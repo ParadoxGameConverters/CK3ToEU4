@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ConverterVersionTests">
+      <UniqueIdentifier>{2befaf67-4e3d-4493-95bf-2258ea0787d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4">
+      <UniqueIdentifier>{63542c5b-0224-4922-b74a-a0d87d5b3c54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\ConverterVersion">
+      <UniqueIdentifier>{b590e4b9-a439-4deb-866a-f75500b9ebe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\commonItems">
+      <UniqueIdentifier>{2cbb46a8-76ce-4e12-9d18-a70f465f3e81}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\CK3toEU4\ConverterVersion\ConverterVersion.cpp">
+      <Filter>CK3ToEU4\ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\ConverterVersion\outConverterVersion.cpp">
+      <Filter>CK3ToEU4\ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="ConverterVersionTests\ConverterVersionTests.cpp">
+      <Filter>ConverterVersionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Parser.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Log.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\StringUtils.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CK3toEU4", "CK3toEU4\CK3toEU4.vcxproj", "{34FEFF06-A41B-441C-995D-CCADC8A2B14C}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CK3ToEU4Tests", "CK3ToEU4Tests\CK3ToEU4Tests.vcxproj", "{263DA23B-D957-405E-A97A-E897A052193D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -12,6 +14,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{34FEFF06-A41B-441C-995D-CCADC8A2B14C}.Release|x64.ActiveCfg = Release|x64
 		{34FEFF06-A41B-441C-995D-CCADC8A2B14C}.Release|x64.Build.0 = Release|x64
+		{263DA23B-D957-405E-A97A-E897A052193D}.Release|x64.ActiveCfg = Release|x64
+		{263DA23B-D957-405E-A97A-E897A052193D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
