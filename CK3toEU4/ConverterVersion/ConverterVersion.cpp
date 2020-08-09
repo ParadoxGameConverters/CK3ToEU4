@@ -1,9 +1,9 @@
-#include "VersionParser.h"
+#include "ConverterVersion.h"
 #include "ParserHelpers.h"
 
 
 
-mappers::VersionParser::VersionParser()
+ConverterVersion::ConverterVersion::ConverterVersion()
 {
 	registerKeys();
 	parseFile("DataFiles/version.txt");
@@ -11,7 +11,7 @@ mappers::VersionParser::VersionParser()
 }
 
 
-mappers::VersionParser::VersionParser(std::istream& theStream)
+ConverterVersion::ConverterVersion::ConverterVersion(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -19,7 +19,7 @@ mappers::VersionParser::VersionParser(std::istream& theStream)
 }
 
 
-void mappers::VersionParser::registerKeys()
+void ConverterVersion::ConverterVersion::registerKeys()
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString nameStr(theStream);

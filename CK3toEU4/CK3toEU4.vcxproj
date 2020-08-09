@@ -56,8 +56,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CK3ToEU4.h" />
-    <ClInclude Include="VersionParser\outVersion.h" />
-    <ClInclude Include="VersionParser\VersionParser.h" />
+    <ClInclude Include="ConverterVersion\ConverterVersion.h" />
+    <ClInclude Include="ConverterVersion\outConverterVersion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp" />
@@ -65,9 +65,9 @@
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
     <ClCompile Include="CK3ToEU4.cpp" />
+    <ClCompile Include="ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="ConverterVersion\outConverterVersion.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="VersionParser\outVersion.cpp" />
-    <ClCompile Include="VersionParser\VersionParser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\DataFiles\version.txt">

@@ -1,5 +1,5 @@
 #include "Log.h"
-#include "VersionParser/VersionParser.h"
+#include "ConverterVersion/ConverterVersion.h"
 #include "CK3ToEU4.h"
 
 
@@ -8,8 +8,8 @@ int main()
 {
 	try
 	{
-		const mappers::VersionParser versionParser;
-		Log(LogLevel::Info) << versionParser;
+		const ConverterVersion::ConverterVersion version;
+		Log(LogLevel::Info) << version;
 		Log(LogLevel::Info) << "Built on " << __TIMESTAMP__;
 		Log(LogLevel::Progress) << "0%";
 		convertCK3ToEU4();

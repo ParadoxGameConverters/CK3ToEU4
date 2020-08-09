@@ -1,39 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="VersionParser">
-      <UniqueIdentifier>{bef1087f-6527-4356-afee-37d6681f96d4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="DataFiles">
       <UniqueIdentifier>{b10cf014-a4ea-4a5e-9a79-03cdb4022131}</UniqueIdentifier>
     </Filter>
     <Filter Include="CommonItems">
       <UniqueIdentifier>{ef433627-91e1-4369-839e-aa0419b527c0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ConverterVersion">
+      <UniqueIdentifier>{bef1087f-6527-4356-afee-37d6681f96d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CK3ToEU4.h" />
-    <ClInclude Include="VersionParser\VersionParser.h">
-      <Filter>VersionParser</Filter>
+    <ClInclude Include="ConverterVersion\ConverterVersion.h">
+      <Filter>ConverterVersion</Filter>
     </ClInclude>
-    <ClInclude Include="VersionParser\outVersion.h">
-      <Filter>VersionParser</Filter>
+    <ClInclude Include="ConverterVersion\outConverterVersion.h">
+      <Filter>ConverterVersion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CK3ToEU4.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="VersionParser\VersionParser.cpp">
-      <Filter>VersionParser</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Log.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\Parser.cpp">
       <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="VersionParser\outVersion.cpp">
-      <Filter>VersionParser</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\ParserHelpers.cpp">
       <Filter>CommonItems</Filter>
@@ -41,10 +35,14 @@
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
+    <ClCompile Include="ConverterVersion\ConverterVersion.cpp">
+      <Filter>ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="ConverterVersion\outConverterVersion.cpp">
+      <Filter>ConverterVersion</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\DataFiles\version.txt">
-      <Filter>DataFiles</Filter>
-    </Text>
+    <CopyFileToFolders Include="..\DataFiles\version.txt" />
   </ItemGroup>
 </Project>
