@@ -12,13 +12,13 @@ namespace ConverterVersion
 
 class ConverterVersion: commonItems::parser
 {
-	public:
+  public:
 	ConverterVersion();
 	explicit ConverterVersion(std::istream& theStream);
 
 	friend std::ostream& operator<<(std::ostream& output, const ConverterVersion& version);
 
-	private:
+  private:
 	void registerKeys();
 
 	std::string name;
@@ -26,7 +26,7 @@ class ConverterVersion: commonItems::parser
 	std::string descriptionLine;
 };
 
-} // namespace mappers
+} // namespace ConverterVersion
 
 
 
