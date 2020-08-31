@@ -6,7 +6,7 @@
 ConverterVersion::ConverterVersion::ConverterVersion()
 {
 	registerKeys();
-	parseFile("DataFiles/version.txt");
+	parseFile("configurables/version.txt");
 	clearRegisteredKeywords();
 }
 

@@ -1,0 +1,74 @@
+## The FAQ
+
+Q: Is this the official converter?
+A: This converter has been done by the same team that specializes in other Paradox converters: 
+EU4->Vic2, Vic2->HoI4, CK2->EU3, EU3->Vic2, Vic2->HoI3, and relatively soon, Imperator->CK3
+It is not official, it does not use official converter's code (though it does recycle some data files).
+
+This is a standalone effort (and so far, the third ck2->eu4 converter to exist).
+
+Q: What are the main advantages between this and the official converter?
+A: Speed, precision and versatility. 
+
+This converter does all that official one does, with many additions and corrections:
+- Shattering any empire and using it as a base for HRE mechanics
+- Shattering empire blobs in general
+- Better and more natural dev shaping of provinces
+- Support for granulated cultures and religions, so "German" or "Italian" break apart into EU4-subcultures
+- True Chinese TAG swapping into ruling dynasty's TAG along with preserving the Celestial Emperor's culture and religion (instead of a simple Ming rename)
+- Integration of the Western Protectorate into China's mainland
+- Better provincial mappings (entirely redone to map CK 3.3 into EU4 1.29)
+- Import of councilmen as advisors
+- Special flags for muslim dynasties (kingdoms and empires are named after their dynasties)
+- Dual bookmarks (for both conversion date and 1444)
+- Full tributary support, both preserving offmap tributaries and importing CK2 ones
+- Expanded EU4 religions with CK2 ones, support for these religions in Vic2 and HoI4.
+- Clearing of siberian tribe and horde OPMs
+- Importing of excommunicated rulers
+- Fixed official converter's handling of starting cash and prestige (it could be negative)
+- Fixed official converter's bug with wonder replication
+- Importing of starting loans
+- Guaranteed support for future EU4 releases
+- And, as time passes, many more features.
+
+Drawbacks are, and will remain for foreseeable future:
+- Not integrated into the game (and will never be)
+- No support for Linux or Mac (need help for that)
+
+Q: I have an ironman save. Can it be converted?
+A: Yes.
+
+Q: Shattered world?
+A: Not an issue.
+
+Q: Random world?
+A: We got your back.
+
+Q: I had Sunset Invasion fire, is this relevant for conversion?
+A: You'll find everything is in *perfect* order, according to specifications.
+
+Q: What about mods?
+A: Unless they change how cultures, religions or flags work, sure, use mods. Total map overhauls are not supported (of course), and whatever new cultures and religions are brought by the mod - you'll have to add manually in the files in configurables folder.
+
+Q: Can you support Random New World?
+A: No. We want the export to be compatible with future conversion to Vic2.
+
+Q: How can I customize my game after converting?
+A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these  files is intended to be modified by users to achieve specific conversion results.
+
+### Quick Troubleshooting:
+
+Q: The generated mod was in a different language than my savegame.
+A: At the moment, CK2ToEU4 only guarantees english localisation, but german, french and spanish are nominally supported.
+
+Q: Some/all country names appear as X25, FRA etc.
+A: This is an issue with the localisation. Only english is guaranteed, and you may be running EU4 in some other localization. Also, CK2 often lacks named and adjectives for various titles in non-english languages. We try to use english localisation when this happens.
+
+Q: I loaded my mod, but nothing changed. What's wrong?
+A: Is the mod enabled in the launcher? If so, then EU4 refused to load it due to possible errors. Come to PDX forums and upload your save, log.txt and errors.txt so we may debug.
+
+Q: The country crashes upon selecting a country and pressing play (at map selection)
+A: Upload your save, log.txt and errors.txt to PDX forums for further study.
+
+Q: The game forbids me to select nations.
+A: Upload your save, log.txt and errors.txt to PDX forums for further study.

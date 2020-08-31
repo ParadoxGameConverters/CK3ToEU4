@@ -1,0 +1,60 @@
+﻿name = CK3ToEU4
+converterFolder = CK3ToEU4
+displayName = CK3DISPLAYNAME
+sourceGame = CK3GAME
+targetGame = EU4GAME
+autoGenerateModsFrom = CK3ModsDirectory
+
+requiredFolder = {
+	name = CK3directory
+	displayName = CK3FOLDER
+	tooltip = CK3FOLDERIP
+	mandatory = true
+	searchPathType = steamFolder
+	searchPathID = 203770
+}
+requiredFolder = {
+	name = CK3ModsDirectory
+	displayName = CK3MOD
+	tooltip = CK3MODTIP
+	mandatory = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Crusader Kings III\mod"
+}
+requiredFolder = {
+	name = EU4directory
+	displayName = EU4FOLDER
+	tooltip = EU4FOLDERTIP
+	mandatory = true
+	searchPathType = steamFolder
+	searchPathID = 236850
+}
+requiredFolder = {
+	name = targetGameModPath
+	displayName = EU4MOD
+	tooltip = EU4MODTIP
+	mandatory = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Europa Universalis IV\mod"
+}
+requiredFile = {
+	name = converterExe
+	displayName = CK3FILE
+	tooltip = CK3FILETIP
+	mandatory = true
+	outputtable = false
+	searchPathType = converterFolder
+	searchPath = "CK3ToEU4"
+	allowedExtension = "*.exe"
+	fileName = "CK3ToEU4Converter.exe"
+}
+requiredFile = {
+	name = SaveGame
+	displayName = CK3SAVE
+	tooltip = CK3SAVETIP
+	mandatory = true
+	outputtable = true
+	searchPathType = windowsUsersFolder
+	searchPath = "Paradox Interactive\Crusader Kings III\save games"
+	allowedExtension = "*.CK3"
+}

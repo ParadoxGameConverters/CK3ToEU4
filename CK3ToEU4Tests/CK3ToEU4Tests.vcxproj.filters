@@ -17,12 +17,6 @@
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="..\CK3toEU4\ConverterVersion\ConverterVersion.cpp">
-      <Filter>CK3ToEU4\ConverterVersion</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\ConverterVersion\outConverterVersion.cpp">
-      <Filter>CK3ToEU4\ConverterVersion</Filter>
-    </ClCompile>
     <ClCompile Include="ConverterVersionTests\ConverterVersionTests.cpp">
       <Filter>ConverterVersionTests</Filter>
     </ClCompile>
@@ -37,6 +31,12 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\ConverterVersion.cpp">
+      <Filter>CK3ToEU4\ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\outConverterVersion.cpp">
+      <Filter>CK3ToEU4\ConverterVersion</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/ConverterVersion/ConverterVersion.h"
-#include "../../CK3toEU4/ConverterVersion/outConverterVersion.h"
+#include "../../CK3toEU4/Source/ConverterVersion/ConverterVersion.h"
+#include "../../CK3toEU4/Source/ConverterVersion/outConverterVersion.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

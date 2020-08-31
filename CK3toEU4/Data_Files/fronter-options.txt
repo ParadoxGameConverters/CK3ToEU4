@@ -1,0 +1,212 @@
+option = {
+	name = dejure
+	displayName = DEJURE
+	tooltip = DEJURETIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = DEJURE1
+			tooltip = DEJURE1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = DEJURE2
+			tooltip = DEJURE2TIP
+			default = false
+		}
+	}
+}
+
+option = {
+	name = i_am_hre
+	displayName = WHOHRE
+	tooltip = WHOHRETIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = WHOHRE1
+			tooltip = WHOHRE1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = WHOHRE2
+			tooltip = WHOHRE2TIP
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = WHOHRE3
+			tooltip = WHOHRE3TIP
+			default = false		
+		}
+		radioOption = {
+			name = 4
+			displayName = WHOHRE4
+			tooltip = WHOHRE4TIP
+			default = false
+		}
+		radioOption = {		
+			name = 5
+			displayName = WHOHRE5
+			tooltip = WHOHRE5TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = shatter_hre_level
+	displayName = SHAHRE
+	tooltip = SHAHRETIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = SHAHRE1
+			tooltip = SHAHRE1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = SHAHRE2
+			tooltip = SHAHRE2TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = shatter_empires
+	displayName = SHAALL
+	tooltip = SHAALLTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = SHAALL1
+			tooltip = SHAALL1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = SHAALL2
+			tooltip = SHAALL2TIP
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = SHAALL3
+			tooltip = SHAALL3TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = shatter_level
+	displayName = SHADIP
+	tooltip = SHADIPTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = SHADIP1
+			tooltip = SHADIP1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = SHADIP2
+			tooltip = SHADIP2TIP
+			default = false
+		}
+	}
+}
+
+option = {
+	name = split_vassals
+	displayName = SPLITVASSALS
+	tooltip = SPLITVASSALSTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = YES1
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = NO
+			default = false
+		}
+	}
+}
+
+option = {
+	name = development
+	displayName = DEVELO
+	tooltip = DEVELOTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = DEVELO1
+			tooltip = DEVELO1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = DEVELO2
+			tooltip = DEVELO2TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = siberia
+	displayName = GULAG
+	tooltip = GULAGTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = GULAG1
+			tooltip = GULAG1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = GULAG2
+			tooltip = GULAG2TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = sunset
+	displayName = AZTEC
+	tooltip = AZTECTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = AZTEC1
+			tooltip = AZTEC1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = AZTEC2
+			tooltip = AZTEC2TIP
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = AZTEC3
+			tooltip = AZTEC3TIP
+			default = false
+		}
+	}
+}
+option = {
+	name = output_name
+	displayName = MODNAME
+	tooltip = MODNAMETIP
+	textSelector = {	
+		value = ""
+		editable = true
+		tooltip = MODNAMETIP2
+	}
+}
