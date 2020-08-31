@@ -54,8 +54,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\CK3toEU4\ConverterVersion\ConverterVersion.cpp" />
-    <ClCompile Include="..\CK3toEU4\ConverterVersion\outConverterVersion.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\outConverterVersion.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />
     <ClCompile Include="..\commonItems\Parser.cpp" />
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />

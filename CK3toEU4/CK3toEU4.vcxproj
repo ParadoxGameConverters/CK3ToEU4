@@ -53,26 +53,27 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>Copy_Files.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CK3ToEU4.h" />
-    <ClInclude Include="ConverterVersion\ConverterVersion.h" />
-    <ClInclude Include="ConverterVersion\outConverterVersion.h" />
+    <ClInclude Include="Source\CK3ToEU4.h" />
+    <ClInclude Include="Source\ConverterVersion\ConverterVersion.h" />
+    <ClInclude Include="Source\ConverterVersion\outConverterVersion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp" />
     <ClCompile Include="..\commonItems\Parser.cpp" />
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
-    <ClCompile Include="CK3ToEU4.cpp" />
-    <ClCompile Include="ConverterVersion\ConverterVersion.cpp" />
-    <ClCompile Include="ConverterVersion\outConverterVersion.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\CK3ToEU4.cpp" />
+    <ClCompile Include="Source\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="Source\ConverterVersion\outConverterVersion.cpp" />
+    <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DataFiles\version.txt">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/DataFiles</DestinationFolders>
-    </CopyFileToFolders>
+    <Text Include="Data_Files\version.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

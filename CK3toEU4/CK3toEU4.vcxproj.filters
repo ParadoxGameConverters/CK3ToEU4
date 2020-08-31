@@ -12,17 +12,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CK3ToEU4.h" />
-    <ClInclude Include="ConverterVersion\ConverterVersion.h">
+    <ClInclude Include="Source\CK3ToEU4.h" />
+    <ClInclude Include="Source\ConverterVersion\ConverterVersion.h">
       <Filter>ConverterVersion</Filter>
     </ClInclude>
-    <ClInclude Include="ConverterVersion\outConverterVersion.h">
+    <ClInclude Include="Source\ConverterVersion\outConverterVersion.h">
       <Filter>ConverterVersion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CK3ToEU4.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
@@ -35,14 +33,16 @@
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
-    <ClCompile Include="ConverterVersion\ConverterVersion.cpp">
+    <ClCompile Include="Source\CK3ToEU4.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\ConverterVersion\ConverterVersion.cpp">
       <Filter>ConverterVersion</Filter>
     </ClCompile>
-    <ClCompile Include="ConverterVersion\outConverterVersion.cpp">
+    <ClCompile Include="Source\ConverterVersion\outConverterVersion.cpp">
       <Filter>ConverterVersion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="..\DataFiles\version.txt" />
+    <Text Include="Data_Files\version.txt" />
   </ItemGroup>
 </Project>

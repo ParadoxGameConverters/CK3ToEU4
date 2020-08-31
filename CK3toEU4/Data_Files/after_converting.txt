@@ -1,0 +1,17 @@
+Step One, sanity check:
+1. Open log.txt
+2. See if there are any warning due to missing cultures, religions, governments and similar.
+3. Edit related maps in configurables/ folder and add the missing entries to appropriate files.
+- These files are designed to be human-readable, easily editable, and players are encouraged to tinker with them.
+4. Reconvert and be sure everything is  in place.
+
+Step Two, testing:
+1. Start the game with the converted mod.
+2. Note all inconsistencies - look for wrong technology groups, missing country modifiers, anything that looks out of place.
+3. Edit affected countries by manually editing files in the mod.
+- common/ holds definitions for countries, religions, and cultures
+- history/ holds actual map data - fell free to edit provinces to change owner, controller, culture or religion
+ 
+ In case of major inconsistencies or problems, come to PDX forums and upload your save, explaining the problems.
+ We're always open to suggestions and will fix whatever we can.
+ 
