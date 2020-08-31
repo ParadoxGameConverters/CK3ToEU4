@@ -1,5 +1,5 @@
 # CK3toEU4
-## Converts Crusader Kings 3 saves into Europa Universalis 4 mods.
+## Converts Crusader Kings 3 saves into Europa Universalis 4 mods
 
 This converter is documented on the [Crusader Kings III wiki](https://ck3.paradoxwikis.com/CK3_To_EU4_Converter). 
 
