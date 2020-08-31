@@ -25,4 +25,5 @@ before_script:
   - sudo apt-get update
   - sudo apt-get install libwxbase3.1-0-unofficial3 libwxbase3.1unofficial3-dev libwxgtk3.1-0-unofficial3 libwxgtk3.1unofficial3-dev wx3.1-headers wx-common
 script:
+  - chmod 755 build_linux.sh
   - ./build_linux.sh
