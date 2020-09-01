@@ -1,0 +1,306 @@
+monarch_power = ADM
+
+# applied when a country is ahead of time in this technology
+ahead_of_time = {
+	production_efficiency = 0.2
+	yearly_corruption = -0.05
+}
+
+# Pre-era techs
+technology = { #Tribal Government
+	# Tech 0
+	year = 1
+	
+	tribal_despotism_legacy = yes 	
+	tribal_federation_legacy = yes 
+	
+	native_earthwork = yes
+	native_palisade = yes
+	native_fortified_house = yes
+	native_three_sisters_field = yes
+	native_irrigation = yes
+	native_storehouse = yes
+	native_longhouse = yes
+	native_sweat_lodge = yes
+	native_great_trail = yes
+	native_ceremonial_fire_pit = yes
+}
+
+technology = { #Advanced Tribes
+	# Tech 1
+	year = 700
+	
+	tribal_democracy_legacy = yes
+	tribal_kingdom_legacy = yes
+}
+
+technology = { #Feudal Monarchy
+	# Tech 2
+	year = 750
+	
+
+	#Monarchies
+	despotic_monarchy = yes	
+	feudal_monarchy = yes
+	oligarchic_republic = yes
+}
+
+# The 30 big techs from here on
+
+technology = { #Medieval Administration
+	# Tech 3
+	year = 769
+
+	production_efficiency	=	0.02
+	may_support_rebels = yes
+}
+ 
+technology = { #Temples
+	# Tech 4
+	year = 1453
+	# Temple
+	temple = yes
+	
+}
+
+technology = { #National Ideas
+	# Tech 5
+	year = 1466
+
+	allowed_idea_groups = 1
+	production_efficiency	 =	0.02
+}
+
+technology = { #Workshop
+	# Tech 6
+	year = 1479
+	
+	#Workshop
+	farm_estate = yes
+	workshop = yes
+	ramparts = yes
+}
+
+technology = { #Renaissance Thought
+	# Tech 7
+	year = 1492
+	
+	#Noble Republic
+	allowed_idea_groups = 2	
+}
+
+technology = { #Courthouse
+	# Tech 8
+
+	year = 1505
+	courthouse = yes
+	governing_capacity = 100
+
+}
+
+technology = { #The Scythe
+	# Tech 9
+	year = 1518
+	
+	#The Scythe
+	production_efficiency 	=	0.02
+	
+
+}
+
+technology = { #Modern Theocracy
+	# Tech 10
+	year = 1531
+	
+	allowed_idea_groups = 3
+	theocratic_government = yes
+}
+
+technology = { #Textile Manufactory
+	# Tech 11
+	year = 1544
+	
+	#Textile Manufactory
+	textile = yes  
+
+}
+
+technology = { #Early Modern Administration
+	# Tech 12
+	year = 1557
+	
+	administrative_monarchy	= yes 
+	administrative_republic	= yes
+	governing_capacity = 100
+	state_house = yes
+}
+
+technology = { #Improved Drainage
+	# Tech 13
+	year = 1570
+	
+	#Improved Drainage
+	production_efficiency 	=	0.02
+}
+
+technology = { #Scientific Experimentation
+	# Tech 14
+	year = 1583
+	
+	plantations = yes
+	allowed_idea_groups	= 4
+}
+
+technology = { #Military Administration
+	# Tech 15
+	year = 1596
+	
+	may_force_march = yes
+	soldier_households = yes
+}
+
+technology = { #Metallurgy
+	# Tech 16
+	year = 1609
+	
+	mills = yes
+	production_efficiency 	=	0.02
+
+
+}
+
+technology = { #University
+	# Tech 17
+	year = 1622
+	
+	university = yes	
+	governing_capacity = 250
+	
+	administrative_efficiency = 0.1
+	development_efficiency = 0.1
+}
+
+technology = { #National Sovereignty
+	# Tech 18
+	year = 1635
+	
+	allowed_idea_groups	= 5
+}
+
+technology = { #Cathedral
+	# Tech 19
+	year = 1648	
+	
+	#Cathedral
+	cathedral = yes
+}
+
+technology = { #Absolute Rulership
+	# Tech 20
+	year = 1661
+	
+	republican_dictatorship = yes
+	governing_capacity = 250
+}
+
+technology = { #Land Clearance
+	# Tech 21
+	year = 1674
+	
+	#Land Clearance
+	production_efficiency 	=	0.02
+	furnace = yes
+}
+
+technology = { #The Constitution
+	# Tech 22
+	year = 1687
+	
+	allowed_idea_groups = 6
+	constitutional_monarchy = yes
+	constitutional_republic = yes  
+
+	town_hall = yes
+}
+
+technology = { #Measuring the World
+	# Tech 23
+	year = 1700
+	
+	administrative_efficiency = 0.1
+	development_efficiency = 0.1
+}
+
+technology = { #Bonds and Tontines
+	# Tech 24
+	year = 1715
+	
+	counting_house = yes  
+	governing_capacity = 250
+}
+
+technology = { #Improved Production
+	# Tech 25
+	year = 1730
+	
+	#Improved Farm Animals
+	production_efficiency 	=	0.02
+}
+
+technology = { #Separation of Powers
+	# Tech 26
+	year = 1745
+	
+	allowed_idea_groups 	= 	7
+}
+
+technology = { #Modern Bureaucracy
+	# Tech 27
+	year = 1760
+
+	administrative_efficiency = 0.1
+	development_efficiency = 0.1	
+	governing_capacity = 250
+}
+
+technology = { #Rotherham Plough
+	# Tech 28
+	year = 1775
+	
+	#Rotherham Plough
+	production_efficiency 	=	0.02
+}
+
+technology = { #Rights of Man
+	# Tech 29
+	year = 1790
+	
+	allowed_idea_groups = 8
+	enlightened_despotism = yes
+	bureaucratic_despotism = yes
+}
+
+technology = { #Advanced Production
+	# Tech 30
+	year = 1805
+	
+	#Improved Draft Animals
+	production_efficiency 	=	0.02
+}
+
+technology = { #Revolutionary Ideals
+	# Tech 31
+	year = 1820
+	
+	revolutionary_republic = yes
+	revolutionary_empire = yes
+	governing_capacity = 500
+}
+
+technology = { #Four Field Rotation
+	# Tech 32
+	year = 1835
+	
+	#Four field rotation
+	production_efficiency 	=	0.02
+}

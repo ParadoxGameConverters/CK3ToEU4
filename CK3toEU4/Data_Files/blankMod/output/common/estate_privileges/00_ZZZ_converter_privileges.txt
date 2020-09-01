@@ -1,0 +1,191 @@
+estate_church_papal_emissary = {
+	icon = privilege_send_emissary_to_pope
+	max_absolutism = -5
+	loyalty = 0.05
+	influence = 0.05
+	is_valid = {
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+		NOT = { tag = PAP }
+		NOT = { tag = FAP }
+	}
+	can_select = {
+		papal_influence = 20
+		num_of_cardinals = 1
+	}
+	on_granted = {
+		add_papal_influence = -5
+	}
+	penalties = {
+		curia_powers_cost = 0.05
+	}
+	benefits = {
+		papal_influence = 1
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			is_part_of_hre = yes
+			is_emperor = no
+		}
+		modifier = {
+			factor = 0.25
+			OR = {
+				tag = SWE
+				tag = ENG
+				tag = GBR
+			}
+		}
+		modifier = {
+			factor = 0
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 0.75
+			religion = catholic
+			NOT = {
+				reverse_has_opinion = {
+					who = PAP
+					value = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			religion = fraticelli
+			NOT = {
+				reverse_has_opinion = {
+					who = FAP
+					value = 50
+				}
+			}
+		}
+	}
+}
+
+estate_church_clerical_ministers = {
+	icon = privilege_recruit_minister
+	max_absolutism = -5
+	influence = 0.10
+	conditional_modifier = {
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Common Sense"
+				}
+				uses_church_aspects = no #Protetants/Anglicans/Cathars/Bogomilists
+				uses_karma = no #Buddhism/Vajrayana/Mahayana/Bon/Reformed Bon
+			}
+			if = {
+				limit = {
+					has_dlc = "Wealth of Nations"
+				}
+				uses_fervor = no #Reformed/Messalian/Waldensian/Lollard/Qarmatian
+			}
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				NOT = { 
+					religion_group = muslim
+					NOT = { religion = qarmatian }
+					NOT = { religion = yazidi }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Mandate of Heaven"
+				}
+				NOT = { religion = confucianism }
+			}
+			if = {
+				limit = {
+					has_dlc = "Third Rome"
+				}
+				uses_patriarch_authority = no #Orthodox/Monothelite/Iconoclast/Paulician/Yazidi
+			}
+		}
+		modifier = {
+			missionary_maintenance_cost = -0.2
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Common Sense"
+			uses_karma = yes #Buddhism/Vajrayana/Mahayana/Bon/Reformed Bon
+		}
+		modifier = {
+			yearly_karma_decay = 0.005
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Common Sense"
+			uses_church_aspects = yes #Protetants/Anglicans/Cathars/Bogomilists
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Wealth of Nations"
+			uses_fervor = yes #Reformed/Messalian/Waldensian/Lollard/Qarmatian
+		}
+		modifier = {
+			monthly_fervor_increase = 0.5
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Cradle of Civilization"
+			religion_group = muslim
+			NOT = { religion = qarmatian }
+			NOT = { religion = yazidi }
+		}
+		modifier = {
+			monthly_piety = 0.001
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Mandate of Heaven"
+			religion = confucianism
+		}
+		modifier = {
+			yearly_harmony = 0.25
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Third Rome"
+			uses_patriarch_authority = yes #Orthodox/Monothelite/Iconoclast/Paulician/Yazidi
+		}
+		modifier = {
+			yearly_patriarch_authority = 0.005
+		}
+	}
+	penalties = {
+	}
+	benefits = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0.5
+			is_absolutism_active = yes
+		}
+		modifier = {
+			factor = 0.5
+			OR = {
+				religion = protestant
+				religion = anglican
+			}
+			religion = protestant
+			num_of_aspects = 3
+		}
+	}
+}

@@ -1,0 +1,32 @@
+government = theocracy
+add_government_reform = papacy_reform
+government_rank = 2
+primary_culture = umbrian
+religion = catholic
+technology_group = western
+capital = 118	# Roma
+fixed_capital = 118  # Cannot move capital away from this province & no power cost to move to it
+add_army_professionalism = 0.05
+
+change_estate_land_share = {
+	estate = estate_church
+	share = -30
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 5
+}
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 5
+}
+
+500.11.11 = {
+	monarch = {
+		name = "(Interregnum)"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

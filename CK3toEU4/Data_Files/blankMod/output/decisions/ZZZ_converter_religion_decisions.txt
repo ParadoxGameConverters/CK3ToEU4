@@ -1,0 +1,835 @@
+country_decisions = {
+	
+	# New Christian Religions
+	institute_the_societas_jesu_FAP = {
+		potential = {
+			OR = {
+				tag = POR
+				tag = SPA
+			}
+			religion = fraticelli
+			NOT = { has_country_modifier = the_societas_jesu }
+			NOT = { has_country_modifier = jesuits_expelled }
+		}
+		allow = {
+			adm_tech = 10
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "the_societas_jesu"
+				duration = -1
+			}
+			add_reform_desire = -0.02
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+	}
+	
+	secularization_of_christian_theocracy_FAP = {
+		major = yes
+		potential = {
+			NOT = { has_dlc = "Dharma" }
+			government = theocracy
+			religion_group = christian
+			NOT = { religion = catholic }
+			NOT = { religion = protestant }
+			NOT = { religion = reformed }
+			NOT = { has_reform = papal_government }
+		}
+		allow = {
+			stability = 2
+			adm_tech = 20
+			custom_trigger_tooltip = {
+				tooltip = recently_changed_government_flag_tooltip
+				OR = {
+					NOT = { has_country_flag = recently_changed_government_flag }
+					had_country_flag = { flag = recently_changed_government_flag days = 9125 }
+				}
+			}
+		}
+		effect = {
+			every_neighbor_country = {
+				limit = {
+					government = monarchy
+					ROOT = { has_reform = monastic_order_government }
+				}
+				add_opinion = { who = ROOT modifier = secularized_monastic_order }
+			}
+			every_neighbor_country = {
+				limit = {
+					government = monarchy
+					ROOT = { NOT = { has_reform = monastic_order_government }}
+				}
+				add_opinion = { who = ROOT modifier = secularized_bishopric }
+			}
+			if = {
+				limit = {
+					religion = fraticelli
+				}
+				FAP = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_displeased
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = { total_development = 300 }
+						is_subject_other_than_tributary_trigger = yes
+					}
+				}
+				set_government_rank = 1
+			}
+			change_government = monarchy
+			set_legacy_government = administrative_monarchy
+			add_stability = -1
+			if = {
+				limit = { has_heir = yes }
+				kill_heir = yes
+			}
+			set_country_flag = recently_changed_government_flag
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	statue_in_restraint_of_appeals_FAP = {
+		potential = {
+			NOT = { has_country_modifier = the_statue_in_restraint_of_appeals }
+			religion = fraticelli
+			exists = FAP
+			NOT = { tag = FAP }
+		}
+		allow = {
+			NOT = { FAP = { has_opinion = { who = root value = -50 } } }
+			adm = 2
+			mil = 2
+		}
+		effect = {
+			add_prestige = 10
+			add_reform_desire  = 0.01
+			every_neighbor_country = {
+				limit = {  
+					religion = fraticelli
+					NOT = {
+						tag = FAP
+					}
+				}
+				add_opinion = { who = ROOT modifier = opinion_demote_pope }
+			}
+			FAP = { add_opinion = { who = ROOT modifier = opinion_pope_realise_demotion } }
+			add_country_modifier = {
+				name = "the_statue_in_restraint_of_appeals"
+				duration = -1
+			}
+			if = {
+				limit = {
+					has_estate = estate_church
+				}
+				custom_tooltip = will_increase_clergy_loyalty_by_5
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				FAP = { has_opinion = { who = root value = -100 } } 
+				NOT = { is_excommunicated = yes }
+				OR = {
+					culture_group = french
+					culture_group = latin
+					culture_group = iberian
+				}
+			}
+			modifier = {
+				factor = 0
+				is_emperor = yes
+				hre_religion_treaty = no
+			}
+		}
+	}
+	
+	revoke_restraint_of_appeals_FAP = {
+		potential = {
+			has_country_modifier = the_statue_in_restraint_of_appeals
+			NOT = { has_country_modifier = revocation_of_restraint_of_appeals }
+			religion = fraticelli
+			exists = FAP
+		}
+		allow = {
+			dip = 4
+			advisor = theologian
+			has_opinion = { who = FAP value = 100 }
+		}
+		effect = {
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			reverse_add_opinion = { who = FAP modifier = opinion_revoked_demotion }
+			add_country_modifier = {
+				name = "revocation_of_restraint_of_appeals"
+				duration = -1
+			}
+			if = {
+				limit = { has_estate = estate_church }
+				custom_tooltip = will_decrease_clergy_loyalty_by_5
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.0
+				is_excommunicated = no
+				OR = {
+					NOT = { has_opinion = { who = FAP value = 150 } }
+					num_of_cities = 5
+				}
+				AND = {
+					is_emperor = yes
+					hre_religion_treaty = no
+				}
+			}
+		}
+	}
+	
+	move_capital_to_rome_FAP = {
+		major = yes
+		potential = {
+			always = no # redundant due to fixed_capital mechanics
+			tag = FAP
+			owns = 118 # Rome
+			NOT = { capital = 118 }
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			religion = fraticelli
+			owns = 118 # Rome
+		}
+		effect = {
+			118 = {
+				move_capital_effect = yes
+			}
+			add_core = 118 # Rome
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		do_not_core = 118 #Rome
+	}
+	
+	join_the_counter_reformation_FAP = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = counter_reformation } 
+			has_global_flag = counter_reformation
+			NOT = { has_idea = ecumenism }
+			NOT = { has_idea = liberty_egalite_fraternity }
+			NOT = { religion_years = { protestant = 150 } }
+			religion = fraticelli
+		}
+		allow = {
+			OR = {
+				tag = FAP
+				is_emperor = yes
+				has_opinion = { who = FAP value = -50 }
+			}
+			NOT = { has_country_modifier = edict_de_nantes }
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { tag = FAP }
+				}
+				reverse_add_opinion = { who = FAP modifier = opinion_embraced_counter_reformation }
+			}
+			if = {
+				limit = {
+					is_emperor = no
+					emperor = { 
+						OR = {
+							religion = catholic 
+							religion = fraticelli
+						}
+					}
+				}
+				emperor = { add_opinion = { who = ROOT modifier = opinion_embraced_counter_reformation } }
+			}
+			add_country_modifier = {
+				name = "counter_reformation"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.0
+				OR = {
+					dominant_religion = reformed
+					dominant_religion = protestant
+					dominant_religion = cathar
+					dominant_religion = waldensian
+					dominant_religion = lollard
+				}
+				is_emperor = no
+			}
+			modifier = {
+				factor = 0.0
+				has_country_flag = protestant_reformation
+				is_emperor = no
+			}
+			modifier = {
+				factor = 0.0
+				has_country_flag = calvinist_reformation
+				is_emperor = no
+			}
+			modifier = {
+				factor = 0.0
+				NOT = { has_opinion = { who = FAP value = -10 } }
+				NOT = { culture_group = latin }
+				NOT = { culture_group = iberian }
+				is_emperor = no
+			}
+			modifier = {
+				factor = 0.0
+				adm = 2
+				NOT = { has_opinion = { who = FAP value = 100 } }
+				NOT = { culture_group = latin }
+				NOT = { culture_group = iberian }
+				is_emperor = no
+			}
+		}
+	}
+	
+	#Protestants
+	secularization_of_protestant_theocracy_EXTRA = {
+		major = yes
+		potential = {
+			NOT = { has_dlc = "Dharma" }
+			government = theocracy
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+			NOT = {
+				tag = TEU
+				owns_core_province = 41 #Königsberg
+			}
+			NOT = {
+				tag = LIV
+				owns_core_province = 39 #Courland
+				owns_core_province = 1935 #Semigallia
+			}
+		}
+		allow = {
+			stability = 2
+			adm_tech = 12
+			custom_trigger_tooltip = {
+				tooltip = recently_changed_government_flag_tooltip
+				OR = {
+					NOT = { has_country_flag = recently_changed_government_flag }
+					had_country_flag = { flag = recently_changed_government_flag days = 9125 }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { has_heir = yes }
+				kill_heir = yes
+			}
+			every_neighbor_country = {
+				limit = {
+					government = monarchy
+					ROOT = { has_reform = monastic_order_government }
+				}
+				add_opinion = { who = ROOT modifier = secularized_monastic_order }
+			}
+			every_neighbor_country = {
+				limit = {
+					government = monarchy
+					ROOT = { NOT = { has_reform = monastic_order_government }}
+				}
+				add_opinion = { who = ROOT modifier = secularized_bishopric }
+			}
+			if = {
+				limit = {
+					OR = {
+						is_free_or_tributary_trigger = yes
+						NOT = { total_development = 300 }
+					}
+				}
+				set_government_rank = 1
+			}
+			change_government = monarchy
+			set_legacy_government = administrative_monarchy
+			add_stability = -1
+			set_country_flag = recently_changed_government_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	test_act_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = the_test_act }
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+		}
+		allow = {
+			adm_tech = 10
+			NOT = { has_country_modifier = the_declaration_of_indulgence }
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "the_test_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	dissolution_of_the_monasteries_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = the_dissolution_of_the_monasteries }
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+				AND = {
+					religion = catholic
+					has_country_modifier = the_statue_in_restraint_of_appeals
+				}
+				AND = {
+					religion = fraticelli
+					has_country_modifier = the_statue_in_restraint_of_appeals
+				}
+			}
+		}
+		allow = {
+			# Raises the king to be the legal authority in all religious matters
+			adm = 4
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "the_dissolution_of_the_monasteries"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				NOT = { stability = 0 }
+				factor = 0
+			}
+		}
+	}
+	
+	popery_act_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = the_popery_act }
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+			adm_tech = 11
+		}
+		allow = {
+			mil = 3
+			#NOT = { has_opinion = { who = FAP value = 0 } }
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "the_popery_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	trade_propagation_convert_to_islam_EXTRA = {
+		potential = {
+			has_dlc = "Cradle of Civilization"
+			NOT = { religion_group = muslim }
+			capital_scope = {
+				religion_group = muslim
+				is_node_in_trade_company_region = yes
+			}
+		}
+		allow = {
+			legitimacy = 90
+			has_regency = no
+			is_free_or_tributary_trigger = yes
+			custom_trigger_tooltip = {
+				tooltip = the_dominant_religion_is_a_form_of_islam_tooltip
+				OR = {
+					dominant_religion = zikri
+					dominant_religion = yazidi
+					dominant_religion = kharijite
+					dominant_religion = druze
+					dominant_religion = hurufi
+					dominant_religion = qarmatian
+				}
+			}
+		}
+		effect = {
+			change_religion = capital
+			add_stability = 1
+			add_legitimacy = 10
+			clr_country_flag = sultan_titles_for_non_muslims
+			remove_country_modifier = islamic_titles
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_country_flag = sultan_titles_for_non_muslims
+				had_country_flag = { flag = sultan_titles_for_non_muslims days = 10950 } #After 30 years
+				NOT = { tag = ARK }
+			}
+		}
+	}
+	
+	#Other
+	restrict_government_offices_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = restricted_offices }
+			religion_group = jewish_group
+			NOT = { religion = jewish }
+		}
+		allow = {
+			ADM = 3
+		}
+		effect = {
+			add_country_modifier = {
+				name = "restricted_offices"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	tengri_yellow_shamanism_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = yellow_shamanism_modifier }
+			NOT = { has_country_modifier = black_shamanism_modifier }
+			religion = tengri_pagan
+		}
+		allow = {
+			ADM = 3
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "yellow_shamanism_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tengri_black_shamanism_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = black_shamanism_modifier }
+			religion = tengri_pagan
+			NOT = { has_secondary_religion = yes }
+		}
+		allow = {
+			ADM = 3
+			NOT = { has_country_modifier = yellow_shamanism_modifier }
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "black_shamanism_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	tengri_expel_the_khojas_EXTRA = {
+		potential = {
+			religion = tengri_pagan
+			has_country_flag = khojas_established
+			NOT = { has_country_flag = end_of_khojas }
+			num_of_cities = 2
+		}
+		allow = {
+			legitimacy_or_horde_unity = 75
+			NOT = { has_ruler_modifier = support_of_the_khojas }
+		}
+		effect = {
+			hidden_effect = {
+				set_country_flag = end_of_khojas
+			}
+			custom_tooltip = tengri_events.16.b.tt
+			random_owned_province = {
+				limit = {
+					is_capital = no
+				}
+				if = {
+					limit = {
+						owner = {
+							NOT = { check_variable = { which = khojas_retained value = 5 } }
+						}
+					}
+					spawn_rebels = {
+						type = sunni_rebels
+						size = 1
+						win = yes
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							check_variable = { which = khojas_retained value = 5 }
+							NOT = { check_variable = { which = khojas_retained value = 7 } }
+						}
+					}
+					spawn_rebels = {
+						type = sunni_rebels
+						size = 2
+						win = yes
+					}
+				}
+				if = {
+					limit = {
+						owner = {
+							check_variable = { which = khojas_retained value = 7 }
+						}
+					}
+					spawn_rebels = {
+						type = sunni_rebels
+						size = 3
+						win = yes
+					}
+				}
+			}
+		}
+	}
+	
+	zoroastrian_rites_of_admission_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = rites_of_admission_modifier }
+			religion_group = zoroastrian_group
+			NOT = { religion = zoroastrian }
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "rites_of_admission_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	zoroastrian_royal_fires_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = royal_fires_modifier }
+			religion_group = zoroastrian_group
+			NOT = { religion = zoroastrian }
+		}
+		allow = {
+			government_rank = 3
+			owns_core_province = 2221 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 2207 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 2235 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 2236 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 2218 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 441 #Various locations suggested to have been the site of these fires.
+			owns_core_province = 2223 #Various locations suggested to have been the site of these fires.
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "royal_fires_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					owns_core_province = 2221 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 2207 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 2235 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 2236 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 2218 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 441 #Various locations suggested to have been the site of these fires.
+					owns_core_province = 2223 #Various locations suggested to have been the site of these fires.
+				}
+				factor = 0
+			}
+		}
+	}
+
+	zoroastrian_diaspora_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = reunification_with_parsees }
+			religion_group = zoroastrian_group
+			NOT = { religion = zoroastrian }
+		}
+		allow = {
+			owns_core_province = 428 #Teheran
+			owns_core_province = 429 #Isfahan
+			owns_core_province = 431 #Mogostan
+			owns_core_province = 432 #Kerman
+			owns_core_province = 433 #Yazd
+			owns_core_province = 450 #Balkh
+			owns_core_province = 504 #Thatta
+			owns_core_province = 517 #Sanjan
+			owns_core_province = 529 #Mumbai
+			owns_core_province = 2210 #Kermanshah
+			all_owned_province = {
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "reunification_with_parsees"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					owns_core_province = 428 #Teheran
+					owns_core_province = 429 #Isfahan
+					owns_core_province = 432 #Kerman
+					owns_core_province = 433 #Yazd
+					owns_core_province = 450 #Balkh
+					owns_core_province = 504 #Thatta
+					owns_core_province = 517 #Sanjan
+					owns_core_province = 529 #Mumbai
+					owns_core_province = 2210 #Kermanshah
+				}
+				factor = 0
+			}
+		}
+	}
+	
+	animism_ritual_education_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = ritual_education_modifier }
+			religion = pagan_religion
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			adm_tech = 8
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "ritual_education_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	shamanism_wondering_shamans_EXTRA = {
+		potential = {
+			NOT = { has_country_modifier = wandering_shamans_modifier }
+			OR = {
+				religion = west_african_pagan
+				religion = west_african_pagan_reformed
+			}
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			adm_tech = 8
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "wandering_shamans_modifier"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	spreading_of_norse_rituals = {
+		potential = {
+			NOT = { has_country_modifier = spreading_norse_rituals }
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+		}
+		allow = {
+			ADM = 3
+			adm_tech = 8
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "spreading_norse_rituals"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+}

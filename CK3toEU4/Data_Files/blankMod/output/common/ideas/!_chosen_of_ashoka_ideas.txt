@@ -1,0 +1,44 @@
+chosen_of_ashoka_ideas = {
+	start = {
+		monthly_karma = 0.1
+		enforce_religion_cost = -0.33
+	}
+	bonus = {
+		land_maintenance_modifier = -0.2
+	}
+	trigger = {
+		tag = COA
+		OR = {
+			religion = buddhism
+			religion = vajrayana
+			religion = mahayana
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_major_edict_1 = {
+		global_unrest = -0.2
+	}
+	ZZZ_major_edict_2 = {
+		development_cost = -0.2
+	}
+	ZZZ_protectors_of_india = {
+		land_morale = 0.2
+	}
+	ZZZ_major_edict_5 = {
+		missionaries = 1
+		global_missionary_strength = 0.01
+	}
+	ZZZ_major_edict_6 = {
+		yearly_absolutism = 0.5
+		administrative_efficiency = 0.05
+	}
+	ZZZ_major_edict_7 = {
+		num_accepted_cultures = 2
+		no_religion_penalty = yes
+	}
+	ZZZ_men_to_protect_india = {
+		global_manpower_modifier = 0.25
+	}
+}

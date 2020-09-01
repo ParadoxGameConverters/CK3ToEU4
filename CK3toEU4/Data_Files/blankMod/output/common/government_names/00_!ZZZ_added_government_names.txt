@@ -1,0 +1,33 @@
+grand_duchy_monarchy = {
+	rank = {
+		1 = GRAND_DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = GRAND_DUKE
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = GRAND_DUCHESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	
+	trigger = {
+		has_reform = grand_duchy_reform
+		NOT = { government_rank = 2 }
+		OR = {
+			tag = LUX
+			tag = BAD
+			tag = TUS
+			tag = FIN
+			tag = LIT
+			culture_group = baltic
+			primary_culture = finnish
+		}
+	}
+}

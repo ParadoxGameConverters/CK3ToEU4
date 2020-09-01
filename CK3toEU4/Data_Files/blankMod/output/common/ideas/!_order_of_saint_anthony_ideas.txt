@@ -1,0 +1,37 @@
+order_of_saint_anthony_ideas = {
+	start = {
+		missionaries = 1
+		leader_land_shock = 1
+	}
+	bonus = {
+		diplomats = 1
+	}
+	trigger = {
+		tag = OOA
+		religion_group = christian
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_coptic_defenders = {
+		shock_damage_received = -0.2
+	}
+	ZZZ_go_far_copts = {
+		merchants = 1
+	}
+	ZZZ_order_in_every_town = {
+		global_unrest = -1.5
+	}
+	ZZZ_mission_to_the_unknown = {
+		colonists = 1
+	}
+	ZZZ_capacity_for_more = {
+		land_forcelimit_modifier = 0.25
+	}
+	ZZZ_coptic_gold = {
+		inflation_reduction = 0.1
+	}
+	ZZZ_order_in_the_ranks = {
+		discipline = 0.05
+	}
+}

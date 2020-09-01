@@ -1,0 +1,39 @@
+jewish_ideas = {
+	start = {
+		tolerance_own = 1
+		legitimacy = 1
+	}
+	
+	bonus = {
+		diplomatic_reputation = 1
+	}
+	
+	trigger = {
+		tag = ISR
+		religion_group = jewish_group
+	}
+	free = yes
+	
+	end_of_diaspora = {
+		global_unrest = -1
+	}
+	national_myths_restored = {
+		discipline = 0.05
+	}
+	return_home = {
+		production_efficiency = 0.2
+	}
+	jewish_trade_tradition = {
+		trade_steering = 0.1
+		trade_efficiency = 0.1
+	}
+	jewish_banking = {
+		interest = -1
+	}
+	people_of_exile = {
+		global_colonial_growth = 33
+	}
+	the_chosen_people = {
+		enemy_core_creation = 1.0
+	}
+}

@@ -1,0 +1,102 @@
+#Adds Fraticelli Pope/Other China Tags as endgame tags
+was_never_end_game_tag_trigger = {	#Country Scope
+	OR = {
+		NOT = { end_game_tags_blocked = yes }
+		AND = {
+			NOT = { was_tag = MUG }
+			NOT = { was_tag = TUR }
+			NOT = { was_tag = BYZ }
+			NOT = { was_tag = ROM }
+			NOT = { was_tag = HLR }
+			NOT = { was_tag = RUM }
+			NOT = { was_tag = QNG }
+			NOT = { was_tag = RUS }
+			NOT = { was_tag = PLC }
+			NOT = { was_tag = JAP }
+			NOT = { was_tag = YUA }
+			NOT = { was_tag = HIN }
+			NOT = { was_tag = BHA }
+			NOT = { was_tag = ARB }
+			NOT = { was_tag = PAP }
+			NOT = { was_tag = SPA }
+			NOT = { was_tag = GBR }
+			NOT = { was_tag = ITA }
+			NOT = { was_tag = GER }
+			NOT = { was_tag = MNG }
+			NOT = { was_tag = MGE }
+			NOT = { was_tag = SYN }
+			NOT = { was_tag = ADU }
+			NOT = { was_tag = LOT }
+			NOT = { was_tag = FAP }
+			NOT = { was_tag = WEI }
+			NOT = { was_tag = HND }
+			NOT = { was_tag = ZAO }
+			NOT = { was_tag = LIO }
+			NOT = { was_tag = XIA }
+			NOT = { was_tag = DAX }
+			NOT = { was_tag = CEG }
+			NOT = { was_tag = SNG }
+			NOT = { was_tag = YIN }
+			NOT = { was_tag = CHN }
+			NOT = { tag = MUG }
+			NOT = { tag = TUR }
+			NOT = { tag = BYZ }
+			NOT = { tag = ROM }
+			NOT = { tag = HLR }
+			NOT = { tag = RUM }
+			NOT = { tag = QNG }
+			NOT = { tag = RUS }
+			NOT = { tag = PLC }
+			NOT = { tag = JAP }
+			NOT = { tag = YUA }
+			NOT = { tag = HIN }
+			NOT = { tag = BHA }
+			NOT = { tag = ARB }
+			NOT = { tag = PAP }
+			NOT = { tag = SPA }
+			NOT = { tag = GBR }
+			NOT = { tag = ITA }
+			NOT = { tag = GER }
+			NOT = { tag = MNG }
+			NOT = { tag = MGE }
+			NOT = { tag = SYN }
+			NOT = { tag = ADU }
+			NOT = { tag = LOT }
+			NOT = { tag = FAP }
+			NOT = { tag = WEI }
+			NOT = { tag = HND }
+			NOT = { tag = ZAO }
+			NOT = { tag = LIO }
+			NOT = { tag = XIA }
+			NOT = { tag = DAX }
+			NOT = { tag = CEG }
+			NOT = { tag = SNG }
+			NOT = { tag = YIN }
+			NOT = { tag = CHN }
+		}
+	}
+}
+
+#French Script, added the Fraticelli Pope
+frloc_tags_art_pl_masc_cons_dansles_05c = {
+	# Ex.: LES États pontificaux / l'honneur DES États pontificaux / le trône DES États pontificaux / arriver DANS LES États pontificaux / demander AUX États pontificaux / NOUVEAUX-États pontificaux
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Italy / Italie
+		OR = {
+			tag = PAP
+			tag = FAP
+		}
+	}
+}

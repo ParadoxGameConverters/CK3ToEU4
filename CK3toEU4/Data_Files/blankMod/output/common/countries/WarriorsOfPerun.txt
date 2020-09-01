@@ -1,0 +1,118 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 100 140 100 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	bardiche_infantry
+	druzhina_cavalry
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {	
+	"Ivan #0" = 1
+	"Fedir #0" = 1
+	"Oleksander #0" = 1
+	"Mikhailo #0" = 1
+	"Yaroslav #0" = 1
+	"Danylo #0" = 1
+	"Rostislav #0" = 1
+	"Vassyl #0" = 1
+	"Volodymyr #0" = 1
+	"Yuriy #0" = 1
+	"Andriy #0" = 1
+	"Bogdan #0" = 1
+	"Bohuslav #0" = 1
+	"Borysko #0" = 1
+	"Boyko #0" = 1
+	"Demyan #0" = 1
+	"Dmytro #0" = 1
+	"Hryhoriy #0" = 1
+	"Kristiyan #0" = 1
+	"Kyrylo #0" = 1
+	"Maksym #0" = 1
+	"Marko #0" = 1
+	"Matviyko #0" = 1
+	"Mecheslav #0" = 1
+	"Mykola #0" = 1
+	"Myroslav #0" = 1
+	"Nykon #0" = 1
+	"Olek #0" = 1
+	"Oleksiy #0" = 1
+	"Pavlo #0" = 1
+	"Petro #0" = 1
+	"Pylip #0" = 1
+	"Radomyr #0" = 1
+	"Stepan #0" = 1
+	"Svyatoslav #0" = 1
+	"Symon #0" = 1
+	"Taras #0" = 1
+	"Yakiv #0" = 1
+	"Yevhevniy #0" = 1
+	"Yosip #0" = 1
+	"Pavel #0" = 1
+	"Prokopiy #0" = 1
+	"Pyotr #0" = 1
+	"Radomir #0" = 1
+	"Saveliy #0" = 1
+	"Sergei #0" = 1
+	"Terentiy #0" = 1
+	"Valeriy #0" = 1
+	"Yakim #0" = 1
+	
+	"Kalyna #0" = -1
+	"Oxana #0" = -1
+	"Zoya #0" = -1
+}
+
+leader_names = {
+	Davydova Sydorenko Lysenko Babko Shchukarev 
+	Trfimenko Tyutyunnikov Hlushkov Filitov Kondratyuk 
+	Antonovych Horbachov Doroshenko Drahomanov Maksymovych 
+	Ohloblyn Stojko Yavornytsky Bogolyubov Bunyakovskii 
+	Chebotaryov Cholesky Hnedenko Kravchuk Fomenko Korolyuk
+	Mytropolsky Oleinik Ostrogradsky Petryshyn Pogorelov
+	Poretsky Potapow Samoilenko Shafarevich Sharkovsky
+	Shatunovsky Skorokhod Shtokalo Sleszynski Urysohn Vashchenko
+	Voronoy Avramenko Chuperchuk Dmytrenko Krivokhyzha Pryma
+	Shekera Vantukh Vasylenko Verkhovynets 
+	
+	Golitzin Kaibula Kamenski Kolzoff Mensjikov Mustislavski "Ostermann Tolstoy" Paletskij Rajevski
+}
+
+ship_names = {
+	Kiev Kherson Lutsk Ghernigiv Vinnitsya Kremenchuk
+	Tsyurupynsk Uman Pryluky Kahovka Hmelnieckiy
+	Melitopol Mariupol Slavutych Kolomiya Kremenets
+	Korets Izyaslav Kovel Balta Noviy Bug Shostka Alchevsk
+	Sudak "Kriviy Rig" Svitlovods'k  Khersones Tovaristsch
+	Rurik Moscha Volga Schorna Coluna Klin Iausa
+	Cortiza Mosnisk Olescho Piersek Troitzkoy Wolok
+	
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

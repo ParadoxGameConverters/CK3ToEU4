@@ -1,0 +1,39 @@
+jerusalem_ideas = {
+	start = {
+		tolerance_heathen = 1
+		global_missionary_strength = 0.03
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	
+	trigger = {
+		tag = KOJ
+		religion_group = christian
+	}
+	free = yes
+	
+	crown_of_thorns = {
+		prestige = 1
+		legitimacy = 1
+	}
+	latin_patriarch = {
+		papal_influence = 2
+	}
+	frontier_state = {
+		discipline = 0.05
+	}
+	land_of_the_heathen = {
+		missionaries = 1
+	}
+	crusader_aristocracy = {
+		leader_land_shock = 1
+	}
+	crusader_castles = {
+		defensiveness = 0.25
+	}
+	cosmopolitan_nobility = {
+		diplomatic_reputation = 2
+	}
+}

@@ -1,0 +1,39 @@
+FAP_ideas = {
+	start = {
+		diplomatic_reputation = 2
+		years_of_nationalism  = -10
+	}
+
+	bonus = {
+		free_policy = 1
+	}
+	
+	trigger = {
+		tag = FAP
+	}
+	free = yes		#will be added at load.
+	
+	ZZZ_little_brethren = {
+		improve_relation_modifier = 0.25
+	}
+	ZZZ_true_christians = {
+		devotion = 1.5
+	}
+	ZZZ_defenders_of_the_faith = {
+		land_morale = 0.2
+	}
+	ZZZ_beauty_in_simplicity = {
+		build_cost = -0.2
+		build_time = -0.25
+	}
+	ZZZ_love_thy_neighbor = {
+		num_accepted_cultures = 5
+		promote_culture_cost = -0.75
+	}
+	ZZZ_a_loving_hand = {
+		global_unrest = -2
+	}
+	ZZZ_spread_the_word = {
+		global_missionary_strength = 0.025
+	}
+}

@@ -1,0 +1,351 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new dieties, make sure they are uniquely named.
+
+jupiter =
+{
+	religious_unity = 0.10
+	legitimacy = 0.1
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 19
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_balanced
+		}
+	}
+}
+
+luno =
+{
+	yearly_corruption = -0.1
+	core_creation = -0.10
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 20
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}
+	}
+}
+
+neptunus =
+{
+	naval_morale = 0.10
+	global_sailors_modifier = 0.10
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 21
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 5 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 10 }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_cities = 30
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}
+	}
+}
+
+venus =
+{
+	heir_chance = 0.5
+	manpower_recovery_speed = 0.1
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 22
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}
+	}
+}
+
+mars =
+{
+	leader_land_fire = 1
+	discipline = 0.05
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 23
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}
+		modifier = {
+			factor = 5
+			personality = ai_militarist
+		}
+	}
+}
+
+
+ceres =
+{
+	global_tax_modifier = 0.1
+	development_cost = -0.1
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 24
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
+}
+
+vulcan =
+{
+	production_efficiency = 0.1
+	land_maintenance_modifier = -0.1
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 25
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1.5
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 1.5
+			personality = ai_capitalist
+		}
+	}
+}
+
+minerva =
+{
+	innovativeness_gain = 0.5
+	idea_cost = -0.15
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 26
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
+}
+
+diana =
+{
+	fire_damage = 0.1
+	province_warscore_cost = -0.10
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 27
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 1.5
+			personality = ai_colonialist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}
+	}
+}
+
+apollo =
+{
+	tolerance_own = 2
+	prestige = 0.5
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 28
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
+}
+
+mercury =
+{
+	global_trade_power = 0.1
+	privateer_efficiency = 0.2
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 29
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}
+	}
+}
+
+vesta =
+{
+	global_unrest = -1
+	advisor_cost = -0.2
+
+	allow = { 
+		OR = {
+			religion = hellenic_pagan 
+			religion = hellenic_pagan_reformed
+		}
+	}
+
+	sprite = 30
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
+}

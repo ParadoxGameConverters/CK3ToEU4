@@ -1,0 +1,18 @@
+government = theocracy
+add_government_reform = monastic_order_reform
+mercantilism = 0.1
+primary_culture = norse
+religion = norse_pagan_reformed
+technology_group = western
+capital = 1858 # Stettin
+
+
+500.11.11 = {
+	monarch = {
+		name = "(Interregnum)"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

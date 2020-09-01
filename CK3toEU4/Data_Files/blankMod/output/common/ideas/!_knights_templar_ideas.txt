@@ -1,0 +1,38 @@
+knights_templar_ideas = {
+	start = {
+		tolerance_heathen = 1
+		diplomatic_reputation = 1
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	
+	trigger = {
+		tag = TEM
+		religion_group = christian
+	}
+	free = yes
+	
+	latin_rule = {
+		discipline = 0.1
+	}
+	letters_of_credit = {
+		global_tax_modifier = 0.2
+	}
+	assault_troops_of_the_crusades = {
+		cavalry_power = 0.1
+	}
+	bank_of_europe = {
+		inflation_reduction = 0.1
+	}
+	the_templar_enterprise = {
+		production_efficiency = 0.2
+	}
+	the_supporting_infrastructure = {
+		advisor_pool = 1
+	}
+	crusader_traditions = {
+		free_leader_pool = 1
+	}
+}

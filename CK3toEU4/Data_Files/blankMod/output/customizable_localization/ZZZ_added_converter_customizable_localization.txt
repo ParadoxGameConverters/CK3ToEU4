@@ -1,0 +1,31 @@
+#Name of the White Stallion
+defined_text = {
+    name = ZZZ_enhanced_white_stallion_name
+
+    text = {
+        localisation_key = string_ZZZ_shadowfax
+        trigger = {
+			has_country_flag = ZZZ_enhanced_shadowfax
+        }
+    }
+    text = {
+        localisation_key = string_ZZZ_atrax
+        trigger = {
+			has_country_flag = ZZZ_enhanced_atrax
+        }
+    }
+	text = {
+        localisation_key = string_ZZZ_bree
+        trigger = {
+			has_country_flag = ZZZ_enhanced_bree
+        }
+	}
+	text = {
+        localisation_key = string_ZZZ_unnamed
+        trigger = {
+			NOT = { has_country_flag = ZZZ_enhanced_bree }
+			NOT = { has_country_flag = ZZZ_enhanced_atrax }
+			NOT = { has_country_flag = ZZZ_enhanced_shadowfax }
+        }
+	}
+}

@@ -1,0 +1,991 @@
+country_decisions = {
+
+	armenia_nation_EXTRA = { ##Monophysite Option
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_armenia_flag }
+			was_never_end_game_tag_trigger = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = ARM }
+			OR = {
+				ai = no
+				AND = {
+					NOT = { exists = ARM }
+					num_of_cities = 3 #Carnage
+				}
+			}
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			primary_culture = armenian
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 327	# Cilicia
+				province_id = 419	# Yerevan
+				province_id = 2202	# Melikates
+				province_id = 2204	# Lomsia
+				province_id = 4302	# Manzikert
+				AND = {
+                    province_id = 2306
+                    ROOT = { NOT = { owns_core_province = 2307 } }
+                }
+				AND = {
+                    province_id = 2307
+                    ROOT = { NOT = { owns_core_province = 2306 } }
+                }
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = ARM }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			religion = monophysite
+			is_nomad = no
+			owns_core_province = 327	# Cilicia
+			owns_core_province = 419	# Yerevan
+			owns_core_province = 2202	# Melikates
+			owns_core_province = 2204	# Lomsia
+			owns_core_province = 4302	# Manzikert
+			OR = {
+				owns_core_province = 2306 #Mush
+				owns_core_province = 2307 #Van
+			}
+		}
+		effect = {
+			change_tag = ARM
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			armenia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ARM
+			}
+			samtskhe_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ARM
+			}
+			erzurum_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ARM
+			}
+			north_kurdistan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ARM
+			}
+			cukurova_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { province_id = 321 }
+				}
+				add_permanent_claim = ARM
+			}
+			north_kurdistan_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ARM
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = ARM_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_armenia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400 #
+	}
+	
+	restore_byzantine_empire_EXTRA = { # New Religions/Cultures
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_byzantium_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = BYZ }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = TUR }
+			OR = {
+				AND = { #New Cultures
+					culture_group = byzantine
+					NOT = { primary_culture = greek }
+					NOT = { primary_culture = pontic_greek }
+					OR = {
+						religion = orthodox
+						religion = iconoclast
+						religion = bogomilist
+						religion = monothelite
+						religion = paulician
+						religion = hellenic_pagan
+						religion = hellenic_pagan_reformed
+					}
+				}
+				AND = { #New Religions
+					OR = {
+						primary_culture = greek
+						primary_culture = pontic_greek
+					}
+					OR = {
+						religion = iconoclast
+						religion = bogomilist
+						religion = monothelite
+						religion = paulician
+						religion = hellenic_pagan
+						religion = hellenic_pagan_reformed
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 151 # Constantinople
+				province_id = 149	# Edirne
+				province_id = 144  # Epiros
+				province_id = 147	# Salonica
+				province_id = 148	# Macedonia
+				province_id = 146	# Athens
+				province_id = 145	# Morea
+				province_id = 1773	# Achea
+				province_id = 316	# Bithynia
+				province_id = 317	# Bursa
+				province_id = 318	# Smyrna
+				province_id = 1853	# Kozani
+				province_id = 2296	# Biga
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			owns = 151 # Constantinople
+			owns = 149	# Edirne
+			owns = 144  # Epiros
+			owns = 147	# Salonica
+			owns = 148	# Macedonia
+			owns = 146	# Athens
+			owns = 145	# Morea
+			owns = 1773	# Achea
+			owns = 316	# Bithynia
+			owns = 317	# Bursa
+			owns = 318	# Smyrna
+			owns = 1853	# Kozani
+			owns = 2296	# Biga
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+		}
+		effect = {
+			151 = {
+				move_capital_effect = yes
+			}
+			change_tag = BYZ
+			swap_non_generic_missions = yes
+			every_province = {
+				limit = {
+					OR = {
+						area = aydin_area
+						area = ankara_area
+						area = germiyan_area
+						area = karaman_area
+						area = cukurova_area
+						area = rum_area
+						area = kastamonu_area
+						area = hudavendigar_area
+						area = dulkadir_area
+						province_id = 149	# Edirne
+						province_id = 147	# Salonica
+						province_id = 148	# Macedonia
+						province_id = 146	# Athens
+						province_id = 145	# Morea
+						province_id = 1773	# Achea
+						province_id = 163	# Crete
+						province_id = 164	# Naxos
+						province_id = 320	# Rhodes
+						province_id = 330	# Trebizon
+						province_id = 285	# Kaffa
+						province_id = 142	# Corfu
+						province_id = 143	# Albania
+						province_id = 144	# Janina
+						province_id = 1765	# Nis
+						province_id = 150	# Bulgaria
+						province_id = 1764	# Burgas
+						province_id = 159	# Silistria
+						province_id = 1853	# Kozani
+						province_id = 2348	# Chios
+						province_id = 2410	# Theodoro
+						province_id = 2750	# Plovdiv
+						province_id = 4298	# Ayntab
+					}
+					NOT = { is_core = BYZ }
+				}
+				add_permanent_claim = BYZ
+			}
+			random_owned_province = {
+				limit = { culture = greek }
+				add_base_tax = 1
+			}
+			random_owned_province = {
+				limit = { culture = greek }
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			BYZ = {
+				add_core = 151 # Constantinople
+			}
+			if = {
+				limit = {
+					is_part_of_hre = yes
+				}
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			if = {
+				limit = { has_global_flag = hagia_sophia_now_mosque }
+				clr_global_flag = hagia_sophia_now_mosque
+				show_ambient_object = hagia_sophia
+				hide_ambient_object = hagia_sophia_minarets
+			}
+			set_government_rank = 3
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_byzantium_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	institute_prussian_monarchy_EXTRA = { #New Religions
+		major = yes
+		potential = {
+			NOT = { has_dlc = "Dharma" }
+			normal_or_historical_nations = yes
+			tag = PRU
+			government = monarchy
+			NOT = { has_reform = prussian_monarchy_legacy }
+		}
+
+		allow = {
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+		}
+
+		effect = {
+			add_government_reform = prussian_monarchy
+		}
+	}
+
+	form_kingdom_of_prussia_EXTRA = { #New Religions/Cultures
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_prussia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { has_reform = celestial_empire } 
+			tag = BRA
+			NOT = { tag = PRU }
+			OR = {
+				NOT = { exists = PRU }
+				ai = no
+			}
+			OR = {
+				ai = no
+				is_religion_enabled = protestant
+				is_religion_enabled = reformed
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 41	# Königsberg
+				AND = {
+					province_id = 43	# Danzig
+					ROOT = { NOT = { owns_core_province = 2995 } }
+				}
+				AND = {
+					province_id = 2995
+					ROOT = { NOT = { owns_core_province = 2995 } }
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = PRU }
+			adm_tech = 10
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+			owns_core_province = 41			# Königsberg
+			OR = {
+				owns_core_province = 43		# Danzig
+				owns_core_province = 2995	# Stolp
+			}
+			is_at_war = no
+		}
+		effect = {
+			change_tag = PRU
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						culture_group = germanic
+						culture = old_prussian
+					}
+				}
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			change_government = monarchy
+			add_government_reform = prussian_monarchy
+			if = {
+				limit = {
+					has_reform = states_general_reform
+				}
+				remove_government_reform = states_general_reform
+			}
+			add_prestige = 5
+			change_primary_culture = prussian
+			PRU = {
+				random_owned_province = {
+					limit = { 
+						is_capital = no 
+						OR = {
+							culture_group = germanic
+							culture = old_prussian
+						}
+					} 
+					change_culture = prussian
+				}
+			}
+			pomerelia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			west_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			east_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			capital_scope = {
+				change_culture = prussian
+			}
+			set_country_flag = formed_prussia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	prussian_nation_EXTRA = { #New Religions
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_prussia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			tag = TEU
+			NOT = { tag = PRU }
+			NOT = { has_reform = celestial_empire } 
+			OR = {
+				NOT = { exists = PRU }
+				ai = no
+			}
+			OR = {
+				ai = no
+				is_religion_enabled = protestant
+				is_religion_enabled = reformed
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 41	# Königsberg
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = PRU }
+			adm_tech = 10
+			is_at_war = no
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+			}
+			owns_core_province = 41 # Königsberg
+		}
+		effect = {
+			41 = {
+				move_capital_effect = yes
+			}
+			change_tag = PRU
+			swap_non_generic_missions = yes
+			pomerelia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			east_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			west_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			add_prestige = 25
+			change_government = monarchy
+			add_government_reform = prussian_monarchy
+			if = {
+				limit = {
+					has_reform = states_general_reform
+				}
+				remove_government_reform = states_general_reform
+			}
+			every_neighbor_country = {
+				limit = { government = monarchy }
+				add_opinion = { who = ROOT modifier = secularized_monastic_order }
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = PRU_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			set_country_flag = formed_prussia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	prussian_nation_general_EXTRA = { #New Religions
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_prussia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				is_religion_enabled = protestant
+				is_religion_enabled = reformed
+			}
+			OR = {
+				culture_group = germanic
+				primary_culture = old_prussian
+			}
+			NOT = { tag = PRU }
+			OR = {
+				NOT = { exists = PRU }
+				ai = no
+			}
+			NOT = { tag = GER }
+			NOT = { tag = HLR }
+			NOT = { tag = BRA }
+			NOT = { has_reform = celestial_empire } 
+			NOT = {
+				tag = TEU
+				government = theocracy
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 41	# Königsberg
+				province_id = 42	# Warmia
+				province_id = 43	# Danzig
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = PRU }
+			adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			OR = {
+				religion = cathar
+				religion = waldensian
+				religion = lollard
+				AND = {
+					culture = old_prussian
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+			}
+			owns_core_province = 41			# Königsberg
+			owns_core_province = 42			# Warmia
+			owns_core_province = 43			# Danzig
+		}
+		effect = {
+			change_tag = PRU
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+					government = monarchy
+				}
+				set_government_rank = 2
+			}
+			east_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			pomerelia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			west_prussia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = PRU
+			}
+			change_government = monarchy
+			add_government_reform = prussian_monarchy
+			if = {
+				limit = {
+					has_reform = states_general_reform
+				}
+				remove_government_reform = states_general_reform
+			}
+			add_prestige = 25
+			change_primary_culture = prussian
+			capital_scope = {
+				change_culture = prussian
+			}
+			random_owned_province = {
+				limit = { 
+					is_capital = no 
+					OR = {
+						culture_group = germanic
+						culture = old_prussian
+					}
+				} 
+				change_culture = prussian
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = PRU_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			set_country_flag = formed_prussia_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ruthenian_nation_EXTRA = { #New Cultures
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_ruthenia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = RUS }
+			NOT = { exists = UKR }
+			OR = {
+				primary_culture = volhynian
+				primary_culture = severian
+				primary_culture = kishinyov
+				AND = {
+					tag = KIE
+					culture_group = east_slavic
+				}
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {	
+				AND = {
+					ROOT = { DIP = 5 }
+					OR = {
+						province_id = 280		#Kiev -center
+					province_id = 283		#Zaporozhie -eastern/southern center of rebellions
+					}
+				}
+				AND = {
+					ROOT = { NOT = { DIP = 5 } }
+					OR = {
+						province_id = 280		#Kiev -center
+						province_id = 283		#Zaporozhie -eastern/southern center of rebellions
+						province_id = 261		#Ruthenia/Lvov -western
+						province_id = 279		#Volhynia -western
+					}
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			OR = {
+				#owns everything
+				AND = {
+					owns_core_province = 280		#Kiev -center
+					owns_core_province = 261		#Ruthenia/Lvov -western
+					owns_core_province = 279		#Volhynia -western
+					owns_core_province = 283		#Zaporozhie -eastern/southern center of rebellions
+				}
+				#or owns only core-core stuff but has god like ruler
+				AND = {
+					owns_core_province = 280		#Kiev -center				
+					owns_core_province = 283		#Zaporozhie -eastern/southern center of rebellions
+					dip = 5
+				}
+			}
+		}
+		effect = {
+			280 = {
+				move_capital_effect = yes
+			}
+			ruthenia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = UKR
+			}
+			red_ruthenia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = UKR
+			}
+			add_prestige = 25
+			change_tag = UKR
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					OR = {
+						has_reform = veche_republic
+						has_reform = principality
+					}
+				}
+				change_government = monarchy
+				set_government_rank = 3
+				add_government_reform = tsardom
+			}
+			set_country_flag = formed_ruthenia_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_importance = 500		
+	}
+	
+	russian_nation_EXTRA = { #New Cultures
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_russia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = POL }
+			NOT = { tag = UKR }
+			NOT = { tag = RUS }
+			OR = {
+				NOT = { exists = RUS }
+				ai = no
+			}
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			culture_group = east_slavic
+			NOT = { primary_culture = byelorussian }
+			NOT = { primary_culture = ruthenian }
+			NOT = { primary_culture = russian }
+			NOT = { primary_culture = novgorodian }
+			NOT = { primary_culture = ryazanian }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 295			# Moskva
+				province_id = 310			# Novgorod
+				AND = {
+					province_id = 294
+					ROOT = { NOT = { owns_core_province = 308 } }
+				}
+				AND = {
+					province_id = 308
+					ROOT = { NOT = { owns_core_province = 294 } }
+				}
+				AND = {
+					province_id = 301
+					ROOT = { NOT = { owns_core_province = 293 } }
+				}
+				AND = {
+					province_id = 293
+					ROOT = { NOT = { owns_core_province = 301 } }
+				}
+				AND = {
+					province_id = 306
+					ROOT = { NOT = { owns_core_province = 307 } }
+				}
+				AND = {
+					province_id = 307
+					ROOT = { NOT = { owns_core_province = 306 } }
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = RUS }
+			adm_tech = 10
+			if = {
+				limit = { has_dlc = "Dharma" }
+				NOT = { has_reform = states_general_reform }
+			}
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns_core_province = 295			# Moskva
+			owns_core_province = 310			# Novgorod
+			OR = {
+				owns_core_province = 294		# Tver
+				owns_core_province = 308		# Yaroslavl	
+			}
+			OR = {
+				owns_core_province = 301		# Ryazan
+				owns_core_province = 293		# Smolensk
+			}
+			OR = {
+				owns_core_province = 306		# Nijni-Novgorod
+				owns_core_province = 307		# Vladimir	
+			}			
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = NOV
+				}
+				complete_mission = tr_invade_novgorod_mission
+				complete_mission = tr_subjugate_novgorod
+			}
+			change_tag = RUS
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = {
+						government = monarchy
+					}
+				}
+				change_government = monarchy
+			}
+			set_government_rank = 3
+			add_government_reform = tsardom
+			russia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = RUS
+			}
+			crimea_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = RUS
+			}
+			ural_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+					is_empty = no
+				}
+				add_permanent_claim = RUS
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_russia_flag
+			add_prestige = 25
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+}

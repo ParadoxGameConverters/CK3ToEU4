@@ -1,0 +1,50 @@
+children_of_dralha_ideas = {
+	start = {
+		global_tax_modifier = 0.15
+		land_morale = 0.15
+	}
+	bonus = {
+		manpower_recovery_speed = 0.25
+	}
+	trigger = {
+		tag = COD
+		OR = {
+			religion = bon
+			religion = bon_reformed
+			religion = buddhism
+			religion = vajrayana
+			religion = mahayana
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_defend_the_motherland = {
+		defensiveness = 0.2
+		garrison_size = 0.5
+	}
+	ZZZ_resist_the_invader = {
+		core_decay_on_your_own = -1
+		hostile_attrition = 1
+	}
+	ZZZ_bon_prayer = {
+		global_missionary_strength = 0.02
+	}
+	ZZZ_bon_diligence = {
+		production_efficiency = 0.15
+	}
+	ZZZ_bon_devotion = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 0.5
+		republican_tradition = 0.5
+	}
+	ZZZ_bon_temple_castles = {
+		fort_maintenance_modifier = -0.25
+	}
+	ZZZ_monk_and_leader = {
+		monarch_admin_power = 1
+		monarch_military_power = 1
+	}
+}

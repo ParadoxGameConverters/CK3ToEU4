@@ -1,0 +1,74 @@
+incident_fraticelli_pope = {
+	event = incident_pope.2
+	default_option = 0
+	
+	can_stop = {
+		OR = {
+			NOT = {
+				exists = FAP
+			}
+			FAP = { is_subject = yes }
+		}
+	}
+	
+	0 = { # pope joins
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_friendly
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_loyal
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_allied
+				}
+			}
+		}
+	}
+	
+	1 = { # denied
+		factor = 1
+		modifier = {
+			factor = 100
+			OR = {
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_rivalry
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_hostile
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_threatened
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_outraged
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_disloyal
+				}
+				ai_attitude = {
+					who = FAP
+					attitude = attitude_rebellious
+				}
+			}
+		}
+		modifier = {
+			factor = 50
+			OR = {
+				is_excommunicated = yes
+				NOT = { religion = fraticelli }
+			}
+		}
+	}
+}

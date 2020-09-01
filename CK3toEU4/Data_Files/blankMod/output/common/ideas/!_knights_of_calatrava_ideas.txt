@@ -1,0 +1,45 @@
+knights_of_calatrava_ideas = {
+	start = {
+		defensiveness = 0.15
+		garrison_size = 0.25
+	}
+	bonus = {
+		leader_siege = 1
+	}
+	trigger = {
+		tag = KCL
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_calatravan_vows = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 0.5
+		republican_tradition = 0.5		
+	}
+	ZZZ_calatravan_royal_intrigue = {
+		global_spy_defence = 0.4
+	}
+	ZZZ_calatravan_papal_favour = {
+		papal_influence = 1
+	}
+	ZZZ_calatravan_aggression = {
+		infantry_power = 0.2
+	}
+	ZZZ_calatravan_rule = {
+		production_efficiency = 0.15
+	}
+	ZZZ_light_to_heathens = {
+		warscore_cost_vs_other_religion = -0.25
+		global_missionary_strength = 0.01
+	}
+	ZZZ_the_tireless_calatravans = {
+		war_exhaustion = -0.05
+	}
+}

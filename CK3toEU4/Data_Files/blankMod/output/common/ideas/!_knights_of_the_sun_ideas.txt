@@ -1,0 +1,46 @@
+knights_of_the_sun_ideas = {
+	start = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 0.5
+		republican_tradition = 0.5
+		leader_land_fire = 1
+	}
+	bonus = {
+		free_adm_policy = 1
+	}
+	trigger = {
+		tag = KOZ
+		OR = {
+			religion = zoroastrian
+			religion = zun_pagan
+			religion = zun_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_all_shall_praise_the_sun = {
+		missionaries = 1
+		global_missionary_strength = 0.02
+	}
+	ZZZ_the_sword_of_zun = {
+		discipline = 0.1
+	}
+	ZZZ_zun_the_lawgiver = {
+		global_autonomy = -0.1
+	}
+	ZZZ_zun_the_bringer_of_light = {
+		core_creation = -0.20
+	}
+	ZZZ_greatness_of_zun = {
+		prestige = 1
+	}
+	ZZZ_fire_of_zun = {
+		fire_damage = 0.2
+	}
+	ZZZ_fire_of_zun_naval = {
+		heavy_ship_power = 0.2
+	}
+}

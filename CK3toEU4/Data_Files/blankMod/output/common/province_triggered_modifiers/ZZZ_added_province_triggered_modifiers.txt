@@ -1,0 +1,225 @@
+ZZZ_enhanced_mighty_temple = {
+	potential = {
+	}
+	trigger = {
+		owner = {
+			OR = {
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+				religion = pagan_religion
+				has_adopted_cult = hellenic_cult
+			}
+		}
+	}
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+	
+	on_activation = {
+	}
+	
+	on_deactivation = {
+	}
+}
+
+ZZZ_enhanced_zoro_mecca = {
+	potential = {
+		NOT = { has_global_flag = ZZZ_enhanced_random_world }
+	}
+	
+	trigger = {
+		owner = {
+			religion_group = zoroastrian_group
+		}
+	}
+	
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+
+ZZZ_enhanced_hellenic_rome = {
+	potential = {
+		NOT = { has_global_flag = ZZZ_enhanced_random_world }
+	}
+	
+	trigger = {
+		owner = {
+			OR = {
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+		}
+	}
+	
+	prestige = 0.5
+	missionaries = 1
+	tolerance_own = 1
+	
+	#Province scope
+	on_activation = {
+	
+	}
+	
+	on_deactivation = {
+	
+	}
+	
+}
+
+#Fraticelli Pope
+adm_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	adm_tech_cost_modifier = -0.05
+	global_unrest = -2
+}
+
+dip_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	dip_tech_cost_modifier = -0.05
+	diplomatic_reputation = 1
+}
+
+mil_vatican_library = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	
+	mil_tech_cost_modifier = -0.05
+	army_tradition_from_battle = 0.5
+}
+
+pap_sistine_chapel = {
+	potential = {
+		normal_or_historical_nations = yes
+		NOT = { has_global_flag = sistine_chapel_decorated }
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	
+	devotion = 0.1
+}
+
+pap_sistinechapel_botticelli = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	global_unrest = -1
+}
+
+pap_sistinechapel_ghirlandaio = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	prestige = 0.5
+}
+
+pap_sistinechapel_perugino = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	improve_relation_modifier = 0.1
+}
+
+pap_sistinechapel_michelangelo = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	idea_cost = -0.05
+}
+
+pap_sistinechapel_decorated = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+	trigger = {
+		owner = {
+			OR = {
+				tag = FAP
+				tag = PAP
+			}
+		}
+	}
+	devotion = 0.1
+	global_missionary_strength = 0.01
+}

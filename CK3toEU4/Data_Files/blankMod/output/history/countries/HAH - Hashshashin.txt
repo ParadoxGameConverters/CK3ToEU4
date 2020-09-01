@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+mercantilism = 0.1
+primary_culture = persian
+religion = shiite
+technology_group = muslim
+capital = 1002 # Abitbi
+
+
+500.11.11 = {
+	monarch = {
+		name = "Al-Nizariyyun"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

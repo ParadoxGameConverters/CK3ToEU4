@@ -1,0 +1,38 @@
+followers_of_arjuna_ideas = {
+	start = {
+		monthly_karma = 0.1
+		shock_damage = 0.15
+	}
+	bonus = {
+		land_forcelimit_modifier = 0.25
+	}
+	trigger = {
+		tag = FOA
+		religion = hinduism
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_dhananjaya = {
+		global_tax_modifier = 0.2
+	}
+	ZZZ_jishnu = {
+		land_morale = 0.10
+		naval_morale = 0.10
+	}
+	ZZZ_truth_of_arjuna = {
+		tolerance_own = 2
+	}
+	ZZZ_indian_trade = {
+		merchants = 1
+	}
+	ZZZ_grand_temples = {
+		build_cost = -0.15
+	}
+	ZZZ_cheap_gurus = {
+		advisor_cost = -0.25
+	}
+	ZZZ_vijaya = {
+		discipline = 0.05
+	}
+}

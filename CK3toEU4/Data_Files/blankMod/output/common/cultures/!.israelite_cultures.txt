@@ -1,0 +1,23 @@
+israelite = {
+	ashkenazi = { primary = ISR }
+	sephardi = { primary = ISR }
+	knaanic = { primary = ISR }
+	magogic = { primary = ISR }
+	yevanic = { primary = ISR }
+	mizrahi = { primary = ISR }
+	israeli = { primary = ISR }
+	misrayim = { primary = ISR }
+	zarphatic = { primary = ISR }
+	laaz = { primary = ISR }
+	kaifeng = { primary = ISR }
+	#Names are shared throughout the entire group
+		male_names = { Abraham Albert Benjamin Daniel David Franz Gustav Heinrich Hermann Isaak Ignatz Jakob Jeremias Josef Leonhard Michael Mose Salomon Saul Shmuel
+		Sigmund Simon Theodor }
+		female_names = {
+		Adah Adinah Alte Asenath Avigail Aviva Batya Bilha Bina Breina Bunah Chana Charna Chasha Chava Chaya Devorah Dobah Drozah Esther Freida Gentille Gruna Gracia Illa Kuna Leah Machla Malka Margola Masheh Matilda Matrona Mazal Menuchah
+		Miriam Miryam Muskat Nachalah Nechamah Puah Peninah Rachel Rivkah Rhoda Ruth Sarah Shoshanah Shulamit Simchat "Anna Frank" Tamar Tikvah Tirtzah Tzipporah Tzitta Tziviah Yael Yehudit Yaffah Yiska Yochanah Yocheved Yonah Zelda Zlata
+		"Rosa Luxembourg" Salome
+		}
+		dynasty_names = { Abramovitch Ashkenazi Bernstein Birnbaum Bloch Cantor Cohen Frank Friedländer Ginsberg Goldstein Horowitz Israel Jacobsohn Kagan Kaplan Klein
+		Levin Luria Morgenstern Nathan Oren Rosenthal Sachs Schapiro Schwartz Weinstein Weiss }
+}

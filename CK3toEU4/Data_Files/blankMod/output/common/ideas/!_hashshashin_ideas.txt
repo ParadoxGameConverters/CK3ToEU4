@@ -1,0 +1,37 @@
+hashshashin_ideas = {
+	start = {
+		global_spy_defence = 0.25
+		hostile_attrition = 1
+	}
+	bonus = {
+		global_garrison_growth = 0.1
+	}
+	trigger = {
+		tag = HAH
+		religion_group = muslim
+		government = theocracy
+	}
+	free = yes
+	
+	hashshashins_creed = {
+		spy_offence = 0.2
+	}
+	avoid_bloodshed = {
+		diplomats = 1
+	}
+	ismailis_dar_al_hijra = {
+		defensiveness = 0.30
+	}
+	mountain_fortresses = {
+		enemy_core_creation = 1.0
+	}
+	dagger_and_a_note = {
+		diplomatic_reputation = 2
+	}
+	murder_in_the_open = {
+		rebel_support_efficiency = 0.50
+	}
+	revive_jihad_hassan = {
+		manpower_recovery_speed = 0.1
+	}
+}

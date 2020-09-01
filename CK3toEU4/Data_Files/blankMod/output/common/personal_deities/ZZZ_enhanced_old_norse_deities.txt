@@ -1,0 +1,146 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new dieties, make sure they are uniquely named.
+
+odin =
+{
+	legitimacy = 0.1
+	horde_unity = 0.1
+	core_creation = -0.10
+	
+	allow = { religion = norse_pagan }
+	sprite = 7
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}
+	}
+}
+
+freya =
+{
+	global_manpower_modifier = 0.1
+	global_tax_modifier = 0.1
+	
+	allow = { religion = norse_pagan }
+	sprite = 8
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}
+	}
+}
+
+tor =
+{
+	leader_land_shock = 1
+	defensiveness = 0.1
+	
+	allow = { religion = norse_pagan }
+	sprite = 9
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 5 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { num_of_cities = 10 }
+		}
+		modifier = {
+			factor = 0.5
+			num_of_cities = 30
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}		
+	}
+}
+
+tyr =
+{
+	global_sailors_modifier = 0.10
+	discipline = 0.05
+	
+	allow = { religion = norse_pagan }
+	sprite = 10
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}		
+	}
+}
+
+njord =
+{
+	trade_efficiency = 0.1
+	global_trade_goods_size_modifier = 0.1
+	
+	allow = { religion = norse_pagan }
+	sprite = 11
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}		
+	}
+}
+
+
+snotra =
+{
+	technology_cost = -0.05
+	build_cost = -0.1
+	
+	allow = { religion = norse_pagan }
+	sprite = 12
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}		
+	}
+}

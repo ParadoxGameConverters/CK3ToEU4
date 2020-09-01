@@ -1,0 +1,129 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 181 204 20 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	steppe_riders
+	steppe_lancers
+	steppe_mounted_raiders
+	steppe_cavalry
+	steppe_uhlans
+	steppe_raiders
+	steppe_footmen
+	steppe_musketeers
+	steppe_infantry
+	steppe_rifles
+	reformed_steppe_rifles
+}
+
+monarch_names = {	
+	"Hydarnes #0" = 50
+	"Hormazd #0" = 50
+	"Maziar #0" = 50
+	"Shapur #0" = 50
+	"Vandad #0" = 50
+	"Zartosht #0" = 50
+	"Abdul-Karim #0" = 40
+	"Abdul-Latif #0" = 20
+	"Abdul-Rahman #0" = 40
+	"Abdullah #0" = 20
+	"Agalak #0" = 20
+	"Ahmad #0" = 50
+	"Ak Köbek #0" = 40
+	"Arslan #0" = 20
+	"Baraq #1" = 30
+	"Bek Bulat #0" = 20
+	"Daniyal #0" = 20
+	"Darwish Ali #0" = 20
+	"Devlet Berdi #0" = 20
+	"Edigu #0" = 20
+	"Husayn #0" = 30
+	"Ibak #0" = 20
+	"Ibrahim #0" = 50
+	"Ilham #0" = 20
+	"Ishim #0" = 20
+	"Jan Ali #0" = 20
+	"Janay #0" = 20
+	"Jumaduq #0" = 20
+	"Khalil #0" = 30
+	"Küchük Muhammad #0" = 40
+	"Kuchum #0" = 20
+	"Mamai #0" = 20
+	"Mamuk #0" = 30
+	"Mansur #0" = 20
+	"Murtaza #0" = 20
+	"Mustafa Ali #0" = 20
+	"Nogai #0" = 20
+	"Pulad #0" = 20
+	"Pulad Timur #0" = 20
+	"Qadir Berdi #1" = 20
+	"Qasim #0" = 60
+	"Sain Bulat #0" = 20
+	"Satilghan #0" = 20
+	"Sayid Ahmad #0" = 60
+	"Sayid Burhan #0" = 20
+	"Sayid Mahmud #0" = 20
+	"Shadi Beg #0" = 20
+	"Shaikh Ahmad #0" = 20
+	"Shaikh Awliar #0" = 20
+	"Shaikh Haidar #0" = 20
+	"Shiban #0" = 20
+	"Taibugha #0" = 20
+	"Timur #0" = 20
+	"Timur Qutlugh #0" = 20
+	"Toqtamish #0" = 20
+	"Urus #1" = 20
+	"Yamghurchi #0" = 20
+	
+	"Fatima #0" = -1
+	"Ibtisam #0" = -1
+	"Jalila #0" = -1
+	"Janan #0" = -1
+	"Layla #0" = -1
+	"Sakina #0" = -1
+	"Sharifa #0" = -1
+}
+
+leader_names = {
+	Hormazd Maziar Shapur Vandad Zartosht
+	"Boke Temur" "Qutlugh Vachir" "Suren Chinua" "Delger Bayar"
+	"Shria Gan" "Bora Chinua" Nasange Temur-chi Chinuagene Toluilun
+	Qutughqan "Koke Burilgi" Surenchar Bayangge
+}
+
+ship_names = {
+	Abathur "Adamn Kasia" "Aesma Daeva" Agas
+	Ahriman Ahura "Ahura Mazda" Ahurani Airyaman
+	"Aka Manah" Aladdin Allatum Amashaspan Ameratat
+	"Amesha Spentas" Anahita "Angra Mainyu" Anjuman
+	"Apam-natat" Apaosa Aredvi Arishtat Armaiti Arsaces
+	"Asha vahista" Asman "Asto Vidatu" "Astvat-Ereta"
+	Atar "Azi Dahaka" Baga Bahram Burijas Bushyasta Buyasta
+	Camros Daena Daevas Ahaka Dahhak Dena Dev Diwe Drug
+	Drvaspa Frashegird Fravashis Gandarewa "Gao-kerena"
+	Gayomard Gayomart "Geus-Tasan" "Geus-Urvan" Haoma
+	Haurvatat Humay Hvar Hvarekhshaeta Indar Indra Izha
+	Jamshid Jeh Karshipta Kavi Khara "Khshathra vairya"
+	Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao 
+	Mashyane Mashye Menog Mithra Nairyosangha Nanghaithya
+	Neriosang Ormazd Peris Peshdadians Rapithwin Rashnu
+	Rustam Saurva Simurgh "Spenta Mainyu" Sraosa Srosh
+	Tawrich Thunaupa Tistrya Tushnamatay Vanant Vata
+	Verethragna "Vohu Manah" Vouruskasha Yam Yasht Yazata
+	Yezidi Yima Zal Zam "Zam-Armatay" Zarathustra Zarich
+	"Zend-Avesta" Zurvan
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

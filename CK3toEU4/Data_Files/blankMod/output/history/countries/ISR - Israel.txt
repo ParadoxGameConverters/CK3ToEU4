@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+mercantilism = 0.1
+primary_culture = ashkenazi
+add_accepted_culture = sephardi
+religion = jewish
+technology_group = eastern
+capital = 379 # Jerusalem
+fixed_capital = 379
+
+
+500.11.11 = {
+	monarch = {
+		name = "Ha-Kohen"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

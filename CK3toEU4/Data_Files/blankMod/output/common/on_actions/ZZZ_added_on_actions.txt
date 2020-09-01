@@ -1,0 +1,247 @@
+#Check for reformed religions in a "HISTORICAL" start
+on_startup = {	
+	if = {
+		limit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }
+		#Norse
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = norse_pagan_reformed
+							ruler_religion = norse_pagan_reformed
+							heir_religion = norse_pagan_reformed
+							consort_religion = norse_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = norse_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_norse_pagan_reformed
+		}	
+		
+		#Baltic
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = baltic_pagan_reformed
+							ruler_religion = baltic_pagan_reformed
+							heir_religion = baltic_pagan_reformed
+							consort_religion = baltic_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = baltic_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_baltic_pagan_reformed
+		}
+		#Finnish
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = finnish_pagan_reformed
+							ruler_religion = finnish_pagan_reformed
+							heir_religion = finnish_pagan_reformed
+							consort_religion = finnish_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = finnish_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_finnish_pagan_reformed
+		}
+		#Aztec is weird
+		#Slavic
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = slavic_pagan_reformed
+							ruler_religion = slavic_pagan_reformed
+							heir_religion = slavic_pagan_reformed
+							consort_religion = slavic_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = slavic_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_slavic_pagan_reformed
+		}
+		#Tengri
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = tengri_pagan_reformed
+							ruler_religion = tengri_pagan_reformed
+							heir_religion = tengri_pagan_reformed
+							consort_religion = tengri_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = tengri_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_tengri_pagan_reformed
+		}
+		#West African
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = west_african_pagan_reformed
+							ruler_religion = west_african_pagan_reformed
+							heir_religion = west_african_pagan_reformed
+							consort_religion = west_african_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = west_african_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_west_african_pagan_reformed
+		}
+		#Hellenic
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = hellenic_pagan_reformed
+							ruler_religion = hellenic_pagan_reformed
+							heir_religion = hellenic_pagan_reformed
+							consort_religion = hellenic_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = hellenic_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_hellenic_pagan_reformed
+		}
+		#Zun
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = zun_pagan_reformed
+							ruler_religion = zun_pagan_reformed
+							heir_religion = zun_pagan_reformed
+							consort_religion = zun_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = zun_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_zun_pagan_reformed
+		}
+		#Bon
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = bon_reformed
+							ruler_religion = bon_reformed
+							heir_religion = bon_reformed
+							consort_religion = bon_reformed
+						}
+					}
+					any_province = {
+						religion = bon_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_bon_reformed
+		}
+	}
+}
+
+#Scripted effect for Extra Fetishist cult mechanics.
+on_battle_lost_country = {
+	ZZZ_enhanced_converter_battle_cult_spreading_effect = yes
+}
+on_province_owner_change = {
+	if = {
+		limit = {
+			has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
+		}
+		country_event = { id = ZZZ_enhanced_fetishist.83 }
+	}
+}
+
+#Fraticelli Pope
+on_five_year_pulse_4 = {
+	if = { #fail-safe for flavor_pap.7, making religious leagues happen at some point if there is no PAP
+		limit = {
+			is_year = 1610
+			NOT = { exists = FAP }
+			NOT = { has_global_flag = counter_reformation }
+		}
+		set_global_flag = counter_reformation
+	}
+}
+on_create_vassal = {
+	if = {
+		limit = {
+			tag = FAP
+		}
+		change_government = theocracy
+		change_religion = fraticelli
+		add_government_reform = papacy_reform
+		adopt_reform_progress = FROM
+	}
+}
+on_country_released = {
+	if = {
+		limit = {
+			tag = FAP
+		}
+		change_government = theocracy
+		change_religion = fraticelli
+		add_government_reform = papacy_reform
+		adopt_reform_progress = FROM
+	}
+}
+on_country_creation = {
+	if = {
+		limit = {
+			tag = FAP
+			OR = {
+				NOT = {
+					religion = fraticelli
+				}
+				NOT = {
+					has_reform = papacy_reform
+				}
+				NOT = {
+					government = theocracy
+				}
+			}
+		}
+		change_religion = fraticelli
+		change_government = theocracy
+		add_government_reform = papacy_reform
+	}
+}

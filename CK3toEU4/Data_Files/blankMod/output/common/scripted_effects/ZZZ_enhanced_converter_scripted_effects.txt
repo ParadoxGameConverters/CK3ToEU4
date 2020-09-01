@@ -1,0 +1,1035 @@
+ZZZ_enhanced_converter_battle_cult_spreading_effect = {
+	#Yemoya
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = yemoja_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = yemoja_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.1 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = yemoja_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = yemoja_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.1 } }
+	}
+	#Roog
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = roog_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = roog_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.2 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = roog_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = roog_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.2 } }
+	}
+	#Nyame
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = nyame_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = nyame_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.3 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = nyame_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = nyame_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.3 } }
+	}
+	
+	#Cwezi / Swezi / Kubandwa
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = cwezi_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = cwezi_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.101 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = cwezi_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = cwezi_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.101 } }
+	}
+	
+	#Mlira and other Nature Spirits and/or ancestral cults of Central Africa
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = central_african_ancestor_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = central_african_ancestor_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.102 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = central_african_ancestor_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = central_african_ancestor_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.102 } }
+	}
+	
+	#Mwari
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = mwari_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = mwari_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.103 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = mwari_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = mwari_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.103 } }
+	}
+	
+	#Enkai
+	if = {
+		limit = {
+			ROOT = {				
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = enkai_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = enkai_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.201 } }
+	}
+	if = {
+		limit = {
+			FROM = {				
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = enkai_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = enkai_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.201 } }
+	}
+	#Waaq
+	if = {
+		limit = {
+			ROOT = {				
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = waaq_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = waaq_cult }
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.202 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = waaq_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = waaq_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.202 } }
+	}
+	#Zanahary
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zanahary_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = zanahary_cult
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.203 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zanahary_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				has_unlocked_cult = zanahary_cult
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.203 } }
+	}
+	#Christianity
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = christianity_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = christian
+					has_unlocked_cult = christianity_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.400 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = christianity_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = christianity_cult
+					religion_group = christian
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.400 } }
+	}
+	#Islam
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = islam_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = muslim
+					has_unlocked_cult = islam_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.401 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = islam_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = islam_cult
+					religion_group = muslim
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.401 } }
+	}
+	#Buddhism
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = buddhism_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = eastern
+					has_unlocked_cult = buddhism_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.402 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = buddhism_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = buddhism_cult
+					religion_group = eastern
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.402 } }
+	}
+	#Dharmic Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = dharmic_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = dharmic
+					has_unlocked_cult = dharmic_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.403 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = dharmic_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = dharmic_cult
+					religion_group = dharmic
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.403 } }
+	}
+	#Teotl Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = south_central_american_cult }
+			}
+			FROM = {
+				OR = {
+					religion = aztec_pagan
+					religion = nahuatl
+					religion = inti
+					religion = mesoamerican_religion
+					has_unlocked_cult = south_central_american_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.404 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism #Paradox forgot to put Inti in ROOT in the original code
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = south_central_american_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = south_central_american_cult
+					religion = aztec_pagan
+					religion = nahuatl
+					religion = inti
+					religion = mesoamerican_religion
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.404 } }
+	}
+	#Norse Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = norse_cult }
+			}
+			FROM = {
+				OR = {
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+					has_unlocked_cult = norse_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.405 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = norse_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = norse_pagan
+					religion = norse_pagan_reformed
+					has_unlocked_cult = norse_cult					
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.405 } }
+	}
+	#Jewish Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism #Original code is religion = jewish, so no karaite/samaritan
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = jewish_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = jewish_group
+					has_unlocked_cult = jewish_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.406 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism #Original code is religion = jewish, so no karaite/samaritan
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = jewish_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = jewish_cult
+					religion_group = jewish_group
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.406 } }
+	}
+	#Zoroastrian Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism #Original code is religion = zoroastrian, so no mazdaki/khurmatza
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zoroastrian_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = zoroastrian_group 
+					has_unlocked_cult = zoroastrian_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = fetishist_flavor.407 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism #Original code is religion = zoroastrian, so no mazdaki/khurmatza
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zoroastrian_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = zoroastrian_cult
+					religion_group = zoroastrian_group
+				}
+			}
+		}
+		FROM = { country_event = { id = fetishist_flavor.407 } }
+	}
+	### MODDED ADDED CULTS ###
+	#West African Reformed Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+				}
+				NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
+			}
+			FROM = {
+				OR = {
+					religion = west_african_pagan_reformed 
+					has_unlocked_cult = west_african_pagan_reformed_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.4 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+				}
+				NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = west_african_pagan_reformed
+					has_unlocked_cult = west_african_pagan_reformed_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.4 } }
+	}
+	#Tengri Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = tengri_cult }
+			}
+			FROM = {
+				OR = {
+					religion = tengri_pagan 
+					religion = tengri_pagan_reformed 
+					has_unlocked_cult = tengri_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.5 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = tengri_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = tengri_pagan
+					religion = tengri_pagan_reformed
+					has_unlocked_cult = tengri_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.5 } }
+	}
+	#Finnish Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = finnish_cult }
+			}
+			FROM = {
+				OR = {
+					religion = finnish_pagan 
+					religion = finnish_pagan_reformed 
+					has_unlocked_cult = finnish_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.6 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = finnish_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = finnish_pagan
+					religion = finnish_pagan_reformed
+					has_unlocked_cult = finnish_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.6 } }
+	}
+	#Baltic Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = baltic_cult }
+			}
+			FROM = {
+				OR = {
+					religion = baltic_pagan 
+					religion = baltic_pagan_reformed 
+					has_unlocked_cult = baltic_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.7 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = baltic_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = baltic_pagan
+					religion = baltic_pagan_reformed
+					has_unlocked_cult = baltic_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.7 } }
+	}
+	#Slavic Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = slavic_cult }
+			}
+			FROM = {
+				OR = {
+					religion = slavic_pagan 
+					religion = slavic_pagan_reformed 
+					has_unlocked_cult = slavic_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.8 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = slavic_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = slavic_pagan
+					religion = slavic_pagan_reformed
+					has_unlocked_cult = slavic_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.8 } }
+	}
+	#Zunist Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zunist_cult }
+			}
+			FROM = {
+				OR = {
+					religion = zun_pagan 
+					religion = zun_pagan_reformed 
+					has_unlocked_cult = zunist_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.9 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = zunist_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = zun_pagan
+					religion = zun_pagan_reformed
+					has_unlocked_cult = zunist_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.9 } }
+	}
+	#Bon Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = bon_cult }
+			}
+			FROM = {
+				OR = {
+					religion = bon_pagan 
+					religion = bon_pagan_reformed 
+					has_unlocked_cult = bon_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.10 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = bon_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = bon_pagan
+					religion = bon_pagan_reformed
+					has_unlocked_cult = bon_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.10 } }
+	}
+	#Hellenic Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = hellenic_cult }
+			}
+			FROM = {
+				OR = {
+					religion = hellenic_pagan 
+					religion = hellenic_pagan_reformed 
+					has_unlocked_cult = hellenic_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.11 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = hellenic_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+					has_unlocked_cult = hellenic_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.11 } }
+	}
+	#Pagan Cult
+	if = {
+		limit = {
+			ROOT = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = pagan_cult }
+			}
+			FROM = {
+				OR = {
+					religion = pagan_religion
+					religion = animism
+					religion = totemism
+					has_unlocked_cult = pagan_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.12 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				OR = {
+					religion = shamanism
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+				NOT = { has_unlocked_cult = hellenic_cult }
+			}
+			ROOT = {
+				OR = {
+					religion = pagan_religion
+					religion = animism
+					religion = totemism
+					has_unlocked_cult = pagan_cult
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.12 } }
+	}
+	
+}

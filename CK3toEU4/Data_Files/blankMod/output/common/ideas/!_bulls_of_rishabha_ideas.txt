@@ -1,0 +1,39 @@
+bulls_of_rishabha_ideas = {
+	start = {
+		interest = -1
+		shock_damage_received = -0.2
+	}
+	bonus = {
+		fire_damage_received = -0.2
+	}
+	trigger = {
+		tag = BOR
+		religion = jain
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_jain_varna = {
+		religious_unity = 0.5
+		global_unrest = -1
+	}
+	ZZZ_jain_asi = {
+		discipline = 0.05
+	}
+	ZZZ_jain_masi = {
+		global_institution_spread = 0.25
+		embracement_cost = -0.25
+	}
+	ZZZ_jain_krishi = {
+		all_power_cost = -0.1
+	}
+	ZZZ_jain_vidya = {
+		technology_cost = -0.10
+	}
+	ZZZ_jain_vanijya = {
+		trade_efficiency = 0.25
+	}
+	ZZZ_jain_shilp = {
+		global_trade_goods_size_modifier = 0.15
+	}	
+}

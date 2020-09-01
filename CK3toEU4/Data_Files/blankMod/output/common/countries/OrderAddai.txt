@@ -1,0 +1,83 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 180 80 140 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {	
+	"Thaddeus #0" = 1
+	"Mar Aggai #0" = 1
+	"Palut #0" = 1
+	"Abris #0" = 1
+	"Abraham #0" = 1
+	"Ya'qob #1" = 1
+	"Ebid M'shikha #0" = 1
+	"Ahadabui #0" = 1
+	"Shahaloopa #0" = 1
+	"Shem #0" = 1
+	"Shahdost #0" = 1
+	"Barba'shmin #0" = 1
+	"Tomarsa #0" = 1
+	"Qayyoma #0" = 1
+	"Isaac #0" = 1
+	"Ahha #0" = 1
+	"Yahballaha #1" = 1
+	"Ma'na #0" = 1
+	"Farbokht #0" = 1
+	"Dadisho #0" = 1
+	"Babowai #0" = 1
+	"Barsauma #0" = 1
+	"Acacius #0" = 1
+	"Babai #0" = 1
+	"Shila #0" = 1
+	"Elisha' #0" = 1
+	"Narsai #0" = 1
+	"Paul #0" = 1
+	"Aba #1" = 1
+	
+	"Adva #0" = -1
+	"Alya #0" = -1
+	"Anena #0" = -1
+	"Anina #0" = -1
+	"Magdala #0" = -1
+	"Tabitha #0" = -1
+	"Raz #0" = -1
+	"Bustan #0" = -1
+	"Zeta #0" = -1
+	"Kitra #0" = -1
+	"Sami #0" = -1
+}
+
+leader_names = {
+	Simeon Thomas Lazarus Tauma Paul Abaye George Foma Chanin "Akha d'abuh'" Israel Karna
+	Zerika Thaddeus "Mar Aggai" Palut Abris Abraham "Ya'qob" "Ebid M'shikha" Ahadabui
+	Shahaloopa Shem Shahdost "Barba'shmin" Tomarsa Qayyoma Isaac Ahha Yahballaha
+	"Ma'na" Farbokht Dadisho Babowai Barsauma Acacius Babai Shila "Elisha'" Narsai
+	Paul Aba
+}
+
+ship_names = {
+	
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

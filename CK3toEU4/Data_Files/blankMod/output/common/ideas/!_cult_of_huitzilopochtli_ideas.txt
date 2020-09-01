@@ -1,0 +1,42 @@
+cult_of_huitzilopochtli_ideas = {
+	start = {
+		global_missionary_strength = 0.02
+		range = 0.5
+	}
+	bonus = {
+		production_efficiency = 0.2
+	}
+	trigger = {
+		tag = COH
+		OR = {
+			religion = nahuatl
+			religion = aztec_pagan
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_legacy_of_flowers = {
+		discipline = 0.05
+	}
+	ZZZ_will_of_the_gods = {
+		cb_on_religious_enemies = yes
+	}
+	ZZZ_permanent_godly_expansion = {
+		core_creation = -0.20
+	}
+	ZZZ_content_gods = {
+		land_morale = 0.15
+	}
+	ZZZ_from_across_the_sea = {
+		ship_durability = 0.15
+		leader_naval_manuever = 1
+	}
+	ZZZ_take_to_the_seas_again = {
+		global_colonial_growth = 35
+	}
+	ZZZ_aztec_trade_home = {
+		naval_maintenance_modifier = -0.15
+		global_trade_power = 0.15
+	}
+}

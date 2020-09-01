@@ -1,0 +1,41 @@
+immortals_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		infantry_power = 0.15
+	}
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	trigger = {
+		tag = IMM
+		religion_group = zoroastrian_group
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_era_of_conversion = {
+		global_missionary_strength = 0.02
+	}
+	ZZZ_immortal_diaspora = {
+		global_foreign_trade_power = 0.2
+	}
+	ZZZ_expand_the_immortal_ranks = {
+		land_forcelimit_modifier = 0.5
+	}
+	ZZZ_expand_the_rites = {
+		missionaries = 2
+	}
+	ZZZ_immortal_sameness = {
+		culture_conversion_cost = -0.25
+	}
+	ZZZ_the_eternal_fires = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+		republican_tradition = 1
+	}
+	ZZZ_the_whites_of_their_eyes = {
+		fire_damage = 0.15
+	}
+}

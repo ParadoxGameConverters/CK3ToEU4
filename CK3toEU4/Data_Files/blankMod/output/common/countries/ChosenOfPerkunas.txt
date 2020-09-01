@@ -1,0 +1,95 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 200 45 45 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	hungarian_hussar
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	russian_lancer
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {	
+	"Aishno #0" = 20
+	"Davins #0" = 20
+	"Giemund #0" = 20
+	"Kaupo #0" = 20
+	"Meinekinus #0" = 20
+	"Scurdo #0" = 20
+	"Treniota #0" = 20
+	"Algirdas #0" = 20
+	"Daumantas #0" = 20
+	"Girdenis #0" = 20
+	"Korybutas #0" = 20
+	"Movkoldas #0" = 20
+	"Songaila #0" = 20
+	"Vidmantas #0" = 20
+	"Alvydas #0" = 20
+	"Golding #0" = 20
+	"Litto #0" = 20
+	"Talivaldis #0" = 20
+	"Svarnas #0" = 20
+	"Karijotas #0" = 20
+	"Zygimantas #0" = 20
+	"Ulinniks #0" = 20
+	"Galindas #0" = 20
+
+	"Betten #0" = -1
+	"Weslikan #0" = -1
+	"Aldona #0" = -1
+	"Vida #0" = -1
+	"Imela #0" = -1
+	"Liga #0" = -1
+	"Dardedze #0" = -1
+}
+
+leader_names = {
+	Aishno Ako Ankad Baise Balodis Bikshe Borut Bulei Butovit Cirulis Dangeruthe Darbeslave Dausprungas 
+	Davins Demas Dobre Dovyat Dzintis Elmede Erasts Erdzivil Galeine Gastile Gedere Gerden Gibedats 
+	Giemund Golovke Gotene Gunvald Imanta Janis Jaunule Jedetus Juvage Kage Kaire Karijotas Karnak 
+	Kaupo Kerstigens Kiten Klavess Kodere Kuliens Kurlemuse Lammekinus Likiik Litto Lonkogveni Manvydas 
+	Meinekinus Mendune Nameisis Narvait Pliksov Pukiik Pukuveras Ringaudas Rushky Rusins Sabe Sargun 
+	Scurdo Shutr Shvarnas Skornand Sprudeik Stegut Steikint Sviendorog Talivaldis Tautvila Traidenis 
+	Treniota Vaishvilkas Valikaila Vetseke Viesturs Visheiv Vishikut Vishly Vykantas Yudki
+	
+	Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas Daugvilas 
+	Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas Gediminas Gedivilas Gintaras Gintautas 
+	Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas Karijotas Kesgaila Kestutis Korigaila 
+	Korybutas Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas 
+	Movkoldas Narimantas Povilas Pukuveras Rimantas Rimgaila Rimvydas Ringaudas Sarunas Skirgaila 
+	Songaila Svarnas Svitrigaila Tarvydas Tovtivilas Traidenis Treniotas Vainius Vaisvilkas Valimantas
+	Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas Zygimantas 
+	
+	Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis Ekkelis Galindo Gauronas Gerdautas Glande 
+	Golding Jauguttis Karatas Klukis Kugis Milzas Nomedas Prusas Sergonis Ulinniks Ulitis
+}
+
+ship_names = {
+	Alytus Birzai Druskininkai Gardinas Jonava Kaunas Kretinga Kreva Lazdijai Naugardukas Palanga
+	Raseiniai Siauliai Sventoji Taurage Telsiai Trakai Utena Vilkmerge
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

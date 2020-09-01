@@ -1,0 +1,39 @@
+zealots_ideas = {
+	start = {
+		tolerance_own = 2
+		land_morale = 0.15
+	}
+	bonus = {
+		discipline = 0.05
+	}
+	trigger = {
+		tag = ZLT
+		religion_group = jewish_group
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_free_from_invaders = {
+		core_decay_on_your_own = -1
+		hostile_attrition = 1
+	}
+	ZZZ_our_own_zealot_destiny = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	ZZZ_zealot_revolts = {
+		rebel_support_efficiency = 0.5
+	}
+	ZZZ_protect_the_coasts = {
+		naval_morale = 0.2
+	}
+	ZZZ_zealot_purity = {
+		monarch_military_power = 1
+		army_tradition_decay = -0.005
+	}
+	ZZZ_jewish_foreign_contacts = {
+		diplomats = 1
+	}
+	ZZZ_zealot_commerce = {
+		inflation_reduction = 0.05
+	}
+}

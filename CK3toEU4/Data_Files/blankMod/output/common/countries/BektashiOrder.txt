@@ -1,0 +1,96 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 90 150 0 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	ottoman_yaya
+	ottoman_musellem
+	ottoman_azab
+	ottoman_timariot
+	ottoman_janissary
+	ottoman_spahi
+	ottoman_sekban
+	ottoman_reformed_spahi
+	ottoman_reformed_janissary
+	ottoman_toprakli_hit_and_run
+	ottoman_nizami_cedid
+	ottoman_toprakli_dragoon
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	ottoman_new_model
+	ottoman_lancer
+}
+
+monarch_names = {	
+	"Haji Bektash #1" = 0
+	"Mondi #0" = 1
+	"Ali #0" = 1
+	"Nesimi #0" = 1
+	"Balim #0" = 1
+	"Gül #0" = 1
+	"Otman #0" = 1
+	"Arabati #0" = 1
+	"Teke #0" = 1
+	"Demir #0" = 1
+	"Alians #0" = 1
+	"Rexheb #0" = 1
+	"Ali Pasha #0" = 1
+	"Naim #0" = 1
+	"Mahmud #0" = 1
+	"Reshat #0" = 1
+	"Tahir Emini #0" = 1
+	"Haydar Ercan #0" = 1
+	"Mumin #0" = 1
+	"Ak-Yazili #0" = 1
+	"Mustafa #0" = 1
+	"Al-Fatiha #0" = 1
+	"Abdul #0" = 1
+	"Abdullah #0" = 1
+	"Abbas #0" = 1
+	"Akbar #0" = 1
+	"Mohammed #0" = 1
+	
+	"Hadice #0" = -1
+	"Safiye #0" = -1
+	"Zeynep #0" = -1
+	"Hurrem #0" = -1
+	"Mihrimah #0" = -1
+	"Nurbanu #0" = -1
+	"Handan #0" = -1
+	"Alime #0" = -1
+	"Kösem #0" = -1
+	"Hüma #0" = -1
+	"Nigar #0" = -1
+	"Emine #0" = -1
+	"Mahpeyker #0" = -1
+	"Gülfem #0" = -1
+	"Rabia #0" = -1
+	"Turhan #0" = -1
+}
+
+leader_names = {
+	Haji Mondi Ali Nesimi Balim Gül Otman Arabati Teke Demir Alians Rexheb Ali Pasha Naim
+	Reshat Tahir Emini Bektash Haydar Ercan Mumin Lama Ak-Yazili Mustafa Eke Al-Fatiha
+	
+	Abbas Abdul Abdullah Abolhassan Abu-Bakr Ahmad Akbar Allahyar Ali Ali-Fay Ali-Kolon
+	Ali-Zalil Hasan Hossein Hussayn Ismail Mahmud Mohammed Muammar Muhammad
+}
+
+ship_names = {
+	
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

@@ -1,0 +1,43 @@
+myrmidons_ideas = {
+	start = {
+		infantry_power = 0.15
+		stability_cost_modifier = -0.2
+	}
+	bonus = {
+		siege_ability = 0.25
+	}
+	trigger = {
+		tag = MYM
+		OR = {
+			religion = pagan_religion
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_legacy_of_the_legions = {
+		army_tradition = 0.5
+		discipline = 0.05
+	}
+	ZZZ_hellenic_exceptionalism = {
+		idea_cost = -0.2
+	}
+	ZZZ_mare_nostrum = {
+		galley_power = 0.2
+	}
+	ZZZ_myrmidon_taxes = {
+		global_tax_modifier = 0.15
+	}
+	ZZZ_myrmidon_ranks = {
+		global_manpower_modifier = 0.33
+	}
+	ZZZ_myrmidon_building = {
+		build_cost = -0.1
+		development_cost = -0.1
+	}
+	ZZZ_legacy_of_alexander = {
+		province_warscore_cost = -0.25
+	}
+}

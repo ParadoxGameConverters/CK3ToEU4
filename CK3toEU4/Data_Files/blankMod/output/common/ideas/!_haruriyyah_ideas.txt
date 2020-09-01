@@ -1,0 +1,46 @@
+haruriyyah_ideas = {
+	start = {
+		land_morale = 0.10
+		spy_offence = 0.33
+	}
+	bonus = {
+		discipline = 0.1
+	}
+	trigger = {
+		tag = HYY
+		religion_group = muslim
+		NOT = { religion = sunni }
+		NOT = { religion = shia }
+		NOT = { religion = yazidi }
+		OR = {
+			government = theocracy
+			has_reform = feudal_theocracy
+		}
+	}
+	free = yes
+	
+	ZZZ_legacy_of_oman = {
+		ship_durability = 0.1
+		navy_tradition = 0.5
+	}
+	ZZZ_for_the_faithful = {
+		cb_on_religious_enemies = yes
+	}
+	ZZZ_nomadic_traditions = {
+		cavalry_power = 0.2
+	}
+	ZZZ_converting_the_other = {
+		global_missionary_strength = 0.02
+	}
+	ZZZ_bring_the_big_guns = {
+		artillery_power = 0.10
+		artillery_cost = -0.10
+	}
+	ZZZ_use_ships_to_trade_and_propagate = {
+		global_ship_trade_power = 0.2
+		sunk_ship_morale_hit_recieved = -0.2
+	}
+	ZZZ_the_true_followers = {
+		tolerance_own = 2
+	}
+}

@@ -1,0 +1,43 @@
+brotherhood_of_the_holy_sepulchre_ideas = {
+	start = {
+		legitimacy = 1
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 0.5
+		republican_tradition = 0.5
+		technology_cost = -0.1
+	}
+	bonus = {
+		discipline = 0.05
+	}
+	trigger = {
+		tag = BHS
+		religion_group = christian
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_the_brotherhood_long_game = {
+		manpower_recovery_speed = 0.2
+		recover_army_morale_speed = 0.1
+	}
+	ZZZ_the_indefatiguable_brotherhood = {
+		prestige = 1
+	}
+	ZZZ_legacy_of_the_byzantines = {
+		infantry_power = 0.1
+		cavalry_power = 0.1
+	}
+	ZZZ_brotherhood_conversion = {
+		global_missionary_strength = 0.03
+	}
+	ZZZ_universal_brotherhood = {
+		num_accepted_cultures = 2
+	}
+	ZZZ_caravans_of_the_brotherhood = {
+		caravan_power = 0.3
+	}
+	ZZZ_churches_of_the_holy_sepulchre = {
+		build_cost = -0.15
+	}
+}
