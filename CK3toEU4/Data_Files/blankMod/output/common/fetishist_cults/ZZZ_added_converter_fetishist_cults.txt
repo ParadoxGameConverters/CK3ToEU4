@@ -1,0 +1,140 @@
+west_african_pagan_reformed_cult = {
+	sprite = 18
+	allow = {
+		OR = {
+			has_unlocked_cult = west_african_pagan_reformed_cult
+			religion = west_african_pagan_reformed
+		}
+	}
+	reform_progress_growth = 0.25
+	ai_will_do = {
+		factor = 15
+		modifier = {
+			personality = ai_capitalist 
+			factor = 2
+		}
+	}
+}
+
+tengri_cult = {
+	sprite = 19
+	allow = {
+		has_unlocked_cult = tengri_cult
+	}
+	cavalry_power = 0.10
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+baltic_cult = {
+	sprite = 20
+	allow = {
+		has_unlocked_cult = baltic_cult
+	}
+	defensiveness = 0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+finnish_cult = {
+	sprite = 21
+	allow = {
+		has_unlocked_cult = finnish_cult
+	}
+	hostile_attrition = 1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+slavic_cult = {
+	sprite = 22
+	allow = {
+		has_unlocked_cult = slavic_cult
+	}
+	culture_conversion_cost = -0.15
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+zunist_cult = {
+	sprite = 23
+	allow = {
+		has_unlocked_cult = zunist_cult
+	}
+	legitimacy = 0.5
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+bon_cult = {
+	sprite = 24
+	allow = {
+		has_unlocked_cult = bon_cult
+	}
+	shock_damage_received = -0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_diplomat
+			factor = 2
+		}
+	}
+}
+
+hellenic_cult = {
+	sprite = 25
+	allow = {
+		has_unlocked_cult = hellenic_cult
+	}
+	idea_cost = -0.1
+	ai_will_do = {
+		factor = 11
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+pagan_cult = {
+	sprite = 26
+	allow = {
+		has_unlocked_cult = pagan_cult
+	}
+	tolerance_heretic = 2
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_diplomat
+			factor = 2
+		}
+	}
+}
+
+
+

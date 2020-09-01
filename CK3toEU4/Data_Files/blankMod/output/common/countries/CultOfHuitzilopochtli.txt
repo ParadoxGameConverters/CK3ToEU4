@@ -1,0 +1,102 @@
+#Country Name: Please see filename.
+
+graphical_culture = southamericagfx
+
+color = { 255 200 0 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	south_american_spearmen
+	aztec_tribal_warfare
+	aztec_hill_warfare
+	aztec_gunpowder_warfare
+	westernized_aztec
+	mexican_guerilla_warfare
+}
+
+monarch_names = {	
+	"Moctezuma #0" = 1
+	"Auitzotl #0" = 1
+	"Axayacatl #0" = 1
+	"Cuauhtemoc #0" = 1
+	"Cuitlahuac #0" = 1
+	"Huitzilihuitl #0" = 1
+	"Itzcoatl #0" = 1
+	"Ohimalpopoca #0" = 1
+	"Tizoc #0" = 1
+	"Huanitzin #0" = 1
+	"Motelchiuh #0" = 1
+	"Tehuetstiquitzin #0" = 1
+	"Tlacotzin #0" = 1
+	"Xochiquentzin #0" = 1
+	"Acamapichtli #0" = 1
+	"Chimalpopoca #0" = 1
+	"Tenoch #0" = 1
+	"Acacitli #0" = 1
+	"Ahcambal #0" = 1
+	"Axacaya #0" = 1
+	"Cacamatzin #0" = 1
+	"Eyahue #0" = 1
+	"Huicton #0" = 1
+	"Ilhuicamina #0" = 1
+	"Itzquautzin #0" = 1
+	"Mazatl #0" = 1
+	"Nopaltzin #0" = 1
+	"Olintecke #0" = 1
+	"Opochtli #0" = 1
+	"Panitzin #0" = 1
+	"Quetzalmantzin #0" = 1
+	"Quimichetl #0" = 1
+	"Texcoyo #0" = 1
+	"Timas #0" = 1
+	"Tlacaelel #0" = 1
+	"Tlotzin #0" = 1
+	"Xiuhcozcatl #0" = 1
+	"Xocoyol #0" = 1
+	"Yaztachimal #0" = 1
+	"Zolton #0" = 1
+	
+	"Centehua #0" = -1
+	"Moyolehuani #0" = -1
+	"Yaotl #0" = -1
+}
+
+leader_names = {
+	Acatlotzin Ahuítzotl Axayacátl Axoquetzin Cacamatzin Chalchiutlatonac Cuauhtemoc Cuitlahuac Cuitlalpitoc
+	Ecatzin Eyahue Ezhuahuacatl Huemac Huestzin Huitzilihuitl Itzcoatl Ixtlilxochitl Izquemitl
+	Mazatl Maxixcatzin Moctezuma Motelchiuh Nauyotl Nezahualpilli Nopaltzin
+	Ocelopan Olintecke Opochtli Oquitzin Panitzin Pimotl Popopoyotl
+	Quahcoatl Qualpopoca Quilaztli Quimichetl Temilotecatl Tezozomoc Tizoc Totoquihuatzin Tzompantli
+	Xiconocatzin Xochipanitzin Xolotl Xomimitl Yaomauhitzin Yaztachimal Zincicha Zoanacochtzin Zolton
+}
+
+ship_names = {
+	Acolmiztli Acolnahuacat "Ah Hoya" "Ah Tzenul" Amimitl Apanecatl Atl Atlau Axoloa
+	Camaxtli Centeot Centzonuiznaua Chalchiuhtlatonal Chalchiuhtlicue Chalchiutotolin Chalmecalt Chalmecaucihuilt
+	Chantico Chichomexochtli Chicomecoatl Chiconahuai Chihalma Chualchihuitlcue Cihuacaotyl Cinteotl
+	Citlalatonac Citlalicue Ciucoatl Coatlicue Cochimetl Coyolxauhqui Cuauhcoatl 
+	Ehehcatl Eueucoyotl
+	"Hopop Can" Huehueteotl Huitzilopochtli Huixtocihuatl
+	Itzcoliuhqui Itzli Itzpapalotl Itzpzpalotl Ixtlilton Iztamixcoatzin
+	Macuilxochitl Mahayuel Malinalxochi Matalcueye Metztli Mictlan Mictlancihuntl Mictlantechtle
+	Mictlantechupi Mictlantecihuatl Mixcoatl
+	Nanauatzin
+	Ococaltzin Omecihuatl Ometecuhlti Ometeotl Omeyocan
+	Patecatli Paynal
+	Quetzalcoatl
+	Tecciztecatl Teoyaomqui Tepeyollotl Teteoinnan Tezacoatl Tezcatlipoca Tillan-Tlapallan Tlaloc
+	Tlalocan Tlaltechhtlii Tlazolteotl Tonacatecuhtli Tonatiuhican Tonatiuth Tzitmime
+	Xilonen "Xipe Totec" Xiucoatl Xiuhtecuhtli Xochipilli Xochiquetzal Xolotl Xonecuilli
+	Yacatechutli
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

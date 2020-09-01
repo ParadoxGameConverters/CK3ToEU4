@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = celestial_empire
+government_rank = 3
+technology_group = chinese
+religion = confucianism
+add_harmonized_religion = mahayana
+primary_culture = chihan
+capital = 1821	# Nanjing
+
+500.1.1 = {
+	monarch = {
+		name = "Zhong"
+		dynasty = "Wuo"
+		regent = yes #Only if there's no CK2 input
+		adm = 6
+		dip = 4
+		mil = 6
+	}
+}

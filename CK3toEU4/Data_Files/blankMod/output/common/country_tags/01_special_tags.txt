@@ -1,0 +1,47 @@
+# Do not rename this file. You may delete it, but it has to be named 01_special_tags.txt to be loaded into converter.
+# Place here any new countries we have definitions for, as well as any vanilla countries we wish to override (MNG or such).
+# Whatever is placed here should point to existing country definition in blankMod/output/common/countries/<country>.txt
+# Country paths MUST be in quotes.
+
+JOM = "countries/Jomsvikings.txt"
+HAH = "countries/Hashshashin.txt"
+ISR = "countries/Israel.txt"
+TEM = "countries/KnightsTemplar.txt"
+TRL = "countries/Trapalanda.txt"
+WEI = "countries/Wei.txt"
+HND = "countries/Han.txt"
+ZAO = "countries/Zhao.txt"
+LIO = "countries/Liao.txt"
+XIA = "countries/Xia.txt"
+DAX = "countries/Dai.txt"
+CEG = "countries/Cheng.txt"
+SNG = "countries/Song.txt"
+YIN = "countries/Yin.txt"
+CHN = "countries/China.txt"
+
+#Holy Orders
+ADD = "countries/OrderAddai.txt"
+AOL = "countries/ArmyOfLight.txt"
+BEK = "countries/BektashiOrder.txt"
+BHS = "countries/BrotherhoodHolySepulchre.txt"
+BOR = "countries/BullsOfRishabha.txt"
+COA = "countries/ChosenOfAshoka.txt"
+COD = "countries/ChildrenOfDralha.txt"
+COH = "countries/CultOfHuitzilopochtli.txt"
+COP = "countries/ChosenOfPerkunas.txt"
+FOA = "countries/FollowersOfArjuna.txt"
+HYY = "countries/Haruriyyah.txt"
+IMM = "countries/Immortals.txt"
+KCL = "countries/KnightsCalatrava.txt"
+KOS = "countries/KnightsSantiago.txt"
+KOZ = "countries/KnightsZun.txt"
+LOS = "countries/LordsOfTheSky.txt"
+MYM = "countries/Myrmidons.txt"
+OOA = "countries/OrderAnthony.txt"
+SGD = "countries/SpiritGuardians.txt"
+SKL = "countries/SonsOfKaleva.txt"
+WOP = "countries/WarriorsOfPerun.txt"
+ZLT = "countries/Zealots.txt"
+
+#The Fraticelli Pope
+FAP = "countries/Fraticelli.txt"

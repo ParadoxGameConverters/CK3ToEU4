@@ -1,0 +1,200 @@
+#Country Name: Please see filename.
+
+graphical_culture = indiangfx
+
+color = { 255 100 0 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	indian_footsoldier
+	rajput_hill_fighters
+	indian_arquebusier
+	mughal_musketeer
+	rajput_musketeer
+	mughal_mansabdar
+	indian_elephant
+	sikh_hit_and_run
+	bhonsle_cavalry
+	indian_rifle
+	tipu_sultan_rocket
+}
+
+monarch_names = {	
+	"Taj ud-Din Firuz #0"= 1
+	"Ala ud-Din Ahmad #0"= 1
+	"Mahmud #0"= 1
+	"Ahmad #0"= 1
+	"Ali #0"= 1
+	"Qasim #0"= 1
+	"Amir #0"= 1
+	"Bahâdur Shâh #0"= 1
+	"Dâwar Bakhsh #0"= 1
+	"Farrukh-siyar #0"= 1
+	"Humâyûn #0"= 1
+	"Islâm Shâh #0"= 1
+	"Jahândâr Shâh #0"= 1
+	"Jahângîr #0"= 1
+	"Akbar #0"= 1
+	"Muhammad Shâh #0"= 1
+	"Nîkû-siyar #0"= 1
+	"Râfi' #0"= 1	
+	"Shîr Shâh #0"= 1
+	"Ibrâhim #0 Shâh" = 1
+	"'Azim-ash Sha'n #0" = 1
+	"A'zam Shâh #0" = 1
+	"Dârâ Shikûh #0" = 1
+	"Muhammad #0" = 1
+	"Makhdumah Jahan #0" = -1
+	"Ghiyas-ud-din #0" = 1
+	"Shams-ud-din #0" = 1
+	"Dilawar Khan #0"= 1
+	"Khwaja Hasan #0"= 1
+	"Khalaf Hasan #0"= 1
+	"Mir Farrukh #0"= 1
+	"Sayid Husain #0"= 1
+	"Jalal Khan #0"= 1
+	"Majnun Sultan #0"= 1
+	"Quli Sultan #0"= 1
+	"Mahmud Gawan #0"= 1
+	"Sayid Hanif #0"= 1
+	"Imad al-Mulk #0"= 1
+	"Saif Allah #0"= 1
+	"Iftikhar al-Mulk #0"= 1
+	"Mir Abu'l-Qasim #0"= 1
+	"Ubbaid Allah #0"= 1
+	"Sayid Nasir al-Din #0"= 1
+	"Shah Khalil Allah #0"= 1
+	"Mullah Qutb al-Din #0"= 1
+	"Abd Allah #0"= 1
+	"Rustam Khan #0"= 1
+	"Mir Shams al-Din #0"= 1
+	"Qasim Beg #0"= 1
+	"Khwaja Imad al-Din #0"= 1
+	"Mir Ali #0"= 1
+	"Khusrau #0"= 1
+	"Daud Khan #0"= 1
+	"Mujahid #0" = 1
+	"Quazi Siraj-ud-din #0"= 1
+	"Fulad Khan #0"= 1
+	"Jamal-ud-din #0"= 1
+	"Abdul #0"= 1
+	"Malik #0"= 1
+	"Ala-ud-din #0"= 1
+	"Malik-ut-Tujjar #0"= 1
+	"Sikandar #0"= 1
+	"Hakim #0"= 1
+	"Sriranga #0"= 1
+	"Narasimha #0"= 1
+	"Venkata #0"= 1
+	"Virupaksha #0"= 1
+	"Devaraya #0"= 1
+	"Vijaya #0"= 1
+	"Praudha #0"= 1
+	"Thimma #0"= 1
+	"Viranarasimha #0"= 1
+	"Krishna #0"= 1
+	"Achyuta #0"= 1
+	"Sadashiva #0"= 1
+	"Tirumala #0"= 1
+	"Rama #0"= 1
+	"Jagga #0" = 1
+	"Yethiraja #0" = 1
+	"Aliya Rama #0" = 1
+	"Tuluva #0" = 1
+	"Harihara #0" = 1
+	"Bukka #0" = 1
+	"Deva #0" = 1
+	"Ramachandra #0" = 1
+	"Vira Vijaya Bukka #0" = 1
+	"Mallikarjuna #0" = 1
+	"Adarsh #0"= 1
+	"Budhil #0"= 1
+	"Chaitanya #0"= 1
+	"Devarsi #0"= 1
+	"Devilal #0"= 1
+	"Gunda #0"= 1
+	"Hridaynath #0"= 1
+	"Kaushal #0"= 1
+	"Manprasad #0"= 1
+	"Markandeya #0"= 1
+	"Pranet #0"= 1
+	"Prabuddha #0"= 1
+	"Purandaradasa #0"= 1
+	"Rishi #0"= 1
+	"Sarasvat #0"= 1
+	"Sivvappa #0"= 1
+	"Narasa #0"= 1
+	"Thirumalai #0"= 1
+	"Gopa #0"= 1
+	"Gopana #0"= 1
+	"Viswanatha #0"= 1
+	"Lakshmidhara #0"= 1
+	"Isvara #0"= 1
+	"Salukaraya #0"= 1
+	"Saluva Mango #0"= 1
+	"Manabhusa #0"= 1
+	"Koniteraja #0"= 1
+	"Imadhi #0"= 1
+	"Kempe Gauda #0"= 1
+	"Vyasaraya #0"= 1
+	"Allasani Pedana #0"= 1
+	"Nagama #0"= 1
+	"Chellappa #0"= 1
+	"Aryavanata Mudaliar #0"= 1
+	"Dandanayaka #0"= 1
+	"Kanaka #0"= 1
+	"Kumara #0"= 1
+	
+	
+	"Samiya #0" = -1
+	"Nasiha #0" = -1
+	"Padmavati Devi #0" = -1
+	"Tirumala Devi #0" = -1
+	"China Devi #0" = -1
+	"Mangammal #0" = -10
+	"Meenakshi #0" = -10
+	"Velunatchiyar #0" = -1
+	"Lakshmi #0" = -1
+	"Jaganmohini #0" = -1
+	"Annapurna Devi #0" = -1
+	"Rudramba #0" = -1
+	"Anitalli #0" = -1
+	"Rudramadevi #0" = -1
+}
+
+leader_names = {
+	Alupa Nayak Nayaka Nayudu Narasa Heuna Kampana Gopana Saluva Keladi Kamma Tuluva Govindaraya
+	Mangu Timma Timmarasa Tiruvadi Ummattur Paruchuri Velama Vasireddy Reddy
+	Afghani Astarabadi Ardastani Badakhshi Bukhari Changezi Gilani Ghuri Hasanabadi Hamadani Jurjani
+	Kabuli Karbali Kirmani Kurd Mazandarani Qummi Safsikhan Simnani Sistani Uzbek Hussaini Qadir
+	Ambar Latif Ameerun Beg Bhutto Chughtai Jahan Kamaluddin Khan Mirza Musharif Nagar Nasseruddin
+	Nazirun Radhidun Ra'ana Rumi Shahabuddin Sharif Sinan Singh Wazirun Zahiruddin
+}
+
+ship_names = {
+	Amirtha Amman Arul Bharatapuza
+	Bhavani Bhima Chellam Devi Durga
+	Gayatri Godavari Iniya Kabani
+	Kaveri Krishna Lakshmi Madhu
+	Meenakshi Nalini Pambar Parvati
+	Periyar Ponni Radha Ratri Sarasvati
+	Sita Tamarai Tungabhadra
+	Alia Aurangabad Devki Fatimah
+	Godvari Gulbargah Jalsena "Kala Jahazi"
+	Khan "Lal Jahazi" Nausena "Nav ka Yudh"
+	Niknaz "Nila Jahazi" Niloufa Sagar Salima
+	Suhalia Shameena Yasmine
+	"Nila Jahazi" Niloufa Noor Sagar
+	Spiti Yamuna Yasmine
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = equine
+religion = tengri_pagan_reformed
+technology_group = high_american
+capital = 1002 # Abitbi
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Lady"
+		dynasty = "Glitterhoof"
+		female = yes
+		adm = 5
+		dip = 6
+		mil = 4
+	}
+}

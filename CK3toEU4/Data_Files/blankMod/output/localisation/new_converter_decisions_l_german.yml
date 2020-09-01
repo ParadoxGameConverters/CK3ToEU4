@@ -1,0 +1,127 @@
+﻿l_german:
+ ZZZ_enhanced_reform_norse_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_norse_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_baltic_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_baltic_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_finnish_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_finnish_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_tengri_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_tengri_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_slavic_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_slavic_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_zun_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_zun_pagan_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_bon_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_bon_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+ 
+ ZZZ_enhanced_reform_hellenic_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_hellenic_desc:0 "Reformiere den Glauben [Root.Religion.GetName] in eine organisierte Religion. Der reformierte Glaube hat keinen Bekehrungsfehler und ist für andere Glaubensrichtungen nicht einfacher zu bekehren."
+  
+ ZZZ_enhanced_reform_african_title:0 "Religiöse Reformen verabschieden"
+ ZZZ_enhanced_reform_african_desc:0 "Wir haben gezeigt, dass manchmal die alten Wege nicht immer die besten sind. Man kann sich mit der Zeit ändern und trotzdem sein Erbe und seine Persönlichkeit bewahren. Es gibt diejenigen, die es nicht mögen werden, aber wir müssen unsere Schamanen in die Moderne ziehen und die Reformen übernehmen, die für andere so gut funktioniert haben."
+ 
+ ZZZ_spreading_of_reformed_pagan_rituals_title:0 "Verbreitung $RELIGION$ Rituale"
+ ZZZ_spreading_of_reformed_pagan_rituals_desc:0 "Die Konversion zur Religion $RELIGION$ erfordert nichts, jeder Mensch kann seine eigenen religiösen Rituale leiten. Solange Sie die richtigen Rituale durchführen, gelten Sie als wahrer Anhänger des Nachfolgers. Lassen Sie uns immer mehr unserer Untertanen ermutigen, unsere Wege kennenzulernen, damit sie zumindest anfangen können, sie anzubeten."
+
+ ZZZ_remove_elective_challenge_title:0 "Fordern Sie die Adligen Heraus"
+ ZZZ_remove_elective_challenge_desc:0 "Zu lange haben die Adligen unser Land mit ihrer unaufhörlichen Politik zurückgehalten. Die Zeit der Wahlmonarchien endete vor Jahrhunderten und wenn wir weiterhin nichts tun, werden unsere Nachbarn unser Land auch zu einem Relikt der Vergangenheit machen!"
+ ZZZ_remove_elective_final_title:0 "Fordern Sie den Sieg über die Adligen"
+ ZZZ_remove_elective_final_desc:0 "Wir haben über den kleinen Adel gesiegt, der unsere Nation vom Fortschritt abgehalten hätte. Jetzt können wir die Nation führen, ohne uns um ihre Einmischung sorgen zu müssen!"
+
+ institute_the_societas_jesu_FAP_title:0 "Richtet die Societas Jesu ein"
+ institute_the_societas_jesu_FAP_desc:0 "Seine Heiligkeit hat einen neuen Missionarsorden, die Gemeinschaft Jesu, bestätigt. Aber ohne königliche Unterstützung wird er nicht überstehen. Sollen wir die Jesuiten unterstützen? "
+  
+ secularization_of_christian_theocracy_FAP_title:0 "Säkularisierung"
+ secularization_of_christian_theocracy_FAP_desc:0 "[Root.Monarch.GetTitle] ist ein schöner Titel, aber es ist an der Zeit, auf unseren eigenen Beinen zu stehen und unseren Einfluss in diesem Staate zu nutzen, um etwas Stärkeres zu schaffen. Trotz der Frömmigkeit unseres Staates sollten wir diese Länder für unsere eigenen Nachkommen sichern, anstatt die Ernennung eines unfähigen Nachfolgers zu riskieren."
+ 
+ statue_in_restraint_of_appeals_FAP_title:0 "Aufhebung der Appellationsmöglichkeit"
+ statue_in_restraint_of_appeals_FAP_desc:0 "Degradiert den Papst offiziell und erhebt stattdessen den König als letzte legale Instanz in allen religiösen Belangen."
+   
+ revoke_restraint_of_appeals_FAP_title:0 "Führt die Appellationsmöglichkeit wieder ein"
+ revoke_restraint_of_appeals_FAP_desc:0 "Widerruft das vorher eingeführte Gesetz, das dem König die letzte, legale Autorität in allen religiösen Belangen gibt und führt diese Rechte für den Papst wieder ein."
+  
+ move_capital_to_rome_FAP_title:0 "Hauptstadt nach Rom verlegen"
+ move_capital_to_rome_FAP_desc:0 "Die Provinz und die Stadt Rom wurde dem Kirchenstaat endlich zurückgegeben. Die Zeit zur Restauration des Heiligen Stuhls ist gekommen."
+  
+ join_the_counter_reformation_FAP_title:0 "Nehmt die Gegen-Reformation an"
+ join_the_counter_reformation_FAP_desc:0 "Seine Heiligkeit der Papst hat nach einer mächtigen Anstrengung verlangt, der protestantischen Bewegung entgegenzutreten. Mit der Hilfe des neu gegründeten Jesuitenordens werden wir diese Häresie auslöschen. Durch immer effektivere Missionare werden es der protestantische und reformierte Glauben schwerer haben, sich in unsere Ländereien auszubreiten."
+  
+ secularization_of_protestant_theocracy_EXTRA_title:0 "Säkularisierung"
+ secularization_of_protestant_theocracy_EXTRA_desc:0 "Da die Verbindungen zu Rom abgebrochen sind, haben wir keinen Platz mehr in einer größeren christlichen Hierarchie. Vielleicht ist den Gläubigen mit einem Monarchen ebenso gut gedient wie mit einem [Root.Monarch.GetTitle]."
+  
+ test_act_EXTRA_title:0 "Verabschiedet den Test-Akt"
+ test_act_EXTRA_desc:0 "Schließt alle Nichtmitglieder der etablierten Kirche von allen militärischen und zivilen Ämtern aus. Dieses Privileg soll Mitgliedern vorbehalten sein, die die Kommunion nach den wahren Riten unserer nationalen Kirche erhalten haben."
+	
+ dissolution_of_the_monasteries_EXTRA_title:0 "Akt zur Klosterauflösung"
+ dissolution_of_the_monasteries_EXTRA_desc:0 "Stärkt die Kontrolle und Macht des Monarchen durch die Konfiszierung von allen geistlichen Besitzungen mit einem jährlichen Einkommen über einem bestimmten Wert."
+	
+ popery_act_EXTRA_title:0 "Verabschiedet den päpstlichen Akt"
+ popery_act_EXTRA_desc:0 "Unternehmt Anstrengungen, den katholischen Einfluss dadurch zu reduzieren, dass jedem Geld angeboten wird, der gegen einen katholischen Priester oder Bischof aussagt, die bei der Ausübung von religiösen Ritualen beobachtet wurden."
+	
+ trade_propagation_convert_to_islam_EXTRA_title:0 "Islam als Staatsreligion annehmen"
+ trade_propagation_convert_to_islam_EXTRA_desc:0 "Der Islam ist zunehmend die dominierende Religion sowohl in der Regierung, unter unseren Untertanen als auch unserem Adel geworden. Es ist Zeit, dass wir uns der Glaubensgemeinschaft anschließen."
+  
+ restrict_government_offices_EXTRA_title:0 "Fördert die Konvertierung zum Judentum"
+ restrict_government_offices_EXTRA_desc:0 "Lasst uns alle wichtigen Ämter in der Verwaltung unser zentralen, lokalen und Militärregierung mit Mitgliedern des wahren Glaubens besetzen, während wir auch freie Ausbildung in den Gesetzen des Talmud und des Schulchan Aruch für alle niederen Beamten zugänglich machen. Auf diese Weise fördern wir sowohl den Willen als auch die Bereitschaft zum Konvertieren."
+ 
+ tengri_yellow_shamanism_EXTRA_title:0 "Gelber Schamanismus"
+ tengri_yellow_shamanism_EXTRA_desc:0 "Seit den Tagen der großen Khans sind viele unserer Untertanen Anhänger des Vajrayana-Buddhismus, und obwohl wir bedauern, dass sie vom wahren Glauben unserer Nation abgekommen sind, wäre es doch unklug, sich von ihnen abzuwenden. Lasst uns stattdessen die synkretischen Elemente unseres Glaubens unterstreichen, einige der Vajrayana-Rituale übernehmen und diese Buddhisten in unsere Gemeinschaft eingliedern."
+   
+ tengri_black_shamanism_EXTRA_title:0 "Schwarzer Schamanismus"
+ tengri_black_shamanism_EXTRA_desc:0 "Der Buddhismus verbreitet sich mit alarmierender Geschwindigkeit unter den Anhängern des Glaubens unserer Vorfahren. Obwohl dieser Glaube von einigen unserer Vorfahren anerkannt wurde, verdrängt er den wahren tengristischen Glauben nun auf gefährliche Weise und vergiftet die Praktiken unserer Untertanen mit buddhistischen Ansätzen. Wir müssen jene Ansichten aktiv verwerfen und stattdessen die Verbreitung der wahren und reinen Praktiken unserer Vorfahren in unserem Volk vorantreiben."
+  
+ tengri_expel_the_khojas_EXTRA_title:0 "Vertreibt die Hodschas"
+ tengri_expel_the_khojas_EXTRA_desc:0 "Mit der Zeit hat der Einfluss des Khoja und seiner Nachkommen in unserem Land gefährlich zugenommen. Nun, da sie nicht mehr das Gehör unseres Herrschers haben, können wir sie mit Gewalt aus unserem Land vertreiben, um zukünftige Konflikte zu vermeiden."
+  
+ zoroastrian_rites_of_admission_EXTRA_title:0 "Aufnahmeriten"
+ zoroastrian_rites_of_admission_EXTRA_desc:0 "Im Gegensatz zu anderen Religionen versucht unsere nicht, sich unwissenden Kindern aufzuzwingen. Eine zoroastrische Initiierung muss von jemandem durchgeführt werden, der alt genug ist, um zu verstehen, was damit verbunden ist. Es kann jedoch noch einiges unternommen werden, um all jene zu ermutigen, die nicht den Nutzen unseres Glaubens erkennen."
+ 
+ zoroastrian_royal_fires_EXTRA_title:0 "Wiederaufleben der königlichen Feuer"
+ zoroastrian_royal_fires_EXTRA_desc:0 "Von all den Feuertempeln unseres Glaubens ist die Legende der drei Feuer, die von Zarathustra selbst entzündet wurden, die größte. Sie sind jedoch schon lange vergessen, da unser Glaube im Laufe der Jahrhunderte verging, und die Standorte der alten Feuer sind nun unbekannt. Obwohl ein Feuer nicht wieder entzündet werden kann, können wir versuchen, den Standort dieser Tempel zu finden und neue Feuer zu entzünden, um den Aufstieg unseres zoroastrischen Reiches zu symbolisieren."
+ 
+ zoroastrian_diaspora_EXTRA_title:0 "Zoroastrische Diaspora"
+ zoroastrian_diaspora_EXTRA_desc:0 "Während der schweren Jahre der Unterdrückung in Persien verließen viele die Heimat ihrer Vorfahren, um sich im Ausland niederzulassen. Die Qissa-i Sanjan berichtet uns von jenen, die eine lange und mühevolle Reise auf sich nahmen, um sich in Gujarat niederzulassen, neue Feuer zu entzünden und ein neues Leben zu beginnen. Diese Männer und Frauen, die für ihre Industrie bekannt sind, wurden in ihrem neuen Heimatland erfolgreich. Durch unsere Bemühungen, den Zoroastrismus innerhalb unserer Grenzen zur einzigen Hauptreligion zu machen, können wir diese fremden Brüder und Schwestern wiedervereinen."
+ 
+ animism_ritual_education_EXTRA_title:0 "Rituelle Ausbildung"
+ animism_ritual_education_EXTRA_desc:0 "Der Glaube, dass es lediglich eine Gottheit in der Welt gibt, ist ein schrecklicher Mythos, der überall verbreitet zu sein scheint. Wir müssen versuchen, unsere armen Untertanen über die wahre Natur der Dinge, darüber, wie die Welt funktioniert und über die vielen Geister, die sie bewohnen, unterrichten."
+ 
+ shamanism_wondering_shamans_EXTRA_title:0 "Wanderschamanen"
+ shamanism_wondering_shamans_EXTRA_desc:0 "Wir haben die Kontrolle über Gebiete erlangt, die weit über die Grenzen unseres Glaubens hinausgehen. Infolge dessen erwartet eine große Anzahl von Heiden von uns, das wir sie führen. Lasst uns unsere Schamanen aussenden, um unseren Glauben zu verbreiten und all jene unter unseren neuen Untertanen lehren, die selbst Schamanen werden können."
+ 
+ armenia_nation_EXTRA_title:0 "Königreich Armenien"
+ armenia_nation_EXTRA_desc:0 "Das Königreich von Armenien beherrschte einmal den Kaukasus. Die Zeit war unseren Vorfahren nicht wohlgesonnen und die benachbarten Reiche sahen die Schwäche unserer inländischen Divisionen und nutzen sie, um unser Volk zu erobern. Lasst uns diese Eindringlinge vertreiben und das Königreich und die Kirche von Armenien wiederherstellen."
+ 
+ restore_byzantine_empire_EXTRA_title:0 "Stellt das Byzantinische Reich wieder her"
+ restore_byzantine_empire_EXTRA_desc:0 "Das glorreiche Byzantinische Reich ist verschwunden, aber solang es noch Griechen in Konstantinopel gibt, gibt es Hoffnung auf Wiederauferstehung. Wir können den Mantel übernehmen, aber um den Namen tragen zu können, müssen wir uns würdig erweisen."
+  
+ institute_prussian_monarchy_EXTRA_title:0 "Preußische Monarchie ausrufen"
+ institute_prussian_monarchy_EXTRA_desc:0 "Unsere Monarchie muss wieder preußische Tugenden und protestantische Ideale widerspiegeln!"
+ 
+ form_kingdom_of_prussia_EXTRA_title:0 "Gründet das Königreich Preußen"
+ form_kingdom_of_prussia_EXTRA_desc:0 "Es gibt nur einen König im Reich, den König von Böhmen. Zur gleichen Zeit sind unsere Ländereien in Preußen kein historischer Teil des Reichs. Lasst uns den Königstitel von Preußen für uns beanspruchen, um unseren Status über den der anderen Kurfürsten zu erheben."
+ 
+ prussian_nation_EXTRA_title:0 "Reformiert Euch zu Preußen"
+ prussian_nation_EXTRA_desc:0 "Mit dem Abbruch der Beziehungen zum Papsttum gibt es keinen Grund mehr, die Erscheinung eines monastischen Staates aufrechtzuerhalten. Der Großmeister wäre viel lieber ein Herzog... oder König."
+
+ prussian_nation_general_EXTRA_title:0 "Werdet zu Preußen"
+ prussian_nation_general_EXTRA_desc:0 "Die Territorien, die einst vom Teutonischen Orden erobert und germanisiert wurden, werden immer Schutz vor aggressiven Nachbarn brauchen. Sollte der Orden in dieser Aufgabe versagen, können wir seinen Platz einnehmen und eine neue Zeit der Blüte und preußischer Disziplin einläuten."
+ 
+ ruthenian_nation_EXTRA_title:0 "Ruthenische Nation aufbauen"
+ ruthenian_nation_EXTRA_desc:1 "Vor Jahrhunderten wurde das Land der Rus unter einem Banner vereint und von der legendären Stadt Kiew aus regiert. Doch dann kamen die mongolischen Horden, plündernd und alles niederbrennend, aus der großen Steppe. Sie zerstörten unsere Kreml und die Städte fielen eine nach der anderen. Nicht einmal Kiew konnte diesem Schicksal entrinnen. Vor Angst floh unser Volk aus den Ebenen der Rus und ging nach Norden, in die Wälder und das Hinterland dessen, was wir heute Russland nennen.\nJetzt befindet sich eine neue und arrogante Stadt im Norden im Aufstieg. Sie zieht die kleinen Staaten in ihrem Umfeld an sich und ihr Herrscher malt sich eine neue Rus aus. Eine Rus, in deren Zentrum Moskau liegt, und nicht Kiew.\nWir Ruthenen werden jedoch nicht schweigend im Strom der Geschichte untergehen. Wir werden nicht zulassen, dass Neulinge und Thronanwärter das Erbe unserer Vorväter für sich beanspruchen. Kiew soll wieder auferstehen und wir werden sie zu altem Ruhm und Pracht führen
+ 
+ russian_nation_EXTRA_title:0 "Russisches Reich"
+ russian_nation_EXTRA_desc:0 "Durch Eroberungen und Diplomatie hat Russland es geschafft, sich aus einer bloßen Ansammlung von Siedlungen in eine dominante Weltmacht zu transformieren. Nach mehreren Expeditionen gen Osten sind die mongolischen Horden nun endlich unter Kontrolle, und ein zentralisierter russischer Staat unter der Oberhoheit des Zaren wächst heran. Einflüsse aus Westeuropa treiben die Modernisierung und Reform unserer Nation voran, und wir haben einen westlichen Erziehungsstil übernommen."
+
+ capital_in_belgrade_EXTRA_title:0 "Hauptstadt nach Belgrad verlegen"
+ capital_in_belgrade_EXTRA_desc:0 "Belgrad nimmt einen wichtigen defensiven und ökonomischen Platz auf dem Balkan ein und diente in der Vergangenheit als Hauptstadt von Serbien. Wir sollten diese großartige Stadt wieder zu unserer Hauptstadt machen und sie erneut zu der glorreichen Stadt machen, die sie einmal war."
+
+ steppe_horde_reform_EXTRA_title:0 "Reformiert die Regierung"
+ steppe_horde_reform_EXTRA_desc:0 "Für viele Jahre haben unsere fortschrittlicheren Nachbarn uns wegen unserer Regierungsform ausgelacht. Nicht länger - von heute an ist unser Anführer ein König!"
+ 
+

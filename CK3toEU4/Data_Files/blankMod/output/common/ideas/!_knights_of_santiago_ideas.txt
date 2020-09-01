@@ -1,0 +1,42 @@
+knights_of_santiago_ideas = {
+	start = {
+		female_advisor_chance = 0.25
+		land_morale = 0.15
+	}
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	trigger = {
+		tag = KOS
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_cross_of_st_james = {
+		prestige_from_land = 1
+		prestige_decay = -0.005
+	}
+	ZZZ_canons_of_augustine = {
+		tolerance_own = 1
+	}
+	ZZZ_galleys_of_santiago = {
+		global_sailors_modifier = 0.1
+		galley_power = 0.1
+	}
+	ZZZ_santiago_encomienda = {
+		global_tax_modifier = 0.2
+	}
+	ZZZ_nobility_of_santiago = {
+		free_leader_pool = 2
+	}
+	ZZZ_santiago_bullarium = {
+		papal_influence = 2
+	}
+	ZZZ_santiago_true_calling = {
+		global_missionary_strength = 0.02
+	}
+}

@@ -1,0 +1,340 @@
+#Country Name: Please see filename.
+
+graphical_culture = asiangfx
+
+color = { 104  180  0 }
+
+historical_idea_groups = {
+	trade_ideas
+	economic_ideas
+	defensive_ideas
+	administrative_ideas
+	humanist_ideas
+	quantity_ideas
+	influence_ideas
+	offensive_ideas
+}
+
+historical_units = {
+	chinese_longspear
+	eastern_bow
+	chinese_footsoldier
+	chinese_steppe
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	manchu_banner
+	han_banner
+	asian_musketeer
+	chinese_dragoon
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+	reformed_manchu_rifle
+}
+
+monarch_names = {
+		"Zhanji #0" = 10
+		"Zhanjun #0" = 10
+		"Zhanyong #0" = 10
+		"Zhanyin #0" = 10
+		"Zhanshan #0" = 10
+		"Zhangang #0" = 10
+		"Zhan'ao #0" = 10
+		"Zhankai #0" = 10
+		"Zhanyan #0" = 10
+		"Jianrui #0" = 10
+		"Jianlin #0" = 10
+		"Jianti #0" = 10
+		"Jianchun #0" = 10
+		"Jianze #0" = 10
+		"Jianjun #0" = 10
+		"Jianzhi #0" = 10
+		"Jianpei #0" = 10
+		"Jianji #0" = 10
+		"Youji #0" = 10
+		"Youtang #0" = 10
+		"Youwan #0" = 10
+		"Youlun #0" = 10
+		"Youbing #0" = 10
+		"Youyun #0" = 10
+		"Youheng #0" = 10
+		"You'kai #0" = 10
+		"Houzhao #0" = 10
+		"Houwei #0" = 10
+		"Houxi #0" = 10
+		"Houcong #0" = 10
+		"Zaiji #0" = 10
+		"Zairui #0" = 10
+		"Zaihou #0" = 10
+		"Yiling #0" = 10
+		"Yijun #0" = 10
+		"Yiliu #0" = 10
+		"Changluo #0" = 10
+		"Changxu #0" = 10
+		"Changxun #0" = 10
+		"Changzhi #0" = 10
+		"Changhao #0" = 10
+		"Changrun #0" = 10
+		"Changyin #0" = 10
+		"Changbo #0" = 10
+		"Youxiao #0" = 10
+		"Youxue #0" = 10
+		"Youmo #0" = 10
+		"Youjian #0" = 10
+		"Youyi #0" = 10
+		"Youshan #0" = 10
+		"Ciran #0" = 10
+		"Ciyu #0" = 10
+		"Cijiong #0" = 10
+		"Cilang #0" = 10
+		"Ciheng #0" = 10
+		"Cizhao #0" = 10
+		"Cihuan #0" = 10
+		"Cican #0" = 10
+		"Shangbing #0" = 10
+		"Shanglie #0" = 10
+		"Shangyi #0" = 10
+		"Shanghong #0" = 10
+		"Zhijun #0" = 10
+		"Zhibao #0" = 10
+		"Gongxi #0" = 10
+		"Gongjian #0" = 10
+		"Gongtang #0" = 10
+		"Gongming #0" = 10
+		"Jixi #0" = 10
+		"Jiye #0" = 10
+		"Jihuang #0" = 10
+		"Jihuan #0" = 10
+		"Jixuan #0" = 10
+		"Meigui #0" = 10
+		"Meiyuan #0" = 10
+		"Zhongxuan #0" = 10
+		"Zhongduo #0" = 10
+		"Qiyuan #0" = 10
+		"Qiying #0" = 10
+		"Qirong #0" = 10
+		"Youdun #0" = 10
+		"Zishi #0" = 10
+		"Linmei #0" = 10
+		"Cijue #0" = 10
+		"Ciwei #0" = 10
+		"Cikai #0" = 10
+		"Youhua #0" = 10
+		"Linyuan #0" = 10
+		"Qisheng #0" = 10
+		"Biao #0" = 10
+		"Shuang #0" = 10
+		"Gang #0" = 10
+		"Su #0" = 10
+		"Zhen #0" = 10
+		"Bo #0" = 10
+		"Zi #0" = 10
+		"Chun #0" = 10
+		"Bo #0" = 10
+		"Gui #0" = 10
+		"Xuntan #0" = 10
+		"Xunquan #0" = 10
+		"Ying #0" = 10
+		"Zhanyan #0" = 10
+		"Zhi #0" = 10
+		"Quan #0" = 10
+		"Chenhao #0" = 10
+		"Bian #0" = 10
+		"Hui #0" = 10
+		"Song #0" = 10
+		"Mo #0" = 10
+		"Yin #0" = 10
+		"Jing #0" = 10
+		"Dong #0" = 10
+		"Nan #0" = 10
+		"Shouqian #0" = 10
+		"Xiongying #0" = 10
+		"Yuntong #0" = 10
+		"Yunjian #0" = 10
+		"Wengui #0" = 10
+		"Wenkui #0" = 10
+		"Gaoxu #0" = 10
+		"Gaosui #0" = 10
+		"Houyu #0" = 10
+		"ZhanYong #0" = 10
+		"Yousi #0" = 10
+		"Jianchun #0" = 10
+		"Jianshu #0" = 10
+		"Jianzhi #0" = 10
+		"Yourong #0" = 10
+		"Houjue #0" = 10
+		"Zailun #0" = 10
+		"Zaiji #0" = 10
+		"Changfang #0" = 10
+		"Changxu #0" = 10
+		"Changxun #0" = 10
+		"Changzhi #0" = 10
+		"Changrun #0" = 10
+		"Cilang #0" = 10
+		"Cihuan #0" = 10
+		"Guan #0" = 0
+		"Keqin #0" = 0
+		"Fu #0" = 0
+		"Dounan #0" = 0
+		"Chengzu #0" = 0
+		"Zixiang #0" = 0
+		"Bingyi #0" = 0
+		"Guan #0" = 0
+		"Zongren #0" = 0
+		"Yuan #0" = 0
+		"Fu #0" = 0
+		"Xingui #0" = 0
+		"Zonglian #0" = 0
+		"Ji #0" = 0
+		"Xiang #0" = 0
+		"Yu #0" = 0
+		"Quan #0" = 0
+		"Zhong #0" = 0
+		"Ji #0" = 0
+		"Xizheng #0" = 0
+		"Jian #0" = 0
+		"Shao'en #0" = 0
+		"Jiusi #0" = 0
+		"Song #0" = 0
+		"Chun #0" = 0
+		"Youxue #0" = 0
+		"Zugan #0" = 0
+		"Yingfang #0" = 0
+		"Kekuan #0" = 0
+		"Mo #0" = 0
+		"Juren #0" = 0
+		"Qing #0" = 0
+		"Qinshun #0" = 0
+		"Duan #0" = 0
+		"Zhencheng #0" = 0
+		"Bao #0" = 0
+		"Li #0" = 0
+		"Xiao #0" = 0
+		"Xian #0" = 0
+		"Tang #0" = 0
+		"Boyuan #0" = 0
+		"Chunyao #0" = 0
+		"Xianzhang #0" = 0
+		"Liang #0" = 0
+		"Ruoshui #0" = 0
+		"Shouyi #0" = 0
+		"De #0" = 0
+		"Ti #0" = 0
+		"Hongxian #0" = 0
+		"Shihuai #0" = 0
+		"Shixi #0" = 0
+		"Yizan #0" = 0
+		"Huali #0" = 0
+		"Zhide #0" = 0
+		"Yuanxi #0" = 0
+		"Xixue #0" = 0
+		"Weizhen #0" = 0
+		"Han #0" = 0
+		"Boheng #0" = 0
+		"Mian #0" = 0
+		"Zongyi #0" = 0
+		"Kai #0" = 0
+		"Meng #0" = 0
+		"Hong #0" = 0
+		"Du #0" = 0
+		"Danian #0" = 0
+		"Tai #0" = 0
+		"Minzheng #0" = 0
+		"Mengyang #0" = 0
+		"Jingming #0" = 0
+		"Zhenqing #0" = 0
+		"Gong #0" = 0
+		"Shanfu #0" = 0
+		"Shen #0" = 0
+		"Zhengming #0" = 0
+		"Zuo #0" = 0
+		"Weiqi #0" = 0
+		"Shenzhong #0" = 0
+		"Panlong #0" = 0
+		"Youguang #0" = 0
+		"Weizhen #0" = 0
+		"Shisheng #0" = 0
+		"Qichang #0" = 0
+		"Hongdao #0" = 0
+		"Nanying #0" = 0
+		"Shaozong #0" = 0
+		"Peng #0" = 0
+		"Wenshi #0" = 0
+		"Liangxiang #0" = 0
+		"Wannian #0" = 0
+		"Zongyan #0" = 0
+		"Tingkui #0" = 0
+		"Bangzuo #0" = 0
+		"Ruxiu #0" = 0
+		"Guochang #0" = 0
+		"Huanchun #0" = 0
+		"Xianming #0" = 0
+		"Shengdou #0" = 0
+		"Zhaochen #0" = 0
+		"Shimei #0" = 0
+		"Guoxi #0" = 0
+		"Shangzhen #0" = 0
+		"Daoxing #0" = 0
+		"Tingbiao #0" = 0
+		"Yunrang #0" = 0
+		"Wan #0" = 0
+		"Jin #0" = 0
+		"Ding #0" = 0
+		"Wuchang #0" = 0
+		"Chengzhang #0" = 0
+		"Jiefu #0" = 0
+		"Wenyong #0" = 0
+		"Shiming #0" = 0
+		"Chonghua #0" = 0
+		"Sanfeng #0" = 0
+		"Wanyan #0" = 0
+		"Dayong #0" = 0
+		"Zhongwen #0" = 0
+		"Kexue #0" = 0
+		"Yuanjie #0" = 0
+		"Rucai  #0" = 0
+		"Kexi  #0" = 0
+		"Zhongming  #0" = 0
+		"Jinxing  #0" = 0
+		"Yan  #0" = 0
+		"Yingxiang  #0" = 0
+		"Zongmin  #0" = 0
+		"Heying #0" = -1
+		"Chunmei #0" = -1
+		"Tianhui #0" = -1
+		"Kon #0" = -1
+		"Mao #0" = -1
+		"Yuying #0" = -1
+		"Yuantong #0" = -1
+		"Yanxiang #0" = -1
+		"Xiurong #0" = -1
+		"Shouying #0" = -1
+		"Fuyuan #0" = -1
+		"Luzhen #0" = -1
+		"Ruirong #0" = -1
+		"Suzhen #0" = -1
+		"Xiao'e #0" = -1
+		"Xiaoying #0" = -1
+		"Xiaoyuan #0" = -1
+		"Xiaoji #0" = -1
+		"Xiaolou #0" = -1
+}
+
+leader_names = {
+	Zhu Wu Geng Shang Zheng Zhao Li Shi Liu Guo Yang Wang Qian Ma Meng Gao 
+	Chen Sun Sima Cao Xiao Qi Zu Zhou Huang Bai Qiu Tang Lu	Xu Chang 
+	Feng Deng Hua Gu Fei Fu Hu Mei Xue Liao Jin Ye He Lan Du Fang Mao Hao 
+	Kong Jiao Si Pan Zuo Ding Bao Yan Tan Han Luo Xie Yuan Qin Ruan	Niu Zeng
+	Dong Lin Shen Ouyang Su Yu Ren Chai Xia Mo Dai Jiang Yue Jia Xiong Cui
+	"Ou'yang" "Huangfu" "Dongfang" "Linghu"
+}
+
+ship_names = {
+	Beiji Tianshu Sifu Gouchen Tianzhu Zhushi Tianqiang Xuange
+	Taizun Beidou Santai Tianji Wenchang Qizhenjiangjun Tenshe
+	Liaoning Beiluoshimen Yujing Hongshi 
+	Qinglong Baihu Zhuque Xuanwu Zhaowu Yong'an Nan'an Longhai Fu'an Fuding Jinchang
+	Qingyuan Xining Xingyi Wu'an Xianning Ruichang Xinghua
+	Zhaoyuan Xingping Yongji Xiaoyi Yongkang Rende Anding
+	Yanping 
+}

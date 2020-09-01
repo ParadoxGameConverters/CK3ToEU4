@@ -1,0 +1,42 @@
+lords_of_the_sky_ideas = {
+	start = {		
+		cavalry_cost = -0.2
+		movement_speed = 0.2
+	}
+	bonus = {
+		global_manpower_modifier = 0.25
+	}
+	trigger = {
+		tag = LOS
+		OR = {
+			religion = tengri_pagan
+			religion = tengri_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_shock_and_awe = {
+		leader_land_shock = 1
+		shock_damage = 0.15		
+	}
+	ZZZ_lords_of_the_caravan = {
+		caravan_power = 0.25
+	}
+	ZZZ_horse_lords = {
+		cavalry_power = 0.33
+		cav_to_inf_ratio = 0.5
+	}
+	ZZZ_the_sprawling_sky = {
+		governing_capacity = 500
+	}
+	ZZZ_or_else = {
+		unjustified_demands = -0.2
+	}
+	ZZZ_lords_abroad = {
+		merchants = 1
+	}
+	ZZZ_modern_cavalry = {
+		cavalry_fire = 2
+	}
+}

@@ -1,0 +1,115 @@
+#Province
+west_african_pagan_reformed_migration_into_ZZZ = {
+	local_development_cost = -0.15
+	local_missionary_strength = -0.02
+}
+ZZZ_baltic_pagan_migration_into_africa = {
+	local_defensiveness = 0.1
+	local_missionary_strength = -0.02
+}
+ZZZ_enhanced_poachers = {
+	trade_goods_size = -0.33
+	trade_value_modifier = -0.25
+	local_unrest = 5
+}
+ZZZ_enhanced_animal_boom = {
+	trade_goods_size = 0.33
+	trade_value_modifier = 0.25
+	local_unrest = -5
+}
+ZZZ_finnish_pagan_migration_into_africa = {
+	trade_goods_size = 0.33
+	trade_value_modifier = 0.25
+	local_missionary_strength = -0.02
+}
+ZZZ_slavic_pagan_migration_into_africa = {
+	local_manpower_modifier = 0.4
+	local_missionary_strength = -0.02
+}
+ZZZ_tengri_pagan_migration_into_africa = {
+	local_manpower_modifier = 0.1
+	local_missionary_strength = -0.02
+}
+ZZZ_zunist_pagan_migration_into_africa = {
+	local_hostile_attrition = 5
+	max_attrition = 5
+	local_hostile_movement_speed = -0.25
+	local_unrest = -5
+	local_missionary_strength = -0.02
+}
+ZZZ_enhanced_mighty_temple_being_built = {
+	local_development_cost = -0.05
+}
+#ZZZ_enhanced_mighty_temple is a Triggered Province Modifier
+ZZZ_hellenic_pagan_migration_into_africa = {
+	local_build_cost = -0.25
+	local_tax_modifier = 0.1
+	local_missionary_strength = -0.02
+}
+ZZZ_bon_pagan_migration_into_africa = {
+	local_production_efficiency = 0.1
+	local_unrest = -10
+	local_missionary_strength = -0.02
+}
+
+#Country
+ZZZ_defend_the_motherland_baltic_cult = {
+	land_morale = 0.1
+	recover_army_morale_speed = 0.1
+}
+ZZZ_enhanced_pet_lion = {
+	prestige = 1
+	legitimacy = 1
+}
+ZZZ_enhanced_good_horses = {
+	cavalry_cost = -0.1
+	cavalry_shock = 1
+}
+ZZZ_enhanced_poor_horses = {
+	cavalry_cost = 0.1
+	cavalry_power = -0.1
+}
+ZZZ_enhanced_white_stallion = {
+	monarch_military_power = 1
+	leader_land_shock = 1
+	leader_land_manuever = 1
+}
+ZZZ_tengri_pagan_migration_into_africa2 = {
+	movement_speed = 0.1
+	cavalry_flanking = 0.1
+}
+ZZZ_bad_omens = {
+	land_morale = -0.05
+	naval_morale = -0.05
+	global_unrest = 1
+}
+ZZZ_good_omens = {
+	land_morale = 0.05
+	naval_morale = 0.05
+	global_unrest = -1
+}
+ZZZ_great_omens = {
+	land_morale = 0.1
+	naval_morale = 0.1
+	global_unrest = -2
+}
+ZZZ_incredible_omens = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+	reserves_organisation = 0.25
+	naval_morale = 0.1
+	sailors_recovery_speed = 0.1
+	sunk_ship_morale_hit_recieved = -0.1
+	global_unrest = -2
+}
+ZZZ_spreading_of_reformed_pagan_rituals_title = {
+	global_missionary_strength = 0.02
+	religion = yes
+}
+
+###Replaced from vanilla
+spreading_norse_rituals = {
+	global_missionary_strength = 0.02 #0.01 normally
+	religion = yes
+}
+

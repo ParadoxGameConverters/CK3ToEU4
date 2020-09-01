@@ -1,0 +1,69 @@
+government = theocracy
+add_government_reform = monastic_order_reform
+mercantilism = 0.1
+primary_culture = outremer
+religion = catholic
+technology_group = western
+capital = 379 # Jerusalem
+fixed_capital = 379
+
+
+500.11.11 = {
+	monarch = {
+		name = "(Unknown)"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
+1118.1.1 = { monarch = { name = "Hughes de Payens" adm = 3 dip = 3 mil = 3
+leader = { name = "Hughes de Payens" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1136.1.1 = { monarch = { name = "Robert de Craon" adm = 3 dip = 3 mil = 3
+leader = { name = "Robert de Craon" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1147.1.1 = { monarch = { name = "Everard des Barres" adm = 3 dip = 3 mil = 3
+leader = { name = "Everard des Barres" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1151.1.1 = { monarch = { name = "Bernard de Tremelay" adm = 3 dip = 3 mil = 3
+leader = { name = "Bernard de Tremelay" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1153.1.1 = { monarch = { name = "André de Montbard" adm = 3 dip = 3 mil = 3
+leader = { name = "André de Montbard" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1156.1.1 = { monarch = { name = "Bertrand de Blanchefort" adm = 3 dip = 3 mil = 3
+leader = { name = "Bertrand de Blanchefort" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1169.1.1 = { monarch = { name = "Philip of Nablus" adm = 3 dip = 3 mil = 3
+leader = { name = "Philip of Nablus" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1171.1.1 = { monarch = { name = "Odo de St Amand" adm = 3 dip = 3 mil = 3
+leader = { name = "Odo de St Amand" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1179.1.1 = { monarch = { name = "(Interregnum)" adm = 3 dip = 3 mil = 3 regent = yes } }
+1181.1.1 = { monarch = { name = "Arnold of Torroja" adm = 3 dip = 3 mil = 3
+leader = { name = "Arnold de Torroja" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1184.1.1 = { monarch = { name = "(Interregnum)" adm = 3 dip = 3 mil = 3 regent = yes } }
+1185.1.1 = { monarch = { name = "Gerard de Ridefort" adm = 3 dip = 3 mil = 3
+leader = { name = "Gerard de Ridefort" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1189.1.1 = { monarch = { name = "(Interregnum)" adm = 3 dip = 3 mil = 3 regent = yes } }
+1191.1.1 = { monarch = { name = "Robert de Sablé" adm = 3 dip = 3 mil = 3
+leader = { name = "Robert de Sablé" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1193.1.1 = { monarch = { name = "Gilbert Erail" adm = 3 dip = 3 mil = 3
+leader = { name = "Gilbert Erail" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1201.1.1 = { monarch = { name = "Philippe de Plessis" adm = 3 dip = 3 mil = 3
+leader = { name = "Philippe de Plessis" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1209.1.1 = { monarch = { name = "Guillaume de Chartres" adm = 3 dip = 3 mil = 3
+leader = { name = "Guillaume de Chartres" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1218.1.1 = { monarch = { name = "Pedro de Montaigu" adm = 3 dip = 3 mil = 3
+leader = { name = "Pedro de Montaigu" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1232.1.1 = { monarch = { name = "Armand de Lavoie" adm = 3 dip = 3 mil = 3
+leader = { name = "Armand de Lavoie" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1244.1.1 = { monarch = { name = "Richard de Bures" adm = 3 dip = 3 mil = 3
+leader = { name = "Richard de Bures" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1247.1.1 = { monarch = { name = "Guillaume de Sonnac" adm = 3 dip = 3 mil = 3
+leader = { name = "Guillaume de Sonnac" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1250.1.1 = { monarch = { name = "Renaud de Vichiers" adm = 3 dip = 3 mil = 3
+leader = { name = "Renaud de Vichiers" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1256.1.1 = { monarch = { name = "Thomas Bérard" adm = 3 dip = 3 mil = 3
+leader = { name = "Thomas Bérard" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1273.1.1 = { monarch = { name = "Guillaume de Beaujeu" adm = 3 dip = 3 mil = 3
+leader = { name = "Guillaume de Beaujeu" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1291.1.1 = { monarch = { name = "Thibaud Gaudin" adm = 3 dip = 3 mil = 3
+leader = { name = "Thibaud Gaudin" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1292.1.1 = { monarch = { name = "Jacques de Molay" adm = 3 dip = 3 mil = 3
+leader = { name = "Jacques de Molay" type = general fire = 2 shock = 2 manuever = 2 siege = 2 } } }
+1314.1.1 = { monarch = { name = "(Interregnum)" adm = 3 dip = 3 mil = 3 regent = yes } }

@@ -1,0 +1,168 @@
+# Jomsvikings
+graphical_culture = westerngfx
+color = { 50 50 50 }
+
+
+
+
+leader_names = {
+
+	"Palnatoke" "Ale" "Alfr" "Alfgeir" "Anders" "Anlaufr" "Anundr" "Arnbjörn" "Arngrimr" "Arni" 
+	"Arnfast" "Asbjörn" "Bagge" "Baldr" "Barid" "Bengt" "Bersi" "Bertil" "Birger" "Björn" 
+	"Bo" "Borkvard" "Botulfr" "Bragi" "Buðli" "Dag" "Dan" "Dyre" "Eilif" "Egill" 
+	"Emund" "Einarr" "Eirikr" "Eskild" "Falki" "Faste" "Filip" "Fredrik" "Frirek" "Froði" 
+	"Freyr" "Folki" "Gandalfr" "Geirr" "Georg" "Gnupa" "Gorm" "Greger" "Grimr" "Guðfrið" 
+	"Guðmundr" "Guðröðr" "Gunnarr" "Hakon" "Halsten" "Haraldr" "Helgi" "Hemming" "Holmger" "Hrafn" 
+	"Hrolfr" "Hrane" "Hæsteinn" "Hjalmar" "Hroðgar" "Hroðulfr" "Hrörekr" "Hysing" "Inge" "Ingemar" 
+	"Ingjald" "Ivar" "Jedvard" "Jon" "Karl" "Kettil" "Kettilmund" "Kjartan" "Klas" "Knut" 
+	"Kol" "Kolbjörn" "Markus" "Mats" "Nils" "Niklas" "Oddr" "Ofeig" "Olafr" "Ormr" 
+	"Ottarr" "Refr" "Refil" "Ragnarr" "Rikulfr" "Rögnvaldr" "Skuli" "Snorri" "Sigbjörn" "Sigtrygg" 
+	"Sigurðr" "Starkaðr" "Steinn" "Sturla" "Styrbjörn" "Styrkar" "Suni" "Sveinn" "Sverker" "Sæmundr" 
+	"Sölvi" "Sörkver" "Tjudmund" "Toke" "Tolir" "Þorbjörn" "Þorfinn" "Þorbrandr" "Þordr" "Þorgil" 
+	"Þorsteinn" "Þorolfr" "Toste" "Totil" "Tryggve" "Tyke" "Ulfr" "Vagn" "Valdemar" "Åke" 
+	"Yngvar" "Örvar" "Öysteinn" }
+monarch_names = {
+	"Palnatoke #1" = 0
+	"Ale #0" = 0
+	"Alfr #0" = 0
+	"Alfgeir #0" = 0
+	"Anders #0" = 0
+	"Anlaufr #0" = 0
+	"Anundr #0" = 0
+	"Arnbjörn #0" = 0
+	"Arngrimr #0" = 0
+	"Arni #0" = 0
+	"Arnfast #0" = 0
+	"Asbjörn #0" = 0
+	"Bagge #0" = 0
+	"Baldr #0" = 0
+	"Barid #0" = 0
+	"Bengt #0" = 0
+	"Bersi #0" = 0
+	"Bertil #0" = 0
+	"Birger #0" = 0
+	"Björn #0" = 0
+	"Bo #0" = 0
+	"Borkvard #0" = 0
+	"Botulfr #0" = 0
+	"Bragi #0" = 0
+	"Buðli #0" = 0
+	"Dag #0" = 0
+	"Dan #0" = 0
+	"Dyre #0" = 0
+	"Eilif #0" = 0
+	"Egill #0" = 0
+	"Emund #0" = 0
+	"Einarr #0" = 0
+	"Eirikr #0" = 0
+	"Eskild #0" = 0
+	"Falki #0" = 0
+	"Faste #0" = 0
+	"Filip #0" = 0
+	"Fredrik #0" = 0
+	"Frirek #0" = 0
+	"Froði #0" = 0
+	"Freyr #0" = 0
+	"Folki #0" = 0
+	"Gandalfr #0" = 0
+	"Geirr #0" = 0
+	"Georg #0" = 0
+	"Gnupa #0" = 0
+	"Gorm #0" = 0
+	"Greger #0" = 0
+	"Grimr #0" = 0
+	"Guðfrið #0" = 0
+	"Guðmundr #0" = 0
+	"Guðröðr #0" = 0
+	"Gunnarr #0" = 0
+	"Hakon #0" = 0
+	"Halsten #0" = 0
+	"Haraldr #0" = 0
+	"Helgi #0" = 0
+	"Hemming #0" = 0
+	"Holmger #0" = 0
+	"Hrafn #0" = 0
+	"Hrolfr #0" = 0
+	"Hrane #0" = 0
+	"Hæsteinn #0" = 0
+	"Hjalmar #0" = 0
+	"Hroðgar #0" = 0
+	"Hroðulfr #0" = 0
+	"Hrörekr #0" = 0
+	"Hysing #0" = 0
+	"Inge #0" = 0
+	"Ingemar #0" = 0
+	"Ingjald #0" = 0
+	"Ivar #0" = 0
+	"Jedvard #0" = 0
+	"Jon #0" = 0
+	"Karl #0" = 0
+	"Kettil #0" = 0
+	"Kettilmund #0" = 0
+	"Kjartan #0" = 0
+	"Klas #0" = 0
+	"Knut #0" = 0
+	"Kol #0" = 0
+	"Kolbjörn #0" = 0
+	"Markus #0" = 0
+	"Mats #0" = 0
+	"Nils #0" = 0
+	"Niklas #0" = 0
+	"Oddr #0" = 0
+	"Ofeig #0" = 0
+	"Olafr #0" = 0
+	"Ormr #0" = 0
+	"Ottarr #0" = 0
+	"Refr #0" = 0
+	"Refil #0" = 0
+	"Ragnarr #0" = 0
+	"Rikulfr #0" = 0
+	"Rögnvaldr #0" = 0
+	"Skuli #0" = 0
+	"Snorri #0" = 0
+	"Sigbjörn #0" = 0
+	"Sigtrygg #0" = 0
+	"Sigurðr #0" = 0
+	"Starkaðr #0" = 0
+	"Steinn #0" = 0
+	"Sturla #0" = 0
+	"Styrbjörn #0" = 0
+	"Styrkar #0" = 0
+	"Suni #0" = 0
+	"Sveinn #0" = 0
+	"Sverker #0" = 0
+	"Sæmundr #0" = 0
+	"Sölvi #0" = 0
+	"Sörkver #0" = 0
+	"Tjudmund #0" = 0
+	"Toke #0" = 0
+	"Tolir #0" = 0
+	"Þorbjörn #0" = 0
+	"Þorfinn #0" = 0
+	"Þorbrandr #0" = 0
+	"Þordr #0" = 0
+	"Þorgil #0" = 0
+	"Þorsteinn #0" = 0
+	"Þorolfr #0" = 0
+	"Toste #0" = 0
+	"Totil #0" = 0
+	"Tryggve #0" = 0
+	"Tyke #0" = 0
+	"Ulfr #0" = 0
+	"Vagn #0" = 0
+	"Valdemar #0" = 0
+	"Åke #0" = 0
+	"Yngvar #0" = 0
+	"Örvar #0" = 0
+	"Öysteinn #0" = 0
+
+	"Gunhilda #0" = -1
+	"Aelfgifu #0" = -1
+	"Gyda #0" = -1
+	"Estrid #0" = -1
+	"Aud #0" = -1
+	"Asa #0" = -1
+	"Tyra #0" = -1
+	"Tove #0" = -1
+}
+

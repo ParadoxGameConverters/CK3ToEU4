@@ -1,0 +1,325 @@
+barbaro_germanic = {
+	graphical_culture = westerngfx
+
+	male_names = { Gunther Rolf }
+	
+	frankish = {
+		primary = FRA
+		male_names = { Abbo Aega Agobard Allowin Arnulf Asselin Berno Berthaire Bruno Cassyon Cheldric Childebrand Clodomir Clotaire Corbinian Dodo Ebroin Ebrulf Emme Evroult Faro Gerold Grifo Grimbald Hartmut Helinand Hildebold Hildeprand Humbert Imbert Jocelin Lambert Lanfranc Lebuin Letard Liudhard Liudolf Lul Mansuet Omer Reginar Reol Richomer Rothad Sergi Sicho Vedast Werinbert Willibrord Zwentibold }
+		dynasty_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
+	}
+	suebi = {
+		primary = POR
+		male_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
+		dynasty_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
+	}
+	old_lombard = {
+		primary = ITA
+		male_names = { Adaloald Agilulf Aistulf Alahis Alboin Ansprand Arioald Aripert Authari Cleph Cunincpert Desideri Garibald Godepert Grimuald Hildeprand Liutpert Liutprand Parctarit Perctarit Raginpert Ragnipert Ratchis Rodoald Rothari }
+		dynasty_names = { Albhi Aleard Amistada Balda Degan Gadoald Gairulf Gisulph Gotefred Gualenghi Haimon Haistulf Hardman Harjowalda Hauptwolf Nok Ragin Rambold Reginmund Ridbald Rudonis Sala Schirald Schiriwaite Sigebald Teudald Tierwysch Wala Walfrit Zazza }
+	}
+	visigothic = {
+		primary = CAS
+		male_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
+		dynasty_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
+	}
+	female_names = {
+		Adele Adelgunde Adelheid Adolfine Agatha Agnes Alexandra Alice Alina Aline Alma Alwina Alwine Amalia Amalie Amanda 
+		Amelie Andrea Angela Angelika Angelina Anika Anita Anja Anke Ann-Katrin Anna Anne Annegret Anneli Annelie Anneliese 
+		Annemarie Anni Annika Annina Anny Antje Antonia Astrid Augusta Auguste Barbara Bärbel Beate Beatrice Beatrix 
+		Bernadette Berta Bertha Bettina Bianca Bianka Birgit Brigitte Britta Brunhild Brünhild Brunhilde Brünhilde Cäcilia 
+		Cäcilie Caren Carina Carla Carmen Carolin Caroline Catarina Catharina Cathrin Catrin Cecilia Cecilie Celina Celine 
+		Charlotte Chiara Christa Christel Christiane Christina Christine Clara Claudia Constanze Cordula Corina Corinna 
+		Cornelia Dagmar Daniela Denise Desirée Désirée Diana Dietlind Dietlinde Dora Doris Dorothea Edda Edith Elena 
+		Eleonora Eleonore Elfriede Elisa Elisabeth Elise Elke Ella Ellen Elli Elly Elma Elsa Elsbeth Else Elvira Emelie 
+		Emely Emilia Emilie Emily Emma Emmeline Emmi Emmy Erdmute Erica Erika Erna Ester Esther Eugenie Eva Evelyn 
+		Fabienne Fanny Felicia Felicitas Felizia Felizitas Finja Finnja Fiona Flora Florentina Florentine Franziska Frauke 
+		Freya Frida Fridegunde Frieda Friedegund Friedegunde Friederike Gabriela Gabriele Genoveva Gerda Gerlind Gerlinde 
+		Gertraud Gertrud Gertrudis Gesine Gina Gisela Grete Gretel Grethe Gudrun Gunda Gundula Hanna Hannah Hanne Hannelore 
+		Hedwig Heide Heidemarie Heidi Heike Helena Helene Helga Helge Hella Helmina Helmine Henny Hermina Hermine Herta 
+		Hertha Hilda Hilde Hildegard Hulda Ida Ilse Ines Inga Inge Ingeborg Ingeburg Ingrid Irene Irina Iris Irma Irmela 
+		Irmelin Irmgard Isabel Isabell Isabella Isabelle Isolde Ivonne Jacqueline Jana Janina Janine Jaqueline Jasmin 
+		Jennifer Jessica Johanna Johanne Josefine Josephine Judith Jule Julia Juliane Jutta Kai Karen Karin Karina Karla 
+		Karolin Karoline Katarina Käte Katharina Käthe Kathrin Katja Katrin Kerstin Kim Kirsten Klara Konstanze Kristin 
+		Kristina Kunigunde Lara Larissa Laura Lea Lena Leni Leoni Leonie Leonore Liane Liesel Lieselotte Lili Lilli Lilly 
+		Lina Linda Lisa Liselotte Lore Lotte Louisa Louise Lucia Lucie Luisa Luise Lulu Luna Luzia Luzie Lydia Madeleine 
+		Madleen Madlen Madlene Magda Magdalena Magdalene Maike Maja Manuela Mareike Marga Margareta Margarete Margaretha 
+		Margarethe Margit Margot Margret Margrit Maria Marianne Marie Marie-Theres Marie-Therese Marina Marion Marleen 
+		Marlen Marlene Marlies Marlis Marta Martha Martina Mathilde Maya Mechthild Meike Melanie Melina Melissa 
+		Merle Meta Mia Michaela Michelle Minna Miriam Mirjam Mona Monica Monika Nadia Nadin Nadine Nadja Natali Natalie 
+		Natascha Nathalie Neele Nele Nicola Nicole Nina Noemi Nora Oda Olga Olivia Ottilie Patricia Patrizia Paula Paulina 
+		Pauline Petra Pia Rachel Rafaela Raffaela Rahel Ramona Raphaela Rebecca Rebekka Regina Renate Ricarda Rita Rolanda 
+		Ronja Rosa Rose Rosemarie Roswitha Ruth Sabina Sabine Sabrina Samantha Sandra Sara Sarah Saskia Selina Seraphina 
+		Seraphine Sibylle Sieglind Sieglinde Siglind Siglinde Sigrid Silke Silvia Simone Sina Sissi Sofia Sofie Sonja Sophia 
+		Sophie Stefanie Stella Stephanie Susanna Svenja Swenja Sybille Sylvia Tabea Tamara Tanja Tatjana Teresa Thekla 
+		Theres Theresa Therese Theresia Thirza Tina Tirza Traute Trude Ulrike Ursel Ursula Uta Ute Valentina Valerie Vanessa 
+		Vera Verena Verona Veronika Victoria Viktoria Walburg Walburga Waldtraud Waldtraut Walpurga Walpurgis Waltraud 
+		Waltraut Wanja Wibke Wiebke Wilhelmina Wilhelmine Wilma Xenia Yasmin Yvonne Zäzilia Zäzilie Zoe
+	}
+	dynasty_names = {
+		"von Oldenburg" "von Mecklenburg" "von Hohenzollern" "von Habsburg"
+		"von Zweibrücken" "von Wittelsbach" "von Holstein" "von Hesse-Kassel" "von Holstein-Gottorp"
+		"von Pfalz-Neumarkt" "von Braunschweig-Lüneburg" "von Hannover" "von Wettin"
+		# CKII
+		"von Rügen" "von Diepholz" "von Silesia-Glogau" "von Bibra" "von Bodeck" 
+		"Boeselager" "Jaworski" "Brauchitsch" "von Bülow" 
+		"von Calw" "von Cham" "von Steutzlingen" "von Wetterau" "von Julichgau" 
+		"von Helffenstein" "von Venis" "von Kyburg" "von Arbon" "von Urach" "von Cilli" "von Utlede" 
+		"von Katzenelnbogen" "von Altena" "von der Marck" "von Hessen" "von Arnsberg" "von Bucheck" 
+		"Walter" "Grelle" "von Dolen" "von Liebnitz" "von Virneberg"
+		"Rübsamen" "von Bardewik" "Vorrade" "Warendorp" "Lüneburg" "Wittenborg" "von Klingenberg" 
+		"von Parchim" "von Kärnten" "von Rügen" "von Neuenburg" "von Werle" "von Mecklemburg" 
+		"von Wittenberg" "von Brandenburg" "von Glogau" "von Rendsburg" "von Pommern" 
+		"von Slesvig" "von Plain" "von Formbach" "von Wasserburg" 
+		"von Lengenfeld" "von Eberstein" "von Heinsberg" "von Weimar"
+		"von Andechs" "von Sulzbach" "von Kleve" "von Versfleth" "von Wickerode" 
+		"von Winzenburg" "von Thüringen" "von Bogen" "von Meissen" "von Genf" 
+		"von Arstein" "von Veldenz" "von Landsberg" "von Franken" "von Babenberg" "von Berg" "von Hohenstauf" 
+		"von Saarbrucken" "von Puteledorg" "von Henneberg" "von Stade" "von Sommerchenberg" 
+		"von Kirchberg" "von Württemberg" "von Tübingen" "von Raabs" 
+		"von Heimbach" "von Nörvenich" "von Jülich" "von Metz" "von Limburg" 
+		"von Eppstein" "von Luxemburg" "von Hornes" "von Sachsen" 
+		"von Beilstein" "von Eppenstein" "von Lusatia" "Orlamunde"
+		"von Hohenstaufen" "von Otakar" "Weimar" "von Tirol"
+		"von Haldensleben" "von Schweinfurt" "von Stad" "von Rheinfelden" 
+		"von Ringelheim" "de Luxembourg" "Hainaut" "von Lenzburg" "Prochaska" 
+		"von Boulogne" "von Nordheim" "von Egisheim" "Asperger" "Hunfriding" 
+		"Witte" "von Hagen" "von Mölln" "Runese" Pleskow 
+		"von Supplingenburg" "von Plotzkau" "von Katlenburg" "von Goslar"
+		"von Wunstorf" "von Goltern" "von Wölpe" "von Nellenburg" "von Arnstein" "von Holte"
+		"von Wippra" "von der Mark" "von Diest" "von Rietberg" "von Löningen" "von Corvey" 
+		"von Steinfurt" "von Tecklenburg" "von Rüssel" "von Waldeck" "von Ravensberg" "von Weyhe" "von Hoya" 
+		"von Dachau" "von Bassenheim" "von Kerpen" "von Tunna" "von Salza" "von Malberg" "von Hohenlohe" 
+		"von Wüllersleben" "von Osterna" "von Sangershausen" "von Heldrungen" 
+		"von Orseln" "von Nauen" "Suerbeer" "von Lunen" 
+		"von Vechta" "Pernstein" "von Schwerin" "von Dorpat" "von Haseldorf" "von Vyshusen" "von Dolen" 
+		"von Friesack" "von Hildesheim" "von Lechsgmünd" "von Komburg" 
+		"von Stahleck" "von Ziegenhain" "von Dinslaken" "von Lambach" "von Pluyvoise" 
+		"von Scharfenberg" "von Leistenberg" "von Schwarzburg" "von Badewide" "von Wassel" 
+		"von Dassel" "von Greyerz" "von Grenchen" "von Abensberg" "von Grünberg" 
+		"von Lichtenberg" "von Hachberg" "von Wartenberg" "von Wolfach" "von Gudensberg"
+		"von Gerhausen" "von Signau" "von Groitzsch" "von Frickingen" "von Sigmaringen" "von Regensburg" 
+		"von Lurngau" "von Leibrechtskirchen" "von Meran" "von Treven" "Gross" "Gualch" "Beck"
+		"zu Schwaben" "von Attems" "von Schweipünt" "von Saffenberg" "von Nörvenich" "von Querfurt" 
+		"von Mansfeld" "von Kärnten" "von Eschenloch" "von Naumburg" "von Schrapelnau" 
+		"von Magdeburg" "von Hardegg" "von Arneburg" "von Seeburg" "von Veldenz" "von Schmidtburg" 
+		"von Bamberg" "von Kyrburg" "von Baumberg" "von Stolzenberg" "von Altenbaumberg" "von Tyrol" 
+		"von Ortenburg" "von Wangen" "von Frontenhausen" "von Andechs" "von Eurasburg" "von Geroldseck" 
+		"von Bocksberg" "von Vinstingen" "von Schoenecken" "von Daun" "von Leiningen" 
+		"von Hohenfels" "von Hunolstein" "von Blankenheim" "von Salm" "von Falkenstein" "von Sponheim" 
+		"von Brunshorn" "von Stein" "von Bikkenbach" "von Heinsberg" "van Valkenburg" "von Sayn" 
+		"von Veringen" "von Gruningen" "von Eselsberg" "von Muhlhausen" "von Pfirt" 
+		"von Lövenstein" "von Landau" "von Tschudi" "von Glarus" "von Chalôns" "von Ratzeburg" 
+		"von Schlawe" "von Schwelz" "von Liebschau" "von der Lippe" "von Schauenburg" "von Rostock" 
+		"von Gustrow" "von Rendsburg" "von Segeberg" "von Neuhaus" "von Friedenthal" "von Rosenberg" 
+		"von Waldenstein" "von Altenburg" "von Pernstein" "von Monheim" "von Urslingen" 
+		"von Assel" "von Osnabrück" "von Münster" "von Kleve" "von Jülich" 
+		"von Andernach" "von Göttingen"
+		"von Pfalz" "von Baden" "von Nordgau" "von Metz" "von Sundgau" "von Bern" 
+		"von Schwyz" "von Neuchatel" "von Aargau" "von Breisgau" "von Fürstenberg"
+		"von Württemberg" "von Franken" "von Thüringen" "von Weimar" "von Celle" 
+		"von Amsberg" "von Wolgast" "von Altmark" "von Anhalt" 
+		"von Plauen" "von Ansbach" "von Kempten" "von Arnim" "von Trent" 
+		"von Innsbruck" "von Lausitz" "von Stettin" 
+		"von Abensberg"  "von Berlichingen" "von Beetzen" 
+		"Sieghardinger" "von Walbeck"
+		#Prussian
+		"von Knorring" "von Creytzen" Sack "von Taube" "Wöhrmann"
+		#Rheinlaender
+		"von Keller" "von der Mark" "von Wittelsbach" "von Baden" "Rotberg"
+		#Hessian
+		"von Frankenstein" "von Taube" "von Uffeln" "von Hessen" "von Boyneburg"
+		#Hannoveran
+		"von Schack" "von Fabrice" "von Hardenberg" "von Welf" "von Schauenburg" "von Holstein-Gottorp" "Askanier" "von Oldenburg"
+	}
+}
+roman_group = {
+	graphical_culture = westerngfx
+	# For the sake of simplicity, all the names are shared throughout the whole group
+	roman = { primary = ROM }
+	hispanic = { primary = ROM }
+	aegyptian = { primary = ROM }
+	arabus = { primary = ROM }
+	carthaginian = { primary = ROM }
+	graecus = { primary = ROM }
+	gaulic = { primary = ROM }
+	hispanic = { primary = ROM }
+	theodisc = { primary = ROM }
+	pannonian = { primary = ROM }
+	wenedyk = { primary = ROM }
+	britannian = { primary = ROM }
+	hyperborean = { primary = ROM }
+		male_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
+		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
+		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
+		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
+		Flavius Fulvius Furius Gabinius Galerius Geganius Gellius Geminius Genucius Gratius
+		Herennius Hirtius Horatius Hortensius Hostilius Iulius Iunius Iuventius Laelius Lartius
+		Licinius Livius Lucilius Lucretius Manlius Marcius Marius Memmius Menenius Minicius
+		Minius Minucius Modius Mucius Naevius Nautius Numerius Numicius Octavius Ovidius
+		Papirius Petronius Pinarius Pompeius Pompilius Pontius Popillius Porcius Postumius
+		Quinctilius Quinctius Rubellius Rufius Rutilius Sallustius Salonius Salvius Scribonius
+		Seius Sempronius Sentius Sergius Sertorius Servilius Sextius Sicinius Suetonius Sulpicius
+		Tarpeius Tarquitius Terentius Titinius Titurius Tuccius Tullius Ulpius Valerius Vedius
+		Velleius Vergilius Verginius Vibius Villius Vipsanius Vitellius Vitruvius Volumnius }
+		dynasty_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
+		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
+		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
+		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
+		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
+		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
+		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
+		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
+		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
+		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
+		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
+		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
+		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
+		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
+		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
+		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
+		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
+		Volusus	}
+	female_names = { Acilia Aebutia Aelia Aemilia Albia Amatia Annaea Anneia Annia Antonia Arria
+		Artoria Asinia Atilia Atia Aurelia Autronia Caecilia Caedicia Caelia Calidia
+		Calpurnia Cassia Claudia Cloelia Cocceia Cominia Cornelia Coruncania Curiatia
+		Curia Curtia Decia Didia Domitia Duilia Durmia Equitia Fabia Fabricia Fannia
+		Flavia Fulvia Furia Gabinia Galeria Gegania Gellia Geminia Genucia Gratia
+		Herennia Hirtia Horatia Hortensia Hostilia Iulia Iunia Iuventia Laelia Lartia
+		Licinia Livia Lucilia Lucretia Manlia Marcia Maria Memmia Menenia Minicia
+		Minia Minucia Modia Mucia Naevia Nautia Numeria Numicia Octavia Ovidia
+		Papiria Petronia Pinaria Pompeia Pompilia Pontia Popillia Porcia Postumia
+		Quinctilia Quinctia Rubellia Rufia Rutilia Sallustia Salonia Salvia Scribonia
+		Seia Sempronia Sentia Sergia Sertoria Servilia Sextia Sicinia Suetonia Sulpicia
+		Tarpeia Tarquitia Terentia Titinia Tituria Tuccia Tullia Ulpia Valeria Vedia
+		Velleia Vergilia Verginia Vibia Villia Vipsania Vitellia Vitruvia Volumnia }
+	dynasty_names = { Aculeo Agricola Agrippa Ahala Ahenobarbus Albinus Albus Ambustus Annalis Aquila
+		Aquilinus Arvina Asellio Asina Atellus Avitus Balbus Barba Barbatus Bassus Bestia
+		Bibaculus Bibulus Blaesus Brocchus Brutus Bubulcus Bucco Bulbus Buteo Caecus Caepio
+		Caesar Calidus Calvinus Calvus Camillus Caninus Canus Capito Carbo Catilina Cato
+		Catulus Celer Celsus Cethegus Cicero Cicurinus Cilo Cincinnatus Cinna Cordus Cornicen
+		Cornutus Corvinus Corvus Cossus Costa Cotta Crassipes Crassus Crispinus Crispus Culleo
+		Curio Cursor Curvus Dentatus Denter Dento Dives Dolabella Dorsuo Drusus Figulus Fimbria
+		Flaccus Favus Florus Fronto Fullo Fusus Galeo Gemellus Glabrio Gracchus Gurges Habitus
+		Helva Imperiosus Iullus Labeo Lactuca Laenas Lanatus Laevinus Laterensis Lentulus Lepidus
+		Libo Licinus Longus Lucullus Lupus Lurco Macer Macula Malleolus Mamercus Marcellus Maro
+		Merenda Mergus Merula Messalla Metellus Murena Mus Musca Nasica Naso Natta Nepos Nero
+		Nerva Niger Novellus Ocella Pacilus Paetus Pansa Papus Paterculus Paullus Pavo Pera Pictor
+		Piso Plancus Plautus Poplicola Postumus Potitus Praeconinus Praetextatus Priscus Proculus
+		Publicola Pulcher Pullus Pulvillus Purpureo Quadratus Ralla Regillus Regulus Rufus Ruga Rullus
+		Rutilus Salinator Saturninus Scaeva Scaevola Scapula Scaurus Scipio Scrofa Seneca Severus
+		Silanus Silo Silus Stolo Strabo Structus Sulla Sura Taurus Triarius Trigeminus Trio Tubero
+		Tubertus Tubulus Tuditanus Tullus Turdus Varro Varus Vatia Verres Vespillo Vetus Vitulus
+		Volusus }
+}
+equine_group = {
+	graphical_culture = westerngfx
+	
+	equine = {
+		primary = TRL
+
+		male_names = {
+			Spot Star Spirit Blaze Lucky Chief Rain Stormy Duke Traveler "Clever Hans" Dreamer Midnight Twilight Arion Carlos Triumph
+		}
+		female_names = {
+			Star Misty Spirit Lucky Honey Lady Rain Stormy Annie Willow Dreamer Midnight Twilight Buttermilk Silhouette "Lady Wonder" Rainbow Epona Denise Charisma
+		}
+		dynasty_names = {
+			Glitterhoof Sparklemane Moontail Opaleye Silvercoat Goldmuzzle 
+		}
+	}
+}
+cat_group = {
+	cat = {
+		primary = TRL
+		male_names = { Mittens Fluffy Tom Smudge Shado
+		}
+		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
+		}
+	}
+}
+bear_group = {
+	bear = {
+		primary = TRL
+		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams
+		}
+		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
+		}
+	}
+}
+hedgehog_group = {
+	hedgehog_culture = {
+		primary = TRL
+		male_names = { Hughues Echinus Erinus Kidnae Micro Mesyo Aurion Sclaterion Rix Spike Pokey Quillem Quilliam Quillington Sanic Knucklys Silver Lancelot Galahad Cyrus Pincushion Hedgehog
+			Grumpy Crisp Pinecone Sam Wiggles Stig Xerxes "Mr. Tiggy-Winkle" Nails Thorn Ringo Groogy Punk Hedgepig August Blaine Saul Sonic
+		}
+		dynasty_names = { "Solisorex" "Eulipotyphla" "Talpidae" "Teja" "Scutisorex" "Crocidura" "Solisorex" "Surdisorex" "Teja" "Neohylomys" "Sylvisorex" "Atelerix" "Congosorex" "Neohylomys" "Hylomys" "Teja" "Paraechinus" "Mesechinus" "Surdisorex" "Scutisorex" "Teja" "Neohylomys" "Paraechinus" "Ruwenzorisorex" "Neohylomys" "Deinogalerix" "Chimarrogale" "Eulipotyphla" "Pholidocercus" "Crocidura" "Quill" "Neotetracus" "Echinosorex" "Solisorex" "Silvacola" "Podogymnura" "Erinaceus" "Diplomesodon" "Echinosorex" "Hylomys" "Hylomys" "Neotetracus" "Erinaceinae" "Surdisorex" "Scutisorex" "Prickles" "Hylomys" "Echinosorex" "Hylomys" "Crocidura" "Mesechinus" "Floof" "Floof" "Echinosorex" "Crocidura" "Silvacola" "Soricidae" "Myosorex" "Echinosorex" "Thorn" "Pholidocercus" "Prickles" "Teja" "Flesberg" "Königsberg" "Ragnit" "Königsberg" "Bahaduran"
+		}
+	}
+}
+duck_group = {
+	duck_culture = {
+		primary = TRL
+		male_names = { Daffy Quacker Huck Waddles Donald Dominic Whitewing Duckus Quackmire Eggbert Howard Scrooge Winghelm Ludwing Gladstone Cake Blunder Duck Quackers Pippi Face Grape Anaheim
+			Quackel Beaky Nottington Drake Mallard Hans Scrooge Darkwing Huey Dewey Louie Bolivar Mårten Maarten Cornelius Havbard Knase Kalle Arne Dylan Emelio Greg Paul
+		}
+		dynasty_names = { "Callduck" "Tachyeres" "Dununge" "Netta" "Chenonetta" "Anka" "Asarcornis" "Runner" "Quackel" "Lophonetta" "Amazonetta" "Mallard" "Netta" "Dununge" "Mallard" "Biziura" "Cakeduck" "Runner" "Dununge" "McDuck" "Pteronetta" "Duckling" "Anka" "Callduck" "Biziura" "Dunstanetta" "Flapper" "Duckling" "Duckling" "Neochen" "Callduck" "Dunstanetta" "Asarcornis" "Chenonetta" "Alopochen" "Malta" "Biziura" "Anka" "Duckling" "Biziura" "Callduck" "Malta" "Cakeduck" "Biziura" "Asarcornis" "Mallard" "Malta" "Neochen" "Neochen" "Asarcornis" "Flapper" "Runner" "Duckling" "Flapper" "Mallard" "Aix" "Tachyeres"
+		}
+	}
+}
+dog_group = {
+	dog_culture = {
+		primary = TRL
+		male_names = { Fido Alfonso Basil Albert Alistair Elmer Gilbert Alwin Brantley Kendrik Psyche Pluck Buckler Spigot Lance Lurcher Watch Keeper Brigade Fencer Butcher Blazer Prowess Craftsman
+			Forester Counsellor Spoiler Hurry Fury Growler Riot Bloomer Rome Blossom Hebe Hilary Jolity Gazer Eyebright Much Force Trooper Bustle Bubbler Rockdove Stubborn Yelp Pele-mele
+			Strongboy Sky Sunbeam Bodkin Wistful Gnome Tracks Dash Blake Buddy Goofy Pluto Killer Max Bonzo Zico Santi Cotte Ruff Trigger Mini Toby Doglas Good Bad Cujo Louis "Mr Wuffles"
+			Inky Saurr Bubbles Dog Doggo Shadow Spot Babe Spotington Wesley Rex Pluto Timmi Ed Benjamin Sapphire Homer Grif Ghost Greywind Summer Shaggydog Scooby Droopy Dogge Henry Casey
+			Sam Maxx Kelvin Rozz Ajax Zorro Clifford Dali Milton Watson Laddie Amundsen Hercules Hackenschmidt Samson Sammy Skipper Caruso Sub Ulysses Spotty Bosun Slobbers Splitlip Swanker
+			Chirgwin Steamer Wuffler
+		}
+		dynasty_names = { "Labrador" "Maltipoo" "Coonhound" "Pawser" "Woofington" "Setter" "Setter" "Maltipoo" "Goldenboi" "Pinscher" "Setter" "Puppy" "Boxer" "Maltipoo" "Canaan" "Houndyr" "Woofer" "Yeller" "Barbet" "Barbet" "Setter" "Pollicle" "Blepper" "Corso" "McDogface" "Girl" "Boxer" "Labradoodle" "Puppy" "Pawser" "Woofington" "von Sploot" "McDogface" "Sheperd" "Bork" "Houndyr" "Pawser" "Terrier" "Goodboye" "Eekimo" "Girl" "Dog" "Labradoodle" "Affenpinecher" "Goodboye" "Boxer" "Bracco" "Dane" "Bluetick" "Woofer" "Corso" "Labrador" "Puppy" "Zittau" "Bithor"
+		}
+	}
+}
+elephant_group = {
+	elephant_culture = {
+		primary = TRL
+		male_names = { Doot Trumpo Snoot Pyyrhus Kandula Jumbo Elephant Setu Dhriti Bhaanu Bhadra Zain Barbar Pompadour Booper Dombo Abul Abbas Hanno Zaeem Hannibal Baal Hasdrubal Babur
+			Batyr Pollux Castor Mr-Tusk Gaj Brant Kamboj Hastin Gajendra Airawat Tej Toti Yathra Ghaazi Chotu Baahi Bakhsh Behru Zaki Cornelius Surus
+		}
+		dynasty_names = { "Rumbler" "Rashtrakuta" "Shahi" "Habbari" "Ivory" "Mlechchha" "Rumbler" "Doot" "Tusk" "Pala" "Doot" "Pallava" "Rumbler" "Pallava" "Habbari" "Ivory" "Habbari" "Haathee" "Pala" "Tusk" "Lambakanna" "Shahi" "Shahi" "Ivory" "Habbari" "Ivory" "Doot" "Mlechchha" "Doot" "Mlechchha" "Pala" "Pala" "Shahi" "Shahi" "Rashtrakuta" "Doot" "Rumbler" "Doot" "Lambakanna" "Habbari" "Mlechchha" "Pallava" "Tusk" "Shahi" "Ivory" "Ivory" "Rashtrakuta" "Lambakanna" "Tusk" "Mlechchha" "Rumbler" "Pala" "Pallava" "Tusk" "Lambakanna" "Doot" "Habbari" "Mlechchha" "Lambakanna" "Rashtrakuta" "Lambakanna" "Doot" "Rumbler" "Ivory" "Shahi" "Shahi" "Tusk" "Pallava" "Tusk" "Tusk" "Ivory" "Lambakanna" "Mlechchha" "Haathee" "Tusk" "Pallava" "Tusk" "Lambakanna" "Rumbler" "Tumshuk" "Yezheguan"
+		}
+	}
+}
+dragon_group = {
+	dragon_culture = {
+		primary = TRL
+		male_names = { Fafnir Midgard Apopis Ladon Colchidei Piton Vouivre Drac Gorynych Bantu Mannu Khozen Morzas Xemcel Medeus Morva Nils Bahamut Leviathan Ryujin Zilant Typhos Puff Nyx
+			Teethless Smokey Deathwing Quicksilver "Grey Ghost" Seasmoke Pyre Scorch Dragon Wyrm Lindwurm Dovah Vlad Rattleskin Ash Benedict Rakshasha Draco Dracul
+			Drago Fafner Errol Glaedr Glaurung Icefyre Falkor Nagini Rathalos Piff Fred Voidaltarah Ddraig Drdrake Morttalis Barney
+		}
+		dynasty_names = { "Kytrapan" "Vorcasymath" "Kytrapan" "Carrafyrt" "Noighyd" "of the Fires" "Grautarrein" "Grautarrein" "of the Sun" "of the Skies" "of the Moon" "Grautarrein" "of the Skies" "Rainbowscale" "Carrafyrt" "of the Moon" "of the Waters" "Noighyd" "Mc’scale" "Colichir" "Eorikamat" "Colichir" "Grautarrein" "Vorcasymath" "Rackart" "of the Skies" "Vorcasymath" "Vilisynther" "of the Moon" "Kosorrat" "of the Waters" "of the Waters" "Seserriff" "Noighyd" "of the Moon" "of the Fires" "Vilisynther" "Gemhide" "of the Waters" "Vilisynther" "Goldscale" "Mc’scale" "Colichir" "Kerokarvar" "Kerokarvar" "Dragaret" "Kerokarvar" "Kytrapan" "Rainbowscale" "Grautarrein" "of the Moon" "Vorcasymath" "of the Skies" "Grautarrein" "of the Moon" "Colichir" "Kerokarvar" "Eorikamat" "of the Earths" "Colichir" "Noighyd" "of the Earths" "of the Fires" "Mc’scale" "Dragaret" "Draokoran" "Vilisynther" "of the Stars" "Vorcasymath" "of the Fires" "Mc’scale" "Eorikamat" "Lipari" "Cefalú" "Mazara" "Caltabellotta" "Catania" "Latakiah" "Rabat"
+		}
+	}
+}
+red_panda_group = {
+	red_panda = {
+		primary = TRL
+		male_names = {
+			Pandolf Pandulf Shifu Panda Basil Spark Ning Benjamin Sawyer Ceba Pabu Ponga Bamboo Kaala Puffball Oolong
+			Chai Semper Vira Song Masala Ila Zeya Carson Harold Stellar Lhotse Wasabi Sabi Khusi Sundar Manasa Bo Mohini
+			Kevyn Phoenix Avi Katar Berry Barrie Pumori Ambrus Albert Feng Chonk Jackie Nutmeg Sabal Peyton Eli Red Babu
+			Kilian Grongo
+		}
+		female_names = {
+			Josefin Pandolfina Shifu Panda Susana Liling Betsy Scarlett Ceba Pabu Ponga Bamboo Kaala Puffball Oolong
+			Chai Semper Vira Song Sonya Miko Nava Cini Masala Panna Piya Satya Sonika Ila Zeya Yukiko Hazel Maude Jaya
+			Wasabi Sabi Khusi Sundar Manasa Leafa Phoenix Beatrix Ruth Avi Katar Berry Simone Chota Mali Aurora Eriel
+			Chonk Mambo Nutmeg Sabal
+			
+		}
+		dynasty_names = { "Experience" }
+	}
+}
+
+

@@ -1,0 +1,38 @@
+order_of_saint_addai_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		reinforce_cost_modifier = -0.5
+	}
+	bonus = {
+		free_mil_policy = 1
+	}
+	trigger = {
+		tag = ADD
+		religion_group = christian
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_christians_of_the_east = {
+		religious_unity = 0.33
+	}
+	ZZZ_kings_khans_emperors = {
+		diplomatic_reputation = 2
+	}
+	ZZZ_fight_until_the_end = {
+		land_morale = 0.2
+	}
+	ZZZ_underdog_nestorians = {
+		ae_impact = -0.15
+	}
+	ZZZ_all_for_the_struggle = {
+		war_taxes_cost_modifier = -0.75
+	}
+	ZZZ_ideas_of_nations = {
+		technology_cost = -0.1
+		auto_explore_adjacent_to_colony = yes
+	}
+	ZZZ_military_opportunities = {
+		possible_mil_policy = 1
+	}
+}

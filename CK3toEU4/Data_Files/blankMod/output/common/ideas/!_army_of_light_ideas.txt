@@ -1,0 +1,40 @@
+army_of_light_ideas = {
+	start = {
+		cav_to_inf_ratio = 0.25
+		missionaries = 1
+	}
+	bonus = {
+		artillery_power = 0.15
+	}
+	trigger = {
+		tag = AOL
+		religion = manichean
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_ride_of_the_light_brigade = {
+		cavalry_power = 0.25
+		cavalry_cost = -0.1
+	}
+	ZZZ_inquisition_of_light = {
+		global_missionary_strength = 0.025
+	}
+	ZZZ_light_tithe = {
+		global_tax_modifier = 0.2
+	}
+	ZZZ_light_always_shines = {
+		land_morale = 0.10
+		naval_morale = 0.10
+	}
+	ZZZ_message_of_light = {
+		improve_relation_modifier = 0.15
+	}
+	ZZZ_into_the_fold_of_light = {
+		global_autonomy = -0.1
+	}
+	ZZZ_into_the_light = {
+		leader_land_fire = 1
+		fire_damage_received = -0.15
+	}
+}

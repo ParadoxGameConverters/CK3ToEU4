@@ -1,0 +1,41 @@
+sons_of_kaleva_ideas = {
+	start = {
+		defensiveness = 0.2
+		leader_land_fire = 1
+	}
+	bonus = {
+		global_regiment_cost = -0.2
+	}
+	trigger = {
+		tag = SKL
+		OR = {
+			religion = finnish_pagan
+			religion = finnish_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_large_order = {
+		governing_capacity = 250
+		state_maintenance_modifier = -0.25
+	}
+	ZZZ_kalevan_trade = {
+		trade_steering = 0.2
+	}
+	ZZZ_cannon_hunters = {
+		backrow_artillery_damage = 0.2
+	}
+	ZZZ_convert_the_masses = {
+		missionaries = 1
+	}
+	ZZZ_vast_peoples = {
+		advisor_pool = 2
+	}
+	ZZZ_kalevan_expansion = {
+		colonists = 1
+	}
+	ZZZ_take_down_the_walls = {
+		artillery_bonus_vs_fort = 2
+	}
+}

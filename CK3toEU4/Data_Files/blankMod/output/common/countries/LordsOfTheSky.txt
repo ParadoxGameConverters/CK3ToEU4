@@ -1,0 +1,107 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 220 200 140 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	steppe_riders
+	steppe_lancers
+	steppe_mounted_raiders
+	steppe_cavalry
+	steppe_uhlans
+	steppe_raiders
+	steppe_footmen
+	steppe_musketeers
+	steppe_infantry
+	steppe_rifles
+	reformed_steppe_rifles
+}
+
+monarch_names = {
+	"Uzur #0" = 20
+	"Eldeçyuk #0" = 20
+	"Yeke #0" = 20
+	"Timur #0" = 25
+	"Arslan #0" = 20
+	"Zebulun #0" = 20
+	"Almish #0" = 20
+	"Gostun #0" = 20
+	"Kormesiy #0" = 20
+	"Zabergan #0" = 20
+	"Paväl #0" = 20
+	"Dizeng #0" = 20
+	"Iltughun #0" = 20
+	"Mukan #0" = 20
+	"Toñra #0" = 20
+	"Yamtar #0" = 20
+	"Çor #0" = 20
+	"Mänglik #0" = 20
+	
+	"Çilen #0" = -1
+	"Vahide #0" = -1
+	"Karacik #0" = -1
+	"Özgul #0" = -1
+	"Asli #0" = -1
+	"Irge #0" = -1
+	"Paykëlti #0" = -1
+	"Tähtani #0" = -1
+	"Shurkka #0" = -1
+	"Sibel #0" = -1
+	"Këlnissa #0" = -1
+	"Lyukha #0" = -1
+	"Özlem #0" = -1
+	"Esin #0" = -1
+	"Dilek #0" = -1
+	"Burtam #0" = -1
+	"Azgan #0" = -1
+	"Atlas #0" = -1
+	"Ancak #0" = -1
+	"Teçush #0" = -1
+	"Qaraqaz #0" = -1
+}
+
+leader_names = {
+	Çilbu Aepak Asalup Asep Atrak Bönek Bachman Begluk Blush Bonyak Borç Eldeçyuk Etrek Girgen Gzi Itlar 
+	Ituk Könçek Kobyak Kopti Kotyan Koza Kozel Kubasar Kuntuvdi Kutan Pulad Saru Sevenç Sirçan Sokal 
+	Sotan Sugr Törtogul Togli Tolun Tugor Uzluk Uzur
+	
+	Çelgil Aba Baitzas Balgor Batan Batas Bator Bayça Biçkili Bizel Boru Bula Giazis Ildey Ipa Ipaos 
+	Kabuksin Karaca Kaydum Kegen Konel Korkutan Kortan Kostas Kourkoutai Kuerçi Kugel Kure Sol Suru 
+	Tatus Teber Timur Tyrach Yavdi Yazi Yeke
+	
+	Alp Arslan Bagha Baghatur Bälgiçi Barjik Barsbek Bastu Bashtwa Bihor Böri Bugha Bulan Bulçan 
+	Busir Buzer Çat Çat'n Çorpan Ilik Iltäbär Itakh Kamaj Karadakh Kayghalagh Khatir Khuterkin Kibar Kisa 
+	Kundaçiq Kundaç Mänär Mänäs Mënümarót Ötemis Papaçyz Samsam Sartäç Simsam Täbär Tabghaç Tarkhan 
+	Tarmaç Tuzniq Vakrim Yabghu Yavantey Yençepi Yerneslu Yeçtirek Yilig Belet Ezra Hanukkah Hezekiah 
+	Isaac Manasseh Nisi Yavdi Zebulun
+	
+	Almish Alzek Anzi Apskhih Araslan Asparukh Balambar Bars Bataul Batbayan Batoya Irkhan Batir
+	Batulia Bayan Belkermak Bezmer Boyan Bulger Buzan Chepa Chinialush Dengizikh Dizeng Dometa Dristar 
+	Drong Dukum Ellak Elemag Ernakh Eskhakh Goleda Gostun Guar Hudbad Iani Irnek Isbul Islivan Isperikh 
+	Ispor Kälaç Kano Karan Karaton Kardam Kharaton Khinialon Khudbard Kordil Kormesiy Kormisosh Kotrag 
+	Krovat Krum Kuber Kubrat Kurt Kutrigur Kuvrat Labertam Magotin Malamir Mugel Odolgan Okhsi Okhsun 
+	Okors Omurtag Onegavon Organ Organa Ornag Oshi Ostro Pagan Pakhtiyar Paväl Praksa Rassate 
+	Rugila Sabin Sandil Sandilkh Sarkhan Sartäç Savin Sevar Shilki Sondoke Tähtaman Tarasiy Taridin Tatra 
+	Telec Telerig Tervel Timër Timëreç Timërpälat Tingiz Tiradin Tokhtaman Toktu Tsog Tsul Tuk Umor 
+	Uturgur Vakrim Venda Vetam Vinekh Yani Yavantey Yençepi Yerneslu Yeçtirek Zabergan Zenti Tukiy Aydar 
+	
+}
+
+ship_names = {
+	Bargut Buzav Kerait Naiman "Dörvn Öörd"
+	Khoshut Olo Dzungar Torgut Dorbot
+	Amdo "Altan Khan" Khoshot Olöts Güshi
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

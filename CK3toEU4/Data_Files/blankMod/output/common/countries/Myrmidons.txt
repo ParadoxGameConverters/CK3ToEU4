@@ -1,0 +1,304 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 224 125 8 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {	
+	"Myrmidon #1" = 2
+	"Achilles #1" = 2
+	
+	"Basileios #0" = 1
+	"Leon #0" = 1
+	"Bardas #0" = 1
+	"Marinos #0" = 1
+	"Konstantinos #0" = 1
+	"Augustus #0" = 1
+	"Tiberius #0" = 1
+	"Caligula #0" = 1
+	"Claudius #0" = 1
+	"Nero #0" = 1
+	"Galba #0" = 1
+	"Otho #0" = 1
+	"Vitellius #0" = 1
+	"Vespasian #0" = 1
+	"Titus #0" = 1
+	"Domitian #0" = 1
+	"Nerva #0" = 1
+	"Trajan #0" = 1
+	"Hadrian #0" = 1
+	"Antoninus #0" = 1
+	"Lucius #0" = 1
+	"Marcus #0" = 1
+	"Commodus #0" = 1
+	"Pertinax #0" = 1
+	"Julian #0" = 1
+	"Septimius #0" = 1
+	"Geta #0" = 1
+	"Caracalla #0" = 1
+	"Macrinus #0" = 1
+	"Heliogabalus #0" = 1
+	"Alexander #0" = 1
+	"Maximinus #0" = 1
+	"Gordian #0" = 1
+	"Pupienus #0" = 1
+	"Balbinus #0" = 1
+	"Philip #0" = 1
+	"Decius #0" = 1
+	"Trebonianus #0" = 1
+	"Aemilian #0" = 1
+	"Valerian #0" = 1
+	"Gallienus #0" = 1
+	"Quintillus #0" = 1
+	"Aurelian #0" = 1	
+	"Tacitus #0" = 1
+	"Florian #0" = 1
+	"Probus #0" = 1
+	"Carus #0" = 1
+	"Numerian #0" = 1
+	"Carinus #0" = 1
+	"Diocletian #0" = 1
+	"Constantius #0" = 1
+	"Galerius #0" = 1
+	"Licinius #0" = 1
+	"Constantine #0" = 1
+	"Constans #0" = 1
+	"Jovian #0" = 1
+	"Valentinian #0" = 1
+	"Valens #0" = 1
+	"Gratian #0" = 1
+	"Theodosius #0" = 1
+	"Arcadius #0" = 1
+	"Honorius #0" = 1
+	"Pulcheria #0" = -1
+	"Marcian #0" = 1
+	"Zenon #0" = 1
+	"Basiliskos #0" = 1
+	"Anastasios #0" = 1
+	"Ioustinos #0" = 1
+	"Ioustinianos #0" = 1
+	"Tiberios #0" = 1
+	"Maurikios #0" = 1
+	"Phokas #0" = 1
+	"Herakleios #0" = 1
+	"Herakleonas #0" = 1
+	"Konstas #0" = 1
+	"Leontios #0" = 1
+	"Philippikos #0" = 1
+	"Theodosios #0" = 1
+	"Artavasdos #0" = 1
+	"Eirene #0" = -1
+	"Nikephoros #0" = 1
+	"Stavrakios #0" = 1
+	"Michael #0" = 1
+	"Theophilos #0" = 1
+	"Adrianos #0" = 1
+	"Akakios #0" = 1
+	"Alexandros #0" = 1
+	"Alexios #0" = 1
+	"Anatolios #0" = 1
+	"Andreas #0" = 1
+	"Andronikos #0" = 1
+	"Anthemios #0" = 1
+	"Anthimos #0" = 1
+	"Antiochos #0" = 1
+	"Antonios #0" = 1
+	"Apollonios #0" = 1
+	"Arsenios #0" = 1
+	"Artemios #0" = 1
+	"Athanasios #0" = 1
+	"Bartholomaios #0" = 1
+	"Belisarios #0" = 1
+	"Boethios #0" = 1
+	"Bosporios #0" = 1
+	"Christophoros #0" = 1
+	"Chrysanthos #0" = 1
+	"Chrysogonos #0" = 1
+	"Damianos #0" = 1
+	"Daniel #0" = 1
+	"David #0" = 1
+	"Demetrios #0" = 1
+	"Diogenes #0" = 1
+	"Dionysios #0" = 1
+	"Dorotheos #0" = 1
+	"Eirenaios #0" = 1
+	"Eudoxios #0" = 1
+	"Eustratios #0" = 1
+	"Eugenios #0" = 1
+	"Euphemios #0" = 1
+	"Eusebios #0" = 1
+	"Eustathios #0" = 1
+	"Evangelos #0" = 1
+	"Gabriel #0" = 1
+	"Gennadios #0" = 1
+	"Georgios #0" = 1
+	"Gerasimos #0" = 1
+	"Germanos #0" = 1
+	"Gregoras #0" = 1
+	"Gregorios #0" = 1
+	"Hektorios #0" = 1
+	"Helias #0" = 1
+	"Hierotheos #0" = 1
+	"Himerios #0" = 1
+	"Hippolytos #0" = 1
+	"Hypatios #0" = 1
+	"Iakobos #0" = 1
+	"Ignatios #0" = 1
+	"Innokentios #0" = 1
+	"Ioannes #0" = 1
+	"Ioannikios #0" = 1
+	"Iordanes #0" = 1
+	"Ioseph #0" = 1
+	"Isaakios #0" = 1
+	"Isaias #0" = 1
+	"Isidoros #0" = 1
+	"Ioulianos #0" = 1
+	"Kaisarios #0" = 1
+	"Kallinikos #0" = 1
+	"Kallistos #0" = 1
+	"Komitas #0" = 1
+	"Konstantios #0" = 1
+	"Kosmas #0" = 1
+	"Kyriakos #0" = 1
+	"Kyrillos #0" = 1
+	"Kyros #0" = 1
+	"Laurentios #0" = 1
+	"Lazaros #0" = 1
+	"Loukas #0" = 1
+	"Makarios #0" = 1
+	"Manuel #0" = 1
+	"Markos #0" = 1
+	"Matthaios #0" = 1
+	"Maximos #0" = 1
+	"Megistos #0" = 1
+	"Meletios #0" = 1
+	"Methodios #0" = 1
+	"Narses #0" = 1
+	"Neophytos #0" = 1
+	"Niketas #0" = 1
+	"Nikodemos #0" = 1
+	"Nikolaos #0" = 1
+	"Niphon #0" = 1
+	"Orestes #0" = 1
+	"Pamphilios #0" = 1
+	"Pankratios #0" = 1
+	"Pantoleon #0" = 1
+	"Paschalis #0" = 1
+	"Pavlos #0" = 1
+	"Pelagios #0" = 1
+	"Petros #0" = 1
+	"Philaretos #0" = 1
+	"Philippos #0" = 1
+	"Philotheos #0" = 1
+	"Photios #0" = 1
+	"Polykarpos #0" = 1
+	"Porphyrios #0" = 1
+	"Prokopios #0" = 1
+	"Pyrros #0" = 1
+	"Raphail #0" = 1
+	"Romanos #0" = 1
+	"Sabas #0" = 1
+	"Samuel #0" = 1
+	"Serapion #0" = 1
+	"Sebastianos #0" = 1
+	"Sergios #0" = 1
+	"Stephanos #0" = 1
+	"Staurakios #0" = 1
+	"Symeon #0" = 1
+	"Symmachos #0" = 1
+	"Theocharistos #0" = 1
+	"Theodoros #0" = 1
+	"Theodotos #0" = 1
+	"Theodoulos #0" = 1
+	"Theoktistos #0" = 1
+	"Theophanes #0" = 1
+	"Theophylaktos #0" = 1
+	"Thomas #0" = 1
+	"Traianos #0" = 1
+	"Timotheos #0" = 1
+	"Tryphon #0" = 1
+	"Valerios #0" = 1
+	"Zacharias #0" = 1
+	"Zenobios #0" = 1
+	
+	"Eurymedousa #0" = -2
+	"Severina #0" = -1
+	"Anastasia #0" = -1	
+}
+
+leader_names = {
+	"Basileios" "Leon" "Bardas" "Marinos" "Anastasia" "Konstantinos" "Augustus" "Tiberius" "Caligula" "Claudius" 
+	"Nero" "Galba" "Otho" "Vitellius" "Vespasian" "Titus" "Domitian" "Nerva" "Trajan" "Hadrian" 
+	"Antoninus" "Lucius" "Marcus" "Commodus" "Pertinax" "Julian" "Septimius" "Geta" "Caracalla" "Macrinus" 
+	"Heliogabalus" "Alexander" "Maximinus" "Gordian" "Pupienus" "Balbinus" "Philip" "Decius" "Trebonianus" "Aemilian" 
+	"Valerian" "Gallienus" "Quintillus" "Aurelian" "Severina" "Tacitus" "Florian" "Probus" "Carus" "Numerian" 
+	"Carinus" "Diocletian" "Constantius" "Galerius" "Licinius" "Constantine" "Constans" "Jovian" "Valentinian" "Valens" 
+	"Gratian" "Theodosius" "Arcadius" "Honorius" "Pulcheria" "Marcian" "Zenon" "Basiliskos" "Anastasios" "Ioustinos" 
+	"Ioustinianos" "Tiberios" "Maurikios" "Phokas" "Herakleios" "Herakleonas" "Konstas" "Leontios" "Philippikos" "Theodosios" 
+	"Artavasdos" "Eirene" "Nikephoros" "Stavrakios" "Michael" "Theophilos" "Adrianos" "Akakios" "Alexandros" "Alexios" 
+	"Anatolios" "Andreas" "Andronikos" "Anthemios" "Anthimos" "Antiochos" "Antonios" "Apollonios" "Arsenios" "Artemios" 
+	"Athanasios" "Bartholomaios" "Belisarios" "Boethios" "Bosporios" "Christophoros" "Chrysanthos" "Chrysogonos" "Damianos" "Daniel" 
+	"David" "Demetrios" "Diogenes" "Dionysios" "Dorotheos" "Eirenaios" "Eudoxios" "Eustratios" "Eugenios" "Euphemios" 
+	"Eusebios" "Eustathios" "Evangelos" "Gabriel" "Gennadios" "Georgios" "Gerasimos" "Germanos" "Gregoras" "Gregorios" 
+	"Hektorios" "Helias" "Hierotheos" "Himerios" "Hippolytos" "Hypatios" "Iakobos" "Ignatios" "Innokentios" "Ioannes" 
+	"Ioannikios" "Iordanes" "Ioseph" "Isaakios" "Isaias" "Isidoros" "Ioulianos" "Kaisarios" "Kallinikos" "Kallistos" 
+	"Komitas" "Konstantios" "Kosmas" "Kyriakos" "Kyrillos" "Kyros" "Laurentios" "Lazaros" "Loukas" "Makarios" 
+	"Manuel" "Markos" "Matthaios" "Maximos" "Megistos" "Meletios" "Methodios" "Narses" "Neophytos" "Niketas" 
+	"Nikodemos" "Nikolaos" "Niphon" "Orestes" "Pamphilios" "Pankratios" "Pantoleon" "Paschalis" "Pavlos" "Pelagios" 
+	"Petros" "Philaretos" "Philippos" "Philotheos" "Photios" "Polykarpos" "Porphyrios" "Prokopios" "Pyrros" "Raphail" 
+	"Romanos" "Sabas" "Samuel" "Serapion" "Sebastianos" "Sergios" "Stephanos" "Staurakios" "Symeon" "Symmachos" 
+	"Theocharistos" "Theodoros" "Theodotos" "Theodoulos" "Theoktistos" "Theophanes" "Theophylaktos" "Thomas" "Traianos" "Timotheos" 
+	"Tryphon" "Valerios" "Zacharias" "Zenobios"
+}
+
+ship_names = {
+	Abundantia "Acca Larentia" Acis Aerecura Aequitas Aesculapius Aeternitas Aeon "Aius Locutius"
+	Alernus Angerona Angitia "Anna Perenna" Annona Antevorta Apollo Arimanius Aura Aurora Averruncus
+	Bacchus Bellona "Bona Dea" "Bonus Eventus" Bubona Caca Cacus Camenae Cardea Carmenta Carmentes
+	Carna Ceres Clementia Cloacina Concordia Consus Cupid Cura Cybele "Dea Dia" "Dea Tacita"
+	Decima Devera Diana "Diana Nemorensis" "Dius Fidius" Disciplina "Dis Pater" Egeria Empanda
+	Epona Falacer Fama Fascinus Fauna Faunus Faustitas Februus Febris Fecunditas Felicitas Ferentina
+	Feronia Fides Flora Fornax Fontus Fortuna Fulgora Furrina Genius Gratiae Hercules Hermaphroditus
+	Hilaritas Honos Hora Indiges Intercidona Inuus Invidia Isis Iris Janus Juno Jupiter Justitia
+	Juturna Juventas Lares Laverna Levana Letum Liber Libera Liberalitas Libertas Libitina Lua
+	Lucina Luna Lupercus Lympha "Mana Genita" Manes Mania Mantus Mars "Mater Matuta" Meditrina 
+	Mephitis Mellonia Mercury Minerva Mithras Molae Moneta Mors Morta Murcia "Mutunus Tutunus"
+	Naenia Nascio Necessitas Nemesis Neptune Nerio Neverita Nixi Nona Nox Opis Orcus Palatua
+	Pales Parcae Pax Penates Picumnus Picus Pietas Pilumnus Pluto Poena Pomona Porrima Portunes
+	Postverta Priapus Proserpina Providentia Pudicitia Querquetulanae Quirinus Quiritis Robigus
+	Roma Rumina Salacia Salus Sancus Saturn Securitas Silvanus "Sol Invictus" Somnus Soranus
+	Sors Spes Stata Mater Sterquilinus Suadela Summanus "Sulis Minerva" Tellurus Tempestas
+	"Terra Mater" Terminus Tiberinus Tibertus Tranquillitas Trivia Ubertas Unxia Uranus Vacuna
+	Vediovus Venilia Venti Venus Veritas Verminus Vertumnus Vesta "Vica Pota" Victoria Virbius
+	Virtus Volturnus Voluptas Vulcan
+}
+
+army_names = {
+	"Myrmidones of $PROVINCE$"
+}
+
+fleet_names = {
+	"Classis Alexandrina" "Classis Seleucena" "Classis Carpathia" "Classis Venetum" 
+	"Classis Constantinopolis" "Classis Roma" "Classis Adrianopolis" "Classis Atlanticum" 
+	"Classis Mediterraneus" "Classis Euxeinos Pontos"
+}

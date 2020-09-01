@@ -1,0 +1,133 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 255 130 0 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {	
+	"Pedro Fernández #0 de Castro" = 1
+	"Fernando Díaz #0 de Castro" = 1
+	"Sanch Fernández #0 de Lemus" = 1
+	"Gonzalo Rodríguez #0" = 1
+	"Suero Rodríguez #0" = 1
+	"Sancho Rodríguez #0" = 1
+	"Fernando González #0 de Marañón" = 1
+	"Pedro Arias #0" = 1
+	"García González #0 de Candamio" = 1
+	"Fernán Pérez #0" = 1
+	"Pedro Alfonso #0 de León" = 1
+	"Pedro González #0" = 1
+	"Rodrigo Íñiguez #0" = 1
+	"Paio Peres #0" = 1
+	"Gonzalo Ruiz #0" = 1
+	"Pedro Núñez #0" = 1
+	"Gonzalo Martel #0" = 1
+	"Pedro Fernández #1" = 1
+	"Juan Muñiz #0" = 1
+	"García Fernández #0" = 1
+	"Vasco Rodríguez #0 de Coronado" = 1
+	"Vasco López #0" = 1
+	"Alonso Meléndez #0 de Guzmán" = 1
+	"Fadrique Alfonso #0 de Castilla" = 1
+	"Garci Álvarez #0 de Toledo y Meneses" = 1
+	"Gonzalo Mejía #0 de Virués" = 1
+	"Fernando Osórez #0" = 1
+	"Pedro Fernández #2" = 1
+	"Rodrigo González #0" = 1
+	"Pedro Muñiz #0 de Godoy y Sandoval" = 1
+	"García Fernández #0 de Villagarcía" = 1
+	"Lorenzo #1" = 1
+	"Enrique #0 de Aragón" = 1
+	"Álvaro #0 de Luna" = 1
+	"Juan #2" = 1
+	"Enrique #4 de Castilla" = 1
+	"Beltrán #0 de la Cueva" = 1
+	"Alfonso #0 de Castilla" = 1
+	"Juan Pachecho #0" = 1
+	"Alonso #1 de Cárdenas" = 1
+	"Rodrigo Manrique #0 de Lara" = 1
+	"Alonso #2 de Cárdenas" = 1
+	"Reyes #0" = 1
+	"Charles #1" = 1
+	
+	"Ana #0" = -15
+	"María Teresa #0" = -10
+	"Isabel #0" = -10
+	"María #0" = -5
+	"Catalina #0" = -5
+	"Alejandra #0" = -5
+	"Candela #0" = -5
+	"Estrella #0" = -5
+}
+
+leader_names = {
+	"Don Garcia" "Fernando Icaza" "Martín Pérez de Siones" "Nuño Pérez de Quiñones"
+	"Martín Martínez" "Ruy Díaz de Yanguas" "Rodrigo Garcés" "Martín Fernández de Quintana"
+	"Gonzalo Yáñez de Novoa" "Martín Ruiz de Cevallos" "Gómez Manrique" "Fernando Ordóñez"
+	"Pedro Yáñez""Juan González" "Ruy Pérez de Leon" "Diego López de Santsoles"
+	"Garci López de Padilla" "Juan Núñez de Prado" "Diego Garcia de Padilla" 
+	"Martín López de Córdoba" "Pedro Muñiz de Godoy y Sandoval" "Pedro Álvarez de Pereira"
+	"Gonzalo Núñez de Guzmán" "Fernando de Padilla" "Alfonso" "Pedro Girón" "Rodrigo"
+	"García López de Padilla" "Juan Carlos" "Felipe"
+	
+	"Pedro Fernández de Castro" "Fernando Díaz de Castro" "Sanch Fernández de Lemus"
+	"Gonzalo Rodríguez" "Suero Rodríguez" "Sancho Rodríguez" "Fernando González de Marañón"
+	"Pedro Arias" "García González de Candamio" "Fernán Pérez" "Pedro Alfonso de León"
+	"Pedro González" "Rodrigo Íñiguez" "Paio Peres" "Gonzalo Ruiz" "Pedro Núñez" "Gonzalo Martel"
+	"Pedro Fernández" "Juan Muñiz" "García Fernández" "Vasco Rodríguez de Coronado"
+	"Vasco López" "Alonso Meléndez de Guzmán" "Fadrique Alfonso de Castilla" "Garci Álvarez de Toledo y Meneses"
+	"Gonzalo Mejía de Virués" "Fernando Osórez" "Pedro Fernández" "Rodrigo González"
+	"Pedro Muñiz de Godoy y Sandoval" "García Fernández de Villagarcía" "Lorenzo"
+	"Enrique de Aragón" "Álvaro de Luna" "Juan" "Enrique de Castilla" "Beltrán de la Cueva"
+	"Alfonso de Castilla" "Juan Pachecho" "Alonso de Cárdenas" "Rodrigo Manrique de Lara"
+	"Alonso de Cárdenas" "Reyes" "Charles"
+}
+
+ship_names = {
+	"The Holy Cross"
+	"The Grail"
+	"The Faithful"
+	"Hammer of God"
+	"True Believer"
+	"The Cleansing"
+	"Baldwin's Gate"
+	"The Rapture"
+	"God Will Know His Own"
+	Paladin
+	Purifier
+	Crusader
+	Guardian
+	Pilgrim
+	Absolution
+	Avenger
+	Vindicator
+	"The Scourge"
+}
+
+army_names = {
+	"Ejército de $PROVINCE$"
+}
+
+fleet_names = {
+	"Flota de $PROVINCE$"
+}

@@ -1,0 +1,2297 @@
+#
+# remember to add graphics for relevant ones when you add to this
+#
+# if a modifier is scaled, its multiplied with development in the province.
+
+
+#######################################
+# Feudalism.  
+# 
+# Most in the old world start with it.
+#######################################
+
+feudalism = {
+	penalty = 0.5
+	bonus = {
+		free_leader_pool = 1
+	}
+
+	trade_company_efficiency = 0.2
+
+	history = {
+		is_year = 1000
+		owner = {
+			NOT = {
+				government = tribal
+				government = native
+
+				technology_group = andean
+				technology_group = mesoamerican
+				technology_group = north_american
+				technology_group = south_american
+			}
+		}
+	}
+	
+	# no need for events, as its there from the start.
+	#can_start = {	is_year = 1000	}
+	#start_chance = 100
+	#on_start = institution_events.1
+
+	can_embrace = {
+		always = yes
+	}
+
+	embracement_speed = {
+		modifier = {
+			factor = 0.6
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = FRIENDLY_NEIGHBOR_OR_COAST_PROVINCE_HAS_EMBRACED
+				any_friendly_coast_border_province = {
+					feudalism = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						feudalism = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = NEIGHBOR_NOT_OWNED_IS_FEUDAL
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					feudalism = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			force_potential = yes	# Hide the this modifier when potential is false
+			potential = {
+				owner = { has_estate = estate_nobles }
+			}
+			custom_trigger_tooltip = {
+				tooltip = FEUDALISM_AND_NOBLES
+				any_neighbor_province = {
+					feudalism = 100
+				}
+				owner = {
+					has_estate = estate_nobles
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+					estate_territory = {
+						estate = estate_nobles
+						territory = 30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = PORT_OR_CAPITAL_IN_COLONY_FEUDAL
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = feudalism }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				owner = { is_colonial_nation = no }
+			}
+			custom_trigger_tooltip = {
+				tooltip = CAPITAL_IN_OLD_WORLD_FEUDAL
+			
+				is_capital = yes
+				NOT = { continent = north_america }
+				NOT = { continent = south_america }
+				NOT = { continent = new_world }
+				owner = {
+					NOT = { government = tribal }
+					NOT = { government = native }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = feudalism
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_feudalism_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = feudalism
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+#######################################
+# Renaissance
+# 
+# Flows from italy
+#######################################
+
+renaissance = {
+	penalty = 0.5
+
+	bonus = {
+		development_cost = -0.05
+		build_cost = -0.05
+	}
+
+	trade_company_efficiency = 0.4
+
+	historical_start_date = 1450.1.1
+	historical_start_province = 116 # Florence
+
+	history = {
+		is_year = 1450
+	}
+	
+	can_start = {
+		is_year = 1450
+		development = 21
+		is_state = yes
+		NOT = { province_id = 126 }
+		is_island = no
+		NOT = { region = moluccas_region }
+		NOT = { region = indonesia_region }
+	}
+	start_chance = 5		#in 100 for when a province can_start
+	
+	on_start = institution_events.2
+	
+	can_embrace = {
+		owner = { has_institution = feudalism }
+	}
+	
+	embracement_speed = {
+		modifier = {
+			scale = yes
+			factor = 0.6
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_renaissance
+				any_friendly_coast_border_province = {
+					renaissance = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						renaissance = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_renaissance
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					renaissance = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.05
+			scale = yes
+			development = 10
+			any_province = {
+				has_province_modifier = "birthplace_of_the_renaissance"
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 0.05
+			scale = yes
+			development = 20
+			any_province = {
+				has_province_modifier = "birthplace_of_the_renaissance"
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			is_year = 1500
+			development = 5
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			any_province = {
+				has_province_modifier = "birthplace_of_the_renaissance"
+				region = PREV
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_renaissance
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = renaissance }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = renaissance
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_renaissance_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = renaissance
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+
+#######################################
+# New World
+# 
+# Colonising is good.. mkay.-.
+#######################################
+new_world_i = {
+	penalty = 0.5
+
+	bonus = {
+		global_prov_trade_power_modifier = 0.10
+	}
+
+	trade_company_efficiency = 0.6
+
+	historical_start_date = 1500.1.1
+	historical_start_province = 224 #Sevilla
+
+	history = {
+		is_year = 1500
+	}
+	
+	can_start = {
+		is_year = 1500
+		OR = {
+			continent = europe
+			continent = asia
+			continent = africa
+			owner = {
+				technology_group = high_american
+			}
+		}
+		has_port = yes
+		is_island = no
+		is_state = yes
+		OR = {
+			province_has_center_of_trade_of_level = 1
+			development = 12
+			is_capital = yes
+		}
+		is_in_capital_area = yes
+		owner = { 
+			has_idea = quest_for_the_new_world
+			OR = {
+				num_of_trade_companies = 1
+				colony = 1
+			}
+			OR = {
+				north_america = { has_discovered = PREV }
+				south_america = { has_discovered = PREV }
+				new_world = { has_discovered = PREV }
+			}
+		}
+	}
+	start_chance = 5		#in 100 for when a province can_start
+	
+	
+	on_start = institution_events.3
+	
+	
+	can_embrace = {
+		always = yes
+	}
+	
+	embracement_speed = {
+	
+		modifier = {
+			factor = 1.2
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_colonialism
+				any_friendly_coast_border_province = {
+					new_world_i = 100
+				}
+			}
+			
+		}
+		
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				has_port = yes
+				NOT = {
+					any_friendly_coast_border_province = {
+						new_world_i = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_neighbor_port_province_new_world
+				has_port = yes
+				any_neighbor_province = {
+					new_world_i = 100
+				}
+			}
+		}
+		
+		#Port provinces in countries with colonial subjects
+		modifier = {
+			factor = 10
+			potential = {
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					capital_scope = {
+						NOT = { continent = north_america }
+						NOT = { continent = south_america }
+						NOT = { continent = new_world }
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_has_colonial_subject_in_new_world
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					colony = 1
+					any_subject_country = {
+						is_colonial_nation = yes
+						OR = {
+							capital_scope = { continent = north_america }
+							capital_scope = { continent = south_america }
+							capital_scope = { continent = new_world }
+						}
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_new_world_i
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = new_world_i }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = new_world_i
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_new_world_i_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = new_world_i
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+
+
+#######################################
+# Printing Press
+#######################################
+printing_press = {
+	penalty = 0.5
+
+	bonus = {
+		stability_cost_modifier = -0.05
+	}
+
+	trade_company_efficiency = 0.8
+
+	historical_start_date = 1550.1.1
+	historical_start_province = 1876 #Frankfurt
+
+	history = {
+		is_year = 1550
+	}
+	
+	can_start = {
+		is_year = 1550
+		is_in_capital_area = yes
+		is_island = no
+		is_state = yes
+		OR = {
+			development = 15
+			is_capital = yes
+			trade_goods = paper
+		}
+		owner = {
+			adm_tech = 12
+			NOT = {
+				government = tribal
+				government = native
+			}
+		}
+
+	}
+	start_chance = 5		#in 100 for when a province can_start	
+	
+	on_start = institution_events.4	
+	
+	can_embrace = {
+		always = yes
+	}
+	
+	embracement_speed = {
+	
+		modifier = {
+			factor = 0.6
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_printing_press
+				any_friendly_coast_border_province = {
+					printing_press = 100
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.2
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						printing_press = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_printing_press
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					printing_press = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			force_potential = yes	# Hide the this modifier when potential is false
+			potential = {
+				owner = { has_estate = estate_church }
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_printing_press_clergy
+				any_neighbor_province = {
+					printing_press = 100
+				}
+				owner = {
+					has_estate = estate_church
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 40
+					}
+					estate_territory = {
+						estate = estate_church
+						territory = 30
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			custom_trigger_tooltip = {
+				tooltip = tooltip_dip_tech15_capital
+				is_capital = yes
+				owner = {
+					dip_tech = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 0.05
+			scale = yes
+			development = 20
+			any_province = {
+				has_province_modifier = "birthplace_of_printing_press"
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_printing_press
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = printing_press }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			potential = {
+				owner = {
+					religion_group = christian
+				}
+			}
+			if = {
+				limit = { has_dlc = "Rule Britannia" }
+				custom_trigger_tooltip = {
+					tooltip = tooltip_owner_protestant
+					is_owned_by_trade_company = no
+					owner = {
+						OR = {
+							religion = protestant
+							religion = reformed
+							religion = anglican
+							religion = hussite
+							religion = cathar
+							religion = waldensian
+							religion = lollard
+						}
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = tooltip_owner_protestant
+					is_owned_by_trade_company = no
+					owner = {
+						OR = {
+							religion = protestant
+							religion = reformed
+							religion = anglican
+							religion = hussite
+							religion = cathar
+							religion = waldensian
+							religion = lollard
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			if = {
+				limit = {
+					has_dlc = "Rule Britannia"
+				}
+				custom_trigger_tooltip = {
+					tooltip = tooltip_province_protestant_RB
+					OR = {
+						religion = reformed
+						religion = protestant
+						religion = anglican
+						religion = hussite
+						religion = cathar
+						religion = waldensian
+						religion = lollard
+					}
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = tooltip_province_protestant
+					OR = {
+						religion = reformed
+						religion = protestant
+						religion = anglican
+						religion = hussite
+						religion = cathar
+						religion = waldensian
+						religion = lollard
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = printing_press
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_printing_press_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = printing_press
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+
+
+
+
+#######################################
+# Global Trade
+#######################################
+global_trade = {
+	penalty = 0.5
+
+	bonus = {
+		merchants = 1
+	}
+
+	trade_company_efficiency = 1.0
+
+	historical_start_date = 1600.1.1
+	historical_start_province = 97 #Holland
+
+	history = {
+		is_year = 1600
+	}
+	
+	can_start = {
+		is_year = 1600
+		is_island = no
+		highest_value_trade_node = yes
+		OR = {
+			province_has_center_of_trade_of_level = 3
+			province_has_center_of_trade_of_level = 2
+			is_capital = yes
+			AND = {
+				is_year = 1630 #fallback
+				province_has_center_of_trade_of_level = 1
+			}
+		}
+		owner = {
+			any_active_trade_node = {
+				is_strongest_trade_power = PREV
+				highest_value_trade_node = yes
+			}
+		}
+
+	}
+	start_chance = 25		#in 100 for when a province can_start
+	
+	
+	on_start = institution_events.5
+	
+	
+	can_embrace = {
+		always = yes
+	}
+
+	
+	embracement_speed = {
+	
+		modifier = {
+			factor = 0.4 #Not scaled
+			province_trade_power = 15
+		}
+		modifier = {
+			factor = 0.8 #Not Scaled
+			province_trade_power = 25
+		}
+		modifier = {
+			factor = 1.2 #Not Scaled
+			province_trade_power = 35
+		}
+		modifier = {
+			factor = 1.6 #Not Scaled
+			province_trade_power = 45
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				OR = {
+					province_has_center_of_trade_of_level = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_center_of_trade_spread
+				OR = {
+					province_has_center_of_trade_of_level = 3
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				OR = {
+					province_has_center_of_trade_of_level = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_center_of_trade_spread
+				OR = {
+					province_has_center_of_trade_of_level = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			force_potential = yes	# Hide the this modifier when potential is false
+			potential = {
+				owner = { has_estate = estate_burghers }
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_global_trade_burghers
+				any_neighbor_province = {
+					global_trade = 100
+				}
+				owner = {
+					has_estate = estate_burghers
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 40
+					}
+					estate_territory = {
+						estate = estate_burghers
+						territory = 30
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				has_port = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_neighbor_non_port_province_global_trade
+				has_port = no
+				any_neighbor_province = {
+					global_trade = 100
+					
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				has_port = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_neighbor_port_province_global_trade
+				has_port = yes
+				any_neighbor_province = {
+					global_trade = 100
+					
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_global_trade
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = global_trade }
+				}
+			}
+		}
+		
+		modifier = {
+			factor = 0.5
+			printing_press = 100
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = global_trade
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_global_trade_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = global_trade
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+
+#######################################
+# Manufactories
+#######################################
+manufactories = {
+	penalty = 0.5
+
+	bonus = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	trade_company_efficiency = 1.25
+
+	historical_start_date = 1650.1.1
+	historical_start_province = 183 #Paris
+
+	history = {
+		is_year = 1650
+	}
+	
+	can_start = {
+		is_year = 1650
+		is_in_capital_area = yes
+		is_island = no
+		is_state = yes
+		development = 20
+		printing_press = 100
+		global_trade = 100
+		OR = {
+			has_building = wharf
+			has_building = weapons
+			has_building = textile
+			has_building = plantations
+			has_building = tradecompany
+			has_building = mills
+		}
+	}
+	start_chance = 10		#in 100 for when a province can_start
+	
+	
+	on_start = institution_events.6
+	
+	
+	can_embrace = {
+		always = yes
+	}
+
+	
+	embracement_speed = {
+		modifier = {
+			factor = 0.35
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_manufactories
+				any_friendly_coast_border_province = {
+					manufactories = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.05
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						manufactories = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_manufactories
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					manufactories = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = naval_supplies
+					trade_goods = fish
+					trade_goods = salt
+				}
+			}
+			has_building = wharf
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+			}
+			has_building = weapons
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+			}
+			has_building = textile
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			has_building = plantations
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = fur
+					trade_goods = incense
+				}
+			}
+			has_building = tradecompany
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = wine
+				}
+			}
+			has_building = farm_estate
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = glass
+					trade_goods = chinaware
+				}
+			}
+			has_building = mills
+			any_province = {
+				is_institution_origin = manufactories
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = naval_supplies
+					trade_goods = fish
+					trade_goods = salt
+				}
+			}
+			has_building = wharf
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+			}
+			has_building = weapons
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+			}
+			has_building = textile
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			has_building = plantations
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = fur
+					trade_goods = incense
+				}
+			}
+			has_building = tradecompany
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = wine
+				}
+			}
+			has_building = farm_estate
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = glass
+					trade_goods = chinaware
+				}
+			}
+			has_building = mills
+			any_province = {
+				is_institution_origin = manufactories
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_manufactories
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = manufactories }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = manufactories
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_manufactories_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = manufactories
+				}
+			}
+		}
+
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+
+
+#######################################
+# Enlightenment
+#######################################
+enlightenment = {
+	penalty = 0.5
+
+	bonus = {
+		culture_conversion_cost = -0.25
+	}
+
+	trade_company_efficiency = 1.5
+
+	historical_start_date = 1700.1.1
+	historical_start_province = 236 #London
+
+	history = {
+		is_year = 1700
+	}
+	
+	can_start = {
+		is_year = 1700
+		is_in_capital_area = yes
+		is_island = no
+		is_state = yes
+		printing_press = 100
+		global_trade = 100
+		development = 30
+		OR = {
+			custom_trigger_tooltip = {
+				tooltip = tooltip_has_seat_in_parliament
+				has_seat_in_parliament = yes
+			}
+			has_building = university
+			AND = {
+				development = 35
+				owner = {
+					ADM = 5
+					MIL = 5
+					DIP = 5
+				}
+			}
+			
+		}
+	}
+	start_chance = 10		#in 100 for when a province can_start
+	
+	
+	on_start = institution_events.7
+	
+	
+	can_embrace = {
+		always = yes
+	}
+
+	
+	embracement_speed = {
+		modifier = {
+			factor = 0.1
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_enlightenment
+				any_friendly_coast_border_province = {
+					enlightenment = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				NOT = {
+					any_friendly_coast_border_province = {
+						enlightenment = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_enlightenment
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					enlightenment = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			
+			has_building = university
+			any_province = {
+				is_institution_origin = enlightenment
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 1
+			
+			has_building = university
+			any_province = {
+				is_institution_origin = enlightenment
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 5
+			potential = {
+				owner = {
+					has_parliament = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_has_seat_in_parliament
+				has_seat_in_parliament = yes
+			}
+			any_province = {
+				is_institution_origin = enlightenment
+				continent = PREV
+			}
+		}
+		modifier = {
+			factor = 0.5
+			potential = {
+				owner = {
+					has_parliament = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_has_seat_in_parliament
+				has_seat_in_parliament = yes
+			}
+			any_province = {
+				is_institution_origin = enlightenment
+				NOT = { continent = PREV }
+			}
+		}
+		modifier = {
+			factor = 1.5
+			custom_trigger_tooltip = {
+				tooltip = tooltip_philosopher_capital
+				is_capital = yes
+				owner = {
+					advisor = philosopher
+					dip_tech = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			custom_trigger_tooltip = {
+				tooltip = tooltip_scientist_capital
+				is_capital = yes
+				owner = {
+					advisor = natural_scientist
+					dip_tech = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			custom_trigger_tooltip = {
+				tooltip = tooltip_full_innovativeness
+				is_capital = yes
+				owner = {
+					full_idea_group = innovativeness_ideas
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_enlightenment
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = enlightenment }
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = enlightenment
+				}
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_enlightenment_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = enlightenment
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+#######################################
+# Industrialisation
+#######################################
+industrialization = {
+	penalty = 0.5
+	
+	trade_company_efficiency = 2.0
+
+	bonus = {
+		global_manpower_modifier = 0.25
+		global_tax_modifier = 0.15
+	}
+
+	historical_start_date = 1750.1.1
+	historical_start_province = 244 #Lancashire
+	
+	history = {
+		is_year = 1750
+	}
+	
+	can_start = {
+		is_year = 1750
+		is_in_capital_area = yes
+		is_island = no
+		is_state = yes
+		development = 30
+		manufactories = 100
+		enlightenment = 100
+		if = {
+			limit = {
+				has_dlc = "Rule Britannia"
+				NOT = { is_year = 1780 } #just in case no one develops their coal provinces
+			}
+			has_building = furnace
+			owner = {
+				OR = {
+					production_leader = {
+						trade_goods = iron
+					}
+					production_leader = {
+						trade_goods = cloth
+					}
+					production_leader = {
+						trade_goods = coal
+					}
+					num_of_trading_bonuses = 3
+					is_year = 1770 #fallback
+				}
+			}
+			OR = {
+				highest_value_trade_node = yes
+				is_year = 1760 #fallback
+			}
+		}
+		else = {
+			OR = {
+				has_building = weapons
+				has_building = textile
+			}
+			owner = {
+				OR = {
+					production_leader = {
+						trade_goods = iron
+					}
+					production_leader = {
+						trade_goods = cloth
+					}
+					num_of_trading_bonuses = 3
+					is_year = 1770 #fallback
+				}
+			}
+			OR = {
+				highest_value_trade_node = yes
+				is_year = 1760 #fallback
+			}
+		}
+	}
+	start_chance = 100		#in 100 for when a province can_start
+	
+	
+	on_start = institution_events.80
+	
+	
+	can_embrace = {
+		always = yes
+	}
+
+	
+	embracement_speed = {
+		#Split between RB and non-RB for these four as RB gives more possibilities for spread (so higher for non-RB to compensate
+		modifier = {
+			factor = 0.3
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+			}
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_industrialization
+				any_friendly_coast_border_province = {
+					industrialization = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.6
+			force_potential = yes
+			potential = {
+				NOT = { has_dlc = "Rule Britannia" }
+			}
+			scale = yes
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_friendly_coast_border_province_has_embraced_industrialization
+				any_friendly_coast_border_province = {
+					industrialization = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				NOT = {
+					any_friendly_coast_border_province = {
+						industrialization = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_industrialization
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					industrialization = 100
+				}
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			force_potential = yes
+			potential = {
+				NOT = { has_dlc = "Rule Britannia" }
+				NOT = {
+					any_friendly_coast_border_province = {
+						industrialization = 100
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_any_neighbor_has_embraced_industrialization
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+					industrialization = 100
+				}
+			}
+		}
+		#Rule Britannia specific
+		modifier = {
+			factor = 2
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				has_manufactory_trigger = yes
+				development = 20
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_inovativeness_10
+				owner = {
+					innovativeness = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				has_manufactory_trigger = yes
+				development = 20
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_inovativeness_15
+				owner = {
+					innovativeness = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				has_manufactory_trigger = yes
+				development = 20
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_inovativeness_25
+				owner = {
+					innovativeness = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				OR = {
+					trade_goods = coal
+					has_latent_trade_goods = coal
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_furnace_on_institution_continent
+				has_building = furnace
+			}
+		}
+		modifier = {
+			factor = 0.25
+			scale = yes
+			force_potential = yes
+			potential = {
+				has_dlc = "Rule Britannia"
+				OR = {
+					trade_goods = coal
+					has_latent_trade_goods = coal
+				}
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_furnace_not_on_institution_continent
+				has_building = furnace
+			}
+		}
+
+
+		#General Manufactories
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = naval_supplies
+					trade_goods = fish
+					trade_goods = salt
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_wharf_on_institution_continent_industrialization
+				has_building = wharf
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_weapons_on_institution_continent_industrialization
+				has_building = weapons
+			}
+		}
+		modifier = {
+			factor = 0.3
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_textile_on_institution_continent_industrialization
+				has_building = textile
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_plantations_on_institution_continent_industrialization
+				has_building = plantations
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = fur
+					trade_goods = incense
+				}
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_tradecompany_on_institution_continent_industrialization
+				has_building = tradecompany
+			}
+		}
+		modifier = {
+			factor = 0.2
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = wine
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_farm_estate_on_institution_continent_industrialization
+				has_building = farm_estate
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = glass
+					trade_goods = chinaware
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_mills_on_institution_continent_industrialization
+				has_building = mills
+				industrialization_origin = {
+					same_continent = PREV
+				}
+			}
+		}
+		modifier = {
+			factor = 0.08
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = naval_supplies
+					trade_goods = fish
+					trade_goods = salt
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_wharf_not_institution_continent_industrialization
+				has_building = wharf
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = copper
+					trade_goods = iron
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_weapons_not_institution_continent_industrialization
+				has_building = weapons
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = wool
+					trade_goods = cloth
+					trade_goods = silk
+					trade_goods = dyes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_textile_not_institution_continent_industrialization
+				has_building = textile
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.08
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = coffee
+					trade_goods = cotton
+					trade_goods = sugar
+					trade_goods = tobacco
+					trade_goods = tea
+					trade_goods = cocoa
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_plantations_not_institution_continent_industrialization
+				has_building = plantations
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+		}
+		modifier = {
+			factor = 0.08
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = ivory
+					trade_goods = slaves
+					trade_goods = spices
+					trade_goods = fur
+					trade_goods = incense
+				}
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_tradecompany_not_institution_continent_industrialization
+				has_building = tradecompany
+			}
+		}
+		modifier = {
+			factor = 0.1
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = grain
+					trade_goods = livestock
+					trade_goods = wine
+				}
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_farm_estate_not_institution_continent_industrialization
+				has_building = farm_estate
+			}
+		}
+		modifier = {
+			factor = 0.08
+			scale = yes
+			potential = {
+				OR = {
+					trade_goods = paper
+					trade_goods = gems
+					trade_goods = tropical_wood
+					trade_goods = glass
+					trade_goods = chinaware
+				}
+				industrialization_origin = {
+					NOT = { same_continent = PREV }
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_mills_not_institution_continent_industrialization
+				has_building = mills
+			}
+		}
+
+		#Trade variables
+		modifier = {
+			factor = 0.18
+			scale = yes
+			potential = {
+				any_trade_node_member_province = {
+					industrialization = 100
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_strongest_trade_power_in_node_with_industrialization
+				is_strongest_trade_power = owner
+			}
+		}
+		modifier = {
+			factor = 3
+			potential = {
+				province_trade_power = 15
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_15_trade_power_and_50_percent_of_income_from_trade
+				owner = { trade_income_percentage = 0.5 }
+				province_trade_power = 15
+			}
+		}
+		modifier = {
+			factor = 3
+			potential = {
+				continent = owner
+				has_port = yes
+				development = 20
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_port_and_owner_has_two_CNs
+				owner = {
+					calc_true_if = {
+						amount = 2
+						all_subject_country = {
+							is_colonial_nation = yes
+						}
+					}
+				}
+			}
+		}
+
+		#Stuff once someone has embraced it
+		modifier = {
+			factor = 0.75
+			scale = yes
+			potential = {
+				owner = {
+					is_colonial_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = tooltip_colonial_overlord_industrialization
+				OR = {
+					has_port = yes
+					is_capital = yes
+				}
+				owner = {
+					is_colonial_nation = yes
+					overlord = { has_institution = industrialization }
+				}
+			}
+		}
+		modifier = {
+			factor = 1
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = industrialization
+				}
+				continent = owner
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_industrialization_embraced
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = industrialization
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			scale = yes
+			potential = {
+				owner = {
+					has_institution = industrialization
+				}
+				NOT = { continent = owner }
+			}
+			
+			custom_trigger_tooltip = {
+				tooltip = tooltip_industrialization_embraced_other_continent
+				is_owned_by_trade_company = no
+				owner = {
+					has_institution = industrialization
+				}
+			}
+		}
+	}
+	
+	ai_will_do = { #Cost of embracing institution must be lower than this factor * last month's regular income, and higher if loans are needed. (Or it has a more than long term goal...)
+		factor = 24
+		
+		modifier = {
+			factor = 0.25
+			is_at_war = yes
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.1
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}

@@ -1,0 +1,130 @@
+﻿l_english:
+ ZZZ_enhanced_reform_norse_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_norse_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_baltic_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_baltic_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_finnish_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_finnish_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_tengri_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_tengri_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_slavic_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_slavic_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_zun_pagan_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_zun_pagan_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_bon_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_bon_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+ 
+ ZZZ_enhanced_reform_hellenic_title:0 "Reform [Root.Religion.GetName]"
+ ZZZ_enhanced_reform_hellenic_desc:0 "Reform the [Root.Religion.GetName] Faith into an organized religion. The reformed faith has no conversion malus and is not easier for other faiths to convert."
+  
+ ZZZ_enhanced_reform_african_title:0 "Adopt Religious Reforms"
+ ZZZ_enhanced_reform_african_desc:0 "We have been shown that sometimes the old ways are not always best. One can change with the times and still retain their heritage and personage. There are those who will not like it, but we must drag our shamans into the modern age and adopt those reforms that have worked so well for others."
+ 
+ ZZZ_spreading_of_reformed_pagan_rituals_title:0 "Spreading of $RELIGION$ Rituals"
+ ZZZ_spreading_of_reformed_pagan_rituals_desc:0 "Converting to the $RELIGION$ religion requires nothing, every person is able to direct their own religious rituals. As long as you conduct the proper rituals you are considered a true follower believer. Let us encourage more and more of our subjects to learn of our ways so that they can at least start to worship them."
+
+ ZZZ_remove_elective_challenge_title:0 "Challenge the Nobles"
+ ZZZ_remove_elective_challenge_desc:0 "For too long the nobles have held back our country with their ceaseless politicking. The time of elective monarchies ended centuries past and if we continue to do nothing, our neighbors will make our country a relic of the past as well!"
+ ZZZ_remove_elective_final_title:0 "Claim Victory Over the Nobles"
+ ZZZ_remove_elective_final_desc:0 "We have triumphed over the petty nobility who would have held our nation back from progress. Now we can guide the nation without having to worry about their meddling!"
+
+ institute_the_societas_jesu_FAP_title:0 "Institute the Societas Jesu"
+ institute_the_societas_jesu_FAP_desc:0 "His Holiness has approved a new missionary order called the Society of Jesus. However without royal support it will not thrive, shall we support the Jesuits? "
+ 
+ secularization_of_christian_theocracy_FAP_title:0 "Secularization"
+ secularization_of_christian_theocracy_FAP_desc:0 "[Root.Monarch.GetTitle] is a fine title but it is time we stood on our own legs and used the influence we have in this state to build something stronger. However pious our state may be we should seize these lands for our our own descendants rather than risk the appointment of an incompetent successor."
+  
+ statue_in_restraint_of_appeals_FAP_title:0 "Declare Statute in Restraint of Appeals"
+ statue_in_restraint_of_appeals_FAP_desc:0 "Officially demote the Pope and instead raise the king to be the final legal authority in all matters of religion."
+  
+ revoke_restraint_of_appeals_FAP_title:0 "Revoke Restraint of Appeals"
+ revoke_restraint_of_appeals_FAP_desc:0 "Revoke the law that was previously passed giving the king final, legal authority in all matters of religion and restore those rights to the Pope."
+  
+ move_capital_to_rome_FAP_title:0 "Move Capital to Rome"
+ move_capital_to_rome_FAP_desc:0 "The province and city of Rome has finally been returned to the Papal State. The time has come to restore the Holy See."
+  
+ join_the_counter_reformation_FAP_title:0 "Embrace the Counter-Reformation"
+ join_the_counter_reformation_FAP_desc:0 "His Holiness, the Pope, has called for a mighty effort to counter the Protestant movement. With the aid of the newly founded Jesuit order, we shall root out and purge these foul heresies. Apart from more - and more effective missionaries - Protestantism and the Reformed faith shall have a harder time spreading in our realm. (If we ever pick the national ideas '§YEcumenism§W' or '§YLiberté, égalité, fraternité§W' we will lose this bonus.)"
+  
+ secularization_of_protestant_theocracy_EXTRA_title:0 "Secularization"
+ secularization_of_protestant_theocracy_EXTRA_desc:0 "With the ties to Rome cut we no longer have a place in a bigger Christian hierarchy. Perhaps the faithful would be just as well served by a Monarch as they are by a [Root.Monarch.GetTitle]?"
+   
+ test_act_EXTRA_title:0 "Pass Test Act"
+ test_act_EXTRA_desc:0 "Exclude all non-members of the established church from holding any military or civil office, reserve that privilege for members that have received communion according to the proper rites of our national church."
+	
+ dissolution_of_the_monasteries_EXTRA_title:0 "Pass Dissolution of the Monasteries Act"
+ dissolution_of_the_monasteries_EXTRA_desc:0 "Increase the monarch's control and power by authorizing any ecclesiastical property with an annual income below a certain value to be confiscated."
+	
+ popery_act_EXTRA_title:0 "Pass Popery Act"
+ popery_act_EXTRA_desc:0 "Take measures to reduce Catholic influence by offering money to anyone willing to witness against a Catholic priest or bishop that has been apprehended performing religious services."
+	
+ trade_propagation_convert_to_islam_EXTRA_title:0 "Adopt Islam as the State Religion"
+ trade_propagation_convert_to_islam_EXTRA_desc:0 "Islam has increasingly grown to be the dominant religion both in government, among our subjects and our nobility. It is time we join the community of the faithful."
+  
+ restrict_government_offices_EXTRA_title:0 "Encourage Conversion to Judaism"
+ restrict_government_offices_EXTRA_desc:0 "Let us restrict all important offices in the administration of our central, local and military government to members of the true faith while also providing free education in the laws of the Talmud and the Shulkhan Arukh for all lower officials. This way we can encourage that there is both a will and a preparedness to convert."
+  
+ tengri_yellow_shamanism_EXTRA_title:0 "Yellow Shamanism"
+ tengri_yellow_shamanism_EXTRA_desc:0 "Since the days of the Great Khans many of our subjects are followers of Vajrayana Buddhism and while we lament that they have strayed from the pure faith of our nation it would be unwise to turn them away. Let us instead accentuate the syncretic elements of our faith and borrow from the Vajrayana rituals and include these Buddhists in our community."
+  
+ tengri_black_shamanism_EXTRA_title:0 "Black Shamanism"
+ tengri_black_shamanism_EXTRA_desc:0 "Buddhism is spreading among the practitioners of our ancestral faith at an alarming rate. While this faith was accepted by some of our ancestors it is now dangerously pushing back the true Tengriist faith and polluting the practices of our subjects with Buddhist tendencies. We must actively reject such notions and instead work to spread the true and pure practices of our ancestors among our people."
+  
+ tengri_expel_the_khojas_EXTRA_title:0 "Expel the Khojas"
+ tengri_expel_the_khojas_EXTRA_desc:0 "Over time the influence of the Khoja and his descendants has grown dangerously strong in our country. Now that they do not have the ear of our ruler we can forcibly expel them from our lands, avoiding future conflicts."
+  
+ zoroastrian_rites_of_admission_EXTRA_title:0 "Rites of Admission"
+ zoroastrian_rites_of_admission_EXTRA_desc:0 "Unlike some religions ours do not attempt to force itself upon unknowing children. A Zoroastrian initiation must be done by someone old enough to understand what it entails. Still much could be done to encourage those who do not see the value of our faith."
+  
+ zoroastrian_royal_fires_EXTRA_title:0 "Rekindling the Royal Fires"
+ zoroastrian_royal_fires_EXTRA_desc:0 "Of all the fire temples of our faith the legend of the three fires lit by Zoroaster himself are the most prestigious. They have, however, long been lost as our faith declined over the centuries and the locations of the old fires are now unknown. While a fire cannot be recreated we can attempt to find the site of these temples and start new fires to symbolize the rise of our Zoroastrian Empire."
+ 
+ zoroastrian_diaspora_EXTRA_title:0 "Zoroastrian Diaspora"
+ zoroastrian_diaspora_EXTRA_desc:0 "During the harsh years of oppression in Persia many left their ancestral homes to resettle abroad. The Qissa-i Sanjan tells us of those who took a long and arduous journey to settle in Gujarat and to lit new fires and start anew. Known for their industry these men and women have thrived in their new homeland. Our efforts to make Zoroastrianism the only majority religion within our borders will allow us to reunite with these foreign brothers and sisters."
+ 
+ animism_ritual_education_EXTRA_title:0 "Ritual Education"
+ animism_ritual_education_EXTRA_desc:0 "The belief that there is just one divine being in the world is a horrible myth that seems widespread wherever we go. We must endeavor to educate our poor subjects in the true nature of things, of how the world functions and of the many spirits that inhabit it."
+
+ shamanism_wondering_shamans_EXTRA_title:0 "Wandering Shamans"
+ shamanism_wondering_shamans_EXTRA_desc:0 "We have come to control areas far beyond the limits of our faith and as a result a great number of heathens look to us for guidance. Let us send forth our Shamans to spread our faith and to teach those among our new subjects who are able to become Shamans themselves."
+ 
+ armenia_nation_EXTRA_title:0 "Kingdom of Armenia"
+ armenia_nation_EXTRA_desc:0 "The Kingdom of Armenia once dominated the Caucasus. Time was not kind to our ancestors, however, and neighboring empires saw weakness in our internal divisions and used it to conquer our people. Let us drive out these invaders and re-establish the Kingdom and Church of Armenia."
+ 
+ restore_byzantine_empire_EXTRA_title:0 "Restore the Byzantine Empire"
+ restore_byzantine_empire_EXTRA_desc:0 "The glorious Byzantine Empire is gone, but as long as there are Greeks in Constantinople, there is hope of resurrection. We can take its place in spirit, but we cannot take its name unless we prove worthy..."
+ 
+ institute_prussian_monarchy_EXTRA_title:0 "Institute Prussian Monarchy"
+ institute_prussian_monarchy_EXTRA_desc:0 "Our monarchy must once more reflect Prussian virtues and Protestant ideals!"
+ 
+ form_kingdom_of_prussia_EXTRA_title:0 "Form Kingdom of Prussia"
+ form_kingdom_of_prussia_EXTRA_desc:0 "There is only one king in the Empire, the king of Bohemia. At the same time our lands in Prussia are not a historic part of the Empire, let us declare ourselves King in Prussia to reflect our grander status than the other electors."
+ 
+ prussian_nation_EXTRA_title:0 "Reform into Prussia"
+ prussian_nation_EXTRA_desc:0 "The age of crusading knights is fading fast. There will come a time when we no longer stand to gain by holding on to the trappings of a monastic order. Besides, the Grandmaster would much rather be a Duke... or King. By reforming into a secular state, we can revitalize our administration and gain the respect of our neighbors."
+
+ prussian_nation_general_EXTRA_title:0 "Reform into Prussia"
+ prussian_nation_general_EXTRA_desc:0 "The lands once conquered and Germanized by the Teutonic Order will always need protection against rapacious neighbors. Should the Order fail in this duty, we can take their place and usher in a new era of prosperity and Prussian discipline."
+ 
+ ruthenian_nation_EXTRA_title:0 "Reclaim Ruthenian Legacy"
+ ruthenian_nation_EXTRA_desc:1 "Centuries ago the land of the Rus' was united under a single banner and ruled from the legendary city Kiev. But then came the Mongol hordes, advancing from the great steppe, pillaging and burning. They destroyed our kremlins and the towns fell one by one, even Kiev itself could not avoid this fate. In terror our people fled the plains of Rus' and went north. Into the forests and hinterlands of the land we today call Russia.\nNow a new and arrogant city of the north is on the rise. It draws in the petty states around it and its ruler envisions a new Rus'. A Rus' centered in Moscow and not Kiev.\nHowever us Ruthenians will not go silent into the pages of history. We will not allow newcomers and pretenders to claim the legacy of our forefathers. Kiev shall rise once gain and we shall restore it to its former glory and splendor. So too shall the Rus'."
+ 
+ russian_nation_EXTRA_title:0 "Form Russian Nation"
+ russian_nation_EXTRA_desc:0 "Through conquest and diplomacy Russia has managed to transform from a mere settlement into a dominant principality. After several eastern expeditions the Mongol hordes have finally been subdued and a centralized Russian state, ruled under the suzerainty of the Tsar, is emerging. Influences from Western Europe are helping us modernize and reform our nation and Western style of education is being adopted."
+	
+ capital_in_belgrade_EXTRA_title:0 "Move Capital to Belgrade"
+ capital_in_belgrade_EXTRA_desc:0 "Belgrade occupies a key defensive and economic point in the Balkans and has in the past served as the capital of Serbia. We should make this great city our capital once again and restore it to the glorious city it once was!"
+
+ steppe_horde_reform_EXTRA_title:0 "Reform the Government"
+ steppe_horde_reform_EXTRA_desc:0 "For many years now our more advanced neighbors have laughed at us for our backward form of government. Well, no longer - as of today our great leader is a King!"
+ 
+ 
+ 
+ 
+ 

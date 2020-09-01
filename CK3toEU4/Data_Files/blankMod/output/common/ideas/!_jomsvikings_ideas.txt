@@ -1,0 +1,38 @@
+jomsvikings_ideas = {
+	start = {
+		leader_land_shock = 1
+		discipline = 0.05
+	}
+	bonus = {
+		infantry_power = 0.10
+	}
+	trigger = {
+		tag = JOM
+		religion = norse_pagan_reformed
+		government = theocracy
+	}
+	free = yes
+	
+	jomsviking_code = {
+		land_morale = 0.1
+	}
+	legend_of_jomsborg = {
+		land_forcelimit_modifier = 0.15
+		naval_forcelimit_modifier = 0.05
+	}
+	glory_of_the_allfather = {
+		manpower_recovery_speed = 0.10
+	}
+	name_of_thor = {
+		cb_on_religious_enemies = yes
+	}
+	adopt_feudal_system = {
+		production_efficiency = 0.10
+	}
+	implement_hogting = {
+		stability_cost_modifier = -0.10
+	}
+	valhalla_awaits = {
+		prestige = 1
+	}
+}

@@ -1,0 +1,658 @@
+monarch_power = MIL
+
+# applied when a country is ahead of time in this technology
+# no bonus for MIL currently
+# ahead_of_time = {
+# }
+
+# Pre-era techs
+technology = {
+	# Tech 0
+	year = 1
+	
+	sprite_level = 1
+
+	infantry_fire		= 	0.25
+	infantry_shock 		= 	0.20	
+	cavalry_shock  		= 	0.8	
+	land_morale 		= 	2.0
+}
+
+technology = {
+	# Tech 1
+	year = 700
+	
+	infantry_shock		= 	0.1
+	infantry_fire 		= 	0.1
+	
+	fort_15th = yes
+	
+	enable = south_american_spearmen		
+	enable = native_indian_archer
+	enable = native_clubmen
+	enable = african_spearmen
+	enable = african_clubmen
+	enable = indian_archers
+	enable = mesoamerican_spearmen
+	enable = halberd_infantry
+	enable = chevauchee
+	enable = western_medieval_knights
+	enable = bardiche_infantry
+	enable = muslim_cavalry_archers
+	enable = western_medieval_infantry
+	enable = eastern_medieval_infantry
+	enable = ottoman_yaya
+	enable = chinese_longspear
+	enable = japanese_archer
+	enable = persian_footsoldier
+	enable = east_asian_spearmen
+	enable = mongolian_bow	
+	enable = indian_footsoldier	
+	enable = rajput_hill_fighters	
+	enable = eastern_bow	
+	enable = persian_cavalry_charge
+	enable = african_mandelaku
+	enable = african_abyssinian_light_cavalry
+	enable = mongol_swarm
+	enable = mongol_steppe	
+	enable = mongol_bow	
+	enable = eastern_knights
+	enable = druzhina_cavalry	
+	enable = ottoman_musellem	
+	enable = mamluk_archer	
+	enable = mamluk_cavalry_charge	
+	enable = south_american_warfare	
+	enable = ha_xantican_warrior
+}
+
+technology = {
+	# Tech 2
+	year = 750
+	
+	infantry_shock		= 	0.2
+	cavalry_shock		= 	0.2
+	
+	combat_width = 5
+}
+
+# The 30 big techs from here on
+
+technology = {
+	# Tech 3
+	year = 769
+	
+	land_morale = 	0.5
+}
+
+technology = {
+	# Tech 4
+	year = 1453
+	
+	#Pike Square
+	
+
+	land_morale = 	0.5
+	military_tactics 	= 	0.25
+}
+
+technology = {
+	# Tech 5
+	year = 1466
+	
+	#Standardised Pikes
+	supply_limit 		= 	0.5
+	infantry_shock		= 	0.15
+	cavalry_shock		= 	0.2
+
+	enable = western_men_at_arms	
+	enable = western_longbow	
+	enable = gaelic_galloglaigh				
+	enable = aztec_tribal_warfare	
+	enable = zapotec_tribal_warfare		
+	enable = songhai_tribal_warfare		
+	enable = niger_kongolese_tribal_warfare		
+	enable = bantu_tribal_warfare	
+	enable = mali_tribal_warfare	
+	enable = pueblo_ambush	
+	enable = native_indian_tribal_warfare
+	enable = algonkin_tomahawk_charge	
+	enable = indian_arquebusier	
+	enable = eastern_militia
+	enable = mamluk_duel  
+	enable = ottoman_azab
+	enable = inca_mountain_warfare	
+	enable = south_american_forest_warfare
+	enable = incan_slingshots
+	enable = incan_axemen	
+	enable = maya_tribal_warfare
+	enable = chinese_footsoldier		
+	enable = japanese_footsoldier	
+	enable = ha_reformed_xantican_warrior
+	
+	combat_width = 2
+}
+
+technology = {
+	# Tech 6
+	year = 1479
+	
+	#Arquebus
+	military_tactics 	= 	0.25
+	infantry_shock		= 	0.30
+	infantry_fire 		= 	0.20
+	
+	
+	barracks = yes
+
+
+	enable = african_somali_cavalry
+	enable = african_tuareg_cavalry
+	enable = slavic_stradioti	
+	enable = native_indian_horsemen
+	enable = central_american_horsemen
+	enable = south_american_horsemen	
+	enable = mughal_mansabdar	
+	enable = ottoman_timariot 
+	enable = chinese_steppe		
+	enable = japanese_samurai	
+	enable = shaybani	
+	enable = high_american_horsemen
+	
+	combat_width = 2
+}
+
+technology = {
+	# Tech 7
+	year = 1492
+	
+	#The limber
+	artillery_fire 		= 	1
+	artillery_shock 	=	0.05
+	military_tactics 	= 	0.25
+	enable = large_cast_bronze_mortar 
+	enable = houfnice
+}
+
+technology = {
+	# Tech 8
+	year = 1505
+	
+	#Pike and Shot
+	infantry_fire		= 	0.25
+	cavalry_shock		=	0.8
+
+	
+	regimental_camp = yes
+}
+
+technology = {
+	# Tech 9
+	
+	year = 1518
+	
+	#Ditch
+	
+	enable = south_indian_musketeer	
+	enable = mughal_musketeer		
+	enable = ottoman_janissary	
+	enable = persian_shamshir	
+	enable = italian_condotta
+	enable = swiss_landsknechten
+	enable = gaelic_mercenary
+	enable = germanized_pike
+	enable = asian_arquebusier	
+	enable = steppe_raiders
+	enable = ha_xiuhtecuhtli_soldier
+	military_tactics 	= 	0.25
+	combat_width = 1	
+}
+
+technology = {
+	# Tech 10
+	year = 1531
+	
+	#Reiter
+	maneuver_value 		= 	0.25
+
+	enable = hungarian_hussar
+	enable = ottoman_spahi		
+	enable = culverin		
+	enable = pedrero 
+	enable = schwarze_reiter
+	enable = african_mossi_horsemen
+	enable = african_abyssinian_cavalry
+	enable = native_indian_mountain_warfare	
+	enable = aztec_hill_warfare	
+	enable = maya_forest_warfare	
+	enable = zapotec_plains_warfare
+	enable = south_american_gunpowder_warfare
+	enable = south_american_arquebusier	
+	enable = north_american_rifle_cavalry
+	enable = central_american_rifle_cavalry
+	enable = south_american_rifle_cavalry	
+	enable = qizilbash_cavalry	
+	enable = east_mongolian_steppe	
+	enable = indian_elephant	
+	enable = steppe_riders
+	enable = high_american_rifle_cavalry
+}
+
+technology = {
+	# Tech 11
+	year = 1544
+	
+	#Matchlock Musket
+	infantry_shock		= 	0.20
+	cavalry_fire		= 	0.5
+
+	
+	weapons = yes
+	
+	combat_width = 2
+}
+	
+technology = {
+	# Tech 12
+	year = 1557
+	
+	#Spanish Square
+	sprite_level = 2
+	
+	supply_limit 		= 	0.5
+	military_tactics	=	0.25
+
+	enable = tofongchis_musketeer		
+	enable = ottoman_sekban		
+	enable = rajput_musketeer	
+	enable = spanish_tercio	
+	enable = gaelic_free_shooter	
+	enable = han_banner	
+	enable = reformed_mughal_musketeer	
+	enable = polish_musketeer 
+	enable = muscovite_musketeer
+	enable = bantu_plains_warfare	
+	enable = niger_kongolese_forest_warfare		
+	enable = african_hill_warfare	
+	enable = ethiopian_mountain_warfare		
+	enable = steppe_footmen
+	enable = ha_xiuhtecuhtlian_infantry
+}
+
+technology = {
+	# Tech 13
+	year = 1570
+	
+	#Trunnions
+	artillery_shock 	= 	0.1
+	artillery_fire 		= 	0.4
+	
+	enable = small_cast_iron_bombard
+	enable = large_cast_iron_bombard
+}
+
+technology = {
+	# Tech 14
+	year = 1583
+	
+	#Star Bastions
+	fort_16th = yes
+	infantry_fire		=	0.3
+	
+	enable = african_hussar
+	enable = french_caracolle 
+	enable = huron_arquebusier	 
+	enable = creek_arquebusier	
+	enable = aztec_gunpowder_warfare		
+	enable = maya_gunpowder_warfare	
+	enable = zapotec_gunpowder_warfare	
+	enable = south_american_reformed_gunpowder_warfare	
+	enable = north_american_hussar
+	enable = central_american_hussar
+	enable = south_american_hussar
+	enable = polish_hussar	
+	enable = muscovite_caracolle	
+	enable = zaporoghian_cossack	
+	enable = topchis_artillery	
+	enable = asian_charge_cavalry
+	enable = reformed_mughal_mansabdar	
+	enable = steppe_lancers
+	enable = high_american_hussar
+	
+	combat_width = 2
+}
+
+technology = {
+	# Tech 15
+	year = 1596
+	
+	#Maurician Infantry
+	land_morale 		=	1.0
+	military_tactics	=	0.25
+	
+
+	
+	enable = irish_charge 
+	enable = dutch_maurician	
+	enable = afsharid_reformed_infantry	
+	enable = muscovite_soldaty	
+	enable = polish_tercio
+	enable = asian_mass_infantry	
+	enable = bantu_gunpowder_warfare	
+	enable = niger_kongolese_gunpowder_warfare	
+	enable = adal_gunpowder_warfare		
+	enable = ethiopian_gunpowder_warfare	
+	enable = steppe_musketeers
+}
+
+technology = {
+	# Tech 16
+	year = 1609
+	
+	#Standardisation of Calibre
+	artillery_shock 	= 	0.1
+	artillery_fire 		= 	1.0	
+
+
+	training_fields = yes
+	
+	combat_width = 1
+	
+	enable = chambered_demi_cannon
+}
+
+technology = {
+	# Tech 17
+	year = 1622
+	
+	cavalry_shock		=	1.0
+	supply_limit		= 	0.5	
+	
+	enable = maharathan_cavalry		
+	enable = manchu_banner		
+	enable = african_swarm
+}
+
+technology = {
+	# Tech 18
+	year = 1635
+	
+	#Carbine
+	maneuver_value 		= 	0.25
+
+		
+	enable = swedish_gallop	
+	enable = sikh_hit_and_run
+	enable = bhonsle_infantry	
+	enable = ottoman_reformed_spahi		
+	enable = mamluk_musket_charge 
+	enable = afsharid_reformed	
+	enable = leather_cannon	
+	enable = steppe_mounted_raiders
+	enable = ha_xoloti
+	
+	combat_width = 2
+}
+
+technology = {
+	# Tech 19
+	year = 1648
+	
+	#Gustavian Infantry
+	military_tactics 	= 	0.25
+	supply_limit		=	0.5
+
+	fort_17th = yes
+
+	
+	enable = austrian_tercio   
+	enable = swedish_gustavian		
+	enable = scottish_highlander	
+	enable = saxon_infantry	
+	enable = ottoman_reformed_janissary	
+	enable = asian_musketeer	
+	enable = incan_guerilla_warfare	
+	enable = iroquois_rifle_scout
+	enable = peruvian_guerilla_warfare
+	enable = mexican_guerilla_warfare	
+	enable = maya_guerilla_warfare	
+	enable = commanche_swarm
+	enable = central_american_swarm
+	enable = south_american_swarm
+	enable = steppe_infantry
+	enable = high_american_swarm
+}
+
+technology = {
+	# Tech 20
+	year = 1661
+	
+	#Killing Grounds
+	
+	infantry_fire		= 	0.5
+		
+	enable = swivel_cannon		
+
+	combat_width = 2
+}
+
+technology = {
+	# Tech 21
+	year = 1674
+	
+	#Line Infantry
+	sprite_level = 3
+	military_tactics 	= 	0.25
+	
+	infantry_shock 		=	0.5
+}
+
+technology = {
+	# Tech 22
+	year = 1687
+	
+	#Cartridge	(1620)?)
+	cavalry_fire		=	0.5
+	artillery_shock 	=	0.1
+	artillery_fire		=	2.0
+	
+	combat_width = 2
+	
+	conscription_center = yes
+
+	
+	enable = polish_winged_hussar	
+	enable = muscovite_cossack	
+
+	enable = coehorn_mortar		
+}
+
+technology = {
+	# Tech 23
+	year = 1700
+	
+	#Light Cavalry
+	
+	cavalry_shock		=	1.0
+	military_tactics 	= 	0.25
+	maneuver_value 		= 	0.5
+
+	enable = swedish_arme_blanche	
+	enable = french_dragoon		
+	enable = austrian_hussar	
+	enable = ottoman_toprakli_hit_and_run			
+	enable = sioux_dragoon
+	enable = central_american_dragoon
+	enable = south_american_dragoon
+	enable = african_dragoon
+	enable = maharathan_guerilla_warfare		
+	enable = austrian_grenzer	
+	enable = swedish_caroline 	
+	enable = anglofrench_line	
+	enable = durrani_rifled_musketeer	
+	enable = ottoman_nizami_cedid	
+	enable = niger_kongolese_guerilla_warfare	
+	enable = adal_guerilla_warfare	
+	enable = ethiopian_guerilla_warfare
+	enable = muslim_dragoon
+	enable = ali_bey_reformed_infantry
+	enable = indian_shock_cavalry	
+	enable = chinese_dragoon	
+	enable = russian_petrine	
+	enable = steppe_cavalry
+	enable = ha_foreign_influenced_infantry
+	enable = high_american_dragoon
+}
+
+technology = {
+	# Tech 24
+	year = 1715
+	
+	#Covered Way
+	fort_18th	= yes	
+	military_tactics 	= 	0.25
+
+	combat_width = 2
+}
+
+technology = {
+	# Tech 25
+	year = 1730
+	
+	#Metallurgy
+	artillery_shock 	=	0.1
+	artillery_fire		=	2.0
+	
+	enable = royal_mortar	
+}
+
+technology = {
+	# Tech 26
+	year = 1745
+	
+	#Light Infantry Companies
+	sprite_level = 4
+
+	land_morale			=	1.0
+
+	enable = austrian_white_coat	
+	enable = french_bluecoat	
+	enable = british_redcoat	
+	enable = prussian_frederickian    
+	enable = russian_green_coat		
+	enable = muslim_mass_infantry		
+	enable = eastern_carabinier	 		
+	enable = indian_rifle
+	enable = reformed_asian_musketeer	
+	enable = westernized_bantu	
+	enable = westernized_niger_kongolese	
+	enable = westernized_adal	
+	enable = westernized_ethiopian	
+	enable = apache_guerilla	
+	enable = westernized_south_american	
+	enable = westernized_aztec	
+	enable = westernized_zapotec	
+	enable = westernized_incan	
+	enable = russian_lancer		
+	enable = tartar_cossack	
+	enable = prussian_uhlan
+	enable = british_hussar	
+	enable = french_carabinier
+	enable = eastern_uhlan
+	enable = eastern_skirmisher
+	enable = steppe_rifles
+	enable = ha_reformed_influenced_infantry
+	
+	combat_width = 2
+}
+
+technology = {
+	# Tech 27
+	year = 1760
+	
+	#Bayonet
+	supply_limit		=	0.5
+	infantry_fire		= 	0.5	
+}
+
+technology = {
+	# Tech 28
+	year = 1775
+	
+	#Cuirassier
+	maneuver_value 		= 	0.25
+	infantry_shock		=	0.5	
+	
+	enable = african_cuirassier
+	enable = russian_cuirassier	
+	enable = russian_cossack
+	enable = ottoman_toprakli_dragoon		
+	enable = ottoman_lancer 
+	enable = reformed_manchu_rifle	
+	enable = open_order_cavalry
+	enable = napoleonic_lancers	
+	enable = french_cuirassier
+	enable = durrani_dragoon 
+	enable = durrani_swivel	
+	enable = sikh_rifle
+	enable = bhonsle_cavalry
+	enable = reformed_asian_cavalry		
+	enable = french_impulse
+	enable = british_square
+	enable = steppe_uhlans
+}
+
+technology = {
+	# Tech 29
+	year = 1790
+	
+	#Defense in Depth
+		
+	enable = flying_battery  
+}
+
+technology = {
+	# Tech 30
+	year = 1805
+	
+	#Impulse Warfare
+	#sprite_level = 5	
+	
+	military_tactics	=	0.25
+	land_morale			=	1.0
+	maneuver_value = 0.25
+	
+	enable = russian_mass
+	enable = mixed_order_infantry	
+	enable = prussian_drill		
+	enable = austrian_jaeger	
+	enable = napoleonic_square
+	enable = persian_rifle
+	enable = ottoman_new_model
+	enable = tipu_sultan_rocket		
+	enable = american_western_franchise_warfare	
+	enable = african_western_franchise_warfare
+	enable = westernized_mayan
+	enable = reformed_westernized_incan		
+	enable = reformed_steppe_rifles
+	enable = ha_reformed_xoloti
+}
+
+technology = {
+	# Tech 31
+	year = 1820
+	
+	#Rifle
+	cavalry_shock		=	1.0
+	infantry_fire		=	1.0
+	supply_limit		=	0.5
+}
+
+technology = {
+	# Tech 32
+	year = 1835
+	
+	#Field Howitzer
+	military_tactics	=	0.25
+	artillery_shock		=	0.1
+	artillery_fire		=	2.0	
+}

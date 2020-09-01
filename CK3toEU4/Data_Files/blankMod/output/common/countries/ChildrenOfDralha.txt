@@ -1,0 +1,98 @@
+#Country Name: Please see filename.
+
+graphical_culture = asiangfx
+
+color = { 205 100 255 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	east_asian_spearmen
+	eastern_bow
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}
+
+monarch_names = {	
+	"Aglen #0" = 1
+	"Balpo #0" = 1
+	"Drogön #0" = 1
+	"Zungtsen #0" = 1
+	"Öpoche #0" = 1
+	"Tsenpo #0" = 1
+	"Liwergyer #0" = 1
+	"Löpo #0" = 1
+	"Nor #0" = 1
+	"Jönwa #0" = 1
+	"Liknyashur #0" = 1
+	"Wal #0" = 1
+	"Raksita #0" = 1
+	"Marpo #0" = 1
+	"Zijid #0" = 1
+	"Shenrab #0" = 1
+	"Trideiöpo #0" = 1
+	
+	"Amala #0" = -1
+	"Dongkar #0" = -1
+	"Gyimsheng #0" = -1
+	"Kunzang #0" = -1
+	"Mungchang #0" = -1
+	"Pongza #0" = -1
+	"Toktokteng #0" = -1
+	"Yeshe #0" = -1
+	"Zigsa #0" = -1
+	"Ba #0" = -1
+	"Gyi #0" = -1
+	"Ongma #0" = -1
+	"Yum #0" = -1
+	"Zazu #0" = -1
+	"Tsa #0" = -1
+}
+
+leader_names = {
+	Aglen Balpo Chakna Changchub Chatri Chokey Chögyal Chukpo Daktri Degyal Denöl Desho Detrin Detsen Detrul
+	Deu Dharmapala Dickey Dingtri Dompu Dondup Donyö Dorje Drag Dragpa Dranga Drigum Drogön Drongnyen Dusong
+	Dzamling Esho Gampo Gangkarwa Gesar Getong Gön Gongpa Gongru Gunggyal Gungsong Gungtsen
+	Gyagar Gyal Gyalpo Gyaltore Gyaltsen Gyeltsen Isho Jamyang Jekundag Jetsun Könchok Kyidé Kunga
+	Langdarma Lek Lekpa Lha Lhanang Lingpa Lodrö  Longtsen Löntsen Lotsen Lukhong Mangban Mangnyen
+	Mangpoje Mangsham Mangsong Mangtsen Mertri Muné Mutik Mutri Muzu Nam Namdé Namkha Namri
+	Namzhungtsen Ngawang Nyantsen Nyasig Nyigön Nyima Nyingpo Nytari Omade Öpoche Orgyen Ösung Pal
+	Palden Palchen Pälkhortsän Palkye Phagpa Po Podé Pude Pungse Pungtsen Raksita Ramsha Ralpacan
+	Rapsel Rinchen Sachen Sadnalegs Sambhota Selbar Senöl Shakya Shang Shanglon Shangnang Siptri Sönam
+	Songtsen Sotri Sumnang Sutse Tagbu Takdra Taknang Taknye Taktsab Tawen Thönmi Thothori Thrikhyiding
+	Tingngezin Tisho Tongtsen Tori Trashi Tridé Tridra Tridu Trimang Trinring Trinyen Trisong Trisu Trisumje
+	Tritog Tritsen Tritsuk Tromo Trongzhi Tsangma Tsemo Tsen Tsendro Tsenpo Tsensong Tsentsän Tsenye Tsugru
+	Tsuktsen Udumtsen Wangchuk Wangdu Yongten Yontan Yülsung Yumtän Zanam Zangtsa Zhangtsun Zhonnu Zimun
+	Zindé Zungtsen
+	
+	Atimuwer Berkya Bonchung Chimetsukphü Chirum Chunmardang Dakhor Damitheke Damshe Dangwa Demdruk Denpar
+	Dokchen Donla Draktsen Draktsubkye Drenpa Dud Duddul Durshen Dzomar Gawagye Gekhö Gön Göwar Gurser Guwer
+	Gyalwa Gyer Gyerme Gyerpung Gyung Gyungyar Harachipar Hrido Hripa Hrista Jönwa Kalarasa Khyabpa Kuchi
+	Kunla Kyabpai Kyeshe Kyichuk Kyile Labchen Lakring Lampa Langboche Larje Likmigyal Likmikya Likmur
+	Liknyashur Liknyikya Liknyirhya Liwergyer Lokpai Löpo Lopön Ludrub Luje Lurab Lutsen Mabu Mangke Marpo
+	Martang Mebar Meka Meri Merutse Milüsamlek Mikmar Milwo Mra Mrabon Mranyite Mrawa Mucho Mukhö Mukhung
+	Mulakhung Mumar Muwer Muwernor Namdak Namje Namkha Namse Nangwa Nangzher Naro Nor Norgyi Ökar
+	Ösel Pebon Pholha Pung Pungse Rabtson Rakhuk Salwa Sangjo Sangpo Sangto Sehrigyer Senggetram Shebu Shele
+	Shelgyung Shenlha Shenpa Shenrab Sridpa Takla Takma Tenzin Thenwa Thipang Thokgö Thoktse Thuchen Tobchen
+	Tonggyung Tönpa Traphü Trideiöpo Tridem Tridü Trimen Triwer Troto Tsepo Wal Werya Yangje Yidring Zache
+	Zijid Zingkye Zingpa Zutse
+}
+
+ship_names = {
+	Barkam Dartsendo Gyantse Gartse Lhasa Lhotse Makalu Nagqu Nyingchi Nedong Pelbar Qamdo Shigatse Sakya
+	Tinggri
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

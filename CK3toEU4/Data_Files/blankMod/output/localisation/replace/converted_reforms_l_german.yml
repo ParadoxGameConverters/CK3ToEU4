@@ -1,0 +1,26 @@
+﻿l_german:
+ #These are here to replace Country Specific government names to make them more open
+ ottoman_government:0 "Padishah Regierung"
+ ottoman_government_desc:0 "Die Padishah-Regierung ist in vielerlei Hinsicht ein Synonym für den königlichen Haushalt. Der Harem stellt sicher, dass es niemals an Erben für die Padishah oder den "Meisterkönig" mangeln wird."
+ english_monarchy:0 "Chartered Monarchie"
+ english_monarchy_desc:0 "Eine Chartered Monarchie ist eine repräsentative Monarchie mit einem Parlament, das regelmäßig vom regierenden Monarchen einberufen wird. Es basiert auf den Privilegien, die in einer vom Monarchen und seinen Vasallen unterzeichneten Charta definiert sind."
+ mamluk_government:0 "Circassianische Sklavenregierung"
+ mamluk_government_desc:0 "Dieser Staat wurde einst von Circassianischen Sklavensoldaten übernommen und erhält sich durch den fortgesetzten Import von Circassianischen Soldatensklaven."
+ indian_sultanate_reform:0 "Dharmisches Sultanat"
+ indian_sultanate_reform_desc:0 "Unter der Herrschaft einer muslimischen Minderheit mussten die Sultane die traditionellen muslimischen Ideen des Königtums weiterentwickeln und erweitern. Während sie islamische Staaten bleiben, wurde die Rolle der Dhimmi, die traditionell Juden und Christen umfasst, auf die dharmischen Religionen ausgedehnt."
+ prussian_monarchy:0 "Stratokratische Monarchie"
+ prussian_monarchy_desc:0 "Eine Regierungsform unter einem Monarchen, die eher als Armee mit Staat als als Staat mit Armee bezeichnet werden kann."
+ prussian_republic_reform:0 "Stratokratische Verwaltung"
+ prussian_republic_reform_desc:0 "Eine stratokratische Republik wird weder von korrupten Oligarchen noch vom Willen der unwissenden Massen regiert, sondern von ihren geschicktesten und bewährten Militärkommandanten. Die Erweiterung und der Schutz unserer Grenzen sind die wichtigsten Richtlinien für den Staat.\n\nDisables Wahlen."
+ prussian_republic:0 "Stratokratische Verwaltung"
+ prussian_republic_descs:0 "Eine stratokratische Republik wird weder von korrupten Oligarchen noch vom Willen der unwissenden Massen regiert, sondern von ihren geschicktesten und bewährten Militärkommandanten. Die Erweiterung und der Schutz unserer Grenzen sind die wichtigsten Richtlinien für den Staat.\n\nDisables Wahlen."
+ mughal_government:0 "Diwan System"
+ mughal_government_desc:0 "Wenn es eine Sache gibt, die unsere Dynastie im Laufe der Jahrhunderte gelernt hat, dann ist es, dass wir in der Lage sein müssen, uns an die lokale Bevölkerung in den Regionen anzupassen, in die wir expandieren. Stellen wir sicher, dass wir von denen lernen, die wir erobern, damit unser Reich weiter wachsen kann."
+ federal_republic:0 "Föderale Republik"
+ federal_republic_desc:0 "Die föderale Republik ist eine Föderation der Staaten. Die Mitgliedsstaaten sind unabhängig, mit eigener Regierung. Es gibt einen Präsidenten, der für vier Jahre gewählt wird."
+ 
+ austrian_archduchy_reform:0 "Kaiserliches Erzherzogtum"
+ austrian_archduchy_reform_desc:0 "Obwohl das kaiserliche Erzherzogtum ähnlich wie ein feudaler Monarch organisiert ist, ist es ein Schritt über anderen Herzogtümern. Durch langjährige Erfahrung in der Herrschaft über andere - wer auch immer sie sein mögen - und durch die Organisation dynastischer Angelegenheiten zu ihren Gunsten konnten die Erzherzöge ein wirksames System zur Verwaltung ihres Landes und zur Wahrung ihrer Einheit entwickeln."
+ austrian_archduchy:0 "Kaiserliches Erzherzogtum"
+ austrian_archduchy_desc:0 "Obwohl das kaiserliche Erzherzogtum ähnlich wie ein feudaler Monarch organisiert ist, ist es ein Schritt über anderen Herzogtümern. Durch langjährige Erfahrung in der Herrschaft über andere - wer auch immer sie sein mögen - und durch die Organisation dynastischer Angelegenheiten zu ihren Gunsten konnten die Erzherzöge ein wirksames System zur Verwaltung ihres Landes und zur Wahrung ihrer Einheit entwickeln."
+ 

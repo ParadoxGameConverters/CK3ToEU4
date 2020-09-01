@@ -1,0 +1,193 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new dieties, make sure they are uniquely named.
+
+ZZZ_enhanced_desi =
+{
+	build_cost = -0.1
+	development_cost = -0.1
+	
+	allow = { religion = khurmazta }
+	sprite = 13
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
+}
+
+ZZZ_enhanced_parn =
+{
+	spy_offence = 0.1
+	prestige = 0.5	
+	
+	allow = { religion = khurmazta }
+	sprite = 14
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}
+	}
+}
+
+ZZZ_enhanced_nanaiya =
+{
+	diplomatic_reputation = 1
+	devotion = 0.5
+	
+	allow = { 
+		religion = khurmazta
+		government = theocracy
+	}
+	
+	sprite = 15
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+	}
+}
+ZZZ_enhanced_nanaiya =
+{
+	diplomatic_reputation = 1
+	heir_chance = 0.5
+	
+	allow = { 
+		religion = khurmazta
+		has_government_attribute = heir
+		NOT = { government = theocracy }
+	}
+	
+	sprite = 15
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+	}
+}
+ZZZ_enhanced_nanaiya =
+{
+	diplomatic_reputation = 1
+	reelection_cost = -0.1
+	
+	allow = { 
+		religion = khurmazta
+		government = republic
+		NOT = { has_government_attribute = heir }
+	}
+	
+	sprite = 15
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+	}
+}
+ZZZ_enhanced_nanaiya =
+{
+	diplomatic_reputation = 1
+	legitimacy = 0.5 #For States General/Netherlands
+	
+	allow = { 
+		religion = khurmazta
+		NOT = { government = theocracy }
+		NOT = { government = republic }
+		NOT = { has_government_attribute = heir }
+	}
+	
+	sprite = 15
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}
+	}
+}
+
+ZZZ_enhanced_weshparkar =
+{
+	global_ship_trade_power = 0.2
+	global_naval_engagement_modifier = 0.1
+	
+	allow = { religion = khurmazta }
+	sprite = 16
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}		
+	}
+}
+
+ZZZ_enhanced_wishaghn =
+{
+	discipline = 0.05
+	army_tradition = 0.5
+	
+	allow = { religion = khurmazta }
+	sprite = 17
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_colonialist
+		}		
+	}
+}
+
+
+ZZZ_enhanced_zurvan =
+{
+	technology_cost = -0.05
+	global_institution_spread = 0.1
+	
+	allow = { religion = khurmazta }
+	sprite = 18
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}		
+	}
+}

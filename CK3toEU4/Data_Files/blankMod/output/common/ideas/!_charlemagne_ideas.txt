@@ -1,0 +1,41 @@
+karling_ideas = {
+	start = {
+		prestige = 1
+		diplomatic_reputation = 2
+	}
+	bonus = {
+		legitimacy = 1
+	}
+	trigger = {
+		dynasty = "Karling"
+		OR = {
+			religion = catholic
+			religion = fraticelli
+		}
+		government = monarchy
+	}
+	free = yes
+	
+	kings_of_europe = {
+		global_unrest = -2
+	}
+	carolingian_grand_strategy = {
+		core_creation = -0.20
+	}
+	military_obligations = {
+		global_manpower_modifier = 0.30
+	}
+	retinue_regnum_francorum = {
+		land_morale = 0.20
+	}
+	legacy_of_the_romans = {
+		idea_cost = -0.1
+		development_cost = -0.1
+	}
+	carolingian_renaissance = {
+		technology_cost = -0.05
+	}
+	tradition_of_war = {
+		army_tradition = 1
+	}
+}

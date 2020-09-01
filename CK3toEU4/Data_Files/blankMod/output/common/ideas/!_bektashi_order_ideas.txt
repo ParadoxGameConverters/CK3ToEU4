@@ -1,0 +1,41 @@
+bektashi_order_ideas = {
+	start = {
+		leader_land_manuever = 1
+		cavalry_power = 0.25
+	}
+	bonus = {
+		discipline = 0.05
+	}
+	trigger = {
+		tag = BEK
+		religion_group = muslim
+		OR = {
+			government = theocracy
+			has_reform = feudal_theocracy
+		}
+	}
+	free = yes
+	
+	ZZZ_wahdat_al_wujud = {
+		global_institution_spread = 0.1
+	}
+	ZZZ_bektashi_graves_of_the_sanints = {
+		global_own_trade_power = 0.15
+	}
+	ZZZ_dervish_alms = {
+		yearly_corruption = -0.05
+	}
+	ZZZ_bektashi_initiation = {
+		missionaries = 1
+		global_missionary_strength = 0.01
+	}
+	ZZZ_spiritual_outreach = {
+		diplomatic_reputation = 1
+	}
+	ZZZ_bektashi_heterodoxy = {
+		idea_cost = -0.1
+	}
+	ZZZ_bektashi_need_for_speed = {
+		movement_speed = 0.05
+	}
+}

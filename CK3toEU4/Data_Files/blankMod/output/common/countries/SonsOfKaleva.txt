@@ -1,0 +1,138 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 140 130 105 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	bardiche_infantry
+	druzhina_cavalry
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {	
+	"Aatos #0" = 1
+	"Kettu #0" = 1
+	"Pentti #0" = 1
+	"Veli #0" = 1
+	"Kauro #0" = 1
+	"Yrjö #0" = 1
+	"Ággi #0" = 1
+	"Bijás #0" = 1
+	"Mohkku #0" = 1
+	"Aare #0" = 1
+	"Hain #0" = 1
+	"Igapäiv #0" = 1
+	"Kaaren #0" = 1
+	"Kaupo #0" = 1
+	"Manivald #0" = 1
+	"Otelemb #0" = 1
+	"Tarva #0" = 1
+	"Valdur #0" = 1
+	"Vilivald #0" = 1
+	"Andyamo #0" = 2
+	"Dokya #0" = 1
+	"Kuaz #0" = 1
+	"Putyayka #0" = 1
+	"Odeg #0" = 1
+	"Tuhan #0" = 1
+	"Yirkap #0" = 1
+	"Nga #0" = 1
+	"Yirkap #0" = 1
+	"Xëryuchi #0" = 2
+	"Wayngachi #0" = 1
+	"Shoksha #0" = 1
+	"Uzhara #0" = 1
+
+	"Hellä #0" = -1
+	"Kaarina #0" = -1
+	"Liekko #0" = -1
+	"Suoinná #0" = -1
+	"Uksáhkká #0" = -1
+	"Aasa #0" = -1
+	"Ida #0" = -1
+	"Yugörka #0" = -1
+	"Litava  #0" = -1
+	"Yar #0" = -1
+	"Tada #0" = -1
+	"Shukshtoroyka #0" = -1
+	"Potyava #0" = -1
+	"Cherava #0" = -1
+	"Ravzhava #0" = -1
+}
+
+leader_names = {
+	Aatos Ahma Aimo Armas Arvo Asikko Ensio Haapa Hannu Havu Hintsa Ihanti Into Jalo Jurva Kaleva Kalevi 
+	Kettu Kolli Lalli Lauri_Laurence LemettiMielitty Miemo Mikko_Michael Oiva Onni Otso Pyry Päiviö 
+	Pentti Reko Sampo Satajalka Satatieto Seppo Susi Tapani Terho Toivo Ukko Uoti Urho Väinö Valta Valto 
+	Veli Vesa Voitto Erkki_Erik Kaarle_Charles Johannes_John Risto_Christopher Olavi_Olaf Petri
+	Henri Yrjö Valteri Riku Matti Jaakoppi Taisto Paavo Aatso Ahvo Aarto Asko Tuokko Rieti
+	Kauro Kuuti Pekko Soini Tuure Turo Tommo Tohmas
+	
+	Ággi Áigesárri Áilu Ámmot Ára Árrajuoksa Ásllat Èoavvá Ahkemiella Algebaeivi Baeivi Baeivvet Biejan 
+	Bijás Bilzi Dávgon Duttá Gáivvas Gáktu Henes Járre Jeansa Juvven Lágon Lávrrohas Leammá Mellet Mihka
+	Mohkku Mokci Náhkol Náinnas Njulgu Oaván Orddot Rástos Riibma Ruigi Sárra Speaidna Viggu
+	
+	Aare Agul Ahas Aho Ahti Ahvo Alar Alo Alur Aopelg Aotõiv Arp Arvet Arvo Atko Aul Aulemb Eeri Elmar 
+	Hain Haljas Heameel Heatõiv Hoovatõiv Hurmas Hurmetõiv Hõimulemb Hüvalemb Hüvameel Hüvatõiv Igalemb
+	Igapäiv Ihalemb Ihameel Ihar Ihatõiv Ihavald Illimar Ilmalemb Ilmar Ilvelemb Jaolemb Kaalep Kaarel
+	Kaaren Kahar Kahru Kahrulemb Kahus Kaido Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel 
+	Kaupo Kaur Kiur Kiurupelg Koit Kosk Kudres Küllelemb Leetõiv Lembit Leppetõiv Lible Lättelemb 
+	Manivald Mart Maru Mati Mats Meelis Mehis Meigo Neeme Niglas Ohetõiv Ohevald Olev Onni 
+	Otelemb Ott Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev Susi Sutemeel Sutepelg Tambet 
+	Tarva Tarvet Tasulemb Toivo Toom Tunne Tutkas Tuul Tõeleid Tõiv Tõivulemb Tõll Tõnn Uku Urmas Uru 
+	Valdur Vambola Vandemeel Varjelemb Vello Venno Vesse Vihavald Vililemb Vilimeel Vilitõiv 
+	Vilivald Vootele Väino Värvo Õigemeel Ülo
+	
+	Andyamo Arnaz Arti Artis Arvo Aymort Azeg Biur Biyar Burmort Chichayka Chuga Dergun Deryab Dobrinya 
+	Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey Kezhevat Kichay Koksha 
+	Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Nuyaksha Nuyanza Nuyat Nydog Nylog 
+	Odeg Onika Osh Oshmar Oshypel Ovtay Ozheg Ozhmeg Pakstyan Paksyay Paksyut Parush Pivtsay Pokshayka 
+	Putyayka Pyera Rateg Rayda Sarin Sektev Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka 
+	Tuhan Tyueykezhut Tyutyuk Tugan Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas Viryay Vokan 
+	Yirkap Ylvan Zarny Zhebeg Zhuneg Zyryan
+	
+	Alik Hasaba Kako Kharuchi Kolik Mandak Nabtiko Nenyts Nga Ngënoh Noumea Num Nyalku Panay Pudak 
+	Salinder Samatu Sarak Sirtya Somatu Syudbya Tatva Tolik Vesei Wayngachi Xëryuchi Yadne Yapti Yar 
+	Yavlad Yurak
+	
+	Chichayka Chumbulat Dergun Deryab Dobrinya Erziya Inzhay Kezhapa Kezhay Kezhedey Kezhevat Kichay 
+	Kubrat Malyaka Malyy Meltsayka Mordvinko Moksha Nalka Nuyaksha Nuyanza Nuyat Ovtay Shoksha
+	Varaka Vechkas Velmayka Virdyan Viryas Viryay Atyamas Azyren Chipaz Kardaz Kinyak Koshel Murunza 
+	Naruchad Nishkepaz Orunza Puresh Purysho Saksa Shkay Surt Tul Tunya Tutyra Tylmache Tylze Tyushten 
+	Tyushtya Uzhara Varmanpaz
+}
+
+ship_names = {
+	Achai Achunai Aharon Alechsandri Ammi Chananel Chaninai Chanoch Chaim Chayim Chelbo 
+	Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina 
+	Elazar Elchanan Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi 
+	Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Yisrael Yitzchak 
+	Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Jerusalem "Bēt Laḥm" Yerushaláyim 
+	Acre Ashdod Beit Shemesh Haifa Nazareth Tira
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

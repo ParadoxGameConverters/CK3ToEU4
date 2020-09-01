@@ -1,0 +1,42 @@
+warriors_of_perun_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		global_missionary_strength = 0.02
+	}
+	bonus = {
+		culture_conversion_cost = -0.5
+	}
+	trigger = {
+		tag = WOP
+		OR = {
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_best_warriors = {
+		infantry_power = 0.15
+	}
+	ZZZ_warriors_of_conversion = {
+		missionaries = 1
+	}
+	ZZZ_warriors_of_unity = {
+		tolerance_own = 3
+	}
+	ZZZ_warriors_read_books = {
+		technology_cost = -0.05
+		institution_spread_from_true_faith = 0.33
+	}
+	ZZZ_seasonal_warriors = {
+		global_trade_goods_size_modifier = 0.10
+	}
+	ZZZ_one_nation = {
+		native_assimilation = 1
+		diplomatic_annexation_cost = -0.25
+	}
+	ZZZ_warriors_in_unison = {
+		discipline = 0.075
+	}
+}

@@ -1,0 +1,16 @@
+pagan = {
+	tengri_pagan_reformed = { #Done to add secondary characteristics
+		icon = 27
+		color = { 25 76 217 }
+		country = {
+			cav_to_inf_ratio = 0.25
+			global_regiment_cost = -0.2
+		}
+		country_as_secondary = {
+			army_tradition_decay = -0.1
+			raze_power_gain = 0.15
+		}
+		can_have_secondary_religion = yes
+		heretic = { GOAT_SKULL }
+	}
+}

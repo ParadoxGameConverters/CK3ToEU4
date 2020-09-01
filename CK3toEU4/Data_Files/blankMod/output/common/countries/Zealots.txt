@@ -1,0 +1,107 @@
+#Country Name: Please see filename.
+
+graphical_culture = easterngfx
+
+color = { 20 100 255 }
+
+historical_idea_groups = {
+
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {	
+	"David #0" = 40
+	"Saul #0" = 20
+	"Ish-bosheth #0" = 20
+	"Solomon #0" = 30
+	"Jeroboam #0" = 20
+	"Nadab #0" = 20
+	"Baasha #0" = 20
+	"Elah #0" = 20
+	"Zimri #0" = 20
+	"Omri #0" = 20
+	"Ahab #0" = 20
+	"Ahaziah #0" = 20
+	"Joram #0" = 20
+	"Jehu #0" = 20
+	"Jehoahaz #0" = 20
+	"Jehoash #0" = 20
+	"Zachariah #0" = 20
+	"Shallum #0" = 20
+	"Menahem #0" = 20
+	"Pekahiah #0" = 20
+	"Pekah #0" = 20
+	"Hoshea #0" = 20
+	"Abba #0" = 0
+	"Malcha #0" = 0
+	"Rivai #0" = 0
+	"Nissim #0" = 0
+	"Yehudai #0" = 0
+	"Yehoshua #0" = 0
+	"Chayim #0" = 0
+	"Isaac #0" = 0
+	"Daniel #0" = 0
+	"Giza #0" = 0
+	"Baruch #0" = 0
+	"Aharon #0" = 0
+	"Judas #0" = 0
+	"Menahem #0" = 0
+	"John #0" = 0
+	"Menahem #0" = 0
+	"Simon #0" = 0
+	"Eleazar #0" = 0
+
+	"Rebekkaa #0" = -1
+	"Rahel #0" = -1
+	"Batia #0" = -1
+	"Malka #0" = -1
+	"Liat #0" = -1
+	"Leah #0" = -1
+	"Ziva #0" = -1
+}
+
+leader_names = {
+	Abba Abbaye Acha Achai Achunai Aharon Alechsandri Ammi Amram Amunah Ashi Asher Avomai 
+	Avraham Azariah Baboi Baruch Bibai Binyamin Boaz Bustenai Chanan Chananel Chaninai 
+	Chanoch Chaim Chayim Chelbo Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi 
+	Dodai Dudai Efrayim Eina Elazar Elchanan Eldad Eliezer Elyakim Gedalyah Gershom Ghayyat 
+	Giat Giza Hillel Hila Isaac Ivomai Kafnai Kahana Kalonymos Levi Kiyomi Machir Malcha Mar 
+	Mari Matiyahu Meir Menechem Menashe Mesharsheya Meshulam Mevasser Mishael Mordechai Moshe
+	Nachman Nachshon Nasan Natan Natroi Natronai Nechemiah Nehilai Nesanel Nissim Paltoi 
+	Pirkoi Peter Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi 
+	Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Tachlifa Tamar 
+	Tzadok Tzemach Uri Yaakov Yachya Yechiel Yehudah Yehudai Yehoshua Yeshayah Yehudah 
+	Yisrael Yitzchak Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind
+}
+
+ship_names = {
+	Achai Achunai Aharon Alechsandri Ammi Chananel Chaninai Chanoch Chaim Chayim Chelbo 
+	Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina 
+	Elazar Elchanan Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi 
+	Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Yisrael Yitzchak 
+	Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Jerusalem "Bēt Laḥm" Yerushaláyim 
+	Acre Ashdod Beit Shemesh Haifa Nazareth Tira
+}
+
+army_names = {
+	"Army of $PROVINCE$"
+}
+
+fleet_names = {
+	
+}

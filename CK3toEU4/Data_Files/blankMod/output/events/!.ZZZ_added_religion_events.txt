@@ -1,0 +1,1066 @@
+namespace = ZZZ_enhanced_religion
+
+#Norse
+country_event = {
+	id = ZZZ_enhanced_religion.1
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.1.desc
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.1.a
+		trigger = {
+			religion = norse_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = norse_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = norse_pagan }
+				change_religion = norse_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = norse_pagan }
+			random_list = {
+				75 = {
+					change_religion = norse_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.1.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.1.b
+		trigger = {
+			religion = norse_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.1.c
+		trigger = {
+			NOT = { religion = norse_pagan }
+			NOT =  { tag = FROM }
+		}
+	}
+}
+
+#Baltic
+country_event = {
+	id = ZZZ_enhanced_religion.2
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.2.desc
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.2.a
+		trigger = {
+			religion = baltic_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = baltic_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = baltic_pagan }
+				change_religion = baltic_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = baltic_pagan }
+			random_list = {
+				75 = {
+					change_religion = baltic_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.2.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.2.b
+		trigger = {
+			religion = baltic_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.2.c
+		trigger = {
+			NOT = { religion = baltic_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Finnish
+country_event = {
+	id = ZZZ_enhanced_religion.3
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.3.desc
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.3.a
+		trigger = {
+			religion = finnish_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = finnish_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = finnish_pagan }
+				change_religion = finnish_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = finnish_pagan }
+			random_list = {
+				75 = {
+					change_religion = finnish_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.3.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.3.b
+		trigger = {
+			religion = finnish_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.3.c
+		trigger = {
+			NOT = { religion = finnish_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Tengri
+country_event = {
+	id = ZZZ_enhanced_religion.4
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.4.desc
+	picture = MONGOL_BANNERS_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.4.a
+		trigger = {
+			religion = tengri_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = tengri_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = tengri_pagan }
+				change_religion = tengri_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = tengri_pagan }
+			random_list = {
+				75 = {
+					change_religion = tengri_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.4.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.4.b
+		trigger = {
+			religion = tengri_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.4.c
+		trigger = {
+			NOT = { religion = tengri_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Slavic
+country_event = {
+	id = ZZZ_enhanced_religion.5
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.5.desc
+	picture = STREET_SPEECH_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.5.a
+		trigger = {
+			religion = slavic_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = slavic_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = slavic_pagan }
+				change_religion = slavic_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = slavic_pagan }
+			random_list = {
+				75 = {
+					change_religion = slavic_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.5.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.5.b
+		trigger = {
+			religion = slavic_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.5.c
+		trigger = {
+			NOT = { religion = slavic_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Zun
+country_event = {
+	id = ZZZ_enhanced_religion.6
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.6.desc
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.6.a
+		trigger = {
+			religion = zun_pagan
+			NOT = { tag = FROM }
+		}
+		
+		change_religion = zun_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = zun_pagan }
+				change_religion = zun_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = zun_pagan }
+			random_list = {
+				75 = {
+					change_religion = zun_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.6.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.6.b
+		trigger = {
+			religion = zun_pagan
+			NOT = { tag = FROM }
+		}
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.6.c
+		trigger = {
+			NOT = { religion = zun_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Bon
+country_event = {
+	id = ZZZ_enhanced_religion.7
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.7.desc
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.7.a
+		trigger = {
+			religion = bon
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 75 }
+		
+		change_religion = bon_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = bon }
+				change_religion = bon_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = bon }
+			random_list = {
+				75 = {
+					change_religion = bon_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.7.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.7.b
+		trigger = {
+			religion = bon
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 25 }
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.7.c
+		trigger = {
+			NOT = { religion = bon }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Hellenic
+country_event = {
+	id = ZZZ_enhanced_religion.8
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.8.desc
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.8.a
+		trigger = {
+			religion = hellenic_pagan
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 75 }
+		
+		change_religion = hellenic_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = hellenic_pagan }
+				change_religion = hellenic_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = hellenic_pagan }
+			random_list = {
+				75 = {
+					change_religion = hellenic_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.8.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.8.b
+		trigger = {
+			religion = hellenic_pagan
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 25 }
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.8.c
+		trigger = {
+			NOT = { religion = hellenic_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}
+
+#Fraticelli Events
+
+# Cardinal Across the Border
+country_event = {
+	id = ZZZ_enhanced_religion.9
+	title = "aow_events.43.t"
+	desc = "aow_events.43.d"
+	picture = RELIGION_eventPicture
+	goto = receive_cardinal_province
+
+	trigger = {
+		papacy_active = yes
+		religion = fraticelli
+		NOT = { tag = FAP }
+		NOT = { num_of_cardinals = 7 }
+		any_owned_province = {
+			development = 10
+			has_cardinal = no
+			religion = fraticelli
+			any_neighbor_province = {
+				has_cardinal = yes
+				NOT = { owned_by = ROOT }
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+		modifier = {
+			factor = 1.2
+			num_of_cardinals = 5
+		}
+	}
+
+	immediate = {
+		check_if_non_state_advisor_effect = { #Hidden, must be followed by erase_advisor_flags_effect
+			chance_of_primary = 75 #Not percentages!
+			chance_of_tertiary = 5
+			chance_of_secondary = 25
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_cardinal = no
+					religion = fraticelli
+					development = 10
+					any_neighbor_province = {
+						has_cardinal = yes
+						NOT = { owned_by = ROOT }
+					}
+				}
+				save_event_target_as = receive_cardinal_province
+				random_neighbor_province = {
+					limit = {
+						has_cardinal = yes
+						NOT = { owned_by = ROOT }
+					}
+					save_event_target_as = send_cardinal_province
+				}
+			}
+		}
+	}
+	
+	# 
+	option = {
+		name = "aow_events.43.a"
+		add_years_of_income = -0.05
+		add_corruption = 0.5
+		event_target:receive_cardinal_province = {
+			add_cardinal = yes
+		}
+		event_target:send_cardinal_province = {
+			remove_cardinal = yes
+			random = {
+				chance = 50
+				hidden_effect = {
+					province_event = {
+						id = aow_events.44
+						days = 7
+					}
+				}
+				owner = {
+					tooltip = {
+						add_casus_belli = {
+							target = ROOT
+							type = cb_insult
+							months = 32
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = bribed_cardinal
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "aow_events.43.b"
+		generate_advisor_of_type_and_semi_random_religion_effect = {
+			advisor_type=spymaster
+			advisor_type_if_not_state=spymaster
+			scaled_skill = yes
+			discount=yes
+		}
+	}
+	after = {
+		erase_advisor_flags_effect = yes
+	}
+}
+
+
+# Thoughts of Heresy
+province_event = {
+	id = ZZZ_enhanced_religion.10
+	title = "aow_events.45.t"
+	desc = "aow_events.45.d"
+	picture = PRAYING_eventPicture
+	goto = root
+
+	trigger = {
+		has_cardinal = yes
+		any_neighbor_province = {
+			NOT = { religion = fraticelli }
+			religion_group = christian
+		}
+	}
+
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# 
+	option = {
+		name = "aow_events.45.a"
+		owner = {
+			add_years_of_income = -0.1
+		}
+			random = {
+				chance = 40
+				province_event = {
+					id = aow_events.46
+					days = 180
+					tooltip = "aow_events.45.a.tt"
+				}
+			}
+
+	}
+
+	option = {
+		name = "aow_events.45.b"
+		remove_cardinal = yes
+	}
+}
+
+# Pope Discovers Duplicity
+province_event = {
+	id = ZZZ_enhanced_religion.11
+	title = "aow_events.46.t"
+	desc = "aow_events.46.d"
+	picture = POPE_PREACHING_eventPicture
+	goto = root
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = FAP
+	}
+
+	# 
+	option = {
+		name = "aow_events.46.a"
+		FAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = bribed_cardinal
+			}
+		}
+	}
+}
+
+# Contacts in the Holy See
+country_event = {
+	id = ZZZ_enhanced_religion.12
+	title = "aow_events.48.t"
+	desc = "aow_events.48.d"
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		papacy_active = yes
+		religion = fraticelli
+		NOT = { tag = FAP }
+		OR = {
+			employed_advisor = {
+				type = theologian
+				religion = fraticelli
+			}
+			employed_advisor = {
+				type = inquisitor
+				religion = fraticelli
+			}
+		}
+		NOT = { num_of_cardinals = 7 }
+		NOT = { total_number_of_cardinals = 49 }
+		any_owned_province = {
+			development = 10
+			has_cardinal = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	# 
+	option = {
+		name = "aow_events.48.a"
+		add_adm_power = -100
+		random_owned_province = {
+			limit = {
+				development = 10
+				has_cardinal = no
+			}
+			add_cardinal = yes
+		}
+	}
+
+	option = {
+		name = "aow_events.48.b"
+		add_adm_power = 100
+	}
+}
+
+# Cardinal Sins
+country_event = {
+	id = ZZZ_enhanced_religion.13
+	title = "aow_events.51.t"
+	desc = "aow_events.51.d"
+	picture = SPY_eventPicture
+
+	trigger = {
+		has_idea_group = spy_ideas
+		religion = fraticelli
+		any_neighbor_country = {
+			num_of_cardinals = 1
+		}
+		NOT = { has_country_modifier = blackmailing_cardinal }
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+	}
+
+	# 
+	option = {
+		name = "aow_events.51.a"
+		random_neighbor_country = {
+			limit = { num_of_cardinals = 1 }
+			random_owned_province = {
+				limit = { has_cardinal = yes }
+				hidden_effect = {
+					province_event = {
+						id = aow_events.52
+						days = 1
+					}
+				}
+				tooltip = {
+					remove_cardinal = yes
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = exposed_cardinal
+			}
+		}
+	}
+
+	#
+	option = {
+		name = "aow_events.51.b"
+		add_corruption = 0.5
+		add_country_modifier = {
+			name = "blackmailing_cardinal"
+			duration = 1825
+		}
+	}
+}
+
+# Veneration of Relics
+country_event = {
+	id = ZZZ_enhanced_religion.14
+	title = catholic_flavor.6.t
+	desc = catholic_flavor.6.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = fraticelli
+		NOT = { is_religion_enabled = protestant }
+		NOT = { tag = FAP }
+		any_owned_province = {
+			religion = fraticelli
+		}
+		is_year = 1490
+		NOT = {
+			has_global_flag = pap_disables_veneration_relics_flag
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = catholic
+				}
+				save_event_target_as = unrest_province
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	option = {
+		name = catholic_flavor.6.a
+		ai_chance = {
+			factor = 10
+		}
+		add_reform_desire = 0.01
+		add_papal_influence = 2
+	}
+	option = {
+		name = catholic_flavor.6.b
+		goto = unrest_province
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 5
+				has_global_flag = borgia_pope_global
+			}
+		}
+		event_target:unrest_province = {
+			add_unrest = 5
+		}
+	}
+}
+
+# Veneration of the Virgin Mary 
+country_event = {
+	id = ZZZ_enhanced_religion.15
+	title = catholic_flavor.7.t
+	desc = catholic_flavor.7.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = fraticelli
+		NOT = { is_religion_enabled = protestant }
+		NOT = { tag = FAP }
+
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	option = {
+		name = catholic_flavor.7.a
+		add_reform_desire = 0.01
+		add_papal_influence = 2
+	}
+	option = {
+		name = catholic_flavor.7.b
+		FAP = {
+			add_opinion = {
+				who = root
+				modifier = opinion_denying_the_holy_mother
+			}
+		}
+	}
+}
+
+# The Doctrine of Particular Judgement
+country_event = {
+	id = ZZZ_enhanced_religion.16
+	title = catholic_flavor.8.t
+	desc = catholic_flavor.8.d
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = fraticelli
+		NOT = { is_religion_enabled = protestant }
+		NOT = { tag = FAP }
+		any_owned_province = {
+			religion = fraticelli
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					religion = fraticelli
+				}
+				save_event_target_as = unrest_province
+			}
+		}
+	}
+	option = {
+		name = catholic_flavor.8.a
+		add_reform_desire = 0.01
+		add_papal_influence = 2
+	}
+	option = {
+		name = catholic_flavor.8.b
+		goto = unrest_province
+		add_reform_desire = -0.01
+		event_target:unrest_province = {
+			add_unrest = 5
+		}
+	}
+}
+
+# A new Confession of Faith
+country_event = {
+	id = ZZZ_enhanced_religion.17
+	title = catholic_flavor.9.t
+	desc = catholic_flavor.9.d
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = fraticelli
+		NOT = { is_religion_enabled = protestant }
+		NOT = { tag = FAP }
+		reform_desire = 0.5
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	option = {
+		name = catholic_flavor.9.a
+		add_reform_desire = 0.01
+		add_adm_power = 25
+	}
+	option = {
+		name = catholic_flavor.9.b
+		add_reform_desire = 0.005
+		add_papal_influence = 5
+		add_devotion = 1
+	}
+}
+
+#A Promise of Safe Passage?
+country_event = {
+	id = ZZZ_enhanced_religion.18
+	title = catholic_flavor.10.t
+	desc = catholic_flavor.10.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = fraticelli
+		NOT = { is_religion_enabled = protestant }
+		NOT = { tag = FAP }
+		reform_desire = 0.95
+		is_year = 1520
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		
+	}
+	option = {
+		name = catholic_flavor.10.a
+		add_reform_desire = 0.02
+		add_dip_power = 50
+	}
+	option = {
+		name = catholic_flavor.10.b
+		add_reform_desire = 0.01
+		add_papal_influence = 10
+		add_devotion = 1
+	}
+}

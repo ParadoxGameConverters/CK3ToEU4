@@ -1,0 +1,43 @@
+spirit_guardians_ideas = {
+	start = {		
+		global_manpower_modifier = 0.25
+		global_unrest = -2
+	}
+	bonus = {
+		promote_culture_cost = -0.75
+	}
+	trigger = {
+		tag = SGD
+		OR = {
+			religion = shamanism
+			religion = west_african_pagan
+			religion = west_african_pagan_reformed
+		}
+		government = theocracy
+	}
+	free = yes
+	
+	ZZZ_guardians_of_the_people = {
+		shock_damage_received = -0.2
+	}
+	ZZZ_guardians_of_trade = {
+		caravan_power = 0.2
+		trade_efficiency = 0.2
+	}
+	ZZZ_guardians_of_spirit = {
+		land_morale = 0.10
+		naval_morale = 0.10
+	}
+	ZZZ_guardians_of_the_arts = {
+		prestige_decay = -0.015
+	}
+	ZZZ_guardians_of_industry = {
+		production_efficiency = 0.2
+	}
+	ZZZ_guardians_of_the_seas = {
+		heavy_ship_power = 0.15
+	}
+	ZZZ_guardians_of_all = {		
+		num_accepted_cultures = 3
+	}
+}
