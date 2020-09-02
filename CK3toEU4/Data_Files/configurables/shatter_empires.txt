@@ -1,0 +1,10 @@
+# Empires posted here will be shattered if this file is enabled by the configuration. 
+# They *should* be independent and obviously have some vassals.
+# While this setting can apply even to kingdoms if shatter level is duchies, don't go about 
+# assigning duchies or lower.
+
+# Here are a few examples, you can edit this to your liking and experiment.
+# Do not list hre title here unless you selected "No HRE shattering" in configuration! 
+# I.e., if you changed HRE mechanics empire to be Byzantium, do not shatter it here!
+
+shatter_empires = { e_byzantium e_persia e_india e_hispania k_france }
