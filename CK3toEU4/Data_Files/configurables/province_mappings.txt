@@ -1,32 +1,192 @@
 0.0.0.0 = {
 	# # Africa
+	# Horn of Africa
+	link = { ck3 = 8496 eu4 = 2780 }	# c_baydhabo -> Beledweyne
+	link = { ck3 = 8475 eu4 = 1205 eu4 = 2782 }	# c_mogadishu -> Mogadishu, Warsheikh
+	link = { ck3 = 6435 ck3 = 8516 eu4 = 1217 }	# c_fazughli, c_gumuz -> Fazughli
+	link = { ck3 = 8376 eu4 = 2763 }	# c_berta -> Asosa
+	link = { ck3 = 8371 eu4 = 2770 }	# c_agaw_meder -> Agew
+	link = { ck3 = 8456 ck3 = 8485 ck3 = 8487 eu4 = 2779 }	# c_sidamo, c_el_waak, c_fudalhi -> Afder
+	link = { ck3 = 8495 ck3 = 8494 ck3 = 8491 ck3 = 8479 eu4 = 1207 }	# c_qalaafe, c_ganale, c_jubba, c_luuq -> Ogaden
+	link = { ck3 = 8423 eu4 = 1210 }	# c_gidaya -> Dawaro
+	link = { ck3 = 8419 ck3 = 8517 eu4 = 1218 }	# c_bali, c_dara -> Sidamo
+	link = { ck3 = 8413 ck3 = 8415 eu4 = 2761 }	# c_arusi, c_dawaro -> Arsi
+	link = { ck3 = 8410 ck3 = 8416 eu4 = 1211 }	# c_harar, c_hargaya -> Harer
+	link = { ck3 = 8348 ck3 = 8409 eu4 = 2791 }	# c_ifat, c_gabal -> Ankober
+	link = { ck3 = 8329 ck3 = 8319 eu4 = 1214 }	# c_amhara, c_angot -> Wollo
+	link = { ck3 = 8386 ck3 = 8385 ck3 = 8378 eu4 = 1213 }	# c_showa, c_waj, c_fetegar -> Shewa
+	link = { ck3 = 8388 eu4 = 2762 }	# c_damot -> Damot
+	link = { ck3 = 8438 eu4 = 2759 }	# c_wellega -> Gambela
+	link = { ck3 = 8433 eu4 = 2758 }	# c_innarya -> Illubabor
+	link = { ck3 = 8518 ck3 = 8450 eu4 = 2756 }	# c_gamo, c_burji -> Welayta
+	link = { ck3 = 8434 eu4 = 4158 }	# c_welamo -> Janjiro
+	link = { ck3 = 8436 eu4 = 2757 }	# c_kaffa -> Kaffa
+	link = { ck3 = 6431 eu4 = 2800 eu4 = 1216 }	# c_tagali -> Kosti, Tegali
+	link = { ck3 = 6432 eu4 = 2799 }	# c_sennar -> Sennar
+	link = { ck3 = 8301 ck3 = 8336 eu4 = 2769 }	# c_lasta, c_hayq -> Lasta
+	link = { ck3 = 8317 eu4 = 1224 }	# c_begemder -> Gonder
+	link = { ck3 = 8313 eu4 = 2772 }	# c_dembiya -> Dembiya
+	link = { ck3 = 8305 eu4 = 2771 }	# c_semien -> Semien
+	link = { ck3 = 8374 ck3 = 8368 eu4 = 2760 }	# c_hadya, c_sharka -> Hadiya
+	link = { ck3 = 8323 ck3 = 8372 eu4 = 1223 }	# c_gojjam, c_gafat -> Gojjam
+	link = { ck3 = 8501 eu4 = 2778 }	# c_gode -> Werder
+	link = { ck3 = 8406 eu4 = 2773 }	# c_dakkar -> Mora
+	link = { ck3 = 8391 ck3 = 8392 eu4 = 2764 }	# c_awssa, c_sitti -> Ausa
+	link = { ck3 = 8500 eu4 = 1208 }	# c_fafan -> Degehabur
+	link = { ck3 = 8505 eu4 = 2792 }	# c_nugaal -> Togdheer
+	link = { ck3 = 8279 ck3 = 6441 eu4 = 1230 }	# c_massawa, c_badi -> Massawa
+	link = { ck3 = 8339 eu4 = 2768 }	# c_afar -> Angot
+	link = { ck3 = 6397 eu4 = 2798 }	# c_alodia -> Soba
+	link = { ck3 = 6387 eu4 = 2797 }	# c_baqlin -> Shendy
+	link = { ck3 = 6360 ck3 = 6369 ck3 = 6370 ck3 = 6353 ck3 = 6366 ck3 = 6389 eu4 = 1220 }	# c_meroe, c_shamir, c_abu_hammad, c_kurgus, c_abwab, c_atbara -> Bayuda
+	link = { ck3 = 6410 eu4 = 1225 }	# c_naga -> Butana
+	link = { ck3 = 6401 ck3 = 6406 eu4 = 1222 }	# c_gezira, c_eleila -> Gezira
+	link = { ck3 = 8302 ck3 = 6444 eu4 = 4033 }	# c_wolqayt, c_showak -> Al Qadarif
+	link = { ck3 = 6440 ck3 = 6442 eu4 = 1226 }	# c_djarin, c_kassala -> Beja
+	link = { ck3 = 6439 eu4 = 2787 }	# c_qataa -> Hamasien
+	link = { ck3 = 8285 eu4 = 2766 }	# c_serae -> Mendefera
+	link = { ck3 = 8293 eu4 = 1227 }	# c_tigre -> Aksum
+	link = { ck3 = 8296 ck3 = 8335 eu4 = 2767 }	# c_intarta, c_danakil -> Enderta
+	link = { ck3 = 8332 ck3 = 8330 ck3 = 8281 eu4 = 2765 }	# c_edd, c_bur, c_dahlak -> Assab
+	link = { ck3 = 8342 eu4 = 1215 }	# c_tadjoura -> Tajura
+	link = { ck3 = 8400 eu4 = 1212 }	# c_zaila -> Zeila
+	link = { ck3 = 8404 eu4 = 2793 eu4 = 1209 }	# c_berbera -> Hargeisa, Berbera
+	link = { ck3 = 8503 eu4 = 2790 }	# c_makhir -> Sanaag
+	link = { ck3 = 8427 eu4 = 2789 }	# c_mait -> Las Khorey
+	link = { ck3 = 8430 eu4 = 2786 }	# c_busaso -> Bosaso
+	link = { ck3 = 8489 eu4 = 4052 }	# c_marsabit -> Dawa
+	link = { ck3 = 8473 ck3 = 8486 eu4 = 2781 }	# c_jilib, c_lag_dera -> Gedo
+	link = { ck3 = 8497 eu4 = 2785 }	# c_hiraab -> El Buur
+	link = { ck3 = 8472 eu4 = 2795 }	# c_mareeg -> Meregh
+	link = { ck3 = 8513 eu4 = 2024 }	# c_mudug -> Garoowe
+	link = { ck3 = 8511 eu4 = 2783 eu4 = 2784 }	# c_hobyo -> Hobyo, Galkayo
+	link = { ck3 = 8509 eu4 = 1206 }	# c_barbacadle -> Qardho
+	link = { ck3 = 8508 eu4 = 2788 }	# c_ras_hafun -> Hafun
+	link = { ck3 = 1369 eu4 = 1099 }	# c_socotra -> Socotra
+	# Subsaharan Africa
+	link = { ck3 = 6516 eu4 = 1156 }	# c_munio -> Damagaram
+	link = { ck3 = 6631 ck3 = 6629 eu4 = 2246 }	# c_walata, c_awkar -> Baghena
+	link = { ck3 = 6799 ck3 = 6755 ck3 = 6769 eu4 = 2243 }	# c_kingui, c_kaarta, c_kaniaga -> Termes
+	link = { ck3 = 6771 ck3 = 6774 eu4 = 2245 }	# c_yelimane, c_guidimaka -> Wagadu
+	link = { ck3 = 6748 ck3 = 8235 eu4 = 1120 }	# c_bambuk, c_bundu -> Bambuk
+	link = { ck3 = 8267 ck3 = 8242 eu4 = 2238 }	# c_kaabu, c_wuli -> Kantor
+	link = { ck3 = 6786 eu4 = 1115 }	# c_silla -> Brakna
+	link = { ck3 = 8250 ck3 = 6787 eu4 = 2237 }	# c_namandiru, c_podor -> Tekrur
+	link = { ck3 = 8258 ck3 = 8256 eu4 = 1116 }	# c_jolof, c_saalum -> Wolof
+	link = { ck3 = 6800 ck3 = 6777 eu4 = 2240 }	# c_galam, c_jowol -> Galam
+	link = { ck3 = 6682 eu4 = 2264 }	# c_oudalan -> Hombori
+	link = { ck3 = 6695 eu4 = 2263 }	# c_kurumba -> Haayre
+	link = { ck3 = 6703 eu4 = 1135 }	# c_yatenga -> Yatenga
+	link = { ck3 = 6660 ck3 = 6658 eu4 = 2274 }	# c_air, c_takkeda -> Air
+	link = { ck3 = 8011 ck3 = 8028 ck3 = 6965 eu4 = 1138 }	# c_kumasi, c_bonoso, c_begho -> Kumasi
+	link = { ck3 = 6945 ck3 = 6938 ck3 = 6941 eu4 = 2256 }	# c_dagomba, c_kuisugu, c_mamprusi -> Dagbon
+	link = { ck3 = 8044 ck3 = 6939 eu4 = 2295 }	# c_sokode, c_djugu -> Atakora
+	link = { ck3 = 8039 ck3 = 8047 eu4 = 1140 }	# c_todo, c_savalu -> Abomey
+	link = { ck3 = 8060 ck3 = 8063 eu4 = 1144 }	# c_oyo, c_ibadan -> Oyo
+	link = { ck3 = 8085 eu4 = 2289 }	# c_kyadya -> Ondo
+	link = { ck3 = 8075 ck3 = 8084 ck3 = 8083 ck3 = 6913 eu4 = 1146 }	# c_ife, c_yagba, c_igbomina, c_ilorin -> Ife
+	link = { ck3 = 6638 ck3 = 6727 eu4 = 2249 }	# c_sibi_mali, c_dakajalan -> Sibiridugu
+	link = { ck3 = 6645 ck3 = 6642 eu4 = 1123 }	# c_dodugu, c_soso -> Segu
+	link = { ck3 = 6621 eu4 = 1131 }	# c_massina -> Massina
+	link = { ck3 = 6622 eu4 = 2260 }	# c_mema -> Mema
+	link = { ck3 = 6949 ck3 = 6957 eu4 = 2267 }	# c_po, c_daboya -> Tenkodogo
+	link = { ck3 = 6997 eu4 = 1137 }	# c_wagadugu -> Wagadugu
+	link = { ck3 = 6567 ck3 = 6664 ck3 = 6591 eu4 = 1130 }	# c_tadmekka, c_tessalit, c_tamentit -> Tadmekka
+	link = { ck3 = 6676 eu4 = 1132 }	# c_gondo -> Timbuktu
+	link = { ck3 = 6677 eu4 = 2262 }	# c_upper_gurma -> Karabara
+	link = { ck3 = 6673 eu4 = 2259 }	# c_kurmina -> Sah
+	link = { ck3 = 6705 eu4 = 2261 }	# c_bandiagara -> Kala
+	link = { ck3 = 6721 ck3 = 6932 eu4 = 2265 }	# c_biun, c_pendjari -> Liptako
+	link = { ck3 = 6570 eu4 = 2273 }	# c_dyamare -> Ader
+	link = { ck3 = 8995 ck3 = 8998 eu4 = 2272 }	# c_zarma, c_tahoua -> Azbin
+	link = { ck3 = 6575 ck3 = 6573 eu4 = 2271 }	# c_ansongo, c_kukiya -> Azawagh
+	link = { ck3 = 6580 eu4 = 1133 }	# c_gao -> Gao
+	link = { ck3 = 6716 eu4 = 2270 eu4 = 1142 }	# c_dendi -> Dallol, Dendi
+	link = { ck3 = 6713 eu4 = 2269 }	# c_say -> Zarmaganda
+	link = { ck3 = 6684 eu4 = 2268 }	# c_bura -> Aribanda
+	link = { ck3 = 6692 eu4 = 1136 eu4 = 2266 }	# c_gurma -> Gurma, Bilanga
+	link = { ck3 = 6550 ck3 = 8103 eu4 = 1154 }	# c_kaduna, c_guwari -> Zazzau
+	link = { ck3 = 6551 eu4 = 1150 eu4 = 1148 }	# c_sokoto -> Zamfara, Gobir
+	link = { ck3 = 6538 ck3 = 6544 eu4 = 1149 }	# c_katsina, c_zaria -> Katsina
+	link = { ck3 = 6857 ck3 = 6843 ck3 = 6807 ck3 = 6812 ck3 = 6816 eu4 = 1159 }	# c_dar_rashid, c_barma, c_baguirmi, c_banre, c_kotoko -> Bagirmi
+	link = { ck3 = 6853 ck3 = 6851 ck3 = 6847 eu4 = 2288 }	# c_fitri, c_ghazzal, c_fellata -> Yao
+	link = { ck3 = 6895 ck3 = 6889 eu4 = 1219 }	# c_east_darfur, c_dar-al-rih -> Darfur
+	link = { ck3 = 6901 eu4 = 1221 }	# c_kordofan -> El Obeid
+	link = { ck3 = 6897 ck3 = 6900 eu4 = 2802 }	# c_west_kordofan, c_south_kordofan -> Kobbe
+	link = { ck3 = 6896 eu4 = 2801 }	# c_wadi_el-milk -> Medwa
+	link = { ck3 = 6878 ck3 = 6890 ck3 = 6875 ck3 = 6867 ck3 = 6893 eu4 = 774 }	# c_dar_al-said, c_el_fasher, c_ayn_farah, c_masalit, c_qimr -> Al-Junaynah
+	link = { ck3 = 6864 ck3 = 6894 ck3 = 6859 ck3 = 6856 eu4 = 2932 }	# c_wadai, c_dar_sila, c_salamat, c_kadam -> Waddai
+	link = { ck3 = 8996 eu4 = 2276 }	# c_gobir -> Itesan
+	link = { ck3 = 6559 eu4 = 2279 }	# c_daura -> Daura
+	link = { ck3 = 6519 ck3 = 6529 eu4 = 1155 }	# c_kano, c_rano -> Kano
+	link = { ck3 = 6513 ck3 = 6508 eu4 = 1157 }	# c_bornu, c_yau -> Borno
+	link = { ck3 = 6556 eu4 = 2278 }	# c_kebbi -> Kebbi
+	link = { ck3 = 6649 ck3 = 6724 eu4 = 2250 }	# c_bindugu, c_sikasso -> Bendugu
+	link = { ck3 = 8141 ck3 = 8146 eu4 = 2255 }	# c_nzi, c_boron -> Gyaaman
+	link = { ck3 = 8130 ck3 = 6979 ck3 = 6975 eu4 = 1125 }	# c_kong, c_leraba, c_loropeni -> Kong
+	link = { ck3 = 6709 ck3 = 6973 eu4 = 2253 }	# c_bena, c_dyulaso -> Gwiriko
+	link = { ck3 = 6712 ck3 = 6707 eu4 = 1134 }	# c_jenne, c_seno -> Jenne
+	link = { ck3 = 6954 ck3 = 8126 eu4 = 2252 }	# c_lobi, c_wa -> Lobi
+	link = { ck3 = 8054 ck3 = 8057 ck3 = 8049 eu4 = 2291 }	# c_ketu, c_igana, c_shabe -> Ketu
+	link = { ck3 = 6927 ck3 = 6922 eu4 = 2292 }	# c_bussa, c_ilesa -> Moshi
+	link = { ck3 = 6916 ck3 = 6928 eu4 = 1143 }	# c_ilo, c_nikki -> Borgu
+	link = { ck3 = 6905 eu4 = 2293 }	# c_yauri -> Yawuri
+	link = { ck3 = 6909 eu4 = 1145 }	# c_nupe -> Nupe
+	link = { ck3 = 6768 ck3 = 6650 ck3 = 6479 eu4 = 2244 }	# c_tagant, c_wadan, c_azukki -> Tagant
+	link = { ck3 = 6751 ck3 = 8236 eu4 = 2248 }	# c_gangaran, c_konko -> Do
+	link = { ck3 = 6741 ck3 = 6753 eu4 = 1124 }	# c_tabon, c_kita -> Joma
+	link = { ck3 = 8184 ck3 = 8174 ck3 = 8175 eu4 = 1117 }	# c_futa_jalon, c_solimana, c_kuranko -> Futa Jallon
+	link = { ck3 = 6987 ck3 = 6983 ck3 = 8155 ck3 = 8156 ck3 = 8158 eu4 = 1122 }	# c_tyendugu, c_nyene, c_worodugu, c_mau, c_konyan -> Bagoe
+	link = { ck3 = 6742 ck3 = 6736 ck3 = 6732 ck3 = 6991 ck3 = 6994 eu4 = 1121 }	# c_bure, c_kankan, c_niani, c_kabarasana, c_toro -> Bure
+	link = { ck3 = 8086 ck3 = 8088 eu4 = 1147 }	# c_edo, c_benin -> Benin
+	link = { ck3 = 8007 ck3 = 8003 ck3 = 6966 eu4 = 2254 }	# c_bono, c_upper_bono, c_gonja -> Bonoman
+	link = { ck3 = 8133 ck3 = 8125 eu4 = 2257 }	# c_ndenye, c_bonduku -> Denkyira
+	link = { ck3 = 8019 ck3 = 8022 ck3 = 8026 ck3 = 8023 eu4 = 2258 }	# c_fante, c_wassa, c_aowin, c_adanse -> Cape Coast
+	link = { ck3 = 8036 ck3 = 8016 eu4 = 1139 }	# c_ewe, c_kwahu-akyem -> Gold Coast
+	link = { ck3 = 8053 ck3 = 8041 eu4 = 1141 }	# c_ifonyin, c_abomey -> Whydah
+	link = { ck3 = 8070 ck3 = 8065 eu4 = 2290 }	# c_owu, c_ijebu -> Ijebu
+	link = { ck3 = 8116 eu4 = 2294 eu4 = 1151 }	# c_ijaw -> Warri, Bonny
+	link = { ck3 = 8122 eu4 = 1163 }	# c_ibibo -> Calabar
+	link = { ck3 = 8229 ck3 = 8231 ck3 = 8145 ck3 = 8211 ck3 = 8209 ck3 = 8138 eu4 = 1126 }	# c_kru, c_dibri, c_dabou, c_lobo, c_boubo, c_attie -> Ivory Coast
+	link = { ck3 = 8214 ck3 = 8205 ck3 = 8204 ck3 = 8161 ck3 = 8166 eu4 = 2242 }	# c_gola, c_sherbro, c_kono, c_toma, c_kisi -> Karou
+	link = { ck3 = 8225 ck3 = 8217 ck3 = 8219 ck3 = 8228 ck3 = 8168 eu4 = 1119 }	# c_grebo, c_bassa, c_nuon, c_wenyon, c_man -> Grain Coast
+	link = { ck3 = 4761 eu4 = 1127 }	# c_taghaza -> Tuat
+	link = { ck3 = 6612 ck3 = 6656 eu4 = 1128 }	# c_tirakka, c_arawan -> Taudeni
+	link = { ck3 = 6614 eu4 = 1129 }	# c_kouga -> Azawad
+	link = { ck3 = 6766 ck3 = 6763 ck3 = 6761 eu4 = 2247 }	# c_hodh, c_tichitt, c_masin -> Hodh
+	link = { ck3 = 8190 ck3 = 8199 ck3 = 8188 eu4 = 1118 }	# c_temne, c_sanda, c_tamiso -> Sierra Leone
+	link = { ck3 = 8275 ck3 = 8198 ck3 = 8196 eu4 = 2241 }	# c_nalu, c_timbi, c_kokoli -> Beafada
+	link = { ck3 = 8277 ck3 = 8274 eu4 = 1114 }	# c_kasa, c_geba -> Gabu
+	link = { ck3 = 8245 ck3 = 8261 ck3 = 8266 eu4 = 2239 }	# c_niomi, c_jame, c_jara -> Siine
+	link = { ck3 = 8257 ck3 = 8253 eu4 = 1113 }	# c_kayor, c_baol -> Cayor
+	link = { ck3 = 6798 ck3 = 6785 ck3 = 6481 eu4 = 1112 }	# c_dhraina, c_takrur, c_amatlus -> Trarza
 	# Northern Africa
-	link = { ck3 = 6472 eu4 = 347 }	# c_zammour -> Ifni
+	link = { ck3 = 6472 ck3 = 6482 eu4 = 347 }	# c_zammour, c_tiris -> Ifni
 	link = { ck3 = 4676 eu4 = 2465 }	# c_wajda -> Oujda
 	link = { ck3 = 4662 eu4 = 2462 }	# c_tahert -> Ouarsenis
-	link = { ck3 = 6655 ck3 = 4759 eu4 = 2460 }	# c_saoura, c_sijilmasa -> Saoura
-	link = { ck3 = 4751 eu4 = 346 }	# c_figuig -> Figuig
+	link = { ck3 = 6655 ck3 = 4759 ck3 = 6468 eu4 = 2460 }	# c_saoura, c_sijilmasa, c_touat -> Saoura
+	link = { ck3 = 4751 eu4 = 346 }	# c_figuig -> Tafilalt
 	link = { ck3 = 4615 eu4 = 2472 }	# c_wargla -> Ouargla
 	link = { ck3 = 4610 eu4 = 2456 }	# c_arigh -> Touggourt
 	link = { ck3 = 6322 eu4 = 2457 }	# c_ghardaia -> Mzab
-	link = { ck3 = 4619 eu4 = 350 }	# c_laghwat -> Aures
+	link = { ck3 = 4619 eu4 = 350 }	# c_laghwat -> Laghouat
 	link = { ck3 = 4762 eu4 = 2459 }	# c_ashir -> Titteri
 	link = { ck3 = 4644 eu4 = 2458 }	# c_hodna -> Hodna
 	link = { ck3 = 4754 eu4 = 351 }	# c_biskra -> Biskra
-	link = { ck3 = 4624 ck3 = 4591 eu4 = 2454 }	# c_west_qamuda, c_medjerda -> Kairouan
-	link = { ck3 = 4742 ck3 = 4745 ck3 = 4712 eu4 = 349 }	# c_ziz, c_muluya, c_tadla -> Atlas
+	link = { ck3 = 4624 ck3 = 4591 eu4 = 2454 }	# c_west_qamuda, c_medjerda -> Kef
+	link = { ck3 = 4742 ck3 = 4745 ck3 = 4712 eu4 = 349 }	# c_ziz, c_muluya, c_tadla -> Figuig
 	link = { ck3 = 4632 ck3 = 4634 eu4 = 340 }	# c_constantine, c_bilizma -> Constantine
-	link = { ck3 = 6091 eu4 = 2318 }	# c_bahriya -> Bahariya
+	link = { ck3 = 6091 eu4 = 2318 }	# c_bahriya -> Bahiriya
 	link = { ck3 = 6087 ck3 = 6088 eu4 = 4323 }	# c_dakhla, c_farafra -> Farafreh
 	link = { ck3 = 6084 eu4 = 1233 }	# c_kharga -> Kharga
 	link = { ck3 = 6073 eu4 = 4320 }	# c_asyut -> Girga
 	link = { ck3 = 6078 eu4 = 360 }	# c_qus -> Qus
-	link = { ck3 = 6113 eu4 = 2323 }	# c_allaqi -> Sahra an Nubyah
+	link = { ck3 = 6113 eu4 = 2323 }	# c_allaqi -> Sahra an Nübyah
 	link = { ck3 = 6362 ck3 = 6331 eu4 = 1234 }	# c_kalabsha, c_qurta -> Qasr Ibrim
 	link = { ck3 = 6082 eu4 = 1231 eu4 = 4319 }	# c_aswan -> Aswan, Isna
-	link = { ck3 = 6377 eu4 = 1232 }	# c_suakin -> Suakin
-	link = { ck3 = 6384 eu4 = 1229 }	# c_naqis -> Berber
-	link = { ck3 = 6359 ck3 = 6338 eu4 = 1228 }	# c_sai, c_batn_al-hajar -> Dongola
+	link = { ck3 = 6377 ck3 = 6381 eu4 = 1232 }	# c_suakin, c_bazin -> Suakin
+	link = { ck3 = 6384 ck3 = 6383 eu4 = 1229 }	# c_naqis, c_wadi_amur -> Berber
+	link = { ck3 = 6359 ck3 = 6338 ck3 = 6345 eu4 = 1228 }	# c_sai, c_batn_al-hajar, c_dongola -> Dongola
 	link = { ck3 = 6336 ck3 = 6334 eu4 = 2322 }	# c_faras, c_qasr_ibrim -> Wadi Halfa
 	link = { ck3 = 6388 eu4 = 2324 }	# c_aydhab -> Halaib
 	link = { ck3 = 6121 eu4 = 2321 }	# c_jabal_quzlum -> Queseer
@@ -39,63 +199,82 @@
 	link = { ck3 = 6038 ck3 = 5968 eu4 = 364 }	# c_farama, c_ghazza -> Gaza
 	link = { ck3 = 6031 eu4 = 365 }	# c_firaun -> Sinai
 	link = { ck3 = 6037 eu4 = 2315 }	# c_sinai -> Suez
-	link = { ck3 = 6044 eu4 = 4316 }	# c_sharkiya -> Mansura
+	link = { ck3 = 6044 eu4 = 4316 }	# c_sharkiya -> Sharqiya
 	link = { ck3 = 6046 eu4 = 363 }	# c_damietta -> Damietta
 	link = { ck3 = 6055 ck3 = 6051 eu4 = 362 }	# c_al-buhaira, c_al-gharbiya -> Rosetta
 	link = { ck3 = 6116 eu4 = 358 }	# c_alexandria -> Alexandria
 	link = { ck3 = 6097 ck3 = 6117 eu4 = 2325 }	# c_sullum, c_siwa -> Tarrana
 	link = { ck3 = 6098 eu4 = 2326 }	# c_tobruk -> Bardiyah
 	link = { ck3 = 6101 eu4 = 357 }	# c_derna -> Darnah
-	link = { ck3 = 6105 ck3 = 6108 eu4 = 356 }	# c_barqa, c_awjila -> Cyrenaica
+	link = { ck3 = 6105 ck3 = 6108 eu4 = 356 }	# c_barqa, c_awjila -> Benghazi
 	link = { ck3 = 4605 ck3 = 4606 ck3 = 6321 eu4 = 352 }	# c_souf, c_qashtiliya, c_bir_amir -> Gafsa
+	link = { ck3 = 6503 eu4 = 2284 }	# c_garumele -> Manga
+	link = { ck3 = 6535 eu4 = 2282 }	# c_katagum -> Muniyo
+	link = { ck3 = 8106 eu4 = 2280 eu4 = 2283 }	# c_bauchi -> Biram, Bedde
+	link = { ck3 = 8105 eu4 = 1161 }	# c_keffi -> Bauchi
+	link = { ck3 = 8102 eu4 = 2281 }	# c_opanda -> Rano
+	link = { ck3 = 8113 eu4 = 1153 }	# c_igala -> Pindinga
+	link = { ck3 = 6447 ck3 = 6459 eu4 = 2448 }	# c_zawila, c_germa -> Fezzan
+	link = { ck3 = 6669 eu4 = 2474 }	# c_murzuk -> Tajarhi
+	link = { ck3 = 6668 ck3 = 6666 eu4 = 2475 }	# c_djado, c_tibesti -> Djado
+	link = { ck3 = 6665 ck3 = 6496 eu4 = 2277 }	# c_bodele, c_ain_galakka -> Kawar
+	link = { ck3 = 6659 ck3 = 6456 eu4 = 2275 }	# c_bilma, c_dirku -> Tenere
+	link = { ck3 = 6490 ck3 = 6492 eu4 = 1158 }	# c_kanem, c_jimi -> Kanem
+	link = { ck3 = 6826 ck3 = 6821 eu4 = 2287 }	# c_kagha, c_wandala -> Kotoko
+	link = { ck3 = 6831 ck3 = 6841 ck3 = 6838 eu4 = 2286 }	# c_kera, c_tumak, c_kuku -> Logone
+	link = { ck3 = 6829 ck3 = 6837 eu4 = 1160 }	# c_diamare, c_masa -> Mandara
+	link = { ck3 = 6534 ck3 = 6827 eu4 = 2285 }	# c_fika, c_garoua -> Marghi
+	link = { ck3 = 6533 eu4 = 1249 }	# c_kwararafa -> Yola
+	link = { ck3 = 8121 eu4 = 1162 }	# c_idoma -> Wukari
+	link = { ck3 = 8114 eu4 = 1152 }	# c_igbo -> Idah
 	link = { ck3 = 6661 eu4 = 4567 }	# c_ghat -> Sabha
 	link = { ck3 = 4571 eu4 = 2450 }	# c_ghadames -> Ghadames
 	link = { ck3 = 4564 eu4 = 2449 }	# c_waddan -> Jufra
 	link = { ck3 = 4552 eu4 = 355 }	# c_syrte -> Sirt
 	link = { ck3 = 4556 eu4 = 2451 }	# c_labda -> Thubaqt
-	link = { ck3 = 4569 eu4 = 354 }	# c_tripolitana -> Tripolitania
+	link = { ck3 = 4569 eu4 = 354 }	# c_tripolitana -> Tripoli
 	link = { ck3 = 4567 eu4 = 2452 }	# c_jafara -> Zuwarah
 	link = { ck3 = 4566 eu4 = 353 eu4 = 2954 }	# c_djerba -> Tataouine, Djerba
 	link = { ck3 = 4577 ck3 = 4574 eu4 = 2453 }	# c_sfax, c_gabes -> Sfax
 	link = { ck3 = 4597 eu4 = 4566 }	# c_kairwan -> Kairwan
-	link = { ck3 = 4580 eu4 = 2473 }	# c_mahdiya -> Souss
+	link = { ck3 = 4580 eu4 = 2473 }	# c_mahdiya -> Sousse
 	link = { ck3 = 4673 eu4 = 336 }	# c_tlemcen -> Tlemcen
-	link = { ck3 = 4756 ck3 = 4736 eu4 = 2466 }	# c_draa, c_tudgha -> Draa
+	link = { ck3 = 4756 ck3 = 4736 ck3 = 6652 eu4 = 2466 }	# c_draa, c_tudgha, c_tindouf -> Draa
 	link = { ck3 = 4732 eu4 = 348 eu4 = 2464 }	# c_sous -> Sus, Ouarzazate
 	link = { ck3 = 4731 ck3 = 4717 eu4 = 344 eu4 = 4568 }	# MANY-TO-MANY: c_marrakesh, c_tinmallal -> Marrakech, Demnate
 	link = { ck3 = 4747 eu4 = 2468 }	# c_fazaz -> Tadla
 	link = { ck3 = 4699 eu4 = 2467 }	# c_meknes -> Meknes
-	link = { ck3 = 4726 ck3 = 4758 eu4 = 1110 }	# c_agadir, c_ifni -> Rio de Oro
-	link = { ck3 = 4722 eu4 = 345 eu4 = 2470 }	# c_asfi -> Safi, Haha
+	link = { ck3 = 4726 ck3 = 4758 eu4 = 1110 }	# c_agadir, c_ifni -> Agadir
+	link = { ck3 = 4722 eu4 = 345 eu4 = 2470 }	# c_asfi -> Abda, Haha
 	link = { ck3 = 4705 eu4 = 4564 eu4 = 2469 }	# c_tamasna -> Anfa, Dukkala
-	link = { ck3 = 4701 eu4 = 4563 eu4 = 342 }	# c_gharb -> Sale, Toubkhal
-	link = { ck3 = 4651 eu4 = 338 }	# c_algier -> Al-Djazair
+	link = { ck3 = 4701 eu4 = 4563 eu4 = 342 }	# c_gharb -> Salé, Gharb
+	link = { ck3 = 4651 eu4 = 338 }	# c_algier -> Mitidja
 	link = { ck3 = 4637 eu4 = 339 }	# c_bejaia -> Kabylia
-	link = { ck3 = 4752 eu4 = 1882 }	# c_annaba -> Bône
+	link = { ck3 = 4752 eu4 = 1882 }	# c_annaba -> Annaba
 	link = { ck3 = 4587 eu4 = 2455 }	# c_satfura -> Bizerte
 	link = { ck3 = 4753 eu4 = 341 }	# c_tunis -> Tunis
 	link = { ck3 = 4654 eu4 = 2461 }	# c_tanas -> Dahra
 	link = { ck3 = 4666 eu4 = 337 }	# c_orania -> Oran
 	link = { ck3 = 4670 eu4 = 4562 }	# c_hunyan -> Mers el Kebir
-	link = { ck3 = 4679 eu4 = 335 }	# c_melilla -> Mellila
+	link = { ck3 = 4679 eu4 = 335 }	# c_melilla -> Melilla
 	link = { ck3 = 4696 ck3 = 4748 eu4 = 343 }	# c_fes, c_taza -> Fez
-	link = { ck3 = 4682 eu4 = 1751 eu4 = 4561 }	# c_ceuta -> Ceuta, Tetouan
+	link = { ck3 = 4682 eu4 = 1751 eu4 = 4561 }	# c_ceuta -> Ceuta, Tétouan
 	link = { ck3 = 4686 eu4 = 334 }	# c_tangiers -> Tangiers
-	link = { ck3 = 8715 eu4 = 366 }	# c_fuerteventura -> The Canarias
+	link = { ck3 = 8715 eu4 = 366 }	# c_fuerteventura -> Gran Canaria
 	link = { ck3 = 8713 eu4 = 4565 }	# c_canarias -> Tenerife
 	link = { ck3 = 8716 eu4 = 368 }	# c_madeira -> Madeira
 	# # Europe
 	# Mother Russia
 	link = { ck3 = 5509 eu4 = 474 eu4 = 2418 }	# c_atkarsk -> Yaik, Ukek
 	link = { ck3 = 5392 eu4 = 2419 eu4 = 473 }	# c_petrovsk -> Kanadey, Samara
-	link = { ck3 = 5498 eu4 = 304 eu4 = 2423 }	# c_durovka -> Pensa, Alatyr
-	link = { ck3 = 5379 eu4 = 2415 eu4 = 303 }	# c_balachev -> Etkara, Saratow
+	link = { ck3 = 5498 eu4 = 304 eu4 = 2423 }	# c_durovka -> Penza, Alatyr
+	link = { ck3 = 5379 eu4 = 2415 eu4 = 303 }	# c_balachev -> Etkara, Saratov
 	link = { ck3 = 5352 eu4 = 4255 }	# c_voronezh -> Pronsk
-	link = { ck3 = 5356 ck3 = 5358 eu4 = 302 }	# c_tambov, c_kozlov -> Tambow
+	link = { ck3 = 5356 ck3 = 5358 eu4 = 302 }	# c_tambov, c_kozlov -> Tambov
 	link = { ck3 = 5242 eu4 = 1956 eu4 = 4253 eu4 = 4147 }	# c_suzdal -> Suzdal, Yuriev, Rostov
 	link = { ck3 = 5238 eu4 = 307 }	# c_vladimir -> Vladimir
 	link = { ck3 = 5831 ck3 = 5834 eu4 = 4263 }	# c_lyubim, c_onsthia -> Sol Galitskaya
-	link = { ck3 = 5828 eu4 = 1753 eu4 = 314 }	# c_vologda -> Kostroma, Ustyug
+	link = { ck3 = 5828 eu4 = 1753 eu4 = 314 }	# c_vologda -> Kostroma, Vologda
 	link = { ck3 = 5249 eu4 = 4254 }	# c_plyos -> Starodub
 	link = { ck3 = 5252 eu4 = 1957 }	# c_manturovo -> Galich
 	link = { ck3 = 5436 eu4 = 305 }	# c_perm -> Perm
@@ -109,11 +288,11 @@
 	link = { ck3 = 5406 eu4 = 4267 eu4 = 2421 }	# c_bolghar -> Bolgar, Juketau
 	link = { ck3 = 5411 eu4 = 4264 }	# c_ashli -> Tetyushi
 	link = { ck3 = 5400 eu4 = 1082 }	# c_kazan -> Kazan
-	link = { ck3 = 5235 eu4 = 1754 }	# c_murom -> Orel
+	link = { ck3 = 5235 eu4 = 1754 }	# c_murom -> Murom
 	link = { ck3 = 5365 ck3 = 5387 ck3 = 5362 eu4 = 2422 }	# c_cheboksary, c_saran, c_lachyk-uba -> Veda-Suvar
 	link = { ck3 = 5469 ck3 = 5396 eu4 = 1079 eu4 = 4129 }	# MANY-TO-MANY: c_kolyn, c_yoshkar-ola -> Viatka, Ust-Vym
-	link = { ck3 = 5472 ck3 = 5474 eu4 = 1083 }	# c_cykma, c_martyuba -> Zavolochye
-	link = { ck3 = 5256 eu4 = 306 }	# c_nizhny_novgorod -> Nijni-Novgorod
+	link = { ck3 = 5472 ck3 = 5474 eu4 = 1083 }	# c_cykma, c_martyuba -> Vetluga
+	link = { ck3 = 5256 eu4 = 306 }	# c_nizhny_novgorod -> Nizhny Novgorod
 	link = { ck3 = 5177 eu4 = 311 }	# c_rusa -> Kholm
 	link = { ck3 = 5142 eu4 = 310 eu4 = 1961 }	# c_novgorod -> Novgorod, Ladoga
 	link = { ck3 = 5176 eu4 = 308 eu4 = 4250 }	# c_yaroslavl -> Yaroslavl, Mologa
@@ -121,7 +300,7 @@
 	link = { ck3 = 5167 eu4 = 4260 eu4 = 1959 }	# c_valdai -> Vyshny Volochyok, Torzhok
 	link = { ck3 = 5243 eu4 = 294 eu4 = 4249 eu4 = 4248 }	# c_tver -> Tver, Zubtsov, Kashin
 	link = { ck3 = 5169 eu4 = 4117 }	# c_bezichi -> Bezhetsk
-	link = { ck3 = 5158 ck3 = 5160 eu4 = 312 }	# c_beloozero, c_vyangi -> Vologda
+	link = { ck3 = 5158 ck3 = 5160 eu4 = 312 }	# c_beloozero, c_vyangi -> Beloozero
 	link = { ck3 = 5823 eu4 = 4262 }	# c_totma -> Totma
 	link = { ck3 = 5848 ck3 = 5844 eu4 = 4122 }	# c_velsk, c_shenkursk -> Shenkursk
 	link = { ck3 = 5819 eu4 = 4259 }	# c_kirillov -> Velsk
@@ -129,7 +308,7 @@
 	link = { ck3 = 202 ck3 = 196 ck3 = 201 eu4 = 309 }	# c_kontupohja, c_onega, c_salinis -> Olonets
 	link = { ck3 = 5802 eu4 = 1955 eu4 = 4257 }	# c_kholmogory -> Kholmogory, Mezen
 	link = { ck3 = 5806 eu4 = 4258 }	# c_onega_BJA -> Onega
-	link = { ck3 = 5810 eu4 = 313 }	# c_povenets -> Archangelsk
+	link = { ck3 = 5810 eu4 = 313 }	# c_povenets -> Soroka
 	link = { ck3 = 5255 eu4 = 2749 eu4 = 4261 }	# c_tikhvin -> Tikhvin, Ustyuzhna
 	link = { ck3 = 5163 ck3 = 5172 eu4 = 1752 }	# c_luki, c_toropets -> Rzhev
 	link = { ck3 = 5223 eu4 = 4243 }	# c_gnezdovo -> Toropets
@@ -139,7 +318,7 @@
 	link = { ck3 = 5131 eu4 = 275 }	# c_polotsk -> Polotsk
 	link = { ck3 = 5149 eu4 = 274 }	# c_pskov -> Pskov
 	link = { ck3 = 170 eu4 = 33 eu4 = 34 }	# c_vodi -> Neva, Ingermanland
-	link = { ck3 = 5225 eu4 = 4246 eu4 = 292 }	# c_roslavl -> Mstislav, Mogilyov
+	link = { ck3 = 5225 eu4 = 4246 eu4 = 292 }	# c_roslavl -> Mstislav, Mogilev
 	link = { ck3 = 5220 eu4 = 4245 eu4 = 293 }	# c_smolensk -> Vyazma, Smolensk
 	link = { ck3 = 5227 eu4 = 4251 eu4 = 296 }	# c_mozhaysk -> Mozhaisk, Kaluga
 	link = { ck3 = 5245 eu4 = 295 eu4 = 4252 }	# c_moskva -> Moskva, Kolomna
@@ -149,28 +328,28 @@
 	link = { ck3 = 5190 eu4 = 4542 }	# c_voin -> Lubnie
 	link = { ck3 = 5184 ck3 = 5283 eu4 = 290 }	# c_hradyzk, c_samar -> Poltava
 	link = { ck3 = 5188 ck3 = 5195 eu4 = 4543 }	# c_romen, c_putyvl -> Rylsk
-	link = { ck3 = 5208 ck3 = 5192 eu4 = 1945 }	# c_sevsk, c_novgorod_seversky -> Novgorod-Seversky
-	link = { ck3 = 5205 eu4 = 4244 }	# c_starodub -> Starodub
+	link = { ck3 = 5208 ck3 = 5192 eu4 = 1945 }	# c_sevsk, c_novgorod_seversky -> Severia
+	link = { ck3 = 5205 eu4 = 4244 }	# c_starodub -> Trubchevsk
 	link = { ck3 = 5218 eu4 = 300 }	# c_odoyev -> Tula
 	link = { ck3 = 5253 eu4 = 301 eu4 = 1778 }	# c_ryazan -> Ryazan, Kasimov
 	link = { ck3 = 5211 ck3 = 5214 eu4 = 297 }	# c_karachev, c_kozelsk -> Bryansk
-	link = { ck3 = 5216 eu4 = 4116 }	# c_novosil -> Belyov
+	link = { ck3 = 5216 eu4 = 4116 }	# c_novosil -> Oka
 	link = { ck3 = 5199 eu4 = 298 }	# c_kursk -> Kursk
 	link = { ck3 = 5757 eu4 = 2196 }	# c_guria -> Guria
 	link = { ck3 = 5787 ck3 = 5785 eu4 = 2205 }	# c_suenik, c_dvin -> Nakhchivan
 	link = { ck3 = 4544 eu4 = 424 }	# c_ardabil -> Ardabil
 	link = { ck3 = 4535 eu4 = 4340 }	# c_talish -> Astara
 	link = { ck3 = 5728 eu4 = 419 }	# c_hayk -> Yerevan
-	link = { ck3 = 5741 eu4 = 2204 }	# c_klarjeti -> Samtskhe
-	link = { ck3 = 5762 ck3 = 5760 eu4 = 423 }	# c_lori, c_tbilisi -> Kartli
+	link = { ck3 = 5741 eu4 = 2204 }	# c_klarjeti -> Kars
+	link = { ck3 = 5762 ck3 = 5760 eu4 = 423 }	# c_lori, c_tbilisi -> Tbilisi
 	link = { ck3 = 5779 ck3 = 5784 eu4 = 420 eu4 = 2202 }	# MANY-TO-MANY: c_aran, c_khachen -> Ganja, Melikates
 	link = { ck3 = 5773 ck3 = 5793 eu4 = 421 }	# c_shirvan, c_mugan -> Shirvan
 	link = { ck3 = 5776 eu4 = 4299 }	# c_shaki -> Shamakhi
 	link = { ck3 = 5770 eu4 = 4305 }	# c_hereti -> Shaki
 	link = { ck3 = 5767 eu4 = 2203 }	# c_kakheti -> Kakheti
-	link = { ck3 = 5743 eu4 = 4301 }	# c_kartli -> Gori
+	link = { ck3 = 5743 eu4 = 4301 }	# c_kartli -> Kartli
 	link = { ck3 = 5753 eu4 = 422 }	# c_svaneti -> Imereti
-	link = { ck3 = 5750 eu4 = 462 }	# c_odishi -> Mingrelia
+	link = { ck3 = 5750 eu4 = 462 }	# c_odishi -> Odishi
 	link = { ck3 = 5266 eu4 = 1944 }	# c_cherkassy -> Cherkasy
 	link = { ck3 = 5086 eu4 = 280 }	# c_kiev -> Kiev
 	link = { ck3 = 5100 ck3 = 5069 eu4 = 281 }	# c_ushytsia, c_terebovl -> Podolia
@@ -179,28 +358,28 @@
 	link = { ck3 = 5122 eu4 = 4544 }	# c_babruysk -> Bobrujsk
 	link = { ck3 = 5094 ck3 = 5097 eu4 = 4247 }	# c_zvyahel, c_chornobyl -> Owrucz
 	link = { ck3 = 5103 ck3 = 5108 eu4 = 1941 }	# c_turov, c_korosten -> Turov
-	link = { ck3 = 5056 ck3 = 5059 eu4 = 277 }	# c_berestye, c_dorohychyn -> Grodno
-	link = { ck3 = 5113 eu4 = 278 }	# c_pinsk -> Polesia
+	link = { ck3 = 5056 ck3 = 5059 eu4 = 277 }	# c_berestye, c_dorohychyn -> Brest
+	link = { ck3 = 5113 eu4 = 278 }	# c_pinsk -> Pinsk
 	link = { ck3 = 5118 eu4 = 4536 }	# c_kletsk -> Lida
 	link = { ck3 = 5136 eu4 = 4537 }	# c_novogrudok -> Nowogrodek
 	link = { ck3 = 5116 eu4 = 4545 }	# c_slutsk -> Sluck
 	link = { ck3 = 5126 eu4 = 276 }	# c_minsk -> Minsk
 	link = { ck3 = 5076 eu4 = 4538 }	# c_cherven -> Chelm
-	link = { ck3 = 5344 eu4 = 2197 eu4 = 2201 }	# c_cabardinia -> Cabardia, Alania
+	link = { ck3 = 5344 eu4 = 2197 eu4 = 2201 }	# c_cabardinia -> Kabardia, Alania
 	link = { ck3 = 5312 ck3 = 5334 eu4 = 464 eu4 = 2417 }	# MANY-TO-MANY: c_astrakhan, c_beksima -> Astrakhan, Kuma
 	link = { ck3 = 5343 eu4 = 2208 }	# c_samiran -> Terek
-	link = { ck3 = 5341 eu4 = 425 eu4 = 4306 }	# c_derbent -> Dagestan, Khumuk
+	link = { ck3 = 5341 eu4 = 425 eu4 = 4306 }	# c_derbent -> Dagestan, Lakia
 	link = { ck3 = 5746 ck3 = 5342 eu4 = 1856 eu4 = 2199 eu4 = 2198 }	# MANY-TO-MANY: c_abkhazia, c_samander -> Abkhazia, Tarki, Khundzia
 	link = { ck3 = 5346 ck3 = 5345 eu4 = 469 eu4 = 2365 }	# MANY-TO-MANY: c_saqsin, c_itil -> Ryn, Orda
-	link = { ck3 = 5332 eu4 = 468 eu4 = 2414 eu4 = 2416 }	# c_sarkel -> Khazaria, Azaraba, Majar
-	link = { ck3 = 5292 eu4 = 288 }	# c_golden_hills -> Cherkassk
-	link = { ck3 = 5295 eu4 = 466 eu4 = 1971 }	# c_sarysyn -> Sarai, Tsaritsyn
+	link = { ck3 = 5332 eu4 = 468 eu4 = 2414 eu4 = 2416 }	# c_sarkel -> Manych, Azaraba, Majar
+	link = { ck3 = 5292 eu4 = 288 }	# c_golden_hills -> Lower Don
+	link = { ck3 = 5295 eu4 = 466 eu4 = 1971 }	# c_sarysyn -> Sarai, Beljamen
 	link = { ck3 = 5301 eu4 = 463 }	# c_maghas -> Circassia
 	link = { ck3 = 5298 eu4 = 2195 }	# c_zichia -> Adyghe
-	link = { ck3 = 5336 eu4 = 2447 }	# c_tmutarakan -> Mantrega
-	link = { ck3 = 5338 eu4 = 287 }	# c_khumar -> Kouban
-	link = { ck3 = 5340 eu4 = 286 }	# c_azov -> Azow
-	link = { ck3 = 5232 eu4 = 2408 }	# c_tula -> Lipetsk
+	link = { ck3 = 5336 eu4 = 2447 }	# c_tmutarakan -> Matrega
+	link = { ck3 = 5338 eu4 = 287 }	# c_khumar -> Kuban
+	link = { ck3 = 5340 eu4 = 286 }	# c_azov -> Azov
+	link = { ck3 = 5232 eu4 = 2408 }	# c_tula -> Yelets
 	link = { ck3 = 5286 eu4 = 291 }	# c_oskol -> Kharkov
 	link = { ck3 = 5373 eu4 = 299 }	# c_karatayak -> Voronezh
 	link = { ck3 = 5382 ck3 = 5376 eu4 = 467 }	# c_khopyor, c_tuluchezeva -> Borisoglebsk
@@ -215,47 +394,47 @@
 	link = { ck3 = 5024 ck3 = 5039 ck3 = 5042 eu4 = 4529 }	# c_iasi, c_dorohoi, c_hotin -> Iasi
 	link = { ck3 = 5081 eu4 = 2424 }	# c_peremyshl -> Peremyshl
 	link = { ck3 = 5062 eu4 = 261 eu4 = 4541 }	# c_halych -> Halicz, Drohobycz
-	link = { ck3 = 5030 ck3 = 5033 ck3 = 5037 eu4 = 268 }	# c_stoenesti, c_neamnt, c_suceava -> Bessarabia
+	link = { ck3 = 5030 ck3 = 5033 ck3 = 5037 eu4 = 268 }	# c_stoenesti, c_neamnt, c_suceava -> Suceava
 	link = { ck3 = 5259 eu4 = 1943 }	# c_ladyzyn -> Bratslav
 	link = { ck3 = 5028 ck3 = 5026 eu4 = 4530 }	# c_galati, c_barlad -> Birlad
-	link = { ck3 = 5022 ck3 = 5020 ck3 = 5018 eu4 = 2405 }	# c_soroca, c_orhei, c_lapusna -> Bendery
-	link = { ck3 = 5014 ck3 = 5011 ck3 = 5016 eu4 = 1756 }	# c_chilia, c_cetatea_alba, c_tigheci -> Budjak
+	link = { ck3 = 5022 ck3 = 5020 ck3 = 5018 eu4 = 2405 }	# c_soroca, c_orhei, c_lapusna -> Bender
+	link = { ck3 = 5014 ck3 = 5011 ck3 = 5016 eu4 = 1756 }	# c_chilia, c_cetatea_alba, c_tigheci -> Bessarabia
 	link = { ck3 = 5268 eu4 = 282 }	# c_odessa -> Yedisan
 	link = { ck3 = 5271 eu4 = 2406 }	# c_kherson -> Ingil
 	link = { ck3 = 5275 eu4 = 283 }	# c_dnipro -> Zaporozhia
 	link = { ck3 = 5324 eu4 = 2412 }	# c_khortytsia -> Kyzyl-Yar
 	link = { ck3 = 5279 eu4 = 1974 }	# c_oleshye -> Yedishkul
 	link = { ck3 = 5330 ck3 = 5331 eu4 = 284 }	# c_kalos_limen, c_perekop -> Crimea
-	link = { ck3 = 562 eu4 = 2410 eu4 = 285 }	# c_kerch -> Theodoro, Kaffa
+	link = { ck3 = 562 eu4 = 2410 eu4 = 285 }	# c_kerch -> Theodoro, Caffa
 	# Baltics
 	link = { ck3 = 139 ck3 = 142 eu4 = 4241 }	# c_kokenois, c_talava -> Wenden
 	link = { ck3 = 146 eu4 = 1834 }	# c_dorpat -> Dorpat
 	link = { ck3 = 98 eu4 = 1842 }	# c_narva -> Narva
-	link = { ck3 = 96 ck3 = 93 eu4 = 36 }	# c_reval, c_wiek -> Estland
+	link = { ck3 = 96 ck3 = 93 eu4 = 36 }	# c_reval, c_wiek -> Reval
 	link = { ck3 = 147 eu4 = 37 }	# c_livs -> Livland
 	link = { ck3 = 148 eu4 = 38 }	# c_vidzeme -> Riga
-	link = { ck3 = 150 ck3 = 121 eu4 = 1935 }	# c_selpils, c_zemigalians -> Semigallia
+	link = { ck3 = 150 ck3 = 121 eu4 = 1935 }	# c_selpils, c_zemigalians -> Mitau
 	link = { ck3 = 163 eu4 = 1936 }	# c_yatvyagi -> Kovno
-	link = { ck3 = 138 ck3 = 141 eu4 = 273 }	# c_jersika, c_aluksne -> Letgallen
+	link = { ck3 = 138 ck3 = 141 eu4 = 273 }	# c_jersika, c_aluksne -> Latgalia
 	link = { ck3 = 164 ck3 = 5046 eu4 = 1937 }	# c_grodno, c_volkovysk -> Grodno
-	link = { ck3 = 162 eu4 = 270 eu4 = 4534 }	# c_trakai -> Troki, Upita
+	link = { ck3 = 162 eu4 = 270 eu4 = 4534 }	# c_trakai -> Trakai, Upita
 	link = { ck3 = 166 eu4 = 770 }	# c_braslau -> Braslaw
-	link = { ck3 = 165 eu4 = 4535 eu4 = 272 }	# c_kernave -> Wilkimierz, Lithuania
+	link = { ck3 = 165 eu4 = 4535 eu4 = 272 }	# c_kernave -> Wilkimierz, Vilna
 	link = { ck3 = 128 ck3 = 152 ck3 = 131 eu4 = 271 }	# c_palanga, c_siauliai, c_raseiniai -> Samogitia
-	link = { ck3 = 117 ck3 = 116 eu4 = 39 }	# c_vanemane, c_grobin -> Kurland
+	link = { ck3 = 117 ck3 = 116 eu4 = 39 }	# c_vanemane, c_grobin -> Goldingen
 	link = { ck3 = 91 eu4 = 35 }	# c_osel -> Ösel
 	# Germany
-	link = { ck3 = 2744 eu4 = 77 }	# c_speyer -> Worms
-	link = { ck3 = 2771 ck3 = 2765 eu4 = 70 }	# c_wurttemberg, c_zollern -> Württemberg
+	link = { ck3 = 2744 eu4 = 77 }	# c_speyer -> Heidelberg
+	link = { ck3 = 2771 ck3 = 2765 eu4 = 70 }	# c_wurttemberg, c_zollern -> Stuttgart
 	link = { ck3 = 2943 eu4 = 4708 }	# c_rothenburg -> Freising
 	link = { ck3 = 2947 eu4 = 65 }	# c_munchen -> München
 	link = { ck3 = 2762 eu4 = 4712 }	# c_furstenberg -> Konstanz
 	link = { ck3 = 2759 eu4 = 4713 }	# c_hohenberg -> Urach
 	link = { ck3 = 2772 eu4 = 4715 }	# c_vaihingen -> Rothenburg
-	link = { ck3 = 2889 ck3 = 2868 eu4 = 71 }	# c_hohenlohe, c_durne -> Leiningen
-	link = { ck3 = 2892 ck3 = 2891 eu4 = 67 }	# c_nurnberg, c_ansbach -> Franken
+	link = { ck3 = 2889 ck3 = 2868 eu4 = 71 }	# c_hohenlohe, c_durne -> Ansbach
+	link = { ck3 = 2892 ck3 = 2891 eu4 = 67 }	# c_nurnberg, c_ansbach -> Nürnberg
 	link = { ck3 = 2955 ck3 = 2954 eu4 = 4758 }	# c_brixen, c_innsbruck -> Etsch
-	link = { ck3 = 2790 ck3 = 2949 eu4 = 73 }	# c_alpsee, c_eschenlohe -> Tirol
+	link = { ck3 = 2790 ck3 = 2949 eu4 = 73 }	# c_alpsee, c_eschenlohe -> Inntal
 	link = { ck3 = 2787 eu4 = 4710 }	# c_ravensburg -> Bregenz
 	link = { ck3 = 2774 eu4 = 68 }	# c_grunningen -> Memmingen
 	link = { ck3 = 2777 ck3 = 2785 ck3 = 2784 eu4 = 1868 }	# c_burgau, c_kempten, c_augsburg -> Augsburg
@@ -263,7 +442,7 @@
 	link = { ck3 = 2770 eu4 = 1872 }	# c_ulm -> Ulm
 	link = { ck3 = 2991 ck3 = 2994 eu4 = 1757 }	# c_parsberg, c_leuchtenburg -> Oberpfalz
 	link = { ck3 = 2965 eu4 = 2957 eu4 = 2956 }	# c_regensburg -> Regensburg, Straubing
-	link = { ck3 = 2981 eu4 = 64 }	# c_frontenhausen -> Niederbayern
+	link = { ck3 = 2981 eu4 = 64 }	# c_frontenhausen -> Landshut
 	link = { ck3 = 2984 ck3 = 2958 eu4 = 4707 }	# c_falkenstein, c_geisenhausen -> Rosenheim
 	link = { ck3 = 2983 ck3 = 2985 eu4 = 76 }	# c_salzburg, c_berchtesgaden -> Salzburg
 	link = { ck3 = 3137 eu4 = 1768 }	# c_lienz -> Lienz
@@ -272,34 +451,34 @@
 	link = { ck3 = 3135 eu4 = 4761 }	# c_hallstatt -> Traungau
 	link = { ck3 = 2979 eu4 = 4760 }	# c_schaumberg -> Innviertel
 	link = { ck3 = 2970 eu4 = 4709 }	# c_passau -> Passau
-	link = { ck3 = 3132 eu4 = 133 }	# c_linz -> Linz
+	link = { ck3 = 3132 eu4 = 133 }	# c_linz -> Ob der Enns
 	link = { ck3 = 3102 ck3 = 3098 eu4 = 129 eu4 = 4751 }	# MANY-TO-MANY: c_kranj, c_ljubljana -> Krain, Cilli
-	link = { ck3 = 3113 eu4 = 128 }	# c_karnten -> Kärnten
+	link = { ck3 = 3113 eu4 = 128 }	# c_karnten -> Unterkärnten
 	link = { ck3 = 3122 ck3 = 3124 eu4 = 4762 }	# c_sankt_polten, c_amstetten -> Wienerwald
-	link = { ck3 = 3082 ck3 = 3088 ck3 = 3090 eu4 = 1770 }	# c_hohenau, c_krems, c_freistadt -> Ostmarch
+	link = { ck3 = 3082 ck3 = 3088 ck3 = 3090 eu4 = 1770 }	# c_hohenau, c_krems, c_freistadt -> Manhartsberg
 	link = { ck3 = 3118 ck3 = 3121 ck3 = 3109 eu4 = 1863 }	# c_graz, c_murzzuschlag, c_liebnitz -> Graz
 	link = { ck3 = 3091 ck3 = 3120 eu4 = 134 }	# c_vienna, c_pitten -> Wien
 	link = { ck3 = 2992 eu4 = 66 eu4 = 4717 }	# c_bamberg -> Bamberg, Bayreuth
 	link = { ck3 = 2866 ck3 = 2871 eu4 = 79 }	# c_klingenberg, c_wurzburg -> Würzburg
 	link = { ck3 = 2736 ck3 = 2742 eu4 = 4718 }	# c_worms, c_erbach -> Aschaffenburg
-	link = { ck3 = 2726 eu4 = 1761 }	# c_saarbrucken -> Alzey
-	link = { ck3 = 2729 eu4 = 78 }	# c_kaiserslautern -> Pfalz
+	link = { ck3 = 2726 eu4 = 1761 }	# c_saarbrucken -> Pfalz
+	link = { ck3 = 2729 eu4 = 78 }	# c_kaiserslautern -> Mainz
 	link = { ck3 = 2940 ck3 = 2882 eu4 = 2955 }	# c_ingolstadt, c_eichstadt -> Ingolstadt
 	link = { ck3 = 2998 ck3 = 2927 eu4 = 4716 }	# c_coburg, c_wiltberg -> Coburg
 	link = { ck3 = 2924 eu4 = 4774 }	# c_fulda -> Fulda
-	link = { ck3 = 2865 eu4 = 81 }	# c_marburg -> Hessen
+	link = { ck3 = 2865 eu4 = 81 }	# c_marburg -> Oberhessen
 	link = { ck3 = 3008 ck3 = 3003 eu4 = 4743 }	# c_orlamunde, c_lobdaburg -> Weimar
 	link = { ck3 = 2445 eu4 = 56 }	# c_osnabruck -> Osnabrück
 	link = { ck3 = 2796 eu4 = 1874 }	# c_bremen -> Bremen
 	link = { ck3 = 2815 eu4 = 4786 }	# c_havelberg -> Priegnitz
 	link = { ck3 = 3169 eu4 = 51 }	# c_ruppin -> Ruppin
 	link = { ck3 = 2821 eu4 = 4749 }	# c_werle -> Stargardland
-	link = { ck3 = 3163 eu4 = 2993 }	# c_prenzlau -> Stargard
+	link = { ck3 = 3163 eu4 = 2993 }	# c_prenzlau -> Uckermark
 	link = { ck3 = 2897 eu4 = 4771 }	# c_wolpe -> Verden
 	link = { ck3 = 3019 ck3 = 2936 eu4 = 62 }	# c_mersenburg, c_mansfeld -> Leipzig
 	link = { ck3 = 2920 eu4 = 4773 }	# c_gottingen -> Göttingen
-	link = { ck3 = 2913 eu4 = 57 }	# c_hildesheim -> Hannover
-	link = { ck3 = 2914 eu4 = 1758 }	# c_hannover -> Hannover
+	link = { ck3 = 2913 eu4 = 57 }	# c_hildesheim -> Brunswick
+	link = { ck3 = 2914 eu4 = 1758 }	# c_hannover -> Hanover
 	link = { ck3 = 2902 eu4 = 4772 }	# c_brunswick -> Celle
 	link = { ck3 = 2684 eu4 = 1878 }	# c_aachen -> Aachen
 	link = { ck3 = 2685 eu4 = 4768 }	# c_cologne -> Julich
@@ -311,53 +490,53 @@
 	link = { ck3 = 2723 eu4 = 4767 }	# c_strassburg -> Zweibrucken
 	link = { ck3 = 2755 eu4 = 74 eu4 = 4714 }	# c_baden -> Baden, Durlach
 	link = { ck3 = 2753 eu4 = 72 }	# c_breisgau -> Breisgau
-	link = { ck3 = 2922 eu4 = 1762 }	# c_kassel -> Kassel
+	link = { ck3 = 2922 eu4 = 1762 }	# c_kassel -> Niederhessen
 	link = { ck3 = 3010 ck3 = 2928 eu4 = 63 }	# c_schmalkalden, c_gleichenstein -> Erfurt
 	link = { ck3 = 2932 eu4 = 4742 }	# c_blankenburg -> Nordhausen
 	link = { ck3 = 2933 eu4 = 4741 }	# c_halberstadt -> Halle
 	link = { ck3 = 3013 ck3 = 3021 ck3 = 3020 eu4 = 4744 }	# c_wolkenstein, c_osterland, c_naumburg -> Zwickau
 	link = { ck3 = 3035 ck3 = 3033 eu4 = 61 }	# c_meissen, c_dresden -> Dresden
-	link = { ck3 = 3175 eu4 = 59 }	# c_brene -> Meissen
+	link = { ck3 = 3175 eu4 = 59 }	# c_brene -> Wittenberg
 	link = { ck3 = 3180 eu4 = 1759 }	# c_juterbog -> Potsdam
 	link = { ck3 = 3172 eu4 = 58 }	# c_dessau -> Anhalt
 	link = { ck3 = 3177 ck3 = 3174 eu4 = 4748 }	# c_brandenburg, c_wittenberg -> Brandenburg
 	link = { ck3 = 3165 eu4 = 50 }	# c_berlin -> Berlin
 	link = { ck3 = 2907 ck3 = 3176 eu4 = 52 }	# c_stendal, c_magdeburg -> Magdeburg
 	link = { ck3 = 2905 eu4 = 2964 }	# c_dannenberg -> Altmark
-	link = { ck3 = 2795 eu4 = 54 }	# c_stade -> Bremen
+	link = { ck3 = 2795 eu4 = 54 }	# c_stade -> Stade
 	link = { ck3 = 2805 eu4 = 44 eu4 = 1857 }	# c_hamburg -> Hamburg, Lauenburg
-	link = { ck3 = 2799 eu4 = 4141 }	# c_ditmarschen -> Ditmarschen
+	link = { ck3 = 2799 eu4 = 4141 }	# c_ditmarschen -> Dithmarschen
 	link = { ck3 = 2804 eu4 = 45 eu4 = 1775 }	# c_lubeck -> Lübeck, Holstein
-	link = { ck3 = 2813 eu4 = 46 eu4 = 2996 }	# c_mecklenburg -> Mecklenburg, Wismar
-	link = { ck3 = 2817 eu4 = 2994 }	# c_wolgast -> Greifswald
+	link = { ck3 = 2813 eu4 = 46 eu4 = 2996 }	# c_mecklenburg -> Rostock, Wismar
+	link = { ck3 = 2817 eu4 = 2994 }	# c_wolgast -> Wolgast
 	link = { ck3 = 2819 eu4 = 47 }	# c_rostock -> Stralsund
 	link = { ck3 = 2811 eu4 = 4745 }	# c_rugen -> Rügen
 	link = { ck3 = 3155 eu4 = 1858 }	# c_stettin -> Stettin
 	# Poland, Bohemia, Moravia, Silesia
-	link = { ck3 = 3070 ck3 = 3136 eu4 = 4778 eu4 = 60 }	# MANY-TO-MANY: c_sprottau, c_gorlitz -> Görlitz, Lausitz
-	link = { ck3 = 4960 ck3 = 4952 eu4 = 260 }	# c_lubelska, c_stezycka -> Galicien
+	link = { ck3 = 3070 ck3 = 3136 eu4 = 4778 eu4 = 60 }	# MANY-TO-MANY: c_sprottau, c_gorlitz -> Görlitz, Bautzen
+	link = { ck3 = 4960 ck3 = 4952 eu4 = 260 }	# c_lubelska, c_stezycka -> Lublin
 	link = { ck3 = 3220 eu4 = 42 }	# c_wormditt -> Warmia
 	link = { ck3 = 120 ck3 = 125 eu4 = 40 }	# c_scalovia, c_memel -> Memel
-	link = { ck3 = 3216 ck3 = 3219 eu4 = 41 }	# c_konigsberg, c_natangia -> Ostpreussen
+	link = { ck3 = 3216 ck3 = 3219 eu4 = 41 }	# c_konigsberg, c_natangia -> Königsberg
 	link = { ck3 = 4923 eu4 = 4524 }	# c_dobrzynska -> Dobrzyn
-	link = { ck3 = 3196 eu4 = 2997 }	# c_berent -> Pomerelia
-	link = { ck3 = 3202 eu4 = 1859 }	# c_torun -> Torun
+	link = { ck3 = 3196 eu4 = 2997 }	# c_berent -> Tuchola
+	link = { ck3 = 3202 eu4 = 1859 }	# c_torun -> Chelmno
 	link = { ck3 = 3214 eu4 = 2958 }	# c_osterode -> Osterode
-	link = { ck3 = 4945 eu4 = 269 }	# c_lomzynska -> Podlasia
+	link = { ck3 = 4945 eu4 = 269 }	# c_lomzynska -> Podlasie
 	link = { ck3 = 4949 eu4 = 1938 }	# c_zakroczymska -> Wizna
 	link = { ck3 = 4935 eu4 = 256 }	# c_plocka -> Plock
 	link = { ck3 = 4950 eu4 = 4525 }	# c_gostyninska -> Rawa
-	link = { ck3 = 4939 eu4 = 257 }	# c_czerska -> Mazovia
+	link = { ck3 = 4939 eu4 = 257 }	# c_czerska -> Warszawa
 	link = { ck3 = 4967 eu4 = 2959 }	# c_tarnowska -> Tarnow
-	link = { ck3 = 4971 eu4 = 2960 }	# c_sacz -> Sadecki
-	link = { ck3 = 3207 ck3 = 3210 ck3 = 3215 eu4 = 767 }	# c_bartenstein, c_angerburg, c_allenstein -> Wystruc
+	link = { ck3 = 4971 eu4 = 2960 }	# c_sacz -> Nowy Sacz
+	link = { ck3 = 3207 ck3 = 3210 ck3 = 3215 eu4 = 767 }	# c_bartenstein, c_angerburg, c_allenstein -> Ortelsburg
 	link = { ck3 = 3197 eu4 = 1841 }	# c_malbork -> Marienburg
-	link = { ck3 = 4964 eu4 = 259 }	# c_sandomierska -> Sandomir
+	link = { ck3 = 4964 eu4 = 259 }	# c_sandomierska -> Sandomierz
 	link = { ck3 = 4956 eu4 = 4527 }	# c_radomska -> Checiny
-	link = { ck3 = 4930 eu4 = 258 }	# c_sieradzka -> Lodz
+	link = { ck3 = 4930 eu4 = 258 }	# c_sieradzka -> Sieradz
 	link = { ck3 = 3194 eu4 = 43 }	# c_danzig -> Danzig
-	link = { ck3 = 4921 eu4 = 4523 eu4 = 4528 }	# c_kujawy -> Inowroclaw, Kuyavia
-	link = { ck3 = 4917 eu4 = 2963 }	# c_krajna -> Notec/Bydgoszcz
+	link = { ck3 = 4921 eu4 = 4523 eu4 = 4528 }	# c_kujawy -> Inowroclaw, Kujawy
+	link = { ck3 = 4917 eu4 = 2963 }	# c_krajna -> Notec
 	link = { ck3 = 3188 eu4 = 4747 }	# c_pila -> Dramburg
 	link = { ck3 = 3191 ck3 = 3190 eu4 = 2995 }	# c_slupsk, c_miastko -> Stolp
 	link = { ck3 = 3182 ck3 = 3143 ck3 = 3159 eu4 = 1763 }	# c_cottbus, c_naumberg, c_spreewald -> Niederlausitz
@@ -371,23 +550,23 @@
 	link = { ck3 = 3183 eu4 = 49 }	# c_landsberg -> Neumark
 	link = { ck3 = 2836 ck3 = 3185 eu4 = 48 eu4 = 4746 }	# MANY-TO-MANY: c_kolobrzeg, c_cammin -> Kolberg, Wolgast
 	link = { ck3 = 4161 eu4 = 4724 }	# c_caslav -> Pardubice
-	link = { ck3 = 4158 eu4 = 266 }	# c_praha -> Bohemia
+	link = { ck3 = 4158 eu4 = 266 }	# c_praha -> Prague
 	link = { ck3 = 3056 ck3 = 3057 ck3 = 3063 ck3 = 3069 eu4 = 4238 }	# c_brzeg, c_breslau, c_legnica, c_przemkow -> Liegnitz
-	link = { ck3 = 4139 eu4 = 2970 }	# c_hradec -> Hradekco
+	link = { ck3 = 4139 eu4 = 2970 }	# c_hradec -> Hradecko
 	link = { ck3 = 4135 ck3 = 4136 eu4 = 1771 }	# c_litomerice, c_boleslav -> Erz
 	link = { ck3 = 4181 eu4 = 4237 }	# c_olomouc -> Olomouc
 	link = { ck3 = 3053 ck3 = 3054 ck3 = 3050 eu4 = 4723 }	# c_opole, c_bethen, c_nysa -> Opole
 	link = { ck3 = 3043 ck3 = 3041 eu4 = 263 }	# c_ratibor, c_cieszyn -> Ratibor
 	link = { ck3 = 8999 ck3 = 4184 eu4 = 4726 }	# c_prerov, c_opava -> Ostrava
-	link = { ck3 = 4169 ck3 = 4162 ck3 = 4168 eu4 = 265 }	# c_znojmo, c_jihlava, c_brno -> Moravia
+	link = { ck3 = 4169 ck3 = 4162 ck3 = 4168 eu4 = 265 }	# c_znojmo, c_jihlava, c_brno -> Brno
 	link = { ck3 = 4157 eu4 = 2968 eu4 = 4725 }	# c_doudleby -> Budejovice, Jindrichuv Hradec
-	link = { ck3 = 4151 ck3 = 2989 eu4 = 267 }	# c_plzen, c_hohenburg -> Plsen
+	link = { ck3 = 4151 ck3 = 2989 eu4 = 267 }	# c_plzen, c_hohenburg -> Plzen
 	link = { ck3 = 2853 ck3 = 2691 eu4 = 83 }	# c_nassau, c_sayn -> Nassau
 	link = { ck3 = 2697 ck3 = 2695 eu4 = 1760 }	# c_koblenz, c_mainz -> Koblenz
-	link = { ck3 = 2681 ck3 = 2850 eu4 = 82 }	# c_arnsberg, c_waldeck -> Lippe
+	link = { ck3 = 2681 ck3 = 2850 eu4 = 82 }	# c_arnsberg, c_waldeck -> Westfalen
 	link = { ck3 = 2688 eu4 = 85 }	# c_bergh -> Köln
 	link = { ck3 = 2679 eu4 = 84 }	# c_mark -> Berg
-	link = { ck3 = 2677 eu4 = 69 }	# c_dortmund -> Konstanz
+	link = { ck3 = 2677 eu4 = 69 }	# c_dortmund -> Dortmund
 	link = { ck3 = 2674 ck3 = 2434 eu4 = 86 }	# c_munster, c_zutphen -> Münster
 	link = { ck3 = 2910 eu4 = 4775 }	# c_lippe -> Bielefeld
 	link = { ck3 = 2848 eu4 = 2972 }	# c_paderborn -> Paderborn
@@ -395,84 +574,84 @@
 	link = { ck3 = 4147 eu4 = 2967 }	# c_zatec -> Eger
 	link = { ck3 = 4974 eu4 = 262 eu4 = 4533 }	# c_krakowska -> Krakow, Wielun
 	# Pannonia
-	link = { ck3 = 3947 ck3 = 3875 ck3 = 3975 eu4 = 155 }	# c_bihar, c_bekes, c_zarand -> Szolnok
-	link = { ck3 = 3912 eu4 = 157 }	# c_szatmar -> Partium
+	link = { ck3 = 3947 ck3 = 3875 ck3 = 3975 eu4 = 155 }	# c_bihar, c_bekes, c_zarand -> Békés
+	link = { ck3 = 3912 eu4 = 157 }	# c_szatmar -> Bihar
 	link = { ck3 = 4976 ck3 = 3933 eu4 = 1951 }	# c_severin, c_hunyad -> Hunyad
-	link = { ck3 = 3884 ck3 = 3973 eu4 = 156 }	# c_krasso, c_temes -> Banat
+	link = { ck3 = 3884 ck3 = 3973 eu4 = 156 }	# c_krasso, c_temes -> Temes
 	link = { ck3 = 3814 ck3 = 3855 ck3 = 3810 eu4 = 4236 }	# c_trenscen, c_lipto, c_orava -> Trencin
-	link = { ck3 = 3826 ck3 = 3823 eu4 = 4240 }	# c_veszprem, c_gyor -> Fejer
-	link = { ck3 = 3807 ck3 = 3866 eu4 = 153 }	# c_szekesfehervar, c_csongrad -> Pecs
-	link = { ck3 = 3879 ck3 = 3974 eu4 = 1954 }	# c_keve, c_csanad -> Torontal
+	link = { ck3 = 3826 ck3 = 3823 eu4 = 4240 }	# c_veszprem, c_gyor -> Fejér
+	link = { ck3 = 3807 ck3 = 3866 eu4 = 153 }	# c_szekesfehervar, c_csongrad -> Pest
+	link = { ck3 = 3879 ck3 = 3974 eu4 = 1954 }	# c_keve, c_csanad -> Torontál
 	link = { ck3 = 3864 ck3 = 3830 eu4 = 4126 }	# c_bodrog, c_bacs -> Bacs
 	link = { ck3 = 3838 ck3 = 3841 ck3 = 3845 eu4 = 1864 }	# c_somogy, c_tolna, c_baranya -> Somogy
-	link = { ck3 = 3941 ck3 = 3939 eu4 = 4128 }	# c_fogaras, c_feher -> Kiralyföld
-	link = { ck3 = 3946 ck3 = 3945 eu4 = 158 }	# c_szekelyfold, c_barcasag -> Transylvania
+	link = { ck3 = 3941 ck3 = 3939 eu4 = 4128 }	# c_fogaras, c_feher -> Királyföld
+	link = { ck3 = 3946 ck3 = 3945 eu4 = 158 }	# c_szekelyfold, c_barcasag -> Maros
 	link = { ck3 = 3918 eu4 = 1952 }	# c_marmaros -> Maramaros
 	link = { ck3 = 3948 eu4 = 4125 }	# c_hewes -> Szolnok
 	link = { ck3 = 3892 eu4 = 1953 }	# c_szabolcs -> Szabolcs
 	link = { ck3 = 3928 ck3 = 3923 eu4 = 4127 }	# c_torda, c_beszterce -> Turda
-	link = { ck3 = 3897 ck3 = 3913 ck3 = 3896 eu4 = 162 }	# c_ungvar, c_bereg, c_zemplen -> Carpathia
-	link = { ck3 = 3862 ck3 = 3860 ck3 = 3979 ck3 = 3871 eu4 = 1318 }	# c_spis, c_saris, c_gemer, c_borsod -> Spis
-	link = { ck3 = 3804 ck3 = 3976 ck3 = 3853 ck3 = 3857 eu4 = 154 }	# c_visegrad, c_esztergom, c_hont, c_zolyom -> Ersekujvar
-	link = { ck3 = 3934 ck3 = 3834 ck3 = 3847 ck3 = 3916 eu4 = 1772 }	# c_poszony, c_nyitra, c_bars, c_komarom -> Presburg
+	link = { ck3 = 3897 ck3 = 3913 ck3 = 3896 eu4 = 162 }	# c_ungvar, c_bereg, c_zemplen -> Zemplén
+	link = { ck3 = 3862 ck3 = 3860 ck3 = 3979 ck3 = 3871 eu4 = 1318 }	# c_spis, c_saris, c_gemer, c_borsod -> Spiš
+	link = { ck3 = 3804 ck3 = 3976 ck3 = 3853 ck3 = 3857 eu4 = 154 }	# c_visegrad, c_esztergom, c_hont, c_zolyom -> Hont
+	link = { ck3 = 3934 ck3 = 3834 ck3 = 3847 ck3 = 3916 eu4 = 1772 }	# c_poszony, c_nyitra, c_bars, c_komarom -> Pozsony
 	link = { ck3 = 3977 ck3 = 3829 ck3 = 3819 eu4 = 135 }	# c_vas, c_kolon, c_sopron -> Sopron
 	# Balkans
-	link = { ck3 = 4989 ck3 = 5004 ck3 = 5002 ck3 = 4999 eu4 = 2998 }	# c_tabla_butii, c_braila, c_buzau, c_calarasi -> Bucaresti
+	link = { ck3 = 4989 ck3 = 5004 ck3 = 5002 ck3 = 4999 eu4 = 2998 }	# c_tabla_butii, c_braila, c_buzau, c_calarasi -> Buzau
 	link = { ck3 = 4994 ck3 = 4996 eu4 = 4531 }	# c_giurgiu, c_bucuresti -> Giurgiu
-	link = { ck3 = 5009 eu4 = 161 }	# c_campulung -> Wallachia
+	link = { ck3 = 5009 eu4 = 161 }	# c_campulung -> Tîrgoviste
 	link = { ck3 = 4984 ck3 = 4987 eu4 = 160 }	# c_calafat, c_craiova -> Oltenia
 	link = { ck3 = 5007 ck3 = 4979 eu4 = 4532 }	# c_polovragi, c_targu_jiu -> Severin
 	link = { ck3 = 3656 ck3 = 3653 eu4 = 4703 }	# c_velbazhd, c_pirin -> Kostendil
-	link = { ck3 = 3663 eu4 = 1765 }	# c_naissus -> Nis
+	link = { ck3 = 3663 eu4 = 1765 }	# c_naissus -> Sofia
 	link = { ck3 = 3514 ck3 = 3517 eu4 = 4755 }	# c_usora, c_vrbas -> Podrinje
 	link = { ck3 = 3597 eu4 = 1766 }	# c_hvosno -> Kosovo
 	link = { ck3 = 3592 ck3 = 3600 ck3 = 3660 eu4 = 3000 }	# c_rashka, c_sumadija, c_pomoravlje -> Nis
 	link = { ck3 = 3568 ck3 = 3586 eu4 = 1827 }	# c_vhrbosna, c_podrinje -> Raska
-	link = { ck3 = 3527 eu4 = 3002 }	# c_rama -> Sarajevo
+	link = { ck3 = 3527 eu4 = 3002 }	# c_rama -> Visoki
 	link = { ck3 = 3647 ck3 = 3651 eu4 = 3001 }	# c_skopje, c_strumica -> Skopje
 	link = { ck3 = 3641 eu4 = 4780 }	# c_ohrid -> Ohrid
 	link = { ck3 = 3630 eu4 = 1764 }	# c_burgas -> Burgas
 	link = { ck3 = 3693 ck3 = 3689 ck3 = 3692 eu4 = 159 }	# c_mesembria, c_dorostorum, c_aytos -> Silistria
 	link = { ck3 = 5010 eu4 = 4706 }	# c_constanta -> Tolcu
 	link = { ck3 = 3684 ck3 = 3681 eu4 = 4704 }	# c_turnovo, c_nikopolis -> Tirnovo
-	link = { ck3 = 3678 eu4 = 150 }	# c_vratsa -> Bulgaria
+	link = { ck3 = 3678 eu4 = 150 }	# c_vratsa -> Nikopol
 	link = { ck3 = 3670 eu4 = 2746 }	# c_vidin -> Vidin
 	link = { ck3 = 3666 eu4 = 4176 }	# c_branicevo -> Branicevo
 	link = { ck3 = 3607 ck3 = 3511 eu4 = 4757 }	# c_macva, c_soli -> Kolubara
-	link = { ck3 = 3603 eu4 = 141 eu4 = 4239 }	# c_beograd -> Serbia, Belgrade
+	link = { ck3 = 3603 eu4 = 141 eu4 = 4239 }	# c_beograd -> Smederevo, Belgrade
 	link = { ck3 = 3503 ck3 = 3508 eu4 = 140 }	# c_zavrsje, c_donjikraji -> Bosnia
-	link = { ck3 = 3519 ck3 = 3523 eu4 = 1828 }	# c_vodica, c_pset -> Soli
+	link = { ck3 = 3519 ck3 = 3523 eu4 = 1828 }	# c_vodica, c_pset -> Donji Kraji
 	link = { ck3 = 3739 eu4 = 4173 }	# c_szerem -> Syrmia
-	link = { ck3 = 3535 ck3 = 3539 eu4 = 131 }	# c_zagreb, c_modrus -> Croatia
+	link = { ck3 = 3535 ck3 = 3539 eu4 = 131 }	# c_zagreb, c_modrus -> Zagreb
 	link = { ck3 = 3530 eu4 = 4756 }	# c_pozega -> Bjelovar
-	link = { ck3 = 3610 eu4 = 1767 }	# c_vukovar -> Osijek
-	link = { ck3 = 3532 eu4 = 152 }	# c_zagorje -> Slavonia
+	link = { ck3 = 3610 eu4 = 1767 }	# c_vukovar -> Slavonia
+	link = { ck3 = 3532 eu4 = 152 }	# c_zagorje -> Varasd
 	link = { ck3 = 2516 eu4 = 1769 }	# c_gorz -> Görz
 	link = { ck3 = 3540 eu4 = 4752 }	# c_gacka -> Rijeka
 	link = { ck3 = 3544 eu4 = 1826 }	# c_lika -> Lika
 	link = { ck3 = 3563 eu4 = 139 }	# c_zachlumia -> Hum
-	link = { ck3 = 3573 eu4 = 1831 }	# c_travunia -> Travunia
+	link = { ck3 = 3573 eu4 = 1831 }	# c_travunia -> Herzegovina
 	link = { ck3 = 3580 eu4 = 138 }	# c_duklja -> Zeta
-	link = { ck3 = 3721 ck3 = 3724 eu4 = 4175 }	# c_arbanon, c_debar -> Lezhe
+	link = { ck3 = 3721 ck3 = 3724 eu4 = 4175 }	# c_arbanon, c_debar -> Lezhë
 	link = { ck3 = 3716 eu4 = 4750 }	# c_antipatreia -> Kruje
-	link = { ck3 = 3712 eu4 = 143 }	# c_avlonas -> Albania
-	link = { ck3 = 3717 eu4 = 4174 }	# c_dyrrachion -> Durres
+	link = { ck3 = 3712 eu4 = 143 }	# c_avlonas -> Vlorë
+	link = { ck3 = 3717 eu4 = 4174 }	# c_dyrrachion -> Durrës
 	link = { ck3 = 3576 eu4 = 4754 }	# c_pomorje -> Kotor
 	link = { ck3 = 3569 ck3 = 3556 eu4 = 137 }	# c_ragusa, c_pagania -> Ragusa
-	link = { ck3 = 3552 ck3 = 3550 eu4 = 136 }	# c_cetina, c_knin -> Dalmatia
+	link = { ck3 = 3552 ck3 = 3550 eu4 = 136 }	# c_cetina, c_knin -> Split
 	link = { ck3 = 3547 eu4 = 4753 }	# c_zadar -> Zadar
 	link = { ck3 = 2522 ck3 = 2521 eu4 = 130 }	# c_pula, c_cherso -> Istria
 	# Greece
-	link = { ck3 = 3797 ck3 = 3705 ck3 = 3788 eu4 = 1853 }	# c_thessaliotis, c_metzovo, c_thessalia -> Kozani
+	link = { ck3 = 3797 ck3 = 3705 ck3 = 3788 eu4 = 1853 }	# c_thessaliotis, c_metzovo, c_thessalia -> Kastoria
 	link = { ck3 = 3774 ck3 = 3780 ck3 = 3785 eu4 = 4702 }	# c_serres, c_thessalonika, c_veria -> Siroz
 	link = { ck3 = 3769 ck3 = 3622 eu4 = 4705 }	# c_mosynopolis, c_zherkovo -> Gumulcine
 	link = { ck3 = 3625 ck3 = 3617 ck3 = 3637 ck3 = 3674 eu4 = 2750 }	# c_philippopolis, c_rhodopes, c_kran, c_sredets -> Plovdiv
 	link = { ck3 = 3627 ck3 = 3634 eu4 = 149 }	# c_adrianopolis, c_beroe -> Edirne
 	link = { ck3 = 3766 eu4 = 4779 }	# c_kalliopolis -> Gallipoli
-	link = { ck3 = 496 ck3 = 3762 eu4 = 151 }	# c_byzantion, c_brysis -> Thrace
+	link = { ck3 = 496 ck3 = 3762 eu4 = 151 }	# c_byzantion, c_brysis -> Constantinople
 	link = { ck3 = 3777 eu4 = 148 }	# c_chalkidike -> Macedonia
-	link = { ck3 = 3790 ck3 = 3794 eu4 = 147 }	# c_demetrias, c_neopatras -> Salonica
-	link = { ck3 = 3709 eu4 = 144 }	# c_epeiros -> Janina
+	link = { ck3 = 3790 ck3 = 3794 eu4 = 147 }	# c_demetrias, c_neopatras -> Thessaly
+	link = { ck3 = 3709 eu4 = 144 }	# c_epeiros -> Epirus
 	link = { ck3 = 3710 eu4 = 142 }	# c_buthrotum -> Corfu
 	link = { ck3 = 3701 ck3 = 3698 eu4 = 4699 }	# c_nicopolis, c_aetolia -> Arta
 	link = { ck3 = 3696 eu4 = 4698 }	# c_cephalonia -> Cephalonia
@@ -487,12 +666,12 @@
 	link = { ck3 = 3736 eu4 = 145 }	# c_laconia -> Morea
 	link = { ck3 = 3744 eu4 = 163 }	# c_chania -> Crete
 	# Switzerland
-	link = { ck3 = 8719 eu4 = 4720 eu4 = 1867 }	# c_geneva -> Geneva, Freiburg
+	link = { ck3 = 8719 eu4 = 4720 eu4 = 1867 }	# c_geneva -> Geneva, Vaud
 	link = { ck3 = 2047 eu4 = 165 }	# c_bern -> Bern
 	link = { ck3 = 2460 eu4 = 4721 }	# c_neuchatel -> Fribourg
 	link = { ck3 = 2789 eu4 = 1873 eu4 = 4722 }	# c_grisons -> Chur, Illanz
-	link = { ck3 = 2054 eu4 = 1870 }	# c_sankt_gallen -> S:t Gallen
-	link = { ck3 = 2049 eu4 = 166 }	# c_aargau -> Schwyz
+	link = { ck3 = 2054 eu4 = 1870 }	# c_sankt_gallen -> St Gallen
+	link = { ck3 = 2049 eu4 = 166 }	# c_aargau -> Waldstätte
 	link = { ck3 = 3107 eu4 = 1869 }	# c_zurich -> Zürich
 	link = { ck3 = 2039 eu4 = 1871 }	# c_aosta -> Wallis
 	# Italia
@@ -501,25 +680,25 @@
 	link = { ck3 = 2541 eu4 = 106 }	# c_modena -> Modena
 	link = { ck3 = 2532 eu4 = 105 }	# c_parma -> Parma
 	link = { ck3 = 2528 ck3 = 2525 eu4 = 113 }	# c_ferrara, c_polesine -> Ferrara
-	link = { ck3 = 2044 eu4 = 1875 }	# c_cuneo -> Turin
-	link = { ck3 = 2469 eu4 = 2981 }	# c_monferrato -> Asti
+	link = { ck3 = 2044 eu4 = 1875 }	# c_cuneo -> Cuneo
+	link = { ck3 = 2469 eu4 = 2981 }	# c_monferrato -> Montferrat
 	link = { ck3 = 2456 eu4 = 4727 }	# c_canavese -> Saluzzo
-	link = { ck3 = 2470 eu4 = 103 }	# c_turin -> Niklas
+	link = { ck3 = 2470 eu4 = 103 }	# c_turin -> Turin
 	link = { ck3 = 2473 eu4 = 2979 }	# c_novara -> Novara
 	link = { ck3 = 2476 ck3 = 2487 eu4 = 4728 }	# c_pavia, c_tortona -> Pavia
 	link = { ck3 = 2533 eu4 = 109 }	# c_mantua -> Mantua
 	link = { ck3 = 2584 eu4 = 2977 }	# c_urbino -> Urbino
-	link = { ck3 = 2549 eu4 = 114 }	# c_ravenna -> Romagna
+	link = { ck3 = 2549 eu4 = 114 }	# c_ravenna -> Ravenna
 	link = { ck3 = 2550 eu4 = 4730 }	# c_bologna -> Bologna
-	link = { ck3 = 2499 eu4 = 110 }	# c_trent -> Trent
-	link = { ck3 = 2482 eu4 = 104 }	# c_lombardia -> Lombardia
+	link = { ck3 = 2499 eu4 = 110 }	# c_trent -> Trentino
+	link = { ck3 = 2482 eu4 = 104 }	# c_lombardia -> Milan
 	link = { ck3 = 2492 eu4 = 1862 }	# c_cremona -> Cremona
 	link = { ck3 = 2494 eu4 = 107 eu4 = 4739 }	# c_brescia -> Brescia, Bergamo
 	link = { ck3 = 2502 eu4 = 108 }	# c_verona -> Verona
 	link = { ck3 = 2666 eu4 = 4729 }	# c_padua -> Padova
 	link = { ck3 = 2517 ck3 = 2506 eu4 = 112 }	# c_venezia, c_veneto -> Venezia
 	link = { ck3 = 8721 eu4 = 102 }	# c_nice -> Nice
-	link = { ck3 = 2466 eu4 = 101 eu4 = 2992 }	# c_genoa -> Liguria, Albenga
+	link = { ck3 = 2466 eu4 = 101 eu4 = 2992 }	# c_genoa -> Genoa, Albenga
 	link = { ck3 = 2514 eu4 = 4738 }	# c_aquileia -> Trieste
 	link = { ck3 = 2513 eu4 = 111 }	# c_friuli -> Friuli
 	link = { ck3 = 2531 ck3 = 2545 eu4 = 2980 }	# c_luni, c_lucca -> Lucca
@@ -529,9 +708,9 @@
 	link = { ck3 = 2567 ck3 = 2570 eu4 = 117 }	# c_siena, c_orbetello -> Siena
 	link = { ck3 = 2579 ck3 = 2592 ck3 = 2573 eu4 = 118 }	# c_roma, c_tivoli, c_viterbo -> Roma
 	link = { ck3 = 2594 ck3 = 2599 eu4 = 119 }	# c_ancona, c_fermo -> Ancona
-	link = { ck3 = 2568 eu4 = 2976 }	# c_orvieto -> Umbria
+	link = { ck3 = 2568 eu4 = 2976 }	# c_orvieto -> Perugia
 	link = { ck3 = 2586 eu4 = 4731 }	# c_spoleto -> Spoleto
-	link = { ck3 = 2600 ck3 = 2596 eu4 = 120 }	# c_abruzzi, c_teramo -> Abbruzzi
+	link = { ck3 = 2600 ck3 = 2596 eu4 = 120 }	# c_abruzzi, c_teramo -> Abruzzi
 	link = { ck3 = 2604 eu4 = 4733 }	# c_lanciano -> Molise
 	link = { ck3 = 2606 eu4 = 4732 }	# c_capua -> Terracina
 	link = { ck3 = 2611 eu4 = 121 }	# c_napoli -> Napoli
@@ -539,12 +718,12 @@
 	link = { ck3 = 2610 eu4 = 2985 }	# c_foggia -> Capitanata
 	link = { ck3 = 2616 eu4 = 2983 }	# c_salerno -> Salerno
 	link = { ck3 = 2619 eu4 = 1933 }	# c_apulia -> Bari
-	link = { ck3 = 2622 ck3 = 2624 eu4 = 122 }	# c_lecce, c_bari -> Apulia
+	link = { ck3 = 2622 ck3 = 2624 eu4 = 122 }	# c_lecce, c_bari -> Salento
 	link = { ck3 = 2632 eu4 = 1934 }	# c_camarda -> Lucania
-	link = { ck3 = 2629 ck3 = 2630 eu4 = 2984 }	# c_rossano, c_cosenza -> Costenza
+	link = { ck3 = 2629 ck3 = 2630 eu4 = 2984 }	# c_rossano, c_cosenza -> Cosenza
 	link = { ck3 = 2627 eu4 = 123 }	# c_reggio_calabria -> Calabria
 	link = { ck3 = 2648 ck3 = 2652 ck3 = 2650 eu4 = 1247 }	# c_bastia, c_vecchio, c_ajaccio -> Corsica
-	link = { ck3 = 2658 ck3 = 2665 eu4 = 127 }	# c_gallura, c_logudoro -> Sardinia
+	link = { ck3 = 2658 ck3 = 2665 eu4 = 127 }	# c_gallura, c_logudoro -> Sassari
 	link = { ck3 = 2661 eu4 = 4735 }	# c_arborea -> Arborea
 	link = { ck3 = 2660 ck3 = 2656 eu4 = 2986 }	# c_cagliari, c_tortoli -> Cagliari
 	link = { ck3 = 2641 eu4 = 4737 eu4 = 125 }	# c_agrigento -> Girgenti, Palermo
@@ -555,114 +734,114 @@
 	# Benelux
 	link = { ck3 = 2435 eu4 = 2975 }	# c_cleves -> Kleves
 	link = { ck3 = 2699 eu4 = 94 }	# c_luxembourg -> Luxemburg
-	link = { ck3 = 2110 eu4 = 1742 eu4 = 2974 }	# c_maastricht -> Limburg, Loon
+	link = { ck3 = 2110 eu4 = 1742 eu4 = 2974 }	# c_maastricht -> Upper Guelders, Loon
 	link = { ck3 = 2097 eu4 = 93 }	# c_liege -> Liège
-	link = { ck3 = 2111 eu4 = 92 }	# c_brabant -> Brabant
-	link = { ck3 = 2109 eu4 = 1744 eu4 = 95 }	# c_antwerpen -> Antwerpen, Noord
+	link = { ck3 = 2111 eu4 = 92 }	# c_brabant -> Brussels
+	link = { ck3 = 2109 eu4 = 1744 eu4 = 95 }	# c_antwerpen -> Antwerpen, Breda
 	link = { ck3 = 2428 ck3 = 2450 eu4 = 99 }	# c_arnhem, c_guelders -> Gelre
 	link = { ck3 = 2451 eu4 = 98 eu4 = 4770 }	# c_nedersticht -> Utrecht, s-Hertogenbosch
 	link = { ck3 = 2431 ck3 = 2452 eu4 = 4381 }	# c_oversticht, c_groningen -> Oversticht
 	link = { ck3 = 2454 eu4 = 1931 eu4 = 55 }	# c_ostfriesland -> East Frisia, Oldenburg
-	link = { ck3 = 2453 eu4 = 4382 }	# c_dokkum -> Ommeland
+	link = { ck3 = 2453 eu4 = 4382 }	# c_dokkum -> Groningen
 	link = { ck3 = 2413 eu4 = 100 }	# c_frisia -> Friesland
-	link = { ck3 = 2409 eu4 = 97 }	# c_westfriesland -> Holland
-	link = { ck3 = 2406 eu4 = 4383 }	# c_holland -> Haag
+	link = { ck3 = 2409 eu4 = 97 }	# c_westfriesland -> Amsterdam
+	link = { ck3 = 2406 eu4 = 4383 }	# c_holland -> Den Haag
 	link = { ck3 = 2401 eu4 = 96 }	# c_zeeland -> Zeeland
 	link = { ck3 = 2124 eu4 = 1865 }	# c_brugge -> Ghent
-	link = { ck3 = 2131 eu4 = 90 }	# c_yperen -> Vlaanderen
+	link = { ck3 = 2131 eu4 = 90 }	# c_yperen -> Bruges
 	# Nothern Islands
 	link = { ck3 = 3 eu4 = 370 }	# c_vestisland -> Reykjavik
 	link = { ck3 = 5 eu4 = 371 }	# c_austisland -> Akureyri
-	link = { ck3 = 7 eu4 = 1978 }	# c_shetland -> Shetlands
-	link = { ck3 = 6 eu4 = 1979 }	# c_faereyar -> Färöarnax
+	link = { ck3 = 7 eu4 = 1978 }	# c_shetland -> Shetland
+	link = { ck3 = 6 eu4 = 1979 }	# c_faereyar -> Färöarna
 	# Scandinavia
-	link = { ck3 = 200 eu4 = 32 eu4 = 4124 }	# c_sortavala -> Kexholm, Kexholm
-	link = { ck3 = 451 eu4 = 4152 }	# c_kainuu -> Enare
+	link = { ck3 = 200 eu4 = 32 eu4 = 4124 }	# c_sortavala -> Kexholm, Karelia
+	link = { ck3 = 451 eu4 = 4152 }	# c_kainuu -> Kainuu
 	link = { ck3 = 204 ck3 = 449 eu4 = 31 }	# c_olavinlinna, c_pielinen -> Savolax
 	link = { ck3 = 208 ck3 = 447 eu4 = 29 }	# c_tavasts, c_sysma -> Tavastland
-	link = { ck3 = 212 eu4 = 4123 }	# c_messukyla -> Birkaland
+	link = { ck3 = 212 eu4 = 4123 }	# c_messukyla -> Pirkanmaa
 	link = { ck3 = 187 ck3 = 173 eu4 = 30 }	# c_viipuri, c_kakisalmi -> Viborg
 	link = { ck3 = 197 eu4 = 28 }	# c_nyland -> Nyland
 	link = { ck3 = 217 eu4 = 1930 }	# c_aland -> Åland
-	link = { ck3 = 186 ck3 = 180 eu4 = 27 }	# c_satakunta, c_finland -> Finland
+	link = { ck3 = 186 ck3 = 180 eu4 = 27 }	# c_satakunta, c_finland -> Åbo
 	link = { ck3 = 446 ck3 = 442 ck3 = 215 eu4 = 19 }	# c_oulu, c_pedersore, c_mustasaari -> Österbotten
-	link = { ck3 = 455 ck3 = 453 eu4 = 1776 }	# c_koutajoki, c_viena -> Karelia
+	link = { ck3 = 455 ck3 = 453 eu4 = 1776 }	# c_koutajoki, c_viena -> White Karelia
 	link = { ck3 = 417 ck3 = 412 ck3 = 406 ck3 = 403 ck3 = 409 eu4 = 1777 }	# c_jovvkuj, c_east_kiilt, c_west_kiilt, c_peaccam, c_akkel -> Kola
 	link = { ck3 = 230 eu4 = 16 }	# c_raniriki -> Bohuslän
-	link = { ck3 = 335 ck3 = 306 ck3 = 301 eu4 = 4166 }	# c_njudung, c_varend, c_finnveden -> Tiohärad/Värend
-	link = { ck3 = 8723 eu4 = 7 }	# c_skara -> Västergötland
+	link = { ck3 = 335 ck3 = 306 ck3 = 301 eu4 = 4166 }	# c_njudung, c_varend, c_finnveden -> Tiohärad
+	link = { ck3 = 8723 eu4 = 7 }	# c_skara -> Skaraborg
 	link = { ck3 = 329 eu4 = 1985 }	# c_narke -> Närke
 	link = { ck3 = 349 eu4 = 4 }	# c_vastmanland -> Bergslagen
 	link = { ck3 = 340 ck3 = 344 eu4 = 1 }	# c_sodermannaland, c_upland -> Stockholm
-	link = { ck3 = 383 eu4 = 4114 }	# c_jahkamakke -> Luleå
-	link = { ck3 = 432 ck3 = 429 ck3 = 381 eu4 = 18 }	# c_sjeltie, c_ubmejeiednuo, c_lais -> Umeå
+	link = { ck3 = 383 eu4 = 4114 }	# c_jahkamakke -> Jokkmokk
+	link = { ck3 = 432 ck3 = 429 ck3 = 381 eu4 = 18 }	# c_sjeltie, c_ubmejeiednuo, c_lais -> Lappland
 	link = { ck3 = 386 ck3 = 298 ck3 = 441 eu4 = 10 }	# c_jamtfir, c_harjadalen, c_helgum -> Jämtland
 	link = { ck3 = 8730 ck3 = 8728 eu4 = 8 }	# c_dalarna, c_dalabergslagen -> Dalaskogen
-	link = { ck3 = 293 ck3 = 242 ck3 = 240 eu4 = 22 }	# c_gudbrandsdalir, c_gauldala, c_eystridalir -> Oplandene
-	link = { ck3 = 426 ck3 = 424 eu4 = 4113 }	# c_kitka, c_siggevara -> Uleaborg
+	link = { ck3 = 293 ck3 = 242 ck3 = 240 eu4 = 22 }	# c_gudbrandsdalir, c_gauldala, c_eystridalir -> Opplanda
+	link = { ck3 = 426 ck3 = 424 eu4 = 4113 }	# c_kitka, c_siggevara -> Rovaniemi
 	link = { ck3 = 368 ck3 = 427 ck3 = 423 eu4 = 11 }	# c_angermanland, c_biton, c_julevadno -> Västerbotten
 	link = { ck3 = 360 ck3 = 364 ck3 = 356 ck3 = 436 eu4 = 9 }	# c_halsingland, c_medelpad, c_gastrikland, c_morarna -> Hälsingland
-	link = { ck3 = 392 ck3 = 418 eu4 = 4151 }	# c_aanaarjavri, c_sombio -> Kuusamo
+	link = { ck3 = 392 ck3 = 418 eu4 = 4151 }	# c_aanaarjavri, c_sombio -> Enare
 	link = { ck3 = 395 ck3 = 399 eu4 = 315 }	# c_rounala, c_karasjohka -> Finnmark
 	link = { ck3 = 284 ck3 = 280 eu4 = 21 }	# c_bothin, c_vastvag -> Hålogaland
 	link = { ck3 = 273 ck3 = 283 eu4 = 20 }	# c_trandheim, c_namdalfylki -> Trøndelag
 	link = { ck3 = 269 eu4 = 2752 }	# c_norwegian_more -> Romsdal
-	link = { ck3 = 259 ck3 = 264 ck3 = 266 eu4 = 23 }	# c_hordalandi, c_sogn, c_firdafylki -> Bergenshus
+	link = { ck3 = 259 ck3 = 264 ck3 = 266 eu4 = 23 }	# c_hordalandi, c_sogn, c_firdafylki -> Bergenhus
 	link = { ck3 = 254 eu4 = 24 }	# c_rogalandi -> Stavanger
 	link = { ck3 = 290 ck3 = 292 eu4 = 4145 }	# c_agdeside, c_nedenes -> Agdesiden
 	link = { ck3 = 288 eu4 = 4144 }	# c_telemark -> Bratsberg
 	link = { ck3 = 287 ck3 = 236 eu4 = 17 }	# c_vestfold, c_hedmork -> Akershus
 	link = { ck3 = 8732 ck3 = 8739 eu4 = 5 }	# c_nordmark, c_varmland -> Värmland
 	link = { ck3 = 285 eu4 = 4143 }	# c_vingulmork -> Smålenene
-	link = { ck3 = 322 eu4 = 4164 }	# c_dal -> Dalsland
+	link = { ck3 = 322 eu4 = 4164 }	# c_dal -> Dal
 	link = { ck3 = 8733 ck3 = 8734 eu4 = 2 }	# c_ostergotland, c_kinda -> Östergötland
 	link = { ck3 = 8725 eu4 = 4163 }	# c_vastergotland -> Elfsborg
 	link = { ck3 = 372 eu4 = 25 }	# c_gutland -> Gotland
-	link = { ck3 = 315 ck3 = 8726 ck3 = 8727 eu4 = 3 }	# c_oland, c_more, c_sevede -> Småland
+	link = { ck3 = 315 ck3 = 8726 ck3 = 8727 eu4 = 3 }	# c_oland, c_more, c_sevede -> Kalmar
 	link = { ck3 = 87 eu4 = 1982 }	# c_blekinge -> Blekinge
 	link = { ck3 = 76 eu4 = 26 }	# c_halland -> Halland
 	link = { ck3 = 77 eu4 = 1981 }	# c_bornholm -> Bornholm
-	link = { ck3 = 86 eu4 = 6 eu4 = 4165 }	# c_skane -> Skåne, Göinge
+	link = { ck3 = 86 eu4 = 6 eu4 = 4165 }	# c_skane -> Lund, Göinge
 	link = { ck3 = 84 ck3 = 434 eu4 = 13 }	# c_slesvig, c_vorbasse -> Slesvig
 	link = { ck3 = 433 eu4 = 12 }	# c_sjaelland -> Sjælland
 	link = { ck3 = 68 eu4 = 1983 }	# c_lolland_falster -> Lolland
 	link = { ck3 = 228 eu4 = 14 }	# c_fyn -> Fyn
-	link = { ck3 = 225 ck3 = 220 eu4 = 15 }	# c_ringkobing, c_ribe -> Midtjylland
+	link = { ck3 = 225 ck3 = 220 eu4 = 15 }	# c_ringkobing, c_ribe -> Vestjylland
 	link = { ck3 = 222 eu4 = 4149 }	# c_viborg -> Kolding
-	link = { ck3 = 226 eu4 = 4142 }	# c_aarhus -> Aarhus
+	link = { ck3 = 226 eu4 = 4142 }	# c_aarhus -> Østjylland
 	link = { ck3 = 224 eu4 = 1984 }	# c_aalborg -> Nordjylland
 	# Britain
-	link = { ck3 = 1554 ck3 = 1560 ck3 = 1557 eu4 = 237 }	# c_buckinghamshire, c_oxfordshire, c_berkshire -> Oxfordshire
+	link = { ck3 = 1554 ck3 = 1560 ck3 = 1557 eu4 = 237 }	# c_buckinghamshire, c_oxfordshire, c_berkshire -> Oxford
 	link = { ck3 = 1660 ck3 = 1662 ck3 = 1664 eu4 = 4366 }	# c_brecknockshire, c_sir_faesyfed, c_maldwyn -> Montgomery
 	link = { ck3 = 1626 ck3 = 1634 ck3 = 1648 eu4 = 240 }	# c_worcestershire, c_hereford, c_shropshire -> Shrewsbury
 	link = { ck3 = 1605 ck3 = 1629 eu4 = 4372 }	# c_warwickshire, c_staffordshire -> Coventry
 	link = { ck3 = 1617 ck3 = 1602 eu4 = 4376 }	# c_leicestershire, c_northamptonshire -> Leicester
 	link = { ck3 = 1623 ck3 = 1620 eu4 = 1861 }	# c_derby, c_nottinghamshire -> Derby
 	link = { ck3 = 1590 eu4 = 4367 }	# c_east_riding -> Hull
-	link = { ck3 = 1587 eu4 = 243 }	# c_lincolnshire -> Lincoln
-	link = { ck3 = 1537 ck3 = 1543 ck3 = 1540 eu4 = 4370 }	# c_cambridgeshire, c_huntingdonshire, c_bedford -> Cambridgeshire
+	link = { ck3 = 1587 eu4 = 243 }	# c_lincolnshire -> Lincolnshire
+	link = { ck3 = 1537 ck3 = 1543 ck3 = 1540 eu4 = 4370 }	# c_cambridgeshire, c_huntingdonshire, c_bedford -> Bedfordshire
 	link = { ck3 = 1521 ck3 = 1525 eu4 = 1860 }	# c_suffolk, c_norfolk -> Norfolk
 	link = { ck3 = 1517 eu4 = 238 }	# c_essex -> Essex
 	link = { ck3 = 1530 ck3 = 1533 eu4 = 236 }	# c_middlesex, c_hertfordshire -> London
 	link = { ck3 = 1505 eu4 = 235 }	# c_kent -> Kent
 	link = { ck3 = 1509 ck3 = 1513 eu4 = 4371 }	# c_sussex, c_surrey -> Sussex
-	link = { ck3 = 1549 ck3 = 1548 ck3 = 1564 eu4 = 234 }	# c_isle_of_wight, c_hampton, c_wiltshire -> Wessex
+	link = { ck3 = 1549 ck3 = 1548 ck3 = 1564 eu4 = 234 }	# c_isle_of_wight, c_hampton, c_wiltshire -> Hampshire
 	link = { ck3 = 1568 eu4 = 4374 }	# c_dorset -> Dorset
 	link = { ck3 = 1575 eu4 = 233 }	# c_cornwall -> Cornwall
 	link = { ck3 = 1572 eu4 = 4373 }	# c_devon -> Devon
 	link = { ck3 = 1579 eu4 = 4130 }	# c_somerset -> Somerset
-	link = { ck3 = 1582 eu4 = 239 }	# c_gloucestershire -> Gloucestershire
+	link = { ck3 = 1582 eu4 = 239 }	# c_gloucestershire -> Gloucester
 	link = { ck3 = 1651 ck3 = 1631 eu4 = 241 }	# c_glamorgan, c_monmouthshire -> Glamorgan
 	link = { ck3 = 1656 ck3 = 1658 ck3 = 1653 eu4 = 4369 }	# c_pembrokeshire, c_cardiganshire, c_carmarthenshire -> Carmarthen
 	link = { ck3 = 1645 eu4 = 4375 }	# c_cheshire -> Chester
 	link = { ck3 = 1674 ck3 = 1669 ck3 = 1672 ck3 = 1666 eu4 = 242 }	# c_anglesey, c_caernarfonshire, c_denbighshire, c_merioneth -> Gwynedd
-	link = { ck3 = 1599 eu4 = 245 eu4 = 4785 }	# c_west_riding -> Yorkshire, Sheffield
+	link = { ck3 = 1599 eu4 = 245 eu4 = 4785 }	# c_west_riding -> York, Sheffield
 	link = { ck3 = 1641 eu4 = 244 }	# c_lancashire -> Lancashire
 	link = { ck3 = 1598 eu4 = 4368 }	# c_north_riding -> Scarborough
 	link = { ck3 = 1638 ck3 = 1642 eu4 = 247 }	# c_westmorland, c_cumberland -> Cumbria
 	link = { ck3 = 1612 ck3 = 1608 eu4 = 246 }	# c_northumberland, c_durham -> Northumberland
-	link = { ck3 = 1740 ck3 = 1676 eu4 = 4361 }	# c_teviotdale, c_dunbar -> East March
-	link = { ck3 = 1684 ck3 = 1681 eu4 = 4362 }	# c_galloway, c_annandale -> West March
+	link = { ck3 = 1740 ck3 = 1676 eu4 = 4361 }	# c_teviotdale, c_dunbar -> Roxburghshire
+	link = { ck3 = 1684 ck3 = 1681 eu4 = 4362 }	# c_galloway, c_annandale -> Dumfries
 	link = { ck3 = 1739 ck3 = 1688 ck3 = 1685 eu4 = 249 }	# c_lanarkshire, c_ayrshire, c_carrick -> Ayrshire
 	link = { ck3 = 1702 ck3 = 1697 eu4 = 4363 }	# c_argyll, c_lennox -> Argyll
 	link = { ck3 = 1726 ck3 = 1730 ck3 = 1733 ck3 = 1736 eu4 = 248 }	# c_fife, c_lothian, c_linlithgowshire, c_strathearn -> Lothian
@@ -677,21 +856,21 @@
 	link = { ck3 = 23 eu4 = 376 }	# c_connacht -> Connaught
 	link = { ck3 = 44 eu4 = 4377 }	# c_ossory -> Ormond
 	link = { ck3 = 40 eu4 = 374 }	# c_leinster -> Leinster
-	link = { ck3 = 36 eu4 = 4379 }	# c_athlone -> Middlands
-	link = { ck3 = 19 ck3 = 32 eu4 = 373 eu4 = 4120 }	# MANY-TO-MANY: c_oriel, c_dublin -> Meath, Kildare
+	link = { ck3 = 36 eu4 = 4379 }	# c_athlone -> Midlands
+	link = { ck3 = 19 ck3 = 32 eu4 = 373 eu4 = 4120 }	# MANY-TO-MANY: c_oriel, c_dublin -> Pale, Kildare
 	link = { ck3 = 27 eu4 = 4119 }	# c_breifne -> Sligo
-	link = { ck3 = 48 eu4 = 375 }	# c_thomond -> Munster
-	link = { ck3 = 51 eu4 = 4118 }	# c_ormond -> Desmond
-	link = { ck3 = 54 eu4 = 4378 }	# c_desmond -> Kinsale
+	link = { ck3 = 48 eu4 = 375 }	# c_thomond -> Limerick
+	link = { ck3 = 51 eu4 = 4118 }	# c_ormond -> Cork
+	link = { ck3 = 54 eu4 = 4378 }	# c_desmond -> Desmond
 	link = { ck3 = 12 eu4 = 4380 eu4 = 372 }	# c_ailech -> Donegal, Tyrone
 	link = { ck3 = 15 eu4 = 4121 }	# c_ulster -> Ulster
 	# Hispania
 	link = { ck3 = 1992 ck3 = 1838 eu4 = 4548 }	# c_niebla, c_moura -> Huelva
 	link = { ck3 = 1749 ck3 = 1750 eu4 = 230 }	# c_silves, c_faro -> Algarve
-	link = { ck3 = 1922 eu4 = 215 }	# c_olmedo -> Castilla La Vieja
+	link = { ck3 = 1922 eu4 = 215 }	# c_olmedo -> Valladolid
 	link = { ck3 = 1908 ck3 = 1898 eu4 = 1746 }	# c_burgos, c_valladolid -> Burgos
 	link = { ck3 = 1903 eu4 = 2989 }	# c_najera -> Rioja
-	link = { ck3 = 1902 eu4 = 4557 }	# c_tudela -> Lleida
+	link = { ck3 = 1902 eu4 = 4557 }	# c_tudela -> Calatayud
 	link = { ck3 = 1888 eu4 = 214 }	# c_zaragoza -> Zaragoza
 	link = { ck3 = 2004 eu4 = 4547 }	# c_alcaraz -> Albacete
 	link = { ck3 = 1999 ck3 = 1989 eu4 = 225 }	# c_cordoba, c_almader -> Córdoba
@@ -706,15 +885,15 @@
 	link = { ck3 = 1911 eu4 = 208 }	# c_leon -> León
 	link = { ck3 = 2000 eu4 = 4560 }	# c_iviza -> Ibiza
 	link = { ck3 = 2002 eu4 = 4559 }	# c_menorca -> Minorca
-	link = { ck3 = 8735 eu4 = 333 }	# c_mallorca -> The Baleares
+	link = { ck3 = 8735 eu4 = 333 }	# c_mallorca -> Majorca
 	link = { ck3 = 1910 ck3 = 1827 eu4 = 4553 }	# c_zamora, c_benavente -> Zamora
-	link = { ck3 = 1921 eu4 = 4551 }	# c_avila -> Avila
+	link = { ck3 = 1921 eu4 = 4551 }	# c_avila -> Ávila
 	link = { ck3 = 1935 ck3 = 1934 eu4 = 2755 }	# c_molina, c_calatayud -> Soria
 	link = { ck3 = 1909 ck3 = 1926 eu4 = 4789 }	# c_soria, c_cuellar -> Segovia
 	link = { ck3 = 1946 ck3 = 1943 eu4 = 2990 }	# c_teruel, c_albarracin -> Teruel
 	link = { ck3 = 1951 ck3 = 1964 eu4 = 2751 }	# c_cuenca, c_alarcon -> Cuenca
 	link = { ck3 = 1929 eu4 = 217 }	# c_madrid -> Madrid
-	link = { ck3 = 1986 ck3 = 1966 eu4 = 1748 }	# c_andujar, c_calatrava -> La Mancha
+	link = { ck3 = 1986 ck3 = 1966 eu4 = 1748 }	# c_andujar, c_calatrava -> Jaén
 	link = { ck3 = 1962 ck3 = 1959 eu4 = 2754 }	# c_malagon, c_mora -> La Mancha
 	link = { ck3 = 1920 eu4 = 219 }	# c_toledo -> Toledo
 	link = { ck3 = 1823 eu4 = 4554 }	# c_pravia -> Lugo
@@ -722,45 +901,45 @@
 	link = { ck3 = 1815 eu4 = 1745 }	# c_asturias_de_santillana -> Cantabria
 	link = { ck3 = 1808 ck3 = 1805 eu4 = 209 }	# c_viscaya, c_ipuskoa -> Vizcaya
 	link = { ck3 = 1889 eu4 = 210 }	# c_navarra -> Navarra
-	link = { ck3 = 3221 ck3 = 1882 eu4 = 211 }	# c_alto_aragon, c_fraga -> Pirineo
+	link = { ck3 = 3221 ck3 = 1882 eu4 = 211 }	# c_alto_aragon, c_fraga -> Huesca
 	link = { ck3 = 1878 ck3 = 1875 eu4 = 2987 }	# c_urgell, c_puigcerda -> Urgell
 	link = { ck3 = 1866 eu4 = 212 }	# c_girona -> Girona
 	link = { ck3 = 1877 eu4 = 213 }	# c_barcelona -> Barcelona
 	link = { ck3 = 1879 ck3 = 1884 eu4 = 2988 }	# c_tarragona, c_lleida -> Tarragona
-	link = { ck3 = 1941 ck3 = 1893 eu4 = 4550 }	# c_castellon, c_alcaniz -> Castellon
-	link = { ck3 = 1939 eu4 = 4549 eu4 = 220 }	# c_valencia -> Xativa, València
+	link = { ck3 = 1941 ck3 = 1893 eu4 = 4550 }	# c_castellon, c_alcaniz -> Castelló
+	link = { ck3 = 1939 eu4 = 4549 eu4 = 220 }	# c_valencia -> Xàtiva, València
 	link = { ck3 = 1940 ck3 = 1969 eu4 = 1750 }	# c_alicante, c_denia -> Alicante
 	link = { ck3 = 1971 eu4 = 221 }	# c_murcia -> Murcia
 	link = { ck3 = 1974 eu4 = 222 }	# c_almeria -> Almería
 	link = { ck3 = 1848 ck3 = 1978 eu4 = 223 }	# c_malaga, c_granada -> Granada
-	link = { ck3 = 1983 ck3 = 1984 eu4 = 226 eu4 = 4546 }	# MANY-TO-MANY: c_algeciras, c_cabra -> Gibraltar, Malaga
+	link = { ck3 = 1983 ck3 = 1984 eu4 = 226 eu4 = 4546 }	# MANY-TO-MANY: c_algeciras, c_cabra -> Gibraltar, Málaga
 	link = { ck3 = 1844 eu4 = 1749 }	# c_cadiz -> Cadiz
-	link = { ck3 = 1993 eu4 = 224 }	# c_sevilla -> Andalucía
+	link = { ck3 = 1993 eu4 = 224 }	# c_sevilla -> Sevilla
 	link = { ck3 = 1777 eu4 = 229 }	# c_beja -> Beja
 	link = { ck3 = 1780 ck3 = 1776 eu4 = 4150 }	# c_alcacer_do_sal, c_elvas -> Évora
 	link = { ck3 = 1755 eu4 = 227 eu4 = 4787 }	# c_lisboa -> Lisboa, Ribatejo
-	link = { ck3 = 1758 eu4 = 1851 }	# c_coimbra -> Ribatejo
-	link = { ck3 = 2003 eu4 = 4556 }	# c_aveiro -> Aviero
+	link = { ck3 = 1758 eu4 = 1851 }	# c_coimbra -> Coimbra
+	link = { ck3 = 2003 eu4 = 4556 }	# c_aveiro -> Aveiro
 	link = { ck3 = 1766 eu4 = 231 }	# c_porto -> Porto
-	link = { ck3 = 1784 eu4 = 4555 }	# c_tui -> Vigo
-	link = { ck3 = 1790 ck3 = 1791 eu4 = 206 }	# c_coruna, c_santiago -> Galicia
+	link = { ck3 = 1784 eu4 = 4555 }	# c_tui -> Pontevedra
+	link = { ck3 = 1790 ck3 = 1791 eu4 = 206 }	# c_coruna, c_santiago -> Corunna
 	# Francia
-	link = { ck3 = 2326 eu4 = 1879 }	# c_alencon -> Alencon
+	link = { ck3 = 2326 eu4 = 1879 }	# c_alencon -> Alençon
 	link = { ck3 = 2272 ck3 = 2266 eu4 = 177 }	# c_maine, c_sable -> Maine
 	link = { ck3 = 2275 eu4 = 4389 }	# c_tourraine -> Touraine
 	link = { ck3 = 2269 ck3 = 2261 eu4 = 178 }	# c_anjou, c_saumur -> Anjou
-	link = { ck3 = 2332 ck3 = 2330 eu4 = 182 }	# c_beaumont, c_evreux -> Vermandois
+	link = { ck3 = 2332 ck3 = 2330 eu4 = 182 }	# c_beaumont, c_evreux -> Valois
 	link = { ck3 = 2121 eu4 = 1743 }	# c_cambray -> Cambray
-	link = { ck3 = 2687 ck3 = 2396 eu4 = 181 }	# c_bouillon, c_rethel -> Valenciennes
-	link = { ck3 = 2122 eu4 = 1866 }	# c_namur -> Namur 
-	link = { ck3 = 2127 eu4 = 91 }	# c_hainaut -> Hainault
+	link = { ck3 = 2687 ck3 = 2396 eu4 = 181 }	# c_bouillon, c_rethel -> Rethel
+	link = { ck3 = 2122 eu4 = 1866 }	# c_namur -> Namur
+	link = { ck3 = 2127 eu4 = 91 }	# c_hainaut -> Hainaut
 	link = { ck3 = 2186 ck3 = 2189 ck3 = 2398 eu4 = 88 }	# c_amiens, c_clermont, c_valois -> Artois
 	link = { ck3 = 2134 eu4 = 4769 }	# c_lille -> Lille
 	link = { ck3 = 2305 ck3 = 2300 eu4 = 4777 }	# c_forez, c_thiers -> Forez
-	link = { ck3 = 2392 ck3 = 2390 ck3 = 2400 eu4 = 186 }	# c_chalons, c_reims, c_vermandois -> Champagne
+	link = { ck3 = 2392 ck3 = 2390 ck3 = 2400 eu4 = 186 }	# c_chalons, c_reims, c_vermandois -> Reims
 	link = { ck3 = 2720 eu4 = 1880 }	# c_sundgau -> Sundgau
 	link = { ck3 = 2719 eu4 = 4765 }	# c_colmar -> Mulhouse
-	link = { ck3 = 2714 ck3 = 2712 eu4 = 75 }	# c_nancy, c_puttlingen -> Elsass
+	link = { ck3 = 2714 ck3 = 2712 eu4 = 75 }	# c_nancy, c_puttlingen -> Straßburg
 	link = { ck3 = 2706 ck3 = 2711 eu4 = 188 }	# c_briey, c_metz -> Metz
 	link = { ck3 = 2386 ck3 = 2387 ck3 = 2715 eu4 = 189 }	# c_langres, c_vaucouleurs, c_neufchateau -> Lothringen
 	link = { ck3 = 2395 eu4 = 4766 }	# c_bar -> Verdun
@@ -769,51 +948,51 @@
 	link = { ck3 = 2458 ck3 = 2459 eu4 = 193 }	# c_dole, c_besancon -> Franche-Comté
 	link = { ck3 = 2457 eu4 = 4764 }	# c_bresse -> Salins
 	link = { ck3 = 2309 ck3 = 2304 eu4 = 1877 }	# c_jaligny, c_macon -> Charolais
-	link = { ck3 = 2377 ck3 = 2382 eu4 = 192 }	# c_chalon, c_dijon -> Bourgogne
-	link = { ck3 = 2344 eu4 = 191 }	# c_nevers -> Nevers
+	link = { ck3 = 2377 ck3 = 2382 eu4 = 192 }	# c_chalon, c_dijon -> Dijonnais
+	link = { ck3 = 2344 eu4 = 191 }	# c_nevers -> Nivernais
 	link = { ck3 = 2379 eu4 = 187 }	# c_tonnerrois -> Barrois
 	link = { ck3 = 2350 ck3 = 2378 eu4 = 4392 }	# c_auxerre, c_avalois -> Auxerrois
-	link = { ck3 = 2357 ck3 = 2354 ck3 = 2359 eu4 = 183 }	# c_ile_de_france, c_brie_francaise, c_meaux -> Île-de-France
+	link = { ck3 = 2357 ck3 = 2354 ck3 = 2359 eu4 = 183 }	# c_ile_de_france, c_brie_francaise, c_meaux -> Paris
 	link = { ck3 = 2331 ck3 = 2321 eu4 = 4388 }	# c_chartres, c_vendome -> Chartres
-	link = { ck3 = 2338 eu4 = 184 }	# c_orleans -> Orléannais
+	link = { ck3 = 2338 eu4 = 184 }	# c_orleans -> Orleanais
 	link = { ck3 = 2319 eu4 = 4776 }	# c_blois -> Blois
 	link = { ck3 = 2280 ck3 = 2312 eu4 = 179 }	# c_berry, c_issoudun -> Berry
 	link = { ck3 = 2287 eu4 = 4697 }	# c_la_marche -> La Marche
-	link = { ck3 = 2256 ck3 = 2464 eu4 = 180 }	# c_poitiers, c_bellac -> Poitou
-	link = { ck3 = 2462 eu4 = 4387 }	# c_angouleme -> Angouleme
+	link = { ck3 = 2256 ck3 = 2464 eu4 = 180 }	# c_poitiers, c_bellac -> Haut-Poitou
+	link = { ck3 = 2462 eu4 = 4387 }	# c_angouleme -> Angoumois
 	link = { ck3 = 2301 eu4 = 203 }	# c_lyon -> Lyonnais
 	link = { ck3 = 2068 ck3 = 8717 eu4 = 204 }	# c_viennois, c_valentinois -> Dauphiné
-	link = { ck3 = 2311 eu4 = 190 }	# c_bourbon -> Bourbon
+	link = { ck3 = 2311 eu4 = 190 }	# c_bourbon -> Bourbonnais
 	link = { ck3 = 2294 ck3 = 2295 ck3 = 2291 eu4 = 199 }	# c_auvergne, c_clermont_sur_allier, c_gevaudan -> Auvergne
 	link = { ck3 = 2222 eu4 = 198 }	# c_millau -> Rouergue
 	link = { ck3 = 3258 ck3 = 2217 ck3 = 2296 eu4 = 4391 }	# c_viviers, c_uses, c_velay -> Vivarais
 	link = { ck3 = 2248 eu4 = 195 }	# c_limousin -> Limousin
 	link = { ck3 = 2239 eu4 = 194 }	# c_perigord -> Périgord
-	link = { ck3 = 2234 ck3 = 2229 eu4 = 4112 }	# c_quercy, c_rouergue -> Aurilac
+	link = { ck3 = 2234 ck3 = 2229 eu4 = 4112 }	# c_quercy, c_rouergue -> Quercy
 	link = { ck3 = 2214 eu4 = 196 }	# c_toulouse -> Toulouse
 	link = { ck3 = 2215 eu4 = 4695 }	# c_albi -> Carcassonne
 	link = { ck3 = 2200 ck3 = 2205 ck3 = 2235 eu4 = 175 }	# c_marsan, c_armagnac, c_agenais -> Armagnac
-	link = { ck3 = 2455 eu4 = 205 eu4 = 4719 }	# c_savoie -> Savoie, Annecy
-	link = { ck3 = 8718 eu4 = 2991 }	# c_forcalquier -> Draguignan
-	link = { ck3 = 2067 eu4 = 201 eu4 = 202 }	# c_venaissin -> Toulon, Avignon
+	link = { ck3 = 2455 eu4 = 205 eu4 = 4719 }	# c_savoie -> Chambery, Annecy
+	link = { ck3 = 8718 eu4 = 2991 }	# c_forcalquier -> Forcalquier
+	link = { ck3 = 2067 eu4 = 201 eu4 = 202 }	# c_venaissin -> Aix, Avignon
 	link = { ck3 = 2025 eu4 = 4696 }	# c_provence -> Toulon
-	link = { ck3 = 2218 eu4 = 200 }	# c_montpellier -> Languedoc
+	link = { ck3 = 2218 eu4 = 200 }	# c_montpellier -> Montpellier
 	link = { ck3 = 2219 eu4 = 2753 }	# c_beziers -> Narbonne
 	link = { ck3 = 2447 eu4 = 197 }	# c_carcassonne -> Roussillon
 	link = { ck3 = 2210 ck3 = 2207 eu4 = 4694 }	# c_foix, c_comminges -> Foix
 	link = { ck3 = 2194 ck3 = 2202 eu4 = 176 }	# c_bearn, c_bigorre -> Béarn
 	link = { ck3 = 2139 eu4 = 173 }	# c_labourd -> Labourd
-	link = { ck3 = 2144 ck3 = 2197 eu4 = 174 }	# c_bordeaux, c_albret -> Gascogne
+	link = { ck3 = 2144 ck3 = 2197 eu4 = 174 }	# c_bordeaux, c_albret -> Bordeaux
 	link = { ck3 = 2242 ck3 = 2243 eu4 = 4111 }	# c_saintonge, c_aunis -> Saintonge
-	link = { ck3 = 2259 ck3 = 2258 ck3 = 2254 eu4 = 4386 }	# c_montaigu, c_thouars, c_lusignan -> Vendee
+	link = { ck3 = 2259 ck3 = 2258 ck3 = 2254 eu4 = 4386 }	# c_montaigu, c_thouars, c_lusignan -> Bas-Poitou
 	link = { ck3 = 2133 eu4 = 87 }	# c_guines -> Calais
 	link = { ck3 = 2137 eu4 = 89 }	# c_boulogne -> Picardie
 	link = { ck3 = 2180 ck3 = 2182 eu4 = 167 }	# c_rouen, c_eu -> Caux
-	link = { ck3 = 2173 ck3 = 2327 eu4 = 168 }	# c_bayeux, c_lisieux -> Normandie
+	link = { ck3 = 2173 ck3 = 2327 eu4 = 168 }	# c_bayeux, c_lisieux -> Caen
 	link = { ck3 = 2169 eu4 = 4385 }	# c_avranches -> Cotentin
-	link = { ck3 = 2166 eu4 = 172 }	# c_nantes -> Vendée
-	link = { ck3 = 2282 eu4 = 4384 }	# c_rennes -> Rennes
+	link = { ck3 = 2166 eu4 = 172 }	# c_nantes -> Nantais
+	link = { ck3 = 2282 eu4 = 4384 }	# c_rennes -> Rennais
 	link = { ck3 = 2164 eu4 = 169 }	# c_penthievre -> Armor
-	link = { ck3 = 2163 eu4 = 171 }	# c_vannes -> Morbihan
+	link = { ck3 = 2163 eu4 = 171 }	# c_vannes -> Vannetais
 	link = { ck3 = 2158 ck3 = 2159 eu4 = 170 }	# c_french_leon, c_cornouaille -> Finistère
 }
