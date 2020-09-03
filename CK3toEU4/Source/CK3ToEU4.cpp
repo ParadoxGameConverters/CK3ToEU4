@@ -1,7 +1,6 @@
 #include "CK3ToEU4.h"
+#include "Configuration/Configuration.h"
 #include "CK3World/World.h"
-
-class Configuration {};
 
 Configuration theConfiguration;
 

@@ -23,8 +23,6 @@ CK3::World::World(const Configuration& theConfiguration)
 		LOG(LogLevel::Info) << "-> Importing uncompressed CK3 save.";
 		processUncompressedSave("input.ck3"); // TODO: ditto
 	}
-
-	LOG(LogLevel::Debug) << saveGame.gamestate.substr(0,1000);
 }
 
 void CK3::World::verifySave(const std::string& saveGamePath)
