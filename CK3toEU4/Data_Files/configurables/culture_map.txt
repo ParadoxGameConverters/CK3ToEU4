@@ -380,3 +380,22 @@ link = { eu4 = dog_culture ck3 = dog_culture tech = western gfx = westerngfx }
 link = { eu4 = elephant_culture ck3 = elephant_culture tech = western gfx = westerngfx }
 link = { eu4 = dragon_culture ck3 = dragon_culture tech = western gfx = westerngfx }
 link = { eu4 = red_panda ck3 = red_panda tech = eastern gfx = easterngfx }
+
+# ---- SUPPORTED MODS ----- Sons of Vinland
+link = { eu4 = inuit ck3 = tuniq tech = north_american gfx = northamericagfx}
+link = { eu4 = inuit ck3 = inuit tech = north_american gfx = northamericagfx}
+link = { eu4 = cree ck3 = innu tech = north_american gfx = northamericagfx}
+link = { eu4 = cree ck3 = atikamekw tech = north_american gfx = northamericagfx}
+link = { eu4 = inuit ck3 = beothuk tech = north_american gfx = northamericagfx}
+link = { eu4 = anishinabe ck3 = anishinabe tech = north_american gfx = northamericagfx}
+link = { eu4 = shawnee ck3 = shawnee tech = north_american gfx = northamericagfx}
+link = { eu4 = mikmaq ck3 = mikmaq tech = north_american gfx = northamericagfx}
+link = { eu4 = abenaki ck3 = abenaki tech = north_american gfx = northamericagfx}
+link = { eu4 = pequot ck3 = pequot tech = north_american gfx = northamericagfx}
+link = { eu4 = powhatan ck3 = powhatan tech = north_american gfx = northamericagfx}
+link = { eu4 = mahican ck3 = mahican tech = north_american gfx = northamericagfx}
+link = { eu4 = delaware ck3 = delaware tech = north_american gfx = northamericagfx}
+link = { eu4 = iroquois ck3 = iroquois tech = north_american gfx = northamericagfx}
+link = { eu4 = huron ck3 = kanata tech = north_american gfx = northamericagfx}
+link = { eu4 = susquehannock ck3 = susquehannock tech = north_american gfx = northamericagfx}
+link = { eu4 = cherokee ck3 = cherokee tech = north_american gfx = northamericagfx}

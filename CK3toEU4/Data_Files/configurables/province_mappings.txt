@@ -1263,11 +1263,10 @@
 	link = { ck3 = 2511 eu4 = 1774 }	# c_treviso -> Treviso
 	link = { ck3 = 2541 eu4 = 106 }	# c_modena -> Modena
 	link = { ck3 = 2532 eu4 = 105 }	# c_parma -> Parma
-	link = { ck3 = 2528 ck3 = 2525 eu4 = 113 }	# c_ferrara, c_polesine -> Ferrara
-	link = { ck3 = 2044 eu4 = 1875 }	# c_cuneo -> Turin
+	link = { ck3 = 2528 eu4 = 113 }	# c_ferrara -> Ferrara
 	link = { ck3 = 2469 eu4 = 2981 }	# c_monferrato -> Asti
-	link = { ck3 = 2456 eu4 = 4727 }	# c_canavese -> Saluzzo
-	link = { ck3 = 2470 eu4 = 103 }	# c_turin -> Niklas
+	link = { ck3 = 2456 ck3 = 2044 eu4 = 4727 }	# c_canavese, c_cuneo -> Saluzzo
+	link = { ck3 = 2470 eu4 = 1875 eu4 = 103 }	# c_turin -> Turin, Niklas
 	link = { ck3 = 2473 eu4 = 2979 }	# c_novara -> Novara
 	link = { ck3 = 2476 ck3 = 2487 eu4 = 4728 }	# c_pavia, c_tortona -> Pavia
 	link = { ck3 = 2533 eu4 = 109 }	# c_mantua -> Mantua
@@ -1280,12 +1279,12 @@
 	link = { ck3 = 2494 eu4 = 107 eu4 = 4739 }	# c_brescia -> Brescia, Bergamo
 	link = { ck3 = 2502 eu4 = 108 }	# c_verona -> Verona
 	link = { ck3 = 2666 eu4 = 4729 }	# c_padua -> Padova
-	link = { ck3 = 2517 ck3 = 2506 eu4 = 112 }	# c_venezia, c_veneto -> Venezia
+	link = { ck3 = 2517 ck3 = 2506 ck3 = 2525 eu4 = 112 }	# c_venezia, c_veneto, c_polesine -> Venezia
 	link = { ck3 = 8721 eu4 = 102 }	# c_nice -> Nice
 	link = { ck3 = 2466 eu4 = 101 eu4 = 2992 }	# c_genoa -> Liguria, Albenga
 	link = { ck3 = 2514 eu4 = 4738 }	# c_aquileia -> Trieste
 	link = { ck3 = 2513 eu4 = 111 }	# c_friuli -> Friuli
-	link = { ck3 = 2531 ck3 = 2545 eu4 = 2980 }	# c_luni, c_lucca -> Lucca
+	link = {  ck3 = 2545ck3 = 2531 eu4 = 2980 }	# c_lucca, c_luni -> Lucca
 	link = { ck3 = 2561 eu4 = 115 }	# c_pisa -> Pisa
 	link = { ck3 = 2563 eu4 = 116 }	# c_firenze -> Firenze
 	link = { ck3 = 2554 eu4 = 2978 }	# c_arezzo -> Arezzo
@@ -1301,17 +1300,17 @@
 	link = { ck3 = 2669 eu4 = 4734 }	# c_benevento -> Avellino
 	link = { ck3 = 2610 eu4 = 2985 }	# c_foggia -> Capitanata
 	link = { ck3 = 2616 eu4 = 2983 }	# c_salerno -> Salerno
-	link = { ck3 = 2619 eu4 = 1933 }	# c_apulia -> Bari
-	link = { ck3 = 2622 ck3 = 2624 eu4 = 122 }	# c_lecce, c_bari -> Apulia
+	link = { ck3 = 2624 ck3 = 2619 eu4 = 1933 }	# c_bari, c_apulia -> Bari
+	link = { ck3 = 2622 eu4 = 122 }	# c_lecce -> Apulia
 	link = { ck3 = 2632 eu4 = 1934 }	# c_camarda -> Lucania
-	link = { ck3 = 2629 ck3 = 2630 eu4 = 2984 }	# c_rossano, c_cosenza -> Costenza
+	link = { ck3 = 2630 ck3 = 2629 eu4 = 2984 }	# c_cosenza, c_rossano -> Costenza
 	link = { ck3 = 2627 eu4 = 123 }	# c_reggio_calabria -> Calabria
 	link = { ck3 = 2648 ck3 = 2652 ck3 = 2650 eu4 = 1247 }	# c_bastia, c_vecchio, c_ajaccio -> Corsica
 	link = { ck3 = 2658 ck3 = 2665 eu4 = 127 }	# c_gallura, c_logudoro -> Sardinia
 	link = { ck3 = 2661 eu4 = 4735 }	# c_arborea -> Arborea
 	link = { ck3 = 2660 ck3 = 2656 eu4 = 2986 }	# c_cagliari, c_tortoli -> Cagliari
-	link = { ck3 = 2641 eu4 = 4737 eu4 = 125 }	# c_agrigento -> Girgenti, Palermo
-	link = { ck3 = 2645 eu4 = 4736 }	# c_palermo -> Trapani
+	link = { ck3 = 2641 eu4 = 4737 }	# c_agrigento -> Girgenti
+	link = { ck3 = 2645  eu4 = 125 eu4 = 4736 }	# c_palermo -> Palermo, Trapani
 	link = { ck3 = 2639 eu4 = 124 }	# c_messina -> Messina
 	link = { ck3 = 2643 eu4 = 2982 }	# c_siracusa -> Syracuse
 	link = { ck3 = 2646 eu4 = 126 }	# c_malta -> Malta
