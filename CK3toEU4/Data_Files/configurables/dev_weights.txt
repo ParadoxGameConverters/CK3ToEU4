@@ -1,0 +1,8 @@
+# This file defines how buildings/building upgrades are weighted against EU4's dev.
+# Provided defaults are reasonable for a standard 250-year game. If shorter, you may want to increase the numbers ever so slightly,
+# or reduce them if you've been playing longer.
+
+dev_from_building = 0.1
+dev_from_barony = 0.3
+
+# If the world seems underdeveloped, try with dev_from_building = 0.12 or 0.15. dev_from_barony is usually fine as is.
