@@ -10,6 +10,12 @@
     <Filter Include="ConverterVersion">
       <UniqueIdentifier>{bef1087f-6527-4356-afee-37d6681f96d4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World">
+      <UniqueIdentifier>{05182a49-13e7-4cee-b17a-53ee550a12c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration">
+      <UniqueIdentifier>{7496cde9-37f4-44ff-bb9c-6312478fa1b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3ToEU4.h" />
@@ -18,6 +24,12 @@
     </ClInclude>
     <ClInclude Include="Source\ConverterVersion\outConverterVersion.h">
       <Filter>ConverterVersion</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\World.h">
+      <Filter>CK3World</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Configuration\Configuration.h">
+      <Filter>Configuration</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -40,6 +52,12 @@
     </ClCompile>
     <ClCompile Include="Source\ConverterVersion\outConverterVersion.cpp">
       <Filter>ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\World.cpp">
+      <Filter>CK3World</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Configuration\Configuration.cpp">
+      <Filter>Configuration</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
