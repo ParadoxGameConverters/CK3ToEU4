@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = steppe_horde
+primary_culture = chuvash
+religion = sunni
+technology_group = nomad_group
+capital = 1778 # Kasimov
+religious_school = hanafi_school
+
+1066.11.11 = {
+	monarch = {
+		name = "Tribal Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
