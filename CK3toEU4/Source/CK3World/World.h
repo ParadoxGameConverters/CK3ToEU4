@@ -13,12 +13,21 @@ public:
 	explicit World(const Configuration& theConfiguration);
 private:
 	void verifySave(const std::string& saveGamePath);
-	void processUncompressedSave(const std::string& saveGamePath);
 	void processCompressedSave(const std::string& saveGamePath);
+	void processAutoSave(const std::string& saveGamePath);
+	void processIronManSave(const std::string& saveGamePath);
+
+	enum class SaveType
+	{
+		INVALID=0,
+		ZIPFILE,
+		AUTOSAVE,
+		IRONMAN
+	};
 
 	struct saveData
 	{
-		bool compressed = false;
+		SaveType saveType = SaveType::INVALID;
 		std::string gamestate;
 		std::string metadata; // probably not needed
 	};
