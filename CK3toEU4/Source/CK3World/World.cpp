@@ -40,7 +40,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		throw std::runtime_error("Could not open save! Exiting!");
 
 	char buffer[10];
-	saveFile.read(buffer, 4);
+	saveFile.get(buffer, 4);
 	if (buffer[0] != 'S' || buffer[1] != 'A' || buffer[2] != 'V')
 		throw std::runtime_error("Savefile of unknown type.");
 
@@ -49,7 +49,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		ch = saveFile.get();
 	} while (ch != '\n' && ch != '\r');
 
-	saveFile.read(buffer, 10);
+	saveFile.get(buffer, 10);
 	if (std::string(buffer) == "meta_data")
 		saveGame.saveType = SaveType::ZIPFILE;
 	else
@@ -57,6 +57,8 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		saveFile.seekg(0);
 		char * bigBuf = new char[65536];
 		saveFile.read(bigBuf, 65536);
+		if (saveFile.gcount() != 65536)
+			throw std::runtime_error("Save file seems a little small.");
 
 		for (int i=0; i<65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf+i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf+i-2) == 4)
