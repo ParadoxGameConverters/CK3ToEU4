@@ -56,7 +56,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 	{
 		saveFile.seekg(0);
 		char * bigBuf = new char[65536];
-		if (saveFile.read(bigBuf, 65536).gcount() != 65536)
+		if (saveFile.readsome(bigBuf, 65536) != 65536)
 			throw std::runtime_error("Save file seems a little small.");
 
 		for (int i=0; i<65533; ++i)
