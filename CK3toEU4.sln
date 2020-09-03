@@ -22,7 +22,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lzma", "ZipLib\extlibs\lzma
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "ZipLib\extlibs\zlib\zlib.vcxproj", "{BAEB16B3-DB4C-432F-9E6A-2ACADEA0691D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZipLib", "..\ZipLib\ZipLib.vcxproj", "{5C9FD859-DDF9-4510-8397-B329B0AE8C48}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZipLib", "ZipLib\ZipLib.vcxproj", "{5C9FD859-DDF9-4510-8397-B329B0AE8C48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
