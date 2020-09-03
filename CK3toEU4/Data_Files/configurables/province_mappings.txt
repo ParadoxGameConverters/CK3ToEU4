@@ -1284,7 +1284,7 @@
 	link = { ck3 = 2466 eu4 = 101 eu4 = 2992 }	# c_genoa -> Liguria, Albenga
 	link = { ck3 = 2514 eu4 = 4738 }	# c_aquileia -> Trieste
 	link = { ck3 = 2513 eu4 = 111 }	# c_friuli -> Friuli
-	link = {  ck3 = 2545ck3 = 2531 eu4 = 2980 }	# c_lucca, c_luni -> Lucca
+	link = { ck3 = 2545 ck3 = 2531 eu4 = 2980 }	# c_lucca, c_luni -> Lucca
 	link = { ck3 = 2561 eu4 = 115 }	# c_pisa -> Pisa
 	link = { ck3 = 2563 eu4 = 116 }	# c_firenze -> Firenze
 	link = { ck3 = 2554 eu4 = 2978 }	# c_arezzo -> Arezzo
