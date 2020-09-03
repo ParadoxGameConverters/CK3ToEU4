@@ -175,31 +175,31 @@ option = {
 		}
 	}
 }
-option = {
-	name = sunset
-	displayName = AZTEC
-	tooltip = AZTECTIP
-	radioSelector = {
-		radioOption = {
-			name = 1
-			displayName = AZTEC1
-			tooltip = AZTEC1TIP
-			default = true
-		}
-		radioOption = {
-			name = 2
-			displayName = AZTEC2
-			tooltip = AZTEC2TIP
-			default = false
-		}
-		radioOption = {
-			name = 3
-			displayName = AZTEC3
-			tooltip = AZTEC3TIP
-			default = false
-		}
-	}
-}
+#option = { # No Sunset Invasion in CK3
+#	name = sunset
+#	displayName = AZTEC
+#	tooltip = AZTECTIP
+#	radioSelector = {
+#		radioOption = {
+#			name = 1
+#			displayName = AZTEC1
+#			tooltip = AZTEC1TIP
+#			default = true
+#		}
+#		radioOption = {
+#			name = 2
+#			displayName = AZTEC2
+#			tooltip = AZTEC2TIP
+#			default = false
+#		}
+#		radioOption = {
+#			name = 3
+#			displayName = AZTEC3
+#			tooltip = AZTEC3TIP
+#			default = false
+#		}
+#	}
+#}
 option = {
 	name = output_name
 	displayName = MODNAME
