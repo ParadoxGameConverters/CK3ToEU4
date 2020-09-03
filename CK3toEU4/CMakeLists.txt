@@ -22,6 +22,7 @@ add_subdirectory(../ZipLib [binary_dir])
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
 file(GLOB CONVERTER_VERSION_SOURCES "${PROJECT_SOURCE_DIR}/ConverterVersion/*.cpp")
+file(GLOB CONFIGURATION_SOURCES "${PROJECT_SOURCE_DIR}/Configuration/*.cpp")
 file(GLOB CK3WORLD_SOURCES "${PROJECT_SOURCE_DIR}/CK3World/*.cpp")
 set(COMMON_SOURCES "../commonItems/CommonFunctions.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Color.cpp")
@@ -38,6 +39,7 @@ add_executable(CK3toEU4
 	${MAIN_SOURCES}
 	${CONVERTER_VERSION_SOURCES}
 	${COMMON_SOURCES}
+	${CONFIGURATION_SOURCES}
 	${CK3WORLD_SOURCES}
 )
 
