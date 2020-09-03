@@ -51,55 +51,17 @@ void CK3::World::processUncompressedSave(const std::string& saveGamePath)
 void CK3::World::processCompressedSave(const std::string& saveGamePath)
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	std::string inString = inStream.str();
 
-	int parenLevel = 0;
-	bool string = false;
-	bool escape = false;
-	char ch;
+	int startMeta = inString.find_first_of("\r\n") + 1;
+	int startZipped = inString.find("PK\03\04");
 
-	do { // Skip over the first line first.
-		ch = saveFile.get();
-		if (saveFile.eof())
-			throw std::runtime_error("File ends unexpectedly.");
-	} while (ch != '\n' && ch != '\r');
-
-	do { // Then process the "meta" section, one character at a time.
-		ch = saveFile.get();
-		if (saveFile.eof())
-			throw std::runtime_error("File ends unexpectedly.");
-		if (ch == '\r')
-			ch = '\n';
-		saveGame.metadata.push_back(ch);
-		if (escape)
-		{
-			escape = false;
-			continue;
-		}
-		if (string && ch == '\\')
-		{
-			escape = true;
-			continue;
-		}
-		if (ch == '"')
-			string == !string;
-		if (string)
-			continue;
-		if (ch == '{')
-			parenLevel++;
-		if (ch == '}')
-			parenLevel--;
-	} while (parenLevel || ch != '\n');
-
-	// Now confirm that we have a zipfile from here on.
-	char buffer[5];
-	saveFile.get(buffer, 5);
-	if (buffer[0] != 'P' || buffer[1] != 'K' || buffer[2] != '\03' || buffer[3] != '\04')
-		throw std::runtime_error("File seems neither compressed nor uncompressed, are you sure this is a valid save?");
-
-	saveFile.seekg(-4, std::ios_base::cur);
+	saveGame.metadata = inString.substr(startMeta, startZipped-startMeta);
 
 	std::stringstream zipStream;
-	zipStream << saveFile.rdbuf();
+	zipStream << inString.substr(startZipped);
 
 	auto zipArchive = ZipArchive::Create(zipStream);
 	if (zipArchive->GetEntriesCount() != 1)
