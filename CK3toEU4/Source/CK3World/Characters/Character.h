@@ -31,8 +31,6 @@ class Character: commonItems::parser
 	std::pair<int, std::string> religion;
 	std::map<int, std::string> traits;
 	
-	
-	
 	Skills skills;
 	date birthDate = date("1.1.1");
 	date deathDate = date("1.1.1");

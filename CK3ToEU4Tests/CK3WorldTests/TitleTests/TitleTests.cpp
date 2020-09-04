@@ -23,8 +23,10 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(theTitle.getHolder().first);
 	ASSERT_FALSE(theTitle.isTheocraticLease());
 	ASSERT_FALSE(theTitle.isCountyCapitalBarony());
-	ASSERT_FALSE(theTitle.isDuchyCapitalBarony());	
+	ASSERT_FALSE(theTitle.isDuchyCapitalBarony());
 	ASSERT_FALSE(theTitle.getCapital().first);
+	ASSERT_FALSE(theTitle.getDFLiege().first);
+	ASSERT_FALSE(theTitle.getDJLiege().first);
 	ASSERT_TRUE(theTitle.getDJVassals().empty());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
 	ASSERT_FALSE(theTitle.getCoA().first);
@@ -48,7 +50,7 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	input << "de_jure_vassals={ 1 2 3 4 5 }\n";
 	input << "heir={ 3 4 5 }\n";
 	input << "coat_of_arms_id=45\n";
-	
+
 	const CK3::Title theTitle(input, 1);
 
 	ASSERT_EQ("k_grenada", theTitle.getName());

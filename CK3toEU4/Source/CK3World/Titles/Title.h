@@ -48,11 +48,11 @@ class Title: commonItems::parser
 	std::pair<int, std::shared_ptr<Character>> holder;					// Holding character
 	std::map<int, std::shared_ptr<Title>> dfVassals;					// defacto vassals, not in save, manually linked post-loading
 	std::map<int, std::shared_ptr<Title>> djVassals;					// dejure vassals (for all except baronies and titulars)
-	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs; // Order of heirs is unclear so we're keeping them ordered and using fist if able.
+	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs; // Order of heirs is unclear so we're keeping them ordered and using first if able.
 	std::map<int, std::shared_ptr<Character>> claims;					// Incredibly useful.
 	bool theocraticLease = false;												// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
 	std::set<std::string> laws;
-	bool cCapitalBarony = false; 
+	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
 };
 } // namespace CK3
