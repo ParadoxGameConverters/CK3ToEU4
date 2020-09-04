@@ -25,6 +25,11 @@ CK3::World::World(const Configuration& theConfiguration)
 		CK3Version = GameVersion(versionString.getString());
 		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
 	});
+	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading landed titles.";
+		titles =  Titles(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " landed titles.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 

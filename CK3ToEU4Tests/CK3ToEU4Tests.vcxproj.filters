@@ -31,6 +31,18 @@
     <Filter Include="CK3ToEU4\EU4World\Output">
       <UniqueIdentifier>{78b4283a-4bd8-46a9-b515-adb4c9cd2eb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World">
+      <UniqueIdentifier>{e7109f06-9b38-4507-95a8-17d6ffbc1612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Titles">
+      <UniqueIdentifier>{4999d001-cad9-4981-862d-d9d52ba26b30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests">
+      <UniqueIdentifier>{b4bd0865-ec1f-4741-9d49-d77dd3cfa3c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\TitleTests">
+      <UniqueIdentifier>{16e748e5-e7da-4519-a10d-e0535e5eac0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -88,6 +100,18 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\iconvlite.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp">
+      <Filter>CK3ToEU4\CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp">
+      <Filter>CK3ToEU4\CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp">
+      <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp">
+      <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

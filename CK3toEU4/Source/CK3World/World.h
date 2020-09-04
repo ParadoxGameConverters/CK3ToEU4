@@ -4,6 +4,7 @@
 #include "Parser.h"
 #include <Date.h>
 #include "GameVersion.h"
+#include "Titles/Titles.h"
 
 class Configuration;
 
@@ -26,6 +27,7 @@ class World: commonItems::parser
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
 	GameVersion CK3Version;
+	Titles titles;
 
 	enum class SaveType
 	{
