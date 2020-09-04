@@ -11,7 +11,7 @@ Configuration::Configuration()
 	parseFile("configuration.txt");
 	clearRegisteredKeywords();
 	setOutputName();
-	verifyCK2Path();
+	verifyCK3Path();
 	verifyEU4Path();
 	Log(LogLevel::Progress) << "3 %";
 }
@@ -102,7 +102,7 @@ void Configuration::registerKeys()
 	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
 }
 
-void Configuration::verifyCK2Path() const
+void Configuration::verifyCK3Path() const
 {
 	if (!Utils::DoesFolderExist(CK3Path))
 		throw std::runtime_error(CK3Path + " does not exist!");

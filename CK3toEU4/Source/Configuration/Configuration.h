@@ -81,7 +81,7 @@ class Configuration: commonItems::parser
   private:
 	void registerKeys();
 	void setOutputName();
-	void verifyCK2Path() const;
+	void verifyCK3Path() const;
 	void verifyEU4Path() const;
 
 	std::string SaveGamePath;
