@@ -2,6 +2,8 @@
 #define CK3_WORLD_H
 
 #include "Parser.h"
+#include <Date.h>
+#include "GameVersion.h"
 
 class Configuration;
 
@@ -9,22 +11,29 @@ namespace CK3
 {
 class World: commonItems::parser
 {
-public:
+  public:
 	explicit World(const Configuration& theConfiguration);
-private:
+
+	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
+
+  private:
 	void verifySave(const std::string& saveGamePath);
 	void processCompressedSave(const std::string& saveGamePath);
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
+	void processSave(const std::string& saveGamePath);
+	
+	date endDate = date("1444.11.11");
+	date startDate = date("1.1.1");
+	GameVersion CK3Version;
 
 	enum class SaveType
 	{
-		INVALID=0,
-		ZIPFILE,
-		AUTOSAVE,
-		IRONMAN
+		INVALID = 0,
+		ZIPFILE = 1,
+		AUTOSAVE = 2,
+		IRONMAN = 3
 	};
-
 	struct saveData
 	{
 		SaveType saveType = SaveType::INVALID;
@@ -36,4 +45,3 @@ private:
 } // namespace CK3
 
 #endif // CK3_WORLD_H
-

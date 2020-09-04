@@ -1,25 +1,21 @@
 #include "ConverterVersion.h"
 #include "ParserHelpers.h"
 
-
-
-ConverterVersion::ConverterVersion::ConverterVersion()
+mappers::ConverterVersion::ConverterVersion()
 {
 	registerKeys();
 	parseFile("configurables/version.txt");
 	clearRegisteredKeywords();
 }
 
-
-ConverterVersion::ConverterVersion::ConverterVersion(std::istream& theStream)
+mappers::ConverterVersion::ConverterVersion(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-
-void ConverterVersion::ConverterVersion::registerKeys()
+void mappers::ConverterVersion::registerKeys()
 {
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString nameStr(theStream);

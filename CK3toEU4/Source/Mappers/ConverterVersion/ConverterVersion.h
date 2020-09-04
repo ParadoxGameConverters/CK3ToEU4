@@ -1,13 +1,9 @@
 #ifndef CONVERTER_VERSION_H
 #define CONVERTER_VERSION_H
 
-
-
 #include "Parser.h"
 
-
-
-namespace ConverterVersion
+namespace mappers
 {
 
 class ConverterVersion: commonItems::parser
@@ -17,6 +13,9 @@ class ConverterVersion: commonItems::parser
 	explicit ConverterVersion(std::istream& theStream);
 
 	friend std::ostream& operator<<(std::ostream& output, const ConverterVersion& version);
+	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getVersion() const { return version; }
+	[[nodiscard]] const auto& getDescription() const { return descriptionLine; }
 
   private:
 	void registerKeys();
@@ -26,7 +25,7 @@ class ConverterVersion: commonItems::parser
 	std::string descriptionLine;
 };
 
-} // namespace ConverterVersion
+} // namespace mappers
 
 
 
