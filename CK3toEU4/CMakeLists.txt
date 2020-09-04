@@ -21,13 +21,15 @@ include_directories("${PROJECT_SOURCE_DIR}")
 add_subdirectory(../ZipLib [binary_dir])
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
-file(GLOB CONVERTER_VERSION_SOURCES "${PROJECT_SOURCE_DIR}/ConverterVersion/*.cpp")
 file(GLOB CONFIGURATION_SOURCES "${PROJECT_SOURCE_DIR}/Configuration/*.cpp")
 file(GLOB CK3WORLD_SOURCES "${PROJECT_SOURCE_DIR}/CK3World/*.cpp")
+file(GLOB EU4WORLD_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/*.cpp")
+file(GLOB EU4WORLD_OUTPUT_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/Output/*.cpp")
+file(GLOB MAPPERS_CONVERTER_VERSION_SOURCES "${PROJECT_SOURCE_DIR}/Mappers/ConverterVersion/*.cpp")
 set(COMMON_SOURCES "../commonItems/CommonFunctions.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Color.cpp")
-set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/GameVersion.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Date.cpp")
+set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/GameVersion.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/LinuxUtils.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Log.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/OSCommonLayer.cpp")
@@ -37,10 +39,12 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/StringUtils.cpp")
 
 add_executable(CK3toEU4 
 	${MAIN_SOURCES}
-	${CONVERTER_VERSION_SOURCES}
-	${COMMON_SOURCES}
 	${CONFIGURATION_SOURCES}
 	${CK3WORLD_SOURCES}
+	${EU4WORLD_SOURCES}
+	${EU4WORLD_OUTPUT_SOURCES}
+	${MAPPERS_CONVERTER_VERSION_SOURCES}
+	${COMMON_SOURCES}
 )
 
 target_link_libraries(CK3toEU4 LINK_PUBLIC ZIPLIB stdc++fs)

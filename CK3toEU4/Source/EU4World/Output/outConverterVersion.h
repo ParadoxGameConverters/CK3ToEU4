@@ -1,18 +1,12 @@
 #ifndef OUT_CONVERTER_VERSION
 #define OUT_CONVERTER_VERSION
 
-
-
-#include "ConverterVersion.h"
+#include "../../Mappers/ConverterVersion/ConverterVersion.h"
 #include <ostream>
 
-
-
-namespace ConverterVersion
+namespace mappers
 {
-
 std::ostream& operator<<(std::ostream& output, const ConverterVersion& version);
-
 }
 
 

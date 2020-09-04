@@ -1,4 +1,6 @@
 #include "World.h"
+#include "../Configuration/Configuration.h"
+#include "../commonItems/ParserHelpers.h"
 #include "Log.h"
 #include <ZipFile.h>
 #include <filesystem>
@@ -10,28 +12,59 @@ CK3::World::World(const Configuration& theConfiguration)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 
-	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
-	const std::string saveGamePath("input.ck3"); // TODO: read filepath from Configuration
-	verifySave(saveGamePath);
+	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString dateString(theStream);
+		endDate = date(dateString.getString());
+	});
+	registerKeyword("bookmark_date", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString startDateString(theStream);
+		startDate = date(startDateString.getString());
+	});
+	registerKeyword("version", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString versionString(theStream);
+		CK3Version = GameVersion(versionString.getString());
+		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+	Log(LogLevel::Progress) << "4 %";
 
+	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
+	verifySave(theConfiguration.getSaveGamePath());
+	processSave(theConfiguration.getSaveGamePath());
+
+	auto metaData = std::istringstream(saveGame.metadata);
+	parseStream(metaData);
+	auto gameState = std::istringstream(saveGame.gamestate);
+	parseStream(gameState);
+	Log(LogLevel::Progress) << "10 %";
+	clearRegisteredKeywords();
+
+
+	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
+	Log(LogLevel::Progress) << "47 %";
+}
+
+void CK3::World::processSave(const std::string& saveGamePath)
+{
 	switch (saveGame.saveType)
 	{
 		case SaveType::ZIPFILE:
-			LOG(LogLevel::Info) << "-> Importing compressed CK3 save.";
+			LOG(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
 			processCompressedSave(saveGamePath);
 			break;
 		case SaveType::AUTOSAVE:
-			LOG(LogLevel::Info) << "-> Importing CK3 autosave.";
+			LOG(LogLevel::Info) << "-> Importing ironman CK3 autosave.";
 			processAutoSave(saveGamePath);
 			break;
 		case SaveType::IRONMAN:
-			LOG(LogLevel::Info) << "-> Importing ironman CK3 save.";
+			LOG(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
 			processIronManSave(saveGamePath);
 			break;
 		default:
 			throw std::runtime_error("Unknown save type.");
 	}
 }
+
 
 void CK3::World::verifySave(const std::string& saveGamePath)
 {
@@ -45,7 +78,8 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		throw std::runtime_error("Savefile of unknown type.");
 
 	char ch;
-	do { // skip until newline
+	do
+	{ // skip until newline
 		ch = saveFile.get();
 	} while (ch != '\n' && ch != '\r');
 
@@ -55,12 +89,12 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 	else
 	{
 		saveFile.seekg(0);
-		char * bigBuf = new char[65536];
+		char* bigBuf = new char[65536];
 		if (saveFile.readsome(bigBuf, 65536) != 65536)
 			throw std::runtime_error("Save file seems a little small.");
 
-		for (int i=0; i<65533; ++i)
-			if (*reinterpret_cast<uint32_t*>(bigBuf+i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf+i-2) == 4)
+		for (int i = 0; i < 65533; ++i)
+			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
 			{
 				saveGame.saveType = SaveType::IRONMAN;
 				break;
@@ -79,31 +113,31 @@ void CK3::World::processCompressedSave(const std::string& saveGamePath)
 	inStream << saveFile.rdbuf();
 	std::string inString = inStream.str();
 
-	int startMeta = inString.find_first_of("\r\n") + 1;
-	int startZipped = inString.find("PK\03\04");
+	auto startMeta = inString.find_first_of("\r\n") + 1;
+	auto startZipped = inString.find("PK\03\04");
 
-	saveGame.metadata = inString.substr(startMeta, startZipped-startMeta);
-
+	// Stripping the "Meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
+	saveGame.metadata = inString.substr(startMeta + 12, startZipped - startMeta - 14);
+	
 	std::stringstream zipStream;
 	zipStream << inString.substr(startZipped);
 
 	auto zipArchive = ZipArchive::Create(zipStream);
 	if (zipArchive->GetEntriesCount() != 1)
-		throw std::runtime_error("Unexpected number of zipped files in archive.");
+		throw std::runtime_error("Unexpected number of zipped files in the savegame.");
 
 	if (zipArchive->GetEntry(0)->GetName() != "gamestate")
-		throw std::runtime_error("gamestate not found in zipped archive.");
+		throw std::runtime_error("Gamestate file not found in zipped savegame.");
 
 	saveGame.gamestate = std::string(std::istreambuf_iterator<char>(*zipArchive->GetEntry(0)->GetDecompressionStream()), {});
 }
 
 void CK3::World::processAutoSave(const std::string& saveGamePath)
 {
-	throw std::runtime_error("Autosaves not yet supported.");
+	throw std::runtime_error("Autosaves (ironman encrypted) are not yet supported.");
 }
 
 void CK3::World::processIronManSave(const std::string& saveGamePath)
 {
 	throw std::runtime_error("Ironman saves not yet supported.");
 }
-

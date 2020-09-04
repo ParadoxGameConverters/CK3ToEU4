@@ -1,25 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ConverterVersionTests">
-      <UniqueIdentifier>{2befaf67-4e3d-4493-95bf-2258ea0787d6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CK3ToEU4">
       <UniqueIdentifier>{63542c5b-0224-4922-b74a-a0d87d5b3c54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\ConverterVersion">
-      <UniqueIdentifier>{b590e4b9-a439-4deb-866a-f75500b9ebe1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CK3ToEU4\commonItems">
       <UniqueIdentifier>{2cbb46a8-76ce-4e12-9d18-a70f465f3e81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests">
+      <UniqueIdentifier>{0be6794b-7d73-46ca-8d6f-af8d92d700b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ConverterVersionTests">
+      <UniqueIdentifier>{2befaf67-4e3d-4493-95bf-2258ea0787d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers">
+      <UniqueIdentifier>{51d5cc9a-2852-4185-879c-ed1d57fb42a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ConverterVersion">
+      <UniqueIdentifier>{b590e4b9-a439-4deb-866a-f75500b9ebe1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Configuration">
+      <UniqueIdentifier>{d5abe392-461d-445d-88ee-e8e1af6aa287}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ConfigurationTests">
+      <UniqueIdentifier>{620e9391-7ce2-483e-977e-90f212d303ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\EU4World">
+      <UniqueIdentifier>{3ce5ba8c-124c-4cb0-b02e-0850d15aef4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\EU4World\Output">
+      <UniqueIdentifier>{78b4283a-4bd8-46a9-b515-adb4c9cd2eb4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="ConverterVersionTests\ConverterVersionTests.cpp">
-      <Filter>ConverterVersionTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\commonItems\Parser.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
@@ -32,11 +47,47 @@
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\ConverterVersion.cpp">
-      <Filter>CK3ToEU4\ConverterVersion</Filter>
+    <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp">
+      <Filter>MapperTests\ConverterVersionTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\ConverterVersion\outConverterVersion.cpp">
-      <Filter>CK3ToEU4\ConverterVersion</Filter>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp">
+      <Filter>CK3ToEU4\Mappers\ConverterVersion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
+      <Filter>CK3ToEU4\Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp">
+      <Filter>ConfigurationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Date.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\WinUtils.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\Color.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\GameVersion.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\iconvlite.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

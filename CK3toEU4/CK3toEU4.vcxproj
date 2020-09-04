@@ -42,6 +42,7 @@
     <LibraryWPath>$(LibraryWPath)</LibraryWPath>
     <SourcePath>$(SourcePath)</SourcePath>
     <ExcludePath>$(ExcludePath)</ExcludePath>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -49,7 +50,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>..\commonItems;..\ZipLib</AdditionalIncludeDirectories>
@@ -72,23 +73,45 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\CK3ToEU4.h" />
+    <ClInclude Include="..\commonItems\Color.h" />
+    <ClInclude Include="..\commonItems\CommonFunctions.h" />
+    <ClInclude Include="..\commonItems\Date.h" />
+    <ClInclude Include="..\commonItems\GameVersion.h" />
+    <ClInclude Include="..\commonItems\iconvlite.h" />
+    <ClInclude Include="..\commonItems\Log.h" />
+    <ClInclude Include="..\commonItems\OSCompatibilityLayer.h" />
+    <ClInclude Include="..\commonItems\Parser.h" />
+    <ClInclude Include="..\commonItems\ParserHelpers.h" />
+    <ClInclude Include="..\commonItems\StringUtils.h" />
+    <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\CK3World\World.h" />
     <ClInclude Include="Source\Configuration\Configuration.h" />
-    <ClInclude Include="Source\ConverterVersion\ConverterVersion.h" />
-    <ClInclude Include="Source\ConverterVersion\outConverterVersion.h" />
+    <ClInclude Include="Source\EU4World\EU4World.h" />
+    <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
+    <ClInclude Include="Source\EU4World\Output\outModFile.h" />
+    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\commonItems\Color.cpp" />
+    <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
+    <ClCompile Include="..\commonItems\Date.cpp" />
+    <ClCompile Include="..\commonItems\GameVersion.cpp" />
+    <ClCompile Include="..\commonItems\iconvlite.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />
+    <ClCompile Include="..\commonItems\OSCommonLayer.cpp" />
     <ClCompile Include="..\commonItems\Parser.cpp" />
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
-    <ClCompile Include="Source\CK3ToEU4.cpp" />
+    <ClCompile Include="..\commonItems\WinUtils.cpp" />
+    <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\CK3World\World.cpp" />
     <ClCompile Include="Source\Configuration\Configuration.cpp" />
-    <ClCompile Include="Source\ConverterVersion\ConverterVersion.cpp" />
-    <ClCompile Include="Source\ConverterVersion\outConverterVersion.cpp" />
+    <ClCompile Include="Source\EU4World\EU4World.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outModFile.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data_Files\version.txt" />

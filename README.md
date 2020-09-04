@@ -3,8 +3,8 @@
 
 This converter is documented on the [Crusader Kings III wiki](https://ck3.paradoxwikis.com/CK3_To_EU4_Converter). 
 
-For troubleshooting, bugreporting, or other help, please visit the official [release thread](https:) on the Paradox Interactive forums. 
-To help with development, please visit the official [development thread](https:) on the Paradox forums.
+For troubleshooting, bugreporting, or other help, please visit the official [release thread](https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/) on the Paradox Interactive forums. 
+To help with development, please visit the official [development thread](https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-thread.1415140/) on the Paradox forums.
 
 ---
 
