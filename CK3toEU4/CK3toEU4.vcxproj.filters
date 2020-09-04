@@ -22,6 +22,15 @@
     <Filter Include="EU4World\Output">
       <UniqueIdentifier>{85f72107-bcdb-4c02-8392-948d85a5c058}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World\Titles">
+      <UniqueIdentifier>{a5eb2775-7241-443c-a4fb-1556c1ecc2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Characters">
+      <UniqueIdentifier>{8f7262e7-8276-4c7f-91c7-c59bedc6d2f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Houses">
+      <UniqueIdentifier>{7976df72-56d4-4ada-a81e-2299475ba58e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -72,6 +81,30 @@
     </ClInclude>
     <ClInclude Include="..\commonItems\iconvlite.h">
       <Filter>CommonItems</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Titles\Title.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Titles\Titles.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Characters\Character.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Characters\Characters.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Houses\Dynasties.h">
+      <Filter>CK3World\Houses</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Houses\Dynasty.h">
+      <Filter>CK3World\Houses</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Houses\House.h">
+      <Filter>CK3World\Houses</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Houses\Houses.h">
+      <Filter>CK3World\Houses</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +163,30 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\iconvlite.cpp">
       <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Titles\Title.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Titles\Titles.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Characters\Character.cpp">
+      <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Characters\Characters.cpp">
+      <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Houses\Dynasties.cpp">
+      <Filter>CK3World\Houses</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Houses\Dynasty.cpp">
+      <Filter>CK3World\Houses</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Houses\House.cpp">
+      <Filter>CK3World\Houses</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Houses\Houses.cpp">
+      <Filter>CK3World\Houses</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
