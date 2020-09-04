@@ -86,6 +86,8 @@
     <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\CK3World\Characters\Character.h" />
     <ClInclude Include="Source\CK3World\Characters\Characters.h" />
+    <ClInclude Include="Source\CK3World\CoatsOfArms\CoatOfArms.h" />
+    <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
     <ClInclude Include="Source\CK3World\Houses\Dynasties.h" />
     <ClInclude Include="Source\CK3World\Houses\Dynasty.h" />
     <ClInclude Include="Source\CK3World\Houses\House.h" />
@@ -114,6 +116,8 @@
     <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Character.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Characters.cpp" />
+    <ClCompile Include="Source\CK3World\CoatsOfArms\CoatOfArms.cpp" />
+    <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
     <ClCompile Include="Source\CK3World\Houses\Dynasties.cpp" />
     <ClCompile Include="Source\CK3World\Houses\Dynasty.cpp" />
     <ClCompile Include="Source\CK3World\Houses\House.cpp" />

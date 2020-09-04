@@ -18,14 +18,21 @@ void CK3::Titles::registerKeys()
 		titles = tempTitles.getTitles();
 	});
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
-		try
+		// Incoming titles may not be actual titles but half-deleted junk.
+		const auto& titleBlob = commonItems::singleItem(ID, theStream);
+		if (titleBlob.find('{') != std::string::npos)
 		{
-			auto newTitle = std::make_shared<Title>(theStream, std::stoi(ID));
-			titles.insert(std::pair(newTitle->getName(), newTitle));
-		}
-		catch (std::exception& e)
-		{
-			throw std::runtime_error("Title ID: " + ID + " is not a number? " + e.what());
+			try
+			{
+				std::stringstream tempStream(titleBlob);
+				auto newTitle = std::make_shared<Title>(tempStream, std::stoi(ID));
+				if (!newTitle->getName().empty())
+					titles.insert(std::pair(newTitle->getName(), newTitle));
+			}
+			catch (std::exception& e)
+			{
+				throw std::runtime_error("Title ID: " + ID + " is not a number? " + e.what());
+			}
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
