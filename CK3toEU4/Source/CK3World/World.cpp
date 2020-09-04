@@ -124,17 +124,17 @@ void CK3::World::processCompressedSave(const std::string& saveGamePath)
 
 	auto zipArchive = ZipArchive::Create(zipStream);
 	if (zipArchive->GetEntriesCount() != 1)
-		throw std::runtime_error("Unexpected number of zipped files in archive.");
+		throw std::runtime_error("Unexpected number of zipped files in the savegame.");
 
 	if (zipArchive->GetEntry(0)->GetName() != "gamestate")
-		throw std::runtime_error("Gamestate not found in zipped savegame.");
+		throw std::runtime_error("Gamestate file not found in zipped savegame.");
 
 	saveGame.gamestate = std::string(std::istreambuf_iterator<char>(*zipArchive->GetEntry(0)->GetDecompressionStream()), {});
 }
 
 void CK3::World::processAutoSave(const std::string& saveGamePath)
 {
-	throw std::runtime_error("Autosaves not yet supported.");
+	throw std::runtime_error("Autosaves (ironman encrypted) are not yet supported.");
 }
 
 void CK3::World::processIronManSave(const std::string& saveGamePath)
