@@ -6,6 +6,7 @@
 #include "Parser.h"
 #include "Titles/Titles.h"
 #include <Date.h>
+#include "Characters/Characters.h"
 
 class Configuration;
 
@@ -30,6 +31,7 @@ class World: commonItems::parser
 	GameVersion CK3Version;
 	Titles titles;
 	BaronyHoldings baronyHoldings;
+	Characters characters;
 
 	enum class SaveType
 	{

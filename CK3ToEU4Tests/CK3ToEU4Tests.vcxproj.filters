@@ -49,6 +49,12 @@
     <Filter Include="CK3ToEU4\CK3World\Geography">
       <UniqueIdentifier>{22cfd728-ace5-4c76-9396-882918250064}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Characters">
+      <UniqueIdentifier>{3afc144b-520e-46be-8deb-b32b25b7a3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\CharacterTests">
+      <UniqueIdentifier>{4c321d7f-0de0-4e3f-812d-9205877115a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -130,6 +136,24 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp">
       <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

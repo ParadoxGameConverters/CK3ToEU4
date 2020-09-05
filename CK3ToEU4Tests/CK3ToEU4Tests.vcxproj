@@ -58,6 +58,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
@@ -80,6 +83,9 @@
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
