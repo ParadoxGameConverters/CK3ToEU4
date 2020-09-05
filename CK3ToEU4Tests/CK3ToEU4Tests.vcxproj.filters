@@ -43,6 +43,12 @@
     <Filter Include="Ck3WorldTests\TitleTests">
       <UniqueIdentifier>{16e748e5-e7da-4519-a10d-e0535e5eac0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ck3WorldTests\GeographyTests">
+      <UniqueIdentifier>{131bfa5e-527a-44a0-83fc-6d307f0896db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Geography">
+      <UniqueIdentifier>{22cfd728-ace5-4c76-9396-882918250064}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -112,6 +118,18 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

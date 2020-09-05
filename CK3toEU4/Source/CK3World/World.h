@@ -1,10 +1,11 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
 
-#include "Parser.h"
-#include <Date.h>
 #include "GameVersion.h"
+#include "Geography/BaronyHoldings.h"
+#include "Parser.h"
 #include "Titles/Titles.h"
+#include <Date.h>
 
 class Configuration;
 
@@ -23,11 +24,12 @@ class World: commonItems::parser
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
 	void processSave(const std::string& saveGamePath);
-	
+
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
 	GameVersion CK3Version;
 	Titles titles;
+	BaronyHoldings baronyHoldings;
 
 	enum class SaveType
 	{

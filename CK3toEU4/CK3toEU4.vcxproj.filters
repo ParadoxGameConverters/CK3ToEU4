@@ -34,6 +34,9 @@
     <Filter Include="CK3World\CoatsOfArms">
       <UniqueIdentifier>{c6de84c8-53e4-4024-93e8-7e33e762444a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World\Geography">
+      <UniqueIdentifier>{954ba1e1-9d8a-4196-a78e-39b17623bcd9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -114,6 +117,12 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h">
       <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\BaronyHolding.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h">
+      <Filter>CK3World\Geography</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +211,12 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp">
       <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\BaronyHolding.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp">
+      <Filter>CK3World\Geography</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
