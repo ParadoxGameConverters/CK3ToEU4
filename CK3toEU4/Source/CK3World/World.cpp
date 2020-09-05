@@ -35,6 +35,11 @@ CK3::World::World(const Configuration& theConfiguration)
 		baronyHoldings = BaronyHoldings(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << baronyHoldings.getBaronyHoldings().size() << " baronies.";
 	});
+	registerKeyword("living", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading alive human beings.";
+		characters = Characters(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 

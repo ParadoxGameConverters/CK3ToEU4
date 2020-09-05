@@ -124,6 +124,9 @@
     <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h">
       <Filter>CK3World\Geography</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -217,6 +220,9 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp">
       <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp">
+      <Filter>CK3World\Characters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

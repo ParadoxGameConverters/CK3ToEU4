@@ -85,6 +85,7 @@
     <ClInclude Include="..\commonItems\StringUtils.h" />
     <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\CK3World\Characters\Character.h" />
+    <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h" />
     <ClInclude Include="Source\CK3World\Characters\Characters.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatOfArms.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
@@ -117,6 +118,7 @@
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Character.cpp" />
+    <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Characters.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatOfArms.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
