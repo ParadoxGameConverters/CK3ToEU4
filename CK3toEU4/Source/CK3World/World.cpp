@@ -27,8 +27,13 @@ CK3::World::World(const Configuration& theConfiguration)
 	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading landed titles.";
-		titles =  Titles(theStream);
+		titles = Titles(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " landed titles.";
+	});
+	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading barony holdings.";
+		baronyHoldings = BaronyHoldings(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << baronyHoldings.getBaronyHoldings().size() << " baronies.";
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
@@ -123,7 +128,7 @@ void CK3::World::processCompressedSave(const std::string& saveGamePath)
 
 	// Stripping the "Meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
 	saveGame.metadata = inString.substr(startMeta + 12, startZipped - startMeta - 14);
-	
+
 	std::stringstream zipStream;
 	zipStream << inString.substr(startZipped);
 

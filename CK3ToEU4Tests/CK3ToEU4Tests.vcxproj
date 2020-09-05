@@ -58,6 +58,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
@@ -78,6 +80,8 @@
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp" />
+    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />

@@ -88,6 +88,8 @@
     <ClInclude Include="Source\CK3World\Characters\Characters.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatOfArms.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
+    <ClInclude Include="Source\CK3World\Geography\BaronyHolding.h" />
+    <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h" />
     <ClInclude Include="Source\CK3World\Houses\Dynasties.h" />
     <ClInclude Include="Source\CK3World\Houses\Dynasty.h" />
     <ClInclude Include="Source\CK3World\Houses\House.h" />
@@ -118,6 +120,8 @@
     <ClCompile Include="Source\CK3World\Characters\Characters.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatOfArms.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
+    <ClCompile Include="Source\CK3World\Geography\BaronyHolding.cpp" />
+    <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="Source\CK3World\Houses\Dynasties.cpp" />
     <ClCompile Include="Source\CK3World\Houses\Dynasty.cpp" />
     <ClCompile Include="Source\CK3World\Houses\House.cpp" />
