@@ -12,7 +12,7 @@ CK3::Dynasties::Dynasties(std::istream& theStream)
 
 void CK3::Dynasties::registerKeys()
 {
-	registerKeyword("houses", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("dynasty_house", [this](const std::string& unused, std::istream& theStream) {
 		houses = Houses(theStream);
 	});
 	registerKeyword("dynasties", [this](const std::string& unused, std::istream& theStream) {

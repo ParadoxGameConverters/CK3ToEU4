@@ -44,7 +44,7 @@ CK3::World::World(const Configuration& theConfiguration)
 		Log(LogLevel::Info) << "-> Loading dynasties.";
 		dynasties = Dynasties(theStream);
 		houses = dynasties.getHouses();
-		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
+		Log(LogLevel::Info) << "<> Loaded " << dynasties.getDynasties().size() << " dynasties and " << houses.getHouses().size() << " houses.";
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
