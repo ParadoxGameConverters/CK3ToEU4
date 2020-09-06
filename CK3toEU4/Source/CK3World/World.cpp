@@ -46,6 +46,12 @@ CK3::World::World(const Configuration& theConfiguration)
 		houses = dynasties.getHouses();
 		Log(LogLevel::Info) << "<> Loaded " << dynasties.getDynasties().size() << " dynasties and " << houses.getHouses().size() << " houses.";
 	});
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading religions.";
+		religions = Religions(theStream);
+		faiths = religions.getFaiths();
+		Log(LogLevel::Info) << "<> Loaded " << religions.getReligions().size() << " religions and " << faiths.getFaiths().size() << " faiths.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 

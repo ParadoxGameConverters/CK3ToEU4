@@ -8,6 +8,8 @@ namespace CK3
 {
 class Title;
 class House;
+class Faith;
+class Culture;
 typedef struct Skills
 {
 	int diplomacy = 0;
@@ -53,8 +55,8 @@ class Character: commonItems::parser
 	int tempTitle = 0;		// temporary variable for recursive scrapes.
 	double gold = 0;
 	std::string name;
-	std::pair<int, std::string> culture;
-	std::pair<int, std::string> faith;
+	std::pair<int, std::shared_ptr<Culture>> culture;
+	std::pair<int, std::shared_ptr<Faith>> faith;
 	std::map<int, std::string> traits;
 	std::pair<int, std::shared_ptr<Character>> employer;
 	std::pair<int, std::shared_ptr<Character>> spouse;

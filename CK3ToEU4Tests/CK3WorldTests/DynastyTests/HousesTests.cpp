@@ -6,9 +6,9 @@
 TEST(CK3World_HousesTests, HousesDefaultToEmpty)
 {
 	std::stringstream input;
-	const CK3::Houses characters(input);
+	const CK3::Houses houses(input);
 
-	ASSERT_TRUE(characters.getHouses().empty());
+	ASSERT_TRUE(houses.getHouses().empty());
 }
 
 TEST(CK3World_HousesTests, HousesCanBeLoaded)
@@ -17,9 +17,9 @@ TEST(CK3World_HousesTests, HousesCanBeLoaded)
 	input << "13={name=\"dynn_Villeneuve\"}\n";
 	input << "15={name=\"dynn_Fournier\"}\n";
 
-	const CK3::Houses characters(input);
-	const auto& h1 = characters.getHouses().find(13);
-	const auto& h2 = characters.getHouses().find(15);
+	const CK3::Houses houses(input);
+	const auto& h1 = houses.getHouses().find(13);
+	const auto& h2 = houses.getHouses().find(15);
 
 	ASSERT_EQ("dynn_Villeneuve", h1->second->getName());
 	ASSERT_EQ("dynn_Fournier", h2->second->getName());

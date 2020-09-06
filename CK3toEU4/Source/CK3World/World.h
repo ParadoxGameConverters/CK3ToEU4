@@ -9,6 +9,8 @@
 #include "Characters/Characters.h"
 #include "Dynasties/Houses.h"
 #include "Dynasties/Dynasties.h"
+#include "Religions/Faiths.h"
+#include "Religions/Religions.h"
 
 class Configuration;
 
@@ -36,6 +38,8 @@ class World: commonItems::parser
 	Characters characters;
 	Dynasties dynasties;
 	Houses houses;
+	Religions religions;
+	Faiths faiths;
 
 	enum class SaveType
 	{

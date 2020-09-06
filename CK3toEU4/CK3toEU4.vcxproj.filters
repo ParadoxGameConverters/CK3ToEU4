@@ -37,6 +37,9 @@
     <Filter Include="CK3World\Dynasties">
       <UniqueIdentifier>{7976df72-56d4-4ada-a81e-2299475ba58e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World\Religions">
+      <UniqueIdentifier>{b73155f9-3a1e-4fc7-8598-a089a6e27155}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -126,6 +129,18 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Dynasties\Houses.h">
       <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Faith.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Faiths.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Religion.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Religions.h">
+      <Filter>CK3World\Religions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -223,6 +238,18 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Dynasties\Houses.cpp">
       <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Faith.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Faiths.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Religion.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Religions.cpp">
+      <Filter>CK3World\Religions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
