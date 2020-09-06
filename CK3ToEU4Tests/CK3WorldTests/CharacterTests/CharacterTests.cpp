@@ -25,6 +25,7 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(character.getSkills().stewardship);
 	ASSERT_FALSE(character.getSkills().learning);
 	ASSERT_FALSE(character.getSkills().intrigue);
+	ASSERT_TRUE(character.getTraits().empty());
 	ASSERT_FALSE(character.getPiety());
 	ASSERT_FALSE(character.getPrestige());
 	ASSERT_FALSE(character.getGold());
@@ -44,6 +45,7 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 	input << "faith = 2\n";
 	input << "dynasty_house = 3\n";
 	input << "skill = { 11 12 13 14 15 16 }\n";
+	input << "traits = { 21 22 23 24 25 26 26 26 }\n";
 	input << "female = yes\n";
 
 	const CK3::Character character(input, 42);
@@ -58,6 +60,9 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 	ASSERT_EQ(13, character.getSkills().stewardship);
 	ASSERT_EQ(14, character.getSkills().intrigue);
 	ASSERT_EQ(15, character.getSkills().learning);
+	ASSERT_EQ(6, character.getTraits().size());
+	ASSERT_EQ(1, character.getTraits().count(26));
+	ASSERT_EQ(1, character.getTraits().count(21));
 	ASSERT_TRUE(character.isFemale());
 }
 
@@ -110,4 +115,16 @@ TEST(CK3World_CharacterTests, characterCourtDataCanBeLoaded)
 
 	ASSERT_EQ(27, character.getEmployer().first);
 	ASSERT_TRUE(character.isKnight());
+}
+
+TEST(CK3World_CharacterTests, characterDomainCanBeLoaded)
+{
+	std::stringstream input;
+	input << "landed_data = {\n";
+	input << "\tis_powerful_vassal = yes\n";
+	input << "}";
+
+	const CK3::Character character(input, 42);
+
+	ASSERT_TRUE(character.getDomain().isPowerfulVassal());
 }

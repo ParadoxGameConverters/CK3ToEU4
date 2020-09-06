@@ -18,8 +18,7 @@ void CK3::Religion::registerKeys()
 		family = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("faiths", [this](const std::string& unused, std::istream& theStream) {
-		const auto faithsList = commonItems::intList(theStream).getInts();
-		for (auto faith: faithsList)
+		for (auto faith: commonItems::intList(theStream).getInts())
 			faiths.insert(std::pair(faith, nullptr));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

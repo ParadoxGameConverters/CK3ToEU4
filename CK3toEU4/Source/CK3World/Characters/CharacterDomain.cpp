@@ -11,15 +11,6 @@ CK3::CharacterDomain::CharacterDomain(std::istream& theStream)
 
 void CK3::CharacterDomain::registerKeys()
 {
-	registerKeyword("domain", [this](const std::string& unused, std::istream& theStream) {
-		const auto& baronyList = commonItems::intList(theStream).getInts();
-		for (auto baronyID: baronyList)
-			domain.insert(std::pair(baronyID, nullptr));
-	});
-	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
-		const auto& lawsList = commonItems::stringList(theStream).getStrings();
-		laws = std::set(lawsList.begin(), lawsList.end());
-	});
 	registerKeyword("is_powerful_vassal", [this](const std::string& unused, std::istream& theStream) {
 		powerfulVassal = commonItems::singleString(theStream).getString() == "yes";
 	});
@@ -29,8 +20,16 @@ void CK3::CharacterDomain::registerKeys()
 	registerKeyword("government", [this](const std::string& unused, std::istream& theStream) {
 		government = commonItems::singleString(theStream).getString();
 	});
+	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
+		const auto& lawsList = commonItems::stringList(theStream).getStrings();
+		laws = std::set(lawsList.begin(), lawsList.end());
+	});
 	registerKeyword("realm_capital", [this](const std::string& unused, std::istream& theStream) {
 		realmCapital = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+	});
+	registerKeyword("domain", [this](const std::string& unused, std::istream& theStream) {
+		for (auto baronyID: commonItems::intList(theStream).getInts())
+			domain.insert(std::pair(baronyID, nullptr));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

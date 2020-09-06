@@ -29,6 +29,7 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	input << "doctrine=\"tenet_adorcism\"\n";
 	input << "doctrine=\"doctrine_monogamy\"\n";
 	input << "doctrine=\"doctrine_deviancy_shunned\"\n";
+	input << "religion = 7\n";
 
 	const CK3::Faith faith(input, 42);
 
@@ -37,5 +38,5 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	ASSERT_EQ(3, faith.getDoctrines().size());
 	ASSERT_EQ(1, faith.getDoctrines().count("tenet_adorcism"));
 	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_monogamy"));
-	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_deviancy_shunned"));
+	ASSERT_EQ(7, faith.getReligion().first);
 }
