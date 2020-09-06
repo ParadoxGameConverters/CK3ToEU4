@@ -7,6 +7,8 @@
 #include "Titles/Titles.h"
 #include <Date.h>
 #include "Characters/Characters.h"
+#include "Dynasties/Houses.h"
+#include "Dynasties/Dynasties.h"
 
 class Configuration;
 
@@ -32,6 +34,8 @@ class World: commonItems::parser
 	Titles titles;
 	BaronyHoldings baronyHoldings;
 	Characters characters;
+	Dynasties dynasties;
+	Houses houses;
 
 	enum class SaveType
 	{

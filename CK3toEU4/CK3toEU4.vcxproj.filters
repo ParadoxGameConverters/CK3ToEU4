@@ -28,14 +28,14 @@
     <Filter Include="CK3World\Characters">
       <UniqueIdentifier>{8f7262e7-8276-4c7f-91c7-c59bedc6d2f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3World\Houses">
-      <UniqueIdentifier>{7976df72-56d4-4ada-a81e-2299475ba58e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CK3World\CoatsOfArms">
       <UniqueIdentifier>{c6de84c8-53e4-4024-93e8-7e33e762444a}</UniqueIdentifier>
     </Filter>
     <Filter Include="CK3World\Geography">
       <UniqueIdentifier>{954ba1e1-9d8a-4196-a78e-39b17623bcd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Dynasties">
+      <UniqueIdentifier>{7976df72-56d4-4ada-a81e-2299475ba58e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -100,18 +100,6 @@
     <ClInclude Include="Source\CK3World\Characters\Characters.h">
       <Filter>CK3World\Characters</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CK3World\Houses\Dynasties.h">
-      <Filter>CK3World\Houses</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Houses\Dynasty.h">
-      <Filter>CK3World\Houses</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Houses\House.h">
-      <Filter>CK3World\Houses</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Houses\Houses.h">
-      <Filter>CK3World\Houses</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatOfArms.h">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClInclude>
@@ -126,6 +114,18 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h">
       <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Dynasties\Dynasties.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Dynasties\Dynasty.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Dynasties\House.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Dynasties\Houses.h">
+      <Filter>CK3World\Dynasties</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -197,18 +197,6 @@
     <ClCompile Include="Source\CK3World\Characters\Characters.cpp">
       <Filter>CK3World\Characters</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CK3World\Houses\Dynasties.cpp">
-      <Filter>CK3World\Houses</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Houses\Dynasty.cpp">
-      <Filter>CK3World\Houses</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Houses\House.cpp">
-      <Filter>CK3World\Houses</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Houses\Houses.cpp">
-      <Filter>CK3World\Houses</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatOfArms.cpp">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClCompile>
@@ -223,6 +211,18 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp">
       <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Dynasties\Dynasties.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Dynasties\Dynasty.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Dynasties\House.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Dynasties\Houses.cpp">
+      <Filter>CK3World\Dynasties</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

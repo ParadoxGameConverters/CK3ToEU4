@@ -61,6 +61,10 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
@@ -86,6 +90,10 @@
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastyTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\HousesTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />

@@ -22,17 +22,10 @@ void CK3::Titles::registerKeys()
 		const auto& titleBlob = commonItems::singleItem(ID, theStream);
 		if (titleBlob.find('{') != std::string::npos)
 		{
-			try
-			{
-				std::stringstream tempStream(titleBlob);
-				auto newTitle = std::make_shared<Title>(tempStream, std::stoi(ID));
-				if (!newTitle->getName().empty())
-					titles.insert(std::pair(newTitle->getName(), newTitle));
-			}
-			catch (std::exception& e)
-			{
-				throw std::runtime_error("Title ID: " + ID + " is not a number? " + e.what());
-			}
+			std::stringstream tempStream(titleBlob);
+			auto newTitle = std::make_shared<Title>(tempStream, std::stoi(ID));
+			if (!newTitle->getName().empty())
+				titles.insert(std::pair(newTitle->getName(), newTitle));
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

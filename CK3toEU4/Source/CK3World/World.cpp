@@ -40,6 +40,12 @@ CK3::World::World(const Configuration& theConfiguration)
 		characters = Characters(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
 	});
+	registerKeyword("dynasties", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading dynasties.";
+		dynasties = Dynasties(theStream);
+		houses = dynasties.getHouses();
+		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 
