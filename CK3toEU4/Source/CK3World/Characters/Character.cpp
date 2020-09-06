@@ -21,7 +21,7 @@ void CK3::Character::registerKeys()
 		culture = std::pair(commonItems::singleInt(theStream).getInt(), std::string());
 	});
 	registerKeyword("faith", [this](const std::string& unused, std::istream& theStream) {
-		religion = std::pair(commonItems::singleInt(theStream).getInt(), std::string());
+		faith = std::pair(commonItems::singleInt(theStream).getInt(), std::string());
 	});
 	registerKeyword("dynasty_house", [this](const std::string& unused, std::istream& theStream) {
 		house = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
