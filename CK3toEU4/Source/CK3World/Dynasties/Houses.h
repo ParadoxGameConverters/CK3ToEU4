@@ -10,7 +10,9 @@ class Houses: commonItems::parser
   public:
 	Houses() = default;
 	explicit Houses(std::istream& theStream); // For testing
-
+	
+	[[nodiscard]] const auto& getHouses() const { return houses; }
+	
   private:
 	void registerKeys();
 

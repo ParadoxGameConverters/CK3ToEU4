@@ -1,5 +1,6 @@
 #ifndef CK3_DYNASTIES_H
 #define CK3_DYNASTIES_H
+#include "Houses.h"
 #include "Parser.h"
 
 namespace CK3
@@ -12,10 +13,12 @@ class Dynasties: commonItems::parser
 	explicit Dynasties(std::istream& theStream); // For testing
 
 	[[nodiscard]] const auto& getDynasties() const { return dynasties; }
+	[[nodiscard]] auto getHouses() { return std::move(houses); }
 
   private:
 	void registerKeys();
 
+	Houses houses;
 	std::map<int, std::shared_ptr<Dynasty>> dynasties;
 };
 } // namespace CK3

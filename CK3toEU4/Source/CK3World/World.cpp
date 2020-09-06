@@ -35,6 +35,23 @@ CK3::World::World(const Configuration& theConfiguration)
 		baronyHoldings = BaronyHoldings(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << baronyHoldings.getBaronyHoldings().size() << " baronies.";
 	});
+	registerKeyword("living", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading alive human beings.";
+		characters = Characters(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
+	});
+	registerKeyword("dynasties", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading dynasties.";
+		dynasties = Dynasties(theStream);
+		houses = dynasties.getHouses();
+		Log(LogLevel::Info) << "<> Loaded " << dynasties.getDynasties().size() << " dynasties and " << houses.getHouses().size() << " houses.";
+	});
+	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading religions.";
+		religions = Religions(theStream);
+		faiths = religions.getFaiths();
+		Log(LogLevel::Info) << "<> Loaded " << religions.getReligions().size() << " religions and " << faiths.getFaiths().size() << " faiths.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 

@@ -6,6 +6,11 @@
 #include "Parser.h"
 #include "Titles/Titles.h"
 #include <Date.h>
+#include "Characters/Characters.h"
+#include "Dynasties/Houses.h"
+#include "Dynasties/Dynasties.h"
+#include "Religions/Faiths.h"
+#include "Religions/Religions.h"
 
 class Configuration;
 
@@ -30,6 +35,11 @@ class World: commonItems::parser
 	GameVersion CK3Version;
 	Titles titles;
 	BaronyHoldings baronyHoldings;
+	Characters characters;
+	Dynasties dynasties;
+	Houses houses;
+	Religions religions;
+	Faiths faiths;
 
 	enum class SaveType
 	{

@@ -49,6 +49,24 @@
     <Filter Include="CK3ToEU4\CK3World\Geography">
       <UniqueIdentifier>{22cfd728-ace5-4c76-9396-882918250064}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Characters">
+      <UniqueIdentifier>{3afc144b-520e-46be-8deb-b32b25b7a3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\CharacterTests">
+      <UniqueIdentifier>{4c321d7f-0de0-4e3f-812d-9205877115a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Dynasties">
+      <UniqueIdentifier>{7812c155-4350-4ee0-a2d0-a06102b33e37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\DynastyTests">
+      <UniqueIdentifier>{c8676b5a-1f32-4514-93cf-59118bdb070d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Religions">
+      <UniqueIdentifier>{b894b82d-bd45-4bc6-9ace-e099b11c5740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\ReligionTests">
+      <UniqueIdentifier>{3e1d93cb-03de-416e-b009-f6a653311a57}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -130,6 +148,72 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp">
       <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp">
+      <Filter>CK3ToEU4\CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp">
+      <Filter>Ck3WorldTests\CharacterTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastyTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HousesTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp">
+      <Filter>CK3ToEU4\CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.cpp">
+      <Filter>CK3ToEU4\CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religion.cpp">
+      <Filter>CK3ToEU4\CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religions.cpp">
+      <Filter>CK3ToEU4\CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ReligionTests\FaithsTests.cpp">
+      <Filter>Ck3WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ReligionTests\FaithTests.cpp">
+      <Filter>Ck3WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ReligionTests\ReligionsTests.cpp">
+      <Filter>Ck3WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ReligionTests\ReligionTests.cpp">
+      <Filter>Ck3WorldTests\ReligionTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

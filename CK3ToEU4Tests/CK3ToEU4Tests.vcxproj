@@ -58,8 +58,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religion.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religions.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
@@ -80,8 +91,19 @@
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
     <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\DynastyTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\HousesTests.cpp" />
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ReligionTests\FaithsTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ReligionTests\FaithTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ReligionTests\ReligionsTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ReligionTests\ReligionTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
