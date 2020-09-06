@@ -38,5 +38,6 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	ASSERT_EQ(3, faith.getDoctrines().size());
 	ASSERT_EQ(1, faith.getDoctrines().count("tenet_adorcism"));
 	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_monogamy"));
+	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_deviancy_shunned"));
 	ASSERT_EQ(7, faith.getReligion().first);
 }
