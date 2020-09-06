@@ -45,7 +45,6 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 	input << "dynasty_house = 3\n";
 	input << "skill = { 11 12 13 14 15 16 }\n";
 	input << "female = yes\n";
-	input << "}";
 
 	const CK3::Character character(input, 42);
 
@@ -66,15 +65,14 @@ TEST(CK3World_CharacterTests, characterAliveDataCanBeLoaded)
 {
 	std::stringstream input;
 	input << "alive_data = {\n";
-	input << "piety = {\n";
-	input << "accumulated = 100.01\n";
-	input << "}\n";
-	input << "prestige = {\n";
-	input << "accumulated = 101.02\n";
-	input << "}\n";
-	input << "gold = 103.02\n";
-	input << "claim = { { title = 1 } { title = 3 } { title = 5 } }\n";
-	input << "}\n";
+	input << "\tpiety = {\n";
+	input << "\t\taccumulated = 100.01\n";
+	input << "\t}\n";
+	input << "\tprestige = {\n";
+	input << "\t\taccumulated = 101.02\n";
+	input << "\t}\n";
+	input << "\tgold = 103.02\n";
+	input << "\tclaim = { { title = 1 } { title = 3 } { title = 5 } }\n";
 	input << "}";
 
 	const CK3::Character character(input, 42);
@@ -92,7 +90,7 @@ TEST(CK3World_CharacterTests, characterFamilyDataCanBeLoaded)
 {
 	std::stringstream input;
 	input << "family_data = {\n";
-	input << "primary_spouse = 17\n";
+	input << "\tprimary_spouse = 17\n";
 	input << "}";
 
 	const CK3::Character character(input, 42);
@@ -104,8 +102,8 @@ TEST(CK3World_CharacterTests, characterCourtDataCanBeLoaded)
 {
 	std::stringstream input;
 	input << "court_data = {\n";
-	input << "employer = 27\n";
-	input << "knight = yes\n";
+	input << "\temployer = 27\n";
+	input << "\tknight = yes\n";
 	input << "}";
 
 	const CK3::Character character(input, 42);

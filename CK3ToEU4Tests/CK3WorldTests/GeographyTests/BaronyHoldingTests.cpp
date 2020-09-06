@@ -28,8 +28,8 @@ TEST(CK3World_BaronyHoldingTests, holdingPrimitivesCanBeLoaded)
 {
 	std::stringstream input;
 	input << "holding = {\n";
-	input << "type = \"city_holding\"\n";
-	input << "special_building_type = \"holy_site_cathedral_01\"\n";
+	input << "\ttype = \"city_holding\"\n";
+	input << "\tspecial_building_type = \"holy_site_cathedral_01\"\n";
 	input << "}";
 
 	const CK3::BaronyHolding holding(input);
@@ -42,9 +42,9 @@ TEST(CK3World_BaronyHoldingTests, holdingEmptyBuildingBlobsAreIgnored)
 {
 	std::stringstream input;
 	input << "holding = {\n";
-	input << "buildings = {\n";
-	input << "\n{\n}\n{\n}\n{\n}{}{}\n";
-	input << "}\n";
+	input << "\tbuildings = {\n";
+	input << "\t\n{\n}\n{\n}\n{\n}{}{}\n";
+	input << "\t}\n";
 	input << "}";
 
 	const CK3::BaronyHolding holding(input);
@@ -56,9 +56,9 @@ TEST(CK3World_BaronyHoldingTests, holdingBuildingBlobsCanBeLoaded)
 {
 	std::stringstream input;
 	input << "holding = {\n";
-	input << "buildings = {\n";
-	input << "\n{\ntype = \"castle_01\"\n}\n{}\n{\n}{}{type = \"hill_farms_02\"}\n";
-	input << "}\n";
+	input << "\tbuildings = {\n";
+	input << "\t\n{\ntype = \"castle_01\"\n}\n{}\n{\n}{}{type = \"hill_farms_02\"}\n";
+	input << "\t}\n";
 	input << "}";
 
 	const CK3::BaronyHolding holding(input);

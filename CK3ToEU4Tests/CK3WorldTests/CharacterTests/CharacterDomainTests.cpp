@@ -24,7 +24,6 @@ TEST(CK3World_CharacterDomainTests, domainPrimitivesCanBeLoaded)
 	input << "vassal_power_value = 1234.56\n";
 	input << "government = \"the_government\"\n";
 	input << "realm_capital = 1234\n";
-	input << "}";
 
 	const CK3::CharacterDomain domain(input);
 

@@ -15,8 +15,8 @@ TEST(CK3World_DynastiesTests, BundledDynastiesCanBeLoaded)
 {
 	std::stringstream input;
 	input << "dynasties={\n";
-	input << "13={key=\"2\"}\n";
-	input << "15={key=\"7\"}\n";
+	input << "\t13={key=\"2\"}\n";
+	input << "\t15={key=\"7\"}\n";
 	input << "}";
 
 	const CK3::Dynasties dynasties(input);
