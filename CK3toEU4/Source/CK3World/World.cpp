@@ -43,14 +43,19 @@ CK3::World::World(const Configuration& theConfiguration)
 	registerKeyword("dynasties", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading dynasties.";
 		dynasties = Dynasties(theStream);
-		houses = dynasties.getHouses();
+		houses = dynasties.getHouses(); // Do not access houses in dynasties after this - there are none and will crash.
 		Log(LogLevel::Info) << "<> Loaded " << dynasties.getDynasties().size() << " dynasties and " << houses.getHouses().size() << " houses.";
 	});
 	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading religions.";
 		religions = Religions(theStream);
-		faiths = religions.getFaiths();
+		faiths = religions.getFaiths(); // Do not access faiths in religions after this - there are none and will crash.
 		Log(LogLevel::Info) << "<> Loaded " << religions.getReligions().size() << " religions and " << faiths.getFaiths().size() << " faiths.";
+	});
+	registerKeyword("coat_of_arms", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading garments of limbs.";
+		coats = CoatsOfArms(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << coats.getCoats().size() << " wearables.";
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
@@ -87,7 +92,7 @@ void CK3::World::processSave(const std::string& saveGamePath)
 			LOG(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
 			processIronManSave(saveGamePath);
 			break;
-		default:
+		case SaveType::INVALID:
 			throw std::runtime_error("Unknown save type.");
 	}
 }
@@ -107,7 +112,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 	char ch;
 	do
 	{ // skip until newline
-		ch = saveFile.get();
+		ch = static_cast<char>(saveFile.get());
 	} while (ch != '\n' && ch != '\r');
 
 	saveFile.get(buffer, 10);

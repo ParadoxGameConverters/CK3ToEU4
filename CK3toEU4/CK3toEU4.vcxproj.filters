@@ -142,6 +142,12 @@
     <ClInclude Include="Source\CK3World\Religions\Religions.h">
       <Filter>CK3World\Religions</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CK3World\CoatsOfArms\Emblem.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\CoatsOfArms\EmblemInstance.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -250,6 +256,12 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Religions\Religions.cpp">
       <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\CoatsOfArms\Emblem.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\CoatsOfArms\EmblemInstance.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,7 @@
 #include "Dynasties/Dynasties.h"
 #include "Religions/Faiths.h"
 #include "Religions/Religions.h"
+#include "CoatsOfArms/CoatsOfArms.h"
 
 class Configuration;
 
@@ -40,6 +41,7 @@ class World: commonItems::parser
 	Houses houses;
 	Religions religions;
 	Faiths faiths;
+	CoatsOfArms coats;
 
 	enum class SaveType
 	{
