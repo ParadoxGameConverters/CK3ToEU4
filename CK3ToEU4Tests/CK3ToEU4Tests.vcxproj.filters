@@ -73,6 +73,12 @@
     <Filter Include="MapperTests\NamedColorTests">
       <UniqueIdentifier>{24120642-8856-45e4-994a-e3a7df540799}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\CoatsOfArms">
+      <UniqueIdentifier>{0337eba5-b35c-4f72-8158-ce7fee95a0f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\CoatOfArmsTests">
+      <UniqueIdentifier>{711708b5-4128-47a8-8865-597d92856f44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -226,6 +232,30 @@
     </ClCompile>
     <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp">
       <Filter>MapperTests\NamedColorTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.cpp">
+      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp">
+      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.cpp">
+      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp">
+      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CoatOfArmsTests\CoatOfArmsTests.cpp">
+      <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CoatOfArmsTests\CoatsOfArmsTests.cpp">
+      <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemInstanceTests.cpp">
+      <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemTests.cpp">
+      <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
