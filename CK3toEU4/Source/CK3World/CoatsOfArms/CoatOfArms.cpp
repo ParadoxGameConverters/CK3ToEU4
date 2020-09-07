@@ -41,5 +41,8 @@ void CK3::CoatOfArms::registerKeys()
 	registerKeyword("instance", [this](const std::string& unused, std::istream& theStream) {
 		instances.emplace_back(EmblemInstance(theStream));
 	});
+	registerKeyword("parent", [this](const std::string& unused, std::istream& theStream) {
+		parent = std::make_pair(commonItems::singleString(theStream).getString(), nullptr);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

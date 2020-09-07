@@ -41,3 +41,20 @@ TEST(CK3World_EmblemTests, emblemPrimitivesCanBeLoaded)
 
 	laFabricaDeColor.clear();
 }
+
+TEST(CK3World_EmblemTests, emblemInstancesCanBeLoaded)
+{
+	std::stringstream input;
+	input << "instance = {\n";
+	input << "depth = 3.17\n";
+	input << "}\n";
+	input << "instance = {\n";
+	input << "depth = -8.999\n";
+	input << "}\n";
+
+	const CK3::Emblem emblem(input);
+
+	ASSERT_EQ(2, emblem.getInstances().size());
+	ASSERT_NEAR(3.17, emblem.getInstances()[0].getDepth(), 0.001);
+	ASSERT_NEAR(-8.999, emblem.getInstances()[1].getDepth(), 0.001);
+}

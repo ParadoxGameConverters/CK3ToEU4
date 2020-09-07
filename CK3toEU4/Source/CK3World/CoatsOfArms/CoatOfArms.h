@@ -23,6 +23,8 @@ class CoatOfArms: commonItems::parser
 	[[nodiscard]] const auto& getTexturedEmblems() const { return texturedEmblems; }
 	[[nodiscard]] const auto& getColoredEmblems() const { return coloredEmblems; }
 	[[nodiscard]] const auto& getSubs() const { return subs; }
+	[[nodiscard]] const auto& getInstances() const { return instances; }
+	[[nodiscard]] const auto& getParent() const { return parent; }
 
   private:
 	void registerKeys();
@@ -36,8 +38,9 @@ class CoatOfArms: commonItems::parser
 	std::optional<commonItems::Color> color5; // unknown
 	std::vector<Emblem> texturedEmblems;
 	std::vector<Emblem> coloredEmblems;
-	std::vector<std::shared_ptr<CoatOfArms>> subs; // These are sub-coatsofarms. They are recursive!
-	std::vector<EmblemInstance> instances;			  // Used to position subemblems.
+	std::vector<std::shared_ptr<CoatOfArms>> subs;					// These are sub-coatsofarms. They are recursive!
+	std::vector<EmblemInstance> instances;								// Used to position sub-coats.
+	std::pair<std::string, std::shared_ptr<CoatOfArms>> parent; // Used for recursive external flags.
 };
 } // namespace CK3
 
