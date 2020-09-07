@@ -13,8 +13,6 @@
 #include "Religions/Religions.h"
 #include "CoatsOfArms/CoatsOfArms.h"
 #include "../Mappers/NamedColors/NamedColors.h"
-#include "Color.h"
-extern commonItems::Color::Factory laFabricaDeColor;
 
 class Configuration;
 
