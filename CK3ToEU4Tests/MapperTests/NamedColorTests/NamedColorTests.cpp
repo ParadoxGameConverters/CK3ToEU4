@@ -3,7 +3,8 @@
 #include <sstream>
 
 TEST(Mappers_NamedColorsTests, NoInputLoadsNoColors)
-{		
+{
+	laFabricaDeColor.clear();
 	std::stringstream input;
 	mappers::NamedColors colors;
 	colors.loadColors(input);
@@ -29,6 +30,8 @@ TEST(Mappers_NamedColorsTests, ColorsCanBeLoaded)
 	EXPECT_EQ("= hsv { 0.02 0.8 0.45 }", red.outputHsv());
 	EXPECT_EQ("= hsv { 0.58 0.8 0.4 }", blue.outputHsv());
 	EXPECT_EQ("= hsv360 { 21 74 45 }", brown.outputHsv360());
+
+	laFabricaDeColor.clear();
 }
 
 TEST(Mappers_NamedColorsTests, ColorsCanBeOverriddenByMods)
@@ -51,4 +54,6 @@ TEST(Mappers_NamedColorsTests, ColorsCanBeOverriddenByMods)
 	EXPECT_EQ(2, laFabricaDeColor.getRegisteredColors().size());
 	EXPECT_EQ("= hsv { 0.02 0.8 0.45 }", red.outputHsv());
 	EXPECT_EQ("= hsv360 { 21 74 45 }", gold.outputHsv360());
+
+	laFabricaDeColor.clear();
 }

@@ -29,11 +29,11 @@ class CoatOfArms: commonItems::parser
 
 	int ID = 0;
 	std::string pattern;
-	commonItems::Color color1; // red
-	commonItems::Color color2; // yellow
-	commonItems::Color color3; // white
-	commonItems::Color color4; // unknown. Black?
-	commonItems::Color color5; // unknown
+	std::optional<commonItems::Color> color1; // red
+	std::optional<commonItems::Color> color2; // yellow
+	std::optional<commonItems::Color> color3; // white
+	std::optional<commonItems::Color> color4; // unknown. Black?
+	std::optional<commonItems::Color> color5; // unknown
 	std::vector<Emblem> texturedEmblems;
 	std::vector<Emblem> coloredEmblems;
 	std::vector<std::shared_ptr<CoatOfArms>> subs; // These are sub-coatsofarms. They are recursive!

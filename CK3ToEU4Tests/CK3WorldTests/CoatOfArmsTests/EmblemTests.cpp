@@ -1,36 +1,43 @@
-#include "../CK3toEU4/Source/CK3World/CoatsOfArms/EmblemInstance.h"
+#include "../CK3toEU4/Source/CK3World/CoatsOfArms/Emblem.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(CK3World_CharacterDomainTests, loadValuesDefaultToBlank)
+TEST(CK3World_EmblemTests, loadValuesDefaultToBlank)
 {
 	std::stringstream input;
-	const CK3::EmblemInstance emblemInstance(input);
+	const CK3::Emblem emblem(input);
 
-	ASSERT_TRUE(emblemInstance.getDomain().empty());
-	ASSERT_TRUE(emblemInstance.getLaws().empty());
-	ASSERT_TRUE(emblemInstance.getGovernment().empty());
-	ASSERT_FALSE(emblemInstance.isPowerfulVassal());
-	ASSERT_FALSE(emblemInstance.getVassalStrength());
-	ASSERT_FALSE(emblemInstance.getRealmCapital().first);
+	ASSERT_TRUE(emblem.getTexture().empty());
+	ASSERT_FALSE(emblem.getColor1());
+	ASSERT_FALSE(emblem.getColor2());
+	ASSERT_FALSE(emblem.getColor3());
+	ASSERT_TRUE(emblem.getMask().empty());
+	ASSERT_TRUE(emblem.getInstances().empty());
 }
 
-TEST(CK3World_CharacterDomainTests, domainPrimitivesCanBeLoaded)
+TEST(CK3World_EmblemTests, emblemPrimitivesCanBeLoaded)
 {
+	laFabricaDeColor.clear();
+	laFabricaDeColor.addNamedColor("white", commonItems::Color(std::array<int, 3>{255, 255, 255}));
+	laFabricaDeColor.addNamedColor("blue", commonItems::Color(std::array<int, 3>{0, 0, 255}));
+	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
+	
 	std::stringstream input;
-	input << "emblemInstance = { 1 2 3 }\n";
-	input << "laws = {\"law_1\" \"law_2\" \"law_3\" \"law_4\" \"law_4\" \"law_4\"}\n";
-	input << "is_powerful_vassal = yes\n";
-	input << "vassal_power_value = 1234.56\n";
-	input << "government = \"the_government\"\n";
-	input << "realm_capital = 1234\n";
+	input << "texture = \"so_smooth\"\n";
+	input << "color1 = white\n";
+	input << "color2 = \"blue\"\n";
+	input << "color3 = red\n";
+	input << "mask = { 2 3 }\n";
 
-	const CK3::EmblemInstance emblemInstance(input);
+	const CK3::Emblem emblem(input);
 
-	ASSERT_EQ(3, emblemInstance.getDomain().size());
-	ASSERT_EQ(4, emblemInstance.getLaws().size());
-	ASSERT_TRUE(emblemInstance.isPowerfulVassal());
-	ASSERT_NEAR(1234.56, emblemInstance.getVassalStrength(), 0.01);
-	ASSERT_EQ("the_government", emblemInstance.getGovernment());
-	ASSERT_EQ(1234, emblemInstance.getRealmCapital().first);
+	ASSERT_EQ("so_smooth", emblem.getTexture());
+	ASSERT_EQ("= hex { ffffff }", emblem.getColor1()->outputHex());
+	ASSERT_EQ("= hex { 0000ff }", emblem.getColor2()->outputHex());
+	ASSERT_EQ("= hex { ff0000 }", emblem.getColor3()->outputHex());
+	ASSERT_EQ(2, emblem.getMask().size());
+	ASSERT_EQ(2, emblem.getMask()[0]);
+	ASSERT_EQ(3, emblem.getMask()[1]);
+
+	laFabricaDeColor.clear();
 }

@@ -2,35 +2,38 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(CK3World_CharacterDomainTests, loadValuesDefaultToBlank)
+TEST(CK3World_EmblemInstanceTests, loadValuesDefaultToBlank)
 {
 	std::stringstream input;
 	const CK3::EmblemInstance emblemInstance(input);
 
-	ASSERT_TRUE(emblemInstance.getDomain().empty());
-	ASSERT_TRUE(emblemInstance.getLaws().empty());
-	ASSERT_TRUE(emblemInstance.getGovernment().empty());
-	ASSERT_FALSE(emblemInstance.isPowerfulVassal());
-	ASSERT_FALSE(emblemInstance.getVassalStrength());
-	ASSERT_FALSE(emblemInstance.getRealmCapital().first);
+	ASSERT_EQ(0.0f, emblemInstance.getRotation());
+	ASSERT_EQ(0.0f, emblemInstance.getDepth());
+	ASSERT_TRUE(emblemInstance.getPosition().empty());
+	ASSERT_TRUE(emblemInstance.getScale().empty());
+	ASSERT_TRUE(emblemInstance.getOffset().empty());
 }
 
-TEST(CK3World_CharacterDomainTests, domainPrimitivesCanBeLoaded)
+TEST(CK3World_EmblemInstanceTests, emblemInstancePrimitivesCanBeLoaded)
 {
 	std::stringstream input;
-	input << "emblemInstance = { 1 2 3 }\n";
-	input << "laws = {\"law_1\" \"law_2\" \"law_3\" \"law_4\" \"law_4\" \"law_4\"}\n";
-	input << "is_powerful_vassal = yes\n";
-	input << "vassal_power_value = 1234.56\n";
-	input << "government = \"the_government\"\n";
-	input << "realm_capital = 1234\n";
+	input << "rotation = -0.41\n";
+	input << "depth = 3.17\n";
+	input << "position = { 0.13 0.34 }\n";
+	input << "scale = { -0.23 0.44 }\n";
+	input << "offset = { 0.33 -0.54 }\n";
 
 	const CK3::EmblemInstance emblemInstance(input);
 
-	ASSERT_EQ(3, emblemInstance.getDomain().size());
-	ASSERT_EQ(4, emblemInstance.getLaws().size());
-	ASSERT_TRUE(emblemInstance.isPowerfulVassal());
-	ASSERT_NEAR(1234.56, emblemInstance.getVassalStrength(), 0.01);
-	ASSERT_EQ("the_government", emblemInstance.getGovernment());
-	ASSERT_EQ(1234, emblemInstance.getRealmCapital().first);
+	ASSERT_NEAR(-0.41, emblemInstance.getRotation(), 0.001);
+	ASSERT_NEAR(3.17, emblemInstance.getDepth(), 0.001);
+	ASSERT_EQ(2, emblemInstance.getPosition().size());
+	ASSERT_NEAR(0.13, emblemInstance.getPosition()[0], 0.001);
+	ASSERT_NEAR(0.34, emblemInstance.getPosition()[1], 0.001);
+	ASSERT_EQ(2, emblemInstance.getScale().size());
+	ASSERT_NEAR(-0.23, emblemInstance.getScale()[0], 0.001);
+	ASSERT_NEAR(0.44, emblemInstance.getScale()[1], 0.001);
+	ASSERT_EQ(2, emblemInstance.getOffset().size());
+	ASSERT_NEAR(0.33, emblemInstance.getOffset()[0], 0.001);
+	ASSERT_NEAR(-0.54, emblemInstance.getOffset()[1], 0.001);
 }

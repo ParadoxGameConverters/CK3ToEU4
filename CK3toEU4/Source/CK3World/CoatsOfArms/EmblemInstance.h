@@ -20,7 +20,7 @@ class EmblemInstance: commonItems::parser
 	void registerKeys();
 
 	double rotation = 0;
-	double depth = 0;
+	double depth = 0; // Do. Not. Ask. Go to wiki and complain there.
 	std::vector<double> position;
 	std::vector<double> scale;
 	std::vector<double> offset; // Used in sub-emblem instances
