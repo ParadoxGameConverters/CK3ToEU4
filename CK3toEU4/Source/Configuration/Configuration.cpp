@@ -3,6 +3,8 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include "Color.h"
+auto laFabricaDeColor = commonItems::Color::Factory();
 
 Configuration::Configuration()
 {

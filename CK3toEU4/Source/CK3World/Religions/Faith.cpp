@@ -21,7 +21,7 @@ void CK3::Faith::registerKeys()
 		religion = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-		color = commonItems::Color::Factory::getColor(theStream);
+		color = laFabricaDeColor.getColor(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

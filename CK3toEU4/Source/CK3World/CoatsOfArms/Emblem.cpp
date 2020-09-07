@@ -15,13 +15,13 @@ void CK3::Emblem::registerKeys()
 		texture = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("color1", [this](const std::string& unused, std::istream& theStream) {
-		color1 = commonItems::singleString(theStream).getString();
+		color1 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("color2", [this](const std::string& unused, std::istream& theStream) {
-		color2 = commonItems::singleString(theStream).getString();
+		color2 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("color3", [this](const std::string& unused, std::istream& theStream) {
-		color3 = commonItems::singleString(theStream).getString();
+		color3 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("mask", [this](const std::string& unused, std::istream& theStream) {
 		mask = commonItems::intList(theStream).getInts();

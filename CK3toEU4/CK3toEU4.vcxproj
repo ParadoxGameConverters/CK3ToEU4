@@ -109,6 +109,7 @@
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
+    <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Color.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data_Files\version.txt" />

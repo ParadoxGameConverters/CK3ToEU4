@@ -1,7 +1,9 @@
 #ifndef CK3_COATOFARMS_H
 #define CK3_COATOFARMS_H
+#include "Color.h"
 #include "Emblem.h"
 #include "Parser.h"
+extern commonItems::Color::Factory laFabricaDeColor;
 
 namespace CK3
 {
@@ -27,11 +29,11 @@ class CoatOfArms: commonItems::parser
 
 	int ID = 0;
 	std::string pattern;
-	std::string color1; // red
-	std::string color2; // yellow
-	std::string color3; // white
-	std::string color4; // unknown. Black?
-	std::string color5; // unknown
+	commonItems::Color color1; // red
+	commonItems::Color color2; // yellow
+	commonItems::Color color3; // white
+	commonItems::Color color4; // unknown. Black?
+	commonItems::Color color5; // unknown
 	std::vector<Emblem> texturedEmblems;
 	std::vector<Emblem> coloredEmblems;
 	std::vector<std::shared_ptr<CoatOfArms>> subs; // These are sub-coatsofarms. They are recursive!

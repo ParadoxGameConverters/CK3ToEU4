@@ -1,7 +1,9 @@
 #ifndef CK3_EMBLEM_H
 #define CK3_EMBLEM_H
+#include "Color.h"
 #include "EmblemInstance.h"
 #include "Parser.h"
+extern commonItems::Color::Factory laFabricaDeColor;
 
 namespace CK3
 {
@@ -22,9 +24,9 @@ class Emblem: commonItems::parser
 	void registerKeys();
 
 	std::string texture;
-	std::string color1; // blue
-	std::string color2; // green
-	std::string color3; // magenta - unsupported by PDX, must render to white!
+	commonItems::Color color1; // blue
+	commonItems::Color color2; // green
+	commonItems::Color color3; // magenta - unsupported by PDX, must render to white!
 	std::vector<int> mask;
 	std::vector<EmblemInstance> instances;
 };

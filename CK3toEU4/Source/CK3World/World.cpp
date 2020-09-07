@@ -5,6 +5,7 @@
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
+#include "OSCompatibilityLayer.h"
 
 namespace fs = std::filesystem;
 
@@ -66,6 +67,9 @@ CK3::World::World(const Configuration& theConfiguration)
 
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
+
+	primeLaFabricaDeColor(theConfiguration);
+	
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "10 %";
@@ -172,4 +176,12 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 void CK3::World::processIronManSave(const std::string& saveGamePath)
 {
 	throw std::runtime_error("Ironman saves not yet supported.");
+}
+
+void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
+{
+	Log(LogLevel::Info) << "-> Loading colors.";
+	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "/game/common/named_colors"))
+		namedColors.loadColors(theConfiguration.getCK3Path() + "/game/common/named_colors/" + file);
+	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
 }

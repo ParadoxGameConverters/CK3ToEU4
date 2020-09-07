@@ -67,6 +67,12 @@
     <Filter Include="Ck3WorldTests\ReligionTests">
       <UniqueIdentifier>{3e1d93cb-03de-416e-b009-f6a653311a57}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\NamedColors">
+      <UniqueIdentifier>{4e2395bd-d902-4167-87b2-23e203af1a0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\NamedColorTests">
+      <UniqueIdentifier>{24120642-8856-45e4-994a-e3a7df540799}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -214,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\ReligionTests\ReligionTests.cpp">
       <Filter>Ck3WorldTests\ReligionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp">
+      <Filter>CK3ToEU4\Mappers\NamedColors</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp">
+      <Filter>MapperTests\NamedColorTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -15,16 +15,19 @@ void CK3::CoatOfArms::registerKeys()
 		pattern = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("color1", [this](const std::string& unused, std::istream& theStream) {
-		color1 = commonItems::singleString(theStream).getString();
+		color1 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("color2", [this](const std::string& unused, std::istream& theStream) {
-		color2 = commonItems::singleString(theStream).getString();
+		color2 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("color3", [this](const std::string& unused, std::istream& theStream) {
-		color3 = commonItems::singleString(theStream).getString();
+		color3 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("color4", [this](const std::string& unused, std::istream& theStream) {
-		color4 = commonItems::singleString(theStream).getString();
+		color4 = laFabricaDeColor.getColor(theStream);
+	});
+	registerKeyword("color5", [this](const std::string& unused, std::istream& theStream) {
+		color5 = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("textured_emblem", [this](const std::string& unused, std::istream& theStream) {
 		texturedEmblems.emplace_back(Emblem(theStream));

@@ -12,6 +12,9 @@
 #include "Religions/Faiths.h"
 #include "Religions/Religions.h"
 #include "CoatsOfArms/CoatsOfArms.h"
+#include "../Mappers/NamedColors/NamedColors.h"
+#include "Color.h"
+extern commonItems::Color::Factory laFabricaDeColor;
 
 class Configuration;
 
@@ -30,6 +33,7 @@ class World: commonItems::parser
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
 	void processSave(const std::string& saveGamePath);
+	void primeLaFabricaDeColor(const Configuration& theConfiguration);
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -42,6 +46,7 @@ class World: commonItems::parser
 	Religions religions;
 	Faiths faiths;
 	CoatsOfArms coats;
+	mappers::NamedColors namedColors;
 
 	enum class SaveType
 	{
