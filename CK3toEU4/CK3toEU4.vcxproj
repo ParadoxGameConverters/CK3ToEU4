@@ -64,7 +64,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Resources\rakaly.dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
     </Link>
     <PostBuildEvent>
@@ -108,6 +108,8 @@
     <ClInclude Include="Source\EU4World\EU4World.h" />
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
+    <ClInclude Include="Source\Helpers\rakaly.h" />
+    <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
   </ItemGroup>

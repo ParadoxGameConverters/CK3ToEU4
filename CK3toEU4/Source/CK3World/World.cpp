@@ -105,7 +105,7 @@ void CK3::World::processSave(const std::string& saveGamePath)
 
 void CK3::World::verifySave(const std::string& saveGamePath)
 {
-	std::ifstream saveFile(fs::u8path(saveGamePath));
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	if (!saveFile.is_open())
 		throw std::runtime_error("Could not open save! Exiting!");
 
@@ -125,11 +125,17 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		saveGame.saveType = SaveType::ZIPFILE;
 	else
 	{
-		saveFile.seekg(0);
+		saveFile.seekg(0, saveFile.end);
+		const auto length = saveFile.tellg();
+		if (length < 65536)
+		{
+			throw std::runtime_error("Savegame seems a bit too small.");
+		}
+		saveFile.seekg(0, saveFile.beg);
 		char* bigBuf = new char[65536];
-		if (saveFile.readsome(bigBuf, 65536) != 65536)
-			throw std::runtime_error("Save file seems a little small.");
-
+		saveFile.read(bigBuf, 65536);
+		if (saveFile.gcount() < 65536)
+			throw std::runtime_error("Read only: " + static_cast<int>(saveFile.gcount()));
 		for (int i = 0; i < 65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
 			{
