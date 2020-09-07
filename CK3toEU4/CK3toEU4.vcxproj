@@ -89,6 +89,8 @@
     <ClInclude Include="Source\CK3World\Characters\Characters.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatOfArms.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
+    <ClInclude Include="Source\CK3World\CoatsOfArms\Emblem.h" />
+    <ClInclude Include="Source\CK3World\CoatsOfArms\EmblemInstance.h" />
     <ClInclude Include="Source\CK3World\Dynasties\Dynasties.h" />
     <ClInclude Include="Source\CK3World\Dynasties\Dynasty.h" />
     <ClInclude Include="Source\CK3World\Dynasties\House.h" />
@@ -107,6 +109,7 @@
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
+    <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Color.cpp" />
@@ -126,6 +129,8 @@
     <ClCompile Include="Source\CK3World\Characters\Characters.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatOfArms.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
+    <ClCompile Include="Source\CK3World\CoatsOfArms\Emblem.cpp" />
+    <ClCompile Include="Source\CK3World\CoatsOfArms\EmblemInstance.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\Dynasties.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\Dynasty.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\House.cpp" />
@@ -146,6 +151,7 @@
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data_Files\version.txt" />

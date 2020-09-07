@@ -9,7 +9,8 @@ class CoatsOfArms: commonItems::parser
 {
   public:
 	CoatsOfArms() = default;
-	explicit CoatsOfArms(std::istream& theStream); // For testing
+	explicit CoatsOfArms(std::istream& theStream);
+	[[nodiscard]] auto getCoats() const { return coats; }
 
   private:
 	void registerKeys();

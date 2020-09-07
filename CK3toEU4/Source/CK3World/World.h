@@ -11,6 +11,8 @@
 #include "Dynasties/Dynasties.h"
 #include "Religions/Faiths.h"
 #include "Religions/Religions.h"
+#include "CoatsOfArms/CoatsOfArms.h"
+#include "../Mappers/NamedColors/NamedColors.h"
 
 class Configuration;
 
@@ -29,6 +31,7 @@ class World: commonItems::parser
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
 	void processSave(const std::string& saveGamePath);
+	void primeLaFabricaDeColor(const Configuration& theConfiguration);
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -40,6 +43,8 @@ class World: commonItems::parser
 	Houses houses;
 	Religions religions;
 	Faiths faiths;
+	CoatsOfArms coats;
+	mappers::NamedColors namedColors;
 
 	enum class SaveType
 	{

@@ -40,6 +40,9 @@
     <Filter Include="CK3World\Religions">
       <UniqueIdentifier>{b73155f9-3a1e-4fc7-8598-a089a6e27155}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\NamedColors">
+      <UniqueIdentifier>{c01b67da-2a06-4dc4-a16c-167df5995ac4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -141,6 +144,15 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Religions\Religions.h">
       <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\CoatsOfArms\Emblem.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\CoatsOfArms\EmblemInstance.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h">
+      <Filter>Mappers\NamedColors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +262,15 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Religions\Religions.cpp">
       <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\CoatsOfArms\Emblem.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\CoatsOfArms\EmblemInstance.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp">
+      <Filter>Mappers\NamedColors</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

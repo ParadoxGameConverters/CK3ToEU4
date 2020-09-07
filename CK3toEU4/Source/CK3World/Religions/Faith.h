@@ -4,6 +4,8 @@
 #include "Color.h"
 #include <set>
 
+extern commonItems::Color::Factory laFabricaDeColor;
+
 namespace CK3
 {
 class Religion;
