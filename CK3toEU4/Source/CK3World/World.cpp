@@ -183,9 +183,6 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 	inStream << saveFile.rdbuf();
 	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
-	std::ofstream dump("dump.ck3", std::ios::binary);
-	dump << saveGame.gamestate;
-	dump.close();
 
 	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
