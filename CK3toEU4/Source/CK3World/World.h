@@ -56,6 +56,7 @@ class World: commonItems::parser
 	struct saveData
 	{
 		SaveType saveType = SaveType::INVALID;
+		int zipStart = 0;
 		std::string gamestate;
 		std::string metadata; // probably not needed
 	};

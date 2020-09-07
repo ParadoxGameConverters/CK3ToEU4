@@ -17,6 +17,7 @@ add_link_options(-no-pie)
 include_directories("../commonItems")
 include_directories("../ZipLib")
 include_directories("${PROJECT_SOURCE_DIR}")
+link_directories(${CMAKE_SOURCE_DIR}/Resources)
 
 add_subdirectory(../ZipLib [binary_dir])
 
@@ -82,7 +83,7 @@ add_executable(CK3toEU4
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(CK3toEU4 LINK_PUBLIC ZIPLIB stdc++fs)
+target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs)
 
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
