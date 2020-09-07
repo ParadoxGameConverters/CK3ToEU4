@@ -125,17 +125,17 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		saveGame.saveType = SaveType::ZIPFILE;
 	else
 	{
-		saveFile.seekg(0, saveFile.end);
+		saveFile.seekg(0, std::ios::end);
 		const auto length = saveFile.tellg();
 		if (length < 65536)
 		{
 			throw std::runtime_error("Savegame seems a bit too small.");
 		}
-		saveFile.seekg(0, saveFile.beg);
+		saveFile.seekg(0, std::ios::beg);
 		char* bigBuf = new char[65536];
 		saveFile.read(bigBuf, 65536);
 		if (saveFile.gcount() < 65536)
-			throw std::runtime_error("Read only: " + static_cast<int>(saveFile.gcount()));
+			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		for (int i = 0; i < 65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
 			{
@@ -183,6 +183,9 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 	inStream << saveFile.rdbuf();
 	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
+	std::ofstream dump("dump.ck3", std::ios::binary);
+	dump << saveGame.gamestate;
+	dump.close();
 
 	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
