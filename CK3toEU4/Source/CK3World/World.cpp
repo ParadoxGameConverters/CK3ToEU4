@@ -1,6 +1,7 @@
 #include "World.h"
 #include "../Configuration/Configuration.h"
 #include "../commonItems/ParserHelpers.h"
+#include "../Helpers/rakaly_wrapper.h"
 #include "Log.h"
 #include <ZipFile.h>
 #include <filesystem>
@@ -123,6 +124,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		for (int i = 0; i < 65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
 			{
+				saveGame.zipStart = i;
 				saveGame.saveType = SaveType::IRONMAN;
 				break;
 			}
@@ -143,7 +145,7 @@ void CK3::World::processCompressedSave(const std::string& saveGamePath)
 	auto startMeta = inString.find_first_of("\r\n") + 1;
 	auto startZipped = inString.find("PK\03\04");
 
-	// Stripping the "Meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
+	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
 	saveGame.metadata = inString.substr(startMeta + 12, startZipped - startMeta - 14);
 
 	std::stringstream zipStream;
@@ -161,10 +163,36 @@ void CK3::World::processCompressedSave(const std::string& saveGamePath)
 
 void CK3::World::processAutoSave(const std::string& saveGamePath)
 {
-	throw std::runtime_error("Autosaves (ironman encrypted) are not yet supported.");
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
+	saveGame.gamestate = rakaly::meltCK3(inBinary);
+
+	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
+	auto endFile = saveGame.gamestate.size();
+	saveGame.gamestate = saveGame.gamestate.substr(startMeta, endFile - startMeta);
+
+	auto endMeta = saveGame.gamestate.find("ironman=no");
+	// Again, strip the "meta_data={\n" and the "}\n"
+	saveGame.metadata = saveGame.gamestate.substr(12, endMeta - 1);
 }
 
 void CK3::World::processIronManSave(const std::string& saveGamePath)
 {
-	throw std::runtime_error("Ironman saves not yet supported.");
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
+
+	std::string meta = rakaly::meltCK3(inBinary.substr(0, saveGame.zipStart));
+	auto startMeta = meta.find_first_of("\r\n");
+	auto endMeta = meta.find_last_of("}");
+	// Again, strip the "meta_data={\n" and the "}\n"
+	saveGame.metadata = meta.substr(startMeta + 12, endMeta - startMeta - 12);
+
+	saveGame.gamestate = rakaly::meltCK3(inBinary);
+	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
+	auto endFile = saveGame.gamestate.size();
+	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
 }
