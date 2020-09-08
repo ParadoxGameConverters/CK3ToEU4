@@ -28,9 +28,9 @@ CK3::World::World(const Configuration& theConfiguration)
 		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
 	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
-		Log(LogLevel::Info) << "-> Loading landed titles.";
+		Log(LogLevel::Info) << "-> Loading titles.";
 		titles = Titles(theStream);
-		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " landed titles.";
+		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles.";
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading barony holdings.";
@@ -70,6 +70,7 @@ CK3::World::World(const Configuration& theConfiguration)
 	parseStream(metaData);
 
 	primeLaFabricaDeColor(theConfiguration);
+	loadLandedTitles(theConfiguration);
 	
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
@@ -216,6 +217,22 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading colors.";
 	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "/game/common/named_colors"))
-		namedColors.loadColors(theConfiguration.getCK3Path() + "/game/common/named_colors/" + file);
+	{
+		if (file.find(".txt") == std::string::npos)
+			continue;
+		namedColors.loadColors(theConfiguration.getCK3Path() + "/game/common/named_colors/" + file);		
+	}
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
+}
+
+void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
+{
+	Log(LogLevel::Info) << "-> Loading Landed Titles.";
+	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "/game/common/landed_titles"))
+	{
+		if (file.find(".txt") == std::string::npos)
+			continue;
+		landedTitles.loadTitles(theConfiguration.getCK3Path() + "/game/common/landed_titles/" + file);		
+	}
+	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
 }

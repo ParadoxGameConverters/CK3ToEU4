@@ -257,5 +257,11 @@
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemTests.cpp">
       <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\LandedTitles.cpp">
+      <Filter>CK3ToEU4\CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\TitleTests\LandedTests.cpp">
+      <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
