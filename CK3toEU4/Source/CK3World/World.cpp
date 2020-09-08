@@ -230,13 +230,17 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 		namedColors.loadColors(theConfiguration.getCK3Path() + "common/named_colors/" + file);
 	}
 	for (const auto& mod: mods.getMods())
+	{
+		if (!Utils::DoesFolderExist(mod.second + "common/named_colors"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading some colors from " << mod.first;
 		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/named_colors"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
-			Log(LogLevel::Info) << "<> Loading some colors from " << mod.first;
 			namedColors.loadColors(mod.second + "common/named_colors/" + file);
 		}
+	}
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
 }
 
@@ -251,12 +255,16 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 		landedTitles.loadTitles(theConfiguration.getCK3Path() + "common/landed_titles/" + file);
 	}
 	for (const auto& mod: mods.getMods())
+	{
+		if (!Utils::DoesFolderExist(mod.second + "common/landed_titles"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading some landed titles from " << mod.first;
 		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/landed_titles"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
-			Log(LogLevel::Info) << "<> Loading some landed titles from " << mod.first;
 			landedTitles.loadTitles(mod.second + "common/landed_titles/" + file);
 		}
+	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
 }
