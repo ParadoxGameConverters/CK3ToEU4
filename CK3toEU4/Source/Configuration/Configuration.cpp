@@ -1,9 +1,9 @@
 #include "Configuration.h"
+#include "Color.h"
 #include "CommonFunctions.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "Color.h"
 auto laFabricaDeColor = commonItems::Color::Factory();
 
 Configuration::Configuration()
@@ -101,10 +101,10 @@ void Configuration::registerKeys()
 		modFileNames.insert(theList.begin(), theList.end());
 		Log(LogLevel::Info) << modFileNames.size() << " mods selected by configuration. Deselected mods will be ignored.";
 	});
-	registerRegex("[a-zA-Z0-9\\_.:]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void Configuration::verifyCK3Path() const
+void Configuration::verifyCK3Path()
 {
 	if (!Utils::DoesFolderExist(CK3Path))
 		throw std::runtime_error(CK3Path + " does not exist!");
@@ -114,6 +114,7 @@ void Configuration::verifyCK3Path() const
 	if (!Utils::DoesFileExist(CK3Path + "/game/map_data/positions.txt"))
 		throw std::runtime_error(CK3Path + " does not appear to be a valid CK3 install!");
 	LOG(LogLevel::Info) << "\tCK3 install path is " << CK3Path;
+	CK3Path += "/game/"; // We're adding "/game/" since all we ever need from now on is in that subdirectory.
 }
 
 void Configuration::verifyEU4Path() const

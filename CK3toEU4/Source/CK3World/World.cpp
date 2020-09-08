@@ -1,19 +1,25 @@
 #include "World.h"
 #include "../Configuration/Configuration.h"
-#include "../commonItems/ParserHelpers.h"
 #include "../Helpers/rakaly_wrapper.h"
+#include "../commonItems/ParserHelpers.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
-#include "OSCompatibilityLayer.h"
 
 namespace fs = std::filesystem;
 
-CK3::World::World(const Configuration& theConfiguration)
+CK3::World::World(std::shared_ptr<Configuration> theConfiguration)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 
+	registerKeyword("mods", [theConfiguration](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Detecting used mods.";
+		const auto modsList = commonItems::stringList(theStream).getStrings();
+		theConfiguration->setModFileNames(std::set(modsList.begin(), modsList.end()));
+		Log(LogLevel::Info) << "<> Savegame claims " << theConfiguration->getModFileNames().size() << " mods used.";
+	});
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString dateString(theStream);
 		endDate = date(dateString.getString());
@@ -63,15 +69,16 @@ CK3::World::World(const Configuration& theConfiguration)
 	Log(LogLevel::Progress) << "4 %";
 
 	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
-	verifySave(theConfiguration.getSaveGamePath());
-	processSave(theConfiguration.getSaveGamePath());
+	verifySave(theConfiguration->getSaveGamePath());
+	processSave(theConfiguration->getSaveGamePath());
 
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
 
-	primeLaFabricaDeColor(theConfiguration);
-	loadLandedTitles(theConfiguration);
-	
+	mods.loadModDirectory(*theConfiguration);
+	primeLaFabricaDeColor(*theConfiguration);
+	loadLandedTitles(*theConfiguration);
+
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "10 %";
@@ -216,23 +223,40 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading colors.";
-	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "/game/common/named_colors"))
+	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
 	{
 		if (file.find(".txt") == std::string::npos)
 			continue;
-		namedColors.loadColors(theConfiguration.getCK3Path() + "/game/common/named_colors/" + file);		
+		namedColors.loadColors(theConfiguration.getCK3Path() + "common/named_colors/" + file);
 	}
+	for (const auto& mod: mods.getMods())
+		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/named_colors"))
+		{
+			if (file.find(".txt") == std::string::npos)
+				continue;
+			Log(LogLevel::Info) << "<> Loading some colors from " << mod.first;
+			namedColors.loadColors(mod.second + "common/named_colors/" + file);
+		}
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
 }
+
 
 void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
-	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "/game/common/landed_titles"))
+	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/landed_titles"))
 	{
 		if (file.find(".txt") == std::string::npos)
 			continue;
-		landedTitles.loadTitles(theConfiguration.getCK3Path() + "/game/common/landed_titles/" + file);		
+		landedTitles.loadTitles(theConfiguration.getCK3Path() + "common/landed_titles/" + file);
 	}
+	for (const auto& mod: mods.getMods())
+		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/landed_titles"))
+		{
+			if (file.find(".txt") == std::string::npos)
+				continue;
+			Log(LogLevel::Info) << "<> Loading some landed titles from " << mod.first;
+			landedTitles.loadTitles(mod.second + "common/landed_titles/" + file);
+		}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
 }

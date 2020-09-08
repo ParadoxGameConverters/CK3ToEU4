@@ -78,10 +78,12 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getModFileNames() const { return modFileNames; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
 
+	void setModFileNames(const std::set<std::string>& mods) { modFileNames = mods; }
+
   private:
 	void registerKeys();
 	void setOutputName();
-	void verifyCK3Path() const;
+	void verifyCK3Path();
 	void verifyEU4Path() const;
 
 	std::string SaveGamePath;

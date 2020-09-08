@@ -97,6 +97,8 @@
     <ClInclude Include="Source\CK3World\Dynasties\Houses.h" />
     <ClInclude Include="Source\CK3World\Geography\BaronyHolding.h" />
     <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h" />
+    <ClInclude Include="Source\CK3World\Mods\Mod.h" />
+    <ClInclude Include="Source\CK3World\Mods\Mods.h" />
     <ClInclude Include="Source\CK3World\Religions\Faith.h" />
     <ClInclude Include="Source\CK3World\Religions\Faiths.h" />
     <ClInclude Include="Source\CK3World\Religions\Religion.h" />
@@ -140,6 +142,8 @@
     <ClCompile Include="Source\CK3World\Dynasties\Houses.cpp" />
     <ClCompile Include="Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp" />
+    <ClCompile Include="Source\CK3World\Mods\Mod.cpp" />
+    <ClCompile Include="Source\CK3World\Mods\Mods.cpp" />
     <ClCompile Include="Source\CK3World\Religions\Faith.cpp" />
     <ClCompile Include="Source\CK3World\Religions\Faiths.cpp" />
     <ClCompile Include="Source\CK3World\Religions\Religion.cpp" />
