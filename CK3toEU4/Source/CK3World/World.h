@@ -23,7 +23,7 @@ namespace CK3
 class World: commonItems::parser
 {
   public:
-	explicit World(std::shared_ptr<Configuration> theConfiguration);
+	explicit World(const std::shared_ptr<Configuration>& theConfiguration);
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
 

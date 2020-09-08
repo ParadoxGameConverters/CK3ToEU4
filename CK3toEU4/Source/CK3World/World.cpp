@@ -10,7 +10,7 @@
 
 namespace fs = std::filesystem;
 
-CK3::World::World(std::shared_ptr<Configuration> theConfiguration)
+CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 
