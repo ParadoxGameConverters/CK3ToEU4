@@ -18,7 +18,7 @@ class LandedTitles: commonItems::parser
 	[[nodiscard]] auto isLandless() const { return landless; }
 	[[nodiscard]] const auto& getColor() const { return color; }
 	[[nodiscard]] const auto& getCapital() const { return capital; }
-	[[nodiscard]] const auto& getBarony() const { return province; }
+	[[nodiscard]] const auto& getProvince() const { return province; }
 	[[nodiscard]] const auto& getFoundTitles() const { return foundTitles; }
 
   private:
