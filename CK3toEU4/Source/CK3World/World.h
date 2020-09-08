@@ -12,6 +12,7 @@
 #include "Religions/Faiths.h"
 #include "Religions/Religions.h"
 #include "CoatsOfArms/CoatsOfArms.h"
+#include "Titles/LandedTitles.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 
 class Configuration;
@@ -26,12 +27,16 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
 
   private:
+	// savegame processing
 	void verifySave(const std::string& saveGamePath);
 	void processCompressedSave(const std::string& saveGamePath);
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
 	void processSave(const std::string& saveGamePath);
+
+	// pre-parsing prep
 	void primeLaFabricaDeColor(const Configuration& theConfiguration);
+	void loadLandedTitles(const Configuration& theConfiguration);
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -44,6 +49,7 @@ class World: commonItems::parser
 	Religions religions;
 	Faiths faiths;
 	CoatsOfArms coats;
+	LandedTitles landedTitles;
 	mappers::NamedColors namedColors;
 
 	enum class SaveType

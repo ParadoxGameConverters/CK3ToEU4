@@ -163,6 +163,9 @@
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CK3World\Titles\LandedTitles.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -280,6 +283,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp">
       <Filter>Mappers\NamedColors</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Titles\LandedTitles.cpp">
+      <Filter>CK3World\Titles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
