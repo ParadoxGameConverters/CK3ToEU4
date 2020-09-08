@@ -14,13 +14,13 @@ class Mods
 	Mods() = default;
 	void loadModDirectory(const Configuration& theConfiguration);
 
-	[[nodiscard]] std::optional<std::string> getModPath(const std::string& modName) const;
 	[[nodiscard]] const auto& getMods() const { return usableMods; }
 
   private:
 	void loadCK3ModDirectory(const Configuration& theConfiguration);
 
 	[[nodiscard]] bool extractZip(const std::string& archive, const std::string& path) const;
+	[[nodiscard]] std::optional<std::string> getModPath(const std::string& modName) const;
 
 	std::map<std::string, std::string> possibleMods;			  // name, absolute path to mod directory
 	std::map<std::string, std::string> possibleCompressedMods; // name, absolute path to zip file
