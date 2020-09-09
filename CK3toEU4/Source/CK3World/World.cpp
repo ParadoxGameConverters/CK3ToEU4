@@ -33,6 +33,11 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		CK3Version = GameVersion(versionString.getString());
 		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
 	});
+	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading variable flags.";
+		flags = Flags(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << flags.getFlags().size() << " variable flags.";
+	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading titles.";
 		titles = Titles(theStream);
@@ -75,10 +80,12 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
 
+	LOG(LogLevel::Info) << "* Priming Converter Components *";
 	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 
+	LOG(LogLevel::Info) << "* Parsing gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "10 %";

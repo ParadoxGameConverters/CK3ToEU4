@@ -69,6 +69,7 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp" />
@@ -108,6 +109,7 @@
     <ClCompile Include="CK3WorldTests\DynastyTests\DynastyTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\HousesTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\HouseTests.cpp" />
+    <ClCompile Include="CK3WorldTests\FlagTests\FlagTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp" />
     <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp" />
     <ClCompile Include="CK3WorldTests\ReligionTests\FaithsTests.cpp" />

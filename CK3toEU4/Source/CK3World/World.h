@@ -15,6 +15,7 @@
 #include "Titles/LandedTitles.h"
 #include "Titles/Titles.h"
 #include <Date.h>
+#include "Flags/Flags.h"
 
 class Configuration;
 
@@ -52,6 +53,7 @@ class World: commonItems::parser
 	CoatsOfArms coats;
 	LandedTitles landedTitles;
 	Mods mods;
+	Flags flags;
 	mappers::NamedColors namedColors;
 
 	enum class SaveType

@@ -49,6 +49,9 @@
     <Filter Include="CK3World\Mods">
       <UniqueIdentifier>{f149b03a-69e9-4ef6-a116-0b0ab2d38af7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World\Flags">
+      <UniqueIdentifier>{2a9ce57e-33f2-4d14-b582-8c566644af3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -174,6 +177,9 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Mods\Mods.h">
       <Filter>CK3World\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Flags\Flags.h">
+      <Filter>CK3World\Flags</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +307,9 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Mods\Mods.cpp">
       <Filter>CK3World\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Flags\Flags.cpp">
+      <Filter>CK3World\Flags</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

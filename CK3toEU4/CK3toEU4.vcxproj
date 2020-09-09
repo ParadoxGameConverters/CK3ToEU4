@@ -95,6 +95,7 @@
     <ClInclude Include="Source\CK3World\Dynasties\Dynasty.h" />
     <ClInclude Include="Source\CK3World\Dynasties\House.h" />
     <ClInclude Include="Source\CK3World\Dynasties\Houses.h" />
+    <ClInclude Include="Source\CK3World\Flags\Flags.h" />
     <ClInclude Include="Source\CK3World\Geography\BaronyHolding.h" />
     <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h" />
     <ClInclude Include="Source\CK3World\Mods\Mod.h" />
@@ -140,6 +141,7 @@
     <ClCompile Include="Source\CK3World\Dynasties\Dynasty.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\House.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\Houses.cpp" />
+    <ClCompile Include="Source\CK3World\Flags\Flags.cpp" />
     <ClCompile Include="Source\CK3World\Geography\BaronyHolding.cpp" />
     <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp" />
     <ClCompile Include="Source\CK3World\Mods\Mod.cpp" />

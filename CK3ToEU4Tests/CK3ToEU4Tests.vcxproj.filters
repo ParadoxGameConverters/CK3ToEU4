@@ -79,6 +79,12 @@
     <Filter Include="Ck3WorldTests\CoatOfArmsTests">
       <UniqueIdentifier>{711708b5-4128-47a8-8865-597d92856f44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Flags">
+      <UniqueIdentifier>{edc18f60-c2d6-4723-b3a6-da2a0dc25cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\FlagTests">
+      <UniqueIdentifier>{2b4882a3-de6e-4455-8a74-abe0fd45ec25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -262,6 +268,12 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\LandedTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp">
+      <Filter>CK3ToEU4\CK3World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\FlagTests\FlagTests.cpp">
+      <Filter>Ck3WorldTests\FlagTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
