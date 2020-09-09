@@ -5,6 +5,7 @@
 namespace CK3
 {
 class Faith;
+class Culture;
 class CountyDetail: commonItems::parser
 {
   public:
@@ -19,7 +20,7 @@ class CountyDetail: commonItems::parser
 	void registerKeys();
 
 	int development = 0;
-	std::pair<int, std::string> culture;
+	std::pair<int, std::shared_ptr<Culture>> culture;
 	std::pair<int, std::shared_ptr<Faith>> faith;
 };
 } // namespace CK3
