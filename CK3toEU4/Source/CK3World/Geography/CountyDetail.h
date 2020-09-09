@@ -16,6 +16,8 @@ class CountyDetail: commonItems::parser
 	[[nodiscard]] const auto& getCulture() const { return culture; }
 	[[nodiscard]] const auto& getFaith() const { return faith; }
 
+	void loadCulture(const std::pair<int, std::shared_ptr<Culture>>& theCulture) { culture = theCulture; }
+
   private:
 	void registerKeys();
 

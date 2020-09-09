@@ -4,10 +4,13 @@
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
+#include "Cultures/Cultures.h"
 #include "Dynasties/Dynasties.h"
 #include "Dynasties/Houses.h"
+#include "Flags/Flags.h"
 #include "GameVersion.h"
 #include "Geography/BaronyHoldings.h"
+#include "Geography/CountyDetails.h"
 #include "Mods/Mods.h"
 #include "Parser.h"
 #include "Religions/Faiths.h"
@@ -15,9 +18,6 @@
 #include "Titles/LandedTitles.h"
 #include "Titles/Titles.h"
 #include <Date.h>
-#include "Flags/Flags.h"
-#include "Geography/CountyDetails.h"
-#include "Cultures/Cultures.h"
 
 class Configuration;
 
@@ -41,6 +41,9 @@ class World: commonItems::parser
 	// pre-parsing prep
 	void primeLaFabricaDeColor(const Configuration& theConfiguration);
 	void loadLandedTitles(const Configuration& theConfiguration);
+
+	// postparsing weave
+	void crosslinkDatabases();
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");

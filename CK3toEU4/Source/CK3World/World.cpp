@@ -95,11 +95,14 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 
-	LOG(LogLevel::Info) << "* Parsing gamestate *";
+	LOG(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "10 %";
 	clearRegisteredKeywords();
+
+	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
+	crosslinkDatabases();
 
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
@@ -284,4 +287,10 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
+}
+
+void CK3::World::crosslinkDatabases()
+{
+	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
+	countyDetails.loadCultures(cultures);
 }

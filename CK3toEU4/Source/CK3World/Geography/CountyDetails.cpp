@@ -1,4 +1,5 @@
 #include "CountyDetails.h"
+#include "../Cultures/Cultures.h"
 #include "CountyDetail.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -21,4 +22,25 @@ void CK3::CountyDetails::registerKeys()
 		countyDetails = scraper.getCountyDetails();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void CK3::CountyDetails::loadCultures(const Cultures& cultures)
+{
+	auto counter = 0;
+	const auto& cultureData = cultures.getCultures();
+	for (const auto& countyDetail: countyDetails)
+	{
+		const auto& cultureDataItr = cultureData.find(countyDetail.second->getCulture().first);
+		if (cultureDataItr != cultureData.end())
+		{
+			countyDetail.second->loadCulture(*cultureDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error(
+				 "County " + countyDetail.first + " has culture " + std::to_string(countyDetail.second->getCulture().first) + "which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "-> " << counter << " Counties updated.";
 }

@@ -5,6 +5,7 @@
 namespace CK3
 {
 class CountyDetail;
+class Cultures;
 class CountyDetails: commonItems::parser
 {
   public:
@@ -12,6 +13,8 @@ class CountyDetails: commonItems::parser
 	explicit CountyDetails(std::istream& theStream);
 
 	[[nodiscard]] const auto& getCountyDetails() const { return countyDetails; }
+
+	void loadCultures(const Cultures& cultures);
 
   private:
 	void registerKeys();
