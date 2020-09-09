@@ -9,7 +9,7 @@ class Cultures: commonItems::parser
 {
   public:
 	Cultures() = default;
-	explicit Cultures(std::istream& theStream); // For testing
+	explicit Cultures(std::istream& theStream);
 
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
 
