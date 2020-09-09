@@ -25,7 +25,7 @@ void CK3::CountyDetails::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void CK3::CountyDetails::loadCultures(const Cultures& cultures)
+void CK3::CountyDetails::linkCultures(const Cultures& cultures)
 {
 	auto counter = 0;
 	const auto& cultureData = cultures.getCultures();
@@ -46,7 +46,7 @@ void CK3::CountyDetails::loadCultures(const Cultures& cultures)
 	Log(LogLevel::Info) << "<> " << counter << " counties updated.";
 }
 
-void CK3::CountyDetails::loadFaiths(const Faiths& faiths)
+void CK3::CountyDetails::linkFaiths(const Faiths& faiths)
 {
 	auto counter = 0;
 	const auto& faithData = faiths.getFaiths();

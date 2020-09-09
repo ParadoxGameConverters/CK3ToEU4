@@ -44,7 +44,7 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	input2 << "1={culture = 15}\n";
 	input2 << "2={culture = 13}\n";
 	CK3::Characters characters(input2);
-	characters.loadCultures(cultures);
+	characters.linkCultures(cultures);
 
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
@@ -64,7 +64,7 @@ TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)
 	input2 << "2={culture = 15}\n";
 	CK3::Characters characters(input2);	
 
-	ASSERT_THROW(characters.loadCultures(cultures);, std::runtime_error);
+	ASSERT_THROW(characters.linkCultures(cultures), std::runtime_error);
 }
 
 TEST(CK3World_CharactersTests, faithsCanBeLinked)
@@ -78,7 +78,7 @@ TEST(CK3World_CharactersTests, faithsCanBeLinked)
 	input2 << "1={faith = 15}\n";
 	input2 << "2={faith = 13}\n";
 	CK3::Characters characters(input2);
-	characters.loadFaiths(faiths);
+	characters.linkFaiths(faiths);
 
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
@@ -98,5 +98,5 @@ TEST(CK3World_CharactersTests, linkingMissingFaithThrowsException)
 	input2 << "2 = { faith = 13 }\n";
 	CK3::Characters characters(input2);
 
-	ASSERT_THROW(characters.loadFaiths(faiths);, std::runtime_error);
+	ASSERT_THROW(characters.linkFaiths(faiths), std::runtime_error);
 }

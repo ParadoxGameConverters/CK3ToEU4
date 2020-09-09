@@ -15,8 +15,8 @@ class CountyDetails: commonItems::parser
 
 	[[nodiscard]] const auto& getCountyDetails() const { return countyDetails; }
 
-	void loadCultures(const Cultures& cultures);
-	void loadFaiths(const Faiths& faiths);
+	void linkCultures(const Cultures& cultures);
+	void linkFaiths(const Faiths& faiths);
 
   private:
 	void registerKeys();

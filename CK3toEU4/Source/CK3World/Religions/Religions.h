@@ -13,7 +13,9 @@ class Religions: commonItems::parser
 	explicit Religions(std::istream& theStream);
 
 	[[nodiscard]] const auto& getReligions() const { return religions; }
-	[[nodiscard]] auto getFaiths() { return std::move(faiths); }
+	[[nodiscard]] auto getFaiths() { return std::move(faiths); } // Use this only once in World.cpp
+
+	void linkFaiths(const Faiths& theFaiths);
 
   private:
 	void registerKeys();

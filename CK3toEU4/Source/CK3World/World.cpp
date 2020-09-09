@@ -292,11 +292,13 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 void CK3::World::crosslinkDatabases()
 {
 	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
-	countyDetails.loadCultures(cultures);
+	countyDetails.linkCultures(cultures);
 	Log(LogLevel::Info) << "-> Loading Cultures into Characters.";
-	characters.loadCultures(cultures);
+	characters.linkCultures(cultures);
 	Log(LogLevel::Info) << "-> Loading Faiths into Counties.";
-	countyDetails.loadFaiths(faiths);
+	countyDetails.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Faiths into Characters.";
-	characters.loadFaiths(faiths);
+	characters.linkFaiths(faiths);
+	Log(LogLevel::Info) << "-> Loading Faiths into Religions.";
+	religions.linkFaiths(faiths);
 }

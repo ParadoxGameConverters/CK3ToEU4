@@ -15,8 +15,8 @@ class Characters: commonItems::parser
 
 	[[nodiscard]] const auto& getCharacters() const { return characters; }
 
-	void loadCultures(const Cultures& cultures);
-	void loadFaiths(const Faiths& faiths);
+	void linkCultures(const Cultures& cultures);
+	void linkFaiths(const Faiths& faiths);
 
   private:
 	void registerKeys();

@@ -44,7 +44,7 @@ TEST(CK3World_CountyDetailsTests, culturesCanBeLinked)
 	input2 << "c_county1 = { culture = 15 }\n";
 	input2 << "c_county2 = { culture = 13 }\n";
 	CK3::CountyDetails details(input2);
-	details.loadCultures(cultures);
+	details.linkCultures(cultures);
 
 	const auto& c1 = details.getCountyDetails().find("c_county1");
 	const auto& c2 = details.getCountyDetails().find("c_county2");
@@ -64,7 +64,7 @@ TEST(CK3World_CountyDetailsTests, linkingMissingCultureThrowsException)
 	input2 << "c_county1 = { culture = 15 }\n";
 	CK3::CountyDetails details(input2);
 
-	ASSERT_THROW(details.loadCultures(cultures), std::runtime_error);
+	ASSERT_THROW(details.linkCultures(cultures), std::runtime_error);
 }
 
 TEST(CK3World_CountyDetailsTests, faithsCanBeLinked)
@@ -78,7 +78,7 @@ TEST(CK3World_CountyDetailsTests, faithsCanBeLinked)
 	input2 << "c_county1 = { faith = 15 }\n";
 	input2 << "c_county2 = { faith = 13 }\n";
 	CK3::CountyDetails details(input2);
-	details.loadFaiths(faiths);
+	details.linkFaiths(faiths);
 
 	const auto& c1 = details.getCountyDetails().find("c_county1");
 	const auto& c2 = details.getCountyDetails().find("c_county2");
@@ -98,5 +98,5 @@ TEST(CK3World_CountyDetailsTests, linkingMissingFaithThrowsException)
 	input2 << "c_county2 = { faith = 15 }\n";
 	CK3::CountyDetails details(input2);
 
-	ASSERT_THROW(details.loadFaiths(faiths), std::runtime_error);
+	ASSERT_THROW(details.linkFaiths(faiths), std::runtime_error);
 }
