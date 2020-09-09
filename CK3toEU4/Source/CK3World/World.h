@@ -16,6 +16,7 @@
 #include "Titles/Titles.h"
 #include <Date.h>
 #include "Flags/Flags.h"
+#include "Geography/CountyDetails.h"
 
 class Configuration;
 
@@ -54,6 +55,7 @@ class World: commonItems::parser
 	LandedTitles landedTitles;
 	Mods mods;
 	Flags flags;
+	CountyDetails countyDetails;
 	mappers::NamedColors namedColors;
 
 	enum class SaveType

@@ -275,5 +275,17 @@
     <ClCompile Include="CK3WorldTests\FlagTests\FlagTests.cpp">
       <Filter>Ck3WorldTests\FlagTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailsTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

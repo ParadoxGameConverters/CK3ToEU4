@@ -181,6 +181,12 @@
     <ClInclude Include="Source\CK3World\Flags\Flags.h">
       <Filter>CK3World\Flags</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\CountyDetail.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\CountyDetails.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -310,6 +316,12 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Flags\Flags.cpp">
       <Filter>CK3World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\CountyDetail.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\CountyDetails.cpp">
+      <Filter>CK3World\Geography</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

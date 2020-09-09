@@ -70,6 +70,11 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		coats = CoatsOfArms(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << coats.getCoats().size() << " wearables.";
 	});
+	registerKeyword("county_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading county details.";
+		countyDetails = CountyDetails(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << countyDetails.getCountyDetails().size() << " county details.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 
