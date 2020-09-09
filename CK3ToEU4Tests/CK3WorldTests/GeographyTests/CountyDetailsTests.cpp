@@ -2,6 +2,8 @@
 #include "../../CK3toEU4/Source/CK3World/Cultures/Cultures.h"
 #include "../../CK3toEU4/Source/CK3World/Geography/CountyDetail.h"
 #include "../../CK3toEU4/Source/CK3World/Geography/CountyDetails.h"
+#include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
+#include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -63,4 +65,38 @@ TEST(CK3World_CountyDetailsTests, linkingMissingCultureThrowsException)
 	CK3::CountyDetails details(input2);
 
 	ASSERT_THROW(details.loadCultures(cultures), std::runtime_error);
+}
+
+TEST(CK3World_CountyDetailsTests, faithsCanBeLinked)
+{
+	std::stringstream input;
+	input << "13={tag=\"old_bon\"}\n";
+	input << "15={tag=\"theravada\"}\n";
+	const CK3::Faiths faiths(input);
+
+	std::stringstream input2;
+	input2 << "c_county1 = { faith = 15 }\n";
+	input2 << "c_county2 = { faith = 13 }\n";
+	CK3::CountyDetails details(input2);
+	details.loadFaiths(faiths);
+
+	const auto& c1 = details.getCountyDetails().find("c_county1");
+	const auto& c2 = details.getCountyDetails().find("c_county2");
+
+	ASSERT_EQ("theravada", c1->second->getFaith().second->getName());
+	ASSERT_EQ("old_bon", c2->second->getFaith().second->getName());
+}
+
+TEST(CK3World_CountyDetailsTests, linkingMissingFaithThrowsException)
+{
+	std::stringstream input;
+	input << "13={tag=\"old_bon\"}\n";
+	const CK3::Faiths faiths(input);
+
+	std::stringstream input2;
+	input2 << "c_county1 = { faith = 13 }\n";
+	input2 << "c_county2 = { faith = 15 }\n";
+	CK3::CountyDetails details(input2);
+
+	ASSERT_THROW(details.loadFaiths(faiths), std::runtime_error);
 }

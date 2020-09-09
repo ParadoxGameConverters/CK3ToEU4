@@ -1,5 +1,6 @@
 #include "CountyDetails.h"
 #include "../Cultures/Cultures.h"
+#include "../Religions/Faiths.h"
 #include "CountyDetail.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -39,8 +40,29 @@ void CK3::CountyDetails::loadCultures(const Cultures& cultures)
 		else
 		{
 			throw std::runtime_error(
-				 "County " + countyDetail.first + " has culture " + std::to_string(countyDetail.second->getCulture().first) + "which has no definition!");
+				 "County " + countyDetail.first + " has culture " + std::to_string(countyDetail.second->getCulture().first) + " which has no definition!");
 		}
 	}
-	Log(LogLevel::Info) << "-> " << counter << " Counties updated.";
+	Log(LogLevel::Info) << "<> " << counter << " counties updated.";
+}
+
+void CK3::CountyDetails::loadFaiths(const Faiths& faiths)
+{
+	auto counter = 0;
+	const auto& faithData = faiths.getFaiths();
+	for (const auto& countyDetail: countyDetails)
+	{
+		const auto& faithDataItr = faithData.find(countyDetail.second->getFaith().first);
+		if (faithDataItr != faithData.end())
+		{
+			countyDetail.second->loadFaith(*faithDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error(
+				 "County " + countyDetail.first + " has faith " + std::to_string(countyDetail.second->getFaith().first) + " which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " counties updated.";
 }

@@ -293,4 +293,10 @@ void CK3::World::crosslinkDatabases()
 {
 	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
 	countyDetails.loadCultures(cultures);
+	Log(LogLevel::Info) << "-> Loading Cultures into Characters.";
+	characters.loadCultures(cultures);
+	Log(LogLevel::Info) << "-> Loading Faiths into Counties.";
+	countyDetails.loadFaiths(faiths);
+	Log(LogLevel::Info) << "-> Loading Faiths into Characters.";
+	characters.loadFaiths(faiths);
 }
