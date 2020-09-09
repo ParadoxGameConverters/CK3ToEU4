@@ -75,6 +75,11 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		countyDetails = CountyDetails(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << countyDetails.getCountyDetails().size() << " county details.";
 	});
+	registerKeyword("culture_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading cultures.";
+		cultures = Cultures(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << cultures.getCultures().size() << " cultures.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 

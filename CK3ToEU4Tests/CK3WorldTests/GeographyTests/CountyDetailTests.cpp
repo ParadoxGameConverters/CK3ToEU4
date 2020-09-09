@@ -21,7 +21,7 @@ TEST(CK3World_CountyDetailTests, detailPrimitivesCanBeLoaded)
 
 	const CK3::CountyDetail detail(input);
 
-	ASSERT_EQ(6, detail.getDevelopment());
+	ASSERT_EQ(7, detail.getDevelopment());
 	ASSERT_EQ(9, detail.getCulture().first);
 	ASSERT_EQ(5, detail.getFaith().first);
 }

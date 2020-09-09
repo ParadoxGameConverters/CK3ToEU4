@@ -85,6 +85,12 @@
     <Filter Include="Ck3WorldTests\FlagTests">
       <UniqueIdentifier>{2b4882a3-de6e-4455-8a74-abe0fd45ec25}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Cultures">
+      <UniqueIdentifier>{2ea6677b-f429-4185-8ffd-5ded1537ac94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\CultureTests">
+      <UniqueIdentifier>{eec43a4f-1ec6-4cf3-9c7e-5c9b8ceea34c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -286,6 +292,18 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailTests.cpp">
       <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp">
+      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp">
+      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CultureTests\CulturesTests.cpp">
+      <Filter>Ck3WorldTests\CultureTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CultureTests\CultureTests.cpp">
+      <Filter>Ck3WorldTests\CultureTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

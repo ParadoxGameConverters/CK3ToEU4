@@ -91,6 +91,8 @@
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\Emblem.h" />
     <ClInclude Include="Source\CK3World\CoatsOfArms\EmblemInstance.h" />
+    <ClInclude Include="Source\CK3World\Cultures\Culture.h" />
+    <ClInclude Include="Source\CK3World\Cultures\Cultures.h" />
     <ClInclude Include="Source\CK3World\Dynasties\Dynasties.h" />
     <ClInclude Include="Source\CK3World\Dynasties\Dynasty.h" />
     <ClInclude Include="Source\CK3World\Dynasties\House.h" />
@@ -139,6 +141,8 @@
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\Emblem.cpp" />
     <ClCompile Include="Source\CK3World\CoatsOfArms\EmblemInstance.cpp" />
+    <ClCompile Include="Source\CK3World\Cultures\Culture.cpp" />
+    <ClCompile Include="Source\CK3World\Cultures\Cultures.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\Dynasties.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\Dynasty.cpp" />
     <ClCompile Include="Source\CK3World\Dynasties\House.cpp" />

@@ -65,6 +65,8 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp" />
@@ -107,6 +109,8 @@
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\CoatsOfArmsTests.cpp" />
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemInstanceTests.cpp" />
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CultureTests\CulturesTests.cpp" />
+    <ClCompile Include="CK3WorldTests\CultureTests\CultureTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\DynastyTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\HousesTests.cpp" />

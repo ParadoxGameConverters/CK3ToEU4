@@ -26,5 +26,5 @@ TEST(CK3World_CountyDetailsTests, detailsCanBeLoadedIfPresent)
 	ASSERT_EQ(3, details.getCountyDetails().size());
 	ASSERT_FALSE(c1->second->getDevelopment());
 	ASSERT_EQ(8, c2->second->getDevelopment());
-	ASSERT_EQ(2, c3->second->getFaith().first);
+	ASSERT_EQ(4, c3->second->getFaith().first);
 }

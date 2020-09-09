@@ -17,6 +17,7 @@
 #include <Date.h>
 #include "Flags/Flags.h"
 #include "Geography/CountyDetails.h"
+#include "Cultures/Cultures.h"
 
 class Configuration;
 
@@ -56,6 +57,7 @@ class World: commonItems::parser
 	Mods mods;
 	Flags flags;
 	CountyDetails countyDetails;
+	Cultures cultures;
 	mappers::NamedColors namedColors;
 
 	enum class SaveType
