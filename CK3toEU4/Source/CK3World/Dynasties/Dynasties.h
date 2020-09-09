@@ -10,7 +10,7 @@ class Dynasties: commonItems::parser
 {
   public:
 	Dynasties() = default;
-	explicit Dynasties(std::istream& theStream); // For testing
+	explicit Dynasties(std::istream& theStream);
 
 	[[nodiscard]] const auto& getDynasties() const { return dynasties; }
 	[[nodiscard]] auto getHouses() { return std::move(houses); }

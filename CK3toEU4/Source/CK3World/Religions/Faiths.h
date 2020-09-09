@@ -9,7 +9,7 @@ class Faiths: commonItems::parser
 {
   public:
 	Faiths() = default;
-	explicit Faiths(std::istream& theStream); // For testing
+	explicit Faiths(std::istream& theStream);
 
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 
