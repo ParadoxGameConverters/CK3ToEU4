@@ -311,4 +311,6 @@ void CK3::World::crosslinkDatabases()
 	titles.linkCoats(coats);
 	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
 	houses.linkDynasties(dynasties);
+	Log(LogLevel::Info) << "-> Loading Holdings into Provinces.";
+	landedTitles.linkBaronyHoldings(baronyHoldings);
 }

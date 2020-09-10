@@ -8,6 +8,7 @@ namespace CK3
 {
 class Title;
 class BaronyHolding;
+class BaronyHoldings;
 class LandedTitles: commonItems::parser
 {
   public:
@@ -21,6 +22,10 @@ class LandedTitles: commonItems::parser
 	[[nodiscard]] const auto& getProvince() const { return province; }
 	[[nodiscard]] const auto& getFoundTitles() const { return foundTitles; }
 
+	void loadBaronyHolding(const std::pair<int, std::shared_ptr<BaronyHolding>>& baronyHolding) { province = baronyHolding; }
+
+	void linkBaronyHoldings(const BaronyHoldings& baronyHoldings);
+	
   private:
 	void registerKeys();
 
@@ -29,7 +34,7 @@ class LandedTitles: commonItems::parser
 	std::optional<commonItems::Color> color;
 	std::pair<std::string, std::shared_ptr<Title>> capital;	// This is of questionable use as savegame already defines defacto capitals.
 	std::pair<int, std::shared_ptr<BaronyHolding>> province; // province is area on map. b_ barony is its corresponding title.
-	std::map<std::string, LandedTitles> foundTitles;			// We're using title name, not savegame ID for key value.
+	std::map<std::string, std::shared_ptr<LandedTitles>> foundTitles;			// We're using title name, not savegame ID for key value.
 };
 } // namespace CK3
 

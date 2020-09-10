@@ -1,4 +1,6 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/BaronyHoldings.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/BaronyHolding.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -56,8 +58,8 @@ TEST(CK3World_LandedTitlesTests, titlesCanBeLoaded)
 	const auto& county = titles.getFoundTitles().find("c_county");
 
 	ASSERT_EQ(2, titles.getFoundTitles().size());
-	ASSERT_EQ(12, barony->second.getProvince().first);
-	ASSERT_TRUE(county->second.isLandless());
+	ASSERT_EQ(12, barony->second->getProvince().first);
+	ASSERT_TRUE(county->second->isLandless());
 }
 
 TEST(CK3World_LandedTitlesTests, titlesCanBeLoadedRecursively)
@@ -73,8 +75,8 @@ TEST(CK3World_LandedTitlesTests, titlesCanBeLoadedRecursively)
 	const auto& county = titles.getFoundTitles().find("c_county5");
 
 	ASSERT_EQ(5, titles.getFoundTitles().size());
-	ASSERT_EQ(12, barony->second.getProvince().first);
-	ASSERT_TRUE(county->second.isLandless());
+	ASSERT_EQ(12, barony->second->getProvince().first);
+	ASSERT_TRUE(county->second->isLandless());
 }
 
 TEST(CK3World_LandedTitlesTests, titlesCanBeOverriddenByMods)
@@ -95,8 +97,8 @@ TEST(CK3World_LandedTitlesTests, titlesCanBeOverriddenByMods)
 	const auto& county = titles.getFoundTitles().find("c_county5");
 
 	ASSERT_EQ(5, titles.getFoundTitles().size());
-	ASSERT_EQ(15, barony->second.getProvince().first);
-	ASSERT_FALSE(county->second.isLandless());
+	ASSERT_EQ(15, barony->second->getProvince().first);
+	ASSERT_FALSE(county->second->isLandless());
 }
 
 TEST(CK3World_LandedTitlesTests, titlesCanBeAddedByMods)
@@ -115,4 +117,40 @@ TEST(CK3World_LandedTitlesTests, titlesCanBeAddedByMods)
 	titles.loadTitles(input2);
 
 	ASSERT_EQ(10, titles.getFoundTitles().size());
+}
+
+TEST(CK3World_LandedTitlesTests, holdingsCanBeLinked)
+{
+	std::stringstream input;
+	input << "e_empire1 = { k_kingdom2 = { d_duchy3 = { b_barony4 = { province = 12 } } } }\n";
+	input << "b_barony2 = { province = 13 }\n";
+	CK3::LandedTitles titles;
+	titles.loadTitles(input);
+
+	std::stringstream input2;
+	input2 << "12={holding={type=\"city_holding\"\n}}\n";
+	input2 << "13={holding={type=\"castle_holding\"\nbuildings={ {type=\"hunting_grounds_01\"} {} {} {type=\"hill_farms_02\"} {} {}}}\n";
+	const CK3::BaronyHoldings baronies(input2);
+
+	titles.linkBaronyHoldings(baronies);
+	const auto& b1 = titles.getFoundTitles().find("b_barony4");
+	const auto& b2 = titles.getFoundTitles().find("b_barony2");
+	
+	ASSERT_EQ("city_holding", b1->second->getProvince().second->getHoldingType());
+	ASSERT_EQ("castle_holding", b2->second->getProvince().second->getHoldingType());
+}
+
+TEST(CK3World_LandedTitlesTests, missingHoldingsLinkThrowsException)
+{
+	std::stringstream input;
+	input << "e_empire1 = { k_kingdom2 = { d_duchy3 = { b_barony4 = { province = 12 } } } }\n";
+	input << "b_barony2 = { province = 13 }\n";
+	CK3::LandedTitles titles;
+	titles.loadTitles(input);
+
+	std::stringstream input2;
+	input << "12={holding={type=\"city_holding\"\n}}\n";
+	const CK3::BaronyHoldings baronies(input);
+
+	ASSERT_THROW(titles.linkBaronyHoldings(baronies), std::runtime_error);
 }
