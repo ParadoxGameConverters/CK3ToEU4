@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(CK3World_BaronyHoldingsTests, baronyHoldingsDefaultToEmpty)
+TEST(CK3World_ProvinceHoldingsTests, ProvinceHoldingsDefaultToEmpty)
 {
 	std::stringstream input;
 	const CK3::ProvinceHoldings baronies(input);
@@ -11,7 +11,7 @@ TEST(CK3World_BaronyHoldingsTests, baronyHoldingsDefaultToEmpty)
 	ASSERT_TRUE(baronies.getProvinceHoldings().empty());
 }
 
-TEST(CK3World_BaronyHoldingsTests, baronyHoldingsCanBeLoadedIfPresent)
+TEST(CK3World_ProvinceHoldingsTests, ProvinceHoldingsCanBeLoadedIfPresent)
 {
 	std::stringstream input;
 	input << "11={}\n";

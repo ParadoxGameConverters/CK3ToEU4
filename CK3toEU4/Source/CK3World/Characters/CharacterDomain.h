@@ -31,7 +31,7 @@ class CharacterDomain: commonItems::parser
 	std::string government;
 	std::set<std::string> laws;
 	std::pair<int, std::shared_ptr<Title>> realmCapital;			// A barony!
-	std::vector<std::pair<int, std::shared_ptr<Title>>> domain; // These are all titles owned (b-c-d-k-e), landless included.
+	std::vector<std::pair<int, std::shared_ptr<Title>>> domain; // These are all titles owned (b-c-d-k-e), landless included. First one is PRIMARY.
 };
 } // namespace CK3
 

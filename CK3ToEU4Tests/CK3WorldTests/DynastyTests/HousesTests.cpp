@@ -27,7 +27,7 @@ TEST(CK3World_HousesTests, HousesCanBeLoaded)
 	ASSERT_EQ("dynn_Fournier", h2->second->getName());
 }
 
-TEST(CK3World_HousesTests, housesCanBeLinked)
+TEST(CK3World_HousesTests, dynastiesCanBeLinked)
 {
 	std::stringstream input;
 	input << "23={name=\"dynn_Villeneuve\"\n dynasty=15}\n";

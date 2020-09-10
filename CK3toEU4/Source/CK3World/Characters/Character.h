@@ -50,7 +50,6 @@ class Character: commonItems::parser
 	void loadCulture(const std::pair<int, std::shared_ptr<Culture>>& theCulture) { culture = theCulture; }
 	void loadFaith(const std::pair<int, std::shared_ptr<Faith>>& theFaith) { faith = theFaith; }
 	void loadHouse(const std::pair<int, std::shared_ptr<House>>& theHouse) { house = theHouse; }
-
 	void loadRealmCapital(const std::pair<int, std::shared_ptr<Title>>& theRealmCapital) { characterDomain->loadRealmCapital(theRealmCapital); }
 	void loadDomain(const std::vector<std::pair<int, std::shared_ptr<Title>>>& theDomain) { characterDomain->loadDomain(theDomain); }
 	void loadClaims(const std::map<int, std::shared_ptr<Title>>& theClaims) { claims = theClaims; }

@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(CK3World_BaronyHoldingTests, loadValuesDefaultToBlank)
+TEST(CK3World_ProvinceHoldingTests, loadValuesDefaultToBlank)
 {
 	std::stringstream input;
 	const CK3::ProvinceHolding holding(input);
@@ -12,7 +12,7 @@ TEST(CK3World_BaronyHoldingTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(holding.getBuildings().empty());
 }
 
-TEST(CK3World_BaronyHoldingTests, blankHoldingIsBlank)
+TEST(CK3World_ProvinceHoldingTests, blankHoldingIsBlank)
 {
 	std::stringstream input;
 	input << "holding = {}";
@@ -24,7 +24,7 @@ TEST(CK3World_BaronyHoldingTests, blankHoldingIsBlank)
 	ASSERT_TRUE(holding.getBuildings().empty());
 }
 
-TEST(CK3World_BaronyHoldingTests, holdingPrimitivesCanBeLoaded)
+TEST(CK3World_ProvinceHoldingTests, holdingPrimitivesCanBeLoaded)
 {
 	std::stringstream input;
 	input << "holding = {\n";
@@ -38,7 +38,7 @@ TEST(CK3World_BaronyHoldingTests, holdingPrimitivesCanBeLoaded)
 	ASSERT_EQ("holy_site_cathedral_01", holding.getSpecialBuilding());
 }
 
-TEST(CK3World_BaronyHoldingTests, holdingEmptyBuildingBlobsAreIgnored)
+TEST(CK3World_ProvinceHoldingTests, holdingEmptyBuildingBlobsAreIgnored)
 {
 	std::stringstream input;
 	input << "holding = {\n";
@@ -52,7 +52,7 @@ TEST(CK3World_BaronyHoldingTests, holdingEmptyBuildingBlobsAreIgnored)
 	ASSERT_TRUE(holding.getBuildings().empty());
 }
 
-TEST(CK3World_BaronyHoldingTests, holdingBuildingBlobsCanBeLoaded)
+TEST(CK3World_ProvinceHoldingTests, holdingBuildingBlobsCanBeLoaded)
 {
 	std::stringstream input;
 	input << "holding = {\n";

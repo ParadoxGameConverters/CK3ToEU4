@@ -116,7 +116,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 				throw std::runtime_error("Character " + std::to_string(character.first) + " has capital " + std::to_string(domain->getRealmCapital().first) +
 												 " which has no definition!");
 			}
-			// load owned hopefully non-landless titles ("the domain").
+			// load owned including landless titles ("the domain").
 			std::vector<std::pair<int, std::shared_ptr<Title>>> replacementDomain;
 			for (const auto& title: domain->getDomain())
 			{

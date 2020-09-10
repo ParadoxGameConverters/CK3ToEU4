@@ -43,7 +43,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		titles = Titles(theStream);
 		const auto& counter = titles.getCounter();
 		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles: " << counter[0] << "b " << counter[1] << "c " << counter[2] << "d "
-								  << counter[3] << "k " << counter[4] << "e ";
+								  << counter[3] << "k " << counter[4] << "e.";
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading provinces.";
