@@ -5,6 +5,7 @@
 namespace CK3
 {
 class Title;
+class CoatsOfArms;
 class Titles: commonItems::parser
 {
   public:
@@ -12,6 +13,8 @@ class Titles: commonItems::parser
 	explicit Titles(std::istream& theStream);
 
 	[[nodiscard]] const auto& getTitles() const { return titles; }
+
+	void linkCoats(const CoatsOfArms& coats);
 
   private:
 	void registerKeys();

@@ -307,4 +307,6 @@ void CK3::World::crosslinkDatabases()
 	coats.linkParents(titles);
 	Log(LogLevel::Info) << "-> Loading Coats into Dynasties.";
 	dynasties.linkCoats(coats);
+	Log(LogLevel::Info) << "-> Loading Coats into Titles.";
+	titles.linkCoats(coats);
 }

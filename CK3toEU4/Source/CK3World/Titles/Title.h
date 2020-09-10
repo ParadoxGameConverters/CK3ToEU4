@@ -31,6 +31,8 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
 
+	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
+
   private:
 	void registerKeys();
 

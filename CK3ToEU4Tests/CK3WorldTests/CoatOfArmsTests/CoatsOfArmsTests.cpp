@@ -31,11 +31,11 @@ TEST(CK3World_CoatsOfArmsTests, BundledCoatsOfArmsCanBeLoaded)
 
 TEST(CK3World_CoatsOfArmsTests, UnBundledCoatsOfArmsCanBeLoaded)
 {
-	std::stringstream input2;
-	input2 << "13={parent=\"k_france\"}\n";
-	input2 << "15={parent=\"k_england\"}\n";
+	std::stringstream input;
+	input << "13 = { parent= \"k_france\" }\n";
+	input << "15 = { parent= \"k_england\" }\n";
 
-	const CK3::CoatsOfArms coatsOfArms(input2);
+	const CK3::CoatsOfArms coatsOfArms(input);
 	const auto& d1 = coatsOfArms.getCoats().find(13);
 	const auto& d2 = coatsOfArms.getCoats().find(15);
 

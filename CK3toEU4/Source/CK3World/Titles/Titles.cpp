@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
+#include "../CoatsOfArms/CoatsOfArms.h"
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -29,4 +30,27 @@ void CK3::Titles::registerKeys()
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void CK3::Titles::linkCoats(const CoatsOfArms& coats)
+{
+	auto counter = 0;
+	const auto& coatData = coats.getCoats();
+	for (const auto& title: titles)
+	{
+		if (!title.second->getCoA())
+			continue;
+		const auto& coatDataItr = coatData.find(title.second->getCoA()->first);
+		if (coatDataItr != coatData.end())
+		{
+			title.second->loadCoat(*coatDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error(
+				 "Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) + " which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
 }
