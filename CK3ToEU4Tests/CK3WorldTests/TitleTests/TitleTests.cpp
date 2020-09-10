@@ -29,7 +29,7 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(theTitle.getDJLiege().first);
 	ASSERT_TRUE(theTitle.getDJVassals().empty());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
-	ASSERT_FALSE(theTitle.getCoA().first);
+	ASSERT_FALSE(theTitle.getCoA());
 }
 
 TEST(CK3World_TitleTests, loadValuesCanBeSet)
@@ -72,5 +72,5 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	ASSERT_EQ(3, theTitle.getHeirs()[0].first);
 	ASSERT_EQ(4, theTitle.getHeirs()[1].first);
 	ASSERT_EQ(5, theTitle.getHeirs()[2].first);
-	ASSERT_EQ(45, theTitle.getCoA().first);
+	ASSERT_EQ(45, theTitle.getCoA()->first);
 }

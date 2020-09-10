@@ -5,12 +5,15 @@
 namespace CK3
 {
 class CoatOfArms;
+class Titles;
 class CoatsOfArms: commonItems::parser
 {
   public:
 	CoatsOfArms() = default;
 	explicit CoatsOfArms(std::istream& theStream);
 	[[nodiscard]] auto getCoats() const { return coats; }
+
+	void linkParents(const Titles& titles);
 
   private:
 	void registerKeys();

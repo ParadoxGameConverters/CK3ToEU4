@@ -303,4 +303,6 @@ void CK3::World::crosslinkDatabases()
 	religions.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
 	faiths.linkReligions(religions);
+	Log(LogLevel::Info) << "-> Loading Coats into Coats.";
+	coats.linkParents(titles);
 }
