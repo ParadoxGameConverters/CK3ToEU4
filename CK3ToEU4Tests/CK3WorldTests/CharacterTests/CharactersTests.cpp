@@ -1,12 +1,14 @@
 #include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/CharacterDomain.h"
 #include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
-#include "../../CK3toEU4/Source/CK3World/Cultures/Cultures.h"
 #include "../../CK3toEU4/Source/CK3World/Cultures/Culture.h"
+#include "../../CK3toEU4/Source/CK3World/Cultures/Cultures.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
-
+#include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -64,7 +66,7 @@ TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)
 	std::stringstream input2;
 	input2 << "1={culture = 13}\n";
 	input2 << "2={culture = 15}\n";
-	CK3::Characters characters(input2);	
+	CK3::Characters characters(input2);
 
 	ASSERT_THROW(characters.linkCultures(cultures), std::runtime_error);
 }
@@ -135,4 +137,106 @@ TEST(CK3World_CharactersTests, linkingMissingHouseThrowsException)
 	CK3::Characters characters(input2);
 
 	ASSERT_THROW(characters.linkHouses(houses), std::runtime_error);
+}
+
+TEST(CK3World_CharactersTests, titlesCanBeLinked)
+{
+	std::stringstream input;
+	input << "1 = { key=c_county1 }\n";
+	input << "2 = { key=c_county2 }\n";
+	input << "3 = { key=c_county3 }\n";
+	input << "4 = { key=c_county4 }\n";
+	input << "5 = { key=c_county5 }\n";
+	const CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "100 = {\n";
+	input2 << "\tclaim = { { title = 1 } { title = 3 } { title = 5 } }\n";
+	input2 << "\tlanded_data = {\n";
+	input2 << "\t\trealm_capital = 2\n";
+	input2 << "\t\tdomain = { 4 2 }";
+	input2 << "\t}";
+	input2 << "}\n";
+	CK3::Characters characters(input2);
+	characters.linkTitles(titles);
+
+	const auto& c1 = characters.getCharacters().find(100);
+
+	ASSERT_EQ(3, c1->second->getClaims().size());
+	ASSERT_EQ("c_county1", c1->second->getClaims().find(1)->second->getName());
+	ASSERT_EQ("c_county3", c1->second->getClaims().find(3)->second->getName());
+	ASSERT_EQ("c_county5", c1->second->getClaims().find(5)->second->getName());
+	ASSERT_EQ("c_county2", c1->second->getDomain()->getRealmCapital().second->getName());
+	ASSERT_EQ(2, c1->second->getDomain()->getDomain().size());
+	ASSERT_EQ("c_county4", c1->second->getDomain()->getDomain()[0].second->getName());
+	ASSERT_EQ("c_county2", c1->second->getDomain()->getDomain()[1].second->getName());
+}
+
+TEST(CK3World_CharactersTests, titlesLinkMissingClaimThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key=c_county1 }\n";
+	input << "2 = { key=c_county2 }\n";
+	input << "3 = { key=c_county3 }\n";
+	input << "4 = { key=c_county4 }\n";
+	input << "5 = { key=c_county5 }\n";
+	const CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "100 = {\n";
+	input2 << "\tclaim = { { title = 1 } { title = 3 } { title = 6 } }\n"; // missing 6
+	input2 << "\tlanded_data = {\n";
+	input2 << "\t\trealm_capital = 2\n";
+	input2 << "\t\tdomain = { 4 2 }";
+	input2 << "\t}";
+	input2 << "}\n";
+	CK3::Characters characters(input2);
+
+	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
+}
+
+TEST(CK3World_CharactersTests, titlesLinkMissingCapitalThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key=c_county1 }\n";
+	input << "2 = { key=c_county2 }\n";
+	input << "3 = { key=c_county3 }\n";
+	input << "4 = { key=c_county4 }\n";
+	input << "5 = { key=c_county5 }\n";
+	const CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "100 = {\n";
+	input2 << "\tclaim = { { title = 1 } { title = 3 } { title = 5 } }\n";
+	input2 << "\tlanded_data = {\n";
+	input2 << "\t\trealm_capital = 6\n"; // missing 6
+	input2 << "\t\tdomain = { 4 2 }";
+	input2 << "\t}";
+	input2 << "}\n";
+	CK3::Characters characters(input2);
+
+	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
+}
+
+TEST(CK3World_CharactersTests, titlesLinkMissingDomainThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key=c_county1 }\n";
+	input << "2 = { key=c_county2 }\n";
+	input << "3 = { key=c_county3 }\n";
+	input << "4 = { key=c_county4 }\n";
+	input << "5 = { key=c_county5 }\n";
+	const CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "100 = {\n";
+	input2 << "\tclaim = { { title = 1 } { title = 3 } { title = 5 } }\n";
+	input2 << "\tlanded_data = {\n";
+	input2 << "\t\trealm_capital = 2\n";
+	input2 << "\t\tdomain = { 4 2 6 }"; // missing 6
+	input2 << "\t}";
+	input2 << "}\n";
+	CK3::Characters characters(input2);
+
+	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
 }

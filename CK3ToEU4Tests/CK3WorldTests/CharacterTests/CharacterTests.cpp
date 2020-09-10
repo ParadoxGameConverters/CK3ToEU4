@@ -26,14 +26,15 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(character.getSkills().learning);
 	ASSERT_FALSE(character.getSkills().intrigue);
 	ASSERT_TRUE(character.getTraits().empty());
-	ASSERT_FALSE(character.getPiety());
-	ASSERT_FALSE(character.getPrestige());
-	ASSERT_FALSE(character.getGold());
+	ASSERT_EQ(0.0f, character.getPiety());
+	ASSERT_EQ(0.0f, character.getPrestige());
+	ASSERT_EQ(0.0f, character.getGold());
 	ASSERT_TRUE(character.getClaims().empty());
 	ASSERT_FALSE(character.getEmployer().first);
 	ASSERT_FALSE(character.isKnight());
 	ASSERT_FALSE(character.isFemale());
 	ASSERT_FALSE(character.getSpouse().first);
+	ASSERT_FALSE(character.getDomain());
 }
 
 TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
@@ -126,5 +127,5 @@ TEST(CK3World_CharacterTests, characterDomainCanBeLoaded)
 
 	const CK3::Character character(input, 42);
 
-	ASSERT_TRUE(character.getDomain().isPowerfulVassal());
+	ASSERT_TRUE(character.getDomain()->isPowerfulVassal());
 }

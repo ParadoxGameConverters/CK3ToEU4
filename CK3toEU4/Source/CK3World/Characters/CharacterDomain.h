@@ -20,6 +20,9 @@ class CharacterDomain: commonItems::parser
 	[[nodiscard]] const auto& getRealmCapital() const { return realmCapital; }
 	[[nodiscard]] const auto& getDomain() const { return domain; }
 
+	void loadRealmCapital(const std::pair<int, std::shared_ptr<Title>>& theRealmCapital) { realmCapital = theRealmCapital; }
+	void loadDomain(const std::vector<std::pair<int, std::shared_ptr<Title>>>& theDomain) { domain = theDomain; }
+
   private:
 	void registerKeys();
 
@@ -27,8 +30,8 @@ class CharacterDomain: commonItems::parser
 	double vassalStrength = 0;
 	std::string government;
 	std::set<std::string> laws;
-	std::pair<int, std::shared_ptr<Title>> realmCapital; // Again, a barony!
-	std::map<int, std::shared_ptr<Title>> domain;		  // These are BARONIES directly owned. They need to be mapped to something usable.
+	std::pair<int, std::shared_ptr<Title>> realmCapital;			// A barony!
+	std::vector<std::pair<int, std::shared_ptr<Title>>> domain; // These are all titles owned (b-c-d-k-e), landless included.
 };
 } // namespace CK3
 
