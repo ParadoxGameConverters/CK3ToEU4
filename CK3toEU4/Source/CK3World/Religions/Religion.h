@@ -16,6 +16,8 @@ class Religion: commonItems::parser
 	[[nodiscard]] const auto& getFamily() const { return family; }
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 
+	void loadFaiths(const std::map<int, std::shared_ptr<Faith>>& theFaiths) { faiths = theFaiths; }	
+
   private:
 	void registerKeys();
 

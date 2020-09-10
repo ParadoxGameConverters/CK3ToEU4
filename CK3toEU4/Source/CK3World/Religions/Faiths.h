@@ -5,13 +5,16 @@
 namespace CK3
 {
 class Faith;
+class Religions;
 class Faiths: commonItems::parser
 {
   public:
 	Faiths() = default;
-	explicit Faiths(std::istream& theStream); // For testing
+	explicit Faiths(std::istream& theStream);
 
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
+
+	void linkReligions(const Religions& religions);
 
   private:
 	void registerKeys();

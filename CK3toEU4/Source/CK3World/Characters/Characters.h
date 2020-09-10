@@ -4,6 +4,8 @@
 
 namespace CK3
 {
+class Cultures;
+class Faiths;
 class Character;
 class Characters: commonItems::parser
 {
@@ -12,6 +14,9 @@ class Characters: commonItems::parser
 	Characters(std::istream& theStream);
 
 	[[nodiscard]] const auto& getCharacters() const { return characters; }
+
+	void linkCultures(const Cultures& cultures);
+	void linkFaiths(const Faiths& faiths);
 
   private:
 	void registerKeys();

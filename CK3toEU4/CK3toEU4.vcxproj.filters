@@ -37,9 +37,6 @@
     <Filter Include="CK3World\Dynasties">
       <UniqueIdentifier>{7976df72-56d4-4ada-a81e-2299475ba58e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3World\Religions">
-      <UniqueIdentifier>{b73155f9-3a1e-4fc7-8598-a089a6e27155}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\NamedColors">
       <UniqueIdentifier>{c01b67da-2a06-4dc4-a16c-167df5995ac4}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,15 @@
     </Filter>
     <Filter Include="CK3World\Mods">
       <UniqueIdentifier>{f149b03a-69e9-4ef6-a116-0b0ab2d38af7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Flags">
+      <UniqueIdentifier>{2a9ce57e-33f2-4d14-b582-8c566644af3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Religions">
+      <UniqueIdentifier>{b73155f9-3a1e-4fc7-8598-a089a6e27155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Cultures">
+      <UniqueIdentifier>{768475c9-451e-4102-9d02-9a7f629c4014}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -139,18 +145,6 @@
     <ClInclude Include="Source\CK3World\Dynasties\Houses.h">
       <Filter>CK3World\Dynasties</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CK3World\Religions\Faith.h">
-      <Filter>CK3World\Religions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Religions\Faiths.h">
-      <Filter>CK3World\Religions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Religions\Religion.h">
-      <Filter>CK3World\Religions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Religions\Religions.h">
-      <Filter>CK3World\Religions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CK3World\CoatsOfArms\Emblem.h">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClInclude>
@@ -174,6 +168,33 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Mods\Mods.h">
       <Filter>CK3World\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Flags\Flags.h">
+      <Filter>CK3World\Flags</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\CountyDetail.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\CountyDetails.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Faith.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Faiths.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Religion.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Religions\Religions.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Cultures\Cultures.h">
+      <Filter>CK3World\Cultures</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Cultures\Culture.h">
+      <Filter>CK3World\Cultures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -272,18 +293,6 @@
     <ClCompile Include="Source\CK3World\Dynasties\Houses.cpp">
       <Filter>CK3World\Dynasties</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CK3World\Religions\Faith.cpp">
-      <Filter>CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Religions\Faiths.cpp">
-      <Filter>CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Religions\Religion.cpp">
-      <Filter>CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Religions\Religions.cpp">
-      <Filter>CK3World\Religions</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CK3World\CoatsOfArms\Emblem.cpp">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClCompile>
@@ -301,6 +310,33 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Mods\Mods.cpp">
       <Filter>CK3World\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Flags\Flags.cpp">
+      <Filter>CK3World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\CountyDetail.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\CountyDetails.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Faith.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Faiths.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Religion.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Religions\Religions.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Cultures\Cultures.cpp">
+      <Filter>CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Cultures\Culture.cpp">
+      <Filter>CK3World\Cultures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

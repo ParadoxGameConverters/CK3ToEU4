@@ -33,6 +33,11 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		CK3Version = GameVersion(versionString.getString());
 		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
 	});
+	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading variable flags.";
+		flags = Flags(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << flags.getFlags().size() << " variable flags.";
+	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading titles.";
 		titles = Titles(theStream);
@@ -65,6 +70,16 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		coats = CoatsOfArms(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << coats.getCoats().size() << " wearables.";
 	});
+	registerKeyword("county_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading county details.";
+		countyDetails = CountyDetails(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << countyDetails.getCountyDetails().size() << " county details.";
+	});
+	registerKeyword("culture_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading cultures.";
+		cultures = Cultures(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << cultures.getCultures().size() << " cultures.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 
@@ -75,14 +90,19 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
 
+	LOG(LogLevel::Info) << "* Priming Converter Components *";
 	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 
+	LOG(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "10 %";
 	clearRegisteredKeywords();
+
+	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
+	crosslinkDatabases();
 
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
@@ -267,4 +287,20 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
+}
+
+void CK3::World::crosslinkDatabases()
+{
+	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
+	countyDetails.linkCultures(cultures);
+	Log(LogLevel::Info) << "-> Loading Cultures into Characters.";
+	characters.linkCultures(cultures);
+	Log(LogLevel::Info) << "-> Loading Faiths into Counties.";
+	countyDetails.linkFaiths(faiths);
+	Log(LogLevel::Info) << "-> Loading Faiths into Characters.";
+	characters.linkFaiths(faiths);
+	Log(LogLevel::Info) << "-> Loading Faiths into Religions.";
+	religions.linkFaiths(faiths);
+	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
+	faiths.linkReligions(religions);
 }

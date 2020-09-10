@@ -21,6 +21,8 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getReligion() const { return religion; }
 	[[nodiscard]] auto getID() const { return ID; }
 
+	void loadReligion(const std::pair<int, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
+
   private:
 	void registerKeys();
 

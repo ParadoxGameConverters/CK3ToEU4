@@ -79,6 +79,18 @@
     <Filter Include="Ck3WorldTests\CoatOfArmsTests">
       <UniqueIdentifier>{711708b5-4128-47a8-8865-597d92856f44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Flags">
+      <UniqueIdentifier>{edc18f60-c2d6-4723-b3a6-da2a0dc25cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\FlagTests">
+      <UniqueIdentifier>{2b4882a3-de6e-4455-8a74-abe0fd45ec25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\CK3World\Cultures">
+      <UniqueIdentifier>{2ea6677b-f429-4185-8ffd-5ded1537ac94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ck3WorldTests\CultureTests">
+      <UniqueIdentifier>{eec43a4f-1ec6-4cf3-9c7e-5c9b8ceea34c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -262,6 +274,36 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\LandedTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp">
+      <Filter>CK3ToEU4\CK3World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\FlagTests\FlagTests.cpp">
+      <Filter>Ck3WorldTests\FlagTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailsTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp">
+      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp">
+      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CultureTests\CulturesTests.cpp">
+      <Filter>Ck3WorldTests\CultureTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\CultureTests\CultureTests.cpp">
+      <Filter>Ck3WorldTests\CultureTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

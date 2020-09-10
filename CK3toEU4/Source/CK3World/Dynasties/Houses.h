@@ -9,7 +9,7 @@ class Houses: commonItems::parser
 {
   public:
 	Houses() = default;
-	explicit Houses(std::istream& theStream); // For testing
+	explicit Houses(std::istream& theStream);
 	
 	[[nodiscard]] const auto& getHouses() const { return houses; }
 	

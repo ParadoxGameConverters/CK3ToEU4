@@ -9,7 +9,7 @@ class BaronyHoldings: commonItems::parser
 {
   public:
 	BaronyHoldings() = default;
-	explicit BaronyHoldings(std::istream& theStream); // For testing
+	explicit BaronyHoldings(std::istream& theStream);
 
 	[[nodiscard]] const auto& getBaronyHoldings() const { return baronyHoldings; }
 
