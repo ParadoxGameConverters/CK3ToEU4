@@ -74,7 +74,7 @@ TEST(CK3World_CoatsOfArmsTests, parentsLinkWithoutTitleThrowsException)
 	input2 << "2 = { parent=\"c_county2\"}\n";
 	CK3::CoatsOfArms coats(input2);
 
-	ASSERT_THROW(coats.linkParents(titles);, std::runtime_error);
+	ASSERT_THROW(coats.linkParents(titles), std::runtime_error);
 }
 
 TEST(CK3World_CoatsOfArmsTests, parentsLinkWithoutCoAIDThrowsException)
@@ -89,7 +89,7 @@ TEST(CK3World_CoatsOfArmsTests, parentsLinkWithoutCoAIDThrowsException)
 	input2 << "2 = { parent=\"c_county\"}\n";
 	CK3::CoatsOfArms coats(input2);
 
-	ASSERT_THROW(coats.linkParents(titles);, std::runtime_error);
+	ASSERT_THROW(coats.linkParents(titles), std::runtime_error);
 }
 
 TEST(CK3World_CoatsOfArmsTests, parentsLinkWithInvalidCoAIDThrowsException)
@@ -104,5 +104,5 @@ TEST(CK3World_CoatsOfArmsTests, parentsLinkWithInvalidCoAIDThrowsException)
 	input2 << "2 = { parent=\"c_county2\"}\n";
 	CK3::CoatsOfArms coats(input2);
 
-	ASSERT_THROW(coats.linkParents(titles);, std::runtime_error);
+	ASSERT_THROW(coats.linkParents(titles), std::runtime_error);
 }
