@@ -4,6 +4,8 @@
 #include "../../CK3toEU4/Source/CK3World/Cultures/Culture.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
 
 #include "gtest/gtest.h"
 #include <sstream>
@@ -99,4 +101,38 @@ TEST(CK3World_CharactersTests, linkingMissingFaithThrowsException)
 	CK3::Characters characters(input2);
 
 	ASSERT_THROW(characters.linkFaiths(faiths), std::runtime_error);
+}
+
+TEST(CK3World_CharactersTests, housesCanBeLinked)
+{
+	std::stringstream input;
+	input << "13={name=\"dynn_Villeneuve\"}\n";
+	input << "15={name=\"dynn_Fournier\"}\n";
+	const CK3::Houses houses(input);
+
+	std::stringstream input2;
+	input2 << "1={dynasty_house = 13}\n";
+	input2 << "2={dynasty_house = 15}\n";
+	CK3::Characters characters(input2);
+	characters.linkHouses(houses);
+
+	const auto& c1 = characters.getCharacters().find(1);
+	const auto& c2 = characters.getCharacters().find(2);
+
+	ASSERT_EQ("dynn_Villeneuve", c1->second->getHouse().second->getName());
+	ASSERT_EQ("dynn_Fournier", c2->second->getHouse().second->getName());
+}
+
+TEST(CK3World_CharactersTests, linkingMissingHouseThrowsException)
+{
+	std::stringstream input;
+	input << "13={name=\"dynn_Villeneuve\"}\n";
+	const CK3::Houses houses(input);
+
+	std::stringstream input2;
+	input2 << "1={dynasty_house = 13}\n";
+	input2 << "2={dynasty_house = 15}\n";
+	CK3::Characters characters(input2);
+
+	ASSERT_THROW(characters.linkHouses(houses), std::runtime_error);
 }

@@ -7,6 +7,7 @@ namespace CK3
 class Cultures;
 class Faiths;
 class Character;
+class Houses;
 class Characters: commonItems::parser
 {
   public:
@@ -17,6 +18,7 @@ class Characters: commonItems::parser
 
 	void linkCultures(const Cultures& cultures);
 	void linkFaiths(const Faiths& faiths);
+	void linkHouses(const Houses& houses);
 
   private:
 	void registerKeys();

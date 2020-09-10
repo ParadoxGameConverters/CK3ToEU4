@@ -4,6 +4,7 @@
 #include "ParserHelpers.h"
 #include "../Cultures/Cultures.h"
 #include "../Religions/Faiths.h"
+#include "../Dynasties/Houses.h"
 
 CK3::Characters::Characters(std::istream& theStream)
 {
@@ -58,6 +59,27 @@ void CK3::Characters::linkFaiths(const Faiths& faiths)
 		{
 			throw std::runtime_error("Character " + std::to_string(character.first) + " has faith " + std::to_string(character.second->getFaith().first) +
 											 " which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " characters updated.";
+}
+
+void CK3::Characters::linkHouses(const Houses& houses)
+{
+	auto counter = 0;
+	const auto& houseData = houses.getHouses();
+	for (const auto& character: characters)
+	{
+		const auto& houseDataItr = houseData.find(character.second->getHouse().first);
+		if (houseDataItr != houseData.end())
+		{
+			character.second->loadHouse(*houseDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error(
+				 "Character " + std::to_string(character.first) + " has house " + std::to_string(character.second->getHouse().first) + " which has no definition!");
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " characters updated.";

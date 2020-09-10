@@ -317,4 +317,6 @@ void CK3::World::crosslinkDatabases()
 	landedTitles.linkProvinceHoldings(provinceHoldings);
 	Log(LogLevel::Info) << "-> Loading Counties into Clay.";
 	landedTitles.linkCountyDetails(countyDetails);
+	Log(LogLevel::Info) << "-> Loading Houses into Characters.";
+	characters.linkHouses(houses);
 }

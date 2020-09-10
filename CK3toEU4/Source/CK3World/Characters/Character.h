@@ -49,6 +49,7 @@ class Character: commonItems::parser
 
 	void loadCulture(const std::pair<int, std::shared_ptr<Culture>>& theCulture) { culture = theCulture; }
 	void loadFaith(const std::pair<int, std::shared_ptr<Faith>>& theFaith) { faith = theFaith; }
+	void loadHouse(const std::pair<int, std::shared_ptr<House>>& theHouse) { house = theHouse; }
 
   private:
 	void registerKeys();
