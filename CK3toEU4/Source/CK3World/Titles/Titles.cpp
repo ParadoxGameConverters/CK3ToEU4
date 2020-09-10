@@ -1,8 +1,8 @@
 #include "Titles.h"
+#include "../CoatsOfArms/CoatsOfArms.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
-#include "../CoatsOfArms/CoatsOfArms.h"
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -17,6 +17,7 @@ void CK3::Titles::registerKeys()
 		// A bit of recursion is good for the soul.
 		const auto& tempTitles = Titles(theStream);
 		titles = tempTitles.getTitles();
+		titleCounter = tempTitles.getCounter();
 	});
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
 		// Incoming titles may not be actual titles but half-deleted junk.
@@ -27,6 +28,16 @@ void CK3::Titles::registerKeys()
 			auto newTitle = std::make_shared<Title>(tempStream, std::stoi(ID));
 			if (!newTitle->getName().empty())
 				titles.insert(std::pair(newTitle->getName(), newTitle));
+			if (newTitle->getName().find("b_") == 0)
+				++titleCounter[0];
+			else if (newTitle->getName().find("c_") == 0)
+				++titleCounter[1];
+			else if (newTitle->getName().find("d_") == 0)
+				++titleCounter[2];
+			else if (newTitle->getName().find("k_") == 0)
+				++titleCounter[3];
+			else if (newTitle->getName().find("e_") == 0)
+				++titleCounter[4];
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -48,8 +59,7 @@ void CK3::Titles::linkCoats(const CoatsOfArms& coats)
 		}
 		else
 		{
-			throw std::runtime_error(
-				 "Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) + " which has no definition!");
+			throw std::runtime_error("Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) + " which has no definition!");
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " titles updated.";

@@ -161,18 +161,6 @@
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
-    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingsTests.cpp">
-      <Filter>Ck3WorldTests\GeographyTests</Filter>
-    </ClCompile>
-    <ClCompile Include="CK3WorldTests\GeographyTests\BaronyHoldingTests.cpp">
-      <Filter>Ck3WorldTests\GeographyTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHolding.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\BaronyHoldings.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp">
       <Filter>CK3ToEU4\CK3World\Characters</Filter>
     </ClCompile>
@@ -304,6 +292,18 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\CultureTests\CultureTests.cpp">
       <Filter>Ck3WorldTests\CultureTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\ProvinceHoldingsTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\GeographyTests\ProvinceHoldingTests.cpp">
+      <Filter>Ck3WorldTests\GeographyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHolding.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.cpp">
+      <Filter>CK3ToEU4\CK3World\Geography</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

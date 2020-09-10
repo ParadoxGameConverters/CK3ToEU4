@@ -124,12 +124,6 @@
     <ClInclude Include="Source\CK3World\CoatsOfArms\CoatsOfArms.h">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CK3World\Geography\BaronyHolding.h">
-      <Filter>CK3World\Geography</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CK3World\Geography\BaronyHoldings.h">
-      <Filter>CK3World\Geography</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h">
       <Filter>CK3World\Characters</Filter>
     </ClInclude>
@@ -195,6 +189,12 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Cultures\Culture.h">
       <Filter>CK3World\Cultures</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\ProvinceHolding.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CK3World\Geography\ProvinceHoldings.h">
+      <Filter>CK3World\Geography</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -272,12 +272,6 @@
     <ClCompile Include="Source\CK3World\CoatsOfArms\CoatsOfArms.cpp">
       <Filter>CK3World\CoatsOfArms</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CK3World\Geography\BaronyHolding.cpp">
-      <Filter>CK3World\Geography</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CK3World\Geography\BaronyHoldings.cpp">
-      <Filter>CK3World\Geography</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp">
       <Filter>CK3World\Characters</Filter>
     </ClCompile>
@@ -337,6 +331,12 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Cultures\Culture.cpp">
       <Filter>CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\ProvinceHolding.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Geography\ProvinceHoldings.cpp">
+      <Filter>CK3World\Geography</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

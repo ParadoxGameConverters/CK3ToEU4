@@ -1,6 +1,8 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
-#include "../../CK3toEU4/Source/CK3World/Geography/BaronyHoldings.h"
-#include "../../CK3toEU4/Source/CK3World/Geography/BaronyHolding.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHoldings.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/CountyDetails.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/CountyDetail.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -130,9 +132,9 @@ TEST(CK3World_LandedTitlesTests, holdingsCanBeLinked)
 	std::stringstream input2;
 	input2 << "12={holding={type=\"city_holding\"\n}}\n";
 	input2 << "13={holding={type=\"castle_holding\"\nbuildings={ {type=\"hunting_grounds_01\"} {} {} {type=\"hill_farms_02\"} {} {}}}\n";
-	const CK3::BaronyHoldings baronies(input2);
+	const CK3::ProvinceHoldings provinces(input2);
 
-	titles.linkBaronyHoldings(baronies);
+	titles.linkProvinceHoldings(provinces);
 	const auto& b1 = titles.getFoundTitles().find("b_barony4");
 	const auto& b2 = titles.getFoundTitles().find("b_barony2");
 	
@@ -150,7 +152,43 @@ TEST(CK3World_LandedTitlesTests, missingHoldingsLinkThrowsException)
 
 	std::stringstream input2;
 	input << "12={holding={type=\"city_holding\"\n}}\n";
-	const CK3::BaronyHoldings baronies(input);
+	const CK3::ProvinceHoldings provinces(input);
 
-	ASSERT_THROW(titles.linkBaronyHoldings(baronies), std::runtime_error);
+	ASSERT_THROW(titles.linkProvinceHoldings(provinces), std::runtime_error);
+}
+
+TEST(CK3World_LandedTitlesTests, countiesCanBeLinked)
+{
+	std::stringstream input;
+	input << "e_empire1 = { k_kingdom2 = { c_county3 = { b_barony4 = { province = 12 } } } }\n";
+	input << "c_county5 = { }\n";
+	CK3::LandedTitles titles;
+	titles.loadTitles(input);
+
+	std::stringstream input2;
+	input2 << "c_county3 = { development = 89 }\n";
+	input2 << "c_county5 = { development = 99 }\n";
+	const CK3::CountyDetails counties(input2);
+
+	titles.linkCountyDetails(counties);
+	const auto& c1 = titles.getFoundTitles().find("c_county3");
+	const auto& c2 = titles.getFoundTitles().find("c_county5");
+
+	ASSERT_EQ(89, c1->second->getCounty().second->getDevelopment());
+	ASSERT_EQ(99, c2->second->getCounty().second->getDevelopment());
+}
+
+TEST(CK3World_LandedTitlesTests, missingCountiesLinkThrowsException)
+{
+	std::stringstream input;
+	input << "e_empire1 = { k_kingdom2 = { c_county3 = { b_barony4 = { province = 12 } } } }\n";
+	input << "c_county5 = { }\n";
+	CK3::LandedTitles titles;
+	titles.loadTitles(input);
+
+	std::stringstream input2;
+	input2 << "c_county3 = { development = 89 }\n";
+	const CK3::CountyDetails counties(input2);
+
+	ASSERT_THROW(titles.linkCountyDetails(counties), std::runtime_error);
 }
