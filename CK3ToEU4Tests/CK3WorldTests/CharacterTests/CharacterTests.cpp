@@ -30,10 +30,10 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_EQ(0.0f, character.getPrestige());
 	ASSERT_EQ(0.0f, character.getGold());
 	ASSERT_TRUE(character.getClaims().empty());
-	ASSERT_FALSE(character.getEmployer().first);
+	ASSERT_FALSE(character.getEmployer());
 	ASSERT_FALSE(character.isKnight());
 	ASSERT_FALSE(character.isFemale());
-	ASSERT_FALSE(character.getSpouse().first);
+	ASSERT_FALSE(character.getSpouse());
 	ASSERT_FALSE(character.getDomain());
 }
 
@@ -101,7 +101,7 @@ TEST(CK3World_CharacterTests, characterFamilyDataCanBeLoaded)
 
 	const CK3::Character character(input, 42);
 
-	ASSERT_EQ(17, character.getSpouse().first);
+	ASSERT_EQ(17, character.getSpouse()->first);
 }
 
 TEST(CK3World_CharacterTests, characterCourtDataCanBeLoaded)
@@ -114,7 +114,7 @@ TEST(CK3World_CharacterTests, characterCourtDataCanBeLoaded)
 
 	const CK3::Character character(input, 42);
 
-	ASSERT_EQ(27, character.getEmployer().first);
+	ASSERT_EQ(27, character.getEmployer()->first);
 	ASSERT_TRUE(character.isKnight());
 }
 

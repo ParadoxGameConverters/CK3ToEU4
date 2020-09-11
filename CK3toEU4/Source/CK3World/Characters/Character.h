@@ -53,6 +53,9 @@ class Character: commonItems::parser
 	void loadRealmCapital(const std::pair<int, std::shared_ptr<Title>>& theRealmCapital) { characterDomain->loadRealmCapital(theRealmCapital); }
 	void loadDomain(const std::vector<std::pair<int, std::shared_ptr<Title>>>& theDomain) { characterDomain->loadDomain(theDomain); }
 	void loadClaims(const std::map<int, std::shared_ptr<Title>>& theClaims) { claims = theClaims; }
+	void loadEmployer(const std::pair<int, std::shared_ptr<Character>>& theEmployer) { employer = theEmployer; }
+	void loadSpouse(const std::pair<int, std::shared_ptr<Character>>& theSpouse) { spouse = theSpouse; }
+	void resetSpouse() { spouse.reset(); }
 
   private:
 	void registerKeys();
@@ -68,8 +71,8 @@ class Character: commonItems::parser
 
 	std::pair<int, std::shared_ptr<Culture>> culture;
 	std::pair<int, std::shared_ptr<Faith>> faith;
-	std::pair<int, std::shared_ptr<Character>> employer;
-	std::pair<int, std::shared_ptr<Character>> spouse;
+	std::optional<std::pair<int, std::shared_ptr<Character>>> employer;
+	std::optional<std::pair<int, std::shared_ptr<Character>>> spouse;
 	std::pair<int, std::shared_ptr<House>> house;
 	std::map<int, std::string> traits;
 	std::map<int, std::shared_ptr<Title>> claims;

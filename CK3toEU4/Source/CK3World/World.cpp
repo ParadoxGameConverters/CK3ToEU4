@@ -311,12 +311,12 @@ void CK3::World::crosslinkDatabases()
 	dynasties.linkCoats(coats);
 	Log(LogLevel::Info) << "-> Loading Coats into Titles.";
 	titles.linkCoats(coats);
-	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
-	houses.linkDynasties(dynasties);
 	Log(LogLevel::Info) << "-> Loading Holdings into Clay.";
 	landedTitles.linkProvinceHoldings(provinceHoldings);
 	Log(LogLevel::Info) << "-> Loading Counties into Clay.";
 	landedTitles.linkCountyDetails(countyDetails);
+	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
+	houses.linkDynasties(dynasties);
 	Log(LogLevel::Info) << "-> Loading Houses into Characters.";
 	characters.linkHouses(houses);
 	Log(LogLevel::Info) << "-> Loading Titles into Characters.";
@@ -325,4 +325,6 @@ void CK3::World::crosslinkDatabases()
 	titles.linkTitles();
 	Log(LogLevel::Info) << "-> Loading Titles into Clay.";
 	landedTitles.linkTitles(titles);
+	Log(LogLevel::Info) << "-> Loading Characters into Characters.";
+	characters.linkCharacters();
 }
