@@ -5,6 +5,7 @@
 namespace CK3
 {
 class House;
+class Dynasties;
 class Houses: commonItems::parser
 {
   public:
@@ -13,6 +14,8 @@ class Houses: commonItems::parser
 	
 	[[nodiscard]] const auto& getHouses() const { return houses; }
 	
+	void linkDynasties(const Dynasties& dynasties);
+
   private:
 	void registerKeys();
 

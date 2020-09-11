@@ -15,6 +15,8 @@ class House: commonItems::parser
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
 	[[nodiscard]] const auto& getID() const { return houseID; }
 
+	void loadDynasty(const std::pair<int, std::shared_ptr<Dynasty>>& theDynasty) { dynasty = theDynasty; }
+
   private:
 	void registerKeys();
 

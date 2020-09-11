@@ -6,6 +6,7 @@
 namespace CK3
 {
 class Dynasty;
+class CoatsOfArms;
 class Dynasties: commonItems::parser
 {
   public:
@@ -14,6 +15,8 @@ class Dynasties: commonItems::parser
 
 	[[nodiscard]] const auto& getDynasties() const { return dynasties; }
 	[[nodiscard]] auto getHouses() { return std::move(houses); }
+
+	void linkCoats(const CoatsOfArms& coats);
 
   private:
 	void registerKeys();

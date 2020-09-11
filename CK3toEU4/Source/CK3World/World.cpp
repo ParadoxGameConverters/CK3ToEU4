@@ -41,12 +41,14 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading titles.";
 		titles = Titles(theStream);
-		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles.";
+		const auto& counter = titles.getCounter();
+		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles: " << counter[0] << "b " << counter[1] << "c " << counter[2] << "d "
+								  << counter[3] << "k " << counter[4] << "e.";
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
-		Log(LogLevel::Info) << "-> Loading barony holdings.";
-		baronyHoldings = BaronyHoldings(theStream);
-		Log(LogLevel::Info) << "<> Loaded " << baronyHoldings.getBaronyHoldings().size() << " baronies.";
+		Log(LogLevel::Info) << "-> Loading provinces.";
+		provinceHoldings = ProvinceHoldings(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << provinceHoldings.getProvinceHoldings().size() << " provinces.";
 	});
 	registerKeyword("living", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading alive human beings.";
@@ -303,4 +305,20 @@ void CK3::World::crosslinkDatabases()
 	religions.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
 	faiths.linkReligions(religions);
+	Log(LogLevel::Info) << "-> Loading Coats into Coats.";
+	coats.linkParents(titles);
+	Log(LogLevel::Info) << "-> Loading Coats into Dynasties.";
+	dynasties.linkCoats(coats);
+	Log(LogLevel::Info) << "-> Loading Coats into Titles.";
+	titles.linkCoats(coats);
+	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
+	houses.linkDynasties(dynasties);
+	Log(LogLevel::Info) << "-> Loading Holdings into Clay.";
+	landedTitles.linkProvinceHoldings(provinceHoldings);
+	Log(LogLevel::Info) << "-> Loading Counties into Clay.";
+	landedTitles.linkCountyDetails(countyDetails);
+	Log(LogLevel::Info) << "-> Loading Houses into Characters.";
+	characters.linkHouses(houses);
+	Log(LogLevel::Info) << "-> Loading Titles into Characters.";
+	characters.linkTitles(titles);
 }

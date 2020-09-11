@@ -1,15 +1,15 @@
-#ifndef CK3_BARONYHOLDING_H
-#define CK3_BARONYHOLDING_H
+#ifndef CK3_PROVINCEHOLDING_H
+#define CK3_PROVINCEHOLDING_H
 #include "Parser.h"
 #include <set>
 
 namespace CK3
 {
-class BaronyHolding: commonItems::parser
+class ProvinceHolding: commonItems::parser
 {
   public:
-	BaronyHolding() = default;
-	BaronyHolding(std::istream& theStream);
+	ProvinceHolding() = default;
+	ProvinceHolding(std::istream& theStream);
 
 	[[nodiscard]] const auto& getHoldingType() const { return holdingType; }
 	[[nodiscard]] const auto& getBuildings() const { return buildings; }
@@ -24,4 +24,4 @@ class BaronyHolding: commonItems::parser
 };
 } // namespace CK3
 
-#endif // CK3_BARONYHOLDING_H
+#endif // CK3_PROVINCEHOLDING_H

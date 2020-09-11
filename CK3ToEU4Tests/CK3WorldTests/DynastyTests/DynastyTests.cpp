@@ -17,7 +17,7 @@ TEST(CK3World_DynastyTests, loadValuesDefaultToBlank)
 
 	ASSERT_TRUE(dynasty.getDynID().empty());
 	ASSERT_FALSE(dynasty.isAppropriateRealmName());
-	ASSERT_FALSE(dynasty.getCoA().first);
+	ASSERT_FALSE(dynasty.getCoA());
 }
 
 TEST(CK3World_DynastyTests, dynastyPrimitivesCanBeLoaded)
@@ -31,5 +31,5 @@ TEST(CK3World_DynastyTests, dynastyPrimitivesCanBeLoaded)
 
 	ASSERT_EQ("7", dynasty.getDynID());
 	ASSERT_TRUE(dynasty.isAppropriateRealmName());
-	ASSERT_EQ(14, dynasty.getCoA().first);
+	ASSERT_EQ(14, dynasty.getCoA()->first);
 }

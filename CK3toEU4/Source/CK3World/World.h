@@ -9,7 +9,7 @@
 #include "Dynasties/Houses.h"
 #include "Flags/Flags.h"
 #include "GameVersion.h"
-#include "Geography/BaronyHoldings.h"
+#include "Geography/ProvinceHoldings.h"
 #include "Geography/CountyDetails.h"
 #include "Mods/Mods.h"
 #include "Parser.h"
@@ -49,7 +49,7 @@ class World: commonItems::parser
 	date startDate = date("1.1.1");
 	GameVersion CK3Version;
 	Titles titles;
-	BaronyHoldings baronyHoldings;
+	ProvinceHoldings provinceHoldings;
 	Characters characters;
 	Dynasties dynasties;
 	Houses houses;

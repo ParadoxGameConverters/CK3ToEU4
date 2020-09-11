@@ -1,4 +1,6 @@
 #include "CoatsOfArms.h"
+#include "../Titles/Title.h"
+#include "../Titles/Titles.h"
 #include "CoatOfArms.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -20,4 +22,30 @@ void CK3::CoatsOfArms::registerKeys()
 		coats = CoatsOfArms(theStream).getCoats();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void CK3::CoatsOfArms::linkParents(const Titles& titles)
+{
+	auto counter = 0;
+	const auto& titleData = titles.getTitles();
+	for (const auto& coat: coats)
+	{
+		if (coat.second->getParent().first.empty())
+			continue;
+		const auto& titleDataItr = titleData.find(coat.second->getParent().first);
+		if (titleDataItr != titleData.end())
+		{
+			if (!titleDataItr->second->getCoA())
+				throw std::runtime_error("CoA " + std::to_string(coat.first) + " has parent " + coat.second->getParent().first + " which has no coat defined!");
+			if (!coats.count(titleDataItr->second->getCoA()->first))
+				throw std::runtime_error("CoA " + std::to_string(coat.first) + " has parent " + coat.second->getParent().first + " which has invalid coat defined!");
+			coat.second->loadParent(std::make_pair(coat.second->getParent().first, coats[titleDataItr->second->getCoA()->first]));
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error("CoA " + std::to_string(coat.first) + " has parent " + coat.second->getParent().first + " which is undefined!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " coats updated.";
 }

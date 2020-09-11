@@ -1,19 +1,19 @@
-#include "BaronyHolding.h"
+#include "ProvinceHolding.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::BaronyHolding::BaronyHolding(std::istream& theStream)
+CK3::ProvinceHolding::ProvinceHolding(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 }
 
-void CK3::BaronyHolding::registerKeys()
+void CK3::ProvinceHolding::registerKeys()
 {
 	registerKeyword("holding", [this](const std::string& unused, std::istream& theStream) {
 		// A bit of recursion is good for sanity.
-		const auto& holdingDetails = BaronyHolding(theStream);
+		const auto& holdingDetails = ProvinceHolding(theStream);
 		holdingType = holdingDetails.getHoldingType();
 		buildings = holdingDetails.getBuildings();
 		specialBuilding = holdingDetails.getSpecialBuilding();
@@ -30,7 +30,7 @@ void CK3::BaronyHolding::registerKeys()
 		for (const auto& blob: buildingBlobs)
 		{
 			auto blobStream = std::stringstream(blob);
-			const auto newBuilding = BaronyHolding(blobStream).getHoldingType();
+			const auto newBuilding = ProvinceHolding(blobStream).getHoldingType();
 			if (!newBuilding.empty())
 				buildings.insert(newBuilding);
 		}

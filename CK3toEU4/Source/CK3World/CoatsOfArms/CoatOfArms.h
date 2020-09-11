@@ -26,6 +26,8 @@ class CoatOfArms: commonItems::parser
 	[[nodiscard]] const auto& getInstances() const { return instances; }
 	[[nodiscard]] const auto& getParent() const { return parent; }
 
+	void loadParent(const std::pair<std::string, std::shared_ptr<CoatOfArms>>& theParent) { parent = theParent; }
+
   private:
 	void registerKeys();
 

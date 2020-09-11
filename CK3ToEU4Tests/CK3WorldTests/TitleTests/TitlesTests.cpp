@@ -1,5 +1,7 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
+#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
+#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -49,4 +51,38 @@ TEST(CK3World_TitlesTests, junkTitlesAreIgnored)
 	const CK3::Titles titles(input);
 
 	ASSERT_EQ(2, titles.getTitles().size());
+}
+
+TEST(CK3World_TitlesTests, coatsCanBeLinked)
+{
+	std::stringstream input;
+	input << "13={key=\"c_county\"\n coat_of_arms_id = 1}\n";
+	input << "15={key=\"d_duchy\"\n coat_of_arms_id = 2}\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { pattern=\"smooth\"}\n";
+	input2 << "2 = { pattern=\"lumpy\"}\n";
+	const CK3::CoatsOfArms coats(input2);
+	titles.linkCoats(coats);
+
+	const auto& t1 = titles.getTitles().find("c_county");
+	const auto& t2 = titles.getTitles().find("d_duchy");
+
+	ASSERT_EQ("smooth", t1->second->getCoA()->second->getPattern());
+	ASSERT_EQ("lumpy", t2->second->getCoA()->second->getPattern());
+}
+
+TEST(CK3World_TitlesTests, linkingMissingCoatsThrowsException)
+{
+	std::stringstream input;
+	input << "13={key=\"c_county\"\n coat_of_arms_id = 1}\n";
+	input << "15={key=\"d_duchy\"\n coat_of_arms_id = 2}\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { pattern=\"smooth\"}\n";
+	CK3::CoatsOfArms coats(input2);
+
+	ASSERT_THROW(titles.linkCoats(coats), std::runtime_error);
 }

@@ -28,8 +28,8 @@ void CK3::CharacterDomain::registerKeys()
 		realmCapital = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerKeyword("domain", [this](const std::string& unused, std::istream& theStream) {
-		for (auto baronyID: commonItems::intList(theStream).getInts())
-			domain.insert(std::pair(baronyID, nullptr));
+		for (auto titleID: commonItems::intList(theStream).getInts())
+			domain.emplace_back(std::pair(titleID, nullptr));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
