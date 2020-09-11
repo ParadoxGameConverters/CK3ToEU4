@@ -40,10 +40,14 @@ class LandedTitles: commonItems::parser
 	bool definiteForm = false;
 	bool landless = false;
 	std::optional<commonItems::Color> color;
-	std::optional<std::pair<std::string, std::shared_ptr<Title>>> capital; // This is of questionable use as savegame already defines defacto capitals. Not always present and if present a COUNTY.
-	std::pair<int, std::shared_ptr<ProvinceHolding>> province;	  // only b_baronies have these - holdings are related to individual provinces on map.
-	std::pair<std::string, std::shared_ptr<CountyDetail>> county; // only c_counties have these - these define common data for group of baronies under county.
-	std::map<std::string, std::shared_ptr<LandedTitles>> foundTitles; // We're using title name, not savegame ID for key value.
+	// This is of questionable use as savegame already defines defacto capitals. Not always present and if present a COUNTY.
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> capital;
+	// only b_baronies have these - holdings are related to individual provinces on map.
+	std::optional<std::pair<int, std::shared_ptr<ProvinceHolding>>> province;
+	// only c_counties have these - these define common data for group of baronies under county.
+	std::optional<std::pair<std::string, std::shared_ptr<CountyDetail>>> county;
+	// We're using title name, not savegame ID for key value.
+	std::map<std::string, std::shared_ptr<LandedTitles>> foundTitles;
 };
 } // namespace CK3
 
