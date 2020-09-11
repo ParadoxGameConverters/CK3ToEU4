@@ -45,16 +45,14 @@ void CK3::Title::registerKeys()
 		djLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
-		for (const auto& vassalID: commonItems::intList(theStream).getInts())
-		{
-			djVassals.emplace(std::pair(vassalID, nullptr));
-		}
+		if (!djVassals)
+			djVassals = std::map<int, std::shared_ptr<Title>>();
+		for (auto vassalID: commonItems::intList(theStream).getInts())
+			djVassals->insert(std::make_pair(vassalID, nullptr));
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
-		for (const auto& heirID: commonItems::intList(theStream).getInts())
-		{
+		for (auto heirID: commonItems::intList(theStream).getInts())
 			heirs.emplace_back(std::pair(heirID, nullptr));
-		}
 	});
 	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
 		const auto& theLaws = commonItems::stringList(theStream).getStrings();

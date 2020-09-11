@@ -32,6 +32,10 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getCoA() const { return coa; }
 
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
+	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
+	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
+	void loadDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
+	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
 
   private:
 	void registerKeys();

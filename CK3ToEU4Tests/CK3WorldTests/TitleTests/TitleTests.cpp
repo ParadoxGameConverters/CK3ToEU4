@@ -27,7 +27,7 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(theTitle.getCapital().first);
 	ASSERT_FALSE(theTitle.getDFLiege());
 	ASSERT_FALSE(theTitle.getDJLiege());
-	ASSERT_TRUE(theTitle.getDJVassals());
+	ASSERT_FALSE(theTitle.getDJVassals());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
 	ASSERT_FALSE(theTitle.getCoA());
 }

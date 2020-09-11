@@ -16,6 +16,7 @@ class Titles: commonItems::parser
 	[[nodiscard]] const auto& getCounter() const { return titleCounter; }
 
 	void linkCoats(const CoatsOfArms& coats);
+	void linkTitles();
 
   private:
 	void registerKeys();
