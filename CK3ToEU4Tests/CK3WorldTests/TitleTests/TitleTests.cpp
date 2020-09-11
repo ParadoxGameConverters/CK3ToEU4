@@ -25,9 +25,9 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(theTitle.isCountyCapitalBarony());
 	ASSERT_FALSE(theTitle.isDuchyCapitalBarony());
 	ASSERT_FALSE(theTitle.getCapital().first);
-	ASSERT_FALSE(theTitle.getDFLiege().first);
-	ASSERT_FALSE(theTitle.getDJLiege().first);
-	ASSERT_TRUE(theTitle.getDJVassals().empty());
+	ASSERT_FALSE(theTitle.getDFLiege());
+	ASSERT_FALSE(theTitle.getDJLiege());
+	ASSERT_TRUE(theTitle.getDJVassals());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
 	ASSERT_FALSE(theTitle.getCoA());
 }
@@ -64,10 +64,10 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	ASSERT_TRUE(theTitle.isCountyCapitalBarony());
 	ASSERT_TRUE(theTitle.isDuchyCapitalBarony());
 	ASSERT_EQ(123, theTitle.getCapital().first);
-	ASSERT_EQ(1234, theTitle.getDFLiege().first);
-	ASSERT_EQ(12345, theTitle.getDJLiege().first);
-	ASSERT_EQ(5, theTitle.getDJVassals().size());
-	ASSERT_EQ(1, theTitle.getDJVassals().count(1));
+	ASSERT_EQ(1234, theTitle.getDFLiege()->first);
+	ASSERT_EQ(12345, theTitle.getDJLiege()->first);
+	ASSERT_EQ(5, theTitle.getDJVassals()->size());
+	ASSERT_EQ(1, theTitle.getDJVassals()->count(1));
 	ASSERT_EQ(3, theTitle.getHeirs().size());
 	ASSERT_EQ(3, theTitle.getHeirs()[0].first);
 	ASSERT_EQ(4, theTitle.getHeirs()[1].first);

@@ -45,11 +45,11 @@ class Title: commonItems::parser
 	std::string historyGovernment;											 // Unclear why this is history. Maybe further governments override it.
 	date creationDate;															 // Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
 	std::optional<std::pair<int, std::shared_ptr<CoatOfArms>>> coa; // This is dejure flag but not defacto.
-	std::pair<int, std::shared_ptr<Title>> dfLiege;						 // defacto liege title (d_kalyani)
-	std::pair<int, std::shared_ptr<Title>> djLiege;						 // dejure liege title (d_rattapadi)
+	std::optional<std::pair<int, std::shared_ptr<Title>>> dfLiege;	 // defacto liege title (d_kalyani)
+	std::optional<std::pair<int, std::shared_ptr<Title>>> djLiege;	 // dejure liege title (d_rattapadi)
 	std::pair<int, std::shared_ptr<Character>> holder;					 // Holding character
-	std::map<int, std::shared_ptr<Title>> dfVassals;					 // defacto vassals, not in save, manually linked post-loading
-	std::map<int, std::shared_ptr<Title>> djVassals;					 // dejure vassals (for all except baronies and titulars)
+	std::optional<std::map<int, std::shared_ptr<Title>>> dfVassals; // defacto vassals, not in save, manually linked post-loading
+	std::optional<std::map<int, std::shared_ptr<Title>>> djVassals; // dejure vassals (for all except baronies and titulars)
 	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs;	 // Order of heirs is unclear so we're keeping them ordered and using first if able.
 	std::map<int, std::shared_ptr<Character>> claims;					 // Incredibly useful.
 	bool theocraticLease = false;												 // Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?

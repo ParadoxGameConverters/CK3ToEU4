@@ -47,7 +47,7 @@ void CK3::Title::registerKeys()
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
 		for (const auto& vassalID: commonItems::intList(theStream).getInts())
 		{
-			djVassals.insert(std::pair(vassalID, nullptr));
+			djVassals.emplace(std::pair(vassalID, nullptr));
 		}
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
