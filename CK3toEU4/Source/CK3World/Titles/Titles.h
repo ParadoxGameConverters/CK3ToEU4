@@ -6,6 +6,7 @@ namespace CK3
 {
 class Title;
 class CoatsOfArms;
+class Characters;
 class Titles: commonItems::parser
 {
   public:
@@ -17,6 +18,7 @@ class Titles: commonItems::parser
 
 	void linkCoats(const CoatsOfArms& coats);
 	void linkTitles();
+	void linkCharacters(const Characters& characters);
 
   private:
 	void registerKeys();

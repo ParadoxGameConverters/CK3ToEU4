@@ -23,6 +23,10 @@ void CK3::Title::registerKeys()
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		creationDate = date(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("claim", [this](const std::string& unused, std::istream& theStream) {
+		for (auto claimantID: commonItems::intList(theStream).getInts())
+			claimants.insert(std::make_pair(claimantID, nullptr));
+	});
 	registerKeyword("history_government", [this](const std::string& unused, std::istream& theStream) {
 		historyGovernment = commonItems::singleString(theStream).getString();
 	});
@@ -45,10 +49,8 @@ void CK3::Title::registerKeys()
 		djLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
-		if (!djVassals)
-			djVassals = std::map<int, std::shared_ptr<Title>>();
 		for (auto vassalID: commonItems::intList(theStream).getInts())
-			djVassals->insert(std::make_pair(vassalID, nullptr));
+			djVassals.insert(std::make_pair(vassalID, nullptr));
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
 		for (auto heirID: commonItems::intList(theStream).getInts())

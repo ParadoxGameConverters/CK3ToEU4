@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
+#include "../Characters/Characters.h"
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -112,10 +113,10 @@ void CK3::Titles::linkTitles()
 			}
 		}
 		// DJVassals
-		if (title.second->getDJVassals())
+		if (!title.second->getDJVassals().empty())
 		{
 			std::map<int, std::shared_ptr<Title>> replacementMap;
-			for (const auto& dJVassal: *title.second->getDJVassals())
+			for (const auto& dJVassal: title.second->getDJVassals())
 			{
 				const auto& cacheItr = IDCache.find(dJVassal.first);
 				if (cacheItr != IDCache.end())
@@ -147,4 +148,65 @@ void CK3::Titles::linkTitles()
 	}
 
 	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter << " dejure vassals updated.";
+}
+
+void CK3::Titles::linkCharacters(const Characters& characters)
+{
+	auto holderCounter = 0;
+	auto claimantCounter = 0;
+	auto heirCounter = 0;
+
+	const auto& characterData = characters.getCharacters();
+	for (const auto& title: titles)
+	{
+		// Holder
+		if (title.second->getHolder())
+		{
+			const auto& characterDataItr = characterData.find(title.second->getHolder()->first);
+			if (characterDataItr != characterData.end())
+			{
+				title.second->loadHolder(*characterDataItr);
+				++holderCounter;
+			}
+			else
+			{
+				throw std::runtime_error("Title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who has no definition!");
+			}
+		}
+		// claimants
+		std::map<int, std::shared_ptr<Character>> replacementMap;
+		for (const auto& claimant: title.second->getClaimants())
+		{
+			const auto& characterDataItr = characterData.find(claimant.first);
+			if (characterDataItr != characterData.end())
+			{
+				replacementMap.insert(*characterDataItr);
+				++claimantCounter;
+			}
+			else
+			{
+				throw std::runtime_error("Title " + title.first + " has claimant " + std::to_string(claimant.first) + " who has no definition!");
+			}			
+		}
+		title.second->loadClaimants(replacementMap);
+
+		// heirs
+		std::vector<std::pair<int, std::shared_ptr<Character>>> replacementVector;
+		for (const auto& heir: title.second->getHeirs())
+		{
+			const auto& characterDataItr = characterData.find(heir.first);
+			if (characterDataItr != characterData.end())
+			{
+				replacementVector.emplace_back(*characterDataItr);
+				++heirCounter;
+			}
+			else
+			{
+				// Dead person, save hadn't updated state yet.
+			}
+		}
+		title.second->loadHeirs(replacementVector);
+	}
+
+	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs updated.";
 }

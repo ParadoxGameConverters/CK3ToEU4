@@ -327,4 +327,6 @@ void CK3::World::crosslinkDatabases()
 	landedTitles.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Characters into Characters.";
 	characters.linkCharacters();
+	Log(LogLevel::Info) << "-> Loading Characters into Titles.";
+	titles.linkCharacters(characters);
 }
