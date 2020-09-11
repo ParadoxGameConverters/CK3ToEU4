@@ -88,24 +88,27 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
 	verifySave(theConfiguration->getSaveGamePath());
 	processSave(theConfiguration->getSaveGamePath());
+	Log(LogLevel::Progress) << "5 %";
 
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
+	Log(LogLevel::Progress) << "10 %";
 
 	LOG(LogLevel::Info) << "* Priming Converter Components *";
 	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
+	Log(LogLevel::Progress) << "15 %";
 
 	LOG(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
-	Log(LogLevel::Progress) << "10 %";
+	Log(LogLevel::Progress) << "20 %";
 	clearRegisteredKeywords();
 
 	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
 	crosslinkDatabases();
-
+	Log(LogLevel::Progress) << "30 %";
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
