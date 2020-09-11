@@ -1,4 +1,6 @@
 #include "Title.h"
+#include "../Geography/CountyDetail.h"
+#include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
@@ -67,4 +69,25 @@ void CK3::Title::registerKeys()
 		coa = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+int CK3::Title::flagDeJureHREProvinces()
+{
+	auto counter = 0;
+	// Flag our dejure counties, or our dejure vassals' counties, wherever those may be.
+	// Actual flagging will happen on county level as higher titles have no dejure provinces linked to them at this stage.
+	// We're leaving baronies out of this, counties are sufficient.
+	for (const auto& deJureVassal: djVassals)
+	{
+		counter += deJureVassal.second->flagDeJureHREProvinces();
+	}
+	if (!clay) // We really need the county clay to confirm we're a landful proper county.
+		return counter;
+	if (!clay->getCounty() || name.find("c_") != 0)
+		return counter;
+
+	clay->getCounty()->second->setDeJureHRE();
+	++counter;
+
+	return counter;
 }

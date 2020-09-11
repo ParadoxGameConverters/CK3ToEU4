@@ -8,6 +8,7 @@ namespace CK3
 {
 class Character;
 class CoatOfArms;
+class LandedTitles;
 class Title: commonItems::parser
 {
   public:
@@ -31,7 +32,9 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getLaws() const { return laws; }
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
+	[[nodiscard]] const auto& getClay() const { return clay; }
 
+	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
 	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
 	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
@@ -40,6 +43,10 @@ class Title: commonItems::parser
 	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
 	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
+	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
+
+	// processing
+	[[nodiscard]] int flagDeJureHREProvinces();
 
   private:
 	void registerKeys();
@@ -64,6 +71,7 @@ class Title: commonItems::parser
 	std::set<std::string> laws;
 	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
+	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
 };
 } // namespace CK3
 

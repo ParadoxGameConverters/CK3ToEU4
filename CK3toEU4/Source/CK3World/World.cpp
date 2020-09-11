@@ -4,6 +4,7 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
+#include "Titles/Title.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
@@ -109,6 +110,10 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
 	crosslinkDatabases();
 	Log(LogLevel::Progress) << "30 %";
+
+	// processing
+	LOG(LogLevel::Info) << "-- Flagging HRE Provinces";
+	flagHREProvinces(*theConfiguration);
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -332,4 +337,44 @@ void CK3::World::crosslinkDatabases()
 	characters.linkCharacters();
 	Log(LogLevel::Info) << "-> Loading Characters into Titles.";
 	titles.linkCharacters(characters);
+	Log(LogLevel::Info) << "-> Loading Clay into Titles.";
+	titles.linkLandedTitles(landedTitles);
+}
+
+void CK3::World::flagHREProvinces(const Configuration& theConfiguration) const
+{
+	std::string hreTitle;
+	switch (theConfiguration.getHRE())
+	{
+		case Configuration::I_AM_HRE::HRE:
+			hreTitle = "e_hre";
+			break;
+		case Configuration::I_AM_HRE::BYZANTIUM:
+			hreTitle = "e_byzantium";
+			break;
+		case Configuration::I_AM_HRE::ROME:
+			hreTitle = "e_roman_empire";
+			break;
+		case Configuration::I_AM_HRE::CUSTOM:
+			hreTitle = iAmHreMapper.getHRE();
+			break;
+		case Configuration::I_AM_HRE::NONE:
+			Log(LogLevel::Info) << ">< HRE Provinces not available due to configuration disabling HRE Mechanics.";
+			return;
+	}
+	const auto& allTitles = titles.getTitles();
+	const auto& theHre = allTitles.find(hreTitle);
+	if (theHre == allTitles.end())
+	{
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " not found!";
+		return;
+	}
+	if (theHre->second->getDFVassals().empty())
+	{
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " has no vassals!";
+		return;
+	}
+
+	const auto counter = theHre->second->flagDeJureHREProvinces();
+	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
 }

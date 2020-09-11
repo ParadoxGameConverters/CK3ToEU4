@@ -4,6 +4,8 @@
 #include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
 #include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -294,4 +296,46 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)
 
 	ASSERT_EQ(1, t1->second->getHeirs().size());
 	ASSERT_EQ("Carol", t1->second->getHeirs()[0].second->getName());
+}
+
+TEST(CK3World_TitlesTests, landedTitlesCanBeLinked)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county }\n";
+	input << "15 = { key = d_duchy }\n";
+	input << "17 = { key = x_x_17 }\n"; // landless faction
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "c_county = { landless = yes }\n";
+	input2 << "d_duchy = { province = 12 }\n";
+	CK3::LandedTitles clay;
+	clay.loadTitles(input2);
+	titles.linkLandedTitles(clay);
+
+	const auto& t1 = titles.getTitles().find("c_county");
+	const auto& t2 = titles.getTitles().find("d_duchy");
+	const auto& t3 = titles.getTitles().find("x_x_17");
+
+	ASSERT_TRUE(t1->second->getClay()->isLandless());
+	ASSERT_EQ(12, t2->second->getClay()->getProvince()->first);
+	ASSERT_FALSE(t3->second->getClay());
+}
+
+TEST(CK3World_TitlesTests, landedTitlesLinkMissingTitleThrowsException)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county }\n";
+	input << "15 = { key = d_duchy }\n";
+	input << "17 = { key = x_x_17 }\n"; // landless faction
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "d_duchy = { province = 12 }\n";
+	input2 << "c_county = { landless = yes }\n";
+	input2 << "k_kingdom = { landless = yes }\n"; // missing title
+	CK3::LandedTitles clay;
+	clay.loadTitles(input2);
+
+	ASSERT_THROW(titles.linkLandedTitles(clay), std::runtime_error);
 }

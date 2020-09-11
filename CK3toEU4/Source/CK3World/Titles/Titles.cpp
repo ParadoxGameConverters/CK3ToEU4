@@ -1,9 +1,10 @@
 #include "Titles.h"
+#include "../Characters/Characters.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
+#include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
-#include "../Characters/Characters.h"
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -147,7 +148,8 @@ void CK3::Titles::linkTitles()
 		}
 	}
 
-	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter << " dejure vassals updated.";
+	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter
+							  << " dejure vassals updated.";
 }
 
 void CK3::Titles::linkCharacters(const Characters& characters)
@@ -186,7 +188,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			else
 			{
 				throw std::runtime_error("Title " + title.first + " has claimant " + std::to_string(claimant.first) + " who has no definition!");
-			}			
+			}
 		}
 		title.second->loadClaimants(replacementMap);
 
@@ -209,4 +211,24 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 	}
 
 	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs updated.";
+}
+
+void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)
+{
+	// We're injecting clay towards titles instead the other way around.
+	auto counter = 0;
+	for (const auto& clay: landedTitles.getFoundTitles())
+	{
+		const auto& titleItr = titles.find(clay.first);
+		if (titleItr != titles.end())
+		{
+			titleItr->second->loadClay(clay.second);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error("Clay for " + clay.first + " has no title definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
 }
