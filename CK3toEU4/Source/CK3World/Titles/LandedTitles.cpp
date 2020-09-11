@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
+#include "Titles.h"
 #include "../Geography/ProvinceHoldings.h"
 #include "../Geography/ProvinceHolding.h"
 #include "../Geography/CountyDetails.h"
@@ -103,4 +104,26 @@ void CK3::LandedTitles::linkCountyDetails(const CountyDetails& countyDetails)
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed titles updated.";
+}
+
+void CK3::LandedTitles::linkTitles(const Titles& titles)
+{
+	auto counter = 0;
+	const auto& titleData = titles.getTitles();
+	for (const auto& landedTitle: foundTitles)
+	{
+		if (!landedTitle.second->getCapital())
+			continue;
+		const auto& titleDataItr = titleData.find(landedTitle.second->getCapital()->first);
+		if (titleDataItr != titleData.end())
+		{
+			landedTitle.second->loadCapital(*titleDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error("Landed title " + landedTitle.first + " has a capital " + capital->first + " which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " landed title capitals updated.";
 }

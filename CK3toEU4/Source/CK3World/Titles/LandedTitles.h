@@ -7,6 +7,7 @@ extern commonItems::Color::Factory laFabricaDeColor;
 namespace CK3
 {
 class Title;
+class Titles;
 class ProvinceHolding;
 class ProvinceHoldings;
 class CountyDetails;
@@ -27,9 +28,11 @@ class LandedTitles: commonItems::parser
 
 	void loadProvinceHolding(const std::pair<int, std::shared_ptr<ProvinceHolding>>& provinceHolding) { province = provinceHolding; }
 	void loadCountyDetails(const std::pair<std::string, std::shared_ptr<CountyDetail>>& countyDetail) { county = countyDetail; }
+	void loadCapital(const std::pair<std::string, std::shared_ptr<Title>>& theCapital) { capital = theCapital; }
 
 	void linkProvinceHoldings(const ProvinceHoldings& provinceHoldings);
 	void linkCountyDetails(const CountyDetails& countyDetails);
+	void linkTitles(const Titles& titles);
 
   private:
 	void registerKeys();
@@ -37,7 +40,7 @@ class LandedTitles: commonItems::parser
 	bool definiteForm = false;
 	bool landless = false;
 	std::optional<commonItems::Color> color;
-	std::pair<std::string, std::shared_ptr<Title>> capital;		  // This is of questionable use as savegame already defines defacto capitals.
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> capital; // This is of questionable use as savegame already defines defacto capitals. Not always present and if present a COUNTY.
 	std::pair<int, std::shared_ptr<ProvinceHolding>> province;	  // only b_baronies have these - holdings are related to individual provinces on map.
 	std::pair<std::string, std::shared_ptr<CountyDetail>> county; // only c_counties have these - these define common data for group of baronies under county.
 	std::map<std::string, std::shared_ptr<LandedTitles>> foundTitles; // We're using title name, not savegame ID for key value.

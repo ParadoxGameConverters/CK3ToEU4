@@ -1,4 +1,6 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
 #include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHoldings.h"
 #include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "../../CK3toEU4/Source/CK3World/Geography/CountyDetails.h"
@@ -15,7 +17,7 @@ TEST(CK3World_LandedTitlesTests, titlePrimitivesDefaultToBlank)
 	ASSERT_FALSE(titles.isDefiniteForm());
 	ASSERT_FALSE(titles.isLandless());
 	ASSERT_FALSE(titles.getColor());
-	ASSERT_TRUE(titles.getCapital().first.empty());
+	ASSERT_FALSE(titles.getCapital());
 	ASSERT_FALSE(titles.getProvince().first);
 }
 
@@ -34,7 +36,7 @@ TEST(CK3World_LandedTitlesTests, titlePrimitivesCanBeLoaded)
 	ASSERT_TRUE(titles.isDefiniteForm());
 	ASSERT_TRUE(titles.isLandless());
 	ASSERT_EQ("= rgb { 23 23 23 }", titles.getColor()->outputRgb());
-	ASSERT_EQ("c_roma", titles.getCapital().first);
+	ASSERT_EQ("c_roma", titles.getCapital()->first);
 	ASSERT_EQ(345, titles.getProvince().first);
 }
 
@@ -191,4 +193,25 @@ TEST(CK3World_LandedTitlesTests, missingCountiesLinkThrowsException)
 	const CK3::CountyDetails counties(input2);
 
 	ASSERT_THROW(titles.linkCountyDetails(counties), std::runtime_error);
+}
+
+TEST(CK3World_LandedTitlesTests, titlesCanBeLinked)
+{
+	std::stringstream input;
+	input << "d_duchy1 = { capital = c_county1\n c_county1 = { b_barony1 = { province = 22 } } } }\n";
+	input << "d_duchy2 = { capital = c_county2\n c_county2 = { b_barony2 = { province = 25 } } }\n";
+	CK3::LandedTitles clays;
+	clays.loadTitles(input);
+
+	std::stringstream input2;
+	input2 << "13={key=\"c_county1\"\n coat_of_arms_id = 1}\n";
+	input2 << "15={key=\"c_county2\"\n coat_of_arms_id = 2}\n";
+	CK3::Titles titles(input2);
+
+	clays.linkTitles(titles);
+	const auto& c1 = clays.getFoundTitles().find("d_duchy1");
+	const auto& c2 = clays.getFoundTitles().find("d_duchy2");
+
+	ASSERT_EQ(1, c1->second->getCapital()->second->getCoA()->first);
+	ASSERT_EQ(2, c2->second->getCapital()->second->getCoA()->first);
 }
