@@ -58,6 +58,9 @@
     <Filter Include="Mappers\IAmHreMapper">
       <UniqueIdentifier>{74185d55-fdf5-4d83-a6f1-1aa02a73e5a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\ShatterEmpiresMapper">
+      <UniqueIdentifier>{88b8bd89-4dcd-4ad1-9167-85be29b0481a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -201,6 +204,9 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h">
       <Filter>Mappers\IAmHreMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.h">
+      <Filter>Mappers\ShatterEmpiresMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -346,6 +352,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp">
       <Filter>Mappers\IAmHreMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp">
+      <Filter>Mappers\ShatterEmpiresMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

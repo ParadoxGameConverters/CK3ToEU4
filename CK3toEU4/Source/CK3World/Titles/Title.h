@@ -17,6 +17,9 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isTheocraticLease() const { return theocraticLease; }
 	[[nodiscard]] auto isCountyCapitalBarony() const { return cCapitalBarony; }
 	[[nodiscard]] auto isDuchyCapitalBarony() const { return dCapitalBarony; }
+	[[nodiscard]] auto isHREEmperor() const { return HREEmperor; }
+	[[nodiscard]] auto isInHRE() const { return inHRE; }
+	[[nodiscard]] auto isThePope() const { return thePope; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -33,20 +36,39 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
 	[[nodiscard]] const auto& getClay() const { return clay; }
+	[[nodiscard]] const auto& getOwnedDFCounties() const { return ownedDFCounties; }
+	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
 	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
 	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
 	void loadDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
+	void addDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals.insert(DFVassals.begin(), DFVassals.end()); }
 	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
 	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
 	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
 	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
+	void loadOwnedDFCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDFCounties = theOwnedCounties; }
+	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
 
 	// processing
 	[[nodiscard]] int flagDeJureHREProvinces();
+	void brickTitle();
+	void grantIndependence();
+	void resetDFLiege() { dfLiege.reset(); }
+	void setHREEmperor() { HREEmperor = true; }
+	void setInHRE() { inHRE = true; }
+	void dropTitleFromDFVassals(int titleID);
+	void setThePope() { thePope = true; }
+	void congregateDFCounties();
+	void congregateDJCounties();
+	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
+	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
+
+	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
+	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
 
   private:
 	void registerKeys();
@@ -72,6 +94,13 @@ class Title: commonItems::parser
 	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
 	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
+	bool HREEmperor = false;
+	bool inHRE = false;
+	bool thePope = false;
+	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
+	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.
+	std::map<std::string, std::shared_ptr<Title>> generatedVassals;					// Vassals we split off deliberately.
 };
 } // namespace CK3
 

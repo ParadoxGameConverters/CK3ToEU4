@@ -1,4 +1,5 @@
 #include "Title.h"
+#include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
 #include "LandedTitles.h"
 #include "Log.h"
@@ -90,4 +91,83 @@ int CK3::Title::flagDeJureHREProvinces()
 	++counter;
 
 	return counter;
+}
+
+void CK3::Title::brickTitle()
+{
+	grantIndependence();
+
+	// Drop from own holder's domain.
+	if (holder)
+		holder->second->dropTitleFromDomain(ID);
+	// Drop holder
+	holder.reset();
+
+	// release all vassals
+	for (const auto& vassal: dfVassals)
+		vassal.second->grantIndependence();
+	dfVassals.clear(); // just in case?
+}
+
+void CK3::Title::dropTitleFromDFVassals(int titleID)
+{
+	const auto& dfvItr = dfVassals.find(titleID);
+	if (dfvItr != dfVassals.end())
+		dfVassals.erase(dfvItr);
+}
+
+void CK3::Title::grantIndependence()
+{
+	// Drop this title from liege holder's vassals
+	if (dfLiege)
+		dfLiege->second->dropTitleFromDFVassals(ID);
+
+	// Drop liege
+	dfLiege.reset();
+}
+
+std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDFCounties() const
+{
+	// We're gathering vassal's counties + self (if c_), and passing them on, adding nothing to ourselves.
+	std::map<std::string, std::shared_ptr<Title>> toReturn;
+	for (const auto& vassal: dfVassals)
+	{
+		const auto& vassalCounties = vassal.second->coalesceDFCounties();
+		toReturn.insert(vassalCounties.begin(), vassalCounties.end());
+	}
+	toReturn.insert(ownedDFCounties.begin(), ownedDFCounties.end());
+	return toReturn;
+}
+
+std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDJCounties() const
+{
+	// We're gathering vassal dejure provinces + our own, and passing them on, adding nothing to ourselves.
+	std::map<std::string, std::shared_ptr<Title>> toReturn;
+	for (const auto& deJureVassal: djVassals)
+	{
+		const auto& vassalDJCounties = deJureVassal.second->coalesceDJCounties();
+		toReturn.insert(vassalDJCounties.begin(), vassalDJCounties.end());
+	}
+	toReturn.insert(ownedDJCounties.begin(), ownedDJCounties.end());
+	return toReturn;
+}
+
+void CK3::Title::congregateDFCounties()
+{
+	// We're gathering vassal counties and adding to our own.
+	for (const auto& vassal: dfVassals)
+	{
+		const auto& vassalDFCounties = vassal.second->coalesceDFCounties();
+		ownedDFCounties.insert(vassalDFCounties.begin(), vassalDFCounties.end());
+	}
+}
+
+void CK3::Title::congregateDJCounties()
+{
+	// We're gathering de jure vassal de jure counties and adding to our own.
+	for (const auto& deJureVassal: djVassals)
+	{
+		const auto& deJureVassalDJCounties = deJureVassal.second->coalesceDJCounties();
+		ownedDJCounties.insert(deJureVassalDJCounties.begin(), deJureVassalDJCounties.end());
+	}
 }

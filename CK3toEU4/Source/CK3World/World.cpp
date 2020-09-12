@@ -2,13 +2,14 @@
 #include "../Configuration/Configuration.h"
 #include "../Helpers/rakaly_wrapper.h"
 #include "../commonItems/ParserHelpers.h"
+#include "Characters/Character.h"
+#include "Characters/CharacterDomain.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "Titles/Title.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
-
 namespace fs = std::filesystem;
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
@@ -114,6 +115,14 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	// processing
 	LOG(LogLevel::Info) << "-- Flagging HRE Provinces";
 	flagHREProvinces(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Shattering HRE";
+	shatterHRE(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Shattering Empires";
+	shatterEmpires(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Filtering Independent Titles";
+	filterIndependentTitles();
+	LOG(LogLevel::Info) << "-- Splitting Off Vassals";
+	splitVassals(*theConfiguration);
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -377,4 +386,305 @@ void CK3::World::flagHREProvinces(const Configuration& theConfiguration) const
 
 	const auto counter = theHre->second->flagDeJureHREProvinces();
 	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
+}
+
+void CK3::World::shatterHRE(const Configuration& theConfiguration) const
+{
+	std::string hreTitle;
+	switch (theConfiguration.getHRE())
+	{
+		case Configuration::I_AM_HRE::HRE:
+			hreTitle = "e_hre";
+			break;
+		case Configuration::I_AM_HRE::BYZANTIUM:
+			hreTitle = "e_byzantium";
+			break;
+		case Configuration::I_AM_HRE::ROME:
+			hreTitle = "e_roman_empire";
+			break;
+		case Configuration::I_AM_HRE::CUSTOM:
+			hreTitle = iAmHreMapper.getHRE();
+			break;
+		case Configuration::I_AM_HRE::NONE:
+			Log(LogLevel::Info) << ">< HRE Mechanics and shattering overridden by configuration.";
+			return;
+	}
+	const auto& allTitles = titles.getTitles();
+	const auto& theHre = allTitles.find(hreTitle);
+	if (theHre == allTitles.end())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " not found!";
+		return;
+	}
+	if (theHre->second->getDFVassals().empty())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no vassals!";
+		return;
+	}
+	if (!theHre->second->getHolder())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no holder!";
+		return;
+	}
+	const auto& hreHolder = theHre->second->getHolder();
+	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
+
+	// First we are composing a list of all HRE members. These are duchies,
+	// so we're also ripping them from under any potential kingdoms.
+	std::map<int, std::shared_ptr<Title>> hreMembers;
+
+	for (const auto& vassal: theHre->second->getDFVassals())
+	{
+		if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+		{
+			hreMembers.insert(vassal);
+		}
+		else if (vassal.second->getName().find("k_") == 0)
+		{
+			if (vassal.second->getName() == "k_papal_state" || vassal.second->getName() == "k_orthodox" ||
+				 theConfiguration.getShatterHRELevel() == Configuration::SHATTER_HRE_LEVEL::KINGDOM) // hard override for special HRE members
+			{
+				hreMembers.insert(vassal);
+			}
+			else
+			{
+				for (const auto& vassalvassal: vassal.second->getDFVassals())
+				{
+					hreMembers.insert(vassalvassal);
+				}
+				// Bricking the kingdom.
+				vassal.second->brickTitle();
+			}
+		}
+		else if (vassal.second->getName().find("b_") != 0)
+		{
+			Log(LogLevel::Warning) << "Unrecognized HRE vassal: " << vassal.first << " - " << vassal.second->getName();
+		}
+	}
+
+	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
+	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
+	{
+		if (hreHolderTitle.second->getName() == hreTitle) // this is what we're breaking, ignore it.
+			continue;
+		if (hreHolderTitle.second->getName().find("b_") == 0) // Absolutely ignore baronies.
+			continue;
+		if (hreHolderTitle.second->getClay() && !hreHolderTitle.second->getClay()->isLandless())
+		{ // looks solid.
+			hreHolderTitle.second->setHREEmperor();
+			Log(LogLevel::Debug) << "Flagging " << hreHolderTitle.second->getName() << " as His HREship.";
+			emperorSet = true;
+			break;
+		}
+	}
+
+	if (!emperorSet)
+		Log(LogLevel::Warning) << "Couldn't flag His HREship as emperor does not own any viable titles!";
+
+	// We're flagging hre members as such, as well as setting them free.
+	for (const auto& member: hreMembers)
+	{
+		member.second->setInHRE();
+		member.second->grantIndependence();
+	}
+
+	// Finally we brick the hre.
+	theHre->second->brickTitle();
+	Log(LogLevel::Info) << "<> " << hreMembers.size() << " HRE members released.";
+}
+
+void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
+{
+	if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::NONE)
+	{
+		Log(LogLevel::Info) << ">< Empire shattering disabled by configuration.";
+		return;
+	}
+
+	bool shatterKingdoms = true; // the default.
+	switch (theConfiguration.getShatterLevel())
+	{
+		case Configuration::SHATTER_LEVEL::KINGDOM:
+			shatterKingdoms = false;
+			break;
+		case Configuration::SHATTER_LEVEL::DUTCHY:
+			shatterKingdoms = true;
+			break;
+	}
+	const auto& allTitles = titles.getTitles();
+
+	for (const auto& empire: allTitles)
+	{
+		if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::CUSTOM && !shatterEmpiresMapper.isEmpireShatterable(empire.first))
+			continue; // Only considering those listed.
+		if (empire.first.find("e_") != 0 && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
+			continue; // Otherwise only empires.
+		if (empire.second->getDFVassals().empty())
+			continue; // Not relevant.
+
+		// First we are composing a list of all members.
+		std::map<int, std::shared_ptr<Title>> members;
+		for (const auto& vassal: empire.second->getDFVassals())
+		{
+			if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+			{
+				members.insert(vassal);
+			}
+			else if (vassal.second->getName().find("k_") == 0)
+			{
+				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
+				{ // hard override for special empire members
+					for (const auto& vassalvassal: vassal.second->getDFVassals())
+					{
+						members.insert(vassalvassal);
+					}
+					// Bricking the kingdom
+					vassal.second->brickTitle();
+				}
+				else
+				{
+					// Not shattering kingdoms.
+					members.insert(vassal);
+				}
+			}
+			else if (vassal.second->getName().find("b_") != 0)
+			{
+				Log(LogLevel::Warning) << "Unrecognized vassal level: " << vassal.first;
+			}
+		}
+
+		// grant independence to ex-vassals.
+		for (const auto& member: members)
+		{
+			member.second->grantIndependence();
+		}
+
+		// Finally, dispose of the shell.
+		empire.second->brickTitle();
+		Log(LogLevel::Info) << "<> " << empire.first << " shattered, " << members.size() << " members released.";
+	}
+}
+
+void CK3::World::filterIndependentTitles()
+{
+	const auto& allTitles = titles.getTitles();
+	std::map<std::string, std::shared_ptr<Title>> potentialIndeps;
+
+	for (const auto& title: allTitles)
+	{
+		if (!title.second->getHolder())
+			continue; // don't bother with titles without holders.
+		if (!title.second->getDFLiege())
+		{
+			// this is a potential indep.
+			potentialIndeps.insert(title);
+		}
+	}
+
+	// Check if the holder holds any actual land (b|c_something). (Only necessary for the holder,
+	// no need to recurse, we're just filtering landless titular titles like mercenaries
+	// or landless Pope. If a character holds a landless titular title along actual title
+	// (like Caliphate), it's not relevant at this stage as he's independent anyway.
+
+	// First, split off all county_title holders into a container.
+	std::set<int> countyHolders;
+	std::map<int, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
+	for (const auto& title: allTitles)
+	{
+		if (title.second->getHolder() && title.second->getName().find("c_") == 0)
+			countyHolders.insert(title.second->getHolder()->first);
+		allTitleHolders[title.second->getHolder()->first].insert(title);
+	}
+
+	// Then look at all potential indeps and see if their holders hold physical clay.
+	auto counter = 0;
+	for (const auto& indep: potentialIndeps)
+	{
+		const auto& holderID = indep.second->getHolder()->first;
+		if (countyHolders.count(holderID))
+		{
+			// this fellow holds a county, so his indep title is an actual title.
+			independentTitles.insert(indep);
+			counter++;
+			// Set The Pope
+			if (indep.first == "k_papal_state")
+			{
+				indep.second->setThePope();
+				Log(LogLevel::Debug) << indep.first << " is the Pope.";
+			}
+			else
+			{
+				if (allTitleHolders[holderID].count("k_papal_state"))
+				{
+					indep.second->setThePope();
+					Log(LogLevel::Debug) << indep.first << " belongs to the Pope.";
+				}
+			}
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " independent titles recognized.";
+}
+
+void CK3::World::splitVassals(const Configuration& theConfiguration)
+{
+	if (theConfiguration.getSplitVassals() == Configuration::SPLITVASSALS::NO)
+	{
+		Log(LogLevel::Info) << ">< Splitting vassals disabled by configuration.";
+		return;
+	}
+
+	std::map<std::string, std::shared_ptr<Title>> newIndeps;
+
+	// We know who's independent. We can go through all indeps and see what should be an independent vassal.
+	for (const auto& title: independentTitles)
+	{
+		if (title.second->isThePope())
+			continue; // Not touching the pope.
+		// let's not split hordes or tribals. <- TODO: Add horde here once some DLC drops.
+		if (title.second->getHolder()->second->getDomain()->getGovernment() == "tribal_government")
+			continue;
+		auto relevantVassals = 0;
+		std::string relevantVassalPrefix;
+		if (title.first.find("e_") == 0)
+			relevantVassalPrefix = "k_";
+		else if (title.first.find("k_") == 0)
+			relevantVassalPrefix = "d_";
+		else
+			continue; // Not splitting off counties.
+		for (const auto& vassal: title.second->getDFVassals())
+		{
+			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+				continue; // they are not relevant
+			if (vassal.second->coalesceDFCounties().empty())
+				continue; // no land, not relevant
+			relevantVassals++;
+		}
+		if (!relevantVassals)
+			continue;																		// no need to split off anything.
+		const auto& countiesClaimed = title.second->coalesceDFCounties(); // this is our primary total.
+		for (const auto& vassal: title.second->getDFVassals())
+		{
+			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+				continue; // they are not relevant
+			if (vassal.second->getHolder()->first == title.second->getHolder()->first)
+				continue; // Not splitting our own land.
+			const auto& vassalProvincesClaimed = vassal.second->coalesceDFCounties();
+
+			// a vassal goes indep if they control 1/relevantvassals + 10% land.
+			const double threshold = static_cast<double>(countiesClaimed.size()) / relevantVassals + 0.1 * static_cast<double>(countiesClaimed.size());
+			if (static_cast<double>(vassalProvincesClaimed.size()) > threshold)
+				newIndeps.insert(std::pair(vassal.second->getName(), vassal.second));
+		}
+	}
+
+	// Now let's free them.
+	for (const auto& newIndep: newIndeps)
+	{
+		const auto& liege = newIndep.second->getDFLiege();
+		liege->second->addGeneratedVassal(newIndep);
+		newIndep.second->loadGeneratedLiege(std::pair(liege->second->getName(), liege->second));
+		newIndep.second->grantIndependence();
+		independentTitles.insert(newIndep);
+	}
+	Log(LogLevel::Info) << "<> " << newIndeps.size() << " vassals liberated from immediate integration.";
 }

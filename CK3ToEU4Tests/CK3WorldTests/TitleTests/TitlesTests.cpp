@@ -1,11 +1,11 @@
+#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
+#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
+#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
-#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
-#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
-#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
-#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
-#include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
-#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -167,7 +167,52 @@ TEST(CK3World_TitlesTests, titlesCanBeLinked)
 	ASSERT_EQ("c_county5", t7->second->getDFVassals().find(5)->second->getName());
 	ASSERT_EQ(1, t8->second->getDFVassals().size());
 	ASSERT_EQ("d_duchy1", t8->second->getDFVassals().find(6)->second->getName());
+
+	// Testing self-loading on counties.
+	ASSERT_EQ("c_county1", t1->second->getOwnedDFCounties().find("c_county1")->second->getName());
+	ASSERT_EQ("c_county1", t1->second->getOwnedDJCounties().find("c_county1")->second->getName());
+	ASSERT_EQ("c_county2", t2->second->getOwnedDFCounties().find("c_county2")->second->getName());
+	ASSERT_EQ("c_county2", t2->second->getOwnedDJCounties().find("c_county2")->second->getName());
+	ASSERT_EQ("c_county3", t3->second->getOwnedDFCounties().find("c_county3")->second->getName());
+	ASSERT_EQ("c_county3", t3->second->getOwnedDJCounties().find("c_county3")->second->getName());
+	ASSERT_EQ("c_county4", t4->second->getOwnedDFCounties().find("c_county4")->second->getName());
+	ASSERT_EQ("c_county4", t4->second->getOwnedDJCounties().find("c_county4")->second->getName());
+	ASSERT_EQ("c_county5", t5->second->getOwnedDFCounties().find("c_county5")->second->getName());
+	ASSERT_EQ("c_county5", t5->second->getOwnedDJCounties().find("c_county5")->second->getName());
 }
+
+TEST(CK3World_TitlesTests, titlesLinkDeFactoMessIsFixed)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 holder = 11 de_facto_liege = 8 de_jure_liege = 6 }\n"; // defacto 8 due to holder holding both c and d. This is wrong.
+	input << "2 = { key = c_county2 holder = 12 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 13 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 14 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 15 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 11 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 holder = 17 de_jure_liege = 8 de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 18 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	titles.linkTitles();
+
+	const auto& t1 = titles.getTitles().find("c_county1");
+	const auto& t6 = titles.getTitles().find("d_duchy1");
+	const auto& t8 = titles.getTitles().find("k_kingdom1");
+
+	// Testing defacto liege
+	ASSERT_EQ("d_duchy1", t1->second->getDFLiege()->second->getName());	 // fixed from 8 to 6.
+	ASSERT_EQ("k_kingdom1", t6->second->getDFLiege()->second->getName()); // remains 8.
+
+	// Testing defacto vassals
+	ASSERT_EQ(3, t6->second->getDFVassals().size()); // gains c1 in dfvassals.
+	ASSERT_EQ("c_county1", t6->second->getDFVassals().find(1)->second->getName());
+	ASSERT_EQ("c_county2", t6->second->getDFVassals().find(2)->second->getName());
+	ASSERT_EQ("c_county3", t6->second->getDFVassals().find(3)->second->getName());
+	ASSERT_EQ(1, t8->second->getDFVassals().size()); // loses c1 in dfvassals.
+	ASSERT_EQ("d_duchy1", t8->second->getDFVassals().find(6)->second->getName());
+}
+
 
 TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
 {
@@ -291,7 +336,7 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)
 	input2 << "3 = { first_name = Carol }\n";
 	const CK3::Characters characters(input2);
 	titles.linkCharacters(characters);
-	
+
 	const auto& t1 = titles.getTitles().find("c_county");
 
 	ASSERT_EQ(1, t1->second->getHeirs().size());
@@ -338,4 +383,64 @@ TEST(CK3World_TitlesTests, landedTitlesLinkMissingTitleThrowsException)
 	clay.loadTitles(input2);
 
 	ASSERT_THROW(titles.linkLandedTitles(clay), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, titlesCanBeCoalesced)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+	titles.linkTitles();
+
+	const auto& ownedDF8 = titles.getTitles().find("k_kingdom1")->second->coalesceDFCounties();
+	const auto& ownedDJ8 = titles.getTitles().find("k_kingdom1")->second->coalesceDJCounties();
+
+	ASSERT_EQ(5, ownedDJ8.size());
+	ASSERT_EQ("c_county1", ownedDJ8.find("c_county1")->second->getName());
+	ASSERT_EQ("c_county2", ownedDJ8.find("c_county2")->second->getName());
+	ASSERT_EQ("c_county3", ownedDJ8.find("c_county3")->second->getName());
+	ASSERT_EQ("c_county4", ownedDJ8.find("c_county4")->second->getName());
+	ASSERT_EQ("c_county5", ownedDJ8.find("c_county5")->second->getName());
+	ASSERT_EQ(3, ownedDF8.size());
+	ASSERT_EQ("c_county1", ownedDF8.find("c_county1")->second->getName());
+	ASSERT_EQ("c_county2", ownedDF8.find("c_county2")->second->getName());
+	ASSERT_EQ("c_county3", ownedDF8.find("c_county3")->second->getName());
+}
+
+TEST(CK3World_TitlesTests, titlesCanBeCongregated)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+	titles.linkTitles();
+	titles.getTitles().find("k_kingdom1")->second->congregateDFCounties();
+	titles.getTitles().find("k_kingdom1")->second->congregateDJCounties();
+
+	const auto& ownedDF8 = titles.getTitles().find("k_kingdom1")->second->getOwnedDFCounties();
+	const auto& ownedDJ8 = titles.getTitles().find("k_kingdom1")->second->getOwnedDJCounties();
+
+	ASSERT_EQ(5, ownedDJ8.size());
+	ASSERT_EQ("c_county1", ownedDJ8.find("c_county1")->second->getName());
+	ASSERT_EQ("c_county2", ownedDJ8.find("c_county2")->second->getName());
+	ASSERT_EQ("c_county3", ownedDJ8.find("c_county3")->second->getName());
+	ASSERT_EQ("c_county4", ownedDJ8.find("c_county4")->second->getName());
+	ASSERT_EQ("c_county5", ownedDJ8.find("c_county5")->second->getName());
+	ASSERT_EQ(3, ownedDF8.size());
+	ASSERT_EQ("c_county1", ownedDF8.find("c_county1")->second->getName());
+	ASSERT_EQ("c_county2", ownedDF8.find("c_county2")->second->getName());
+	ASSERT_EQ("c_county3", ownedDF8.find("c_county3")->second->getName());
 }

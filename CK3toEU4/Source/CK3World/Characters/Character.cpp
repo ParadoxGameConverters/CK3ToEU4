@@ -103,3 +103,17 @@ void CK3::Character::registerKeys()
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+
+void CK3::Character::dropTitleFromDomain(int titleID)
+{
+	if (characterDomain)
+	{
+		std::vector<std::pair<int, std::shared_ptr<Title>>> replacementDomain;
+		for (const auto& title: characterDomain->getDomain())
+		{
+			if (title.first != titleID)
+				replacementDomain.emplace_back(title);
+		}
+		characterDomain->loadDomain(replacementDomain);
+	}	
+}

@@ -97,6 +97,12 @@
     <Filter Include="MapperTests\IAmHreMapperTests">
       <UniqueIdentifier>{d83da73a-bac0-40a8-ba30-4600f6bcc66a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapperTests\ShatterEmpiresMapperTests">
+      <UniqueIdentifier>{d719a269-e116-43db-8fd2-6d4b1f3df1f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ShatterEmpiresMapper">
+      <UniqueIdentifier>{bdb6ab91-7b6b-4a06-8a0c-b0bbe0bc3178}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -316,6 +322,12 @@
     </ClCompile>
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp">
       <Filter>MapperTests\IAmHreMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp">
+      <Filter>MapperTests\ShatterEmpiresMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\ShatterEmpiresMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

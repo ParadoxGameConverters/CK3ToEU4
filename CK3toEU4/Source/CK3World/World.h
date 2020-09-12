@@ -3,6 +3,7 @@
 
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
+#include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
 #include "Cultures/Cultures.h"
@@ -30,6 +31,7 @@ class World: commonItems::parser
 	explicit World(const std::shared_ptr<Configuration>& theConfiguration);
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
+	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }
 
   private:
 	// savegame processing
@@ -48,6 +50,10 @@ class World: commonItems::parser
 
 	// CK2World processing
 	void flagHREProvinces(const Configuration& theConfiguration) const;
+	void shatterHRE(const Configuration& theConfiguration) const;
+	void shatterEmpires(const Configuration& theConfiguration) const;
+	void filterIndependentTitles();
+	void splitVassals(const Configuration& theConfiguration);
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -67,6 +73,9 @@ class World: commonItems::parser
 	Cultures cultures;
 	mappers::NamedColors namedColors;
 	mappers::IAmHreMapper iAmHreMapper;
+	mappers::ShatterEmpiresMapper shatterEmpiresMapper;
+
+	std::map<std::string, std::shared_ptr<Title>> independentTitles;
 
 	enum class SaveType
 	{
