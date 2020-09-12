@@ -119,6 +119,7 @@
     <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
+    <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h" />
     <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +170,7 @@
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp" />
   </ItemGroup>
   <ItemGroup>

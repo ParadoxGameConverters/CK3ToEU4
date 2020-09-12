@@ -1,10 +1,10 @@
 #include "LandedTitles.h"
+#include "../Geography/CountyDetails.h"
+#include "../Geography/ProvinceHoldings.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
-#include "../Geography/ProvinceHoldings.h"
-#include "../Geography/ProvinceHolding.h"
-#include "../Geography/CountyDetails.h"
+#include "Titles.h"
 
 // This is a recursive class that scrapes 00_landed_titles.txt (and related files) looking for title colors, landlessness,
 // and most importantly relation between baronies and barony provinces so we can link titles to actual clay.
@@ -36,7 +36,7 @@ void CK3::LandedTitles::registerKeys()
 		newTitle->loadTitles(theStream);
 		for (const auto& locatedTitle: newTitle->getFoundTitles())
 			foundTitles[locatedTitle.first] = locatedTitle.second;
-		
+
 		// And then add this one as well, overwriting existing.
 		foundTitles[titleName] = newTitle;
 	});
@@ -67,7 +67,10 @@ void CK3::LandedTitles::linkProvinceHoldings(const ProvinceHoldings& provinceHol
 	{
 		if (landedTitle.first.find("b_") != 0)
 			continue;
-		const auto& provinceDataItr = provinceData.find(landedTitle.second->getProvince().first);
+		if (!landedTitle.second->getProvince())
+			throw std::runtime_error("Landed title " + landedTitle.first + " has not province holding defined!");
+
+		const auto& provinceDataItr = provinceData.find(landedTitle.second->getProvince()->first);
 		if (provinceDataItr != provinceData.end())
 		{
 			landedTitle.second->loadProvinceHolding(*provinceDataItr);
@@ -75,8 +78,8 @@ void CK3::LandedTitles::linkProvinceHoldings(const ProvinceHoldings& provinceHol
 		}
 		else
 		{
-			throw std::runtime_error(
-				 "Landed title " + landedTitle.first + " has province holding " + std::to_string(landedTitle.second->getProvince().first) + " which has no definition!");
+			throw std::runtime_error("Landed title " + landedTitle.first + " has province holding " + std::to_string(landedTitle.second->getProvince()->first) +
+											 " which has no definition!");
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed titles updated.";
@@ -103,4 +106,26 @@ void CK3::LandedTitles::linkCountyDetails(const CountyDetails& countyDetails)
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed titles updated.";
+}
+
+void CK3::LandedTitles::linkTitles(const Titles& titles)
+{
+	auto counter = 0;
+	const auto& titleData = titles.getTitles();
+	for (const auto& landedTitle: foundTitles)
+	{
+		if (!landedTitle.second->getCapital())
+			continue;
+		const auto& titleDataItr = titleData.find(landedTitle.second->getCapital()->first);
+		if (titleDataItr != titleData.end())
+		{
+			landedTitle.second->loadCapital(*titleDataItr);
+			++counter;
+		}
+		else
+		{
+			throw std::runtime_error("Landed title " + landedTitle.first + " has a capital " + capital->first + " which has no definition!");
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " landed title capitals updated.";
 }

@@ -1,6 +1,7 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
 
+#include "../Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
@@ -9,8 +10,8 @@
 #include "Dynasties/Houses.h"
 #include "Flags/Flags.h"
 #include "GameVersion.h"
-#include "Geography/ProvinceHoldings.h"
 #include "Geography/CountyDetails.h"
+#include "Geography/ProvinceHoldings.h"
 #include "Mods/Mods.h"
 #include "Parser.h"
 #include "Religions/Faiths.h"
@@ -45,6 +46,9 @@ class World: commonItems::parser
 	// postparsing weave
 	void crosslinkDatabases();
 
+	// CK2World processing
+	void flagHREProvinces(const Configuration& theConfiguration) const;
+
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
 	GameVersion CK3Version;
@@ -62,6 +66,7 @@ class World: commonItems::parser
 	CountyDetails countyDetails;
 	Cultures cultures;
 	mappers::NamedColors namedColors;
+	mappers::IAmHreMapper iAmHreMapper;
 
 	enum class SaveType
 	{

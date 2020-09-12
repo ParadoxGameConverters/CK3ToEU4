@@ -8,6 +8,7 @@ namespace CK3
 {
 class Character;
 class CoatOfArms;
+class LandedTitles;
 class Title: commonItems::parser
 {
   public:
@@ -27,35 +28,50 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getDFVassals() const { return dfVassals; }
 	[[nodiscard]] const auto& getDJVassals() const { return djVassals; }
 	[[nodiscard]] const auto& getHeirs() const { return heirs; }
+	[[nodiscard]] const auto& getClaimants() const { return claimants; }
 	[[nodiscard]] const auto& getLaws() const { return laws; }
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
+	[[nodiscard]] const auto& getClay() const { return clay; }
 
+	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
+	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
+	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
+	void loadDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
+	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
+	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
+	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
+	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
+	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
+
+	// processing
+	[[nodiscard]] int flagDeJureHREProvinces();
 
   private:
 	void registerKeys();
 
-	int ID = 0;																		 // 11038
-	std::pair<int, std::shared_ptr<Title>> capital;						 // capital title is a COUNTY, even for county itself and baronies beneath it!
-	std::string name;																 // c_ashmaka
-	std::string displayName;													 // Ashmaka
-	std::string adjective;														 // Ashmakan
-	std::string article;															 // "the ". Not always present.
-	std::string historyGovernment;											 // Unclear why this is history. Maybe further governments override it.
-	date creationDate;															 // Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
-	std::optional<std::pair<int, std::shared_ptr<CoatOfArms>>> coa; // This is dejure flag but not defacto.
-	std::pair<int, std::shared_ptr<Title>> dfLiege;						 // defacto liege title (d_kalyani)
-	std::pair<int, std::shared_ptr<Title>> djLiege;						 // dejure liege title (d_rattapadi)
-	std::pair<int, std::shared_ptr<Character>> holder;					 // Holding character
-	std::map<int, std::shared_ptr<Title>> dfVassals;					 // defacto vassals, not in save, manually linked post-loading
-	std::map<int, std::shared_ptr<Title>> djVassals;					 // dejure vassals (for all except baronies and titulars)
-	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs;	 // Order of heirs is unclear so we're keeping them ordered and using first if able.
-	std::map<int, std::shared_ptr<Character>> claims;					 // Incredibly useful.
-	bool theocraticLease = false;												 // Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
+	int ID = 0;																			// 11038
+	std::pair<int, std::shared_ptr<Title>> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
+	std::string name;																	// c_ashmaka
+	std::string displayName;														// Ashmaka
+	std::string adjective;															// Ashmakan
+	std::string article;																// "the ". Not always present.
+	std::string historyGovernment;												// Unclear why this is history. Maybe further governments override it.
+	date creationDate;																// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
+	std::optional<std::pair<int, std::shared_ptr<CoatOfArms>>> coa;	// This is dejure flag but not defacto.
+	std::optional<std::pair<int, std::shared_ptr<Title>>> dfLiege;		// defacto liege title (d_kalyani)
+	std::optional<std::pair<int, std::shared_ptr<Title>>> djLiege;		// dejure liege title (d_rattapadi)
+	std::optional<std::pair<int, std::shared_ptr<Character>>> holder; // Holding character
+	std::map<int, std::shared_ptr<Title>> dfVassals;						// defacto vassals, not in save, manually linked post-loading
+	std::map<int, std::shared_ptr<Title>> djVassals;						// dejure vassals (for all except baronies and titulars)
+	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs;		// Order of heirs is unclear so we're keeping them ordered and using first if able.
+	std::map<int, std::shared_ptr<Character>> claimants;					// People holding a claim to this title. Incredibly useful.
+	bool theocraticLease = false;													// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
 	std::set<std::string> laws;
 	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
+	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
 };
 } // namespace CK3
 

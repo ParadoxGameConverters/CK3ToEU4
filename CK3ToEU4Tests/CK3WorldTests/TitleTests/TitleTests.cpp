@@ -20,15 +20,16 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(theTitle.getAdjective().empty());
 	ASSERT_TRUE(theTitle.getHistoryGovernment().empty());
 	ASSERT_TRUE(theTitle.getLaws().empty());
-	ASSERT_FALSE(theTitle.getHolder().first);
+	ASSERT_FALSE(theTitle.getHolder());
 	ASSERT_FALSE(theTitle.isTheocraticLease());
 	ASSERT_FALSE(theTitle.isCountyCapitalBarony());
 	ASSERT_FALSE(theTitle.isDuchyCapitalBarony());
 	ASSERT_FALSE(theTitle.getCapital().first);
-	ASSERT_FALSE(theTitle.getDFLiege().first);
-	ASSERT_FALSE(theTitle.getDJLiege().first);
+	ASSERT_FALSE(theTitle.getDFLiege());
+	ASSERT_FALSE(theTitle.getDJLiege());
 	ASSERT_TRUE(theTitle.getDJVassals().empty());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
+	ASSERT_TRUE(theTitle.getClaimants().empty());
 	ASSERT_FALSE(theTitle.getCoA());
 }
 
@@ -49,6 +50,7 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	input << "de_jure_liege=12345\n";
 	input << "de_jure_vassals={ 1 2 3 4 5 }\n";
 	input << "heir={ 3 4 5 }\n";
+	input << "claim={ 7 8 }\n";
 	input << "coat_of_arms_id=45\n";
 
 	const CK3::Title theTitle(input, 1);
@@ -59,18 +61,21 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	ASSERT_EQ("theocratic_government", theTitle.getHistoryGovernment());
 	ASSERT_EQ(3, theTitle.getLaws().size());
 	ASSERT_EQ(1, theTitle.getLaws().count("second_law"));
-	ASSERT_EQ(123, theTitle.getHolder().first);
+	ASSERT_EQ(123, theTitle.getHolder()->first);
 	ASSERT_TRUE(theTitle.isTheocraticLease());
 	ASSERT_TRUE(theTitle.isCountyCapitalBarony());
 	ASSERT_TRUE(theTitle.isDuchyCapitalBarony());
 	ASSERT_EQ(123, theTitle.getCapital().first);
-	ASSERT_EQ(1234, theTitle.getDFLiege().first);
-	ASSERT_EQ(12345, theTitle.getDJLiege().first);
+	ASSERT_EQ(1234, theTitle.getDFLiege()->first);
+	ASSERT_EQ(12345, theTitle.getDJLiege()->first);
 	ASSERT_EQ(5, theTitle.getDJVassals().size());
 	ASSERT_EQ(1, theTitle.getDJVassals().count(1));
 	ASSERT_EQ(3, theTitle.getHeirs().size());
 	ASSERT_EQ(3, theTitle.getHeirs()[0].first);
 	ASSERT_EQ(4, theTitle.getHeirs()[1].first);
 	ASSERT_EQ(5, theTitle.getHeirs()[2].first);
+	ASSERT_EQ(2, theTitle.getClaimants().size());
+	ASSERT_EQ(1, theTitle.getClaimants().count(7));
+	ASSERT_EQ(1, theTitle.getClaimants().count(8));
 	ASSERT_EQ(45, theTitle.getCoA()->first);
 }

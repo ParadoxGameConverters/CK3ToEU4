@@ -154,3 +154,42 @@ void CK3::Characters::linkTitles(const Titles& titles)
 	}
 	Log(LogLevel::Info) << "<> " << capitalCounter << " capitals, " << titleCounter << " titles and " << claimCounter << " claims updated.";
 }
+
+void CK3::Characters::linkCharacters()
+{
+	auto employerCounter = 0;
+	auto spouseCounter = 0;
+
+	for (const auto& character: characters)
+	{
+		if (character.second->getSpouse())
+		{
+			const auto& charItr = characters.find(character.second->getSpouse()->first);
+			if (charItr != characters.end())
+			{
+				character.second->loadSpouse(*charItr);
+				++spouseCounter;
+			}
+			else
+			{
+				// dead spouse.
+				character.second->resetSpouse();
+			}			
+		}
+		if (character.second->getEmployer())
+		{
+			const auto& charItr = characters.find(character.second->getEmployer()->first);
+			if (charItr != characters.end())
+			{
+				character.second->loadEmployer(*charItr);
+				++employerCounter;
+			}
+			else
+			{
+				throw std::runtime_error("Character " + std::to_string(character.first) + " has employer " + std::to_string(character.second->getEmployer()->first) +
+												 " which has no definition!");
+			}
+		}
+	}
+	Log(LogLevel::Info) << "<> " << spouseCounter << " spouses, " << employerCounter << " employers updated.";
+}

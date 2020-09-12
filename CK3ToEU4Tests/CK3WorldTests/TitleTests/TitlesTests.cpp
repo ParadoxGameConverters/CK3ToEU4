@@ -2,6 +2,10 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
 #include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
+#include "../../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -85,4 +89,253 @@ TEST(CK3World_TitlesTests, linkingMissingCoatsThrowsException)
 	CK3::CoatsOfArms coats(input2);
 
 	ASSERT_THROW(titles.linkCoats(coats), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, titlesCanBeLinked)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	titles.linkTitles();
+
+	const auto& t1 = titles.getTitles().find("c_county1");
+	const auto& t2 = titles.getTitles().find("c_county2");
+	const auto& t3 = titles.getTitles().find("c_county3");
+	const auto& t4 = titles.getTitles().find("c_county4");
+	const auto& t5 = titles.getTitles().find("c_county5");
+	const auto& t6 = titles.getTitles().find("d_duchy1");
+	const auto& t7 = titles.getTitles().find("d_duchy2");
+	const auto& t8 = titles.getTitles().find("k_kingdom1");
+
+	// Testing defacto liege
+	ASSERT_EQ("d_duchy1", t1->second->getDFLiege()->second->getName());
+	ASSERT_EQ("d_duchy1", t2->second->getDFLiege()->second->getName());
+	ASSERT_EQ("d_duchy1", t3->second->getDFLiege()->second->getName());
+	ASSERT_EQ("d_duchy2", t4->second->getDFLiege()->second->getName());
+	ASSERT_EQ("d_duchy2", t5->second->getDFLiege()->second->getName());
+	ASSERT_EQ("k_kingdom1", t6->second->getDFLiege()->second->getName());
+	ASSERT_FALSE(t7->second->getDFLiege());
+	ASSERT_FALSE(t8->second->getDFLiege());
+
+	// Testing dejure liege
+	ASSERT_EQ("d_duchy1", t1->second->getDJLiege()->second->getName());
+	ASSERT_EQ("d_duchy1", t2->second->getDJLiege()->second->getName());
+	ASSERT_EQ("d_duchy2", t3->second->getDJLiege()->second->getName());
+	ASSERT_EQ("d_duchy2", t4->second->getDJLiege()->second->getName());
+	ASSERT_EQ("d_duchy2", t5->second->getDJLiege()->second->getName());
+	ASSERT_EQ("k_kingdom1", t6->second->getDJLiege()->second->getName());
+	ASSERT_EQ("k_kingdom1", t7->second->getDJLiege()->second->getName());
+	ASSERT_FALSE(t8->second->getDJLiege());
+
+	// Testing de jure vassals
+	ASSERT_TRUE(t1->second->getDJVassals().empty());
+	ASSERT_TRUE(t2->second->getDJVassals().empty());
+	ASSERT_TRUE(t3->second->getDJVassals().empty());
+	ASSERT_TRUE(t4->second->getDJVassals().empty());
+	ASSERT_TRUE(t5->second->getDJVassals().empty());
+	ASSERT_EQ(2, t6->second->getDJVassals().size());
+	ASSERT_EQ("c_county1", t6->second->getDJVassals().find(1)->second->getName());
+	ASSERT_EQ("c_county2", t6->second->getDJVassals().find(2)->second->getName());
+	ASSERT_EQ(3, t7->second->getDJVassals().size());
+	ASSERT_EQ("c_county3", t7->second->getDJVassals().find(3)->second->getName());
+	ASSERT_EQ("c_county4", t7->second->getDJVassals().find(4)->second->getName());
+	ASSERT_EQ("c_county5", t7->second->getDJVassals().find(5)->second->getName());
+	ASSERT_EQ(2, t8->second->getDJVassals().size());
+	ASSERT_EQ("d_duchy1", t8->second->getDJVassals().find(6)->second->getName());
+	ASSERT_EQ("d_duchy2", t8->second->getDJVassals().find(7)->second->getName());
+
+	// Testing defacto vassals
+	ASSERT_TRUE(t1->second->getDJVassals().empty());
+	ASSERT_TRUE(t2->second->getDJVassals().empty());
+	ASSERT_TRUE(t3->second->getDJVassals().empty());
+	ASSERT_TRUE(t4->second->getDJVassals().empty());
+	ASSERT_TRUE(t5->second->getDJVassals().empty());
+	ASSERT_EQ(3, t6->second->getDFVassals().size());
+	ASSERT_EQ("c_county1", t6->second->getDFVassals().find(1)->second->getName());
+	ASSERT_EQ("c_county2", t6->second->getDFVassals().find(2)->second->getName());
+	ASSERT_EQ("c_county3", t6->second->getDFVassals().find(3)->second->getName());
+	ASSERT_EQ(2, t7->second->getDFVassals().size());
+	ASSERT_EQ("c_county4", t7->second->getDFVassals().find(4)->second->getName());
+	ASSERT_EQ("c_county5", t7->second->getDFVassals().find(5)->second->getName());
+	ASSERT_EQ(1, t8->second->getDFVassals().size());
+	ASSERT_EQ("d_duchy1", t8->second->getDFVassals().find(6)->second->getName());
+}
+
+TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 9 de_jure_vassals = { 1 2 } }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 9 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 9 } }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, charactersCanBeLinked)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county holder = 1 claim = { 2 3 } heir = { 2 } }\n";
+	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } }\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { first_name = Alice }\n";
+	input2 << "2 = { first_name = Bob }\n";
+	input2 << "3 = { first_name = Carol }\n";
+	const CK3::Characters characters(input2);
+	titles.linkCharacters(characters);
+
+	const auto& t1 = titles.getTitles().find("c_county");
+	const auto& t2 = titles.getTitles().find("d_duchy");
+
+	ASSERT_EQ("Alice", t1->second->getHolder()->second->getName());
+	ASSERT_EQ("Bob", t2->second->getHolder()->second->getName());
+	ASSERT_EQ(2, t1->second->getClaimants().size());
+	ASSERT_EQ("Bob", t1->second->getClaimants().find(2)->second->getName());
+	ASSERT_EQ("Carol", t1->second->getClaimants().find(3)->second->getName());
+	ASSERT_EQ(1, t2->second->getClaimants().size());
+	ASSERT_EQ("Alice", t2->second->getClaimants().find(1)->second->getName());
+	ASSERT_EQ(1, t1->second->getHeirs().size());
+	ASSERT_EQ("Bob", t1->second->getHeirs()[0].second->getName());
+	ASSERT_EQ(2, t2->second->getHeirs().size());
+	ASSERT_EQ("Carol", t2->second->getHeirs()[0].second->getName());
+	ASSERT_EQ("Alice", t2->second->getHeirs()[1].second->getName());
+}
+
+TEST(CK3World_TitlesTests, charactersLinkMissingHolderThrowsException)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county holder = 9 claim = { 2 3 } heir = { 2 } }\n"; // missing 9
+	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } }\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { first_name = Alice }\n";
+	input2 << "2 = { first_name = Bob }\n";
+	input2 << "3 = { first_name = Carol }\n";
+	const CK3::Characters characters(input2);
+
+	ASSERT_THROW(titles.linkCharacters(characters), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, charactersLinkMissingClaimantThrowsException)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county holder = 1 claim = { 9 3 } heir = { 2 } }\n"; // missing 9
+	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } }\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { first_name = Alice }\n";
+	input2 << "2 = { first_name = Bob }\n";
+	input2 << "3 = { first_name = Carol }\n";
+	const CK3::Characters characters(input2);
+
+	ASSERT_THROW(titles.linkCharacters(characters), std::runtime_error);
+}
+
+TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county heir = { 9 3 } }\n"; // missing 9
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { first_name = Alice }\n";
+	input2 << "3 = { first_name = Carol }\n";
+	const CK3::Characters characters(input2);
+	titles.linkCharacters(characters);
+	
+	const auto& t1 = titles.getTitles().find("c_county");
+
+	ASSERT_EQ(1, t1->second->getHeirs().size());
+	ASSERT_EQ("Carol", t1->second->getHeirs()[0].second->getName());
+}
+
+TEST(CK3World_TitlesTests, landedTitlesCanBeLinked)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county }\n";
+	input << "15 = { key = d_duchy }\n";
+	input << "17 = { key = x_x_17 }\n"; // landless faction
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "c_county = { landless = yes }\n";
+	input2 << "d_duchy = { province = 12 }\n";
+	CK3::LandedTitles clay;
+	clay.loadTitles(input2);
+	titles.linkLandedTitles(clay);
+
+	const auto& t1 = titles.getTitles().find("c_county");
+	const auto& t2 = titles.getTitles().find("d_duchy");
+	const auto& t3 = titles.getTitles().find("x_x_17");
+
+	ASSERT_TRUE(t1->second->getClay()->isLandless());
+	ASSERT_EQ(12, t2->second->getClay()->getProvince()->first);
+	ASSERT_FALSE(t3->second->getClay());
+}
+
+TEST(CK3World_TitlesTests, landedTitlesLinkMissingTitleThrowsException)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county }\n";
+	input << "15 = { key = d_duchy }\n";
+	input << "17 = { key = x_x_17 }\n"; // landless faction
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "d_duchy = { province = 12 }\n";
+	input2 << "c_county = { landless = yes }\n";
+	input2 << "k_kingdom = { landless = yes }\n"; // missing title
+	CK3::LandedTitles clay;
+	clay.loadTitles(input2);
+
+	ASSERT_THROW(titles.linkLandedTitles(clay), std::runtime_error);
 }

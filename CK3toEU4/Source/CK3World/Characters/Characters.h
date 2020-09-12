@@ -22,6 +22,8 @@ class Characters: commonItems::parser
 	void linkHouses(const Houses& houses);
 	void linkTitles(const Titles& titles);
 
+	void linkCharacters();
+
   private:
 	void registerKeys();
 

@@ -55,6 +55,9 @@
     <Filter Include="CK3World\Cultures">
       <UniqueIdentifier>{768475c9-451e-4102-9d02-9a7f629c4014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\IAmHreMapper">
+      <UniqueIdentifier>{74185d55-fdf5-4d83-a6f1-1aa02a73e5a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -195,6 +198,9 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Geography\ProvinceHoldings.h">
       <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h">
+      <Filter>Mappers\IAmHreMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +343,9 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Geography\ProvinceHoldings.cpp">
       <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp">
+      <Filter>Mappers\IAmHreMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

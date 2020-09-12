@@ -6,6 +6,8 @@ namespace CK3
 {
 class Title;
 class CoatsOfArms;
+class Characters;
+class LandedTitles;
 class Titles: commonItems::parser
 {
   public:
@@ -16,6 +18,9 @@ class Titles: commonItems::parser
 	[[nodiscard]] const auto& getCounter() const { return titleCounter; }
 
 	void linkCoats(const CoatsOfArms& coats);
+	void linkTitles();
+	void linkCharacters(const Characters& characters);
+	void linkLandedTitles(const LandedTitles& landedTitles);
 
   private:
 	void registerKeys();

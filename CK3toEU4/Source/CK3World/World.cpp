@@ -4,6 +4,7 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
+#include "Titles/Title.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
@@ -88,24 +89,31 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
 	verifySave(theConfiguration->getSaveGamePath());
 	processSave(theConfiguration->getSaveGamePath());
+	Log(LogLevel::Progress) << "5 %";
 
 	auto metaData = std::istringstream(saveGame.metadata);
 	parseStream(metaData);
+	Log(LogLevel::Progress) << "10 %";
 
 	LOG(LogLevel::Info) << "* Priming Converter Components *";
 	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
+	Log(LogLevel::Progress) << "15 %";
 
 	LOG(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
-	Log(LogLevel::Progress) << "10 %";
+	Log(LogLevel::Progress) << "20 %";
 	clearRegisteredKeywords();
 
 	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
 	crosslinkDatabases();
+	Log(LogLevel::Progress) << "30 %";
 
+	// processing
+	LOG(LogLevel::Info) << "-- Flagging HRE Provinces";
+	flagHREProvinces(*theConfiguration);
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -311,14 +319,62 @@ void CK3::World::crosslinkDatabases()
 	dynasties.linkCoats(coats);
 	Log(LogLevel::Info) << "-> Loading Coats into Titles.";
 	titles.linkCoats(coats);
-	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
-	houses.linkDynasties(dynasties);
 	Log(LogLevel::Info) << "-> Loading Holdings into Clay.";
 	landedTitles.linkProvinceHoldings(provinceHoldings);
 	Log(LogLevel::Info) << "-> Loading Counties into Clay.";
 	landedTitles.linkCountyDetails(countyDetails);
+	Log(LogLevel::Info) << "-> Loading Dynasties into Houses.";
+	houses.linkDynasties(dynasties);
 	Log(LogLevel::Info) << "-> Loading Houses into Characters.";
 	characters.linkHouses(houses);
 	Log(LogLevel::Info) << "-> Loading Titles into Characters.";
 	characters.linkTitles(titles);
+	Log(LogLevel::Info) << "-> Loading Titles into Titles.";
+	titles.linkTitles();
+	Log(LogLevel::Info) << "-> Loading Titles into Clay.";
+	landedTitles.linkTitles(titles);
+	Log(LogLevel::Info) << "-> Loading Characters into Characters.";
+	characters.linkCharacters();
+	Log(LogLevel::Info) << "-> Loading Characters into Titles.";
+	titles.linkCharacters(characters);
+	Log(LogLevel::Info) << "-> Loading Clay into Titles.";
+	titles.linkLandedTitles(landedTitles);
+}
+
+void CK3::World::flagHREProvinces(const Configuration& theConfiguration) const
+{
+	std::string hreTitle;
+	switch (theConfiguration.getHRE())
+	{
+		case Configuration::I_AM_HRE::HRE:
+			hreTitle = "e_hre";
+			break;
+		case Configuration::I_AM_HRE::BYZANTIUM:
+			hreTitle = "e_byzantium";
+			break;
+		case Configuration::I_AM_HRE::ROME:
+			hreTitle = "e_roman_empire";
+			break;
+		case Configuration::I_AM_HRE::CUSTOM:
+			hreTitle = iAmHreMapper.getHRE();
+			break;
+		case Configuration::I_AM_HRE::NONE:
+			Log(LogLevel::Info) << ">< HRE Provinces not available due to configuration disabling HRE Mechanics.";
+			return;
+	}
+	const auto& allTitles = titles.getTitles();
+	const auto& theHre = allTitles.find(hreTitle);
+	if (theHre == allTitles.end())
+	{
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " not found!";
+		return;
+	}
+	if (theHre->second->getDFVassals().empty())
+	{
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " has no vassals!";
+		return;
+	}
+
+	const auto counter = theHre->second->flagDeJureHREProvinces();
+	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
 }

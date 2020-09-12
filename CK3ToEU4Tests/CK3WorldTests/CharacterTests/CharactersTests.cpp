@@ -240,3 +240,68 @@ TEST(CK3World_CharactersTests, titlesLinkMissingDomainThrowsException)
 
 	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
 }
+
+
+TEST(CK3World_CharactersTests, charactersCanBeLinked)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\tcourt_data = { employer = 9 }\n";
+	input << "\tfamily_data = { primary_spouse = 2 }\n";
+	input << "}\n";
+	input << "2 = {\n";
+	input << "\tfirst_name = Bob\n";
+	input << "\tcourt_data = { employer = 9 }\n";
+	input << "\tfamily_data = { primary_spouse = 1 }\n";
+	input << "}\n";
+	input << "9 = {\n";
+	input << "\tfirst_name = Carol\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+	characters.linkCharacters();
+
+	const auto& c1 = characters.getCharacters().find(1);
+	const auto& c2 = characters.getCharacters().find(2);
+
+	ASSERT_EQ("Carol", c1->second->getEmployer()->second->getName());
+	ASSERT_EQ("Carol", c2->second->getEmployer()->second->getName());
+	ASSERT_EQ("Bob", c1->second->getSpouse()->second->getName());
+	ASSERT_EQ("Alice", c2->second->getSpouse()->second->getName());
+}
+
+TEST(CK3World_CharactersTests, charactersLinkMissingSpouseResetsSpouse)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\tcourt_data = { employer = 9 }\n";
+	input << "\tfamily_data = { primary_spouse = 2 }\n";
+	input << "}\n";
+	input << "9 = {\n";
+	input << "\tfirst_name = Carol\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+	characters.linkCharacters();
+
+	const auto& c1 = characters.getCharacters().find(1);
+	ASSERT_FALSE(c1->second->getSpouse());
+}
+
+TEST(CK3World_CharactersTests, charactersLinkMissingEmployerThrowsException)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\tcourt_data = { employer = 9 }\n";
+	input << "\tfamily_data = { primary_spouse = 2 }\n";
+	input << "}\n";
+	input << "2 = {\n";
+	input << "\tfirst_name = Bob\n";
+	input << "\tcourt_data = { employer = 9 }\n";
+	input << "\tfamily_data = { primary_spouse = 1 }\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+
+	ASSERT_THROW(characters.linkCharacters(), std::runtime_error);
+}

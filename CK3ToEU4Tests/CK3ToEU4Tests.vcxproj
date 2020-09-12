@@ -88,6 +88,7 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
@@ -129,6 +130,7 @@
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
     <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp" />
+    <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
     <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -91,6 +91,12 @@
     <Filter Include="Ck3WorldTests\CultureTests">
       <UniqueIdentifier>{eec43a4f-1ec6-4cf3-9c7e-5c9b8ceea34c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\IAmHreMapper">
+      <UniqueIdentifier>{0d187933-071f-4629-8e24-b29999dab2d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\IAmHreMapperTests">
+      <UniqueIdentifier>{d83da73a-bac0-40a8-ba30-4600f6bcc66a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -304,6 +310,12 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.cpp">
       <Filter>CK3ToEU4\CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\IAmHreMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp">
+      <Filter>MapperTests\IAmHreMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
