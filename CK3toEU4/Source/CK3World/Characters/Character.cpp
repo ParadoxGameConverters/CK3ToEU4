@@ -68,12 +68,17 @@ void CK3::Character::registerKeys()
 		const auto tempBlock = Character(theStream, charID);
 		employer = tempBlock.getEmployer();
 		knight = tempBlock.isKnight();
+		councilor = tempBlock.isCouncilor();
 	});
 	registerKeyword("employer", [this](const std::string& unused, std::istream& theStream) {
 		employer = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
 	registerKeyword("knight", [this](const std::string& unused, std::istream& theStream) {
 		knight = commonItems::singleString(theStream).getString() == "yes";
+	});
+	registerRegex("council_task|special_council_tasks", [this](const std::string& unused, std::istream& theStream) {
+		councilor = true;
+		commonItems::ignoreItem(unused, theStream);
 	});
 	registerKeyword("female", [this](const std::string& unused, std::istream& theStream) {
 		female = commonItems::singleString(theStream).getString() == "yes";

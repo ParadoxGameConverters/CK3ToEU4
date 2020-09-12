@@ -123,6 +123,12 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	filterIndependentTitles();
 	LOG(LogLevel::Info) << "-- Splitting Off Vassals";
 	splitVassals(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Rounding Up Some People";
+	gatherCourtierNames();
+	LOG(LogLevel::Info) << "-- Congregating DeFacto Counties for Independent Titles";
+	congregateDFCounties();
+	LOG(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
+	congregateDJCounties();
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -687,4 +693,104 @@ void CK3::World::splitVassals(const Configuration& theConfiguration)
 		independentTitles.insert(newIndep);
 	}
 	Log(LogLevel::Info) << "<> " << newIndeps.size() << " vassals liberated from immediate integration.";
+}
+
+void CK3::World::gatherCourtierNames()
+{
+	// We're using this function to locate courtiers, assemble their names as potential Monarch Names in EU4,
+	// and also while at it, to see if they hold adviser jobs. It's anything but trivial, as being employed doesn't equate with
+	// being a councilor, nor do landed councilors have employers if they work for their liege.
+
+	auto counter = 0;
+	auto counterAdvisors = 0;
+	std::map<int, std::map<std::string, bool>> holderCourtiers;					 // holder-name/male
+	std::map<int, std::map<int, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
+
+	for (const auto& character: characters.getCharacters())
+	{
+		// Hello. Are you an employed individual?
+		if (!character.second->isCouncilor() && !character.second->getEmployer())
+			continue;
+		// If you have a steady job, we need your employer's references.
+		if (character.second->isCouncilor())
+		{
+			if (character.second->getEmployer())
+			{
+				// easiest case.
+				holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
+				holderCouncilors[character.second->getEmployer()->first].insert(character);
+			}
+			else if (character.second->getDomain() && !character.second->getDomain()->getDomain().empty())
+			{
+				// this councilor is landed and works for his liege.
+				const auto& characterPrimaryTitle = character.second->getDomain()->getDomain()[0];
+				const auto& liegeTitle = characterPrimaryTitle.second->getDFLiege();
+				if (!liegeTitle)
+					continue; // I dislike this character. I think it is time he was let go.
+				const auto& liege = liegeTitle->second->getHolder();
+				if (!liege)
+					continue; // Or maybe we should fire his liege.
+				holderCourtiers[liege->first].insert(std::pair(character.second->getName(), character.second->isFemale()));
+				holderCouncilors[liege->first].insert(character);				
+			}
+			else
+			{
+				// Doesn't have employer and doesn't have land but is councilor. Bollocks.
+				continue;
+			}
+		}
+		else if (character.second->getEmployer())
+		{
+			// Being employed but without a council task means a knight or physician or similar. Works for us.
+			holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
+		}		
+	}
+
+	// We're only interested in those working for indeps.	
+	for (const auto& title: independentTitles)
+	{
+		const auto containerItr = holderCourtiers.find(title.second->getHolder()->first);
+		if (containerItr != holderCourtiers.end())
+		{
+			title.second->getHolder()->second->loadCourtierNames(containerItr->second);
+			counter += static_cast<int>(containerItr->second.size());
+		}
+		const auto councilorItr = holderCouncilors.find(title.second->getHolder()->first);
+		if (councilorItr != holderCouncilors.end())
+		{
+			title.second->getHolder()->second->loadCouncilors(councilorItr->second);
+			counterAdvisors += static_cast<int>(councilorItr->second.size());
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " people gathered for interrogation. " << counterAdvisors << " were detained.";
+}
+
+void CK3::World::congregateDFCounties()
+{
+	auto counter = 0;
+	// We're linking all contained counties for a title's tree under that title.
+	// This will form actual EU4 tag and contained provinces.
+	for (const auto& title: independentTitles)
+	{
+		title.second->congregateDFCounties();
+		for (const auto& province: title.second->getOwnedDFCounties())
+		{
+			province.second->loadHoldingTitle(std::pair(title.first, title.second));
+		}
+		counter += static_cast<int>(title.second->getOwnedDFCounties().size());
+	}
+	Log(LogLevel::Info) << "<> " << counter << " counties held by independents.";
+}
+
+void CK3::World::congregateDJCounties()
+{
+	auto counter = 0;
+	// We're linking all dejure provinces under the title as these will be the base
+	// for that title's permanent claims, unless already owned.
+	for (const auto& title: independentTitles)
+	{
+		title.second->congregateDJCounties();
+		counter += static_cast<int>(title.second->getOwnedDJCounties().size());
+	}
+	Log(LogLevel::Info) << "<> " << counter << " de jure provinces claimed by independents.";	
 }
