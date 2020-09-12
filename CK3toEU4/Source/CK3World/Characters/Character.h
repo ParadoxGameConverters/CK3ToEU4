@@ -57,6 +57,9 @@ class Character: commonItems::parser
 	void loadSpouse(const std::pair<int, std::shared_ptr<Character>>& theSpouse) { spouse = theSpouse; }
 	void resetSpouse() { spouse.reset(); }
 
+	// processing
+	void dropTitleFromDomain(int titleID);
+
   private:
 	void registerKeys();
 

@@ -1,5 +1,6 @@
 #include "Titles.h"
 #include "../Characters/Characters.h"
+#include "../Characters/Character.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
 #include "LandedTitles.h"
 #include "Log.h"
@@ -77,8 +78,13 @@ void CK3::Titles::linkTitles()
 	std::map<int, std::shared_ptr<Title>> IDCache;
 	for (const auto& title: titles)
 		IDCache.insert(std::pair(title.second->getID(), title.second));
+	
 	// We'll also be needing a defacto vassal registry for later.
-	std::map<int, std::map<int, std::shared_ptr<Title>>> dfvRegistry; // <liegeTitleID, map<vassalTitleID, vassalTitle>>
+	std::map<int, std::map<int, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
+
+	// Additional objective:
+	// When a county and a duchy are held by same holder, under a king, both titles will have the kingdom set as defacto liege. We need to
+	// untangle this mess and drop all vassals held by a person that also holds the vassal's dejure title as a vassal under same liege. :/
 
 	for (const auto& title: titles)
 	{
@@ -133,21 +139,47 @@ void CK3::Titles::linkTitles()
 			title.second->loadDJVassals(replacementMap);
 		}
 	}
-	// Now with fully generated dfvCache we can load it into all lieges.
+	
+	// Now with fully generated dfvCache we can load it into all lieges, after fixing the mess inside.
+	std::map<int, std::map<int, std::shared_ptr<Title>>> updateMap;
 	for (const auto& liege: dfvRegistry)
 	{
 		const auto& cacheItr = IDCache.find(liege.first);
 		if (cacheItr != IDCache.end())
 		{
-			cacheItr->second->loadDFVassals(liege.second);
-			DFVcounter += static_cast<int>(liege.second.size());
+			// liege.second holds all "vassals". Let's find actual ones.
+			std::map<int, std::shared_ptr<Title>> actualMap;
+			for (const auto& vassal: liege.second)
+			{
+				auto djLiegeID = vassal.second->getDJLiege()->first;
+				const auto& actualDJLiege = liege.second.find(djLiegeID);
+				if (actualDJLiege != liege.second.end())
+				{
+					// this title's dejure liege is also under us. Redirect it.
+					vassal.second->loadDFLiege(std::pair(actualDJLiege->first, actualDJLiege->second));
+					// record this move so we can update new dfLiege
+					updateMap[actualDJLiege->first].insert(vassal);
+				}
+				else
+				{
+					// this is a legitimate vassal.
+					actualMap.insert(vassal);
+				}
+			}
+			cacheItr->second->loadDFVassals(actualMap);
+			DFVcounter += static_cast<int>(actualMap.size());
 		}
 		else
 		{
 			throw std::runtime_error("DJVCache corruption: " + std::to_string(liege.first) + " cannot be found!");
 		}
 	}
-
+	// Finally update the dfvassal lists of all titles that gained new vassals.
+	for (const auto& update: updateMap)
+	{
+		IDCache[update.first]->addDFVassals(update.second);
+	}
+	
 	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter
 							  << " dejure vassals updated.";
 }

@@ -17,6 +17,8 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isTheocraticLease() const { return theocraticLease; }
 	[[nodiscard]] auto isCountyCapitalBarony() const { return cCapitalBarony; }
 	[[nodiscard]] auto isDuchyCapitalBarony() const { return dCapitalBarony; }
+	[[nodiscard]] auto isHREEmperor() const { return HREEmperor; }
+	[[nodiscard]] auto isInHRE() const { return inHRE; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -39,6 +41,7 @@ class Title: commonItems::parser
 	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
 	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
 	void loadDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
+	void addDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals.insert(DFVassals.begin(), DFVassals.end()); }
 	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
 	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
@@ -47,6 +50,12 @@ class Title: commonItems::parser
 
 	// processing
 	[[nodiscard]] int flagDeJureHREProvinces();
+	void brickTitle();
+	void grantIndependence();
+	void resetDFLiege() { dfLiege.reset(); }
+	void setHREEmperor() { HREEmperor = true; }
+	void setInHRE() { inHRE = true; }
+	void dropTitleFromDFVassals(int titleID);
 
   private:
 	void registerKeys();
@@ -72,6 +81,8 @@ class Title: commonItems::parser
 	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
 	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
+	bool HREEmperor = false;
+	bool inHRE = false;
 };
 } // namespace CK3
 

@@ -169,6 +169,39 @@ TEST(CK3World_TitlesTests, titlesCanBeLinked)
 	ASSERT_EQ("d_duchy1", t8->second->getDFVassals().find(6)->second->getName());
 }
 
+TEST(CK3World_TitlesTests, titlesLinkDeFactoMessIsFixed)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 holder = 11 de_facto_liege = 8 de_jure_liege = 6 }\n"; // defacto 8 due to holder holding both c and d. This is wrong.
+	input << "2 = { key = c_county2 holder = 12 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 13 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 14 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 15 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 11 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 holder = 17 de_jure_liege = 8 de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 18 de_jure_vassals = { 6 7 } }\n";
+	CK3::Titles titles(input);
+
+	titles.linkTitles();
+
+	const auto& t1 = titles.getTitles().find("c_county1");
+	const auto& t6 = titles.getTitles().find("d_duchy1");
+	const auto& t8 = titles.getTitles().find("k_kingdom1");
+
+	// Testing defacto liege
+	ASSERT_EQ("d_duchy1", t1->second->getDFLiege()->second->getName()); // fixed from 8 to 6.
+	ASSERT_EQ("k_kingdom1", t6->second->getDFLiege()->second->getName()); // remains 8.
+
+	// Testing defacto vassals
+	ASSERT_EQ(3, t6->second->getDFVassals().size()); // gains c1 in dfvassals.
+	ASSERT_EQ("c_county1", t6->second->getDFVassals().find(1)->second->getName());
+	ASSERT_EQ("c_county2", t6->second->getDFVassals().find(2)->second->getName());
+	ASSERT_EQ("c_county3", t6->second->getDFVassals().find(3)->second->getName());
+	ASSERT_EQ(1, t8->second->getDFVassals().size()); // loses c1 in dfvassals.
+	ASSERT_EQ("d_duchy1", t8->second->getDFVassals().find(6)->second->getName());
+}
+
+
 TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
 {
 	std::stringstream input;

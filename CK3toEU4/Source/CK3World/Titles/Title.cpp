@@ -1,4 +1,5 @@
 #include "Title.h"
+#include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
 #include "LandedTitles.h"
 #include "Log.h"
@@ -90,4 +91,37 @@ int CK3::Title::flagDeJureHREProvinces()
 	++counter;
 
 	return counter;
+}
+
+void CK3::Title::brickTitle()
+{
+	grantIndependence();
+
+	// Drop from own holder's domain.
+	if (holder)
+		holder->second->dropTitleFromDomain(ID);
+	// Drop holder
+	holder.reset();
+
+	// release all vassals
+	for (const auto& vassal: dfVassals)
+		vassal.second->grantIndependence();
+	dfVassals.clear(); // just in case?
+}
+
+void CK3::Title::dropTitleFromDFVassals(int titleID)
+{
+	const auto& dfvItr = dfVassals.find(titleID);
+	if (dfvItr != dfVassals.end())
+		dfVassals.erase(dfvItr);
+}
+
+void CK3::Title::grantIndependence()
+{
+	// Drop this title from liege holder's vassals
+	if (dfLiege)
+		dfLiege->second->dropTitleFromDFVassals(ID);
+
+	// Drop liege
+	dfLiege.reset();
 }

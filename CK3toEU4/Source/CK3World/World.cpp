@@ -2,13 +2,14 @@
 #include "../Configuration/Configuration.h"
 #include "../Helpers/rakaly_wrapper.h"
 #include "../commonItems/ParserHelpers.h"
+#include "Characters/Character.h"
+#include "Characters/CharacterDomain.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "Titles/Title.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
-
 namespace fs = std::filesystem;
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
@@ -114,6 +115,10 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	// processing
 	LOG(LogLevel::Info) << "-- Flagging HRE Provinces";
 	flagHREProvinces(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Shattering HRE";
+	shatterHRE(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Shattering Empires";
+	shatterEmpires(*theConfiguration);
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -377,4 +382,181 @@ void CK3::World::flagHREProvinces(const Configuration& theConfiguration) const
 
 	const auto counter = theHre->second->flagDeJureHREProvinces();
 	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
+}
+
+void CK3::World::shatterHRE(const Configuration& theConfiguration) const
+{
+	std::string hreTitle;
+	switch (theConfiguration.getHRE())
+	{
+		case Configuration::I_AM_HRE::HRE:
+			hreTitle = "e_hre";
+			break;
+		case Configuration::I_AM_HRE::BYZANTIUM:
+			hreTitle = "e_byzantium";
+			break;
+		case Configuration::I_AM_HRE::ROME:
+			hreTitle = "e_roman_empire";
+			break;
+		case Configuration::I_AM_HRE::CUSTOM:
+			hreTitle = iAmHreMapper.getHRE();
+			break;
+		case Configuration::I_AM_HRE::NONE:
+			Log(LogLevel::Info) << ">< HRE Mechanics and shattering overridden by configuration.";
+			return;
+	}
+	const auto& allTitles = titles.getTitles();
+	const auto& theHre = allTitles.find(hreTitle);
+	if (theHre == allTitles.end())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " not found!";
+		return;
+	}
+	if (theHre->second->getDFVassals().empty())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no vassals!";
+		return;
+	}
+	if (!theHre->second->getHolder())
+	{
+		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no holder!";
+		return;
+	}
+	const auto& hreHolder = theHre->second->getHolder();
+	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
+
+	// First we are composing a list of all HRE members. These are duchies,
+	// so we're also ripping them from under any potential kingdoms.
+	std::map<int, std::shared_ptr<Title>> hreMembers;
+
+	for (const auto& vassal: theHre->second->getDFVassals())
+	{
+		if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+		{
+			hreMembers.insert(vassal);
+		}
+		else if (vassal.second->getName().find("k_") == 0)
+		{
+			if (vassal.second->getName() == "k_papal_state" || vassal.second->getName() == "k_orthodox" ||
+				 theConfiguration.getShatterHRELevel() == Configuration::SHATTER_HRE_LEVEL::KINGDOM) // hard override for special HRE members
+			{
+				hreMembers.insert(vassal);
+			}
+			else
+			{
+				for (const auto& vassalvassal: vassal.second->getDFVassals())
+				{
+					hreMembers.insert(vassalvassal);
+				}
+				// Bricking the kingdom.
+				vassal.second->brickTitle();
+			}
+		}
+		else if (vassal.second->getName().find("b_") != 0)
+		{
+			Log(LogLevel::Warning) << "Unrecognized HRE vassal: " << vassal.first << " - " << vassal.second->getName();
+		}
+	}
+
+	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
+	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
+	{
+		if (hreHolderTitle.second->getName() == hreTitle) // this is what we're breaking, ignore it.
+			continue;
+		if (hreHolderTitle.second->getName().find("b_") == 0) // Absolutely ignore baronies.
+			continue;
+		if (hreHolderTitle.second->getClay() && !hreHolderTitle.second->getClay()->isLandless())
+		{ // looks solid.
+			hreHolderTitle.second->setHREEmperor();
+			Log(LogLevel::Debug) << "Flagging " << hreHolderTitle.second->getName() << " as His HREship.";
+			emperorSet = true;
+			break;
+		}
+	}
+
+	if (!emperorSet)
+		Log(LogLevel::Warning) << "Couldn't flag His HREship as emperor does not own any viable titles!";
+
+	// We're flagging hre members as such, as well as setting them free.
+	for (const auto& member: hreMembers)
+	{
+		member.second->setInHRE();
+		member.second->grantIndependence();
+	}
+
+	// Finally we brick the hre.
+	theHre->second->brickTitle();
+	Log(LogLevel::Info) << "<> " << hreMembers.size() << " HRE members released.";
+}
+
+void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
+{
+	if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::NONE)
+	{
+		Log(LogLevel::Info) << ">< Empire shattering disabled by configuration.";
+		return;
+	}
+
+	bool shatterKingdoms = true; // the default.
+	switch (theConfiguration.getShatterLevel())
+	{
+		case Configuration::SHATTER_LEVEL::KINGDOM:
+			shatterKingdoms = false;
+			break;
+		case Configuration::SHATTER_LEVEL::DUTCHY:
+			shatterKingdoms = true;
+			break;
+	}
+	const auto& allTitles = titles.getTitles();
+
+	for (const auto& empire: allTitles)
+	{
+		if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::CUSTOM && !shatterEmpiresMapper.isEmpireShatterable(empire.first))
+			continue; // Only considering those listed.
+		if (empire.first.find("e_") != 0 && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
+			continue; // Otherwise only empires.
+		if (empire.second->getDFVassals().empty())
+			continue; // Not relevant.
+
+		// First we are composing a list of all members.
+		std::map<int, std::shared_ptr<Title>> members;
+		for (const auto& vassal: empire.second->getDFVassals())
+		{
+			if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+			{
+				members.insert(vassal);
+			}
+			else if (vassal.second->getName().find("k_") == 0)
+			{
+				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
+				{ // hard override for special empire members
+					for (const auto& vassalvassal: vassal.second->getDFVassals())
+					{
+						members.insert(vassalvassal);
+					}
+					// Bricking the kingdom
+					vassal.second->brickTitle();
+				}
+				else
+				{
+					// Not shattering kingdoms.
+					members.insert(vassal);
+				}
+			}
+			else if (vassal.second->getName().find("b_") != 0)
+			{
+				Log(LogLevel::Warning) << "Unrecognized vassal level: " << vassal.first;
+			}
+		}
+
+		// grant independence to ex-vassals.
+		for (const auto& member: members)
+		{
+			member.second->grantIndependence();
+		}
+
+		// Finally, dispose of the shell.
+		empire.second->brickTitle();
+		Log(LogLevel::Info) << "<> " << empire.first << " shattered, " << members.size() << " members released.";
+	}
 }

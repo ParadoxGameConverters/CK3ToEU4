@@ -90,6 +90,7 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
     <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp" />
+    <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
