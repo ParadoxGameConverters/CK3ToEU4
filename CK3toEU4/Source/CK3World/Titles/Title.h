@@ -19,6 +19,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isDuchyCapitalBarony() const { return dCapitalBarony; }
 	[[nodiscard]] auto isHREEmperor() const { return HREEmperor; }
 	[[nodiscard]] auto isInHRE() const { return inHRE; }
+	[[nodiscard]] auto isThePope() const { return thePope; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -56,6 +57,7 @@ class Title: commonItems::parser
 	void setHREEmperor() { HREEmperor = true; }
 	void setInHRE() { inHRE = true; }
 	void dropTitleFromDFVassals(int titleID);
+	void setThePope() { thePope = true; }
 
   private:
 	void registerKeys();
@@ -83,6 +85,7 @@ class Title: commonItems::parser
 	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
 	bool HREEmperor = false;
 	bool inHRE = false;
+	bool thePope = false;
 };
 } // namespace CK3
 

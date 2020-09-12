@@ -31,6 +31,7 @@ class World: commonItems::parser
 	explicit World(const std::shared_ptr<Configuration>& theConfiguration);
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
+	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }
 
   private:
 	// savegame processing
@@ -51,6 +52,7 @@ class World: commonItems::parser
 	void flagHREProvinces(const Configuration& theConfiguration) const;
 	void shatterHRE(const Configuration& theConfiguration) const;
 	void shatterEmpires(const Configuration& theConfiguration) const;
+	void filterIndependentTitles();
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -71,6 +73,8 @@ class World: commonItems::parser
 	mappers::NamedColors namedColors;
 	mappers::IAmHreMapper iAmHreMapper;
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;
+
+	std::map<std::string, std::shared_ptr<Title>> independentTitles;
 
 	enum class SaveType
 	{

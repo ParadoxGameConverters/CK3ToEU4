@@ -119,6 +119,8 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	shatterHRE(*theConfiguration);
 	LOG(LogLevel::Info) << "-- Shattering Empires";
 	shatterEmpires(*theConfiguration);
+	LOG(LogLevel::Info) << "-- Filtering Independent Titles";
+	filterIndependentTitles();
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -559,4 +561,64 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		empire.second->brickTitle();
 		Log(LogLevel::Info) << "<> " << empire.first << " shattered, " << members.size() << " members released.";
 	}
+}
+
+void CK3::World::filterIndependentTitles()
+{
+	const auto& allTitles = titles.getTitles();
+	std::map<std::string, std::shared_ptr<Title>> potentialIndeps;
+
+	for (const auto& title: allTitles)
+	{
+		if (!title.second->getHolder())
+			continue; // don't bother with titles without holders.
+		if (!title.second->getDFLiege())
+		{
+			// this is a potential indep.
+			potentialIndeps.insert(title);
+		}
+	}
+
+	// Check if the holder holds any actual land (b|c_something). (Only necessary for the holder,
+	// no need to recurse, we're just filtering landless titular titles like mercenaries
+	// or landless Pope. If a character holds a landless titular title along actual title
+	// (like Caliphate), it's not relevant at this stage as he's independent anyway.
+
+	// First, split off all county_title holders into a container.
+	std::set<int> countyHolders;
+	std::map<int, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
+	for (const auto& title: allTitles)
+	{
+		if (title.second->getHolder() && title.second->getName().find("c_") == 0)
+			countyHolders.insert(title.second->getHolder()->first);
+		allTitleHolders[title.second->getHolder()->first].insert(title);
+	}
+
+	// Then look at all potential indeps and see if their holders hold physical clay.
+	auto counter = 0;
+	for (const auto& indep: potentialIndeps)
+	{
+		const auto& holderID = indep.second->getHolder()->first;
+		if (countyHolders.count(holderID))
+		{
+			// this fellow holds a county, so his indep title is an actual title.
+			independentTitles.insert(indep);
+			counter++;
+			// Set The Pope
+			if (indep.first == "k_papal_state")
+			{
+				indep.second->setThePope();
+				Log(LogLevel::Debug) << indep.first << " is the Pope.";
+			}
+			else
+			{
+				if (allTitleHolders[holderID].count("k_papal_state"))
+				{
+					indep.second->setThePope();
+					Log(LogLevel::Debug) << indep.first << " belongs to the Pope.";
+				}
+			}
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " independent titles recognized.";
 }
