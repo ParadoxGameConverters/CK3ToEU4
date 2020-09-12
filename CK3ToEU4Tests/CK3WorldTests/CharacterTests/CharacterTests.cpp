@@ -32,6 +32,7 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(character.getClaims().empty());
 	ASSERT_FALSE(character.getEmployer());
 	ASSERT_FALSE(character.isKnight());
+	ASSERT_FALSE(character.isCouncilor());
 	ASSERT_FALSE(character.isFemale());
 	ASSERT_FALSE(character.getSpouse());
 	ASSERT_FALSE(character.getDomain());
@@ -110,12 +111,14 @@ TEST(CK3World_CharacterTests, characterCourtDataCanBeLoaded)
 	input << "court_data = {\n";
 	input << "\temployer = 27\n";
 	input << "\tknight = yes\n";
+	input << "\tcouncil_task = 7248\n";
 	input << "}";
 
 	const CK3::Character character(input, 42);
 
 	ASSERT_EQ(27, character.getEmployer()->first);
 	ASSERT_TRUE(character.isKnight());
+	ASSERT_TRUE(character.isCouncilor());
 }
 
 TEST(CK3World_CharacterTests, characterDomainCanBeLoaded)

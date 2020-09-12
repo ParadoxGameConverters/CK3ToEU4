@@ -38,6 +38,7 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getClay() const { return clay; }
 	[[nodiscard]] const auto& getOwnedDFCounties() const { return ownedDFCounties; }
 	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
+	[[nodiscard]] const auto& getHoldingTitle() const { return holdingTitle; }
 
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
@@ -66,6 +67,7 @@ class Title: commonItems::parser
 	void congregateDJCounties();
 	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
 	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
+	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
 
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
@@ -101,6 +103,7 @@ class Title: commonItems::parser
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.
 	std::map<std::string, std::shared_ptr<Title>> generatedVassals;					// Vassals we split off deliberately.
+	std::pair<std::string, std::shared_ptr<Title>> holdingTitle;						// topmost owner title (e_francia or similar), only c_s have this.
 };
 } // namespace CK3
 

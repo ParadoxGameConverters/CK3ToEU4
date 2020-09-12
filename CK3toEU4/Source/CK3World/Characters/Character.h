@@ -26,6 +26,7 @@ class Character: commonItems::parser
 
 	[[nodiscard]] auto isKnight() const { return knight; }
 	[[nodiscard]] auto isFemale() const { return female; }
+	[[nodiscard]] auto isCouncilor() const { return councilor; }
 	[[nodiscard]] auto getID() const { return charID; }
 	[[nodiscard]] auto getPiety() const { return piety; }
 	[[nodiscard]] auto getPrestige() const { return prestige; }
@@ -43,6 +44,8 @@ class Character: commonItems::parser
 
 	[[nodiscard]] const auto& getSkills() const { return skills; }
 	[[nodiscard]] const auto& getDomain() const { return characterDomain; }
+	[[nodiscard]] const auto& getCourtierNames() const { return courtierNames; }
+	[[nodiscard]] const auto& getCouncilors() const { return councilors; }
 
 	[[nodiscard]] auto getTempTitle() const { return tempTitle; }
 	[[nodiscard]] auto getAccumulated() const { return accumulated; }
@@ -59,12 +62,15 @@ class Character: commonItems::parser
 
 	// processing
 	void dropTitleFromDomain(int titleID);
+	void loadCourtierNames(const std::map<std::string, bool>& theNames) { courtierNames = theNames; }
+	void loadCouncilors(const std::map<int, std::shared_ptr<Character>>& newCouncilors) { councilors = newCouncilors; }
 
   private:
 	void registerKeys();
 
 	bool knight = false;
 	bool female = false;
+	bool councilor = false;
 	int charID = 0;
 	double piety = 0;
 	double prestige = 0;
@@ -82,6 +88,8 @@ class Character: commonItems::parser
 
 	Skills skills;
 	std::optional<CharacterDomain> characterDomain;
+	std::map<std::string, bool> courtierNames; // A simple list of people's names and genders. True=male.
+	std::map<int, std::shared_ptr<Character>> councilors;
 
 	int tempTitle = 0;		// temporary variable for recursive scrapes.
 	double accumulated = 0; // temporary variable for recursive scrapes.
