@@ -36,6 +36,8 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
 	[[nodiscard]] const auto& getClay() const { return clay; }
+	[[nodiscard]] const auto& getOwnedDFCounties() const { return ownedDFCounties; }
+	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
@@ -48,6 +50,8 @@ class Title: commonItems::parser
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
 	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
 	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
+	void loadOwnedDFCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDFCounties = theOwnedCounties; }
+	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
 
 	// processing
 	[[nodiscard]] int flagDeJureHREProvinces();
@@ -58,6 +62,11 @@ class Title: commonItems::parser
 	void setInHRE() { inHRE = true; }
 	void dropTitleFromDFVassals(int titleID);
 	void setThePope() { thePope = true; }
+	void congregateDFCounties();
+	void congregateDJCounties();
+
+	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
+	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
 
   private:
 	void registerKeys();
@@ -85,7 +94,9 @@ class Title: commonItems::parser
 	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
 	bool HREEmperor = false;
 	bool inHRE = false;
-	bool thePope = false;
+	bool thePope = false;	
+	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
+	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 };
 } // namespace CK3
 

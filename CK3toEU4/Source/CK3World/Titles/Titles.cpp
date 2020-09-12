@@ -88,6 +88,15 @@ void CK3::Titles::linkTitles()
 
 	for (const auto& title: titles)
 	{
+		// Self-loading - this is used for coalescing and congregating counties later.
+		if (title.first.find("c_") == 0)
+		{
+			std::map<std::string, std::shared_ptr<Title>> self;
+			self.insert(title);
+			title.second->loadOwnedDFCounties(self); // every county defacto owns itself, by definition.
+			title.second->loadOwnedDJCounties(self); // dejure as well.
+		}
+
 		// DFLiege
 		if (title.second->getDFLiege())
 		{
