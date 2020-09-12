@@ -121,6 +121,8 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	shatterEmpires(*theConfiguration);
 	LOG(LogLevel::Info) << "-- Filtering Independent Titles";
 	filterIndependentTitles();
+	LOG(LogLevel::Info) << "-- Splitting Off Vassals";
+	splitVassals(*theConfiguration);
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -621,4 +623,68 @@ void CK3::World::filterIndependentTitles()
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " independent titles recognized.";
+}
+
+void CK3::World::splitVassals(const Configuration& theConfiguration)
+{
+	if (theConfiguration.getSplitVassals() == Configuration::SPLITVASSALS::NO)
+	{
+		Log(LogLevel::Info) << ">< Splitting vassals disabled by configuration.";
+		return;
+	}
+
+	std::map<std::string, std::shared_ptr<Title>> newIndeps;
+
+	// We know who's independent. We can go through all indeps and see what should be an independent vassal.
+	for (const auto& title: independentTitles)
+	{
+		if (title.second->isThePope())
+			continue; // Not touching the pope.
+		// let's not split hordes or tribals. <- TODO: Add horde here once some DLC drops.
+		if (title.second->getHolder()->second->getDomain()->getGovernment() == "tribal_government")
+			continue;
+		auto relevantVassals = 0;
+		std::string relevantVassalPrefix;
+		if (title.first.find("e_") == 0)
+			relevantVassalPrefix = "k_";
+		else if (title.first.find("k_") == 0)
+			relevantVassalPrefix = "d_";
+		else
+			continue; // Not splitting off counties.
+		for (const auto& vassal: title.second->getDFVassals())
+		{
+			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+				continue; // they are not relevant
+			if (vassal.second->coalesceDFCounties().empty())
+				continue; // no land, not relevant
+			relevantVassals++;
+		}
+		if (!relevantVassals)
+			continue;																		// no need to split off anything.
+		const auto& countiesClaimed = title.second->coalesceDFCounties(); // this is our primary total.
+		for (const auto& vassal: title.second->getDFVassals())
+		{
+			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+				continue; // they are not relevant
+			if (vassal.second->getHolder()->first == title.second->getHolder()->first)
+				continue; // Not splitting our own land.
+			const auto& vassalProvincesClaimed = vassal.second->coalesceDFCounties();
+
+			// a vassal goes indep if they control 1/relevantvassals + 10% land.
+			const double threshold = static_cast<double>(countiesClaimed.size()) / relevantVassals + 0.1 * static_cast<double>(countiesClaimed.size());
+			if (static_cast<double>(vassalProvincesClaimed.size()) > threshold)
+				newIndeps.insert(std::pair(vassal.second->getName(), vassal.second));
+		}
+	}
+
+	// Now let's free them.
+	for (const auto& newIndep: newIndeps)
+	{
+		const auto& liege = newIndep.second->getDFLiege();
+		liege->second->addGeneratedVassal(newIndep);
+		newIndep.second->loadGeneratedLiege(std::pair(liege->second->getName(), liege->second));
+		newIndep.second->grantIndependence();
+		independentTitles.insert(newIndep);
+	}
+	Log(LogLevel::Info) << "<> " << newIndeps.size() << " vassals liberated from immediate integration.";
 }

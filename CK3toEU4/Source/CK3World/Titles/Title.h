@@ -64,6 +64,8 @@ class Title: commonItems::parser
 	void setThePope() { thePope = true; }
 	void congregateDFCounties();
 	void congregateDJCounties();
+	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
+	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
 
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
@@ -94,9 +96,11 @@ class Title: commonItems::parser
 	std::shared_ptr<LandedTitles> clay; // Middleware towards geographical data, essential for b_&c_, potentially obsolete for others.
 	bool HREEmperor = false;
 	bool inHRE = false;
-	bool thePope = false;	
+	bool thePope = false;
 	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.
+	std::map<std::string, std::shared_ptr<Title>> generatedVassals;					// Vassals we split off deliberately.
 };
 } // namespace CK3
 
