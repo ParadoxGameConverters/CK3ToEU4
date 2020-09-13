@@ -120,7 +120,11 @@
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h" />
+    <ClInclude Include="Source\Mappers\LocalizationMapper\LocalizationMapper.h" />
     <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.h" />
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.h" />
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.h" />
     <ClInclude Include="Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.h" />
     <ClInclude Include="Source\Mappers\TraitScraper\TraitScraper.h" />
     <ClInclude Include="Source\Mappers\TraitScraper\TraitScraping.h" />
@@ -174,13 +178,14 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
+    <ClCompile Include="Source\Mappers\LocalizationMapper\LocalizationMapper.cpp" />
     <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp" />
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp" />
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp" />
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp" />
     <ClCompile Include="Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
     <ClCompile Include="Source\Mappers\TraitScraper\TraitScraper.cpp" />
     <ClCompile Include="Source\Mappers\TraitScraper\TraitScraping.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Data_Files\version.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ZipLib\ZipLib.vcxproj">

@@ -89,7 +89,11 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp" />
@@ -135,6 +139,9 @@
     <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
     <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp" />
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp" />
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp" />
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp" />
     <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp" />

@@ -109,6 +109,15 @@
     <Filter Include="MapperTests\TraitScraperTests">
       <UniqueIdentifier>{64db79a3-2ac7-4342-b4d7-aa74a95adbbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\PrimaryTagMapper">
+      <UniqueIdentifier>{dd4a8cdb-a968-47ca-9921-e31a7a2dd270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\LocalizationMapper">
+      <UniqueIdentifier>{5b6c5175-a127-4e82-be17-ca4340484337}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\PrimaryTagMapperTests">
+      <UniqueIdentifier>{a7421cb5-027d-4efe-be77-14cb576696a8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -346,6 +355,27 @@
     </ClCompile>
     <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp">
       <Filter>MapperTests\TraitScraperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp">
+      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp">
+      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\LocalizationMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp">
+      <Filter>MapperTests\PrimaryTagMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp">
+      <Filter>MapperTests\PrimaryTagMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp">
+      <Filter>MapperTests\PrimaryTagMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
