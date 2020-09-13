@@ -39,8 +39,8 @@ TEST(Mappers_PrimaryTagMapperTests, TagMapperReturnsTagOnHit)
 	input << "group2 = { culture4 = {primary = GAT} culture5 = {} culture6 = {primary = GOT} }\n";
 	const mappers::PrimaryTagMapper tagMapper(input);
 
-	ASSERT_EQ(*tagMapper.getPrimaryTagForCulture("culture1"), "TAG");
-	ASSERT_EQ(*tagMapper.getPrimaryTagForCulture("culture3"), "GAT");
-	ASSERT_EQ(*tagMapper.getPrimaryTagForCulture("culture4"), "GAT");
-	ASSERT_EQ(*tagMapper.getPrimaryTagForCulture("culture6"), "GOT");
+	ASSERT_EQ("TAG", * tagMapper.getPrimaryTagForCulture("culture1"));
+	ASSERT_EQ("GAT", *tagMapper.getPrimaryTagForCulture("culture3"));
+	ASSERT_EQ("GAT", *tagMapper.getPrimaryTagForCulture("culture4"));
+	ASSERT_EQ("GOT", *tagMapper.getPrimaryTagForCulture("culture6"));
 }

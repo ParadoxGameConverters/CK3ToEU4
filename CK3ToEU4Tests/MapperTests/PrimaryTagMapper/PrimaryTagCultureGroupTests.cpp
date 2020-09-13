@@ -23,8 +23,8 @@ TEST(Mappers_PrimaryTagCultureGroupTests, PrimaryTagsCanBeLoaded)
 	const auto& theTags = theMapping.getCollectedTags();
 	
 	ASSERT_EQ(theTags.size(), 2);
-	ASSERT_EQ(theTags.find("culture1")->second, "TAG");
-	ASSERT_EQ(theTags.find("culture2"), theTags.end());
-	ASSERT_EQ(theTags.find("culture3")->second, "GAT");
+	ASSERT_EQ("TAG", theTags.find("culture1")->second);
+	ASSERT_EQ(theTags.end(), theTags.find("culture2"));
+	ASSERT_EQ("GAT" , theTags.find("culture3")->second);
 }
 

@@ -18,5 +18,5 @@ TEST(Mappers_PrimaryTagCultureTests, PrimaryTagCanBeSet)
 
 	const mappers::PrimaryTagCulture theMapping(input);
 
-	ASSERT_EQ(theMapping.getTag(), "TAG");
+	ASSERT_EQ("TAG", theMapping.getTag());
 }
