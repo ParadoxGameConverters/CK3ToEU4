@@ -445,11 +445,11 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
-		if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+		if (vassal.second->getLevel() == 2 || vassal.second->getLevel() == 1)
 		{
 			hreMembers.insert(vassal);
 		}
-		else if (vassal.second->getName().find("k_") == 0)
+		else if (vassal.second->getLevel() == 3)
 		{
 			if (vassal.second->getName() == "k_papal_state" || vassal.second->getName() == "k_orthodox" ||
 				 theConfiguration.getShatterHRELevel() == Configuration::SHATTER_HRE_LEVEL::KINGDOM) // hard override for special HRE members
@@ -466,7 +466,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 				vassal.second->brickTitle();
 			}
 		}
-		else if (vassal.second->getName().find("b_") != 0)
+		else if (vassal.second->getLevel() != 0)
 		{
 			Log(LogLevel::Warning) << "Unrecognized HRE vassal: " << vassal.first << " - " << vassal.second->getName();
 		}
@@ -477,7 +477,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	{
 		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
 			continue;
-		if (hreHolderTitle.second->getName().find("b_") == 0) // Absolutely ignore baronies.
+		if (hreHolderTitle.second->getLevel() == 0) // Absolutely ignore baronies.
 			continue;
 		if (hreHolderTitle.second->getClay() && !hreHolderTitle.second->getClay()->isLandless())
 		{ // looks solid.
@@ -529,7 +529,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // This is HRE, wrong function for that one.
 		if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::CUSTOM && !shatterEmpiresMapper.isEmpireShatterable(empire.first))
 			continue; // Only considering those listed.
-		if (empire.first.find("e_") != 0 && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
+		if (empire.second->getLevel() != 4 && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
 			continue; // Otherwise only empires.
 		if (empire.second->getDFVassals().empty())
 			continue; // Not relevant.
@@ -538,11 +538,11 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		std::map<int, std::shared_ptr<Title>> members;
 		for (const auto& vassal: empire.second->getDFVassals())
 		{
-			if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
+			if (vassal.second->getLevel() == 2 || vassal.second->getLevel() == 1)
 			{
 				members.insert(vassal);
 			}
-			else if (vassal.second->getName().find("k_") == 0)
+			else if (vassal.second->getLevel() == 3)
 			{
 				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
 				{ // hard override for special empire members
@@ -559,7 +559,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 					members.insert(vassal);
 				}
 			}
-			else if (vassal.second->getName().find("b_") != 0)
+			else if (vassal.second->getLevel() != 0)
 			{
 				Log(LogLevel::Warning) << "Unrecognized vassal level: " << vassal.first;
 			}
@@ -603,7 +603,7 @@ void CK3::World::filterIndependentTitles()
 	std::map<int, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
 	for (const auto& title: allTitles)
 	{
-		if (title.second->getHolder() && title.second->getName().find("c_") == 0)
+		if (title.second->getHolder() && title.second->getLevel() == 1)
 			countyHolders.insert(title.second->getHolder()->first);
 		allTitleHolders[title.second->getHolder()->first].insert(title);
 	}
@@ -656,16 +656,16 @@ void CK3::World::splitVassals(const Configuration& theConfiguration)
 		if (title.second->getHolder()->second->getDomain()->getGovernment() == "tribal_government")
 			continue;
 		auto relevantVassals = 0;
-		std::string relevantVassalPrefix;
-		if (title.first.find("e_") == 0)
-			relevantVassalPrefix = "k_";
-		else if (title.first.find("k_") == 0)
-			relevantVassalPrefix = "d_";
+		int relevantVassalLevel;
+		if (title.second->getLevel() == 4)
+			relevantVassalLevel = 3;
+		else if (title.second->getLevel() == 3)
+			relevantVassalLevel = 2;
 		else
 			continue; // Not splitting off counties.
 		for (const auto& vassal: title.second->getDFVassals())
 		{
-			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+			if (vassal.second->getLevel() != relevantVassalLevel)
 				continue; // they are not relevant
 			if (vassal.second->coalesceDFCounties().empty())
 				continue; // no land, not relevant
@@ -676,7 +676,7 @@ void CK3::World::splitVassals(const Configuration& theConfiguration)
 		const auto& countiesClaimed = title.second->coalesceDFCounties(); // this is our primary total.
 		for (const auto& vassal: title.second->getDFVassals())
 		{
-			if (vassal.second->getName().find(relevantVassalPrefix) != 0)
+			if (vassal.second->getLevel() != relevantVassalLevel)
 				continue; // they are not relevant
 			if (vassal.second->getHolder()->first == title.second->getHolder()->first)
 				continue; // Not splitting our own land.

@@ -42,6 +42,8 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 	[[nodiscard]] const auto& getHoldingTitle() const { return holdingTitle; }
 
+	[[nodiscard]] int getLevel() const;
+
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
 	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }

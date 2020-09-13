@@ -92,7 +92,7 @@ int CK3::Title::flagDeJureHREProvinces()
 	}
 	if (!clay) // We really need the county clay to confirm we're a landful proper county.
 		return counter;
-	if (!clay->getCounty() || name.find("c_") != 0)
+	if (!clay->getCounty() || getLevel() != 1)
 		return counter;
 
 	clay->getCounty()->second->setDeJureHRE();
@@ -178,4 +178,25 @@ void CK3::Title::congregateDJCounties()
 		const auto& deJureVassalDJCounties = deJureVassal.second->coalesceDJCounties();
 		ownedDJCounties.insert(deJureVassalDJCounties.begin(), deJureVassalDJCounties.end());
 	}
+}
+
+int CK3::Title::getLevel() const
+{
+	// It's easy, until it's not.
+	if (name.find("b_") == 0)
+		return 0;
+	if (name.find("c_") == 0)
+		return 1;
+	if (name.find("d_") == 0)
+		return 2;
+	if (name.find("k_") == 0)
+		return 3;
+	if (name.find("e_") == 0)
+		return 4;
+	
+	// This is the questionable part. Does it work for custom empires? Maybe?
+	if (!djLiege)
+		return 4;
+	else
+		return djLiege->second->getLevel() - 1;
 }
