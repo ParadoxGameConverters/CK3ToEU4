@@ -3,6 +3,8 @@
 #include "../CK3World/World.h"
 #include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "Output/outModFile.h"
+#include "../Mappers/LocalizationMapper/LocalizationMapper.h"
+#include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 
 class Configuration;
 
@@ -23,6 +25,9 @@ class World
 	void outputVersion(const mappers::ConverterVersion& versionParser, const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
+
+	mappers::LocalizationMapper localizationMapper;
+	mappers::PrimaryTagMapper primaryTagMapper;
 
 	ModFile modFile;
 };

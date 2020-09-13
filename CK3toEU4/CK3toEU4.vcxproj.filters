@@ -64,6 +64,12 @@
     <Filter Include="Mappers\TraitScraper">
       <UniqueIdentifier>{dcea308a-b2bf-4134-b33f-9f6419120382}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\LocalizationMapper">
+      <UniqueIdentifier>{2839300b-a215-41c5-bf23-506dbace188f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\PrimaryTagMapper">
+      <UniqueIdentifier>{ad8d726d-948a-4f97-b7fc-d6116b156077}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -216,6 +222,18 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\TraitScraper\TraitScraping.h">
       <Filter>Mappers\TraitScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LocalizationMapper\LocalizationMapper.h">
+      <Filter>Mappers\LocalizationMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -371,8 +389,17 @@
     <ClCompile Include="Source\Mappers\TraitScraper\TraitScraping.cpp">
       <Filter>Mappers\TraitScraper</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Data_Files\version.txt" />
+    <ClCompile Include="Source\Mappers\LocalizationMapper\LocalizationMapper.cpp">
+      <Filter>Mappers\LocalizationMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

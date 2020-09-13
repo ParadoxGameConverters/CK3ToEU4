@@ -33,6 +33,7 @@ class World: commonItems::parser
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
 	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }
+	[[nodiscard]] const auto& getMods() const { return mods; }
 
   private:
 	// savegame processing
