@@ -62,12 +62,12 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 		const auto quote2Loc = newLine.find_last_of('\"');
 		if (quoteLoc == std::string::npos || quote2Loc == std::string::npos || quote2Loc - quoteLoc == 0)
 			continue;
-		const auto value = newLine.substr(quoteLoc, quote2Loc - quoteLoc);
+		const auto value = newLine.substr(quoteLoc + 1, quote2Loc - quoteLoc - 1);
 
 		if (localizations.count(key))
 		{
 			if (language == "english")
-				localizations[key].english = value;
+				localizations[key].english = value;				
 			if (language == "french")
 				localizations[key].french = value;
 			if (language == "german")
