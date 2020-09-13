@@ -870,6 +870,9 @@ void CK3::World::setElectors()
 
 	for (auto& elector: electors)
 	{
+		if (counter >= 7)
+			break; // We had enough.
+		
 		if (electors.size() > 7 && elector.first == hreHolder.first)
 		{
 			continue; // We're skipping the emperor for 8+ slot setups.
