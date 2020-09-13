@@ -69,6 +69,14 @@ void CK3::Title::registerKeys()
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
 		coa = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
+	registerKeyword("succession_election", [this](const std::string& unused, std::istream& theStream) {
+		const auto newTitle = Title(theStream, 0);
+		electors = newTitle.getElectors();
+	});
+	registerKeyword("electors", [this](const std::string& unused, std::istream& theStream) {
+		for (auto electorID: commonItems::intList(theStream).getInts())
+			electors.insert(std::pair(electorID, nullptr));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

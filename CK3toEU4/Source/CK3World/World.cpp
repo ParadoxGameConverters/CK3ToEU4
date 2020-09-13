@@ -129,6 +129,10 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	congregateDFCounties();
 	LOG(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
 	congregateDJCounties();
+	LOG(LogLevel::Info) << "-- Filtering Landless Titles";
+	filterLandlessTitles();
+	LOG(LogLevel::Info) << "-- Distributing Electorates";
+	setElectors();
 
 	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
@@ -356,90 +360,64 @@ void CK3::World::crosslinkDatabases()
 	titles.linkLandedTitles(landedTitles);
 }
 
-void CK3::World::flagHREProvinces(const Configuration& theConfiguration) const
+void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
 {
-	std::string hreTitle;
+	std::string hreTitleStr;
 	switch (theConfiguration.getHRE())
 	{
 		case Configuration::I_AM_HRE::HRE:
-			hreTitle = "e_hre";
+			hreTitleStr = "e_hre";
 			break;
 		case Configuration::I_AM_HRE::BYZANTIUM:
-			hreTitle = "e_byzantium";
+			hreTitleStr = "e_byzantium";
 			break;
 		case Configuration::I_AM_HRE::ROME:
-			hreTitle = "e_roman_empire";
+			hreTitleStr = "e_roman_empire";
 			break;
 		case Configuration::I_AM_HRE::CUSTOM:
-			hreTitle = iAmHreMapper.getHRE();
+			hreTitleStr = iAmHreMapper.getHRE();
 			break;
 		case Configuration::I_AM_HRE::NONE:
 			Log(LogLevel::Info) << ">< HRE Provinces not available due to configuration disabling HRE Mechanics.";
 			return;
 	}
 	const auto& allTitles = titles.getTitles();
-	const auto& theHre = allTitles.find(hreTitle);
+	const auto& theHre = allTitles.find(hreTitleStr);
 	if (theHre == allTitles.end())
 	{
-		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " not found!";
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitleStr << " not found!";
 		return;
 	}
 	if (theHre->second->getDFVassals().empty())
 	{
-		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitle << " has no vassals!";
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitleStr << " has no vassals!";
+		return;
+	}
+	if (!theHre->second->getHolder())
+	{
+		Log(LogLevel::Info) << ">< HRE Provinces not available, " << hreTitleStr << " has no holder!";
 		return;
 	}
 
+	// store for later.
+	hreTitle = std::make_pair(hreTitleStr, theHre->second);
+	
 	const auto counter = theHre->second->flagDeJureHREProvinces();
 	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
 }
 
 void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 {
-	std::string hreTitle;
-	switch (theConfiguration.getHRE())
-	{
-		case Configuration::I_AM_HRE::HRE:
-			hreTitle = "e_hre";
-			break;
-		case Configuration::I_AM_HRE::BYZANTIUM:
-			hreTitle = "e_byzantium";
-			break;
-		case Configuration::I_AM_HRE::ROME:
-			hreTitle = "e_roman_empire";
-			break;
-		case Configuration::I_AM_HRE::CUSTOM:
-			hreTitle = iAmHreMapper.getHRE();
-			break;
-		case Configuration::I_AM_HRE::NONE:
-			Log(LogLevel::Info) << ">< HRE Mechanics and shattering overridden by configuration.";
-			return;
-	}
-	const auto& allTitles = titles.getTitles();
-	const auto& theHre = allTitles.find(hreTitle);
-	if (theHre == allTitles.end())
-	{
-		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " not found!";
+	if (!hreTitle)
 		return;
-	}
-	if (theHre->second->getDFVassals().empty())
-	{
-		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no vassals!";
-		return;
-	}
-	if (!theHre->second->getHolder())
-	{
-		Log(LogLevel::Info) << ">< HRE shattering cancelled, " << hreTitle << " has no holder!";
-		return;
-	}
-	const auto& hreHolder = theHre->second->getHolder();
+	const auto& hreHolder = hreTitle->second->getHolder();
 	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
 
 	// First we are composing a list of all HRE members. These are duchies,
 	// so we're also ripping them from under any potential kingdoms.
 	std::map<int, std::shared_ptr<Title>> hreMembers;
 
-	for (const auto& vassal: theHre->second->getDFVassals())
+	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
 		if (vassal.second->getName().find("d_") == 0 || vassal.second->getName().find("c_") == 0)
 		{
@@ -471,7 +449,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
 	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
 	{
-		if (hreHolderTitle.second->getName() == hreTitle) // this is what we're breaking, ignore it.
+		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
 			continue;
 		if (hreHolderTitle.second->getName().find("b_") == 0) // Absolutely ignore baronies.
 			continue;
@@ -495,7 +473,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	}
 
 	// Finally we brick the hre.
-	theHre->second->brickTitle();
+	hreTitle->second->brickTitle();
 	Log(LogLevel::Info) << "<> " << hreMembers.size() << " HRE members released.";
 }
 
@@ -521,6 +499,8 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 
 	for (const auto& empire: allTitles)
 	{
+		if (hreTitle && empire.first == hreTitle->first)
+			continue; // This is HRE, wrong function for that one.
 		if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::CUSTOM && !shatterEmpiresMapper.isEmpireShatterable(empire.first))
 			continue; // Only considering those listed.
 		if (empire.first.find("e_") != 0 && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
@@ -793,4 +773,121 @@ void CK3::World::congregateDJCounties()
 		counter += static_cast<int>(title.second->getOwnedDJCounties().size());
 	}
 	Log(LogLevel::Info) << "<> " << counter << " de jure provinces claimed by independents.";	
+}
+
+void CK3::World::filterLandlessTitles()
+{
+	auto counter = 0;
+	std::set<std::string> titlesForDisposal;
+	for (const auto& title: independentTitles)
+	{
+		if (title.second->getOwnedDFCounties().empty())
+		{
+			titlesForDisposal.insert(title.first);
+		}
+	}
+	for (const auto& drop: titlesForDisposal)
+	{
+		independentTitles.erase(drop);
+		counter++;
+	}
+	Log(LogLevel::Info) << "<> " << counter << " empty titles dropped, " << independentTitles.size() << " remain.";
+}
+
+void CK3::World::setElectors()
+{
+	// Finding electorates is not entirely trivial. CK3 has 7-XX slots, one of which is usually the Emperor himself, but
+	// he is not considered an elector in EU4 sense unless he holds one of the electorate titles which are historical.
+	// However, CK3 doesn't care about titles, it stores people, so a multiduke with a secondary electoral title will still
+	// be elector and we need to flag his primary title as electorate one, as other duchies will possibly be annexed or PU-d.
+	// Moreover, these electors may not even be indeps after HRE shattering as player may opt to keep kingdoms but electors were
+	// under these kings. We can't help that.
+
+	if (!hreTitle)
+	{
+		Log(LogLevel::Info) << ">< HRE does not exist.";
+		return;
+	}
+	auto electors = hreTitle->second->getElectors();
+	if (electors.empty())
+	{
+		Log(LogLevel::Info) << ">< HRE does not have electors.";
+		return;
+	}
+
+	auto counter = 0;
+	
+	// Preambule done, we start here.
+	// Make a registry of indep titles and their holders.
+	std::map<int, std::map<std::string, std::shared_ptr<Title>>> holderTitles; // holder/titles
+	std::pair<int, std::shared_ptr<Character>> hreHolder;
+
+	for (const auto& title: independentTitles)
+	{
+		holderTitles[title.second->getHolder()->first].insert(title);
+		if (title.second->isHREEmperor())
+		{
+			hreHolder = *title.second->getHolder();
+		}
+	}
+
+	if (!hreHolder.first)
+	{
+		Log(LogLevel::Info) << ">< HRE does not have an emperor.";
+		return;
+	}
+
+	// Now roll through electors and flag their primary titles as electors. If kings get electorate status
+	// but kingdoms are also shattered, tough luck? Their primary duchy won't inherit electorate as they could
+	// end up with multiple electorates, and that's possible only through EU4 gameplay and causes massive
+	// penalties to IA.
+
+	for (auto& elector: electors)
+	{
+		if (electors.size() > 7 && elector.first == hreHolder.first)
+		{
+			continue; // We're skipping the emperor for 8+ slot setups.
+		}
+
+		// How many indep titles does he hold? If any?
+		const auto& regItr = holderTitles.find(elector.first);
+		if (regItr == holderTitles.end())
+		{
+			continue; // This fellow was cheated out of electorate titles.
+		}
+
+		// Which title is his primary? The first one in his domain (that survived the shattering)
+		if (elector.second->getDomain() && !elector.second->getDomain()->getDomain().empty())
+		{
+			for (const auto& electorTitle: elector.second->getDomain()->getDomain())
+			{
+				// mark this title as electorate if it's independent and has land.
+				if (regItr->second.count(electorTitle.second->getName()) && !electorTitle.second->getOwnedDFCounties().empty())
+				{
+					electorTitle.second->setElectorate();
+					Log(LogLevel::Debug) << "Setting electorate: " << electorTitle.second->getName();
+					counter++;
+					break;					
+				}
+			}
+			// If we marked none here, then all his titles are dependent and he's not a good elector choice.
+		}
+		else
+		{
+			// This is a fellow without a domain? Mark some independent non-landless title as electorate.
+			for (const auto& title: regItr->second)
+			{
+				if (!title.second->getOwnedDFCounties().empty())
+				{
+					title.second->setElectorate();
+					Log(LogLevel::Debug) << "Setting electorate: " << title.first;
+					counter++;
+					break;
+				}
+			}
+			// otherwise no helping this fellow.
+		}
+	}
+
+	Log(LogLevel::Info) << "<> " << counter << " electorates linked.";
 }
