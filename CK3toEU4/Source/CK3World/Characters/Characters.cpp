@@ -1,4 +1,5 @@
 #include "Characters.h"
+#include "../../Mappers/TraitScraper/TraitScraper.h"
 #include "../Cultures/Cultures.h"
 #include "../Dynasties/Houses.h"
 #include "../Religions/Faiths.h"
@@ -174,7 +175,7 @@ void CK3::Characters::linkCharacters()
 			{
 				// dead spouse.
 				character.second->resetSpouse();
-			}			
+			}
 		}
 		if (character.second->getEmployer())
 		{
@@ -186,10 +187,28 @@ void CK3::Characters::linkCharacters()
 			}
 			else
 			{
-				throw std::runtime_error("Character " + std::to_string(character.first) + " has employer " + std::to_string(character.second->getEmployer()->first) +
-												 " which has no definition!");
+				throw std::runtime_error("Character " + std::to_string(character.first) + " has employer " +
+												 std::to_string(character.second->getEmployer()->first) + " which has no definition!");
 			}
 		}
 	}
 	Log(LogLevel::Info) << "<> " << spouseCounter << " spouses, " << employerCounter << " employers updated.";
+}
+
+void CK3::Characters::linkTraits(const mappers::TraitScraper& traitScraper)
+{
+	auto counter = 0;
+	for (const auto& character: characters)
+	{
+		std::map<int, std::string> translatedTraits;
+		for (const auto& trait: character.second->getTraits())
+		{
+			const auto& traitMatch = traitScraper.getTraitForID(trait.first);
+			if (traitMatch)
+				translatedTraits.insert(std::pair(trait.first, *traitMatch));
+		}
+		counter += static_cast<int>(translatedTraits.size());
+		character.second->loadTraits(translatedTraits);
+	}
+	Log(LogLevel::Info) << "<> " << counter << " traits observed.";
 }

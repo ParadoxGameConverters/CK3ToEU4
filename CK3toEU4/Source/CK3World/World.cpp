@@ -100,6 +100,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
+	loadCharacterTraits(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
 
 	LOG(LogLevel::Info) << "* Parsing Gamestate *";
@@ -293,7 +294,6 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
 }
 
-
 void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
@@ -316,6 +316,30 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
+}
+
+void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
+{
+	LOG(LogLevel::Info) << "-> Examiming Personalities";
+	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
+	{
+		if (file.find(".txt") == std::string::npos)
+			continue;
+		traitScraper.loadTraits(theConfiguration.getCK3Path() + "common/traits/" + file);
+	}
+	for (const auto& mod: mods.getMods())
+	{
+		if (!Utils::DoesFolderExist(mod.second + "common/traits"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading some character traits from " << mod.first;
+		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/traits"))
+		{
+			if (file.find(".txt") == std::string::npos)
+				continue;
+			traitScraper.loadTraits(mod.second + "common/traits/" + file);
+		}
+	}
+	LOG(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
 }
 
 void CK3::World::crosslinkDatabases()
@@ -358,6 +382,8 @@ void CK3::World::crosslinkDatabases()
 	titles.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Clay into Titles.";
 	titles.linkLandedTitles(landedTitles);
+	Log(LogLevel::Info) << "-> Loading Traits into Characters.";
+	characters.linkTraits(traitScraper);
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
@@ -401,7 +427,7 @@ void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
 
 	// store for later.
 	hreTitle = std::make_pair(hreTitleStr, theHre->second);
-	
+
 	const auto counter = theHre->second->flagDeJureHREProvinces();
 	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
 }
@@ -683,7 +709,7 @@ void CK3::World::gatherCourtierNames()
 
 	auto counter = 0;
 	auto counterAdvisors = 0;
-	std::map<int, std::map<std::string, bool>> holderCourtiers;					 // holder-name/male
+	std::map<int, std::map<std::string, bool>> holderCourtiers;						// holder-name/male
 	std::map<int, std::map<int, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
 
 	for (const auto& character: characters.getCharacters())
@@ -711,7 +737,7 @@ void CK3::World::gatherCourtierNames()
 				if (!liege)
 					continue; // Or maybe we should fire his liege.
 				holderCourtiers[liege->first].insert(std::pair(character.second->getName(), character.second->isFemale()));
-				holderCouncilors[liege->first].insert(character);				
+				holderCouncilors[liege->first].insert(character);
 			}
 			else
 			{
@@ -723,10 +749,10 @@ void CK3::World::gatherCourtierNames()
 		{
 			// Being employed but without a council task means a knight or physician or similar. Works for us.
 			holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
-		}		
+		}
 	}
 
-	// We're only interested in those working for indeps.	
+	// We're only interested in those working for indeps.
 	for (const auto& title: independentTitles)
 	{
 		const auto containerItr = holderCourtiers.find(title.second->getHolder()->first);
@@ -772,7 +798,7 @@ void CK3::World::congregateDJCounties()
 		title.second->congregateDJCounties();
 		counter += static_cast<int>(title.second->getOwnedDJCounties().size());
 	}
-	Log(LogLevel::Info) << "<> " << counter << " de jure provinces claimed by independents.";	
+	Log(LogLevel::Info) << "<> " << counter << " de jure provinces claimed by independents.";
 }
 
 void CK3::World::filterLandlessTitles()
@@ -816,7 +842,7 @@ void CK3::World::setElectors()
 	}
 
 	auto counter = 0;
-	
+
 	// Preambule done, we start here.
 	// Make a registry of indep titles and their holders.
 	std::map<int, std::map<std::string, std::shared_ptr<Title>>> holderTitles; // holder/titles
@@ -867,7 +893,7 @@ void CK3::World::setElectors()
 					electorTitle.second->setElectorate();
 					Log(LogLevel::Debug) << "Setting electorate: " << electorTitle.second->getName();
 					counter++;
-					break;					
+					break;
 				}
 			}
 			// If we marked none here, then all his titles are dependent and he's not a good elector choice.

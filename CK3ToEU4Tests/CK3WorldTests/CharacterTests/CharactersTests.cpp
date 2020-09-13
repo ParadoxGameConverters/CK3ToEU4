@@ -9,6 +9,7 @@
 #include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
+#include "../../CK3toEU4/Source/Mappers/TraitScraper/TraitScraper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -304,4 +305,73 @@ TEST(CK3World_CharactersTests, charactersLinkMissingEmployerThrowsException)
 	CK3::Characters characters(input);
 
 	ASSERT_THROW(characters.linkCharacters(), std::runtime_error);
+}
+
+TEST(CK3World_CharactersTests, traitsCanBeLinked)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\ttraits = { 1 2 3 }\n";
+	input << "}\n";
+	input << "2 = {\n";
+	input << "\tfirst_name = Bob\n";
+	input << "\ttraits = { 2 3 }\n";
+	input << "}\n";
+	input << "3 = {\n";
+	input << "\tfirst_name = Carol\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+	characters.linkCharacters();
+
+	std::stringstream input2;
+	input2 << "trait1 = { index = 1 }\n";
+	input2 << "trait2 = { index = 2 }\n";
+	input2 << "trait3 = { index = 3 }\n";
+
+	mappers::TraitScraper traitScraper;
+	traitScraper.loadTraits(input2);
+
+	characters.linkTraits(traitScraper);
+	
+	const auto& c1 = characters.getCharacters().find(1);
+	const auto& c2 = characters.getCharacters().find(2);
+	const auto& c3 = characters.getCharacters().find(3);
+
+	ASSERT_EQ(3, c1->second->getTraits().size());
+	ASSERT_EQ("trait1", c1->second->getTraits().find(1)->second);
+	ASSERT_EQ("trait2", c1->second->getTraits().find(2)->second);
+	ASSERT_EQ("trait3", c1->second->getTraits().find(3)->second);
+	ASSERT_EQ(2, c2->second->getTraits().size());
+	ASSERT_EQ("trait2", c2->second->getTraits().find(2)->second);
+	ASSERT_EQ("trait3", c2->second->getTraits().find(3)->second);
+	ASSERT_TRUE(c3->second->getTraits().empty());
+}
+
+TEST(CK3World_CharactersTests, traitsLinkMissingTraitsAreIgnored)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\ttraits = { 1 2 3 4 9 }\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+	characters.linkCharacters();
+
+	std::stringstream input2;
+	input2 << "trait1 = { index = 1 }\n";
+	input2 << "trait2 = { index = 2 }\n";
+	input2 << "trait3 = { index = 3 }\n";
+
+	mappers::TraitScraper traitScraper;
+	traitScraper.loadTraits(input2);
+
+	characters.linkTraits(traitScraper);
+
+	const auto& c1 = characters.getCharacters().find(1);
+
+	ASSERT_EQ(3, c1->second->getTraits().size());
+	ASSERT_EQ("trait1", c1->second->getTraits().find(1)->second);
+	ASSERT_EQ("trait2", c1->second->getTraits().find(2)->second);
+	ASSERT_EQ("trait3", c1->second->getTraits().find(3)->second);
 }
