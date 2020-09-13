@@ -8,7 +8,7 @@
 void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const std::map<std::string, std::string>& mods)
 {
 	LOG(LogLevel::Info) << "-> Reading Words";
-	
+
 	scrapeLanguage("english", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("french", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("german", theConfiguration.getCK3Path() + "localization");
@@ -18,14 +18,14 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 	{
 		if (Utils::DoesFolderExist(mod.second + "localization"))
 		{
-			Log(LogLevel::Info) << "\t>> Found some words in: " << mod.second + "localization";
-			scrapeLanguage("english", mod.second);
-			scrapeLanguage("french", mod.second);
-			scrapeLanguage("german", mod.second);
-			scrapeLanguage("spanish", mod.second);
+			Log(LogLevel::Info) << "\t>> Found some words in: " << mod.second + "/localization";
+			scrapeLanguage("english", mod.second + "/localization");
+			scrapeLanguage("french", mod.second + "/localization");
+			scrapeLanguage("german", mod.second + "/localization");
+			scrapeLanguage("spanish", mod.second + "/localization");
 		}
 	}
-	
+
 	LOG(LogLevel::Info) << ">> " << localizations.size() << " words read.";
 }
 
@@ -73,7 +73,7 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 			if (language == "german")
 				localizations[key].german = value;
 			if (language == "spanish")
-				localizations[key].spanish = value;			
+				localizations[key].spanish = value;
 		}
 		else
 		{
@@ -85,7 +85,7 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 			if (language == "german")
 				newBlock.german = value;
 			if (language == "spanish")
-				newBlock.spanish = value;			
+				newBlock.spanish = value;
 			localizations.insert(std::pair(key, newBlock));
 		}
 	}

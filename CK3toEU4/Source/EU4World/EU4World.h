@@ -2,9 +2,9 @@
 #define EU4_WORLD_H
 #include "../CK3World/World.h"
 #include "../Mappers/ConverterVersion/ConverterVersion.h"
-#include "Output/outModFile.h"
 #include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
+#include "Output/outModFile.h"
 
 class Configuration;
 

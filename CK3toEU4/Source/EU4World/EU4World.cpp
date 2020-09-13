@@ -13,7 +13,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Scrape Primary Tags for nationalities
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
 	Log(LogLevel::Progress) << "50 %";
-	
+
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";
 	modFile.outname = theConfiguration.getOutputName();
