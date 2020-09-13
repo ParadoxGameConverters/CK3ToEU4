@@ -23,7 +23,7 @@ void mappers::TraitScraper::registerKeys()
 	registerRegex(commonItems::catchallRegex, [this](const std::string& traitName, std::istream& theStream) {
 		const auto newScraping = TraitScraping(theStream);
 		// we're overriding previously loaded trait names.
-		if (newScraping.getIndex())
+		if (newScraping.getIndex() > 0) // indexes start at 1!
 			traits[newScraping.getIndex()] = traitName;
 	});
 }

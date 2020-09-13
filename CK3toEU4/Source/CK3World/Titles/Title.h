@@ -9,10 +9,23 @@ namespace CK3
 class Character;
 class CoatOfArms;
 class LandedTitles;
+
+enum class LEVEL
+{
+	BARONY,
+	COUNTY,
+	DUCHY,
+	KINGDOM,
+	EMPIRE
+};
+
+static std::map<int, LEVEL> IntToLevel{{0, LEVEL::BARONY}, {1, LEVEL::COUNTY}, {2, LEVEL::DUCHY}, {3, LEVEL::KINGDOM}, {4, LEVEL::EMPIRE}};
+static std::map<LEVEL, int> LevelToInt{{LEVEL::BARONY, 0}, {LEVEL::COUNTY, 1}, {LEVEL::DUCHY, 2}, {LEVEL::KINGDOM, 3}, {LEVEL::EMPIRE, 4}};
+
 class Title: commonItems::parser
 {
   public:
-	Title(std::istream& theStream, int ID);
+	Title(std::istream& theStream, int theID);
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] auto isTheocraticLease() const { return theocraticLease; }
 	[[nodiscard]] auto isCountyCapitalBarony() const { return cCapitalBarony; }
@@ -42,7 +55,7 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 	[[nodiscard]] const auto& getHoldingTitle() const { return holdingTitle; }
 
-	[[nodiscard]] int getLevel() const;
+	[[nodiscard]] LEVEL getLevel() const;
 
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }

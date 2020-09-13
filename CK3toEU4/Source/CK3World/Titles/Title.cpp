@@ -5,7 +5,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::Title::Title(std::istream& theStream, int ID): ID(ID)
+CK3::Title::Title(std::istream& theStream, int theID): ID(theID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -92,7 +92,7 @@ int CK3::Title::flagDeJureHREProvinces()
 	}
 	if (!clay) // We really need the county clay to confirm we're a landful proper county.
 		return counter;
-	if (!clay->getCounty() || getLevel() != 1)
+	if (!clay->getCounty() || getLevel() != LEVEL::COUNTY)
 		return counter;
 
 	clay->getCounty()->second->setDeJureHRE();
@@ -180,23 +180,23 @@ void CK3::Title::congregateDJCounties()
 	}
 }
 
-int CK3::Title::getLevel() const
+CK3::LEVEL CK3::Title::getLevel() const
 {
 	// It's easy, until it's not.
 	if (name.find("b_") == 0)
-		return 0;
+		return LEVEL::BARONY;
 	if (name.find("c_") == 0)
-		return 1;
+		return LEVEL::COUNTY;
 	if (name.find("d_") == 0)
-		return 2;
+		return LEVEL::DUCHY;
 	if (name.find("k_") == 0)
-		return 3;
+		return LEVEL::KINGDOM;
 	if (name.find("e_") == 0)
-		return 4;
+		return LEVEL::EMPIRE;
 	
 	// This is the questionable part. Does it work for custom empires? Maybe?
 	if (!djLiege)
-		return 4;
+		return LEVEL::EMPIRE;
 	else
-		return djLiege->second->getLevel() - 1;
+		return IntToLevel[LevelToInt[djLiege->second->getLevel()] - 1];
 }
