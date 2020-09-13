@@ -4,6 +4,7 @@
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
+#include "../Mappers/TraitScraper/TraitScraper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
 #include "Cultures/Cultures.h"
@@ -44,12 +45,13 @@ class World: commonItems::parser
 	// pre-parsing prep
 	void primeLaFabricaDeColor(const Configuration& theConfiguration);
 	void loadLandedTitles(const Configuration& theConfiguration);
+	void loadCharacterTraits(const Configuration& theConfiguration);
 
 	// postparsing weave
 	void crosslinkDatabases();
 
 	// CK2World processing
-	void flagHREProvinces(const Configuration& theConfiguration) const;
+	void flagHREProvinces(const Configuration& theConfiguration);
 	void shatterHRE(const Configuration& theConfiguration) const;
 	void shatterEmpires(const Configuration& theConfiguration) const;
 	void filterIndependentTitles();
@@ -57,6 +59,8 @@ class World: commonItems::parser
 	void gatherCourtierNames();
 	void congregateDFCounties();
 	void congregateDJCounties();
+	void filterLandlessTitles();
+	void setElectors();
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -77,7 +81,9 @@ class World: commonItems::parser
 	mappers::NamedColors namedColors;
 	mappers::IAmHreMapper iAmHreMapper;
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;
+	mappers::TraitScraper traitScraper;
 
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> hreTitle; // loaded by configuration option.
 	std::map<std::string, std::shared_ptr<Title>> independentTitles;
 
 	enum class SaveType

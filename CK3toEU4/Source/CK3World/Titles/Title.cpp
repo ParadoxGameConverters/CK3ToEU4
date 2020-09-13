@@ -5,7 +5,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::Title::Title(std::istream& theStream, int ID): ID(ID)
+CK3::Title::Title(std::istream& theStream, int theID): ID(theID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -69,6 +69,14 @@ void CK3::Title::registerKeys()
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
 		coa = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
+	registerKeyword("succession_election", [this](const std::string& unused, std::istream& theStream) {
+		const auto newTitle = Title(theStream, 0);
+		electors = newTitle.getElectors();
+	});
+	registerKeyword("electors", [this](const std::string& unused, std::istream& theStream) {
+		for (auto electorID: commonItems::intList(theStream).getInts())
+			electors.insert(std::pair(electorID, nullptr));
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
@@ -84,7 +92,7 @@ int CK3::Title::flagDeJureHREProvinces()
 	}
 	if (!clay) // We really need the county clay to confirm we're a landful proper county.
 		return counter;
-	if (!clay->getCounty() || name.find("c_") != 0)
+	if (!clay->getCounty() || getLevel() != LEVEL::COUNTY)
 		return counter;
 
 	clay->getCounty()->second->setDeJureHRE();
@@ -170,4 +178,25 @@ void CK3::Title::congregateDJCounties()
 		const auto& deJureVassalDJCounties = deJureVassal.second->coalesceDJCounties();
 		ownedDJCounties.insert(deJureVassalDJCounties.begin(), deJureVassalDJCounties.end());
 	}
+}
+
+CK3::LEVEL CK3::Title::getLevel() const
+{
+	// It's easy, until it's not.
+	if (name.find("b_") == 0)
+		return LEVEL::BARONY;
+	if (name.find("c_") == 0)
+		return LEVEL::COUNTY;
+	if (name.find("d_") == 0)
+		return LEVEL::DUCHY;
+	if (name.find("k_") == 0)
+		return LEVEL::KINGDOM;
+	if (name.find("e_") == 0)
+		return LEVEL::EMPIRE;
+	
+	// This is the questionable part. Does it work for custom empires? Maybe?
+	if (!djLiege)
+		return LEVEL::EMPIRE;
+	else
+		return IntToLevel[LevelToInt[djLiege->second->getLevel()] - 1];
 }

@@ -2,6 +2,11 @@
 #define CK3_CHARACTERS_H
 #include "Parser.h"
 
+namespace mappers
+{
+class TraitScraper;
+}
+
 namespace CK3
 {
 class Cultures;
@@ -21,8 +26,8 @@ class Characters: commonItems::parser
 	void linkFaiths(const Faiths& faiths);
 	void linkHouses(const Houses& houses);
 	void linkTitles(const Titles& titles);
-
 	void linkCharacters();
+	void linkTraits(const mappers::TraitScraper& traitScraper);
 
   private:
 	void registerKeys();

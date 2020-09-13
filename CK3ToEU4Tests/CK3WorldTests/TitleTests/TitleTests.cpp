@@ -30,10 +30,11 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(theTitle.getDJVassals().empty());
 	ASSERT_TRUE(theTitle.getHeirs().empty());
 	ASSERT_TRUE(theTitle.getClaimants().empty());
+	ASSERT_TRUE(theTitle.getElectors().empty());
 	ASSERT_FALSE(theTitle.getCoA());
 }
 
-TEST(CK3World_TitleTests, loadValuesCanBeSet)
+TEST(CK3World_TitleTests, primitivesCanBeLoaded)
 {
 	std::stringstream input;
 	input << "key=\"k_grenada\"\n";
@@ -78,4 +79,19 @@ TEST(CK3World_TitleTests, loadValuesCanBeSet)
 	ASSERT_EQ(1, theTitle.getClaimants().count(7));
 	ASSERT_EQ(1, theTitle.getClaimants().count(8));
 	ASSERT_EQ(45, theTitle.getCoA()->first);
+}
+
+TEST(CK3World_TitleTests, successionElectionCanBeLoaded)
+{
+	std::stringstream input;
+	input << "succession_election={\n";
+	input << "\telectors={ 17972 43082 16968 }\n";
+	input << "}\n";
+
+	const CK3::Title theTitle(input, 1);
+
+	ASSERT_EQ(3, theTitle.getElectors().size());
+	ASSERT_EQ(17972, theTitle.getElectors().find(17972)->first);
+	ASSERT_EQ(43082, theTitle.getElectors().find(43082)->first);
+	ASSERT_EQ(16968, theTitle.getElectors().find(16968)->first);
 }

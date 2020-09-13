@@ -198,6 +198,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 	auto holderCounter = 0;
 	auto claimantCounter = 0;
 	auto heirCounter = 0;
+	auto electorCounter = 0;
 
 	const auto& characterData = characters.getCharacters();
 	for (const auto& title: titles)
@@ -249,9 +250,26 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 		}
 		title.second->loadHeirs(replacementVector);
+
+		// electors
+		replacementMap.clear();
+		for (const auto& elector: title.second->getElectors())
+		{
+			const auto& characterDataItr = characterData.find(elector.first);
+			if (characterDataItr != characterData.end())
+			{
+				replacementMap.insert(*characterDataItr);
+				++electorCounter;
+			}
+			else
+			{
+				throw std::runtime_error("Title " + title.first + " has elector " + std::to_string(elector.first) + " who has no definition!");
+			}
+		}
+		title.second->loadElectors(replacementMap);
 	}
 
-	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs updated.";
+	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs, " << electorCounter << " electors updated.";
 }
 
 void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)

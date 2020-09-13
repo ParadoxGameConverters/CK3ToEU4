@@ -103,6 +103,12 @@
     <Filter Include="CK3ToEU4\Mappers\ShatterEmpiresMapper">
       <UniqueIdentifier>{bdb6ab91-7b6b-4a06-8a0c-b0bbe0bc3178}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\TraitScraper">
+      <UniqueIdentifier>{87cbe4ec-368f-43b4-adc0-7b37dc7c16c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\TraitScraperTests">
+      <UniqueIdentifier>{64db79a3-2ac7-4342-b4d7-aa74a95adbbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -328,6 +334,18 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp">
       <Filter>CK3ToEU4\Mappers\ShatterEmpiresMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp">
+      <Filter>CK3ToEU4\Mappers\TraitScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp">
+      <Filter>CK3ToEU4\Mappers\TraitScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp">
+      <Filter>MapperTests\TraitScraperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp">
+      <Filter>MapperTests\TraitScraperTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

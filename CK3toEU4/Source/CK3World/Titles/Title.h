@@ -9,10 +9,23 @@ namespace CK3
 class Character;
 class CoatOfArms;
 class LandedTitles;
+
+enum class LEVEL
+{
+	BARONY,
+	COUNTY,
+	DUCHY,
+	KINGDOM,
+	EMPIRE
+};
+
+static std::map<int, LEVEL> IntToLevel{{0, LEVEL::BARONY}, {1, LEVEL::COUNTY}, {2, LEVEL::DUCHY}, {3, LEVEL::KINGDOM}, {4, LEVEL::EMPIRE}};
+static std::map<LEVEL, int> LevelToInt{{LEVEL::BARONY, 0}, {LEVEL::COUNTY, 1}, {LEVEL::DUCHY, 2}, {LEVEL::KINGDOM, 3}, {LEVEL::EMPIRE, 4}};
+
 class Title: commonItems::parser
 {
   public:
-	Title(std::istream& theStream, int ID);
+	Title(std::istream& theStream, int theID);
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] auto isTheocraticLease() const { return theocraticLease; }
 	[[nodiscard]] auto isCountyCapitalBarony() const { return cCapitalBarony; }
@@ -20,6 +33,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isHREEmperor() const { return HREEmperor; }
 	[[nodiscard]] auto isInHRE() const { return inHRE; }
 	[[nodiscard]] auto isThePope() const { return thePope; }
+	[[nodiscard]] auto isElectorate() const { return electorate; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -32,6 +46,7 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getDJVassals() const { return djVassals; }
 	[[nodiscard]] const auto& getHeirs() const { return heirs; }
 	[[nodiscard]] const auto& getClaimants() const { return claimants; }
+	[[nodiscard]] const auto& getElectors() const { return electors; }
 	[[nodiscard]] const auto& getLaws() const { return laws; }
 	[[nodiscard]] const auto& getHolder() const { return holder; }
 	[[nodiscard]] const auto& getCoA() const { return coa; }
@@ -39,6 +54,8 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getOwnedDFCounties() const { return ownedDFCounties; }
 	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 	[[nodiscard]] const auto& getHoldingTitle() const { return holdingTitle; }
+
+	[[nodiscard]] LEVEL getLevel() const;
 
 	// linkage
 	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
@@ -50,6 +67,7 @@ class Title: commonItems::parser
 	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
 	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
+	void loadElectors(const std::map<int, std::shared_ptr<Character>>& theElectors) { electors = theElectors; }
 	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
 	void loadOwnedDFCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDFCounties = theOwnedCounties; }
 	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
@@ -68,6 +86,7 @@ class Title: commonItems::parser
 	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
 	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
 	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
+	void setElectorate() { electorate = true; }
 
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
@@ -91,6 +110,7 @@ class Title: commonItems::parser
 	std::map<int, std::shared_ptr<Title>> djVassals;						// dejure vassals (for all except baronies and titulars)
 	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs;		// Order of heirs is unclear so we're keeping them ordered and using first if able.
 	std::map<int, std::shared_ptr<Character>> claimants;					// People holding a claim to this title. Incredibly useful.
+	std::map<int, std::shared_ptr<Character>> electors;					// People involved in elections regardless of election type law.
 	bool theocraticLease = false;													// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
 	std::set<std::string> laws;
 	bool cCapitalBarony = false;
@@ -104,6 +124,7 @@ class Title: commonItems::parser
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.
 	std::map<std::string, std::shared_ptr<Title>> generatedVassals;					// Vassals we split off deliberately.
 	std::pair<std::string, std::shared_ptr<Title>> holdingTitle;						// topmost owner title (e_francia or similar), only c_s have this.
+	bool electorate = false;
 };
 } // namespace CK3
 
