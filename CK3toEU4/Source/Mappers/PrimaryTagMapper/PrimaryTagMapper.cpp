@@ -6,7 +6,6 @@
 
 void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfiguration)
 {
-	LOG(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
 	registerKeys();
 
 	for (const auto& filename: Utils::GetAllFilesInFolder("blankMod/output/common/cultures/"))

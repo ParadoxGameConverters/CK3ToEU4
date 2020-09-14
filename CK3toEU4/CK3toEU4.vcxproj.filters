@@ -70,6 +70,30 @@
     <Filter Include="Mappers\PrimaryTagMapper">
       <UniqueIdentifier>{ad8d726d-948a-4f97-b7fc-d6116b156077}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\RegionMapper">
+      <UniqueIdentifier>{837ae947-8b46-4e38-81b5-62d080babc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureMapper">
+      <UniqueIdentifier>{c1c5f526-9551-4982-9ff8-a15b1ff75909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ProvinceMapper">
+      <UniqueIdentifier>{9ba68179-20dd-4f96-ae1d-38712cdbd8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Country">
+      <UniqueIdentifier>{ec5080b4-3f26-4e46-a5d5-5fcbf3016ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Province">
+      <UniqueIdentifier>{36d34441-4e87-4184-ba6d-9b1494ff7f2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Diplomacy">
+      <UniqueIdentifier>{a22f3b18-9c42-42e3-8413-f249586a9eef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\GovernmentsMapper">
+      <UniqueIdentifier>{a9e2789d-14b4-428c-9051-b3a305c85311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligionMapper">
+      <UniqueIdentifier>{23a729d0-2ea3-462d-90e4-7b3f88846d77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -234,6 +258,69 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.h">
       <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionMapper\Area.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionMapper\Region.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionMapper\RegionMapper.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RegionMapper\SuperRegion.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMapper\ProvinceMapper.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMapper\ProvinceMapping.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\Country.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\CountryDetails.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Country\MonarchNames.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Province\EU4Province.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Province\ProvinceDetails.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Province\ProvinceModifier.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Diplomacy\Agreement.h">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Diplomacy\Diplomacy.h">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h">
+      <Filter>Mappers\ReligionMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +487,69 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp">
       <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionMapper\Area.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionMapper\Region.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionMapper\RegionMapper.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RegionMapper\SuperRegion.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMapper\ProvinceMapper.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMapper\ProvinceMapping.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\Country.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\CountryDetails.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Country\MonarchNames.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Province\EU4Province.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Province\ProvinceDetails.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Province\ProvinceModifier.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Diplomacy\Agreement.cpp">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Diplomacy\Diplomacy.cpp">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

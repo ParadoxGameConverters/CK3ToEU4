@@ -118,6 +118,36 @@
     <Filter Include="MapperTests\PrimaryTagMapperTests">
       <UniqueIdentifier>{a7421cb5-027d-4efe-be77-14cb576696a8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\RegionMapper">
+      <UniqueIdentifier>{4e4c5917-718e-4d7b-ad96-96af611ff5d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\RegionMapperTests">
+      <UniqueIdentifier>{153f3607-065b-43cb-8436-3d3bce216090}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\CultureMapper">
+      <UniqueIdentifier>{ff3d7822-4baa-47ec-bfa3-ea99b0d99022}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CultureMapperTests">
+      <UniqueIdentifier>{536d0f56-35da-4b2c-9e25-e6dbec153571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ProvinceMapper">
+      <UniqueIdentifier>{aea30287-e248-4ed0-982c-c4ddbca81a5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ProvinceMapperTests">
+      <UniqueIdentifier>{7e457b44-e823-41da-aba6-a75666ae00f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\GovernmentsMapper">
+      <UniqueIdentifier>{6870d6b9-ecad-4899-ab67-bb6087fb5fe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\GovernmentsMapperTests">
+      <UniqueIdentifier>{e66a1a2b-94d2-4589-9c8b-0fe37e06eaa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ReligionMapperTests">
+      <UniqueIdentifier>{2af8ba5f-6b6a-46e1-b68e-8ecdefd0ba92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ReligionMapper">
+      <UniqueIdentifier>{755d5486-f3d2-448c-b27b-2f4b69c6bcca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -376,6 +406,84 @@
     </ClCompile>
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp">
       <Filter>MapperTests\PrimaryTagMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Area.cpp">
+      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.cpp">
+      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp">
+      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RegionMapper\AreaTests.cpp">
+      <Filter>MapperTests\RegionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RegionMapper\RegionMapperTests.cpp">
+      <Filter>MapperTests\RegionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RegionMapper\RegionTests.cpp">
+      <Filter>MapperTests\RegionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RegionMapper\SuperRegionTests.cpp">
+      <Filter>MapperTests\RegionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
+      <Filter>CK3ToEU4\Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp">
+      <Filter>MapperTests\CultureMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapper\CultureMappingTests.cpp">
+      <Filter>MapperTests\CultureMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.cpp">
+      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp">
+      <Filter>MapperTests\ProvinceMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingsVersionTests.cpp">
+      <Filter>MapperTests\ProvinceMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp">
+      <Filter>MapperTests\ProvinceMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp">
+      <Filter>MapperTests\GovernmentsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp">
+      <Filter>MapperTests\GovernmentsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMapper\ReligionMapperTests.cpp">
+      <Filter>MapperTests\ReligionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMapper\ReligionMappingTests.cpp">
+      <Filter>MapperTests\ReligionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -7,8 +7,6 @@
 
 void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const std::map<std::string, std::string>& mods)
 {
-	LOG(LogLevel::Info) << "-> Reading Words";
-
 	scrapeLanguage("english", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("french", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("german", theConfiguration.getCK3Path() + "localization");
@@ -67,7 +65,7 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 		if (localizations.count(key))
 		{
 			if (language == "english")
-				localizations[key].english = value;				
+				localizations[key].english = value;
 			if (language == "french")
 				localizations[key].french = value;
 			if (language == "german")
