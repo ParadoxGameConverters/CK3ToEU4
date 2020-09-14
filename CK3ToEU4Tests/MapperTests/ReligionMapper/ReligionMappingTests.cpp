@@ -21,7 +21,7 @@ TEST(Mappers_ReligionMappingTests, eu4ReligionCanBeSet)
 
 	const mappers::ReligionMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getEU4Religion(), "eu4Religion");
+	ASSERT_EQ("eu4Religion", theMapping.getEU4Religion());
 }
 
 
@@ -43,7 +43,7 @@ TEST(Mappers_ReligionMappingTests, ck3ReligionsCanBeSet)
 
 	const mappers::ReligionMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getCK3Religions().size(), 2);
-	ASSERT_EQ(*theMapping.getCK3Religions().find("religion1"), "religion1");
-	ASSERT_EQ(*theMapping.getCK3Religions().find("religion2"), "religion2");
+	ASSERT_EQ(2, theMapping.getCK3Religions().size());
+	ASSERT_EQ("religion1", *theMapping.getCK3Religions().find("religion1"));
+	ASSERT_EQ("religion2", *theMapping.getCK3Religions().find("religion2"));
 }

@@ -18,7 +18,7 @@ TEST(Mappers_TitleTagMappingTests, EU4TagCanBeAdded)
 
 	const mappers::TitleTagMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getEU4Tag(), "TST");
+	ASSERT_EQ("TST", theMapper.getEU4Tag());
 }
 
 TEST(Mappers_TitleTagMappingTests, FallbackDefaultsToFalse)
@@ -76,7 +76,7 @@ TEST(Mappers_TitleTagMappingTests, CK3TitleCanBeAdded)
 
 	const mappers::TitleTagMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getCK3Title(), "c_test");
+	ASSERT_EQ("c_test", theMapper.getCK3Title());
 }
 
 TEST(Mappers_TitleTagMappingTests, capitalsDefaultToEmpty)
@@ -95,10 +95,10 @@ TEST(Mappers_TitleTagMappingTests, CapitalsCanBeAdded)
 
 	const mappers::TitleTagMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getCapitals().size(), 3);
-	ASSERT_EQ(theMapper.getCapitals().count(1), 1);
-	ASSERT_EQ(theMapper.getCapitals().count(2), 1);
-	ASSERT_EQ(theMapper.getCapitals().count(3), 1);
+	ASSERT_EQ(3, theMapper.getCapitals().size());
+	ASSERT_EQ(1, theMapper.getCapitals().count(1));
+	ASSERT_EQ(1, theMapper.getCapitals().count(2));
+	ASSERT_EQ(1, theMapper.getCapitals().count(3));
 }
 
 TEST(Mappers_TitleTagMappingTests, titleMatchFailsOnNoMatch)
@@ -120,7 +120,7 @@ TEST(Mappers_TitleTagMappingTests, titleMatchSuceedsOnMatch)
 	const mappers::TitleTagMapping theMapper(input);
 	const auto& match = theMapper.titleMatch("c_test");
 
-	ASSERT_EQ(*match, "TST");
+	ASSERT_EQ("TST", *match);
 }
 
 TEST(Mappers_TitleTagMappingTests, capitalsMatchFailsOnNoMatch)
@@ -142,5 +142,5 @@ TEST(Mappers_TitleTagMappingTests, capitalsMatchSuceedsOnMatch)
 	const mappers::TitleTagMapping theMapper(input);
 	const auto& match = theMapper.capitalMatch(2);
 
-	ASSERT_EQ(*match, "TST");
+	ASSERT_EQ("TST", *match);
 }

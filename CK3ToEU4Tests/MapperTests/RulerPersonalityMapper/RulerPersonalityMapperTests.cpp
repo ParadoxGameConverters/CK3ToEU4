@@ -20,9 +20,9 @@ TEST(Mappers_RulerPersonalitiesMapperTests, mappingsCanBeLoaded)
 	const mappers::RulerPersonalitiesMapper mapper(input);
 
 	ASSERT_FALSE(mapper.getMappings().empty());
-	ASSERT_EQ(mapper.getMappings().find("personality")->first, "personality");
-	ASSERT_EQ(mapper.getMappings().find("personality2")->first, "personality2");
-	ASSERT_EQ(mapper.getMappings().find("personality3")->first, "personality3");
+	ASSERT_EQ("personality", mapper.getMappings().find("personality")->first);
+	ASSERT_EQ("personality2", mapper.getMappings().find("personality2")->first);
+	ASSERT_EQ("personality3", mapper.getMappings().find("personality3")->first);
 }
 
 TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsAlphabeticallyLastTwoMatchesForBlankCharacter)
@@ -40,9 +40,9 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsAlphabeticallyLastT
 	auto returned = mapper.evaluatePersonalities(charPair);
 
 	ASSERT_FALSE(returned.empty());
-	ASSERT_EQ(returned.count("z-personality"), 1);
-	ASSERT_EQ(returned.count("p-personality3"), 1);
-	ASSERT_EQ(returned.size(), 2);
+	ASSERT_EQ(1, returned.count("z-personality"));
+	ASSERT_EQ(1, returned.count("p-personality3"));
+	ASSERT_EQ(2, returned.size());
 }
 
 TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsEmptyForNoRulesAndBlankCharacter)
@@ -93,7 +93,7 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsTwoBestPersonalitie
 
 	auto returned = mapper.evaluatePersonalities(charPair);
 
-	ASSERT_EQ(returned.size(), 2);
-	ASSERT_EQ(returned.count("z-personality"), 1); // score 99
-	ASSERT_EQ(returned.count("c-personality"), 1); // score 50
+	ASSERT_EQ(2, returned.size());
+	ASSERT_EQ(1, returned.count("z-personality")); // score 99
+	ASSERT_EQ(1, returned.count("c-personality")); // score 50
 }

@@ -21,7 +21,7 @@ TEST(Mappers_GovernmentsMapperTests, eu4GovernmentCanBeFound)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("ck3Government", "ck3title");
 
-	ASSERT_EQ(match->first, "eu4Government");
+	ASSERT_EQ("eu4Government", match->first);
 }
 
 
@@ -33,7 +33,7 @@ TEST(Mappers_GovernmentsMapperTests, multipleCK3GovernmentsCanBeInARule)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("ck3Government2", "ck3title");
 
-	ASSERT_EQ(match->first, "eu4Government");
+	ASSERT_EQ("eu4Government", match->first);
 }
 
 TEST(Mappers_GovernmentsMapperTests, correctRuleMatches)
@@ -45,7 +45,7 @@ TEST(Mappers_GovernmentsMapperTests, correctRuleMatches)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("ck3Government2", "ck3title");
 
-	ASSERT_EQ(match->first, "eu4Government2");
+	ASSERT_EQ("eu4Government2", match->first);
 }
 
 TEST(Mappers_GovernmentsMapperTests, ck3TitleCanBeFound)
@@ -57,7 +57,7 @@ TEST(Mappers_GovernmentsMapperTests, ck3TitleCanBeFound)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("", "c_test");
 
-	ASSERT_EQ(match->first, "eu4Government2");
+	ASSERT_EQ("eu4Government2", match->first);
 }
 
 TEST(Mappers_GovernmentsMapperTests, ck3TitleTakesPriority)
@@ -69,7 +69,7 @@ TEST(Mappers_GovernmentsMapperTests, ck3TitleTakesPriority)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("ck3Government", "c_test");
 
-	ASSERT_EQ(match->first, "eu4Government2");
+	ASSERT_EQ("eu4Government2", match->first);
 }
 
 TEST(Mappers_GovernmentsMapperTests, reformIsReturnedIfExists)
@@ -81,8 +81,8 @@ TEST(Mappers_GovernmentsMapperTests, reformIsReturnedIfExists)
 	const mappers::GovernmentsMapper theMapper(input);
 	auto match = theMapper.matchGovernment("ck3Government", "c_test");
 
-	ASSERT_EQ(match->first, "eu4Government2");
-	ASSERT_EQ(match->second, "papacy_reform");
+	ASSERT_EQ("eu4Government2", match->first);
+	ASSERT_EQ("papacy_reform", match->second);
 }
 
 TEST(Mappers_GovernmentsMapperTests, reformIsEmptyIfDoesNotExist)

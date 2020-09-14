@@ -19,10 +19,10 @@ TEST(Mappers_RulerPersonalitiesMappingTests, traitsCanBeLoaded)
 
 	const mappers::RulerPersonalitiesMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getTraits().size(), 3);
-	ASSERT_EQ(theMapping.getTraits().find("trait")->second, 0);
-	ASSERT_EQ(theMapping.getTraits().find("trait2")->second, -9);
-	ASSERT_EQ(theMapping.getTraits().find("trait3")->second, 7);
+	ASSERT_EQ(3, theMapping.getTraits().size(), 3);
+	ASSERT_EQ(0, theMapping.getTraits().find("trait")->second);
+	ASSERT_EQ(-9, theMapping.getTraits().find("trait2")->second);
+	ASSERT_EQ(7, theMapping.getTraits().find("trait3")->second);
 }
 
 TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitsScoreZeroForNoLoadedTraits)
@@ -33,7 +33,7 @@ TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitsScoreZeroForNoLoadedT
 
 	const std::set<std::string> incomingTraits = {"trait1", "trait2", "trait3"};
 
-	ASSERT_EQ(theMapping.evaluatePersonality(incomingTraits), 0);
+	ASSERT_EQ(0, theMapping.evaluatePersonality(incomingTraits));
 }
 
 TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitsScoreZeroForNoIncomingTraits)
@@ -44,7 +44,7 @@ TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitsScoreZeroForNoIncomin
 
 	const std::set<std::string> incomingTraits;
 
-	ASSERT_EQ(theMapping.evaluatePersonality(incomingTraits), 0);
+	ASSERT_EQ(0, theMapping.evaluatePersonality(incomingTraits));
 }
 
 TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitCanMatchAndScore)
@@ -55,7 +55,7 @@ TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitCanMatchAndScore)
 
 	const std::set<std::string> incomingTraits = {"trait1", "trait7", "trait2"};
 
-	ASSERT_EQ(theMapping.evaluatePersonality(incomingTraits), -9);
+	ASSERT_EQ(-9, theMapping.evaluatePersonality(incomingTraits));
 }
 
 TEST(Mappers_RulerPersonalitiesMappingTests, multipleTraitsCanMatchAndScore)
@@ -66,5 +66,5 @@ TEST(Mappers_RulerPersonalitiesMappingTests, multipleTraitsCanMatchAndScore)
 
 	const std::set<std::string> incomingTraits = {"trait", "trait2", "trait3"}; // 0-9+7=-2
 
-	ASSERT_EQ(theMapping.evaluatePersonality(incomingTraits), -2);
+	ASSERT_EQ(-2, theMapping.evaluatePersonality(incomingTraits));
 }

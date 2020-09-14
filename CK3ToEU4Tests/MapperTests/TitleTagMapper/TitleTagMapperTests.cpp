@@ -20,7 +20,7 @@ TEST(Mappers_TitleTagMapperTests, canLoadTitleTagLinks)
 
 	const mappers::TitleTagMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getMappings().size(), 2);
+	ASSERT_EQ(2, theMapper.getMappings().size());
 }
 
 TEST(Mappers_TitleTagMapperTests, canMatchTagsOnTitles)
@@ -32,7 +32,7 @@ TEST(Mappers_TitleTagMapperTests, canMatchTagsOnTitles)
 	mappers::TitleTagMapper theMapper(input);
 	const auto& match = theMapper.getTagForTitle("c_test2");
 
-	ASSERT_EQ(*match, "TST2");
+	ASSERT_EQ("TST2", *match);
 }
 
 TEST(Mappers_TitleTagMapperTests, canMatchTagsOnTitlesAndCapitals)
@@ -44,7 +44,7 @@ TEST(Mappers_TitleTagMapperTests, canMatchTagsOnTitlesAndCapitals)
 	mappers::TitleTagMapper theMapper(input);
 	const auto& match = theMapper.getTagForTitle("c_test2", 3);
 
-	ASSERT_EQ(*match, "TST2");
+	ASSERT_EQ("TST2", *match);
 }
 
 TEST(Mappers_TitleTagMapperTests, canGenerateNewTagsForMismatches)
@@ -58,9 +58,9 @@ TEST(Mappers_TitleTagMapperTests, canGenerateNewTagsForMismatches)
 	const auto& match2 = theMapper.getTagForTitle("x_x_2", 0);
 	const auto& match3 = theMapper.getTagForTitle("x_x_3", 0);
 
-	ASSERT_EQ(*match, "Z00");
-	ASSERT_EQ(*match2, "Z01");
-	ASSERT_EQ(*match3, "Z02");
+	ASSERT_EQ("Z00", *match);
+	ASSERT_EQ("Z01", *match2);
+	ASSERT_EQ("Z02", *match3);
 }
 
 TEST(Mappers_TitleTagMapperTests, canRegisterAllAccessedTitles)
@@ -78,10 +78,10 @@ TEST(Mappers_TitleTagMapperTests, canRegisterAllAccessedTitles)
 	const auto& match6 = theMapper.getTagForTitle("x_x_8", 34);
 
 	ASSERT_EQ(theMapper.getRegisteredTitleTags().size(), 6);
-	ASSERT_EQ(*match, "Z00");
-	ASSERT_EQ(*match2, "Z01");
-	ASSERT_EQ(*match3, "TST");
-	ASSERT_EQ(*match4, "Z02");
-	ASSERT_EQ(*match5, "TST2");
-	ASSERT_EQ(*match6, "Z03");
+	ASSERT_EQ("Z00", *match);
+	ASSERT_EQ("Z01", *match2);
+	ASSERT_EQ("TST", *match3);
+	ASSERT_EQ("Z02", *match4);
+	ASSERT_EQ("TST2", *match5, );
+	ASSERT_EQ("Z03", *match6);
 }

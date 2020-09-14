@@ -24,5 +24,5 @@ TEST(Mappers_ProvinceMappingsVersionTests, MappingsCanBeLoaded)
 
 	mappers::ProvinceMappingsVersion theMappingVersion(input);
 
-	ASSERT_EQ(theMappingVersion.getMappings().size(), 2);
+	ASSERT_EQ(2, theMappingVersion.getMappings().size());
 }

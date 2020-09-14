@@ -18,7 +18,7 @@ TEST(Mappers_RegionTests, areaCanBeLoaded)
 	const mappers::Region region(input);
 
 	ASSERT_FALSE(region.getAreas().empty());
-	ASSERT_EQ(region.getAreas().find("test_area")->first, "test_area");
+	ASSERT_EQ("test_area", region.getAreas().find("test_area")->first);
 }
 
 TEST(Mappers_RegionTests, multipleAreasCanBeLoaded)
@@ -27,7 +27,7 @@ TEST(Mappers_RegionTests, multipleAreasCanBeLoaded)
 	input << "areas = { test_area area2 area3 } \n";
 	const mappers::Region region(input);
 
-	ASSERT_EQ(region.getAreas().size(), 3);
+	ASSERT_EQ(3, region.getAreas().size());
 }
 
 TEST(Mappers_RegionTests, regionCanBeLinkedToArea)

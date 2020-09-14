@@ -128,12 +128,12 @@ TEST(Mappers_RegionMapperTests, correctParentLocationsReported)
 	superRegionStream << "test_superregion2 = { test_region2 }";
 	theMapper.loadRegions(areaStream, regionStream, superRegionStream);
 
-	ASSERT_EQ(*theMapper.getParentAreaName(1), "test_area");
-	ASSERT_EQ(*theMapper.getParentRegionName(1), "test_region");
-	ASSERT_EQ(*theMapper.getParentSuperRegionName(1), "test_superregion");
-	ASSERT_EQ(*theMapper.getParentAreaName(5), "test_area2");
-	ASSERT_EQ(*theMapper.getParentRegionName(5), "test_region2");
-	ASSERT_EQ(*theMapper.getParentSuperRegionName(5), "test_superregion2");
+	ASSERT_EQ("test_area", *theMapper.getParentAreaName(1));
+	ASSERT_EQ("test_region", *theMapper.getParentRegionName(1));
+	ASSERT_EQ("test_superregion", *theMapper.getParentSuperRegionName(1));
+	ASSERT_EQ("test_area2", *theMapper.getParentAreaName(5));
+	ASSERT_EQ("test_region2", *theMapper.getParentRegionName(5));
+	ASSERT_EQ("test_superregion2", *theMapper.getParentSuperRegionName(5));
 }
 
 TEST(Mappers_RegionMapperTests, wrongParentLocationsReturnNullopt)

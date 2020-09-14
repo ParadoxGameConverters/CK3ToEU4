@@ -9,8 +9,8 @@ TEST(Mappers_ProvinceMappingTests, EU4ProvinceCanBeAdded)
 
 	const mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getEU4Provinces()[0], 2);
-	ASSERT_EQ(theMapper.getEU4Provinces()[1], 1);
+	ASSERT_EQ(2, theMapper.getEU4Provinces()[0]);
+	ASSERT_EQ(1, theMapper.getEU4Provinces()[1]);
 }
 
 TEST(Mappers_ProvinceMappingTests, CK3ProvinceCanBeAdded)
@@ -20,6 +20,6 @@ TEST(Mappers_ProvinceMappingTests, CK3ProvinceCanBeAdded)
 
 	const mappers::ProvinceMapping theMapper(input);
 
-	ASSERT_EQ(theMapper.getCK3Provinces()[0], 2);
-	ASSERT_EQ(theMapper.getCK3Provinces()[1], 1);
+	ASSERT_EQ(2, theMapper.getCK3Provinces()[0]);
+	ASSERT_EQ(1, theMapper.getCK3Provinces()[1]);
 }

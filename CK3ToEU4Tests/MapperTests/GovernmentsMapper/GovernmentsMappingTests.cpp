@@ -20,7 +20,7 @@ TEST(Mappers_GovernmentsMappingTests, eu4GovernmentCanBeSet)
 
 	const mappers::GovernmentsMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getGovernment(), "eu4Government");
+	ASSERT_EQ("eu4Government", theMapping.getGovernment());
 }
 
 TEST(Mappers_GovernmentsMappingTests, ck3GovernmentsDefaultToEmpty)
@@ -40,9 +40,9 @@ TEST(Mappers_GovernmentsMappingTests, ck3GovernmentsCanBeSet)
 
 	const mappers::GovernmentsMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getCK3Governments().size(), 2);
-	ASSERT_EQ(*theMapping.getCK3Governments().find("religion1"), "religion1");
-	ASSERT_EQ(*theMapping.getCK3Governments().find("religion2"), "religion2");
+	ASSERT_EQ(2, theMapping.getCK3Governments().size());
+	ASSERT_EQ("religion1", *theMapping.getCK3Governments().find("religion1"));
+	ASSERT_EQ("religion2", *theMapping.getCK3Governments().find("religion2"));
 }
 
 TEST(Mappers_GovernmentsMappingTests, ck3titleDefaultToEmpty)
@@ -62,7 +62,7 @@ TEST(Mappers_GovernmentsMappingTests, ck3TitleCanBeSet)
 
 	const mappers::GovernmentsMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getCK3Title(), "c_test");
+	ASSERT_EQ("c_test", theMapping.getCK3Title());
 }
 
 TEST(Mappers_GovernmentsMappingTests, reformDefaultToEmpty)
@@ -82,5 +82,5 @@ TEST(Mappers_GovernmentsMappingTests, reformCanBeSet)
 
 	const mappers::GovernmentsMapping theMapping(input);
 
-	ASSERT_EQ(theMapping.getReform(), "theReform");
+	ASSERT_EQ("theReform", theMapping.getReform());
 }

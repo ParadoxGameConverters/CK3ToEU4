@@ -18,7 +18,7 @@ TEST(Mappers_SuperRegionTests, RegionsCanBeLoaded)
 	const mappers::SuperRegion superRegion(input);
 
 	ASSERT_FALSE(superRegion.getRegions().empty());
-	ASSERT_EQ(superRegion.getRegions().find("region1")->first, "region1");
+	ASSERT_EQ("region1", superRegion.getRegions().find("region1")->first);
 }
 
 TEST(Mappers_SuperRegionTests, superRegionCanBeLinkedToRegion)

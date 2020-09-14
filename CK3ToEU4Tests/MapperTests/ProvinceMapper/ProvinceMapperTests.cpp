@@ -22,12 +22,12 @@ TEST(Mappers_ProvinceMapperTests, canLookupCK3Provinces)
 
 	const mappers::ProvinceMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(1).size(), 2);
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(1)[0], 2);
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(1)[1], 1);
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(2).size(), 2);
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(2)[0], 2);
-	ASSERT_EQ(theMapper.getCK3ProvinceNumbers(2)[1], 1);
+	ASSERT_EQ(2, theMapper.getCK3ProvinceNumbers(1).size());
+	ASSERT_EQ(2, theMapper.getCK3ProvinceNumbers(1)[0]);
+	ASSERT_EQ(1, theMapper.getCK3ProvinceNumbers(1)[1]);
+	ASSERT_EQ(2, theMapper.getCK3ProvinceNumbers(2).size());
+	ASSERT_EQ(2, theMapper.getCK3ProvinceNumbers(2)[0]);
+	ASSERT_EQ(1, theMapper.getCK3ProvinceNumbers(2)[1]);
 }
 
 TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
@@ -39,10 +39,10 @@ TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
 
 	const mappers::ProvinceMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(1).size(), 2);
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(1)[0], 2);
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(1)[1], 1);
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(2).size(), 2);
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(2)[0], 2);
-	ASSERT_EQ(theMapper.getEU4ProvinceNumbers(2)[1], 1);
+	ASSERT_EQ(2, theMapper.getEU4ProvinceNumbers(1).size());
+	ASSERT_EQ(2, theMapper.getEU4ProvinceNumbers(1)[0]);
+	ASSERT_EQ(1, theMapper.getEU4ProvinceNumbers(1)[1]);
+	ASSERT_EQ(2, theMapper.getEU4ProvinceNumbers(2).size());
+	ASSERT_EQ(2, theMapper.getEU4ProvinceNumbers(2)[0]);
+	ASSERT_EQ(1, theMapper.getEU4ProvinceNumbers(2)[1]);
 }

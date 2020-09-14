@@ -18,7 +18,7 @@ TEST(Mappers_CultureMapperTests, simpleCultureMatches)
 	input << "link = { eu4 = culture ck3 = test }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "", 0, ""), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 0, ""));
 }
 
 TEST(Mappers_CultureMapperTests, simpleCultureCorrectlyMatches)
@@ -27,7 +27,7 @@ TEST(Mappers_CultureMapperTests, simpleCultureCorrectlyMatches)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "", 0, ""), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 0, ""));
 }
 
 TEST(Mappers_CultureMapperTests, cultureMatchesWithReligion)
@@ -36,7 +36,7 @@ TEST(Mappers_CultureMapperTests, cultureMatchesWithReligion)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "thereligion", 0, ""), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "thereligion", 0, ""));
 }
 
 TEST(Mappers_CultureMapperTests, cultureFailsWithWrongReligion)
@@ -54,7 +54,7 @@ TEST(Mappers_CultureMapperTests, cultureMatchesWithCapital)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "", 4, ""), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 4, ""));
 }
 
 TEST(Mappers_CultureMapperTests, cultureFailsWithWrongCapital)
@@ -72,7 +72,7 @@ TEST(Mappers_CultureMapperTests, cultureMatchesWithOwnerTag)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 owner = TAG }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "", 0, "TAG"), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 0, "TAG"));
 }
 
 TEST(Mappers_CultureMapperTests, cultureFailsWithWrongTag)
@@ -142,7 +142,7 @@ TEST(Mappers_CultureMapperTests, cultureMapperMatchesOnRegion)
 
 	culMapper.loadRegionMapper(theMapper);
 
-	ASSERT_EQ(*culMapper.cultureMatch("test", "", 1, ""), "culture");
+	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 1, ""));
 }
 
 TEST(Mappers_CultureMapperTests, cultureMapperFailsOnWrongRegion)
@@ -174,7 +174,7 @@ TEST(Mappers_CultureMapperTests, TechGroupCanBeRetrieved)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion tech = the_tech }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.getTechGroup("culture"), "the_tech");
+	ASSERT_EQ("the_tech", *culMapper.getTechGroup("culture"));
 }
 
 TEST(Mappers_CultureMapperTests, techGroupFailsForNonsenseCulture)
@@ -202,7 +202,7 @@ TEST(Mappers_CultureMapperTests, GFXCanBeRetrieved)
 	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion gfx = gfxtest }";
 	const mappers::CultureMapper culMapper(input);
 
-	ASSERT_EQ(*culMapper.getGFX("culture"), "gfxtest");
+	ASSERT_EQ("gfxtest", *culMapper.getGFX("culture"));
 }
 
 TEST(Mappers_CultureMapperTests, GFXFailsForNonsenseCulture)

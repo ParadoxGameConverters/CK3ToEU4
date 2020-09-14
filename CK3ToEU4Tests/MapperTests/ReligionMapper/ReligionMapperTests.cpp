@@ -22,7 +22,7 @@ TEST(Mappers_ReligionMapperTests, eu4ReligionCanBeFound)
 	const mappers::ReligionMapper theMapper(input);
 
 	const auto& eu4Religion = theMapper.getEU4ReligionForCK3Religion("ck3Religion");
-	ASSERT_EQ(eu4Religion, "eu4Religion");
+	ASSERT_EQ("eu4Religion", eu4Religion);
 }
 
 
@@ -34,7 +34,7 @@ TEST(Mappers_ReligionMapperTests, multipleEU4ReligionsCanBeInARule)
 	const mappers::ReligionMapper theMapper(input);
 
 	const auto& eu4Religion = theMapper.getEU4ReligionForCK3Religion("ck3Religion2");
-	ASSERT_EQ(eu4Religion, "eu4Religion");
+	ASSERT_EQ("eu4Religion", eu4Religion);
 }
 
 
@@ -47,5 +47,5 @@ TEST(Mappers_ReligionMapperTests, correctRuleMatches)
 	const mappers::ReligionMapper theMapper(input);
 
 	const auto& eu4Religion = theMapper.getEU4ReligionForCK3Religion("ck3Religion2");
-	ASSERT_EQ(eu4Religion, "eu4Religion2");
+	ASSERT_EQ("eu4Religion2", eu4Religion);
 }

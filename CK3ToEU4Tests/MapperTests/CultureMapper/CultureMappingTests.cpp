@@ -19,7 +19,7 @@ TEST(Mappers_CultureMappingTests, eu4CultureCanBeSet)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(theMapping.getEU4Culture(), "eu4Culture");
+	ASSERT_EQ("eu4Culture", theMapping.getEU4Culture());
 }
 
 TEST(Mappers_CultureMappingTests, ck3CulturesDefaultToEmpty)
@@ -62,8 +62,8 @@ TEST(Mappers_CultureMappingTests, ReligionsCanBeSet)
 	const mappers::CultureMappingRule theMapping(input);
 
 	ASSERT_EQ(theMapping.getReligions().size(), 2);
-	ASSERT_EQ(*theMapping.getReligions().find("religion1"), "religion1");
-	ASSERT_EQ(*theMapping.getReligions().find("religion2"), "religion2");
+	ASSERT_EQ("religion1", *theMapping.getReligions().find("religion1"));
+	ASSERT_EQ("religion2", *theMapping.getReligions().find("religion2"));
 }
 
 
@@ -85,8 +85,8 @@ TEST(Mappers_CultureMappingTests, RegionsCanBeSet)
 	const mappers::CultureMappingRule theMapping(input);
 
 	ASSERT_EQ(theMapping.getRegions().size(), 2);
-	ASSERT_EQ(*theMapping.getRegions().find("region1"), "region1");
-	ASSERT_EQ(*theMapping.getRegions().find("region2"), "region2");
+	ASSERT_EQ("region1", *theMapping.getRegions().find("region1"));
+	ASSERT_EQ("region2", *theMapping.getRegions().find("region2"));
 }
 
 TEST(Mappers_CultureMappingTests, OwnersDefaultToEmpty)
@@ -107,8 +107,8 @@ TEST(Mappers_CultureMappingTests, OwnersCanBeSet)
 	const mappers::CultureMappingRule theMapping(input);
 
 	ASSERT_EQ(theMapping.getOwners().size(), 2);
-	ASSERT_EQ(*theMapping.getOwners().find("TAG1"), "TAG1");
-	ASSERT_EQ(*theMapping.getOwners().find("TAG2"), "TAG2");
+	ASSERT_EQ("TAG1", *theMapping.getOwners().find("TAG1"));
+	ASSERT_EQ("TAG2", *theMapping.getOwners().find("TAG2"));
 }
 
 TEST(Mappers_CultureMappingTests, ProvincesDefaultToEmpty)
@@ -128,9 +128,9 @@ TEST(Mappers_CultureMappingTests, ProvincesCanBeSet)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(theMapping.getProvinces().size(), 2);
-	ASSERT_EQ(*theMapping.getProvinces().find(3), 3);
-	ASSERT_EQ(*theMapping.getProvinces().find(4), 4);
+	ASSERT_EQ(2, theMapping.getProvinces().size());
+	ASSERT_EQ(3, *theMapping.getProvinces().find(3));
+	ASSERT_EQ(4, *theMapping.getProvinces().find(4));
 }
 
 TEST(Mappers_CultureMappingTests, TechGroupDefaultToEmpty)
@@ -150,7 +150,7 @@ TEST(Mappers_CultureMappingTests, TechGroupCanBeSet)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(theMapping.getTechGroupField(), "high_american");
+	ASSERT_EQ("high_american", theMapping.getTechGroupField());
 }
 
 TEST(Mappers_CultureMappingTests, TechGroupCanBeMatched)
@@ -160,7 +160,7 @@ TEST(Mappers_CultureMappingTests, TechGroupCanBeMatched)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(*theMapping.getTechGroup("aztec"), "high_american");
+	ASSERT_EQ("high_american", *theMapping.getTechGroup("aztec"));
 }
 
 
@@ -192,7 +192,7 @@ TEST(Mappers_CultureMappingTests, GFXCanBeSet)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(theMapping.getGFXField(), "test");
+	ASSERT_EQ("test", theMapping.getGFXField());
 }
 
 TEST(Mappers_CultureMappingTests, GFXCanBeMatched)
@@ -202,7 +202,7 @@ TEST(Mappers_CultureMappingTests, GFXCanBeMatched)
 
 	const mappers::CultureMappingRule theMapping(input);
 
-	ASSERT_EQ(*theMapping.getGFX("aztec"), "test");
+	ASSERT_EQ("test", *theMapping.getGFX("aztec"));
 }
 
 

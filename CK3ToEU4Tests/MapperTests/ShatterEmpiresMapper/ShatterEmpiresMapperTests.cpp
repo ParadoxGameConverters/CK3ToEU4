@@ -18,7 +18,7 @@ TEST(Mappers_ShatterEmpiresMapperTests, empiresCanBeLoaded)
 
 	const mappers::ShatterEmpiresMapper theMapper(input);
 
-	ASSERT_EQ(theMapper.getEmpires().size(), 3);
+	ASSERT_EQ(3, theMapper.getEmpires().size());
 	ASSERT_TRUE(theMapper.getEmpires().count("e_rome"));
 	ASSERT_TRUE(theMapper.getEmpires().count("e_byzantium"));
 	ASSERT_TRUE(theMapper.getEmpires().count("e_hispania"));
