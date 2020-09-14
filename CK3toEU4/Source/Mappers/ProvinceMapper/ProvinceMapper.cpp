@@ -67,12 +67,12 @@ void mappers::ProvinceMapper::createMappings()
 	}
 }
 
-const std::map<std::string, std::shared_ptr<CK3::Title>>& mappers::ProvinceMapper::getCK3Titles(int eu4ProvinceNumber) const
+std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getCK3Titles(int eu4ProvinceNumber) const
 {
 	const auto& mapping = EU4ToCK3ProvinceMap.find(eu4ProvinceNumber);
+	std::map<std::string, std::shared_ptr<CK3::Title>> toReturn;
 	if (mapping != EU4ToCK3ProvinceMap.end())
 	{
-		std::map<std::string, std::shared_ptr<CK3::Title>> toReturn;
 		for (auto ck3ID: mapping->second)
 		{
 			if (baroniesToCounties.count(ck3ID))

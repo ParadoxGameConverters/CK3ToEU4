@@ -19,7 +19,7 @@ class ProvinceMapper: commonItems::parser
 	ProvinceMapper();
 	explicit ProvinceMapper(std::istream& theStream);
 
-	[[nodiscard]] const std::map<std::string, std::shared_ptr<CK3::Title>>& getCK3Titles(int eu4ProvinceNumber) const;
+	[[nodiscard]] std::map<std::string, std::shared_ptr<CK3::Title>> getCK3Titles(int eu4ProvinceNumber) const;
 	[[nodiscard]] std::vector<int> getEU4ProvinceNumbers(const std::string& ck3CountyName) const;
 	[[nodiscard]] std::vector<int> getCK3ProvinceNumbers(int eu4ProvinceNumber) const; // for load testing
 	[[nodiscard]] std::vector<int> getEU4ProvinceNumbers(int ck3ProvinceNumber) const; // for load testing
