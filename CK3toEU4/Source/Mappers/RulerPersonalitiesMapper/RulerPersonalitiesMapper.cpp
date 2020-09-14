@@ -30,18 +30,18 @@ void mappers::RulerPersonalitiesMapper::registerKeys()
 
 std::set<std::string> mappers::RulerPersonalitiesMapper::evaluatePersonalities(const std::pair<int, std::shared_ptr<CK3::Character>>& theCharacter) const
 {
-	// In CK2 they are traits. In EU4 they are personalities.
+	// In CK3 they are traits. In EU4 they are personalities.
 	const auto& incTraits = theCharacter.second->getTraits();
-	std::set<std::string> ck2Traits;
+	std::set<std::string> ck3Traits;
 	for (const auto& trait: incTraits)
-		ck2Traits.insert(trait.second);
+		ck3Traits.insert(trait.second);
 
 	std::vector<std::pair<int, std::string>> scoreBoard; // personalityscore, personality
 	std::set<std::string> toReturn;
 
 	for (const auto& mapping: theMappings)
 	{
-		auto score = mapping.second.evaluatePersonality(ck2Traits);
+		auto score = mapping.second.evaluatePersonality(ck3Traits);
 		scoreBoard.emplace_back(std::pair(score, mapping.first));
 	}
 	std::sort(scoreBoard.rbegin(), scoreBoard.rend());

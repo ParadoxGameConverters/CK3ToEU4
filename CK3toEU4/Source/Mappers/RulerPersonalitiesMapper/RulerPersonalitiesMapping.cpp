@@ -20,7 +20,6 @@ void mappers::RulerPersonalitiesMapping::registerKeys()
 int mappers::RulerPersonalitiesMapping::evaluatePersonality(const std::set<std::string>& ck3Traits) const
 {
 	// In CK3 they are traits. In EU4 they are personalities.
-
 	auto score = 0;
 	for (const auto& trait: traits)
 		if (ck3Traits.count(trait.first))

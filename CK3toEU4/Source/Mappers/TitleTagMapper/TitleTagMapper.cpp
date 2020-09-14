@@ -45,7 +45,7 @@ std::optional<std::string> mappers::TitleTagMapper::getTagForTitle(const std::st
 	if (ck3Title.empty())
 		return std::nullopt;
 
-	// The popes don't use proper titles and aren't registered.
+	// The pope don't use proper title and isn't registered.
 	if (ck3Title == "The Pope")
 	{
 		if (!usedTags.count("PAP"))
@@ -65,16 +65,6 @@ std::optional<std::string> mappers::TitleTagMapper::getTagForTitle(const std::st
 	const auto& registerItr = registeredTitleTags.find(ck3Title);
 	if (registerItr != registeredTitleTags.end())
 		return registerItr->second;
-
-	// Map The Pope(s)
-	if (ck3Title == "The Pope")
-	{
-		if (!usedTags.count("PAP"))
-		{
-			registerTitle(ck3Title, "PAP");
-			return "PAP";
-		}
-	}
 
 	// Attempt a capital match.
 	if (eu4Capital)
