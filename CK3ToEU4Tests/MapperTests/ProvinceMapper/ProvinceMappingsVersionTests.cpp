@@ -9,7 +9,7 @@ TEST(Mappers_ProvinceMappingsVersionTests, MappingsDefaultToEmpty)
 	input << "= {\n";
 	input << "}";
 
-	const mappers::ProvinceMappingsVersion theMappingVersion(input);
+	mappers::ProvinceMappingsVersion theMappingVersion(input);
 
 	ASSERT_TRUE(theMappingVersion.getMappings().empty());
 }
@@ -22,7 +22,7 @@ TEST(Mappers_ProvinceMappingsVersionTests, MappingsCanBeLoaded)
 	input << "	link = { eu4 = 2 ck3 = 2 }\n";
 	input << "}";
 
-	const mappers::ProvinceMappingsVersion theMappingVersion(input);
+	mappers::ProvinceMappingsVersion theMappingVersion(input);
 
 	ASSERT_EQ(theMappingVersion.getMappings().size(), 2);
 }

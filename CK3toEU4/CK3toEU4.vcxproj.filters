@@ -94,6 +94,12 @@
     <Filter Include="Mappers\ReligionMapper">
       <UniqueIdentifier>{23a729d0-2ea3-462d-90e4-7b3f88846d77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\TitleTagMapper">
+      <UniqueIdentifier>{aaf58d1f-d099-40bc-8ee6-21466bf22b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RulerPersonalitiesMapper">
+      <UniqueIdentifier>{004ea203-94fd-4409-99ff-6b1aefec9b4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -321,6 +327,18 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h">
       <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TitleTagMapper\TitleTagMapper.h">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\TitleTagMapper\TitleTagMapping.h">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.h">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.h">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -550,6 +568,18 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp">
       <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TitleTagMapper\TitleTagMapper.cpp">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\TitleTagMapper\TitleTagMapping.cpp">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

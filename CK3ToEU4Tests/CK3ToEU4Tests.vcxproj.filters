@@ -148,6 +148,18 @@
     <Filter Include="CK3ToEU4\Mappers\ReligionMapper">
       <UniqueIdentifier>{755d5486-f3d2-448c-b27b-2f4b69c6bcca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\TitleTagMapper">
+      <UniqueIdentifier>{d94c484a-d3b5-4466-846d-f2c5c62446cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\TitleTagMapperTests">
+      <UniqueIdentifier>{a4a29331-ff75-4732-8df2-8cc9d3ba4ccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\RulerPersonalitiesMapper">
+      <UniqueIdentifier>{27da1194-d94e-4977-9ce2-01087fab2086}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\RulerPersonalitiesMapperTests">
+      <UniqueIdentifier>{941dea37-479d-4fcb-b29b-cf58b584456f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -163,9 +175,6 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp">
-      <Filter>MapperTests\ConverterVersionTests</Filter>
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp">
       <Filter>CK3ToEU4\Mappers\ConverterVersion</Filter>
@@ -286,9 +295,6 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp">
       <Filter>CK3ToEU4\Mappers\NamedColors</Filter>
-    </ClCompile>
-    <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp">
-      <Filter>MapperTests\NamedColorTests</Filter>
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.cpp">
       <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
@@ -484,6 +490,36 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
       <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMapperTests.cpp">
+      <Filter>MapperTests\TitleTagMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMappingTests.cpp">
+      <Filter>MapperTests\TitleTagMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp">
+      <Filter>MapperTests\ConverterVersionTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp">
+      <Filter>MapperTests\NamedColorTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalitiesMappingTests.cpp">
+      <Filter>MapperTests\RulerPersonalitiesMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalityMapperTests.cpp">
+      <Filter>MapperTests\RulerPersonalitiesMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

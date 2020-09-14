@@ -107,7 +107,11 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
@@ -149,13 +153,13 @@
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
-    <ClCompile Include="MapperTests\ConverterVersionTests\ConverterVersionTests.cpp" />
+    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
-    <ClCompile Include="MapperTests\NamedColorTests\NamedColorTests.cpp" />
+    <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp" />
@@ -168,7 +172,11 @@
     <ClCompile Include="MapperTests\RegionMapper\SuperRegionTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapper\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapper\ReligionMappingTests.cpp" />
+    <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalitiesMappingTests.cpp" />
+    <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalityMapperTests.cpp" />
     <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp" />
+    <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMapperTests.cpp" />
+    <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMappingTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp" />
   </ItemGroup>

@@ -48,8 +48,8 @@ void mappers::CultureMappingRule::registerKeys()
 		}
 	});
 	registerKeyword("ck3", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString ck2Str(theStream);
-		cultures.insert(ck2Str.getString());
+		const commonItems::singleString ck3Str(theStream);
+		cultures.insert(ck3Str.getString());
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

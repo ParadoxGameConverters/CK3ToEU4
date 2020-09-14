@@ -5,6 +5,8 @@ namespace fs = std::filesystem;
 #include "../Configuration/Configuration.h"
 #include "OSCompatibilityLayer.h"
 #include <fstream>
+#include "../CK3World/Titles/Title.h"
+#include "../CK3World/Characters/Character.h"
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
 {
@@ -30,10 +32,18 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	cultureMapper.loadRegionMapper(regionMapper);
 	Log(LogLevel::Progress) << "53 %";
 
+	// Our provincemapper is useless for this game. We don't care about baronies, we want <Title> counties.
+	LOG(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
+	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
+
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.
-	// We'll overwrite some of them with ck2 imports.
+	// We'll overwrite some of them with ck3 imports.
 	importVanillaCountries(theConfiguration.getEU4Path(), theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE);
 	Log(LogLevel::Progress) << "55 %";
+
+	// Which happens now. Translating incoming titles into EU4 tags, with new tags being added to our countries.
+	importCK3Countries(sourceWorld);
+	Log(LogLevel::Progress) << "56 %";
 
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";
@@ -125,5 +135,103 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 			countries.insert(std::make_pair(tag, newCountry));
 		if (!isVanillaSource)
 			specialCountryTags.insert(tag);
+	}
+}
+
+void EU4::World::importCK3Countries(const CK3::World& sourceWorld)
+{
+	LOG(LogLevel::Info) << "-> Importing CK3 Countries";
+
+	// countries holds all tags imported from EU4. We'll now overwrite some and
+	// add new ones from ck3 titles.
+	for (const auto& title: sourceWorld.getIndeps())
+	{
+		if (title.second->getLevel() != CK3::LEVEL::EMPIRE)
+			continue;
+		importCK3Country(title, sourceWorld);
+	}
+	for (const auto& title: sourceWorld.getIndeps())
+	{
+		if (title.second->getLevel() != CK3::LEVEL::KINGDOM)
+			continue;
+		importCK3Country(title, sourceWorld);
+	}
+	for (const auto& title: sourceWorld.getIndeps())
+	{
+		if (title.second->getLevel() != CK3::LEVEL::DUCHY)
+			continue;
+		importCK3Country(title, sourceWorld);
+	}
+	for (const auto& title: sourceWorld.getIndeps())
+	{
+		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
+			continue;
+		importCK3Country(title, sourceWorld);
+	}
+	LOG(LogLevel::Info) << ">> " << countries.size() << " total countries recognized.";
+}
+
+void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld)
+{
+	// Grabbing the capital, if possible
+	int eu4CapitalID = 0;
+	const auto& holderDomain = title.second->getHolder()->second->getDomain();
+	if (holderDomain && holderDomain->getRealmCapital().first)
+	{
+		const auto& capitalBarony = holderDomain->getRealmCapital();
+		const auto& capitalCounty = capitalBarony.second->getDJLiege();
+		if (capitalCounty)
+		{
+			const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(capitalCounty->second->getName());
+			if (!capitalMatch.empty())
+				eu4CapitalID = *capitalMatch.begin();			
+		}
+	}
+
+	// Mapping the title to a tag
+	// The Pope is Special! This is land /owned by/ a pope, but might be e_france or k_jerusalem.
+	// First title will map to PAP/FAP and others will merge into it.
+	std::optional<std::string> tag;
+	if (title.second->isThePope())
+	{
+		tag = titleTagMapper.getTagForTitle("The Pope", eu4CapitalID);
+	}
+	else
+	{
+		tag = titleTagMapper.getTagForTitle(title.first, eu4CapitalID);
+	}
+	if (!tag)
+		throw std::runtime_error("Title " + title.first + " could not be mapped!");
+
+	// Locating appropriate existing country
+	const auto& countryItr = countries.find(*tag);
+	if (countryItr != countries.end())
+	{
+		countryItr->second->initializeFromTitle(*tag,
+			 title,
+			 governmentsMapper,
+			 religionMapper,
+			 cultureMapper,
+			 provinceMapper,
+			 localizationMapper,
+			 rulerPersonalitiesMapper,
+			 sourceWorld.getConversionDate());
+		title.second->loadEU4Tag(std::pair(*tag, countryItr->second));
+	}
+	else
+	{
+		// Otherwise create the country
+		auto newCountry = std::make_shared<Country>();
+		newCountry->initializeFromTitle(*tag,
+			 title,
+			 governmentsMapper,
+			 religionMapper,
+			 cultureMapper,
+			 provinceMapper,
+			 localizationMapper,
+			 rulerPersonalitiesMapper,
+			 sourceWorld.getConversionDate());
+		title.second->loadEU4Tag(std::pair(*tag, newCountry));
+		countries.insert(std::pair(*tag, newCountry));
 	}
 }

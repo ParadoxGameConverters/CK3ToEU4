@@ -11,6 +11,8 @@
 #include "Country/Country.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
+#include "../Mappers/TitleTagMapper/TitleTagMapper.h"
 
 class Configuration;
 
@@ -29,6 +31,8 @@ class World
 	// import
 	void importVanillaCountries(const std::string& eu4Path, bool invasion);
 	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
+	void importCK3Countries(const CK3::World& sourceWorld);
+	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld);
 
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
@@ -48,6 +52,8 @@ class World
 	mappers::ProvinceMapper provinceMapper;
 	mappers::GovernmentsMapper governmentsMapper;
 	mappers::ReligionMapper religionMapper;
+	mappers::TitleTagMapper titleTagMapper;
+	mappers::RulerPersonalitiesMapper rulerPersonalitiesMapper;
 
 	ModFile modFile;
 };

@@ -12,10 +12,12 @@ class ProvinceMappingsVersion: commonItems::parser
 	ProvinceMappingsVersion() = default;
 	explicit ProvinceMappingsVersion(std::istream& theStream);
 
-	[[nodiscard]] const auto& getMappings() const { return mappings; }
+	[[nodiscard]] auto getMappings() { return std::move(mappings); }
 
   private:
-	std::vector<ProvinceMapping> mappings;
+	void registerKeys();
+	
+	std::vector<std::shared_ptr<ProvinceMapping>> mappings;
 };
 } // namespace mappers
 

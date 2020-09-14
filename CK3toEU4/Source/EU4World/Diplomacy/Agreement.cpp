@@ -30,7 +30,7 @@ void EU4::Agreement::registerKeys()
 		const commonItems::singleString dateStr(theStream);
 		endDate = date(dateStr.getString());
 	});
-	registerRegex("[a-zA-Z0-9\\_.:-]+", commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 void EU4::Agreement::updateTags(const std::string& oldTag, const std::string& newTag)
