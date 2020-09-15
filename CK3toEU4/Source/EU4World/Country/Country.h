@@ -51,6 +51,10 @@ class Country
 	friend std::ostream& operator<<(std::ostream& output, const Country& versionParser);
 
   private:
+	void populateHistory(const mappers::GovernmentsMapper& governmentsMapper,
+		 const mappers::ReligionMapper& religionMapper,
+		 const mappers::ProvinceMapper& provinceMapper);
+	
 	std::string tag;
 	std::string commonCountryFile;
 	std::string historyCountryFile;
