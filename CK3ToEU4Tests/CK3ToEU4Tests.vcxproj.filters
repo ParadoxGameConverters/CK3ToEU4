@@ -446,9 +446,6 @@
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp">
       <Filter>MapperTests\CultureMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\CultureMapper\CultureMappingTests.cpp">
-      <Filter>MapperTests\CultureMapperTests</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.cpp">
       <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
     </ClCompile>
@@ -520,6 +517,9 @@
     </ClCompile>
     <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalityMapperTests.cpp">
       <Filter>MapperTests\RulerPersonalitiesMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp">
+      <Filter>MapperTests\CultureMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

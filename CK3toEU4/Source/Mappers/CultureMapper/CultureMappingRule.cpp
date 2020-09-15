@@ -67,19 +67,23 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const std::
 	if (!cultures.count(ck3culture))
 		return std::nullopt;
 
-	if (!eu4ownerTag.empty() && !owners.empty())
-		if (!owners.count(eu4ownerTag))
+	if (!owners.empty())
+		if (eu4ownerTag.empty() || !owners.count(eu4ownerTag))
 			return std::nullopt;
 
-	if (!eu4religion.empty() && !religions.empty())
-		if (!religions.count(eu4religion))
+	if (!religions.empty())
+		if (eu4religion.empty() || !religions.count(eu4religion))
 			return std::nullopt;
 
 	// This is a straight province check, not regions.
-	if (eu4Province && !provinces.empty() && regions.empty())
-		if (!provinces.count(eu4Province))
+	if (!provinces.empty())
+		if (!eu4Province || !provinces.count(eu4Province))
 			return std::nullopt;
 
+	// Asking for a regions check without an incoming province is pointless.
+	if (!regions.empty() && !eu4Province)
+		return std::nullopt;
+	
 	// This is a regions check, that checks if a provided province is within that region.
 	if (eu4Province && !regions.empty())
 	{
@@ -98,9 +102,6 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const std::
 			if (regionMapper->provinceIsInRegion(eu4Province, region))
 				regionMatch = true;
 		}
-		// This is an override if we have a province outside the regions specified.
-		if (!provinces.empty() && provinces.count(eu4Province))
-			regionMatch = true;
 		if (!regionMatch)
 			return std::nullopt;
 	}

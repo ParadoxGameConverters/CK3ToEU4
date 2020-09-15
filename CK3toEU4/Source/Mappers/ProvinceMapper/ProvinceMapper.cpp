@@ -90,7 +90,7 @@ std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getC
 	}
 	else
 	{
-		throw std::runtime_error("Province mapper error - requested ck3 province ID does not exist in mappings.");
+		throw std::runtime_error("Province mapper error - requested EU4 province ID " + std::to_string(eu4ProvinceNumber) + " does not exist in mappings.");
 	}
 }
 
@@ -125,8 +125,10 @@ void mappers::ProvinceMapper::transliterateMappings(std::map<std::string, std::s
 
 	for (const auto& title: titles)
 	{
-		if (title.second->getLevel() == CK3::LEVEL::BARONY && title.second->getClay() && title.second->getClay()->getProvince())
+		if (title.second->getLevel() == CK3::LEVEL::BARONY)
 		{
+			if (!title.second->getClay() || !title.second->getClay()->getProvince())
+				throw std::runtime_error("Barony " + title.first + " has no province data and is unmappable!");
 			// This is indeed a barony. Is it broken?
 			if (!title.second->getDJLiege())
 				throw std::runtime_error("Barony " + title.first + " has no county and is unmappable!");
@@ -155,25 +157,9 @@ void mappers::ProvinceMapper::transliterateMappings(std::map<std::string, std::s
 			else
 			{
 				// We're mapping to something unheard of. Let's not.
-				throw std::runtime_error("Province mapping ck3 = " + std::to_string(ck3ID) + " is invalid. We cannot find related county. Farewell.");
+				throw std::runtime_error("Province mapping ck3 = " + std::to_string(ck3ID) + " is invalid. We cannot find related county.");
 			}
 		}
 	}
 	LOG(LogLevel::Info) << "<> " << counter << " mappings validated.";
-}
-
-std::vector<int> mappers::ProvinceMapper::getCK3ProvinceNumbers(const int eu4ProvinceNumber) const
-{
-	const auto& mapping = EU4ToCK3ProvinceMap.find(eu4ProvinceNumber);
-	if (mapping != EU4ToCK3ProvinceMap.end())
-		return mapping->second;
-	return std::vector<int>();
-}
-
-std::vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(int ck3ProvinceNumber) const
-{
-	const auto& mapping = CK3ToEU4ProvinceMap.find(ck3ProvinceNumber);
-	if (mapping != CK3ToEU4ProvinceMap.end())
-		return mapping->second;
-	return std::vector<int>();
 }

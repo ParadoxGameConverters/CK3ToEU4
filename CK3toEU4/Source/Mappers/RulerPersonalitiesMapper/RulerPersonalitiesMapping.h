@@ -14,8 +14,6 @@ class RulerPersonalitiesMapping: commonItems::parser
 
 	[[nodiscard]] int evaluatePersonality(const std::set<std::string>& ck3Traits) const;
 
-	[[nodiscard]] const auto& getTraits() const { return traits; } // used for testing
-
   private:
 	void registerKeys();
 

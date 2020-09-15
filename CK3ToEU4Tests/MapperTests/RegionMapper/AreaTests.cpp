@@ -20,7 +20,7 @@ TEST(Mappers_AreaTests, provincesCanBeLoaded)
 	const mappers::Area newArea(input);
 
 	ASSERT_FALSE(newArea.getProvinces().empty());
-	ASSERT_EQ(3, newArea.getProvinces().size(), 3);
+	ASSERT_EQ(3, newArea.getProvinces().size());
 	ASSERT_EQ(1, newArea.getProvinces().find(1)->first);
 	ASSERT_EQ(2, newArea.getProvinces().find(2)->first);
 	ASSERT_EQ(3, newArea.getProvinces().find(3)->first);

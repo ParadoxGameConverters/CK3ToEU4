@@ -13,13 +13,6 @@ namespace mappers
 class RegionMapper: commonItems::parser
 {
   public:
-	RegionMapper() = default;
-	virtual ~RegionMapper() = default;
-	RegionMapper(const RegionMapper&) = default;
-	RegionMapper& operator=(const RegionMapper&) = default;
-	RegionMapper(RegionMapper&&) = default;
-	RegionMapper& operator=(RegionMapper&&) = default;
-
 	void loadRegions(const Configuration& theConfiguration);
 	void loadRegions(std::istream& areaStream, std::istream& regionStream, std::istream& superRegionStream); // for testing
 

@@ -51,7 +51,7 @@ TEST(Mappers_CultureMapperTests, cultureFailsWithWrongReligion)
 TEST(Mappers_CultureMapperTests, cultureMatchesWithCapital)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi province = 4 }";
 	const mappers::CultureMapper culMapper(input);
 
 	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 4, ""));
@@ -60,7 +60,7 @@ TEST(Mappers_CultureMapperTests, cultureMatchesWithCapital)
 TEST(Mappers_CultureMapperTests, cultureFailsWithWrongCapital)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi province = 4 }";
 	const mappers::CultureMapper culMapper(input);
 
 	ASSERT_FALSE(culMapper.cultureMatch("test", "", 3, ""));
@@ -69,7 +69,7 @@ TEST(Mappers_CultureMapperTests, cultureFailsWithWrongCapital)
 TEST(Mappers_CultureMapperTests, cultureMatchesWithOwnerTag)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 owner = TAG }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi owner = TAG }";
 	const mappers::CultureMapper culMapper(input);
 
 	ASSERT_EQ("culture", *culMapper.cultureMatch("test", "", 0, "TAG"));
@@ -78,7 +78,7 @@ TEST(Mappers_CultureMapperTests, cultureMatchesWithOwnerTag)
 TEST(Mappers_CultureMapperTests, cultureFailsWithWrongTag)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 owner = TAG }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi owner = TAG }";
 	const mappers::CultureMapper culMapper(input);
 
 	ASSERT_FALSE(culMapper.cultureMatch("test", "", 0, "GAT"));
@@ -87,7 +87,7 @@ TEST(Mappers_CultureMapperTests, cultureFailsWithWrongTag)
 TEST(Mappers_CultureMapperTests, cultureMapperThrowsExceptionWithoutRegionMapper)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion province = 4 owner = TAG region = atlantis }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi region = atlantis }";
 	const mappers::CultureMapper culMapper(input);
 	try
 	{
@@ -125,7 +125,7 @@ TEST(Mappers_CultureMapperTests, cultureMapperFailsForInvalidRegion)
 TEST(Mappers_CultureMapperTests, cultureMapperMatchesOnRegion)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion owner = TAG region = test_superregion }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi region = test_superregion }";
 	mappers::CultureMapper culMapper(input);
 
 	auto theMapper = std::make_shared<mappers::RegionMapper>();
@@ -148,7 +148,7 @@ TEST(Mappers_CultureMapperTests, cultureMapperMatchesOnRegion)
 TEST(Mappers_CultureMapperTests, cultureMapperFailsOnWrongRegion)
 {
 	std::stringstream input;
-	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi religion = thereligion owner = TAG region = test_superregion }";
+	input << "link = { eu4 = culture ck3 = qwe ck3 = test ck3 = poi region = test_superregion }";
 	mappers::CultureMapper culMapper(input);
 
 	auto theMapper = std::make_shared<mappers::RegionMapper>();

@@ -2,29 +2,6 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(Mappers_RulerPersonalitiesMappingTests, traitsDefaultToBlank)
-{
-	std::stringstream input;
-	input << "= {}";
-
-	const mappers::RulerPersonalitiesMapping theMapping(input);
-
-	ASSERT_TRUE(theMapping.getTraits().empty());
-}
-
-TEST(Mappers_RulerPersonalitiesMappingTests, traitsCanBeLoaded)
-{
-	std::stringstream input;
-	input << "= { trait = 0 trait2 = -9 trait3 = 7 }";
-
-	const mappers::RulerPersonalitiesMapping theMapping(input);
-
-	ASSERT_EQ(3, theMapping.getTraits().size(), 3);
-	ASSERT_EQ(0, theMapping.getTraits().find("trait")->second);
-	ASSERT_EQ(-9, theMapping.getTraits().find("trait2")->second);
-	ASSERT_EQ(7, theMapping.getTraits().find("trait3")->second);
-}
-
 TEST(Mappers_RulerPersonalitiesMappingTests, incomingTraitsScoreZeroForNoLoadedTraits)
 {
 	std::stringstream input;

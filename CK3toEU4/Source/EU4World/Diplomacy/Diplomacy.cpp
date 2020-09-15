@@ -4,15 +4,6 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-EU4::Diplomacy::Diplomacy()
-{
-	LOG(LogLevel::Info) << "-> Loading Eastern Diplomacy";
-	registerKeys();
-	parseFile("configurables/chinese_tributaries.txt");
-	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << ">> " << agreements.size() << " tributaries loaded.";
-}
-
 void EU4::Diplomacy::registerKeys()
 {
 	registerKeyword("dependency", [this](const std::string& type, std::istream& theStream) {
