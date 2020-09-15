@@ -11,6 +11,7 @@
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "Log.h"
+#include <cmath>
 
 EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std::move(theTag))
 {
