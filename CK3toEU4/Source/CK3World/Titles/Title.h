@@ -3,6 +3,7 @@
 #include "Date.h"
 #include "Parser.h"
 #include <set>
+#include "Color.h"
 
 namespace EU4
 {
@@ -62,6 +63,10 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getGeneratedLiege() const { return generatedLiege; }
 	[[nodiscard]] const auto& getGeneratedVassals() const { return generatedVassals; }
 	[[nodiscard]] const auto& getEU4Tag() const { return tagCountry; }
+	[[nodiscard]] const auto& getPreviousHolders() const { return previousHolders; }
+	
+	[[nodiscard]] std::optional<commonItems::Color> getColor() const;
+	[[nodiscard]] bool isLandless() const;
 
 	[[nodiscard]] LEVEL getLevel() const;
 
@@ -137,6 +142,10 @@ class Title: commonItems::parser
 	std::pair<std::string, std::shared_ptr<Title>> holdingTitle;						// topmost owner title (e_francia or similar), only c_s have this.
 	bool electorate = false;
 	std::optional<std::pair<std::string, std::shared_ptr<EU4::Country>>> tagCountry;
+	bool landless = false;
+	std::optional<commonItems::Color> color;
+	std::vector<std::pair<int, std::shared_ptr<Character>>> previousHolders;
+	
 };
 } // namespace CK3
 

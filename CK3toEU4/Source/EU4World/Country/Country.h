@@ -53,8 +53,11 @@ class Country
   private:
 	void populateHistory(const mappers::GovernmentsMapper& governmentsMapper,
 		 const mappers::ReligionMapper& religionMapper,
-		 const mappers::ProvinceMapper& provinceMapper);
-	
+		 const mappers::ProvinceMapper& provinceMapper,
+		 const mappers::CultureMapper& cultureMapper);
+	void populateCommons(const mappers::CultureMapper& cultureMapper);
+	void populateMisc();
+
 	std::string tag;
 	std::string commonCountryFile;
 	std::string historyCountryFile;

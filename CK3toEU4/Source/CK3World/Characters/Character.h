@@ -66,6 +66,9 @@ class Character: commonItems::parser
 	void loadCourtierNames(const std::map<std::string, bool>& theNames) { courtierNames = theNames; }
 	void loadCouncilors(const std::map<int, std::shared_ptr<Character>>& newCouncilors) { councilors = newCouncilors; }
 
+	// poking
+	[[nodiscard]] bool hasTrait(const std::string& wantedTrait) const;
+
   private:
 	void registerKeys();
 

@@ -77,6 +77,12 @@ void CK3::Title::registerKeys()
 		for (auto electorID: commonItems::intList(theStream).getInts())
 			electors.insert(std::pair(electorID, nullptr));
 	});
+	registerKeyword("landless", [this](const std::string& unused, std::istream& theStream) {
+		landless = commonItems::singleString(theStream).getString() == "yes";
+	});
+	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
+		color = laFabricaDeColor.getColor(theStream);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
@@ -199,4 +205,22 @@ CK3::LEVEL CK3::Title::getLevel() const
 		return LEVEL::EMPIRE;
 	else
 		return IntToLevel[LevelToInt[djLiege->second->getLevel()] - 1];
+}
+
+std::optional<commonItems::Color> CK3::Title::getColor() const
+{
+	if (color)
+		return color;
+	if (clay && clay->getColor())
+		return clay->getColor();
+	return std::nullopt;
+}
+
+bool CK3::Title::isLandless() const
+{
+	if (landless)
+		return true;
+	if (clay && clay->isLandless())
+		return true;
+	return false;
 }

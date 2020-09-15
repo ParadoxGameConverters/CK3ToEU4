@@ -32,6 +32,8 @@ TEST(CK3World_TitleTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(theTitle.getClaimants().empty());
 	ASSERT_TRUE(theTitle.getElectors().empty());
 	ASSERT_FALSE(theTitle.getCoA());
+	ASSERT_FALSE(theTitle.getColor());
+	ASSERT_FALSE(theTitle.isLandless());
 }
 
 TEST(CK3World_TitleTests, primitivesCanBeLoaded)
@@ -53,6 +55,8 @@ TEST(CK3World_TitleTests, primitivesCanBeLoaded)
 	input << "heir={ 3 4 5 }\n";
 	input << "claim={ 7 8 }\n";
 	input << "coat_of_arms_id=45\n";
+	input << "color={ 1 2 3 }\n";
+	input << "landless=yes\n";
 
 	const CK3::Title theTitle(input, 1);
 
@@ -79,6 +83,8 @@ TEST(CK3World_TitleTests, primitivesCanBeLoaded)
 	ASSERT_EQ(1, theTitle.getClaimants().count(7));
 	ASSERT_EQ(1, theTitle.getClaimants().count(8));
 	ASSERT_EQ(45, theTitle.getCoA()->first);
+	ASSERT_EQ(commonItems::Color(std::array<int, 3>{1, 2, 3}), theTitle.getColor());
+	ASSERT_TRUE(theTitle.isLandless());
 }
 
 TEST(CK3World_TitleTests, successionElectionCanBeLoaded)
