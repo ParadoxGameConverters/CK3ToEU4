@@ -4,6 +4,11 @@
 #include "Parser.h"
 #include <set>
 
+namespace EU4
+{
+class Country;
+}
+
 namespace CK3
 {
 class Character;
@@ -54,6 +59,9 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getOwnedDFCounties() const { return ownedDFCounties; }
 	[[nodiscard]] const auto& getOwnedDJCounties() const { return ownedDJCounties; }
 	[[nodiscard]] const auto& getHoldingTitle() const { return holdingTitle; }
+	[[nodiscard]] const auto& getGeneratedLiege() const { return generatedLiege; }
+	[[nodiscard]] const auto& getGeneratedVassals() const { return generatedVassals; }
+	[[nodiscard]] const auto& getEU4Tag() const { return tagCountry; }
 
 	[[nodiscard]] LEVEL getLevel() const;
 
@@ -88,6 +96,9 @@ class Title: commonItems::parser
 	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
 	void setElectorate() { electorate = true; }
 
+	//conversion
+	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }
+	
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
 
@@ -125,6 +136,7 @@ class Title: commonItems::parser
 	std::map<std::string, std::shared_ptr<Title>> generatedVassals;					// Vassals we split off deliberately.
 	std::pair<std::string, std::shared_ptr<Title>> holdingTitle;						// topmost owner title (e_francia or similar), only c_s have this.
 	bool electorate = false;
+	std::optional<std::pair<std::string, std::shared_ptr<EU4::Country>>> tagCountry;
 };
 } // namespace CK3
 
