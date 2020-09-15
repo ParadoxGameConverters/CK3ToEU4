@@ -6,6 +6,7 @@
 #include "../../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
+#include "Log.h"
 
 EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std::move(theTag))
 {
@@ -45,4 +46,11 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 		commonCountryFile = "countries/" + title->first + ".txt";
 	if (historyCountryFile.empty())
 		historyCountryFile = "history/countries/" + tag + " - " + title->first + ".txt";
+
+	Log(LogLevel::Debug) << "importing " << tag << " from " << title->first;
+	details.holder = title->second->getHolder()->second;
+	if (details.holder->getHouse().first)
+		details.house = details.holder->getHouse().second;
+	else
+		Log(LogLevel::Warning) << tag << " holder " << details.holder->getName() << " has no house.";	
 }

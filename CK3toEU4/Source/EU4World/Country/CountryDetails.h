@@ -6,6 +6,12 @@
 #include "Parser.h"
 #include <set>
 
+namespace CK3
+{
+class House;
+class Character;
+}
+
 namespace EU4
 {
 
@@ -63,7 +69,8 @@ class CountryDetails: commonItems::parser
 	bool isSunsetCountry = false;
 	int addTreasury = 0;
 	int addPrestige = 0;
-	int dynastyID = 0;
+	std::shared_ptr<CK3::House> house;
+	std::shared_ptr<CK3::Character> holder;
 	int capital = 0;
 	int governmentRank = 1;
 	int mercantilism = 0;
