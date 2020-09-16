@@ -204,7 +204,7 @@ link = { eu4 = bedouin_arabic ck3 = bedouin tech = muslim gfx = muslimgfx }
 link = { eu4 = algerian ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area }
 link = { eu4 = moroccan ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = northern_morocco_area region = tafilalt_area region = sus_area region = marrekesh_area region = western_morocco_area region = southern_morocco_area }
 link = { eu4 = tunisian ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = tunisia_area region = djerba_area }
-link = { eu4 = berber ck3 = berber ck3 = baranis ck3 = butr tech = muslim gfx = muslimgfx }
+link = { eu4 = berber ck3 = berber ck3 = baranis ck3 = butr ck3 = maghrebi tech = muslim gfx = muslimgfx }
 link = { eu4 = al_suryah_arabic ck3 = levantine tech = muslim gfx = muslimgfx }
 link = { eu4 = al_misr_arabic ck3 = egyptian tech = muslim gfx = muslimgfx }
 link = { eu4 = andalucian ck3 = andalusian tech = muslim gfx = muslimgfx }

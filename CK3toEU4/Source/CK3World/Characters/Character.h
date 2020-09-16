@@ -33,6 +33,7 @@ class Character: commonItems::parser
 	[[nodiscard]] auto getGold() const { return gold; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getBirthDate() const { return birthDate; }
+	[[nodiscard]] const auto& getDeathDate() const { return deathDate; }
 
 	[[nodiscard]] const auto& getCulture() const { return culture; }
 	[[nodiscard]] const auto& getFaith() const { return faith; }
@@ -81,6 +82,7 @@ class Character: commonItems::parser
 	double gold = 0;
 	std::string name;
 	date birthDate = date("1.1.1");
+	date deathDate = date("1.1.1");
 
 	std::pair<int, std::shared_ptr<Culture>> culture;
 	std::pair<int, std::shared_ptr<Faith>> faith;

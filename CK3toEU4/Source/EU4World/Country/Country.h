@@ -58,6 +58,9 @@ class Country
 	void populateCommons(const mappers::CultureMapper& cultureMapper);
 	void populateMisc();
 	void populateLocs(const mappers::LocalizationMapper& localizationMapper);
+	void populateRulers(const mappers::ReligionMapper& religionMapper,
+		 const mappers::CultureMapper& cultureMapper,
+		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper);
 
 	std::string tag;
 	std::string commonCountryFile;
