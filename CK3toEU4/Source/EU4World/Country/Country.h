@@ -57,6 +57,7 @@ class Country
 		 const mappers::CultureMapper& cultureMapper);
 	void populateCommons(const mappers::CultureMapper& cultureMapper);
 	void populateMisc();
+	void populateLocs(const mappers::LocalizationMapper& localizationMapper);
 
 	std::string tag;
 	std::string commonCountryFile;
@@ -65,7 +66,7 @@ class Country
 	CountryDetails details;
 
 	std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> title;
-	std::map<std::string, mappers::LocBlock> localizations;
+	std::map<std::string, mappers::LocBlock> localizations; // Beware, these are UTF8 strings. If you are altering them be sure you know what you're doing.
 	std::map<int, std::shared_ptr<Province>> provinces;
 };
 } // namespace EU4

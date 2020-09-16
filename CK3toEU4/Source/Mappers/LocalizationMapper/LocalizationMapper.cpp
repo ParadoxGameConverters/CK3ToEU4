@@ -31,13 +31,13 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 {
 	if (!Utils::DoesFolderExist(path + "/" + language))
 		return;
-	auto filenames = Utils::GetAllFilesInFolderRecursive(path + "/" + language);
-	for (const auto& file: filenames)
+	auto fileNames = Utils::GetAllFilesInFolderRecursive(path + "/" + language);
+	for (const auto& file: fileNames)
 	{
-		std::ifstream filestream(path + "/" + language + "/" + file);
-		if (filestream.is_open())
-			scrapeStream(filestream, language);
-		filestream.close();
+		std::ifstream fileStream(path + "/" + language + "/" + file);
+		if (fileStream.is_open())
+			scrapeStream(fileStream, language);
+		fileStream.close();
 	}
 }
 
@@ -48,13 +48,13 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 		std::string line;
 		getline(theStream, line);
 
-		if (line[0] == '#' || line.length() < 4)
+		if (line[0] == '#' || line[1] == '#' || line.length() < 4)
 			continue;
 
 		const auto sepLoc = line.find_first_of(':');
 		if (sepLoc == std::string::npos)
 			continue;
-		const auto key = line.substr(1, sepLoc);
+		const auto key = line.substr(1, sepLoc - 1);
 		const auto newLine = line.substr(sepLoc + 1, line.length());
 		const auto quoteLoc = newLine.find_first_of('\"');
 		const auto quote2Loc = newLine.find_last_of('\"');

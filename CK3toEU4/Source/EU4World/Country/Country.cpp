@@ -1,6 +1,8 @@
 #include "Country.h"
 #include "../../CK3World/Characters/Character.h"
 #include "../../CK3World/Cultures/Culture.h"
+#include "../../CK3World/Dynasties/Dynasty.h"
+#include "../../CK3World/Dynasties/House.h"
 #include "../../CK3World/Geography/CountyDetail.h"
 #include "../../CK3World/Religions/Faith.h"
 #include "../../CK3World/Titles/LandedTitles.h"
@@ -60,6 +62,7 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	populateHistory(governmentsMapper, religionMapper, provinceMapper, cultureMapper);
 	populateCommons(cultureMapper);
 	populateMisc();
+	populateLocs(localizationMapper);
 }
 
 void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governmentsMapper,
@@ -138,7 +141,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 			// We failed to get a primaryCulture. This is not an issue. We'll set it later from the majority of owned provinces.
 			Log(LogLevel::Warning) << "Failed to map ck3 culture: " << baseCulture << " into an EU4 culture. Check mappings!";
 			details.primaryCulture.clear();
-		}		
+		}
 	}
 	else
 	{
@@ -278,4 +281,199 @@ void EU4::Country::populateMisc()
 		details.addPrestige = -50 + std::max(-50, static_cast<int>(lround(15 * log2(details.holder->getPrestige() - 100) - 50)));
 	if (details.holder->hasTrait("excommunicated"))
 		details.excommunicated = true;
+}
+
+void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationMapper)
+{
+	auto nameSet = false;
+
+	// Pope is special, as always.
+	if (title->second->isThePope() && tag == "PAP")
+		nameSet = true; // We'll use vanilla PAP locs.
+
+	// FIRST we see if we can match the locblocks for title. This is because some titles have displayName set but only in english, whereas
+	// locs have proper locs in all languages.
+
+	if (!nameSet)
+	{
+		auto nameLocalizationMatch = localizationMapper.getLocBlockForKey(title->first);
+		if (nameLocalizationMatch)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch));
+			nameSet = true;
+		}
+	}
+
+	// If this doesn't work, try the displayname.
+	if (!nameSet && !title->second->getDisplayName().empty())
+	{
+		// This is a custom name in UTF8 encoding, usually english only. We copy it ad verbatum.
+		mappers::LocBlock newblock;
+		newblock.english = title->second->getDisplayName();
+		newblock.spanish = title->second->getDisplayName();
+		newblock.french = title->second->getDisplayName();
+		newblock.german = title->second->getDisplayName();
+		localizations.insert(std::pair(tag, newblock));
+		nameSet = true;
+	}
+
+	if (!nameSet)
+	{
+		// Now get creative. See if we can map any similar locs. Poke at it blindly.
+		auto alternateName1 = "b_" + title->first.substr(2, title->first.length());
+		auto alternateName2 = "c_" + title->first.substr(2, title->first.length());
+		auto alternateName3 = "d_" + title->first.substr(2, title->first.length());
+		auto alternateName4 = "e_" + title->first.substr(2, title->first.length());
+		auto nameLocalizationMatch1 = localizationMapper.getLocBlockForKey(alternateName1);
+		auto nameLocalizationMatch2 = localizationMapper.getLocBlockForKey(alternateName2);
+		auto nameLocalizationMatch3 = localizationMapper.getLocBlockForKey(alternateName3);
+		auto nameLocalizationMatch4 = localizationMapper.getLocBlockForKey(alternateName4);
+
+		if (nameLocalizationMatch1)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch1));
+			nameSet = true;
+		}
+		if (!nameSet && nameLocalizationMatch2)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch2));
+			nameSet = true;
+		}
+		if (!nameSet && nameLocalizationMatch3)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch3));
+			nameSet = true;
+		}
+		if (!nameSet && nameLocalizationMatch4)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch4));
+			nameSet = true;
+		}
+	}
+	if (!nameSet)
+	{
+		// using capital province name?
+		auto capitalName = details.holder->getDomain()->getRealmCapital().second->getName();
+		auto nameLocalizationMatch = localizationMapper.getLocBlockForKey(capitalName);
+		if (nameLocalizationMatch)
+		{
+			localizations.insert(std::pair(tag, *nameLocalizationMatch));
+			nameSet = true;
+		}
+	}
+
+	// Override for kingdoms/empires that use Dynasty Names
+	std::set<std::string> hardcodedExclusions =
+		 {"k_rum", "k_israel", "e_india", "e_ilkhanate", "e_persia", "e_mali", "k_mali", "k_ghana", "k_songhay", "e_hre", "e_roman_empire", "e_byzantium"};
+
+	if (details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
+		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
+		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
+	{
+		const auto& houseName = details.holder->getHouse().second->getName();
+		auto nameLocalizationMatch = localizationMapper.getLocBlockForKey(houseName);
+		if (nameLocalizationMatch)
+		{
+			mappers::LocBlock newblock;
+			if (nameLocalizationMatch->english.back() == 's')
+				newblock.english = nameLocalizationMatch->english;
+			else
+				newblock.english = nameLocalizationMatch->english + "s";
+			newblock.spanish = nameLocalizationMatch->spanish;
+			newblock.french = nameLocalizationMatch->french;
+			newblock.german = nameLocalizationMatch->german;
+
+			// If we already set a canonical name, don't just overwrite, save it for future reference (Ottoman Crimea)
+			if (nameSet)
+			{
+				localizations.insert(std::pair("canonical", localizations[tag]));
+			}
+
+			localizations[tag] = newblock;
+			details.hasDynastyName = true;
+			nameSet = true;
+		}
+	}
+
+	// giving up.
+	if (!nameSet)
+		Log(LogLevel::Warning) << tag << " needs help with localization! " << title->first;
+
+	// --------------- Adjective Locs
+
+	auto adjSet = false;
+
+	// Pope is special, as always.
+	if (title->second->isThePope())
+		adjSet = true; // We'll use vanilla PAP locs.
+
+	// See if we use dynasty name.
+	if (details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
+		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
+		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
+	{
+		const auto& houseName = details.holder->getHouse().second->getName();
+		auto nameLocalizationMatch = localizationMapper.getLocBlockForKey(houseName);
+		if (nameLocalizationMatch)
+		{
+			mappers::LocBlock newblock;
+			newblock.english = nameLocalizationMatch->english; // Ottoman Africa
+			newblock.spanish = "de los " + nameLocalizationMatch->spanish;
+			newblock.french = "des " + nameLocalizationMatch->french;
+			newblock.german = nameLocalizationMatch->german + "-";
+			localizations.insert(std::pair(tag + "_ADJ", newblock));
+			adjSet = true;
+		}
+	}
+
+	if (!adjSet)
+	{
+		// try with straight adj and cross fingers. Those usually work well.
+		auto nameLocalizationMatch1 = localizationMapper.getLocBlockForKey(title->first + "_adj");
+		auto nameLocalizationMatch2 = localizationMapper.getLocBlockForKey("b_" + title->first.substr(2, title->first.length()) + "_adj");
+		auto nameLocalizationMatch3 = localizationMapper.getLocBlockForKey("c_" + title->first.substr(2, title->first.length()) + "_adj");
+		auto nameLocalizationMatch4 = localizationMapper.getLocBlockForKey("d_" + title->first.substr(2, title->first.length()) + "_adj");
+		auto nameLocalizationMatch5 = localizationMapper.getLocBlockForKey("k_" + title->first.substr(2, title->first.length()) + "_adj");
+		if (nameLocalizationMatch1)
+		{
+			localizations.insert(std::pair(tag + "_ADJ", *nameLocalizationMatch1));
+			adjSet = true;
+		}
+		if (!adjSet && nameLocalizationMatch2)
+		{
+			localizations.insert(std::pair(tag + "_ADJ", *nameLocalizationMatch2));
+			adjSet = true;
+		}
+		if (!adjSet && nameLocalizationMatch3)
+		{
+			localizations.insert(std::pair(tag + "_ADJ", *nameLocalizationMatch3));
+			adjSet = true;
+		}
+		if (!adjSet && nameLocalizationMatch4)
+		{
+			localizations.insert(std::pair(tag + "_ADJ", *nameLocalizationMatch4));
+			adjSet = true;
+		}
+		if (!adjSet && nameLocalizationMatch5)
+		{
+			localizations.insert(std::pair(tag + "_ADJ", *nameLocalizationMatch5));
+			adjSet = true;
+		}
+	}
+
+	// Can we use some custom name?
+	if (!adjSet && !title->second->getDisplayName().empty())
+	{
+		mappers::LocBlock newblock;
+		newblock.english = title->second->getDisplayName() + "'s"; // singular Nordarike's Africa
+		newblock.spanish = "de " + title->second->getDisplayName();
+		newblock.french = "de " + title->second->getDisplayName();
+		newblock.german = title->second->getDisplayName() + "s";
+		localizations.insert(std::pair(tag + "_ADJ", newblock));
+		adjSet = true;
+	}
+
+	// out of ideas.
+	if (!adjSet)
+		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj?";
 }
