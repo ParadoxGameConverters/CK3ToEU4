@@ -125,8 +125,7 @@ void CK3::Character::dropTitleFromDomain(int titleID)
 
 bool CK3::Character::hasTrait(const std::string& wantedTrait) const
 {
-	for (const auto& trait: traits)
-		if (trait.second == wantedTrait)
-			return true;
-	return false;
+	return std::any_of(traits.begin(), traits.end(), [wantedTrait](const std::pair<int, std::string>& trait) {
+		return trait.second == wantedTrait;
+	});
 }
