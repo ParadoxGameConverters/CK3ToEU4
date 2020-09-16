@@ -52,7 +52,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		provinceHoldings = ProvinceHoldings(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << provinceHoldings.getProvinceHoldings().size() << " provinces.";
 	});
-	registerKeyword("living", [this](const std::string& unused, std::istream& theStream) {
+	registerRegex("living|dead_unpruneable", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading alive human beings.";
 		characters = Characters(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";

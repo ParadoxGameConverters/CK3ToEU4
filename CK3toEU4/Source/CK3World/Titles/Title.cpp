@@ -83,6 +83,24 @@ void CK3::Title::registerKeys()
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		color = laFabricaDeColor.getColor(theStream);
 	});
+	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
+		previousHolders = Title(theStream, 0).getPreviousHolders();
+	});
+	registerRegex(R"(\d+.\d+.\d+)", [this](const std::string& unused, std::istream& theStream) {
+		const auto questionableItem = commonItems::singleItem(unused, theStream);
+		if (questionableItem.find('{') == std::string::npos)
+		{
+			try
+			{
+				auto prevID = std::stoi(questionableItem);
+				previousHolders.emplace_back(std::pair(prevID, nullptr));
+			}
+			catch(std::exception&)
+			{
+				Log(LogLevel::Warning) << "Invalid previous holder ID: " << questionableItem;
+			}
+		}			
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

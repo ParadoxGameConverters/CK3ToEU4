@@ -265,7 +265,7 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)
 TEST(CK3World_TitlesTests, charactersCanBeLinked)
 {
 	std::stringstream input;
-	input << "13 = { key= c_county holder = 1 claim = { 2 3 } heir = { 2 } }\n";
+	input << "13 = { key= c_county holder = 1 claim = { 2 3 } heir = { 2 } history = { 1.1.1=2\n2.2.2=1\n3.3.3={type=destroyed}}}\n";
 	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } succession_election = { electors = { 2 3 } } }\n";
 	CK3::Titles titles(input);
 
@@ -294,6 +294,9 @@ TEST(CK3World_TitlesTests, charactersCanBeLinked)
 	ASSERT_EQ(2, t2->second->getElectors().size());
 	ASSERT_EQ("Bob", t2->second->getElectors().find(2)->second->getName());
 	ASSERT_EQ("Carol", t2->second->getElectors().find(3)->second->getName());
+	ASSERT_EQ(2, t1->second->getPreviousHolders().size());
+	ASSERT_EQ("Bob", t1->second->getPreviousHolders()[0].second->getName());
+	ASSERT_EQ("Alice", t1->second->getPreviousHolders()[1].second->getName());
 }
 
 TEST(CK3World_TitlesTests, charactersLinkMissingHolderThrowsException)

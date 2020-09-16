@@ -569,73 +569,79 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 
 	if (!title->second->getHeirs().empty())
 	{
-		const auto& heir = title->second->getHeirs()[0];
-		details.heir.name = heir.second->getName();
-		// We're setting future regnalness
-		if (details.government != "republic" && !details.monarchNames.empty())
+		for (const auto& heir: title->second->getHeirs())
 		{
-			auto const& theName = heir.second->getName();
-			std::string roman;
-			const auto& nameItr = details.monarchNames.find(theName);
-			if (nameItr != details.monarchNames.end())
+			if (heir.second->getDeathDate() != date("1.1.1"))
+				continue; // This one is dead. Next, please.
+			
+			details.heir.name = heir.second->getName();
+			// We're setting future regnalness
+			if (details.government != "republic" && !details.monarchNames.empty())
 			{
-				const auto regnal = nameItr->second.first;
-				if (regnal >= 1)
+				auto const& theName = heir.second->getName();
+				std::string roman;
+				const auto& nameItr = details.monarchNames.find(theName);
+				if (nameItr != details.monarchNames.end())
 				{
-					roman = cardinalToRoman(regnal + 1);
-					roman = " " + roman;
+					const auto regnal = nameItr->second.first;
+					if (regnal >= 1)
+					{
+						roman = cardinalToRoman(regnal + 1);
+						roman = " " + roman;
+					}
 				}
+				details.heir.monarchName = heir.second->getName() + roman;
 			}
-			details.heir.monarchName = heir.second->getName() + roman;
-		}
-		if (heir.second->getHouse().first)
-			details.heir.dynasty = heir.second->getHouse().second->getName();
-		details.heir.adm = std::min((heir.second->getSkills().stewardship + heir.second->getSkills().learning) / 2, 6);
-		details.heir.dip = std::min((heir.second->getSkills().diplomacy + heir.second->getSkills().intrigue) / 2, 6);
-		details.heir.mil = std::min((heir.second->getSkills().martial + heir.second->getSkills().learning) / 2, 6);
-		details.heir.birthDate = heir.second->getBirthDate();
-		details.heir.female = heir.second->isFemale();
-		if (!heir.second->getFaith().first)
-		{
-			details.heir.religion = details.monarch.religion; // taking a shortcut.			
-		}
-		else
-		{
-			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith().second->getName());
-			if (religionMatch)
-			{				
-				details.heir.religion = *religionMatch;
-			}
-			else
+			if (heir.second->getHouse().first)
+				details.heir.dynasty = heir.second->getHouse().second->getName();
+			details.heir.adm = std::min((heir.second->getSkills().stewardship + heir.second->getSkills().learning) / 2, 6);
+			details.heir.dip = std::min((heir.second->getSkills().diplomacy + heir.second->getSkills().intrigue) / 2, 6);
+			details.heir.mil = std::min((heir.second->getSkills().martial + heir.second->getSkills().learning) / 2, 6);
+			details.heir.birthDate = heir.second->getBirthDate();
+			details.heir.female = heir.second->isFemale();
+			if (!heir.second->getFaith().first)
 			{
-				Log(LogLevel::Warning) << "No religion match for heir " << details.heir.name << ": " << heir.second->getFaith().second->getName();
 				details.heir.religion = details.monarch.religion; // taking a shortcut.
 			}
-		}
-		if (!heir.second->getCulture().first)
-		{			
-			details.heir.culture = details.monarch.culture; // taking a shortcut.
-		}
-		else
-		{
-			const auto& cultureMatch = cultureMapper.cultureMatch(heir.second->getCulture().second->getName(), details.heir.religion, 0, tag);
-			if (cultureMatch)
+			else
 			{
-				details.heir.culture = *cultureMatch;				
+				const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith().second->getName());
+				if (religionMatch)
+				{
+					details.heir.religion = *religionMatch;
+				}
+				else
+				{
+					Log(LogLevel::Warning) << "No religion match for heir " << details.heir.name << ": " << heir.second->getFaith().second->getName();
+					details.heir.religion = details.monarch.religion; // taking a shortcut.
+				}
+			}
+			if (!heir.second->getCulture().first)
+			{
+				details.heir.culture = details.monarch.culture; // taking a shortcut.
 			}
 			else
 			{
-				Log(LogLevel::Warning) << "No culture match for heir " << details.heir.name << ": " << heir.second->getCulture().second->getName();
-				details.heir.culture = details.monarch.culture; // taking a shortcut.
+				const auto& cultureMatch = cultureMapper.cultureMatch(heir.second->getCulture().second->getName(), details.heir.religion, 0, tag);
+				if (cultureMatch)
+				{
+					details.heir.culture = *cultureMatch;
+				}
+				else
+				{
+					Log(LogLevel::Warning) << "No culture match for heir " << details.heir.name << ": " << heir.second->getCulture().second->getName();
+					details.heir.culture = details.monarch.culture; // taking a shortcut.
+				}
 			}
+			details.heir.deathDate = details.heir.birthDate;
+			details.heir.deathDate.subtractYears(-65);
+			details.heir.claim = 89; // good enough?
+			details.heir.personalities = rulerPersonalitiesMapper.evaluatePersonalities(heir.second);
+			details.heir.isSet = true;			
 		}
-		details.heir.deathDate = details.heir.birthDate;
-		details.heir.deathDate.subtractYears(-65);
-		details.heir.claim = 89; // good enough?
-		details.heir.personalities = rulerPersonalitiesMapper.evaluatePersonalities(heir.second);
-		details.heir.isSet = true;
 	}
 
+	// this transformation is always true, heir or not.
 	if (conversionDate.diffInYears(details.monarch.birthDate) < 16)
 	{
 		details.heir = details.monarch;

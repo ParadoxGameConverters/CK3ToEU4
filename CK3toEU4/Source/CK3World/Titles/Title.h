@@ -79,6 +79,7 @@ class Title: commonItems::parser
 	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
 	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
 	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
+	void loadPreviousHolders(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHolders) { previousHolders = theHolders; }
 	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
 	void loadElectors(const std::map<int, std::shared_ptr<Character>>& theElectors) { electors = theElectors; }
 	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
