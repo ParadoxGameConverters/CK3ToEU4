@@ -42,7 +42,7 @@ class Province
 	[[nodiscard]] auto getMil() const { return details.baseManpower; }
 	[[nodiscard]] auto getDip() const { return details.baseProduction; }
 	[[nodiscard]] auto getProvinceID() const { return provID; }
-	
+
 
 	void registerTagCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry) { tagCountry = theCountry; }
 	void addCore(const std::string& tag) { details.cores.insert(tag); }

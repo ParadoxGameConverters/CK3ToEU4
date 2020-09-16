@@ -513,9 +513,9 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	}
 	if (details.holder->getHouse().first)
 	{
-		details.monarch.dynasty = details.holder->getHouse().second->getName();		
+		details.monarch.dynasty = details.holder->getHouse().second->getName();
 	}
-	
+
 	details.monarch.adm = std::min((details.holder->getSkills().stewardship + details.holder->getSkills().learning) / 3, 6);
 	details.monarch.dip = std::min((details.holder->getSkills().diplomacy + details.holder->getSkills().intrigue) / 3, 6);
 	details.monarch.mil = std::min((details.holder->getSkills().martial + details.holder->getSkills().learning) / 3, 6);
@@ -543,7 +543,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith().second->getName());
 		if (religionMatch)
 		{
-			details.queen.religion = *religionMatch;			
+			details.queen.religion = *religionMatch;
 		}
 		else
 		{
@@ -553,12 +553,12 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		const auto& cultureMatch = cultureMapper.cultureMatch(spouse->getCulture().second->getName(), details.queen.religion, 0, tag);
 		if (cultureMatch)
 		{
-			details.queen.culture = *cultureMatch;			
+			details.queen.culture = *cultureMatch;
 		}
 		else
 		{
 			Log(LogLevel::Warning) << "No culture match for queen " << details.queen.name << ": " << spouse->getCulture().second->getName();
-			details.queen.culture = details.monarch.culture; // taking a shortcut.			
+			details.queen.culture = details.monarch.culture; // taking a shortcut.
 		}
 		details.queen.originCountry = tag;
 		details.queen.deathDate = details.queen.birthDate;
@@ -573,7 +573,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		{
 			if (heir.second->isDead())
 				continue; // This one is dead. Next, please.
-			
+
 			details.heir.name = heir.second->getName();
 			// We're setting future regnalness
 			if (details.government != "republic" && !details.monarchNames.empty())
@@ -637,7 +637,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			details.heir.deathDate.subtractYears(-65);
 			details.heir.claim = 89; // good enough?
 			details.heir.personalities = rulerPersonalitiesMapper.evaluatePersonalities(heir.second);
-			details.heir.isSet = true;			
+			details.heir.isSet = true;
 		}
 	}
 

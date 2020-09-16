@@ -70,7 +70,7 @@ class Country
 
 	[[nodiscard]] int getDevelopment() const;
 
-	
+
 	friend std::ostream& operator<<(std::ostream& output, const Country& versionParser);
 
   private:

@@ -1,10 +1,10 @@
 #include "EU4Province.h"
-#include "../../CK3World/Titles/Title.h"
-#include "../../CK3World/Titles/LandedTitles.h"
-#include "../../CK3World/Religions/Faith.h"
-#include "../../CK3World/Cultures/Culture.h"
 #include "../../CK3World/Characters/Character.h"
+#include "../../CK3World/Cultures/Culture.h"
 #include "../../CK3World/Geography/CountyDetail.h"
+#include "../../CK3World/Religions/Faith.h"
+#include "../../CK3World/Titles/LandedTitles.h"
+#include "../../CK3World/Titles/Title.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Country/Country.h"
@@ -30,14 +30,14 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 {
 	srcProvince = origProvince;
 
-		details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
+	details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
 
 	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
 	// There are no uncolonized provinces in CK3.
 
 	if (!srcProvince->getHoldingTitle().second->getEU4Tag())
-			throw std::runtime_error(
-				 "EU4 Province ID " + std::to_string(provID) + " has source holdingtitle " + srcProvince->getHoldingTitle().first + " which has no EU4 tag!");
+		throw std::runtime_error(
+			 "EU4 Province ID " + std::to_string(provID) + " has source holdingtitle " + srcProvince->getHoldingTitle().first + " which has no EU4 tag!");
 	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
@@ -60,7 +60,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
 	}
 
-	// Attempt to use religion of ruler in THAT province.	
+	// Attempt to use religion of ruler in THAT province.
 	if (!religionSet)
 	{
 		baseReligion = srcProvince->getHolder()->second->getFaith().second->getName();
@@ -72,7 +72,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";			
+			Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 		}
 	}
 	// Attempt to use religion of country.
@@ -91,7 +91,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	if (cultureMatch)
 	{
 		details.culture = *cultureMatch;
-		cultureSet = true;		
+		cultureSet = true;
 	}
 	else
 	{
@@ -101,8 +101,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	if (!cultureSet)
 	{
 		baseCulture = srcProvince->getHolder()->second->getCulture().second->getName();
-		cultureMatch =
-			 cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
+		cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
 		if (cultureMatch)
 		{
 			details.culture = *cultureMatch;
@@ -110,11 +109,11 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";			
+			Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 		}
 	}
 	// Attempt to use primary culture of country.
-	if (!cultureSet)		
+	if (!cultureSet)
 	{
 		if (!tagCountry.second->getPrimaryCulture().empty())
 			details.culture = tagCountry.second->getPrimaryCulture();
