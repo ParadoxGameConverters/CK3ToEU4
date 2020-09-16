@@ -44,10 +44,33 @@ class Country
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
 	void clearHistoryLessons() { details.historyLessons.clear(); }
 
-	[[nodiscard]] const auto& getTitle() const { return title; }
+	[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
+	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyCountryFile; }
+	[[nodiscard]] const auto& getLocalizations() const { return localizations; }
+	[[nodiscard]] const auto& getPrimaryCulture() const { return details.primaryCulture; }
+	[[nodiscard]] const auto& getMajorityReligion() const { return details.majorityReligion; }
+	[[nodiscard]] const auto& getReligion() const { return details.religion; }
+	[[nodiscard]] const auto& getTechGroup() const { return details.technologyGroup; }
+	[[nodiscard]] const auto& getGFX() const { return details.graphicalCulture; }
 	[[nodiscard]] const auto& getProvinces() const { return provinces; }
-	[[nodiscard]] const auto& getConversionDate() const { return conversionDate; }
+	[[nodiscard]] const auto& getTitle() const { return title; }
+	[[nodiscard]] const auto& getGovernment() const { return details.government; }
+	[[nodiscard]] const auto& getGovernmentReforms() const { return details.reforms; }
+	[[nodiscard]] const auto& getTag() const { return tag; }
+	[[nodiscard]] const auto& getAdvisers() const { return details.advisers; }
+	[[nodiscard]] auto getConversionDate() const { return conversionDate; }
+	[[nodiscard]] auto isExcommunicated() const { return details.excommunicated; }
+	[[nodiscard]] auto isHREEmperor() const { return details.holyRomanEmperor; }
+	[[nodiscard]] auto isHREElector() const { return details.elector; }
+	[[nodiscard]] auto isinHRE() const { return details.inHRE; }
+	[[nodiscard]] auto isSunsetCountry() const { return details.isSunsetCountry; }
+	[[nodiscard]] auto getCapitalID() const { return details.capital; }
+	[[nodiscard]] auto getHouse() const { return details.house; }
+	[[nodiscard]] auto getHasDynastyName() const { return details.hasDynastyName; }
 
+	[[nodiscard]] int getDevelopment() const;
+
+	
 	friend std::ostream& operator<<(std::ostream& output, const Country& versionParser);
 
   private:

@@ -323,8 +323,8 @@ link = { eu4 = pahari ck3 = hindustani tech = indian gfx = indiangfx region = hi
 link = { eu4 = kanauji ck3 = hindustani tech = indian gfx = indiangfx region = upper_doab_area region = sirhind_area }
 link = { eu4 = vindhyan ck3 = hindustani tech = indian gfx = indiangfx region = baghelkhand_area region = gird_area region = bundelkhand_area region = malwa_area region = khandesh_area region = gondwana_area }
 link = { eu4 = avadhi ck3 = hindustani tech = indian gfx = indiangfx }
-link = { eu4 = saurashtri ck3 = gujurati tech = indian gfx = indiangfx region = saurashtra_area }
-link = { eu4 = gujarati ck3 = gujurati tech = indian gfx = indiangfx }
+link = { eu4 = saurashtri ck3 = gujarati tech = indian gfx = indiangfx region = saurashtra_area }
+link = { eu4 = gujarati ck3 = gujarati tech = indian gfx = indiangfx }
 link = { eu4 = kashmiri ck3 = kashmiri tech = indian gfx = indiangfx }
 link = { eu4 = panjabi ck3 = punjabi tech = indian gfx = indiangfx }
 link = { eu4 = malvi ck3 = rajput tech = indian gfx = indiangfx region = malwa_area region = khandesh_area }

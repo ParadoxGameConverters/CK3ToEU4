@@ -1,6 +1,7 @@
 #include "Title.h"
 #include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
+#include "../Geography/ProvinceHolding.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -241,4 +242,23 @@ bool CK3::Title::isLandless() const
 	if (clay && clay->isLandless())
 		return true;
 	return false;
+}
+
+int CK3::Title::getBuildingWeight() const
+{
+	if (getLevel() != LEVEL::COUNTY) // This applies to nothing but counties.
+		return 0;
+	
+	// buildingWeight is a mixture of all holdings, their potential buildings, and general county development.
+	const auto development = clay->getCounty()->second->getDevelopment();
+	auto buildingCount = 0;
+	auto holdingCount = 0;
+	for (const auto& barony: djVassals)
+	{
+		const auto& baronyProvince = barony.second->getClay()->getProvince();		
+		buildingCount += baronyProvince->second->getBuildings().size();
+		if (!baronyProvince->second->getHoldingType().empty())
+			++holdingCount;
+	}
+	return 3 * holdingCount + buildingCount + development;
 }

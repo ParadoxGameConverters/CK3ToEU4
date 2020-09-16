@@ -328,7 +328,7 @@ TEST(Mappers_ProvinceMapperTests, EU4ProvinceLookupReturnsNothingForInvalidTitle
 	ASSERT_TRUE(provinceMapper.getEU4ProvinceNumbers("nonsense").empty());
 }
 
-TEST(Mappers_ProvinceMapperTests, CK3TitleLookupThrowsExceptionInvalidEU4ProvinceID)
+TEST(Mappers_ProvinceMapperTests, CK3TitleLookupReturnsNothingForInvalidEU4ProvinceID)
 {
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
@@ -360,13 +360,5 @@ TEST(Mappers_ProvinceMapperTests, CK3TitleLookupThrowsExceptionInvalidEU4Provinc
 	titles.linkLandedTitles(landedTitles);
 	provinceMapper.transliterateMappings(titles.getTitles());
 
-	try
-	{
-		auto fail = provinceMapper.getCK3Titles(99);
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Province mapper error - requested EU4 province ID 99 does not exist in mappings.", e.what());
-	}
+	ASSERT_TRUE(provinceMapper.getCK3Titles(99).empty());
 }

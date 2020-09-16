@@ -26,7 +26,7 @@ class Province
 	Province(int id, const std::string& filePath);
 
 	void updateWith(const std::string& filePath);
-	void initializeFromCK3(std::shared_ptr<CK3::Title> origProvince,
+	void initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper);
 

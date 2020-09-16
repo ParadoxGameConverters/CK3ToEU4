@@ -40,6 +40,8 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isInHRE() const { return inHRE; }
 	[[nodiscard]] auto isThePope() const { return thePope; }
 	[[nodiscard]] auto isElectorate() const { return electorate; }
+	[[nodiscard]] auto isHolderCapital() const { return holderCapital; }
+	[[nodiscard]] auto isHRECapital() const { return HRECapital; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -104,6 +106,9 @@ class Title: commonItems::parser
 
 	//conversion
 	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }
+	[[nodiscard]] int getBuildingWeight() const;
+	void setHolderCapital() { holderCapital = true; }
+	void setHRECapital() { HRECapital = true; }
 	
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
@@ -146,6 +151,8 @@ class Title: commonItems::parser
 	bool landless = false;
 	std::optional<commonItems::Color> color;
 	std::vector<std::pair<int, std::shared_ptr<Character>>> previousHolders;
+	bool holderCapital = false;
+	bool HRECapital = false;
 	
 };
 } // namespace CK3

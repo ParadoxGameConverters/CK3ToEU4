@@ -1,7 +1,14 @@
 #include "EU4Province.h"
 #include "../../CK3World/Titles/Title.h"
+#include "../../CK3World/Titles/LandedTitles.h"
+#include "../../CK3World/Religions/Faith.h"
+#include "../../CK3World/Cultures/Culture.h"
+#include "../../CK3World/Characters/Character.h"
+#include "../../CK3World/Geography/CountyDetail.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
+#include "../Country/Country.h"
+#include "Log.h"
 
 EU4::Province::Province(int id, const std::string& filePath): provID(id)
 {
@@ -17,11 +24,131 @@ void EU4::Province::updateWith(const std::string& filePath)
 	details.updateWith(filePath);
 }
 
-void EU4::Province::initializeFromCK3(std::shared_ptr<CK3::Title> origProvince,
+void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 	 const mappers::CultureMapper& cultureMapper,
 	 const mappers::ReligionMapper& religionMapper)
 {
-	srcProvince = std::move(origProvince);
+	srcProvince = origProvince;
+
+		details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
+
+	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
+	// There are no uncolonized provinces in CK3.
+
+	if (!srcProvince->getHoldingTitle().second->getEU4Tag())
+			throw std::runtime_error(
+				 "EU4 Province ID " + std::to_string(provID) + " has source holdingtitle " + srcProvince->getHoldingTitle().first + " which has no EU4 tag!");
+	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
+	details.owner = tagCountry.first;
+	details.controller = tagCountry.first;
+
+	// History section
+	// Not touching Capital, that's hardcoded English name.
+	details.isCity = true; // This must be true for all incoming provinces.
+
+	// Religion first.
+	auto religionSet = false;
+	auto baseReligion = srcProvince->getClay()->getCounty()->second->getFaith().second->getName();
+	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+	if (religionMatch)
+	{
+		details.religion = *religionMatch;
+		religionSet = true;
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
+	}
+
+	// Attempt to use religion of ruler in THAT province.	
+	if (!religionSet)
+	{
+		baseReligion = srcProvince->getHolder()->second->getFaith().second->getName();
+		religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+		if (religionMatch)
+		{
+			details.religion = *religionMatch;
+			religionSet = true;
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";			
+		}
+	}
+	// Attempt to use religion of country.
+	if (!religionSet)
+	{
+		if (!tagCountry.second->getReligion().empty())
+			details.religion = tagCountry.second->getReligion();
+		else
+			Log(LogLevel::Warning) << "EU4 " << tagCountry.first << " has no religion set! Defaulting.";
+	}
+
+	auto cultureSet = false;
+	// do we even have a base culture?
+	auto baseCulture = srcProvince->getClay()->getCounty()->second->getCulture().second->getName();
+	auto cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
+	if (cultureMatch)
+	{
+		details.culture = *cultureMatch;
+		cultureSet = true;		
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
+	}
+	// Attempt to use primary culture of ruler in THAT province.
+	if (!cultureSet)
+	{
+		baseCulture = srcProvince->getHolder()->second->getCulture().second->getName();
+		cultureMatch =
+			 cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
+		if (cultureMatch)
+		{
+			details.culture = *cultureMatch;
+			cultureSet = true;
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";			
+		}
+	}
+	// Attempt to use primary culture of country.
+	if (!cultureSet)		
+	{
+		if (!tagCountry.second->getPrimaryCulture().empty())
+			details.culture = tagCountry.second->getPrimaryCulture();
+		else
+			Log(LogLevel::Warning) << "EU4 " << tagCountry.first << " has no culture set! Defaulting.";
+	}
+
+	// trade goods are retained.
+	details.fort = false; // dropping all forts, we'll redistribute later.
+	details.inHre = srcProvince->isInHRE() || srcProvince->getClay()->getCounty()->second->isDeJureHRE();
+	// base tax, production and manpower will be adjusted later.
+	// not touching extra_cost until we know what it does.
+	// not touching centers of trade
+
+	details.cores.clear();
+	details.cores.insert(tagCountry.first); // Only owner for now, dejures come later.
+	details.claims.clear();						 // dejures come later.
+
+	details.estate.clear(); // setting later.
+
+	details.localAutonomy = 0; // let the game handle this.
+	// not touching native_size/ferocity/hostileness.
+	// not touching existing permanent modifiers. These mostly relate to new world anyway. Wonders do need to be added.
+
+	details.shipyard = false; // we'll distribute these later.
+	// not touching province_triggered_modifiers. Rome is rome.
+	details.revoltRisk = 0;				 // we can adjust this later.
+	details.unrest = 0;					 // ditto
+	details.nationalism = 0;			 // later, if ever.
+	details.seatInParliament = false; // no.
+	details.jainsBurghers = false;	 // nope.
+	details.rajputsNobles = false;	 // nono.
+	details.brahminsChurch = false;	 // Still no.
+	details.vaisyasBurghers = false;	 // No.
 }
 
 void EU4::Province::sterilize()

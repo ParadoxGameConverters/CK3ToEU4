@@ -22,6 +22,7 @@ namespace CK3
 
 namespace EU4
 {
+class Province;
 class World
 {
   public:
@@ -33,6 +34,10 @@ class World
 	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
 	void importCK3Countries(const CK3::World& sourceWorld);
 	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld);
+	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
+	void importCK3Provinces(const CK3::World& sourceWorld);
+	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
+		 const CK3::World& sourceWorld) const;
 
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;

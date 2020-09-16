@@ -13,6 +13,7 @@
 #include "../../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
+#include "../Province/EU4Province.h"
 #include "CommonFunctions.h"
 #include "Log.h"
 #include <cmath>
@@ -56,7 +57,6 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	if (historyCountryFile.empty())
 		historyCountryFile = "history/countries/" + tag + " - " + title->first + ".txt";
 
-	Log(LogLevel::Debug) << "importing " << tag << " from " << title->first;
 	details.holder = title->second->getHolder()->second;
 	if (details.holder->getHouse().first)
 		details.house = details.holder->getHouse().second;
@@ -661,4 +661,12 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		details.monarch.dynasty.clear();
 		details.monarch.personalities.clear();
 	}
+}
+
+int EU4::Country::getDevelopment() const
+{
+	auto dev = 0;
+	for (const auto& province: provinces)
+		dev += province.second->getDev();
+	return dev;
 }

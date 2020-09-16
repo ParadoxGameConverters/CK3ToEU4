@@ -7,9 +7,12 @@ namespace fs = std::filesystem;
 #include <fstream>
 #include "../CK3World/Titles/Title.h"
 #include "../CK3World/Characters/Character.h"
+#include "Province/EU4Province.h"
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
 {
+	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
+	
 	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	LOG(LogLevel::Info) << "-> Reading Words";
@@ -38,12 +41,26 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.
 	// We'll overwrite some of them with ck3 imports.
-	importVanillaCountries(theConfiguration.getEU4Path(), theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE);
+	importVanillaCountries(theConfiguration.getEU4Path(), invasion);
 	Log(LogLevel::Progress) << "55 %";
 
 	// Which happens now. Translating incoming titles into EU4 tags, with new tags being added to our countries.
 	importCK3Countries(sourceWorld);
+	
 	Log(LogLevel::Progress) << "56 %";
+	// Now we can deal with provinces since we know to whom to assign them. We first import vanilla province data.
+	// Some of it will be overwritten, but not all.
+	importVanillaProvinces(theConfiguration.getEU4Path(), invasion);
+	Log(LogLevel::Progress) << "57 %";
+
+	// We can link provinces to regionMapper's bindings, though this is not used at the moment.
+	regionMapper->linkProvinces(provinces);
+	Log(LogLevel::Progress) << "58 %";
+
+	// Next we import ck2 provinces and translate them ontop a significant part of all imported provinces.
+	importCK3Provinces(sourceWorld);
+	Log(LogLevel::Progress) << "59 %";
+
 
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";
@@ -240,4 +257,152 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 		title.second->loadEU4Tag(std::pair(*tag, newCountry));
 		countries.insert(std::pair(*tag, newCountry));
 	}
+}
+
+void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasion)
+{
+	LOG(LogLevel::Info) << "-> Importing Vanilla Provinces";
+	// ---- Loading history/provinces
+	auto fileNames = Utils::GetAllFilesInFolder(eu4Path + "/history/provinces/");
+	for (const auto& fileName: fileNames)
+	{
+		if (fileName.find(".txt") == std::string::npos)
+			continue;
+		try
+		{
+			const auto id = std::stoi(fileName);
+			auto newProvince = std::make_shared<Province>(id, eu4Path + "/history/provinces/" + fileName);
+			if (provinces.count(id))
+			{
+				Log(LogLevel::Warning) << "Vanilla province duplication - " << id << " already loaded! Overwriting.";
+				provinces[id] = newProvince;
+			}
+			else
+				provinces.insert(std::pair(id, newProvince));
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Warning) << "Invalid province filename: " << eu4Path << "/history/provinces/" << fileName << " : " << e.what();
+		}
+	}
+	LOG(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
+	if (invasion)
+	{
+		fileNames = Utils::GetAllFilesInFolder("configurables/sunset/history/provinces/");
+		for (const auto& fileName: fileNames)
+		{
+			if (fileName.find(".txt") == std::string::npos)
+				continue;
+			auto id = std::stoi(fileName);
+			const auto& provinceItr = provinces.find(id);
+			if (provinceItr != provinces.end())
+				provinceItr->second->updateWith("configurables/sunset/history/provinces/" + fileName);
+		}
+	}
+}
+
+void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
+{
+	LOG(LogLevel::Info) << "-> Importing CK3 Provinces";
+	auto counter = 0;
+	// CK3 provinces map to a subset of eu4 provinces. We'll only rewrite those we are responsible for.
+	for (const auto& province: provinces)
+	{
+		const auto& ck3Titles = provinceMapper.getCK3Titles(province.first);
+		// Provinces we're not affecting will not be in this list.
+		if (ck3Titles.empty())
+			continue;
+		// Next, we find what province to use as its initializing source.
+		const auto& sourceProvince = determineProvinceSource(ck3Titles, sourceWorld);
+		if (!sourceProvince)
+		{
+			Log(LogLevel::Warning) << "Mismap on CK3 province import for EU4 province: " << province.first;
+			continue; // MISMAP, or simply have mod provinces loaded we're not using.
+		}
+		else
+		{
+			// And finally, initialize it.
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper);
+			counter++;
+		}
+	}
+	LOG(LogLevel::Info) << ">> " << counter << " EU4 provinces have been imported from CK3.";
+}
+
+std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::determineProvinceSource(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
+	 const CK3::World& sourceWorld) const
+{
+	// determine ownership by province development.
+	std::map<int, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
+	std::map<int, int> theShares;														// title, development
+	auto winner = -1;
+	auto maxDev = -1;
+
+	// We have multiple titles, c_ level, in battle royale to see which becomes canonical source for a target EU4 province.
+	// Since all source titles have working title pointers and have been verified by provinceMapper, we can be pretty relaxed
+	// about their integrity. None hail from wastelands or lakes or other junk.
+	for (auto ck3Title: ck3Titles)
+	{
+		const auto holderID = ck3Title.second->getHoldingTitle().second->getHolder()->first; // this is the fellow owning this land.
+		theClaims[holderID].insert(ck3Title);
+		theShares[holderID] += lround(ck3Title.second->getBuildingWeight());
+
+		// While at it, is this province especially important? Enough so we'd sidestep regular rules?
+		// Check for capital provinces
+		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();		
+		if (capitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
+		{
+			// This is the someone's capital, don't assign it away if unnecessary.
+			theShares[holderID] += 20; // Dev can go up to 50+, so yes, assign it away if someone has overbuilt a nearby province.
+			ck3Title.second->setHolderCapital();
+		}
+		// Check for HRE emperor
+		if (ck3Title.second->getHoldingTitle().second->isHREEmperor())
+		{
+			const auto& HRECapitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();
+			if (HRECapitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
+			{
+				// This is the empire capital, never assign it away.
+				theShares[holderID] += 999;
+				ck3Title.second->setHRECapital();
+			}
+		}
+	}
+	// Let's see who the lucky winner is.
+	for (const auto& share: theShares)
+	{
+		if (share.second > maxDev)
+		{
+			winner = share.first;
+			maxDev = share.second;
+		}
+	}
+	if (winner < 0)
+	{
+		return std::nullopt;
+	}
+
+	// Now that we have a winning title, let's find its largest province to use as a source.
+	maxDev = -1; // We can have winning provinces with weight = 0;
+
+	std::pair<std::string, std::shared_ptr<CK3::Title>> toReturn;
+	for (const auto& title: theClaims[winner])
+	{
+		auto provinceWeight = title.second->getBuildingWeight();
+		if (title.second->isHolderCapital())
+			provinceWeight += 20;
+		if (title.second->isHRECapital())
+			provinceWeight += 999;
+
+		if (provinceWeight > maxDev)
+		{
+			toReturn = title;
+			maxDev = provinceWeight;
+		}
+	}
+	if (toReturn.first.empty() || !toReturn.second)
+	{
+		return std::nullopt;
+	}
+	return toReturn;
 }
