@@ -92,6 +92,8 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	// Reforms will be set later to ensure that all other aspects of a country have been correctly set first.
 
 	const std::string baseReligion = details.holder->getFaith().second->getName();
+	if (baseReligion.empty())
+		Log(LogLevel::Warning) << tag << " base faith has no name!";
 	const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
 	if (religionMatch)
 		details.religion = *religionMatch;
@@ -111,8 +113,8 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		}
 		else
 		{
-			Log(LogLevel::Debug) << "No match for capital: " << details.holder->getDomain()->getRealmCapital().second->getDJLiege()->second->getName();
-			details.capital = 0; // We will see warning about this earlier, no need for more spam.
+			Log(LogLevel::Warning) << "No match for capital: " << details.holder->getDomain()->getRealmCapital().second->getDJLiege()->second->getName();
+			details.capital = 0;
 		}
 	}
 	// do we have a culture? Pope is special as always.
@@ -126,19 +128,29 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	{
 		baseCulture = details.holder->getCulture().second->getName();
 	}
-	const auto& cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, details.capital, tag);
-	if (cultureMatch)
-		details.primaryCulture = *cultureMatch;
+	if (!baseCulture.empty())
+	{
+		const auto& cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, details.capital, tag);
+		if (cultureMatch)
+			details.primaryCulture = *cultureMatch;
+		else
+		{
+			// We failed to get a primaryCulture. This is not an issue. We'll set it later from the majority of owned provinces.
+			Log(LogLevel::Warning) << "Failed to map ck3 culture: " << baseCulture << " into an EU4 culture. Check mappings!";
+			details.primaryCulture.clear();
+		}		
+	}
 	else
 	{
-		// We failed to get a primaryCulture. This is not an issue. We'll set it later from the majority of owned provinces.
-		details.primaryCulture.clear();
+		Log(LogLevel::Warning) << tag << " has no ck3 culture! Will substitute with something.";
 	}
 	if (!details.primaryCulture.empty())
 	{
 		const auto& techMatch = cultureMapper.getTechGroup(details.primaryCulture);
 		if (techMatch)
 			details.technologyGroup = *techMatch;
+		else
+			Log(LogLevel::Warning) << details.primaryCulture << " has no tech group!  Check the mappings!";
 	} // We will set it later if primaryCulture is unavailable at this stage.
 
 	if (title->second->getLevel() == CK3::LEVEL::COUNTY)
