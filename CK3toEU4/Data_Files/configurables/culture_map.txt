@@ -143,7 +143,7 @@ link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
 link = { eu4 = komi ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
-link = { eu4 = uralic ck3 = mari ck3 = merya tech = eastern gfx = inuitgfx }
+link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = khanty tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
 
 # Baltic
@@ -287,7 +287,6 @@ link = { eu4 = kanuri ck3 = kanuri tech = sub_saharan gfx = africangfx }
 link = { eu4 = hausa ck3 = hausa tech = sub_saharan gfx = africangfx }
 link = { eu4 = bilala ck3 = zaghawa tech = sub_saharan gfx = africangfx region = kanem_area }
 link = { eu4 = zaghawa ck3 = zaghawa tech = sub_saharan gfx = africangfx }
-# eu4 fulani?
 
 # West African
 link = { eu4 = bambara ck3 = mande tech = sub_saharan gfx = africangfx region = massina_area region = jenne_area }
@@ -307,6 +306,7 @@ link = { eu4 = mossi ck3 = mossi tech = sub_saharan gfx = africangfx }
 link = { eu4 = senegambian tech = sub_saharan gfx = africangfx ck3 = pulaar ck3 = serer }
 link = { eu4 = jolof tech = sub_saharan gfx = africangfx ck3 = wolof }
 link = { eu4 = aka tech = sub_saharan gfx = africangfx ck3 = akan ck3 = guan }
+link = { eu4 = fulani ck3 = mel tech = sub_saharan gfx = africangfx }
 
 # Mesoamerican - this is relevant only for azteks holding europe
 

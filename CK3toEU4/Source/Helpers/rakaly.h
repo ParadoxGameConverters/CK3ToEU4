@@ -68,9 +68,7 @@ MeltedBuffer *rakaly_eu4_melt(const char *data_ptr, size_t data_len);
 void rakaly_free_melt(MeltedBuffer *res);
 
 /**
- * Returns the length of the melted data in bytes. Length excludes null terminator if present,
- * so make sure you add 1 to this result to ensure a buffer big enough to hold the data is
- * allocated
+ * Returns the length of the melted data in bytes.
  *
  * # Safety
  *
@@ -98,16 +96,16 @@ int rakaly_melt_error_code(const MeltedBuffer *res);
  *
  * Returns the number of bytes copied from the melted data to the provided buffer.
  *
- * If the buffer is not long enough for the melted data, then -1 is returned.
+ * If the buffer is not long enough for the melted data, then 0 is returned.
  *
- * If the melted data or provided buffer are null, then -1 is returned.
+ * If the melted data or provided buffer are null, then 0 is returned.
  *
  * # Safety
  *
  * - Must pass in a valid pointer to a `MeltedBuffer`
  * - Given buffer must be at least the given length in size
  */
-int rakaly_melt_write_data(const MeltedBuffer *res, char *buffer, size_t length);
+size_t rakaly_melt_write_data(const MeltedBuffer *res, char *buffer, size_t length);
 
 #ifdef __cplusplus
 } // extern "C"

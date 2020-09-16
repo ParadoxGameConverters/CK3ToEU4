@@ -122,3 +122,10 @@ void CK3::Character::dropTitleFromDomain(int titleID)
 		characterDomain->loadDomain(replacementDomain);
 	}	
 }
+
+bool CK3::Character::hasTrait(const std::string& wantedTrait) const
+{
+	return std::any_of(traits.begin(), traits.end(), [wantedTrait](const std::pair<int, std::string>& trait) {
+		return trait.second == wantedTrait;
+	});
+}

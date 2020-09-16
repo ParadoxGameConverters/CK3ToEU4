@@ -61,14 +61,20 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		throw std::runtime_error("Could not open " + eu4Path + "/common/country_tags/00_countries.txt!");
 	loadCountriesFromSource(eu4CountriesFile, eu4Path, true);
 	eu4CountriesFile.close();
-	if (Utils::DoesFileExist("blankMod/output/common/country_tags/01_special_tags.txt"))
+
+	if (Utils::DoesFolderExist("blankMod/output/common/country_tags/"))
 	{
-		std::ifstream blankCountriesFile(fs::u8path("blankMod/output/common/country_tags/01_special_tags.txt"));
-		if (!blankCountriesFile.is_open())
-			throw std::runtime_error("Could not open blankMod/output/common/country_tags/01_special_tags.txt!");
-		loadCountriesFromSource(blankCountriesFile, "blankMod/output/", false);
-		blankCountriesFile.close();
+		auto fileNames = Utils::GetAllFilesInFolder("blankMod/output/common/country_tags/");
+		for (const auto& file: fileNames)
+		{
+			std::ifstream blankCountriesFile(fs::u8path("blankMod/output/common/country_tags/" + file));
+			if (!blankCountriesFile.is_open())
+				throw std::runtime_error("Could not open blankMod/output/common/country_tags/"+ file + "!");
+			loadCountriesFromSource(blankCountriesFile, "blankMod/output/", false);
+			blankCountriesFile.close();
+		}
 	}
+	
 	if (invasion)
 	{
 		std::ifstream sunset(fs::u8path("configurables/sunset/common/country_tags/zz_countries.txt"));

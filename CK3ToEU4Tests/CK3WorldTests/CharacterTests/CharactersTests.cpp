@@ -348,6 +348,32 @@ TEST(CK3World_CharactersTests, traitsCanBeLinked)
 	ASSERT_TRUE(c3->second->getTraits().empty());
 }
 
+TEST(CK3World_CharactersTests, traitsCanBePoked)
+{
+	std::stringstream input;
+	input << "1 = {\n";
+	input << "\tfirst_name = Alice\n";
+	input << "\ttraits = { 1 2 3 }\n";
+	input << "}\n";
+	CK3::Characters characters(input);
+	characters.linkCharacters();
+
+	std::stringstream input2;
+	input2 << "trait1 = { index = 1 }\n";
+	input2 << "trait2 = { index = 2 }\n";
+	input2 << "trait3 = { index = 3 }\n";
+
+	mappers::TraitScraper traitScraper;
+	traitScraper.loadTraits(input2);
+
+	characters.linkTraits(traitScraper);
+
+	const auto& c1 = characters.getCharacters().find(1);
+
+	ASSERT_TRUE(c1->second->hasTrait("trait1"));
+	ASSERT_FALSE(c1->second->hasTrait("trait-nonsense"));
+}
+
 TEST(CK3World_CharactersTests, traitsLinkMissingTraitsAreIgnored)
 {
 	std::stringstream input;
