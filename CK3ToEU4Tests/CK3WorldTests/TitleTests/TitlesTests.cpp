@@ -265,7 +265,17 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)
 TEST(CK3World_TitlesTests, charactersCanBeLinked)
 {
 	std::stringstream input;
-	input << "13 = { key= c_county holder = 1 claim = { 2 3 } heir = { 2 } history = { 1.1.1=2\n2.2.2=1\n3.3.3={type=destroyed}}}\n";
+	input << "13 = {\n";
+	input << "\tkey= c_county\n";
+	input << "\tholder = 1\n";
+	input << "\tclaim = {2 3}\n";
+	input << "\their = {2}\n";
+	input << "\thistory = {\n";
+	input << "\t\t1.1.1 = 2\n";
+	input << "\t\t2.2.2 = 1\n";
+	input << "\t\t3.3.3 = { type = destroyed }\n";
+	input << "\t}\n";
+	input << "}\n";
 	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } succession_election = { electors = { 2 3 } } }\n";
 	CK3::Titles titles(input);
 

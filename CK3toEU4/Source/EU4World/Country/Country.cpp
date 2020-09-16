@@ -529,7 +529,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	details.monarch.personalities = rulerPersonalitiesMapper.evaluatePersonalities(details.holder);
 	details.monarch.isSet = true;
 
-	if (details.holder->getSpouse() && details.holder->getSpouse()->second->getDeathDate() == date("1.1.1")) // making sure she's alive.
+	if (details.holder->getSpouse() && !details.holder->isDead()) // making sure she's alive.
 	{
 		const auto spouse = details.holder->getSpouse()->second;
 		details.queen.name = spouse->getName();
@@ -571,7 +571,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	{
 		for (const auto& heir: title->second->getHeirs())
 		{
-			if (heir.second->getDeathDate() != date("1.1.1"))
+			if (heir.second->isDead())
 				continue; // This one is dead. Next, please.
 			
 			details.heir.name = heir.second->getName();

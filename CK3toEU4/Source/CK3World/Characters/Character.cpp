@@ -17,6 +17,10 @@ void CK3::Character::registerKeys()
 	registerKeyword("birth", [this](const std::string& unused, std::istream& theStream) {
 		birthDate = date(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("dead_data", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		dead = true;
+	});
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
 		culture = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});

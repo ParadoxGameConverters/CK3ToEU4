@@ -256,7 +256,7 @@ int CK3::Title::getBuildingWeight() const
 	for (const auto& barony: djVassals)
 	{
 		const auto& baronyProvince = barony.second->getClay()->getProvince();		
-		buildingCount += baronyProvince->second->getBuildings().size();
+		buildingCount += static_cast<int>(baronyProvince->second->getBuildings().size());
 		if (!baronyProvince->second->getHoldingType().empty())
 			++holdingCount;
 	}
