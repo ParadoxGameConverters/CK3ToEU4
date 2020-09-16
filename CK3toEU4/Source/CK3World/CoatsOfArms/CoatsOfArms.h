@@ -18,7 +18,7 @@ class CoatsOfArms: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<int, std::shared_ptr<CoatOfArms>> coats;
+	std::map<long long, std::shared_ptr<CoatOfArms>> coats;
 };
 } // namespace CK3
 

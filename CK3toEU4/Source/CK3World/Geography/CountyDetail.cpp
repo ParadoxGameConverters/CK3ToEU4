@@ -15,10 +15,10 @@ void CK3::CountyDetail::registerKeys()
 		development = commonItems::singleInt(theStream).getInt();
 	});
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
-		culture = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		culture = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("faith", [this](const std::string& unused, std::istream& theStream) {
-		faith = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		faith = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

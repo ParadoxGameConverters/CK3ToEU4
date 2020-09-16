@@ -129,6 +129,7 @@
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
+    <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
     <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h" />
@@ -212,6 +213,7 @@
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
+    <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />

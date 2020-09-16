@@ -32,7 +32,7 @@ class Characters: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<int, std::shared_ptr<Character>> characters;
+	std::map<long long, std::shared_ptr<Character>> characters;
 };
 } // namespace CK3
 

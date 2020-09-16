@@ -19,7 +19,7 @@ class Houses: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<int, std::shared_ptr<House>> houses;
+	std::map<long long, std::shared_ptr<House>> houses;
 };
 } // namespace CK3
 

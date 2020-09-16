@@ -8,6 +8,8 @@ namespace fs = std::filesystem;
 #include "../CK3World/Titles/Title.h"
 #include "../CK3World/Characters/Character.h"
 #include "Province/EU4Province.h"
+#include "../CK3World/Geography/ProvinceHolding.h"
+#include "../CK3World/Geography/CountyDetail.h"
 #include <cmath>
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
@@ -61,6 +63,11 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Next we import ck2 provinces and translate them ontop a significant part of all imported provinces.
 	importCK3Provinces(sourceWorld);
 	Log(LogLevel::Progress) << "59 %";
+
+	// With Ck2 provinces linked to those eu4 provinces they affect, we can adjust eu4 province dev values.
+	if (theConfiguration.getDevelopment() == Configuration::DEVELOPMENT::IMPORT)
+		alterProvinceDevelopment();
+	Log(LogLevel::Progress) << "60 %";
 
 
 	// And finally, the Dump.
@@ -334,9 +341,9 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	 const CK3::World& sourceWorld) const
 {
 	// determine ownership by province development.
-	std::map<int, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
-	std::map<int, int> theShares;														// title, development
-	auto winner = -1;
+	std::map<long long, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
+	std::map<long long, int> theShares;																  // title, development
+	long long winner = -1;
 	auto maxDev = -1;
 
 	// We have multiple titles, c_ level, in battle royale to see which becomes canonical source for a target EU4 province.
@@ -406,4 +413,66 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		return std::nullopt;
 	}
 	return toReturn;
+}
+
+void EU4::World::alterProvinceDevelopment()
+{
+	Log(LogLevel::Info) << "-- Scaling Imported provinces";
+
+	auto totalVanillaDev = 0;
+	auto totalCK2Dev = 0;
+	auto counter = 0;
+
+	double debugdev = 0;
+	double debugbuild = 0;
+	double debughold = 0;
+
+	for (const auto& province: provinces)
+	{
+		if (!province.second->getSourceProvince())
+			continue;
+		totalVanillaDev += province.second->getDev();
+		auto adm = 0.0;
+		auto dip = 0.0;
+		auto mil = 0.0;
+		const auto& baronies = province.second->getSourceProvince()->getDFVassals();
+		for (const auto& barony: baronies)
+		{
+			const auto& provinceData = barony.second->getClay()->getProvince()->second;
+			if (provinceData->getHoldingType().empty())
+				continue;
+			const auto buildingNumber = static_cast<double>(provinceData->countBuildings());
+			debugbuild += buildingNumber * devWeightsMapper.getDevFromBuilding();
+			debughold += devWeightsMapper.getDevFromHolding();
+			const auto baronyDev = devWeightsMapper.getDevFromHolding() + devWeightsMapper.getDevFromBuilding() * buildingNumber;
+			if (provinceData->getHoldingType() == "tribal_holding")
+			{
+				mil += baronyDev;
+			}
+			else if (provinceData->getHoldingType() == "city_holding")
+			{
+				dip += baronyDev;
+			}
+			else if (provinceData->getHoldingType() == "church_holding")
+			{
+				adm += baronyDev;
+			}
+			else if (provinceData->getHoldingType() == "castle_holding")
+			{
+				adm += baronyDev * 1 / 3; // third to adm
+				mil += baronyDev * 2 / 3; // two thirds to mil
+			}
+		}
+		double generalDevelopment = province.second->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
+		debugdev += generalDevelopment * devWeightsMapper.getDevFromDev();
+		generalDevelopment *= devWeightsMapper.getDevFromDev() / 3;
+		province.second->setAdm(std::max(static_cast<int>(std::lround(adm + generalDevelopment)), 1));
+		province.second->setDip(std::max(static_cast<int>(std::lround(dip + generalDevelopment)), 1));
+		province.second->setMil(std::max(static_cast<int>(std::lround(mil + generalDevelopment)), 1));
+		counter++;
+		totalCK2Dev += province.second->getDev();
+	}
+
+	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK2Dev << " development imported (vanilla had " << totalVanillaDev << ").";
+	Log(LogLevel::Debug) << "ddev " << debugdev << " dbuild " << debugbuild << " dhold " << debughold;
 }

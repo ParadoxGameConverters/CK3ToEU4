@@ -13,7 +13,7 @@ CK3::Religions::Religions(std::istream& theStream)
 void CK3::Religions::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& faithID, std::istream& theStream) {
-		auto newReligion = std::make_shared<Religion>(theStream, std::stoi(faithID));
+		auto newReligion = std::make_shared<Religion>(theStream, std::stoll(faithID));
 		religions.insert(std::pair(newReligion->getID(), newReligion));
 	});
 	registerKeyword("religions", [this](const std::string& unused, std::istream& theStream) {
@@ -32,7 +32,7 @@ void CK3::Religions::linkFaiths(const Faiths& theFaiths)
 	for (const auto& religion: religions)
 	{
 		const auto& religionFaiths = religion.second->getFaiths();
-		std::map<int, std::shared_ptr<Faith>> replacementMap;
+		std::map<long long, std::shared_ptr<Faith>> replacementMap;
 		
 		for (const auto& faith: religionFaiths)
 		{

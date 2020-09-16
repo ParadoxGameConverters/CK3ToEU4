@@ -13,6 +13,7 @@
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
+#include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 
 class Configuration;
 
@@ -39,6 +40,9 @@ class World
 	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
 		 const CK3::World& sourceWorld) const;
 
+	// processing
+	void alterProvinceDevelopment();
+
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
 	void createModFile(const Configuration& theConfiguration) const;
@@ -59,6 +63,7 @@ class World
 	mappers::ReligionMapper religionMapper;
 	mappers::TitleTagMapper titleTagMapper;
 	mappers::RulerPersonalitiesMapper rulerPersonalitiesMapper;
+	mappers::DevWeightsMapper devWeightsMapper;
 
 	ModFile modFile;
 };

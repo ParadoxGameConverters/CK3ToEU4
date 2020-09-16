@@ -268,6 +268,9 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
+	std::ofstream dump("dump.txt");
+	dump << saveGame.gamestate;
+	dump.close();
 }
 
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
@@ -441,7 +444,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 
 	// First we are composing a list of all HRE members. These are duchies,
 	// so we're also ripping them from under any potential kingdoms.
-	std::map<int, std::shared_ptr<Title>> hreMembers;
+	std::map<long long, std::shared_ptr<Title>> hreMembers;
 
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
@@ -473,6 +476,8 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	}
 
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
+	if (!hreHolder->second->getDomain())
+		throw std::runtime_error("HREmperor has no Domain!");
 	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
 	{
 		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
@@ -535,7 +540,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // Not relevant.
 
 		// First we are composing a list of all members.
-		std::map<int, std::shared_ptr<Title>> members;
+		std::map<long long, std::shared_ptr<Title>> members;
 		for (const auto& vassal: empire.second->getDFVassals())
 		{
 			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
@@ -599,8 +604,8 @@ void CK3::World::filterIndependentTitles()
 	// (like Caliphate), it's not relevant at this stage as he's independent anyway.
 
 	// First, split off all county_title holders into a container.
-	std::set<int> countyHolders;
-	std::map<int, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
+	std::set<long long> countyHolders;
+	std::map<long long, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
 	for (const auto& title: allTitles)
 	{
 		if (title.second->getHolder() && title.second->getLevel() == LEVEL::COUNTY)
@@ -709,8 +714,8 @@ void CK3::World::gatherCourtierNames()
 
 	auto counter = 0;
 	auto counterAdvisors = 0;
-	std::map<int, std::map<std::string, bool>> holderCourtiers;						// holder-name/male
-	std::map<int, std::map<int, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
+	std::map<long long, std::map<std::string, bool>> holderCourtiers;				// holder-name/male
+	std::map<long long, std::map<long long, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
 
 	for (const auto& character: characters.getCharacters())
 	{
@@ -845,8 +850,8 @@ void CK3::World::setElectors()
 
 	// Preambule done, we start here.
 	// Make a registry of indep titles and their holders.
-	std::map<int, std::map<std::string, std::shared_ptr<Title>>> holderTitles; // holder/titles
-	std::pair<int, std::shared_ptr<Character>> hreHolder;
+	std::map<long long, std::map<std::string, std::shared_ptr<Title>>> holderTitles; // holder/titles
+	std::pair<long long, std::shared_ptr<Character>> hreHolder;
 
 	for (const auto& title: independentTitles)
 	{

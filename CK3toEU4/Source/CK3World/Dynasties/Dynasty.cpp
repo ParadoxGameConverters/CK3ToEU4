@@ -2,7 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::Dynasty::Dynasty(std::istream& theStream, int gameID): gameID(gameID)
+CK3::Dynasty::Dynasty(std::istream& theStream, long long theGameID): gameID(theGameID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -18,7 +18,7 @@ void CK3::Dynasty::registerKeys()
 		appropriateRealmName = commonItems::singleString(theStream).getString() == "yes";
 	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
-		coa = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		coa = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

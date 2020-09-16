@@ -20,7 +20,7 @@ CK3::Characters::Characters(std::istream& theStream)
 void CK3::Characters::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& charID, std::istream& theStream) {
-		auto newCharacter = std::make_shared<Character>(theStream, std::stoi(charID));
+		auto newCharacter = std::make_shared<Character>(theStream, std::stoll(charID));
 		characters.insert(std::pair(newCharacter->getID(), newCharacter));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -96,7 +96,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 	auto claimCounter = 0;
 	const auto& titleData = titles.getTitles();
 	// Since titles are locked behind name keys and we'll needs IDs, make a cache.
-	std::map<int, std::shared_ptr<Title>> IDCache;
+	std::map<long long, std::shared_ptr<Title>> IDCache;
 	for (const auto& title: titleData)
 		IDCache.insert(std::pair(title.second->getID(), title.second));
 
@@ -118,7 +118,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 												 " which has no definition!");
 			}
 			// load owned including landless titles ("the domain").
-			std::vector<std::pair<int, std::shared_ptr<Title>>> replacementDomain;
+			std::vector<std::pair<long long, std::shared_ptr<Title>>> replacementDomain;
 			for (const auto& title: domain->getDomain())
 			{
 				titleDataItr = IDCache.find(title.first);
@@ -136,7 +136,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 			character.second->loadDomain(replacementDomain);
 		}
 		// Now claims.
-		std::map<int, std::shared_ptr<Title>> replacementClaims;
+		std::map<long long, std::shared_ptr<Title>> replacementClaims;
 		for (const auto& claim: character.second->getClaims())
 		{
 			auto titleDataItr = IDCache.find(claim.first);

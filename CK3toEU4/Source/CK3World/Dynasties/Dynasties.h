@@ -22,7 +22,7 @@ class Dynasties: commonItems::parser
 	void registerKeys();
 
 	Houses houses;
-	std::map<int, std::shared_ptr<Dynasty>> dynasties;
+	std::map<long long, std::shared_ptr<Dynasty>> dynasties;
 };
 } // namespace CK3
 

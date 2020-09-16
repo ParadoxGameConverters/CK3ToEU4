@@ -160,6 +160,12 @@
     <Filter Include="MapperTests\RulerPersonalitiesMapperTests">
       <UniqueIdentifier>{941dea37-479d-4fcb-b29b-cf58b584456f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapperTests\DevWeightsMapperTests">
+      <UniqueIdentifier>{72c05f50-5bee-4ab2-9bd6-72f6c6ac55a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\DevWeightsMapper">
+      <UniqueIdentifier>{cdc068db-c919-484c-a2a4-efd642f68824}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -520,6 +526,12 @@
     </ClCompile>
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp">
       <Filter>MapperTests\CultureMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp">
+      <Filter>MapperTests\DevWeightsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\DevWeightsMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

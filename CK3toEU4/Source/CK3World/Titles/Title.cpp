@@ -6,7 +6,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::Title::Title(std::istream& theStream, int theID): ID(theID)
+CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -28,7 +28,7 @@ void CK3::Title::registerKeys()
 		creationDate = date(commonItems::singleString(theStream).getString());
 	});
 	registerKeyword("claim", [this](const std::string& unused, std::istream& theStream) {
-		for (auto claimantID: commonItems::intList(theStream).getInts())
+		for (auto claimantID: commonItems::llongList(theStream).getLlongs())
 			claimants.insert(std::make_pair(claimantID, nullptr));
 	});
 	registerKeyword("history_government", [this](const std::string& unused, std::istream& theStream) {
@@ -44,31 +44,31 @@ void CK3::Title::registerKeys()
 		dCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
 	});
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
-		capital = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		capital = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_facto_liege", [this](const std::string& unused, std::istream& theStream) {
-		dfLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		dfLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_jure_liege", [this](const std::string& unused, std::istream& theStream) {
-		djLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		djLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
-		for (auto vassalID: commonItems::intList(theStream).getInts())
+		for (auto vassalID: commonItems::llongList(theStream).getLlongs())
 			djVassals.insert(std::make_pair(vassalID, nullptr));
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
-		for (auto heirID: commonItems::intList(theStream).getInts())
-			heirs.emplace_back(std::pair(heirID, nullptr));
+		for (auto heirID: commonItems::llongList(theStream).getLlongs())
+			heirs.emplace_back(std::make_pair(heirID, nullptr));
 	});
 	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
 		const auto& theLaws = commonItems::stringList(theStream).getStrings();
 		laws = std::set(theLaws.begin(), theLaws.end());
 	});
 	registerKeyword("holder", [this](const std::string& unused, std::istream& theStream) {
-		holder = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
-		coa = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("succession_election", [this](const std::string& unused, std::istream& theStream) {
 		const auto newTitle = Title(theStream, 0);
@@ -93,7 +93,7 @@ void CK3::Title::registerKeys()
 		{
 			try
 			{
-				auto prevID = std::stoi(questionableItem);
+				auto prevID = std::stoll(questionableItem);
 				previousHolders.emplace_back(std::pair(prevID, nullptr));
 			}
 			catch(std::exception&)
@@ -142,7 +142,7 @@ void CK3::Title::brickTitle()
 	dfVassals.clear(); // just in case?
 }
 
-void CK3::Title::dropTitleFromDFVassals(int titleID)
+void CK3::Title::dropTitleFromDFVassals(long long titleID)
 {
 	const auto& dfvItr = dfVassals.find(titleID);
 	if (dfvItr != dfVassals.end())

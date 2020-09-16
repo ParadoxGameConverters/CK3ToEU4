@@ -1,6 +1,6 @@
 #include "Titles.h"
-#include "../Characters/Characters.h"
 #include "../Characters/Character.h"
+#include "../Characters/Characters.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
 #include "LandedTitles.h"
 #include "Log.h"
@@ -28,19 +28,27 @@ void CK3::Titles::registerKeys()
 		if (titleBlob.find('{') != std::string::npos)
 		{
 			std::stringstream tempStream(titleBlob);
-			auto newTitle = std::make_shared<Title>(tempStream, std::stoi(ID));
-			if (!newTitle->getName().empty())
-				titles.insert(std::pair(newTitle->getName(), newTitle));
-			if (newTitle->getName().find("b_") == 0)
-				++titleCounter[0];
-			else if (newTitle->getName().find("c_") == 0)
-				++titleCounter[1];
-			else if (newTitle->getName().find("d_") == 0)
-				++titleCounter[2];
-			else if (newTitle->getName().find("k_") == 0)
-				++titleCounter[3];
-			else if (newTitle->getName().find("e_") == 0)
-				++titleCounter[4];
+			try
+			{
+				auto newTitle = std::make_shared<Title>(tempStream, std::stoll(ID));
+				if (!newTitle->getName().empty())
+					titles.insert(std::pair(newTitle->getName(), newTitle));
+				if (newTitle->getName().find("b_") == 0)
+					++titleCounter[0];
+				else if (newTitle->getName().find("c_") == 0)
+					++titleCounter[1];
+				else if (newTitle->getName().find("d_") == 0)
+					++titleCounter[2];
+				else if (newTitle->getName().find("k_") == 0)
+					++titleCounter[3];
+				else if (newTitle->getName().find("e_") == 0)
+					++titleCounter[4];
+			}
+			catch (std::exception& e)
+			{
+				Log(LogLevel::Error) << "Cannot import title ID: " << ID << " (" << e.what() << ")";
+				throw std::runtime_error(e.what());
+			}
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -75,12 +83,12 @@ void CK3::Titles::linkTitles()
 	auto DFVcounter = 0;
 	auto DJVcounter = 0;
 	// We'll be needing a cache.
-	std::map<int, std::shared_ptr<Title>> IDCache;
+	std::map<long long, std::shared_ptr<Title>> IDCache;
 	for (const auto& title: titles)
 		IDCache.insert(std::pair(title.second->getID(), title.second));
-	
+
 	// We'll also be needing a defacto vassal registry for later.
-	std::map<int, std::map<int, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
+	std::map<long long, std::map<long long, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
 
 	// Additional objective:
 	// When a county and a duchy are held by same holder, under a king, both titles will have the kingdom set as defacto liege. We need to
@@ -131,7 +139,7 @@ void CK3::Titles::linkTitles()
 		// DJVassals
 		if (!title.second->getDJVassals().empty())
 		{
-			std::map<int, std::shared_ptr<Title>> replacementMap;
+			std::map<long long, std::shared_ptr<Title>> replacementMap;
 			for (const auto& dJVassal: title.second->getDJVassals())
 			{
 				const auto& cacheItr = IDCache.find(dJVassal.first);
@@ -148,16 +156,16 @@ void CK3::Titles::linkTitles()
 			title.second->loadDJVassals(replacementMap);
 		}
 	}
-	
+
 	// Now with fully generated dfvCache we can load it into all lieges, after fixing the mess inside.
-	std::map<int, std::map<int, std::shared_ptr<Title>>> updateMap;
+	std::map<long long, std::map<long long, std::shared_ptr<Title>>> updateMap;
 	for (const auto& liege: dfvRegistry)
 	{
 		const auto& cacheItr = IDCache.find(liege.first);
 		if (cacheItr != IDCache.end())
 		{
 			// liege.second holds all "vassals". Let's find actual ones.
-			std::map<int, std::shared_ptr<Title>> actualMap;
+			std::map<long long, std::shared_ptr<Title>> actualMap;
 			for (const auto& vassal: liege.second)
 			{
 				auto djLiegeID = vassal.second->getDJLiege()->first;
@@ -188,7 +196,7 @@ void CK3::Titles::linkTitles()
 	{
 		IDCache[update.first]->addDFVassals(update.second);
 	}
-	
+
 	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter
 							  << " dejure vassals updated.";
 }
@@ -219,7 +227,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 		}
 		// claimants
-		std::map<int, std::shared_ptr<Character>> replacementMap;
+		std::map<long long, std::shared_ptr<Character>> replacementMap;
 		for (const auto& claimant: title.second->getClaimants())
 		{
 			const auto& characterDataItr = characterData.find(claimant.first);
@@ -236,7 +244,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 		title.second->loadClaimants(replacementMap);
 
 		// heirs
-		std::vector<std::pair<int, std::shared_ptr<Character>>> replacementVector;
+		std::vector<std::pair<long long, std::shared_ptr<Character>>> replacementVector;
 		for (const auto& heir: title.second->getHeirs())
 		{
 			const auto& characterDataItr = characterData.find(heir.first);
@@ -287,7 +295,8 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 		title.second->loadElectors(replacementMap);
 	}
 
-	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs, " << exCounter << " previous holders, " << electorCounter << " electors updated.";
+	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs, " << exCounter
+							  << " previous holders, " << electorCounter << " electors updated.";
 }
 
 void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)

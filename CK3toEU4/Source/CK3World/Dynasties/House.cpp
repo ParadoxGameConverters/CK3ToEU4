@@ -2,7 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::House::House(std::istream& theStream, int houseID): houseID(houseID)
+CK3::House::House(std::istream& theStream, long long housID): houseID(housID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -18,7 +18,7 @@ void CK3::House::registerKeys()
 		prefix = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("dynasty", [this](const std::string& unused, std::istream& theStream) {
-		dynasty = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		dynasty = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

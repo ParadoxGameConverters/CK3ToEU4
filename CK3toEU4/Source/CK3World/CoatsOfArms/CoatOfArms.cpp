@@ -2,7 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::CoatOfArms::CoatOfArms(std::istream& theStream, int ID): ID(ID)
+CK3::CoatOfArms::CoatOfArms(std::istream& theStream, long long theID): ID(theID)
 {
 	registerKeys();
 	parseStream(theStream);

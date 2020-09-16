@@ -8,7 +8,7 @@ class Culture: commonItems::parser
 {
   public:
 	Culture() = default;
-	Culture(std::istream& theStream, int ID);
+	Culture(std::istream& theStream, long long theID);
 
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] const auto& getName() const { return name; }
@@ -16,7 +16,7 @@ class Culture: commonItems::parser
   private:
 	void registerKeys();
 
-	int ID = 0;
+	long long ID = 0;
 	std::string name;
 };
 } // namespace CK3

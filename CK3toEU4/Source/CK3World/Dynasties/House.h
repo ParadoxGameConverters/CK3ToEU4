@@ -9,20 +9,20 @@ class House: commonItems::parser
 {
   public:
 	House() = default;
-	House(std::istream& theStream, int houseID);
+	House(std::istream& theStream, long long housID);
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getPrefix() const { return prefix; }
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
 	[[nodiscard]] const auto& getID() const { return houseID; }
 
-	void loadDynasty(const std::pair<int, std::shared_ptr<Dynasty>>& theDynasty) { dynasty = theDynasty; }
+	void loadDynasty(const std::pair<long long, std::shared_ptr<Dynasty>>& theDynasty) { dynasty = theDynasty; }
 
   private:
 	void registerKeys();
 
-	int houseID = 0;
+	long long houseID = 0;
 	std::string name;
-	std::pair<int, std::shared_ptr<Dynasty>> dynasty;
+	std::pair<long long, std::shared_ptr<Dynasty>> dynasty;
 	std::string prefix;
 	
 };

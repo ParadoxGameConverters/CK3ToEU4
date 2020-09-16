@@ -28,12 +28,16 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	 const mappers::CultureMapper& cultureMapper,
 	 const mappers::ReligionMapper& religionMapper)
 {
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 1;
 	srcProvince = origProvince;
 
 	details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
 
 	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
 	// There are no uncolonized provinces in CK3.
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 2;
 
 	if (!srcProvince->getHoldingTitle().second->getEU4Tag())
 		throw std::runtime_error(
@@ -41,6 +45,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 3;
 
 	// History section
 	// Not touching Capital, that's hardcoded English name.
@@ -49,6 +55,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// Religion first.
 	auto religionSet = false;
 	auto baseReligion = srcProvince->getClay()->getCounty()->second->getFaith().second->getName();
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 4;
 	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
 	if (religionMatch)
 	{
@@ -59,6 +67,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	{
 		Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
 	}
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 5;
 
 	// Attempt to use religion of ruler in THAT province.
 	if (!religionSet)
@@ -75,6 +85,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 			Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 		}
 	}
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 6;
 	// Attempt to use religion of country.
 	if (!religionSet)
 	{
@@ -83,10 +95,14 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		else
 			Log(LogLevel::Warning) << "EU4 " << tagCountry.first << " has no religion set! Defaulting.";
 	}
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 7;
 
 	auto cultureSet = false;
 	// do we even have a base culture?
 	auto baseCulture = srcProvince->getClay()->getCounty()->second->getCulture().second->getName();
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 8;
 	auto cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
 	if (cultureMatch)
 	{
@@ -98,6 +114,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
 	}
 	// Attempt to use primary culture of ruler in THAT province.
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 9;
 	if (!cultureSet)
 	{
 		baseCulture = srcProvince->getHolder()->second->getCulture().second->getName();
@@ -112,6 +130,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 			Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 		}
 	}
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 10;
 	// Attempt to use primary culture of country.
 	if (!cultureSet)
 	{
@@ -120,6 +140,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		else
 			Log(LogLevel::Warning) << "EU4 " << tagCountry.first << " has no culture set! Defaulting.";
 	}
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 11;
 
 	// trade goods are retained.
 	details.fort = false; // dropping all forts, we'll redistribute later.
@@ -127,6 +149,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// base tax, production and manpower will be adjusted later.
 	// not touching extra_cost until we know what it does.
 	// not touching centers of trade
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 12;
 
 	details.cores.clear();
 	details.cores.insert(tagCountry.first); // Only owner for now, dejures come later.
@@ -137,6 +161,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.localAutonomy = 0; // let the game handle this.
 	// not touching native_size/ferocity/hostileness.
 	// not touching existing permanent modifiers. These mostly relate to new world anyway. Wonders do need to be added.
+	if (provID == 1115)
+		Log(LogLevel::Debug) << 13;
 
 	details.shipyard = false; // we'll distribute these later.
 	// not touching province_triggered_modifiers. Rome is rome.
@@ -148,6 +174,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.rajputsNobles = false;	 // nono.
 	details.brahminsChurch = false;	 // Still no.
 	details.vaisyasBurghers = false;	 // No.
+	if (provID == 1115)
+		Log(LogLevel::Debug) << "out";
 }
 
 void EU4::Province::sterilize()

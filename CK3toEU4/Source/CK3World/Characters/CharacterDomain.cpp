@@ -25,10 +25,10 @@ void CK3::CharacterDomain::registerKeys()
 		laws = std::set(lawsList.begin(), lawsList.end());
 	});
 	registerKeyword("realm_capital", [this](const std::string& unused, std::istream& theStream) {
-		realmCapital = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		realmCapital = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("domain", [this](const std::string& unused, std::istream& theStream) {
-		for (auto titleID: commonItems::intList(theStream).getInts())
+		for (auto titleID: commonItems::llongList(theStream).getLlongs())
 			domain.emplace_back(std::pair(titleID, nullptr));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
