@@ -8,6 +8,7 @@ namespace fs = std::filesystem;
 #include "../CK3World/Titles/Title.h"
 #include "../CK3World/Characters/Character.h"
 #include "Province/EU4Province.h"
+#include <cmath>
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
 {
