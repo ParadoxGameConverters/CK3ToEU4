@@ -342,9 +342,9 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 {
 	// determine ownership by province development.
 	std::map<long long, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
-	std::map<long long, int> theShares;																  // title, development
+	std::map<long long, double> theShares;																  // title, development
 	long long winner = -1;
-	auto maxDev = -1;
+	double maxDev = -1;
 
 	// We have multiple titles, c_ level, in battle royale to see which becomes canonical source for a target EU4 province.
 	// Since all source titles have working title pointers and have been verified by provinceMapper, we can be pretty relaxed
@@ -357,7 +357,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 			throw std::runtime_error(ck3Title.first + " has no holding title holder?");
 		const auto holderID = ck3Title.second->getHoldingTitle().second->getHolder()->first; // this is the fellow owning this land.
 		theClaims[holderID].insert(ck3Title);
-		theShares[holderID] += lround(ck3Title.second->getBuildingWeight());
+		theShares[holderID] += ck3Title.second->getBuildingWeight(devWeightsMapper);
 
 		// While at it, is this province especially important? Enough so we'd sidestep regular rules?
 		// Check for capital provinces
@@ -400,7 +400,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	std::pair<std::string, std::shared_ptr<CK3::Title>> toReturn;
 	for (const auto& title: theClaims[winner])
 	{
-		auto provinceWeight = title.second->getBuildingWeight();
+		auto provinceWeight = title.second->getBuildingWeight(devWeightsMapper);
 		if (title.second->isHolderCapital())
 			provinceWeight += 20;
 		if (title.second->isHRECapital())

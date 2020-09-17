@@ -8,7 +8,7 @@ TEST(Mappers_DevWeightsMapperTests, devFromBuildingDefaultsToZero)
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0, theMapper.getDevFromBuilding(), 0.001);
+	ASSERT_FALSE(theMapper.getDevFromBuilding());
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromBuildingCanBeSet)
@@ -27,7 +27,7 @@ TEST(Mappers_DevWeightsMapperTests, devFromHoldingDefaultsToZero)
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0, theMapper.getDevFromHolding(), 0.001);
+	ASSERT_FALSE(theMapper.getDevFromHolding());
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromHoldingCanBeSet)
@@ -46,7 +46,7 @@ TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentDefaultsToZero)
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0, theMapper.getDevFromDev(), 0.001);
+	ASSERT_FALSE(theMapper.getDevFromDev());
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentCanBeSet)

@@ -268,9 +268,6 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	std::ofstream dump("dump.txt");
-	dump << saveGame.gamestate;
-	dump.close();
 }
 
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
@@ -721,7 +718,7 @@ void CK3::World::gatherCourtierNames()
 
 	auto counter = 0;
 	auto counterAdvisors = 0;
-	std::map<long long, std::map<std::string, bool>> holderCourtiers;				// holder-name/male
+	std::map<long long, std::map<std::string, bool>> holderCourtiers;								// holder-name/male
 	std::map<long long, std::map<long long, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
 
 	for (const auto& character: characters.getCharacters())

@@ -464,6 +464,19 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		}
 	}
 
+	// Do we have a displayAdj?
+	if (!nameSet && !title->second->getAdjective().empty())
+	{
+		// This is a custom name in UTF8 encoding, usually english only. We copy it ad verbatum.
+		mappers::LocBlock newblock;
+		newblock.english = title->second->getAdjective();
+		newblock.spanish = title->second->getAdjective();
+		newblock.french = title->second->getAdjective();
+		newblock.german = title->second->getAdjective();
+		localizations.insert(std::pair(tag, newblock));
+		nameSet = true;
+	}
+
 	// Can we use some custom name?
 	if (!adjSet && !title->second->getDisplayName().empty())
 	{

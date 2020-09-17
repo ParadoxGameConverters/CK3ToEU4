@@ -5,6 +5,7 @@
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "../../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 
 CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
@@ -244,7 +245,7 @@ bool CK3::Title::isLandless() const
 	return false;
 }
 
-int CK3::Title::getBuildingWeight() const
+double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeightsMapper) const
 {
 	if (getLevel() != LEVEL::COUNTY) // This applies to nothing but counties.
 		return 0;
@@ -253,16 +254,20 @@ int CK3::Title::getBuildingWeight() const
 	const auto development = clay->getCounty()->second->getDevelopment();
 	auto buildingCount = 0;
 	auto holdingCount = 0;
+
 	for (const auto& barony: djVassals)
 	{
 		if (!barony.second->getClay())
-			Log(LogLevel::Error) << "supposed barony " << barony.second->getName() << " of " << name << " has no clay?";
+			throw std::runtime_error("Supposed barony " + barony.second->getName() + " of " + name + " has no clay?");
 		if (!barony.second->getClay()->getProvince())
-			Log(LogLevel::Error) << "barony " << barony.second->getName() << " of " << name << " has no clay province?";
+			throw std::runtime_error("Barony " + barony.second->getName() + " of " + name + " has no clay province?");
 		const auto& baronyProvince = barony.second->getClay()->getProvince();		
 		buildingCount += static_cast<int>(baronyProvince->second->getBuildings().size());
 		if (!baronyProvince->second->getHoldingType().empty())
 			++holdingCount;
 	}
-	return 3 * holdingCount + buildingCount + development;
+
+	const auto totalDev = devWeightsMapper.getDevFromHolding() * holdingCount + devWeightsMapper.getDevFromBuilding() * buildingCount +
+								 devWeightsMapper.getDevFromDev() * development;
+	return totalDev;
 }

@@ -6,4 +6,4 @@ dev_from_building = 0.25
 dev_from_holding = 0.75
 dev_from_development = 0.1
 
-# If the world seems underdeveloped, try with dev_from_building = 0.25 or 0.3. dev_from_holding is usually fine as is.
+# If the world seems underdeveloped, try with dev_from_building = 0.3 or 0.35. dev_from_holding is usually fine as is, as well as dev from development.

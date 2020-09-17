@@ -5,6 +5,10 @@
 #include "Parser.h"
 #include <set>
 
+namespace mappers
+{
+class DevWeightsMapper;
+}
 namespace EU4
 {
 class Country;
@@ -106,7 +110,7 @@ class Title: commonItems::parser
 
 	// conversion
 	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }
-	[[nodiscard]] int getBuildingWeight() const;
+	[[nodiscard]] double getBuildingWeight(const mappers::DevWeightsMapper& devWeightsMapper) const;
 	void setHolderCapital() { holderCapital = true; }
 	void setHRECapital() { HRECapital = true; }
 
