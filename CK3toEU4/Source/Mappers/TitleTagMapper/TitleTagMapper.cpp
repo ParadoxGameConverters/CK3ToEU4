@@ -57,7 +57,7 @@ std::optional<std::string> mappers::TitleTagMapper::getTagForTitle(const std::st
 		{
 			auto generatedTag = generateNewTag();
 			usedTags.insert(generatedTag);
-			return generatedTag;
+			return std::move(generatedTag);
 		}
 	}
 
@@ -98,7 +98,7 @@ std::optional<std::string> mappers::TitleTagMapper::getTagForTitle(const std::st
 	// Generate a new tag
 	auto generatedTag = generateNewTag();
 	registerTitle(ck3Title, generatedTag);
-	return generatedTag;
+	return std::move(generatedTag);
 }
 
 std::string mappers::TitleTagMapper::generateNewTag()

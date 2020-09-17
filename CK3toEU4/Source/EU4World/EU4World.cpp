@@ -452,7 +452,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	{
 		return std::nullopt;
 	}
-	return toReturn;
+	return std::move(toReturn);
 }
 
 void EU4::World::alterProvinceDevelopment()
