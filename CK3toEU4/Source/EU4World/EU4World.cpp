@@ -1162,7 +1162,7 @@ void EU4::World::fixTengri()
 	}
 	for (const auto& country: countries)
 	{
-		if (country.second->getTitle())
+		if (!country.second->getTitle())
 		{
 			if (country.second->getReligion() == "tengri_pagan_reformed")
 			{
