@@ -1146,7 +1146,7 @@ void EU4::Country::annexCountry(const std::pair<std::string, std::shared_ptr<Cou
 	for (const auto& province: targetProvinces)
 	{
 		// Adding, not replacing. Unless the special snowflake.
-		if (tag == "PAP" || tag == "FAP")
+		if (tag == "PAP")
 			province.second->dropCores();
 		province.second->addCore(tag);
 		province.second->setOwner(tag);
