@@ -68,33 +68,19 @@ void mappers::ProvinceMapper::createMappings()
 
 std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getCK3Titles(int eu4ProvinceNumber) const
 {
-	if (eu4ProvinceNumber == 1115)
-		Log(LogLevel::Debug) << "p1";
 	const auto& mapping = EU4ToCK3ProvinceMap.find(eu4ProvinceNumber);
-	if (eu4ProvinceNumber == 1115)
-		Log(LogLevel::Debug) << "p2";
 	std::map<std::string, std::shared_ptr<CK3::Title>> toReturn;
 	if (mapping != EU4ToCK3ProvinceMap.end())
 	{
-		if (eu4ProvinceNumber == 1115)
-			Log(LogLevel::Debug) << "p3";
 		for (auto ck3ID: mapping->second)
 		{
-			if (eu4ProvinceNumber == 1115)
-				Log(LogLevel::Debug) << "p4";
 			if (baroniesToCounties.count(ck3ID))
 			{
-				if (eu4ProvinceNumber == 1115)
-					Log(LogLevel::Debug) << "p5";
 				auto targetTitle = baroniesToCounties.find(ck3ID)->second;
-				if (eu4ProvinceNumber == 1115)
-					Log(LogLevel::Debug) << "p5a";
 				toReturn.insert(targetTitle);
 			}
 			else
 			{
-				if (eu4ProvinceNumber == 1115)
-					Log(LogLevel::Debug) << "p6";
 				throw std::runtime_error(
 					 "Province mapper error - requested ck3 province ID " + std::to_string(ck3ID) + " is invalid. We cannot find related county. Farewell.");
 			}
@@ -102,12 +88,8 @@ std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getC
 	}
 	else
 	{
-		if (eu4ProvinceNumber == 1115)
-			Log(LogLevel::Debug) << "p7";
 		// We must not show fear here. Parent is likely iterating over all EU4 provinces. Play dead, they will go away.
 	}
-	if (eu4ProvinceNumber == 1115)
-		Log(LogLevel::Debug) << "p8";
 	return toReturn;
 }
 

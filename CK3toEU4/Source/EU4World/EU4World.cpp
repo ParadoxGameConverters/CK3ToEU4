@@ -351,6 +351,10 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	// about their integrity. None hail from wastelands or lakes or other junk.
 	for (auto ck3Title: ck3Titles)
 	{
+		if (!ck3Title.second->getHoldingTitle().second)
+			throw std::runtime_error(ck3Title.first + " has no holding title?");
+		if (!ck3Title.second->getHoldingTitle().second->getHolder())
+			throw std::runtime_error(ck3Title.first + " has no holding title holder?");
 		const auto holderID = ck3Title.second->getHoldingTitle().second->getHolder()->first; // this is the fellow owning this land.
 		theClaims[holderID].insert(ck3Title);
 		theShares[holderID] += lround(ck3Title.second->getBuildingWeight());
@@ -423,10 +427,6 @@ void EU4::World::alterProvinceDevelopment()
 	auto totalCK2Dev = 0;
 	auto counter = 0;
 
-	double debugdev = 0;
-	double debugbuild = 0;
-	double debughold = 0;
-
 	for (const auto& province: provinces)
 	{
 		if (!province.second->getSourceProvince())
@@ -442,8 +442,6 @@ void EU4::World::alterProvinceDevelopment()
 			if (provinceData->getHoldingType().empty())
 				continue;
 			const auto buildingNumber = static_cast<double>(provinceData->countBuildings());
-			debugbuild += buildingNumber * devWeightsMapper.getDevFromBuilding();
-			debughold += devWeightsMapper.getDevFromHolding();
 			const auto baronyDev = devWeightsMapper.getDevFromHolding() + devWeightsMapper.getDevFromBuilding() * buildingNumber;
 			if (provinceData->getHoldingType() == "tribal_holding")
 			{
@@ -464,7 +462,6 @@ void EU4::World::alterProvinceDevelopment()
 			}
 		}
 		double generalDevelopment = province.second->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
-		debugdev += generalDevelopment * devWeightsMapper.getDevFromDev();
 		generalDevelopment *= devWeightsMapper.getDevFromDev() / 3;
 		province.second->setAdm(std::max(static_cast<int>(std::lround(adm + generalDevelopment)), 1));
 		province.second->setDip(std::max(static_cast<int>(std::lround(dip + generalDevelopment)), 1));
@@ -474,5 +471,4 @@ void EU4::World::alterProvinceDevelopment()
 	}
 
 	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK2Dev << " development imported (vanilla had " << totalVanillaDev << ").";
-	Log(LogLevel::Debug) << "ddev " << debugdev << " dbuild " << debugbuild << " dhold " << debughold;
 }

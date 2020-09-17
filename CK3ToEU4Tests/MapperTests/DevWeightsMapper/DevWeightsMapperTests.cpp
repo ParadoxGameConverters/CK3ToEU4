@@ -2,13 +2,13 @@
 #include "gtest/gtest.h"
 #include <sstream>
 
-TEST(Mappers_DevWeightsMapperTests, devFromBuildingDefaultsToDefault)
+TEST(Mappers_DevWeightsMapperTests, devFromBuildingDefaultsToZero)
 {
 	std::stringstream input;
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0.1, theMapper.getDevFromBuilding(), 0.001);
+	ASSERT_NEAR(0, theMapper.getDevFromBuilding(), 0.001);
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromBuildingCanBeSet)
@@ -21,13 +21,13 @@ TEST(Mappers_DevWeightsMapperTests, devFromBuildingCanBeSet)
 	ASSERT_NEAR(0.3, theMapper.getDevFromBuilding(), 0.001);
 }
 
-TEST(Mappers_DevWeightsMapperTests, devFromHoldingDefaultsToDefault)
+TEST(Mappers_DevWeightsMapperTests, devFromHoldingDefaultsToZero)
 {
 	std::stringstream input;
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0.3, theMapper.getDevFromHolding(), 0.001);
+	ASSERT_NEAR(0, theMapper.getDevFromHolding(), 0.001);
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromHoldingCanBeSet)
@@ -40,13 +40,13 @@ TEST(Mappers_DevWeightsMapperTests, devFromHoldingCanBeSet)
 	ASSERT_NEAR(0.7, theMapper.getDevFromHolding(), 0.001);
 }
 
-TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentDefaultsToDefault)
+TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentDefaultsToZero)
 {
 	std::stringstream input;
 
 	const mappers::DevWeightsMapper theMapper(input);
 
-	ASSERT_NEAR(0.1, theMapper.getDevFromDev(), 0.001);
+	ASSERT_NEAR(0, theMapper.getDevFromDev(), 0.001);
 }
 
 TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentCanBeSet)

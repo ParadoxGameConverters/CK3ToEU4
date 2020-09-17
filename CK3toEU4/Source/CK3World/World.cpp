@@ -596,6 +596,13 @@ void CK3::World::filterIndependentTitles()
 			// this is a potential indep.
 			potentialIndeps.insert(title);
 		}
+		if (title.second->getDFLiege() && !title.second->getDFLiege()->second->getHolder()) // yes, we can have a dfliege that's destroyed, apparently.)
+		{
+			// this is also potential indep.
+			potentialIndeps.insert(title);
+			// And do fix it.
+			title.second->grantIndependence();
+		}
 	}
 
 	// Check if the holder holds any actual land (b|c_something). (Only necessary for the holder,
