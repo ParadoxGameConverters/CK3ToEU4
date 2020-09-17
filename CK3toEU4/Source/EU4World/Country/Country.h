@@ -88,6 +88,8 @@ class Country
 
 	[[nodiscard]] int getDevelopment() const;
 
+	void outputCommons(std::ostream& output) const;
+	void outputAdvisers(std::ostream& output) const;
 
 	friend std::ostream& operator<<(std::ostream& output, const Country& versionParser);
 

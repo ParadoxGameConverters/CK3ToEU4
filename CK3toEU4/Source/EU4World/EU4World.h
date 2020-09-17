@@ -62,11 +62,19 @@ class World
 	void africanQuestion();
 	void indianQuestion();
 
-
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
 	void createModFile(const Configuration& theConfiguration) const;
 	void outputVersion(const mappers::ConverterVersion& versionParser, const Configuration& theConfiguration) const;
+	void outputCommonCountriesFile(const Configuration& theConfiguration) const;
+	void outputCommonCountries(const Configuration& theConfiguration) const;
+	void outputHistoryCountries(const Configuration& theConfiguration) const;
+	void outputAdvisers(const Configuration& theConfiguration) const;
+	void outputHistoryProvinces(const Configuration& theConfiguration) const;
+	void outputLocalization(const Configuration& theConfiguration, bool invasion) const;
+	void outputEmperor(const Configuration& theConfiguration, date conversionDate) const;
+	void outputDiplomacy(const Configuration& theConfiguration, const std::vector<std::shared_ptr<Agreement>>& agreements, bool invasion) const;
+
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
 

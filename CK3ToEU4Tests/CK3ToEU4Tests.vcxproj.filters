@@ -533,5 +533,14 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp">
       <Filter>CK3ToEU4\Mappers\DevWeightsMapper</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
