@@ -6,6 +6,8 @@ namespace fs = std::filesystem;
 #include "OSCompatibilityLayer.h"
 #include <fstream>
 #include "../CK3World/Titles/Title.h"
+#include "../CK3World/Religions/Faith.h"
+#include "../CK3World/Religions/Religion.h"
 #include "../CK3World/Characters/Character.h"
 #include "Province/EU4Province.h"
 #include "../CK3World/Geography/ProvinceHolding.h"
@@ -68,6 +70,40 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	if (theConfiguration.getDevelopment() == Configuration::DEVELOPMENT::IMPORT)
 		alterProvinceDevelopment();
 	Log(LogLevel::Progress) << "60 %";
+	
+	// We then link them to their respective countries. Those countries that end up with 0 provinces are defacto dead.
+	linkProvincesToCountries();
+	Log(LogLevel::Progress) << "61 %";
+	
+	// Country capitals are fuzzy, and need checking if we assigned them to some other country during mapping.
+	verifyCapitals();
+	Log(LogLevel::Progress) << "62 %";
+
+	// This step is important. CK2 data was sketchy and not every character or province has culture/religion data.
+	// In CK3 this is not the case, but if we cannot craft dynamic faiths or cannot convert existing religions/cultures due to
+	// mismaps this is the recovery procedure.
+	// For those, we look at vanilla provinces and override missing bits with vanilla setup. Yeah, a bit more sunni in
+	// hordeland, but it's fine.
+	verifyReligionsAndCultures();
+	
+	Log(LogLevel::Progress) << "63 %";
+	// With all provinces and rulers religion/culture set, only now can we import advisers, which also need religion/culture set.
+	// Those advisers coming without such data use the monarch's religion/culture.
+	importAdvisers();
+	Log(LogLevel::Progress) << "64 %";
+
+	// Rulers with multiple crowns either get PU agreements, or just annex the other crowns.
+	resolvePersonalUnions();
+	Log(LogLevel::Progress) << "65 %";
+
+	// We're onto the finesse part of conversion now. HRE was shattered in CK2 World and now we're assigning electorates, free
+	// cities, and such.
+	distributeHRESubtitles(theConfiguration);
+	Log(LogLevel::Progress) << "66 %";
+
+	// With all religious/cultural matters taken care of, we can now set reforms
+	assignAllCountryReforms();
+	Log(LogLevel::Progress) << "67 %";
 
 
 	// And finally, the Dump.
@@ -471,4 +507,457 @@ void EU4::World::alterProvinceDevelopment()
 	}
 
 	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK2Dev << " development imported (vanilla had " << totalVanillaDev << ").";
+}
+
+void EU4::World::linkProvincesToCountries()
+{
+	// Some of the provinces have linked countries, but new world won't. We need to insert links both ways there.
+	for (const auto& province: provinces)
+	{
+		if (province.second->getOwner().empty())
+			continue; // this is the uncolonized case
+		const auto& countryItr = countries.find(province.second->getOwner());
+		if (countryItr != countries.end())
+		{
+			// registering owner in province
+			if (province.second->getTagCountry().first.empty())
+				province.second->registerTagCountry(std::pair(countryItr->first, countryItr->second));
+			// registering province in owner.
+			countryItr->second->registerProvince(std::pair(province.first, province.second));
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Province " << province.first << " owner " << province.second->getOwner() << " has no country!";
+		}
+	}
+
+	// 1210 - Dawaro needs to be given to Adal (Since Ethiopia could be a country)
+	if (provinces.find(1210) != provinces.end() && provinces.find(1210)->second)
+	{
+		provinces.find(1210)->second->sterilize();
+		provinces.find(1210)->second->addCore("ADA");
+		provinces.find(1210)->second->setOwner("ADA");
+		provinces.find(1210)->second->setController("ADA");
+	}
+}
+
+void EU4::World::verifyCapitals()
+{
+	Log(LogLevel::Info) << "-- Verifying All countries Have Capitals";
+
+	auto counter = 0;
+	for (const auto& country: countries)
+	{
+		// POPE is special. Of course. Skip this for pope because he may end up with a capital in new world or something.
+		if (country.first == "PAP" || country.first == "FAP")
+			continue;
+		if (country.second->verifyCapital(provinceMapper))
+			counter++;
+	}
+
+	Log(LogLevel::Info) << "<> " << counter << " capitals have been reassigned.";
+}
+
+template <typename KeyType, typename ValueType> std::pair<KeyType, ValueType> get_max(const std::map<KeyType, ValueType>& x)
+{
+	using pairtype = std::pair<KeyType, ValueType>;
+	return *std::max_element(x.begin(), x.end(), [](const pairtype& p1, const pairtype& p2) {
+		return p1.second < p2.second;
+	});
+}
+
+void EU4::World::verifyReligionsAndCultures()
+{
+	// We are checking every country if it lacks primary religion and culture. This is an issue for mismaps mostly.
+	// For those lacking setups, we'll do a provincial census and inherit those values.
+	for (const auto& country: countries)
+	{
+		// It's possible to get non-christian countries excommunicated through broken setups. Let's clear those immediately.
+		if (country.second->isExcommunicated())
+		{
+			const auto& religion = country.second->getReligion();
+			if (religion != "catholic") // TODO: check for papacies in dynamic faiths.
+				country.second->clearExcommunicated();
+		}
+		// And then proceed on checking the missing boxes.
+		if (!country.second->getReligion().empty() && !country.second->getPrimaryCulture().empty() && !country.second->getTechGroup().empty() &&
+			 !country.second->getGFX().empty())
+			continue;
+		if (country.second->getProvinces().empty())
+			continue; // No point.
+
+		std::map<std::string, int> religiousCensus;
+		std::map<std::string, int> culturalCensus;
+		for (const auto& province: country.second->getProvinces())
+		{
+			if (province.second->getReligion().empty())
+			{
+				Log(LogLevel::Warning) << "Province " << province.first << " has no religion set!";
+				continue;
+			}
+			if (province.second->getCulture().empty())
+			{
+				Log(LogLevel::Warning) << "Province " << province.first << " has no culture set!";
+				continue;
+			}
+			religiousCensus[province.second->getReligion()] += 1;
+			culturalCensus[province.second->getCulture()] += 1;
+		}
+		if (country.second->getPrimaryCulture().empty())
+		{
+			auto max = get_max(culturalCensus);
+			Log(LogLevel::Warning) << country.first << " overriding blank culture with: " << max.first;
+			country.second->setPrimaryCulture(max.first);
+		}
+		if (country.second->getMajorityReligion().empty())
+		{
+			auto max = get_max(religiousCensus);
+			Log(LogLevel::Info) << country.first << "'s majority religion is: " << max.first;
+			country.second->setMajorityReligion(max.first);
+		}
+		if (country.second->getReligion().empty())
+		{
+			auto max = get_max(religiousCensus);
+			Log(LogLevel::Warning) << country.first << " overriding blank religion with: " << max.first;
+			country.second->setReligion(max.first);
+		}
+		if (country.second->getTechGroup().empty())
+		{
+			const auto& techMatch = cultureMapper.getTechGroup(country.second->getPrimaryCulture());
+			if (techMatch)
+			{
+				Log(LogLevel::Warning) << country.first << " overriding blank tech group with: " << *techMatch;
+				country.second->setTechGroup(*techMatch);
+			}
+			else
+			{
+				country.second->setTechGroup("western");
+				Log(LogLevel::Warning) << country.first << " could not determine technological group, substituting western!";
+			}
+		}
+		if (country.second->getGFX().empty())
+		{
+			const auto& gfxMatch = cultureMapper.getGFX(country.second->getPrimaryCulture());
+			if (gfxMatch)
+			{
+				Log(LogLevel::Warning) << country.first << " overriding blank gfx with: " << *gfxMatch;
+				country.second->setGFX(*gfxMatch);
+			}
+			else
+			{
+				country.second->setGFX("westerngfx");
+				Log(LogLevel::Warning) << country.first << " could not determine GFX, substituting westerngfx!";
+			}
+		}
+	}
+}
+
+void EU4::World::assignAllCountryReforms()
+{
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle() || !country.second->getGovernmentReforms().empty())
+			continue;
+		country.second->assignReforms(regionMapper);
+	}
+}
+
+void EU4::World::importAdvisers()
+{
+	LOG(LogLevel::Info) << "-> Importing Advisers";
+	auto counter = 0;
+	for (const auto& country: countries)
+	{
+		country.second->initializeAdvisers(religionMapper, cultureMapper);
+		counter += static_cast<int>(country.second->getAdvisers().size());
+	}
+	LOG(LogLevel::Info) << "<> Imported " << counter << " advisers.";
+}
+
+void EU4::World::resolvePersonalUnions()
+{
+	std::map<long long, std::map<std::string, std::shared_ptr<Country>>> holderTitles;
+	std::map<long long, std::pair<std::string, std::shared_ptr<Country>>> holderPrimaryTitle;
+	std::map<long long, std::shared_ptr<CK3::Character>> relevantHolders;
+
+	// We're filling the registry first.
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle())
+			continue;
+		if (!country.second->getTitle()->second->getHolder())
+			continue;
+		// we have a holder.
+		const auto& holder = *country.second->getTitle()->second->getHolder();
+		holderTitles[holder.first].insert(country);
+		relevantHolders.insert(holder);
+		// does he have a primary title? Of course he does. They all do.
+		holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
+	}
+
+	// Now let's see what we have.
+	for (const auto& holderTitle: holderTitles)
+	{
+		if (holderTitle.second.size() <= 1)
+			continue;
+
+		// multiple crowns. What's our primary?
+		auto primaryItr = holderPrimaryTitle.find(holderTitle.first);
+		std::pair<std::string, std::shared_ptr<Country>> primaryTitle;
+		if (primaryItr == holderPrimaryTitle.end() || primaryItr->second.second->getProvinces().empty())
+		{
+			// We need to find another primary title.
+			auto foundPrimary = false;
+			// First check if we can find PAP or FAP or some special flag
+			for (const auto& title: holderTitle.second)
+			{
+				if (title.first == "PAP" || title.second->isHREEmperor() || title.second->isHREElector())
+				{
+					primaryTitle = std::pair(title.first, title.second);
+					foundPrimary = true;
+					break;
+				}
+			}
+			// If no popes or specials pick first one.
+			if (!foundPrimary)
+				for (const auto& title: holderTitle.second)
+				{
+					if (!title.second->getProvinces().empty())
+					{
+						primaryTitle = std::pair(title.first, title.second);
+						foundPrimary = true;
+						break;
+					}
+				}
+			if (!foundPrimary)
+				continue; // no helping this fellow.
+		}
+		else
+		{
+			primaryTitle = primaryItr->second;
+
+			// That's lovely, but is this the special snowflake THE POPE? Does he hold PAP/FAP as secondary?
+			for (const auto& title: holderTitle.second)
+			{
+				if (title.first == "PAP")
+				{
+					primaryTitle = std::pair(title.first, title.second);
+					break;
+				}
+			}
+		}
+
+		// religion
+		auto heathen = false;
+		if (relevantHolders[holderTitle.first]->getFaith().second->getReligion().second->getName() != "christianity_religion")
+			heathen = true;
+
+		// We now have a holder, his primary, and religion. Let's resolve multiple crowns.
+		if (!heathen && primaryTitle.second->getGovernment() == "monarchy")
+		{
+			auto unionCount = 0;
+			for (const auto& title: holderTitle.second)
+			{
+				if (title.first == primaryTitle.first)
+					continue;
+				if (title.second->getProvinces().empty())
+					continue;
+				// Craft a relation. Going up to a max of 3 unions.
+				if (unionCount <= 2)
+				{
+					diplomacy.addAgreement(std::make_shared<Agreement>(primaryTitle.first, title.first, "union", primaryTitle.second->getConversionDate()));
+					++unionCount;
+				}
+				else
+				{
+					// too many unions.
+					primaryTitle.second->annexCountry(title);
+					if (primaryTitle.second->isHREEmperor() && emperorTag != primaryTitle.first)
+						emperorTag = primaryTitle.first;
+				}
+			}
+		}
+		else
+		{
+			// heathens annex straight up.
+			for (const auto& title: holderTitle.second)
+			{
+				if (title.first == primaryTitle.first)
+					continue;
+				if (title.second->getProvinces().empty())
+					continue;
+				// Yum.
+				primaryTitle.second->annexCountry(title);
+				if (primaryTitle.first == "PAP")
+					Log(LogLevel::Debug) << primaryTitle.first << " is annexing " << title.first;
+				if (primaryTitle.second->isHREEmperor() && emperorTag != primaryTitle.first)
+					emperorTag = primaryTitle.first;
+			}
+		}
+	}
+}
+
+void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)
+{
+	if (theConfiguration.getHRE() == Configuration::I_AM_HRE::NONE)
+		return;
+	LOG(LogLevel::Info) << "-> Locating Emperor";
+	// Emperor may or may not be set.
+	for (const auto& country: countries)
+		if (country.second->isHREEmperor())
+		{
+			emperorTag = country.first;
+			Log(LogLevel::Info) << "<> Emperor is " << emperorTag << " (" << country.second->getTitle()->second->getName() << ", " << country.second->getProvinces().size()
+									  << " provinces)";
+			break;
+		}
+	if (!emperorTag.empty())
+	{
+		setFreeCities();
+		setElectors();
+	}
+	else
+		Log(LogLevel::Info) << "<> Emperor could not be found, no HRE mechanics.";
+}
+
+void EU4::World::setElectors()
+{
+	LOG(LogLevel::Info) << "-> Setting Electors";
+	std::vector<std::pair<double, std::shared_ptr<Country>>> bishops;	  // piety-tag
+	std::vector<std::pair<int, std::shared_ptr<Country>>> duchies;	  // dev-tag
+	std::vector<std::pair<int, std::shared_ptr<Country>>> republics; // dev-tag
+	std::vector<std::shared_ptr<Country>> electors;
+	int electorBishops = 0;
+	int electorRepublics = 0;
+	int electorDuchies = 0;
+
+	// We need to be careful about papacy and orthodox holders
+	for (const auto& country: countries)
+	{
+		if (country.second->isinHRE())
+		{
+			if (country.second->getProvinces().empty())
+				continue;
+			const auto& holder = country.second->getTitle()->second->getHolder();
+			if (country.first == "PAP" || holder->second->getDomain()->getDomain()[0].second->getName() == "k_orthodox")
+			{
+				// override to always be elector
+				electors.emplace_back(country.second);
+				electorBishops++;
+				continue;
+			}
+			// Let's shove all hre members into appropriate categories.
+			if (country.second->getGovernment() == "theocracy")
+			{
+				if (country.second->getTitle()->second->isElectorate())
+				{
+					electorBishops++;
+					electors.emplace_back(country.second);
+				}
+				else
+				{
+					bishops.emplace_back(std::pair(lround(holder->second->getPiety()), country.second));
+				}
+			}
+			else if (country.second->getGovernment() == "monarchy")
+			{
+				if (country.second->getTitle()->second->isElectorate())
+				{
+					electorDuchies++;
+					electors.emplace_back(country.second);
+				}
+				else
+				{
+					// skip juniors.
+					if (diplomacy.isCountryJunior(country.first))
+						continue;
+					duchies.emplace_back(std::pair(country.second->getDevelopment(), country.second));
+				}
+			}
+			else if (country.second->getGovernment() == "republic")
+			{
+				// No free cities, thank you!
+				if (country.second->getGovernmentReforms().count("free_city"))
+					continue;
+				if (country.second->getTitle()->second->isElectorate())
+				{
+					electorRepublics++;
+					electors.emplace_back(country.second);
+				}
+				else
+				{
+					republics.emplace_back(std::pair(country.second->getDevelopment(), country.second));
+				}
+			} // skipping tribal and similar.
+		}
+	}
+
+	std::sort(bishops.rbegin(), bishops.rend());
+	std::sort(duchies.rbegin(), duchies.rend());
+	std::sort(republics.rbegin(), republics.rend());
+
+	for (const auto& bishop: bishops)
+	{
+		if (electors.size() >= 7 || electorBishops >= 3)
+			break;
+		electors.emplace_back(bishop.second);
+		electorBishops++;
+	}
+	for (const auto& republic: republics)
+	{
+		if (electors.size() >= 7 || electorBishops + electorRepublics >= 3)
+			break;
+		electors.emplace_back(republic.second);
+		electorRepublics++;
+	}
+	for (const auto& duchy: duchies)
+	{
+		if (electors.size() >= 7)
+			break;
+		electors.emplace_back(duchy.second);
+	}
+
+	for (const auto& elector: electors)
+	{
+		elector->setElector();
+		Log(LogLevel::Info) << "\t- Electorate set: " << elector->getTag() << " (from " << elector->getTitle()->second->getName() << ")";
+	}
+	LOG(LogLevel::Info) << "<> There are " << electors.size() << " electors recognized.";
+}
+
+void EU4::World::setFreeCities()
+{
+	LOG(LogLevel::Info) << "-> Setting Free Cities";
+	// How many free cities do we already have?
+	auto freeCityNum = 0;
+	for (const auto& country: countries)
+	{
+		if (country.second->isinHRE() && country.second->getGovernment() == "republic" && country.second->getProvinces().size() == 1 &&
+			 !country.second->getTitle()->second->getGeneratedLiege() && !country.second->getTitle()->second->isElectorate() && freeCityNum < 12)
+		{
+			country.second->overrideReforms("free_city");
+			country.second->setMercantilism(25);
+			++freeCityNum;
+		}
+	}
+	// Can we turn some minors into free cities?
+	if (freeCityNum < 12)
+	{
+		for (const auto& country: countries)
+		{
+			if (country.second->isinHRE() && country.second->getGovernment() != "republic" && !country.second->isHREEmperor() &&
+				 country.second->getGovernmentReforms().empty() && country.second->getProvinces().size() == 1 && !diplomacy.isCountryJunior(country.first) &&
+				 !country.second->getTitle()->second->getGeneratedLiege() && !country.second->getTitle()->second->isElectorate() && freeCityNum < 12)
+			{
+				if (country.first == "HAB")
+					continue; // For Iohannes who is sensitive about Austria.
+				// GovernmentReforms being empty ensures we're not converting special governments and targeted tags into free cities.
+				country.second->overrideReforms("free_city");
+				country.second->setGovernment("republic");
+				country.second->setMercantilism(25);
+				++freeCityNum;
+			}
+		}
+	}
+	LOG(LogLevel::Info) << "<> There are " << freeCityNum << " free cities.";
 }

@@ -497,7 +497,7 @@
 	link = { ck3 = 5962 eu4 = 1854 }	# c_jaffa -> Jaffa
 	link = { ck3 = 5954 ck3 = 5959 ck3 = 5937 eu4 = 382 }	# c_damascus, c_tiberias, c_baalbek -> Damascus
 	link = { ck3 = 5938 ck3 = 5942 eu4 = 377 }	# c_aleppo, c_suriya -> Aleppo
-	link = { ck3 = 5929 eu4 = 4297 }	# c_homs -> Homs
+	link = { ck3 = 5929 ck3 = 5915 eu4 = 4297 }	# c_homs, c_shayzar -> Homs
 	link = { ck3 = 5948 ck3 = 5950 ck3 = 5952 eu4 = 405 }	# c_palmyra, c_qaryatan, c_juwair -> Tadmor
 	link = { ck3 = 4809 eu4 = 4293 }	# c_irbil -> Arbil
 	link = { ck3 = 5794 ck3 = 4769 eu4 = 2206 }	# c_urmiya, c_bailaqan -> Urmia
@@ -747,7 +747,8 @@
 	# Northern Africa
 	link = { ck3 = 6472 ck3 = 6482 eu4 = 347 }	# c_zammour, c_tiris -> Ifni
 	link = { ck3 = 4676 eu4 = 2465 }	# c_wajda -> Oujda
-	link = { ck3 = 4662 eu4 = 2462 }	# c_tahert -> Ouarsenis
+	link = { ck3 = 4657 eu4 = 2462 }	# c_yalala -> Ouarsenis
+	link = { ck3 = 4662 eu4 = 2463 }	# c_tahert -> Kasdir
 	link = { ck3 = 6655 ck3 = 4759 ck3 = 6468 eu4 = 2460 }	# c_saoura, c_sijilmasa, c_touat -> Saoura
 	link = { ck3 = 4751 eu4 = 346 }	# c_figuig -> Tafilalt
 	link = { ck3 = 4615 eu4 = 2472 }	# c_wargla -> Ouargla
@@ -757,7 +758,7 @@
 	link = { ck3 = 4762 eu4 = 2459 }	# c_ashir -> Titteri
 	link = { ck3 = 4644 eu4 = 2458 }	# c_hodna -> Hodna
 	link = { ck3 = 4754 eu4 = 351 }	# c_biskra -> Biskra
-	link = { ck3 = 4624 ck3 = 4591 eu4 = 2454 }	# c_west_qamuda, c_medjerda -> Kef
+	link = { ck3 = 4624 ck3 = 4591 ck3 = 4626 eu4 = 2454 }	# c_west_qamuda, c_medjerda, c_tabassa -> Kef
 	link = { ck3 = 4742 ck3 = 4745 ck3 = 4712 eu4 = 349 }	# c_ziz, c_muluya, c_tadla -> Figuig
 	link = { ck3 = 4632 ck3 = 4634 eu4 = 340 }	# c_constantine, c_bilizma -> Constantine
 	link = { ck3 = 6091 eu4 = 2318 }	# c_bahriya -> Bahiriya
@@ -800,7 +801,7 @@
 	link = { ck3 = 8113 eu4 = 1153 }	# c_igala -> Pindinga
 	link = { ck3 = 6447 ck3 = 6459 eu4 = 2448 }	# c_zawila, c_germa -> Fezzan
 	link = { ck3 = 6669 eu4 = 2474 }	# c_murzuk -> Tajarhi
-	link = { ck3 = 6668 ck3 = 6666 eu4 = 2475 }	# c_djado, c_tibesti -> Djado
+	link = { ck3 = 6668 ck3 = 6666 ck3 = 6663 eu4 = 2475 }	# c_djado, c_tibesti, c_djanet -> Djado
 	link = { ck3 = 6665 ck3 = 6496 eu4 = 2277 }	# c_bodele, c_ain_galakka -> Kawar
 	link = { ck3 = 6659 ck3 = 6456 eu4 = 2275 }	# c_bilma, c_dirku -> Tenere
 	link = { ck3 = 6490 ck3 = 6492 eu4 = 1158 }	# c_kanem, c_jimi -> Kanem
@@ -833,7 +834,7 @@
 	link = { ck3 = 4705 eu4 = 4564 eu4 = 2469 }	# c_tamasna -> Anfa, Dukkala
 	link = { ck3 = 4701 eu4 = 4563 eu4 = 342 }	# c_gharb -> Salé, Gharb
 	link = { ck3 = 4651 eu4 = 338 }	# c_algier -> Mitidja
-	link = { ck3 = 4637 eu4 = 339 }	# c_bejaia -> Kabylia
+	link = { ck3 = 4637 ck3 = 4640 eu4 = 339 }	# c_bejaia, c_satif -> Kabylia
 	link = { ck3 = 4752 eu4 = 1882 }	# c_annaba -> Annaba
 	link = { ck3 = 4587 eu4 = 2455 }	# c_satfura -> Bizerte
 	link = { ck3 = 4753 eu4 = 341 }	# c_tunis -> Tunis

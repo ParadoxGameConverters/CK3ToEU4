@@ -3,17 +3,18 @@
 #include "../CK3World/World.h"
 #include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 #include "../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../Mappers/RegionMapper/RegionMapper.h"
-#include "Output/outModFile.h"
-#include "Country/Country.h"
-#include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
-#include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include "Country/Country.h"
+#include "Diplomacy/Diplomacy.h"
+#include "Output/outModFile.h"
 
 class Configuration;
 
@@ -37,11 +38,21 @@ class World
 	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld);
 	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
 	void importCK3Provinces(const CK3::World& sourceWorld);
-	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
+	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(
+		 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
 		 const CK3::World& sourceWorld) const;
 
 	// processing
 	void alterProvinceDevelopment();
+	void linkProvincesToCountries();
+	void verifyCapitals();
+	void verifyReligionsAndCultures();
+	void assignAllCountryReforms();
+	void importAdvisers();
+	void resolvePersonalUnions();
+	void distributeHRESubtitles(const Configuration& theConfiguration);
+	void setElectors();
+	void setFreeCities();
 
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
@@ -66,6 +77,9 @@ class World
 	mappers::DevWeightsMapper devWeightsMapper;
 
 	ModFile modFile;
+	Diplomacy diplomacy;
+
+	std::string emperorTag;
 };
 } // namespace EU4
 

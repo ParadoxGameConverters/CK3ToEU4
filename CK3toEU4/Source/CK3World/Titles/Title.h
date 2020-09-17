@@ -113,6 +113,7 @@ class Title: commonItems::parser
 	[[nodiscard]] double getBuildingWeight(const mappers::DevWeightsMapper& devWeightsMapper) const;
 	void setHolderCapital() { holderCapital = true; }
 	void setHRECapital() { HRECapital = true; }
+	void clearGeneratedVassals() { generatedVassals.clear(); }
 
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;

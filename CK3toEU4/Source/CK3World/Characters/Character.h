@@ -32,6 +32,7 @@ class Character: commonItems::parser
 	[[nodiscard]] auto getPiety() const { return piety; }
 	[[nodiscard]] auto getPrestige() const { return prestige; }
 	[[nodiscard]] auto getGold() const { return gold; }
+	[[nodiscard]] auto isSpent() const { return spent; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getBirthDate() const { return birthDate; }
 
@@ -69,6 +70,7 @@ class Character: commonItems::parser
 
 	// poking
 	[[nodiscard]] bool hasTrait(const std::string& wantedTrait) const;
+	void setSpent() { spent = true; }
 
   private:
 	void registerKeys();
@@ -83,6 +85,7 @@ class Character: commonItems::parser
 	std::string name;
 	date birthDate = date("1.1.1");
 	bool dead = false;
+	bool spent = false;
 
 	std::pair<long long, std::shared_ptr<Culture>> culture;
 	std::pair<long long, std::shared_ptr<Faith>> faith;

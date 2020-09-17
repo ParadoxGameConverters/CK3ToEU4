@@ -43,6 +43,22 @@ class Country
 		 date theConversionDate);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
 	void clearHistoryLessons() { details.historyLessons.clear(); }
+	void registerProvince(std::pair<int, std::shared_ptr<Province>> theProvince) { provinces.insert(std::move(theProvince)); }
+	bool verifyCapital(const mappers::ProvinceMapper& provinceMapper);
+	void clearExcommunicated() { details.excommunicated = false; }
+	void setPrimaryCulture(const std::string& culture);
+	void setMajorityReligion(const std::string& religion);
+	void setReligion(const std::string& religion);
+	void setTechGroup(const std::string& tech) { details.technologyGroup = tech; }
+	void setGFX(const std::string& gfx) { details.graphicalCulture = gfx; }
+	void assignReforms(const std::shared_ptr<mappers::RegionMapper>& regionMapper);
+	void initializeAdvisers(const mappers::ReligionMapper& religionMapper, const mappers::CultureMapper& cultureMapper);
+	void annexCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry);
+	void clearProvinces() { provinces.clear(); }
+	void setElector() { details.elector = true; }
+	void overrideReforms(const std::string& reform) { details.reforms = {reform}; }
+	void setMercantilism(int mercantilism) { details.mercantilism = mercantilism; }
+	void setGovernment(const std::string& government) { details.government = government; }
 
 	[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyCountryFile; }
