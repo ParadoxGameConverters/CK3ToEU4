@@ -157,34 +157,15 @@ void CK3::Titles::linkTitles()
 		}
 	}
 
-	// Now with fully generated dfvCache we can load it into all lieges, after fixing the mess inside.
+	// Now with fully generated dfvCache we can load it into all lieges.
 	std::map<long long, std::map<long long, std::shared_ptr<Title>>> updateMap;
 	for (const auto& liege: dfvRegistry)
 	{
 		const auto& cacheItr = IDCache.find(liege.first);
 		if (cacheItr != IDCache.end())
 		{
-			// liege.second holds all "vassals". Let's find actual ones.
-			std::map<long long, std::shared_ptr<Title>> actualMap;
-			for (const auto& vassal: liege.second)
-			{
-				auto djLiegeID = vassal.second->getDJLiege()->first;
-				const auto& actualDJLiege = liege.second.find(djLiegeID);
-				if (actualDJLiege != liege.second.end())
-				{
-					// this title's dejure liege is also under us. Redirect it.
-					vassal.second->loadDFLiege(std::pair(actualDJLiege->first, actualDJLiege->second));
-					// record this move so we can update new dfLiege
-					updateMap[actualDJLiege->first].insert(vassal);
-				}
-				else
-				{
-					// this is a legitimate vassal.
-					actualMap.insert(vassal);
-				}
-			}
-			cacheItr->second->loadDFVassals(actualMap);
-			DFVcounter += static_cast<int>(actualMap.size());
+			cacheItr->second->loadDFVassals(liege.second);
+			DFVcounter += static_cast<int>(liege.second.size());
 		}
 		else
 		{

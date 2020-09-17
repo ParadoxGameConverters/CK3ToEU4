@@ -164,7 +164,7 @@
 	link = { ck3 = 9620 eu4 = 4206 }	# c_chamil -> Balikul
 	link = { ck3 = 7058 eu4 = 2122 eu4 = 4207 }	# c_vargashi -> Hami, Turpan
 	link = { ck3 = 9475 ck3 = 9488 ck3 = 9482 ck3 = 9477 ck3 = 9486 ck3 = 9492 eu4 = 707 }	# c_yumenguan, c_hongliuyuan, c_guazhou, c_shazhou, c_changma, c_yumen -> Yumen
-	link = { ck3 = 7468 eu4 = 2119 }	# c_yangjibaliq -> Chuguchak
+	link = { ck3 = 7468 ck3 = 7192 eu4 = 2119 }	# c_yangjibaliq, c_karamay -> Chuguchak
 	link = { ck3 = 7186 ck3 = 7198 ck3 = 7193 ck3 = 7183 eu4 = 2118 }	# c_lepsink, c_jinsko, c_emil, c_guzkol -> Urzhar
 	link = { ck3 = 4439 ck3 = 4426 ck3 = 7967 eu4 = 458 }	# c_nasaiya, c_isfara, c_terek_pass -> Kokand
 	link = { ck3 = 4438 ck3 = 7217 ck3 = 7151 eu4 = 460 }	# c_ferghana, c_nasrabad, c_cherik -> Uzkend
@@ -497,7 +497,7 @@
 	link = { ck3 = 5938 ck3 = 5942 eu4 = 377 }	# c_aleppo, c_suriya -> Aleppo
 	link = { ck3 = 5929 ck3 = 5915 eu4 = 4297 }	# c_homs, c_shayzar -> Homs
 	link = { ck3 = 5948 ck3 = 5950 ck3 = 5952 eu4 = 405 }	# c_palmyra, c_qaryatan, c_juwair -> Tadmor
-	link = { ck3 = 4809 eu4 = 4293 }	# c_irbil -> Arbil
+	link = { ck3 = 4809 ck3 = 4776 ck3 = 4812 eu4 = 4293 }	# c_irbil, c_kurdistan, c_ninive -> Arbil
 	link = { ck3 = 5794 ck3 = 4769 eu4 = 2206 }	# c_urmiya, c_bailaqan -> Urmia
 	link = { ck3 = 4549 ck3 = 4765 eu4 = 2207 }	# c_maragha, c_dinawar -> Maragheh
 	link = { ck3 = 4327 eu4 = 2212 eu4 = 4300 }	# c_zanjan -> Zanjan, Mianeh
@@ -524,7 +524,7 @@
 	link = { ck3 = 4851 eu4 = 2309 }	# c_sinjar -> Sinjar
 	link = { ck3 = 4887 ck3 = 4885 eu4 = 406 }	# c_al-haditha, c_hadithat-ana -> Haditha
 	link = { ck3 = 4889 ck3 = 5946 ck3 = 4883 eu4 = 2314 }	# c_rahba, c_sukhna, c_khabur -> Rahba
-	link = { ck3 = 4878 ck3 = 4856 eu4 = 2308 }	# c_harran, c_upper_khabur -> Urfa
+	link = { ck3 = 4878 ck3 = 4856 ck3 = 4872 eu4 = 2308 }	# c_harran, c_upper_khabur, c_edessa -> Urfa
 	link = { ck3 = 5943 ck3 = 5940 ck3 = 4875 eu4 = 407 }	# c_raqqa, c_syrrusafa, c_dausar -> Ar Raqqa
 	link = { ck3 = 5902 eu4 = 4298 }	# c_aintab -> Ayntab
 	link = { ck3 = 5932 ck3 = 5936 eu4 = 1849 }	# c_hama, c_qinnasrin -> Hama
@@ -1247,7 +1247,7 @@
 	link = { ck3 = 3754 eu4 = 2348 }	# c_chios -> Chios
 	link = { ck3 = 3757 eu4 = 164 }	# c_naxos -> Naxos
 	link = { ck3 = 3736 eu4 = 145 }	# c_laconia -> Morea
-	link = { ck3 = 3744 eu4 = 163 }	# c_chania -> Crete
+	link = { ck3 = 3744 ck3 = 3746 eu4 = 163 }	# c_chania, c_chandax -> Crete
 	# Switzerland
 	link = { ck3 = 8719 eu4 = 4720 eu4 = 1867 }	# c_geneva -> Geneva, Vaud
 	link = { ck3 = 2047 eu4 = 165 }	# c_bern -> Bern

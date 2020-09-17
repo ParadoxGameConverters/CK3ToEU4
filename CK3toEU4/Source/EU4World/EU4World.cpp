@@ -304,7 +304,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	}
 	if (!tag)
 		throw std::runtime_error("Title " + title.first + " could not be mapped!");
-
+	
 	// Locating appropriate existing country
 	const auto& countryItr = countries.find(*tag);
 	if (countryItr != countries.end())
@@ -711,6 +711,9 @@ void EU4::World::importAdvisers()
 
 void EU4::World::resolvePersonalUnions()
 {
+	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Untions";
+	auto annexCounter = 0;
+	auto puCounter = 0;
 	std::map<long long, std::map<std::string, std::shared_ptr<Country>>> holderTitles;
 	std::map<long long, std::pair<std::string, std::shared_ptr<Country>>> holderPrimaryTitle;
 	std::map<long long, std::shared_ptr<CK3::Character>> relevantHolders;
@@ -727,7 +730,17 @@ void EU4::World::resolvePersonalUnions()
 		holderTitles[holder.first].insert(country);
 		relevantHolders.insert(holder);
 		// does he have a primary title? Of course he does. They all do.
-		holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
+		if (holder.second->getDomain() && !holder.second->getDomain()->getDomain().empty())
+			if (holder.second->getDomain()->getDomain()[0].second->getEU4Tag())
+				holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
+			else
+			{
+				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no eu4tag for title " << holder.second->getDomain()->getDomain()[0].second->getName();
+				// ... mooooving on.
+				continue;
+			}
+		else
+			Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has nothing in domain. Great.";
 	}
 
 	// Now let's see what we have.
@@ -748,7 +761,7 @@ void EU4::World::resolvePersonalUnions()
 			{
 				if (title.first == "PAP" || title.second->isHREEmperor() || title.second->isHREElector())
 				{
-					primaryTitle = std::pair(title.first, title.second);
+					primaryTitle = title;
 					foundPrimary = true;
 					break;
 				}
@@ -759,7 +772,7 @@ void EU4::World::resolvePersonalUnions()
 				{
 					if (!title.second->getProvinces().empty())
 					{
-						primaryTitle = std::pair(title.first, title.second);
+						primaryTitle = title;
 						foundPrimary = true;
 						break;
 					}
@@ -770,7 +783,7 @@ void EU4::World::resolvePersonalUnions()
 		else
 		{
 			primaryTitle = primaryItr->second;
-
+			
 			// That's lovely, but is this the special snowflake THE POPE? Does he hold PAP/FAP as secondary?
 			for (const auto& title: holderTitle.second)
 			{
@@ -781,12 +794,12 @@ void EU4::World::resolvePersonalUnions()
 				}
 			}
 		}
-
+		
 		// religion
 		auto heathen = false;
 		if (relevantHolders[holderTitle.first]->getFaith().second->getReligion().second->getName() != "christianity_religion")
 			heathen = true;
-
+		
 		// We now have a holder, his primary, and religion. Let's resolve multiple crowns.
 		if (!heathen && primaryTitle.second->getGovernment() == "monarchy")
 		{
@@ -802,11 +815,13 @@ void EU4::World::resolvePersonalUnions()
 				{
 					diplomacy.addAgreement(std::make_shared<Agreement>(primaryTitle.first, title.first, "union", primaryTitle.second->getConversionDate()));
 					++unionCount;
+					++puCounter;
 				}
 				else
 				{
 					// too many unions.
 					primaryTitle.second->annexCountry(title);
+					++annexCounter;
 					if (primaryTitle.second->isHREEmperor() && emperorTag != primaryTitle.first)
 						emperorTag = primaryTitle.first;
 				}
@@ -823,6 +838,7 @@ void EU4::World::resolvePersonalUnions()
 					continue;
 				// Yum.
 				primaryTitle.second->annexCountry(title);
+				++annexCounter;
 				if (primaryTitle.first == "PAP")
 					Log(LogLevel::Debug) << primaryTitle.first << " is annexing " << title.first;
 				if (primaryTitle.second->isHREEmperor() && emperorTag != primaryTitle.first)
@@ -830,6 +846,7 @@ void EU4::World::resolvePersonalUnions()
 			}
 		}
 	}
+	LOG(LogLevel::Info) << "<> Annexed " << annexCounter << " and PUed " << puCounter << " countries.";
 }
 
 void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)

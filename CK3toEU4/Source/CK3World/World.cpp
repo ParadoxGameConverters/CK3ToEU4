@@ -268,6 +268,10 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
+	// TODO: Leaving this debug in until all kinks are sorted.
+	std::ofstream dump("dumpOfIron.txt");
+	dump << saveGame.gamestate;
+	dump.close();
 }
 
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
@@ -593,7 +597,7 @@ void CK3::World::filterIndependentTitles()
 			// this is a potential indep.
 			potentialIndeps.insert(title);
 		}
-		if (title.second->getDFLiege() && !title.second->getDFLiege()->second->getHolder()) // yes, we can have a dfliege that's destroyed, apparently.)
+		if (title.second->getDFLiege() && !title.second->getDFLiege()->second->getHolder()) // yes, we can have a dfliege that's destroyed, apparently.
 		{
 			// this is also potential indep.
 			potentialIndeps.insert(title);
