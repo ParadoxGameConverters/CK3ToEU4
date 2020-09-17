@@ -146,18 +146,17 @@
 	link = { ck3 = 9616 ck3 = 7963 eu4 = 2124 }	# c_karghalik, c_yarkand -> Yarkand
 	link = { ck3 = 9612 ck3 = 9034 ck3 = 9036 eu4 = 710 }	# c_khotan, c_thaldat, c_sumdo -> Hotan
 	link = { ck3 = 9603 ck3 = 9606 ck3 = 9043 ck3 = 9065 eu4 = 4693 }	# c_cherchen, c_keriya, c_memar, c_gomoco -> Keriya
-	link = { ck3 = 9391 ck3 = 9367 ck3 = 9221 ck3 = 9393 eu4 = 711 }	# c_kumkol, c_sewa, c_garkung, c_mangnai -> Qarqan
-	link = { ck3 = 9372 ck3 = 9370 ck3 = 9360 ck3 = 9373 ck3 = 9388 eu4 = 4522 }	# c_aqenganggyai, c_dangla, c_yenshipin, c_chumarho, c_hohaseco -> Aqenganggyai
+	link = { ck3 = 9391 ck3 = 9367 ck3 = 9221 ck3 = 9393 ck3 = 9372 eu4 = 711 }	# c_kumkol, c_sewa, c_garkung, c_mangnai, c_aqenganggyai -> Qarqan
 	link = { ck3 = 9420 ck3 = 9418 ck3 = 9413 ck3 = 9422 ck3 = 9434 ck3 = 9512 eu4 = 2184 }	# c_kuozhou, c_shanzhou, c_datong, c_xining, c_rebgong, c_qilin -> Xining
 	link = { ck3 = 9445 ck3 = 9454 ck3 = 9438 ck3 = 9436 ck3 = 9433 ck3 = 9440 ck3 = 9443 eu4 = 2183 }	# c_tewo, c_zoige, c_maqu, c_zekog, c_mangra, c_sangqu, c_jone -> Taozhou
 	link = { ck3 = 9447 ck3 = 9450 ck3 = 9455 ck3 = 9342 ck3 = 9463 ck3 = 9467 ck3 = 9457 ck3 = 9460 eu4 = 2170 }	# c_maqen, c_baima, c_ngawa, c_sertar, c_barkam, c_quqen, c_sungqu, c_maowun -> Songqu
 	link = { ck3 = 9315 ck3 = 9353 ck3 = 9317 ck3 = 9322 ck3 = 9324 eu4 = 678 }	# c_markam, c_batang, c_deqen, c_gyaitang, c_lenggu -> Tachienlu
 	link = { ck3 = 9352 ck3 = 9347 ck3 = 9345 ck3 = 9339 ck3 = 9327 ck3 = 9331 ck3 = 9333 ck3 = 9337 eu4 = 2135 }	# c_pelyul, c_garze, c_dege, c_nyagrong, c_litang, c_lhagang, c_chakla, c_dawu -> Garze
 	link = { ck3 = 9302 ck3 = 9313 ck3 = 9309 ck3 = 9311 ck3 = 9281 eu4 = 2131 }	# c_qamdo, c_zhagyab, c_lhatok, c_gonjo, c_baxoi -> Qamdo
-	link = { ck3 = 9376 ck3 = 9382 ck3 = 9379 ck3 = 9305 ck3 = 9307 ck3 = 9384 ck3 = 9387 eu4 = 705 }	# c_trandam, c_zhidoi, c_zadoi, c_nangqen, c_gyegumdo, c_chindu, c_qumarleb -> Gyegu
+	link = { ck3 = 9376 ck3 = 9382 ck3 = 9379 ck3 = 9305 ck3 = 9307 ck3 = 9384 ck3 = 9387 ck3 = 9373 eu4 = 705 }	# c_trandam, c_zhidoi, c_zadoi, c_nangqen, c_gyegumdo, c_chindu, c_qumarleb, c_chumarho -> Gyegu
 	link = { ck3 = 9397 ck3 = 9472 ck3 = 9470 eu4 = 706 }	# c_lenghu, c_aksay, c_haltang -> Tsaidam
 	link = { ck3 = 9351 ck3 = 9349 eu4 = 2133 }	# c_ariksar, c_lingtsang -> Dege
-	link = { ck3 = 9405 ck3 = 9403 ck3 = 9400 ck3 = 9428 ck3 = 9426 ck3 = 9431 ck3 = 9401 eu4 = 2134 }	# c_ulam, c_tuulain, c_nagormo, c_xigortang, c_gerqen, c_madoi, c_ngoring -> Rebgong
+	link = { ck3 = 9405 ck3 = 9403 ck3 = 9400 ck3 = 9428 ck3 = 9426 ck3 = 9431 ck3 = 9401 ck3 = 9388 eu4 = 2134 }	# c_ulam, c_tuulain, c_nagormo, c_xigortang, c_gerqen, c_madoi, c_ngoring, c_hohaseco -> Rebgong
 	link = { ck3 = 7592 ck3 = 7590 ck3 = 7610 ck3 = 7561 eu4 = 719 }	# c_tseel, c_sharga, c_khar_us, c_khasagt_khairkhan -> Uliastai
 	link = { ck3 = 7511 ck3 = 7508 ck3 = 7595 eu4 = 4680 }	# c_boro_burgasu, c_kara_asirgan, c_zarman -> East Zagast
 	link = { ck3 = 7457 eu4 = 715 eu4 = 4208 }	# c_kara_khoja -> Urumqi, Qurqara-usu
@@ -184,8 +183,8 @@
 	link = { ck3 = 9274 ck3 = 9270 ck3 = 9280 ck3 = 9265 ck3 = 9286 ck3 = 9289 ck3 = 9299 eu4 = 2130 }	# c_gongbo, c_lhari, c_nyingchi, c_nang, c_bome, c_banbar, c_dengqen -> Nyingchi
 	link = { ck3 = 9231 ck3 = 9232 ck3 = 9225 ck3 = 9151 ck3 = 9153 ck3 = 9236 eu4 = 4517 }	# c_zetang, c_nagarze, c_comai, c_cona, c_lhunze, c_gyaca -> Nedong
 	link = { ck3 = 9246 ck3 = 9250 ck3 = 9267 ck3 = 9244 eu4 = 677 }	# c_lhasa, c_damxung, c_gyama, c_lhunzhub -> Lhasa
-	link = { ck3 = 9258 ck3 = 9357 ck3 = 9358 ck3 = 9298 ck3 = 9295 eu4 = 4205 }	# c_nagchu, c_amdo, c_nyainrong, c_baqen, c_sog -> Nagchu
-	link = { ck3 = 9254 ck3 = 9264 ck3 = 9263 eu4 = 4519 }	# c_baingoin, c_cozhelhoma, c_garco -> Damxung
+	link = { ck3 = 9258 ck3 = 9358 ck3 = 9298 ck3 = 9295 ck3 = 9360 eu4 = 4205 }	# c_nagchu, c_nyainrong, c_baqen, c_sog, c_yenshipin -> Nagchu
+	link = { ck3 = 9254 ck3 = 9264 ck3 = 9263 ck3 = 9370 ck3 = 9357 eu4 = 4519 }	# c_baingoin, c_cozhelhoma, c_garco, c_dangla, c_amdo -> Damxung
 	link = { ck3 = 9213 ck3 = 9222 ck3 = 9218 eu4 = 4518 }	# c_xainza, c_nyima, c_aso -> Tsurphu
 	link = { ck3 = 9195 ck3 = 9197 ck3 = 9210 ck3 = 9251 eu4 = 676 }	# c_kangmar, c_gyangze, c_xigaze, c_nyemo -> Shigatse
 	link = { ck3 = 9191 eu4 = 4514 }	# c_sagya -> Sakya
