@@ -1172,3 +1172,22 @@ void EU4::Country::annexCountry(const std::pair<std::string, std::shared_ptr<Cou
 
 	// Bricking the title -> eu4tag is not necessary and not desirable. As soon as the country has 0 provinces, it's effectively dead.
 }
+
+void EU4::Country::setLocalizations(const mappers::LocBlock& newBlock)
+{
+	// Setting the name
+	localizations[tag] = newBlock;
+}
+
+void EU4::Country::correctRoyaltyToBuddhism()
+{
+	if (details.monarch.religion == "vajrayana")
+		details.monarch.religion = "buddhism";
+	if (details.queen.religion == "vajrayana")
+		details.queen.religion = "buddhism";
+	if (details.heir.religion == "vajrayana")
+		details.heir.religion = "buddhism";
+	for (auto& adviser: details.advisers)
+		if (adviser.religion == "vajrayana")
+			adviser.religion = "buddhism";
+}

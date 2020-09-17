@@ -105,6 +105,41 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	assignAllCountryReforms();
 	Log(LogLevel::Progress) << "67 %";
 
+	// Vassalages were set in ck3::world but we have to transcribe those into EU4 agreements.
+	// Ck3 does not support tributaries as such and we care not about alliances.
+	diplomacy.importVassals(countries);
+	Log(LogLevel::Progress) << "68 %";
+
+	// We're distributing permanent claims according to dejure distribution.
+	distributeClaims(theConfiguration);
+
+	// We're distributing dead cores according to cultures.
+	distributeDeadCores();
+	Log(LogLevel::Progress) << "69 %";
+
+	// Now for the final tweaks.
+	distributeForts();
+	Log(LogLevel::Progress) << "70 %";
+
+	// Tengri
+	fixTengri();
+	Log(LogLevel::Progress) << "71 %";
+	
+	// Check for duplicate country names and rename accordingly
+	fixDuplicateNames();
+	Log(LogLevel::Progress) << "72 %";
+
+	// Siberia
+	siberianQuestion(theConfiguration);
+	Log(LogLevel::Progress) << "73 %";
+
+	// African Passes
+	africanQuestion();
+	Log(LogLevel::Progress) << "74 %";
+
+	// Indian buddhisms
+	indianQuestion();
+	Log(LogLevel::Progress) << "75 %";
 
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";
@@ -960,4 +995,511 @@ void EU4::World::setFreeCities()
 		}
 	}
 	LOG(LogLevel::Info) << "<> There are " << freeCityNum << " free cities.";
+}
+
+void EU4::World::distributeClaims(const Configuration& theConfiguration)
+{
+	if (theConfiguration.getDejure() == Configuration::DEJURE::DISABLED)
+	{
+		Log(LogLevel::Info) << ">< Permaclaim distribution disabled by configuration.";
+		return;
+	}
+
+	Log(LogLevel::Info) << "-- Distributing DeJure Claims";
+	auto counter = 0;
+	std::map<std::string, std::set<std::string>> claimsRegister; // ck2 county name, eu4 tag claims
+
+	// Mapping all countries with all their claims.
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle())
+			continue;
+		if (country.second->getProvinces().empty())
+			continue; // No claims for dead nations.
+		for (const auto& DJcounty: country.second->getTitle()->second->getOwnedDJCounties())
+		{
+			claimsRegister[DJcounty.first].insert(country.first);
+		}
+	}
+
+	// And then rolling through provinces and applying those claims.
+	for (const auto& province: provinces)
+	{
+		if (!province.second->getSourceProvince())
+			continue;
+		const auto& claimItr = claimsRegister.find(province.second->getSourceProvince()->getName());
+		if (claimItr == claimsRegister.end())
+			continue;
+		for (const auto& tag: claimItr->second)
+		{
+			if (tag == province.second->getOwner())
+				continue;
+			// since de jure claims are based on DE JURE land, we're adding it even for PU or vassal land.
+			province.second->addPermanentClaim(tag);
+			counter++;
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " claims have been distributed.";
+}
+
+void EU4::World::distributeDeadCores()
+{
+	Log(LogLevel::Info) << "-- Distributing Dead Cores";
+	auto counter = 0;
+
+	// Make a register of dead country tags we are allowed to use
+	std::set<std::string> deadTags;
+
+	for (const auto& country: countries)
+		if (country.second->getProvinces().empty())
+			deadTags.insert(country.first);
+
+	// Then, for all provinces, see if their culture has a primary nation, and if we're allowed to insert it.
+	for (const auto& province: provinces)
+	{
+		// Don't touch ROTW
+		if (!province.second->getSourceProvince())
+			continue;
+		// Don't touch stuff we left empty
+		if (province.second->getOwner().empty())
+			continue;
+
+		const auto& primaryTag = primaryTagMapper.getPrimaryTagForCulture(province.second->getCulture());
+		if (primaryTag)
+		{
+			if (deadTags.count(*primaryTag))
+			{
+				// We're ok to use this.
+				province.second->addCore(*primaryTag);
+				++counter;
+			}
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " dead cores have been distributed.";
+}
+
+void EU4::World::distributeForts()
+{
+	Log(LogLevel::Info) << "-- Building Forts";
+
+	// We're doing this only for our new countries. We haven't deleted forts in ROTW.
+	// Countries at 4+ provinces get a capital fort. 8+ countries get one fort per area where they own 3+ provinces.
+
+	auto counterCapital = 0;
+	auto counterOther = 0;
+
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle())
+			continue;
+		if (country.second->getProvinces().size() < 4)
+			continue; // To small to afford forts.
+		if (!country.second->getCapitalID())
+			continue; // Not dealing with broken countries, thank you.
+		if (!country.second->getProvinces().count(country.second->getCapitalID()))
+		{
+			if (country.first != "PAP")
+				Log(LogLevel::Warning) << country.first << " has capital province set to " << country.second->getCapitalID() << " but doesn't own it?";
+			continue; // this should have been fixed earlier by verifyCapitals! Well... Except for pope.
+		}
+
+		const auto& capitalAreaName = regionMapper->getParentAreaName(country.second->getCapitalID());
+		if (!capitalAreaName)
+			continue; // uh-huh
+
+		const auto& capitalProvince = country.second->getProvinces().find(country.second->getCapitalID());
+		capitalProvince->second->buildFort();
+		counterCapital++;
+
+		if (country.second->getProvinces().size() < 8)
+			continue; // Too small for more forts.
+
+		std::set<std::string> builtAreas = {*capitalAreaName};
+		// Now it gets serious. We need a list of areas with 3+ provinces.
+		std::map<std::string, int> elegibleAreas;
+
+		for (const auto& province: country.second->getProvinces())
+		{
+			const auto& areaName = regionMapper->getParentAreaName(province.first);
+			if (!areaName)
+				continue;
+			elegibleAreas[*areaName]++;
+		}
+
+		// And we put a fort in every one of those.
+		for (const auto& province: country.second->getProvinces())
+		{
+			const auto& areaName = regionMapper->getParentAreaName(province.first);
+			if (!areaName)
+				continue;
+			if (builtAreas.count(*areaName))
+				continue;
+			if (elegibleAreas[*areaName] <= 2)
+				continue;
+
+			province.second->buildFort();
+			counterOther++;
+			builtAreas.insert(*areaName);
+		}
+	}
+
+	Log(LogLevel::Info) << "<> " << counterCapital << " capital forts and " << counterOther << " other forts have been built.";
+}
+
+void EU4::World::fixTengri()
+{
+	// We need to convert all unmapped EU4 Tengri provinces to Old Tengri (Unreformed)
+	Log(LogLevel::Info) << "-- Checking for Reformed Tengri";
+	for (const auto& province: provinces)
+	{
+		if (!province.second->getSourceProvince())
+		{
+			if (province.second->getReligion() == "tengri_pagan_reformed")
+			{
+				province.second->setReligion("tengri_pagan");
+			}
+		}
+	}
+	for (const auto& country: countries)
+	{
+		if (country.second->getTitle())
+		{
+			if (country.second->getReligion() == "tengri_pagan_reformed")
+			{
+				country.second->setReligion("tengri_pagan");
+			}
+		}
+	}
+	Log(LogLevel::Info) << ">< Tengri successfully unreformed";
+}
+
+void EU4::World::fixDuplicateNames()
+{
+	Log(LogLevel::Info) << "-- Renaming Duplicate Countries";
+	auto counter = 0;
+
+	// Iterate through countries and assign their names as keywords. If a name appears more than once, add it to list of pointers
+	std::map<const std::string, std::vector<std::shared_ptr<Country>>> nameMap;
+	for (const auto& country: countries)
+	{
+		if (country.second->getProvinces().empty())
+			continue;
+		const auto& countryLocs = country.second->getLocalizations();
+		if (countryLocs.empty())
+			continue;
+		if (countryLocs.find(country.first) == countryLocs.end())
+			continue;
+		if (countryLocs.find(country.first)->second.english.empty())
+			continue;
+		nameMap[countryLocs.find(country.first)->second.english].emplace_back(country.second);
+	}
+
+	// Reorder countries in list by development (highest -> lowest)
+	for (auto& countryBatch: nameMap)
+	{
+		std::sort(countryBatch.second.begin(), countryBatch.second.end(), [](auto a, auto b) {
+			return a->getDevelopment() > b->getDevelopment();
+		});
+	}
+
+	// Now we iterate through all batches and sort out the names.
+	for (const auto& countryBatch: nameMap)
+	{
+		// Bail for singletons
+		if (countryBatch.second.size() <= 1)
+			continue;
+
+		// This is the locblock we're operating on. Should be same for all countries in this batch.
+		auto currentBlock = countryBatch.second[0]->getLocalizations().find(countryBatch.second[0]->getTag())->second;
+
+		// Is this a dynastyname? These will follow a bit different rules.
+		auto dynastyName = countryBatch.second[0]->getHasDynastyName();
+
+		// Clear out any "Greater" from name.
+		auto greaterdropped = false;
+		if (currentBlock.english.find("Greater ") != std::string::npos)
+		{
+			currentBlock.english = currentBlock.english.erase(0, 8); // -Greater
+			currentBlock.spanish = currentBlock.spanish.erase(0, 5); // -Gran
+			currentBlock.french = currentBlock.french.erase(0, 7);	// -Grande
+			currentBlock.german = currentBlock.german.erase(0, 6);	// -Gross
+			greaterdropped = true;
+		}
+
+		// Ditto for "Lesser"
+		auto lesserdropped = false;
+		if (currentBlock.english.find("Lesser ") != std::string::npos)
+		{
+			currentBlock.english = currentBlock.english.erase(0, 7); // -Lesser
+			currentBlock.spanish = currentBlock.spanish.erase(0, 8); // -Pequeca
+			currentBlock.french = currentBlock.french.erase(0, 7);	// -Petite
+			currentBlock.german = currentBlock.german.erase(0, 6);	// -Klein
+			lesserdropped = true;
+		}
+
+		// and now let's get to work.
+
+		for (auto i = 0; i < static_cast<int>(countryBatch.second.size()); i++)
+		{
+			mappers::LocBlock newBlock;
+			const auto& actualCountry = countryBatch.second[i];
+			const auto& actualTag = actualCountry->getTag();
+			const auto& countryLocs = actualCountry->getLocalizations();
+
+			// First we deal with dynastynames.
+			if (dynastyName)
+			{
+				switch (i)
+				{
+					case 0:
+						// First country. Nothing changes (Ottomans).
+						break;
+					case 5:
+						// For the fifth, we do Secret Ottomans.
+						newBlock.english = "Secret " + currentBlock.english;
+						newBlock.spanish = currentBlock.spanish + " Secreta";
+						newBlock.french = currentBlock.french + " Secrete";
+						newBlock.german = "Geheimnis " + currentBlock.german;
+						actualCountry->setLocalizations(newBlock);
+						break;
+					default:
+						// Otherwise we're trying to fuse TAG_ADJ and a canonical name for the country. (Ottoman Austria)
+						if (countryLocs.count("canonical") && countryLocs.find(actualTag + "_ADJ") != countryLocs.end() &&
+							 !countryLocs.find(actualTag + "_ADJ")->second.english.empty())
+						{
+							// We have the ingredients and can create the name.
+							const auto& canonicalBlock = countryLocs.find("canonical")->second;
+							const auto& adjBlock = countryLocs.find(actualTag + "_ADJ")->second;
+							newBlock.english = adjBlock.english + " " + canonicalBlock.english;
+							newBlock.spanish = adjBlock.spanish + " " + canonicalBlock.spanish;
+							newBlock.german = adjBlock.german + " " + canonicalBlock.german;
+							newBlock.french = adjBlock.french + " " + canonicalBlock.french;
+							actualCountry->setLocalizations(newBlock);
+							break;
+						}
+						// If we at least have canonical, we can bail from dynasty names. (just Austria)
+						if (countryLocs.count("canonical"))
+						{
+							newBlock = countryLocs.find("canonical")->second;
+							actualCountry->setLocalizations(newBlock);
+							break;
+						}
+						// Else crap. We don't have a canonical name for these fellows. Leave as is.
+						break;
+				}
+			}
+
+			else // These would be regular, non-dynastyname countries.
+			{
+				switch (i)
+				{
+					case 0:
+						// This is the Greater one, unless it already was the greater one. In that case we diversify.
+						if (!greaterdropped)
+						{
+							newBlock.english = "Greater " + currentBlock.english;
+							newBlock.spanish = "Gran " + currentBlock.spanish;
+							newBlock.french = "Grande " + currentBlock.french;
+							newBlock.german = "Gross " + currentBlock.german;
+						}
+						else
+						{
+							newBlock.english = currentBlock.english + " Major";
+							newBlock.spanish = currentBlock.spanish + " Maior";
+							newBlock.french = currentBlock.french + " Majeur";
+							newBlock.german = currentBlock.german + " Maior";
+						}
+						actualCountry->setLocalizations(newBlock);
+						break;
+					case 1:
+						// This is Lesser, unless it's Minor.
+						if (!lesserdropped)
+						{
+							newBlock.english = "Lesser " + currentBlock.english;
+							newBlock.spanish = "Pequeca " + currentBlock.spanish;
+							newBlock.french = "Petite " + currentBlock.french;
+							newBlock.german = "Klein " + currentBlock.german;
+						}
+						else
+						{
+							newBlock.english = currentBlock.english + " Minor";
+							newBlock.spanish = currentBlock.spanish + " Minor";
+							newBlock.french = currentBlock.french + " Mineur";
+							newBlock.german = currentBlock.german + " Minor";
+						}
+						actualCountry->setLocalizations(newBlock);
+						break;
+					case 2:
+						// Hello Hither.
+						newBlock.english = "Hither " + currentBlock.english;
+						newBlock.spanish = "Hither " + currentBlock.english;
+						newBlock.french = "Hither " + currentBlock.english;
+						newBlock.german = "Hither " + currentBlock.english;
+						actualCountry->setLocalizations(newBlock);
+						break;
+					case 3:
+						// Hello Further.
+						newBlock.english = "Further " + currentBlock.english;
+						newBlock.spanish = "Lejos " + currentBlock.spanish;
+						newBlock.french = "Plus " + currentBlock.french;
+						newBlock.german = "Ferner " + currentBlock.german;
+						actualCountry->setLocalizations(newBlock);
+						break;
+					case 4:
+						// This one's easy.
+						newBlock.english = "Secret " + currentBlock.english;
+						newBlock.spanish = currentBlock.spanish + " Secreta";
+						newBlock.french = currentBlock.french + " Secrete";
+						newBlock.german = "Geheimnis " + currentBlock.german;
+						actualCountry->setLocalizations(newBlock);
+						break;
+					default:
+						// Out of ideas. 6 Polands? Don't care any more.
+						break;
+				}
+			}
+			counter++;
+		}
+	}
+
+	Log(LogLevel::Info) << "<> " << counter << " names unduplicated.";
+}
+
+void EU4::World::siberianQuestion(const Configuration& theConfiguration)
+{
+	Log(LogLevel::Info) << "-- Burning Siberia";
+	if (theConfiguration.getSiberia() == Configuration::SIBERIA::LEAVE_SIBERIA)
+	{
+		Log(LogLevel::Info) << ">< Leaving Siberia alone due to Configuration.";
+		return;
+	}
+
+	auto counter = 0;
+
+	// We're deleting all tags with:
+	// * capital is in Siberia
+	// * nomad or tribal level
+	// * no more than 5 provinces
+	for (const auto& country: countries)
+	{
+		if (country.second->getGovernment() != "nomad" && country.second->getGovernment() != "tribal")
+			continue;
+		if (country.second->getProvinces().empty())
+			continue;
+		if (!country.second->getCapitalID())
+			continue;
+		const auto& region = regionMapper->getParentRegionName(country.second->getCapitalID());
+		if (!region)
+			continue;
+		if (region != "west_siberia_region" && region != "east_siberia_region")
+			continue;
+		if (country.second->getProvinces().size() > 5)
+			continue;
+
+		// All checks done. Let's get deleting.
+		for (const auto& province: country.second->getProvinces())
+		{
+			province.second->sterilize();
+		}
+		country.second->clearProvinces();
+		country.second->clearExcommunicated();
+		diplomacy.deleteAgreementsWithTag(country.first);
+		++counter;
+	}
+	Log(LogLevel::Info) << "<> " << counter << " Siberian countries have been removed";
+}
+
+void EU4::World::africanQuestion()
+{
+	Log(LogLevel::Info) << "-- Checking Africa";
+
+	// If a country has a province on both ends of the pass it stays, otherwise the pass is getting cleared
+	// Tuat Pass
+	if (provinces.find(1128) != provinces.end() && provinces.find(1128)->second && provinces.find(2466) != provinces.end() && provinces.find(2466)->second &&
+		 provinces.find(2460) != provinces.end() && provinces.find(2460)->second)
+	{
+		if (!(countries.find(provinces.find(1127)->second->getOwner())->second->isinHRE()) &&
+			 provinces.find(1128)->second->getOwner() != provinces.find(2466)->second->getOwner() &&
+			 provinces.find(1128)->second->getOwner() != provinces.find(2460)->second->getOwner())
+		{
+			if (provinces.find(1127) != provinces.end() && provinces.find(1127)->second)
+				provinces.find(1127)->second->sterilize();
+			Log(LogLevel::Info) << "<> Tuat Sterilized";
+		}
+	}
+	// Djado-Tajhari Pass
+	if (provinces.find(2448) != provinces.end() && provinces.find(2448)->second && provinces.find(2275) != provinces.end() && provinces.find(2275)->second &&
+		 provinces.find(2277) != provinces.end() && provinces.find(2277)->second)
+	{
+		if (!(countries.find(provinces.find(2474)->second->getOwner())->second->isinHRE()) &&
+			 !(countries.find(provinces.find(2475)->second->getOwner())->second->isinHRE()) &&
+			 provinces.find(2448)->second->getOwner() != provinces.find(2275)->second->getOwner() &&
+			 provinces.find(2448)->second->getOwner() != provinces.find(2277)->second->getOwner())
+		{
+			if (provinces.find(2474) != provinces.end() && provinces.find(2474)->second)
+				provinces.find(2474)->second->sterilize();
+			if (provinces.find(2475) != provinces.end() && provinces.find(2475)->second)
+				provinces.find(2475)->second->sterilize();
+			Log(LogLevel::Info) << "<> Tuat Djado-Tajhari Sterilized";
+		}
+	}
+	// Central Sahara (Only Waddai and Al-Junaynah)
+	if (provinces.find(1219) != provinces.end() && provinces.find(1219)->second && provinces.find(2288) != provinces.end() && provinces.find(2288)->second &&
+		 provinces.find(1159) != provinces.end() && provinces.find(1159)->second)
+	{
+		if (!(countries.find(provinces.find(2932)->second->getOwner())->second->isinHRE()) &&
+			 !(countries.find(provinces.find(774)->second->getOwner())->second->isinHRE()) &&
+			 provinces.find(1219)->second->getOwner() != provinces.find(2288)->second->getOwner() &&
+			 provinces.find(1219)->second->getOwner() != provinces.find(1159)->second->getOwner())
+		{
+			if (provinces.find(774) != provinces.end() && provinces.find(774)->second)
+				provinces.find(774)->second->sterilize();
+			if (provinces.find(2932) != provinces.end() && provinces.find(2932)->second)
+				provinces.find(2932)->second->sterilize();
+			Log(LogLevel::Info) << "<> Central Sahara Sterilized";
+		}
+	}
+}
+
+void EU4::World::indianQuestion()
+{
+	// countries with capitals in india or persia superregions, need to have their provinces updated to buddhism (from vajrayana),
+	// as well as state religion if vajrayana.
+	LOG(LogLevel::Info) << "-> Resolving the Indian Question";
+	auto countryCounter = 0;
+	auto provinceCounter = 0;
+
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle())
+			continue;
+		if (country.second->getProvinces().empty())
+			continue;
+
+		const auto capitalID = country.second->getCapitalID();
+		if (!capitalID)
+			continue;
+
+		const auto& capitalSuperRegion = regionMapper->getParentSuperRegionName(capitalID);
+		if (!capitalSuperRegion)
+			continue;
+
+		if (*capitalSuperRegion == "india_superregion" || *capitalSuperRegion == "persia_superregion")
+		{
+			// Let's convert to buddhism.
+			if (country.second->getReligion() == "vajrayana")
+			{
+				country.second->setReligion("buddhism");
+				country.second->correctRoyaltyToBuddhism();
+				++countryCounter;
+			}
+			for (const auto& province: country.second->getProvinces())
+				if (province.second->getReligion() == "vajrayana")
+				{
+					province.second->setReligion("buddhism");
+					++provinceCounter;
+				}
+		}
+	}
+	LOG(LogLevel::Info) << "-> " << countryCounter << " countries and " << provinceCounter << " provinces resolved.";
 }

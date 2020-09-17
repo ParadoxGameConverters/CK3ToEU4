@@ -53,6 +53,15 @@ class World
 	void distributeHRESubtitles(const Configuration& theConfiguration);
 	void setElectors();
 	void setFreeCities();
+	void distributeClaims(const Configuration& theConfiguration);
+	void distributeDeadCores();
+	void distributeForts();
+	void fixTengri();
+	void fixDuplicateNames();
+	void siberianQuestion(const Configuration& theConfiguration);
+	void africanQuestion();
+	void indianQuestion();
+
 
 	// output
 	void output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;

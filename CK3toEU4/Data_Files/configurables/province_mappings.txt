@@ -82,7 +82,7 @@
 	link = { ck3 = 7412 ck3 = 7409 ck3 = 7408 ck3 = 7414 ck3 = 7351 eu4 = 2434 }	# c_terektai, c_korgon, c_aley, c_biia, c_semey -> Barnaul
 	link = { ck3 = 7495 ck3 = 7491 ck3 = 7181 ck3 = 7178 eu4 = 2355 }	# c_hoboksar, c_torangy_kul, c_chuguchak, c_kokpekty -> Narym
 	link = { ck3 = 7207 eu4 = 2120 }	# c_ghulja -> Ili
-	link = { ck3 = 7206 eu4 = 2125 eu4 = 1784 }	# c_kash -> Kochkor, Tian Shan
+	link = { ck3 = 7206 eu4 = 2125 }	# c_kash -> Kochkor
 	link = { ck3 = 7167 ck3 = 7201 eu4 = 461 }	# c_almaty, c_iliq -> Almaty
 	link = { ck3 = 4254 ck3 = 4222 eu4 = 2228 }	# c_guzgan, c_marvarrud -> Maymana
 	link = { ck3 = 4081 eu4 = 432 }	# c_kirman -> Kerman
@@ -256,7 +256,6 @@
 	link = { ck3 = 1325 ck3 = 1151 eu4 = 4479 }	# c_madhupur, c_laksmanavati -> Goraghat
 	link = { ck3 = 1324 eu4 = 2046 eu4 = 4478 }	# c_suvarnagram -> Nasirabad, Haibatnagar
 	link = { ck3 = 1319 eu4 = 564 }	# c_bikrampur -> Dhaka
-	link = { ck3 = 1245 eu4 = 1950 }	# c_srihatta -> Meghalaya
 	link = { ck3 = 9657 eu4 = 567 }	# c_karmanta -> Silhet
 	link = { ck3 = 854 eu4 = 2091 }	# c_harikela -> Tripura
 	link = { ck3 = 8722 eu4 = 4474 eu4 = 4473 }	# c_samatata -> Sonargaon, Chakla
@@ -307,7 +306,7 @@
 	link = { ck3 = 3466 eu4 = 525 }	# c_sripatha -> Gird
 	link = { ck3 = 3972 ck3 = 1356 eu4 = 2059 }	# c_kalpi, c_kanyakubja -> Kalpi
 	link = { ck3 = 1414 eu4 = 556 eu4 = 4496 }	# c_asni -> Lower Doab, Kora
-	link = { ck3 = 1246 eu4 = 2042 }	# c_goalpara -> Koch Hajo
+	link = { ck3 = 1246 ck3 = 1245 eu4 = 2042 }	# c_goalpara, c_srihatta -> Koch Hajo
 	link = { ck3 = 1244 eu4 = 562 }	# c_kamatapur -> Koch
 	link = { ck3 = 1153 ck3 = 1381 eu4 = 2045 }	# c_kotivarsa, c_pundravardhana -> Rangpur
 	link = { ck3 = 9656 eu4 = 4486 }	# c_bangaon -> Purnia

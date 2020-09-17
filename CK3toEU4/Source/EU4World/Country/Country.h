@@ -59,6 +59,8 @@ class Country
 	void overrideReforms(const std::string& reform) { details.reforms = {reform}; }
 	void setMercantilism(int mercantilism) { details.mercantilism = mercantilism; }
 	void setGovernment(const std::string& government) { details.government = government; }
+	void setLocalizations(const mappers::LocBlock& newBlock);
+	void correctRoyaltyToBuddhism();
 
 	[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyCountryFile; }
