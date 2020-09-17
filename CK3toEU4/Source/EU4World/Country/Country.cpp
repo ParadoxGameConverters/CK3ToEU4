@@ -741,7 +741,7 @@ void EU4::Country::setReligion(const std::string& religion)
 
 void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& regionMapper)
 {
-	// TODO; This entire function needs love.
+	// TODO; This entire function needs love. I'm not dropping the code but many aspects won't work.
 	
 	// Setting the Primary Religion (The religion most common in the country, not the religion of the country, needed for some reforms)
 	if (details.majorityReligion.empty() || details.majorityReligion == "noreligion")
@@ -774,10 +774,10 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	// Muslims
 	std::set<std::string> muslimReligions = {"sunni", "zikri", "yazidi", "ibadi", "kharijite", "shiite", "druze", "hurufi", "qarmatian"};
-	// Mazdans
-	std::set<std::string> mazdanReligions = {"zoroastrian", "mazdaki", "manichean", "khurmazta"};
-	// Buddhists
-	std::set<std::string> buddhistReligions = {"buddhism", "vajrayana", "mahayana"};
+	// Mazdans - TODO: Re-enable when we can map to these religions
+	//std::set<std::string> mazdanReligions = {"zoroastrian", "mazdaki", "manichean", "khurmazta"};
+	// Buddhists - TODO: Re-enable when we can map to these religions
+	//std::set<std::string> buddhistReligions = {"buddhism", "vajrayana", "mahayana"};
 	// Eastern
 	std::set<std::string> easternReligions = {"confucianism", "shinto", "buddhism", "vajrayana", "mahayana"};
 	// Indians (Dharmic + Buddhists)
@@ -836,7 +836,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		 "maltese",
 		 "italian"};
 	
-	// GENERIC REFORMS
+	// GENERIC REFORMS - TODO: Re-enable when we can map those laws to actual reforms. This code is valid for CK3.
+	/*
 	std::set<std::string> laws = title->second->getLaws();
 	std::string governmentType = "despotic";
 	if (details.holder->getDomain()->getLaws().count("tribal_authority_3") || details.holder->getDomain()->getLaws().count("crown_authority_3"))
@@ -846,7 +847,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		governmentType = "despotic";
 	else if (details.holder->getDomain()->getLaws().count("tribal_authority_0") || details.holder->getDomain()->getLaws().count("crown_authority_0"))
 		governmentType = "aristocratic";
-
+	*/
+	
 	// MONARCHIES
 	if (details.government == "monarchy")
 	{
@@ -917,8 +919,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	// Mughal Diwan System is a LEVEL 2 REFORM
 
-	// TODO: Most of the stuff below needs a rework as it depends on stuff like english monarchy or iqta which we cannot set at this stage
-	// TODO: of game development. The code is not broken, so I'm not removing it.
+	// TODO: Most of the stuff below needs a rework as it depends on stuff like english monarchy or iqta which we cannot set at this stage.
+	// TODO: The code is not broken, so I'm not removing it.
 
 	// Austrian Archduchy (Renamed in converter)
 	else if (details.government == "monarchy" && (tag == "HAB" || isHREEmperor()))
