@@ -91,6 +91,16 @@ TEST(CK3World_TitleTests, primitivesCanBeLoaded)
 	ASSERT_TRUE(theTitle.isLandless());
 }
 
+TEST(CK3World_TitleTests, titleWithoutHolderResetsDFLiege) // this is done because this title is in fact dead and savegame is wrong.
+{
+	std::stringstream input;
+	input << "key=\"k_grenada\"\n";
+	input << "de_facto_liege=1234\n";
+	const CK3::Title theTitle(input, 1);
+
+	ASSERT_FALSE(theTitle.getDFLiege());
+}
+
 TEST(CK3World_TitleTests, successionElectionCanBeLoaded)
 {
 	std::stringstream input;
