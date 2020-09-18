@@ -1,0 +1,163 @@
+pagan = {
+	baltic_pagan_reformed = {
+		icon = 53
+		color = { 0.75 0.5 0.35  }
+		country = {
+			
+fort_maintenance_modifier =-0.1
+
+land_morale =0.1
+
+}
+		province = {
+			
+local_defensiveness =0.1
+
+local_missionary_strength =-0.02
+
+}
+		has_patriarchs =yes
+
+		
+		heretic = { OLD_ROMUVA  }
+	bon_reformed = {
+		icon = 60
+		color = { 8 140 131  }
+		country = {
+			
+tolerance_heathen =2
+tolerance_heretic =1
+
+}
+		province = {
+			
+}
+		uses_karma =yes
+
+		
+		heretic = { ZEN  }
+	finnish_pagan_reformed = {
+		icon = 54
+		color = { 0.65 0.65 0.1  }
+		country = {
+			
+tolerance_heathen =2
+tolerance_heretic =1
+
+num_accepted_cultures =1
+
+tolerance_own =2
+
+}
+		province = {
+			
+local_missionary_strength =-0.02
+
+}
+		uses_karma =yes
+
+		
+		heretic = { OLD_SUOMENUSKO  }
+	norse_pagan_reformed = {
+		icon = 21
+		color = { 191 191 191  }
+		country = {
+			
+global_missionary_strength =0.02
+tolerance_heathen =-1
+
+naval_morale =0.1
+
+}
+		province = {
+			
+local_manpower_modifier =0.1 
+}
+		personal_deity =yes
+
+		
+		heretic = { OLD_NORSE  }
+	slavic_pagan_reformed = {
+		icon = 55
+		color = { 0.85 0.73 0.4  }
+		country = {
+			
+tolerance_heretic =-1
+tolerance_heathen =-2
+
+culture_conversion_cost =-0.15
+
+female_advisor_chance =0.5
+
+}
+		province = {
+			
+local_missionary_strength =-0.02
+
+}
+		fervor =yes
+
+		
+may_recruit_female_generals =yes
+
+		heretic = { OLD_SLAVIC  }
+	tengri_pagan_reformed = {
+		icon = 27
+		color = { 25 76 217  }
+		country = {
+			
+shock_damage =0.1
+
+}
+		province = {
+			
+}
+		can_have_secondary_religion =yes
+
+		
+		heretic = { GOAT_SKULL  }
+	west_african_pagan_reformed = {
+		icon = 52
+		color = { 255 160 0  }
+		country = {
+			
+tolerance_heathen =1
+tolerance_heretic =2
+
+build_cost =-0.1
+
+}
+		province = {
+			
+local_missionary_strength =0.02
+
+}
+		fetishist_cult =yes
+
+		
+		heretic = { GOAT_SKULL  }
+	zun_pagan_reformed = {
+		icon = 43
+		color = { 0.9 1.0 0.0  }
+		country = {
+			
+tolerance_heretic =-1
+tolerance_heathen =-2
+
+heir_chance =1
+hostile_attrition =1
+
+global_autonomy =-0.05
+
+}
+		province = {
+			
+local_missionary_strength =-0.02
+
+}
+		fervor =yes
+
+		
+		heretic = { DARKNESS  }
+	
+}

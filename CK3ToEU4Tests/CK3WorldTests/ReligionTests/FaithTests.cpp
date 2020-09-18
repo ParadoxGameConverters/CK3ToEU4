@@ -19,6 +19,10 @@ TEST(CK3World_FaithTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(faith.getDoctrines().empty());
 	ASSERT_FALSE(faith.getColor());
 	ASSERT_FALSE(faith.getReligion().first);
+	ASSERT_TRUE(faith.getCustomName().empty());
+	ASSERT_TRUE(faith.getCustomAdj().empty());
+	ASSERT_TRUE(faith.getTemplate().empty());
+	ASSERT_TRUE(faith.getIconPath().empty());
 }
 
 TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
@@ -30,6 +34,10 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	input << "doctrine=\"doctrine_monogamy\"\n";
 	input << "doctrine=\"doctrine_deviancy_shunned\"\n";
 	input << "religion = 7\n";
+	input << "name = \"Custom Name\"\n";
+	input << "adjective = \"Custom Adj\"\n";
+	input << "icon = \"gfx/icon.dds\"\n";
+	input << "template = \"catholic\"\n";
 
 	const CK3::Faith faith(input, 42);
 
@@ -40,4 +48,8 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_monogamy"));
 	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_deviancy_shunned"));
 	ASSERT_EQ(7, faith.getReligion().first);
+	ASSERT_EQ("Custom Name", faith.getCustomName());
+	ASSERT_EQ("Custom Adj", faith.getCustomAdj());
+	ASSERT_EQ("gfx/icon.dds", faith.getIconPath());
+	ASSERT_EQ("catholic", faith.getTemplate());
 }
