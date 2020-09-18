@@ -6,6 +6,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "../../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include <cmath>
 
 CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
@@ -220,11 +221,22 @@ CK3::LEVEL CK3::Title::getLevel() const
 	if (name.find("e_") == 0)
 		return LEVEL::EMPIRE;
 	
-	// This is the questionable part. Does it work for custom empires? Maybe?
-	if (!djLiege)
-		return LEVEL::EMPIRE;
-	else
+	// This is the questionable part. It should work for customs as they are treated identically as any other - with dejure parents and all.
+	// exceptions are dynamic mercs, landless religious orders and similar - but those don't hold land, at least initially.
+	
+	// see if they hold any vassals and if so, assign a level one step higher.	
+	auto level = -1;
+	for (const auto& vassal: dfVassals)
+		if (LevelToInt[vassal.second->getLevel()] > level)
+			level = LevelToInt[vassal.second->getLevel()] + 1;	
+	if (level > -1)
+		return IntToLevel[std::max(level, 4)];
+
+	// Without vassals we must poke at our hierarchy, if any.
+	if (djLiege)
 		return IntToLevel[LevelToInt[djLiege->second->getLevel()] - 1];
+	else
+		return LEVEL::EMPIRE; // If this is wrong for landless mercs, it won't affect anything as they are landless anyway.
 }
 
 std::optional<commonItems::Color> CK3::Title::getColor() const
@@ -251,18 +263,24 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 		return 0;
 	
 	// buildingWeight is a mixture of all holdings, their potential buildings, and general county development.
+	if (!clay)
+		throw std::runtime_error("County " + name + " has no clay?");
+	if (!clay->getCounty() || !clay->getCounty()->second)
+		throw std::runtime_error("County " + name + " has no county in its clay?");
 	const auto development = clay->getCounty()->second->getDevelopment();
 	auto buildingCount = 0;
 	auto holdingCount = 0;
 
 	for (const auto& barony: djVassals)
 	{
+		if (!barony.second)
+			throw std::runtime_error("Running unlinked vassals, are we? " + std::to_string(barony.first) + " has no link.");
 		if (!barony.second->getClay())
 			throw std::runtime_error("Supposed barony " + barony.second->getName() + " of " + name + " has no clay?");
-		if (!barony.second->getClay()->getProvince())
+		if (!barony.second->getClay()->getProvince() || !barony.second->getClay()->getProvince()->second)
 			throw std::runtime_error("Barony " + barony.second->getName() + " of " + name + " has no clay province?");
 		const auto& baronyProvince = barony.second->getClay()->getProvince();		
-		buildingCount += static_cast<int>(baronyProvince->second->getBuildings().size());
+		buildingCount += baronyProvince->second->countBuildings();
 		if (!baronyProvince->second->getHoldingType().empty())
 			++holdingCount;
 	}

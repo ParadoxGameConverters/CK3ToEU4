@@ -85,6 +85,7 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />

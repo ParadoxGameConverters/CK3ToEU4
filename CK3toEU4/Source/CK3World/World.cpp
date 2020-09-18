@@ -268,7 +268,7 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	// TODO: Leaving this debug in until all kinks are sorted.
+	// TODO(#42): Leaving this debug in until all kinks are sorted.
 	std::ofstream dump("dumpOfIron.txt");
 	dump << saveGame.gamestate;
 	dump.close();

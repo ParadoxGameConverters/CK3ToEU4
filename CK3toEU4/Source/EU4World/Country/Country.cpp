@@ -774,9 +774,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	// Muslims
 	std::set<std::string> muslimReligions = {"sunni", "zikri", "yazidi", "ibadi", "kharijite", "shiite", "druze", "hurufi", "qarmatian"};
-	// Mazdans - TODO: Re-enable when we can map to these religions
+	// Mazdans - TODO(#41): Re-enable when we can map to these religions
 	//std::set<std::string> mazdanReligions = {"zoroastrian", "mazdaki", "manichean", "khurmazta"};
-	// Buddhists - TODO: Re-enable when we can map to these religions
+	// Buddhists - TODO(#41): Re-enable when we can map to these religions
 	//std::set<std::string> buddhistReligions = {"buddhism", "vajrayana", "mahayana"};
 	// Eastern
 	std::set<std::string> easternReligions = {"confucianism", "shinto", "buddhism", "vajrayana", "mahayana"};
@@ -836,7 +836,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		 "maltese",
 		 "italian"};
 	
-	// GENERIC REFORMS - TODO: Re-enable when we can map those laws to actual reforms. This code is valid for CK3.
+	// GENERIC REFORMS - TODO(#41): Re-enable when we can map those laws to actual reforms. This code is valid for CK3.
 	/*
 	std::set<std::string> laws = title->second->getLaws();
 	std::string governmentType = "despotic";
@@ -919,8 +919,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	// Mughal Diwan System is a LEVEL 2 REFORM
 
-	// TODO: Most of the stuff below needs a rework as it depends on stuff like english monarchy or iqta which we cannot set at this stage.
-	// TODO: The code is not broken, so I'm not removing it.
+	// TODO(#41): Most of the stuff below needs a rework as it depends on stuff like english monarchy or iqta which we cannot set at this stage.
+	// TODO(#41): The code is not broken, so I'm not removing it.
 
 	// Austrian Archduchy (Renamed in converter)
 	else if (details.government == "monarchy" && (tag == "HAB" || isHREEmperor()))

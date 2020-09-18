@@ -120,6 +120,7 @@
     <ClInclude Include="Source\EU4World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4World.h" />
     <ClInclude Include="Source\EU4World\Output\outAgreement.h" />
+    <ClInclude Include="Source\EU4World\Output\outCharacter.h" />
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
     <ClInclude Include="Source\EU4World\Output\outCountry.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
@@ -207,6 +208,7 @@
     <ClCompile Include="Source\EU4World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4World.cpp" />
     <ClCompile Include="Source\EU4World\Output\outAgreement.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp" />
     <ClCompile Include="Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="Source\EU4World\Output\outModFile.cpp" />

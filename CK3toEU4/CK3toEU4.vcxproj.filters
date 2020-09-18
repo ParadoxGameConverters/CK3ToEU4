@@ -355,6 +355,9 @@
     <ClInclude Include="Source\EU4World\Output\outProvince.h">
       <Filter>EU4World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outCharacter.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -606,6 +609,9 @@
       <Filter>EU4World\Output</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outProvince.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outCharacter.cpp">
       <Filter>EU4World\Output</Filter>
     </ClCompile>
   </ItemGroup>

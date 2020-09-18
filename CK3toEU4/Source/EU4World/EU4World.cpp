@@ -1392,7 +1392,8 @@ void EU4::World::siberianQuestion(const Configuration& theConfiguration)
 	}
 
 	auto counter = 0;
-
+	std::set<std::string> exceptions = {"CHU", "HOD", "CHV", "KMC"}; // kamchatkans.
+	
 	// We're deleting all tags with:
 	// * capital is in Siberia
 	// * nomad or tribal level
@@ -1412,7 +1413,9 @@ void EU4::World::siberianQuestion(const Configuration& theConfiguration)
 			continue;
 		if (country.second->getProvinces().size() > 5)
 			continue;
-
+		if (exceptions.count(country.second->getTag()))
+			continue; // don't touch far-east vanilla tribes.
+		
 		// All checks done. Let's get deleting.
 		for (const auto& province: country.second->getProvinces())
 		{

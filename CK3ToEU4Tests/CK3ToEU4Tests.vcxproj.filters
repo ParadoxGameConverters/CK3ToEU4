@@ -542,5 +542,8 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
