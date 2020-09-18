@@ -67,3 +67,32 @@ TEST(CK3World_ProvinceHoldingTests, holdingBuildingBlobsCanBeLoaded)
 	ASSERT_EQ(1, holding.getBuildings().count("castle_01"));
 	ASSERT_EQ(1, holding.getBuildings().count("hill_farms_02"));
 }
+
+TEST(CK3World_ProvinceHoldingTests, holdingBuildingsCanBeCounted)
+{
+	std::stringstream input;
+	input << "holding = {\n";
+	input << "\tbuildings = {\n";
+	input << "\t\n{\ntype = \"castle_01\"\n}\n{}\n{\n}{}{type = \"hill_farms_02\"}\n"; // 2
+	input << "\t}\n";
+	input << "}";
+
+	const CK3::ProvinceHolding holding(input);
+
+	ASSERT_EQ(2, holding.countBuildings());
+}
+
+TEST(CK3World_ProvinceHoldingTests, holdingAllBuildingsCanBeCounted)
+{
+	std::stringstream input;
+	input << "holding = {\n";
+	input << "\tspecial_building_type = \"holy_site_cathedral_01\"\n"; // 1
+	input << "\tbuildings = {\n";
+	input << "\t\n{\ntype = \"castle_01\"\n}\n{}\n{\n}{}{type = \"hill_farms_02\"}\n"; // +2
+	input << "\t}\n";
+	input << "}";
+
+	const CK3::ProvinceHolding holding(input);
+
+	ASSERT_EQ(3, holding.countBuildings());
+}

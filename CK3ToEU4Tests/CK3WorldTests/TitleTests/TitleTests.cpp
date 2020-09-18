@@ -101,3 +101,38 @@ TEST(CK3World_TitleTests, successionElectionCanBeLoaded)
 	ASSERT_EQ(43082, theTitle.getElectors().find(43082)->first);
 	ASSERT_EQ(16968, theTitle.getElectors().find(16968)->first);
 }
+
+TEST(CK3World_TitleTests, previousHoldersCanBeLoaded)
+{
+	std::stringstream input;
+	input << "history={\n";
+	input << "\t1.2.3=17972\n";
+	input	<< "\t4.5.6=43082\n";
+	input << "\t7.8.9=16968\n";
+	input << "}\n";
+
+	const CK3::Title theTitle(input, 1);
+
+	ASSERT_EQ(3, theTitle.getPreviousHolders().size());
+	ASSERT_EQ(17972, theTitle.getPreviousHolders()[0].first);
+	ASSERT_EQ(43082, theTitle.getPreviousHolders()[1].first);
+	ASSERT_EQ(16968, theTitle.getPreviousHolders()[2].first);
+}
+
+TEST(CK3World_TitleTests, previousHoldersIgnoresComplexNonsense)
+{
+	std::stringstream input;
+	input << "history={\n";
+	input << "\t1.2.3=17972\n";
+	input << "\t4.5.6={\n";
+	input << "\t\ttype = destroyed\n";
+	input << "\n}\n";
+	input << "\t7.8.9=16968\n";
+	input << "}\n";
+
+	const CK3::Title theTitle(input, 1);
+
+	ASSERT_EQ(2, theTitle.getPreviousHolders().size());
+	ASSERT_EQ(17972, theTitle.getPreviousHolders()[0].first);
+	ASSERT_EQ(16968, theTitle.getPreviousHolders()[1].first);
+}

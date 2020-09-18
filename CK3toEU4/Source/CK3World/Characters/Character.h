@@ -32,7 +32,7 @@ class Character: commonItems::parser
 	[[nodiscard]] auto getPiety() const { return piety; }
 	[[nodiscard]] auto getPrestige() const { return prestige; }
 	[[nodiscard]] auto getGold() const { return gold; }
-	[[nodiscard]] auto isSpent() const { return spent; }
+	[[nodiscard]] auto isSpent() const { return spent; } // Used to mark characters (advisors) so they cannot be reused in different tag.
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getBirthDate() const { return birthDate; }
 

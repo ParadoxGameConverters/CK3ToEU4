@@ -43,11 +43,12 @@ void CK3::Titles::registerKeys()
 					++titleCounter[3];
 				else if (newTitle->getName().find("e_") == 0)
 					++titleCounter[4];
+				else
+					++titleCounter[5]; // x_x_, x_mc_ and the rest.
 			}
 			catch (std::exception& e)
 			{
-				Log(LogLevel::Error) << "Cannot import title ID: " << ID << " (" << e.what() << ")";
-				throw std::runtime_error(e.what());
+				throw std::runtime_error("Cannot import title ID: " + ID + " (" + e.what() + ")");
 			}
 		}
 	});

@@ -30,6 +30,23 @@ TEST(CK3World_DynastiesTests, BundledDynastiesCanBeLoaded)
 	ASSERT_EQ("7", d2->second->getDynID());
 }
 
+TEST(CK3World_DynastiesTests, NonsenseDynastiesAreIgnored)
+{
+	std::stringstream input;
+	input << "dynasties={\n";
+	input << "\t13=none\n";
+	input << "\t15={key=\"7\"}\n";
+	input << "}";
+
+	const CK3::Dynasties dynasties(input);
+	const auto& d1 = dynasties.getDynasties().find(13);
+	const auto& d2 = dynasties.getDynasties().find(15);
+
+	ASSERT_EQ(1, dynasties.getDynasties().size());
+	ASSERT_EQ(dynasties.getDynasties().end(), d1);
+	ASSERT_EQ("7", d2->second->getDynID());
+}
+
 TEST(CK3World_DynastiesTests, UnBundledDynastiesCanBeLoaded)
 {
 	std::stringstream input;
