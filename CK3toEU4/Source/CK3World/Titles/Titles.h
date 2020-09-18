@@ -25,7 +25,7 @@ class Titles: commonItems::parser
   private:
 	void registerKeys();
 
-	std::vector<int> titleCounter = {0, 0, 0, 0, 0};
+	std::vector<int> titleCounter = {0, 0, 0, 0, 0, 0};
 	std::map<std::string, std::shared_ptr<Title>> titles; // We're using NAME, not ID for key value!
 };
 } // namespace CK3

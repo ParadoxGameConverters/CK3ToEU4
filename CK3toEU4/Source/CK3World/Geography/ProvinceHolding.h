@@ -14,6 +14,7 @@ class ProvinceHolding: commonItems::parser
 	[[nodiscard]] const auto& getHoldingType() const { return holdingType; }
 	[[nodiscard]] const auto& getBuildings() const { return buildings; }
 	[[nodiscard]] const auto& getSpecialBuilding() const { return specialBuilding; }
+	[[nodiscard]] int countBuildings() const;
 
   private:
 	void registerKeys();

@@ -16,7 +16,7 @@ class Cultures: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<int, std::shared_ptr<Culture>> cultures;
+	std::map<long long, std::shared_ptr<Culture>> cultures;
 };
 } // namespace CK3
 

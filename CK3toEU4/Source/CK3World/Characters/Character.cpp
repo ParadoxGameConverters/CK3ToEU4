@@ -2,7 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-CK3::Character::Character(std::istream& theStream, int charID): charID(charID)
+CK3::Character::Character(std::istream& theStream, long long characterID): charID(characterID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -17,14 +17,18 @@ void CK3::Character::registerKeys()
 	registerKeyword("birth", [this](const std::string& unused, std::istream& theStream) {
 		birthDate = date(commonItems::singleString(theStream).getString());
 	});
+	registerKeyword("dead_data", [this](const std::string& unused, std::istream& theStream) {
+		commonItems::ignoreItem(unused, theStream);
+		dead = true;
+	});
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
-		culture = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		culture = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("faith", [this](const std::string& unused, std::istream& theStream) {
-		faith = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		faith = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("dynasty_house", [this](const std::string& unused, std::istream& theStream) {
-		house = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		house = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("skill", [this](const std::string& unused, std::istream& theStream) {
 		const auto& skillList = commonItems::intList(theStream).getInts();
@@ -71,7 +75,7 @@ void CK3::Character::registerKeys()
 		councilor = tempBlock.isCouncilor();
 	});
 	registerKeyword("employer", [this](const std::string& unused, std::istream& theStream) {
-		employer = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		employer = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("knight", [this](const std::string& unused, std::istream& theStream) {
 		knight = commonItems::singleString(theStream).getString() == "yes";
@@ -91,7 +95,7 @@ void CK3::Character::registerKeys()
 		spouse = tempBlock.getSpouse();
 	});
 	registerKeyword("primary_spouse", [this](const std::string& unused, std::istream& theStream) {
-		spouse = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		spouse = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("claim", [this](const std::string& unused, std::istream& theStream) {
 		const auto blobList = commonItems::blobList(theStream).getBlobs();
@@ -104,16 +108,16 @@ void CK3::Character::registerKeys()
 		}
 	});
 	registerKeyword("title", [this](const std::string& unused, std::istream& theStream) {
-		tempTitle = commonItems::singleInt(theStream).getInt();
+		tempTitle = commonItems::singleLlong(theStream).getLlong();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void CK3::Character::dropTitleFromDomain(int titleID)
+void CK3::Character::dropTitleFromDomain(long long titleID)
 {
 	if (characterDomain)
 	{
-		std::vector<std::pair<int, std::shared_ptr<Title>>> replacementDomain;
+		std::vector<std::pair<long long, std::shared_ptr<Title>>> replacementDomain;
 		for (const auto& title: characterDomain->getDomain())
 		{
 			if (title.first != titleID)

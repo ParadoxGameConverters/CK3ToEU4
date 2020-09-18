@@ -84,12 +84,17 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
@@ -156,6 +161,7 @@
     <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
+    <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />

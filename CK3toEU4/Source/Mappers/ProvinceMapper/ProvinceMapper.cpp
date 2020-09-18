@@ -5,7 +5,6 @@
 #include <filesystem>
 #include <fstream>
 namespace fs = std::filesystem;
-#include "../../CK3World/Geography/ProvinceHolding.h"
 #include "../../CK3World/Titles/LandedTitles.h"
 #include "../../CK3World/Titles/Title.h"
 
@@ -86,12 +85,12 @@ std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getC
 					 "Province mapper error - requested ck3 province ID " + std::to_string(ck3ID) + " is invalid. We cannot find related county. Farewell.");
 			}
 		}
-		return toReturn;
 	}
 	else
 	{
-		throw std::runtime_error("Province mapper error - requested EU4 province ID " + std::to_string(eu4ProvinceNumber) + " does not exist in mappings.");
+		// We must not show fear here. Parent is likely iterating over all EU4 provinces. Play dead, they will go away.
 	}
+	return toReturn;
 }
 
 std::vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(const std::string& ck3CountyName) const

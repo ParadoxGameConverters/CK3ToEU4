@@ -13,7 +13,7 @@ class Faith: commonItems::parser
 {
   public:
 	Faith() = default;
-	Faith(std::istream& theStream, int ID);
+	Faith(std::istream& theStream, long long theID);
 
 	[[nodiscard]] const auto& getName() const { return tag; }
 	[[nodiscard]] const auto& getColor() const { return color; }
@@ -21,16 +21,16 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getReligion() const { return religion; }
 	[[nodiscard]] auto getID() const { return ID; }
 
-	void loadReligion(const std::pair<int, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
+	void loadReligion(const std::pair<long long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
 
   private:
 	void registerKeys();
 
-	int ID = 0;
+	long long ID = 0;
 	std::string tag;
 	std::optional<commonItems::Color> color;
 	std::set<std::string> doctrines;
-	std::pair<int, std::shared_ptr<Religion>> religion;
+	std::pair<long long, std::shared_ptr<Religion>> religion;
 };
 } // namespace CK3
 

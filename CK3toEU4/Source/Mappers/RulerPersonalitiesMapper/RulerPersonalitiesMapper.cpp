@@ -28,10 +28,10 @@ void mappers::RulerPersonalitiesMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::set<std::string> mappers::RulerPersonalitiesMapper::evaluatePersonalities(const std::pair<int, std::shared_ptr<CK3::Character>>& theCharacter) const
+std::set<std::string> mappers::RulerPersonalitiesMapper::evaluatePersonalities(const std::shared_ptr<CK3::Character>& theCharacter) const
 {
 	// In CK3 they are traits. In EU4 they are personalities.
-	const auto& incTraits = theCharacter.second->getTraits();
+	const auto& incTraits = theCharacter->getTraits();
 	std::set<std::string> ck3Traits;
 	for (const auto& trait: incTraits)
 		ck3Traits.insert(trait.second);

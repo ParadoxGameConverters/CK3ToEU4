@@ -100,6 +100,9 @@
     <Filter Include="Mappers\RulerPersonalitiesMapper">
       <UniqueIdentifier>{004ea203-94fd-4409-99ff-6b1aefec9b4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\DevWeightsMapper">
+      <UniqueIdentifier>{3a53edf8-2d69-4505-b9ac-f6685900a265}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -339,6 +342,21 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.h">
       <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h">
+      <Filter>Mappers\DevWeightsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outAgreement.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outCountry.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outProvince.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outCharacter.h">
+      <Filter>EU4World\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -580,6 +598,21 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp">
       <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp">
+      <Filter>Mappers\DevWeightsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outAgreement.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outCountry.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outProvince.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outCharacter.cpp">
+      <Filter>EU4World\Output</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

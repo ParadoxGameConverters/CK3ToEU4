@@ -36,6 +36,7 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(character.isFemale());
 	ASSERT_FALSE(character.getSpouse());
 	ASSERT_FALSE(character.getDomain());
+	ASSERT_FALSE(character.isDead());
 }
 
 TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
@@ -49,6 +50,7 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 	input << "skill = { 11 12 13 14 15 16 }\n";
 	input << "traits = { 21 22 23 24 25 26 26 26 }\n";
 	input << "female = yes\n";
+	input << "dead_data = { irrelevant details }\n";
 
 	const CK3::Character character(input, 42);
 
@@ -66,6 +68,7 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 	ASSERT_EQ(1, character.getTraits().count(26));
 	ASSERT_EQ(1, character.getTraits().count(21));
 	ASSERT_TRUE(character.isFemale());
+	ASSERT_TRUE(character.isDead());
 }
 
 TEST(CK3World_CharacterTests, characterAliveDataCanBeLoaded)

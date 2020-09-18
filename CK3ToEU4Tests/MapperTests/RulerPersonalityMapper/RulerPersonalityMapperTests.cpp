@@ -35,9 +35,8 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsAlphabeticallyLastT
 
 	std::stringstream charinput;
 	auto newCharacter = std::make_shared<CK3::Character>(charinput, 1);
-	auto charPair = std::pair(1, newCharacter);
 
-	auto returned = mapper.evaluatePersonalities(charPair);
+	auto returned = mapper.evaluatePersonalities(newCharacter);
 
 	ASSERT_FALSE(returned.empty());
 	ASSERT_EQ(1, returned.count("z-personality"));
@@ -52,9 +51,8 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsEmptyForNoRulesAndB
 
 	std::stringstream charinput;
 	auto newCharacter = std::make_shared<CK3::Character>(charinput, 1);
-	auto charPair = std::pair(1, newCharacter);
 
-	auto returned = mapper.evaluatePersonalities(charPair);
+	auto returned = mapper.evaluatePersonalities(newCharacter);
 
 	ASSERT_TRUE(returned.empty());
 }
@@ -66,11 +64,10 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsEmptyForNoRulesAndL
 
 	std::stringstream charinput;
 	auto newCharacter = std::make_shared<CK3::Character>(charinput, 1);
-	auto charPair = std::pair(1, newCharacter);
 	std::map<int, std::string> traits = {{1, "trait1"}, {2, "trait2"}};
 	newCharacter->loadTraits(traits);
 
-	auto returned = mapper.evaluatePersonalities(charPair);
+	auto returned = mapper.evaluatePersonalities(newCharacter);
 
 	ASSERT_TRUE(returned.empty());
 }
@@ -87,11 +84,10 @@ TEST(Mappers_RulerPersonalitiesMapperTests, evaluationReturnsTwoBestPersonalitie
 
 	std::stringstream charinput;
 	auto newCharacter = std::make_shared<CK3::Character>(charinput, 1);
-	auto charPair = std::pair(1, newCharacter);
 	std::map<int, std::string> traits = {{1, "trait1"}, {2, "trait2"}, {3, "trait3"}};
 	newCharacter->loadTraits(traits);
 
-	auto returned = mapper.evaluatePersonalities(charPair);
+	auto returned = mapper.evaluatePersonalities(newCharacter);
 
 	ASSERT_EQ(2, returned.size());
 	ASSERT_EQ(1, returned.count("z-personality")); // score 99

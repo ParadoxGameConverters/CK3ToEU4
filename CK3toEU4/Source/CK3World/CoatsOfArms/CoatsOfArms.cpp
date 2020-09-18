@@ -15,7 +15,7 @@ CK3::CoatsOfArms::CoatsOfArms(std::istream& theStream)
 void CK3::CoatsOfArms::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& coaID, std::istream& theStream) {
-		auto newCoA = std::make_shared<CoatOfArms>(theStream, std::stoi(coaID));
+		auto newCoA = std::make_shared<CoatOfArms>(theStream, std::stoll(coaID));
 		coats.insert(std::pair(newCoA->getID(), newCoA));
 	});
 	registerKeyword("coat_of_arms_manager_database", [this](const std::string& unused, std::istream& theStream) {

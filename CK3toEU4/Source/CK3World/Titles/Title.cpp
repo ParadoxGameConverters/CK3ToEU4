@@ -1,11 +1,14 @@
 #include "Title.h"
 #include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
+#include "../Geography/ProvinceHolding.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "../../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include <cmath>
 
-CK3::Title::Title(std::istream& theStream, int theID): ID(theID)
+CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
 	registerKeys();
 	parseStream(theStream);
@@ -27,7 +30,7 @@ void CK3::Title::registerKeys()
 		creationDate = date(commonItems::singleString(theStream).getString());
 	});
 	registerKeyword("claim", [this](const std::string& unused, std::istream& theStream) {
-		for (auto claimantID: commonItems::intList(theStream).getInts())
+		for (auto claimantID: commonItems::llongList(theStream).getLlongs())
 			claimants.insert(std::make_pair(claimantID, nullptr));
 	});
 	registerKeyword("history_government", [this](const std::string& unused, std::istream& theStream) {
@@ -43,31 +46,31 @@ void CK3::Title::registerKeys()
 		dCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
 	});
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
-		capital = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		capital = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_facto_liege", [this](const std::string& unused, std::istream& theStream) {
-		dfLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		dfLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_jure_liege", [this](const std::string& unused, std::istream& theStream) {
-		djLiege = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		djLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
-		for (auto vassalID: commonItems::intList(theStream).getInts())
+		for (auto vassalID: commonItems::llongList(theStream).getLlongs())
 			djVassals.insert(std::make_pair(vassalID, nullptr));
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
-		for (auto heirID: commonItems::intList(theStream).getInts())
-			heirs.emplace_back(std::pair(heirID, nullptr));
+		for (auto heirID: commonItems::llongList(theStream).getLlongs())
+			heirs.emplace_back(std::make_pair(heirID, nullptr));
 	});
 	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
 		const auto& theLaws = commonItems::stringList(theStream).getStrings();
 		laws = std::set(theLaws.begin(), theLaws.end());
 	});
 	registerKeyword("holder", [this](const std::string& unused, std::istream& theStream) {
-		holder = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
-		coa = std::pair(commonItems::singleInt(theStream).getInt(), nullptr);
+		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("succession_election", [this](const std::string& unused, std::istream& theStream) {
 		const auto newTitle = Title(theStream, 0);
@@ -82,6 +85,24 @@ void CK3::Title::registerKeys()
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		color = laFabricaDeColor.getColor(theStream);
+	});
+	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
+		previousHolders = Title(theStream, 0).getPreviousHolders();
+	});
+	registerRegex(R"(\d+.\d+.\d+)", [this](const std::string& unused, std::istream& theStream) {
+		const auto questionableItem = commonItems::singleItem(unused, theStream);
+		if (questionableItem.find('{') == std::string::npos)
+		{
+			try
+			{
+				auto prevID = std::stoll(questionableItem);
+				previousHolders.emplace_back(std::pair(prevID, nullptr));
+			}
+			catch(std::exception&)
+			{
+				Log(LogLevel::Warning) << "Invalid previous holder ID: " << questionableItem;
+			}
+		}			
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -123,7 +144,7 @@ void CK3::Title::brickTitle()
 	dfVassals.clear(); // just in case?
 }
 
-void CK3::Title::dropTitleFromDFVassals(int titleID)
+void CK3::Title::dropTitleFromDFVassals(long long titleID)
 {
 	const auto& dfvItr = dfVassals.find(titleID);
 	if (dfvItr != dfVassals.end())
@@ -200,11 +221,22 @@ CK3::LEVEL CK3::Title::getLevel() const
 	if (name.find("e_") == 0)
 		return LEVEL::EMPIRE;
 	
-	// This is the questionable part. Does it work for custom empires? Maybe?
-	if (!djLiege)
-		return LEVEL::EMPIRE;
-	else
+	// This is the questionable part. It should work for customs as they are treated identically as any other - with dejure parents and all.
+	// exceptions are dynamic mercs, landless religious orders and similar - but those don't hold land, at least initially.
+	
+	// see if they hold any vassals and if so, assign a level one step higher.	
+	auto level = -1;
+	for (const auto& vassal: dfVassals)
+		if (LevelToInt[vassal.second->getLevel()] > level)
+			level = LevelToInt[vassal.second->getLevel()] + 1;	
+	if (level > -1)
+		return IntToLevel[std::max(level, 4)];
+
+	// Without vassals we must poke at our hierarchy, if any.
+	if (djLiege)
 		return IntToLevel[LevelToInt[djLiege->second->getLevel()] - 1];
+	else
+		return LEVEL::EMPIRE; // If this is wrong for landless mercs, it won't affect anything as they are landless anyway.
 }
 
 std::optional<commonItems::Color> CK3::Title::getColor() const
@@ -223,4 +255,37 @@ bool CK3::Title::isLandless() const
 	if (clay && clay->isLandless())
 		return true;
 	return false;
+}
+
+double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeightsMapper) const
+{
+	if (getLevel() != LEVEL::COUNTY) // This applies to nothing but counties.
+		return 0;
+	
+	// buildingWeight is a mixture of all holdings, their potential buildings, and general county development.
+	if (!clay)
+		throw std::runtime_error("County " + name + " has no clay?");
+	if (!clay->getCounty() || !clay->getCounty()->second)
+		throw std::runtime_error("County " + name + " has no county in its clay?");
+	const auto development = clay->getCounty()->second->getDevelopment();
+	auto buildingCount = 0;
+	auto holdingCount = 0;
+
+	for (const auto& barony: djVassals)
+	{
+		if (!barony.second)
+			throw std::runtime_error("Running unlinked vassals, are we? " + std::to_string(barony.first) + " has no link.");
+		if (!barony.second->getClay())
+			throw std::runtime_error("Supposed barony " + barony.second->getName() + " of " + name + " has no clay?");
+		if (!barony.second->getClay()->getProvince() || !barony.second->getClay()->getProvince()->second)
+			throw std::runtime_error("Barony " + barony.second->getName() + " of " + name + " has no clay province?");
+		const auto& baronyProvince = barony.second->getClay()->getProvince();		
+		buildingCount += baronyProvince->second->countBuildings();
+		if (!baronyProvince->second->getHoldingType().empty())
+			++holdingCount;
+	}
+
+	const auto totalDev = devWeightsMapper.getDevFromHolding() * holdingCount + devWeightsMapper.getDevFromBuilding() * buildingCount +
+								 devWeightsMapper.getDevFromDev() * development;
+	return totalDev;
 }

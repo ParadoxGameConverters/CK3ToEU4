@@ -13,7 +13,7 @@ CK3::Cultures::Cultures(std::istream& theStream)
 void CK3::Cultures::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& faithID, std::istream& theStream) {
-		auto newCulture = std::make_shared<Culture>(theStream, std::stoi(faithID));
+		auto newCulture = std::make_shared<Culture>(theStream, std::stoll(faithID));
 		cultures.insert(std::pair(newCulture->getID(), newCulture));
 	});
 	registerKeyword("cultures", [this](const std::string& faithID, std::istream& theStream) {

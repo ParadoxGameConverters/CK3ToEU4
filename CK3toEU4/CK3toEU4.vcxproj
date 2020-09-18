@@ -119,8 +119,12 @@
     <ClInclude Include="Source\EU4World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4World.h" />
+    <ClInclude Include="Source\EU4World\Output\outAgreement.h" />
+    <ClInclude Include="Source\EU4World\Output\outCharacter.h" />
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
+    <ClInclude Include="Source\EU4World\Output\outCountry.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
+    <ClInclude Include="Source\EU4World\Output\outProvince.h" />
     <ClInclude Include="Source\EU4World\Province\EU4Province.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceDetails.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceModifier.h" />
@@ -129,6 +133,7 @@
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
+    <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
     <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h" />
@@ -202,8 +207,12 @@
     <ClCompile Include="Source\EU4World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4World.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outAgreement.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="Source\EU4World\Output\outModFile.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\EU4World\Province\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\Province\ProvinceDetails.cpp" />
@@ -212,6 +221,7 @@
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
+    <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />

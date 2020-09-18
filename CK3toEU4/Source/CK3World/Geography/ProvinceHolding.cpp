@@ -37,3 +37,11 @@ void CK3::ProvinceHolding::registerKeys()
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+
+int CK3::ProvinceHolding::countBuildings() const
+{
+	if (specialBuilding.empty())
+		return static_cast<int>(buildings.size());
+	else
+		return static_cast<int>(buildings.size() + 1);
+}

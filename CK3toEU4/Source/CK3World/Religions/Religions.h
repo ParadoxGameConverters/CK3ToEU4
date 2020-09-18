@@ -20,7 +20,7 @@ class Religions: commonItems::parser
   private:
 	void registerKeys();
 
-	std::map<int, std::shared_ptr<Religion>> religions;
+	std::map<long long, std::shared_ptr<Religion>> religions;
 	Faiths faiths;
 };
 } // namespace CK3

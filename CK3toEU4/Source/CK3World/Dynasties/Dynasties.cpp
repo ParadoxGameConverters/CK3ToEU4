@@ -20,8 +20,13 @@ void CK3::Dynasties::registerKeys()
 		dynasties = Dynasties(theStream).getDynasties();
 	});
 	registerRegex(R"(\d+)", [this](const std::string& gameID, std::istream& theStream) {
-		const auto newDynasty = std::make_shared<Dynasty>(theStream, std::stoi(gameID));
-		dynasties.insert(std::pair(newDynasty->getGameID(), newDynasty));
+		const auto suspiciousItem = commonItems::singleItem(gameID, theStream);
+		if (suspiciousItem.find('{') != std::string::npos)
+		{
+			auto dynastyStream = std::stringstream(suspiciousItem);
+			const auto newDynasty = std::make_shared<Dynasty>(dynastyStream, std::stoll(gameID));
+			dynasties.insert(std::pair(newDynasty->getGameID(), newDynasty));
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

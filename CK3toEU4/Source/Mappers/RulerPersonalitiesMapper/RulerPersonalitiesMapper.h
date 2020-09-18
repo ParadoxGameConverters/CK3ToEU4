@@ -18,7 +18,7 @@ class RulerPersonalitiesMapper: commonItems::parser
 	RulerPersonalitiesMapper();
 	explicit RulerPersonalitiesMapper(std::istream& theStream);
 
-	[[nodiscard]] std::set<std::string> evaluatePersonalities(const std::pair<int, std::shared_ptr<CK3::Character>>& theCharacter) const;
+	[[nodiscard]] std::set<std::string> evaluatePersonalities(const std::shared_ptr<CK3::Character>& theCharacter) const;
 	[[nodiscard]] const auto& getMappings() const { return theMappings; } // used for testing
 
   private:

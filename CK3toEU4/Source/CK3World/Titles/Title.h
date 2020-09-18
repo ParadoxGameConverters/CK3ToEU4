@@ -1,10 +1,14 @@
 #ifndef CK3_TITLE_H
 #define CK3_TITLE_H
+#include "Color.h"
 #include "Date.h"
 #include "Parser.h"
 #include <set>
-#include "Color.h"
 
+namespace mappers
+{
+class DevWeightsMapper;
+}
 namespace EU4
 {
 class Country;
@@ -31,7 +35,7 @@ static std::map<LEVEL, int> LevelToInt{{LEVEL::BARONY, 0}, {LEVEL::COUNTY, 1}, {
 class Title: commonItems::parser
 {
   public:
-	Title(std::istream& theStream, int theID);
+	Title(std::istream& theStream, long long theID);
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] auto isTheocraticLease() const { return theocraticLease; }
 	[[nodiscard]] auto isCountyCapitalBarony() const { return cCapitalBarony; }
@@ -40,6 +44,8 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isInHRE() const { return inHRE; }
 	[[nodiscard]] auto isThePope() const { return thePope; }
 	[[nodiscard]] auto isElectorate() const { return electorate; }
+	[[nodiscard]] auto isHolderCapital() const { return holderCapital; }
+	[[nodiscard]] auto isHRECapital() const { return HRECapital; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -64,23 +70,24 @@ class Title: commonItems::parser
 	[[nodiscard]] const auto& getGeneratedVassals() const { return generatedVassals; }
 	[[nodiscard]] const auto& getEU4Tag() const { return tagCountry; }
 	[[nodiscard]] const auto& getPreviousHolders() const { return previousHolders; }
-	
+
 	[[nodiscard]] std::optional<commonItems::Color> getColor() const;
 	[[nodiscard]] bool isLandless() const;
 
 	[[nodiscard]] LEVEL getLevel() const;
 
 	// linkage
-	void loadCoat(const std::pair<int, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
-	void loadDFLiege(const std::pair<int, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
-	void loadDJLiege(const std::pair<int, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
-	void loadDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
-	void addDFVassals(const std::map<int, std::shared_ptr<Title>>& DFVassals) { dfVassals.insert(DFVassals.begin(), DFVassals.end()); }
-	void loadDJVassals(const std::map<int, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
-	void loadHolder(const std::pair<int, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
-	void loadHeirs(const std::vector<std::pair<int, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
-	void loadClaimants(const std::map<int, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
-	void loadElectors(const std::map<int, std::shared_ptr<Character>>& theElectors) { electors = theElectors; }
+	void loadCoat(const std::pair<long long, std::shared_ptr<CoatOfArms>>& coat) { coa = coat; }
+	void loadDFLiege(const std::pair<long long, std::shared_ptr<Title>>& DFLiege) { dfLiege = DFLiege; }
+	void loadDJLiege(const std::pair<long long, std::shared_ptr<Title>>& DJLiege) { djLiege = DJLiege; }
+	void loadDFVassals(const std::map<long long, std::shared_ptr<Title>>& DFVassals) { dfVassals = DFVassals; }
+	void addDFVassals(const std::map<long long, std::shared_ptr<Title>>& DFVassals) { dfVassals.insert(DFVassals.begin(), DFVassals.end()); }
+	void loadDJVassals(const std::map<long long, std::shared_ptr<Title>>& DJVassals) { djVassals = DJVassals; }
+	void loadHolder(const std::pair<long long, std::shared_ptr<Character>>& theHolder) { holder = theHolder; }
+	void loadHeirs(const std::vector<std::pair<long long, std::shared_ptr<Character>>>& theHeirs) { heirs = theHeirs; }
+	void loadPreviousHolders(const std::vector<std::pair<long long, std::shared_ptr<Character>>>& theHolders) { previousHolders = theHolders; }
+	void loadClaimants(const std::map<long long, std::shared_ptr<Character>>& theClaimants) { claimants = theClaimants; }
+	void loadElectors(const std::map<long long, std::shared_ptr<Character>>& theElectors) { electors = theElectors; }
 	void loadClay(const std::shared_ptr<LandedTitles>& theClay) { clay = theClay; }
 	void loadOwnedDFCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDFCounties = theOwnedCounties; }
 	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
@@ -92,7 +99,7 @@ class Title: commonItems::parser
 	void resetDFLiege() { dfLiege.reset(); }
 	void setHREEmperor() { HREEmperor = true; }
 	void setInHRE() { inHRE = true; }
-	void dropTitleFromDFVassals(int titleID);
+	void dropTitleFromDFVassals(long long titleID);
 	void setThePope() { thePope = true; }
 	void congregateDFCounties();
 	void congregateDJCounties();
@@ -101,33 +108,37 @@ class Title: commonItems::parser
 	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
 	void setElectorate() { electorate = true; }
 
-	//conversion
+	// conversion
 	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }
-	
+	[[nodiscard]] double getBuildingWeight(const mappers::DevWeightsMapper& devWeightsMapper) const;
+	void setHolderCapital() { holderCapital = true; }
+	void setHRECapital() { HRECapital = true; }
+	void clearGeneratedVassals() { generatedVassals.clear(); }
+
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDFCounties() const;
 	[[nodiscard]] std::map<std::string, std::shared_ptr<Title>> coalesceDJCounties() const;
 
   private:
 	void registerKeys();
 
-	int ID = 0;																			// 11038
-	std::pair<int, std::shared_ptr<Title>> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
-	std::string name;																	// c_ashmaka
-	std::string displayName;														// Ashmaka
-	std::string adjective;															// Ashmakan
-	std::string article;																// "the ". Not always present.
-	std::string historyGovernment;												// Unclear why this is history. Maybe further governments override it.
-	date creationDate;																// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
-	std::optional<std::pair<int, std::shared_ptr<CoatOfArms>>> coa;	// This is dejure flag but not defacto.
-	std::optional<std::pair<int, std::shared_ptr<Title>>> dfLiege;		// defacto liege title (d_kalyani)
-	std::optional<std::pair<int, std::shared_ptr<Title>>> djLiege;		// dejure liege title (d_rattapadi)
-	std::optional<std::pair<int, std::shared_ptr<Character>>> holder; // Holding character
-	std::map<int, std::shared_ptr<Title>> dfVassals;						// defacto vassals, not in save, manually linked post-loading
-	std::map<int, std::shared_ptr<Title>> djVassals;						// dejure vassals (for all except baronies and titulars)
-	std::vector<std::pair<int, std::shared_ptr<Character>>> heirs;		// Order of heirs is unclear so we're keeping them ordered and using first if able.
-	std::map<int, std::shared_ptr<Character>> claimants;					// People holding a claim to this title. Incredibly useful.
-	std::map<int, std::shared_ptr<Character>> electors;					// People involved in elections regardless of election type law.
-	bool theocraticLease = false;													// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
+	long long ID = 0;																			// 11038
+	std::pair<long long, std::shared_ptr<Title>> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
+	std::string name;																			// c_ashmaka
+	std::string displayName;																// Ashmaka
+	std::string adjective;																	// Ashmakan
+	std::string article;																		// "the ". Not always present.
+	std::string historyGovernment;														// Unclear why this is history. Maybe further governments override it.
+	date creationDate;																		// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
+	std::optional<std::pair<long long, std::shared_ptr<CoatOfArms>>> coa;	// This is dejure flag but not defacto.
+	std::optional<std::pair<long long, std::shared_ptr<Title>>> dfLiege;		// defacto liege title (d_kalyani)
+	std::optional<std::pair<long long, std::shared_ptr<Title>>> djLiege;		// dejure liege title (d_rattapadi)
+	std::optional<std::pair<long long, std::shared_ptr<Character>>> holder; // Holding character
+	std::map<long long, std::shared_ptr<Title>> dfVassals;						// defacto vassals, not in save, manually linked post-loading
+	std::map<long long, std::shared_ptr<Title>> djVassals;						// dejure vassals (for all except baronies and titulars)
+	std::vector<std::pair<long long, std::shared_ptr<Character>>> heirs;		// Order of heirs is unclear so we're keeping them ordered and using first if able.
+	std::map<long long, std::shared_ptr<Character>> claimants;					// People holding a claim to this title. Incredibly useful.
+	std::map<long long, std::shared_ptr<Character>> electors;					// People involved in elections regardless of election type law.
+	bool theocraticLease = false;															// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
 	std::set<std::string> laws;
 	bool cCapitalBarony = false;
 	bool dCapitalBarony = false;
@@ -144,8 +155,9 @@ class Title: commonItems::parser
 	std::optional<std::pair<std::string, std::shared_ptr<EU4::Country>>> tagCountry;
 	bool landless = false;
 	std::optional<commonItems::Color> color;
-	std::vector<std::pair<int, std::shared_ptr<Character>>> previousHolders;
-	
+	std::vector<std::pair<long long, std::shared_ptr<Character>>> previousHolders;
+	bool holderCapital = false;
+	bool HRECapital = false;
 };
 } // namespace CK3
 

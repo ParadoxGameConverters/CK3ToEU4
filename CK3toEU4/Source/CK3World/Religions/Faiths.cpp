@@ -14,7 +14,7 @@ CK3::Faiths::Faiths(std::istream& theStream)
 void CK3::Faiths::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& faithID, std::istream& theStream) {
-		auto newFaith = std::make_shared<Faith>(theStream, std::stoi(faithID));
+		auto newFaith = std::make_shared<Faith>(theStream, std::stoll(faithID));
 		faiths.insert(std::pair(newFaith->getID(), newFaith));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

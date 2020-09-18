@@ -27,6 +27,22 @@ TEST(CK3World_HousesTests, HousesCanBeLoaded)
 	ASSERT_EQ("dynn_Fournier", h2->second->getName());
 }
 
+
+TEST(CK3World_HousesTests, NonsenseHousesAreIgnored)
+{
+	std::stringstream input;
+	input << "13=none\n";
+	input << "15={name=\"dynn_Fournier\"}\n";
+
+	const CK3::Houses houses(input);
+	const auto& h1 = houses.getHouses().find(13);
+	const auto& h2 = houses.getHouses().find(15);
+
+	ASSERT_EQ(1, houses.getHouses().size());
+	ASSERT_EQ(houses.getHouses().end(), h1);
+	ASSERT_EQ("dynn_Fournier", h2->second->getName());
+}
+
 TEST(CK3World_HousesTests, dynastiesCanBeLinked)
 {
 	std::stringstream input;

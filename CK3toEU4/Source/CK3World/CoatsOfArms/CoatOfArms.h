@@ -11,7 +11,7 @@ class CoatOfArms: commonItems::parser
 {
   public:
 	CoatOfArms() = default;
-	CoatOfArms(std::istream& theStream, int ID);
+	CoatOfArms(std::istream& theStream, long long theID);
 
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] const auto& getPattern() const { return pattern; }
@@ -31,7 +31,7 @@ class CoatOfArms: commonItems::parser
   private:
 	void registerKeys();
 
-	int ID = 0;
+	long long ID = 0;
 	std::string pattern;
 	std::optional<commonItems::Color> color1; // red
 	std::optional<commonItems::Color> color2; // yellow

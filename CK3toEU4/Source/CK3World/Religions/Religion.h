@@ -9,22 +9,22 @@ class Religion: commonItems::parser
 {
   public:
 	Religion() = default;
-	Religion(std::istream& theStream, int ID);
+	Religion(std::istream& theStream, long long theID);
 
 	[[nodiscard]] auto getID() const { return ID; }	
 	[[nodiscard]] const auto& getName() const { return tag; }
 	[[nodiscard]] const auto& getFamily() const { return family; }
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 
-	void loadFaiths(const std::map<int, std::shared_ptr<Faith>>& theFaiths) { faiths = theFaiths; }	
+	void loadFaiths(const std::map<long long, std::shared_ptr<Faith>>& theFaiths) { faiths = theFaiths; }	
 
   private:
 	void registerKeys();
 
-	int ID = 0;
+	long long ID = 0;
 	std::string tag;
 	std::string family;
-	std::map<int, std::shared_ptr<Faith>> faiths;
+	std::map<long long, std::shared_ptr<Faith>> faiths;
 };
 } // namespace CK3
 

@@ -26,7 +26,7 @@ class Province
 	Province(int id, const std::string& filePath);
 
 	void updateWith(const std::string& filePath);
-	void initializeFromCK3(std::shared_ptr<CK3::Title> origProvince,
+	void initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper);
 
@@ -42,7 +42,6 @@ class Province
 	[[nodiscard]] auto getMil() const { return details.baseManpower; }
 	[[nodiscard]] auto getDip() const { return details.baseProduction; }
 	[[nodiscard]] auto getProvinceID() const { return provID; }
-	
 
 	void registerTagCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry) { tagCountry = theCountry; }
 	void addCore(const std::string& tag) { details.cores.insert(tag); }

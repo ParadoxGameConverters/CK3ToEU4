@@ -17,16 +17,16 @@ class CountyDetail: commonItems::parser
 	[[nodiscard]] const auto& getFaith() const { return faith; }
 	[[nodiscard]] const auto& isDeJureHRE() const { return deJureHRE; }
 
-	void loadCulture(const std::pair<int, std::shared_ptr<Culture>>& theCulture) { culture = theCulture; }
-	void loadFaith(const std::pair<int, std::shared_ptr<Faith>>& theFaith) { faith = theFaith; }
+	void loadCulture(const std::pair<long long, std::shared_ptr<Culture>>& theCulture) { culture = theCulture; }
+	void loadFaith(const std::pair<long long, std::shared_ptr<Faith>>& theFaith) { faith = theFaith; }
 	void setDeJureHRE() { deJureHRE = true; }
 
   private:
 	void registerKeys();
 
 	int development = 0;
-	std::pair<int, std::shared_ptr<Culture>> culture;
-	std::pair<int, std::shared_ptr<Faith>> faith;
+	std::pair<long long, std::shared_ptr<Culture>> culture;
+	std::pair<long long, std::shared_ptr<Faith>> faith;
 	bool deJureHRE = false;
 };
 } // namespace CK3
