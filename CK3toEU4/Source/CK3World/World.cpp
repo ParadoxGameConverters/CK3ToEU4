@@ -245,6 +245,10 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(startMeta, endFile - startMeta);
+	// TODO(#42): Leaving this debug in until all kinks are sorted.
+	std::ofstream dump("dumpOfIron.txt");
+	dump << saveGame.gamestate;
+	dump.close();
 
 	auto endMeta = saveGame.gamestate.find("ironman=no");
 	// Again, strip the "meta_data={\n" and the "}\n"
@@ -442,11 +446,11 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 		return;
 	const auto& hreHolder = hreTitle->second->getHolder();
 	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
+	std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 
 	// First we are composing a list of all HRE members. These are duchies,
 	// so we're also ripping them from under any potential kingdoms.
 	std::map<long long, std::shared_ptr<Title>> hreMembers;
-
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
 		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
@@ -467,6 +471,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 					hreMembers.insert(vassalvassal);
 				}
 				// Bricking the kingdom.
+				brickedPeople.insert(*vassal.second->getHolder());
 				vassal.second->brickTitle();
 			}
 		}
@@ -479,6 +484,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
 	if (!hreHolder->second->getDomain())
 		throw std::runtime_error("HREmperor has no Domain!");
+
 	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
 	{
 		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
@@ -501,11 +507,37 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	for (const auto& member: hreMembers)
 	{
 		member.second->setInHRE();
-		member.second->grantIndependence();
+		member.second->grantIndependence(); // This fill free emperor's holdings as well. We'll reintegrate them immediately after this.
 	}
 
 	// Finally we brick the hre.
+	brickedPeople.insert(*hreHolder);
 	hreTitle->second->brickTitle();
+
+	// Exception to ripping are some members that are (still) in hreHolder's domain. These would be some titles he had that were not bricked but went
+	// independent; If hreHolder has empire+duchy+county, county may not go free and needs to go back under the duchy. Now that we've cleaned up bricked title(s)
+	// from his domain, we can fix the loose ones.
+
+	for (const auto& afflictedPerson: brickedPeople)
+	{
+		const auto& holderDomain = afflictedPerson.second->getDomain()->getDomain();
+		const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
+
+		for (const auto& holderTitle: holderDomain)
+		{
+			// does this title have a DJLiege that is was in his domain, and survived bricking, but does not have DFLiege since it was granted independence?
+			if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second->getHolder() &&
+				 holderTitle.second->getDJLiege()->second->getHolder()->first == afflictedPerson.first && holderTitles.count(holderTitle.first))
+			{
+				// fix this title.
+				const auto& djLiege = holderTitle.second->getDJLiege();
+				djLiege->second->addDFVassals(std::map{holderTitle});
+				holderTitle.second->loadDFLiege(*djLiege);
+				Log(LogLevel::Debug) << "Linked " << holderTitle.second->getName() << " into " << holderTitle.second->getDJLiege()->second->getName();
+			}
+		}
+	}
+
 	Log(LogLevel::Info) << "<> " << hreMembers.size() << " HRE members released.";
 }
 
@@ -540,6 +572,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		if (empire.second->getDFVassals().empty())
 			continue; // Not relevant.
 
+		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
 		std::map<long long, std::shared_ptr<Title>> members;
 		for (const auto& vassal: empire.second->getDFVassals())
@@ -557,6 +590,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 						members.insert(vassalvassal);
 					}
 					// Bricking the kingdom
+					brickedPeople.insert(*vassal.second->getHolder());
 					vassal.second->brickTitle();
 				}
 				else
@@ -578,7 +612,30 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		}
 
 		// Finally, dispose of the shell.
+		brickedPeople.insert(*empire.second->getHolder());
 		empire.second->brickTitle();
+
+		// Same as with HREmperor, we need to roll back counties or duchies that got released from ex-emperor himself or kings.
+		for (const auto& afflictedPerson: brickedPeople)
+		{
+			const auto& holderDomain = afflictedPerson.second->getDomain()->getDomain();
+			const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
+
+			for (const auto& holderTitle: holderDomain)
+			{
+				// does this title have a DJLiege that is was in his domain, and survived bricking, but does not have DFLiege since it was granted independence?
+				if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second->getHolder() &&
+					 holderTitle.second->getDJLiege()->second->getHolder()->first == afflictedPerson.first && holderTitles.count(holderTitle.first))
+				{
+					// fix this title.
+					const auto& djLiege = holderTitle.second->getDJLiege();
+					djLiege->second->addDFVassals(std::map{holderTitle});
+					holderTitle.second->loadDFLiege(*djLiege);
+					Log(LogLevel::Debug) << "Linked " << holderTitle.second->getName() << " into " << holderTitle.second->getDJLiege()->second->getName();
+				}
+			}
+		}
+
 		Log(LogLevel::Info) << "<> " << empire.first << " shattered, " << members.size() << " members released.";
 	}
 }
