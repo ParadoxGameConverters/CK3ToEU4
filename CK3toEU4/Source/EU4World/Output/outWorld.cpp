@@ -278,9 +278,9 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 			Utils::TryCopyFile("configurables/sunset/localisation/" + fileName, "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
 	}
 
-	auto fileNames = Utils::GetAllFilesInFolder("configurables/reformation/roman/");
+	auto fileNames = Utils::GetAllFilesInFolder("configurables/religions/reformation/roman/");
 	for (const auto& fileName: fileNames)
-		Utils::TryCopyFile("configurables/reformation/roman/" + fileName, "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
+		Utils::TryCopyFile("configurables/religions/reformation/roman/" + fileName, "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
 }
 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const

@@ -112,14 +112,14 @@ TEST(CK3World_TitlesTests, linkingMissingCoatsThrowsException)
 TEST(CK3World_TitlesTests, titlesCanBeLinked)
 {
 	std::stringstream input;
-	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
-	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
-	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
-	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
-	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
-	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	input << "1 = { key = c_county1 holder = 1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 holder = 2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 6 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 holder = 7 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 8 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 
 	titles.linkTitles();
@@ -218,14 +218,14 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
 TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeThrowsException)
 {
 	std::stringstream input;
-	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
-	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
-	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
-	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "6 = { key = d_duchy1 de_facto_liege = 9 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n"; // There is no 9
-	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
-	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	input << "1 = { key = c_county1 holder = 1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 holder = 2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 6 de_facto_liege = 9 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 holder = 7 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 8 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 
 	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
@@ -389,14 +389,14 @@ TEST(CK3World_TitlesTests, landedTitlesLinkMissingTitleThrowsException)
 TEST(CK3World_TitlesTests, titlesCanBeCoalesced)
 {
 	std::stringstream input;
-	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
-	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
-	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
-	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
-	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
-	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	input << "1 = { key = c_county1 holder = 1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 holder = 2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 6 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 holder = 7 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 8  de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 	titles.linkTitles();
 
@@ -418,14 +418,14 @@ TEST(CK3World_TitlesTests, titlesCanBeCoalesced)
 TEST(CK3World_TitlesTests, titlesCanBeCongregated)
 {
 	std::stringstream input;
-	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
-	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
-	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
-	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
-	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
-	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	input << "1 = { key = c_county1 holder = 1 de_facto_liege = 6 de_jure_liege = 6 }\n";
+	input << "2 = { key = c_county2 holder = 2 de_facto_liege = 6 de_jure_liege = 6  }\n";
+	input << "3 = { key = c_county3 holder = 3 de_facto_liege = 6 de_jure_liege = 7  }\n";
+	input << "4 = { key = c_county4 holder = 4 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "5 = { key = c_county5 holder = 5 de_facto_liege = 7 de_jure_liege = 7  }\n";
+	input << "6 = { key = d_duchy1 holder = 6 de_facto_liege = 8 de_jure_liege = 8 de_jure_vassals = { 1 2 } }\n";
+	input << "7 = { key = d_duchy2 holder = 7 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
+	input << "8 = { key = k_kingdom1 holder = 8 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 	titles.linkTitles();
 	titles.getTitles().find("k_kingdom1")->second->congregateDFCounties();

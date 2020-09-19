@@ -13,6 +13,13 @@ CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	// Obligatory sanity check.
+	if (!holder)
+	{
+		// This title does NOT in fact exist.
+		dfLiege.reset();
+	}
 }
 
 void CK3::Title::registerKeys()

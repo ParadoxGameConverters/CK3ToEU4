@@ -23,5 +23,17 @@ void CK3::Faith::registerKeys()
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
 		color = laFabricaDeColor.getColor(theStream);
 	});
+	registerKeyword("template", [this](const std::string& unused, std::istream& theStream) {
+		religionTemplate = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		customName = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("adjective", [this](const std::string& unused, std::istream& theStream) {
+		customAdjective = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("icon", [this](const std::string& unused, std::istream& theStream) {
+		iconPath = commonItems::singleString(theStream).getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

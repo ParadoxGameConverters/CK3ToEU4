@@ -20,6 +20,10 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getDoctrines() const { return doctrines; }
 	[[nodiscard]] const auto& getReligion() const { return religion; }
 	[[nodiscard]] auto getID() const { return ID; }
+	[[nodiscard]] const auto& getCustomName() const { return customName; }
+	[[nodiscard]] const auto& getCustomAdj() const { return customAdjective; }
+	[[nodiscard]] const auto& getTemplate() const { return religionTemplate; }
+	[[nodiscard]] const auto& getIconPath() const { return iconPath; }
 
 	void loadReligion(const std::pair<long long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
 
@@ -28,6 +32,10 @@ class Faith: commonItems::parser
 
 	long long ID = 0;
 	std::string tag;
+	std::string religionTemplate;
+	std::string iconPath;
+	std::string customName;
+	std::string customAdjective;
 	std::optional<commonItems::Color> color;
 	std::set<std::string> doctrines;
 	std::pair<long long, std::shared_ptr<Religion>> religion;

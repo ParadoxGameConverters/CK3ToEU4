@@ -2,22 +2,22 @@
 #include "Log.h"
 #include <filesystem>
 namespace fs = std::filesystem;
-#include "../Configuration/Configuration.h"
-#include "OSCompatibilityLayer.h"
-#include <fstream>
-#include "../CK3World/Titles/Title.h"
+#include "../CK3World/Characters/Character.h"
+#include "../CK3World/Geography/CountyDetail.h"
+#include "../CK3World/Geography/ProvinceHolding.h"
 #include "../CK3World/Religions/Faith.h"
 #include "../CK3World/Religions/Religion.h"
-#include "../CK3World/Characters/Character.h"
+#include "../CK3World/Titles/Title.h"
+#include "../Configuration/Configuration.h"
+#include "OSCompatibilityLayer.h"
 #include "Province/EU4Province.h"
-#include "../CK3World/Geography/ProvinceHolding.h"
-#include "../CK3World/Geography/CountyDetail.h"
 #include <cmath>
+#include <fstream>
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
-	
+
 	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	LOG(LogLevel::Info) << "-> Reading Words";
@@ -51,7 +51,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Which happens now. Translating incoming titles into EU4 tags, with new tags being added to our countries.
 	importCK3Countries(sourceWorld);
-	
+
 	Log(LogLevel::Progress) << "56 %";
 	// Now we can deal with provinces since we know to whom to assign them. We first import vanilla province data.
 	// Some of it will be overwritten, but not all.
@@ -70,11 +70,11 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	if (theConfiguration.getDevelopment() == Configuration::DEVELOPMENT::IMPORT)
 		alterProvinceDevelopment();
 	Log(LogLevel::Progress) << "60 %";
-	
+
 	// We then link them to their respective countries. Those countries that end up with 0 provinces are defacto dead.
 	linkProvincesToCountries();
 	Log(LogLevel::Progress) << "61 %";
-	
+
 	// Country capitals are fuzzy, and need checking if we assigned them to some other country during mapping.
 	verifyCapitals();
 	Log(LogLevel::Progress) << "62 %";
@@ -85,7 +85,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// For those, we look at vanilla provinces and override missing bits with vanilla setup. Yeah, a bit more sunni in
 	// hordeland, but it's fine.
 	verifyReligionsAndCultures();
-	
+
 	Log(LogLevel::Progress) << "63 %";
 	// With all provinces and rulers religion/culture set, only now can we import advisers, which also need religion/culture set.
 	// Those advisers coming without such data use the monarch's religion/culture.
@@ -124,7 +124,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Tengri
 	fixTengri();
 	Log(LogLevel::Progress) << "71 %";
-	
+
 	// Check for duplicate country names and rename accordingly
 	fixDuplicateNames();
 	Log(LogLevel::Progress) << "72 %";
@@ -165,12 +165,12 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		{
 			std::ifstream blankCountriesFile(fs::u8path("blankMod/output/common/country_tags/" + file));
 			if (!blankCountriesFile.is_open())
-				throw std::runtime_error("Could not open blankMod/output/common/country_tags/"+ file + "!");
+				throw std::runtime_error("Could not open blankMod/output/common/country_tags/" + file + "!");
 			loadCountriesFromSource(blankCountriesFile, "blankMod/output/", false);
 			blankCountriesFile.close();
 		}
 	}
-	
+
 	if (invasion)
 	{
 		std::ifstream sunset(fs::u8path("configurables/sunset/common/country_tags/zz_countries.txt"));
@@ -286,7 +286,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 		{
 			const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(capitalCounty->second->getName());
 			if (!capitalMatch.empty())
-				eu4CapitalID = *capitalMatch.begin();			
+				eu4CapitalID = *capitalMatch.begin();
 		}
 	}
 
@@ -304,7 +304,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	}
 	if (!tag)
 		throw std::runtime_error("Title " + title.first + " could not be mapped!");
-	
+
 	// Locating appropriate existing country
 	const auto& countryItr = countries.find(*tag);
 	if (countryItr != countries.end())
@@ -408,12 +408,13 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 	LOG(LogLevel::Info) << ">> " << counter << " EU4 provinces have been imported from CK3.";
 }
 
-std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::determineProvinceSource(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
+std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::determineProvinceSource(
+	 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
 	 const CK3::World& sourceWorld) const
 {
 	// determine ownership by province development.
 	std::map<long long, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
-	std::map<long long, double> theShares;																  // title, development
+	std::map<long long, double> theShares;															  // title, development
 	long long winner = -1;
 	double maxDev = -1;
 
@@ -432,7 +433,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 
 		// While at it, is this province especially important? Enough so we'd sidestep regular rules?
 		// Check for capital provinces
-		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();		
+		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();
 		if (capitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
 		{
 			// This is the someone's capital, don't assign it away if unnecessary.
@@ -735,7 +736,8 @@ void EU4::World::resolvePersonalUnions()
 				holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
 			else
 			{
-				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no eu4tag for title " << holder.second->getDomain()->getDomain()[0].second->getName();
+				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no eu4tag for title "
+											  << holder.second->getDomain()->getDomain()[0].second->getName();
 				// ... mooooving on.
 				continue;
 			}
@@ -783,7 +785,7 @@ void EU4::World::resolvePersonalUnions()
 		else
 		{
 			primaryTitle = primaryItr->second;
-			
+
 			// That's lovely, but is this the special snowflake THE POPE? Does he hold PAP/FAP as secondary?
 			for (const auto& title: holderTitle.second)
 			{
@@ -794,12 +796,12 @@ void EU4::World::resolvePersonalUnions()
 				}
 			}
 		}
-		
+
 		// religion
 		auto heathen = false;
 		if (relevantHolders[holderTitle.first]->getFaith().second->getReligion().second->getName() != "christianity_religion")
 			heathen = true;
-		
+
 		// We now have a holder, his primary, and religion. Let's resolve multiple crowns.
 		if (!heathen && primaryTitle.second->getGovernment() == "monarchy")
 		{
@@ -859,8 +861,8 @@ void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)
 		if (country.second->isHREEmperor())
 		{
 			emperorTag = country.first;
-			Log(LogLevel::Info) << "<> Emperor is " << emperorTag << " (" << country.second->getTitle()->second->getName() << ", " << country.second->getProvinces().size()
-									  << " provinces)";
+			Log(LogLevel::Info) << "<> Emperor is " << emperorTag << " (" << country.second->getTitle()->second->getName() << ", "
+									  << country.second->getProvinces().size() << " provinces)";
 			break;
 		}
 	if (!emperorTag.empty())
@@ -875,9 +877,9 @@ void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)
 void EU4::World::setElectors()
 {
 	LOG(LogLevel::Info) << "-> Setting Electors";
-	std::vector<std::pair<double, std::shared_ptr<Country>>> bishops;	  // piety-tag
-	std::vector<std::pair<int, std::shared_ptr<Country>>> duchies;	  // dev-tag
-	std::vector<std::pair<int, std::shared_ptr<Country>>> republics; // dev-tag
+	std::vector<std::pair<double, std::shared_ptr<Country>>> bishops; // piety-tag
+	std::vector<std::pair<int, std::shared_ptr<Country>>> duchies;		// dev-tag
+	std::vector<std::pair<int, std::shared_ptr<Country>>> republics;	// dev-tag
 	std::vector<std::shared_ptr<Country>> electors;
 	int electorBishops = 0;
 	int electorRepublics = 0;
@@ -1393,7 +1395,7 @@ void EU4::World::siberianQuestion(const Configuration& theConfiguration)
 
 	auto counter = 0;
 	std::set<std::string> exceptions = {"CHU", "HOD", "CHV", "KMC"}; // kamchatkans.
-	
+
 	// We're deleting all tags with:
 	// * capital is in Siberia
 	// * nomad or tribal level
@@ -1415,7 +1417,7 @@ void EU4::World::siberianQuestion(const Configuration& theConfiguration)
 			continue;
 		if (exceptions.count(country.second->getTag()))
 			continue; // don't touch far-east vanilla tribes.
-		
+
 		// All checks done. Let's get deleting.
 		for (const auto& province: country.second->getProvinces())
 		{
