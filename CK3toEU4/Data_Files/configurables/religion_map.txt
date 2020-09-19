@@ -3,8 +3,8 @@
 # multiple ck3 entires are allowed (and encouraged), multiple eu4 are not.
 
 # Akom  
-link = { ck3 = akom_pagan eu4 = west_african_pagan_reformed }
-link = { ck3 = waaqism_reformed eu4 = west_african_pagan_reformed }
+link = { ck3 = akom_pagan eu4 = shamanism }
+link = { ck3 = akom_pagan_reformed eu4 = west_african_pagan_reformed }
 # Baltic  
 link = { ck3 = baltic_pagan eu4 = baltic_pagan }
 link = { ck3 = baltic_pagan_reformed eu4 = baltic_pagan_reformed }
@@ -16,7 +16,7 @@ link = { ck3 = theravada eu4 = buddhism }
 link = { ck3 = mahayana eu4 = mahayana }
 link = { ck3 = vajrayana eu4 = vajrayana }
 link = { ck3 = ari eu4 = buddhism }
-link = { ck3 = lamaism eu4 = buddhism }
+link = { ck3 = lamaism eu4 = vajrayana }
 # Christianity  
 link = { ck3 = catholic eu4 = catholic }
 link = { ck3 = orthodox eu4 = orthodox }
@@ -32,7 +32,7 @@ link = { ck3 = paulician eu4 = paulician }
 link = { ck3 = nestorian eu4 = nestorian }
 link = { ck3 = messalian eu4 = messalian }
 link = { ck3 = adamites eu4 = adamites }
-link = { ck3 = insular_celtic eu4 = insular_celtic }
+link = { ck3 = insular_celtic eu4 = catholic }
 link = { ck3 = bosnian_church eu4 = bogomilist }
 # Tani  
 link = { ck3 = donyipoloism eu4 = animism }
@@ -117,18 +117,18 @@ link = { ck3 = quanzhen eu4 = confucianism }
 link = { ck3 = tengri_pagan eu4 = tengri_pagan }
 link = { ck3 = tengri_reformed eu4 = tengri_pagan_reformed }
 # Waaqism  
-link = { ck3 = waaqism_pagan eu4 = west_african_pagan }
+link = { ck3 = waaqism_pagan eu4 = shamanism }
 link = { ck3 = waaqism_reformed eu4 = west_african_pagan_reformed }
 # West African  
-link = { ck3 = west_african_pagan eu4 = west_african_pagan }
+link = { ck3 = west_african_pagan eu4 = shamanism }
 link = { ck3 = west_african_bidu_pagan eu4 = west_african_pagan }
 # West African Bori  
-link = { ck3 = west_african_bori_pagan eu4 = west_african_pagan }
+link = { ck3 = west_african_bori_pagan eu4 = shamanism }
 link = { ck3 = west_african_bori_reformed eu4 = west_african_pagan_reformed }
 # West African Orisha  
-link = { ck3 = west_african_orisha_pagan eu4 = west_african_pagan }
+link = { ck3 = west_african_orisha_pagan eu4 = shamanism }
 # West African Roog  
-link = { ck3 = west_african_roog_pagan eu4 = west_african_pagan }
+link = { ck3 = west_african_roog_pagan eu4 = shamanism }
 link = { ck3 = west_african_roog_reformed eu4 = west_african_pagan_reformed }
 # Yazidi  
 link = { ck3 = yazidi eu4 = yazidi }
@@ -140,7 +140,7 @@ link = { ck3 = zurvanism eu4 = zoroastrian }
 link = { ck3 = gayomarthianism eu4 = zoroastrian }
 link = { ck3 = khurmatza eu4 = khurmatza }
 link = { ck3 = mazdakism eu4 = mazdaki }
-link = { ck3 = khurramism eu4 = zoroastrian }
+link = { ck3 = khurramism eu4 = mazdaki }
 link = { ck3 = urartuism eu4 = zoroastrian }
 # Zunism  
 link = { ck3 = zun_pagan eu4 = zun_pagan }

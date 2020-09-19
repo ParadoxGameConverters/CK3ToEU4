@@ -361,7 +361,6 @@ christian = {
 		}
 		
 		hre_heretic_religion = yes
-		uses_karma = yes # Dualism stuff
 		can_have_secondary_religion = yes
 		
 		heretic = { BOGOMILIST FRATICELLI HUSSITE LOLLARD SOCINIAN }
