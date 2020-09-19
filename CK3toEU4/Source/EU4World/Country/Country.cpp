@@ -854,6 +854,36 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// MONARCHIES
 	if (details.government == "monarchy")
 	{		
+		// Iqta
+		if (muslimReligions.count(details.religion) && (governmentType == "aristocratic" || governmentType == "despotic"))
+		{
+			details.reforms.clear();
+			details.reforms = {"iqta"};
+		}
+		// Feudalism
+		else if (governmentType == "despotic")
+		{
+			details.reforms.clear();
+			details.reforms = {"feudalism_reform"};
+		}
+		// English Monarchy (Renamed in the converter)
+		else if (governmentType == "aristocratic")
+		{
+			details.reforms.clear();
+			details.reforms = {"english_monarchy"};
+		}
+		// Ottoman Government (Renamed in converter)
+		else if (muslimReligions.count(details.religion) && governmentType == "absolute")
+		{
+			details.reforms.clear();
+			details.reforms = {"ottoman_government"};
+		}
+		// Autocracy, also the fallback
+		else // if (governmentType == "absolute")
+		{
+			details.reforms.clear();
+			details.reforms = {"autocracy_reform"};
+		}
 		for (auto law: details.holder->getDomain()->getLaws())
 		{
 			// Electoral
@@ -861,42 +891,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			{
 				details.reforms.clear();
 				details.reforms = {"elective_monarchy"};
-				continue;
-			}
-			// Iqta
-			else if (muslimReligions.count(details.religion) && (governmentType == "aristocratic" || governmentType == "despotic"))
-			{
-				details.reforms.clear();
-				details.reforms = {"iqta"};
-				continue;
-			}
-			// Feudalism
-			else if (governmentType == "despotic")
-			{
-				details.reforms.clear();
-				details.reforms = {"feudalism_reform"};
-				continue;
-			}
-			// English Monarchy (Renamed in the converter)
-			else if (governmentType == "aristocratic")
-			{
-				details.reforms.clear();
-				details.reforms = {"english_monarchy"};
-				continue;
-			}
-			// Ottoman Government (Renamed in converter)
-			else if (muslimReligions.count(details.religion) && governmentType == "absolute")
-			{
-				details.reforms.clear();
-				details.reforms = {"ottoman_government"};
-				continue;
-			}
-			// Autocracy, also the fallback
-			else // if (governmentType == "absolute")
-			{
-				details.reforms.clear();
-				details.reforms = {"autocracy_reform"};
-				continue;
+				break;
 			}
 		}
 	}
@@ -917,45 +912,46 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// Just setting some locational ones. Not enough laws to do proper differentiation.
 	if (details.government == "tribal")
 	{
-		for (auto law: details.holder->getDomain()->getLaws())
+		// Hordes (This is the worst way to do this, but so be it until we get a horde government type)
+		if (regionMapper->provinceIsInRegion(details.capital, "russia_region") || regionMapper->provinceIsInRegion(details.capital, "ural_region") ||
+					regionMapper->provinceIsInRegion(details.capital, "ruthenia_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
+					regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
 		{
+			details.reforms.clear();
+			details.reforms = {"steppe_horde"};
+		}
+		// Siberian Tribes
+		else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") ||
+				regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
+		{
+			details.reforms.clear();
+			details.reforms = {"siberian_tribe"};
+		}
+		// Tribal Federations
+		else if (muslimReligions.count(details.religion))
+		{
+			details.reforms.clear();
+			details.reforms = {"tribal_federation"};
+		}
+		else
+		{
+			bool wasKing = false;
 			// Tribal Kingdoms
-			if (partitionSuccession.count(law))
+			for (auto law: details.holder->getDomain()->getLaws())
 			{
-				details.reforms.clear();
-				details.reforms = {"tribal_kingdom"};
-				continue;
-			}
-			// Hordes (This is the worst way to do this, but so be it until we get a horde government type)
-			else if (regionMapper->provinceIsInRegion(details.capital, "russia_region") || regionMapper->provinceIsInRegion(details.capital, "ural_region") ||
-					 regionMapper->provinceIsInRegion(details.capital, "ruthenia_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
-					 regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
-			{
-				details.reforms.clear();
-				details.reforms = {"steppe_horde"};
-				continue;
-			}
-			// Siberian Tribes
-			else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") ||
-				 regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
-			{
-				details.reforms.clear();
-				details.reforms = {"siberian_tribe"};
-				continue;
-			}
-			// Tribal Federations
-			else if (muslimReligions.count(details.religion))
-			{
-				details.reforms.clear();
-				details.reforms = {"tribal_federation"};
-				continue;
+				if (partitionSuccession.count(law))
+				{
+					details.reforms.clear();
+					details.reforms = {"tribal_kingdom"};
+					wasKing = true;
+					break;
+				}
 			}
 			// Tribal Despotism, also the fallback
-			else
+			if (wasKing)
 			{
 				details.reforms.clear();
 				details.reforms = {"tribal_despotism"};
-				continue;
 			}
 		}
 	}
