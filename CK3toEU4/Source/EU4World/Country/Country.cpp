@@ -776,9 +776,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// Muslims
 	std::set<std::string> muslimReligions = { "sunni", "zikri", "yazidi", "ibadi", "kharijite", "shiite", "druze", "hurufi", "qarmatian" };
 	// Mazdans - TODO(#41): Re-enable when we can map to these religions
-	std::set<std::string> mazdanReligions = { "zoroastrian", "zurvanism", "gayomarthianism", "mazdaki", "manichean", "khurmazta", "khurramism", "urartuism" };
+	//std::set<std::string> mazdanReligions = { "zoroastrian", "zurvanism", "gayomarthianism", "mazdaki", "manichean", "khurmazta", "khurramism", "urartuism" };
 	// Buddhists - TODO(#41): Re-enable when we can map to these religions
-	std::set<std::string> buddhistReligions = { "buddhism", "vajrayana", "mahayana" };
+	//std::set<std::string> buddhistReligions = { "buddhism", "vajrayana", "mahayana" };
 	// Eastern
 	std::set<std::string> easternReligions = { "confucianism", "shinto", "buddhism", "vajrayana", "mahayana" };
 	// Indians (Dharmic + Buddhists)
@@ -948,7 +948,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 				}
 			}
 			// Tribal Despotism, also the fallback
-			if (wasKing)
+			if (!wasKing)
 			{
 				details.reforms.clear();
 				details.reforms = {"tribal_despotism"};
