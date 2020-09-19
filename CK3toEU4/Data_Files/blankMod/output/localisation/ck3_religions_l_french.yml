@@ -1,7 +1,17 @@
 ﻿l_english:
+ #Christian
  adamites: "Adamite"
  adamites_desc: "À l'origine une secte chrétienne primitive de la fin de l'ère romaine en Afrique du Nord, les Adamites sont notoirement célèbres pour avoir tenté de rétablir le paradis sur Terre en se promenant nus et en n'étant pas tenus responsables du bien ou du mal."
  insular_celtic: "Insulaire"
  insular_celtic_desc: "Le christianisme celtique insulaire est légèrement différent du catholicisme, mais pas assez pour qu'il soit représenté par des mécanismes de jeu en plus d'un nom sophistiqué."
+ bosnian_church:0 "Église bosnienne"
+ bosnian_church_desc:0 "Longtemps oubliés par les catholiques et les orthodoxes, les bosniens des hauts plateaux bosniaques sont plus permissifs que leurs compatriotes plus connus, mais manquent de structure officielle. Conservant de nombreux éléments archaïques du christianisme, ils sont souvent traités avec mépris par leurs coreligionnaires, si tant est qu'on se souvienne de leur existence."
+
+ 
+ #Gnostic
  gnostic: "Gnosticisme"
  gnostic_desc: "Le gnosticisme est un recueil de différentes théories religieuses, principalement centrées sur le dualisme, avec l'idée que le monde matériel est le fruit du mal."
+ 
+ 
+ 
+ 

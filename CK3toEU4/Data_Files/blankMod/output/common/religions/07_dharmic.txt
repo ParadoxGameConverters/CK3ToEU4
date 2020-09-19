@@ -1,0 +1,21 @@
+dharmic = {
+	jain = {
+		icon = 59
+		color = { 1.2 0.3 0.6 }
+		country = {
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+			religious_unity = 0.5
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			religious_unity = 0.75
+		}
+		
+		uses_karma = yes
+		
+		heretic = { TERAPANTHA }
+	}
+}

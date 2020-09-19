@@ -1,0 +1,33 @@
+zoroastrian_group = {
+	mazdaki = {
+		icon = 47
+		color = { 0.5 0.7 0.2 }
+		country = {
+			global_unrest = -3 # Proto-socialism
+			tolerance_heretic = 1
+			tolerance_heathen = 1
+			global_tax_modifier = -0.15
+		}
+		country_as_secondary = {
+			global_unrest = -1
+			tolerance_heretic = 1
+		}
+		
+		heretic = { MANICHEAN }
+	}
+	khurmazta = {
+		icon = 116
+		color = { 0.5 0.6 0.3 }
+		country = {
+			stability_cost_modifier = -0.1
+			global_tax_modifier = 0.1
+		}
+		country_as_secondary = {
+			stability_cost_modifier = -0.1
+			global_tax_modifier = 0.1
+		}
+		heretic = { MAZDAKI }
+		
+		personal_deity = yes
+	}
+}

@@ -1,20 +1,72 @@
 christian = {
-	cathar = {
-		color = { 0.5 0.5 0.9 }
-		icon = 34
-		allowed_conversion = {
-			reformed
-			protestant
-		}
+	nestorian = {
+		color = { 0.8 0.3 0.5 }
+		icon = 31
 		country = {
 			tolerance_own = 2
-			stability_cost_modifier = -0.1
+			adm_tech_cost_modifier = -0.1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country_as_secondary = {
+			adm_tech_cost_modifier = -0.1
+			tolerance_own = 1
+		}
+		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS }
+		
+		misguided_heretic = yes		# Other christians hate them less
+		
+		holy_sites = { 358 1227 2313 1234 419 }
+		
+		blessings = {
+			legitimize_government
+			encourage_warriors_of_the_faith
+			send_monks_to_establish_monasteries
+			promote_territorial_rights
+			will_of_the_martyrs
+		}
+	}
+	messalian = {
+		color = { 0.6 0.1 0.4 }
+		icon = 33
+		country = {
+			global_missionary_strength = 0.01
+			heir_chance = 1
 			may_recruit_female_generals = yes
 			female_advisor_chance = 0.2
 		}
+		province = {
+			local_missionary_strength = -0.01
+		}
 		country_as_secondary = {
+			global_missionary_strength = 0.01
+			advisor_cost = -0.1
+		}
+		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS }
+		
+		fervor = yes
+		
+		misguided_heretic = yes		# Other christians hate them less
+	}
+	
+	adamites = {
+		color = { 0.6 0.8 0.6 }
+		icon = 129
+		allowed_conversion = {
+			catholic
+			cathar
+		}
+		country = { # Going around naked
 			yearly_corruption = -0.1
-			advisor_pool = 1
+			heir_chance = 1
+		}
+		province = {
+			local_manpower_modifier = 0.1
+		}
+		country_as_secondary = {
+			heir_chance = 1
+			manpower_recovery_speed = 0.1
 		}
 		hre_heretic_religion = yes
 		
@@ -37,7 +89,7 @@ christian = {
 		}
 		
 		on_convert = {
-			change_religion = cathar
+			change_religion = adamites
 			add_prestige = -100
 			
 			remove_country_modifier = the_test_act
@@ -47,33 +99,56 @@ christian = {
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
-		
+			}
 		}
 	}
-	fraticelli = {
-		color = { 0.7 0.7 0.4 }
-		icon = 35
+	
+	bosnian_church = {
+		color = { 153 117 134 }
+		icon = 130
 		allowed_conversion = {
-			reformed
-			protestant
+			catholic
+			orthodox
+			bogomilist
 		}
 		country = {
-			legitimacy = 1
-			tolerance_own = 2
+			global_unrest = -2
+			global_autonomy = -0.05
 		}
 		province = {
-			local_tax_modifier = -0.1
+			local_missionary_strength = -0.01
 		}
 		country_as_secondary = {
-			horde_unity = 1
+			global_unrest = -2
+			global_autonomy = -0.05
+		}
+		hre_heretic_religion = yes
+		
+		heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }
+		
+		has_patriarchs = yes		# Uses patriarch authority		
+		misguided_heretic = yes		# Other christians hate them less
+	}
+
+	insular_celtic = {
+		color = { 0.5 0.5 0.3 }
+		icon = 31
+		allowed_conversion = {
+			catholic
+		}
+		country = {
 			tolerance_own = 1
+			tolerance_heretic = -1
+		}
+		country_as_secondary = {
+			diplomatic_reputation = 1
+			advisor_pool = 1
 		}
 		hre_religion = yes
 		
 		
 		on_convert = {
-			change_religion = fraticelli
+			change_religion = insular_celtic
 			add_prestige = -100
 			
 			remove_country_modifier = the_test_act
@@ -89,8 +164,10 @@ christian = {
 		
 		heretic = { BOGOMILIST WALDENSIAN HUSSITE LOLLARD SOCINIAN }
 		
+		# Insular Celtics are just Irish Catholics
+		
 		papacy = {
-			papal_tag = FAP
+			papal_tag = PAP
 			election_cost = 5
 			seat_of_papacy = 118 # rome
 			
@@ -159,7 +236,7 @@ christian = {
 			levy_church_tax = {
 				cost = 75
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
 					NOT = { has_country_modifier = papal_sanction_for_church_taxes }
@@ -177,10 +254,10 @@ christian = {
 			bless_monarch = {
 				cost = 40
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { prestige = 100 }
 					NOT = { has_country_modifier = papal_blessing }
 				}
@@ -198,10 +275,10 @@ christian = {
 				cost = 60
 				potential = {
 					government = monarchy
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { legitimacy = 100 }
 					NOT = { has_country_modifier = papal_indulgence }
 				}
@@ -218,10 +295,10 @@ christian = {
 			local_saint = {
 				cost = 100
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { stability = 3 }
 				}
 				effect = {
@@ -238,10 +315,10 @@ christian = {
 			forgiveness_for_usury = {
 				cost = 25
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { has_country_modifier = usury_forgiven }
 				}
 				effect = {
@@ -261,11 +338,11 @@ christian = {
 			proclaim_holy_war = {
 				cost = 40
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
 					is_at_war = yes
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { has_country_modifier = papal_sanction_for_holy_war }
 				}
 				effect = {
@@ -285,11 +362,11 @@ christian = {
 			send_papal_legate = {
 				cost = 30
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 					is_papal_controller = no
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { has_country_modifier = papal_legate }
 				}
 				effect = {
@@ -305,10 +382,10 @@ christian = {
 			sanction_commercial_monopoly = {
 				cost = 75
 				potential = {
-					NOT = { tag = FAP }
+					NOT = { tag = PAP }
 				}
 				allow = {
-					NOT = { war_with = FAP }
+					NOT = { war_with = PAP }
 					NOT = { mercantilism = 100 }
 				}
 				effect = {
@@ -327,7 +404,7 @@ christian = {
 				potential = {
 					has_dlc = "Emperor"
 					is_papal_controller = yes
-					tag = FAP
+					tag = PAP
 				}
 				allow = {
 					is_papal_controller = yes
@@ -342,28 +419,59 @@ christian = {
 				}
 			}
 		}
+		misguided_heretic = yes
 	}
-	messalian = {
-		color = { 0.6 0.1 0.4 }
-		icon = 33
+	cathar = {
+		color = { 0.5 0.5 0.9 }
+		icon = 34
+		allowed_conversion = {
+			reformed
+			protestant
+		}
 		country = {
-			global_missionary_strength = 0.01
-			heir_chance = 1
+			tolerance_own = 2
+			stability_cost_modifier = -0.1
 			may_recruit_female_generals = yes
 			female_advisor_chance = 0.2
 		}
-		province = {
-			local_missionary_strength = -0.01
-		}
 		country_as_secondary = {
-			global_missionary_strength = 0.01
-			advisor_cost = -0.1
+			yearly_corruption = -0.1
+			advisor_pool = 1
 		}
-		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS }
+		hre_heretic_religion = yes
 		
-		fervor = yes
+		heretic = { BOGOMILIST WALDENSIAN FRATICELLI HUSSITE LOLLARD SOCINIAN }
 		
-		misguided_heretic = yes		# Other christians hate them less
+		uses_church_power = yes				# Uses church power/aspect mechanics
+		aspects = {
+			organised_through_bishops_aspect
+			priests_may_marry_aspect
+			adult_baptism_aspect
+			holy_sacraments_aspect
+			saints_accept_prayers_aspect
+			icons_images_aspect
+			legalised_divorces_aspect
+			heretics_deported_aspect
+			parish_registers_aspect
+			individual_creeds_aspect
+			allow_usury_aspect
+			translated_bibles_aspect
+		}
+		
+		on_convert = {
+			change_religion = cathar
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		
+		}
 	}
 	waldensian = {
 		color = { 0.4 0.4 0.7 }
@@ -439,7 +547,6 @@ christian = {
 		
 		}
 	}
-
 	monophysite = {
 		color = { 0.8 0.4 0.1 }
 		icon = 38
@@ -586,7 +693,6 @@ christian = {
 			
 		}
 	}
-
 	iconoclast = {
 		color = { 0.5 0.2 0.4 }
 		icon = 41
@@ -689,210 +795,5 @@ christian = {
 			
 			
 		}
-	}
-
-}
-
-muslim = {
-	zikri = {
-		color = { 0.2 0.6 0.2 }
-		icon = 44
-		country = {
-			global_institution_spread = 0.15
-			heir_chance = 1.0
-		}
-		province = {
-			local_missionary_strength = -0.02
-		}
-		country_as_secondary = {
-			global_institution_spread = 0.15
-			heir_chance = 1.0
-		}
-		heretic = { BEKTASHI AHMADI YAZIDI }
-		
-		uses_piety = yes				# Uses piety mechanics
-	}
-	yazidi = {
-		color = { 0.2 0.2 0.7 }
-		icon = 48
-		country = {
-			tolerance_own = 3 # Preoccupation with religious purity
-			tolerance_heretic = -1 # Too much contact with non-Yazidis is considered polluting
-			tolerance_heathen = -1
-			advisor_pool = 1 # Caste system
-			global_missionary_strength = -0.01 # Accepts no converts
-		}
-		province = {
-			local_missionary_strength = -0.01
-		}
-		country_as_secondary = {
-			tolerance_own = 2
-			advisor_pool = 1
-		}
-		heretic = { BEKTASHI AHMADI ZIKRI }
-		
-		has_patriarchs = yes		# Uses patriarch authority
-	}
-	kharijite = {
-		color = { 0.4 0.8 0.6 }
-		icon = 46
-		country = {
-			improve_relation_modifier = 0.2
-			heir_chance = 1.0
-		}
-		province = {
-			local_missionary_strength = -0.02
-		}
-		country_as_secondary = {
-			advisor_cost = -0.1
-			improve_relation_modifier = 0.1
-		}
-		heretic = { HARURI SUFRI NAJADAT AZRAQI }
-		
-		uses_piety = yes				# Uses piety mechanics
-	}
-	druze = {
-		color = { 0.0 0.9 0.4 }
-		icon = 45
-		country = {
-			heir_chance = 1.0
-			dip_tech_cost_modifier = -0.1 # Promoted intellectualism
-			tolerance_heretic = -1 # Renounced 'false' belief
-		}
-		province = {
-			local_missionary_strength = -0.02
-		}
-		country_as_secondary = {
-			diplomats = 1
-			dip_tech_cost_modifier = -0.05
-		}
-		heretic = { HURUFI ZAIDI }
-		
-		uses_piety = yes				# Uses piety mechanics
-	}
-	hurufi = {
-		color = { 0.4 0.9 0.0 }
-		icon = 49
-		country = {
-			heir_chance = 1.0
-			diplomatic_upkeep = 2
-		}
-		province = {
-			local_missionary_strength = -0.01
-		}
-		country_as_secondary = {
-			diplomatic_upkeep = 1
-			stability_cost_modifier = -0.1
-		}
-		heretic = { DRUZE ZAIDI QARMATIAN }
-		
-		uses_piety = yes				# Uses piety mechanics
-	}
-	qarmatian = {
-		color = { 0.2 0.7 0.1 }
-		icon = 61
-		country = {
-			heir_chance = 1.0
-			tolerance_heretic = -1 # No time for the "superstitious nonsense" of the other Muslim religions
-			loot_amount = 0.25
-			may_perform_slave_raid = yes
-		}
-		province = {
-			local_missionary_strength = -0.01
-		}
-		country_as_secondary = {
-			loot_amount = 0.25
-			may_perform_slave_raid = yes
-		}
-		heretic = { DRUZE ZAIDI HURUFI }
-		
-		fervor = yes			# Uses fervor mechanics
-	}
-}
-
-zoroastrian_group = {
-	mazdaki = {
-		icon = 47
-		color = { 0.5 0.7 0.2 }
-		country = {
-			global_unrest = -3 # Proto-socialism
-			tolerance_heretic = 1
-			tolerance_heathen = 1
-			global_tax_modifier = -0.15
-		}
-		country_as_secondary = {
-			global_unrest = -1
-			tolerance_heretic = 1
-		}
-		
-		heretic = { MANICHEAN }
-	}
-	manichean = {
-		icon = 32
-		color = { 0.5 0.7 0.2 }
-		country = {
-			tolerance_heathen = 2
-			legitimacy = 1
-		}
-		country_as_secondary = {
-			tolerance_heathen = 2
-			global_missionary_strength = 0.01
-		}
-		heretic = { MAZDAKI }
-	}
-	khurmazta = {
-		icon = 116
-		color = { 0.5 0.6 0.3 }
-		country = {
-			stability_cost_modifier = -0.1
-			global_tax_modifier = 0.1
-		}
-		country_as_secondary = {
-			stability_cost_modifier = -0.1
-			global_tax_modifier = 0.1
-		}
-		heretic = { MAZDAKI }
-		
-		personal_deity = yes
-	}
-}
-
-jewish_group = {
-	samaritan_faith = {
-		icon = 50
-		color = { 0.5 0.7 0.2 }
-		country = {
-			advisor_cost = -0.15
-			adm_tech_cost_modifier = -0.05
-			tolerance_heathen = -2
-		}
-		province = {
-			local_missionary_strength = -0.01
-			local_tax_modifier = 0.02
-		}
-		country_as_secondary = {
-			advisor_cost = -0.3
-		}
-		
-		heretic = { KARAITE }
-	}
-	karaite_faith = {
-		icon = 51
-		color = { 0.5 0.7 0.2 }
-		country = {
-			governing_capacity = 250
-			idea_cost = -0.1
-			tolerance_heathen = -2
-		}
-		province = {
-			local_missionary_strength = -0.01
-			local_tax_modifier = 0.02
-		}
-		country_as_secondary = {
-			land_morale = 0.05
-			global_unrest = -1
-		}
-		
-		heretic = { SAMARITAN }
 	}
 }

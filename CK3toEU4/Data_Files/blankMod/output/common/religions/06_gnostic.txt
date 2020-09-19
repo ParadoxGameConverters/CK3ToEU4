@@ -1,0 +1,52 @@
+gnostic = {
+	manichean = {
+		icon = 32
+		color = { 0.5 0.7 0.2 }
+		country = {
+			tolerance_heathen = 2
+			legitimacy = 1
+		}
+		country_as_secondary = {
+			tolerance_heathen = 2
+			global_missionary_strength = 0.01
+		}
+		heretic = { MAZDAKI BOGOMILIST }
+	}
+	gnostic = {
+		color = { 0.5 0.75 0.3 }
+		icon = 92
+		allowed_conversion = {
+		}
+		country = {
+			global_unrest = -3
+			tolerance_heretic = 1
+			tolerance_heathen = 1
+			global_tax_modifier = -0.15
+		}
+		
+		country_as_secondary = {
+			global_unrest = -1
+			tolerance_heretic = 1
+		}
+		
+		hre_heretic_religion = yes
+		uses_karma = yes # Dualism stuff
+		can_have_secondary_religion = yes
+		
+		heretic = { BOGOMILIST FRATICELLI HUSSITE LOLLARD SOCINIAN }
+		
+		on_convert = {
+			change_religion = gnostic
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+}

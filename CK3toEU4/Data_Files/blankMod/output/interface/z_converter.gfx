@@ -24,7 +24,7 @@ spriteType = {
 	spriteType = {
 		name = "GFX_province_view_religion"
 		texturefile = "gfx/interface/province_view_religion.tga"
-		noOfFrames = 129
+		noOfFrames = 140
 		loadType = "INGAME"
 		allwaystransparent = yes
 	}

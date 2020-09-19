@@ -1,7 +1,17 @@
 l_spanish:
+ #Christian
  adamites: "Adanita"
  adamites_desc: "Originalmente una secta cristiana primitiva de la era romana tardía en el norte de África, los adanitas son notoriamente famosos por tratar de restablecer el Paraíso en Tierra caminando desnudos y no responsabilizándose por el bien o el mal."
  insular_celtic: "Insular"
  insular_celtic_desc: "El cristianismo celta insular es ligeramente diferente del catolicismo, pero no lo suficiente como para que esté representado por las mecánicas del juego además de un nombre elegante."
+ bosnian_church:0 "Krstjani"
+ bosnian_church_desc:0 "Olvidados durante mucho tiempo tanto por católicos como por ortodoxos, los krstjani de las tierras altas de Bosnia son más permisivos que sus compatriotas más conocidos, pero carecen de estructura formal. Al conservar muchos elementos arcaicos del cristianismo, son tratados a menudo con desdén por sus correligionarios, si es que se les recuerda."
+
+ 
+ #Gnostic
  gnostic: "Gnosticismo"
  gnostic_desc: "El gnosticismo es una colección de diferentes teorías religiosas, en su mayoría centradas en el dualismo, con la idea de que el mundo material es fruto del Mal."
+ 
+ 
+ 
+ 

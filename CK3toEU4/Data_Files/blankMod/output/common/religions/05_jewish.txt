@@ -1,0 +1,39 @@
+jewish_group = {
+	samaritan_faith = {
+		icon = 50
+		color = { 0.5 0.7 0.2 }
+		country = {
+			advisor_cost = -0.15
+			adm_tech_cost_modifier = -0.05
+			tolerance_heathen = -2
+		}
+		province = {
+			local_missionary_strength = -0.01
+			local_tax_modifier = 0.02
+		}
+		country_as_secondary = {
+			advisor_cost = -0.3
+		}
+		
+		heretic = { KARAITE }
+	}
+	karaite_faith = {
+		icon = 51
+		color = { 0.5 0.7 0.2 }
+		country = {
+			governing_capacity = 250
+			idea_cost = -0.1
+			tolerance_heathen = -2
+		}
+		province = {
+			local_missionary_strength = -0.01
+			local_tax_modifier = 0.02
+		}
+		country_as_secondary = {
+			land_morale = 0.05
+			global_unrest = -1
+		}
+		
+		heretic = { SAMARITAN }
+	}
+}
