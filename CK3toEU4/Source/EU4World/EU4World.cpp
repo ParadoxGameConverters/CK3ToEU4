@@ -140,6 +140,10 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Indian buddhisms
 	indianQuestion();
 	Log(LogLevel::Progress) << "75 %";
+	
+	LOG(LogLevel::Info) << "<- Crafting Flags";
+	flagCrafter.test();
+	Log(LogLevel::Progress) << "93 %";
 
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";

@@ -68,7 +68,6 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 		LOG(LogLevel::Info) << "<- Writing Sunset Invasion Files";
 		outputInvasionExtras(theConfiguration);
 	}
-
 	
 	LOG(LogLevel::Info) << "<- Writing Advisers";
 	outputAdvisers(theConfiguration);

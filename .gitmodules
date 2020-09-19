@@ -10,3 +10,6 @@
 [submodule "ZipLib"]
 	path = ZipLib
 	url = https://github.com/ParadoxGameConverters/ZipLib.git
+[submodule "imageMagick"]
+	path = imageMagick
+	url = https://github.com/ParadoxGameConverters/imageMagick.git
