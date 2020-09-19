@@ -109,7 +109,7 @@ void Configuration::verifyCK3Path()
 	if (!Utils::DoesFolderExist(CK3Path))
 		throw std::runtime_error(CK3Path + " does not exist!");
 	// TODO: OSX and Linux paths are speculative
-	if (!Utils::DoesFileExist(CK3Path + "/binaries/ck3.exe") && !Utils::DoesFileExist(CK3Path + "/CK3game") && !Utils::DoesFileExist(CK3Path + "binaries/ck3"))
+	if (!Utils::DoesFileExist(CK3Path + "/binaries/ck3.exe") && !Utils::DoesFileExist(CK3Path + "/CK3game") && !Utils::DoesFileExist(CK3Path + "/binaries/ck3"))
 		throw std::runtime_error(CK3Path + " does not contain Crusader Kings 3!");
 	if (!Utils::DoesFileExist(CK3Path + "/game/map_data/positions.txt"))
 		throw std::runtime_error(CK3Path + " does not appear to be a valid CK3 install!");
