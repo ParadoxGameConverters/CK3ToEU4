@@ -7,10 +7,55 @@
  bosnian_church:0 "Église bosnienne"
  bosnian_church_desc:0 "Longtemps oubliés par les catholiques et les orthodoxes, les bosniens des hauts plateaux bosniaques sont plus permissifs que leurs compatriotes plus connus, mais manquent de structure officielle. Conservant de nombreux éléments archaïques du christianisme, ils sont souvent traités avec mépris par leurs coreligionnaires, si tant est qu'on se souvienne de leur existence."
 
+ #Islamic
+ mutazila:0 "Qadariyah"
+ mutazila_desc:0 "Une école de théologie rationaliste qui affirme que le Coran n'a pas toujours coexisté avec Dieu, puisque Dieu doit avoir précédé sa propre parole."
+ quranist:0 "Coranisme"
+ quranist_desc:0 "Une interprétation littérale de l'islam qui souligne que le Coran est la seule source de sagesse divine et doit être suivi à la lettre, en ignorant les hadiths et les fatwas."
+ alawite:0 "Alaouisme"
+ alawite_desc:0 "Les enseignements religieux alaouites sont secrets et le Coran n'est qu'un de leurs textes sacrés. Outre la croyance en la succession d'imams par Ali, les alaouites croient également en la réincarnation et en le fait que tous les êtres ont été des étoiles tombées du ciel qui doivent maintenant regagner leur place en menant une vie bonne et fidèle."
+
+ #Mazdan
+ zurvanism:0 "Zurvanisme"
+ zurvanism_desc:0 "Les zurvaniens pensent qu'Ahura Mazda et Angra Mainyu étaient des jumeaux égaux mais opposés, nés de Zurvân, le Créateur de tout. Le zurvanisme met l'accent sur l'aide que l'on peut apporter à Ahura Mazda en extirpant le mal et les mensonges."
+ gayomarthianism:0 "Gayomarthianisme"
+ gayomarthianism_desc:0 "Sur la base de l'idée qu'Ahura Mazda, à travers ses pensées, a créé les esprits malins par accident, les gayomarthians rejette l'infaillibilité du Seigneur Sage et mettent en avant la pratique rituelle pour apprendre la vérité dans la communion avec Ahura Mazda."
+ khurramism:0 "Khurramisme"
+ khurramism_desc:0 "Dans un monde de lumière et de ténèbres, les gouvernants injustes doivent être renversés en soutien à ce qui est bon. À travers des prophètes tels que Mazdak, Muhammad et Abu Muslim, les khurramites croient que le divin est né dans l’humanité et reviendra un jour pour les guider sous la forme du Messie."
+
+
+ #Yazidi
+ yazidism: "Yazidism"
+ desc_harmonized_yazidism:0 "Nous avons accepté toutes les fois yazidi dans le pays et les avons incluses au sein de nos croyances."
+ harmonized_yazidism:0 "Harmonisation avec les croyances yazidi"
+ meshefaresism:0 "Mechefrechisme"
+ meshefaresism_desc:0 "Les adeptes du Livre noir, qui décrit comment le Seigneur est descendu de la Montagne Noire et a créé le monde."
+ kitebacilweism:0 "Kitêbacilwéisme"
+ kitebacilweism_desc:0 "Les adeptes du Livre des révélations, qui raconte la grandeur de Xwedê."
+ HOLY_SITE_411_DESC:0 "Mossoul abrite Lalish, une vallée de montagne et un temple à Ninawa. C'est le temple le plus sacré des Yézidis. C'est l'emplacement de la tombe du cheikh Adi ibn Musafir, une figure centrale de la foi yézidie."
+ HOLY_SITE_385_DESC:0 "La Mecque est célèbre comme le lieu saint de l'Islam. Le contrôle de celle-ci pour les fidèles yézidis serait la preuve que c'est vers Lalish que nous devons prier, pas la Mecque."
+ HOLY_SITE_379_DESC:0 "En tant que l'une des religions abrahamiques, les Yézidis considèrent Jérusalem comme une ville sacrée, à tenir avec le plus grand respect et le plus grand soin."
+ HOLY_SITE_4326_DESC:0 "L'une des villes les plus anciennes et les plus prestigieuses du monde, Nishapur a été la capitale de plus d'un grand empire, dégageant prestige et puissance de son noyau."
+ HOLY_SITE_430_DESC:0 "Dit avoir été le lieu de sépulture des 3 mages, Bushehr est important non seulement stratégiquement mais aussi théologiquement."
  
  #Gnostic
  gnostic: "Gnosticisme"
  gnostic_desc: "Le gnosticisme est un recueil de différentes théories religieuses, principalement centrées sur le dualisme, avec l'idée que le monde matériel est le fruit du mal."
+ desc_harmonized_gnostic:0 "Nous avons accepté toutes les fois gnostic dans le pays et les avons incluses au sein de nos croyances."
+ harmonized_gnostic:0 "Harmonisation avec les croyances gnostic"
+ mandeaism:0 "Mandéisme"
+ mandeaism_desc:0 "Le mandéisme remonte à Adam, avec Jean-Baptiste comme le plus grand prophète. Le monde est constitué de lumière et de ténèbres et, avec le temps, toutes les âmes mortelles seront jugées dignes ou non de retourner à la lumière éternelle."
+ valentinianism:0 "Valentinianisme"
+ valentinianism_desc:0 "Le Père, le créateur originel, est le cœur de tout savoir et le chemin vers la véritable compréhension — la gnose. L'acquisition de la connaissance améliore le monde qui, lorsqu'il sera collectivement sorti de son ignorance matérielle, reviendra à son état naturel et spirituel."
+ sethianism:0 "Séthianisme"
+ sethianism_desc:0 "Le Dieu inconnu a émané toute son existence dans le Plérôme parfait, rempli par les gracieux éons, au premier rang desquelles Barbélô la Mère.\nUne corruption a provoqué l'existence de Yaldabaôth, qui a volé un morceau de divinité et a créé le monde matériel. Cependant, quand il a créé l’humanité, il lui a accidentellement donné sa part volée de divinité. Yaldabaôth passera l'éternité à tenter de récupérer son pouvoir, tandis que l'humanité devra s'efforcer de revenir à Barbélô et au Dieu inconnu."
+ priscillianism:0 "Priscillianisme"
+ priscillianism_desc:0 "Il existe deux royaumes, l'un de lumière et l'autre de ténèbres. Les âmes humaines étaient destinées à conquérir le royaume des ténèbres, mais sont tombées et ont été piégées dans le royaume matériel. Parmi les humains, il y avait douze Patriarches de la Lumière qui n'ont pas réussi à vaincre les ténèbres, car ils étaient divisés entre le corps et l'âme. Ainsi, Dieu envoya le Sauveur sur la terre et, par sa mort, permit une nouvelle fois la libération des esprits humains."
+ cainitism:0 "Caïnitisme"
+ cainitism_desc:0 "Caïn fut la première victime du Mal du Démiurge, créateur de toute matière physique. Puisque la matière et les corps sont diaboliques, les corps doivent être profanés et détruits par le péché, afin que la véritable âme humaine à l'intérieur puisse être libérée."
+ 
+ 
+ 
  
  
  

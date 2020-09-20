@@ -46,8 +46,6 @@ christian = {
 		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS }
 		
 		fervor = yes
-		
-		misguided_heretic = yes		# Other christians hate them less
 	}
 	
 	adamites = {
@@ -606,8 +604,6 @@ christian = {
 			allow_usury_aspect
 			translated_bibles_aspect
 		}
-		
-		misguided_heretic = yes		# Other christians hate them less
 	}
 	monothelite = {
 		color = { 0.5 0 0.3 }

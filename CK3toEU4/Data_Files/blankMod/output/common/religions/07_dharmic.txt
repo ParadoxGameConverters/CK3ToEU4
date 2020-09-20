@@ -11,7 +11,7 @@ dharmic = {
 			local_missionary_strength = 0.02
 		}
 		country_as_secondary = {
-			religious_unity = 0.75
+			religious_unity = 0.5
 		}
 		
 		uses_karma = yes

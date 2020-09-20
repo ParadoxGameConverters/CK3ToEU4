@@ -107,6 +107,19 @@ ZZZ_spreading_of_reformed_pagan_rituals_title = {
 	religion = yes
 }
 
+##################################################
+# Harmonized Modifiers
+##################################################
+harmonized_yazidi = {
+	yearly_harmony = 0.5
+	religion = yes
+}
+harmonized_gnostic = {
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+	religion = yes
+}
+
 ###Replaced from vanilla
 spreading_norse_rituals = {
 	global_missionary_strength = 0.02 #0.01 normally

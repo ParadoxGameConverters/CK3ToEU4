@@ -1,42 +1,80 @@
 gnostic = {
+	defender_of_faith = yes
+	can_form_personal_unions = yes
+	
+	flags_with_emblem_percentage = 33
+	flag_emblem_index_range = { 1 110 }
+
+
 	manichean = {
 		icon = 32
 		color = { 0.5 0.7 0.2 }
+		allowed_conversion = {
+			bogomomilist
+			manichean
+			mandeaism
+			valentinianism
+			sethianism
+			priscillianism
+			cainitism
+		}
 		country = {
 			tolerance_heathen = 2
 			legitimacy = 1
+			relation_with_heretics = 10
 		}
 		country_as_secondary = {
 			tolerance_heathen = 2
 			global_missionary_strength = 0.01
 		}
-		heretic = { MAZDAKI BOGOMILIST }
-	}
-	gnostic = {
-		color = { 0.5 0.75 0.3 }
-		icon = 92
-		allowed_conversion = {
-		}
-		country = {
-			global_unrest = -3
-			tolerance_heretic = 1
-			tolerance_heathen = 1
-			global_tax_modifier = -0.15
-		}
 		
-		country_as_secondary = {
-			global_unrest = -1
-			tolerance_heretic = 1
-		}
+		misguided_heretic = yes
 		
-		hre_heretic_religion = yes
-		uses_karma = yes # Dualism stuff
 		can_have_secondary_religion = yes
 		
-		heretic = { BOGOMILIST FRATICELLI HUSSITE LOLLARD SOCINIAN }
+		heretic = { SOCINIAN MAZDAKI EUSTATHIANS }
 		
 		on_convert = {
-			change_religion = gnostic
+			change_religion = manichean
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}	
+	mandeaism = {
+		icon = 139
+		color = { 0.5 0.75 0.3 }
+		allowed_conversion = {
+			
+		}
+		country = {
+			tolerance_own = 2
+			religious_unity = 0.5
+			relation_with_heretics = 10
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			religious_unity = 0.25
+		}
+		
+		misguided_heretic = yes
+		
+		can_have_secondary_religion = yes
+		
+		heretic = { SOCINIAN EUSTATHIANS }
+		
+		on_convert = {
+			change_religion = mandeaism
 			add_prestige = -100
 			
 			remove_country_modifier = the_test_act
@@ -49,4 +87,153 @@ gnostic = {
 			}			
 		}
 	}
+	valentinianism = {
+		icon = 140
+		color = { 0.8 0.6 0.4 }
+		allowed_conversion = {
+			catholic
+		}
+		country = {
+			yearly_corruption = -0.1
+			tolerance_heathen = 2
+			relation_with_heretics = 10
+		}
+		country_as_secondary = {
+			yearly_corruption = -0.1
+			tolerance_heathen = 2
+		}
+		
+		misguided_heretic = yes
+		
+		fervor = yes
+		
+		heretic = { SOCINIAN EUSTATHIANS }
+		
+		on_convert = {
+			change_religion = valentinianism
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	sethianism = {
+		icon = 141
+		color = { 0.85 0.55 0.3 }
+		allowed_conversion = {
+			
+		}
+		country = {
+			land_morale = 0.1
+			state_maintenance_modifier = -0.25
+			relation_with_heretics = 10
+		}
+		country_as_secondary = {
+			land_morale = 0.1
+			state_maintenance_modifier = -0.25
+		}
+		
+		misguided_heretic = yes
+		
+		heretic = { SOCINIAN EUSTATHIANS }
+		
+		fervor = yes
+		
+		on_convert = {
+			change_religion = sethianism
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	priscillianism = {
+		icon = 142
+		color = { 0.3 0.6 0.2 }
+		allowed_conversion = {
+			catholic
+		}
+		country = {
+			tolerance_heathen = 2
+			spy_offence = 0.2
+			relation_with_heretics = 10
+		}
+		country_as_secondary = {
+			tolerance_heathen = 1
+			spy_offence = 0.15
+		}
+		
+		misguided_heretic = yes
+		
+		heretic = { SOCINIAN EUSTATHIANS }
+		
+		has_patriarchs = yes
+		
+		on_convert = {
+			change_religion = priscillianism
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	cainitism = {
+		icon = 143
+		color = { 0.2 0.5 0.25 }
+		allowed_conversion = {
+			catholic
+		}
+		country = { #Hyper-aggressive, but people don't like them for it.
+			shock_damage = 0.1
+			core_creation = -0.1
+			fabricate_claims_cost = -0.25
+			ae_impact = 0.1
+			relation_with_heretics = 10
+		}
+		country_as_secondary = {
+			shock_damage = 0.1
+			fabricate_claims_cost = -0.2
+		}
+		
+		misguided_heretic = yes
+		
+		heretic = { SOCINIAN EUSTATHIANS }
+		
+		fervor = yes
+		
+		on_convert = {
+			change_religion = cainitism
+			add_prestige = -100
+			
+			remove_country_modifier = the_test_act
+			remove_country_modifier = superintendent_office
+			remove_country_modifier = the_popery_act
+			
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}			
+		}
+	}
+	
+	harmonized_modifier = harmonized_gnostic
+	crusade_name = CRUSADE
 }
