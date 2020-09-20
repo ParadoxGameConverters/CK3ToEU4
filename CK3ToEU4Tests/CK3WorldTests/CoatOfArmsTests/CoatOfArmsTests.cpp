@@ -16,7 +16,7 @@ TEST(CK3World_CoatOfArmsTests, loadValuesDefaultToBlank)
 	std::stringstream input;
 	const CK3::CoatOfArms coatOfArms(input, 79);
 
-	ASSERT_TRUE(coatOfArms.getPattern().empty());
+	ASSERT_FALSE(coatOfArms.getPattern());
 	ASSERT_FALSE(coatOfArms.getColor1());
 	ASSERT_FALSE(coatOfArms.getColor2());
 	ASSERT_FALSE(coatOfArms.getColor3());
@@ -26,7 +26,7 @@ TEST(CK3World_CoatOfArmsTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(coatOfArms.getColoredEmblems().empty());
 	ASSERT_TRUE(coatOfArms.getSubs().empty());
 	ASSERT_TRUE(coatOfArms.getInstances().empty());
-	ASSERT_TRUE(coatOfArms.getParent());
+	ASSERT_FALSE(coatOfArms.getParent());
 }
 
 TEST(CK3World_CoatOfArmsTests, PrimitivesCanBeLoaded)

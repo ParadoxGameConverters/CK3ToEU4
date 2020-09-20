@@ -32,7 +32,7 @@ class CoatOfArms: commonItems::parser
 	void registerKeys();
 
 	long long ID = 0;
-	std::string pattern;
+	std::optional<std::string> pattern;
 	std::optional<commonItems::Color> color1; // red
 	std::optional<commonItems::Color> color2; // yellow
 	std::optional<commonItems::Color> color3; // white
