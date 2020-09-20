@@ -1,0 +1,21 @@
+# No previous file for Tepeacac
+
+culture = aztek
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = TEO
+is_city = yes
+religion = nahuatl
+capital = "Tepeacac"
+trade_goods = grain
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

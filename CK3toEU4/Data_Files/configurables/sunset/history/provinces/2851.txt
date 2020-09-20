@@ -1,0 +1,16 @@
+owner = CUA
+controller = CUA
+add_core = CUA
+culture = charruan
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+religion = animism
+capital = "Ilheus"
+is_city = yes
+trade_goods = grain
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 5

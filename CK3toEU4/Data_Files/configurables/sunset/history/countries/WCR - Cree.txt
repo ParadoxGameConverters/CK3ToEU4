@@ -1,0 +1,21 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 2
+mercantilism = 0.1
+primary_culture = cree
+add_accepted_culture = chipewyan
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 1002 # Abitbi
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Chinnabie"
+		dynasty = "Hothlepoya"
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}

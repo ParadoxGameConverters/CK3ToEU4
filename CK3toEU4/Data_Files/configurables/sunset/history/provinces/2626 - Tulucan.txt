@@ -1,0 +1,21 @@
+# No previous file for Tulucan
+
+culture = matlatzinca
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = MAT
+is_city = yes
+religion = nahuatl
+capital = "Tolluca"
+trade_goods = gold
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 2
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

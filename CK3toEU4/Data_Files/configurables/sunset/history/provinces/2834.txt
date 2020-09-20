@@ -1,0 +1,28 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+add_core = GUA
+
+culture = guarani
+
+religion = inti
+
+base_tax = 7
+base_production = 3
+base_manpower = 1
+
+trade_goods = tropical_wood
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000

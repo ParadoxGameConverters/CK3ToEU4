@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = autocracy_reform
+add_army_professionalism = 0.05
+government_rank = 2
+mercantilism = 0.1
+primary_culture = pueblo
+add_accepted_culture = wichita
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 880 # Pueblo
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Xenome"
+		dynasty = "Cochiti"
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

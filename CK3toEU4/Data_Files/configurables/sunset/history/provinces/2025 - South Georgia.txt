@@ -1,0 +1,21 @@
+#2025 - South Georgia
+
+capital = "South Georgia"
+
+hre = no
+
+owner = TRL
+
+controller = TRL
+
+add_core = TRL
+
+citysize = 1000
+base_tax = 3
+base_production = 3
+base_manpower = 3
+trade_goods = gems
+
+religion = tengri_pagan_reformed
+
+culture = equine

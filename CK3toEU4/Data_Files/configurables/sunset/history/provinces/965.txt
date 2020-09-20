@@ -1,0 +1,27 @@
+owner = LEN
+
+controller = LEN
+
+add_core = LEN
+
+culture = delaware
+religion = totemism
+
+base_tax = 12
+base_production = 2
+base_manpower = 8
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+add_permanent_province_modifier = {
+	name = hudson_estuary_modifier
+	duration = -1
+}

@@ -1,0 +1,20 @@
+# No previous file for Wintun
+
+owner = YKT
+controller = YKT
+add_core = YKT
+
+culture = yokuts
+religion = totemism
+capital = "Wintun"
+trade_goods = unknown
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

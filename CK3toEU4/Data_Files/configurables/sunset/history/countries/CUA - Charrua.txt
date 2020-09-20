@@ -1,0 +1,47 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = charruan
+religion = animism
+technology_group = high_american
+unit_type = high_american
+capital = 778
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
+
+1510.1.1 = {
+	monarch = {
+		name = "Zapicán"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+
+1550.1.1 = {
+	monarch = {
+		name = "Abayubá"
+		adm = 3
+		dip = 1
+		mil = 4
+	}
+}
+
+1574.1.1 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

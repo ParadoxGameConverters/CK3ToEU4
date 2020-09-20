@@ -1,0 +1,25 @@
+owner = KIC
+
+controller = KIC
+
+add_core = KIC
+add_core = KAQ
+
+culture = highland_mayan
+
+religion = mesoamerican_religion
+
+base_tax = 5
+base_production = 3
+base_manpower = 2
+
+trade_goods = gems
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+

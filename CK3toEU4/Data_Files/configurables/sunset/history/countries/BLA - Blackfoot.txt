@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = blackfoot
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 2004 # Niitsitapi
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Makawee"
+		dynasty = "Wokpanbi"
+		female = yes
+		adm = 3
+		dip = 2
+		mil = 5
+	}
+}

@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+add_army_professionalism = 0.05
+mercantilism = 0.1
+primary_culture = pequot
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 968 # Massachusetts
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Sassious"
+		dynasty = "Shenecosset"
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

@@ -141,8 +141,8 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	indianQuestion();
 	Log(LogLevel::Progress) << "75 %";
 	
-	LOG(LogLevel::Info) << "<- Crafting Flags";
-	flagCrafter.test();
+	LOG(LogLevel::Info) << "-- Crafting Flags";
+	flagCrafter.generateFlags(countries, theConfiguration);
 	Log(LogLevel::Progress) << "93 %";
 
 	// And finally, the Dump.

@@ -1,0 +1,56 @@
+government = monarchy
+add_government_reform = autocracy_reform
+#aristocracy_plutocracy = 5
+#centralization_decentralization = 5
+#innovative_narrowminded = 0
+mercantilism = 0.1
+#offensive_defensive = 5
+#land_naval = -5
+#quality_quantity = 0
+#serfdom_freesubjects = 5
+primary_culture = creek
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 926
+
+1399.1.1 = {
+	monarch = {
+		name = "Brim"
+		dynasty = "Kapawe'no"
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}
+
+1550.1.1 = {
+	monarch = {
+		name = "Chigelli"
+		dynasty = "Kapawe'no"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1700.1.1 = {
+	monarch = {
+		name = "Tomochichi"
+		dynasty = "Kapawe'no"
+		adm = 1
+		dip = 2
+		mil = 3
+	}
+}
+
+1739.1.1 = {
+	monarch = {
+		name = "Chekilli"
+		dynasty = "Kapawe'no"
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}
+

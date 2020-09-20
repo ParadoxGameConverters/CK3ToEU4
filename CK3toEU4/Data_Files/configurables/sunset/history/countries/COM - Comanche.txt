@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = shoshone
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 2006 # Apsaalooke
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Tocmetone"
+		dynasty = "Huirivis"
+		female = yes
+		adm = 1
+		dip = 4
+		mil = 4
+	}
+}

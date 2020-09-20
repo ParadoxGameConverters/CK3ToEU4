@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = mikmaq
+religion = totemism
+technology_group = north_american
+capital = 985 # Micmac
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Chichabenady"
+		dynasty = "Pemigewasset"
+		adm = 3
+		dip = 5
+		mil = 2
+	}
+}

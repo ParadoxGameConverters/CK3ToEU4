@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = mesquakie
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 944 # Potawatomi
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Peaneesh"
+		dynasty = "Mundua"
+		adm = 3
+		dip = 4
+		mil = 1
+	}
+}

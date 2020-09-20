@@ -1,0 +1,25 @@
+owner = MAY
+
+controller = MAY
+
+add_core = MAY
+
+culture = mayan
+
+religion = mesoamerican_religion
+
+base_tax = 10
+base_production = 5
+base_manpower = 4
+
+trade_goods = sugar
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+citysize = 1000

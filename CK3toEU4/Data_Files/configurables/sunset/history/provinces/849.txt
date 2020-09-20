@@ -1,0 +1,25 @@
+owner = TLA
+
+controller = TLA
+
+add_core = TLA
+
+culture = tlapanec
+
+religion = nahuatl
+
+base_tax = 8
+base_production = 8
+base_manpower = 8
+
+trade_goods = gold
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+center_of_trade = 1

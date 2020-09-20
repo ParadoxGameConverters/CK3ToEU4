@@ -1,0 +1,16 @@
+owner = TPA
+controller = TPA
+add_core = TPA
+culture = tupinamba
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+religion = animism
+capital = "Ilheus"
+is_city = yes
+trade_goods = slaves
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 2
