@@ -40,9 +40,9 @@ class CoatOfArms: commonItems::parser
 	std::optional<commonItems::Color> color5; // unknown
 	std::vector<Emblem> texturedEmblems;
 	std::vector<Emblem> coloredEmblems;
-	std::vector<std::shared_ptr<CoatOfArms>> subs;					// These are sub-coatsofarms. They are recursive!
-	std::vector<EmblemInstance> instances;								// Used to position sub-coats.
-	std::pair<std::string, std::shared_ptr<CoatOfArms>> parent; // Used for recursive external flags.
+	std::vector<std::shared_ptr<CoatOfArms>> subs;										// These are sub-coatsofarms. They are recursive!
+	std::vector<EmblemInstance> instances;													// Used to position sub-coats.
+	std::optional<std::pair<std::string, std::shared_ptr<CoatOfArms>>> parent; // Used for recursive external flags.
 };
 } // namespace CK3
 

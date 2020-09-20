@@ -15,7 +15,7 @@
 
 // This means this is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
-void EU4::FlagCrafter::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration)
+void EU4::FlagCrafter::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -57,7 +57,7 @@ void EU4::FlagCrafter::generateFlags(const std::map<std::string, std::shared_ptr
 		commonItems::TryCopyFile("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga");
 }
 
-void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country)
+void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country) const
 {
 	if (!country->getTitle())
 	{
@@ -67,8 +67,38 @@ void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country)
 	if (!country->getTitle()->second->getCoA())
 	{
 		Log(LogLevel::Error) << "Cannot craft a flag for country " << country->getTag() << " - title " << country->getTitle()->first << " has no CoA!";
-		return;		
+		return;
 	}
+
 	const auto& coa = country->getTitle()->second->getCoA()->second;
-	Log(LogLevel::Debug) << "to create: " << coa->getID();
+
+	auto generatedCoa = craftFlagFromCoA(*coa);
+	try
+	{
+		generatedCoa.magick("TGA");
+	}
+	catch (std::exception& e)
+	{
+		Log(LogLevel::Error) << "Failed setting flag format: " << e.what();
+	}
+	try
+	{
+		generatedCoa.write("flags.tmp/" + country->getTag() + ".tga");
+	}
+	catch (std::exception& e)
+	{
+		Log(LogLevel::Error) << "Failed writing flag to disk: " << e.what();
+	}
+
+
+	Log(LogLevel::Debug) << "Crafted: " << country->getTag() << ".tga";
+}
+
+Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
+{
+	// Create a blank (black) 128x128 image.
+
+	Magick::Image image("128x128", "black");
+
+	return image;
 }
