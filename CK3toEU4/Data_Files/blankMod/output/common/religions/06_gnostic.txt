@@ -1,5 +1,4 @@
 gnostic = {
-	defender_of_faith = yes
 	can_form_personal_unions = yes
 	
 	flags_with_emblem_percentage = 33
@@ -52,7 +51,11 @@ gnostic = {
 		icon = 139
 		color = { 0.5 0.75 0.3 }
 		allowed_conversion = {
-			
+			manichean
+			valentinianism
+			sethianism
+			priscillianism
+			cainitism
 		}
 		country = {
 			tolerance_own = 2
@@ -92,6 +95,12 @@ gnostic = {
 		color = { 0.8 0.6 0.4 }
 		allowed_conversion = {
 			catholic
+			bogomomilist
+			manichean
+			mandeaism
+			sethianism
+			priscillianism
+			cainitism
 		}
 		country = {
 			yearly_corruption = -0.1
@@ -127,7 +136,11 @@ gnostic = {
 		icon = 141
 		color = { 0.85 0.55 0.3 }
 		allowed_conversion = {
-			
+			manichean
+			mandeaism
+			valentinianism
+			priscillianism
+			cainitism
 		}
 		country = {
 			land_morale = 0.1
@@ -164,6 +177,11 @@ gnostic = {
 		color = { 0.3 0.6 0.2 }
 		allowed_conversion = {
 			catholic
+			manichean
+			mandeaism
+			valentinianism
+			sethianism
+			cainitism
 		}
 		country = {
 			tolerance_heathen = 2
@@ -199,7 +217,11 @@ gnostic = {
 		icon = 143
 		color = { 0.2 0.5 0.25 }
 		allowed_conversion = {
-			catholic
+			manichean
+			mandeaism
+			valentinianism
+			sethianism
+			priscillianism
 		}
 		country = { #Hyper-aggressive, but people don't like them for it.
 			shock_damage = 0.1
