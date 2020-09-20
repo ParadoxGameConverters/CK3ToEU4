@@ -14,7 +14,7 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 
 	for (const auto& mod: mods)
 	{
-		if (Utils::DoesFolderExist(mod.second + "localization"))
+		if (commonItems::DoesFolderExist(mod.second + "localization"))
 		{
 			Log(LogLevel::Info) << "\t>> Found some words in: " << mod.second + "/localization";
 			scrapeLanguage("english", mod.second + "/localization");
@@ -29,9 +29,9 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 
 void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, const std::string& path)
 {
-	if (!Utils::DoesFolderExist(path + "/" + language))
+	if (!commonItems::DoesFolderExist(path + "/" + language))
 		return;
-	auto fileNames = Utils::GetAllFilesInFolderRecursive(path + "/" + language);
+	auto fileNames = commonItems::GetAllFilesInFolderRecursive(path + "/" + language);
 	for (const auto& file: fileNames)
 	{
 		std::ifstream fileStream(path + "/" + language + "/" + file);
