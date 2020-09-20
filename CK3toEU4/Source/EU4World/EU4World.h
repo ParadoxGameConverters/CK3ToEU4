@@ -14,6 +14,7 @@
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
+#include "FlagCrafter/FlagCrafter.h"
 #include "Output/outModFile.h"
 
 class Configuration;
@@ -95,6 +96,7 @@ class World
 
 	ModFile modFile;
 	Diplomacy diplomacy;
+	FlagCrafter flagCrafter;
 
 	std::string emperorTag;
 };

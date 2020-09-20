@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
-#set(CMAKE_VERBOSE_MAKEFILE on)
 
-project(CK2ToEU4)
-#SET(CMAKE_CXX_COMPILER g++-9)
+project(CK3toEU4)
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16")
+SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--enable-new-dtags")
 
 add_compile_options("-lstdc++fs")
 add_compile_options("-O2")
@@ -16,9 +15,9 @@ add_link_options(-no-pie)
 
 include_directories("../commonItems")
 include_directories("../ZipLib")
+include_directories("../imageMagick/include-linux/")
 include_directories("${PROJECT_SOURCE_DIR}")
 link_directories(${CMAKE_SOURCE_DIR}/Resources)
-
 add_subdirectory(../ZipLib [binary_dir])
 
 set(MAIN_SOURCES ${MAIN_SOURCES} "${PROJECT_SOURCE_DIR}/CK3ToEU4Converter.cpp")
@@ -60,6 +59,7 @@ set(EU4WORLD_COUNTRY_SOURCES ${EU4WORLD_COUNTRY_SOURCES} "${PROJECT_SOURCE_DIR}/
 set(EU4WORLD_COUNTRY_SOURCES ${EU4WORLD_COUNTRY_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Country/MonarchNames.cpp")
 set(EU4WORLD_DIPLOMACY_SOURCES ${EU4WORLD_DIPLOMACY_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Diplomacy/Agreement.cpp")
 set(EU4WORLD_DIPLOMACY_SOURCES ${EU4WORLD_DIPLOMACY_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Diplomacy/Diplomacy.cpp")
+set(EU4WORLD_FLAG_CRAFTER_SOURCES ${EU4WORLD_FLAG_CRAFTER_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/FlagCrafter/FlagCrafter.cpp")
 set(EU4WORLD_PROVINCE_SOURCES ${EU4WORLD_PROVINCE_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Province/EU4Province.cpp")
 set(EU4WORLD_PROVINCE_SOURCES ${EU4WORLD_PROVINCE_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Province/ProvinceDetails.cpp")
 set(EU4WORLD_PROVINCE_SOURCES ${EU4WORLD_PROVINCE_SOURCES} "${PROJECT_SOURCE_DIR}/EU4World/Province/ProvinceModifier.cpp")
@@ -131,6 +131,7 @@ add_executable(CK3toEU4
 	${EU4WORLD_SOURCES}
 	${EU4WORLD_COUNTRY_SOURCES}
 	${EU4WORLD_DIPLOMACY_SOURCES}
+	${EU4WORLD_FLAG_CRAFTER_SOURCES}
 	${EU4WORLD_PROVINCE_SOURCES}
 	${EU4WORLD_OUTPUT_SOURCES}
 	
@@ -153,7 +154,7 @@ add_executable(CK3toEU4
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs)
+target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs MagickWand-6.Q16 MagickCore-6.Q16 Magick++-6.Q16)
 
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)

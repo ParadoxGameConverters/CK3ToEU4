@@ -103,6 +103,9 @@
     <Filter Include="Mappers\DevWeightsMapper">
       <UniqueIdentifier>{3a53edf8-2d69-4505-b9ac-f6685900a265}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4World\FlagCrafter">
+      <UniqueIdentifier>{cab7da81-77cf-40a3-acfc-899da04b970f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -357,6 +360,9 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Output\outCharacter.h">
       <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagCrafter\FlagCrafter.h">
+      <Filter>EU4World\FlagCrafter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -613,6 +619,9 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outCharacter.cpp">
       <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagCrafter\FlagCrafter.cpp">
+      <Filter>EU4World\FlagCrafter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

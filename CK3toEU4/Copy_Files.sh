@@ -6,6 +6,8 @@ cp "Data_Files/FAQ.txt" "Release-Linux/"
 cp "Data_Files/after_converting.txt" "Release-Linux/"
 cp "Data_Files/license.txt" "Release-Linux/"
 
+cp "Resources/librakaly.so" "Release-Linux/"
+
 # Copy configurables
 rm -rf "Release-Linux/configurables"
 cp -r "Data_Files/configurables" "Release-Linux/"
