@@ -106,12 +106,12 @@ void Configuration::registerKeys()
 
 void Configuration::verifyCK3Path()
 {
-	if (!Utils::DoesFolderExist(CK3Path))
+	if (!commonItems::DoesFolderExist(CK3Path))
 		throw std::runtime_error(CK3Path + " does not exist!");
 	// TODO: OSX and Linux paths are speculative
-	if (!Utils::DoesFileExist(CK3Path + "/binaries/ck3.exe") && !Utils::DoesFileExist(CK3Path + "/CK3game") && !Utils::DoesFileExist(CK3Path + "/binaries/ck3"))
+	if (!commonItems::DoesFileExist(CK3Path + "/binaries/ck3.exe") && !commonItems::DoesFileExist(CK3Path + "/CK3game") && !commonItems::DoesFileExist(CK3Path + "/binaries/ck3"))
 		throw std::runtime_error(CK3Path + " does not contain Crusader Kings 3!");
-	if (!Utils::DoesFileExist(CK3Path + "/game/map_data/positions.txt"))
+	if (!commonItems::DoesFileExist(CK3Path + "/game/map_data/positions.txt"))
 		throw std::runtime_error(CK3Path + " does not appear to be a valid CK3 install!");
 	LOG(LogLevel::Info) << "\tCK3 install path is " << CK3Path;
 	CK3Path += "/game/"; // We're adding "/game/" since all we ever need from now on is in that subdirectory.
@@ -119,11 +119,11 @@ void Configuration::verifyCK3Path()
 
 void Configuration::verifyEU4Path() const
 {
-	if (!Utils::DoesFolderExist(EU4Path))
+	if (!commonItems::DoesFolderExist(EU4Path))
 		throw std::runtime_error(EU4Path + " does not exist!");
-	if (!Utils::DoesFileExist(EU4Path + "/eu4.exe") && !Utils::DoesFileExist(EU4Path + "/eu4"))
+	if (!commonItems::DoesFileExist(EU4Path + "/eu4.exe") && !commonItems::DoesFileExist(EU4Path + "/eu4"))
 		throw std::runtime_error(EU4Path + " does not contain Europa Universalis 4!");
-	if (!Utils::DoesFileExist(EU4Path + "/map/positions.txt"))
+	if (!commonItems::DoesFileExist(EU4Path + "/map/positions.txt"))
 		throw std::runtime_error(EU4Path + " does not appear to be a valid EU4 install!");
 	LOG(LogLevel::Info) << "\tEU4 install path is " << EU4Path;
 }
@@ -138,6 +138,6 @@ void Configuration::setOutputName()
 	outputName = replaceCharacter(outputName, '-');
 	outputName = replaceCharacter(outputName, ' ');
 
-	outputName = Utils::normalizeUTF8Path(outputName);
+	outputName = commonItems::normalizeUTF8Path(outputName);
 	LOG(LogLevel::Info) << "Using output name " << outputName;
 }

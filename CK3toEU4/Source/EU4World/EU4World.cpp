@@ -162,9 +162,9 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 	loadCountriesFromSource(eu4CountriesFile, eu4Path, true);
 	eu4CountriesFile.close();
 
-	if (Utils::DoesFolderExist("blankMod/output/common/country_tags/"))
+	if (commonItems::DoesFolderExist("blankMod/output/common/country_tags/"))
 	{
-		auto fileNames = Utils::GetAllFilesInFolder("blankMod/output/common/country_tags/");
+		auto fileNames = commonItems::GetAllFilesInFolder("blankMod/output/common/country_tags/");
 		for (const auto& file: fileNames)
 		{
 			std::ifstream blankCountriesFile(fs::u8path("blankMod/output/common/country_tags/" + file));
@@ -188,14 +188,14 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 
 	LOG(LogLevel::Info) << "-> Importing Vanilla Country History";
 	// ---- Loading history/countries/
-	auto fileNames = Utils::GetAllFilesInFolder(eu4Path + "/history/countries/");
+	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/countries/");
 	for (const auto& fileName: fileNames)
 	{
 		auto tag = fileName.substr(0, 3);
 		countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);
 	}
 	// Now our special tags.
-	fileNames = Utils::GetAllFilesInFolder("blankMod/output/history/countries/");
+	fileNames = commonItems::GetAllFilesInFolder("blankMod/output/history/countries/");
 	for (const auto& fileName: fileNames)
 	{
 		auto tag = fileName.substr(0, 3);
@@ -203,7 +203,7 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 	}
 	if (invasion)
 	{
-		fileNames = Utils::GetAllFilesInFolder("configurables/sunset/history/countries/");
+		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/countries/");
 		for (const auto& fileName: fileNames)
 		{
 			auto tag = fileName.substr(0, 3);
@@ -346,7 +346,7 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 {
 	LOG(LogLevel::Info) << "-> Importing Vanilla Provinces";
 	// ---- Loading history/provinces
-	auto fileNames = Utils::GetAllFilesInFolder(eu4Path + "/history/provinces/");
+	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/provinces/");
 	for (const auto& fileName: fileNames)
 	{
 		if (fileName.find(".txt") == std::string::npos)
@@ -371,7 +371,7 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 	LOG(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
 	if (invasion)
 	{
-		fileNames = Utils::GetAllFilesInFolder("configurables/sunset/history/provinces/");
+		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/provinces/");
 		for (const auto& fileName: fileNames)
 		{
 			if (fileName.find(".txt") == std::string::npos)
