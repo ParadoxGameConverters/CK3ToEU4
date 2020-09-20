@@ -17,7 +17,7 @@ include_directories("../commonItems")
 include_directories("../ZipLib")
 include_directories("../imageMagick/include-linux/")
 include_directories("${PROJECT_SOURCE_DIR}")
-link_directories(${CMAKE_SOURCE_DIR}/Resources ${CMAKE_SOURCE_DIR}/../imageMagick/lib-linux)
+link_directories(${CMAKE_SOURCE_DIR}/Resources)
 add_subdirectory(../ZipLib [binary_dir])
 
 set(MAIN_SOURCES ${MAIN_SOURCES} "${PROJECT_SOURCE_DIR}/CK3ToEU4Converter.cpp")
