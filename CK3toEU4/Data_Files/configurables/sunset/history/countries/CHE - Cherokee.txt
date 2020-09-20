@@ -1,0 +1,74 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+add_army_professionalism = 0.05
+government_rank = 2
+mercantilism = 0.1
+primary_culture = cherokee
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 952
+
+#aristocracy_plutocracy = 5
+#centralization_decentralization = 5
+#innovative_narrowminded = 0
+#offensive_defensive = 5
+#land_naval = -5
+#quality_quantity = 0
+#serfdom_freesubjects = 5
+
+
+1399.1.1 = {
+	monarch = {
+		name = "Tistoe"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+
+1700.1.1 = {
+	monarch = {
+		name = "Amatoya Moytoy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1720.1.1 = {
+	monarch = {
+		name = "Moytoy II"
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+}
+
+1740.1.1 = {
+	monarch = {
+		name = "Kalanu"
+		adm = 1
+		dip = 2
+		mil = 3
+	}
+}
+
+1750.1.1 = {
+	monarch = {
+		name = "Ocanostata"
+		adm = 1
+		dip = 1
+		mil = 5
+		leader = {	name = "Ocanostata"            	type = general	fire = 3	shock = 1	manuever = 3	siege = 1}
+	}
+}
+
+1760.1.1 = {
+	monarch = {
+		name = "Attakutlakulla"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

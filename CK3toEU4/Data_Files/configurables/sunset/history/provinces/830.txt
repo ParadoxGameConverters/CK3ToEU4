@@ -1,0 +1,24 @@
+owner = MCA
+
+controller = MCA
+
+add_core = MCA
+add_core = ARW
+
+culture = muisca
+
+religion = animism
+
+base_tax = 7
+base_production = 2
+base_manpower = 3
+
+trade_goods = cocoa
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

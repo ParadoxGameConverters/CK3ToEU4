@@ -1,0 +1,16 @@
+owner = KIC
+controller = KIC
+add_core = KIC
+add_core = ITZ
+culture = putun
+religion = mesoamerican_religion
+base_tax = 4
+base_production = 4
+base_manpower = 2
+trade_goods = cocoa
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+citysize = 1000

@@ -1,0 +1,21 @@
+# No previous file for Towa
+
+add_core = PUE
+owner = PUE
+controller = PUE
+culture = pueblo 
+religion = totemism
+capital = "Cochiti" 
+trade_goods = salt 
+hre = no 
+base_tax = 7
+base_production = 3
+base_manpower = 5
+is_city = yes
+extra_cost = 8
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

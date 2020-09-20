@@ -1,0 +1,39 @@
+owner = MAY
+
+controller = MAY
+
+add_core = MAY
+
+culture = mayan
+
+religion = mesoamerican_religion
+
+base_tax = 5
+base_production = 4
+base_manpower = 4
+
+trade_goods = sugar
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+citysize = 1000
+
+
+
+1444.11.11 = {
+
+	owner = MAY
+
+	controller = MAY
+
+	culture = mayan
+
+	religion = mesoamerican_religion
+
+}

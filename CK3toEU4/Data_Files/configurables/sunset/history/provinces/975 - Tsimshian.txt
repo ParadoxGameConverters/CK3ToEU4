@@ -1,0 +1,21 @@
+#975 - Tsimshian
+
+owner = HDA
+controller = HDA
+add_core = HDA
+add_permanent_claim = CNK
+
+culture = haida
+religion = totemism
+capital = "Tsimshian"
+trade_goods = naval_supplies
+hre = no
+base_tax = 12
+base_production = 2
+base_manpower = 8
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

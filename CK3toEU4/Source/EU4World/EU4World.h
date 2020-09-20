@@ -14,6 +14,7 @@
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
+#include "FlagCrafter/FlagCrafter.h"
 #include "Output/outModFile.h"
 
 class Configuration;
@@ -74,7 +75,7 @@ class World
 	void outputLocalization(const Configuration& theConfiguration, bool invasion) const;
 	void outputEmperor(const Configuration& theConfiguration, date conversionDate) const;
 	void outputDiplomacy(const Configuration& theConfiguration, const std::vector<std::shared_ptr<Agreement>>& agreements, bool invasion) const;
-
+	void outputFlags(const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
 
@@ -95,6 +96,7 @@ class World
 
 	ModFile modFile;
 	Diplomacy diplomacy;
+	FlagCrafter flagCrafter;
 
 	std::string emperorTag;
 };

@@ -1,0 +1,29 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+technology_group = high_american
+unit_type = high_american
+religion = mesoamerican_religion
+primary_culture = highland_mayan
+capital = 4587
+1435.1.1 =
+{monarch ={name ="K'iq'ab'"
+dynasty ="K'iche'"
+adm =3
+dip =1
+mil =2
+}}
+1475.1.1 =
+{monarch ={name ="Vahxak i-Kaam"
+dynasty ="K'iche'"
+adm =3
+dip =1
+mil =2
+}}
+1500.1.1 =
+{monarch ={name ="Oxib Keh"
+dynasty ="K'iche'"
+adm =3
+dip =1
+mil =2
+}}

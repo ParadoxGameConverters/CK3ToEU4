@@ -1,0 +1,31 @@
+# Aztec Vassals
+vassal = {
+	first = AZT
+	second = TAR
+	start_date = 769.1.1
+	end_date = 1822.1.1
+}
+vassal = {
+	first = AZT
+	second = TLX
+	start_date = 769.1.1
+	end_date = 1822.1.1
+}
+vassal = {
+	first = AZT
+	second = TLA
+	start_date = 769.1.1
+	end_date = 1822.1.1
+}
+vassal = {
+	first = AZT
+	second = KIC
+	start_date = 769.1.1
+	end_date = 1822.1.1
+}
+march = {
+	first = AZT
+	second = MCA
+	start_date = 769.1.1
+	end_date = 1822.1.1
+}

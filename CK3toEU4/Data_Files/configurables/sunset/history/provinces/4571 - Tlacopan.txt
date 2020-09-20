@@ -1,0 +1,20 @@
+# No previous file for Tlacopan
+
+owner = AZT
+controller = AZT
+add_core = AZT
+culture = aztek 
+religion = nahuatl
+capital = "Tlacopan" 
+trade_goods = gold
+hre = no 
+base_tax = 10
+base_production = 10
+base_manpower = 5
+is_city = yes
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

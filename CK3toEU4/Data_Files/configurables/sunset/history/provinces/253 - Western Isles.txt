@@ -1,0 +1,29 @@
+#253 - Western Isles
+
+owner = LOI
+controller = LOI
+culture = highland_scottish
+religion = catholic
+hre = no
+base_tax = 1 
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+capital = "Stornoway"
+is_city = yes
+add_core = SCO
+add_core = LOI
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+
+1493.1.1 = {
+	owner = SCO
+	controller = SCO
+}
+1560.8.1 = { religion = reformed }
+1707.5.12 = {	owner = GBR
+	controller = GBR
+	add_core = GBR
+}

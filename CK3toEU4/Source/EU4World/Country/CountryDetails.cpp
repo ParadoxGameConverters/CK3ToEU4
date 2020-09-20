@@ -6,7 +6,7 @@
 EU4::CountryDetails::CountryDetails(const std::string& filePath)
 {
 	registerKeys();
-	if (Utils::DoesFileExist(filePath))
+	if (commonItems::DoesFileExist(filePath))
 	{
 		parseFile(filePath);
 	}

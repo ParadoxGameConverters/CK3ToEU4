@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = powhatan
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 952 # Powhatan
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Ashaquid"
+		dynasty = "Quiyoughcohannock"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

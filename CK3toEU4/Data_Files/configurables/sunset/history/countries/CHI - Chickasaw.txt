@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = chickasaw
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 919	# Chickasaw
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Bahhakahtubbe"
+		dynasty = "Hykehah"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

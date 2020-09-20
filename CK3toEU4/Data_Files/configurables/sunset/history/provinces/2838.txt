@@ -1,0 +1,29 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+add_core = CCQ
+add_core = CRA
+
+culture = aimara
+
+religion = inti
+
+base_tax = 6
+base_production = 6
+base_manpower = 2
+
+trade_goods = wool
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000

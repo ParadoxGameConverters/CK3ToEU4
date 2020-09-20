@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = susquehannock
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 955 # Susquehannock
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Tekakwitha"
+		dynasty = "Quadroque"
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}

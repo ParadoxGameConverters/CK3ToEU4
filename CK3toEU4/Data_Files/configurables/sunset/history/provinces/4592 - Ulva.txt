@@ -1,0 +1,19 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = MIS
+culture = miskito
+religion = nahuatl
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+# No previous file for Ulva
+capital = "Ulva"
+trade_goods = cocoa
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2

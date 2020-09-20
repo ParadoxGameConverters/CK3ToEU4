@@ -12,31 +12,24 @@ link = { eu4 = baltic_pagan_reformed ck3 = baltic_reformed }
 link = { eu4 = bon_reformed ck3 = bon  }
 link = { eu4 = bon ck3 = old_bon }
 # Buddhism  
-link = { eu4 = buddhism ck3 = theravada }
-link = { eu4 = buddhism ck3 = ari }
+link = { eu4 = buddhism ck3 = theravada ck3 = ari }
 link = { eu4 = mahayana ck3 = mahayana }
-link = { eu4 = vajrayana ck3 = vajrayana }
-link = { eu4 = vajrayana ck3 = lamaism }
+link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity  
-link = { eu4 = catholic ck3 = catholic }
-link = { eu4 = catholic ck3 = conversos }
-link = { eu4 = catholic ck3 = insular_celtic }
+link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic }
 link = { eu4 = orthodox ck3 = orthodox }
-link = { eu4 = coptic ck3 = coptic }
-link = { eu4 = coptic ck3 = armenian_apostolic }
+link = { eu4 = coptic ck3 = coptic ck3 = armenian_apostolic }
 link = { eu4 = cathar ck3 = cathar }
 link = { eu4 = waldensian ck3 = waldensian }
 link = { eu4 = lollard ck3 = lollard }
 link = { eu4 = iconoclast ck3 = iconoclast }
-link = { eu4 = bogomilist ck3 = bogomilist }
+link = { eu4 = bogomilist ck3 = bogomilist ck3 = bosnian_church }
 link = { eu4 = paulician ck3 = paulician }
 link = { eu4 = nestorian ck3 = nestorian }
 link = { eu4 = messalian ck3 = messalian }
 link = { eu4 = adamites ck3 = adamites }
-link = { eu4 = bosnian_church ck3 = bosnian_church }
 # Tani  
-link = { eu4 = animism ck3 = donyipoloism }
-link = { eu4 = animism ck3 = sedism }
+link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism  
 link = { eu4 = manichean ck3 = manichean }
 link = { eu4 = mandeaism ck3 = mandeaism }
@@ -54,13 +47,7 @@ link = { eu4 = norse_reformed ck3 = norse_reformed }
 # Hellenism  
 link = { eu4 = hellenic_pagan ck3 = hellenic_pagan }
 # Hinduism  
-link = { eu4 = hinduism ck3 = vaishnavism }
-link = { eu4 = hinduism ck3 = advaitism }
-link = { eu4 = hinduism ck3 = shaivism }
-link = { eu4 = hinduism ck3 = srikula_shaktism }
-link = { eu4 = hinduism ck3 = kalikula_shaktism }
-link = { eu4 = hinduism ck3 = smartism }
-link = { eu4 = hinduism ck3 = krishnaism }
+link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam  
 link = { eu4 = sunni ck3 = ashari }
 link = { eu4 = sunni ck3 = muwalladi }
@@ -82,14 +69,9 @@ link = { eu4 = kharijite ck3 = azariqa }
 link = { eu4 = kharijite ck3 = najdat }
 link = { eu4 = kharijite ck3 = sufri }
 # Jainism  
-link = { eu4 = jain ck3 = digambara }
-link = { eu4 = jain ck3 = svetambara }
-link = { eu4 = jain ck3 = yapaniya }
+link = { eu4 = jain ck3 = digambara ck3 = svetambara ck3 = yapaniya }
 # Judaism  
-link = { eu4 = jewish ck3 = rabbinism }
-link = { eu4 = jewish ck3 = haymanot }
-link = { eu4 = jewish ck3 = malabarism }
-link = { eu4 = jewish ck3 = kabarism }
+link = { eu4 = jewish ck3 = rabbinism ck3 = kabarism ck3 = haymanot ck3 = malabarism }
 link = { eu4 = karaite_faith ck3 = karaism }
 link = { eu4 = samaritan_faith ck3 = samaritan }
 # Kushitism  
@@ -110,9 +92,7 @@ link = { eu4 = animism ck3 = melieism }
 link = { eu4 = slavic_pagan ck3 = slavic_pagan }
 link = { eu4 = slavic_pagan_reformed ck3 = slavic_reformed }
 # Taoism  
-link = { eu4 = confucianism ck3 = zhengyi }
-link = { eu4 = confucianism ck3 = shangqing }
-link = { eu4 = confucianism ck3 = quanzhen }
+link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism  
 link = { eu4 = tengri_pagan ck3 = tengri_pagan }
 link = { eu4 = tengri_pagan_reformed ck3 = tengri_reformed }

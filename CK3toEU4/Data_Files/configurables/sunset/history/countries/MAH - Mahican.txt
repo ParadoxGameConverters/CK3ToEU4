@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = dakota
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 969 # Pocumtuk
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Maumauntissekun"
+		dynasty = "Isanyathi"
+		adm = 2
+		dip = 1
+		mil = 6
+	}
+}

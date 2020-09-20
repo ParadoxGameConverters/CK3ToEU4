@@ -1,0 +1,20 @@
+# No previous file for Qumarkaj
+
+owner = KIC 
+controller = KIC
+culture = highland_mayan 
+religion = mesoamerican_religion
+capital = "Qumarkaj" 
+trade_goods = cocoa 
+hre = no 
+base_tax = 6
+base_production = 6
+base_manpower = 6
+is_city = yes
+add_core = KIC
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

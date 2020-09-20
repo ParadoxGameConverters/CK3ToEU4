@@ -1,0 +1,20 @@
+#878 - Navajo
+
+add_core = NAH
+owner = NAH
+controller = NAH
+culture = navajo
+religion = totemism 
+capital = "Navajo" 
+trade_goods = salt 
+hre = no 
+base_tax = 10
+base_production = 6
+base_manpower = 10
+is_city = yes
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

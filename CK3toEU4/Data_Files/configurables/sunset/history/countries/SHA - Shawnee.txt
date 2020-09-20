@@ -1,0 +1,79 @@
+government = monarchy
+add_government_reform = autocracy_reform
+#aristocracy_plutocracy = 5
+#centralization_decentralization = 5
+#innovative_narrowminded = 0
+mercantilism = 0.1
+#offensive_defensive = 5
+#land_naval = -5
+#quality_quantity = 0
+#serfdom_freesubjects = 5
+primary_culture = shawnee
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 948	# Ohio
+
+1399.1.1 = {
+	monarch = {
+		name = "Hokoleskwa"
+		dynasty = "Thawegila"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+
+1550.1.1 = {
+	monarch = {
+		name = "Cottawamago"
+		dynasty = "Thawegila"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1725.1.1 = {
+	monarch = {
+		name = "Paxinos"
+		dynasty = "Thawegila"
+		adm = 4
+		dip = 1
+		mil = 2
+	}
+}
+
+1755.1.1 = {
+	monarch = {
+		name = "Wynepuechisika"
+		dynasty = "Thawegila"
+		adm = 1
+		dip = 2
+		mil = 3
+	}
+}
+
+1777.1.1 = {
+	monarch = {
+		name = "Weyapersenwah"
+		dynasty = "Thawegila"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+
+1800.1.1 = {
+	monarch = {
+		name = "Tecumseh"
+		dynasty = "Thawegila"
+		adm = 5
+		dip = 6
+		mil = 5
+		leader = {	name = "Tecumseh"              	type = general	fire = 5	shock = 2	manuever = 5	siege = 1}
+	}
+}
+
+
+

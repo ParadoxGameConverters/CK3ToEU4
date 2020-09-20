@@ -1,0 +1,19 @@
+# No previous file for Moniquira
+
+owner = MCA
+controller = MCA
+culture = muisca
+religion = inti
+capital = "Moniquira"
+is_city = yes
+trade_goods = gems
+hre = no
+base_tax = 10
+base_production = 10
+base_manpower = 4
+add_core = MCA
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

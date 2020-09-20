@@ -1,0 +1,25 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+
+culture = het
+
+religion = animism
+
+base_tax = 5
+base_production = 3
+base_manpower = 1
+
+trade_goods = salt
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+center_of_trade = 1

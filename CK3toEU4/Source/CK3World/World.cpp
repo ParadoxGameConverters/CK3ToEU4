@@ -281,7 +281,7 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading colors.";
-	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
 	{
 		if (file.find(".txt") == std::string::npos)
 			continue;
@@ -289,10 +289,10 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 	}
 	for (const auto& mod: mods.getMods())
 	{
-		if (!Utils::DoesFolderExist(mod.second + "common/named_colors"))
+		if (!commonItems::DoesFolderExist(mod.second + "common/named_colors"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some colors from " << mod.first;
-		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/named_colors"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/named_colors"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
@@ -305,7 +305,7 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
-	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/landed_titles"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/landed_titles"))
 	{
 		if (file.find(".txt") == std::string::npos)
 			continue;
@@ -313,10 +313,10 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 	}
 	for (const auto& mod: mods.getMods())
 	{
-		if (!Utils::DoesFolderExist(mod.second + "common/landed_titles"))
+		if (!commonItems::DoesFolderExist(mod.second + "common/landed_titles"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some landed titles from " << mod.first;
-		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/landed_titles"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/landed_titles"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
@@ -329,7 +329,7 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 {
 	LOG(LogLevel::Info) << "-> Examiming Personalities";
-	for (const auto& file: Utils::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
 	{
 		if (file.find(".txt") == std::string::npos)
 			continue;
@@ -337,10 +337,10 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 	}
 	for (const auto& mod: mods.getMods())
 	{
-		if (!Utils::DoesFolderExist(mod.second + "common/traits"))
+		if (!commonItems::DoesFolderExist(mod.second + "common/traits"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some character traits from " << mod.first;
-		for (const auto& file: Utils::GetAllFilesInFolder(mod.second + "common/traits"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/traits"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;

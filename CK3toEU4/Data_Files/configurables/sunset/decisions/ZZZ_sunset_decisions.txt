@@ -1,0 +1,89 @@
+#These should only appear in a Sunset Invasion scenario
+country_decisions = {
+	mesoamerican_codification_of_the_faith = {
+		potential = {
+			NOT = { has_country_modifier = codification_of_mayan_faith }
+			religion = mesoamerican_religion
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "codification_of_mayan_faith"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	nahuatl_conversion_ceremonies = {
+		potential = {
+			NOT = { has_country_modifier = nahuatl_sacrificial_stones }
+			religion = nahuatl
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "nahuatl_sacrificial_stones"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+	
+	inti_obligatory_religious_festivals = {
+		potential = {
+			NOT = { has_country_modifier = great_inti_festivals }
+			religion = inti
+			any_owned_province = {
+				NOT = { religion = owner }
+			}
+		}
+		allow = {
+			stability = 2
+			ADM = 3
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = "great_inti_festivals"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_idea_group = humanist_ideas
+				factor = 0
+			}
+		}
+	}
+}

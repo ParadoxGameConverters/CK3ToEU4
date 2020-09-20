@@ -1,0 +1,19 @@
+# - Rio Contas
+
+owner = TPQ
+controller = TPQ
+add_core = TPQ
+
+culture = tupinamba
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+religion = animism
+capital = "Rio de Contas"
+trade_goods = cocoa
+hre = no
+base_tax = 5
+base_production = 1
+base_manpower = 7
