@@ -1,0 +1,17 @@
+owner = CRE
+controller = CRE
+add_core = CRE
+culture = creek
+religion = totemism
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+citysize = 1000
+capital = "Potano"
+trade_goods = fur
+hre = no
+base_tax = 3
+base_production = 1
+base_manpower = 2

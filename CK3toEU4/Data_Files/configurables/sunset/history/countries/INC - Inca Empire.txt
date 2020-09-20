@@ -1,0 +1,297 @@
+government = monarchy
+add_government_reform = autocracy_reform
+add_army_professionalism = 0.1
+government_rank = 3
+mercantilism = 0.1
+primary_culture = inca
+religion = inti
+technology_group = high_american
+unit_type = high_american
+capital = 808	# Cuzco
+historical_rival = AZT
+
+#aristocracy_plutocracy = -5
+#centralization_decentralization = 5
+#innovative_narrowminded = 5
+#offensive_defensive = -5
+#land_naval = -5
+#quality_quantity = 4
+#serfdom_freesubjects = -5
+
+1443.1.1 = {
+	leader = {	
+		name = "Yamqui Mayta"	
+		type = explorer	
+		fire = 4
+		shock = 4
+		manuever = 6
+		siege = 0
+		death_date = 1465.1.15
+	}
+}
+
+1399.1.1 = {
+	monarch = {
+		name = "Viracocha Inca"
+		dynasty = "Hanan"
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+}
+
+1420.1.1 = {
+	heir = {
+		name = "Pachacuti"
+		monarch_name = "Pachacuti Inca"
+		dynasty = "Hanan"
+		birth_date = 1420.1.1
+		death_date = 1471.1.1
+		claim = 95
+		adm = 5
+		dip = 4
+		mil = 6
+	}
+}
+
+1438.1.1 = {
+	monarch = {
+		name = "Pachacuti Inca"
+		dynasty = "Hanan"
+		adm = 5
+		dip = 4
+		mil = 6
+	}
+}
+
+1443.1.1 = { 
+	leader = {	
+		name = "Yamqui Mayta Apo"	
+		type = explorer	
+		fire = 3
+		shock = 3
+		manuever = 6
+		siege = 0
+		death_date = 1470.10.15
+	}
+}
+
+1445.1.1 = {
+	heir = {
+		name = "Tupac-Yupanqui"
+		monarch_name = "Tupac Inca Yupanqui"
+		dynasty = "Hanan"
+		birth_date = 1445.1.1 # Approx.
+		death_date = 1493.1.1
+		claim = 95
+		adm = 5
+		dip = 3
+		mil = 6
+	}
+}
+
+1471.1.1 = {
+	monarch = {
+		name = "Tupac Inca Yupanqui"
+		dynasty = "Hanan"
+		adm = 5
+		dip = 3
+		mil = 6
+	}
+}
+
+1475.1.1 = {
+	heir = {
+		name = "Huayana Capac"
+		monarch_name = "Huayana Capac"
+		dynasty = "Hanan"
+		birth_date = 1475.1.1 # Approx.
+		death_date = 1527.1.1
+		claim = 95
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}
+
+1493.1.1 = {
+	monarch = {
+		name = "Huayna-Capac"
+		dynasty = "Hanan"
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}
+
+1503.1.1 = {
+	heir = {
+		name = "Huáscar"
+		monarch_name = "Huáscar I"
+		dynasty = "Hanan"
+		birth_date = 1503.1.1
+		death_date = 1532.1.1
+		claim = 95
+		adm = 3
+		dip = 0
+		mil = 1
+		leader = { name = "Huáscar"	type = general	fire = 1	shock = 3	manuever = 2	siege = 0 }
+	}
+}
+
+1523.1.1 = { leader = {	name = "Atoc"      	type = general	fire = 1	shock = 3	manuever = 2	siege = 0	death_date = 1532.1.1 } }
+
+1527.1.1 = {
+	monarch = {
+		name = "Huáscar I"
+		dynasty = "Hanan"
+		adm = 3
+		dip = 0
+		mil = 1
+		leader = { name = "Huáscar"	type = general	fire = 1	shock = 3	manuever = 2	siege = 0 }
+	}
+}
+
+1527.1.1 = {
+	heir = {
+		name = "Atahuallpa"
+		monarch_name = "Atahuallpa"
+		dynasty = "Hanan"
+		birth_date = 1497.3.20
+		death_date = 1533.8.29
+		claim = 95
+		adm = 2
+		dip = 0
+		mil = 3
+	}
+}
+
+1532.1.1 = {
+	monarch = {
+		name = "Atahuallpa"
+		dynasty = "Hanan"
+		adm = 2
+		dip = 0
+		mil = 3
+	}
+}
+
+1533.1.1 = {
+	heir = {
+		name = "Tupac Huallpa"
+		monarch_name = "Tupac Huallpa"
+		dynasty = "Hanan"
+		birth_date = 1510.1.1 # Unknown.
+		death_date = 1533.10.1
+		claim = 95
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+
+1533.7.28 = {
+	monarch = {
+		name = "Tupac Huallpa"
+		dynasty = "Hanan"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+
+1533.7.28 = {
+	heir = {
+		name = "Manco Yupanqui"
+		monarch_name = "Manco Inca Yupanqui"
+		dynasty = "Hanan"
+		birth_date = 1516.1.1
+		death_date = 1544.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1534.1.1 = {
+	monarch = {
+		name = "Manco Inca Yupanqui"
+		dynasty = "Hanan"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1535.1.1 = {
+	heir = {
+		name = "Sayri Tupac"
+		monarch_name = "Sayri Inca Tupac"
+		dynasty = "Hanan"
+		birth_date = 1535.1.1
+		death_date = 1561.1.1
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+
+1545.1.1 = {
+	monarch = {
+		name = "Sayri Tupac"
+		dynasty = "Hanan"
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+
+1545.1.1 = {
+	heir = {
+		name = "Titu Cusi"
+		monarch_name = "Titu Cusi Inca"
+		dynasty = "Hanan"
+		birth_date = 1529.1.1
+		death_date = 1571.1.1
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+
+1557.1.1 = {
+	monarch = {
+		name = "Titu Cusi Inca"
+		dynasty = "Hanan"
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+
+1557.1.1 = {
+	heir = {
+		name = "Tupac Amaru"
+		monarch_name = "Tupac Amaru Inca"
+		dynasty = "Hanan"
+		birth_date = 1540.1.1
+		death_date = 1572.1.1
+		claim = 95
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+
+1571.1.1 = {
+	monarch = {
+		name = "Tupac Amaru Inca"
+		dynasty = "Hanan"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}

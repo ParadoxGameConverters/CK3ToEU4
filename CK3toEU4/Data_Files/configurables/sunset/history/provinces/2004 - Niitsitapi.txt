@@ -1,0 +1,24 @@
+#2004 - Niitsitapi
+
+latent_trade_goods = {
+	coal
+}
+
+add_core = BLA
+owner = BLA
+controller = BLA
+culture = blackfoot
+religion = totemism
+capital = "Niitsitapi"
+trade_goods = fur
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 4
+is_city = yes
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

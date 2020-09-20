@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = cheyenne
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 910 # Chippewa
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Wahhanissatta"
+		dynasty = "Diwali"
+		adm = 6
+		dip = 1
+		mil = 3
+	}
+}

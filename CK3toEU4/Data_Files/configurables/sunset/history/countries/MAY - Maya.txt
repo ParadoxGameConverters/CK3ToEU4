@@ -1,0 +1,91 @@
+government = republic
+add_government_reform = merchants_reform
+add_army_professionalism = 0.075
+government_rank = 3
+mercantilism = 0.25
+technology_group = high_american
+unit_type = high_american
+primary_culture = mayan
+religion = mesoamerican_religion
+capital = 488	# Petén
+
+#offensive_defensive = -5
+#land_naval = -5
+#quality_quantity = 4
+#serfdom_freesubjects = -5
+#aristocracy_plutocracy = -5
+#centralization_decentralization = 5
+#innovative_narrowminded = 5
+
+#The Tutal Xiu family ruled in Uxmal and, later, Maní.
+
+1443.1.1 = {
+	leader = {
+		name = "Zotz Yumcaax"	
+		type = explorer	
+		fire = 6
+		shock = 6
+		manuever = 2
+		siege = 0
+		death_date = 1462.6.9
+	}
+}
+
+1399.1.1 = {
+	monarch = {
+		name = "Ah"
+		dynasty = "Xiu"
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+
+1420.1.1 = {
+	heir = {
+		name = "Tutul"
+		monarch_name = "Tutul"
+		dynasty = "Xiu"
+		birth_Date = 1420.1.1
+		death_date = 1492.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+
+1464.1.1 = {
+	monarch = {
+		name = "Tutul"
+		dynasty = "Xiu"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+
+1464.1.1 = {
+	heir = {
+		name = "Napot"
+		monarch_name = "Napot"
+		dynasty = "Xiu"
+		birth_date = 1464.1.1
+		death_Date = 1512.1.1
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+
+1492.1.1 = {
+	monarch = {
+		name = "Napot"
+		dynasty = "Xiu"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+

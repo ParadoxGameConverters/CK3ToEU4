@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = choctaw
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 920	# Choctaw
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Tushtallay"
+		dynasty = "Imoklashaiskitini"
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}

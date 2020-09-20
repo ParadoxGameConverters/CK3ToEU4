@@ -89,6 +89,10 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	outputDiplomacy(theConfiguration, diplomacy.getAgreements(), invasion);
 	Log(LogLevel::Progress) << "93 %";
 
+	LOG(LogLevel::Info) << "<- Copying Flags";
+	outputFlags(theConfiguration);
+	Log(LogLevel::Progress) << "94 %";
+
 	LOG(LogLevel::Info) << "<- Replacing Bookmark";
 	outputBookmark(theConfiguration, conversionDate);
 	Log(LogLevel::Progress) << "95 %";
@@ -355,4 +359,20 @@ void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const st
 		commonItems::TryCopyFile("configurables/sunset/history/diplomacy/SunsetInvasion.txt",
 			 "output/" + theConfiguration.getOutputName() + "/history/diplomacy/SunsetInvasion.txt");
 	}
+}
+
+void EU4::World::outputFlags(const Configuration& theConfiguration) const
+{
+	auto counter = 0;
+	if (!commonItems::DoesFolderExist("flags.tmp"))
+	{
+		Log(LogLevel::Warning) << "Flag folder flags.tmp not found!";
+		return;
+	}
+	for (const auto& filename: commonItems::GetAllFilesInFolder("flags.tmp"))
+	{
+		if (commonItems::TryCopyFile("flags.tmp/" + filename, "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + filename))
+			++counter;
+	}
+	Log(LogLevel::Info) << "<< " << counter << " flags copied.";
 }

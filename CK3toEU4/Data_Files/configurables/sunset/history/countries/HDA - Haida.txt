@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+add_army_professionalism = 0.1
+government_rank = 2
+primary_culture = haida
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 2022 #Haida
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

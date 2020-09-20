@@ -1,0 +1,16 @@
+owner = ARW
+controller = ARW
+add_core = ARW
+culture = guajiro
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+religion = animism
+capital = "Ilheus"
+is_city = yes
+trade_goods = sugar
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 5

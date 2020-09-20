@@ -1,0 +1,27 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+
+culture = patagonian
+
+religion = animism
+
+base_tax = 4
+base_production = 1
+base_manpower = 3
+
+trade_goods = fish
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000

@@ -1,0 +1,29 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+
+culture = inca
+
+religion = inti
+
+base_tax = 10
+base_production = 10
+base_manpower = 10
+
+trade_goods = gold
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000
+
+center_of_trade = 3

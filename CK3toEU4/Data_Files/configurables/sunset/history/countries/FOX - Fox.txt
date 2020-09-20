@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = chiwere
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 945	# Fox
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Hantaywee"
+		dynasty = "Blackhawk"
+		female = yes
+		adm = 3
+		dip = 2
+		mil = 5
+	}
+}

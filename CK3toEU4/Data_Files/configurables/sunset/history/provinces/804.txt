@@ -1,0 +1,25 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+add_core = CLA
+add_core = CRA
+
+culture = aimara
+
+religion = inti
+
+base_tax = 4
+base_production = 4
+base_manpower = 4
+
+trade_goods = gold
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

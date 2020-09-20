@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+primary_culture = navajo
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 878 # Navajo
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Toh Yah"
+		dynasty = "Coyotero"
+		adm = 2
+		dip = 3
+		mil = 4
+	}
+}

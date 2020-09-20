@@ -1,0 +1,20 @@
+# No previous file for Xocotla
+
+owner = TLX
+controller = TLX
+culture = aztek
+religion = nahuatl
+capital = "Xocotla"
+trade_goods = sugar
+hre = no 
+base_tax = 8
+base_production = 8
+base_manpower = 2
+is_city = yes
+add_core = TLX
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

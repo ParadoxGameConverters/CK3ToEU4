@@ -1,0 +1,16 @@
+#2002 - Galápagos Islands
+
+owner = INC
+
+controller = INC
+
+add_core = INC
+
+culture = inca
+religion = inti
+capital = "Puerto Baquerizo Moreno"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1

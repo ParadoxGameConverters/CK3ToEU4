@@ -1,0 +1,27 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+
+culture = chacoan
+
+religion = inti
+
+base_tax = 10 #25 is just too much, 50 Native size eh?
+base_production = 1
+base_manpower = 7
+
+trade_goods = wool
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000

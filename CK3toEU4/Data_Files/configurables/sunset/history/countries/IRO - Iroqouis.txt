@@ -1,0 +1,111 @@
+government = republic
+add_government_reform = federal_republic
+add_army_professionalism = 0.075
+government_rank = 2
+mercantilism = 0.2
+primary_culture = iroquois
+religion = totemism
+technology_group = high_american
+unit_type = high_american
+capital = 960 #Onondaga
+
+#aristocracy_plutocracy = 5
+#centralization_decentralization = 5
+#innovative_narrowminded = 0
+#offensive_defensive = 5
+#land_naval = -5
+#quality_quantity = 0
+#serfdom_freesubjects = 5
+
+
+1399.1.1 = {
+	monarch = {
+		name = "Bear Paw"
+		adm = 4
+		dip = 3
+		mil = 1
+	}
+}
+
+1533.1.1 = {
+	monarch = {
+		name = "White Wolf"
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+
+1567.1.1 = {
+	monarch = {
+		name = "Hiawatha"
+		adm = 5
+		dip = 6
+		mil = 3
+	}
+}
+
+1595.1.1 = {
+	monarch = {
+		name = "Wise Beaver"
+		adm = 3
+		dip = 5
+		mil = 4
+	}
+}
+
+1623.1.1 = {
+	monarch = {
+		name = "Red Fox"
+		adm = 2
+		dip = 4
+		mil = 4
+	}
+}
+
+1670.1.1 = {
+	monarch = {
+		name = "Eagle"
+		adm = 3
+		dip = 5
+		mil = 0
+	}
+}
+
+1699.1.1 = {
+	monarch = {
+		name = "Theyanoguin"
+		adm = 4
+		dip = 3
+		mil = 0
+	}
+}
+
+1755.1.1 = {
+	monarch = {
+		name = "Teiorhenhsere"
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+}
+
+1765.1.1 = { leader = {	name = "Pontiac"	type = conquistador	fire = 3	shock = 5	manuever = 6	siege = 1	death_date = 1769.4.20 } }
+
+1780.1.1 = {
+	monarch = {
+		name = "Thayendanega"
+		adm = 2
+		dip = 5
+		mil = 0
+	}
+}
+
+1807.1.1 = {
+	monarch = {
+		name = "Ahyouwighs"
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

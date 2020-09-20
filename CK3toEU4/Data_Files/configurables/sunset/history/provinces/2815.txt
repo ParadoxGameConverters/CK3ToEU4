@@ -1,0 +1,26 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+add_core = ARW
+
+culture = guajiro
+
+religion = inti
+
+base_tax = 7
+base_production = 1
+base_manpower = 3
+
+trade_goods = tropical_wood
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+

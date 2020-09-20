@@ -1,0 +1,21 @@
+# No previous file for Guanipa
+
+owner = CAB
+controller = CAB
+add_core = CAB
+add_core = ARW
+culture = carib
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+religion = animism
+capital = "Guanipa"
+trade_goods = tropical_wood
+hre = no
+base_tax = 7
+base_production = 2
+base_manpower = 3

@@ -1,0 +1,37 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+technology_group = high_american
+unit_type = high_american
+religion = nahuatl
+primary_culture = purepecha
+capital = 2624
+
+1430.1.1 =
+{monarch ={name ="Tangaxuan"
+dynasty ="Uacusecha"
+adm =4
+dip =2
+mil =4
+}}
+1454.1.1 =
+{monarch ={name ="Tzitzipandaquare"
+dynasty ="Uacusecha"
+adm =2
+dip =2
+mil =3
+}}
+1479.1.1 =
+{monarch ={name ="Zuangua"
+dynasty ="Uacusecha"
+adm =2
+dip =2
+mil =3
+}}
+1520.1.1 =
+{monarch ={name ="Tangaxuan II"
+dynasty ="Uacusecha"
+adm =2
+dip =2
+mil =3
+}}

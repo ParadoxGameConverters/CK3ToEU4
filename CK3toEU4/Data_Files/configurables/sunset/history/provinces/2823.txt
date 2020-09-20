@@ -1,0 +1,26 @@
+owner = INC
+
+controller = INC
+
+add_core = INC
+add_core = CYA
+
+culture = inca
+
+religion = inti
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = tropical_wood
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+

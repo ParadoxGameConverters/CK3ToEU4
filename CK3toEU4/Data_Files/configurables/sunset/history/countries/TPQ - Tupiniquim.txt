@@ -1,0 +1,27 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = tupinamba
+religion = animism
+technology_group = high_american
+unit_type = high_american
+capital = 757
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
+
+1520.1.1 = {
+	monarch = {
+		name = "Tibiriçá"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}

@@ -1,0 +1,28 @@
+owner = AZT
+
+controller = AZT
+
+add_core = AZT
+add_core = CAD
+
+culture = caddo
+
+religion = nahuatl
+
+discovered_by = mesoamerican
+
+base_tax = 5
+base_production = 2
+base_manpower = 4
+
+trade_goods = sugar
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+
