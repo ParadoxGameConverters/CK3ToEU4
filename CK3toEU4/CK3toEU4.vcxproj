@@ -66,7 +66,7 @@
       <AdditionalLibraryDirectories>..\imageMagick\lib-windows;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>Resources\rakaly.dll.lib;CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>NotSet</ShowProgress>
-      <LinkStatus>true</LinkStatus>
+      <LinkStatus>false</LinkStatus>
     </Link>
     <PostBuildEvent>
       <Command>Copy_Files.bat</Command>
