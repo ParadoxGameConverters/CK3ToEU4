@@ -12,39 +12,28 @@ link = { eu4 = baltic_pagan_reformed ck3 = baltic_pagan_reformed }
 link = { eu4 = bon_reformed ck3 = bon  }
 link = { eu4 = bon ck3 = old_bon }
 # Buddhism  
-link = { eu4 = buddhism ck3 = theravada }
-link = { eu4 = buddhism ck3 = ari }
+link = { eu4 = buddhism ck3 = theravada ck3 = ari }
 link = { eu4 = mahayana ck3 = mahayana }
-link = { eu4 = vajrayana ck3 = vajrayana }
-link = { eu4 = vajrayana ck3 = lamaism }
+link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity  
-link = { eu4 = catholic ck3 = catholic }
-link = { eu4 = catholic ck3 = conversos }
-link = { eu4 = catholic ck3 = insular_celtic }
+link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic }
 link = { eu4 = orthodox ck3 = orthodox }
-link = { eu4 = coptic ck3 = coptic }
-link = { eu4 = coptic ck3 = armenian_apostolic }
+link = { eu4 = coptic ck3 = coptic ck3 = armenian_apostolic }
 link = { eu4 = cathar ck3 = cathar }
 link = { eu4 = waldensian ck3 = waldensian }
 link = { eu4 = lollard ck3 = lollard }
 link = { eu4 = iconoclast ck3 = iconoclast }
-link = { eu4 = bogomilist ck3 = bogomilist }
-link = { eu4 = bogomilist ck3 = bosnian_church }
+link = { eu4 = bogomilist ck3 = bogomilist ck3 = bosnian_church }
 link = { eu4 = paulician ck3 = paulician }
 link = { eu4 = nestorian ck3 = nestorian }
 link = { eu4 = messalian ck3 = messalian }
 link = { eu4 = adamites ck3 = adamites }
 # Tani  
-link = { eu4 = animism ck3 = donyipoloism }
-link = { eu4 = animism ck3 = sedism }
+link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism  
 link = { eu4 = manichean ck3 = manichean }
-link = { eu4 = hurufi ck3 = mandeaism }
-link = { eu4 = hurufi ck3 = sabianism }
-link = { eu4 = gnostic ck3 = valentinianism }
-link = { eu4 = gnostic ck3 = sethianism }
-link = { eu4 = gnostic ck3 = priscillianism }
-link = { eu4 = gnostic ck3 = cainitism }
+link = { eu4 = hurufi ck3 = mandeaism ck3 = sabianism }
+link = { eu4 = gnostic ck3 = valentinianism ck3 = sethianism ck3 = priscillianism ck3 = cainitism }
 # Finno-Ugric  
 link = { eu4 = finnish_pagan ck3 = finnish_pagan }
 link = { eu4 = finnish_reformed ck3 = finnish_pagan_reformed }
@@ -54,42 +43,18 @@ link = { eu4 = norse_reformed ck3 = norse_pagan_reformed }
 # Hellenism  
 link = { eu4 = hellenic_pagan ck3 = hellenic_pagan }
 # Hinduism  
-link = { eu4 = hinduism ck3 = vaishnavism }
-link = { eu4 = hinduism ck3 = advaitism }
-link = { eu4 = hinduism ck3 = shaivism }
-link = { eu4 = hinduism ck3 = srikula_shaktism }
-link = { eu4 = hinduism ck3 = kalikula_shaktism }
-link = { eu4 = hinduism ck3 = smartism }
-link = { eu4 = hinduism ck3 = krishnaism }
+link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam  
-link = { eu4 = sunni ck3 = ashari }
-link = { eu4 = sunni ck3 = muwalladi }
-link = { eu4 = sunni ck3 = maturidi }
-link = { eu4 = sunni ck3 = masmudi }
-link = { eu4 = sunni ck3 = mutazila }
-link = { eu4 = sunni ck3 = quranist }
+link = { eu4 = sunni ck3 = ashari ck3 = muwalladi ck3 = maturidi ck3 = masmudi ck3 = mutazila ck3 = quranist }
 link = { eu4 = qarmatian ck3 = qarmatian }
-link = { eu4 = shia ck3 = ismaili }
-link = { eu4 = shia ck3 = nizari }
-link = { eu4 = shia ck3 = zayidi }
-link = { eu4 = shia ck3 = imami }
-link = { eu4 = shia ck3 = ghulat }
-link = { eu4 = shia ck3 = alawite }
-link = { eu4 = shia ck3 = alevi }
+link = { eu4 = shiite ck3 = ismaili ck3 = nizari ck3 = zayidi ck3 = imami ck3 = ghulat ck3 = alawite ck3 = alevi }
 link = { eu4 = druze ck3 = druze }
 link = { eu4 = ibadi ck3 = ibadi }
-link = { eu4 = kharijite ck3 = azariqa }
-link = { eu4 = kharijite ck3 = najdat }
-link = { eu4 = kharijite ck3 = sufri }
+link = { eu4 = kharijite ck3 = azariqa ck3 = najdat ck3 = sufri }
 # Jainism  
-link = { eu4 = jain ck3 = digambara }
-link = { eu4 = jain ck3 = svetambara }
-link = { eu4 = jain ck3 = yapaniya }
+link = { eu4 = jain ck3 = digambara ck3 = svetambara ck3 = yapaniya }
 # Judaism  
-link = { eu4 = jewish ck3 = rabbinism }
-link = { eu4 = jewish ck3 = kabarism }
-link = { eu4 = jewish ck3 = haymanot }
-link = { eu4 = jewish ck3 = malabarism }
+link = { eu4 = jewish ck3 = rabbinism ck3 = kabarism ck3 = haymanot ck3 = malabarism }
 link = { eu4 = karaite_faith ck3 = karaism }
 link = { eu4 = samaritan_faith ck3 = samaritan }
 # Kushitism  
@@ -99,20 +64,16 @@ link = { eu4 = west_african_pagan_reformed ck3 = kushitism_reformed }
 link = { eu4 = tengri_pagan ck3 = magyar_pagan }
 link = { eu4 = tengri_pagan_reformed ck3 = magyar_reformed }
 # Mundhum  
-link = { eu4 = hinduism ck3 = kiratism }
-link = { eu4 = hinduism ck3 = yumaism }
+link = { eu4 = hinduism ck3 = kiratism ck3 = yumaism }
 # Paganism  
 link = { eu4 = pagan_religion ck3 = pagan }
 # Qiangic  
-link = { eu4 = confucianism ck3 = rrmeaism }
-link = { eu4 = confucianism ck3 = melieism }
+link = { eu4 = confucianism ck3 = rrmeaism ck3 = melieism }
 # Slavic  
 link = { eu4 = slavic_pagan ck3 = slavic_pagan }
 link = { eu4 = slavic_pagan_reformed ck3 = slavic_pagan_reformed }
 # Taoism  
-link = { eu4 = confucianism ck3 = zhengyi }
-link = { eu4 = confucianism ck3 = shangqing }
-link = { eu4 = confucianism ck3 = quanzhen }
+link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism  
 link = { eu4 = tengri_pagan ck3 = tengri_pagan }
 link = { eu4 = tengri_reformed ck3 = tengri_pagan_reformed }
@@ -131,17 +92,11 @@ link = { eu4 = shamanism ck3 = west_african_orisha_pagan }
 link = { eu4 = shamanism ck3 = west_african_roog_pagan }
 link = { eu4 = west_african_pagan_reformed ck3 = west_african_roog_reformed }
 # Yazidi  
-link = { eu4 = yazidi ck3 = yazidi }
-link = { eu4 = yazidi ck3 = meshefaresism }
-link = { eu4 = yazidi ck3 = kitebacilweism }
+link = { eu4 = yazidi ck3 = yazidi ck3 = meshefaresism ck3 = kitebacilweism }
 # Zoroastrianism  
-link = { eu4 = zoroastrian ck3 = mazdayasna }
-link = { eu4 = zoroastrian ck3 = zurvanism }
-link = { eu4 = zoroastrian ck3 = gayomarthianism }
-link = { eu4 = zoroastrian ck3 = urartuism }
+link = { eu4 = zoroastrian ck3 = mazdayasna ck3 = zurvanism ck3 = gayomarthianism ck3 = urartuism }
 link = { eu4 = khurmatza ck3 = khurmatza }
-link = { eu4 = mazdaki ck3 = mazdakism }
-link = { eu4 = mazdaki ck3 = khurramism }
+link = { eu4 = mazdaki ck3 = mazdakism ck3 = khurramism }
 # Zunism  
 link = { eu4 = zun_pagan ck3 = zun_pagan }
 link = { eu4 = zun_pagan_reformed ck3 = zun_pagan_reformed }
