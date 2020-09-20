@@ -18,7 +18,7 @@ pagan = {
 	}
 	pagan_religion_reformed = {
 		color = { 127 127 127 }
-		icon = 148
+		icon = 149
 		country = {
 			tolerance_own = 2
 			tolerance_heretic = 2
@@ -341,7 +341,7 @@ pagan = {
 	#Donyi-Poloism/Sedism -> Animism
 	kushitism_pagan = {
 		color = { 0.15 1 0.7 }
-		icon = 144
+		icon = 145
 		country = {
 			legitimacy = 1
 			devotion = 1
@@ -362,7 +362,7 @@ pagan = {
 	}
 	kushitism_pagan_reformed = {
 		color = { 0 255 170 }
-		icon = 145
+		icon = 146
 		country = {
 			legitimacy = 1
 			devotion = 1
@@ -384,7 +384,7 @@ pagan = {
 	
 	magyar_pagan = { #Uralic/Taltoism
 		color = { 250 120 90 }
-		icon = 146
+		icon = 147
 		country = {
 			free_policy = 1
 		}
@@ -399,7 +399,7 @@ pagan = {
 	}
 	magyar_pagan_reformed = { #Uralic/Taltoism
 		color = { 212 106 80 }
-		icon = 147
+		icon = 148
 		country = {
 			free_policy = 1
 		}

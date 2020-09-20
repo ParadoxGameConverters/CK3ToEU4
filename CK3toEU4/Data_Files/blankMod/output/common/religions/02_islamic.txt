@@ -1,7 +1,7 @@
 muslim = {
 	mutazila = { #Qadariyah
 		color = { 0 0.7 0.5 }
-		icon = 131
+		icon = 132
 		country = {
 			idea_cost = -0.1
 			heir_chance = 1.0
@@ -19,7 +19,7 @@ muslim = {
 	}
 	quranist = {
 		color = { 0.2 0.7 0.1 }
-		icon = 132
+		icon = 133
 		country = {
 			tolerance_own = 2
 			heir_chance = 1.0
@@ -37,7 +37,7 @@ muslim = {
 	}
 	alawite = {
 		color = { 0.2 0.4 0.1 }
-		icon = 133
+		icon = 134
 		country = {
 			tolerance_heretic = 2
 			tolerance_heathen = 3

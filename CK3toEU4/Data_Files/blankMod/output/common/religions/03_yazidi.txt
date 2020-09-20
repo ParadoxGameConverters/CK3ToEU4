@@ -28,7 +28,7 @@ yazidism = {
 	}
 	meshefaresism = {
 		color = { 0.5 0.1 0.5 }
-		icon = 134
+		icon = 135
 		country = {
 			tolerance_own = 1
 			advisor_pool = 1 # Caste system
@@ -46,7 +46,7 @@ yazidism = {
 	}
 	kitebacilweism = {
 		color = { 0.1 0.1 0.8 }
-		icon = 135
+		icon = 136
 		country = {
 			global_missionary_strength = 0.01
 			advisor_pool = 1 # Caste system		

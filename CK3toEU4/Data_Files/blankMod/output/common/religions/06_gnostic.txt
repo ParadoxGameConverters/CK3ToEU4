@@ -48,7 +48,7 @@ gnostic = {
 		}
 	}	
 	mandeaism = {
-		icon = 139
+		icon = 140
 		color = { 0.5 0.75 0.3 }
 		allowed_conversion = {
 			manichean
@@ -91,7 +91,7 @@ gnostic = {
 		}
 	}
 	valentinianism = {
-		icon = 140
+		icon = 141
 		color = { 0.8 0.6 0.4 }
 		allowed_conversion = {
 			catholic
@@ -133,7 +133,7 @@ gnostic = {
 		}
 	}
 	sethianism = {
-		icon = 141
+		icon = 142
 		color = { 0.85 0.55 0.3 }
 		allowed_conversion = {
 			manichean
@@ -173,7 +173,7 @@ gnostic = {
 		}
 	}
 	priscillianism = {
-		icon = 142
+		icon = 143
 		color = { 0.3 0.6 0.2 }
 		allowed_conversion = {
 			catholic
@@ -214,7 +214,7 @@ gnostic = {
 		}
 	}
 	cainitism = {
-		icon = 143
+		icon = 144
 		color = { 0.2 0.5 0.25 }
 		allowed_conversion = {
 			manichean

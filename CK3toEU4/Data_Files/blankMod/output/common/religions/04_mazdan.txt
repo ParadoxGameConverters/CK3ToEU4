@@ -31,7 +31,7 @@ zoroastrian_group = {
 		personal_deity = yes
 	}
 	zurvanism = {
-		icon = 136
+		icon = 137
 		color = { 0.3 0.6 0.4 }
 		country = {
 			tolerance_own = 2
@@ -47,7 +47,7 @@ zoroastrian_group = {
 		heretic = { MANICHEAN MAZDAKI }
 	}
 	gayomarthianism = {
-		icon = 137
+		icon = 138
 		color = { 0.4 0.8 0.2 }
 		country = {
 			stability_cost_modifier = -0.5
@@ -64,7 +64,7 @@ zoroastrian_group = {
 		heretic = { MANICHEAN MAZDAKI }
 	}
 	khurramism = {
-		icon = 138
+		icon = 139
 		color = { 0.1 0.7 0.2 }
 		country = {
 			global_unrest = -2

@@ -50,7 +50,7 @@ christian = {
 	
 	adamites = {
 		color = { 0.6 0.8 0.6 }
-		icon = 129
+		icon = 130
 		allowed_conversion = {
 			catholic
 			cathar
@@ -103,7 +103,7 @@ christian = {
 	
 	bosnian_church = {
 		color = { 153 117 134 }
-		icon = 130
+		icon = 131
 		allowed_conversion = {
 			catholic
 			orthodox

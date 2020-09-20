@@ -201,10 +201,10 @@ link = { eu4 = al_iraqiya_arabic ck3 = bedouin ck3 = levantine tech = muslim gfx
 link = { eu4 = omani_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = oman_area region = mascat_area }
 link = { eu4 = yemeni_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = asir_area region = tihama_al_yemen_area region = upper_yemen_area region = yemen_area }
 link = { eu4 = bedouin_arabic ck3 = bedouin tech = muslim gfx = muslimgfx }
-link = { eu4 = algerian ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area }
-link = { eu4 = moroccan ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = northern_morocco_area region = tafilalt_area region = sus_area region = marrekesh_area region = western_morocco_area region = southern_morocco_area }
-link = { eu4 = tunisian ck3 = maghrebi ck3 = bedouin tech = muslim gfx = muslimgfx region = tunisia_area region = djerba_area }
-link = { eu4 = berber ck3 = berber ck3 = baranis ck3 = butr ck3 = maghrebi tech = muslim gfx = muslimgfx }
+link = { eu4 = algerian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area }
+link = { eu4 = moroccan ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = northern_morocco_area region = tafilalt_area region = sus_area region = marrekesh_area region = western_morocco_area region = southern_morocco_area }
+link = { eu4 = tunisian cck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = tunisia_area region = djerba_area }
+link = { eu4 = berber ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx }
 link = { eu4 = al_suryah_arabic ck3 = levantine tech = muslim gfx = muslimgfx }
 link = { eu4 = al_misr_arabic ck3 = egyptian tech = muslim gfx = muslimgfx }
 link = { eu4 = andalucian ck3 = andalusian tech = muslim gfx = muslimgfx }
@@ -283,7 +283,7 @@ link = { eu4 = somali ck3 = somali tech = east_african gfx = africangfx }
 link = { eu4 = daju ck3 = daju tech = east_african gfx = africangfx }
 
 # Central African
-link = { eu4 = kanuri ck3 = kanuri tech = sub_saharan gfx = africangfx }
+link = { eu4 = kanuri ck3 = kanuri ck3 = sao tech = sub_saharan gfx = africangfx }
 link = { eu4 = hausa ck3 = hausa tech = sub_saharan gfx = africangfx }
 link = { eu4 = bilala ck3 = zaghawa tech = sub_saharan gfx = africangfx region = kanem_area }
 link = { eu4 = zaghawa ck3 = zaghawa tech = sub_saharan gfx = africangfx }
@@ -298,10 +298,9 @@ link = { eu4 = mali ck3 = mande ck3 = senufo ck3 = malinke ck3 = bobo ck3 = gur 
 link = { eu4 = soninke ck3 = soninke tech = sub_saharan gfx = africangfx }
 link = { eu4 = songhai ck3 = songhai ck3 = gaw tech = sub_saharan gfx = africangfx }
 
-link = { eu4 = nupe ck3 = nupe ck3 = sao tech = sub_saharan gfx = africangfx }
+link = { eu4 = nupe ck3 = nupe ck3 = igbo tech = sub_saharan gfx = africangfx }
 link = { eu4 = fon ck3 = ewe tech = sub_saharan gfx = africangfx }
 link = { eu4 = yorumba ck3 = yoruba ck3 = edo tech = sub_saharan gfx = africangfx }
-link = { eu4 = igbo ck3 = igbo tech = sub_saharan gfx = africangfx }
 link = { eu4 = mossi ck3 = mossi tech = sub_saharan gfx = africangfx }
 link = { eu4 = senegambian tech = sub_saharan gfx = africangfx ck3 = pulaar ck3 = serer }
 link = { eu4 = jolof tech = sub_saharan gfx = africangfx ck3 = wolof }
