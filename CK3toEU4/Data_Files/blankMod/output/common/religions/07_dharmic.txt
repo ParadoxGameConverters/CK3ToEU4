@@ -1,7 +1,7 @@
 dharmic = {
 	jain = {
 		icon = 59
-		color = { 1.2 0.3 0.6 }
+		color = { 1.2 0.3 0.6 } #306(!?) 76.5 153
 		country = {
 			tolerance_heathen = 2
 			tolerance_heretic = 2

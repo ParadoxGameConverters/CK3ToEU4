@@ -1,7 +1,7 @@
 jewish_group = {
 	samaritan_faith = {
 		icon = 50
-		color = { 0.5 0.7 0.2 }
+		color = { 200 0 200 }
 		country = {
 			advisor_cost = -0.15
 			adm_tech_cost_modifier = -0.05
@@ -17,9 +17,9 @@ jewish_group = {
 		
 		heretic = { KARAITE }
 	}
-	karaite_faith = {
+	karaite_faith = { #
 		icon = 51
-		color = { 0.5 0.7 0.2 }
+		color = { 255 83 255 }
 		country = {
 			governing_capacity = 250
 			idea_cost = -0.1
