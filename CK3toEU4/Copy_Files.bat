@@ -18,7 +18,7 @@ copy "Data_Files\license.txt" "..\Release\Docs\"
 copy "Data_Files\after_converting.txt" "..\Release\Docs\"
 
 rem Imagemagick dlls
-xcopy "..\imageMagick\dll-windows" "..\Release\CK3toEU4" /Y /E /I
+xcopy "..\imageMagick\dll-windows-required" "..\Release\CK3toEU4" /Y /E /I
 
 rem Create Configurables
 del "..\Release\CK3toEU4\configurables" /Q

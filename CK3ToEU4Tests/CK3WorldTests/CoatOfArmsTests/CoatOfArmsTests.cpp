@@ -16,7 +16,7 @@ TEST(CK3World_CoatOfArmsTests, loadValuesDefaultToBlank)
 	std::stringstream input;
 	const CK3::CoatOfArms coatOfArms(input, 79);
 
-	ASSERT_TRUE(coatOfArms.getPattern().empty());
+	ASSERT_FALSE(coatOfArms.getPattern());
 	ASSERT_FALSE(coatOfArms.getColor1());
 	ASSERT_FALSE(coatOfArms.getColor2());
 	ASSERT_FALSE(coatOfArms.getColor3());
@@ -26,7 +26,7 @@ TEST(CK3World_CoatOfArmsTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(coatOfArms.getColoredEmblems().empty());
 	ASSERT_TRUE(coatOfArms.getSubs().empty());
 	ASSERT_TRUE(coatOfArms.getInstances().empty());
-	ASSERT_TRUE(coatOfArms.getParent().first.empty());
+	ASSERT_FALSE(coatOfArms.getParent());
 }
 
 TEST(CK3World_CoatOfArmsTests, PrimitivesCanBeLoaded)
@@ -55,7 +55,7 @@ TEST(CK3World_CoatOfArmsTests, PrimitivesCanBeLoaded)
 	ASSERT_EQ("= hex { ff0000 }", coatOfArms.getColor3()->outputHex());
 	ASSERT_EQ("= hex { 00ff00 }", coatOfArms.getColor4()->outputHex());
 	ASSERT_EQ("= hex { 7f7f7f }", coatOfArms.getColor5()->outputHex());
-	ASSERT_EQ("k_abyss", coatOfArms.getParent().first);
+	ASSERT_EQ("k_abyss", coatOfArms.getParent()->first);
 
 	laFabricaDeColor.clear();
 }

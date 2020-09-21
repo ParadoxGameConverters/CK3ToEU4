@@ -23,8 +23,8 @@ TEST(CK3World_CoatsOfArmsTests, BundledCoatsOfArmsCanBeLoaded)
 	const CK3::CoatsOfArms coatsOfArms(input);
 
 	ASSERT_EQ(2, coatsOfArms.getCoats().size());
-	ASSERT_EQ("k_france", coatsOfArms.getCoats().find(13)->second->getParent().first);
-	ASSERT_EQ("k_england", coatsOfArms.getCoats().find(15)->second->getParent().first);
+	ASSERT_EQ("k_france", coatsOfArms.getCoats().find(13)->second->getParent()->first);
+	ASSERT_EQ("k_england", coatsOfArms.getCoats().find(15)->second->getParent()->first);
 }
 
 TEST(CK3World_CoatsOfArmsTests, UnBundledCoatsOfArmsCanBeLoaded)
@@ -36,8 +36,8 @@ TEST(CK3World_CoatsOfArmsTests, UnBundledCoatsOfArmsCanBeLoaded)
 	const CK3::CoatsOfArms coatsOfArms(input);
 
 	ASSERT_EQ(2, coatsOfArms.getCoats().size());
-	ASSERT_EQ("k_france", coatsOfArms.getCoats().find(13)->second->getParent().first);
-	ASSERT_EQ("k_england", coatsOfArms.getCoats().find(15)->second->getParent().first);
+	ASSERT_EQ("k_france", coatsOfArms.getCoats().find(13)->second->getParent()->first);
+	ASSERT_EQ("k_england", coatsOfArms.getCoats().find(15)->second->getParent()->first);
 }
 
 TEST(CK3World_CoatsOfArmsTests, parentsCanBeLinked)
@@ -55,7 +55,7 @@ TEST(CK3World_CoatsOfArmsTests, parentsCanBeLinked)
 
 	const auto& c2 = coats.getCoats().find(2);
 
-	ASSERT_EQ("smooth", c2->second->getParent().second->getPattern());
+	ASSERT_EQ("smooth", c2->second->getParent()->second->getPattern());
 }
 
 TEST(CK3World_CoatsOfArmsTests, parentsLinkWithoutTitleThrowsException)

@@ -53,7 +53,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		Log(LogLevel::Info) << "<> Loaded " << provinceHoldings.getProvinceHoldings().size() << " provinces.";
 	});
 	registerRegex("living|dead_unpruneable", [this](const std::string& unused, std::istream& theStream) {
-		Log(LogLevel::Info) << "-> Loading alive human beings.";
+		Log(LogLevel::Info) << "-> Loading potentially alive human beings.";
 		characters = Characters(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
 	});
