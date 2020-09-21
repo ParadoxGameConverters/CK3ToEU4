@@ -1,7 +1,67 @@
 l_spanish:
+ #Christian
  adamites: "Adanita"
- adamites_desc: "Originalmente una secta cristiana primitiva de la era romana tardía en el norte de África, los adanitas son notoriamente famosos por tratar de restablecer el Paraíso en Tierra caminando desnudos y no responsabilizándose por el bien o el mal."
+ adamites_religion_desc: "Originalmente una secta cristiana primitiva de la era romana tardía en el norte de África, los adanitas son notoriamente famosos por tratar de restablecer el Paraíso en Tierra caminando desnudos y no responsabilizándose por el bien o el mal."
  insular_celtic: "Insular"
- insular_celtic_desc: "El cristianismo celta insular es ligeramente diferente del catolicismo, pero no lo suficiente como para que esté representado por las mecánicas del juego además de un nombre elegante."
+ insular_celtic_religion_desc: "El cristianismo celta insular es ligeramente diferente del catolicismo, pero no lo suficiente como para que esté representado por las mecánicas del juego además de un nombre elegante."
+ bosnian_church:0 "Krstjani"
+ bosnian_church_religion_desc:0 "Olvidados durante mucho tiempo tanto por católicos como por ortodoxos, los krstjani de las tierras altas de Bosnia son más permisivos que sus compatriotas más conocidos, pero carecen de estructura formal. Al conservar muchos elementos arcaicos del cristianismo, son tratados a menudo con desdén por sus correligionarios, si es que se les recuerda."
+
+ #Islamic
+ mutazila:0 "Qadariyah"
+ mutazila_religion_desc:0 "Una escuela racionalista de teología que afirma que el Corán no coexiste eternamente con Dios, ya que Él habrá precedido a Su palabra."
+ quranist:0 "Coranismo"
+ quranist_religion_desc:0 "Una interpretación literal del islam que enfatiza que el Corán es la única fuente de sabiduría divina y debe seguirse al pie de la letra, haciendo caso omiso de hadices y fetuas."
+ alawite:0 "Alauismo"
+ alawite_religion_desc:0 "Las enseñanzas religiosas alauitas son secretas, y el Corán es solo uno de sus textos sagrados. Además de la creencia en la sucesión de imanes a través de Ali, los alauitas también creen en la reencarnación, y que todos los seres son estrellas expulsadas del cielo que ahora deben volver a ganarse su lugar viviendo vidas sucesivas buenas y fieles."
+
+ #Yazidi
+ yazidism: "Yazidism"
+ harmonized_yazidism:0 "Armonizado con fes yazidi"
+ desc_harmonized_yazidism:0 "Hemos incorporado todas las fes yazidis a nuestro país y los valores nacionales."
+ meshefaresism:0 "Meshefaresismo"
+ meshefaresism_religion_desc:0 "Seguidores del Libro Negro, que describe cómo el Señor descendió de la Montaña Negra para crear el mundo."
+ kitebacilweism:0 "Kitêbacilweismo"
+ kitebacilweism_religion_desc:0 "Seguidores del Libro de las Revelaciones, que habla de la grandeza de Xwedê."
+ HOLY_SITE_411_DESC:0 "Mosul es el hogar de Lalish, un valle de montaña y templo en Ninawa. Es el templo más sagrado de los yazidis. Es la ubicación de la tumba del jeque Adi ibn Musafir, una figura central de la fe yazidi."
+ HOLY_SITE_385_DESC:0 "La Meca es famosa por ser el lugar sagrado del Islam. El control de ella por parte de los fieles yazidíes sería una prueba de que es hacia Lalish por lo que debemos orar, no hacia La Meca."
+ HOLY_SITE_379_DESC:0 "Como una de las religiones abrahámicas, los yazidíes consideran a Jerusalén como una ciudad sagrada, que debe ser celebrada con el mayor respeto y cuidado."
+ HOLY_SITE_4326_DESC:0 "Una de las ciudades más antiguas y prestigiosas del mundo, Nishapur ha sido la capital de más de un gran imperio, exudando prestigio y poder de su núcleo."
+ HOLY_SITE_430_DESC:0 "Se dice que fue el lugar del entierro de los 3 magos, Bushehr es importante no solo estratégicamente sino también teológicamente."
+ 
+ #Mazdan
+ zurvanism:0 "Zurvanismo"
+ zurvanism_religion_desc:0 "Los zurvanitas creen que Ahura Mazda y Angra Mainyu eran gemelos iguales pero opuestos, nacidos de Zurvan, el Creador de todo. El zurvanismo hace gran hincapié en ayudar a Ahura Mazda mediante arrancando de raíz el mal y las falsedades."
+ gayomarthianism:0 "Keyumarismo"
+ gayomarthianism_religion_desc:0 "Basándose en la idea de que Ahura Mazda, mediante sus pensamientos, creó los espíritus malignos por accidente, los keyumars rechazan la infalibilidad del Señor de la Sabiduría y, en su lugar, enfatizan la práctica ritual para aprender la verdad en comunión con Ahura Mazda."
+ khurramism:0 "Khurramismo"
+ khurramism_religion_desc:0 "En un mundo de Luz y Oscuridad, los gobernantes injustos deben ser depuestos en apoyo de lo que es bueno. Mediante profetas como Mazdek, Mahoma y Abu Muslim, los khurramitas creen que la divinidad nació en la humanidad y que un día volverá para guiarles como el Mesías."
+
+ 
+ #Gnostic
  gnostic: "Gnosticismo"
- gnostic_desc: "El gnosticismo es una colección de diferentes teorías religiosas, en su mayoría centradas en el dualismo, con la idea de que el mundo material es fruto del Mal."
+ gnostic_religion_desc: "El gnosticismo es una colección de diferentes teorías religiosas, en su mayoría centradas en el dualismo, con la idea de que el mundo material es fruto del Mal."
+ harmonized_gnostic:0 "Armonizado con fes gnostic"
+ desc_harmonized_gnostic:0 "Hemos incorporado todas las fes gnostics a nuestro país y los valores nacionales."
+ mandeaism:0 "Mandeísmo"
+ mandeaism_religion_desc:0 "El mandeísmo remonta su linaje a Adán y Juan el Bautista es su mayor profeta. El mundo consta de luz y oscuridad y en su momento, todas las almas mortales serán juzgadas si son dignas de regresar al autor de la luz, el Creador eterno."
+ valentinianism:0 "Valentinismo"
+ valentinianism_religion_desc:0 "El Padre, el creador original, está al final de todo conocimiento, y el camino a la verdadera comprensión -gnosis. Conseguir el conocimiento mejora el mundo y cuando el mundo haya salido colectivamente de la ignorancia material, regresará a su estado natural y espiritual."
+ sethianism:0 "Setianismo"
+ sethianism_religion_desc:0 "El Dios Desconocido emanó toda la existencia en el pléroma perfecto, lleno de eones de gracia, el primero de los cuales fue Barbelo, el Madre-Padre.\nUna corrupción causó la existencia de Yaldabaoth, quién robó una porción de divinidad y creó el mundo material. Sin embargo, cuando creó a la humanidad, les dio accidentalmente la chispa de divinidad robada. Yaldabaoth pasará la eternidad intentando recuperar su poder, mientras que la humanidad debe esforzarse por volver a Barbelo y al Dios Desconocido."
+ priscillianism:0 "Priscilianismo"
+ priscillianism_adherent_plural:0 "priscilianistas"
+ cainitism:0 "Cainitismo"
+ cainitism_religion_desc:0 "Caín fue la primera víctima del mal del Demiurgo, creador de toda materia física. Como la materia y los cuerpos son malvados, los cuerpos deben ser mancillados y destruidos mediante el pecado para liberar la auténtica alma humana de su interior."
+ 
+ #Pagan
+ kushitism_pagan:1 "Kushitismo"
+ kushitism_pagan_religion_desc:0 "Aquí se mantiene fuerte la veneración a los dioses aniguos, así como el venerar el límiete entre vida y muerte."
+ magyar_pagan_religion:2 "Urálica"
+ magyar_pagan_religion_desc:1 "En la fe mogyer nativa, todo táltos, o sacerdote, es elegido por los dioses antes de su nacimiento. Dotado de una fuerza, sabiduría y poderes sobrehumanos, los urálicos confían a estos táltos la protección de sus comunidades, y esperan que los conduzcan a la prosperidad."
+
+ 
+ 
+ 
+ 
+ 
