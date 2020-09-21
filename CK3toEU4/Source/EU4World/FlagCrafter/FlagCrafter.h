@@ -11,7 +11,7 @@ namespace Magick
 {
 class Image;
 class ColorRGB;
-}
+} // namespace Magick
 namespace CK3
 {
 class CoatOfArms;
@@ -27,7 +27,8 @@ class FlagCrafter
   private:
 	void craftFlag(const std::shared_ptr<Country>& country) const;
 	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa) const;
-	bool ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
+	[[nodiscard]] bool ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
+	[[nodiscard]] bool ColorFuzzyNearby(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
 
 	std::string ck3Source; // path to ck3 installation gfx/coat_of_arms/ folder
 
@@ -40,9 +41,10 @@ class FlagCrafter
 		COLOR5
 	};
 
-	[[nodiscard]] Magick::Image recolorPattern(const Magick::Image& pattern, COLOR colorcode, const commonItems::Color& color) const;
-	[[nodiscard]] Magick::Image recolorEmblem(const Magick::Image& emblem, COLOR colorcode, const commonItems::Color& color) const;
-	[[nodiscard]] Magick::Image recolorImage(const Magick::Image& image, const commonItems::Color& mask, const commonItems::Color& color) const;
+	[[nodiscard]] Magick::Image recolorPattern(const Magick::Image& pattern, const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const;
+	[[nodiscard]] Magick::Image recolorEmblem(const Magick::Image& emblem, const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const;
+	[[nodiscard]] Magick::Image recolorImage(const Magick::Image& image,
+		 const std::vector<std::pair<commonItems::Color, commonItems::Color>>& replacementColors) const;
 
 	struct patternColorMasks
 	{
@@ -52,7 +54,7 @@ class FlagCrafter
 		commonItems::Color color4 = commonItems::Color(std::array<int, 3>{0, 0, 0}); // unknown
 		commonItems::Color color5 = commonItems::Color(std::array<int, 3>{0, 0, 0}); // unknown
 	} patternColorMasks;
-	
+
 	struct emblemColorMasks
 	{
 		commonItems::Color color1 = commonItems::Color(std::array<int, 3>{0, 0, 126});

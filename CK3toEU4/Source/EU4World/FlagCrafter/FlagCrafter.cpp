@@ -8,6 +8,7 @@
 #include "../Country/Country.h"
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
+#include <cmath>
 
 // We are calling this class and its methods outside of outWorld. This is because CK3toEU4Tests depends on outWorld and
 // we do not want to pollute tests build with imagemagick's shenanigans. So, we will generate flags in a temporary directory
@@ -101,65 +102,75 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	// Create a blank (black) 128x128 image.
 	Magick::Image image("128x128", "black");
 
-	Magick::Image pattern;
-	// Pattern is the base of CoAs.
+	Magick::Image pattern; // Pattern is the base of CoAs.
+	std::vector<std::pair<COLOR, commonItems::Color>> replacementMatrix;	
 	if (coa.getPattern())
 	{
 		Log(LogLevel::Debug) << "Using pattern: " << *coa.getPattern();
-		const auto patternSource = ck3Source + "patterns/" + *coa.getPattern();
-		pattern.read(patternSource);
+		pattern.read(ck3Source + "patterns/" + *coa.getPattern());
 		if (coa.getColor1())
 		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR1, *coa.getColor1()));
 			Log(LogLevel::Debug) << "Using color1: " << coa.getColor1()->outputRgb();
-			pattern = recolorPattern(pattern, COLOR::COLOR1, *coa.getColor1());
 		}
 		if (coa.getColor2())
 		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR2, *coa.getColor2()));
 			Log(LogLevel::Debug) << "Using color2: " << coa.getColor2()->outputRgb();
-			pattern = recolorPattern(pattern, COLOR::COLOR2, *coa.getColor2());
 		}
 		if (coa.getColor3())
 		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR3, *coa.getColor3()));
 			Log(LogLevel::Debug) << "Using color3: " << coa.getColor3()->outputRgb();
-			pattern = recolorPattern(pattern, COLOR::COLOR3, *coa.getColor3());
 		}
+		pattern = recolorPattern(pattern, replacementMatrix);
 		image = pattern;
 	}
 
 	return image;
 }
 
-Magick::Image EU4::FlagCrafter::recolorPattern(const Magick::Image& pattern, COLOR colorcode, const commonItems::Color& color) const
+Magick::Image EU4::FlagCrafter::recolorPattern(const Magick::Image& pattern, const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const
 {
-	switch (colorcode)
-	{
-		case COLOR::COLOR1:
-			return recolorImage(pattern, patternColorMasks.color1, color);		
-		case COLOR::COLOR2:
-			return recolorImage(pattern, patternColorMasks.color2, color);
-		case COLOR::COLOR3:
-			return recolorImage(pattern, patternColorMasks.color3, color);
-		case COLOR::COLOR4: // not sure what to do here yet.
-		case COLOR::COLOR5: // not sure what to do here yet.
-			return pattern;
-	}
-	return pattern;
+	std::vector<std::pair<commonItems::Color, commonItems::Color>> replacementColors;
+	for (const auto& entry: replacementMatrix)
+		switch (entry.first)
+		{
+			case COLOR::COLOR1:
+				replacementColors.emplace_back(std::pair(patternColorMasks.color1, entry.second));
+				break;
+			case COLOR::COLOR2:
+				replacementColors.emplace_back(std::pair(patternColorMasks.color2, entry.second));
+				break;
+			case COLOR::COLOR3:
+				replacementColors.emplace_back(std::pair(patternColorMasks.color3, entry.second));
+				break;
+			case COLOR::COLOR4: // not sure what to do here yet.
+			case COLOR::COLOR5: // not sure what to do here yet.
+				break;
+		}
+	return recolorImage(pattern, replacementColors);
 }
-Magick::Image EU4::FlagCrafter::recolorEmblem(const Magick::Image& emblem, COLOR colorcode, const commonItems::Color& color) const
+Magick::Image EU4::FlagCrafter::recolorEmblem(const Magick::Image& emblem, const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const
 {
-	switch (colorcode)
-	{
-		case COLOR::COLOR1:
-			return recolorImage(emblem, emblemColorMasks.color1, color);
-		case COLOR::COLOR2:
-			return recolorImage(emblem, emblemColorMasks.color2, color);
-		case COLOR::COLOR3:
-			return recolorImage(emblem, emblemColorMasks.color3, commonItems::Color(std::array<int, 3>{255, 255, 255})); // rendering to white per PDX spec.
-		case COLOR::COLOR4: // not sure what to do here yet.
-		case COLOR::COLOR5: // not sure what to do here yet.
-			return emblem;
-	}
-	return emblem;
+	std::vector<std::pair<commonItems::Color, commonItems::Color>> replacementColors;
+	for (const auto& entry: replacementMatrix)
+		switch (entry.first)
+		{
+			case COLOR::COLOR1:
+				replacementColors.emplace_back(std::pair(emblemColorMasks.color1, entry.second));
+				break;
+			case COLOR::COLOR2:
+				replacementColors.emplace_back(std::pair(emblemColorMasks.color2, entry.second));
+				break;
+			case COLOR::COLOR3:
+				replacementColors.emplace_back(std::pair(emblemColorMasks.color3, commonItems::Color(std::array<int, 3>{255, 255, 255})));// rendering to white per PDX spec.
+				break;
+			case COLOR::COLOR4: // not sure what to do here yet.
+			case COLOR::COLOR5: // not sure what to do here yet.
+				break;
+		}
+	return recolorImage(emblem, replacementColors);
 }
 
 bool EU4::FlagCrafter::ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
@@ -167,26 +178,27 @@ bool EU4::FlagCrafter::ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::
 	return std::fabs(a.red() - b.red()) < 0.01 && std::fabs(a.green() - b.green()) < 0.01 && std::fabs(a.blue() - b.blue()) < 0.01;
 }
 
-Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image, const commonItems::Color& mask, const commonItems::Color& color) const
+bool EU4::FlagCrafter::ColorFuzzyNearby(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
+{
+	return std::sqrt(std::pow(a.red() - b.red(), 2) + std::pow(a.green() - b.green(), 2)  + std::pow(a.blue() - b.blue(), 2)) < 0.25;
+}
+
+Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image,
+	 const std::vector<std::pair<commonItems::Color, commonItems::Color>>& replacementColors) const
 {
 	auto workingImage = image;
 	workingImage.modifyImage();
-	const size_t columns = workingImage.columns();
-	const size_t rows = workingImage.rows();
-	const Magick::ColorRGB fillColor(color.r()/255.0, color.g()/255.0, color.b()/255.0);
-	const Magick::ColorRGB swapMask(mask.r() / 255.0, mask.g() / 255.0, mask.b() / 255.0);
-	auto counter = 0;
-	for (size_t row = 0; row < rows; ++row)
-		for (size_t column = 0; column < columns; ++column)
-		{
-			const auto& px = Magick::ColorRGB(workingImage.pixelColor(column, row));
-			if (ColorFuzzyEqual(px, swapMask))
-			{
-				workingImage.pixelColor(column, row, fillColor);
-				++counter;
-			}
-		}
-	workingImage.syncPixels();
-	Log(LogLevel::Debug) << counter << " pixels replaced";
+	workingImage.colorFuzz(25.0 * 65535 / 100.0);
+
+	for (const auto& replacement: replacementColors)
+	{
+		const Magick::ColorRGB swapMask(replacement.first.r() / 255.0, replacement.first.g() / 255.0, replacement.first.b() / 255.0); // color to be replaced
+		const Magick::ColorRGB fillColor(replacement.second.r() / 255.0,
+			 replacement.second.g() / 255.0,
+			 replacement.second.b() / 255.0); // color that replaces it
+		workingImage.opaque(swapMask, fillColor);
+	}
+
+	workingImage.flip();
 	return workingImage;
 }
