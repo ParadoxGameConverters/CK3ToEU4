@@ -106,7 +106,8 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	if (coa.getPattern())
 	{
 		Log(LogLevel::Debug) << "Using pattern: " << *coa.getPattern();
-		pattern.read(ck3Source + "patterns/" + *coa.getPattern());
+		const auto patternSource = ck3Source + "patterns/" + *coa.getPattern();
+		pattern.read(patternSource);
 		if (coa.getColor1())
 		{
 			Log(LogLevel::Debug) << "Using color1: " << coa.getColor1()->outputRgb();
