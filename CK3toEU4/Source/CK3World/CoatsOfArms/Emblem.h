@@ -23,7 +23,7 @@ class Emblem: commonItems::parser
   private:
 	void registerKeys();
 
-	std::string texture;
+	std::optional<std::string> texture;
 	std::optional<commonItems::Color> color1; // blue
 	std::optional<commonItems::Color> color2; // green
 	std::optional<commonItems::Color> color3; // yelowish-white - unsupported by PDX, must render to white!

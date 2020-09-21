@@ -15,6 +15,7 @@ class ColorRGB;
 namespace CK3
 {
 class CoatOfArms;
+class Emblem;
 }
 namespace EU4
 {
@@ -22,6 +23,7 @@ class Country;
 class FlagCrafter
 {
   public:
+	FlagCrafter();
 	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration);
 
   private:
@@ -44,6 +46,8 @@ class FlagCrafter
 	[[nodiscard]] Magick::Image recolorEmblem(const Magick::Image& emblem, const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const;
 	[[nodiscard]] Magick::Image recolorImage(const Magick::Image& image,
 		 const std::vector<std::pair<commonItems::Color, commonItems::Color>>& replacementColors) const;
+	[[nodiscard]] Magick::Image craftPatternImage(const CK3::CoatOfArms& coa);
+	[[nodiscard]] std::map<int, Magick::Image> craftEmblemImages(const std::vector<CK3::Emblem>& emblems);
 
 	struct patternColorMasks
 	{

@@ -7,7 +7,7 @@ TEST(CK3World_EmblemTests, loadValuesDefaultToBlank)
 	std::stringstream input;
 	const CK3::Emblem emblem(input);
 
-	ASSERT_TRUE(emblem.getTexture().empty());
+	ASSERT_FALSE(emblem.getTexture());
 	ASSERT_FALSE(emblem.getColor1());
 	ASSERT_FALSE(emblem.getColor2());
 	ASSERT_FALSE(emblem.getColor3());
