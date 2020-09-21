@@ -73,7 +73,7 @@ void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country) const
 	}
 
 	const auto& coa = country->getTitle()->second->getCoA()->second;
-	Log(LogLevel::Debug) << "crafting: " << country->getTag();
+	Log(LogLevel::Debug) << "crafting: " << country->getTag() << " from " << country->getTitle()->second->getName();
 	auto generatedCoa = craftFlagFromCoA(*coa);
 	try
 	{
@@ -160,6 +160,12 @@ Magick::Image EU4::FlagCrafter::recolorEmblem(const Magick::Image& emblem, COLOR
 	}
 	return emblem;
 }
+
+bool EU4::FlagCrafter::ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
+{
+	return std::fabs(a.red() - b.red()) < 0.01 && std::fabs(a.green() - b.green()) < 0.01 && std::fabs(a.blue() - b.blue()) < 0.01;
+}
+
 Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image, const commonItems::Color& mask, const commonItems::Color& color) const
 {
 	auto workingImage = image;
@@ -172,9 +178,8 @@ Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image, const c
 	for (size_t row = 0; row < rows; ++row)
 		for (size_t column = 0; column < columns; ++column)
 		{
-			const auto& px = workingImage.pixelColor(column, row);
-			const auto& test = Magick::ColorRGB(px);
-			if (test.isFuzzyEquivalent(swapMask, 1))
+			const auto& px = Magick::ColorRGB(workingImage.pixelColor(column, row));
+			if (ColorFuzzyEqual(px, swapMask))
 			{
 				workingImage.pixelColor(column, row, fillColor);
 				++counter;

@@ -10,6 +10,7 @@ class Configuration;
 namespace Magick
 {
 class Image;
+class ColorRGB;
 }
 namespace CK3
 {
@@ -26,6 +27,7 @@ class FlagCrafter
   private:
 	void craftFlag(const std::shared_ptr<Country>& country) const;
 	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa) const;
+	bool ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
 
 	std::string ck3Source; // path to ck3 installation gfx/coat_of_arms/ folder
 
