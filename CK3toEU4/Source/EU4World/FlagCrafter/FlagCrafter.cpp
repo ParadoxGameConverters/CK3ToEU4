@@ -19,7 +19,7 @@
 void EU4::FlagCrafter::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration)
 {
 	ck3Source = theConfiguration.getCK3Path() + "gfx/coat_of_arms/";
-	
+
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
 		throw std::runtime_error("Could not delete flags.tmp folder!");
@@ -60,7 +60,7 @@ void EU4::FlagCrafter::generateFlags(const std::map<std::string, std::shared_ptr
 		commonItems::TryCopyFile("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga");
 }
 
-void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country) const
+void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country)
 {
 	if (!country->getTitle())
 	{
@@ -93,38 +93,58 @@ void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country) const
 		Log(LogLevel::Error) << "Failed writing flag to disk: " << e.what();
 	}
 
-
 	Log(LogLevel::Debug) << "Crafted: " << country->getTag() << ".tga";
 }
 
-Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
+Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa)
 {
 	// Create a blank (black) 128x128 image.
-	Magick::Image image("128x128", "black");
+	Magick::Image image("128x128", "black"); // This is used as fallback if there is no background pattern.
 
-	Magick::Image pattern; // Pattern is the base of CoAs.
-	std::vector<std::pair<COLOR, commonItems::Color>> replacementMatrix;	
 	if (coa.getPattern())
 	{
+		Magick::Image pattern; // Pattern is the base of CoAs.
 		Log(LogLevel::Debug) << "Using pattern: " << *coa.getPattern();
+		std::vector<std::pair<COLOR, commonItems::Color>> replacementMatrix;
 		pattern.read(ck3Source + "patterns/" + *coa.getPattern());
 		if (coa.getColor1())
-		{
 			replacementMatrix.emplace_back(std::pair(COLOR::COLOR1, *coa.getColor1()));
-			Log(LogLevel::Debug) << "Using color1: " << coa.getColor1()->outputRgb();
-		}
 		if (coa.getColor2())
-		{
 			replacementMatrix.emplace_back(std::pair(COLOR::COLOR2, *coa.getColor2()));
-			Log(LogLevel::Debug) << "Using color2: " << coa.getColor2()->outputRgb();
-		}
 		if (coa.getColor3())
-		{
 			replacementMatrix.emplace_back(std::pair(COLOR::COLOR3, *coa.getColor3()));
-			Log(LogLevel::Debug) << "Using color3: " << coa.getColor3()->outputRgb();
-		}
 		pattern = recolorPattern(pattern, replacementMatrix);
 		image = pattern;
+	}
+
+	for (const auto& cemblem: coa.getColoredEmblems())
+	{
+		if (cemblem.getTexture().empty())
+			continue;
+		Magick::Image cemblemImage;
+		Log(LogLevel::Debug) << "Using cemblem: " << cemblem.getTexture();
+		std::vector<std::pair<COLOR, commonItems::Color>> replacementMatrix;
+		cemblemImage.read(ck3Source + "colored_emblems/" + cemblem.getTexture());
+		if (cemblem.getColor1())
+		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR1, *cemblem.getColor1()));
+			Log(LogLevel::Debug) << "using color1: " << cemblem.getColor1()->outputRgb();
+		}
+		if (cemblem.getColor2())
+		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR2, *cemblem.getColor2()));
+			Log(LogLevel::Debug) << "using color2: " << cemblem.getColor2()->outputRgb();
+		}
+		if (cemblem.getColor3())
+		{
+			replacementMatrix.emplace_back(std::pair(COLOR::COLOR3, *cemblem.getColor3()));
+			Log(LogLevel::Debug) << "using color3: " << cemblem.getColor3()->outputRgb();
+		}
+		cemblemImage = recolorEmblem(cemblemImage, replacementMatrix);
+		cemblemImage.magick("TGA");
+		Log(LogLevel::Debug) << "dumping emblem to: flags.tmp/" << std::to_string(temp) << ".tga";
+		cemblemImage.write("flags.tmp/" + std::to_string(temp) + ".tga");
+		++temp;
 	}
 
 	return image;
@@ -164,7 +184,8 @@ Magick::Image EU4::FlagCrafter::recolorEmblem(const Magick::Image& emblem, const
 				replacementColors.emplace_back(std::pair(emblemColorMasks.color2, entry.second));
 				break;
 			case COLOR::COLOR3:
-				replacementColors.emplace_back(std::pair(emblemColorMasks.color3, commonItems::Color(std::array<int, 3>{255, 255, 255})));// rendering to white per PDX spec.
+				replacementColors.emplace_back(
+					 std::pair(emblemColorMasks.color3, commonItems::Color(std::array<int, 3>{255, 255, 255}))); // rendering to white per PDX spec.
 				break;
 			case COLOR::COLOR4: // not sure what to do here yet.
 			case COLOR::COLOR5: // not sure what to do here yet.
@@ -180,7 +201,7 @@ bool EU4::FlagCrafter::ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::
 
 bool EU4::FlagCrafter::ColorFuzzyNearby(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
 {
-	return std::sqrt(std::pow(a.red() - b.red(), 2) + std::pow(a.green() - b.green(), 2)  + std::pow(a.blue() - b.blue(), 2)) < 0.25;
+	return std::sqrt(std::pow(a.red() - b.red(), 2) + std::pow(a.green() - b.green(), 2) + std::pow(a.blue() - b.blue(), 2)) < 0.25;
 }
 
 Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image,

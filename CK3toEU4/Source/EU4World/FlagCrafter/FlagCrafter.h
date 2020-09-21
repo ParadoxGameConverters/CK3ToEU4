@@ -25,12 +25,13 @@ class FlagCrafter
 	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration);
 
   private:
-	void craftFlag(const std::shared_ptr<Country>& country) const;
-	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa) const;
+	void craftFlag(const std::shared_ptr<Country>& country);
+	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa);
 	[[nodiscard]] bool ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
 	[[nodiscard]] bool ColorFuzzyNearby(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const;
 
 	std::string ck3Source; // path to ck3 installation gfx/coat_of_arms/ folder
+	int temp = 0; // debug
 
 	enum class COLOR
 	{
