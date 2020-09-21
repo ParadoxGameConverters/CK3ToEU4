@@ -79,18 +79,11 @@ void EU4::FlagCrafter::craftFlag(const std::shared_ptr<Country>& country)
 	try
 	{
 		generatedCoa.magick("TGA");
-	}
-	catch (std::exception& e)
-	{
-		Log(LogLevel::Error) << "Failed setting flag format: " << e.what();
-	}
-	try
-	{
 		generatedCoa.write("flags.tmp/" + country->getTag() + ".tga");
 	}
 	catch (std::exception& e)
 	{
-		Log(LogLevel::Error) << "Failed writing flag to disk: " << e.what();
+		Log(LogLevel::Error) << "Failed exporting flag: " << e.what();
 	}
 
 	Log(LogLevel::Debug) << "Crafted: " << country->getTag() << ".tga";
@@ -194,29 +187,23 @@ Magick::Image EU4::FlagCrafter::recolorEmblem(const Magick::Image& emblem, const
 	return recolorImage(emblem, replacementColors);
 }
 
-bool EU4::FlagCrafter::ColorFuzzyEqual(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
-{
-	return std::fabs(a.red() - b.red()) < 0.01 && std::fabs(a.green() - b.green()) < 0.01 && std::fabs(a.blue() - b.blue()) < 0.01;
-}
-
-bool EU4::FlagCrafter::ColorFuzzyNearby(const Magick::ColorRGB& a, const Magick::ColorRGB& b) const
-{
-	return std::sqrt(std::pow(a.red() - b.red(), 2) + std::pow(a.green() - b.green(), 2) + std::pow(a.blue() - b.blue(), 2)) < 0.25;
-}
-
 Magick::Image EU4::FlagCrafter::recolorImage(const Magick::Image& image,
 	 const std::vector<std::pair<commonItems::Color, commonItems::Color>>& replacementColors) const
 {
 	auto workingImage = image;
-	workingImage.modifyImage();
+	workingImage.modifyImage(); // Lock image from outside influences.
+	// I *think* this means colors distanced by "25" (in rgb ints maybe) are considered equal for purposes of replacement.
 	workingImage.colorFuzz(25.0 * 65535 / 100.0);
 
-	for (const auto& replacement: replacementColors)
+	for (const auto& color: replacementColors)
 	{
-		const Magick::ColorRGB swapMask(replacement.first.r() / 255.0, replacement.first.g() / 255.0, replacement.first.b() / 255.0); // color to be replaced
-		const Magick::ColorRGB fillColor(replacement.second.r() / 255.0,
-			 replacement.second.g() / 255.0,
-			 replacement.second.b() / 255.0); // color that replaces it
+		// color to be replaced
+		const Magick::ColorRGB swapMask(color.first.r() / 255.0, color.first.g() / 255.0, color.first.b() / 255.0);
+
+		// color that replaces it
+		const Magick::ColorRGB fillColor(color.second.r() / 255.0, color.second.g() / 255.0, color.second.b() / 255.0);
+
+		// and.... Magick++
 		workingImage.opaque(swapMask, fillColor);
 	}
 
