@@ -1,4 +1,4 @@
-#include "FlagCrafter.h"
+#include "FlagCrafter-old.h"
 #include "../../CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3World/CoatsOfArms/Emblem.h"
 #include "../../CK3World/CoatsOfArms/EmblemInstance.h"

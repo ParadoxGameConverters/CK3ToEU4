@@ -103,8 +103,8 @@
     <Filter Include="Mappers\DevWeightsMapper">
       <UniqueIdentifier>{3a53edf8-2d69-4505-b9ac-f6685900a265}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4World\FlagCrafter">
-      <UniqueIdentifier>{cab7da81-77cf-40a3-acfc-899da04b970f}</UniqueIdentifier>
+    <Filter Include="EU4World\FlagFoundry">
+      <UniqueIdentifier>{587c25c2-a0cd-44e4-92a8-e5564a537699}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -361,8 +361,17 @@
     <ClInclude Include="Source\EU4World\Output\outCharacter.h">
       <Filter>EU4World\Output</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\FlagCrafter\FlagCrafter.h">
-      <Filter>EU4World\FlagCrafter</Filter>
+    <ClInclude Include="Source\EU4World\FlagFoundry\CoatCrafter.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagFoundry\EmblemCrafter.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagFoundry.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter-old.h">
+      <Filter>EU4World\FlagFoundry</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -620,8 +629,17 @@
     <ClCompile Include="Source\EU4World\Output\outCharacter.cpp">
       <Filter>EU4World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\FlagCrafter\FlagCrafter.cpp">
-      <Filter>EU4World\FlagCrafter</Filter>
+    <ClCompile Include="Source\EU4World\FlagFoundry\CoatCrafter.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagFoundry\EmblemCrafter.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagFoundry.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter-old.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

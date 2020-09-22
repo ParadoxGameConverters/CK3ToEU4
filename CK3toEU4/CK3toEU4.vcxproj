@@ -120,7 +120,10 @@
     <ClInclude Include="Source\EU4World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4World.h" />
-    <ClInclude Include="Source\EU4World\FlagCrafter\FlagCrafter.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\CoatCrafter.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\EmblemCrafter.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter-old.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagFoundry.h" />
     <ClInclude Include="Source\EU4World\Output\outAgreement.h" />
     <ClInclude Include="Source\EU4World\Output\outCharacter.h" />
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
@@ -209,7 +212,10 @@
     <ClCompile Include="Source\EU4World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4World.cpp" />
-    <ClCompile Include="Source\EU4World\FlagCrafter\FlagCrafter.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\CoatCrafter.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\EmblemCrafter.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter-old.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagFoundry.cpp" />
     <ClCompile Include="Source\EU4World\Output\outAgreement.cpp" />
     <ClCompile Include="Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp" />
