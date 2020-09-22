@@ -59,7 +59,7 @@ pagan = {
 	
 	baltic_pagan = {
 		icon = 126
-		color = { 0.8 0.4 0.15 }
+		color = { 0.8 0.4 0.15 } #204 102 38.25
 		country = {
 			fort_maintenance_modifier = -0.1
 			tolerance_own = 1
@@ -76,7 +76,7 @@ pagan = {
 	}
 	baltic_pagan_reformed = {
 		icon = 53
-		color = { 0.75 0.5 0.35 }
+		color = { 0.75 0.5 0.35 } #191.25 127.5 89.25
 		country = {
 			fort_maintenance_modifier = -0.1
 			tolerance_own = 1
@@ -94,7 +94,7 @@ pagan = {
 	
 	finnish_pagan = {
 		icon = 124
-		color = { 0.6 0.7 0.15 }
+		color = { 0.6 0.7 0.15 } #153 178.5 38.25
 		country = {
 			defensiveness = 0.1
 			num_accepted_cultures = 1
@@ -110,7 +110,7 @@ pagan = {
 	}
 	finnish_pagan_reformed = {
 		icon = 54
-		color = { 0.65 0.65 0.1 }
+		color = { 0.65 0.65 0.1 } #165.75 165.75 25.5
 		country = {
 			defensiveness = 0.1
 			num_accepted_cultures = 1
@@ -144,7 +144,7 @@ pagan = {
 	
 	slavic_pagan = {
 		icon = 123
-		color = { 0.8 0.8 0.3 }
+		color = { 0.8 0.8 0.3 } #204 204 76.5
 		country = {
 			culture_conversion_cost = -0.15
 		}
@@ -161,7 +161,7 @@ pagan = {
 	}
 	slavic_pagan_reformed = {
 		icon = 55
-		color = { 0.85 0.73 0.4 }
+		color = { 0.85 0.73 0.4 } #216.75 186.15 102
 		country = {
 			culture_conversion_cost = -0.15
 		}
@@ -196,7 +196,7 @@ pagan = {
 	
 	zun_pagan = {
 		icon = 128
-		color = { 1.0 0.9 0.05 }
+		color = { 1.0 0.9 0.05 } #255 229.5 12.75
 		
 		country = {
 			tolerance_own = 3
@@ -214,7 +214,7 @@ pagan = {
 	}
 	zun_pagan_reformed = {
 		icon = 43
-		color = { 0.9 1.0 0.0 }
+		color = { 0.9 1.0 0.0 } #229.5 255 0
 		
 		country = {
 			tolerance_own = 3
@@ -248,7 +248,7 @@ pagan = {
 		uses_karma = yes
 	}
 	bon_reformed = {
-		color = { 8 140 131 }
+		color = { 6 116 108 }
 		icon = 60
 		country = {
 			tolerance_heretic = 1
@@ -269,7 +269,7 @@ pagan = {
 	
 	hellenic_pagan = {
 		icon = 58
-		color = { 0.6 0.1 0.1 }
+		color = { 0.6 0.1 0.1 } #153 25.5 25.5
 		country = {
 			tolerance_own = 1
 			development_cost = -0.1
@@ -284,7 +284,7 @@ pagan = {
 	}
 	hellenic_pagan_reformed = {
 		icon = 58
-		color = { 0.6 0.1 0.1 }
+		color = { 190 32 32 }
 		country = {
 			tolerance_own = 1
 			development_cost = -0.1
@@ -340,7 +340,7 @@ pagan = {
 	#Akom -> Fetishism
 	#Donyi-Poloism/Sedism -> Animism
 	kushitism_pagan = {
-		color = { 0.15 1 0.7 }
+		color = { 0.15 1 0.7 } #38.25 255 178.5
 		icon = 145
 		country = {
 			legitimacy = 1
@@ -361,7 +361,7 @@ pagan = {
 		heretic = { GOAT_SKULL SNAKE_CLAN }
 	}
 	kushitism_pagan_reformed = {
-		color = { 0 255 170 }
+		color = { 0 255 255 }
 		icon = 146
 		country = {
 			legitimacy = 1

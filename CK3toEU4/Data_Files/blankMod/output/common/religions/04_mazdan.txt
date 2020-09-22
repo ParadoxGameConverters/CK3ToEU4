@@ -1,7 +1,7 @@
 zoroastrian_group = {
 	mazdaki = {
 		icon = 47
-		color = { 0.5 0.7 0.2 }
+		color = { 0.5 0.7 0.2 } #127.5 178.5 51
 		country = {
 			global_unrest = -3 # Proto-socialism
 			tolerance_heretic = 1
@@ -17,7 +17,7 @@ zoroastrian_group = {
 	}
 	khurmazta = {
 		icon = 116
-		color = { 0.5 0.6 0.3 }
+		color = { 0.5 0.6 0.3 } #127.5 153 76.5
 		country = {
 			stability_cost_modifier = -0.1
 			global_tax_modifier = 0.1
@@ -32,7 +32,7 @@ zoroastrian_group = {
 	}
 	zurvanism = {
 		icon = 137
-		color = { 0.3 0.6 0.4 }
+		color = { 0.3 0.6 0.4 } #76.5 153 102
 		country = {
 			tolerance_own = 2
 			production_efficiency = 0.15
@@ -48,7 +48,7 @@ zoroastrian_group = {
 	}
 	gayomarthianism = {
 		icon = 138
-		color = { 0.4 0.8 0.2 }
+		color = { 0.4 0.8 0.2 } #102 204 102
 		country = {
 			stability_cost_modifier = -0.5
 		}
@@ -65,7 +65,7 @@ zoroastrian_group = {
 	}
 	khurramism = {
 		icon = 139
-		color = { 0.1 0.7 0.2 }
+		color = { 0.1 0.7 0.2 } #25.5 178.5 51
 		country = {
 			global_unrest = -2
 			global_tax_modifier = -0.10
