@@ -5,8 +5,11 @@ set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=16")
-SET(CMAKE_EXE_LINKER_FLAGS "-Wl,--enable-new-dtags")
+set(LIBDIR /usr/local/lib)
+set(LD_LIBRARY_PATH ${LD_LIBRARY_PATH} LIBDIR)
+set(LD_RUN_PATH ${LD_RUN_PATH} LIBDIR)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8")
+SET(CMAKE_EXE_LINKER_FLAGS "-Wl,-rpath -Wl,LIBDIR")
 
 add_compile_options("-lstdc++fs")
 add_compile_options("-O2")
@@ -15,9 +18,9 @@ add_link_options(-no-pie)
 
 include_directories("../commonItems")
 include_directories("../ZipLib")
-include_directories("../imageMagick/include-linux/")
+include_directories("/usr/local/include/ImageMagick-7/")
 include_directories("${PROJECT_SOURCE_DIR}")
-link_directories(${CMAKE_SOURCE_DIR}/Resources)
+link_directories(${CMAKE_SOURCE_DIR}/Resources /usr/local/lib)
 add_subdirectory(../ZipLib [binary_dir])
 
 set(MAIN_SOURCES ${MAIN_SOURCES} "${PROJECT_SOURCE_DIR}/CK3ToEU4Converter.cpp")
@@ -157,7 +160,10 @@ add_executable(CK3toEU4
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs MagickWand-6.Q16 MagickCore-6.Q16 Magick++-6.Q16)
+target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs
+MagickWand-7.Q8
+MagickCore-7.Q8
+Magick++-7.Q8)
 
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
