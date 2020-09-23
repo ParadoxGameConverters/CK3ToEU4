@@ -37,21 +37,19 @@ Magick::Image EU4::FlagCrafter::processEmblemsOnImage(const Magick::Image& image
 
 	for (const auto& emblemPair: emblems)
 	{
-		Log(LogLevel::Debug) << "in emblem " << *emblemPair.first.getTexture();
+		Log(LogLevel::Debug) << "flagcrafter in emblem " << *emblemPair.first.getTexture();
 		if (emblemPair.first.getInstances().empty())
 		{
-			Log(LogLevel::Debug) << "generating single instance";
+			Log(LogLevel::Debug) << "flagcrafter generating single instance";
 			// We need at least a nominal instance.
 			CK3::EmblemInstance emblemInstance;
-			Log(LogLevel::Debug) << "into vector";
 			std::vector<CK3::EmblemInstance> emblemVector = {emblemInstance};
-			Log(LogLevel::Debug) << "generating single instance";
 			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, emblemPair.second);
 		}
 		else
 		{
 			// Run them all.
-			Log(LogLevel::Debug) << "pushing instances";
+			Log(LogLevel::Debug) << "flagcrafter pushing existing instances";
 			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemPair.first.getInstances(), emblemPair.second);
 		}
 	}
@@ -84,19 +82,17 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 			}
 			const auto targetWidth = instance.getScale()[0] * static_cast<double>(width);
 			const auto targetHeight = instance.getScale()[1] * static_cast<double>(height);
-			Log(LogLevel::Debug) << "scaling insance";
+			Log(LogLevel::Debug) << "flagcrafter scaling insance";
 			workingEmblem.scale(Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight)));
-			Log(LogLevel::Debug) << "scaled";
-			workingEmblem.write("flags.tmp/scaledemblem.dds");
+			Log(LogLevel::Debug) << "flagcrafter scaled instance";
 		}
 		
 		// Rotate emblem
 		if (instance.getRotation() == 0.0)
 		{
-			Log(LogLevel::Debug) << "rotating insance";
+			Log(LogLevel::Debug) << "flagcrafter rotating insance";
 			workingEmblem.rotate(0 - instance.getRotation()); // I *think* PDX stores rotation clockwise.
-			Log(LogLevel::Debug) << "rotated";
-			workingEmblem.write("flags.tmp/rotatedemblem.dds");
+			Log(LogLevel::Debug) << "flagcrafter rotated instance";
 		}
 		
 		// Position emblem
@@ -109,12 +105,12 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 			}
 			const auto targetX = static_cast<size_t>(instance.getPosition()[0] * static_cast<double>(width));
 			const auto targetY = static_cast<size_t>(instance.getPosition()[1] * static_cast<double>(height));
-			Log(LogLevel::Debug) << "compositing instance";
+			Log(LogLevel::Debug) << "flagcrafter compositing instance";
 			workingImage.composite(workingEmblem, Magick::Geometry(targetX, targetY), MagickCore::BlendCompositeOp);
-			Log(LogLevel::Debug) << "composited";
+			Log(LogLevel::Debug) << "flagcrafter composited instance";
 		}		
 		
 	}
-	Log(LogLevel::Debug) << "returning pattern";
+	Log(LogLevel::Debug) << "flagcrafter returning completed instance run";
 	return workingImage;
 }
