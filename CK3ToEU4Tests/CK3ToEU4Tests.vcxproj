@@ -48,6 +48,7 @@
       <Optimization>Disabled</Optimization>
       <OmitFramePointers>false</OmitFramePointers>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>..\imageMagick\include-windows</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -55,7 +56,15 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <OutputFile>$(ProjectDir)$(Configuration)\$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>..\imageMagick\lib-windows;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CORE_RL_aom_.lib;CORE_RL_bzlib_.lib;CORE_RL_cairo_.lib;CORE_RL_croco_.lib;CORE_RL_exr_.lib;CORE_RL_ffi_.lib;CORE_RL_flif_.lib;CORE_RL_freetype_.lib;CORE_RL_fribidi_.lib;CORE_RL_glib_.lib;CORE_RL_harfbuzz_.lib;CORE_RL_jbig_.lib;CORE_RL_jp2_.lib;CORE_RL_jpeg_.lib;CORE_RL_lcms_.lib;CORE_RL_libde265_.lib;CORE_RL_libheif_.lib;CORE_RL_liblzma_.lib;CORE_RL_libraw_.lib;CORE_RL_librsvg_.lib;CORE_RL_libxml_.lib;CORE_RL_libzip_.lib;CORE_RL_lqr_.lib;CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;CORE_RL_openjpeg_.lib;CORE_RL_pango_.lib;CORE_RL_pixman_.lib;CORE_RL_png_.lib;CORE_RL_tiff_.lib;CORE_RL_webp_.lib;CORE_RL_zlib_.lib;FILTER_analyze_.lib;ImageMagickObject.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>Copy_Files.bat</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copying Test Files</Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp" />
@@ -84,6 +93,10 @@
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp" />
@@ -158,6 +171,7 @@
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
+    <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
     <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />

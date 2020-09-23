@@ -9,8 +9,8 @@ TEST(CK3World_EmblemInstanceTests, loadValuesDefaultToBlank)
 
 	ASSERT_EQ(0.0f, emblemInstance.getRotation());
 	ASSERT_EQ(0.0f, emblemInstance.getDepth());
-	ASSERT_TRUE(emblemInstance.getPosition().empty());
-	ASSERT_TRUE(emblemInstance.getScale().empty());
+	ASSERT_EQ(2, emblemInstance.getPosition().size());
+	ASSERT_EQ(2, emblemInstance.getScale().size());
 	ASSERT_TRUE(emblemInstance.getOffset().empty());
 }
 

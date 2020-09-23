@@ -13,33 +13,12 @@ struct coloredImage;
 class Recolorer
 {
   public:
-	[[nodiscard]] Magick::Image craftPatternImage(const coloredImage& imageBlock) const;
-	[[nodiscard]] Magick::Image craftTextureImage(const coloredImage& imageBlock) const;
+	[[nodiscard]] static Magick::Image craftPatternImage(const coloredImage& imageBlock);
+	[[nodiscard]] static Magick::Image craftTextureImage(const coloredImage& imageBlock);
 
   private:
-	enum class IMAGETYPE
-	{
-		PATTERN,
-		TEXTURE
-	};
-	enum class COLOR
-	{
-		COLOR1,
-		COLOR2,
-		COLOR3,
-		COLOR4,
-		COLOR5
-	};
 
-	[[nodiscard]] Magick::Image craftImage(const coloredImage& imageBlock, IMAGETYPE imageType) const;
-	[[nodiscard]] Magick::Image recolorPattern(const Magick::Image& patternImage,
-		 const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const;
-	[[nodiscard]] Magick::Image recolorTexture(const Magick::Image& textureImage,
-		 const std::vector<std::pair<COLOR, commonItems::Color>>& replacementMatrix) const;
-	[[nodiscard]] Magick::Image recolorImage(const Magick::Image& image,
-		 const std::vector<std::pair<commonItems::Color, commonItems::Color>>& replacementColors) const;
-
-	struct patternColorMasks
+	struct patternColorMasks // For reference only. Not used.
 	{
 		commonItems::Color color1 = commonItems::Color(std::array<int, 3>{255, 0, 0});
 		commonItems::Color color2 = commonItems::Color(std::array<int, 3>{255, 255, 0});

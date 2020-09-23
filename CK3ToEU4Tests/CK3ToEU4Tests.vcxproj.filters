@@ -166,6 +166,15 @@
     <Filter Include="CK3ToEU4\Mappers\DevWeightsMapper">
       <UniqueIdentifier>{cdc068db-c919-484c-a2a4-efd642f68824}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\EU4World\FlagFoundry">
+      <UniqueIdentifier>{0d96a100-8c78-4869-9b48-4fdb35428343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests">
+      <UniqueIdentifier>{2000fce1-d585-4c3e-a367-d30821c26bf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\RecolorerTests">
+      <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -544,6 +553,21 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.cpp">
+      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp">
+      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp">
+      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp">
+      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp">
+      <Filter>EU4WorldTests\RecolorerTests</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
