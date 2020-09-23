@@ -4,24 +4,29 @@
 #include "../../CK3World/Titles/Title.h"
 #include "../../Configuration/Configuration.h"
 #include "../Country/Country.h"
-#include "CoatCrafter.h"
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
+#include "Warehouse.h"
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
 EU4::FlagFoundry::FlagFoundry()
 {
 	Magick::InitializeMagick(".");
+	warehouse = std::make_shared<Warehouse>();
+	flagCrafter.loadWarehouse(warehouse);
 }
 
-void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration)
+void EU4::FlagFoundry::loadImageFolder(const Configuration& theConfiguration) const
 {
-	ck3Source = theConfiguration.getCK3Path() + "gfx/coat_of_arms/";
+	warehouse->loadImageFolder(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
+}
 
+void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration) const
+{
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
-		throw std::runtime_error("Could not delete flags.tmp folder!");
+		Log(LogLevel::Error) << "Could not delete flags.tmp folder!";
 	else if (!commonItems::TryCreateFolder("flags.tmp"))
 		throw std::runtime_error("Could not create flags.tmp folder!");
 
@@ -52,7 +57,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 
 		// We do.
 		craftFlag(country.second);
-		break;
+		break; // TODO: Crafting just 1 flag. REMOVE THIS ONCE FLAGS ACTUALLY WORK.
 	}
 
 	// Do not forget about our SDM.
@@ -73,9 +78,10 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 		return;
 	}
 
-	const auto& coa = country->getTitle()->second->getCoA()->second;
 	Log(LogLevel::Debug) << "crafting: " << country->getTag() << " from " << country->getTitle()->second->getName();
-	auto generatedCoa = coatCrafter.craftFlagFromCoA(*coa);
+
+	const auto& coa = country->getTitle()->second->getCoA()->second;
+	auto generatedCoa = flagCrafter.craftFlagFromCoA(*coa);
 	try
 	{
 		generatedCoa.magick("TGA");

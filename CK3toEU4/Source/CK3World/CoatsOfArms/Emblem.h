@@ -24,9 +24,9 @@ class Emblem: commonItems::parser
 	void registerKeys();
 
 	std::optional<std::string> texture;
-	std::optional<commonItems::Color> color1; // blue
-	std::optional<commonItems::Color> color2; // green
-	std::optional<commonItems::Color> color3; // yelowish-white - unsupported by PDX, must render to white!
+	std::optional<commonItems::Color> color1; // mask: 0, 0, 128 - blueish
+	std::optional<commonItems::Color> color2; // mask: 0, 255, 128 - greenish
+	std::optional<commonItems::Color> color3; // mask: 255, 0, 128 - unsupported by PDX, must render to white!
 	std::vector<int> mask;
 	std::vector<EmblemInstance> instances;
 };

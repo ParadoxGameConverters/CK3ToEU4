@@ -361,16 +361,16 @@
     <ClInclude Include="Source\EU4World\Output\outCharacter.h">
       <Filter>EU4World\Output</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\FlagFoundry\CoatCrafter.h">
-      <Filter>EU4World\FlagFoundry</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\FlagFoundry\EmblemCrafter.h">
-      <Filter>EU4World\FlagFoundry</Filter>
-    </ClInclude>
     <ClInclude Include="Source\EU4World\FlagFoundry\FlagFoundry.h">
       <Filter>EU4World\FlagFoundry</Filter>
     </ClInclude>
-    <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter-old.h">
+    <ClInclude Include="Source\EU4World\FlagFoundry\Warehouse.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagFoundry\Recolorer.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter.h">
       <Filter>EU4World\FlagFoundry</Filter>
     </ClInclude>
   </ItemGroup>
@@ -629,16 +629,16 @@
     <ClCompile Include="Source\EU4World\Output\outCharacter.cpp">
       <Filter>EU4World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\FlagFoundry\CoatCrafter.cpp">
-      <Filter>EU4World\FlagFoundry</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\FlagFoundry\EmblemCrafter.cpp">
-      <Filter>EU4World\FlagFoundry</Filter>
-    </ClCompile>
     <ClCompile Include="Source\EU4World\FlagFoundry\FlagFoundry.cpp">
       <Filter>EU4World\FlagFoundry</Filter>
     </ClCompile>
-    <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter-old.cpp">
+    <ClCompile Include="Source\EU4World\FlagFoundry\Warehouse.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagFoundry\Recolorer.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter.cpp">
       <Filter>EU4World\FlagFoundry</Filter>
     </ClCompile>
   </ItemGroup>

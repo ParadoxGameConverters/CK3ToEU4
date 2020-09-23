@@ -142,7 +142,8 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "75 %";
 	
 	LOG(LogLevel::Info) << "-- Crafting Flags";
-	flagCrafter.generateFlags(countries, theConfiguration);
+	flagFoundry.loadImageFolder(theConfiguration);
+	flagFoundry.generateFlags(countries, theConfiguration);
 	Log(LogLevel::Progress) << "93 %";
 
 	// And finally, the Dump.
