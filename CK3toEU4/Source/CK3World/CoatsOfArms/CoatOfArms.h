@@ -18,8 +18,6 @@ class CoatOfArms: commonItems::parser
 	[[nodiscard]] const auto& getColor1() const { return color1; }
 	[[nodiscard]] const auto& getColor2() const { return color2; }
 	[[nodiscard]] const auto& getColor3() const { return color3; }
-	[[nodiscard]] const auto& getColor4() const { return color4; }
-	[[nodiscard]] const auto& getColor5() const { return color5; }
 	[[nodiscard]] const auto& getTexturedEmblems() const { return texturedEmblems; }
 	[[nodiscard]] const auto& getColoredEmblems() const { return coloredEmblems; }
 	[[nodiscard]] const auto& getSubs() const { return subs; }
@@ -36,8 +34,6 @@ class CoatOfArms: commonItems::parser
 	std::optional<commonItems::Color> color1; // mask: 255, 0, 0 - red
 	std::optional<commonItems::Color> color2; // mask: 255, 255, 0 - yellow
 	std::optional<commonItems::Color> color3; // mask: 255, 255, 255 - white
-	std::optional<commonItems::Color> color4; // unknown. Black?
-	std::optional<commonItems::Color> color5; // unknown
 	std::vector<Emblem> texturedEmblems;
 	std::vector<Emblem> coloredEmblems;
 	std::vector<std::shared_ptr<CoatOfArms>> subs;										// These are sub-coatsofarms. They are recursive!

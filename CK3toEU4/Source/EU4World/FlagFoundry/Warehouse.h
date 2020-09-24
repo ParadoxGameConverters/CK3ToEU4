@@ -29,7 +29,7 @@ class Warehouse
 	void storeCoA(long long ID, Magick::Image image) { coaStorage.insert(std::pair(ID, image)); }
 	[[nodiscard]] std::pair<bool, Magick::Image> getCoA(long long ID);
 
-	[[nodiscard]] Magick::Image getPattern(const CK3::CoatOfArms& coa);
+	[[nodiscard]] std::pair<Magick::Image, Magick::Image> getPattern(const CK3::CoatOfArms& coa); // colored/RAW (original) pattern
 	[[nodiscard]] std::vector<std::pair<CK3::Emblem, Magick::Image>> getColoredTextures(const std::vector<CK3::Emblem>& emblems);
 	[[nodiscard]] std::vector<std::pair<CK3::Emblem, Magick::Image>> getTexturedTextures(const std::vector<CK3::Emblem>& emblems);
 

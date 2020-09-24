@@ -7,20 +7,21 @@ std::pair<bool, Magick::Image> EU4::Warehouse::getCoA(long long ID)
 {
 	// Unfortunately Magick::Image cannot go into a std::optional.
 	// This also means we cannot return a reference but must make a copy.
-	
+
 	if (coaStorage.count(ID))
 		return std::pair(true, coaStorage[ID]);
 	else
 		return std::pair(false, Magick::Image());
 }
 
-Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
+std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 {
+	auto black = Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
 	if (!coa.getPattern())
 	{
 		// This is a broken pattern. Return black image.
 		Log(LogLevel::Warning) << "Coat of Arms is missing a pattern. Defaulting to black.";
-		return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
+		return std::pair(black, black);
 	}
 
 	coloredImage newImageBlock; // This block is used both for comparing and for eventual storage.
@@ -30,14 +31,14 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 	newImageBlock.patternName = *coa.getPattern();
 
 	Log(LogLevel::Debug) << "warehouse pattern enter on " << newImageBlock.patternName;
-	
+
 	// Do we have a coa like this stored?
 	for (const auto& storedImage: patternStorage)
 	{
 		if (newImageBlock == storedImage)
 		{
 			Log(LogLevel::Debug) << "warehouse pattern match on cache";
-			return storedImage.imageData; // We have a match of patternName and all possible colors.			
+			return std::pair(storedImage.imageData, basePatterns[newImageBlock.patternName]); // We have a match of patternName and all possible colors.
 		}
 	}
 
@@ -48,7 +49,7 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 		if (!commonItems::DoesFileExist(imageFolder + "patterns/" + newImageBlock.patternName))
 		{
 			Log(LogLevel::Warning) << "Coat of arms uses invalid pattern: " << newImageBlock.patternName << ", defaulting to black.";
-			return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));			
+			return std::pair(black, black);
 		}
 		try
 		{
@@ -58,7 +59,7 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 		catch (std::exception& e)
 		{
 			Log(LogLevel::Warning) << "Coat of arms uses invalid pattern: " << newImageBlock.patternName << ", defaulting to black. (" << e.what() << ")";
-			return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
+			return std::pair(black, black);
 		}
 	}
 
@@ -74,7 +75,7 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 
 	// And fulfill order
 	Log(LogLevel::Debug) << "warehouse returning pattern";
-	return newImageBlock.imageData;
+	return std::pair(newImageBlock.imageData, basePatterns[*coa.getPattern()]);
 }
 
 std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getColoredTextures(const std::vector<CK3::Emblem>& emblems)

@@ -7,6 +7,12 @@
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
 
+/*
+ * This class operates on image pairs. First of the two is a working image, one we slice and dice and copy stuff onto.
+ * Second is the pristine pattern used to mask said stuff. We drag it around all the way from the warehouse to the forge
+ * due to convenience of having it nearby and handy.
+ */
+
 Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
 {
 	// Probe for existing coa.
@@ -20,7 +26,7 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	}
 
 	// Crafting time.	Get a background image.
-	auto image = warehouse->getPattern(coa);
+	auto imagePair = warehouse->getPattern(coa);
 	Log(LogLevel::Debug) << "got pattern";
 	// Grab subcoats
 	auto counter = 0;
@@ -40,22 +46,23 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
 
 		Log(LogLevel::Debug) << "go sub";
-	image = processSubsOnImage(image, subs);
-	image = processEmblemsOnImage(image, coloredEmblems);
-	image = processEmblemsOnImage(image, texturedEmblems);
+	imagePair = processSubsOnImage(imagePair, subs);
+	imagePair = processEmblemsOnImage(imagePair, coloredEmblems);
+	imagePair = processEmblemsOnImage(imagePair, texturedEmblems);
 
 	if (coa.getID()) // subcoats won't have an ID.
-		warehouse->storeCoA(coa.getID(), image);
+		warehouse->storeCoA(coa.getID(), imagePair.first);
 	
-	return image;
+	return imagePair.first;
 }
 
-Magick::Image EU4::FlagCrafter::processEmblemsOnImage(const Magick::Image& image, const std::vector<std::pair<CK3::Emblem, Magick::Image>>& emblems) const
+std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::processEmblemsOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
+	 const std::vector<std::pair<CK3::Emblem, Magick::Image>>& emblems) const
 {
 	if (emblems.empty())
-		return image;
+		return imagePair;
 
-	auto workingImage = image;
+	auto workingImage = imagePair;
 
 	for (const auto& emblemPair: emblems)
 	{
@@ -65,24 +72,25 @@ Magick::Image EU4::FlagCrafter::processEmblemsOnImage(const Magick::Image& image
 			CK3::EmblemInstance emblemInstance;
 			emblemInstance.defaultPosition();
 			std::vector<CK3::EmblemInstance> emblemVector = {emblemInstance};
-			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, emblemPair.second);
+			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, emblemPair.second, emblemPair.first.getMask());
 		}
 		else
 		{
 			// Run them all.
-			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemPair.first.getInstances(), emblemPair.second);
+			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemPair.first.getInstances(), emblemPair.second, emblemPair.first.getMask());
 		}
 	}
 
 	return workingImage;
 }
 
-Magick::Image EU4::FlagCrafter::processSubsOnImage(const Magick::Image& image, const std::vector<std::pair<CK3::CoatOfArms, Magick::Image>>& subs) const
+std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::processSubsOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
+	 const std::vector<std::pair<CK3::CoatOfArms, Magick::Image>>& subs) const
 {
 	if (subs.empty())
-		return image;
+		return imagePair;
 
-	auto workingImage = image;
+	auto workingImagePair = imagePair;
 
 	for (const auto& subPair: subs)
 	{
@@ -92,24 +100,25 @@ Magick::Image EU4::FlagCrafter::processSubsOnImage(const Magick::Image& image, c
 			CK3::EmblemInstance emblemInstance;
 			emblemInstance.defaultOffset();
 			std::vector<CK3::EmblemInstance> emblemVector = {emblemInstance};
-			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, subPair.second);
+			workingImagePair = imposeEmblemInstancesOnImage(workingImagePair, emblemVector, subPair.second, std::vector<int>{});
 		}
 		else
 		{
 			// Run them all.
-			workingImage = imposeEmblemInstancesOnImage(workingImage, subPair.first.getInstances(), subPair.second);
+			workingImagePair = imposeEmblemInstancesOnImage(workingImagePair, subPair.first.getInstances(), subPair.second, std::vector<int>{});
 		}
 	}
 
-	return workingImage;
+	return workingImagePair;
 }
 
 
-Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image& image,
+std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
 	 const std::vector<CK3::EmblemInstance>& instances,
-	 const Magick::Image& emblem) const
+	 const Magick::Image& emblem,
+	 const std::vector<int>& masks) const
 {
-	auto workingImage = image;
+	auto workingImage = imagePair.first;
 
 	const auto height = workingImage.baseRows();
 	const auto width = workingImage.baseColumns();
@@ -156,7 +165,7 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 			workingEmblem.write("rotatedemblem" + std::to_string(counter) + ".dds");
 		}
 
-		// Position emblem
+		// Position and clip emblem
 		if (!instance.getPosition().empty()) // We won't paste anything without a position - which should only happen on user error.
 		{
 			if (instance.getPosition().size() != 2)
@@ -171,8 +180,61 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 			const auto targetY =
 				 static_cast<size_t>(instance.getPosition()[1] * static_cast<double>(height) - static_cast<double>(workingEmblem.size().height()) / 2.0);
 			Log(LogLevel::Debug) << "position " << targetX << " by " << targetY;
-			workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-			workingImage.write("workingemb" + std::to_string(counter) + ".dds");
+
+			// Now it's time for a mask.
+			if (masks.size() == 3)
+			{
+				// Masks are 3-int vectors containing nothing but { 0|1, 0|2, 0|3 }, telling us which color of original pattern to use to clip emblem.
+				// We support any number of masks. The same emblem will be sliced 3 times if needed and portions pasted separately.
+				for (auto mask: masks)
+				{
+					if (mask == 1)
+					{
+						// clip against red. Translation: Show only those parts of the emblem that match the pattern's original red.
+						// We know this to be in fact greeninverse channel of the pattern.
+						auto greenInverse = imagePair.second;
+						greenInverse.channel(MagickCore::ChannelType::GreenChannel);
+						greenInverse.negate();
+						// Now slap the emblem onto a faux baseimage that's entirely empty.
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
+						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
+						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
+						// And slap it over with the mask
+						faux.composite(greenInverse, "0x0", MagickCore::CopyAlphaCompositeOp);
+						// Now with the faux containing only clipped portion of the emblem, slip it into the workhorse.
+						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
+					}
+					else if (mask == 2)
+					{
+						// identical to before but with green channel.
+						auto green = imagePair.second;
+						green.channel(MagickCore::ChannelType::GreenChannel);
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
+						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
+						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
+						faux.composite(green, "0x0", MagickCore::CopyAlphaCompositeOp);
+						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
+					}
+					else if (mask == 3)
+					{
+						// ditto, blue channel.
+						auto blue = imagePair.second;
+						blue.channel(MagickCore::ChannelType::BlueChannel);
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
+						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
+						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
+						faux.composite(blue, "0x0", MagickCore::CopyAlphaCompositeOp);
+						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
+					}
+				}					
+			}
+			else
+			{
+				// No masks, straight clip.
+				workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
+				workingImage.write("workingemb" + std::to_string(counter) + ".dds");				
+			}
+			
 		}
 		
 		// Position sub
@@ -195,5 +257,5 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 		}
 
 	}
-	return workingImage;
+	return std::pair(workingImage, imagePair.second);
 }
