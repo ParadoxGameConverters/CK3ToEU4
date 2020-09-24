@@ -172,9 +172,6 @@
     <Filter Include="EU4WorldTests">
       <UniqueIdentifier>{2000fce1-d585-4c3e-a367-d30821c26bf1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4WorldTests\RecolorerTests">
-      <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TestFiles">
       <UniqueIdentifier>{38319c43-fc9a-4751-bcb1-b5e8bd3e5468}</UniqueIdentifier>
     </Filter>
@@ -189,6 +186,9 @@
     </Filter>
     <Filter Include="TestFiles\FlagFoundry\colored_emblems">
       <UniqueIdentifier>{2d6e14df-23f7-431d-a139-c02d60a76330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\FlagFoundryTests">
+      <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -582,10 +582,10 @@
       <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp">
-      <Filter>EU4WorldTests\RecolorerTests</Filter>
+      <Filter>EU4WorldTests\FlagFoundryTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp">
-      <Filter>EU4WorldTests\RecolorerTests</Filter>
+      <Filter>EU4WorldTests\FlagFoundryTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -705,6 +705,21 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_twocolor.dds">
       <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flag.txt">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest1.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest3.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest4.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

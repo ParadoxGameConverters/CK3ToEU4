@@ -26,6 +26,7 @@ class FlagCrafter
 
   private:
 	[[nodiscard]] Magick::Image processEmblemsOnImage(const Magick::Image& image, const std::vector<std::pair<CK3::Emblem, Magick::Image>>& emblems) const;
+	[[nodiscard]] Magick::Image processSubsOnImage(const Magick::Image& image, const std::vector<std::pair<CK3::CoatOfArms, Magick::Image>>& subs) const;
 	[[nodiscard]] Magick::Image imposeEmblemInstancesOnImage(const Magick::Image& image,
 		 const std::vector<CK3::EmblemInstance>& instances,
 		 const Magick::Image& emblem) const;

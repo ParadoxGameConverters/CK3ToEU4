@@ -1,0 +1,79 @@
+pattern="pattern_twocolor.dds"
+color1=blue
+color2=yellow
+sub={
+	instance={
+		scale={ 0.500000 0.500000 }
+	}
+
+	pattern="pattern_twocolor.dds"
+	color1=blue
+	color2=yellow
+	colored_emblem={
+		color1=yellow
+		color2=yellow
+		texture="texture_tricolor.dds"
+	}
+
+}
+
+sub={
+	instance={
+		scale={ 0.500000 0.500000 }
+		offset={ 0.500000 0.500000 }
+	}
+
+	pattern="pattern_solid.dds"
+	color1=blue
+	color2=yellow
+	colored_emblem={
+		color1=yellow
+		color2=yellow
+		texture="texture_solid.dds"
+	}
+
+}
+
+sub={
+	instance={
+		scale={ 0.500000 0.500000 }
+		offset={ 0.500000 0.000000 }
+	}
+
+	pattern="pattern_twocolor.dds"
+	color1=white
+	color2=red
+	colored_emblem={
+		color1=red
+		color2=yellow
+		texture="texture_solid.dds"
+		instance={
+			position={ 0.510000 0.470000 }
+			scale={ 0.900000 0.900000 }
+		}
+
+	}
+
+}
+
+sub={
+	instance={
+		scale={ 0.500000 0.500000 }
+		offset={ 0.000000 0.500000 }
+	}
+
+	pattern="pattern_twocolor.dds"
+	color1=white
+	color2=red
+	colored_emblem={
+		color1=red
+		color2=yellow
+		color3=blue
+		texture="texture_tricolor.dds"
+		instance={
+			position={ 0.510000 0.470000 }
+			scale={ 0.900000 0.900000 }
+		}
+
+	}
+}

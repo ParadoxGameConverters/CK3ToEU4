@@ -3,9 +3,10 @@
 #include "../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
 #include "gtest/gtest.h"
 #include "Magick++.h"
-#include <sstream>
+#include <fstream>
+#include "Log.h"
 
-TEST(EU4World_FlagCrafterTests, test)
+TEST(EU4World_FlagCrafterTests, emblemOverlayOnPattern)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
 	warehouse->loadImageFolder("FlagFoundry/");
@@ -23,12 +24,15 @@ TEST(EU4World_FlagCrafterTests, test)
 	const CK3::CoatOfArms coa(input, 79);
 
 	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result-coa.dds");
+	result.write("result.dds");
 
-	ASSERT_FALSE(result.isValid());
+	const Magick::Image test("result.dds");
+	const Magick::Image orig("FlagFoundry/flagtest1.dds");
+
+	ASSERT_TRUE(orig.compare(test));
 }
 
-TEST(EU4World_FlagCrafterTests, test2)
+TEST(EU4World_FlagCrafterTests, multicolorEmblemsOverlayOnMulticolorPattern)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
 	warehouse->loadImageFolder("FlagFoundry/");
@@ -49,12 +53,15 @@ TEST(EU4World_FlagCrafterTests, test2)
 	const CK3::CoatOfArms coa(input, 79);
 
 	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result-coa2.dds");
+	result.write("result.dds");
 
-	ASSERT_FALSE(result.isValid());
+	const Magick::Image test("result.dds");
+	const Magick::Image orig("FlagFoundry/flagtest2.dds");
+
+	ASSERT_TRUE(orig.compare(test));
 }
 
-TEST(EU4World_FlagCrafterTests, test3)
+TEST(EU4World_FlagCrafterTests, emblemInstancePositioningRotationAndScaling)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
 	warehouse->loadImageFolder("FlagFoundry/");
@@ -95,7 +102,36 @@ TEST(EU4World_FlagCrafterTests, test3)
 	const CK3::CoatOfArms coa(input, 79);
 
 	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result-coa3.dds");
+	result.write("result.dds");
 
-	ASSERT_FALSE(result.isValid());
+	const Magick::Image test("result.dds");
+	const Magick::Image orig("FlagFoundry/flagtest3.dds");
+
+	ASSERT_TRUE(orig.compare(test));
+}
+
+TEST(EU4World_FlagCrafterTests, subcoatPositioningRotationAndScaling)
+{
+	laFabricaDeColor.clear();
+	laFabricaDeColor.addNamedColor("white", commonItems::Color(std::array<int, 3>{255, 255, 255}));
+	laFabricaDeColor.addNamedColor("blue", commonItems::Color(std::array<int, 3>{0, 0, 255}));
+	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
+	laFabricaDeColor.addNamedColor("yellow", commonItems::Color(std::array<int, 3>{255, 255, 0}));
+	
+	const auto warehouse = std::make_shared<EU4::Warehouse>();
+	warehouse->loadImageFolder("FlagFoundry/");
+	EU4::FlagCrafter flagCrafter;
+	flagCrafter.loadWarehouse(warehouse);
+
+	std::ifstream input("FlagFoundry/flag.txt");	
+	const CK3::CoatOfArms coa(input, 79);
+
+	auto result = flagCrafter.craftFlagFromCoA(coa);
+	result.write("result.dds");
+
+	const Magick::Image test("result.dds");
+	const Magick::Image orig("FlagFoundry/flagtest4.dds");
+
+	laFabricaDeColor.clear();
+	ASSERT_TRUE(orig.compare(test));
 }

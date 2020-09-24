@@ -27,7 +27,10 @@ void CK3::Emblem::registerKeys()
 		mask = commonItems::intList(theStream).getInts();
 	});
 	registerKeyword("instance", [this](const std::string& unused, std::istream& theStream) {
-		instances.emplace_back(EmblemInstance(theStream));
+		auto instance = EmblemInstance(theStream);
+		if (instance.getPosition().empty())
+			instance.defaultPosition();
+		instances.emplace_back(instance);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

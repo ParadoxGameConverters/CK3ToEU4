@@ -36,10 +36,13 @@ void CK3::CoatOfArms::registerKeys()
 		coloredEmblems.emplace_back(Emblem(theStream));
 	});
 	registerKeyword("sub", [this](const std::string& unused, std::istream& theStream) {
-		subs.emplace_back(std::make_shared<CoatOfArms>(theStream, ID));
+		subs.emplace_back(std::make_shared<CoatOfArms>(theStream, 0));
 	});
 	registerKeyword("instance", [this](const std::string& unused, std::istream& theStream) {
-		instances.emplace_back(EmblemInstance(theStream));
+		auto instance = EmblemInstance(theStream);
+		if (instance.getOffset().empty())
+			instance.defaultOffset();
+		instances.emplace_back(instance);
 	});
 	registerKeyword("parent", [this](const std::string& unused, std::istream& theStream) {
 		parent = std::make_pair(commonItems::singleString(theStream).getString(), nullptr);
