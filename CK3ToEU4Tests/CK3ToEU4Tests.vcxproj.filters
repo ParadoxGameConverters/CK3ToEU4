@@ -580,30 +580,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_cross.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_shield.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_solid.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_full.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_half.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_half2.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\solid_cyan.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\solid_gray.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
       <Filter>RequiredDLLs</Filter>
     </CopyFileToFolders>
@@ -642,6 +618,84 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\IM_MOD_RL_xc_.dll">
       <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_solid_cyan.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_solid_gray.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_full.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_half.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_solid.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_tricolor.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_twocolor.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_solid.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_tricolor.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_twocolor.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_half2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_tricolor_full.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_tricolor_third.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_tricolor_third2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\p_tricolor_third3.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_solid_gold.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_solid_gray.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_solid_gray2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_twocolor_half.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_twocolor_half2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_twocolor_full.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_twocolor_gray.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_full.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_third.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_third2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_third3.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>
