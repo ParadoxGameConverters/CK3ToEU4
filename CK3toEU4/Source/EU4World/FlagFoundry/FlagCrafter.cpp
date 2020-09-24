@@ -11,8 +11,15 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 {
 	// Get a background image
 	auto image = warehouse->getPattern(coa);
-	// Get emblems
 
+	// do subcoas
+	for (const auto& sub: coa.getSubs())
+	{
+		auto subImage = craftFlagFromCoA(*sub);
+		
+	}
+
+	// Get emblems
 	const auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
 	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
 
@@ -33,7 +40,7 @@ Magick::Image EU4::FlagCrafter::processEmblemsOnImage(const Magick::Image& image
 	{
 		if (emblemPair.first.getInstances().empty())
 		{
-			// We need at least a nominal instance.
+			// We need at least a nominal emblem instance.
 			const CK3::EmblemInstance emblemInstance;
 			std::vector<CK3::EmblemInstance> emblemVector = {emblemInstance};
 			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, emblemPair.second);
