@@ -1,10 +1,10 @@
+#include "../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../CK3toEU4/Source/EU4World/FlagFoundry/FlagCrafter.h"
 #include "../CK3toEU4/Source/EU4World/FlagFoundry/Warehouse.h"
-#include "../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
-#include "gtest/gtest.h"
-#include "Magick++.h"
-#include <fstream>
 #include "Log.h"
+#include "Magick++.h"
+#include "gtest/gtest.h"
+#include <fstream>
 
 TEST(EU4World_FlagCrafterTests, emblemOverlayOnPattern)
 {
@@ -117,13 +117,13 @@ TEST(EU4World_FlagCrafterTests, subcoatPositioningRotationAndScaling)
 	laFabricaDeColor.addNamedColor("blue", commonItems::Color(std::array<int, 3>{0, 0, 255}));
 	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
 	laFabricaDeColor.addNamedColor("yellow", commonItems::Color(std::array<int, 3>{255, 255, 0}));
-	
+
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
 	warehouse->loadImageFolder("FlagFoundry/");
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
-	std::ifstream input("FlagFoundry/flag.txt");	
+	std::ifstream input("FlagFoundry/flag.txt");
 	const CK3::CoatOfArms coa(input, 79);
 
 	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
@@ -192,6 +192,36 @@ TEST(EU4World_FlagCrafterTests, dodgeMaskTest)
 
 	const Magick::Image test("flagCrafterTest6.dds");
 	const Magick::Image orig("FlagFoundry/flagtest6.dds");
+
+	laFabricaDeColor.clear();
+	ASSERT_TRUE(orig.compare(test));
+}
+
+TEST(EU4World_FlagCrafterTests, almeriaTheFinalTestFromHell)
+{
+	laFabricaDeColor.clear();
+	laFabricaDeColor.addNamedColor("white",
+		 commonItems::Color(std::array<float, 3>{static_cast<float>(0.08), static_cast<float>(0.1), static_cast<float>(0.75)}));
+	laFabricaDeColor.addNamedColor("blue", commonItems::Color(std::array<float, 3>{static_cast<float>(0.58), static_cast<float>(0.8), static_cast<float>(0.4)}));
+	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<float, 3>{static_cast<float>(0.02), static_cast<float>(0.8), static_cast<float>(0.45)}));
+	laFabricaDeColor.addNamedColor("yellow",
+		 commonItems::Color(std::array<float, 3>{static_cast<float>(0.1), static_cast<float>(0.75), static_cast<float>(0.75)}));
+	laFabricaDeColor.addNamedColor("purple",
+		 commonItems::Color(std::array<float, 3>{static_cast<float>(0.9), static_cast<float>(0.7), static_cast<float>(0.35)}));
+
+	const auto warehouse = std::make_shared<EU4::Warehouse>();
+	warehouse->loadImageFolder("FlagFoundry/");
+	EU4::FlagCrafter flagCrafter;
+	flagCrafter.loadWarehouse(warehouse);
+
+	std::ifstream input("FlagFoundry/almeriaTestFromHell.txt");
+	const CK3::CoatOfArms coa(input, 79);
+
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest-almeria.dds");
+
+	const Magick::Image test("flagCrafterTest-almeria.dds");
+	const Magick::Image orig("FlagFoundry/flagtest-almeria.dds");
 
 	laFabricaDeColor.clear();
 	ASSERT_TRUE(orig.compare(test));

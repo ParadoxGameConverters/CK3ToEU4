@@ -730,5 +730,26 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest6.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_shield_01.dds">
+      <Filter>TestFiles\FlagFoundry\patterns</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\ce_sun_shield.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\ce_lion_rampant.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\ce_castle.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\almeriaTestFromHell.txt">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\ce_ordinary_cross_5.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest-almeria.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
