@@ -50,7 +50,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CONSOLE;_HAS_AUTO_PTR_ETC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <AdditionalIncludeDirectories>..\commonItems;..\ZipLib;..\imageMagick\include-windows</AdditionalIncludeDirectories>
@@ -120,7 +120,10 @@
     <ClInclude Include="Source\EU4World\Diplomacy\Agreement.h" />
     <ClInclude Include="Source\EU4World\Diplomacy\Diplomacy.h" />
     <ClInclude Include="Source\EU4World\EU4World.h" />
-    <ClInclude Include="Source\EU4World\FlagCrafter\FlagCrafter.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\FlagFoundry.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\Recolorer.h" />
+    <ClInclude Include="Source\EU4World\FlagFoundry\Warehouse.h" />
     <ClInclude Include="Source\EU4World\Output\outAgreement.h" />
     <ClInclude Include="Source\EU4World\Output\outCharacter.h" />
     <ClInclude Include="Source\EU4World\Output\outConverterVersion.h" />
@@ -209,7 +212,10 @@
     <ClCompile Include="Source\EU4World\Diplomacy\Agreement.cpp" />
     <ClCompile Include="Source\EU4World\Diplomacy\Diplomacy.cpp" />
     <ClCompile Include="Source\EU4World\EU4World.cpp" />
-    <ClCompile Include="Source\EU4World\FlagCrafter\FlagCrafter.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\FlagFoundry.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\Recolorer.cpp" />
+    <ClCompile Include="Source\EU4World\FlagFoundry\Warehouse.cpp" />
     <ClCompile Include="Source\EU4World\Output\outAgreement.cpp" />
     <ClCompile Include="Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp" />

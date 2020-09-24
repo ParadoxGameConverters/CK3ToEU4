@@ -33,9 +33,9 @@ class CoatOfArms: commonItems::parser
 
 	long long ID = 0;
 	std::optional<std::string> pattern;
-	std::optional<commonItems::Color> color1; // red
-	std::optional<commonItems::Color> color2; // yellow
-	std::optional<commonItems::Color> color3; // white
+	std::optional<commonItems::Color> color1; // mask: 255, 0, 0 - red
+	std::optional<commonItems::Color> color2; // mask: 255, 255, 0 - yellow
+	std::optional<commonItems::Color> color3; // mask: 255, 255, 255 - white
 	std::optional<commonItems::Color> color4; // unknown. Black?
 	std::optional<commonItems::Color> color5; // unknown
 	std::vector<Emblem> texturedEmblems;

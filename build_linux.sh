@@ -3,6 +3,12 @@
 export CC=/usr/bin/gcc-9 &&
 export CXX=/usr/bin/g++-9 &&
 
+cd imageMagick &&
+tar xvf im7.10-linux-source.tar &&
+cd ImageMagick-7.0.10 &&
+./configure --with-quantum-depth=8 --enable-hdri=no --with-x=no --with-utilities=no &&
+sudo make install &&
+cd ../../ &&
 rm -rf Release/ &&
 cd Fronter &&
 ./build_linux.sh &&

@@ -19,10 +19,10 @@ class EmblemInstance: commonItems::parser
   private:
 	void registerKeys();
 
-	double rotation = 0;
-	double depth = 0; // Do. Not. Ask. Go to wiki and complain there.
-	std::vector<double> position;
-	std::vector<double> scale;
+	double rotation = 0.0; // Degrees, clockwise.
+	double depth = 0.0; // Do. Not. Ask. Go to wiki and complain there.
+	std::vector<double> position = { 0.0, 0.0 }; // Default position is UPPER LEFT corner
+	std::vector<double> scale = { 1.0, 1.0 }; // Relative to image size. Defaults to "across entire image".
 	std::vector<double> offset; // Used in sub-emblem instances
 };
 } // namespace CK3
