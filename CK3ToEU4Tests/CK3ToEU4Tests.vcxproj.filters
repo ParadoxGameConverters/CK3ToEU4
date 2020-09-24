@@ -187,7 +187,7 @@
     <Filter Include="TestFiles\FlagFoundry\patterns">
       <UniqueIdentifier>{73c7070b-8c41-4c44-b31d-7a1cd72864aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="TestFiles\FlagFoundry\textured_emblems">
+    <Filter Include="TestFiles\FlagFoundry\colored_emblems">
       <UniqueIdentifier>{2d6e14df-23f7-431d-a139-c02d60a76330}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -697,14 +697,14 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_twocolor.dds">
       <Filter>TestFiles\FlagFoundry\patterns</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_solid.dds">
-      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_solid.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_tricolor.dds">
-      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_tricolor.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_twocolor.dds">
-      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_twocolor.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

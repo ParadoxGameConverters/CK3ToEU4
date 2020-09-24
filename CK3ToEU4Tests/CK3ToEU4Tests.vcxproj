@@ -332,14 +332,14 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_solid.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_solid.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/colored_emblems</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_tricolor.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_tricolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/colored_emblems</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_twocolor.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_twocolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/colored_emblems</DestinationFolders>
     </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

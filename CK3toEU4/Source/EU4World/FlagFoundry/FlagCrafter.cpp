@@ -10,21 +10,15 @@
 Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
 {
 	// Get a background image
-	Log(LogLevel::Debug) << "flagcrafter grabbing pattern";
 	auto image = warehouse->getPattern(coa);
 	// Get emblems
 
-	Log(LogLevel::Debug) << "flagcrafter grabbing c emblems";
-	auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
-	Log(LogLevel::Debug) << "flagcrafter grabbing t emblems";
-	auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
+	const auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
+	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
 
-	Log(LogLevel::Debug) << "flagcrafter processing cemblems";
 	image = processEmblemsOnImage(image, coloredEmblems);
-	Log(LogLevel::Debug) << "flagcrafter processing temblems";
 	image = processEmblemsOnImage(image, texturedEmblems);
 
-	Log(LogLevel::Debug) << "flagcrafter done";
 	return image;
 }
 
@@ -37,23 +31,20 @@ Magick::Image EU4::FlagCrafter::processEmblemsOnImage(const Magick::Image& image
 
 	for (const auto& emblemPair: emblems)
 	{
-		Log(LogLevel::Debug) << "flagcrafter in emblem " << *emblemPair.first.getTexture();
 		if (emblemPair.first.getInstances().empty())
 		{
-			Log(LogLevel::Debug) << "flagcrafter generating single instance";
 			// We need at least a nominal instance.
-			CK3::EmblemInstance emblemInstance;
+			const CK3::EmblemInstance emblemInstance;
 			std::vector<CK3::EmblemInstance> emblemVector = {emblemInstance};
 			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemVector, emblemPair.second);
 		}
 		else
 		{
 			// Run them all.
-			Log(LogLevel::Debug) << "flagcrafter pushing existing instances";
 			workingImage = imposeEmblemInstancesOnImage(workingImage, emblemPair.first.getInstances(), emblemPair.second);
 		}
 	}
-	
+
 	return workingImage;
 }
 
@@ -62,16 +53,18 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 	 const Magick::Image& emblem) const
 {
 	auto workingImage = image;
-	workingImage.modifyImage();
 
 	const auto height = workingImage.baseRows();
 	const auto width = workingImage.baseColumns();
-	
+
+	auto counter = 0;
+
 	for (const auto& instance: instances)
 	{
-		auto workingEmblem = image;
-		workingEmblem.modifyImage();
-		
+		counter++;
+		auto workingEmblem = emblem;
+		workingEmblem.write("origemblem.dds");
+
 		// Rescale emblem
 		if (!instance.getScale().empty())
 		{
@@ -82,19 +75,18 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 			}
 			const auto targetWidth = instance.getScale()[0] * static_cast<double>(width);
 			const auto targetHeight = instance.getScale()[1] * static_cast<double>(height);
-			Log(LogLevel::Debug) << "flagcrafter scaling insance";
-			workingEmblem.scale(Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight)));
-			Log(LogLevel::Debug) << "flagcrafter scaled instance";
+			workingEmblem.adaptiveResize(Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight)));
+			workingEmblem.write("scaledemblem" + std::to_string(counter) + ".dds");
 		}
-		
+
 		// Rotate emblem
-		if (instance.getRotation() == 0.0)
+		if (instance.getRotation() != 0.0)
 		{
-			Log(LogLevel::Debug) << "flagcrafter rotating insance";
-			workingEmblem.rotate(0 - instance.getRotation()); // I *think* PDX stores rotation clockwise.
-			Log(LogLevel::Debug) << "flagcrafter rotated instance";
+			workingEmblem.backgroundColor(Magick::Color("none"));
+			workingEmblem.rotate(instance.getRotation());
+			workingEmblem.write("rotatedemblem" + std::to_string(counter) + ".dds");
 		}
-		
+
 		// Position emblem
 		if (!instance.getPosition().empty()) // We won't paste anything without a position - which should only happen on user error.
 		{
@@ -103,14 +95,14 @@ Magick::Image EU4::FlagCrafter::imposeEmblemInstancesOnImage(const Magick::Image
 				Log(LogLevel::Warning) << "Invalid emblem instance position command, array size: " << instance.getPosition().size();
 				continue;
 			}
-			const auto targetX = static_cast<size_t>(instance.getPosition()[0] * static_cast<double>(width));
-			const auto targetY = static_cast<size_t>(instance.getPosition()[1] * static_cast<double>(height));
-			Log(LogLevel::Debug) << "flagcrafter compositing instance";
-			workingImage.composite(workingEmblem, Magick::Geometry(targetX, targetY), MagickCore::BlendCompositeOp);
-			Log(LogLevel::Debug) << "flagcrafter composited instance";
-		}		
-		
+			const auto targetX =
+				 static_cast<size_t>(instance.getPosition()[0] * static_cast<double>(width) - static_cast<double>(workingEmblem.size().width()) / 2.0);
+			const auto targetY =
+				 static_cast<size_t>(instance.getPosition()[1] * static_cast<double>(height) - static_cast<double>(workingEmblem.size().height()) / 2.0);
+			Log(LogLevel::Debug) << "position " << targetX << " by " << targetY;
+			workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
+			workingImage.write("working" + std::to_string(counter) + ".dds");
+		}
 	}
-	Log(LogLevel::Debug) << "flagcrafter returning completed instance run";
 	return workingImage;
 }

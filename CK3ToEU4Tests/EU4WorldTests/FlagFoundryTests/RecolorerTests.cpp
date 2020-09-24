@@ -191,7 +191,7 @@ TEST(EU4World_RecolorerTests, colorSuiteRecolorsTricolorPattern)
 TEST(EU4World_RecolorerTests, noColorGraysSolidTexture)
 {
 	EU4::coloredImage imageBlock;
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_solid.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_solid.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -205,7 +205,7 @@ TEST(EU4World_RecolorerTests, color1RecolorsMask1SolidTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_solid.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_solid.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -219,7 +219,7 @@ TEST(EU4World_RecolorerTests, color2GraysMask1SolidTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_solid.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_solid.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -233,7 +233,7 @@ TEST(EU4World_RecolorerTests, color3GraysMask1SolidTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_solid.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_solid.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -249,7 +249,7 @@ TEST(EU4World_RecolorerTests, colorSuiteRecolorsSolidTexture)
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0});
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 165, 0});
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{50, 180, 200});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_solid.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_solid.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -263,7 +263,7 @@ TEST(EU4World_RecolorerTests, color1RecolorsHalfOfTwocoloTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_twocolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_twocolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -277,7 +277,7 @@ TEST(EU4World_RecolorerTests, color2RecolorsOtherHalfOfTwocolorTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_twocolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_twocolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -291,7 +291,7 @@ TEST(EU4World_RecolorerTests, color3GraysTwocolorTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_twocolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_twocolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -307,7 +307,7 @@ TEST(EU4World_RecolorerTests, colorSuiteRecolorsTwocolorTexture)
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0});
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 165, 0});
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{50, 180, 200});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_twocolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_twocolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -321,7 +321,7 @@ TEST(EU4World_RecolorerTests, color1RecolorsThirdOfTricolorTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_tricolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_tricolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -335,7 +335,7 @@ TEST(EU4World_RecolorerTests, color2RecolorsSecondThirdOfTriColorTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_tricolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_tricolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -349,7 +349,7 @@ TEST(EU4World_RecolorerTests, color3RecolorsFinalThirdOfTriColorTexture)
 {
 	EU4::coloredImage imageBlock;
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{255, 215, 0});
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_tricolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_tricolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 
@@ -365,7 +365,7 @@ TEST(EU4World_RecolorerTests, colorSuiteRecolorsTricolorTexture)
 	imageBlock.color1 = commonItems::Color(std::array<int, 3>{255, 215, 0}); // recoloring to gold.
 	imageBlock.color2 = commonItems::Color(std::array<int, 3>{255, 165, 0}); // recoloring to orange.
 	imageBlock.color3 = commonItems::Color(std::array<int, 3>{50, 180, 200}); // recoloring to aquamarine.
-	imageBlock.imageData = Magick::Image("FlagFoundry/textured_emblems/texture_tricolor.dds");
+	imageBlock.imageData = Magick::Image("FlagFoundry/colored_emblems/texture_tricolor.dds");
 	auto result = EU4::Recolorer::craftTextureImage(imageBlock);
 	result.write("result.dds");
 

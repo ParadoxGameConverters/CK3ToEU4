@@ -21,7 +21,7 @@ class FlagCrafter
 {
   public:
 	void loadWarehouse(const std::shared_ptr<Warehouse>& theWarehouse) { warehouse = theWarehouse; }
-	
+
 	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa) const;
 
   private:
