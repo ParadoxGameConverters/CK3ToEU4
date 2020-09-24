@@ -175,6 +175,15 @@
     <Filter Include="EU4WorldTests\RecolorerTests">
       <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TestFiles">
+      <UniqueIdentifier>{38319c43-fc9a-4751-bcb1-b5e8bd3e5468}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestFiles\FlagFoundry">
+      <UniqueIdentifier>{5f98aa9a-8ebb-42ac-af83-883e38b3f9d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RequiredDLLs">
+      <UniqueIdentifier>{5d046dbb-c199-4d27-8251-5b17550a2396}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -569,5 +578,70 @@
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp">
       <Filter>EU4WorldTests\RecolorerTests</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_cross.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_shield.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_solid.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_full.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_half.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\shield_half2.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\solid_cyan.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\solid_gray.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_freetype_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_glib_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_lcms_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_libxml_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_lqr_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_Magick++_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_MagickCore_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_MagickWand_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_zlib_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\IM_MOD_RL_dds_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\IM_MOD_RL_tga_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\imageMagick\dll-windows-required\IM_MOD_RL_xc_.dll">
+      <Filter>RequiredDLLs</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
