@@ -1,13 +1,14 @@
 #include "outCharacter.h"
+#include "OSCompatibilityLayer.h"
 
 std::ostream& EU4::operator<<(std::ostream& output, const Character& character)
 {
-	output << "\t\tname = \"" << character.name << "\"\n";
+	output << "\t\tname = \"" << commonItems::convertUTF8ToWin1252(character.name) << "\"\n";
 	if (!character.monarchName.empty())
-		output << "\t\tmonarch_name = \"" << character.monarchName << "\"\n";
+		output << "\t\tmonarch_name = \"" << commonItems::convertUTF8ToWin1252(character.monarchName) << "\"\n";
 	if (!character.dynasty.empty())
 	{
-		output << "\t\tdynasty = \"" << character.dynasty << "\"\n";
+		output << "\t\tdynasty = \"" << commonItems::convertUTF8ToWin1252(character.dynasty) << "\"\n";
 	}
 	if (!character.id)
 		output << "\t\tadm = " << character.adm << "\n";
