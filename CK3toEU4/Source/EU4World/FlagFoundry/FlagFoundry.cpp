@@ -77,8 +77,6 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 		return;
 	}
 
-	Log(LogLevel::Debug) << "crafting: " << country->getTag() << " from " << country->getTitle()->second->getName();
-
 	const auto& coa = country->getTitle()->second->getCoA()->second;
 	auto generatedCoa = flagCrafter.craftFlagFromCoA(*coa);
 	try
@@ -90,6 +88,4 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	{
 		Log(LogLevel::Error) << "Failed exporting flag: " << e.what();
 	}
-
-	Log(LogLevel::Debug) << "Crafted: " << country->getTag() << ".tga";
 }

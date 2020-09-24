@@ -26,13 +26,10 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	// Crafting time.	Get a background image.
 	auto imagePair = warehouse->getPattern(coa);
 	// Grab subcoats
-	auto counter = 0;
 	std::vector<std::pair<CK3::CoatOfArms, Magick::Image>> subs;
 	for (const auto& sub: coa.getSubs())
 	{
 		auto subimage = craftFlagFromCoA(*sub);
-		subimage.write("subimage" + std::to_string(counter) + ".dds");
-		++counter;
 		subs.emplace_back(std::pair(*sub, subimage));
 	}
 	
@@ -117,13 +114,9 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 	const auto height = workingImage.baseRows();
 	const auto width = workingImage.baseColumns();
 
-	auto counter = 0;
-
 	for (const auto& instance: instances)
 	{
-		counter++;
 		auto workingEmblem = emblem;
-		workingEmblem.write("origemblem.dds");
 
 		// Rescale emblem
 		if (!instance.getScale().empty())
@@ -148,7 +141,6 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 			const auto targetWidth = scaleX * static_cast<double>(width);
 			const auto targetHeight = scaleY * static_cast<double>(height);
 			workingEmblem.adaptiveResize(Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight)));
-			workingEmblem.write("scaledemblem" + std::to_string(counter) + ".dds");
 		}
 
 		// Rotate emblem
@@ -156,7 +148,6 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 		{
 			workingEmblem.backgroundColor(Magick::Color("none"));
 			workingEmblem.rotate(instance.getRotation());
-			workingEmblem.write("rotatedemblem" + std::to_string(counter) + ".dds");
 		}
 
 		// Position and clip emblem
@@ -230,7 +221,6 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 			{
 				// No masks, straight clip.
 				workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-				workingImage.write("workingemb" + std::to_string(counter) + ".dds");				
 			}
 			
 		}
@@ -248,7 +238,6 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 			const auto targetY =
 				 static_cast<size_t>(instance.getOffset()[1] * static_cast<double>(height));
 			workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-			workingImage.write("workingsub" + std::to_string(counter) + ".dds");
 		}
 
 	}
