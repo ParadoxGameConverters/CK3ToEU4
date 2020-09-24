@@ -166,20 +166,20 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 
 bool EU4::coloredImage::operator==(const coloredImage& rhs)
 {
-	if (this->patternName != rhs.patternName)
+	if (patternName != rhs.patternName)
 		return false;
-	if (!this->color1 && rhs.color1 || this->color1 && !rhs.color1)
+	if (!color1 && rhs.color1 || color1 && !rhs.color1)
 		return false;
-	if (!this->color2 && rhs.color2 || this->color2 && !rhs.color2)
+	if (!color2 && rhs.color2 || color2 && !rhs.color2)
 		return false;
-	if (!this->color3 && rhs.color3 || this->color3 && !rhs.color3)
+	if (!color3 && rhs.color3 || color3 && !rhs.color3)
 		return false;
 	// Possible match, compare the colors.
-	if (this->color1 && *this->color1 != *rhs.color1)
+	if (color1 && *color1 != *rhs.color1)
 		return false;
-	if (this->color2 && *this->color2 != *rhs.color2)
+	if (color2 && *color2 != *rhs.color2)
 		return false;
-	if (this->color3 && *this->color3 != *rhs.color3)
+	if (color3 && *color3 != *rhs.color3)
 		return false;
 	// Full match
 	return true;
