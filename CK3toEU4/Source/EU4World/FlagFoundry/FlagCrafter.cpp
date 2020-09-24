@@ -9,23 +9,34 @@
 
 Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
 {
-	// Get a background image
-	auto image = warehouse->getPattern(coa);
-
-	// do subcoas
-	for (const auto& sub: coa.getSubs())
+	// Probe for existing coa.
+	if (coa.getID())
 	{
-		auto subImage = craftFlagFromCoA(*sub);
-		
+		const auto probe = warehouse->getCoA(coa.getID());
+		if (probe.first)
+			return probe.second;		
 	}
 
-	// Get emblems
+	// Crafting time.	Get a background image.
+	auto image = warehouse->getPattern(coa);
+
+	// Apply subcoats
+	for (const auto sub: coa.getSubs())
+	{
+		auto subimage = craftFlagFromCoA(*sub);
+	}
+	
+	// Get emblems.
 	const auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
 	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
 
 	image = processEmblemsOnImage(image, coloredEmblems);
+	image = processEmblemsOnImage(image, coloredEmblems);
 	image = processEmblemsOnImage(image, texturedEmblems);
 
+	if (coa.getID()) // subcoats won't have an ID.
+		warehouse->storeCoA(coa.getID(), image);
+	
 	return image;
 }
 

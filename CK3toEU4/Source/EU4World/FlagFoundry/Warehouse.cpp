@@ -3,6 +3,17 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 
+std::pair<bool, Magick::Image> EU4::Warehouse::getCoA(long long ID)
+{
+	// Unfortunately Magick::Image cannot go into a std::optional.
+	// This also means we cannot return a reference but must make a copy.
+	
+	if (coaStorage.count(ID))
+		return std::pair(true, coaStorage[ID]);
+	else
+		return std::pair(false, Magick::Image());
+}
+
 Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 {
 	if (!coa.getPattern())

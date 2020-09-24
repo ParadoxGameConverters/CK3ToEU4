@@ -26,6 +26,8 @@ class Warehouse
 {
   public:
 	void loadImageFolder(const std::string& source) { imageFolder = source; }
+	void storeCoA(long long ID, Magick::Image image) { coaStorage.insert(std::pair(ID, image)); }
+	[[nodiscard]] std::pair<bool, Magick::Image> getCoA(long long ID);
 
 	[[nodiscard]] Magick::Image getPattern(const CK3::CoatOfArms& coa);
 	[[nodiscard]] std::vector<std::pair<CK3::Emblem, Magick::Image>> getColoredTextures(const std::vector<CK3::Emblem>& emblems);
@@ -42,6 +44,8 @@ class Warehouse
 	std::vector<coloredImage> patternStorage;	 // Storage for crafted CoA patterns, which are RGB solids
 	std::vector<coloredImage> texturedStorage; // Storage for crafted colored emblems that use RGBA textures
 	std::vector<coloredImage> coloredStorage;	 // Storage for crafted colored emblems, which are RGB solids
+
+	std::map<long long, Magick::Image> coaStorage; // Storage for finished CoAs to be used as parents in other CoAs
 
 	Recolorer recolorer;
 };
