@@ -57,7 +57,6 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 
 		// We do.
 		craftFlag(country.second);
-		break; // TODO: Crafting just 1 flag. REMOVE THIS ONCE FLAGS ACTUALLY WORK.
 	}
 
 	// Do not forget about our SDM.

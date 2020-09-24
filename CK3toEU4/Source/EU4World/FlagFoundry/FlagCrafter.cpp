@@ -16,10 +16,8 @@
 Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) const
 {
 	// Probe for existing coa.
-	Log(LogLevel::Debug) << "Enter cffcoa";
 	if (coa.getID())
 	{
-		Log(LogLevel::Debug) << "Probing";
 		const auto probe = warehouse->getCoA(coa.getID());
 		if (probe.first)
 			return probe.second;		
@@ -27,17 +25,14 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 
 	// Crafting time.	Get a background image.
 	auto imagePair = warehouse->getPattern(coa);
-	Log(LogLevel::Debug) << "got pattern";
 	// Grab subcoats
 	auto counter = 0;
 	std::vector<std::pair<CK3::CoatOfArms, Magick::Image>> subs;
 	for (const auto& sub: coa.getSubs())
 	{
-		Log(LogLevel::Debug) << "forsub";
 		auto subimage = craftFlagFromCoA(*sub);
 		subimage.write("subimage" + std::to_string(counter) + ".dds");
 		++counter;
-		Log(LogLevel::Debug) << "gotsub";
 		subs.emplace_back(std::pair(*sub, subimage));
 	}
 	
@@ -45,7 +40,6 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	const auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
 	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
 
-		Log(LogLevel::Debug) << "go sub";
 	imagePair = processSubsOnImage(imagePair, subs);
 	imagePair = processEmblemsOnImage(imagePair, coloredEmblems);
 	imagePair = processEmblemsOnImage(imagePair, texturedEmblems);
@@ -173,13 +167,10 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 				Log(LogLevel::Warning) << "Invalid emblem instance position command, array size: " << instance.getPosition().size();
 				continue;
 			}
-			Log(LogLevel::Debug) << "instance position " << instance.getPosition()[0] << " by " << instance.getPosition()[1];
-			Log(LogLevel::Debug) << "working size " << workingEmblem.size().width() << " by " << workingEmblem.size().height();
 			const auto targetX =
 				 static_cast<size_t>(instance.getPosition()[0] * static_cast<double>(width) - static_cast<double>(workingEmblem.size().width()) / 2.0);
 			const auto targetY =
 				 static_cast<size_t>(instance.getPosition()[1] * static_cast<double>(height) - static_cast<double>(workingEmblem.size().height()) / 2.0);
-			Log(LogLevel::Debug) << "position " << targetX << " by " << targetY;
 
 			// Now it's time for a mask.
 			if (masks.size() == 3)
@@ -252,13 +243,10 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 				Log(LogLevel::Warning) << "Invalid emblem instance position command, array size: " << instance.getPosition().size();
 				continue;
 			}
-			Log(LogLevel::Debug) << "instance offset " << instance.getOffset()[0] << " by " << instance.getOffset()[1];
-			Log(LogLevel::Debug) << "working size " << workingEmblem.size().width() << " by " << workingEmblem.size().height();
 			const auto targetX =
 				 static_cast<size_t>(instance.getOffset()[0] * static_cast<double>(width));
 			const auto targetY =
 				 static_cast<size_t>(instance.getOffset()[1] * static_cast<double>(height));
-			Log(LogLevel::Debug) << "offset " << targetX << " by " << targetY;
 			workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
 			workingImage.write("workingsub" + std::to_string(counter) + ".dds");
 		}
