@@ -23,10 +23,10 @@ TEST(EU4World_FlagCrafterTests, emblemOverlayOnPattern)
 	input << "}\n";
 	const CK3::CoatOfArms coa(input, 79);
 
-	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result.dds");
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest1.dds");
 
-	const Magick::Image test("result.dds");
+	const Magick::Image test("flagCrafterTest1.dds");
 	const Magick::Image orig("FlagFoundry/flagtest1.dds");
 
 	ASSERT_TRUE(orig.compare(test));
@@ -52,10 +52,10 @@ TEST(EU4World_FlagCrafterTests, multicolorEmblemsOverlayOnMulticolorPattern)
 	input << "}\n";
 	const CK3::CoatOfArms coa(input, 79);
 
-	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result.dds");
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest2.dds");
 
-	const Magick::Image test("result.dds");
+	const Magick::Image test("flagCrafterTest2.dds");
 	const Magick::Image orig("FlagFoundry/flagtest2.dds");
 
 	ASSERT_TRUE(orig.compare(test));
@@ -101,10 +101,10 @@ TEST(EU4World_FlagCrafterTests, emblemInstancePositioningRotationAndScaling)
 	input << "}\n";
 	const CK3::CoatOfArms coa(input, 79);
 
-	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result.dds");
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest3.dds");
 
-	const Magick::Image test("result.dds");
+	const Magick::Image test("flagCrafterTest3.dds");
 	const Magick::Image orig("FlagFoundry/flagtest3.dds");
 
 	ASSERT_TRUE(orig.compare(test));
@@ -126,11 +126,72 @@ TEST(EU4World_FlagCrafterTests, subcoatPositioningRotationAndScaling)
 	std::ifstream input("FlagFoundry/flag.txt");	
 	const CK3::CoatOfArms coa(input, 79);
 
-	auto result = flagCrafter.craftFlagFromCoA(coa);
-	result.write("result.dds");
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest4.dds");
 
-	const Magick::Image test("result.dds");
+	const Magick::Image test("flagCrafterTest4.dds");
 	const Magick::Image orig("FlagFoundry/flagtest4.dds");
+
+	laFabricaDeColor.clear();
+	ASSERT_TRUE(orig.compare(test));
+}
+
+TEST(EU4World_FlagCrafterTests, simpleMaskTest)
+{
+	const auto warehouse = std::make_shared<EU4::Warehouse>();
+	warehouse->loadImageFolder("FlagFoundry/");
+	EU4::FlagCrafter flagCrafter;
+	flagCrafter.loadWarehouse(warehouse);
+
+	std::stringstream input;
+	input << "pattern = pattern_split.dds\n";
+	input << "color1 = { 200 100 100 }\n";
+	input << "color2 = { 100 100 200 }\n";
+	input << "colored_emblem = {\n";
+	input << "texture = texture_solid.dds\n";
+	input << "color1 = { 100 200 100 }\n";
+	input << "mask = { 1 0 0 }\n";
+	input << "}\n";
+	const CK3::CoatOfArms coa(input, 79);
+
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest5.dds");
+
+	const Magick::Image test("flagCrafterTest5.dds");
+	const Magick::Image orig("FlagFoundry/flagtest5.dds");
+
+	laFabricaDeColor.clear();
+	ASSERT_TRUE(orig.compare(test));
+}
+
+TEST(EU4World_FlagCrafterTests, dodgeMaskTest)
+{
+	const auto warehouse = std::make_shared<EU4::Warehouse>();
+	warehouse->loadImageFolder("FlagFoundry/");
+	EU4::FlagCrafter flagCrafter;
+	flagCrafter.loadWarehouse(warehouse);
+
+	std::stringstream input;
+	input << "pattern = pattern_split.dds\n";
+	input << "color1 = { 200 100 100 }\n";
+	input << "color2 = { 100 100 200 }\n";
+	input << "colored_emblem = {\n";
+	input << "texture = texture_solid.dds\n";
+	input << "color1 = { 100 200 100 }\n";
+	input << "mask = { 0 2 0 }\n";
+	input << "instance = {\n";
+	input << "position = { 0.6 0.2 }\n";
+	input << "rotation = -45\n";
+	input << "scale = { 0.5 0.5 }\n";
+	input << "}\n";
+	input << "}\n";
+	const CK3::CoatOfArms coa(input, 79);
+
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest6.dds");
+
+	const Magick::Image test("flagCrafterTest6.dds");
+	const Magick::Image orig("FlagFoundry/flagtest6.dds");
 
 	laFabricaDeColor.clear();
 	ASSERT_TRUE(orig.compare(test));

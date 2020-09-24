@@ -193,37 +193,44 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 						// clip against red. Translation: Show only those parts of the emblem that match the pattern's original red.
 						// We know this to be in fact greeninverse channel of the pattern.
 						auto greenInverse = imagePair.second;
-						greenInverse.channel(MagickCore::ChannelType::GreenChannel);
+						greenInverse.channel(MagickCore::GreenChannel);
 						greenInverse.negate();
-						// Now slap the emblem onto a faux baseimage that's entirely empty.
-						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
-						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
-						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-						// And slap it over with the mask
-						faux.composite(greenInverse, "0x0", MagickCore::CopyAlphaCompositeOp);
-						// Now with the faux containing only clipped portion of the emblem, slip it into the workhorse.
+						// Create a faux new image, transparent, and put emblem into proper position
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("transparent"));
+						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);						
+						// Extract the alpha channel and exclude whatever is supposed to be masked
+						auto fauxAlpha = faux;
+						fauxAlpha.channel(MagickCore::AlphaChannel);
+						fauxAlpha.composite(greenInverse, "0x0", MagickCore::DarkenCompositeOp);
+						// Put the alpha channel back in
+						faux.composite(fauxAlpha, "0x0", MagickCore::CopyAlphaCompositeOp);
+						// And paste the faux layer onto the horse.
 						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
 					}
 					else if (mask == 2)
 					{
 						// identical to before but with green channel.
 						auto green = imagePair.second;
-						green.channel(MagickCore::ChannelType::GreenChannel);
-						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
-						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
+						green.channel(MagickCore::GreenChannel);
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("transparent"));
 						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-						faux.composite(green, "0x0", MagickCore::CopyAlphaCompositeOp);
+						auto fauxAlpha = faux;
+						fauxAlpha.channel(MagickCore::AlphaChannel);
+						fauxAlpha.composite(green, "0x0", MagickCore::DarkenCompositeOp);
+						faux.composite(fauxAlpha, "0x0", MagickCore::CopyAlphaCompositeOp);
 						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
 					}
 					else if (mask == 3)
 					{
 						// ditto, blue channel.
 						auto blue = imagePair.second;
-						blue.channel(MagickCore::ChannelType::BlueChannel);
-						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("none"));
-						faux.alphaChannel(MagickCore::ActivateAlphaChannel);
+						blue.channel(MagickCore::BlueChannel);
+						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("transparent"));
 						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
-						faux.composite(blue, "0x0", MagickCore::CopyAlphaCompositeOp);
+						auto fauxAlpha = faux;
+						fauxAlpha.channel(MagickCore::AlphaChannel);
+						fauxAlpha.composite(blue, "0x0", MagickCore::DarkenCompositeOp);
+						faux.composite(fauxAlpha, "0x0", MagickCore::CopyAlphaCompositeOp);
 						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
 					}
 				}					

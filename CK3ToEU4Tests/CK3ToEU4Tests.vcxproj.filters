@@ -721,5 +721,14 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest4.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_split.dds">
+      <Filter>TestFiles\FlagFoundry\patterns</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest5.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest6.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

@@ -23,12 +23,6 @@ void CK3::CoatOfArms::registerKeys()
 	registerKeyword("color3", [this](const std::string& unused, std::istream& theStream) {
 		color3 = laFabricaDeColor.getColor(theStream);
 	});
-	registerKeyword("color4", [this](const std::string& unused, std::istream& theStream) {
-		color4 = laFabricaDeColor.getColor(theStream);
-	});
-	registerKeyword("color5", [this](const std::string& unused, std::istream& theStream) {
-		color5 = laFabricaDeColor.getColor(theStream);
-	});
 	registerKeyword("textured_emblem", [this](const std::string& unused, std::istream& theStream) {
 		texturedEmblems.emplace_back(Emblem(theStream));
 	});
