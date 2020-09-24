@@ -184,6 +184,12 @@
     <Filter Include="RequiredDLLs">
       <UniqueIdentifier>{5d046dbb-c199-4d27-8251-5b17550a2396}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TestFiles\FlagFoundry\patterns">
+      <UniqueIdentifier>{73c7070b-8c41-4c44-b31d-7a1cd72864aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestFiles\FlagFoundry\textured_emblems">
+      <UniqueIdentifier>{2d6e14df-23f7-431d-a139-c02d60a76330}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -578,6 +584,9 @@
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp">
       <Filter>EU4WorldTests\RecolorerTests</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp">
+      <Filter>EU4WorldTests\RecolorerTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
@@ -631,24 +640,6 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_half.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_solid.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_tricolor.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_twocolor.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_solid.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_tricolor.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_twocolor.dds">
-      <Filter>TestFiles\FlagFoundry</Filter>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_half2.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
@@ -696,6 +687,24 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_third3.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_solid.dds">
+      <Filter>TestFiles\FlagFoundry\patterns</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_tricolor.dds">
+      <Filter>TestFiles\FlagFoundry\patterns</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_twocolor.dds">
+      <Filter>TestFiles\FlagFoundry\patterns</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_solid.dds">
+      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_tricolor.dds">
+      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_twocolor.dds">
+      <Filter>TestFiles\FlagFoundry\textured_emblems</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

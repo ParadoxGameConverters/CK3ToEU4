@@ -173,6 +173,7 @@
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp" />
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp" />
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
+    <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
     <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
@@ -244,15 +245,6 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_solid.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_tricolor.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\pattern_twocolor.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\p_solid_cyan.dds">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
     </CopyFileToFolders>
@@ -266,15 +258,6 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
     </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\p_twocolor_half2.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_solid.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_tricolor.dds">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="TestFiles\FlagFoundry\texture_twocolor.dds">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
     </CopyFileToFolders>
   </ItemGroup>
@@ -335,6 +318,28 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\t_tricolor_third3.dds">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_solid.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/patterns</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_tricolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/patterns</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\patterns\pattern_twocolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/patterns</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_solid.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_tricolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\textured_emblems\texture_twocolor.dds">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry/textured_emblems</DestinationFolders>
     </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
