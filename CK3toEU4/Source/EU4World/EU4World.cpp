@@ -44,6 +44,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	LOG(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
 
+	// Import CK3 dynamic faiths and register them in religionMapper
+	religionMapper
+
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.
 	// We'll overwrite some of them with ck3 imports.
 	importVanillaCountries(theConfiguration.getEU4Path(), invasion);
