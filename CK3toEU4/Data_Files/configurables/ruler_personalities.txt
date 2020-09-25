@@ -19,7 +19,7 @@ well_connected_personality = { education_diplomacy_4 = 3 education_diplomacy_3 =
 secretive_personality = { education_intrigue_4 = 4 education_intrigue_3 = 3 deceitful = 3 callous = 2 cynical = 1 honest = -99 contrite = -99 }
 intricate_web_weaver_personality = { education_intrigue_4 = 3 education_intrigue_3 = 4 schemer = 5 paranoid = 3 deceitful = 2 }
 benevolent_personality = { compassionate = 3 generous = 2 content = 1 sadistic = -99 }
-education_diplomacy_3_personality = { education_diplomacy_4 = 3 education_diplomacy_3 = 4 reveler_1 = 5 reveler_2 = 5 reveler_3 = 5 gregarious = 2 compassionate = 1 just = 1 beauty_good_1 = 1 beauty_good_2 = 1 beauty_good_3 = 1 bossy = 1 }
+charismatic_negotiator_personality = { education_diplomacy_4 = 3 education_diplomacy_3 = 4 reveler_1 = 5 reveler_2 = 5 reveler_3 = 5 gregarious = 2 compassionate = 1 just = 1 beauty_good_1 = 1 beauty_good_2 = 1 beauty_good_3 = 1 bossy = 1 }
 silver_tongue_personality = { education_diplomacy_4 = 3 education_diplomacy_3 = 2 seducer = 5 deceitful = 3 }
 bold_fighter_personality = { gallant = 5 impatient = 3 brave = 2 strong = 1 physique_good_1 = 1 physique_good_2 = 1 }
 tactical_genius_personality = { strategist = 5 education_martial_4 = 3 education_martial_3 = 3 patient = 3 sadistic = 2 intellect_good_3 = 2 intellect_good_1 = 1 shrewd = 1 }

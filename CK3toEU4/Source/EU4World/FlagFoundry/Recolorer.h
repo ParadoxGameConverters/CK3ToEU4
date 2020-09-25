@@ -27,11 +27,11 @@ class Recolorer
 		commonItems::Color color5 = commonItems::Color(std::array<int, 3>{0, 0, 0}); // unknown
 	} patternColorMasks;
 
-	struct emblemColorMasks
+	struct emblemColorMasks // For reference only. Not used.
 	{
 		commonItems::Color color1 = commonItems::Color(std::array<int, 3>{0, 0, 126});
 		commonItems::Color color2 = commonItems::Color(std::array<int, 3>{0, 255, 126});
-		commonItems::Color color3 = commonItems::Color(std::array<int, 3>{255, 255, 126});
+		commonItems::Color color3 = commonItems::Color(std::array<int, 3>{255, 0, 126});
 	} emblemColorMasks;
 };
 } // namespace EU4

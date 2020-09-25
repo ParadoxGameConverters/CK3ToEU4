@@ -51,7 +51,7 @@ link = { eu4 = hellenic_pagan_reformed ck3 = hellenic_reformed }
 link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam  
 link = { eu4 = sunni ck3 = ashari ck3 = muwalladi ck3 = maturidi ck3 = masmudi }
-link = { eu4 = shia ck3 = ismaili ck3 = nizari ck3 = zayidi ck3 = imami ck3 = ghulat ck3 = alevi }
+link = { eu4 = shiite ck3 = ismaili ck3 = nizari ck3 = zayidi ck3 = imami ck3 = ghulat ck3 = alevi }
 link = { eu4 = ibadi ck3 = ibadi }
 link = { eu4 = mutazila ck3 = mutazila }
 link = { eu4 = quranist ck3 = quranist }

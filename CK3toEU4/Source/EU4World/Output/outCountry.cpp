@@ -1,5 +1,6 @@
 #include "outCountry.h"
 #include "outCharacter.h"
+#include "OSCompatibilityLayer.h"
 
 std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 {
@@ -180,7 +181,7 @@ void EU4::Country::outputCommons(std::ostream& output) const
 		output << "monarch_names = {\n";
 		for (const auto& name: details.monarchNames)
 		{
-			output << "\t\"" << name.first << " #" << name.second.first << "\" = " << name.second.second << "\n";
+			output << "\t\"" << commonItems::convertUTF8ToWin1252(name.first) << " #" << name.second.first << "\" = " << name.second.second << "\n";
 		}
 		output << "}\n";
 	}

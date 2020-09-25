@@ -21,14 +21,18 @@ class FlagCrafter
 {
   public:
 	void loadWarehouse(const std::shared_ptr<Warehouse>& theWarehouse) { warehouse = theWarehouse; }
-	
+
 	[[nodiscard]] Magick::Image craftFlagFromCoA(const CK3::CoatOfArms& coa) const;
 
   private:
-	[[nodiscard]] Magick::Image processEmblemsOnImage(const Magick::Image& image, const std::vector<std::pair<CK3::Emblem, Magick::Image>>& emblems) const;
-	[[nodiscard]] Magick::Image imposeEmblemInstancesOnImage(const Magick::Image& image,
+	[[nodiscard]] std::pair<Magick::Image, Magick::Image> processEmblemsOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
+		 const std::vector<std::pair<CK3::Emblem, Magick::Image>>& emblems) const;
+	[[nodiscard]] std::pair<Magick::Image, Magick::Image> processSubsOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
+		 const std::vector<std::pair<CK3::CoatOfArms, Magick::Image>>& subs) const;
+	[[nodiscard]] std::pair<Magick::Image, Magick::Image> imposeEmblemInstancesOnImage(const std::pair<Magick::Image, Magick::Image>& imagePair,
 		 const std::vector<CK3::EmblemInstance>& instances,
-		 const Magick::Image& emblem) const;
+		 const Magick::Image& emblem,
+		 const std::vector<int>& masks) const;
 
 	std::shared_ptr<Warehouse> warehouse;
 };

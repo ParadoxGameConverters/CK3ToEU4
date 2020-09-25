@@ -3,13 +3,25 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 
-Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
+std::pair<bool, Magick::Image> EU4::Warehouse::getCoA(long long ID)
 {
+	// Unfortunately Magick::Image cannot go into a std::optional.
+	// This also means we cannot return a reference but must make a copy.
+
+	if (coaStorage.count(ID))
+		return std::pair(true, coaStorage[ID]);
+	else
+		return std::pair(false, Magick::Image());
+}
+
+std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
+{
+	auto black = Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
 	if (!coa.getPattern())
 	{
 		// This is a broken pattern. Return black image.
 		Log(LogLevel::Warning) << "Coat of Arms is missing a pattern. Defaulting to black.";
-		return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
+		return std::pair(black, black);
 	}
 
 	coloredImage newImageBlock; // This block is used both for comparing and for eventual storage.
@@ -18,15 +30,12 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 	newImageBlock.color3 = coa.getColor3();
 	newImageBlock.patternName = *coa.getPattern();
 
-	Log(LogLevel::Debug) << "warehouse pattern enter on " << newImageBlock.patternName;
-	
 	// Do we have a coa like this stored?
 	for (const auto& storedImage: patternStorage)
 	{
 		if (newImageBlock == storedImage)
 		{
-			Log(LogLevel::Debug) << "warehouse pattern match on cache";
-			return storedImage.imageData; // We have a match of patternName and all possible colors.			
+			return std::pair(storedImage.imageData, basePatterns[newImageBlock.patternName]); // We have a match of patternName and all possible colors.
 		}
 	}
 
@@ -37,33 +46,29 @@ Magick::Image EU4::Warehouse::getPattern(const CK3::CoatOfArms& coa)
 		if (!commonItems::DoesFileExist(imageFolder + "patterns/" + newImageBlock.patternName))
 		{
 			Log(LogLevel::Warning) << "Coat of arms uses invalid pattern: " << newImageBlock.patternName << ", defaulting to black.";
-			return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));			
+			return std::pair(black, black);
 		}
 		try
 		{
-			Log(LogLevel::Debug) << "warehouse loading pattern from disk: " << imageFolder + "patterns/" + newImageBlock.patternName;
 			basePatterns.insert(std::pair(newImageBlock.patternName, Magick::Image(imageFolder + "patterns/" + newImageBlock.patternName)));
 		}
 		catch (std::exception& e)
 		{
 			Log(LogLevel::Warning) << "Coat of arms uses invalid pattern: " << newImageBlock.patternName << ", defaulting to black. (" << e.what() << ")";
-			return Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0));
+			return std::pair(black, black);
 		}
 	}
 
 	newImageBlock.imageData = basePatterns[*coa.getPattern()];
-	Log(LogLevel::Debug) << "pattern is sized: " << newImageBlock.imageData.size().width() << "x" << newImageBlock.imageData.size().height();
 
 	// Send to coloring department.
-	Log(LogLevel::Debug) << "warehouse sending pattern to recolorer";
 	newImageBlock.imageData = recolorer.craftPatternImage(newImageBlock);
 
 	// Store for posterity.
 	patternStorage.emplace_back(newImageBlock);
 
 	// And fulfill order
-	Log(LogLevel::Debug) << "warehouse returning pattern";
-	return newImageBlock.imageData;
+	return std::pair(newImageBlock.imageData, basePatterns[*coa.getPattern()]);
 }
 
 std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getColoredTextures(const std::vector<CK3::Emblem>& emblems)
@@ -95,8 +100,6 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		newImageBlock.color3 = emblem.getColor3();
 		newImageBlock.patternName = *emblem.getTexture();
 
-		Log(LogLevel::Debug) << "warehouse pattern enter on " << newImageBlock.patternName;
-
 		// Do we have an emblem like this stored?
 		auto matchedEmblem = false;
 		if (directoryName == "colored_emblems")
@@ -104,7 +107,6 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 			{
 				if (newImageBlock == storedImage)
 				{
-					Log(LogLevel::Debug) << "warehouse colored texture match on cache";
 					toReturn.emplace_back(std::pair(emblem, storedImage.imageData)); // We have a match of patternName and all possible colors.
 					matchedEmblem = true;
 					break;
@@ -115,7 +117,6 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 			{
 				if (newImageBlock == storedImage)
 				{
-					Log(LogLevel::Debug) << "warehouse textured texture match on cache";
 					toReturn.emplace_back(std::pair(emblem, storedImage.imageData)); // We have a match of patternName and all possible colors.
 					matchedEmblem = true;
 					break;
@@ -136,7 +137,6 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 			}
 			try
 			{
-				Log(LogLevel::Debug) << "warehouse texture loading from disk: " << imageFolder + directoryName + "/" + newImageBlock.patternName;
 				baseTextures.insert(std::pair(newImageBlock.patternName, Magick::Image(imageFolder + directoryName + "/" + newImageBlock.patternName)));
 			}
 			catch (std::exception& e)
@@ -148,10 +148,8 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		}
 
 		newImageBlock.imageData = baseTextures[newImageBlock.patternName];
-		Log(LogLevel::Debug) << "texture is sized: " << newImageBlock.imageData.size().width() << "x" << newImageBlock.imageData.size().height();
 
 		// Send to coloring department.
-		Log(LogLevel::Debug) << "warehouse texture sending to recolorer";
 		newImageBlock.imageData = recolorer.craftTextureImage(newImageBlock);
 
 		// Store for posterity.
@@ -160,7 +158,6 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		// And fulfill order
 		toReturn.emplace_back(std::pair(emblem, newImageBlock.imageData));
 	}
-	Log(LogLevel::Debug) << "warehouse returning textures";
 	return toReturn;
 }
 
