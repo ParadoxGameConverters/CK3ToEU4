@@ -125,8 +125,10 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp" />
@@ -195,8 +197,10 @@
     <ClCompile Include="MapperTests\RegionMapper\RegionMapperTests.cpp" />
     <ClCompile Include="MapperTests\RegionMapper\RegionTests.cpp" />
     <ClCompile Include="MapperTests\RegionMapper\SuperRegionTests.cpp" />
-    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMapperTests.cpp" />
-    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMappingTests.cpp" />
+    <ClCompile Include="MapperTests\ReligionDefinitionMapper\ReligionDefinitionMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ReligionDefinitionMapper\ReligionDefinitionMappingTests.cpp" />
+    <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScraperTests.cpp" />
+    <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScrapingTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapper\ReligionMapperTests.cpp" />
     <ClCompile Include="MapperTests\ReligionMapper\ReligionMappingTests.cpp" />
     <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalitiesMappingTests.cpp" />

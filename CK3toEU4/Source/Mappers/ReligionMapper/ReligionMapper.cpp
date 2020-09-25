@@ -1,7 +1,8 @@
 #include "ReligionMapper.h"
 #include "../../CK3World/Religions/Faith.h"
 #include "../../CK3World/Religions/Faiths.h"
-#include "ReligionDefinitionMapper.h"
+#include "../ReligionDefinitionMapper/ReligionDefinitionMapper.h"
+#include "../ReligionGroupScraper/ReligionGroupScraper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
@@ -42,19 +43,23 @@ std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion
 	return std::nullopt;
 }
 
-void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths, ReligionDefinitionMapper& definitions)
+void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
+	 ReligionDefinitionMapper& religionDefinitionMapper,
+	 const ReligionGroupScraper& religionGroupScraper)
 {
 	for (const auto& faith: faiths.getFaiths())
 	{
 		if (!getEU4ReligionForCK3Religion(faith.second->getName()))
 		{
 			// This is a new faith.
-			importCK3Faith(*faith.second, definitions);
+			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper);
 		}
 	}
 }
 
-void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDefinitionMapper& definitions)
+void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
+	 ReligionDefinitionMapper& religionDefinitionMapper,
+	 const ReligionGroupScraper& religionGroupScraper)
 {
 	// Hello, imported CK3 dynamic faith.
 	const auto& origName = faith.getName();
@@ -73,19 +78,18 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDe
 	std::string province;
 	std::string unique;
 	std::string nonUnique;
+	std::string eu4ParentReligion;
+	std::string staticBlob;
 	if (!faith.getTemplate().empty()) // for a NakedMan custom religion, this would probably be ck3's "adamites".
 	{
 		const auto& dstReligion = getEU4ReligionForCK3Religion(faith.getTemplate()); // and this would map into eu4's "adamites"
 		if (dstReligion)
 		{
-			const auto& match = definitions.getDefinition(*dstReligion);
+			eu4ParentReligion = *dstReligion;
+			const auto& match = religionDefinitionMapper.getStaticBlob(*dstReligion);
 			if (match)
 			{
-				country += match->getCountry();
-				countrySecondary += match->getCountrySecondary();
-				province += match->getProvince();
-				unique = match->getUnique(); // overriding uniques, always.
-				nonUnique += match->getNonUnique();
+				staticBlob = *match;
 			}
 			else
 			{
@@ -94,7 +98,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDe
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "CK3-EU4 Religion Mapping for " << faith.getTemplate() << " does not exist! Check religion_map.txt! We will be scraping defaults.";			
+			Log(LogLevel::Warning) << "CK3-EU4 Religion Mapping for " << faith.getTemplate()
+										  << " does not exist! Check religion_map.txt! We will be scraping defaults.";
 		}
 	}
 	else
@@ -104,14 +109,19 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDe
 
 	for (const auto& doctrine: faith.getDoctrines())
 	{
-		const auto& match = definitions.getDefinition(doctrine);
+		const auto& match = religionDefinitionMapper.getDefinition(doctrine);
 		if (match)
 		{
-			country += match->getCountry();
-			countrySecondary += match->getCountrySecondary();
-			province += match->getProvince();
-			unique = match->getUnique(); // overriding uniques, always.
-			nonUnique += match->getNonUnique();			
+			if (!match->getCountry().empty())
+				country += match->getCountry() + "\n";
+			if (!match->getCountrySecondary().empty())
+				countrySecondary += match->getCountrySecondary() + "\n";
+			if (!match->getProvince().empty())
+				province += match->getProvince() + "\n";
+			if (!match->getUnique().empty())
+				unique = match->getUnique(); // overriding uniques, always.
+			if (!match->getNonUnique().empty())
+				nonUnique += match->getNonUnique() + "\n";
 		}
 		else
 		{
@@ -126,7 +136,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDe
 	newReligion.province = province;
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;
-	newReligion.icon = definitions.getNextIcon();
+	newReligion.icon = religionDefinitionMapper.getNextIcon();
+	newReligion.staticBlob = staticBlob;
 	newReligion.iconPath = faith.getIconPath();
 	if (newReligion.iconPath.empty())
 	{
@@ -136,7 +147,19 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, ReligionDe
 	if (!newReligion.color)
 	{
 		Log(LogLevel::Warning) << "CK3 Color for " << origName << " does not exist! Religion will be black!";
-	}	
+	}
+	const auto& match = religionGroupScraper.getReligionGroupForReligion(eu4ParentReligion);
+	if (match)
+	{
+		newReligion.religionGroup = *match;
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "EU4 religion group for " << eu4ParentReligion
+									  << " could not be found! Check religion defines in blankmod/output/common/religions! Will appear standalone!";
+	}
+	newReligion.name = faithName;
+
 	generatedReligions.emplace_back(newReligion);
 
 	// and register it.

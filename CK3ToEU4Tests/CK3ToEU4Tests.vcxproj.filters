@@ -190,6 +190,18 @@
     <Filter Include="EU4WorldTests\FlagFoundryTests">
       <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ReligionDefinitionMapper">
+      <UniqueIdentifier>{f51b231f-e161-4e86-bd83-08d6d494b63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\ReligionGroupScraper">
+      <UniqueIdentifier>{b240cf4d-2a84-406c-b529-341f1888d7b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ReligionDefinitionMapperTests">
+      <UniqueIdentifier>{0e12882d-5ebf-428d-8255-42392d82fe50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\ReligionGroupScraper">
+      <UniqueIdentifier>{dd33bb3a-2beb-4b71-94c5-f9702757a034}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -587,17 +599,29 @@
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp">
       <Filter>EU4WorldTests\FlagFoundryTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionDefinitionMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionDefinitionMapper</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMapperTests.cpp">
-      <Filter>MapperTests\ReligionMapperTests</Filter>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionGroupScraper</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMappingTests.cpp">
-      <Filter>MapperTests\ReligionMapperTests</Filter>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionGroupScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionDefinitionMapper\ReligionDefinitionMapperTests.cpp">
+      <Filter>MapperTests\ReligionDefinitionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionDefinitionMapper\ReligionDefinitionMappingTests.cpp">
+      <Filter>MapperTests\ReligionDefinitionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScraperTests.cpp">
+      <Filter>MapperTests\ReligionGroupScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScrapingTests.cpp">
+      <Filter>MapperTests\ReligionGroupScraper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
