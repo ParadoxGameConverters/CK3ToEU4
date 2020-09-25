@@ -58,7 +58,7 @@ class Province
 	void addDiscoveredBy(const std::string& bywhom) { details.discoveredBy.insert(bywhom); }
 	void sterilize();
 
-	friend std::ostream& operator<<(std::ostream& output, const Province& versionParser);
+	friend std::ostream& operator<<(std::ostream& output, const Province& province);
 
   private:
 	int provID = 0;

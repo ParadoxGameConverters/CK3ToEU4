@@ -623,6 +623,9 @@
     <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScrapingTests.cpp">
       <Filter>MapperTests\ReligionGroupScraper</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

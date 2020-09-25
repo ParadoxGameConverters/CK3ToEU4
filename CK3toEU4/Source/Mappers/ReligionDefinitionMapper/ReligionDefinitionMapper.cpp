@@ -6,7 +6,7 @@ mappers::ReligionDefinitionMapper::ReligionDefinitionMapper()
 {
 	LOG(LogLevel::Info) << "-> Parsing religion definitions.";
 	registerKeys();
-	parseFile("configurables/religions/dynamic/next_icon.txt");
+	parseFile("configurables/religions/dynamic/current_icons.txt");
 	parseFile("configurables/religions/dynamic/doctrine_definitions.txt");
 	clearRegisteredKeywords();
 	registerStaticKeys();

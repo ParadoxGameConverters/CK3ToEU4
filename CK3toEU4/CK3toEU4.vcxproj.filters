@@ -112,6 +112,9 @@
     <Filter Include="Mappers\ReligionGroupScraper">
       <UniqueIdentifier>{2f010031-055a-4314-ad53-f579fd74ff0c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4World\Religion">
+      <UniqueIdentifier>{d10185d1-0fad-4d18-8a4c-249ea6deb425}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -390,6 +393,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.h">
       <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outReligion.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Religion\GeneratedReligion.h">
+      <Filter>EU4World\Religion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -670,6 +679,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp">
       <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outReligion.cpp">
+      <Filter>EU4World\Output</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

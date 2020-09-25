@@ -130,7 +130,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	}
 
 	// Store new religion for later processing and output.
-	generatedReligion newReligion;
+	EU4::GeneratedReligion newReligion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
 	newReligion.province = province;

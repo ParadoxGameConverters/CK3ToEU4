@@ -130,9 +130,11 @@
     <ClInclude Include="Source\EU4World\Output\outCountry.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
     <ClInclude Include="Source\EU4World\Output\outProvince.h" />
+    <ClInclude Include="Source\EU4World\Output\outReligion.h" />
     <ClInclude Include="Source\EU4World\Province\EU4Province.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceDetails.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceModifier.h" />
+    <ClInclude Include="Source\EU4World\Religion\GeneratedReligion.h" />
     <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
@@ -226,6 +228,7 @@
     <ClCompile Include="Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="Source\EU4World\Output\outModFile.cpp" />
     <ClCompile Include="Source\EU4World\Output\outProvince.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\EU4World\Province\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\Province\ProvinceDetails.cpp" />

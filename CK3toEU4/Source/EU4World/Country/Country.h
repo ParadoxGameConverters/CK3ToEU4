@@ -91,7 +91,7 @@ class Country
 	void outputCommons(std::ostream& output) const;
 	void outputAdvisers(std::ostream& output) const;
 
-	friend std::ostream& operator<<(std::ostream& output, const Country& versionParser);
+	friend std::ostream& operator<<(std::ostream& output, const Country& country);
 
   private:
 	void populateHistory(const mappers::GovernmentsMapper& governmentsMapper,

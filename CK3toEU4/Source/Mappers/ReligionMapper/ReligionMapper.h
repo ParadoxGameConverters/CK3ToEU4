@@ -1,8 +1,8 @@
 #ifndef RELIGION_MAPPER_H
 #define RELIGION_MAPPER_H
 
+#include "../../EU4World/Religion/GeneratedReligion.h"
 #include "../LocalizationMapper/LocalizationMapper.h"
-#include "Color.h"
 #include "Parser.h"
 #include <map>
 #include <optional>
@@ -18,21 +18,6 @@ namespace mappers
 {
 class ReligionDefinitionMapper;
 class ReligionGroupScraper;
-
-struct generatedReligion
-{
-	std::string country;
-	std::string countrySecondary;
-	std::string province;
-	std::string unique;
-	std::string nonUnique;
-	std::string iconPath;
-	std::string religionGroup;
-	std::string staticBlob;
-	std::string name;
-	std::optional<commonItems::Color> color;
-	int icon = 0;
-};
 
 class ReligionMapper: commonItems::parser
 {
@@ -52,7 +37,7 @@ class ReligionMapper: commonItems::parser
 	std::map<std::string, std::string> CK3toEU4ReligionMap;
 	std::map<std::string, LocBlock> localizations;
 
-	std::vector<generatedReligion> generatedReligions;
+	std::vector<EU4::GeneratedReligion> generatedReligions;
 };
 } // namespace mappers
 
