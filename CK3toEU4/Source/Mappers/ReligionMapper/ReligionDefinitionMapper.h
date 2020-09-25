@@ -15,10 +15,11 @@ class ReligionDefinitionMapper: commonItems::parser
 	explicit ReligionDefinitionMapper(std::istream& theStream);
 
 	[[nodiscard]] std::optional<ReligionDefinitionMapping> getDefinition(const std::string& definition) const;
+	[[nodiscard]] auto getNextIcon() { return ++currentIcon; }
 
   private:
 	void registerKeys();
-
+	int currentIcon = 0;
 	std::map<std::string, ReligionDefinitionMapping> mappings;
 };
 } // namespace mappers

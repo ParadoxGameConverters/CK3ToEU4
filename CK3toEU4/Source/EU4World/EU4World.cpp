@@ -45,7 +45,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
 
 	// Import CK3 dynamic faiths and register them in religionMapper
+	LOG(LogLevel::Info) << "-> Importing Dynamic Faiths";
 	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper);
+	Log(LogLevel::Progress) << "54 %";
 
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.
 	// We'll overwrite some of them with ck3 imports.
@@ -62,6 +64,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "57 %";
 
 	// We can link provinces to regionMapper's bindings, though this is not used at the moment.
+	LOG(LogLevel::Info) << "-> Linking Provinces to Regions";
 	regionMapper->linkProvinces(provinces);
 	Log(LogLevel::Progress) << "58 %";
 
@@ -75,6 +78,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "60 %";
 
 	// We then link them to their respective countries. Those countries that end up with 0 provinces are defacto dead.
+	LOG(LogLevel::Info) << "-> Linking Provinces to Countries";
 	linkProvincesToCountries();
 	Log(LogLevel::Progress) << "61 %";
 
@@ -87,6 +91,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// mismaps this is the recovery procedure.
 	// For those, we look at vanilla provinces and override missing bits with vanilla setup. Yeah, a bit more sunni in
 	// hordeland, but it's fine.
+	LOG(LogLevel::Info) << "-> Verifying Religions and Cultures";
 	verifyReligionsAndCultures();
 
 	Log(LogLevel::Progress) << "63 %";
@@ -101,15 +106,18 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// We're onto the finesse part of conversion now. HRE was shattered in CK2 World and now we're assigning electorates, free
 	// cities, and such.
+	LOG(LogLevel::Info) << "-> Distributing HRE Subtitles";
 	distributeHRESubtitles(theConfiguration);
 	Log(LogLevel::Progress) << "66 %";
 
 	// With all religious/cultural matters taken care of, we can now set reforms
+	LOG(LogLevel::Info) << "-> Assigning Country Reforms";
 	assignAllCountryReforms();
 	Log(LogLevel::Progress) << "67 %";
 
 	// Vassalages were set in ck3::world but we have to transcribe those into EU4 agreements.
 	// Ck3 does not support tributaries as such and we care not about alliances.
+	LOG(LogLevel::Info) << "-> Importing Vassals";
 	diplomacy.importVassals(countries);
 	Log(LogLevel::Progress) << "68 %";
 
