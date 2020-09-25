@@ -18,6 +18,22 @@ namespace mappers
 {
 class ReligionDefinitionMapper;
 class ReligionGroupScraper;
+
+struct generatedReligion
+{
+	std::string country;
+	std::string countrySecondary;
+	std::string province;
+	std::string unique;
+	std::string nonUnique;
+	std::string iconPath;
+	std::string religionGroup;
+	std::string staticBlob;
+	std::string name;
+	std::optional<commonItems::Color> color;
+	int icon = 0;
+};
+
 class ReligionMapper: commonItems::parser
 {
   public:
@@ -35,21 +51,6 @@ class ReligionMapper: commonItems::parser
 
 	std::map<std::string, std::string> CK3toEU4ReligionMap;
 	std::map<std::string, LocBlock> localizations;
-
-	struct generatedReligion
-	{
-		std::string country;
-		std::string countrySecondary;
-		std::string province;
-		std::string unique;
-		std::string nonUnique;
-		std::string iconPath;
-		std::string religionGroup;
-		std::string staticBlob;
-		std::string name;
-		std::optional<commonItems::Color> color;
-		int icon = 0;
-	};
 
 	std::vector<generatedReligion> generatedReligions;
 };
