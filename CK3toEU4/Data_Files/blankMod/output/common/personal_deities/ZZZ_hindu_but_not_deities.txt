@@ -1,0 +1,151 @@
+#For custom CK3 Hindu religions
+
+shiva =
+{
+	# (Diplomatic - War)
+	ae_impact = -0.05
+	core_creation = -0.10
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 1
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}		
+	}
+}
+
+ganesha = 
+{
+	#(Diplomatic - Peace)
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.20
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 2
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}			
+	}	
+}
+
+surya =
+{
+	#(Economic - Income)
+	global_tax_modifier = 0.10
+	trade_efficiency = 0.10
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 3
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}	
+}
+
+ganga = 
+{
+	#(Economic - Savings)
+	interest = -0.25
+	build_cost = -0.10
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 4
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}		
+	}	
+}
+
+shakti = 
+{ 
+	#(Military - Offensive) 
+	siege_ability = 0.05
+	discipline = 0.05
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 5
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}		
+	}	
+}
+
+vishnu =
+{
+	# (Military - Defensive)
+	defensiveness = 0.2
+	global_missionary_strength = 0.02
+	
+	allow = { 
+		religion_group = dharmic
+		NOT = { religion = hinduism }
+	}
+	sprite = 6
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_balanced
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}		
+	}	
+}
