@@ -124,4 +124,9 @@
  steppe_horde_reform_EXTRA_title:0 "Reformiert die Regierung"
  steppe_horde_reform_EXTRA_desc:0 "Für viele Jahre haben unsere fortschrittlicheren Nachbarn uns wegen unserer Regierungsform ausgelacht. Nicht länger - von heute an ist unser Anführer ein König!"
  
-
+ pagan_conversion_to_gnostic_title:0 "In Gnostizismus konvertieren"
+ pagan_conversion_to_gnostic_desc:0 "In Gnostizismus konvertieren"
+ pagan_conversion_to_gnostic_tooltip:0 "[Root.GetName] wird einen gnostischen Glauben annehmen, wie er von ihren Untertanen als neue Staatsreligion praktiziert wird."
+ pagan_conversion_to_yazidi_title:0 "Zum Yazidismus konvertieren"
+ pagan_conversion_to_yazidi_desc:0 "Zum Yazidismus konvertieren"
+ pagan_conversion_to_yazidi_tooltip:0 "[Root.GetName] wird einen yazidischen Glauben annehmen, wie er von ihren Untertanen als neue Staatsreligion praktiziert wird."

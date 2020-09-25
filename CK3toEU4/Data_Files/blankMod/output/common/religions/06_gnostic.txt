@@ -9,7 +9,7 @@ gnostic = {
 		icon = 32
 		color = { 208 183 0 }
 		allowed_conversion = {
-			bogomomilist
+			bogomilist
 			manichean
 			mandeaism
 			valentinianism
@@ -95,7 +95,7 @@ gnostic = {
 		color = { 0.8 0.6 0.4 } #204 153 102
 		allowed_conversion = {
 			catholic
-			bogomomilist
+			bogomilist
 			manichean
 			mandeaism
 			sethianism

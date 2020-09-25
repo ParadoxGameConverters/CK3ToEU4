@@ -590,7 +590,7 @@ void EU4::World::verifyCapitals()
 	for (const auto& country: countries)
 	{
 		// POPE is special. Of course. Skip this for pope because he may end up with a capital in new world or something.
-		if (country.first == "PAP" || country.first == "FAP")
+		if (country.first == "PAP")
 			continue;
 		if (country.second->verifyCapital(provinceMapper))
 			counter++;

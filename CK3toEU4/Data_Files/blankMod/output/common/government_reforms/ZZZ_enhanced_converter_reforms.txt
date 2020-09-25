@@ -157,6 +157,7 @@ prussian_monarchy = {
 			religion = cathar
 			religion = waldensian
 			religion = lollard
+			religion = adamites
 		}
 	}
 	valid_for_nation_designer = yes
