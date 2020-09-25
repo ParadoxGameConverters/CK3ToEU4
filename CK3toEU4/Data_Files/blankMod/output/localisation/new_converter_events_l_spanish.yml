@@ -283,6 +283,8 @@
  religious_events.18.z9:0 "Oramos por la venida del mundo futuro."
  religious_events.18.z10:0 "A través de nuestros sentidos tocaremos lo divino."
  religious_events.18.z11:0 "Mantendremos la enseñanza de Nestorio."
+ religious_events.18.z12:0 "Seremos como Adán."
+ religious_events.18.z13:0 "Seguiremos el camino recto."
  
  religious_events.19.z1:0 "Seguiremos las siete obligaciones."
  religious_events.19.z2:0 "Nos uniremos a la Nación de Melek Taus."
@@ -290,15 +292,28 @@
  religious_events.19.z4:0 "Firmaremos el Custodio del Pacto del Tiempo."
  religious_events.19.z5:0 "El Gran Libro de la Eternidad guía nuestro camino."
  religious_events.19.z6:0 "El Hayy no es más que una superstición."
+ religious_events.19.z7:0 "Debemos reconciliar a Allah y el mal".
+ religious_events.19.z8:0 "Sólo a través del Corán encontramos la verdad".
+ religious_events.19.z9:0 "La sustancia de Ali puede ser transubstanciada".
  
  religious_events.21.z1:0 "Intentaremos acabar con la violencia."
  
  religious_events.22.z1:0 "Seguiremos las enseñanzas de Mazdak."
- religious_events.22.z2:0 "La luz prevalecerá."
- religious_events.22.z3:0 "Aceptaremos la fe de Khurmazta como propia."
+ religious_events.22.z2:0 "Aceptaremos la fe de Khurmazta como propia."
+ religious_events.22.z3: 0 "Antes que no hubiera nada, estaba Zurvan."
+ religious_events.22.z4: 0 "Gayōmart será nuestra guía."
+ religious_events.22.z5: 0 "Esperamos el regreso del verdadero Mesías."
  
  religious_events.23.z1:0 "Seguiremos la Torá original."
  religious_events.23.z2:0 "La Torá sola es la autoridad suprema."
  
+ religious_events.999.z1:0 "La luz prevalecerá."
+ religious_events.999.z2: 0 "Seguimos a Juan el Bautista."
+ religious_events.999.z3: 0 "Valentinus sabía la verdad."
+ religious_events.999.z4: 0 "La serpiente salvó a los hombres, no los condenó."
+ religious_events.999.z5: 0 "Priscillian tiene el derecho de hacerlo."
+ religious_events.999.z6: 0 "Debemos experimentar todas las cosas en la vida."
  
+ religious_events.998.z1: 0 "El libro negro contiene la verdad."
+ religious_events.998.z2: 0 "Xwedê es genial."
  

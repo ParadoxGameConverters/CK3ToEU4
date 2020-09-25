@@ -124,7 +124,12 @@
  steppe_horde_reform_EXTRA_title:0 "Reform the Government"
  steppe_horde_reform_EXTRA_desc:0 "For many years now our more advanced neighbors have laughed at us for our backward form of government. Well, no longer - as of today our great leader is a King!"
  
- 
+ pagan_conversion_to_gnostic_title:0 "Convert to Gnosticism"
+ pagan_conversion_to_gnostic_desc:0 "Convert to Gnosticism"
+ pagan_conversion_to_gnostic_tooltip:0 "[Root.GetName] will adopt a Gnostic faith as practiced by their subjects as the new state religion."
+ pagan_conversion_to_yazidi_title:0 "Convert to Yazidism"
+ pagan_conversion_to_yazidi_desc:0 "Convert to Yazidism"
+ pagan_conversion_to_yazidi_tooltip:0 "[Root.GetName] will adopt a Yazidi faith as practiced by their subjects as the new state religion."
  
  
  

@@ -124,4 +124,10 @@
  steppe_horde_reform_EXTRA_title:0 "Réformer notre régime politique"
  steppe_horde_reform_EXTRA_desc:0 "Cela fait des années que nos voisins plus avancés se moquent de l'archaïsme de notre régime politique. Mais c'est terminé : à partir d'aujourd'hui, notre chef sera roi !"
  
+ pagan_conversion_to_gnostic_title:0 "Convertir au gnosticisme"
+ pagan_conversion_to_gnostic_desc:0 "Convertir au gnosticisme"
+ pagan_conversion_to_gnostic_tooltip:0 "[Root.GetName] adoptera une foi gnostique telle que pratiquée par leurs sujets en tant que nouvelle religion d'État."
+ pagan_conversion_to_yazidi_title:0 "Convertir en yazidisme"
+ pagan_conversion_to_yazidi_desc:0 "Convertir en yazidisme"
+ pagan_conversion_to_yazidi_tooltip:0 "[Root.GetName] adoptera une religion yézidie telle que pratiquée par leurs sujets en tant que nouvelle religion d'État."
  

@@ -92,7 +92,6 @@ estate_church_clerical_ministers = {
 				NOT = { 
 					religion_group = muslim
 					NOT = { religion = qarmatian }
-					NOT = { religion = yazidi }
 				}
 			}
 			if = {
@@ -144,7 +143,6 @@ estate_church_clerical_ministers = {
 			has_dlc = "Cradle of Civilization"
 			religion_group = muslim
 			NOT = { religion = qarmatian }
-			NOT = { religion = yazidi }
 		}
 		modifier = {
 			monthly_piety = 0.001

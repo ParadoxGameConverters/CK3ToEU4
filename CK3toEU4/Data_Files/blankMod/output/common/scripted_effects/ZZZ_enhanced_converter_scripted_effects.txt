@@ -367,6 +367,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			FROM = {
 				OR = {
 					religion_group = christian
+					religion_group = gnostic #Until I can add it as its own cult 
 					has_unlocked_cult = christianity_cult
 				}
 			}
@@ -385,6 +386,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			ROOT = {
 				OR = {
 					has_unlocked_cult = christianity_cult
+					religion_group = gnostic #Until I can add it as its own cult 
 					religion_group = christian
 				}
 			}
@@ -404,6 +406,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			FROM = {
 				OR = {
 					religion_group = muslim
+					religion_group = yazidi #Until I can add it as its own cult 
 					has_unlocked_cult = islam_cult
 				}
 			}
@@ -422,6 +425,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			ROOT = {
 				OR = {
 					has_unlocked_cult = islam_cult
+					religion_group = yazidi #Until I can add it as its own cult
 					religion_group = muslim
 				}
 			}
@@ -638,6 +642,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			FROM = {
 				OR = {
 					religion_group = zoroastrian_group 
+					religion_group = gnostic #Until I can add it as its own cult 
 					has_unlocked_cult = zoroastrian_cult
 				}
 			}
@@ -919,8 +924,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			}
 			FROM = {
 				OR = {
-					religion = bon_pagan 
-					religion = bon_pagan_reformed 
+					religion = bon
+					religion = bon_reformed 
 					has_unlocked_cult = bon_cult
 				}
 			}
@@ -939,8 +944,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			}
 			ROOT = {
 				OR = {
-					religion = bon_pagan
-					religion = bon_pagan_reformed
+					religion = bon
+					religion = bon_reformed
 					has_unlocked_cult = bon_cult
 				}
 			}
@@ -1001,9 +1006,32 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			}
 			FROM = {
 				OR = {
-					religion = pagan_religion
-					religion = animism
-					religion = totemism
+					AND = {
+						religion_group = pagan		
+						NOT = { religion = nahuatl }
+						NOT = { religion = inti }
+						NOT = { religion = mesoamerican_religion }
+						NOT = { religion = baltic_pagan }
+						NOT = { religion = baltic_pagan_reformed }
+						NOT = { religion = bon}
+						NOT = { religion = bon_reformed }
+						NOT = { religion = finnish_pagan  }
+						NOT = { religion = finnish_pagan_reformed }
+						NOT = { religion = norse_pagan }
+						NOT = { religion = norse_pagan_reformed }
+						NOT = { religion = hellenic_pagan }
+						NOT = { religion = hellenic_pagan_reformed }
+						NOT = { religion = kushitism_pagan }
+						NOT = { religion = kushitism_pagan_reformed }
+						NOT = { religion = magyar_pagan }
+						NOT = { religion = magyar_pagan_reformed }
+						NOT = { religion = slavic_pagan }
+						NOT = { religion = slavic_pagan_reformed }
+						NOT = { religion = tengri_pagan }
+						NOT = { religion = tengri_pagan_reformed }
+						NOT = { religion = zun_pagan }
+						NOT = { religion = zun_pagan_reformed }
+					}
 					has_unlocked_cult = pagan_cult
 				}
 			}
@@ -1022,9 +1050,32 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			}
 			ROOT = {
 				OR = {
-					religion = pagan_religion
-					religion = animism
-					religion = totemism
+					AND = {
+						religion_group = pagan						
+						NOT = { religion = nahuatl }
+						NOT = { religion = inti }
+						NOT = { religion = mesoamerican_religion }
+						NOT = { religion = baltic_pagan }
+						NOT = { religion = baltic_pagan_reformed }
+						NOT = { religion = bon}
+						NOT = { religion = bon_reformed }
+						NOT = { religion = finnish_pagan  }
+						NOT = { religion = finnish_pagan_reformed }
+						NOT = { religion = norse_pagan }
+						NOT = { religion = norse_pagan_reformed }
+						NOT = { religion = hellenic_pagan }
+						NOT = { religion = hellenic_pagan_reformed }
+						NOT = { religion = kushitism_pagan }
+						NOT = { religion = kushitism_pagan_reformed }
+						NOT = { religion = magyar_pagan }
+						NOT = { religion = magyar_pagan_reformed }
+						NOT = { religion = slavic_pagan }
+						NOT = { religion = slavic_pagan_reformed }
+						NOT = { religion = tengri_pagan }
+						NOT = { religion = tengri_pagan_reformed }
+						NOT = { religion = zun_pagan }
+						NOT = { religion = zun_pagan_reformed }
+					}
 					has_unlocked_cult = pagan_cult
 				}
 			}

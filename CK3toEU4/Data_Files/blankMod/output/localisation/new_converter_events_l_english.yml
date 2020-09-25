@@ -283,22 +283,43 @@
  religious_events.18.z9:0 "We pray for the coming of the future world."
  religious_events.18.z10:0 "Through our senses we shall touch the divine."
  religious_events.18.z11:0 "We shall uphold the teaching of Nestorius."
+ religious_events.18.z12:0 "We shall be as Adam was."
+ religious_events.18.z13:0 "We shall follow the righteous path."
  
  religious_events.19.z1:0 "We shall follow the seven obligations."
  religious_events.19.z2:0 "We will join the Nation of Melek Taus."
  religious_events.19.z3:0 "Arbitration of religion is for Allah alone."
  religious_events.19.z4:0 "We will sign the Pact of the Time Custodian."
  religious_events.19.z5:0 "The Great Book of Eternity guides our way."
- religious_events.19.z6:0 "The Hajj is but a superstition."
+ religious_events.19.z6:0 "The Hajj is but a superstition."s
+ religious_events.19.z7:0 "We must reconcile Allah and evil."
+ religious_events.19.z8:0 "Through the Quran alone we find truth."
+ religious_events.19.z9:0 "Ali's substance can be transubstantiated."
  
  religious_events.21.z1:0 "We shall seek to end violence."
  
  religious_events.22.z1:0 "We shall follow the teachings of Mazdak."
- religious_events.22.z2:0 "The light shall prevail."
- religious_events.22.z3:0 "We shall embrace the Khurmazta faith as our own."
+ religious_events.22.z2:0 "We shall embrace the Khurmazta faith as our own."
+ religious_events.22.z3:0 "Before there was nothing, there was Zurvan."
+ religious_events.22.z4:0 "Gayōmart shall be our guide."
+ religious_events.22.z5:0 "We await the return of the true messiah."
  
  religious_events.23.z1:0 "We will follow the original Torah."
  religious_events.23.z2:0 "The Torah alone is the supreme authority."
+ 
+ religious_events.999.t:0  "[Root.GetName] Converts to Gnosticism"
+ religious_events.999.d:0  "Gnostic communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off."
+ religious_events.999.z1:0 "The light shall prevail."
+ religious_events.999.z2:0 "We follow John the Baptist."
+ religious_events.999.z3:0 "Valentinus knew the truth."
+ religious_events.999.z4:0 "The serpent saved men, not damned them."
+ religious_events.999.z5:0 "Priscillian has the right of it."
+ religious_events.999.z6:0 "We must experience all things in life."
+ 
+ religious_events.998.t:0  "[Root.GetName] Converts to Yazidi"
+ religious_events.998.d:0  "Yazidi communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off."
+ religious_events.998.z1:0 "The black book contains the truth."
+ religious_events.998.z2:0 "Xwedê is great."
  
  
  

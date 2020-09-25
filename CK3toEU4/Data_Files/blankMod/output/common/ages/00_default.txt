@@ -74,7 +74,10 @@ age_of_discovery = {
 		
 		obj_two_unions = {
 			allow = {
-				religion_group = christian
+				OR = {
+					religion_group = christian
+					religion_group = gnostic
+				}
 			}
 			personal_union  = 2
 		}
@@ -82,6 +85,7 @@ age_of_discovery = {
 		obj_many_vassals = {
 			allow = {
 				NOT = { religion_group = christian }
+				NOT = { religion_group = gnostic }
 			}
 			vassal = 5
 		}		
@@ -278,6 +282,7 @@ age_of_reformation = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
+				religion = adamites
 			}
 		}
 		

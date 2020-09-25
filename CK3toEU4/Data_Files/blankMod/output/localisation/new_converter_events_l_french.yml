@@ -283,6 +283,8 @@
  religious_events.18.z9:0 "Nous prions pour la venue du monde futur."
  religious_events.18.z10:0 "Par nos sens, nous toucherons le divin."
  religious_events.18.z11:0 "Nous maintiendrons l'enseignement de Nestorius."
+ religious_events.18.z12:0 "Nous serons comme Adam était."
+ religious_events.18.z13:0 "Nous suivrons le chemin juste."
  
  religious_events.19.z1:0 "Nous respecterons les sept obligations."
  religious_events.19.z2:0 "Nous rejoindrons la Nation des Melek Taus."
@@ -290,15 +292,28 @@
  religious_events.19.z4:0 "Nous signerons le Pacte du gardien du temps."
  religious_events.19.z5:0 "Le Grand Livre de l'éternité guide notre chemin."
  religious_events.19.z6:0 "Le Hajj n'est qu'une superstition."
+ religious_events.19.z7:0 "Nous devons réconcilier Allah et le mal."
+ religious_events.19.z8:0 "Par le seul Coran, nous trouvons la vérité."
+ religious_events.19.z9:0 "La substance d'Ali peut être transsubstantiée."
  
  religious_events.21.z1:0 "Nous chercherons à mettre fin à la violence."
  
- religious_events.22.z1:0 "Nous suivrons les enseignements de Mazdak."
- religious_events.22.z2:0 "La lumière prévaudra."
- religious_events.22.z3:0 "Nous adopterons la foi Khurmazta comme la nôtre."
+ religious_events.22.z1:0 "Nous suivrons les enseignements de Mazdak." 
+ religious_events.22.z2:0 "Nous adopterons la foi Khurmazta comme la nôtre."
+ religious_events.22.z3: 0 "Avant il n'y avait rien, il y avait Zurvan."
+ religious_events.22.z4: 0 "Gayōmart sera notre guide."
+ religious_events.22.z5: 0 "Nous attendons le retour du vrai messie."
  
  religious_events.23.z1:0 "Nous suivrons la Torah originale."
  religious_events.23.z2:0 "La Torah seule est l'autorité suprême."
  
+ religious_events.999.z1:0 "La lumière prévaudra."
+ religious_events.999.z2: 0 "Nous suivons Jean-Baptiste."
+ religious_events.999.z3: 0 "Valentinus savait la vérité."
+ religious_events.999.z4: 0 "Le serpent a sauvé les hommes, pas les damnés."
+ religious_events.999.z5: 0 "Priscillian en a le droit."
+ religious_events.999.z6: 0 "Nous devons expérimenter toutes choses dans la vie."
  
+ religious_events.998.z1: 0 "Le livre noir contient la vérité."
+ religious_events.998.z2: 0 "Xwedê est super."
  
