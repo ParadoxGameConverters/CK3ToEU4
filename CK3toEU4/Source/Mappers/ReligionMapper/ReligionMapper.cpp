@@ -1,7 +1,7 @@
 #include "ReligionMapper.h"
 #include "../../CK3World/Religions/Faith.h"
 #include "../../CK3World/Religions/Faiths.h"
-#include "../LocalizationMapper/LocalizationMapper.h"
+#include "ReligionDefinitionMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
@@ -57,11 +57,49 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths, const R
 void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, const ReligionDefinitionMapper& definitions)
 {
 	// Hello, imported CK3 dynamic faith.
-	const auto faithName = "converted_" + faith.getName(); // makes them easier to notice
-	const auto displayName = faith.getCustomAdj();			 // Catholic, not catholicism
+	const auto& origName = faith.getName();
+	const auto faithName = "converted_" + origName; // makes them easier to notice
+	const auto& displayName = faith.getCustomAdj(); // Catholic, not catholicism
 	LocBlock locBlock;
 	locBlock.english = displayName;
 	locBlock.french = displayName;
 	locBlock.german = displayName;
 	locBlock.spanish = displayName; // Ck3 save only stores the one display name, so we have no choice but to copy it around.
+	localizations.insert(std::pair(faithName, locBlock));
+
+	// Grab the source definitions from the originating faith (unreformed one)
+	std::string country;
+	std::string countrySecondary;
+	std::string province;
+	std::string unique;
+	std::string nonUnique;
+	if (!faith.getTemplate().empty()) // for a NakedMan custom religion, this would probably be ck3's "adamites".
+	{
+		const auto& dstReligion = getEU4ReligionForCK3Religion(faith.getTemplate()); // and this would map into eu4's "adamites"
+		if (dstReligion)
+		{
+			const auto& match = definitions.getDefinition(*dstReligion);
+			if (match)
+			{
+				country += match->getCountry();
+				countrySecondary += match->getCountrySecondary();
+				province += match->getProvince();
+				unique = match->getUnique(); // overriding uniques, always.
+				nonUnique += match->getNonUnique();
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "EU4 Religion Template " << *dstReligion << " does not exist! Check religion_globals.txt!";
+			}
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "CK3-EU4 Religion Mapping for " << faith.getTemplate() << " does not exist! Check religion_map.txt!";			
+		}
+	}
+	else
+	{
+		Log(LogLevel::Error) << "CK3 Religion Template for " << origName << " does not exist! We cannot convert faith, it will load as noreligion.";
+		return;
+	}
 }
