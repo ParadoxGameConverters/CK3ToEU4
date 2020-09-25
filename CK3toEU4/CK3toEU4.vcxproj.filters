@@ -373,6 +373,12 @@
     <ClInclude Include="Source\EU4World\FlagFoundry\FlagCrafter.h">
       <Filter>EU4World\FlagFoundry</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionDefinitionMapper.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\ReligionMapper\ReligionDefinitionMapping.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -640,6 +646,12 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\FlagFoundry\FlagCrafter.cpp">
       <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionDefinitionMapper.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\ReligionMapper\ReligionDefinitionMapping.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

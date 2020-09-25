@@ -587,6 +587,18 @@
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp">
       <Filter>EU4WorldTests\FlagFoundryTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionDefinitionMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMapperTests.cpp">
+      <Filter>MapperTests\ReligionMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\ReligionMapper\ReligionDefinitionMappingTests.cpp">
+      <Filter>MapperTests\ReligionMapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

@@ -45,7 +45,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
 
 	// Import CK3 dynamic faiths and register them in religionMapper
-	religionMapper
+	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper);
 
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.
 	// We'll overwrite some of them with ck3 imports.
@@ -143,7 +143,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Indian buddhisms
 	indianQuestion();
 	Log(LogLevel::Progress) << "75 %";
-	
+
 	LOG(LogLevel::Info) << "-- Crafting Flags";
 	flagFoundry.loadImageFolder(theConfiguration);
 	flagFoundry.generateFlags(countries, theConfiguration);

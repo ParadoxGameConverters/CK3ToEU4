@@ -9,6 +9,7 @@
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 #include "../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../Mappers/RegionMapper/RegionMapper.h"
+#include "../Mappers/ReligionMapper/ReligionDefinitionMapper.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
@@ -93,6 +94,7 @@ class World
 	mappers::TitleTagMapper titleTagMapper;
 	mappers::RulerPersonalitiesMapper rulerPersonalitiesMapper;
 	mappers::DevWeightsMapper devWeightsMapper;
+	mappers::ReligionDefinitionMapper religionDefinitionMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;

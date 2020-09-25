@@ -1,10 +1,10 @@
 #include "ReligionMapper.h"
+#include "../../CK3World/Religions/Faith.h"
+#include "../../CK3World/Religions/Faiths.h"
+#include "../LocalizationMapper/LocalizationMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
-#include "../../CK3World/Religions/Faiths.h"
-#include "../../CK3World/Religions/Faith.h"
-#include "../LocalizationMapper/LocalizationMapper.h"
 
 mappers::ReligionMapper::ReligionMapper()
 {
@@ -42,29 +42,26 @@ std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion
 	return std::nullopt;
 }
 
-void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths)
+void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths, const ReligionDefinitionMapper& definitions)
 {
 	for (const auto& faith: faiths.getFaiths())
 	{
 		if (!getEU4ReligionForCK3Religion(faith.second->getName()))
 		{
 			// This is a new faith.
-			importCK3Faith(*faith.second);
+			importCK3Faith(*faith.second, definitions);
 		}
 	}
 }
 
-void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith)
+void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith, const ReligionDefinitionMapper& definitions)
 {
 	// Hello, imported CK3 dynamic faith.
 	const auto faithName = "converted_" + faith.getName(); // makes them easier to notice
-	const auto displayName = faith.getCustomAdj(); // Catholic, not catholicism
+	const auto displayName = faith.getCustomAdj();			 // Catholic, not catholicism
 	LocBlock locBlock;
 	locBlock.english = displayName;
 	locBlock.french = displayName;
 	locBlock.german = displayName;
 	locBlock.spanish = displayName; // Ck3 save only stores the one display name, so we have no choice but to copy it around.
-
-	
-	
 }
