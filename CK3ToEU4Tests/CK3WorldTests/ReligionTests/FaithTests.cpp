@@ -21,6 +21,7 @@ TEST(CK3World_FaithTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(faith.getReligion().first);
 	ASSERT_TRUE(faith.getCustomName().empty());
 	ASSERT_TRUE(faith.getCustomAdj().empty());
+	ASSERT_TRUE(faith.getDescription().empty());
 	ASSERT_TRUE(faith.getTemplate().empty());
 	ASSERT_TRUE(faith.getIconPath().empty());
 }
@@ -36,6 +37,7 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	input << "religion = 7\n";
 	input << "name = \"Custom Name\"\n";
 	input << "adjective = \"Custom Adj\"\n";
+	input << "desc = \"Custom Desc\"\n";
 	input << "icon = \"gfx/icon.dds\"\n";
 	input << "template = \"catholic\"\n";
 
@@ -50,6 +52,7 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	ASSERT_EQ(7, faith.getReligion().first);
 	ASSERT_EQ("Custom Name", faith.getCustomName());
 	ASSERT_EQ("Custom Adj", faith.getCustomAdj());
+	ASSERT_EQ("Custom Desc", faith.getDescription());
 	ASSERT_EQ("gfx/icon.dds", faith.getIconPath());
 	ASSERT_EQ("catholic", faith.getTemplate());
 }

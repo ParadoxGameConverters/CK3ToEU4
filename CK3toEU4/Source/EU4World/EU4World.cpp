@@ -46,7 +46,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Import CK3 dynamic faiths and register them in religionMapper
 	LOG(LogLevel::Info) << "-> Importing Dynamic Faiths";
-	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper);
+	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper, localizationMapper);
 	Log(LogLevel::Progress) << "54 %";
 
 	// We start conversion by importing vanilla eu4 countries, history and common sections included.

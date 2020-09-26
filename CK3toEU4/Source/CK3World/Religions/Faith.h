@@ -22,6 +22,7 @@ class Faith: commonItems::parser
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] const auto& getCustomName() const { return customName; }
 	[[nodiscard]] const auto& getCustomAdj() const { return customAdjective; }
+	[[nodiscard]] const auto& getDescription() const { return description; }
 	[[nodiscard]] const auto& getTemplate() const { return religionTemplate; }
 	[[nodiscard]] const auto& getIconPath() const { return iconPath; }
 
@@ -36,6 +37,7 @@ class Faith: commonItems::parser
 	std::string iconPath;
 	std::string customName;
 	std::string customAdjective;
+	std::string description;
 	std::optional<commonItems::Color> color;
 	std::set<std::string> doctrines;
 	std::pair<long long, std::shared_ptr<Religion>> religion;

@@ -32,6 +32,9 @@ void CK3::Faith::registerKeys()
 	registerKeyword("adjective", [this](const std::string& unused, std::istream& theStream) {
 		customAdjective = commonItems::singleString(theStream).getString();
 	});
+	registerKeyword("desc", [this](const std::string& unused, std::istream& theStream) {
+		description = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("icon", [this](const std::string& unused, std::istream& theStream) {
 		iconPath = commonItems::singleString(theStream).getString();
 	});

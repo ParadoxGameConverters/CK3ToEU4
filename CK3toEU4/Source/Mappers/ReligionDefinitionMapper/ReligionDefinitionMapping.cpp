@@ -10,7 +10,12 @@ mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theS
 
 void mappers::ReligionDefinitionMapping::registerKeys()
 {
-	registerKeyword("country", [this](const std::string& unused, std::istream& theStream) {		
+	registerKeyword("allowed_conversion", [this](const std::string& unused, std::istream& theStream) {		
+		allowedConversion = commonItems::singleItem(unused, theStream);
+		if (allowedConversion.size() > 1)
+			allowedConversion = allowedConversion.substr(1, allowedConversion.size() - 2);
+	});
+	registerKeyword("country", [this](const std::string& unused, std::istream& theStream) {
 		country = commonItems::singleItem(unused, theStream);
 		if (country.size() > 1)
 			country = country.substr(1, country.size() - 2);

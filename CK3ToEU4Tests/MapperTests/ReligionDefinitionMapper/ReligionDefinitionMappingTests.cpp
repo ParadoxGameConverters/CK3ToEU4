@@ -7,6 +7,7 @@ TEST(Mappers_ReligionDefinitionMappingTests, primitivesDefaultToBlank)
 	std::stringstream input;
 	const mappers::ReligionDefinitionMapping theMapping(input);
 
+	ASSERT_TRUE(theMapping.getAllowedConversion().empty());
 	ASSERT_TRUE(theMapping.getCountry().empty());
 	ASSERT_TRUE(theMapping.getCountrySecondary().empty());
 	ASSERT_TRUE(theMapping.getProvince().empty());
@@ -17,6 +18,7 @@ TEST(Mappers_ReligionDefinitionMappingTests, primitivesDefaultToBlank)
 TEST(Mappers_ReligionDefinitionMappingTests, primitivesCanBeLoaded)
 {
 	std::stringstream input;
+	input << "allowed_conversion = { rel1 rel2 rel3 }\n";
 	input << "country = { blah unformatted = = blah }\n";
 	input << "country_as_secondary = { blah \nu\nnformatted = = blah }\n";
 	input << "province = { blah unformatted = = blah }\n";
@@ -26,6 +28,7 @@ TEST(Mappers_ReligionDefinitionMappingTests, primitivesCanBeLoaded)
 
 	// These tests demonstrate some of errors in singleItem, but these do not affect us in reality.
 
+	ASSERT_EQ("rel1 rel2 rel3 ", theMapping.getAllowedConversion());
 	ASSERT_EQ("blah unformatted ==blah ", theMapping.getCountry());				// singleItem strips whitespace post equal sign
 	ASSERT_EQ("blah u\nnformatted ==blah ", theMapping.getCountrySecondary()); // singleItem strips newline post whitespace
 	ASSERT_EQ("blah unformatted ==blah ", theMapping.getProvince());

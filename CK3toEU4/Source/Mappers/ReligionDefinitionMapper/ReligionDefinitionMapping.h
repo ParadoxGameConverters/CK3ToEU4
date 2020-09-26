@@ -15,6 +15,7 @@ class ReligionDefinitionMapping: commonItems::parser
 	[[nodiscard]] const auto& getCountrySecondary() const { return countrySecondary; }
 	[[nodiscard]] const auto& getUnique() const { return unique; }
 	[[nodiscard]] const auto& getNonUnique() const { return nonUnique; }
+	[[nodiscard]] const auto& getAllowedConversion() const { return allowedConversion; }
 
   private:
 	void registerKeys();
@@ -23,7 +24,8 @@ class ReligionDefinitionMapping: commonItems::parser
 	std::string province;
 	std::string countrySecondary;
 	std::string unique;
-	std::string nonUnique;	
+	std::string nonUnique;
+	std::string allowedConversion;
 };
 } // namespace mappers
 

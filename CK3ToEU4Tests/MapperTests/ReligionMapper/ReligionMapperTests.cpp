@@ -3,6 +3,7 @@
 #include "../../CK3toEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
 #include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
 #include "../../CK3toEU4/Source/Mappers/ReligionMapper/ReligionMapper.h"
+#include "../../CK3toEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -69,6 +70,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	input2 << "color=rgb { 229 178 76 }\n";
 	input2 << "name = \"Custom Name\"\n";
 	input2 << "adjective = \"Custom Adj\"\n";
+	input2 << "desc = \"Custom Description\"\n";
 	input2 << "doctrine=\"tenet_1\"\n";
 	input2 << "doctrine=\"tenet_2\"\n";
 	input2 << "}";
@@ -92,8 +94,10 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	input5 << "religion2 = {Static Template, usually very short.}\n"; // <- this applies
 	mappers::ReligionDefinitionMapper definitions(input4, input5);
 
+	mappers::LocalizationMapper localizationMapper;
+	
 	ASSERT_FALSE(theMapper.getEU4ReligionForCK3Religion("dyn_faith_345")); // There is no mapping like this, yet.
-	theMapper.importCK3Faiths(faiths, definitions, scraper);
+	theMapper.importCK3Faiths(faiths, definitions, scraper, localizationMapper);
 	ASSERT_TRUE(theMapper.getEU4ReligionForCK3Religion("dyn_faith_345")); // Now something exists.
 
 	const auto& match = theMapper.getEU4ReligionForCK3Religion("dyn_faith_345");
@@ -120,4 +124,11 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("Custom Adj", newLocs->second.spanish);
 	ASSERT_EQ("Custom Adj", newLocs->second.german);
 	ASSERT_EQ("Custom Adj", newLocs->second.french);
+
+	const auto& descLocs = locs.find("converted_dyn_faith_345_religion_desc");
+
+	ASSERT_EQ("Custom Description", descLocs->second.english);
+	ASSERT_EQ("Custom Description", descLocs->second.spanish);
+	ASSERT_EQ("Custom Description", descLocs->second.german);
+	ASSERT_EQ("Custom Description", descLocs->second.french);
 }
