@@ -30,7 +30,7 @@ TEST(Mappers_ReligionDefinitionMapperTests, nonMatchStaticGivesEmptyOptional)
 {
 	std::stringstream input;
 	std::stringstream input2;
-	input << "religion = {This is a very large static blob.\nIt is substantial and full of horrors.}";
+	input2 << "religion = {This is a very large static blob.\nIt is substantial and full of horrors.}";
 	const mappers::ReligionDefinitionMapper theMapper(input, input2);
 
 	const auto& religion = theMapper.getStaticBlob("nonsense");

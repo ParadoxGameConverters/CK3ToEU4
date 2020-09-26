@@ -18,7 +18,6 @@ class ReligionGroupScraper: commonItems::parser
 
   private:
 	void registerKeys();
-	int currentIcon = 0;
 	std::map<std::string, std::set<std::string>> religionGroups; // religiongroupname, <religionnames>
 };
 } // namespace mappers
