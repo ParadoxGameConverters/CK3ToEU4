@@ -9,6 +9,7 @@ std::ostream& EU4::operator<<(std::ostream& output, const ModFile& modFile)
 	output << "replace_path = \"history/countries/\"\n";
 	output << "replace_path = \"history/provinces/\"\n";
 	output << "replace_path = \"history/diplomacy/\"\n";
+	output << "replace_path = \"history/wars/\"\n";
 	output << "replace_path = \"common/countries/\"\n";
 	output << "replace_path = \"common/country_tags/\"\n";
 	output << "replace_path = \"common/bookmarks/\"\n";
