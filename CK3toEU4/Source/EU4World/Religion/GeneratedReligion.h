@@ -18,6 +18,7 @@ class GeneratedReligion
 	std::string religionGroup;
 	std::string staticBlob;
 	std::string name;
+	std::string allowedConversion;
 	std::optional<commonItems::Color> color;
 	int icon = 0;
 	friend std::ostream& operator<<(std::ostream& output, const GeneratedReligion& religion);

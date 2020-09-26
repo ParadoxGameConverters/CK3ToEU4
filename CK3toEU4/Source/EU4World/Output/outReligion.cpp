@@ -13,9 +13,13 @@ std::ostream& EU4::operator<<(std::ostream& output, const GeneratedReligion& rel
 	output << "\t" << religion.name << " = {\n";
 	if (religion.color)
 	{
-		output << "\t\tcolor " << religion.color->outputRgb() << "\n";
+		output << "\t\tcolor " << *religion.color << "\n";
 	}
 	output << "\t\ticon =  " << religion.icon << "\n";
+	if (!religion.allowedConversion.empty())
+	{
+		output << "\t\tallowed_conversion = {\n " << religion.allowedConversion << "}\n";
+	}
 	if (!religion.country.empty())
 	{
 		output << "\t\tcountry = {\n " << religion.country << "}\n";

@@ -45,34 +45,59 @@ std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion
 
 void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 	 ReligionDefinitionMapper& religionDefinitionMapper,
-	 const ReligionGroupScraper& religionGroupScraper)
+	 const ReligionGroupScraper& religionGroupScraper,
+	 const LocalizationMapper& localizationMapper)
 {
 	for (const auto& faith: faiths.getFaiths())
 	{
 		if (!getEU4ReligionForCK3Religion(faith.second->getName()))
 		{
 			// This is a new faith.
-			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper);
+			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
 	}
 }
 
 void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	 ReligionDefinitionMapper& religionDefinitionMapper,
-	 const ReligionGroupScraper& religionGroupScraper)
+	 const ReligionGroupScraper& religionGroupScraper,
+	 const LocalizationMapper& localizationMapper)
 {
 	// Hello, imported CK3 dynamic faith.
 	const auto& origName = faith.getName();
 	const auto faithName = "converted_" + origName; // makes them easier to notice
 	const auto& displayName = faith.getCustomAdj(); // Catholic, not catholicism
+	const auto description = faith.getDescription();
 	LocBlock locBlock;
 	locBlock.english = displayName;
 	locBlock.french = displayName;
 	locBlock.german = displayName;
 	locBlock.spanish = displayName; // Ck3 save only stores the one display name, so we have no choice but to copy it around.
 	localizations.insert(std::pair(faithName, locBlock));
+	LocBlock descBlock;
+	if (!description.empty())
+	{
+		descBlock.english = description;
+		descBlock.french = description;
+		descBlock.german = description;
+		descBlock.spanish = description;
+	}
+	else
+	{
+		const auto& match = localizationMapper.getLocBlockForKey(faith.getTemplate()); // We'll attempt to copy over parent desc.
+		if (match)
+		{
+			descBlock.english = match->english;
+			descBlock.french = match->french;
+			descBlock.german = match->german;
+			descBlock.spanish = match->spanish;
+		}
+	}
+	// rather have it empty than display raw key ingame.
+	localizations.insert(std::pair(faithName + "_religion_desc", descBlock));
 
 	// Grab the source definitions from the originating faith (unreformed one)
+	std::string allowedConversion;
 	std::string country;
 	std::string countrySecondary;
 	std::string province;
@@ -112,6 +137,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		const auto& match = religionDefinitionMapper.getDefinition(doctrine);
 		if (match)
 		{
+			if (!match->getAllowedConversion().empty())
+				allowedConversion += match->getAllowedConversion() + "\n";
 			if (!match->getCountry().empty())
 				country += match->getCountry() + "\n";
 			if (!match->getCountrySecondary().empty())
@@ -131,6 +158,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 
 	// Store new religion for later processing and output.
 	EU4::GeneratedReligion newReligion;
+	newReligion.allowedConversion = allowedConversion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
 	newReligion.province = province;
