@@ -27,7 +27,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { was_tag = SYN }
 			NOT = { was_tag = ADU }
 			NOT = { was_tag = LOT }
-			NOT = { was_tag = FAP }
 			NOT = { was_tag = WEI }
 			NOT = { was_tag = HND }
 			NOT = { was_tag = ZAO }
@@ -62,7 +61,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = SYN }
 			NOT = { tag = ADU }
 			NOT = { tag = LOT }
-			NOT = { tag = FAP }
 			NOT = { tag = WEI }
 			NOT = { tag = HND }
 			NOT = { tag = ZAO }
@@ -73,30 +71,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = SNG }
 			NOT = { tag = YIN }
 			NOT = { tag = CHN }
-		}
-	}
-}
-
-#French Script, added the Fraticelli Pope
-frloc_tags_art_pl_masc_cons_dansles_05c = {
-	# Ex.: LES États pontificaux / l'honneur DES États pontificaux / le trône DES États pontificaux / arriver DANS LES États pontificaux / demander AUX États pontificaux / NOUVEAUX-États pontificaux
-	### HIGHER PRIORITY ###
-	# override_country_name
-	NOT = { has_country_flag = is_china_flag }
-	NOT = { has_country_flag = is_revolutionary_china_flag }
-	NOT = { has_country_flag = is_gurkani_flag }
-	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
-	NOT = { has_country_flag = is_kingdom_of_god_flag }
-	NOT = { has_country_flag = is_turkey_flag }
-	NOT = { has_country_flag = is_revolutionary_turkey_flag }
-	NOT = { has_country_flag = unified_islam }
-	OR = {
-		### USUAL PRIORITY ###
-		# Italy / Italie
-		OR = {
-			tag = PAP
-			tag = FAP
 		}
 	}
 }

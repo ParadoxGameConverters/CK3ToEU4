@@ -65,6 +65,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 
 	LOG(LogLevel::Info) << "<- Writing Religions";
 	outputReligions(theConfiguration, religionMapper.getGeneratedReligions());
+	Log(LogLevel::Progress) << "89 %";
 
 	if (invasion)
 	{
@@ -74,32 +75,69 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	
 	LOG(LogLevel::Info) << "<- Writing Advisers";
 	outputAdvisers(theConfiguration);
-	Log(LogLevel::Progress) << "89 %";
+	Log(LogLevel::Progress) << "90 %";
 
 	LOG(LogLevel::Info) << "<- Writing Provinces";
 	outputHistoryProvinces(theConfiguration);
-	Log(LogLevel::Progress) << "90 %";
+	Log(LogLevel::Progress) << "91 %";
 
 	LOG(LogLevel::Info) << "<- Writing Localization";
 	outputLocalization(theConfiguration, invasion);
-	Log(LogLevel::Progress) << "91 %";
+	Log(LogLevel::Progress) << "92 %";
 
 	LOG(LogLevel::Info) << "<- Writing Emperor";
 	outputEmperor(theConfiguration, conversionDate);
-	Log(LogLevel::Progress) << "92 %";
+	Log(LogLevel::Progress) << "93 %";
 
 	LOG(LogLevel::Info) << "<- Writing Diplomacy";
 	outputDiplomacy(theConfiguration, diplomacy.getAgreements(), invasion);
-	Log(LogLevel::Progress) << "93 %";
+	Log(LogLevel::Progress) << "94 %";
 
 	LOG(LogLevel::Info) << "<- Copying Flags";
 	outputFlags(theConfiguration);
-	Log(LogLevel::Progress) << "94 %";
+	Log(LogLevel::Progress) << "95 %";
+
+	LOG(LogLevel::Info) << "<- Writing Religion Icons";
+	outputReligionIcons(theConfiguration, religionMapper.getGeneratedReligions());
+	Log(LogLevel::Progress) << "96 %";
 
 	LOG(LogLevel::Info) << "<- Replacing Bookmark";
 	outputBookmark(theConfiguration, conversionDate);
-	Log(LogLevel::Progress) << "95 %";
+	Log(LogLevel::Progress) << "97 %";
 }
+
+void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
+{
+	// edit the strips
+	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions);
+
+	// edit interface file, raw search/replace.
+	const auto originalIcons = religionDefinitionMapper.getOriginalIconCount();
+	auto currentIcons = originalIcons + religionMapper.getGeneratedReligions().size();
+	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx")) 
+		throw std::runtime_error("Cannot open output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	
+	std::ifstream sourceInterfaces("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	std::stringstream interfaceStream;
+	interfaceStream << sourceInterfaces.rdbuf();
+	sourceInterfaces.close();
+
+	auto interfaceData = interfaceStream.str();
+	auto swap = std::to_string(originalIcons);
+	auto with = std::to_string(currentIcons);
+	auto pos = interfaceData.find(swap);
+	while (pos != std::string::npos)
+	{
+		interfaceData.replace(pos, swap.size(), with);
+		// Get the next occurrence from the current position
+		pos = interfaceData.find(swap, pos + with.size());
+	}
+
+	std::ofstream interFaceDump("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	interFaceDump << interfaceData;
+	interFaceDump.close();
+}
+
 
 void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
 {
@@ -110,7 +148,6 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 		religionFile.close();
 	}
 }
-
 
 void EU4::World::outputBookmark(const Configuration& theConfiguration, date conversionDate) const
 {

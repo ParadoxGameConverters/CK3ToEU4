@@ -17,11 +17,13 @@ class ReligionDefinitionMapper: commonItems::parser
 	[[nodiscard]] std::optional<ReligionDefinitionMapping> getDefinition(const std::string& definition) const;
 	[[nodiscard]] std::optional<std::string> getStaticBlob(const std::string& religion) const;
 	[[nodiscard]] auto getNextIcon() { return ++currentIcon; }
+	[[nodiscard]] auto getOriginalIconCount() const { return originalIcons; }
 
   private:
 	void registerKeys();
 	void registerStaticKeys();
 	int currentIcon = 0;
+	int originalIcons = 0;
 	std::map<std::string, ReligionDefinitionMapping> mappings;
 	std::map<std::string, std::string> staticStorage; // these are static string blobs we only store and regurgitate.
 };
