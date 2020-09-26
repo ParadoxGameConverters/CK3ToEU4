@@ -765,19 +765,30 @@ void EU4::World::resolvePersonalUnions()
 		const auto& holder = *country.second->getTitle()->second->getHolder();
 		holderTitles[holder.first].insert(country);
 		relevantHolders.insert(holder);
-		// does he have a primary title? Of course he does. They all do.
+		// Does he have a primary title? Of course he does. They all do. but some may have been dropped as provinceless.
+		// Look for first one that has an EU4 tag attached.
 		if (holder.second->getDomain() && !holder.second->getDomain()->getDomain().empty())
-			if (holder.second->getDomain()->getDomain()[0].second->getEU4Tag())
-				holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
-			else
+		{
+			auto foundTag = false;
+			for (const auto& title: holder.second->getDomain()->getDomain())
 			{
-				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no eu4tag for title "
-											  << holder.second->getDomain()->getDomain()[0].second->getName();
-				// ... mooooving on.
-				continue;
+				if (title.second->getEU4Tag())
+				{
+					foundTag = true;
+					holderPrimaryTitle[holder.first] = *title.second->getEU4Tag();
+					break;
+				}
 			}
+			if (!foundTag)
+			{
+				// ... mooooving on.
+				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+			}
+		}
 		else
-			Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has nothing in domain. Great.";
+		{
+			Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has nothing in domain. Great.";			
+		}
 	}
 
 	// Now let's see what we have.

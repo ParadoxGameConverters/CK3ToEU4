@@ -455,7 +455,8 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	std::map<long long, std::shared_ptr<Title>> hreMembers;
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
-		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
+		// Empire is there for x_mc_XYZ mercenary companies that report erroneous levels due to not having land. They will get filtered out later.
+		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY || vassal.second->getLevel() == LEVEL::EMPIRE)
 		{
 			hreMembers.insert(vassal);
 		}
@@ -579,7 +580,8 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		std::map<long long, std::shared_ptr<Title>> members;
 		for (const auto& vassal: empire.second->getDFVassals())
 		{
-			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
+			// Empire is there for x_mc_XYZ mercenary companies that report erroneous levels due to not having land. They will get filtered out later.
+			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY || vassal.second->getLevel() == LEVEL::EMPIRE)
 			{
 				members.insert(vassal);
 			}
