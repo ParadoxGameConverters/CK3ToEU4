@@ -35,6 +35,7 @@ class World
 
   private:
 	// import
+	void verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
 	void importVanillaCountries(const std::string& eu4Path, bool invasion);
 	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
 	void importCK3Countries(const CK3::World& sourceWorld);

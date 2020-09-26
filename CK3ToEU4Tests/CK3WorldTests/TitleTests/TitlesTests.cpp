@@ -215,7 +215,7 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
 	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
 }
 
-TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeThrowsException)
+TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeFixesDFLiegeToNullopt)
 {
 	std::stringstream input;
 	input << "1 = { key = c_county1 holder = 1 de_facto_liege = 6 de_jure_liege = 6 }\n";
@@ -227,8 +227,9 @@ TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeThrowsException)
 	input << "7 = { key = d_duchy2 holder = 7 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
 	input << "8 = { key = k_kingdom1 holder = 8 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
-
-	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+	titles.linkTitles();
+	
+	ASSERT_FALSE(titles.getTitles().find("d_duchy1")->second->getDFLiege());
 }
 
 TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)

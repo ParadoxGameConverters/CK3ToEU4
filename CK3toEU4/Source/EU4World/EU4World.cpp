@@ -18,7 +18,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 
-	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
+	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";	
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	LOG(LogLevel::Info) << "-> Reading Words";
 	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods().getMods());
@@ -43,6 +43,10 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Our provincemapper is useless for this game. We don't care about baronies, we want <Title> counties.
 	LOG(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
+
+	// Verify all incoming c_counties have a mapping that's not empty.
+	LOG(LogLevel::Info) << "-> Verifying all county mappings exist.";
+	verifyAllCountyMappings(sourceWorld.getTitles().getTitles());
 
 	// Import CK3 dynamic faiths and register them in religionMapper
 	LOG(LogLevel::Info) << "-> Importing Dynamic Faiths";
@@ -163,6 +167,21 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	output(converterVersion, theConfiguration, sourceWorld);
 	LOG(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
 }
+
+void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const
+{
+	for (const auto& title: ck3Titles)
+	{
+		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
+			continue;
+		const auto& mappings = provinceMapper.getEU4ProvinceNumbers(title.first);
+		if (mappings.empty())
+		{
+			Log(LogLevel::Warning) << "Province mapping error: " << title.first << " has no EU4 provinces!";
+		}
+	}
+}
+
 
 void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasion)
 {
