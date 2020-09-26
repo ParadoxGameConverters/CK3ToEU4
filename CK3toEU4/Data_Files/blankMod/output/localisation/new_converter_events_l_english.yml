@@ -47,7 +47,19 @@
  ZZZ_enhanced_religion.8.a:0 "Almighty Jupiter, show us the way!"
  ZZZ_enhanced_religion.8.aa:0 "Almighty Jupiter, show us the way!"
  ZZZ_enhanced_religion.8.b:0 "Do they wish to become irrelevant again!?"
- ZZZ_enhanced_religion.8.c:0 "Accursed Heathens!" 
+ ZZZ_enhanced_religion.8.c:0 "Accursed Heathens!"
+ 
+ ZZZ_enhanced_religion.9.desc:0 "Once the names of the gods Ra and Osiris struck deep into the hearts of men. For centuries men, fearing death, attempted to burn this bridge between our world and the next, until only the thinnest of planks survived. However, under the leadership of [From.Monarch.GetName] the Kushite faith has been revitalized and brought back to the forfront once more. The bridge, once almost lost, stands strong again."
+ ZZZ_enhanced_religion.9.a:0 "We shall maintain this bridge forever more!"
+ ZZZ_enhanced_religion.9.aa:0 "We shall maintain this bridge forever more!"
+ ZZZ_enhanced_religion.9.b:0 "This is a betrayal of the gods!"
+ ZZZ_enhanced_religion.9.c:0 "Accursed Heathens!" 
+ 
+ ZZZ_enhanced_religion.10.desc:0 "They tried to take away the power of the Táltos, lying to our people and proclaiming the supposed wrongness of the Táltos. [Root.Monarch.GetName] knew better, [Root.Monarch.GetSheHe] refused to abandon the chosen of the gods, and under [Root.Monarch.GetHerHim] leadership the Táltos have resumed their rightful place at the head of society. Now with codified laws and practices, our people shall never again be lead astray by those who would oppose the chosen!"
+ ZZZ_enhanced_religion.10.a:0 "We follow the Táltos!"
+ ZZZ_enhanced_religion.10.aa:0 "We follow the Táltos!"
+ ZZZ_enhanced_religion.10.b:0 "The Táltos did not need new laws!"
+ ZZZ_enhanced_religion.10.c:0 "Accursed Heathens!"
 
  #Fetishist
  ZZZ_enhanced_fetishist.4.t:0 "Elder Leadership"

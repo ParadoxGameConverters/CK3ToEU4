@@ -49,6 +49,18 @@
  ZZZ_enhanced_religion.8.b:0 "Souhaitent-ils redevenir hors de propos!?"
  ZZZ_enhanced_religion.8.c:0 "Païens maudits!"
  
+ ZZZ_enhanced_religion.9.desc: 0 "Une fois que les noms des dieux Ra et Osiris ont frappé profondément dans le cœur des hommes. Pendant des siècles, les hommes, craignant la mort, ont tenté de brûler ce pont entre notre monde et le prochain, jusqu'à ce que seuls les planches les plus minces Cependant, sous la direction de [From.Monarch.GetName], la foi kushite a été revitalisée et ramenée au premier plan une fois de plus. Le pont, une fois presque perdu, est de nouveau solide. "
+ ZZZ_enhanced_religion.9.a: 0 "Nous entretiendrons ce pont pour toujours!"
+ ZZZ_enhanced_religion.9.aa: 0 "Nous entretiendrons ce pont pour toujours!"
+ ZZZ_enhanced_religion.9.b: 0 "C'est une trahison des dieux!"
+ ZZZ_enhanced_religion.9.c: 0 "Maudits païens!"
+ 
+ ZZZ_enhanced_religion.10.desc: 0 "Ils ont essayé de retirer le pouvoir des Táltos, mentant à notre peuple et proclamant la prétendue erreur des Táltos. [Root.Monarch.GetName] savait mieux, [Root.Monarch.GetLuiElleHrt] a refusé abandonner l'élu des dieux, et sous la direction de [Root.Monarch.GetIlElleHrt] les Táltos ont repris leur place légitime à la tête de la société. Maintenant, avec des lois et des pratiques codifiées, notre peuple ne sera plus jamais égaré par ceux qui voudraient opposez-vous aux élus! "
+ ZZZ_enhanced_religion.10.a: 0 "Nous suivons les Táltos!"
+ ZZZ_enhanced_religion.10.aa: 0 "Nous suivons les Táltos!"
+ ZZZ_enhanced_religion.10.b: 0 "Les Táltos n'avaient pas besoin de nouvelles lois!"
+ ZZZ_enhanced_religion.10.c: 0 "Maudits païens!"
+ 
  #Fetishist
  ZZZ_enhanced_fetishist.4.t:0 "Leadership des Aînés"
  ZZZ_enhanced_fetishist.4.d:0 "Nous avons rencontré et vu des gens que nous avons d'abord confondus avec les nôtres. Cependant, nous nous sommes vite rendu compte que leurs voies étaient différentes des nôtres. Ils étaient plus organisés et leurs chamans semblaient tous être formés de la même manière, avec une structure qui implique que certains chamans ont un rang supérieur à d'autres. Étonnamment, tous les chamans de ces gens l'acceptent et suivent leurs supérieurs sans question. Ces gens affirment qu’autrefois ils nous ressemblaient beaucoup, mais qu’ils ont découvert de plus grandes vérités sur l’univers et qu’ainsi ils ont pu repousser ceux qui défieraient les anciennes méthodes."

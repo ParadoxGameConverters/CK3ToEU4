@@ -60,7 +60,11 @@ l_spanish:
  magyar_pagan_religion:2 "Urálica"
  magyar_pagan_religion_desc:1 "En la fe mogyer nativa, todo táltos, o sacerdote, es elegido por los dioses antes de su nacimiento. Dotado de una fuerza, sabiduría y poderes sobrehumanos, los urálicos confían a estos táltos la protección de sus comunidades, y esperan que los conduzcan a la prosperidad."
 
- 
+ #Eastern
+ harmonized_confucian: 0 "Armonizado con la filosofía confuciana"
+ desc_harmonized_confucian: 0 "Hemos incorporado todos los ideales confucianos en nuestro país y el espíritu nacional."
+ harmonized_other_eastern: 0 "Armonizado con Eastern"
+ desc_harmonized_other_eastern: 0 "Hemos incorporado todas las religiones orientales en nuestro país y la ética nacional."
  
  
  

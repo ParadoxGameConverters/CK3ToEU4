@@ -1023,4 +1023,179 @@ country_decisions = {
 			}
 		}
 	}
+	
+	##CK3 Pagan
+	ZZZ_enhanced_reform_kushitism = {
+		major = yes
+		potential = {
+			NOT = { has_global_flag = ZZZ_enhanced_kushitism_reformed }
+			NOT = { has_global_flag = ZZZ_enhanced_random_world }
+			religion = hellenic_pagan
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1231 #Aswan
+				province_id = 358  #Alexandria
+				province_id = 2799 #Sennar
+				province_id = 2323 #Sahra an Nubyah (Naqis?)
+				province_id = 1220 #Bayuda (Wadi el-Milk?)
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			government_rank = 2
+			stability = 2
+			owns_core_province = 1231 #Aswan
+			owns_core_province = 358  #Alexandria
+			owns_core_province = 2799 #Sennar
+			owns_core_province = 2323 #Sahra an Nubyah (Naqis?)
+			owns_core_province = 1220 #Bayuda (Wadi el-Milk?)
+		}
+		
+		effect = {
+			hidden_effect = {
+				set_global_flag = ZZZ_enhanced_kushitism_reformed
+				every_country = {
+					country_event = { id = ZZZ_enhanced_religion.9 }
+				}
+			}			
+			add_prestige = 100
+			change_religion = kushitism_pagan_reformed
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			capital_scope = {
+				area = {
+					limit = { 
+						religion = kushitism_pagan
+						owned_by = ROOT
+					}
+					change_religion = kushitism_pagan_reformed
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			every_owned_province = {
+				random_list = {
+					75 = {
+						change_religion = kushitism_pagan_reformed
+					}
+					25 = {
+						add_province_modifier = {
+							name = "heresy"
+							duration = 3650
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					owns_core_province = 1231 #Aswan
+					owns_core_province = 358  #Alexandria
+					owns_core_province = 2799 #Sennar
+					owns_core_province = 2323 #Sahra an Nubyah (Naqis?)
+					owns_core_province = 1220 #Bayuda (Wadi el-Milk?)
+				}
+				factor = 0
+			}
+		}
+	}
+	
+	ZZZ_enhanced_reform_magyar = {
+		major = yes
+		potential = {
+			NOT = { has_global_flag = ZZZ_enhanced_magyar_reformed }
+			NOT = { has_global_flag = ZZZ_enhanced_random_world }
+			religion = hellenic_pagan
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 153  #Pest
+				province_id = 284  #Kerch (Crimea)
+				province_id = 282  #Yedisan (Odessa)
+				province_id = 1772 #Pozsony (Poszony)
+				province_id = 1971 #Beljamen (Sarysyn/Tsaritsyn)
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			government_rank = 2
+			stability = 2
+			owns_core_province = 153  #Pest
+			owns_core_province = 284  #Kerch (Crimea)
+			owns_core_province = 282  #Yedisan (Odessa)
+			owns_core_province = 1772 #Pozsony (Poszony)
+			owns_core_province = 1971 #Beljamen (Sarysyn/Tsaritsyn)
+		}
+		
+		effect = {
+			hidden_effect = {
+				set_global_flag = ZZZ_enhanced_magyar_reformed
+				every_country = {
+					country_event = { id = ZZZ_enhanced_religion.10 }
+				}
+			}			
+			add_prestige = 100
+			change_religion = magyar_pagan_reformed
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			capital_scope = {
+				area = {
+					limit = { 
+						religion = magyar_pagan
+						owned_by = ROOT
+					}
+					change_religion = magyar_pagan_reformed
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			every_owned_province = {
+				random_list = {
+					75 = {
+						change_religion = magyar_pagan_reformed
+					}
+					25 = {
+						add_province_modifier = {
+							name = "heresy"
+							duration = 3650
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					owns_core_province = 153  #Pest
+					owns_core_province = 284  #Kerch (Crimea)
+					owns_core_province = 282  #Yedisan (Odessa)
+					owns_core_province = 1772 #Pozsony (Poszony)
+					owns_core_province = 1971 #Beljamen (Sarysyn/Tsaritsyn)
+				}
+				factor = 0
+			}
+		}
+	}
 }

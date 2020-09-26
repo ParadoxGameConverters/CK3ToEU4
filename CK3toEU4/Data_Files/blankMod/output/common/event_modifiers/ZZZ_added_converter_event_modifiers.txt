@@ -119,6 +119,18 @@ harmonized_gnostic = {
 	tolerance_heretic = 1
 	religion = yes
 }
+harmonized_confucian = {
+	harmonization_speed = 0.25
+	religion = yes
+}
+harmonized_other_eastern = {
+	legitimacy = 0.5
+	devotion = 0.5
+	horde_unity = 0.5
+	meritocracy = 0.5
+	republican_tradition = 0.5
+	religion = yes
+}
 
 ###Replaced from vanilla
 spreading_norse_rituals = {

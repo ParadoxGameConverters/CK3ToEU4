@@ -59,7 +59,11 @@
  magyar_pagan_religion:2 "Uraliertum"
  magyar_pagan_religion_desc:1 "Im ursprünglichen Glauben der Magyaren wird jeder Táltos – oder Priester – von den Göttern bereits vor seiner Geburt auserkoren. Sie werden mit übermenschlicher Stärke, Weisheit und Mächten ausgestattet, und die Magyaren vertrauen darauf, dass diese Táltos ihre Gemeinden schützen und sie zu Wohlstand führen."
 
- 
+ #Eastern
+ harmonized_confucian: 0 "Harmonisiert mit der konfuzianischen Philosophie"
+ desc_harmonized_confucian: 0 "Wir haben alle konfuzianischen Ideale in unser Land und unser nationales Ethos aufgenommen."
+ harmonized_other_eastern: 0 "Harmonisiert mit Eastern"
+ desc_harmonized_other_eastern: 0 "Wir haben alle östlichen Glaubensrichtungen in unser Land und unser nationales Ethos aufgenommen."
  
  
  
