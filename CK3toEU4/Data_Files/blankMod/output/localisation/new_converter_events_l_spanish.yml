@@ -47,7 +47,19 @@
  ZZZ_enhanced_religion.8.a:0 "¡Todopoderoso Júpiter, muéstranos el camino!"
  ZZZ_enhanced_religion.8.aa:0 "¡Todopoderoso Júpiter, muéstranos el camino!"
  ZZZ_enhanced_religion.8.b:0 "¿¡Quieren volver a ser irrelevantes!?"
- ZZZ_enhanced_religion.8.c:0 "Heathens maldito!" 
+ ZZZ_enhanced_religion.8.c:0 "Heathens maldito!"
+ 
+ ZZZ_enhanced_religion.9.desc: 0 "Una vez que los nombres de los dioses Ra y Osiris golpearon profundamente los corazones de los hombres. Durante siglos, los hombres, temiendo la muerte, intentaron quemar este puente entre nuestro mundo y el próximo, hasta que solo la más delgada de las tablas sobrevivió. Sin embargo, bajo el liderazgo de [From.Monarch.GetName], la fe kushita ha sido revitalizada y traída de nuevo al frente una vez más. El puente, una vez casi perdido, se mantiene firme de nuevo."
+ ZZZ_enhanced_religion.9.a: 0 "¡Mantendremos este puente para siempre!"
+ ZZZ_enhanced_religion.9.aa: 0 "¡Mantendremos este puente para siempre!"
+ ZZZ_enhanced_religion.9.b: 0 "¡Esto es una traición a los dioses!"
+ ZZZ_enhanced_religion.9.c: 0 "¡Malditos paganos!"
+ 
+ ZZZ_enhanced_religion.10.desc: 0 "Intentaron quitarle el poder a los Táltos, mintiendo a nuestra gente y proclamando la supuesta injusticia de los Táltos. [Root.Monarch.GetName] lo sabía mejor, [Root.Monarch.GetElEllaHer] se negó para abandonar a los elegidos de los dioses, y bajo el liderazgo de [Root.Monarch.GetelellaHer] oponerse a los elegidos!"
+ ZZZ_enhanced_religion.10.a: 0 "¡Seguimos a los Táltos!"
+ ZZZ_enhanced_religion.10.aa: 0 "¡Seguimos a los Táltos!"
+ ZZZ_enhanced_religion.10.b: 0 "¡Los Táltos no necesitaban nuevas leyes!"
+ ZZZ_enhanced_religion.10.c: 0 "¡Malditos paganos!"
 
  #Fetishist
  ZZZ_enhanced_fetishist.4.t:0 "Liderazgo de Ancianos"

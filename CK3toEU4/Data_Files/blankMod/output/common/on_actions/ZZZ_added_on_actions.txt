@@ -175,6 +175,44 @@ on_startup = {
 			}
 			set_global_flag = ZZZ_enhanced_bon_reformed
 		}
+		#Kushite
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = kushitism_pagan_reformed
+							ruler_religion = kushitism_pagan_reformed
+							heir_religion = kushitism_pagan_reformed
+							consort_religion = kushitism_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = kushitism_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_kushitism_reformed
+		}
+		#Magyar
+		if = {
+			limit = {
+				OR = {
+					any_country = {
+						OR = {
+							religion = magyar_pagan_reformed
+							ruler_religion = magyar_pagan_reformed
+							heir_religion = magyar_pagan_reformed
+							consort_religion = magyar_pagan_reformed
+						}
+					}
+					any_province = {
+						religion = magyar_pagan_reformed
+					}
+				}
+			}
+			set_global_flag = ZZZ_enhanced_magyar_reformed
+		}
 	}
 }
 

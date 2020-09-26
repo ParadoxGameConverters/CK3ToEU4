@@ -59,8 +59,11 @@
  magyar_pagan_religion:2 "Uralic"
  magyar_pagan_religion_desc:1 "In this faith each Táltos, or priest, is chosen by the gods prior to their birth. Endowed with superhuman strength, wisdom, and powers, Uralics entrust these Táltos with protecting their communities and leading them to prosperity."
 
- 
- 
+ #Eastern
+ harmonized_confucian:0 "Harmonized with Confucian Philosophy"
+ desc_harmonized_confucian:0 "We have incorporated all Confucian ideals in our country and national ethos."
+ harmonized_other_eastern:0 "Harmonized with Eastern"
+ desc_harmonized_other_eastern:0 "We have incorporated all Eastern faiths in our country and national ethos."
  
  
  

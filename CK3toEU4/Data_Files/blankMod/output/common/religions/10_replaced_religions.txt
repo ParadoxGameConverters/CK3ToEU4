@@ -14,3 +14,24 @@ pagan = {
 		heretic = { GOAT_SKULL }
 	}
 }
+
+eastern = {
+	confucianism = { #Done to add harmonization modifier
+		color = { 214 229 140 }
+		icon = 9
+		country = {
+			tolerance_heretic = 2
+			adm_tech_cost_modifier = -0.1
+		}
+		country_as_secondary = {
+			adm_tech_cost_modifier = -0.1
+			stability_cost_modifier = -0.1
+		}		
+		
+		heretic = { TAOIST }
+		
+		uses_harmony = yes
+		
+		harmonized_modifier = harmonized_confucian
+	}
+}

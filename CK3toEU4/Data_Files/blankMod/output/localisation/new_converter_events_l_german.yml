@@ -47,7 +47,19 @@
  ZZZ_enhanced_religion.8.a:0 "Allmächtiger Jupiter, zeig uns den Weg!"
  ZZZ_enhanced_religion.8.aa:0 "Allmächtiger Jupiter, zeig uns den Weg!"
  ZZZ_enhanced_religion.8.b:0 "Wollen sie wieder irrelevant werden!?"
- ZZZ_enhanced_religion.8.c:0 "Verfluchte Heiden!" 
+ ZZZ_enhanced_religion.8.c:0 "Verfluchte Heiden!"
+ 
+ ZZZ_enhanced_religion.9.desc: 0 "Einmal schlugen die Namen der Götter Ra und Osiris tief in die Herzen der Menschen ein. Über Jahrhunderte hinweg versuchten Männer aus Angst vor dem Tod, diese Brücke zwischen unserer Welt und der nächsten zu verbrennen, bis nur die dünnsten Bretter unter der Führung von [From.Monarch.GetName] wurde der kuschitische Glaube jedoch wiederbelebt und wieder in den Vordergrund gerückt. Die Brücke, die einst fast verloren war, steht wieder stark. "
+ ZZZ_enhanced_religion.9.a: 0 "Wir werden diese Brücke für immer mehr erhalten!"
+ ZZZ_enhanced_religion.9.aa: 0 "Wir werden diese Brücke für immer mehr erhalten!"
+ ZZZ_enhanced_religion.9.b: 0 "Dies ist ein Verrat an den Göttern!"
+ ZZZ_enhanced_religion.9.c: 0 "Verfluchte Heiden!"
+ 
+ ZZZ_enhanced_religion.10.desc: 0 "Sie versuchten, die Macht der Táltos wegzunehmen, unser Volk anzulügen und die angebliche Unrichtigkeit der Táltos zu proklamieren. [Root.Monarch.GetName] wusste es besser, [Root.Monarch.GetHdieserdiese] lehnte ab Um die Auserwählten der Götter aufzugeben, und unter der Führung von [Root.Monarch.GetHihmihr] haben die Táltos ihren rechtmäßigen Platz an der Spitze der Gesellschaft wieder aufgenommen. Jetzt mit kodifizierten Gesetzen und Praktiken wird unser Volk nie wieder von denen in die Irre geführt werden, die dies tun würden lehne die Auserwählten ab! "
+ ZZZ_enhanced_religion.10.a: 0 "Wir folgen den Táltos!"
+ ZZZ_enhanced_religion.10.aa: 0 "Wir folgen den Táltos!"
+ ZZZ_enhanced_religion.10.b: 0 "Die Táltos brauchten keine neuen Gesetze!"
+ ZZZ_enhanced_religion.10.c: 0 "Verfluchte Heiden!"
 
  #Fetishist
  ZZZ_enhanced_fetishist.4.t:0 "Ältere Führung"

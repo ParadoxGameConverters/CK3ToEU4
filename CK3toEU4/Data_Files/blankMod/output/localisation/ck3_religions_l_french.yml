@@ -60,7 +60,11 @@
  magyar_pagan_religion:1 "Ouralien"
  magyar_pagan_religiondesc:0 "Dans la foi mogyer, chaque táltos, ou prêtre, est choisi par les dieux avant sa naissance. Dotés d'une force, d'une sagesse et de pouvoirs surhumains, les ouraliens confient à ces táltos la tâche de protéger leurs communautés et de les mener vers la prospérité."
 
- 
+ #Eastern
+ harmonized_confucian: 0 "Harmonized with Confucian Philosophy"
+ desc_harmonized_confucian: 0 "Nous avons incorporé tous les idéaux confucéens dans notre pays et notre philosophie nationale."
+ harmonized_other_eastern: 0 "Harmonized with Eastern"
+ desc_harmonized_other_eastern: 0 "Nous avons incorporé toutes les religions orientales dans notre pays et notre philosophie nationale."
  
  
  
