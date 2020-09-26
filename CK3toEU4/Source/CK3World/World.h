@@ -35,6 +35,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }
 	[[nodiscard]] const auto& getMods() const { return mods; }
 	[[nodiscard]] const auto& getTitles() const { return titles; }
+	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 
   private:
 	// savegame processing

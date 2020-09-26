@@ -801,7 +801,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// TODO; This entire function needs love. I'm not dropping the code but many aspects won't work.
 	
 	// Setting the Primary Religion (The religion most common in the country, not the religion of the country, needed for some reforms)
-	if (details.majorityReligion.empty() || details.majorityReligion == "noreligion")
+	if (details.majorityReligion.empty())
 	{
 		std::map<std::string, int> religionDevelopment; // religion, development
 		int primeDev = -1;

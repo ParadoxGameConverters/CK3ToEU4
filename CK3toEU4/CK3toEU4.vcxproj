@@ -130,9 +130,11 @@
     <ClInclude Include="Source\EU4World\Output\outCountry.h" />
     <ClInclude Include="Source\EU4World\Output\outModFile.h" />
     <ClInclude Include="Source\EU4World\Output\outProvince.h" />
+    <ClInclude Include="Source\EU4World\Output\outReligion.h" />
     <ClInclude Include="Source\EU4World\Province\EU4Province.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceDetails.h" />
     <ClInclude Include="Source\EU4World\Province\ProvinceModifier.h" />
+    <ClInclude Include="Source\EU4World\Religion\GeneratedReligion.h" />
     <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
     <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h" />
@@ -154,6 +156,10 @@
     <ClInclude Include="Source\Mappers\RegionMapper\Region.h" />
     <ClInclude Include="Source\Mappers\RegionMapper\RegionMapper.h" />
     <ClInclude Include="Source\Mappers\RegionMapper\SuperRegion.h" />
+    <ClInclude Include="Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.h" />
+    <ClInclude Include="Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.h" />
+    <ClInclude Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.h" />
+    <ClInclude Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapper.h" />
     <ClInclude Include="Source\Mappers\ReligionMapper\ReligionMapping.h" />
     <ClInclude Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.h" />
@@ -222,6 +228,7 @@
     <ClCompile Include="Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="Source\EU4World\Output\outModFile.cpp" />
     <ClCompile Include="Source\EU4World\Output\outProvince.cpp" />
+    <ClCompile Include="Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="Source\EU4World\Province\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\Province\ProvinceDetails.cpp" />
@@ -246,6 +253,10 @@
     <ClCompile Include="Source\Mappers\RegionMapper\Region.cpp" />
     <ClCompile Include="Source\Mappers\RegionMapper\RegionMapper.cpp" />
     <ClCompile Include="Source\Mappers\RegionMapper\SuperRegion.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp" />
+    <ClCompile Include="Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
     <ClCompile Include="Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
     <ClCompile Include="Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp" />

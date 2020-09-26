@@ -63,6 +63,9 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	outputHistoryCountries(theConfiguration);
 	Log(LogLevel::Progress) << "88 %";
 
+	LOG(LogLevel::Info) << "<- Writing Religions";
+	outputReligions(theConfiguration, religionMapper.getGeneratedReligions());
+
 	if (invasion)
 	{
 		LOG(LogLevel::Info) << "<- Writing Sunset Invasion Files";
@@ -97,6 +100,17 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	outputBookmark(theConfiguration, conversionDate);
 	Log(LogLevel::Progress) << "95 %";
 }
+
+void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
+{
+	for (const auto& religion: generatedReligions)
+	{
+		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + ".txt");
+		religionFile << religion;
+		religionFile.close();
+	}
+}
+
 
 void EU4::World::outputBookmark(const Configuration& theConfiguration, date conversionDate) const
 {
@@ -269,6 +283,15 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 			german << " " << locblock.first << ": \"" << locblock.second.german << "\"\n";
 		}
 	}
+
+	for (const auto& locblock: religionMapper.getLocalizations())
+	{
+		english << " " << locblock.first << ": \"" << locblock.second.english << "\"\n";
+		french << " " << locblock.first << ": \"" << locblock.second.french << "\"\n";
+		spanish << " " << locblock.first << ": \"" << locblock.second.spanish << "\"\n";
+		german << " " << locblock.first << ": \"" << locblock.second.german << "\"\n";
+	}
+
 	english.close();
 	french.close();
 	spanish.close();

@@ -9,6 +9,8 @@
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 #include "../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../Mappers/RegionMapper/RegionMapper.h"
+#include "../Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
+#include "../Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
@@ -78,6 +80,7 @@ class World
 	void outputFlags(const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
+	void outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;
@@ -93,6 +96,8 @@ class World
 	mappers::TitleTagMapper titleTagMapper;
 	mappers::RulerPersonalitiesMapper rulerPersonalitiesMapper;
 	mappers::DevWeightsMapper devWeightsMapper;
+	mappers::ReligionDefinitionMapper religionDefinitionMapper;
+	mappers::ReligionGroupScraper religionGroupScraper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;
