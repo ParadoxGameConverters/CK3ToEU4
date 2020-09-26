@@ -18,7 +18,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 
-	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";	
+	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	LOG(LogLevel::Info) << "-> Reading Words";
 	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods().getMods());
@@ -834,7 +834,8 @@ void EU4::World::resolvePersonalUnions()
 
 		// religion
 		auto heathen = false;
-		if (relevantHolders[holderTitle.first]->getFaith().second->getReligion().second->getName() != "christianity_religion")
+		if (!relevantHolders[holderTitle.first]->getFaith() ||
+			 relevantHolders[holderTitle.first]->getFaith()->second->getReligion().second->getName() != "christianity_religion")
 			heathen = true;
 
 		// We now have a holder, his primary, and religion. Let's resolve multiple crowns.

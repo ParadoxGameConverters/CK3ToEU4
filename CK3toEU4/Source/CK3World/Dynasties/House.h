@@ -5,6 +5,7 @@
 namespace CK3
 {
 class Dynasty;
+class Character;
 class House: commonItems::parser
 {
   public:
@@ -14,8 +15,11 @@ class House: commonItems::parser
 	[[nodiscard]] const auto& getPrefix() const { return prefix; }
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
 	[[nodiscard]] const auto& getID() const { return houseID; }
+	[[nodiscard]] const auto& getHouseHead() const { return houseHead; }
 
 	void loadDynasty(const std::pair<long long, std::shared_ptr<Dynasty>>& theDynasty) { dynasty = theDynasty; }
+	void loadHouseHead(const std::pair<long long, std::shared_ptr<Character>>& theHead) { houseHead = theHead; }
+	void resetHouseHead() { houseHead.reset(); }
 
   private:
 	void registerKeys();
@@ -24,7 +28,7 @@ class House: commonItems::parser
 	std::string name;
 	std::pair<long long, std::shared_ptr<Dynasty>> dynasty;
 	std::string prefix;
-	
+	std::optional<std::pair<long long, std::shared_ptr<Character>>> houseHead; // houses can have missing heads or dead people...
 };
 } // namespace CK3
 

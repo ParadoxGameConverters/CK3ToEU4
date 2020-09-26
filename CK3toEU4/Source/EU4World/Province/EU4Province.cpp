@@ -63,16 +63,19 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// Attempt to use religion of ruler in THAT province.
 	if (!religionSet)
 	{
-		baseReligion = srcProvince->getHolder()->second->getFaith().second->getName();
-		religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
-		if (religionMatch)
+		if (srcProvince->getHolder()->second->getFaith())
 		{
-			details.religion = *religionMatch;
-			religionSet = true;
-		}
-		else
-		{
-			Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+			baseReligion = srcProvince->getHolder()->second->getFaith()->second->getName();
+			religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+			if (religionMatch)
+			{
+				details.religion = *religionMatch;
+				religionSet = true;
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+			}
 		}
 	}
 	// Attempt to use religion of country.
@@ -100,16 +103,19 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// Attempt to use primary culture of ruler in THAT province.
 	if (!cultureSet)
 	{
-		baseCulture = srcProvince->getHolder()->second->getCulture().second->getName();
-		cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
-		if (cultureMatch)
+		if (srcProvince->getHolder()->second->getCulture())
 		{
-			details.culture = *cultureMatch;
-			cultureSet = true;
-		}
-		else
-		{
-			Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+			baseCulture = srcProvince->getHolder()->second->getCulture()->second->getName();
+			cultureMatch = cultureMapper.cultureMatch(baseCulture, details.religion, provID, tagCountry.first);
+			if (cultureMatch)
+			{
+				details.culture = *cultureMatch;
+				cultureSet = true;
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+			}
 		}
 	}
 	// Attempt to use primary culture of country.

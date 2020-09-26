@@ -1,6 +1,7 @@
 #include "Characters.h"
 #include "../../Mappers/TraitScraper/TraitScraper.h"
 #include "../Cultures/Cultures.h"
+#include "../Dynasties/House.h"
 #include "../Dynasties/Houses.h"
 #include "../Religions/Faiths.h"
 #include "../Titles/Title.h"
@@ -32,7 +33,12 @@ void CK3::Characters::linkCultures(const Cultures& cultures)
 	const auto& cultureData = cultures.getCultures();
 	for (const auto& character: characters)
 	{
-		const auto& cultureDataItr = cultureData.find(character.second->getCulture().first);
+		if (!character.second->getCulture())
+		{
+			// We'll sideload this later.
+			continue;
+		}
+		const auto& cultureDataItr = cultureData.find(character.second->getCulture()->first);
 		if (cultureDataItr != cultureData.end())
 		{
 			character.second->loadCulture(*cultureDataItr);
@@ -40,7 +46,7 @@ void CK3::Characters::linkCultures(const Cultures& cultures)
 		}
 		else
 		{
-			throw std::runtime_error("Character " + std::to_string(character.first) + " has culture " + std::to_string(character.second->getCulture().first) +
+			throw std::runtime_error("Character " + std::to_string(character.first) + " has culture " + std::to_string(character.second->getCulture()->first) +
 											 " which has no definition!");
 		}
 	}
@@ -53,7 +59,12 @@ void CK3::Characters::linkFaiths(const Faiths& faiths)
 	const auto& faithData = faiths.getFaiths();
 	for (const auto& character: characters)
 	{
-		const auto& faithDataItr = faithData.find(character.second->getFaith().first);
+		if (!character.second->getFaith())
+		{
+			// We'll sideload this later.
+			continue;
+		}
+		const auto& faithDataItr = faithData.find(character.second->getFaith()->first);
 		if (faithDataItr != faithData.end())
 		{
 			character.second->loadFaith(*faithDataItr);
@@ -61,8 +72,8 @@ void CK3::Characters::linkFaiths(const Faiths& faiths)
 		}
 		else
 		{
-			throw std::runtime_error(
-				 "Character " + std::to_string(character.first) + " has faith " + std::to_string(character.second->getFaith().first) + " which has no definition!");
+			throw std::runtime_error("Character " + std::to_string(character.first) + " has faith " + std::to_string(character.second->getFaith()->first) +
+											 " which has no definition!");
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " characters updated.";
@@ -71,6 +82,8 @@ void CK3::Characters::linkFaiths(const Faiths& faiths)
 void CK3::Characters::linkHouses(const Houses& houses)
 {
 	auto counter = 0;
+	auto missingFaith = 0;
+	auto missingCulture = 0;
 	const auto& houseData = houses.getHouses();
 	for (const auto& character: characters)
 	{
@@ -79,6 +92,20 @@ void CK3::Characters::linkHouses(const Houses& houses)
 		{
 			character.second->loadHouse(*houseDataItr);
 			++counter;
+			if (!character.second->getCulture())
+			{
+				if (character.second->getHouse().second->getHouseHead() && character.second->getHouse().second->getHouseHead()->second->getCulture())
+					character.second->loadCulture(*character.second->getHouse().second->getHouseHead()->second->getCulture());
+				else
+					missingCulture++;
+			}
+			if (!character.second->getFaith())
+			{
+				if (character.second->getHouse().second->getHouseHead() && character.second->getHouse().second->getHouseHead()->second->getFaith())
+					character.second->loadFaith(*character.second->getHouse().second->getHouseHead()->second->getFaith());
+				else
+					missingFaith++;
+			}
 		}
 		else
 		{
@@ -86,7 +113,7 @@ void CK3::Characters::linkHouses(const Houses& houses)
 				 "Character " + std::to_string(character.first) + " has house " + std::to_string(character.second->getHouse().first) + " which has no definition!");
 		}
 	}
-	Log(LogLevel::Info) << "<> " << counter << " characters updated.";
+	Log(LogLevel::Info) << "<> " << counter << " characters updated, " << missingCulture << " are missing culture, " << missingFaith << " are missing faith.";
 }
 
 void CK3::Characters::linkTitles(const Titles& titles)

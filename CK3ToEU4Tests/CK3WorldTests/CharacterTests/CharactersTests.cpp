@@ -54,8 +54,8 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
 
-	ASSERT_EQ("kru", c1->second->getCulture().second->getName());
-	ASSERT_EQ("akan", c2->second->getCulture().second->getName());
+	ASSERT_EQ("kru", c1->second->getCulture()->second->getName());
+	ASSERT_EQ("akan", c2->second->getCulture()->second->getName());
 }
 
 TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)
@@ -88,8 +88,8 @@ TEST(CK3World_CharactersTests, faithsCanBeLinked)
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
 
-	ASSERT_EQ("theravada", c1->second->getFaith().second->getName());
-	ASSERT_EQ("old_bon", c2->second->getFaith().second->getName());
+	ASSERT_EQ("theravada", c1->second->getFaith()->second->getName());
+	ASSERT_EQ("old_bon", c2->second->getFaith()->second->getName());
 }
 
 TEST(CK3World_CharactersTests, linkingMissingFaithThrowsException)
@@ -139,6 +139,26 @@ TEST(CK3World_CharactersTests, linkingMissingHouseThrowsException)
 
 	ASSERT_THROW(characters.linkHouses(houses), std::runtime_error);
 }
+
+TEST(CK3World_CharactersTests, houseLinkingFixesMissingFaithAndCulture)
+{
+	std::stringstream input;
+	input << "13={name=\"dynn_Villeneuve\" head_of_house=2}\n";
+	CK3::Houses houses(input);
+
+	std::stringstream input2;
+	input2 << "1={dynasty_house = 13}\n"; // <- No faith/culture
+	input2 << "2={dynasty_house = 13 faith=9 culture=8}\n";
+	CK3::Characters characters(input2);
+	houses.linkCharacters(characters); // loads the house head
+	characters.linkHouses(houses);
+
+	const auto& c1 = characters.getCharacters().find(1);
+
+	ASSERT_EQ(9, c1->second->getFaith()->first);
+	ASSERT_EQ(8, c1->second->getCulture()->first);
+}
+
 
 TEST(CK3World_CharactersTests, titlesCanBeLinked)
 {
@@ -333,7 +353,7 @@ TEST(CK3World_CharactersTests, traitsCanBeLinked)
 	traitScraper.loadTraits(input2);
 
 	characters.linkTraits(traitScraper);
-	
+
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
 	const auto& c3 = characters.getCharacters().find(3);

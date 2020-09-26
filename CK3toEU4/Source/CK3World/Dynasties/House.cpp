@@ -20,5 +20,8 @@ void CK3::House::registerKeys()
 	registerKeyword("dynasty", [this](const std::string& unused, std::istream& theStream) {
 		dynasty = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
+	registerKeyword("head_of_house", [this](const std::string& unused, std::istream& theStream) {
+		houseHead = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
