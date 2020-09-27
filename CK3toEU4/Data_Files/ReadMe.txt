@@ -4,16 +4,16 @@ This program will convert a Crusader Kings III save game to a Europa Universalis
 IMPORTANT LINKS
 ----
 
-Forum Release Thread: 
-Forum Development Thread: 
+Forum Release Thread: https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/
+Forum Development Thread: https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-thread.1415140/
 Github project: https://github.com/ParadoxGameConverters/CK3toEU4
 Windows development build: https://github.com/ParadoxGameConverters/CK3toEU4/releases/tag/windows_development_build
 
 ----
 REQUIREMENTS
 ----
-CK3
-EU4
+CK3 - 1.0
+EU4 - 1.30
 
 -----
 INSTRUCTIONS
@@ -39,8 +39,11 @@ CREDITS
 
 An list of those who contributed effort to this mammoth undertaking
 
-Idhrendur			- Sanity Checks and Review
-Mysterious_Italy	- Data Files, Graphics
-Zemurin				- Programming, Testing
+* Comagoosie 								- Rakaly melter
+* Idhrendur 								- Sanity Checks and Review
+* IohannesIohannium (aka Mysterious_Italy) 	- Data Files
+* Elfangor 									- Data Files
+* Silver Wizard 							- Coding support
+* Zemurin 									- The Weave
 
  - AND ALL THE OTHERS WHO GAVE THEIR INPUT ON THE FORUM AND DISCORD -

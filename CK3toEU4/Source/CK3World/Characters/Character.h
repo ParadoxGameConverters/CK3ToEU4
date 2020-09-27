@@ -87,8 +87,8 @@ class Character: commonItems::parser
 	bool dead = false;
 	bool spent = false;
 
-	std::pair<long long, std::shared_ptr<Culture>> culture;
-	std::pair<long long, std::shared_ptr<Faith>> faith;
+	std::optional<std::pair<long long, std::shared_ptr<Culture>>> culture;
+	std::optional<std::pair<long long, std::shared_ptr<Faith>>> faith;
 	std::optional<std::pair<long long, std::shared_ptr<Character>>> employer;
 	std::optional<std::pair<long long, std::shared_ptr<Character>>> spouse;
 	std::pair<long long, std::shared_ptr<House>> house;

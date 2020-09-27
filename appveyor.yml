@@ -17,7 +17,7 @@ test_script:
     (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
 artifacts:
 - path: Release
-  name: CK3ToEU4-0.0Angevin-prerelease
+  name: CK3toEU4-0.1Adamite
 deploy:
 - provider: GitHub
   release: windows_development_build
@@ -25,6 +25,6 @@ deploy:
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: ParadoxGameConverters/CK3ToEU4
-  artifact: CK3ToEU4-0.0Angevin-prerelease
+  artifact: CK3toEU4-0.1Adamite
   prerelease: true
   force_update: true

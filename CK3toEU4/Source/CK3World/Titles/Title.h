@@ -93,6 +93,7 @@ class Title: commonItems::parser
 	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
 
 	// processing
+	void cleanUpDisplayName();
 	[[nodiscard]] int flagDeJureHREProvinces();
 	void brickTitle();
 	void grantIndependence();

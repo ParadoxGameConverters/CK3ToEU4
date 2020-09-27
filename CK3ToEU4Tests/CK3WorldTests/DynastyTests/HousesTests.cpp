@@ -2,6 +2,8 @@
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -41,6 +43,27 @@ TEST(CK3World_HousesTests, NonsenseHousesAreIgnored)
 	ASSERT_EQ(1, houses.getHouses().size());
 	ASSERT_EQ(houses.getHouses().end(), h1);
 	ASSERT_EQ("dynn_Fournier", h2->second->getName());
+}
+
+TEST(CK3World_HousesTests, charactersCanBeLinkedIgnoringMissing)
+{
+	std::stringstream input;
+	input << "1={}\n";
+	input << "2={first_name=\"bob\"}\n";
+	input << "3={first_name=\"alice\"}\n";
+	const CK3::Characters characters(input);
+
+	std::stringstream input2;
+	input2 << "13={head_of_house = 2}\n";
+	input2 << "15={head_of_house = 19}\n"; // missing character, often in the savegame. Deleted or something.
+	auto houses = CK3::Houses(input2);
+	houses.linkCharacters(characters);
+
+	const auto& h1 = houses.getHouses().find(13);
+	const auto& h2 = houses.getHouses().find(15);
+
+	ASSERT_EQ("bob", h1->second->getHouseHead()->second->getName());
+	ASSERT_FALSE(h2->second->getHouseHead());
 }
 
 TEST(CK3World_HousesTests, dynastiesCanBeLinked)

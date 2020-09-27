@@ -1,60 +1,33 @@
 ## The FAQ
 
-Q: Is this the official converter?
-A: This converter has been done by the same team that specializes in other Paradox converters: 
-EU4->Vic2, Vic2->HoI4, CK2->EU3, EU3->Vic2, Vic2->HoI3, and relatively soon, Imperator->CK3
-It is not official, it does not use official converter's code (though it does recycle some data files).
-
-This is a standalone effort (and so far, the third ck2->eu4 converter to exist).
-
-Q: What are the main advantages between this and the official converter?
-A: Speed, precision and versatility. 
-
-This converter does all that official one does, with many additions and corrections:
-- Shattering any empire and using it as a base for HRE mechanics
-- Shattering empire blobs in general
-- Better and more natural dev shaping of provinces
-- Support for granulated cultures and religions, so "German" or "Italian" break apart into EU4-subcultures
-- True Chinese TAG swapping into ruling dynasty's TAG along with preserving the Celestial Emperor's culture and religion (instead of a simple Ming rename)
-- Integration of the Western Protectorate into China's mainland
-- Better provincial mappings (entirely redone to map CK 3.3 into EU4 1.29)
-- Import of councilmen as advisors
-- Special flags for muslim dynasties (kingdoms and empires are named after their dynasties)
-- Dual bookmarks (for both conversion date and 1444)
-- Full tributary support, both preserving offmap tributaries and importing CK2 ones
-- Expanded EU4 religions with CK2 ones, support for these religions in Vic2 and HoI4.
-- Clearing of siberian tribe and horde OPMs
-- Importing of excommunicated rulers
-- Fixed official converter's handling of starting cash and prestige (it could be negative)
-- Fixed official converter's bug with wonder replication
-- Importing of starting loans
-- Guaranteed support for future EU4 releases
-- And, as time passes, many more features.
-
-Drawbacks are, and will remain for foreseeable future:
-- Not integrated into the game (and will never be)
-- No support for Linux or Mac (need help for that)
+== Frequently Asked Questions ==
+Q: Is this the official converter?''
+A: This converter has been done by the same team that specializes in other Paradox converters:
+CK2->EU4, EU4->Vic2, Vic2->HoI4, CK2->EU3, EU3->Vic2, Vic2->HoI3, and relatively soon, Imperator->CK3
+It is not official, but it produces as accurate conversion as possible.
 
 Q: I have an ironman save. Can it be converted?
 A: Yes.
 
-Q: Shattered world?
-A: Not an issue.
-
-Q: Random world?
-A: We got your back.
-
-Q: I had Sunset Invasion fire, is this relevant for conversion?
-A: You'll find everything is in *perfect* order, according to specifications.
-
 Q: What about mods?
 A: Unless they change how cultures, religions or flags work, sure, use mods. Total map overhauls are not supported (of course), and whatever new cultures and religions are brought by the mod - you'll have to add manually in the files in configurables folder.
 
-Q: Can you support Random New World?
-A: No. We want the export to be compatible with future conversion to Vic2.
-
 Q: How can I customize my game after converting?
-A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these  files is intended to be modified by users to achieve specific conversion results.
+A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these files is intended to be modified by users to achieve specific conversion results.
+
+Q: Is linux supported?
+A: The converter does compile on Linux, and you need to compile it from source it to run it. Clone the github repository + all submodules, and run build_linux.sh. If you already have ImageMagick 7 installed, delete relevant commands from the script. Also you'll need to export LD_PATH for the imagemagick libs so the converter can find them. You may need to export the path even when compiling and installing ImageMagick from source.
+
+Q: Is OSX supported?
+A: No, none of the developers has a Mac and we cannot do a port. If you have experience in coding and are willing to help us, we're always interested.
+
+Q: I have found errors / bugs / glitches / wrong provinces / culture mismaps / religion mismaps / broken names /...
+This is good! We need user input to see where we mapped stuff wrong. Please come to forum converter release thread and report any bugs. When reporting upload your ck3 save, converter's log.txt and describe in detail what is wrong. Screenshots always help. We fix user reported bugs as priority.
+https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/
+
+Q: I want to help!
+We always need help. Not only for this converter, but all others. As they share the same pool of developers we're often stretched thin. We need experienced coders, with working knowledge of C++ and git. We also need modders willing to scour through our mapping files, verify the events, triggers, general data files and so on. If you think you could contribute, please visit our [[forum::1415140|development thread]] and say hello.
+https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-thread.1415140/
 
 ### Quick Troubleshooting:
 

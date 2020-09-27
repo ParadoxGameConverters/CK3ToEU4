@@ -44,6 +44,10 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	LOG(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
 
+	// Verify all incoming c_counties have a mapping that's not empty.
+	LOG(LogLevel::Info) << "-> Verifying all county mappings exist.";
+	verifyAllCountyMappings(sourceWorld.getTitles().getTitles());
+
 	// Import CK3 dynamic faiths and register them in religionMapper
 	LOG(LogLevel::Info) << "-> Importing Dynamic Faiths";
 	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper, localizationMapper);
@@ -163,6 +167,21 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	output(converterVersion, theConfiguration, sourceWorld);
 	LOG(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
 }
+
+void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const
+{
+	for (const auto& title: ck3Titles)
+	{
+		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
+			continue;
+		const auto& mappings = provinceMapper.getEU4ProvinceNumbers(title.first);
+		if (mappings.empty())
+		{
+			Log(LogLevel::Warning) << "Province mapping error: " << title.first << " has no EU4 provinces!";
+		}
+	}
+}
+
 
 void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasion)
 {
@@ -746,19 +765,30 @@ void EU4::World::resolvePersonalUnions()
 		const auto& holder = *country.second->getTitle()->second->getHolder();
 		holderTitles[holder.first].insert(country);
 		relevantHolders.insert(holder);
-		// does he have a primary title? Of course he does. They all do.
+		// Does he have a primary title? Of course he does. They all do, but some may have been dropped as provinceless.
+		// Look for first one that has an EU4 tag attached.
 		if (holder.second->getDomain() && !holder.second->getDomain()->getDomain().empty())
-			if (holder.second->getDomain()->getDomain()[0].second->getEU4Tag())
-				holderPrimaryTitle[holder.first] = *holder.second->getDomain()->getDomain()[0].second->getEU4Tag();
-			else
+		{
+			auto foundTag = false;
+			for (const auto& title: holder.second->getDomain()->getDomain())
 			{
-				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no eu4tag for title "
-											  << holder.second->getDomain()->getDomain()[0].second->getName();
-				// ... mooooving on.
-				continue;
+				if (title.second->getEU4Tag())
+				{
+					foundTag = true;
+					holderPrimaryTitle[holder.first] = *title.second->getEU4Tag();
+					break;
+				}
 			}
+			if (!foundTag)
+			{
+				// ... mooooving on.
+				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+			}
+		}
 		else
-			Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has nothing in domain. Great.";
+		{
+			Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has nothing in domain. Great.";			
+		}
 	}
 
 	// Now let's see what we have.
@@ -815,7 +845,8 @@ void EU4::World::resolvePersonalUnions()
 
 		// religion
 		auto heathen = false;
-		if (relevantHolders[holderTitle.first]->getFaith().second->getReligion().second->getName() != "christianity_religion")
+		if (!relevantHolders[holderTitle.first]->getFaith() ||
+			 relevantHolders[holderTitle.first]->getFaith()->second->getReligion().second->getName() != "christianity_religion")
 			heathen = true;
 
 		// We now have a holder, his primary, and religion. Let's resolve multiple crowns.

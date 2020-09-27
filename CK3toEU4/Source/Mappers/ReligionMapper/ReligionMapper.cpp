@@ -167,6 +167,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.icon = religionDefinitionMapper.getNextIcon();
 	newReligion.staticBlob = staticBlob;
 	newReligion.iconPath = faith.getIconPath();
+	newReligion.parent = eu4ParentReligion;
 	if (newReligion.iconPath.empty())
 	{
 		Log(LogLevel::Warning) << "CK3 Icon for " << origName << " does not exist! Religion will have no icon!";

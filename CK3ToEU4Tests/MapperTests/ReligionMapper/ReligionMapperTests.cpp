@@ -116,6 +116,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("someicon.dds", newReligion.iconPath);
 	ASSERT_EQ("religion_group1", newReligion.religionGroup);
 	ASSERT_EQ("converted_dyn_faith_345", newReligion.name);
+	ASSERT_EQ("religion2", newReligion.parent);
 
 	const auto& locs = theMapper.getLocalizations();
 	const auto& newLocs = locs.find("converted_dyn_faith_345");

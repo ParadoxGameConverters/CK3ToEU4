@@ -1,8 +1,9 @@
 #include "Houses.h"
+#include "../Characters/Characters.h"
+#include "Dynasties.h"
 #include "House.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "Dynasties.h"
 
 CK3::Houses::Houses(std::istream& theStream)
 {
@@ -19,10 +20,38 @@ void CK3::Houses::registerKeys()
 		{
 			auto houseStream = std::stringstream(suspiciousItem);
 			const auto newHouse = std::make_shared<House>(houseStream, std::stoll(ID));
-			houses.insert(std::pair(newHouse->getID(), newHouse));			
+			houses.insert(std::pair(newHouse->getID(), newHouse));
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void CK3::Houses::linkCharacters(const Characters& characters)
+{
+	auto counter = 0;
+	const auto& characterData = characters.getCharacters();
+	for (const auto& house: houses)
+	{
+		if (house.second->getHouseHead())
+		{
+			const auto& characterDataItr = characterData.find(house.second->getHouseHead()->first);
+			if (characterDataItr != characterData.end())
+			{
+				house.second->loadHouseHead(*characterDataItr);
+				++counter;
+			}
+			else
+			{
+				// Not much we can do about erroneous saves, but we can fix this internally.
+				house.second->resetHouseHead();
+			}
+		}
+		else
+		{
+			// :/ House with no head. Okay.
+		}
+	}
+	Log(LogLevel::Info) << "<> " << counter << " houses updated.";
 }
 
 void CK3::Houses::linkDynasties(const Dynasties& dynasties)

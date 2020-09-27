@@ -17,8 +17,8 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 
 	ASSERT_TRUE(character.getName().empty());
 	ASSERT_EQ(date("1.1.1"), character.getBirthDate());
-	ASSERT_FALSE(character.getCulture().first);
-	ASSERT_FALSE(character.getFaith().first);
+	ASSERT_FALSE(character.getCulture());
+	ASSERT_FALSE(character.getFaith());
 	ASSERT_FALSE(character.getHouse().first);
 	ASSERT_FALSE(character.getSkills().martial);
 	ASSERT_FALSE(character.getSkills().diplomacy);
@@ -56,8 +56,8 @@ TEST(CK3World_CharacterTests, characterPrimitivesCanBeLoaded)
 
 	ASSERT_EQ("bob spongepants", character.getName());
 	ASSERT_EQ(date("9.9.9"), character.getBirthDate());
-	ASSERT_EQ(1, character.getCulture().first);
-	ASSERT_EQ(2, character.getFaith().first);
+	ASSERT_EQ(1, character.getCulture()->first);
+	ASSERT_EQ(2, character.getFaith()->first);
 	ASSERT_EQ(3, character.getHouse().first);
 	ASSERT_EQ(11, character.getSkills().diplomacy);
 	ASSERT_EQ(12, character.getSkills().martial);

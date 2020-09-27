@@ -118,8 +118,9 @@ void CK3::Titles::linkTitles()
 			}
 			else
 			{
-				throw std::runtime_error(
-					 "Title " + title.first + " has defacto liege " + std::to_string(title.second->getDFLiege()->first) + " which has no definition!");
+				// Yet another savegame error.
+				Log(LogLevel::Warning) << "Title " + title.first + " has defacto liege " + std::to_string(title.second->getDFLiege()->first) + " which has no definition!";
+				title.second->resetDFLiege();
 			}
 		}
 		// DJLiege

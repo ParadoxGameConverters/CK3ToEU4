@@ -7,6 +7,7 @@
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
+#include "../Religion/GeneratedReligion.h"
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -88,4 +89,53 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	{
 		Log(LogLevel::Error) << "Failed exporting flag: " << e.what();
 	}
+}
+
+void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const
+{
+	std::set<std::string> targetStrips = {"country_icon_religion.dds", "icon_religion.dds", "icon_religion_small.dds", "province_view_religion.dds"};
+	for (const auto& religion: religions)
+	{
+		// Import the source dds
+		Magick::Image sourceIcon;
+		if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + religion.iconPath))
+		{
+			sourceIcon.read(theConfiguration.getCK3Path() + religion.iconPath);
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + religion.iconPath << ", skipping!";
+			// blank.
+			sourceIcon = Magick::Image("100x100", Magick::Color("transparent"));
+		}
+		// Process target strips
+		for (const auto& target: targetStrips)
+		{
+			if (!commonItems::DoesFileExist("blankMod/output/gfx/interface/" + target))
+				throw std::runtime_error("Cannot find blankMod/output/gfx/interface/" + target + "! Where are our religion strips?");
+			Magick::Image targetStrip("blankMod/output/gfx/interface/" + target);
+			targetStrip = extendReligionStrip(targetStrip, sourceIcon);
+			targetStrip.write("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target);
+		}
+	}
+}
+
+Magick::Image EU4::FlagFoundry::extendReligionStrip(const Magick::Image& sourceStrip, const Magick::Image& icon) const
+{
+	const auto width = sourceStrip.size().width();
+	const auto height = sourceStrip.size().height();
+	const auto dimension = height;
+	const auto newWidth = width + dimension;
+
+	// Make a new image.
+	auto newStrip = Magick::Image(Magick::Geometry(newWidth, height), Magick::Color("transparent"));
+	// Paste old strip
+	newStrip.composite(sourceStrip, "0x0", MagickCore::OverCompositeOp);
+	// Resize icon
+	auto newIcon = icon;
+	newIcon.adaptiveResize(Magick::Geometry(dimension, dimension));
+	// paste new icon in the back
+	newStrip.composite(newIcon, width, 0, MagickCore::OverCompositeOp);
+	// and done.
+	return newStrip;
 }

@@ -28,7 +28,9 @@ mappers::ReligionDefinitionMapper::ReligionDefinitionMapper(std::istream& theStr
 void mappers::ReligionDefinitionMapper::registerKeys()
 {
 	registerKeyword("current_icons", [this](const std::string& definition, std::istream& theStream) {
-		currentIcon = commonItems::singleInt(theStream).getInt();
+		const auto icon = commonItems::singleInt(theStream).getInt();
+		currentIcon = icon;
+		originalIcons = icon;
 	});
 	registerRegex(commonItems::catchallRegex, [this](const std::string& definition, std::istream& theStream) {
 		const auto definitionBlobs = ReligionDefinitionMapping(theStream);
