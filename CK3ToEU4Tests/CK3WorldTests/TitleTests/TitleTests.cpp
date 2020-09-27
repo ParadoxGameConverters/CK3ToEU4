@@ -91,6 +91,22 @@ TEST(CK3World_TitleTests, primitivesCanBeLoaded)
 	ASSERT_TRUE(theTitle.isLandless());
 }
 
+TEST(CK3World_TitleTests, nameCanBeCleanedOfGUIJunk)
+{
+	std::stringstream input;
+	input << "key=\"k_grenada\"\n";
+	input << "name=\"Crusader \x15ONCLICK:TITLE,81 \x15TOOLTIP:LANDED_TITLE,81 \x15L England\x15!\x15!\x15!\"\n";
+	const CK3::Title theTitle(input, 1);
+	ASSERT_EQ("Crusader England", theTitle.getDisplayName());
+
+	std::stringstream input2;
+	input2 << "key=\"k_grenada\"\n";
+	input2 << "name=\"\x15TOOLTIP:FAITH,catholic \x15L Catholic\x15!\x15! \x15ONCLICK:TITLE,733 \x15TOOLTIP:LANDED_TITLE,733 \x15L Lotharingia\x15!\x15!\x15!\"\n";
+	const CK3::Title theTitle2(input2, 1);
+	ASSERT_EQ("Catholic Lotharingia", theTitle2.getDisplayName());
+}
+
+
 TEST(CK3World_TitleTests, titleWithoutHolderResetsDFLiege) // this is done because this title is in fact dead and savegame is wrong.
 {
 	std::stringstream input;

@@ -1,11 +1,11 @@
 #include "Title.h"
+#include "../../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
 #include "../Geography/ProvinceHolding.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "../../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include <cmath>
 
 CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
@@ -29,6 +29,11 @@ void CK3::Title::registerKeys()
 	});
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		displayName = commonItems::singleString(theStream).getString();
+		if (displayName.find("\x15") != std::string::npos)
+		{
+			Log(LogLevel::Debug) << name << " cleaning name";
+			cleanUpDisplayName();
+		}
 	});
 	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
 		adjective = commonItems::singleString(theStream).getString();
@@ -105,14 +110,73 @@ void CK3::Title::registerKeys()
 				auto prevID = std::stoll(questionableItem);
 				previousHolders.emplace_back(std::pair(prevID, nullptr));
 			}
-			catch(std::exception&)
+			catch (std::exception&)
 			{
 				Log(LogLevel::Warning) << "Invalid previous holder ID: " << questionableItem;
 			}
-		}			
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+
+void CK3::Title::cleanUpDisplayName()
+{
+	auto start = displayName.find('\x15');
+	auto silence = false;
+	auto silenceOverRide = false;
+	auto braceDepth = 0;
+	std::string newName;
+	while (start != std::string::npos)
+	{
+		if ((!silence || silenceOverRide) && start != 0)
+		{
+			newName += displayName.substr(0, start);
+			displayName = displayName.substr(start, displayName.length());
+			silence = true;
+			silenceOverRide = false;
+			start = displayName.find('\x15');
+		}
+		else if (displayName.at(start + 1) == 'L')
+		{
+			if (displayName.length() >= start + 3)
+				displayName = displayName.substr(start + 3, displayName.length());
+			else
+				break;
+			silence = true;
+			silenceOverRide = true;
+			braceDepth++;
+			start = displayName.find('\x15');
+		}
+		else if (displayName.at(start + 1) == '!')
+		{
+			if (displayName.length() >= start + 2)
+				displayName = displayName.substr(start + 2, displayName.length());
+			else
+				break;
+			braceDepth--;
+			if (braceDepth <= 0)
+			{
+				silence = false;
+				braceDepth = 0;
+			}
+			silenceOverRide = false;
+			start = displayName.find('\x15');
+		}
+		else
+		{
+			silence = true;
+			silenceOverRide = false;
+			if (displayName.length() >= start + 1)
+				displayName = displayName.substr(start + 1, displayName.length());
+			else
+				break;
+			braceDepth++;
+			start = displayName.find('\x15');
+		}
+	}
+	displayName = newName;
+}
+
 
 int CK3::Title::flagDeJureHREProvinces()
 {
@@ -227,15 +291,15 @@ CK3::LEVEL CK3::Title::getLevel() const
 		return LEVEL::KINGDOM;
 	if (name.find("e_") == 0)
 		return LEVEL::EMPIRE;
-	
+
 	// This is the questionable part. It should work for customs as they are treated identically as any other - with dejure parents and all.
 	// exceptions are dynamic mercs, landless religious orders and similar - but those don't hold land, at least initially.
-	
-	// see if they hold any vassals and if so, assign a level one step higher.	
+
+	// see if they hold any vassals and if so, assign a level one step higher.
 	auto level = -1;
 	for (const auto& vassal: dfVassals)
 		if (LevelToInt[vassal.second->getLevel()] > level)
-			level = LevelToInt[vassal.second->getLevel()] + 1;	
+			level = LevelToInt[vassal.second->getLevel()] + 1;
 	if (level > -1)
 		return IntToLevel[std::max(level, 4)];
 
@@ -268,7 +332,7 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 {
 	if (getLevel() != LEVEL::COUNTY) // This applies to nothing but counties.
 		return 0;
-	
+
 	// buildingWeight is a mixture of all holdings, their potential buildings, and general county development.
 	if (!clay)
 		throw std::runtime_error("County " + name + " has no clay?");
@@ -286,7 +350,7 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 			throw std::runtime_error("Supposed barony " + barony.second->getName() + " of " + name + " has no clay?");
 		if (!barony.second->getClay()->getProvince() || !barony.second->getClay()->getProvince()->second)
 			throw std::runtime_error("Barony " + barony.second->getName() + " of " + name + " has no clay province?");
-		const auto& baronyProvince = barony.second->getClay()->getProvince();		
+		const auto& baronyProvince = barony.second->getClay()->getProvince();
 		buildingCount += baronyProvince->second->countBuildings();
 		if (!baronyProvince->second->getHoldingType().empty())
 			++holdingCount;

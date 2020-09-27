@@ -143,7 +143,7 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 {
 	for (const auto& religion: generatedReligions)
 	{
-		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + ".txt");
+		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
 	}
