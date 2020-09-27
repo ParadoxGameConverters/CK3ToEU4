@@ -31,7 +31,6 @@ void CK3::Title::registerKeys()
 		displayName = commonItems::singleString(theStream).getString();
 		if (displayName.find("\x15") != std::string::npos)
 		{
-			Log(LogLevel::Debug) << name << " cleaning name";
 			cleanUpDisplayName();
 		}
 	});

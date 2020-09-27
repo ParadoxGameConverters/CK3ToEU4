@@ -765,7 +765,7 @@ void EU4::World::resolvePersonalUnions()
 		const auto& holder = *country.second->getTitle()->second->getHolder();
 		holderTitles[holder.first].insert(country);
 		relevantHolders.insert(holder);
-		// Does he have a primary title? Of course he does. They all do. but some may have been dropped as provinceless.
+		// Does he have a primary title? Of course he does. They all do, but some may have been dropped as provinceless.
 		// Look for first one that has an EU4 tag attached.
 		if (holder.second->getDomain() && !holder.second->getDomain()->getDomain().empty())
 		{
