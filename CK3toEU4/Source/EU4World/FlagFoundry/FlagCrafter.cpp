@@ -140,7 +140,9 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 			}
 			const auto targetWidth = scaleX * static_cast<double>(width);
 			const auto targetHeight = scaleY * static_cast<double>(height);
-			workingEmblem.adaptiveResize(Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight)));
+			auto geometry = Magick::Geometry(static_cast<size_t>(targetWidth), static_cast<size_t>(targetHeight));
+			geometry.aspect(true);
+			workingEmblem.adaptiveResize(geometry);
 		}
 
 		// Rotate emblem
