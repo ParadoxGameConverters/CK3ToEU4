@@ -296,9 +296,14 @@ CK3::LEVEL CK3::Title::getLevel() const
 
 	// see if they hold any vassals and if so, assign a level one step higher.
 	auto level = -1;
-	for (const auto& vassal: dfVassals)
+	for (const auto& vassal: djVassals)
+	{
+		if (vassal.second->getName().find("x_") == 0)
+			continue; // Those vassals can't help us.
 		if (LevelToInt[vassal.second->getLevel()] > level)
 			level = LevelToInt[vassal.second->getLevel()] + 1;
+		
+	}
 	if (level > -1)
 		return IntToLevel[std::max(level, 4)];
 
