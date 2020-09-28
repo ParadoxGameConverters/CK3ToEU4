@@ -790,5 +790,14 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest-almeria.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\colored_emblems\texture_solid2.dds">
+      <Filter>TestFiles\FlagFoundry\colored_emblems</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\magyar_flag.txt">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest7.dds">
+      <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

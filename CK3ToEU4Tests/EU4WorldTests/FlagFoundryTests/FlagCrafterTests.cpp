@@ -61,6 +61,30 @@ TEST(EU4World_FlagCrafterTests, multicolorEmblemsOverlayOnMulticolorPattern)
 	ASSERT_TRUE(orig.compare(test));
 }
 
+TEST(EU4World_FlagCrafterTests, emblemInstanceStretchingAndPositioning)
+{
+	laFabricaDeColor.clear();
+	laFabricaDeColor.addNamedColor("white", commonItems::Color(std::array<int, 3>{255, 255, 255}));
+	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
+
+	const auto warehouse = std::make_shared<EU4::Warehouse>();
+	warehouse->loadImageFolder("FlagFoundry/");
+	EU4::FlagCrafter flagCrafter;
+	flagCrafter.loadWarehouse(warehouse);
+
+	std::ifstream input("FlagFoundry/magyar_flag.txt");
+	const CK3::CoatOfArms coa(input, 79);
+
+	auto flagCrafterTest = flagCrafter.craftFlagFromCoA(coa);
+	flagCrafterTest.write("flagCrafterTest7.dds");
+
+	const Magick::Image test("flagCrafterTest7.dds");
+	const Magick::Image orig("FlagFoundry/flagtest7.dds");
+
+	laFabricaDeColor.clear();
+	ASSERT_TRUE(orig.compare(test));
+}
+
 TEST(EU4World_FlagCrafterTests, emblemInstancePositioningRotationAndScaling)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
