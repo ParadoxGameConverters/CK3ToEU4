@@ -82,6 +82,10 @@ zunist_cult = {
 		has_unlocked_cult = zunist_cult
 	}
 	legitimacy = 0.5
+	republican_tradition = 0.25
+	devotion = 0.5
+	horde_unity = 0.5
+	meritocracy = 0.5
 	ai_will_do = {
 		factor = 10
 		modifier = {
@@ -136,5 +140,34 @@ pagan_cult = {
 	}
 }
 
+###CK3
+gnostic_cult = {
+	sprite = 27
+	allow = {
+		has_unlocked_cult = gnostic_cult
+	}
+	religious_unity = 0.5
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
 
+yazidi_cult = {
+	sprite = 28
+	allow = {
+		has_unlocked_cult = yazidi_cult
+	}
+	yearly_corruption = -0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
 

@@ -102,6 +102,8 @@
     ZZZ_enhanced_fetishist.39.aa.tt:0 "Una gran cantidad de inmigrantes samaritanos se establecen en la provincia [Root.GetName]."
  ZZZ_enhanced_fetishist.39.ab:0 "Mientras sean verdaderos creyentes."
     ZZZ_enhanced_fetishist.39.ab.tt:0 "Una gran cantidad de inmigrantes Karaitas se establecen en la provincia [Root.GetName]."
+ ZZZ_enhanced_fetishist.39.ac:0 "Mientras sean verdaderos creyentes."
+    ZZZ_enhanced_fetishist.39.ac.tt:0 "Una gran cantidad de inmigrantes [jewish_immigrants_origin.Religion] se establecen en la provincia [Root.GetName]."
  #
  ZZZ_enhanced_fetishist.49.aa:0 "Mientras ellos reconozcan a Mazdak."
  ZZZ_enhanced_fetishist.49.ab:0 "Mientras sigan el camino correcto."
@@ -278,6 +280,48 @@
  ZZZ_enhanced_fetishist.96.d:0 "Se detuvo una caravana migratoria en dirección a [Root.GetName] donde un grupo de fieles de Bön había planeado establecerse. Aparentemente se les habían vendido falsas escrituras para aterrizar en [Root.GetName] y pensaron que eran una presencia esperada en la provincia. Ahora que sucede, [Root.GetName] tiene mucho espacio y, si quisiéramos, podríamos acomodar fácilmente a los migrantes."
  ZZZ_enhanced_fetishist.96.a:0 "Sería cruel rechazarlos ahora."
  ZZZ_enhanced_fetishist.96.b:0 "No es asunto nuestro si fueron engañados."
+ 
+ ZZZ_enhanced_fetishist.97.t: 0 "La ilusión de la realidad"
+ ZZZ_enhanced_fetishist.97.d: 0 "Los predicadores que han llegado a nuestro pueblo recientemente no han sido como los que hemos visto en el pasado. No hablan del mundo en el que vivimos como una bendición, sino como una maldición, sobre nosotros por el que ellos llaman "El Demiurgo." Dicen que la verdadera iluminación y salvación sólo se puede encontrar más allá del mundo material en el que existimos ."
+ ZZZ_enhanced_fetishist.97.a: 0 "¡El elemento divino será nuestro!"
+ ZZZ_enhanced_fetishist.98.t: 0 "El ángel pavo real"
+ ZZZ_enhanced_fetishist.98.d: 0 "Una pequeña banda migratoria de personas se ha mudado recientemente a nuestra tierra. Traen consigo tradiciones peculiares y una religión aún más peculiar. Afirman que siguen al más destacado de los Ángeles del Dios único, que tiene dominio sobre la Tierra. Los intentos de aprender más han sido sorprendentemente rechazados, parece que estas personas no son como otras personas religiosas ."
+ ZZZ_enhanced_fetishist.98.a: 0 "¡De todos modos, nosotros también seguiremos a Melek Taus!"
+ 
+ ZZZ_enhanced_fetishist.99.t: 0 "Acusaciones de satanismo"
+ ZZZ_enhanced_fetishist.99.d: 0 "Aunque seguimos el camino de los Nostikks, hay quienes en nuestro [Root.GovernmentName] siguen los caminos del cristianismo. Normalmente, esto no causa problemas, de hecho, argumentaríamos que nuestras similitudes superan nuestras diferencias. Sin embargo, un grupo de fieros líderes cristianos ha estado difundiendo el escandaloso rumor de que nuestros caminos son el satanismo y que adoramos a los poderes oscuros. Esto ha causado descontento entre nuestra gente, ¿cómo debemos responder? "
+ ZZZ_enhanced_fetishist.99.a: 0 "Inicie nuestra propia campaña de propaganda."
+ ZZZ_enhanced_fetishist.99.b: 0 "Elimina a los alborotadores de forma permanente."
+ ZZZ_enhanced_fetishist.99.c: 0 "No necesitamos responder a fanfarrones."
+ ZZZ_enhanced_fetishist.99.d: 0 "Muéstrales la verdad con el ejemplo."
+ ZZZ_enhanced_fetishist.100.t: 0 "Tolerancia global"
+ ZZZ_enhanced_fetishist.100.d: 0 "Hemos tenido más éxito que de costumbre en nuestro mensaje de tolerancia entre las masas. Hemos dejado en claro que lo que sucede en el mundo material no importa realmente en comparación con lo que ocurre en el espiritual. Como tal , uno no debe preocuparse demasiado por lo que otros eligen creer o hacer. Al menos por ahora, parece que la gente actuará de acuerdo con lo que les hemos dicho ."
+ ZZZ_enhanced_fetishist.100.a: 0 "Ama a tus vecinos."
+ ZZZ_enhanced_fetishist.101.t: 0 "Resolución inquebrantable"
+ ZZZ_enhanced_fetishist.101.d: 0 "Nuestra forma de pensar se ha vuelto popular entre los soldados de nuestro ejército. Esto ha tenido el efecto no deseado, aunque positivo, de imbuirlos de un fuerte fatalismo. Ya que saben que el mundo material es un lugar maligno llenos de nada más que dolor, no temen a la muerte ni a la eternidad.Nuestros oficiales han comenzado a hacer uso de esta fuerza recién descubierta, pero no pueden ponerse de acuerdo si centrarse en la moral general de la tropa o si deben aprovechar esta oportunidad para aumentar la disciplina. "
+ ZZZ_enhanced_fetishist.101.a: 0 "Nuestros hombres no se inmutarán."
+ ZZZ_enhanced_fetishist.101.b: 0 "Nuestros hombres actuarán en conjunto."
+ ZZZ_enhanced_fetishist.101.c: 0 "Deberíamos poder hacer ambas cosas."
+ ZZZ_enhanced_fetishist.102.t: 0 "[gnostic_missionary_origin.Religion] se propaga a [Root.GetName]"
+ ZZZ_enhanced_fetishist.102.d: 0 "Parece que los misioneros del [gnostic_missionary_origin.GovernmentName] de [gnostic_missionary_origin.GetName] han estado increíblemente activos en [Root.GetName] en los últimos tiempos. Al ver que la gente compartía muchas de sus creencias, el los misioneros han usado esa base para difundir su propia interpretación del universo. Ahora se puede decir con seguridad que la gente de [Root.GetName] es más [gnostic_missionary_origin.Religion] que [Root.Owner.Religion] ."
+ ZZZ_enhanced_fetishist.102.a: 0 "Que así sea."
+ ZZZ_enhanced_fetishist.102.b: 0 "No, no, creo que no."
+ 
+ ZZZ_enhanced_fetishist.103.t: 0 "La tradición nos une a todos"
+ ZZZ_enhanced_fetishist.103.d: 0 "Nuestro enfoque en la tradición ha ido bien tanto con los líderes locales como con la población en general. Gobernar [Root.GetName] nunca ha sido tan fácil".
+ ZZZ_enhanced_fetishist.103.a: 0 "¡Tradición!"
+ ZZZ_enhanced_fetishist.104.t: 0 "Oportunidades comerciales únicas"
+ ZZZ_enhanced_fetishist.104.d: 0 "Nuestra fe ha traído bonificaciones inesperadas a nuestras políticas comerciales. Las comunidades de yazidis existen por todas partes y siempre están deseosas de comerciar con quienes comparten su visión del mundo. Nuestros comerciantes han convertido esta preferencia en un auge comercial serio en los últimos años, cuyos frutos ahora se sienten verdaderamente ".
+ ZZZ_enhanced_fetishist.104.a: 0 "¡Excelente!"
+ ZZZ_enhanced_fetishist.104.a: 0 "¿Quizás podríamos usar nuestra posición de otra manera?"
+ ZZZ_enhanced_fetishist.105.t: 0 "Tensiones religiosas"
+ ZZZ_enhanced_fetishist.105.d: 0 "Los yazidis siempre han sido una comunidad muy unida, y el hecho de que nos unamos a ella no siempre ha ido bien con aquellos que ya la practican. Muchos yazidis nos dicen constantemente que no somos realmente uno de los ellos y que nunca podremos ser. Normalmente esto se deja con palabras, sin embargo, los líderes religiosos yazidi de [Root.GetName] han azotado a su gente en un frenesí, alegando que nuestras supuestas "creencias falsas" han corrompido su juventud y voluntad continúen haciéndolo si no actúan. Es casi seguro que surgirá una rebelión en [Root.GetName] como resultado de este alarmismo si no actuamos con decisión ".
+ ZZZ_enhanced_fetishist.105.a: 0 "Suaviza las cosas".
+ ZZZ_enhanced_fetishist.105.a: 0 "¡Les mostraremos creencias falsas!"
+ ZZZ_enhanced_fetishist.106.t: 0 "Migración de [yazidi_migrant_origin.Religion] a [Root.GetName]"
+ ZZZ_enhanced_fetishist.106.d: 0 "Un gran grupo de yazidis ha solicitado a [Root.Owner.GetTitle] [Root.Owner.Ruler] que se mude a [Root.GetName] donde pueden vivir en paz. , y para que todo salga bien, los Yazidis han ofrecido sus servicios en nuestra administración por un tiempo, ya que varios de sus miembros habían trabajado previamente como administradores, sería una tontería rechazar esta oportunidad sin antes considerar las ventajas. "
+ ZZZ_enhanced_fetishist.106.a: 0 "Muy bien, déjalos entrar".
+ ZZZ_enhanced_fetishist.106.a: 0 "Nuestros propios administradores están bien, gracias".
  
  #MISC
  ZZZ_enhanced_misc.4.t:0 "La Abolición de la Esclavitud"

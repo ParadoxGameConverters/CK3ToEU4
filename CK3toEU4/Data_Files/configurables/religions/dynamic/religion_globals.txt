@@ -142,6 +142,8 @@ mahayana = {
 
 confucianism = {
 	heretic = { TAOIST }
+	
+	harmonized_modifier = harmonized_other_eastern
 }
 
 shinto = {
@@ -306,7 +308,6 @@ sethianism = {
 }
 
 priscillianism = {
-	misguided_heretic = yes
 	heretic = { SOCINIAN EUSTATHIANS }
 }
 
