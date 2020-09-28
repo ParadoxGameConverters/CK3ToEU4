@@ -27,8 +27,8 @@
 	link = { ck3 = 5891 eu4 = 1076 }	# c_kurgan -> Kurgan
 	link = { ck3 = 5528 ck3 = 5522 ck3 = 5889 eu4 = 2427 }	# c_chadrinsk, c_yekaterinburg, c_tyumen -> Ostyaki
 	link = { ck3 = 7026 ck3 = 7358 eu4 = 1075 }	# c_karasu, c_atbasar -> Tyumen
-	link = { ck3 = 7035 ck3 = 7032 eu4 = 1074 }	# c_petropavl, c_kazanskoye -> Sibir
-	link = { ck3 = 7028 ck3 = 7362 eu4 = 1069 }	# c_tara, c_chich -> Surgut
+	link = { ck3 = 7035 ck3 = 7032 eu4 = 1074 eu4 = 2428 }	# MANY-TO-MANY: c_petropavl, c_kazanskoye -> Sibir, Yugan
+	link = { ck3 = 7028 ck3 = 7362 eu4 = 1069 eu4 = 2429 }	# MANY-TO-MANY: c_tara, c_chich -> Surgut, Agan
 	link = { ck3 = 7057 ck3 = 7029 eu4 = 4691 }	# c_dolgujar, c_ishim -> As
 	link = { ck3 = 7004 ck3 = 7005 ck3 = 7009 ck3 = 7010 eu4 = 1073 }	# c_tobol, c_belogorje, c_bardak, c_sibir -> Berezov
 	link = { ck3 = 5886 ck3 = 5883 ck3 = 5880 ck3 = 5873 ck3 = 5876 eu4 = 1080 }	# c_laia, c_tabary, c_neramkary, c_pelym, c_koshuki -> Pelym
@@ -121,7 +121,8 @@
 	link = { ck3 = 4104 eu4 = 4171 eu4 = 2218 }	# c_qumisha -> Abarquh, Shiraz
 	link = { ck3 = 4108 eu4 = 429 }	# c_isfahan -> Isfahan
 	link = { ck3 = 4099 ck3 = 4121 eu4 = 433 }	# c_shahre-babak, c_istakhr -> Yazd
-	link = { ck3 = 4061 ck3 = 4056 eu4 = 4334 }	# c_mafaza, c_yazd -> Tabas
+	link = { ck3 = 4061 eu4 = 2222 }	# c_mafaza -> Ardakan
+	link = { ck3 = 4056 eu4 = 4334 }	# c_yazd -> Tabas
 	link = { ck3 = 4075 eu4 = 436 }	# c_behabad -> Birjand
 	link = { ck3 = 4021 ck3 = 4066 ck3 = 4071 eu4 = 4336 }	# c_baihaq, c_qain, c_tun -> Tun
 	link = { ck3 = 4211 eu4 = 4324 }	# c_bakharz -> Ghuriyan
@@ -784,7 +785,8 @@
 	link = { ck3 = 6037 eu4 = 2315 }	# c_sinai -> Suez
 	link = { ck3 = 6044 eu4 = 4316 }	# c_sharkiya -> Sharqiya
 	link = { ck3 = 6046 eu4 = 363 }	# c_damietta -> Damietta
-	link = { ck3 = 6055 ck3 = 6051 eu4 = 362 }	# c_al-buhaira, c_al-gharbiya -> Rosetta
+	link = { ck3 = 6051 eu4 = 2316 }	# c_al-gharbiya -> Al Gharbia
+	link = { ck3 = 6055 eu4 = 362 }	# c_al-buhaira -> Rosetta
 	link = { ck3 = 6116 eu4 = 358 }	# c_alexandria -> Alexandria
 	link = { ck3 = 6097 ck3 = 6117 eu4 = 2325 }	# c_sullum, c_siwa -> Tarrana
 	link = { ck3 = 6098 eu4 = 2326 }	# c_tobruk -> Bardiyah
