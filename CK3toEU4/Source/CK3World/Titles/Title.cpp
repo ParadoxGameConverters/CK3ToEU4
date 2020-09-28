@@ -297,13 +297,12 @@ CK3::LEVEL CK3::Title::getLevel() const
 	// see if they hold any vassals and if so, assign a level one step higher.
 	auto level = -1;
 	const std::set<char> allowedPrefixes = {'b', 'c', 'd', 'k'};
-	for (const auto& vassal: djVassals)
+	for (const auto& vassal: djVassals) // run through all as they can vary in levels.
 	{
 		if (!allowedPrefixes.count(vassal.second->getName().at(0)))
 			continue; // Those dynamic vassals can't help us. Or heaven's forbid, it's an empire.
 		if (LevelToInt[vassal.second->getLevel()] > level)
 			level = LevelToInt[vassal.second->getLevel()] + 1;
-		break; // first should suffice.
 	}
 	if (level > -1)
 		return IntToLevel[std::max(level, 4)];
