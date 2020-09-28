@@ -111,9 +111,9 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		// Process target strips
 		for (const auto& target: targetStrips)
 		{
-			if (!commonItems::DoesFileExist("blankMod/output/gfx/interface/" + target))
-				throw std::runtime_error("Cannot find blankMod/output/gfx/interface/" + target + "! Where are our religion strips?");
-			Magick::Image targetStrip("blankMod/output/gfx/interface/" + target);
+			if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target))
+				throw std::runtime_error("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target + "! Where are our religion strips?");
+			Magick::Image targetStrip("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target);
 			targetStrip = extendReligionStrip(targetStrip, sourceIcon);
 			targetStrip.write("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target);
 		}
