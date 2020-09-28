@@ -34,8 +34,14 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	// For every tag we must have a flag. This can be vanilla flag (in which case we do nothing), or
 	// our pre-generated flag (which we copy over) or a dynamic flag from CK3 savegame which we have yet to create.
 
+	// Hardcoding special flags from out-of-scope we're not supposed to craft.
+	const std::set<std::string> ignoreTags = {"SDM"};
+
 	for (const auto& country: countries)
 	{
+		if (ignoreTags.count(country.first))
+			continue;
+		
 		// first check is for dynasty and override flags.
 		if (country.second->getHasDynastyName()) // If this is true, we have a holder, house and dynasty already.
 		{

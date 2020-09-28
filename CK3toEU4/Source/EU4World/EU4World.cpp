@@ -596,6 +596,10 @@ void EU4::World::linkProvincesToCountries()
 			// registering province in owner.
 			countryItr->second->registerProvince(std::pair(province.first, province.second));
 		}
+		else if (province.second->getOwner() == "XXX") // this is PDX "special" way to mark provinces from out of scope as taken.
+		{
+			// ignore.
+		}
 		else
 		{
 			Log(LogLevel::Warning) << "Province " << province.first << " owner " << province.second->getOwner() << " has no country!";

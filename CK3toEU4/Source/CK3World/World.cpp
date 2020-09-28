@@ -677,9 +677,12 @@ void CK3::World::filterIndependentTitles()
 	std::map<long long, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
 	for (const auto& title: allTitles)
 	{
-		if (title.second->getHolder() && title.second->getLevel() == LEVEL::COUNTY)
-			countyHolders.insert(title.second->getHolder()->first);
-		allTitleHolders[title.second->getHolder()->first].insert(title);
+		if (title.second->getHolder())
+		{
+			if (title.second->getLevel() == LEVEL::COUNTY)
+				countyHolders.insert(title.second->getHolder()->first);
+			allTitleHolders[title.second->getHolder()->first].insert(title);		
+		}
 	}
 
 	// Then look at all potential indeps and see if their holders hold physical clay.
