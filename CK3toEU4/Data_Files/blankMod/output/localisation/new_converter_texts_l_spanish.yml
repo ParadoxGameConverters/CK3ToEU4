@@ -298,6 +298,10 @@ l_spanish:
  hellenic_cult_desc:0 "Honramos a los dioses del Olimpo y nos dedicamos a convertirnos en los mejores hombres."
  pagan_cult:0 "Paken"
  pagan_cult_desc:0 "Hemos abrazado a aquellos cuyas creencias son diferentes a las nuestras, adoptando sus prácticas y sacrificando a sus dioses. Solo nos hemos hecho más fuertes por ello."
+ gnostic_cult: 0 "Nostikk"
+ gnostic_cult_desc: 0 "Reconocemos que el mundo material es una creación falsa y terrible gobernada por el demiurgo. Esperamos nuestra salvación del mundo material."
+ yazidi_cult: 0 "Yazidi"
+ yazidi_cult_desc: 0 "Honramos a Melek Taus, el primero entre los 7 ángeles, compañero de Adán, salvador de Abraham y gobernante elegido de Dios. A través de él encontramos la salvación con el Todopoderoso."
  
  ##Personal Deities
  #Khurmazta

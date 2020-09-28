@@ -3,17 +3,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = yemoja_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = yemoja_cult
 			}
 		}
@@ -22,17 +17,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = yemoja_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = yemoja_cult
 			}
 		}
@@ -42,17 +32,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = roog_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = roog_cult
 			}
 		}
@@ -61,17 +46,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = roog_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = roog_cult
 			}
 		}
@@ -81,17 +61,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = nyame_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = nyame_cult
 			}
 		}
@@ -100,17 +75,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = nyame_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = nyame_cult
 			}
 		}
@@ -121,17 +91,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = cwezi_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = cwezi_cult
 			}
 		}
@@ -140,17 +105,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = cwezi_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = cwezi_cult
 			}
 		}
@@ -161,17 +121,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = central_african_ancestor_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = central_african_ancestor_cult
 			}
 		}
@@ -180,17 +135,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = central_african_ancestor_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = central_african_ancestor_cult
 			}
 		}
@@ -201,17 +151,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = mwari_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = mwari_cult
 			}
 		}
@@ -220,17 +165,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = mwari_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = mwari_cult
 			}
 		}
@@ -241,17 +181,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {				
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = enkai_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = enkai_cult
 			}
 		}
@@ -260,17 +195,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {				
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = enkai_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = enkai_cult
 			}
 		}
@@ -280,17 +210,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {				
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = waaq_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = waaq_cult }
 			}
 		}
@@ -299,17 +224,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = waaq_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = waaq_cult
 			}
 		}
@@ -319,17 +239,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = zanahary_cult }
 			}
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = zanahary_cult
 			}
 		}
@@ -338,17 +253,12 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = zanahary_cult }
 			}
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				has_unlocked_cult = zanahary_cult
 			}
 		}
@@ -358,16 +268,13 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = christianity_cult }
 			}
 			FROM = {
 				OR = {
 					religion_group = christian
-					religion_group = gnostic #Until I can add it as its own cult 
 					has_unlocked_cult = christianity_cult
 				}
 			}
@@ -377,10 +284,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = christianity_cult }
 			}
 			ROOT = {
@@ -397,10 +302,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = islam_cult }
 			}
 			FROM = {
@@ -416,10 +319,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = islam_cult }
 			}
 			ROOT = {
@@ -436,10 +337,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = buddhism_cult }
 			}
 			FROM = {
@@ -454,10 +353,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = buddhism_cult }
 			}
 			ROOT = {
@@ -473,10 +370,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = dharmic_cult }
 			}
 			FROM = {
@@ -491,10 +386,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = dharmic_cult }
 			}
 			ROOT = {
@@ -510,10 +403,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = south_central_american_cult }
 			}
 			FROM = {
@@ -531,11 +422,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism #Paradox forgot to put Inti in ROOT in the original code
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes #Paradox forgot to put Inti in ROOT in the original code
 				NOT = { has_unlocked_cult = south_central_american_cult }
 			}
 			ROOT = {
@@ -554,10 +441,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = norse_cult }
 			}
 			FROM = {
@@ -573,10 +458,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 				NOT = { has_unlocked_cult = norse_cult }
 			}
 			ROOT = {
@@ -593,11 +476,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism #Original code is religion = jewish, so no karaite/samaritan
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes #Original code is religion = jewish, so no karaite/samaritan
 				NOT = { has_unlocked_cult = jewish_cult }
 			}
 			FROM = {
@@ -612,11 +491,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism #Original code is religion = jewish, so no karaite/samaritan
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes #Original code is religion = jewish, so no karaite/samaritan
 				NOT = { has_unlocked_cult = jewish_cult }
 			}
 			ROOT = {
@@ -632,11 +507,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism #Original code is religion = zoroastrian, so no mazdaki/khurmatza
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes #Original code is religion = zoroastrian, so no mazdaki/khurmatza
 				NOT = { has_unlocked_cult = zoroastrian_cult }
 			}
 			FROM = {
@@ -652,11 +523,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism #Original code is religion = zoroastrian, so no mazdaki/khurmatza
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes #Original code is religion = zoroastrian, so no mazdaki/khurmatza
 				NOT = { has_unlocked_cult = zoroastrian_cult }
 			}
 			ROOT = {
@@ -673,10 +540,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-				}
+				uses_cults = yes
+				NOT = { religion = west_african_pagan_reformed }
 				NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
 			}
 			FROM = {
@@ -691,10 +556,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-				}
+				uses_cults = yes
+				NOT = { religion = west_african_pagan_reformed }
 				NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
 			}
 			ROOT = {
@@ -710,11 +573,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = tengri_cult }
 			}
 			FROM = {
@@ -730,11 +589,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = tengri_cult }
 			}
 			ROOT = {
@@ -751,11 +606,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = finnish_cult }
 			}
 			FROM = {
@@ -771,11 +622,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = finnish_cult }
 			}
 			ROOT = {
@@ -792,11 +639,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = baltic_cult }
 			}
 			FROM = {
@@ -812,11 +655,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = baltic_cult }
 			}
 			ROOT = {
@@ -833,11 +672,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = slavic_cult }
 			}
 			FROM = {
@@ -853,11 +688,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = slavic_cult }
 			}
 			ROOT = {
@@ -874,11 +705,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = zunist_cult }
 			}
 			FROM = {
@@ -894,11 +721,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = zunist_cult }
 			}
 			ROOT = {
@@ -915,11 +738,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = bon_cult }
 			}
 			FROM = {
@@ -935,11 +754,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = bon_cult }
 			}
 			ROOT = {
@@ -956,11 +771,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = hellenic_cult }
 			}
 			FROM = {
@@ -976,11 +787,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = hellenic_cult }
 			}
 			ROOT = {
@@ -997,11 +804,7 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			ROOT = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
 				NOT = { has_unlocked_cult = pagan_cult }
 			}
 			FROM = {
@@ -1041,12 +844,8 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 	if = {
 		limit = {
 			FROM = {
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-				NOT = { has_unlocked_cult = hellenic_cult }
+				uses_cults = yes
+				NOT = { has_unlocked_cult = pagan_cult }
 			}
 			ROOT = {
 				OR = {
@@ -1081,6 +880,69 @@ ZZZ_enhanced_converter_battle_cult_spreading_effect = {
 			}
 		}
 		FROM = { country_event = { id = ZZZ_enhanced_fetishist.12 } }
+	}
+	##CK3
+	#Gnostic
+	if = {
+		limit = {
+			ROOT = {
+				uses_cults = yes
+				NOT = { has_unlocked_cult = gnostic_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = gnostic
+					has_unlocked_cult = gnostic_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.97 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				uses_cults = yes
+				NOT = { has_unlocked_cult = gnostic_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = gnostic_cult
+					religion_group = gnostic
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.97 } }
+	}
+	#Yazidi
+	if = {
+		limit = {
+			ROOT = {
+				uses_cults = yes
+				NOT = { has_unlocked_cult = yazidi_cult }
+			}
+			FROM = {
+				OR = {
+					religion_group = yazidism
+					has_unlocked_cult = yazidi_cult
+				}
+			}
+		}
+		ROOT = { country_event = { id = ZZZ_enhanced_fetishist.98 } }
+	}
+	if = {
+		limit = {
+			FROM = {
+				uses_cults = yes
+				NOT = { has_unlocked_cult = yazidi_cult }
+			}
+			ROOT = {
+				OR = {
+					has_unlocked_cult = yazidi_cult
+					religion_group = yazidism
+				}
+			}
+		}
+		FROM = { country_event = { id = ZZZ_enhanced_fetishist.98 } }
 	}
 	
 }

@@ -12,13 +12,7 @@ country_event = {
 	immediate = {
 		random_neighbor_country = {
 			limit = {
-				NOT = { 
-					OR = {
-						religion = shamanism
-						religion = west_african_pagan
-						religion = west_african_pagan_reformed
-					}
-				}
+				NOT = { uses_cults = yes }
 				alliance_with = ROOT
 				OR = {
 					AND = {
@@ -54,6 +48,14 @@ country_event = {
 						ROOT = { NOT = { has_unlocked_cult = south_central_american_cult } }
 					}
 					#MODDED Cults
+					AND = {
+						religion_group = gnostic
+						ROOT = { NOT = { has_unlocked_cult = gnostic_cult } }
+					}
+					AND = {
+						religion_group = yazidism
+						ROOT = { NOT = { has_unlocked_cult = yazidi_cult } }
+					}
 					AND = {
 						OR = {
 							religion = tengri_pagan
@@ -104,11 +106,8 @@ country_event = {
 						ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 					}
 					AND = {
-						OR = {
-							religion = pagan_religion
-							religion = animism
-							religion = totemism
-						}
+						religion_group = pagan #Yes, it is possible to get two cults for the price of one
+						NOT = { uses_cults = yes }
 						ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
 					}
 					
@@ -194,6 +193,24 @@ country_event = {
 			#MODDED Cults
 			if = {
 				limit = {
+					religion_group = gnostic
+					ROOT = { NOT = { has_unlocked_cult = gnostic_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.97 }
+				}
+			}
+			if = {
+				limit = {
+					religion_group = yazidism
+					ROOT = { NOT = { has_unlocked_cult = yazidi_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.98 }
+				}
+			}
+			if = {
+				limit = {
 					OR = {
 						religion = tengri_pagan
 						religion = tengri_pagan_reformed
@@ -278,11 +295,8 @@ country_event = {
 			}
 			if = {
 				limit = {
-					OR = {
-						religion = pagan_religion
-						religion = animism
-						religion = totemism
-					}
+					religion_group = pagan #Yes, it is possible to get two cults for the price of one
+					NOT = { uses_cults = yes }
 					ROOT = {  NOT = { has_unlocked_cult = pagan_cult } }
 				}
 				ROOT = {
@@ -294,20 +308,10 @@ country_event = {
 	}
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		any_neighbor_country = {
-			NOT = { 
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
+			NOT = { uses_cults = yes }
 			alliance_with = ROOT
 			OR = {
 				AND = {
@@ -354,6 +358,14 @@ country_event = {
 					ROOT = { NOT = { has_unlocked_cult = south_central_american_cult } }
 				}
 				#MODDED Cults
+				AND = {
+					religion_group = gnostic
+					ROOT = { NOT = { has_unlocked_cult = gnostic_cult } }
+				}
+				AND = {
+					religion_group = yazidism
+					ROOT = { NOT = { has_unlocked_cult = yazidi_cult } }
+				}
 				AND = {
 					OR = {
 						religion = tengri_pagan
@@ -404,11 +416,8 @@ country_event = {
 					ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 				}
 				AND = {
-					OR = {
-						religion = pagan_religion
-						religion = animism
-						religion = totemism
-					}
+					religion_group = pagan #Yes, it is possible to get two cults for the price of one
+					NOT = { uses_cults = yes }
 					ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
 				}
 			}
@@ -436,13 +445,7 @@ country_event = {
 	immediate = {
 		random_owned_province = {
 			limit = {
-				NOT = { 
-					OR = {
-						religion = shamanism
-						religion = west_african_pagan
-						religion = west_african_pagan_reformed
-					}
-				}
+				NOT = { uses_cults = yes }
 				OR = {
 					AND = {
 						religion_group = eastern
@@ -477,6 +480,14 @@ country_event = {
 						ROOT = { NOT = { has_unlocked_cult = south_central_american_cult } }
 					}
 					#MODDED Cults
+					AND = {
+						religion_group = gnostic
+						ROOT = { NOT = { has_unlocked_cult = gnostic_cult } }
+					}
+					AND = {
+						religion_group = yazidism
+						ROOT = { NOT = { has_unlocked_cult = yazidi_cult } }
+					}
 					AND = {
 						OR = {
 							religion = tengri_pagan
@@ -527,11 +538,8 @@ country_event = {
 						ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 					}
 					AND = {
-						OR = {
-							religion = pagan_religion
-							religion = animism
-							religion = totemism
-						}
+						religion_group = pagan #Yes, it is possible to get two cults for the price of one
+						NOT = { has_owner_religion = yes }
 						ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
 					}
 				}
@@ -616,6 +624,24 @@ country_event = {
 			#MODDED cults
 			if = {
 				limit = {
+					religion_group = gnostic
+					ROOT = {  NOT = { has_unlocked_cult = gnostic_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.97 }
+				}
+			}
+			if = {
+				limit = {
+					religion_group = yazidism
+					ROOT = {  NOT = { has_unlocked_cult = yazidi_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.98 }
+				}
+			}
+			if = {
+				limit = {
 					OR = {
 						religion = tengri_pagan
 						religion = tengri_pagan_reformed
@@ -700,11 +726,8 @@ country_event = {
 			}
 			if = {
 				limit = {
-					OR = {
-						religion = pagan_religion
-						religion = animism
-						religion = totemism
-					}
+					religion_group = pagan #Yes, it is possible to get two cults for the price of one
+					NOT = { has_owner_religion = yes }
 					ROOT = {  NOT = { has_unlocked_cult = pagan_cult } }
 				}
 				ROOT = {
@@ -715,20 +738,10 @@ country_event = {
 	}
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		any_owned_province = {
-			NOT = { 
-				OR = {
-					religion = shamanism
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
-			}
+			NOT = { uses_cults = yes }
 			OR = {
 				AND = {
 					religion_group = eastern
@@ -774,6 +787,14 @@ country_event = {
 					ROOT = { NOT = { has_unlocked_cult = south_central_american_cult } }
 				}
 				#MODDED cults
+				AND = {
+					religion_group = gnostic
+					ROOT = { NOT = { has_unlocked_cult = gnostic_cult } }
+				}
+				AND = {
+					religion_group = yazidism
+					ROOT = { NOT = { has_unlocked_cult = yazidi_cult } }
+				}
 				AND = {
 					OR = {
 						religion = tengri_pagan
@@ -824,11 +845,8 @@ country_event = {
 					ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 				}
 				AND = {
-					OR = {
-						religion = pagan_religion
-						religion = animism
-						religion = totemism
-					}
+					religion_group = pagan #Yes, it is possible to get two cults for the price of one
+					NOT = { has_owner_religion = yes }
 					ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
 				}
 			}
@@ -875,11 +893,7 @@ country_event = {
 	}
 	
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
 		has_dlc = "Rights of Man"
 		OR = {
@@ -1114,19 +1128,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = yemoja_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = yemoja_cult
 		}
 	}
@@ -1149,19 +1155,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = roog_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = roog_cult
 		}
 	}
@@ -1184,19 +1182,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = nyame_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = nyame_cult
 		}
 	}
@@ -1219,19 +1209,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = cwezi_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = cwezi_cult
 		}
 	}
@@ -1254,19 +1236,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = central_african_ancestor_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = central_african_ancestor_cult
 		}
 	}
@@ -1289,19 +1263,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = mwari_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = mwari_cult
 		}
 	}
@@ -1324,19 +1290,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = enkai_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = enkai_cult
 		}
 	}
@@ -1359,19 +1317,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = waaq_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = waaq_cult
 		}
 	}
@@ -1394,19 +1344,11 @@ country_event = {
 	picture = TRIBES_MEETING_eventPicture
 
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		NOT = { has_unlocked_cult = zanahary_cult }
 		any_neighbor_country = {
-			OR = {
-				religion = shamanism
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
 			has_adopted_cult = zanahary_cult
 		}
 	}
@@ -1432,10 +1374,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = central_african_ancestor_cult
 		NOT = { has_ruler_modifier = ancestral_support }
 	}
@@ -1465,10 +1405,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = central_african_ancestor_cult
 	}
 	
@@ -1500,10 +1438,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = central_african_ancestor_cult
 		has_ruler_modifier = ancestral_shrine_caretaker
 	}
@@ -1534,10 +1470,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = central_african_ancestor_cult
 		is_year = 1500 #At least one dead ruler by now?
 		NOT = { has_ruler_flag = had_ancestor_deified }
@@ -1566,10 +1500,8 @@ province_event = {
 		has_dlc = "Rights of Man"
 		is_capital = no
 		owner = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			has_adopted_cult = mwari_cult
 		}
 	}
@@ -1581,10 +1513,8 @@ province_event = {
 		modifier = {
 			factor = 0.8
 			NOT = { 
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 			}
 		}
 	}
@@ -1613,10 +1543,8 @@ province_event = {
 		name = fetishist_flavor.150.c #
 		trigger = { 
 			NOT = { 
-				OR = {
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
+				uses_cults = yes
+				NOT = { religion = shamanism }
 			}
 		}
 		add_province_modifier = {
@@ -1641,10 +1569,8 @@ province_event = {
 		is_state = yes
 		has_estate = no
 		owner = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			has_adopted_cult = mwari_cult
 		}
 	}
@@ -1670,10 +1596,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = mwari_cult
 		any_owned_province = {
 			is_looted = yes
@@ -1708,15 +1632,11 @@ province_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		owner = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			has_adopted_cult = mwari_cult
 			OR = {
 				AND = {
@@ -1764,10 +1684,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = mwari_cult
 		num_of_cities = 5
 	}
@@ -1802,16 +1720,12 @@ province_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		NOT = { has_province_modifier = fertility_concerns }
 		owner = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			has_adopted_cult = cwezi_cult
 		}
 		is_in_capital_area = yes
@@ -1917,10 +1831,8 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = cwezi_cult
 	}
 	
@@ -2008,10 +1920,8 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = cwezi_cult
 		NOT = { stability = 3 }
 	}
@@ -2041,10 +1951,8 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = cwezi_cult
 		any_owned_province = {
 			is_capital = no
@@ -2103,10 +2011,8 @@ country_event = {
 		has_adopted_cult = enkai_cult
 		has_dlc = "Rights of Man"
 		any_owned_province = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			NOT = { has_province_modifier = god_is_black }
 			NOT = { has_province_modifier = god_is_red }
 			NOT = { has_province_modifier = forced_sacrifice }
@@ -2265,14 +2171,10 @@ province_event = {
 	picture = KINGS_CHOICE_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = shamanism #They need it for the Karaites/Samaritans
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
 		has_dlc = "Rights of Man"
 		is_capital = no
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = jewish_cult
 		}
 
@@ -2361,6 +2263,70 @@ province_event = {
 		set_province_flag = fetishist_jewish_immigrants
 	}
 	option = {
+		name = ZZZ_enhanced_fetishist.39.ac
+		custom_tooltip = ZZZ_enhanced_fetishist.39.ac.tt
+		trigger = {
+			OR = {
+				any_neighbor_province = {
+					religion_group = jewish
+					NOT = { religion = jewish }
+					NOT = { religion = samaritan_faith }
+					NOT = { religion = karaite_faith }
+				}
+				any_owned_province = {
+					religion_group = jewish
+					NOT = { religion = jewish }
+					NOT = { religion = samaritan_faith }
+					NOT = { religion = karaite_faith }
+				}
+			}
+		}
+		
+		immediate = {		
+			hidden_effect = {
+				if = {
+					limit = {
+						any_owned_province = {
+							religion_group = jewish
+							NOT = { religion = jewish }
+							NOT = { religion = samaritan_faith }
+							NOT = { religion = karaite_faith }
+						}
+					}
+					random_owned_province = {
+						religion_group = jewish
+						NOT = { religion = jewish }
+						NOT = { religion = samaritan_faith }
+						NOT = { religion = karaite_faith }
+						save_event_target_as = jewish_immigrants_origin
+					}
+					
+				}
+				else = {
+					random_neighbor_province = {
+						religion_group = jewish
+						NOT = { religion = jewish }
+						NOT = { religion = samaritan_faith }
+						NOT = { religion = karaite_faith }
+						save_event_target_as = jewish_immigrants_origin
+					}
+				}
+			}
+		}
+		
+		change_religion = event_target:jewish_immigrants_origin
+		
+		add_base_tax = 1
+
+		add_province_modifier = {
+			name = jewish_immigrants
+			duration = 7300
+		}
+
+		hidden_effect = { province_event = { id = fetishist_flavor.419 days = 1 } }
+		set_province_flag = fetishist_jewish_immigrants
+	}
+	option = {
 		name = fetishist_flavor.418.b
 		custom_tooltip = fetishist_flavor.418.b.tt
 
@@ -2436,10 +2402,8 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_adopted_cult = jewish_cult
 		
 		OR = {
@@ -2511,10 +2475,8 @@ country_event = {
 	
 	trigger = {
 		has_adopted_cult = christianity_cult
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		any_neighbor_country = {
 			religion_group = christian
@@ -2558,10 +2520,8 @@ country_event = {
 	
 	trigger = {
 		has_adopted_cult = christianity_cult
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		any_known_country = {
 			religion_group = christian
@@ -2596,19 +2556,13 @@ province_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		is_capital = no
 		owner = {
 			has_adopted_cult = christianity_cult
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			any_known_country = {
 				religion_group = christian
 				num_of_cities = 5
@@ -2667,10 +2621,8 @@ country_event = {
 	
 	trigger = {
 		has_adopted_cult = islam_cult
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		NOT = { has_ruler_modifier = qadi_in_fetishist_lands }
 	}
@@ -2702,10 +2654,8 @@ province_event = {
 	
 	trigger = {
 		owner = { has_adopted_cult = islam_cult }
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = shirazi_merchant_presence }
 	}
@@ -2736,10 +2686,8 @@ province_event = {
 	trigger = {
 		religion_group = muslim
 		owner = {
-			OR = {
-				religion = west_african_pagan
-				religion = west_african_pagan_reformed
-			}
+			uses_cults = yes
+			NOT = { religion = shamanism }
 			has_adopted_cult = islam_cult
 		}
 		has_dlc = "Rights of Man"
@@ -2792,10 +2740,8 @@ province_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
+		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		owner = {
 			has_adopted_cult = islam_cult
@@ -2859,11 +2805,7 @@ province_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = shamanism #For Mazdaki/Khurmatza
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		is_capital = no
 		NOT = { has_province_modifier = zoroastrian_migration_into_africa }
@@ -2916,14 +2858,54 @@ province_event = {
 		trigger = {
 			OR = {
 				any_neighbor_province = {
-					religion = manichean
+					religion_group = zoroastrian_group
+					NOT = { religion = zoroastrian }
+					NOT = { religion = mazdaki }
+					NOT = { religion = khurmazta }
 				}
 				any_owned_province = {
-					religion = manichean
+					religion_group = zoroastrian_group
+					NOT = { religion = zoroastrian }
+					NOT = { religion = mazdaki }
+					NOT = { religion = khurmazta }
 				}
 			}
 		}
-		change_religion = manichean 
+		
+		immediate = {		
+			hidden_effect = {
+				if = {
+					limit = {
+						any_owned_province = {
+							religion_group = zoroastrian_group
+							NOT = { religion = zoroastrian }
+							NOT = { religion = mazdaki }
+							NOT = { religion = khurmazta }
+						}
+					}
+					random_owned_province = {
+						religion_group = zoroastrian_group
+						NOT = { religion = zoroastrian }
+						NOT = { religion = mazdaki }
+						NOT = { religion = khurmazta }
+						save_event_target_as = zoroastrian_immigrant_origin
+					}
+					
+				}
+				else = {
+					random_neighbor_province = {
+						religion_group = zoroastrian_group
+						NOT = { religion = zoroastrian }
+						NOT = { religion = mazdaki }
+						NOT = { religion = khurmazta }
+						save_event_target_as = zoroastrian_immigrant_origin
+					}
+				}
+			}
+		}
+		
+		change_religion = event_target:zoroastrian_immigrant_origin
+		
 		add_province_modifier = {
 			name = "zoroastrian_migration_into_africa"
 			duration = 3650
@@ -2963,11 +2945,7 @@ province_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-			religion = west_african_pagan_reformed
-		}
+		uses_cults = yes
 		has_dlc = "Rights of Man"
 		is_capital = no
 		NOT = { has_province_modifier = zoroastrian_unrest }
@@ -3002,16 +2980,7 @@ province_event = {
 				}
 				clr_province_flag = fetishist_zoroastrian_unrest
 			}
-			fetishist_reaction = {
-				if = {
-					limit = {
-						owner = { religion = shamanism }
-					}
-					spawn_rebels = {
-						type = shamanism_rebels
-						size = 1
-					}
-				}
+			fetishist_reaction = {				
 				if = {
 					limit = {
 						owner = { religion = west_african_pagan }
@@ -3021,12 +2990,18 @@ province_event = {
 						size = 1
 					}
 				}
-				if = {
+				else_if = {
 					limit = {
 						owner = { religion = west_african_pagan_reformed }
 					}
 					spawn_rebels = {
 						type = west_african_pagan_reformed_rebels
+						size = 1
+					}
+				}
+				else = {
+					spawn_rebels = {
+						type = shamanism_rebels
 						size = 1
 					}
 				}
@@ -3051,6 +3026,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = west_african_pagan_reformed_cult		
 	}
 	
@@ -3077,6 +3053,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = west_african_pagan_reformed_cult		
 	}
 	
@@ -3103,6 +3080,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = west_african_pagan_reformed_cult
 	}
 	
@@ -3126,10 +3104,8 @@ province_event = {
 	picture = POPE_PREACHING_eventPicture
 	
 	trigger = {
-		OR = {
-			religion = shamanism
-			religion = west_african_pagan
-		}
+		uses_cults = yes
+		NOT = { religion = west_african_pagan_reformed }
 		has_dlc = "Rights of Man"
 		is_capital = no
 		NOT = { has_province_modifier = west_african_pagan_reformed_migration_into_ZZZ }
@@ -3179,6 +3155,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = baltic_cult
 		NOT = { has_country_flag = ZZZ_sacrifice_to_divas }
 		
@@ -3281,6 +3258,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = baltic_cult
 		any_country = {
 			NOT = { religion = baltic_pagan }
@@ -3324,6 +3302,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_baltic_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = baltic_cult
 		}
 	}
@@ -3408,6 +3387,7 @@ province_event = {
 	trigger = {
 		has_dlc = "Rights of Man"
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = finnish_cult
 		}
 		OR = {
@@ -3631,6 +3611,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = finnish_cult
 		has_heir = yes
 		heir_age = 15
@@ -3752,6 +3733,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_finnish_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = finnish_cult
 		}
 	}
@@ -3827,6 +3809,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = slavic_cult
 	}
 	
@@ -3851,6 +3834,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = slavic_cult
 	}
 	
@@ -3888,6 +3872,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_slavic_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = slavic_cult
 		}
 	}
@@ -3965,6 +3950,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_good_horses }
 	}
@@ -4005,6 +3991,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_poor_horses }
 	}
@@ -4040,6 +4027,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_white_stallion }
 	}
@@ -4121,6 +4109,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_tengri_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = tengri_cult
 		}
 	}
@@ -4220,6 +4209,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = zunist_cult
 	}
 	
@@ -4288,6 +4278,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = zunist_cult
 	}
 	
@@ -4392,6 +4383,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = zunist_cult
 		has_heir = yes
 		heir_age = 15
@@ -4526,6 +4518,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_zunist_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = zunist_cult
 		}
 	}
@@ -4538,8 +4531,8 @@ province_event = {
 			factor = 0.9
 			any_neighbor_province = {
 				OR = {
-					religion = tengri_pagan
-					religion = tengri_pagan_reformed
+					religion = zun_pagan
+					religion = zun_pagan_reformed
 				}
 			}
 		}
@@ -4608,6 +4601,7 @@ province_event = {
 			has_building = cathedral
 		}
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = hellenic_cult
 			NOT = { has_country_flag = ZZZ_enhanced_has_built_grand_temple }
 		}
@@ -4773,6 +4767,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = hellenic_cult
 		NOT = { has_country_modifier = ZZZ_bad_omens }
 		NOT = { has_country_modifier = ZZZ_good_omens }
@@ -5006,6 +5001,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_hellenic_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = hellenic_cult
 		}
 	}
@@ -5081,6 +5077,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = pagan_cult
 		is_year = 1500 #At least one dead ruler by now?
 		NOT = { has_ruler_flag = had_ancestor_deified }
@@ -5104,6 +5101,7 @@ country_event = {
 	picture = ADVISOR_eventPicture
 	
 	trigger = {
+		uses_cults = yes
 		has_adopted_cult = pagan_cult
 		has_dlc = "Rights of Man"
 		any_owned_province = {
@@ -5142,6 +5140,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = pagan_cult
 		NOT = { has_ruler_modifier = ancestral_support }
 	}
@@ -5174,6 +5173,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = pagan_cult
 	}
 	
@@ -5205,6 +5205,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = pagan_cult
 		has_ruler_modifier = ancestral_shrine_caretaker
 	}
@@ -5244,6 +5245,7 @@ country_event = {
 	}
 
 	trigger = {
+		uses_cults = yes
 		has_adopted_cult = bon_cult
 		has_dlc = "Rights of Man"
 		any_owned_province = {
@@ -5317,6 +5319,7 @@ country_event = {
 
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = bon_cult
 	}
 
@@ -5350,6 +5353,7 @@ country_event = {
 	
 	trigger = {
 		has_dlc = "Rights of Man"
+		uses_cults = yes
 		has_adopted_cult = bon_cult
 		NOT = { has_country_modifier = selfless_guru }
 	}
@@ -5416,6 +5420,7 @@ country_event = {
 	picture = FEUDALISM_eventPicture
 	
 	trigger = {
+		uses_cults = yes
 		has_adopted_cult = bon_cult
 		has_dlc = "Rights of Man"
 		any_neighbor_country = {
@@ -5469,6 +5474,7 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_bon_pagan_migration_into_africa }
 		has_owner_religion = yes
 		owner = {
+			uses_cults = yes
 			has_adopted_cult = bon_cult
 		}
 	}
@@ -5527,6 +5533,430 @@ province_event = {
 	}	
 	option = {
 		name = ZZZ_enhanced_fetishist.96.b
+		owner = {
+			add_prestige = 5
+		}
+	}
+}
+
+
+###CK3 Cults
+#Discovering Gnostic cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.97
+	title = ZZZ_enhanced_fetishist.97.t
+	desc = ZZZ_enhanced_fetishist.97.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.97.a
+		unlock_cult = gnostic_cult 
+	}
+}
+#Discovering Yazidi cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.98
+	title = ZZZ_enhanced_fetishist.98.t
+	desc = ZZZ_enhanced_fetishist.98.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.98.a
+		unlock_cult = yazidi_cult
+	}
+}
+
+
+#Satanists?
+country_event = {
+	id = ZZZ_enhanced_fetishist.99
+	title = fetishist_flavor.99.t
+	desc = fetishist_flavor.99.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	trigger = {
+		has_adopted_cult = gnostic_cult
+		has_unlocked_cult = christianity_cult
+		uses_cults = yes
+		has_dlc = "Rights of Man"
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}	
+	
+	option = {
+		name = fetishist_flavor.99.a
+		add_years_of_income = -0.25
+		add_prestige = 15
+		increase_legitimacy_medium_effect = yes
+	}
+	option = {
+		name = fetishist_flavor.99.b
+		add_stability = -1
+		add_prestige = 20
+		increase_legitimacy_medium_effect = yes
+	}
+	option = {
+		name = fetishist_flavor.99.c
+		add_prestige = -15
+		reduce_legitimacy_medium_effect = yes
+	}
+	option = {
+		name = fetishist_flavor.99.d
+		trigger = {
+			ruler_has_personality = pious_personality
+		}
+		add_prestige = 5
+		add_devotion = 5
+	}
+}
+
+#Gnostic Tolerance
+country_event = {
+	id = ZZZ_enhanced_fetishist.100
+	title = fetishist_flavor.100.t
+	desc = fetishist_flavor.100.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {		
+		uses_cults = yes
+		has_adopted_cult = gnostic_cult
+		has_dlc = "Rights of Man"
+		NOT = { has_country_modifier = religious_tolerance }
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 380
+	}	
+	
+	option = {
+		name = fetishist_flavor.100.a
+		add_country_modifier = {
+			name = "religious_tolerance"
+			duration = 3650
+		}
+	}
+}
+
+#Unearthly Army
+country_event = {
+	id = ZZZ_enhanced_fetishist.101
+	title = fetishist_flavor.101.t
+	desc = fetishist_flavor.101.d
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		uses_cults = yes
+		has_adopted_cult = gnostic_cult
+		has_dlc = "Rights of Man"
+		NOT = { has_country_modifier = bold_warriors }
+		NOT = { has_country_modifier = disciplined_warriors }
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+	}
+	
+	option = {
+		name = fetishist_flavor.101.a
+		add_country_modifier = {
+			name = "bold_warriors"
+			duration = 3650
+		}
+	}	
+	option = {
+		name = fetishist_flavor.101.b
+		add_country_modifier = {
+			name = "disciplined_warriors"
+			duration = 3650
+		}
+	}
+	option = {
+		name = fetishist_flavor.101.c
+		trigger = {
+			OR = {
+				ruler_has_personality = tactical_genius_personality
+				ruler_has_personality = bold_fighter_personality
+				ruler_has_personality = strict_personality
+				ruler_has_personality = inspiring_leader_personality
+				ruler_has_personality = martial_educator_personality
+			}
+		}
+		add_country_modifier = {
+			name = "bold_warriors"
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = "disciplined_warriors"
+			duration = 3650
+		}
+	}
+}
+
+#Spread of Gnosticism
+province_event = {
+	id = ZZZ_enhanced_fetishist.102
+	title = fetishist_flavor.102.t
+	desc = fetishist_flavor.102.d
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		has_owner_religion = yes
+		has_dlc = "Rights of Man"
+		owner = {
+			uses_cults = yes
+			has_adopted_cult = gnostic_cult
+			any_known_country = {
+				religion_group = gnostic
+				OR = {
+					is_neighbor_of = OWNER
+					AND = {
+						num_of_cities = 3
+						num_of_ports = 1
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			owner = {
+				random_known_country = {
+					limit = {
+						religion_group = gnostic
+						OR = {
+							is_neighbor_of = OWNER
+							AND = {
+								num_of_cities = 3
+								num_of_ports = 1
+							}
+						}
+					}
+					save_event_target_as = gnostic_missionary_origin
+				}
+			}
+		}
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.7
+			any_neighbor_province = {
+				religion_group = gnostic
+			}
+		}
+	}	
+	
+	option = {
+		name = fetishist_flavor.102.a #
+		change_religion = event_target:gnostic_missionary_origin
+	}
+	option = {
+		name = fetishist_flavor.102.b #
+		trigger = {
+			owner = { ruler_has_personality = zealot_personality }
+		}
+		if = {
+			limit = {
+				base_tax = 2
+			}
+			add_base_tax = -1
+		}
+		else = {
+			add_years_of_income = -0.2
+		}
+	}
+}
+
+#Traditions Bind Us Closer
+country_event = {
+	id = ZZZ_enhanced_fetishist.103
+	title = fetishist_flavor.103.t
+	desc = fetishist_flavor.103.d
+	picture = POPE_PREACHING_eventPicture
+	
+	trigger = {
+		has_adopted_cult = yazidi_cult
+		uses_cults = yes
+		has_dlc = "Rights of Man"
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	
+	option = {
+		name = fetishist_flavor.103.a
+		add_adm_power = 100
+	}
+}
+
+#Trade Opportunities
+country_event = {
+	id = ZZZ_enhanced_fetishist.104
+	title = fetishist_flavor.104.t
+	desc = fetishist_flavor.104.d
+	picture = MERCHANTS_TALKING_eventPicture
+	
+	trigger = {
+		uses_cults = yes
+		has_adopted_cult = yazidi_cult
+		has_dlc = "Rights of Man"
+		NOT = { has_country_modifier = efficienct_merchants }
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 380
+	}
+	
+	
+	option = {
+		name = fetishist_flavor.104.a #
+		add_province_modifier = {
+			name = "efficienct_merchants"
+			duration = 3650
+		}
+	}
+	option = {
+		name = fetishist_flavor.104.b #
+		trigger = {
+			OR = {
+				ruler_has_personality = entrepreneur_personality
+				ruler_has_personality = expansionist_personality
+			}
+		}
+		add_mercantilism = 5
+	}
+}
+
+#Religious Tensions
+province_event = {
+	id = ZZZ_enhanced_fetishist.105
+	title = fetishist_flavor.105.t
+	desc = fetishist_flavor.105.d
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		religion_group = yazidism
+		owner = {
+			uses_cults = yes
+			has_adopted_cult = yazidi_cult
+		}
+		has_dlc = "Rights of Man"
+	}
+	
+	is_mtth_scaled_to_size = 1
+	
+	mean_time_to_happen = {
+		months = 360
+	}
+	
+	option = {
+		name = fetishist_flavor.105.a #
+		owner = {
+			add_adm_power = -50
+		}
+	}
+	
+	option = {
+		name = fetishist_flavor.105.b #
+		spawn_rebels = {
+			type = yazidi_rebels 
+			size = 2
+		}
+	}
+}
+
+#Yazidi Migration
+province_event = {
+	id = ZZZ_enhanced_fetishist.106
+	title = fetishist_flavor.106.t
+	desc = fetishist_flavor.106.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		has_owner_religion = yes
+		has_dlc = "Rights of Man"
+		owner = {
+			uses_cults = yes
+			has_adopted_cult = yazidi_cult
+			any_known_country = {
+				religion_group = yazidism
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			owner = {
+				random_known_country = {
+					limit = {
+						religion_group = yazidism
+					}
+					save_event_target_as = yazidi_migrant_origin
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.75
+			any_neighbor_province = {
+				religion_group = yazidism
+			}
+		}
+	}
+	
+	option = {
+		name = ZZZ_enhanced_fetishist.106.a
+		change_religion = event_target:yazidi_migrant_origin
+		owner = {
+			add_country_modifier = {
+				name = "expanded_royal_bureaucracy"
+				duration = 1825
+			}
+		}
+	}	
+	option = {
+		name = ZZZ_enhanced_fetishist.106.b
 		owner = {
 			add_prestige = 5
 		}
