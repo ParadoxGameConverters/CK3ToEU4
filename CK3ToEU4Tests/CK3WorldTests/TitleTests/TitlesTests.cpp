@@ -369,24 +369,6 @@ TEST(CK3World_TitlesTests, landedTitlesCanBeLinked)
 	ASSERT_FALSE(t3->second->getClay());
 }
 
-TEST(CK3World_TitlesTests, landedTitlesLinkMissingTitleThrowsException)
-{
-	std::stringstream input;
-	input << "13 = { key= c_county }\n";
-	input << "15 = { key = d_duchy }\n";
-	input << "17 = { key = x_x_17 }\n"; // landless faction
-	CK3::Titles titles(input);
-
-	std::stringstream input2;
-	input2 << "d_duchy = { province = 12 }\n";
-	input2 << "c_county = { landless = yes }\n";
-	input2 << "k_kingdom = { landless = yes }\n"; // missing title
-	CK3::LandedTitles clay;
-	clay.loadTitles(input2);
-
-	ASSERT_THROW(titles.linkLandedTitles(clay), std::runtime_error);
-}
-
 TEST(CK3World_TitlesTests, titlesCanBeCoalesced)
 {
 	std::stringstream input;

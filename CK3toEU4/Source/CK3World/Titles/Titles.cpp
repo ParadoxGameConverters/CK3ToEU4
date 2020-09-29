@@ -296,7 +296,7 @@ void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)
 		}
 		else
 		{
-			throw std::runtime_error("Clay for " + clay.first + " has no title definition!");
+			Log(LogLevel::Error) << "Clay for " << clay.first << " has no title definition! THIS IS BAD! Are you converting an old save against a new CK3 version?";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
