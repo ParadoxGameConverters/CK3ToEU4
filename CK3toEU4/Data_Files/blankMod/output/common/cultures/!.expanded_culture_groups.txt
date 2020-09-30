@@ -1,37 +1,23 @@
-sudanese = {
-	daju = {
-		primary = DAR
-		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
-	}
-}
+# Maintain parity with vanilla culture groups at all costs or lose vanilla culture group colors!
+# New culture groups must be added to other files, alphabetically after this one. 
+# Update this file for every EU4 vanilla update.
 
-sahelian = {
-	zaghawa = {
-		primary = KAM
-		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
+germanic = {
+	german = {
+		primary = GER
+	}
+	alsatian = {
+		primary = ALS
+	}
+	sudeten = {
+		primary = BOH
 	}
 }
-altaic = {
-	khitan = {
-		primary = LIO
-		dynasty_names = { Genden Amar Tserendorj Tomorbaatar Damdinbazar Bodoo Sukhbaatar Jamyan Choibalsan Chagdarjav }
-	}
-}
-baltic = {
-	old_prussian = {
-		primary = PRU
-		male_names = {
-			Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis Ekkelis Galindas Galindo Gauronas Gerdautas Glande Golding 
-			Jauguttis Karatas Klukis Kugis Milzas Nomedas Prusas Sergonis Ulinniks Ulitis
-		}
-		female_names = {
-			Betten Dagas Gelennis Gerkus Grasus Gulbis Mila Milyuns Weslikan Ziedas
-		}
-		dynasty_names = { Adamkus Almenas Avizienis Baltrušaitis Brazauskas Basanavicius Birutis Brazdžiunas Buga Ciurlionis
-		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Griškevicius Ivanauskas Jablonskis
-		Jucys Krupavicius Landsbergis Lozoraitis Merkys Paksas Paleckis Paulauskas Petrauskas Piskarkas
-		Požela Radvila Šabaniauskas Schatz Simonavicius Širvydas Šleževicius Semtona Snieckus Stauaitis
-		Straižys Stulginkis Švedas Terleckas Urbšys Vagnorius Valeška Voldemaras Žemaitis Zuokas }
+scandinavian = {
+	norse = {
+		primary = SCA
+		dynasty_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
 }
 british = {
@@ -40,25 +26,29 @@ british = {
 		dynasty_names = { Aelfwig Alfstan Athelred Auchenceter Auchterworthy Bloccsham Brownlowe Burgwine Cerdic Coldren Cuthberht Cwmcott Ecgred Estmund Gardyner Glover Godwinsson Gorbold Hrothsige Hwitmann Lea Leofwine Purcell Unred Wolfsige Wulfstan Wyndham Wynstan Wyther }
 	}
 }
-
 gaelic = {
 	pictish = {
 		primary = HSC
 		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest }
 	}
 }
-caucasian = {
-	alan = {
-		primary = GEO
-		dynasty_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
+latin = {
+	italian = {
+		primary = ITA
+		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
 	}
-	assyrian = {
-		primary = GEO
-		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
-	}
-	coptic = {
-		primary = EGY
-		dynasty_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
+}
+iberian	= {
+}
+french = {
+	outremer = {
+		primary = KOJ
+		male_names = { Achille Adolphe Adrien Aimable Alphonse Amédée Antoine Armand August Augustin
+		Charles Daniel Denis Édouard Elie Éttiene Eugène Félicien Félix Fernand
+		François Frédéric Georges Guillaume Gustave Henri Hubert Hugo Jacques Jean
+		Joseph Jules Julien Lazare Léopold Leroy Louis Lucien Matthieu Michel
+		Napoléon Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
+		dynasty_names = { "de Narbonne" "de Bourgogne-Comté" "de l'Aigle" "de Flotte" "de Vendome" "de Champagne" "de Namur" "de Bissy" "d'Eu" "von Margrave" "du Perche" "de Boulogne" "Puy du Fou" "de Preuilly" "de Salins" "d'Oisy" "de Barthe" "de Fezensac" "de Boisrobert" "de Bourbon" "d'Angoulême" "de Guyenne" "Le Tellier" "de Talleyrand" "de Batarnay" "de Beaumont-au-Maine" "de Hainaut" "de Crecy" "de Bellegarde" "de St. Hilary" "d'Aubigny" "de Albemarle" "de Verre" "d'Évreux" "de Blundeville" "de Mellent" "de Baalun" "de Vernon" Estouteville "de Vexin-Amiens" "de Tilly" }
 	}
 }
 finno_ugric = {
@@ -79,74 +69,29 @@ finno_ugric = {
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
 }
-germanic = {
-	german = {
-		primary = GER
-	}
-	alsatian = {
-		primary = ALS
-	}
-	sudeten = {
-		primary = BOH
+south_slavic = {
+}
+west_slavic = {	
+	graphical_culture = easterngfx
+	slovak = {
+		primary = SLO
+		male_names = {
+			Matej Jan Lukas Stefan Pavol Peter Juraj Jozef Marek Daniel Moric Samuel Martin Ondrej Anton Karol
+			Hugolín Tomas Ludovít Viliam Mikulas Ignac Jaroslav Jaromir Miroslav Drahoslav Svatopluk Mojmir
+			Dobroslav Radoslav Radomír Kazimír Vlastimil Vitazoslav Blahoslav Svetozar Bonifac Vratislav
+			Vladislav Vladimir Cyril Konstantin Metod Bohuslav Drahomir Prokop Jergus Tichomir Bartolomej
+			Luboslav Lubomir Levoslav Stanislav
+		}
+		female_names = {
+			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana			 
+		}
+		dynasty_names = {
+			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
+			Zapolský Palfi Cáki Balaša Báthory
+		}
 	}
 }
-iranian = {
-	sogdian = {
-		primary = KOK
-	}
-	tocharian = {
-		primary = KAS
-	}
-	saka = {
-		primary = KAS
-	}
-	tajik = { 
-		primary = TRS
-	}
-}
-latin = {
-	italian = {
-		primary = ITA
-		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
-	}
-}
-french = {
-	outremer = {
-		primary = KOJ
-		male_names = { Achille Adolphe Adrien Aimable Alphonse Amédée Antoine Armand August Augustin
-		Charles Daniel Denis Édouard Elie Éttiene Eugène Félicien Félix Fernand
-		François Frédéric Georges Guillaume Gustave Henri Hubert Hugo Jacques Jean
-		Joseph Jules Julien Lazare Léopold Leroy Louis Lucien Matthieu Michel
-		Napoléon Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
-		dynasty_names = { "de Narbonne" "de Bourgogne-Comté" "de l'Aigle" "de Flotte" "de Vendome" "de Champagne" "de Namur" "de Bissy" "d'Eu" "von Margrave" "du Perche" "de Boulogne" "Puy du Fou" "de Preuilly" "de Salins" "d'Oisy" "de Barthe" "de Fezensac" "de Boisrobert" "de Bourbon" "d'Angoulême" "de Guyenne" "Le Tellier" "de Talleyrand" "de Batarnay" "de Beaumont-au-Maine" "de Hainaut" "de Crecy" "de Bellegarde" "de St. Hilary" "d'Aubigny" "de Albemarle" "de Verre" "d'Évreux" "de Blundeville" "de Mellent" "de Baalun" "de Vernon" Estouteville "de Vexin-Amiens" "de Tilly" }
-	}
-}
-oghuz = {
-	pecheneg = {
-		primary = GLH
-	}
-	cuman = {
-		primary = GLH
-	}
-	bolghar = {
-		primary = BUL
-	}
-	avar = {
-		primary = AVR
-	}
-	khazar = {
-		primary = KAZ
-	}
-	karluk = {
-		primary = UZB
-	}
-}
-scandinavian = {
-	norse = {
-		primary = SCA
-		dynasty_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
-	}
+carpathian = {
 }
 east_slavic = {
 	ilmenian = {
@@ -190,19 +135,21 @@ east_slavic = {
 				Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
 	}
 }
-
-tibetan_group = {
-	tangut = {
-		primary = TAU
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
-	}
-	zhangzhung = {
-		primary = GUG
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
-	}
-	sumpa = {
-		primary = TIB
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
+baltic = {
+	old_prussian = {
+		primary = PRU
+		male_names = {
+			Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis Ekkelis Galindas Galindo Gauronas Gerdautas Glande Golding 
+			Jauguttis Karatas Klukis Kugis Milzas Nomedas Prusas Sergonis Ulinniks Ulitis
+		}
+		female_names = {
+			Betten Dagas Gelennis Gerkus Grasus Gulbis Mila Milyuns Weslikan Ziedas
+		}
+		dynasty_names = { Adamkus Almenas Avizienis Baltrušaitis Brazauskas Basanavicius Birutis Brazdžiunas Buga Ciurlionis
+		Danauskas Daukantas Dobkevicius Dubeneckis Dvarionas Galdikas Grinius Griškevicius Ivanauskas Jablonskis
+		Jucys Krupavicius Landsbergis Lozoraitis Merkys Paksas Paleckis Paulauskas Petrauskas Piskarkas
+		Požela Radvila Šabaniauskas Schatz Simonavicius Širvydas Šleževicius Semtona Snieckus Stauaitis
+		Straižys Stulginkis Švedas Terleckas Urbšys Vagnorius Valeška Voldemaras Žemaitis Zuokas }
 	}
 }
 byzantine = {
@@ -211,6 +158,20 @@ byzantine = {
 	}
 	magnagreek = {
 		primary = BYZ
+	}
+}
+caucasian = {
+	alan = {
+		primary = GEO
+		dynasty_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
+	}
+	assyrian = {
+		primary = GEO
+		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
+	}
+	coptic = {
+		primary = EGY
+		dynasty_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
 	}
 }
 turko_semitic = {
@@ -234,23 +195,146 @@ turko_semitic = {
 		}
 	}
 }
-west_slavic = {	
-	graphical_culture = easterngfx
-	slovak = {
-		primary = SLO
-		male_names = {
-			Matej Jan Lukas Stefan Pavol Peter Juraj Jozef Marek Daniel Moric Samuel Martin Ondrej Anton Karol
-			Hugolín Tomas Ludovít Viliam Mikulas Ignac Jaroslav Jaromir Miroslav Drahoslav Svatopluk Mojmir
-			Dobroslav Radoslav Radomír Kazimír Vlastimil Vitazoslav Blahoslav Svetozar Bonifac Vratislav
-			Vladislav Vladimir Cyril Konstantin Metod Bohuslav Drahomir Prokop Jergus Tichomir Bartolomej
-			Luboslav Lubomir Levoslav Stanislav
-		}
-		female_names = {
-			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana			 
-		}
-		dynasty_names = {
-			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
-			Zapolský Palfi Cáki Balaša Báthory
-		}
+maghrebi = {
+}
+iranian = {
+	sogdian = {
+		primary = KOK
+	}
+	tocharian = {
+		primary = KAS
+	}
+	saka = {
+		primary = KAS
+	}
+	tajik = { 
+		primary = TRS
 	}
 }
+altaic = {
+	khitan = {
+		primary = LIO
+		dynasty_names = { Genden Amar Tserendorj Tomorbaatar Damdinbazar Bodoo Sukhbaatar Jamyan Choibalsan Chagdarjav }
+	}
+}
+central_american = {
+}
+aridoamerican = {
+}
+maya = {
+}
+otomanguean = {
+}
+andean_group = {
+}
+je_tupi = {
+}
+je = {
+}
+maranon = {
+}
+chibchan = {
+}
+mataco = {
+}
+araucanian = {
+}
+carribean = {
+}
+eskaleut = {
+}
+central_algonquian = {
+}
+plains_algonquian = {
+}
+eastern_algonquian = {
+}
+iroquoian = {
+}
+siouan = {
+}
+caddoan = {
+}
+muskogean = {
+}
+sonoran = {
+}
+apachean = {
+}
+na_dene = {
+}
+penutian = {
+}
+east_asian = {
+}
+korean_g = {
+}
+japanese_g = {
+}
+tibetan_group = {
+	tangut = {
+		primary = TAU
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
+	}
+	zhangzhung = {
+		primary = GUG
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
+	}
+	sumpa = {
+		primary = TIB
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
+	}
+}
+malay = {
+}
+southeastasian_group = {
+}
+burman = {
+}
+pacific = {
+}
+eastern_aryan = {
+}
+hindusthani = {
+}
+western_aryan = {
+}
+dravidian = {
+}
+central_indic = {
+}
+mande = {
+}
+sahelian = {
+	zaghawa = {
+		primary = KAM
+		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
+	}
+}
+west_african = {
+}
+southern_african = {
+}
+kongo_group = {
+}
+great_lakes_group = {
+}
+african = {
+}
+cushitic = {
+}
+sudanese = {
+	daju = {
+		primary = DAR
+		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
+	}
+}
+evenks = {
+}
+kamchatkan_g = {
+}
+tartar = {
+}
+lost_cultures_group = {
+}
+
