@@ -20,7 +20,7 @@ std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::Co
 	if (!coa.getPattern())
 	{
 		// This is a broken pattern. Return black image.
-		Log(LogLevel::Warning) << "Coat of Arms is missing a pattern. Defaulting to black.";
+		Log(LogLevel::Warning) << "Coat of Arms " << coa.getID() << " definition in save is missing a pattern. Defaulting to black.";
 		return std::pair(black, black);
 	}
 
