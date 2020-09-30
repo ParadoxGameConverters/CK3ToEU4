@@ -91,6 +91,13 @@ void CK3::Titles::linkTitles()
 	// We'll also be needing a defacto vassal registry for later.
 	std::map<long long, std::map<long long, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
 
+	// But before we begin, we need to clear out the mess that is the save. Titles will have defacto liege set to titles that have no holder.
+	// To filter them, let's first run through all titles and make a cache of all without a holder.
+	std::set<long long> holderlessTitles;
+	for (const auto& title: titles)
+		if (!title.second->getHolder())
+			holderlessTitles.insert(title.second->getID());
+
 	// Additional objective:
 	// When a county and a duchy are held by same holder, under a king, both titles will have the kingdom set as defacto liege. We need to
 	// untangle this mess and drop all vassals held by a person that also holds the vassal's dejure title as a vassal under same liege. :/
@@ -109,18 +116,30 @@ void CK3::Titles::linkTitles()
 		// DFLiege
 		if (title.second->getDFLiege())
 		{
-			const auto& cacheItr = IDCache.find(title.second->getDFLiege()->first);
-			if (cacheItr != IDCache.end())
+			// STOP. Is this erroneous ID?
+			if (holderlessTitles.count(title.second->getDFLiege()->first))
 			{
-				title.second->loadDFLiege(*cacheItr);
-				dfvRegistry[title.second->getDFLiege()->first].insert(std::pair(title.second->getID(), title.second));
-				++DFLcounter;
+				// fix it immediately.
+				Log(LogLevel::Warning) << "Title " + title.first + " has defacto liege " + std::to_string(title.second->getDFLiege()->first) +
+														" which has no holder. Fixing error internally.";
+				title.second->resetDFLiege();
 			}
 			else
 			{
-				// Yet another savegame error.
-				Log(LogLevel::Warning) << "Title " + title.first + " has defacto liege " + std::to_string(title.second->getDFLiege()->first) + " which has no definition!";
-				title.second->resetDFLiege();
+				const auto& cacheItr = IDCache.find(title.second->getDFLiege()->first);
+				if (cacheItr != IDCache.end())
+				{
+					title.second->loadDFLiege(*cacheItr);
+					dfvRegistry[title.second->getDFLiege()->first].insert(std::pair(title.second->getID(), title.second));
+					++DFLcounter;
+				}
+				else
+				{
+					// Yet another savegame error type.
+					Log(LogLevel::Warning) << "Title " + title.first + " has defacto liege " + std::to_string(title.second->getDFLiege()->first) +
+															" which has no definition!";
+					title.second->resetDFLiege();
+				}
 			}
 		}
 		// DJLiege
@@ -296,7 +315,8 @@ void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)
 		}
 		else
 		{
-			Log(LogLevel::Error) << "Clay for " << clay.first << " has no title definition! THIS IS BAD! Are you converting an old save against a new CK3 version?";
+			Log(LogLevel::Error) << "Clay for " << clay.first
+										<< " has no title definition! THIS IS BAD! Are you converting an old save against a new CK3 version?";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " titles updated.";

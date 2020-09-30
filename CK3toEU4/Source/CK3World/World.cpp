@@ -574,6 +574,8 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // Otherwise only empires.
 		if (empire.second->getDFVassals().empty())
 			continue; // Not relevant.
+		if (!empire.second->getHolder())
+			continue; // No holder.
 
 		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
@@ -681,7 +683,7 @@ void CK3::World::filterIndependentTitles()
 		{
 			if (title.second->getLevel() == LEVEL::COUNTY)
 				countyHolders.insert(title.second->getHolder()->first);
-			allTitleHolders[title.second->getHolder()->first].insert(title);		
+			allTitleHolders[title.second->getHolder()->first].insert(title);
 		}
 	}
 
