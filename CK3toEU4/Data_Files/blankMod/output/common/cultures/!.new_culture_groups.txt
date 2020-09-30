@@ -1,3 +1,24 @@
+oghuz = {
+	pecheneg = {
+		primary = GLH
+	}
+	cuman = {
+		primary = GLH
+	}
+	bolghar = {
+		primary = BUL
+	}
+	avar = {
+		primary = AVR
+	}
+	khazar = {
+		primary = KAZ
+	}
+	karluk = {
+		primary = UZB
+	}
+}
+
 barbaro_germanic = {
 	graphical_culture = westerngfx
 
