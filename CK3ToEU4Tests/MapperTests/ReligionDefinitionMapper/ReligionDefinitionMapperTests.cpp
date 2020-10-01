@@ -23,6 +23,7 @@ TEST(Mappers_ReligionDefinitionMapperTests, matchReturnsDefinition)
 
 	const auto& definition = theMapper.getDefinition("definition");
 	ASSERT_EQ("something or other", definition->getProvince());
+	std::cout << definition->getCountry();
 	ASSERT_TRUE(definition->getCountry().empty());
 }
 

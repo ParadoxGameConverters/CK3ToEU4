@@ -41,9 +41,9 @@ void mappers::ReligionDefinitionMapper::registerKeys()
 void mappers::ReligionDefinitionMapper::registerStaticKeys()
 {
 	registerRegex(commonItems::catchallRegex, [this](const std::string& religionName, std::istream& theStream) {
-		const auto blob = commonItems::singleItem(religionName, theStream);
-		if (blob.size() > 1)
-			staticStorage.insert(std::make_pair(religionName, blob.substr(1, blob.size() - 2)));
+		const auto blob = commonItems::stringOfItem(theStream).getString();
+		if (blob.size() > 4)
+			staticStorage.insert(std::make_pair(religionName, blob.substr(3, blob.size() - 4)));
 	});
 }
 

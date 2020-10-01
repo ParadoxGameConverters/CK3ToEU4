@@ -26,12 +26,10 @@ TEST(Mappers_ReligionDefinitionMappingTests, primitivesCanBeLoaded)
 	input << "non_unique_modifiers = { blah unform\n\t\n\tatted = = blah }\n";
 	const mappers::ReligionDefinitionMapping theMapping(input);
 
-	// These tests demonstrate some of errors in singleItem, but these do not affect us in reality.
-
-	ASSERT_EQ("rel1 rel2 rel3 ", theMapping.getAllowedConversion());
-	ASSERT_EQ("blah unformatted ==blah ", theMapping.getCountry());				// singleItem strips whitespace post equal sign
-	ASSERT_EQ("blah u\nnformatted ==blah ", theMapping.getCountrySecondary()); // singleItem strips newline post whitespace
-	ASSERT_EQ("blah unformatted ==blah ", theMapping.getProvince());
-	ASSERT_EQ("blah unforma=t=ted ==blah ", theMapping.getUnique());
-	ASSERT_EQ("blah unform\natted ==blah ", theMapping.getNonUnique()); // singleItem strips whitespace post newline;
+	ASSERT_EQ(" rel1 rel2 rel3 ", theMapping.getAllowedConversion());
+	ASSERT_EQ(" blah unformatted = = blah ", theMapping.getCountry());
+	ASSERT_EQ(" blah \nu\nnformatted = = blah ", theMapping.getCountrySecondary());
+	ASSERT_EQ(" blah unformatted = = blah ", theMapping.getProvince());
+	ASSERT_EQ(" blah unforma=t=ted = = blah ", theMapping.getUnique());
+	ASSERT_EQ(" blah unform\n\t\n\tatted = = blah ", theMapping.getNonUnique());
 }

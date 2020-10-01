@@ -101,13 +101,13 @@ void CK3::Title::registerKeys()
 		previousHolders = Title(theStream, 0).getPreviousHolders();
 	});
 	registerRegex(R"(\d+.\d+.\d+)", [this](const std::string& unused, std::istream& theStream) {
-		const auto questionableItem = commonItems::singleItem(unused, theStream);
+		const auto questionableItem = commonItems::stringOfItem(theStream).getString();
+		auto tempStream = std::stringstream(questionableItem);
 		if (questionableItem.find('{') == std::string::npos)
 		{
 			try
 			{
-				auto prevID = std::stoll(questionableItem);
-				previousHolders.emplace_back(std::pair(prevID, nullptr));
+				previousHolders.emplace_back(std::pair(commonItems::singleLlong(tempStream).getLlong(), nullptr));
 			}
 			catch (std::exception&)
 			{

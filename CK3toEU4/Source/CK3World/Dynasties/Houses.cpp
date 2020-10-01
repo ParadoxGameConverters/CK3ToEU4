@@ -15,7 +15,7 @@ CK3::Houses::Houses(std::istream& theStream)
 void CK3::Houses::registerKeys()
 {
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
-		const auto suspiciousItem = commonItems::singleItem(ID, theStream);
+		const auto suspiciousItem = commonItems::stringOfItem(theStream).getString();
 		if (suspiciousItem.find('{') != std::string::npos)
 		{
 			auto houseStream = std::stringstream(suspiciousItem);
