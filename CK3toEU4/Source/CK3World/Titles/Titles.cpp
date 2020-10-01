@@ -24,7 +24,7 @@ void CK3::Titles::registerKeys()
 	});
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
 		// Incoming titles may not be actual titles but half-deleted junk.
-		const auto& titleBlob = commonItems::singleItem(ID, theStream);
+		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
 		if (titleBlob.find('{') != std::string::npos)
 		{
 			std::stringstream tempStream(titleBlob);
