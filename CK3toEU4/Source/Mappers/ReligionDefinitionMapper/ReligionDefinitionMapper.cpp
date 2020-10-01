@@ -44,6 +44,8 @@ void mappers::ReligionDefinitionMapper::registerStaticKeys()
 		const auto blob = commonItems::stringOfItem(theStream).getString();
 		if (blob.size() > 4)
 			staticStorage.insert(std::make_pair(religionName, blob.substr(3, blob.size() - 4)));
+		else
+			staticStorage.clear();
 	});
 }
 
