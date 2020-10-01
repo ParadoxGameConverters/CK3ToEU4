@@ -106,8 +106,8 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		Magick::Image sourceIcon;
 		if (!religion.iconPath.empty())
 		{
-			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+			const auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+			const auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
 			if (commonItems::DoesFileExist(path1))
 				sourceIcon.read(path1);
 			else if (commonItems::DoesFileExist(path2))
