@@ -104,15 +104,24 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 	{
 		// Import the source dds
 		Magick::Image sourceIcon;
-		if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + religion.iconPath))
+		if (!religion.iconPath.empty())
 		{
-			sourceIcon.read(theConfiguration.getCK3Path() + religion.iconPath);
+			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+			if (commonItems::DoesFileExist(path1))
+				sourceIcon.read(path1);
+			else if (commonItems::DoesFileExist(path2))
+				sourceIcon.read(path2);
+			else
+			{
+				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";				
+				sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
+			}
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + religion.iconPath << ", skipping!";
-			// blank.
-			sourceIcon = Magick::Image("100x100", Magick::Color("transparent"));
+			Log(LogLevel::Warning) << "Religion " << religion.name << " has no icon set, skipping!";
+			sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 		}
 		// Process target strips
 		for (const auto& target: targetStrips)

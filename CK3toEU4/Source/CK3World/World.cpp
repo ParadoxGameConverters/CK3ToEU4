@@ -15,7 +15,8 @@ namespace fs = std::filesystem;
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
-
+	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
+	});
 	registerKeyword("mods", [theConfiguration](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		const auto modsList = commonItems::stringList(theStream).getStrings();
@@ -143,6 +144,10 @@ void CK3::World::processSave(const std::string& saveGamePath)
 {
 	switch (saveGame.saveType)
 	{
+		case SaveType::REGULAR:
+			Log(LogLevel::Info) << "-> Importing regular uncompressed CK3 save.";
+			processRegularSave(saveGamePath);
+			break;
 		case SaveType::ZIPFILE:
 			LOG(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
 			processCompressedSave(saveGamePath);
@@ -180,7 +185,30 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 
 	saveFile.get(buffer, 10);
 	if (std::string(buffer) == "meta_data")
-		saveGame.saveType = SaveType::ZIPFILE;
+	{
+		// compressed or not?
+		saveFile.seekg(0, std::ios::end);
+		const auto length = saveFile.tellg();
+		if (length < 65536)
+		{
+			throw std::runtime_error("Savegame seems a bit too small.");
+		}
+		saveFile.seekg(0, std::ios::beg);
+		char* bigBuf = new char[65536];
+		saveFile.read(bigBuf, 65536);
+		if (saveFile.gcount() < 65536)
+			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
+		const std::string bufStr(bigBuf);
+		const auto pos = bufStr.find("}\nPK");
+		if ( pos != std::string::npos)
+		{
+			saveGame.saveType = SaveType::ZIPFILE;			
+		}
+		else
+		{
+			saveGame.saveType = SaveType::REGULAR;
+		}
+	}
 	else
 	{
 		saveFile.seekg(0, std::ios::end);
@@ -206,6 +234,21 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 
 		delete[] bigBuf;
 	}
+	saveFile.close();
+}
+
+void CK3::World::processRegularSave(const std::string& saveGamePath)
+{
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	saveGame.gamestate = inStream.str();
+
+	const auto startMeta = saveGame.gamestate.find_first_of("\r\n") + 1;
+	const auto endMeta = saveGame.gamestate.find("ironman_manager={");
+
+	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
+	saveGame.metadata = saveGame.gamestate.substr(startMeta + 12, endMeta - startMeta - 14);
 }
 
 void CK3::World::processCompressedSave(const std::string& saveGamePath)
