@@ -233,6 +233,7 @@
     <ClCompile Include="Source\EU4World\Province\EU4Province.cpp" />
     <ClCompile Include="Source\EU4World\Province\ProvinceDetails.cpp" />
     <ClCompile Include="Source\EU4World\Province\ProvinceModifier.cpp" />
+    <ClCompile Include="Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />

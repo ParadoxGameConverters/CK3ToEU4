@@ -1,4 +1,4 @@
-#include "FlagFoundry.h"
+﻿#include "FlagFoundry.h"
 #include "../../CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3World/Dynasties/House.h"
 #include "../../CK3World/Titles/Title.h"
@@ -23,7 +23,7 @@ void EU4::FlagFoundry::loadImageFolder(const Configuration& theConfiguration) co
 	warehouse->loadImageFolder(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
 }
 
-void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration) const
+void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, std::vector<EU4::GeneratedReligion> religions) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -69,6 +69,13 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	// Do not forget about our SDM.
 	if (theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE)
 		commonItems::TryCopyFile("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga");
+
+	// Time for Religious Rebels
+	for (const auto& religion: religions)
+	{
+		LOG::Log(LogLevel::Debug) << religion.name + " REBEL YELL!";
+		craftRebelFlag(theConfiguration, religion);
+	}
 }
 
 void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
@@ -95,6 +102,42 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	{
 		Log(LogLevel::Error) << "Failed exporting flag: " << e.what();
 	}
+}
+
+void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const
+{
+	//Import the generic Rebel Flag	
+	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
+		throw std::runtime_error("blankMod/output/gfx/flags/generic_rebels.tga! Where are the rebel scum!?");
+	Magick::Image baseFlag("blankMod/output/gfx/flags/generic_rebels.tga");
+	
+	//Process target icon
+	Magick::Image targetIcon;
+	if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + religion.iconPath))
+	{
+		targetIcon.read(theConfiguration.getCK3Path() + religion.iconPath);
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + religion.iconPath << ", skipping!";
+		// blank.
+		targetIcon = Magick::Image("100x100", Magick::Color("transparent"));
+	}
+
+	//Turn the Icon pure white
+	targetIcon.gamma(255);
+
+	//Now make the Icon a little smaller （75/75 instead of 100/100)
+	targetIcon.transformScale(0.75, 0.75);
+
+	//Finally, combine the images into a new one
+	//auto newRebel = Magick::Image(Magick::Geometry(baseFlag.size().width(), baseFlag.size().height()), Magick::Color("transparent"));
+	baseFlag.composite(targetIcon, "32x-32", MagickCore::OverCompositeOp);
+	
+	//Output
+	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
+	LOG::Log(LogLevel::Debug) << "flags.tmp/" + religion.name + "_rebels.tga";
+
 }
 
 void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const

@@ -96,6 +96,33 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	// rather have it empty than display raw key ingame.
 	localizations.insert(std::pair(faithName + "_religion_desc", descBlock));
 
+	// Rebels
+	LocBlock rebelBlock;
+	//Title
+	rebelBlock.english = "Religious";
+	rebelBlock.french = "Dévots";
+	rebelBlock.german = "Religiöse";
+	rebelBlock.spanish = "Religioso";
+	localizations.insert(std::pair(faithName + "_rebels_title", rebelBlock));
+	//Name
+	rebelBlock.english = "$RELIGION$ Zealots";
+	rebelBlock.french = "Fanatiques $RELIGION$";
+	rebelBlock.german = "$RELIGION$-Fanatiker";
+	rebelBlock.spanish = "Fanáticos de $RELIGION$";
+	localizations.insert(std::pair(faithName + "_rebels_name", rebelBlock));
+	//Desc
+	rebelBlock.english = "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers.";
+	rebelBlock.french = "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s\'en prennent à tous les infidèles.";
+	rebelBlock.german = "Religiöse Fanatiker neigen dazu, sich in Provinzen zu erheben, die von Nationen eines anderen Glaubens kontrolliert werden. Sie versuchen, ihren Glauben zu verbreiten und alle Ungläubigen zu quälen.";
+	rebelBlock.spanish = "Los fanáticos religiosos suelen aparecer en provincias controladas por naciones que practican una creencia diferente. Buscan propagar su fe y sofocar a todos los infieles.";
+	localizations.insert(std::pair(faithName + "_rebels_desc", rebelBlock));
+	//Army
+	rebelBlock.english = "$RELIGION$ Army";
+	rebelBlock.french = "Armée $RELIGION$";
+	rebelBlock.german = "$RELIGION$-Armee";
+	rebelBlock.spanish = "Ejército $RELIGION$";
+	localizations.insert(std::pair(faithName + "_rebels_army", rebelBlock));
+
 	// Grab the source definitions from the originating faith (unreformed one)
 	std::string allowedConversion;
 	std::string country;

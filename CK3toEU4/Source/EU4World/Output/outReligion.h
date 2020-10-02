@@ -6,7 +6,7 @@
 
 namespace EU4
 {
-std::ostream& operator<<(std::ostream& output, const GeneratedReligion& religion);
+	std::ostream& operator<<(std::ostream& output, const GeneratedReligion& religion);
 }
 
 #endif // OUT_RELIGION_H
