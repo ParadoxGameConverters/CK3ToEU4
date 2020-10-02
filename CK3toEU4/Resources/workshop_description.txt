@@ -1,0 +1,48 @@
+[h1]CK3 To EU4 Converter[/h1]
+
+Welcome to the CK3 to EU4 Converter project! The goal of this project is to allow a Crusader Kings 3 campaign to be transferred and continued in Europa Universalis 4, so you may continue your game uninterrupted, from 867 to 1821+, and further using our other converters to Victoria 2 and Hearts of Iron 4.
+
+Running a continuous campaign from CK3 all the way to HoI4 is called running a [b]mega-campaign[/b].
+
+[h2]Converter is not a mod - it is a mod producing [i]application[/i][/h2]
+[list]
+[*] This converter currently supports EU4 1.30 and CK3 1.1. EU4 DLCs are optional, as are CK3 DLC.
+[*] This mod is not intended to be enabled in game. It is only a [i]delivery vehicle[/i] for the converter's download link.
+[*] You can also download the converter directly from our [url=https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/]forums thread[/url] or from Github.
+[/list]
+
+[h3]Setting up the converter.[/h3]
+To set up the converter, you’ll need to follow the simple steps below:
+[olist]
+[*] Subscribe to the this mod.
+[*] If the mod does not immediately begin downloading, you may need to start CK3 launcher to trigger the download.
+[*] Go to your mod folder (usually [i]C:\Program Files (x86)\Steam\steamapps\workshop\content\1158310\2241203093[/i], or elsewhere if you moved your steam library)
+[*] Inside it find and open [i]downloadLink.txt[/i]. 
+[*] Within that file are direct links to the converter's stable and development versions. Pick one and download it. Development versions are fresher and usually better.
+[*] Unzip the downloaded converter by right-clicking on it and selecting [i]Extract All…[/i]
+[*] Finally, go to the extracted converter's directory and fire it up by running [i]ConverterFrontend.exe[/i].
+[/olist]
+
+If you downloaded the converter directly from forums or github, you only need to execute steps 6 and 7.
+
+[h2]How does it work?[/h2]
+Every converter has a detailed documentation available at its [url=https://ck3.paradoxwikis.com/CK3_To_EU4_Converter]wiki page[/url].
+Very generally, it takes your Crusader Kings 3 [b]saved game[/b] and converts it into a Europa Universalis 4 [b]mod[/b].
+You then have to [b]enable that mod[/b] when starting EU4 launcher:
+
+[olist]
+[*] Start the EU4 Launcher. Click [i]Mods[/i].
+[*] Click [i]Manage Mods[/i].
+[*] Click [i]Initial playset[/i] and select [i]Add new playset[/i] (or select the playset you're currently using).
+[*] For a fresh playset, directly select the converted mod. Otherwise, on an existing playset in the bottom right corner click [i]Add more mods[/i] and add it.
+[/olist]
+
+[h2]Troubleshooting and Suggestions[/h2]
+
+We are always open to suggestions on improving our converters and will gladly help you out if you hit a problem. 
+
+Best place for discussion on improving the converters are our [url=https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/]Paradox forum release thread[/url] and [url=https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-thread.1415140/]development thread[/url].
+
+When resolving issues we will always need if your conversion's [i][b]log.txt[/b][/i]. You can find it in your converter's folder after conversion. Come to the release thread linked above and upload your log.txt there, along with a detailed description of your problem. We may need additional data like your running savegame or mods used, which you can also upload to the forums directly.
+
+Keep in mind Steam discussion below is [b]not suited[/b] to troubleshooting as you cannot upload files we need.
