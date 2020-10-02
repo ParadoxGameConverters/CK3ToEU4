@@ -73,7 +73,6 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	// Time for Religious Rebels
 	for (const auto& religion: religions)
 	{
-		LOG::Log(LogLevel::Debug) << religion.name + " REBEL YELL!";
 		craftRebelFlag(theConfiguration, religion);
 	}
 }
@@ -113,13 +112,14 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	
 	//Process target icon
 	Magick::Image targetIcon;
-	if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + religion.iconPath))
+	if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath + ".dds"))
 	{
-		targetIcon.read(theConfiguration.getCK3Path() + religion.iconPath);
+		targetIcon.read(theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath + ".dds");
+		Log(LogLevel::Debug) << religion.name << " icon path: " << religion.iconPath;
 	}
 	else
 	{
-		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + religion.iconPath << ", skipping!";
+		Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath << ".dds, skipping!";
 		// blank.
 		targetIcon = Magick::Image("100x100", Magick::Color("transparent"));
 	}
@@ -127,16 +127,15 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	//Turn the Icon pure white
 	targetIcon.gamma(255);
 
-	//Now make the Icon a little smaller （75/75 instead of 100/100)
-	targetIcon.transformScale(0.75, 0.75);
+	//Now make the Icon a little smaller and flip it right-side up （85/85 instead of 100/100)
+	targetIcon.adaptiveResize(Magick::Geometry(targetIcon.size().width() * 0.85, targetIcon.size().height() * 0.85));
+	targetIcon.flip();
 
 	//Finally, combine the images into a new one
-	//auto newRebel = Magick::Image(Magick::Geometry(baseFlag.size().width(), baseFlag.size().height()), Magick::Color("transparent"));
-	baseFlag.composite(targetIcon, "32x-32", MagickCore::OverCompositeOp);
+	baseFlag.composite(targetIcon, MagickCore::CenterGravity, MagickCore::OverCompositeOp);
 	
 	//Output
 	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
-	LOG::Log(LogLevel::Debug) << "flags.tmp/" + religion.name + "_rebels.tga";
 
 }
 
@@ -147,13 +146,13 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 	{
 		// Import the source dds
 		Magick::Image sourceIcon;
-		if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + religion.iconPath))
+		if (!religion.iconPath.empty() && commonItems::DoesFileExist(theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath + ".dds"))
 		{
-			sourceIcon.read(theConfiguration.getCK3Path() + religion.iconPath);
+			sourceIcon.read(theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath + ".dds");
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + religion.iconPath << ", skipping!";
+			Log(LogLevel::Warning) << "Could not find " << theConfiguration.getCK3Path() + "gfx/interface/icons/religion/" + religion.iconPath << ".dds, skipping!";
 			// blank.
 			sourceIcon = Magick::Image("100x100", Magick::Color("transparent"));
 		}

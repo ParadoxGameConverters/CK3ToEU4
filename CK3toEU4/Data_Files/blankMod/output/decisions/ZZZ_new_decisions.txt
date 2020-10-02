@@ -1030,7 +1030,7 @@ country_decisions = {
 		potential = {
 			NOT = { has_global_flag = ZZZ_enhanced_kushitism_reformed }
 			NOT = { has_global_flag = ZZZ_enhanced_random_world }
-			religion = hellenic_pagan
+			religion = kushitism_pagan
 		}
 		
 		provinces_to_highlight = {
@@ -1117,7 +1117,7 @@ country_decisions = {
 		potential = {
 			NOT = { has_global_flag = ZZZ_enhanced_magyar_reformed }
 			NOT = { has_global_flag = ZZZ_enhanced_random_world }
-			religion = hellenic_pagan
+			religion = magyar_pagan
 		}
 		
 		provinces_to_highlight = {
