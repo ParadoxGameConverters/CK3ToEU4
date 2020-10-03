@@ -80,15 +80,22 @@ west_slavic = {
 			Hugolín Tomas Ludovít Viliam Mikulas Ignac Jaroslav Jaromir Miroslav Drahoslav Svatopluk Mojmir
 			Dobroslav Radoslav Radomír Kazimír Vlastimil Vitazoslav Blahoslav Svetozar Bonifac Vratislav
 			Vladislav Vladimir Cyril Konstantin Metod Bohuslav Drahomir Prokop Jergus Tichomir Bartolomej
-			Luboslav Lubomir Levoslav Stanislav
-		}
+			Luboslav Lubomir Levoslav Stanislav }
 		female_names = {
-			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana			 
-		}
+			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana			  }
 		dynasty_names = {
 			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
-			Zapolský Palfi Cáki Balaša Báthory
-		}
+			Zapolský Palfi Cáki Balaša Báthory }
+	}
+	old_pommeranian = {
+        primary = POM
+        male_names = { Aleksander Andrzej Antoni Aron Barnim Bartosz Bedrich Bezprzym Blazej Bogislaw Bohdan Bohumir Boleslaw Borzywoj Bozydar Branimir Branislav Bretislav Casimir Ctibor Dobieslaw Dobromil Drosuk Dytryk Frantisek Gawel Grzegorz Havel Jacenty Jakub Jakusz Janusz Jaromar Jaromil Jaromir Jaroslav Jedrzej Jindrich Jiri Jozef Juliusz Kajetan Kamil Karel Kasper Kazimierz Kliment Kolman Kornel Kresimir Krzesla  Krzysztof Lech Leszek Lubomir Lucjan Ludvik Marek Marian Martin Mateusz Mieszko Mikolas Miloslaw Milosz Miroslaw Mscislaw Msciwo  Oldrich Ondrej Otokar Patryk Pawel Piotr Prendota Przemysl Przybyslaw Radomil Radomir Radoslav Rostislav Ryszard Sambor Sobiesalv Stanislaw Strasz Swietopelk Swietoslaw Szczepan Szczesny Szymon Tadeusz Tomasz Udalrich Urjasz Vojtech Waclaw Walenty Wratyslaw Wawrzyniec Vaclav Wincenty Wislaw Wladyslaw Wlodek Wlodzimierz Wlodzislaw Zbigniew Zdenek Zdislav Zygmunt }
+        female_names = { Agnieszka Alzbeta Andela Anna Berta Bohuslava Bozena Branislava Dagmar Danuta Dobrava Dobroniega Dorota Dragomira Edyta Ewa Geira Gertruda Gracja Halina Hanna Irena Izabela Jadwiga Jarka Jarmila Jolanta Judyta Kamila Katarina Kenna Kornelia Krystyna Ksenia Lidia Ludmila Magda Magdalena Malgorzata Marcelina Maria Marketa Martyna Mateja Matylda Milena Miroslava Pechna Roza Radomila Radomira Radoslava Raina Regelinda Rycheza Salomea Smiechna Stanislava Stefana Svetlana Urszula Vaclava Vladislava Wera Wojslawa Zdenka Zofia Zwinislawa
+        dynasty_names = { Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
+
+    }
+
+}
 	}
 }
 carpathian = {

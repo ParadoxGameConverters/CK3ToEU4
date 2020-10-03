@@ -230,10 +230,10 @@ link = { eu4 = severian ck3 = severian tech = eastern gfx = easterngfx }
 
 # West Slavic
 
-link = { eu4 = pommeranian ck3 = pommeranian tech = western gfx = westerngfx }
+link = { eu4 = old_pommeranian ck3 = pommeranian tech = western gfx = westerngfx }
 link = { eu4 = schlesian ck3 = czech tech = western gfx = westerngfx region = silesia_area }
 link = { eu4 = schlesian ck3 = polish tech = western gfx = westerngfx region = silesia_area }
-link = { eu4 = polish ck3 = polish ck3 = polabian tech = western gfx = westerngfx }
+link = { eu4 = polish ck3 = polish tech = western gfx = westerngfx }
 link = { eu4 = sorbian ck3 = polabian tech = western gfx = westerngfx }
 link = { eu4 = slovak ck3 = czech tech = western gfx = westerngfx region = slovakia_area }
 link = { eu4 = czech ck3 = czech tech = western gfx = westerngfx }
