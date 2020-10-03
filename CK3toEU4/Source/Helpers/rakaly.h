@@ -12,8 +12,8 @@ extern "C" {
 #endif // __cplusplus
 
 /**
- * Melts binary encoded CK3 data into normal plaintext data. The melted buffer, when written utf-8 encoded
- * plaintext.
+ * Melts binary encoded CK3 data into normal plaintext data. The melted buffer will contain utf-8 encoded
+ * text.
  *
  * Parameters:
  *
@@ -66,6 +66,29 @@ MeltedBuffer *rakaly_eu4_melt(const char *data_ptr, size_t data_len);
  * Must pass in a valid pointer to a `MeltedBuffer`
  */
 void rakaly_free_melt(MeltedBuffer *res);
+
+/**
+ * Melts binary encoded Imperator data into normal plaintext data. The melted buffer will contain utf-8 encoded
+ * text.
+ *
+ * Parameters:
+ *
+ *  - data: Pointer to immutable data that represents the binary data. The data can be:
+ *    - a save file
+ *    - binary data from already extracted gamestate
+ *  - data_len: Length of the data indicated by the data pointer. It is undefined behavior if the
+ *  given length does not match the actual length of the data
+ *
+ * If an unknown token is encountered and rakaly doesn't know how to convert it to plaintext there
+ * are two possible outcomes:
+ *
+ *  - If the token is part of an object's key then key and value will not appear in the plaintext
+ *  output
+ *  - Else the object value (or array value) will be string of "__unknown_x0$z" where z is the
+ *  hexadecimal representation of the unknown token.
+ */
+MeltedBuffer *rakaly_imperator_melt(const char *data_ptr,
+                                    size_t data_len);
 
 /**
  * Returns the length of the melted data in bytes.

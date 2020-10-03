@@ -137,9 +137,7 @@ std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 	{
 		for (const auto& historyLesson: country.details.historyLessons)
 		{
-			output << historyLesson.first << " =\n";
-			output << historyLesson.second;
-			output << "\n";
+			output << historyLesson.first << historyLesson.second << "\n";
 		}
 	}
 

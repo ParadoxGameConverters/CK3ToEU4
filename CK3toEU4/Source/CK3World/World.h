@@ -40,6 +40,7 @@ class World: commonItems::parser
   private:
 	// savegame processing
 	void verifySave(const std::string& saveGamePath);
+	void processRegularSave(const std::string& saveGamePath);
 	void processCompressedSave(const std::string& saveGamePath);
 	void processAutoSave(const std::string& saveGamePath);
 	void processIronManSave(const std::string& saveGamePath);
@@ -94,14 +95,15 @@ class World: commonItems::parser
 		INVALID = 0,
 		ZIPFILE = 1,
 		AUTOSAVE = 2,
-		IRONMAN = 3
+		IRONMAN = 3,
+		REGULAR = 4
 	};
 	struct saveData
 	{
 		SaveType saveType = SaveType::INVALID;
 		int zipStart = 0;
 		std::string gamestate;
-		std::string metadata; // probably not needed
+		std::string metadata; // we use this to set up mods before main processing.
 	};
 	saveData saveGame;
 };

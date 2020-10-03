@@ -35,6 +35,10 @@ inline std::string meltCK3(const std::string &encrypted) {
   return meltFinish(rakaly_ck3_melt(encrypted.c_str(), encrypted.length()));
 }
 
+inline std::string meltImperator(const std::string &encrypted) {
+  return meltFinish(rakaly_imperator_melt(encrypted.c_str(), encrypted.length()));
+}
+
 } // namespace rakaly
 
 #endif

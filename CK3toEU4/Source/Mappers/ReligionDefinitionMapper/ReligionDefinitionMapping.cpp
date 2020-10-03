@@ -11,34 +11,46 @@ mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theS
 void mappers::ReligionDefinitionMapping::registerKeys()
 {
 	registerKeyword("allowed_conversion", [this](const std::string& unused, std::istream& theStream) {		
-		allowedConversion = commonItems::singleItem(unused, theStream);
-		if (allowedConversion.size() > 1)
-			allowedConversion = allowedConversion.substr(1, allowedConversion.size() - 2);
+		allowedConversion = commonItems::stringOfItem(theStream).getString();
+		if (allowedConversion.size() > 4)
+			allowedConversion = allowedConversion.substr(3, allowedConversion.size() - 4);
+		else
+			allowedConversion.clear();
 	});
 	registerKeyword("country", [this](const std::string& unused, std::istream& theStream) {
-		country = commonItems::singleItem(unused, theStream);
-		if (country.size() > 1)
-			country = country.substr(1, country.size() - 2);
+		country = commonItems::stringOfItem(theStream).getString();
+		if (country.size() > 4)
+			country = country.substr(3, country.size() - 4);
+		else
+			country.clear();
 	});
 	registerKeyword("province", [this](const std::string& unused, std::istream& theStream) {
-		province = commonItems::singleItem(unused, theStream);
-		if (province.size() > 1)
-			province = province.substr(1, province.size() - 2);
+		province = commonItems::stringOfItem(theStream).getString();
+		if (province.size() > 4)
+			province = province.substr(3, province.size() - 4);
+		else
+			province.clear();
 	});
 	registerKeyword("country_as_secondary", [this](const std::string& unused, std::istream& theStream) {
-		countrySecondary = commonItems::singleItem(unused, theStream);
-		if (countrySecondary.size() > 1)
-			countrySecondary = countrySecondary.substr(1, countrySecondary.size() - 2);
+		countrySecondary = commonItems::stringOfItem(theStream).getString();
+		if (countrySecondary.size() > 4)
+			countrySecondary = countrySecondary.substr(3, countrySecondary.size() - 4);
+		else
+			countrySecondary.clear();
 	});
 	registerKeyword("unique_modifiers", [this](const std::string& unused, std::istream& theStream) {
-		unique = commonItems::singleItem(unused, theStream);
-		if (unique.size() > 1)
-			unique = unique.substr(1, unique.size() - 2);
+		unique = commonItems::stringOfItem(theStream).getString();
+		if (unique.size() > 4)
+			unique = unique.substr(3, unique.size() - 4);
+		else
+			unique.clear();
 	});
 	registerKeyword("non_unique_modifiers", [this](const std::string& unused, std::istream& theStream) {
-		nonUnique = commonItems::singleItem(unused, theStream);
-		if (nonUnique.size() > 1)
-			nonUnique = nonUnique.substr(1, nonUnique.size() - 2);
+		nonUnique = commonItems::stringOfItem(theStream).getString();
+		if (nonUnique.size() > 4)
+			nonUnique = nonUnique.substr(3, nonUnique.size() - 4);
+		else
+			nonUnique.clear();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
