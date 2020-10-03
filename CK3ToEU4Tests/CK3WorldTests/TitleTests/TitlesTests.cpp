@@ -311,7 +311,7 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHolderThrowsException)
 	ASSERT_THROW(titles.linkCharacters(characters), std::runtime_error);
 }
 
-TEST(CK3World_TitlesTests, charactersLinkMissingClaimantThrowsException)
+TEST(CK3World_TitlesTests, charactersLinkMissingClaimantIgnoresClaimant)
 {
 	std::stringstream input;
 	input << "13 = { key= c_county holder = 1 claim = { 9 3 } heir = { 2 } }\n"; // missing 9
@@ -323,8 +323,10 @@ TEST(CK3World_TitlesTests, charactersLinkMissingClaimantThrowsException)
 	input2 << "2 = { first_name = Bob }\n";
 	input2 << "3 = { first_name = Carol }\n";
 	const CK3::Characters characters(input2);
+	titles.linkCharacters(characters);
 
-	ASSERT_THROW(titles.linkCharacters(characters), std::runtime_error);
+	const auto& t1 = titles.getTitles().find("c_county");
+	ASSERT_EQ(1, t1->second->getClaimants().size());	
 }
 
 TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)

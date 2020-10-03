@@ -240,7 +240,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 			else
 			{
-				throw std::runtime_error("Title " + title.first + " has claimant " + std::to_string(claimant.first) + " who has no definition!");
+				// Maybe deleted.
 			}
 		}
 		title.second->loadClaimants(replacementMap);
@@ -291,7 +291,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 			else
 			{
-				throw std::runtime_error("Title " + title.first + " has elector " + std::to_string(elector.first) + " who has no definition!");
+				// Maybe deleted.
 			}
 		}
 		title.second->loadElectors(replacementMap);
