@@ -24,7 +24,7 @@ namespace EU4
 {
 class Country;
 class Warehouse;
-class GeneratedReligion;
+struct GeneratedReligion;
 class FlagFoundry
 {
   public:
