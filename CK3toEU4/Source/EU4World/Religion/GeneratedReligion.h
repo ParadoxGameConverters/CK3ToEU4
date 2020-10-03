@@ -6,9 +6,8 @@
 
 namespace EU4
 {
-	class GeneratedReligion
+	struct GeneratedReligion
 	{
-	  public:
 		void EU4::GeneratedReligion::returnRebels(std::ostream& output) const;
 
 		std::string country;
