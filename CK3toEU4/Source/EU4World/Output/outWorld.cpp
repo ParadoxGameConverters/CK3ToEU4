@@ -139,7 +139,7 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, std:
 }
 
 
-void EU4::World::outputReligions(const Configuration& theConfiguration, std::vector<GeneratedReligion> generatedReligions) const
+void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion> generatedReligions) const
 {
 	for (auto& religion: generatedReligions)
 	{
