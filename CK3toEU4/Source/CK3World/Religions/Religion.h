@@ -1,7 +1,6 @@
 #ifndef CK3_RELIGION_H
 #define CK3_RELIGION_H
 #include "Parser.h"
-#include "..\..\EU4World\Religion\GeneratedReligion.h"
 
 namespace CK3
 {
