@@ -148,7 +148,7 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, std::vec
 		religionFile.close();
 		std::ofstream religionRebelFile(
 			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
-		religion.returnRebels(religionRebelFile);
+		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
 	}
 }
