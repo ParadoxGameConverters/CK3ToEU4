@@ -1,6 +1,6 @@
 #include "GeneratedReligion.h"
 
-void EU4::GeneratedReligion::returnRebels(std::ostream& output) const
+void EU4::GeneratedReligion::returnRebels(std::ostream& output)
 {
 	output << name << "_rebels = {";
 	output << "\n\n\t" << "area = nation";
