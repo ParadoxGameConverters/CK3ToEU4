@@ -108,6 +108,7 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />

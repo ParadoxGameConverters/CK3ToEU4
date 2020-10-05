@@ -352,6 +352,11 @@ evenks = {
 kamchatkan_g = {
 }
 tartar = {
+	chuvash = {
+		primary = CVS
+		dynasty_names = { Abash Agish Baran Karach Karam Kashkar Kolu Kurak Mishaik "Mis Si" Mosol Temir Tenish
+						  Vanyut Yaku }
+	}		
 }
 lost_cultures_group = {
 }

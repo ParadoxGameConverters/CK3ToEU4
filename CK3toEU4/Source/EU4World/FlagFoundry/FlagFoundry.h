@@ -24,17 +24,18 @@ namespace EU4
 {
 class Country;
 class Warehouse;
-class GeneratedReligion;
+struct GeneratedReligion;
 class FlagFoundry
 {
   public:
 	FlagFoundry();
-	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration) const;
+	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, const std::vector<EU4::GeneratedReligion>& religions) const;
 	void loadImageFolder(const Configuration& theConfiguration) const;
 	void extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const;
 	
   private:
 	void craftFlag(const std::shared_ptr<Country>& country) const;
+	void craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const;
 	[[nodiscard]] Magick::Image extendReligionStrip(const Magick::Image& sourceStrip, const Magick::Image& icon) const;
 
 	FlagCrafter flagCrafter; // image processor

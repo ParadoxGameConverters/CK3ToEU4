@@ -1,12 +1,12 @@
-#include "../EU4World.h"
 #include "../../CK3World/World.h"
+#include "../EU4World.h"
 #include "Log.h"
 #include <filesystem>
 #include <fstream>
 namespace fs = std::filesystem;
 #include "../../Configuration/Configuration.h"
-#include "OSCompatibilityLayer.h"
 #include "../Province/EU4Province.h"
+#include "OSCompatibilityLayer.h"
 
 void EU4::World::output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
 {
@@ -49,7 +49,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	LOG(LogLevel::Info) << "<- Writing version";
 	outputVersion(converterVersion, theConfiguration);
 	Log(LogLevel::Progress) << "85 %";
-	
+
 	// Output common\countries.txt
 	LOG(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountriesFile(theConfiguration);
@@ -72,7 +72,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 		LOG(LogLevel::Info) << "<- Writing Sunset Invasion Files";
 		outputInvasionExtras(theConfiguration);
 	}
-	
+
 	LOG(LogLevel::Info) << "<- Writing Advisers";
 	outputAdvisers(theConfiguration);
 	Log(LogLevel::Progress) << "90 %";
@@ -114,9 +114,9 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 	// edit interface file, raw search/replace.
 	const auto originalIcons = religionDefinitionMapper.getOriginalIconCount();
 	auto currentIcons = originalIcons + religionMapper.getGeneratedReligions().size();
-	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx")) 
+	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx"))
 		throw std::runtime_error("Cannot open output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
-	
+
 	std::ifstream sourceInterfaces("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
 	std::stringstream interfaceStream;
 	interfaceStream << sourceInterfaces.rdbuf();
@@ -146,6 +146,10 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
+		std::ofstream religionRebelFile(
+			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		religion.outputRebels(religionRebelFile);
+		religionRebelFile.close();
 	}
 }
 
@@ -343,7 +347,8 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 
 	auto fileNames = commonItems::GetAllFilesInFolder("configurables/religions/reformation/roman/");
 	for (const auto& fileName: fileNames)
-		commonItems::TryCopyFile("configurables/religions/reformation/roman/" + fileName, "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
+		commonItems::TryCopyFile("configurables/religions/reformation/roman/" + fileName,
+			 "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
 }
 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const

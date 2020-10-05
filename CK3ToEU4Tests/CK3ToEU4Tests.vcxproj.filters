@@ -202,6 +202,9 @@
     <Filter Include="MapperTests\ReligionGroupScraper">
       <UniqueIdentifier>{dd33bb3a-2beb-4b71-94c5-f9702757a034}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\EU4World\Religion">
+      <UniqueIdentifier>{dc7c04c4-71a9-4f48-a52a-3251ab5e7deb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -625,6 +628,9 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp">
+      <Filter>CK3ToEU4\EU4World\Religion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

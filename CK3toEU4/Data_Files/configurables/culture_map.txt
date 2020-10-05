@@ -7,12 +7,12 @@
 
 # North Germanic
 
-link = { eu4 = norse ck3 = norse tech = western gfx = westerngfx }
 link = { eu4 = swedish ck3 = swedish tech = western gfx = westerngfx }
 link = { eu4 = norwegian ck3 = norwegian tech = western gfx = westerngfx }
 link = { eu4 = danish ck3 = danish tech = western gfx = westerngfx }
 link = { eu4 = icelandic ck3 = norse ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
 link = { eu4 = hannoverian ck3 = old_saxon tech = western gfx = westerngfx }
+link = { eu4 = norse ck3 = norse tech = western gfx = westerngfx }
 
 # German: the split
 link = { eu4 = alsatian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = lorraine_area region = brittany_area region = normandy_area region = lorraine_area region = picardy_area region = champagne_area region = ile_de_france_area region = loire_area region = bourgogne_area region = west_burgundy_area region = poitou_area region = orleans_area }
@@ -202,7 +202,7 @@ link = { eu4 = al_iraqiya_arabic ck3 = bedouin ck3 = levantine tech = muslim gfx
 link = { eu4 = omani_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = oman_area region = mascat_area }
 link = { eu4 = yemeni_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = asir_area region = tihama_al_yemen_area region = upper_yemen_area region = yemen_area }
 link = { eu4 = bedouin_arabic ck3 = bedouin tech = muslim gfx = muslimgfx }
-link = { eu4 = algerian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area }
+link = { eu4 = algerian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area region = barbary_coast_area }
 link = { eu4 = moroccan ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = northern_morocco_area region = tafilalt_area region = sus_area region = marrekesh_area region = western_morocco_area region = southern_morocco_area }
 link = { eu4 = tunisian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = tunisia_area region = djerba_area }
 link = { eu4 = berber ck3 = butr ck3 = baranis ck3 = maghrebi tech = muslim gfx = muslimgfx }

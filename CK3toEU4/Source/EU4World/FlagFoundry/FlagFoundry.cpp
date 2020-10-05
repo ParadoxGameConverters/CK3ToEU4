@@ -1,4 +1,4 @@
-#include "FlagFoundry.h"
+﻿#include "FlagFoundry.h"
 #include "../../CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3World/Dynasties/House.h"
 #include "../../CK3World/Titles/Title.h"
@@ -23,7 +23,7 @@ void EU4::FlagFoundry::loadImageFolder(const Configuration& theConfiguration) co
 	warehouse->loadImageFolder(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
 }
 
-void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration) const
+void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, const std::vector<EU4::GeneratedReligion>& religions) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -69,6 +69,12 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	// Do not forget about our SDM.
 	if (theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE)
 		commonItems::TryCopyFile("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga");
+
+	// Time for Religious Rebels
+	for (const auto& religion: religions)
+	{
+		craftRebelFlag(theConfiguration, religion);
+	}
 }
 
 void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
@@ -97,6 +103,50 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	}
 }
 
+void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const
+{
+	//Import the generic Rebel Flag	
+	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
+		throw std::runtime_error("blankMod/output/gfx/flags/generic_rebels.tga! Where are the rebel scum!?");
+	Magick::Image baseFlag("blankMod/output/gfx/flags/generic_rebels.tga");
+	
+	//Process target icon
+	Magick::Image targetIcon;
+	if (!religion.iconPath.empty())
+	{
+		const auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+		const auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+		if (commonItems::DoesFileExist(path1))
+			targetIcon.read(path1);
+		else if (commonItems::DoesFileExist(path2))
+			targetIcon.read(path2);
+		else
+		{
+			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
+			targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
+		}
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "Religion " << religion.name << " has no icon set, skipping!";
+		targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
+	}
+
+	//Turn the Icon pure white
+	targetIcon.gamma(255);
+
+	//Now make the Icon a little smaller and flip it right-side up （85/85 instead of 100/100)
+	targetIcon.adaptiveResize(Magick::Geometry(targetIcon.size().width() * 0.85, targetIcon.size().height() * 0.85));
+	targetIcon.flip();
+
+	//Finally, combine the images into a new one
+	baseFlag.composite(targetIcon, MagickCore::CenterGravity, MagickCore::OverCompositeOp);
+	
+	//Output
+	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
+
+}
+
 void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const
 {
 	std::set<std::string> targetStrips = {"country_icon_religion.dds", "icon_religion.dds", "icon_religion_small.dds", "province_view_religion.dds"};
@@ -114,7 +164,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 				sourceIcon.read(path2);
 			else
 			{
-				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";				
+				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
 				sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 			}
 		}
