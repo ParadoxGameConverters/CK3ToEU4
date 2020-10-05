@@ -56,8 +56,12 @@
  #Pagan
  kushitism_pagan:1 "Kushitismus"
  kushitism_pagan_religion_desc:0 "Die Verehrung der uralten Götter bleibt hier stark, ebenso wie die Verehrung der Grenze zwischen Leben und Tod."
- magyar_pagan_religion:2 "Uraliertum"
+ kushitism_pagan_reformed: 0 "Reformierter Kushit"
+ kushitism_pagan_reformed_religion_desc: 0 "Der wiederbelebte kuschitische Glaube führt seine Geschichte Jahrtausende zurück bis in die alten ägyptischen Reiche."
+ magyar_pagan:2 "Uraliertum"
  magyar_pagan_religion_desc:1 "Im ursprünglichen Glauben der Magyaren wird jeder Táltos – oder Priester – von den Göttern bereits vor seiner Geburt auserkoren. Sie werden mit übermenschlicher Stärke, Weisheit und Mächten ausgestattet, und die Magyaren vertrauen darauf, dass diese Táltos ihre Gemeinden schützen und sie zu Wohlstand führen."
+ magyar_pagan_reformed: 0 "Reformiertes Uralic"
+ magyar_pagan_reformed_religion_desc: 0 "In einem gemeinsamen Glauben vereint, glauben diejenigen, die der reformierten uralischen Kirche angehören, an die Táltos oder Priester, die von den Göttern vor ihrer Geburt ausgewählt wurden. Mit übermenschlicher Stärke, Weisheit und Macht ausgestattet, vertrauen Uralics diesen Táltos an Schutz ihrer Gemeinschaften und Führung zu Wohlstand."
 
  #Eastern
  harmonized_confucian: 0 "Harmonisiert mit der konfuzianischen Philosophie"

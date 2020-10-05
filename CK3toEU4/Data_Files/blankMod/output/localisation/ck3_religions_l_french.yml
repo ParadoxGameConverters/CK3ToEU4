@@ -57,8 +57,12 @@
  #Pagan
  kushitism_pagan:0 "Kushitisme"
  kushitism_pagan_desc:0 "La vénération des anciennes divinités reste forte ici, tout comme la vénération de la frontière entre la vie et la mort."
- magyar_pagan_religion:1 "Ouralien"
- magyar_pagan_religiondesc:0 "Dans la foi mogyer, chaque táltos, ou prêtre, est choisi par les dieux avant sa naissance. Dotés d'une force, d'une sagesse et de pouvoirs surhumains, les ouraliens confient à ces táltos la tâche de protéger leurs communautés et de les mener vers la prospérité."
+ kushitism_pagan_reformed: 0 "Kushite réformée"
+ kushitism_pagan_reformed_religion_desc: 0 "La foi kushite revigorée remonte à des milliers d'années jusqu'aux anciens empires égyptiens."
+ magyar_pagan:1 "Ouralien"
+ magyar_pagan_religion_desc:0 "Dans la foi mogyer, chaque táltos, ou prêtre, est choisi par les dieux avant sa naissance. Dotés d'une force, d'une sagesse et de pouvoirs surhumains, les ouraliens confient à ces táltos la tâche de protéger leurs communautés et de les mener vers la prospérité."
+ magyar_pagan_reformed: 0 "Oural réformé"
+ magyar_pagan_reformed_religion_desc: 0 "Unis dans une croyance commune, ceux qui appartiennent à l'Église réformée de l'Oural croient aux Táltos, ou prêtres, qui ont choisi par les dieux avant leur naissance. Dotés d'une force, d'une sagesse et de pouvoirs surhumains, les Ouraliques confient à ces Táltos protéger leurs communautés et les conduire à la prospérité. "
 
  #Eastern
  harmonized_confucian: 0 "Harmonized with Confucian Philosophy"

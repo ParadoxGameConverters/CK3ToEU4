@@ -57,8 +57,12 @@ l_spanish:
  #Pagan
  kushitism_pagan:1 "Kushitismo"
  kushitism_pagan_religion_desc:0 "Aquí se mantiene fuerte la veneración a los dioses aniguos, así como el venerar el límiete entre vida y muerte."
- magyar_pagan_religion:2 "Urálica"
+ kushitism_pagan_reformed:0 "Kushite reformado"
+ kushitism_pagan_reformed_religion_desc:0 "La fe kushita revitalizada se remonta a miles de años en los antiguos imperios egipcios."
+ magyar_pagan:2 "Urálica"
  magyar_pagan_religion_desc:1 "En la fe mogyer nativa, todo táltos, o sacerdote, es elegido por los dioses antes de su nacimiento. Dotado de una fuerza, sabiduría y poderes sobrehumanos, los urálicos confían a estos táltos la protección de sus comunidades, y esperan que los conduzcan a la prosperidad."
+ magyar_pagan_reformed:0 "Uralico reformado"
+ magyar_pagan_reformed_religion_desc:0 "Unidos en una creencia común, los que pertenecen a la iglesia Uralica Reformada creen en los Táltos, o sacerdotes, elegidos por los dioses antes de su nacimiento. Dotados de fuerza, sabiduría y poderes sobrehumanos, los Uralics confían a estos Táltos proteger a sus comunidades y llevarlas a la prosperidad."
 
  #Eastern
  harmonized_confucian: 0 "Armonizado con la filosofía confuciana"
