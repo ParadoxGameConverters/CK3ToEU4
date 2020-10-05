@@ -106,7 +106,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	Log(LogLevel::Progress) << "97 %";
 }
 
-void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion> generatedReligions) const
+void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
 {
 	// edit the strips
 	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions);
@@ -139,7 +139,7 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 }
 
 
-void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion> generatedReligions) const
+void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
 {
 	for (const auto& religion: generatedReligions)
 	{

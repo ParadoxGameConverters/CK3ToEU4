@@ -23,7 +23,7 @@ void EU4::FlagFoundry::loadImageFolder(const Configuration& theConfiguration) co
 	warehouse->loadImageFolder(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
 }
 
-void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, std::vector<EU4::GeneratedReligion> religions) const
+void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, const std::vector<EU4::GeneratedReligion> religions) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
