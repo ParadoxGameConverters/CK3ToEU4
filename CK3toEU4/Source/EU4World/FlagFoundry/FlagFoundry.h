@@ -29,7 +29,7 @@ class FlagFoundry
 {
   public:
 	FlagFoundry();
-	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, std::vector<EU4::GeneratedReligion> religions) const;
+	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, const std::vector<EU4::GeneratedReligion>& religions) const;
 	void loadImageFolder(const Configuration& theConfiguration) const;
 	void extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const;
 	
