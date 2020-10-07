@@ -253,8 +253,8 @@ link = { eu4 = albanian ck3 = arberian tech = eastern gfx = easterngfx }
 
 # Magyar
 
-link = { eu4 = transylvanian ck3 = hungarian tech = western gfx = westerngfx region = transylvania_area region = southern_transylvania_area }
-link = { eu4 = hungarian ck3 = hungarian ck3 = mogyer tech = western gfx = westerngfx }
+link = { eu4 = transylvanian ck3 = hungarian tech = eastern gfx = easterngfx region = transylvania_area region = southern_transylvania_area }
+link = { eu4 = hungarian ck3 = hungarian ck3 = mogyer tech = eastern gfx = easterngfx }
 
 # Iranian
 
