@@ -76,7 +76,16 @@ void CK3::Mods::loadCK3ModDirectory(const Configuration& theConfiguration)
 				{
 					if (!commonItems::DoesFolderExist(theMod.getPath()))
 					{
-						throw std::invalid_argument("Mod file " + filename + " points to " + theMod.getPath() + " which does not exist!");
+						// Maybe we have a relative path
+						if (commonItems::DoesFolderExist(theConfiguration.getCK3DocPath() + "/" + theMod.getPath()))
+						{
+							// fix this.
+							theMod.setPath(theConfiguration.getCK3DocPath() + "/" + theMod.getPath());
+						}
+						else
+						{
+							throw std::invalid_argument("Mod file " + filename + " points to " + theMod.getPath() + " which does not exist!");
+						}
 					}
 
 					possibleMods.insert(std::make_pair(theMod.getName(), theMod.getPath()));

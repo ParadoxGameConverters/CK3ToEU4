@@ -15,6 +15,8 @@ class Mod: commonItems::parser
 	[[nodiscard]] auto looksValid() const { return !name.empty() && !path.empty(); }
 	[[nodiscard]] auto isCompressed() const { return compressed; }
 
+	void setPath(const std::string& thePath) { path = thePath; }
+	
   private:
 	bool compressed = false;
 
