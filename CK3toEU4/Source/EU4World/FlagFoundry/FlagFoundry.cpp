@@ -1,13 +1,14 @@
 ﻿#include "FlagFoundry.h"
 #include "../../CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3World/Dynasties/House.h"
+#include "../../CK3World/Mods/Mods.h"
 #include "../../CK3World/Titles/Title.h"
 #include "../../Configuration/Configuration.h"
 #include "../Country/Country.h"
+#include "../Religion/GeneratedReligion.h"
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
-#include "../Religion/GeneratedReligion.h"
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -18,12 +19,23 @@ EU4::FlagFoundry::FlagFoundry()
 	flagCrafter.loadWarehouse(warehouse);
 }
 
-void EU4::FlagFoundry::loadImageFolder(const Configuration& theConfiguration) const
+void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, const CK3::Mods& mods) const
 {
-	warehouse->loadImageFolder(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
+	std::set<std::string> folders;
+	folders.insert(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
+	for (const auto& [modName, modPath]: mods.getMods())
+	{
+		if (!commonItems::DoesFolderExist(modPath + "/gfx/coat_of_arms/"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading some garments from " << modName;
+		folders.insert(modPath + "/gfx/coat_of_arms/");
+	}
+	warehouse->loadImageFolders(folders);
 }
 
-void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries, const Configuration& theConfiguration, const std::vector<EU4::GeneratedReligion>& religions) const
+void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries,
+	 const Configuration& theConfiguration,
+	 const std::vector<EU4::GeneratedReligion>& religions) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -41,7 +53,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	{
 		if (ignoreTags.count(country.first))
 			continue;
-		
+
 		// first check is for dynasty and override flags.
 		if (country.second->getHasDynastyName()) // If this is true, we have a holder, house and dynasty already.
 		{
@@ -105,12 +117,12 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 
 void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const
 {
-	//Import the generic Rebel Flag	
+	// Import the generic Rebel Flag
 	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
 		throw std::runtime_error("blankMod/output/gfx/flags/generic_rebels.tga! Where are the rebel scum!?");
 	Magick::Image baseFlag("blankMod/output/gfx/flags/generic_rebels.tga");
-	
-	//Process target icon
+
+	// Process target icon
 	Magick::Image targetIcon;
 	if (!religion.iconPath.empty())
 	{
@@ -132,19 +144,18 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 		targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 	}
 
-	//Turn the Icon pure white
+	// Turn the Icon pure white
 	targetIcon.gamma(255);
 
-	//Now make the Icon a little smaller and flip it right-side up （85/85 instead of 100/100)
+	// Now make the Icon a little smaller and flip it right-side up （85/85 instead of 100/100)
 	targetIcon.adaptiveResize(Magick::Geometry(targetIcon.size().width() * 0.85, targetIcon.size().height() * 0.85));
 	targetIcon.flip();
 
-	//Finally, combine the images into a new one
+	// Finally, combine the images into a new one
 	baseFlag.composite(targetIcon, MagickCore::CenterGravity, MagickCore::OverCompositeOp);
-	
-	//Output
-	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
 
+	// Output
+	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
 }
 
 void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const
