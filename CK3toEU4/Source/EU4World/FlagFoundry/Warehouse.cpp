@@ -43,14 +43,23 @@ std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::Co
 	if (!basePatterns.count(newImageBlock.patternName))
 	{
 		// Load the pattern from disk.
-		if (!commonItems::DoesFileExist(imageFolder + "patterns/" + newImageBlock.patternName))
+		std::string actualFolder;
+		for (const auto& folder: imageFolders)
+		{
+			if (commonItems::DoesFileExist(folder + "patterns/" + newImageBlock.patternName))
+			{
+				actualFolder = folder;
+				break;
+			}
+		}
+		if (actualFolder.empty())
 		{
 			Log(LogLevel::Warning) << "Coat of arms uses invalid pattern: " << newImageBlock.patternName << ", defaulting to black.";
 			return std::pair(black, black);
 		}
 		try
 		{
-			basePatterns.insert(std::pair(newImageBlock.patternName, Magick::Image(imageFolder + "patterns/" + newImageBlock.patternName)));
+			basePatterns.insert(std::pair(newImageBlock.patternName, Magick::Image(actualFolder + "patterns/" + newImageBlock.patternName)));
 		}
 		catch (std::exception& e)
 		{
@@ -129,7 +138,16 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		if (!baseTextures.count(newImageBlock.patternName))
 		{
 			// Load the texture from disk.
-			if (!commonItems::DoesFileExist(imageFolder + directoryName + "/" + newImageBlock.patternName))
+			std::string actualFolder;
+			for (const auto& folder: imageFolders)
+			{
+				if (commonItems::DoesFileExist(folder + directoryName + "/" + newImageBlock.patternName))
+				{
+					actualFolder = folder;
+					break;
+				}
+			}
+			if (actualFolder.empty())
 			{
 				Log(LogLevel::Warning) << "Emblem uses invalid texture: " << newImageBlock.patternName << ", defaulting to black.";
 				toReturn.emplace_back(std::pair(emblem, Magick::Image(Magick::Geometry(128, 128), Magick::ColorRGB(0, 0, 0))));
@@ -137,7 +155,7 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 			}
 			try
 			{
-				baseTextures.insert(std::pair(newImageBlock.patternName, Magick::Image(imageFolder + directoryName + "/" + newImageBlock.patternName)));
+				baseTextures.insert(std::pair(newImageBlock.patternName, Magick::Image(actualFolder + directoryName + "/" + newImageBlock.patternName)));
 			}
 			catch (std::exception& e)
 			{
