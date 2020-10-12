@@ -847,7 +847,7 @@
 	link = { ck3 = 4683 eu4 = 334 }	# Tangiers -> Tangiers
 	link = { ck3 = 8714 eu4 = 366 }	# Fuerteventura -> Gran Canaria
 	link = { ck3 = 849 eu4 = 4565 }	# Canarias -> Tenerife
-	link = { ck3 = 8716 eu4 = 368 }	# Madeira -> Madeira
+	link = { ck3 = 8716 eu4 = 368 eu4 = 367 }	# Madeira -> Madeira, The Azores
 	# # Europe
 	# Mother Russia
 	link = { ck3 = 609 ck3 = 616 eu4 = 473 }	# Samar, Pecheneg -> Samara
