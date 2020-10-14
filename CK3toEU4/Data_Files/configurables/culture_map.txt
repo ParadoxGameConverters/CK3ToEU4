@@ -131,8 +131,8 @@ link = { eu4 = coptic ck3 = coptic tech = eastern gfx = easterngfx }
 # Celtic
 
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
-link = { eu4 = scottish ck3 = gaelic ck3 = scottish tech = western gfx = westerngfx }
-link = { eu4 = pictish ck3 = pictish tech = western gfx = westerngfx }
+link = { eu4 = scottish ck3 = scottish tech = western gfx = westerngfx }
+link = { eu4 = highland_scottish ck3 = gaelic ck3 = pictish tech = western gfx = westerngfx }
 link = { eu4 = welsh ck3 = welsh tech = western gfx = westerngfx }
 link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
@@ -196,10 +196,10 @@ link = { eu4 = tuareg ck3 = bedouin ck3 = levantine ck3 = maghrebi ck3 = egyptia
 link = { eu4 = frencharab ck3 = bedouin ck3 = levantine ck3 = maghrebi ck3 = egyptian ck3 = andalusian tech = muslim gfx = muslimgfx region = france_region }
 link = { eu4 = andalucian ck3 = bedouin tech = muslim gfx = muslimgfx region = iberia_region }
 link = { eu4 = hejazi_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = gulf_of_arabia_area region = tabuk_area region = medina_area region = mecca_area }
-link = { eu4 = gulf_arabic ck3 = bedouin tech = muslim gfx = muslimgfx region = bahrain_area region = pirate_coast_area }
+link = { eu4 = gulf_arabic ck3 = bedouin tech = muslim gfx = muslimgfx region = bahrain_area province = 2333 }
 link = { eu4 = mahri_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = mahra_area region = dhofar_area region = hadramut_area }
 link = { eu4 = al_iraqiya_arabic ck3 = bedouin ck3 = levantine tech = muslim gfx = muslimgfx region = tabriz_area region = shahrizor_area region = iraq_arabi_area region = basra_area }
-link = { eu4 = omani_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = oman_area region = mascat_area }
+link = { eu4 = omani_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = oman_area region = mascat_area region = pirate_coast_area }
 link = { eu4 = yemeni_culture ck3 = bedouin tech = muslim gfx = muslimgfx region = asir_area region = tihama_al_yemen_area region = upper_yemen_area region = yemen_area }
 link = { eu4 = bedouin_arabic ck3 = bedouin tech = muslim gfx = muslimgfx }
 link = { eu4 = algerian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi tech = muslim gfx = muslimgfx region = algiers_area region = hautes_plaines_area region = kabylia_area region = ouled_nail_area region = barbary_coast_area }
@@ -275,8 +275,8 @@ link = { eu4 = saka ck3 = saka tech = muslim gfx = muslimgfx }
 link = { eu4 = beja ck3 = beja tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = nubian tech = east_african gfx = africangfx }
 link = { eu4 = afar ck3 = afar tech = east_african gfx = africangfx }
-link = { eu4 = harari ck3 = ethiopian tech = east_african gfx = africangfx region = ifat_area region = ogaden_area region = somaliland_area region = majarteen_area }
-link = { eu4 = oromo ck3 = ethiopian tech = east_african gfx = africangfx region = shewa_area region = hadiya_area }
+link = { eu4 = harari ck3 = ethiopian ck3 = somali tech = east_african gfx = africangfx region = ifat_area province = 1210 province = 2761  }
+link = { eu4 = sidamo ck3 = ethiopian ck3 = somali tech = east_african gfx = africangfx region = hadiya_area region = southern_ethiopia_area }
 link = { eu4 = sidamo ck3 = welayta tech = east_african gfx = africangfx }
 link = { eu4 = tigray ck3 = ethiopian tech = east_african gfx = africangfx region = tigray_area region = red_sea_coast_area }
 link = { eu4 = amhara ck3 = ethiopian tech = east_african gfx = africangfx }
@@ -299,7 +299,7 @@ link = { eu4 = mali ck3 = mande ck3 = senufo ck3 = malinke ck3 = bobo ck3 = gur 
 link = { eu4 = soninke ck3 = soninke tech = sub_saharan gfx = africangfx }
 link = { eu4 = songhai ck3 = songhai ck3 = gaw tech = sub_saharan gfx = africangfx }
 
-link = { eu4 = fulani ck3 = serer ck3 = wolof ck3 = mel tech = sub_saharan gfx = africangfx province = 1117 }
+link = { eu4 = fulani ck3 = serer ck3 = wolof ck3 = mel tech = sub_saharan gfx = africangfx region = tekrur_area region = baghena_area province = 1117 }
 link = { eu4 = fulani ck3 = pulaar tech = sub_saharan gfx = africangfx }
 link = { eu4 = nupe ck3 = nupe ck3 = igbo tech = sub_saharan gfx = africangfx }
 link = { eu4 = fon ck3 = ewe tech = sub_saharan gfx = africangfx }
