@@ -180,12 +180,17 @@ void CK3::Title::cleanUpDisplayName()
 int CK3::Title::flagDeJureHREProvinces()
 {
 	auto counter = 0;
-	// Flag our dejure counties, or our dejure vassals' counties, wherever those may be.
+	// For CK3 flagging dejure alone is not enough as we'll be losing a ton of land when duchies break away in full independence.
+	// Flag our dejure AND defacto counties, or our dejure/defacto vassals' counties, wherever those may be.
 	// Actual flagging will happen on county level as higher titles have no dejure provinces linked to them at this stage.
 	// We're leaving baronies out of this, counties are sufficient.
 	for (const auto& deJureVassal: djVassals)
 	{
 		counter += deJureVassal.second->flagDeJureHREProvinces();
+	}
+	for (const auto& deFactoVassal: dfVassals)
+	{
+		counter += deFactoVassal.second->flagDeJureHREProvinces();
 	}
 	if (!clay) // We really need the county clay to confirm we're a landful proper county.
 		return counter;

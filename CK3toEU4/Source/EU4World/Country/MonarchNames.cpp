@@ -1,72 +1,47 @@
 #include "MonarchNames.h"
+#include "ParserHelpers.h"
 #include "Log.h"
+#include "StringUtils.h"
 
 EU4::MonarchNames::MonarchNames(std::istream& theStream)
 {
-	// This is a very special manual parsing class that we have to use to load monarch names.
-	// They come in form: "Mohammed #0" = 100
-	// Parser will choke on quoted key so we'll do this manually.
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
 
-	std::string line;
-	while (std::getline(theStream, line))
+void EU4::MonarchNames::registerKeys()
+{
+	registerRegex(commonItems::catchallRegex, [this](const std::string& nameBlock, std::istream& theStream) {
+		auto chance = commonItems::singleInt(theStream).getInt();
+		const auto nameData = parseName(nameBlock);
+		if (nameData)
+			monarchNames.insert(std::pair(nameData->first, std::pair(nameData->second, chance)));		
+	});
+}
+
+std::optional<std::pair<std::string, int>> EU4::MonarchNames::parseName(const std::string& nameBlock)
+{
+	auto theBlock = nameBlock;
+	if (theBlock.size() > 2 && theBlock[0] == '\"' && theBlock[theBlock.size() - 1] == '\"')
+		theBlock = commonItems::remQuotes(theBlock);
+	if (theBlock.find('#') != std::string::npos)
 	{
-		if (line.find('{') != std::string::npos)
-			continue;
-		if (line.find('}') != std::string::npos)
-			return;
-		if (line.length() < 5)
-			continue;
-		if (line.at(0) == '#')
-			continue;
-
-		std::string name;
-		auto regnal = 0;
-		auto chance = 0;
-
-		auto quoteLoc = line.find_first_of('\"');
-		if (quoteLoc == std::string::npos)
-			continue;
-		auto newline = line.substr(quoteLoc + 1, line.length());
-		quoteLoc = newline.find_last_of('\"');
-		if (quoteLoc == std::string::npos)
-			continue;
-		auto fullname = newline.substr(0, quoteLoc);
-		if (fullname.find('#') != std::string::npos)
-		{
-			const auto hashpos = fullname.find('#');
-			name = fullname.substr(0, hashpos - 1);
-			try
-			{
-				regnal = std::stoi(fullname.substr(hashpos + 1, fullname.length()));
-			}
-			catch (std::exception& e)
-			{
-				Log(LogLevel::Warning) << "Broken Monarch regnal in line: " << line << " : " << e.what();
-				continue;
-			}
-		}
-		else
-		{
-			name = fullname;
-		}
-
-		const auto eqPos = line.find('=');
-		newline = line.substr(eqPos + 1, line.length());
-		if (newline.find('#') != std::string::npos)
-		{
-			const auto hashpos = newline.find('#');
-			newline = newline.substr(0, hashpos);
-		}
+		const auto hashpos = theBlock.find('#');
+		const auto name = theBlock.substr(0, hashpos - 1);
 		try
 		{
-			chance = std::stoi(newline);
+			const auto regnal = std::stoi(theBlock.substr(hashpos + 1, theBlock.length()));
+			return std::pair(name, regnal);
 		}
 		catch (std::exception& e)
 		{
-			Log(LogLevel::Warning) << "Broken Monarch chance in line: " << line << " : " << e.what();
-			continue;
+			Log(LogLevel::Warning) << "Broken Monarch regnal in name: " << theBlock << " : " << e.what();
+			return std::nullopt;
 		}
-
-		monarchNames.insert(std::pair(name, std::pair(regnal, chance)));
+	}
+	else
+	{
+		return std::pair(theBlock, 0);
 	}
 }

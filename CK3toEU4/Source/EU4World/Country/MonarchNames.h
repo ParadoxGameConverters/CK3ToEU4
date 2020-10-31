@@ -1,12 +1,12 @@
 #ifndef EU4_MONARCH_NAMES_H
 #define EU4_MONARCH_NAMES_H
-#include <istream>
 #include <map>
+#include "Parser.h"
 
 namespace EU4
 {
 
-class MonarchNames
+class MonarchNames: commonItems::parser
 {
   public:
 	MonarchNames() = default;
@@ -15,6 +15,9 @@ class MonarchNames
 	[[nodiscard]] const auto& getMonarchNames() const { return monarchNames; }
 
   private:
+	void registerKeys();
+	static std::optional<std::pair<std::string, int>> parseName(const std::string& nameBlock);
+	
 	std::map<std::string, std::pair<int, int>> monarchNames; // name (without regnal), pair(regnal, chance)
 };
 } // namespace EU4
