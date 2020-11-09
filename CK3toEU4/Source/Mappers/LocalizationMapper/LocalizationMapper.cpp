@@ -43,50 +43,62 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 
 void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const std::string& language)
 {
+	std::string line;
+	std::getline(theStream, line); // Dropping first line and BOM with it.
+
 	while (!theStream.eof())
 	{
-		std::string line;
-		getline(theStream, line);
-
-		if (line[0] == '#' || line[1] == '#' || line.length() < 4)
-			continue;
-
-		const auto sepLoc = line.find_first_of(':');
-		if (sepLoc == std::string::npos)
-			continue;
-		const auto key = line.substr(1, sepLoc - 1);
-		const auto newLine = line.substr(sepLoc + 1, line.length());
-		const auto quoteLoc = newLine.find_first_of('\"');
-		const auto quote2Loc = newLine.find_last_of('\"');
-		if (quoteLoc == std::string::npos || quote2Loc == std::string::npos || quote2Loc - quoteLoc == 0)
-			continue;
-		const auto value = newLine.substr(quoteLoc + 1, quote2Loc - quoteLoc - 1);
-
-		if (localizations.count(key))
+		std::getline(theStream, line);
+		const auto [key, value] = determineKeyLocalizationPair(line);
+		if (!key.empty() && !value.empty())
 		{
-			if (language == "english")
-				localizations[key].english = value;
-			if (language == "french")
-				localizations[key].french = value;
-			if (language == "german")
-				localizations[key].german = value;
-			if (language == "spanish")
-				localizations[key].spanish = value;
-		}
-		else
-		{
-			LocBlock newBlock;
-			if (language == "english")
-				newBlock.english = value;
-			if (language == "french")
-				newBlock.french = value;
-			if (language == "german")
-				newBlock.german = value;
-			if (language == "spanish")
-				newBlock.spanish = value;
-			localizations.insert(std::pair(key, newBlock));
+			if (localizations.count(key))
+			{
+				if (language == "english")
+					localizations[key].english = value;
+				if (language == "french")
+					localizations[key].french = value;
+				if (language == "german")
+					localizations[key].german = value;
+				if (language == "spanish")
+					localizations[key].spanish = value;
+			}
+			else
+			{
+				LocBlock newBlock;
+				if (language == "english")
+					newBlock.english = value;
+				if (language == "french")
+					newBlock.french = value;
+				if (language == "german")
+					newBlock.german = value;
+				if (language == "spanish")
+					newBlock.spanish = value;
+				localizations.insert(std::pair(key, newBlock));
+			}			
 		}
 	}
+}
+
+std::pair<std::string, std::string> mappers::LocalizationMapper::determineKeyLocalizationPair(const std::string& text)
+{
+	std::pair<std::string, std::string> blankReturn;
+
+	if (text.size() > 2 && (text[0] == '#' || text[1] == '#'))
+		return blankReturn;
+
+	const auto keyBeginPos = text.find_first_not_of(' ');
+	if (keyBeginPos == std::string::npos)
+		return blankReturn;
+
+	const auto keyEndPos = text.find_first_of(':', keyBeginPos + 1);
+	const auto quotePos = text.find_first_of('"', keyEndPos);
+	if (quotePos == std::string::npos)
+		return blankReturn;
+
+	const auto localizationBeginPos = quotePos + 1;
+	const auto localizationEndPos = text.find_last_of('"', text.size());
+	return std::make_pair(text.substr(keyBeginPos, keyEndPos - keyBeginPos), text.substr(localizationBeginPos, localizationEndPos - localizationBeginPos));
 }
 
 std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(const std::string& key) const
@@ -104,7 +116,7 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 			newBlock.german = newBlock.english;
 		if (newBlock.french.empty())
 			newBlock.french = newBlock.english;
-		return newBlock;
+		return std::move(newBlock);
 	}
 	// either all is well, or we're missing english. Can't do anything about the latter.
 	return keyItr->second;
