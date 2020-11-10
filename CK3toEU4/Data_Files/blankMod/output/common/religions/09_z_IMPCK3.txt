@@ -1,0 +1,76 @@
+pagan = {
+	canaanite = {
+		color = { 144 186 19 }
+		icon = 121
+		country = {
+			naval_forcelimit = 1
+			global_sailors_modifier = 1.2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			naval_forcelimit = 0.5
+			global_sailors_modifier = 1.1
+		}
+		center_of_religion = 379 # Jerusalem
+		heretic = { MOLOCHITES AMMONITES JEBUSAEI MOABITES EDOMITES }
+		allowed_conversion = { jewish }
+		personal_deity = yes
+	}
+	druidism = {
+		color = { 102 66 31 }
+		icon = 149
+		country = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	
+	kemetism = {
+		color = { 179 45 0 }
+		icon = 56
+		country = {
+			legitimacy = 2
+			republican_tradition = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			legitimacy = 1
+			republican_tradition = 1
+		}
+		personal_deity = yes
+		heretic = { KUSHITE SPHYNX }
+	}
+	
+	mardukism = {
+		icon = 126
+		color = { 128 11 0 }
+		country = {
+			monthly_splendor = 2
+			harsh_treatment_cost = -0.3
+		}
+		province = {
+			local_defensiveness = 0.1
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			monthly_splendor = 1
+			harsh_treatment_cost = -0.1
+		}
+		heretic = { DANIEL SUMER }
+		allowed_conversion = { jewish }
+	}
+}

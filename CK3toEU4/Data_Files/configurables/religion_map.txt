@@ -42,7 +42,7 @@ link = { eu4 = finnish_pagan_reformed ck3 = finnish_reformed }
 # Germanic  
 link = { eu4 = norse_pagan ck3 = norse_pagan }
 # Hellenism  
-link = { eu4 = hellenic_pagan ck3 = hellenic_pagan }
+link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = anatolian_pagan ck3 = anatolian_pagan_old ck3 = dacian_pagan ck3 = dacian_pagan_old }
 # Hinduism  
 link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam  
@@ -68,7 +68,7 @@ link = { eu4 = magyar_pagan ck3 = magyar_pagan }
 # Mundhum  
 link = { eu4 = animism ck3 = kiratism ck3 = yumaism }
 # Paganism  
-link = { eu4 = pagan_religion ck3 = pagan }
+link = { eu4 = pagan_religion ck3 = pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = berber_pagan ck3 = berber_pagan_old ck3 = caucasian_pagan ck3 = caucasian_pagan_old ck3 = iberian_pagan ck3 = iberian_pagan_old }
 # Qiangic  
 link = { eu4 = confucianism ck3 = rrmeaism }
 link = { eu4 = animism ck3 = melieism }
@@ -77,7 +77,7 @@ link = { eu4 = slavic_pagan ck3 = slavic_pagan }
 # Taoism  
 link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism  
-link = { eu4 = tengri_pagan ck3 = tengri_pagan }
+link = { eu4 = tengri_pagan ck3 = tengri_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 # Waaqism  
 link = { eu4 = shamanism ck3 = waaqism_pagan }
 # West African  
@@ -102,3 +102,9 @@ link = { eu4 = khurramism ck3 = khurramism }
 # Zunism  
 link = { eu4 = zun_pagan ck3 = zun_pagan }
 link = { eu4 = zun_pagan_reformed ck3 = zun_pagan_reformed }
+
+# IMP:CK3 addition
+link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }
+link = { eu4 = druidism ck3 = celtic_pagan ck3 = celtic_pagan_old }
+link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
+link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old }
