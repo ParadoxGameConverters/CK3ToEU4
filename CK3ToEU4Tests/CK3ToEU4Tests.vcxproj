@@ -209,6 +209,7 @@
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
+    <ClCompile Include="MapperTests\LocalisationTests\LocalisationTests.cpp" />
     <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp" />

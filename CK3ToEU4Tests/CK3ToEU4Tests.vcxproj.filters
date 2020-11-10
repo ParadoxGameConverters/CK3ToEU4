@@ -205,6 +205,9 @@
     <Filter Include="CK3ToEU4\EU4World\Religion">
       <UniqueIdentifier>{dc7c04c4-71a9-4f48-a52a-3251ab5e7deb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapperTests\LocalizationTests">
+      <UniqueIdentifier>{5ff4266a-ed17-4041-8283-e5cde1a877ca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -631,6 +634,9 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp">
       <Filter>CK3ToEU4\EU4World\Religion</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LocalisationTests\LocalisationTests.cpp">
+      <Filter>MapperTests\LocalizationTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
