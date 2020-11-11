@@ -1,0 +1,58 @@
+lost_cultures_group = {
+	oldspain = { #Pre-Roman Iberia
+		male_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		female_names = {
+			Ana Ama Aretaunin Aunia Auruningica Canine Daleninar Similce Sicounin Stena Aife Thurinninar Secetaunin Teite Tettingica Nerseada
+		}
+		dynasty_names = {
+			Punicid Orisid Amidian Nisunidian Tiresidian Budidian Gargoridian Culcidian Indicidian Iscerbelidian Karidian Korbidian Lagunidian Mandonidian Magavarician Uxentican Umarilid Turenidian Urceticidian
+		}
+	}
+	illyrian = {
+		male_names = {
+			Andinos Andios Anneses Annos Aplis Aploudos Aplos Apouros Baidaros Baizo Baizos Baolios Bardourios Bato Byoukos Byousas Bizo Bryoukos Karrios Daiekos Daitor Dasantos Dasios Dazomenos Dazos Epikaris Iettos Implaios Laidikalios Laidietis Laidos Labios Ledros Massurios Messios Messor Paio Panentios Panes Panto Pantos Plannios Plares Prorados Sarnos Skenobarbos Sestos Statanios Statikos Statos Souttis Temaios Tizios Tritonos Tritos Turelios Ulkidios Baranos Baridios Bendo Bepos Berzoulos
+			Karbanios Germanos Labianos Pinsos Pladomenos Verzaieos # Of Dalmatian origin
+			Anadros Bouzetios Ditos Loantios Pantadienos Plator Platourios Rufantius Sestenius Stennas Vendes # Used among the Japodes
+			Tourranios Tourrinios Touros # Used among the Japodes; of Liburnian origin
+			Andes Iaritos Montanos Parmanicos Sarios Seneka Silos Sinos # Used among the Japodes; probably of Celtic origin
+			Blaidaros Dasmenos Lensos Sassaios Skilos Sourko # Used among the Breuci
+			Kralos Liros Passalos Likkaios # Used among the Colapiani
+			Skenos # Used among the Jasi
+		}
+		female_names = {
+			Andio Aplo Arbo Kallo Kato Kourbania Koursolabia Dasa Dasantilla Dasto Genthena Glabikida Iato Labinkia Likko Lossa Mabida Nebato Pantia Passia Platino Samountio Seio Sesto Stato Surio Soutta Tito Tritano Barro
+			Stataria Testo Tritto # Of Dalmatian origin
+			Deidmou Dennaia Ditoueio Stennato Tatonia Vandano # Used among the Japodes
+			Ammida Matera Maxa # Used among the Japodes; probably of Celtic origin
+			Mellito Nantia Nonntio Poia Sicou # Used among the Japodes; of Celtic origin
+			Arsa # Probably of Thracian origin
+		}
+		dynasty_names = {
+			Andinid Andid Annesid Annid Aplid Apludid Apurid Baizid Bardurid Batid Beukid Beusid Bizid Karrid Daitorid Dasid Dazomenid Dazid Epicarid Iettid Laidicalid Laidietid Laidid Ledrid Messid Messorid Panentid Panid Pantid Plannid Plarid Proradid Samekkid Sarnid Skenobarbid Statanid Statikid Statid Suttid Tizid Tritonid Tritid Turelid Varanid Varidid Vendid Vepid Verzulid Carvanid Germanid Lavianid Pinsid Pladomenid Platid Verzaiid Anadrid Buzetid Ditid Loantid Pantadienid Platorid Platourid Portid Rufantid Sestenid Stennid Vendid Tourranid Tourrinid Tourid Iaritid Montanid Parmanikid Sarid Senekid Silid Sinid Blaidarid Dasmenid Lensid Sassaid Skilid Surkid Kralid Lirid Passalid Likkaid Skenid
+		}
+	}
+	nuragic = {
+		male_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+		female_names = {
+			Ana Ama Aretaunin Aunia Auruningica Canine Daleninar Similce Sicounin Stena Aife Thurinninar Secetaunin Teite Tettingica Nerseada
+		}
+		dynasty_names = {
+			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
+			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
+		}
+	}
+}
+germanic = {
+	getian = { }
+	vandal = { }
+	gothic = { }
+}
+byzantine = {
+	alexandrine = { }
+}

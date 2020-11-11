@@ -400,3 +400,25 @@ link = { eu4 = huron ck3 = kanata tech = north_american gfx = northamericagfx}
 link = { eu4 = susquehannock ck3 = susquehannock tech = north_american gfx = northamericagfx}
 link = { eu4 = cherokee ck3 = cherokee tech = north_american gfx = northamericagfx}
 
+# IMP:CK3
+link = { eu4 = aegyptian ck3 = old_egyptian tech = western gfx = muslimgfx }
+link = { eu4 = carthaginian ck3 = numidian ck3 = carthaginian tech = western gfx = muslimgfx }
+link = { eu4 = gaulic ck3 = belgae ck3 = gallic tech = western gfx = westerngfx }
+link = { eu4 = pannonian ck3 = celtic_pannonian tech = western gfx = easterngfx }
+link = { eu4 = oldspain ck3 = celtiberian ck3 = iberian ck3 = lusoiberian tech = western gfx = westerngfx }
+link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek ck3 = macedonian ck3 = thracian ck3 = dacian tech = eastern gfx = easterngfx }
+link = { eu4 = getian ck3 = getian tech = nomad_group gfx = easterngfx }
+link = { eu4 = anatolian ck3 = ionic ck3 = cappadocian ck3 = phrygian tech = eastern gfx = easterngfx }
+link = { eu4 = pontic_greek ck3 = pontic tech = eastern gfx = easterngfx }
+link = { eu4 = phoenician ck3 = phoenician ck3 = nabatean tech = eastern gfx = muslimgfx }
+link = { eu4 = illyrian ck3 = dalmatian tech = nomad_group gfx = easterngfx }
+link = { eu4 = aramaic ck3 = aramaic tech = eastern gfx = muslimgfx }
+link = { eu4 = babylonian ck3 = babylonian tech = eastern gfx = muslimgfx }
+link = { eu4 = vandal ck3 = vandal tech = western gfx = westerngfx }
+link = { eu4 = nuragic ck3 = nuragic tech = western gfx = inuitgfx }
+link = { eu4 = scythian ck3 = scythian ck3 = sarmatian tech = nomad_group gfx = muslimgfx }
+link = { eu4 = persian ck3 = parthian tech = eastern gfx = easterngfx }
+link = { eu4 = hebrew ck3 = hebrew tech = eastern gfx = muslimgfx }
+link = { eu4 = etrurian ck3 = etruscan tech = western gfx = westerngfx }
+link = { eu4 = britannian ck3 = brythonic tech = nomad_group gfx = westerngfx }
+link = { eu4 = gothic ck3 = gothic tech = western gfx = westerngfx }
