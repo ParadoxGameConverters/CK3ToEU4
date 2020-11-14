@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export CC=/usr/bin/gcc-9 &&
-export CXX=/usr/bin/g++-9 &&
+export CC=/usr/bin/gcc-10 &&
+export CXX=/usr/bin/g++-10 &&
 
 cd imageMagick &&
 cat im7.10.tar.* > im7.10-linux-source.tar &&
