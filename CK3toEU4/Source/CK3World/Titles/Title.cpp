@@ -369,3 +369,47 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 								 devWeightsMapper.getDevFromDev() * development;
 	return totalDev;
 }
+
+void CK3::Title::relinkDFVassals()
+{
+	// We're reconstructing defacto hierarchy; redirecting our DFvassals from our DF title into our DJ title holder of this title holds hold both.
+	// Otherwise secondary titles wouldn't have their own vassals under them but under primary title, breaking PU splitoffs.
+	if (name.starts_with("c_") || name.starts_with("b_"))
+		return; // don't bother with counties and below.
+
+	for (const auto& dfVassal: dfVassals)
+	{
+		if (!dfVassal.second)
+			continue;
+
+		if (dfVassal.second->getDFLiege() && dfVassal.second->getDJLiege() && dfVassal.second->getDFLiege()->first != dfVassal.second->getDJLiege()->first)
+		{
+			// Do we own both titles?
+			if (holder && holder->second && holder->second->getDomain())
+			{
+				const auto holderTitles = holder->second->getDomain()->getDomain();
+				std::set<std::string> titleNameCache;
+				for (const auto& domainTitle: holderTitles)
+					titleNameCache.insert(domainTitle.second->getName());
+
+				if (titleNameCache.contains(dfVassal.second->getDFLiege()->second->getName()) &&
+					 titleNameCache.contains(dfVassal.second->getDJLiege()->second->getName()))
+				{
+					// We do. Grab the dejure title and load that as defacto one.
+					dfVassal.second->loadDFLiege(*dfVassal.second->getDJLiege());
+					dfVassal.second->getDJLiege()->second->addDFVassals(std::map{dfVassal});
+					dropTitleFromDFVassals(dfVassal.first);
+				}
+			}
+			else
+			{
+				if (!holder)
+					Log(LogLevel::Warning) << name << " has no holder but has vassals?";
+				else if (!holder->second)
+					Log(LogLevel::Warning) << name << "'s holder is not linked up!";
+				else if (!holder->second->getDomain())
+					Log(LogLevel::Warning) << name << "' holder has no domain but has vassals?";
+			}
+		}
+	}
+}

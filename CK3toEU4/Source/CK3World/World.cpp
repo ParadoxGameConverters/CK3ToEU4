@@ -200,9 +200,9 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		const std::string bufStr(bigBuf);
 		const auto pos = bufStr.find("}\nPK");
-		if ( pos != std::string::npos)
+		if (pos != std::string::npos)
 		{
-			saveGame.saveType = SaveType::ZIPFILE;			
+			saveGame.saveType = SaveType::ZIPFILE;
 		}
 		else
 		{
@@ -429,6 +429,8 @@ void CK3::World::crosslinkDatabases()
 	characters.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Titles into Titles.";
 	titles.linkTitles();
+	Log(LogLevel::Info) << "-> Fixing Titles Pointing To Wrong Places.";
+	titles.relinkDFVassals();
 	Log(LogLevel::Info) << "-> Loading Titles into Clay.";
 	landedTitles.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Characters into Characters.";

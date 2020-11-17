@@ -1,10 +1,11 @@
+#include "../CK3toEU4/Source/CK3World/Characters/Characters.h"
 #include "../CK3toEU4/Source/CK3World/Geography/CountyDetail.h"
 #include "../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
 #include "../CK3toEU4/Source/CK3World/Titles/Title.h"
+#include "../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "../CK3toEU4/Source/Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "gtest/gtest.h"
-#include <sstream>
 
 TEST(CK3World_TitleTests, idCanBeSet)
 {
@@ -101,7 +102,8 @@ TEST(CK3World_TitleTests, nameCanBeCleanedOfGUIJunk)
 
 	std::stringstream input2;
 	input2 << "key=\"k_grenada\"\n";
-	input2 << "name=\"\x15TOOLTIP:FAITH,catholic \x15L Catholic\x15!\x15! \x15ONCLICK:TITLE,733 \x15TOOLTIP:LANDED_TITLE,733 \x15L Lotharingia\x15!\x15!\x15!\"\n";
+	input2
+		 << "name=\"\x15TOOLTIP:FAITH,catholic \x15L Catholic\x15!\x15! \x15ONCLICK:TITLE,733 \x15TOOLTIP:LANDED_TITLE,733 \x15L Lotharingia\x15!\x15!\x15!\"\n";
 	const CK3::Title theTitle2(input2, 1);
 	ASSERT_EQ("Catholic Lotharingia", theTitle2.getDisplayName());
 }
@@ -273,7 +275,7 @@ TEST(CK3World_TitleTests, buildingWeighWithoutCountyfulClayThrowsExceptions)
 	landedTitles.loadTitles(landedStream);
 	auto lc = landedTitles.getFoundTitles().find("c_county")->second;
 	c.second->loadClay(lc);
-	
+
 	try
 	{
 		auto test = c.second->getBuildingWeight(devWeightMapper);
@@ -342,7 +344,7 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	b1.second->loadClay(lb1);
 	b2.second->loadClay(lb2);
 	b3.second->loadClay(lb3);
-	
+
 	try
 	{
 		auto test = c.second->getBuildingWeight(devWeightMapper);
@@ -352,4 +354,48 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	{
 		ASSERT_STREQ("Barony b_barony1 of c_county has no clay province?", e.what());
 	}
+}
+
+TEST(CK3World_TitleTests, dfVassalsCanBeRelinked)
+{
+	std::stringstream charInput;
+	charInput << "11={\n";
+	charInput << "\tfirst_name = \"bob spongepants\"\n";
+	charInput << "\tlanded_data = {\n";
+	charInput << "\t\tdomain = { 3 4 1 2 }\n"; // guy holds 4 titles. first is primary, then listed in order of importance.
+	charInput << "\t\trealm_capital = 1\n";	 // this is his capital, a county (in game a barony but we're abstracting).
+	charInput << "\t}\n";
+	charInput << "}\n";
+	CK3::Characters characters(charInput);
+
+	std::stringstream titleInput;
+	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";	// this one is his capital.
+	titleInput << "2 = { key = c_county2 holder = 11 de_facto_liege = 3 de_jure_liege = 4  }\n"; // this one links to his primary title. -> This is wrong.
+	titleInput << "3 = { key = d_duchy1 holder = 11 de_jure_vassals = { 1 } }\n";						// this is primary title.
+	titleInput << "4 = { key = d_duchy2 holder = 11 de_jure_vassals = { 2 } }\n";						// this is secondary duchy.
+	CK3::Titles titles(titleInput);
+
+	// Fist we put characters into titles.
+	titles.linkCharacters(characters);
+	// And titles into characters.
+	characters.linkTitles(titles);
+	// And titles into titles.
+	titles.linkTitles();
+
+	// then we tell the primary title to relink wrongly linked vassals.
+	const auto& duchy1 = titles.getTitles().find("d_duchy1")->second;
+	duchy1->relinkDFVassals();
+
+	// now let's grab the county2
+	const auto& county2 = titles.getTitles().find("c_county2")->second;
+
+	ASSERT_EQ(4, county2->getDFLiege()->first);											// it is properly linked to duchy2 now.
+	ASSERT_EQ("d_duchy2", county2->getDFLiege()->second->getName());				// link works
+	ASSERT_EQ(1, duchy1->getDFVassals().size());											// duchy1 has only 1 dfvassal
+	ASSERT_EQ("c_county1", duchy1->getDFVassals().begin()->second->getName()); // and that's county1.
+
+	// and finally
+	const auto& duchy2 = titles.getTitles().find("d_duchy2")->second;
+	ASSERT_EQ(1, duchy2->getDFVassals().size());											// duchy2 has the vassal registered
+	ASSERT_EQ("c_county2", duchy2->getDFVassals().begin()->second->getName()); // and linked.
 }
