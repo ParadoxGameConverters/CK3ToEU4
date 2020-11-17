@@ -21,7 +21,7 @@ class Titles: commonItems::parser
 	void linkTitles();
 	void linkCharacters(const Characters& characters);
 	void linkLandedTitles(const LandedTitles& landedTitles);
-	void relinkDFVassals();
+	void relinkDeFactoVassals();
 
   private:
 	void registerKeys();

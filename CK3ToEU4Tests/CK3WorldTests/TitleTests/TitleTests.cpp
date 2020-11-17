@@ -384,7 +384,7 @@ TEST(CK3World_TitleTests, dfVassalsCanBeRelinked)
 
 	// then we tell the primary title to relink wrongly linked vassals.
 	const auto& duchy1 = titles.getTitles().find("d_duchy1")->second;
-	duchy1->relinkDFVassals();
+	duchy1->relinkDeFactoVassals();
 
 	// now let's grab the county2
 	const auto& county2 = titles.getTitles().find("c_county2")->second;

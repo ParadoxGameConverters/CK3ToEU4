@@ -203,10 +203,10 @@ void CK3::Titles::linkTitles()
 							  << " dejure vassals updated.";
 }
 
-void CK3::Titles::relinkDFVassals()
+void CK3::Titles::relinkDeFactoVassals()
 {
 	for (const auto& title: titles)
-		title.second->relinkDFVassals();
+		title.second->relinkDeFactoVassals();
 }
 
 void CK3::Titles::linkCharacters(const Characters& characters)

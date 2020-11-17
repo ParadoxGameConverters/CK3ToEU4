@@ -430,7 +430,7 @@ void CK3::World::crosslinkDatabases()
 	Log(LogLevel::Info) << "-> Loading Titles into Titles.";
 	titles.linkTitles();
 	Log(LogLevel::Info) << "-> Fixing Titles Pointing To Wrong Places.";
-	titles.relinkDFVassals();
+	titles.relinkDeFactoVassals();
 	Log(LogLevel::Info) << "-> Loading Titles into Clay.";
 	landedTitles.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Characters into Characters.";

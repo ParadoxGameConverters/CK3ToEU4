@@ -369,7 +369,7 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 	return totalDev;
 }
 
-void CK3::Title::relinkDFVassals()
+void CK3::Title::relinkDeFactoVassals()
 {
 	// We're reconstructing defacto hierarchy; we're redirecting our DFvassals from our DFtitle into our DJtitle - if holder of this title holds hold both.
 	// This is important - otherwise secondary titles wouldn't have their own vassals under them but under primary title, breaking PU splitoffs,

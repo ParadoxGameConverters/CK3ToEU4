@@ -108,7 +108,7 @@ class Title: commonItems::parser
 	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
 	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
 	void setElectorate() { electorate = true; }
-	void relinkDFVassals();
+	void relinkDeFactoVassals();
 
 	// conversion
 	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }
