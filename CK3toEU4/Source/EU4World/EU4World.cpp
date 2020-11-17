@@ -751,7 +751,7 @@ void EU4::World::importAdvisers()
 
 void EU4::World::resolvePersonalUnions()
 {
-	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Untions";
+	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Unions";
 	auto annexCounter = 0;
 	auto puCounter = 0;
 	std::map<long long, std::map<std::string, std::shared_ptr<Country>>> holderTitles;

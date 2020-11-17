@@ -423,6 +423,8 @@ void CK3::World::crosslinkDatabases()
 	houses.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Houses into Characters.";
 	characters.linkHouses(houses);
+	Log(LogLevel::Info) << "-> Loading Characters into Titles.";
+	titles.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Titles into Characters.";
 	characters.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Titles into Titles.";
@@ -431,8 +433,6 @@ void CK3::World::crosslinkDatabases()
 	landedTitles.linkTitles(titles);
 	Log(LogLevel::Info) << "-> Loading Characters into Characters.";
 	characters.linkCharacters();
-	Log(LogLevel::Info) << "-> Loading Characters into Titles.";
-	titles.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Clay into Titles.";
 	titles.linkLandedTitles(landedTitles);
 	Log(LogLevel::Info) << "-> Loading Traits into Characters.";

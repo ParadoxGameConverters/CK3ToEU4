@@ -175,7 +175,7 @@ void CK3::Titles::linkTitles()
 				}
 			}
 			title.second->loadDJVassals(replacementMap);
-		}
+		}		
 	}
 
 	// Now with fully generated dfvCache we can load it into all lieges.
@@ -197,6 +197,45 @@ void CK3::Titles::linkTitles()
 	for (const auto& update: updateMap)
 	{
 		IDCache[update.first]->addDFVassals(update.second);
+	}
+
+	// Finally finally, redirect our DFvassals from our DF title into our DJ title if we hold both!
+	for (const auto& title: titles)
+	{
+		if (!title.second->getDFVassals().empty())
+		{
+			for (const auto& dfVassal: title.second->getDFVassals())
+			{
+				if (!dfVassal.second)
+					continue;
+				
+				if (dfVassal.second->getDFLiege() && dfVassal.second->getDJLiege() &&
+					 dfVassal.second->getDFLiege()->first != dfVassal.second->getDJLiege()->first)
+				{
+					// Do we own both titles?
+					if (title.second->getHolder() && title.second->getHolder()->second->getDomain())
+					{
+						const auto holderTitles = title.second->getHolder()->second->getDomain()->getDomain();
+						std::set<std::string> titleNameCache;
+						for (const auto& domainTitle: holderTitles)
+							titleNameCache.insert(domainTitle.second->getName());
+						
+						if (titleNameCache.contains(dfVassal.second->getDFLiege()->second->getName()) &&
+							 titleNameCache.contains(dfVassal.second->getDJLiege()->second->getName()))
+						{
+							// We do. Grab the dejure title and load that as defacto one.
+							dfVassal.second->loadDFLiege(*dfVassal.second->getDJLiege());
+							dfVassal.second->getDJLiege()->second->addDFVassals(std::map{dfVassal});
+							title.second->dropTitleFromDFVassals(dfVassal.first);
+						}
+					}
+					else
+					{
+						Log(LogLevel::Warning) << title.second->getName() << " has no holder or holder domain but has vassals?";
+					}
+				}
+			}
+		}
 	}
 
 	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter
