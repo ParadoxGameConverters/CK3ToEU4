@@ -6,7 +6,6 @@
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include <cmath>
 
 CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
@@ -372,8 +371,10 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 
 void CK3::Title::relinkDFVassals()
 {
-	// We're reconstructing defacto hierarchy; redirecting our DFvassals from our DF title into our DJ title holder of this title holds hold both.
-	// Otherwise secondary titles wouldn't have their own vassals under them but under primary title, breaking PU splitoffs.
+	// We're reconstructing defacto hierarchy; we're redirecting our DFvassals from our DFtitle into our DJtitle - if holder of this title holds hold both.
+	// This is important - otherwise secondary titles wouldn't have their own vassals under them but under primary title, breaking PU splitoffs,
+	// and resulting with those secondary duchies/kingdoms being discarded as landless.
+
 	if (name.starts_with("c_") || name.starts_with("b_"))
 		return; // don't bother with counties and below.
 
@@ -388,6 +389,8 @@ void CK3::Title::relinkDFVassals()
 			if (holder && holder->second && holder->second->getDomain())
 			{
 				const auto holderTitles = holder->second->getDomain()->getDomain();
+
+				// Make a small cache of the holder's owned title names.
 				std::set<std::string> titleNameCache;
 				for (const auto& domainTitle: holderTitles)
 					titleNameCache.insert(domainTitle.second->getName());
@@ -395,9 +398,11 @@ void CK3::Title::relinkDFVassals()
 				if (titleNameCache.contains(dfVassal.second->getDFLiege()->second->getName()) &&
 					 titleNameCache.contains(dfVassal.second->getDJLiege()->second->getName()))
 				{
-					// We do. Grab the dejure title and load that as defacto one.
+					// We do own both. Tell the vassal to relink its defacto owner to dejure title.
 					dfVassal.second->loadDFLiege(*dfVassal.second->getDJLiege());
+					// Tell dejure title it's now owner of a brand new vassal.
 					dfVassal.second->getDJLiege()->second->addDFVassals(std::map{dfVassal});
+					// And finally...
 					dropTitleFromDFVassals(dfVassal.first);
 				}
 			}
