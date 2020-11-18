@@ -45,7 +45,7 @@ class Character: commonItems::parser
 	[[nodiscard]] const auto& getClaims() const { return claims; }
 
 	[[nodiscard]] const auto& getSkills() const { return skills; }
-	[[nodiscard]] const auto& getDomain() const { return characterDomain; }
+	[[nodiscard]] const auto& getCharacterDomain() const { return characterDomain; }
 	[[nodiscard]] const auto& getCourtierNames() const { return courtierNames; }
 	[[nodiscard]] const auto& getCouncilors() const { return councilors; }
 

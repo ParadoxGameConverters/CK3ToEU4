@@ -187,10 +187,10 @@ TEST(CK3World_CharactersTests, titlesCanBeLinked)
 	ASSERT_EQ("c_county1", c1->second->getClaims().find(1)->second->getName());
 	ASSERT_EQ("c_county3", c1->second->getClaims().find(3)->second->getName());
 	ASSERT_EQ("c_county5", c1->second->getClaims().find(5)->second->getName());
-	ASSERT_EQ("c_county2", c1->second->getDomain()->getRealmCapital().second->getName());
-	ASSERT_EQ(2, c1->second->getDomain()->getDomain().size());
-	ASSERT_EQ("c_county4", c1->second->getDomain()->getDomain()[0].second->getName());
-	ASSERT_EQ("c_county2", c1->second->getDomain()->getDomain()[1].second->getName());
+	ASSERT_EQ("c_county2", c1->second->getCharacterDomain()->getRealmCapital().second->getName());
+	ASSERT_EQ(2, c1->second->getCharacterDomain()->getDomain().size());
+	ASSERT_EQ("c_county4", c1->second->getCharacterDomain()->getDomain()[0].second->getName());
+	ASSERT_EQ("c_county2", c1->second->getCharacterDomain()->getDomain()[1].second->getName());
 }
 
 TEST(CK3World_CharactersTests, titlesLinkMissingClaimThrowsException)

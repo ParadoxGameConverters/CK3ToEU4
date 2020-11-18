@@ -76,7 +76,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	// --------------- History section
 	details.government.clear();
 	details.reforms.clear();
-	const auto& newGovernment = governmentsMapper.matchGovernment(details.holder->getDomain()->getGovernment(), title->first);
+	const auto& newGovernment = governmentsMapper.matchGovernment(details.holder->getCharacterDomain()->getGovernment(), title->first);
 	if (newGovernment)
 	{
 		details.government = newGovernment->first;
@@ -85,7 +85,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	}
 	else
 	{
-		Log(LogLevel::Warning) << "No government match for " << details.holder->getDomain()->getGovernment() << " for title: " << title->first
+		Log(LogLevel::Warning) << "No government match for " << details.holder->getCharacterDomain()->getGovernment() << " for title: " << title->first
 									  << ", defaulting to monarchy.";
 		details.government = "monarchy";
 	}
@@ -114,14 +114,15 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	// Change capitals for anyone not aztec.
 	if (tag != "AZT")
 	{
-		const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(details.holder->getDomain()->getRealmCapital().second->getDJLiege()->second->getName());
+		const auto& capitalMatch =
+			 provinceMapper.getEU4ProvinceNumbers(details.holder->getCharacterDomain()->getRealmCapital().second->getDJLiege()->second->getName());
 		if (!capitalMatch.empty())
 		{
 			details.capital = *capitalMatch.begin();
 		}
 		else
 		{
-			Log(LogLevel::Warning) << "No match for capital: " << details.holder->getDomain()->getRealmCapital().second->getDJLiege()->second->getName();
+			Log(LogLevel::Warning) << "No match for capital: " << details.holder->getCharacterDomain()->getRealmCapital().second->getDJLiege()->second->getName();
 			details.capital = 0;
 		}
 	}
@@ -130,7 +131,8 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	if (title->second->isThePope())
 	{
 		// This is getting absurd.
-		baseCulture = details.holder->getDomain()->getRealmCapital().second->getDJLiege()->second->getClay()->getCounty()->second->getCulture().second->getName();
+		baseCulture =
+			 details.holder->getCharacterDomain()->getRealmCapital().second->getDJLiege()->second->getClay()->getCounty()->second->getCulture().second->getName();
 	}
 	else
 	{
@@ -366,7 +368,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	if (!nameSet)
 	{
 		// using capital province name?
-		auto capitalName = details.holder->getDomain()->getRealmCapital().second->getName();
+		auto capitalName = details.holder->getCharacterDomain()->getRealmCapital().second->getName();
 		auto nameLocalizationMatch = localizationMapper.getLocBlockForKey(capitalName);
 		if (nameLocalizationMatch)
 		{
@@ -511,7 +513,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 {
 	// Are we the ruler's primary title? (if he has any)
 	// Potential PU's don't get monarchs. (and those apply for monarchies only)
-	if (details.holder->getDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
+	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
 		return;
 
 	// Determine regnalness.
@@ -767,7 +769,7 @@ bool EU4::Country::verifyCapital(const mappers::ProvinceMapper& provinceMapper)
 	if (details.capital && provinces.count(details.capital))
 		return false;
 
-	const auto& holderCapitalCounty = details.holder->getDomain()->getRealmCapital().second->getDFLiege()->second;
+	const auto& holderCapitalCounty = details.holder->getCharacterDomain()->getRealmCapital().second->getDFLiege()->second;
 	const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(holderCapitalCounty->getName());
 	if (!capitalMatch.empty())
 	{
@@ -937,9 +939,11 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	std::set<std::string> laws = title->second->getLaws();
 	std::string governmentType = "despotic";
-	if (details.holder->getDomain()->getLaws().count("tribal_authority_3") || details.holder->getDomain()->getLaws().count("crown_authority_3"))
+	if (details.holder->getCharacterDomain()->getLaws().count("tribal_authority_3") ||
+		 details.holder->getCharacterDomain()->getLaws().count("crown_authority_3"))
 		governmentType = "absolute";
-	else if (details.holder->getDomain()->getLaws().count("tribal_authority_0") || details.holder->getDomain()->getLaws().count("crown_authority_0"))
+	else if (details.holder->getCharacterDomain()->getLaws().count("tribal_authority_0") ||
+				details.holder->getCharacterDomain()->getLaws().count("crown_authority_0"))
 		governmentType = "aristocratic";
 	else
 		governmentType = "despotic";
@@ -977,7 +981,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms.clear();
 			details.reforms = {"autocracy_reform"};
 		}
-		for (auto law: details.holder->getDomain()->getLaws())
+		for (auto law: details.holder->getCharacterDomain()->getLaws())
 		{
 			// Electoral
 			if (electiveMonarchies.count(law) && tag != "ROM" && tag != "HLR" && tag != "BYZ")
@@ -994,7 +998,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	{
 		// No republic laws for now. Waiting for a DLC to bring some.
 		// Mercs
-		if (details.holder->getDomain()->getLaws().count("mercenary_company_succession_law"))
+		if (details.holder->getCharacterDomain()->getLaws().count("mercenary_company_succession_law"))
 		{
 			details.reforms.clear();
 			details.reforms = {"noble_elite_reform"};
@@ -1030,7 +1034,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		{
 			bool wasKing = false;
 			// Tribal Kingdoms
-			for (auto law: details.holder->getDomain()->getLaws())
+			for (auto law: details.holder->getCharacterDomain()->getLaws())
 			{
 				if (partitionSuccession.count(law))
 				{
@@ -1058,7 +1062,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms = {"papacy_reform"};
 		}
 		// Holy Orders
-		else if (details.holder->getDomain()->getLaws().count("holy_order_succession_law"))
+		else if (details.holder->getCharacterDomain()->getLaws().count("holy_order_succession_law"))
 		{
 			details.reforms.clear();
 			details.reforms = {"monastic_order_reform"};
@@ -1248,7 +1252,7 @@ void EU4::Country::initializeAdvisers(const mappers::ReligionMapper& religionMap
 	// initialized.
 	if (!title || !details.holder)
 		return; // Vanilla and the dead do not get these.
-	if (details.holder->getDomain()->getDomain()[0].second->getName() != title->first)
+	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first)
 		return; // PU's don't get advisors on secondary countries.
 
 	for (const auto& adviser: details.holder->getCouncilors())

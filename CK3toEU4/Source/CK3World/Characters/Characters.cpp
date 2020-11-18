@@ -129,7 +129,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 
 	for (const auto& character: characters)
 	{
-		const auto& domain = character.second->getDomain();
+		const auto& domain = character.second->getCharacterDomain();
 		if (domain)
 		{
 			// load realm capital

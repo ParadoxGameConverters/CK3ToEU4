@@ -530,10 +530,10 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	}
 
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
-	if (!hreHolder->second->getDomain())
-		throw std::runtime_error("HREmperor has no Domain!");
+	if (!hreHolder->second->getCharacterDomain())
+		throw std::runtime_error("HREmperor has no Character Domain!");
 
-	for (const auto& hreHolderTitle: hreHolder->second->getDomain()->getDomain())
+	for (const auto& hreHolderTitle: hreHolder->second->getCharacterDomain()->getDomain())
 	{
 		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
 			continue;
@@ -568,7 +568,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 
 	for (const auto& afflictedPerson: brickedPeople)
 	{
-		const auto& holderDomain = afflictedPerson.second->getDomain()->getDomain();
+		const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 		const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
 		for (const auto& holderTitle: holderDomain)
@@ -669,7 +669,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		// Same as with HREmperor, we need to roll back counties or duchies that got released from ex-emperor himself or kings.
 		for (const auto& afflictedPerson: brickedPeople)
 		{
-			const auto& holderDomain = afflictedPerson.second->getDomain()->getDomain();
+			const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 			const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
 			for (const auto& holderTitle: holderDomain)
@@ -777,7 +777,7 @@ void CK3::World::splitVassals(const Configuration& theConfiguration)
 		if (title.second->isThePope())
 			continue; // Not touching the pope.
 		// let's not split hordes or tribals. <- TODO: Add horde here once some DLC drops.
-		if (title.second->getHolder()->second->getDomain()->getGovernment() == "tribal_government")
+		if (title.second->getHolder()->second->getCharacterDomain()->getGovernment() == "tribal_government")
 			continue;
 		auto relevantVassals = 0;
 		LEVEL relevantVassalLevel;
@@ -850,10 +850,10 @@ void CK3::World::gatherCourtierNames()
 				holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
 				holderCouncilors[character.second->getEmployer()->first].insert(character);
 			}
-			else if (character.second->getDomain() && !character.second->getDomain()->getDomain().empty())
+			else if (character.second->getCharacterDomain() && !character.second->getCharacterDomain()->getDomain().empty())
 			{
 				// this councilor is landed and works for his liege.
-				const auto& characterPrimaryTitle = character.second->getDomain()->getDomain()[0];
+				const auto& characterPrimaryTitle = character.second->getCharacterDomain()->getDomain()[0];
 				const auto& liegeTitle = characterPrimaryTitle.second->getDFLiege();
 				if (!liegeTitle)
 					continue; // I dislike this character. I think it is time he was let go.
@@ -1010,9 +1010,9 @@ void CK3::World::setElectors()
 		}
 
 		// Which title is his primary? The first one in his domain (that survived the shattering)
-		if (elector.second->getDomain() && !elector.second->getDomain()->getDomain().empty())
+		if (elector.second->getCharacterDomain() && !elector.second->getCharacterDomain()->getDomain().empty())
 		{
-			for (const auto& electorTitle: elector.second->getDomain()->getDomain())
+			for (const auto& electorTitle: elector.second->getCharacterDomain()->getDomain())
 			{
 				// mark this title as electorate if it's independent and has land.
 				if (regItr->second.count(electorTitle.second->getName()) && !electorTitle.second->getOwnedDFCounties().empty())

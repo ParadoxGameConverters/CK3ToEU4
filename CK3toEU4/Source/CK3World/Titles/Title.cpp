@@ -378,43 +378,72 @@ void CK3::Title::relinkDeFactoVassals()
 	if (name.starts_with("c_") || name.starts_with("b_"))
 		return; // don't bother with counties and below.
 
-	for (const auto& dfVassal: dfVassals)
+	for (const auto& [dfVassalID, dfVassal]: dfVassals)
 	{
-		if (!dfVassal.second)
+		if (!dfVassal)
 			continue;
 
-		if (dfVassal.second->getDFLiege() && dfVassal.second->getDJLiege() && dfVassal.second->getDFLiege()->first != dfVassal.second->getDJLiege()->first)
+		if (dfVassal->areDFLiegeAndDJLiegeSet() && !dfVassal->areDFLiegeAndDJLiegeSame()) // We have different df and dj lieges there.
 		{
 			// Do we own both titles?
-			if (holder && holder->second && holder->second->getDomain())
+			if (doesHolderHaveCharacterDomain())
 			{
-				const auto holderTitles = holder->second->getDomain()->getDomain();
+				const auto holderTitles = holder->second->getCharacterDomain()->getDomain();
 
 				// Make a small cache of the holder's owned title names.
-				std::set<std::string> titleNameCache;
-				for (const auto& domainTitle: holderTitles)
-					titleNameCache.insert(domainTitle.second->getName());
+				const auto titleNameCache = getTitleNamesFromHolderDomain();
 
-				if (titleNameCache.contains(dfVassal.second->getDFLiege()->second->getName()) &&
-					 titleNameCache.contains(dfVassal.second->getDJLiege()->second->getName()))
+				if (titleNameCache.contains(dfVassal->getDFLiege()->second->getName()) && titleNameCache.contains(dfVassal->getDJLiege()->second->getName()))
 				{
 					// We do own both. Tell the vassal to relink its defacto owner to dejure title.
-					dfVassal.second->loadDFLiege(*dfVassal.second->getDJLiege());
+					dfVassal->loadDFLiege(*dfVassal->getDJLiege());
 					// Tell dejure title it's now owner of a brand new vassal.
-					dfVassal.second->getDJLiege()->second->addDFVassals(std::map{dfVassal});
+					dfVassal->getDJLiege()->second->addDFVassals(std::map{std::pair(dfVassalID, dfVassal)});
 					// And finally...
-					dropTitleFromDFVassals(dfVassal.first);
+					dropTitleFromDFVassals(dfVassalID);
 				}
 			}
 			else
 			{
-				if (!holder)
+				if (!isHolderSet())
 					Log(LogLevel::Warning) << name << " has no holder but has vassals?";
-				else if (!holder->second)
+				else if (!isHolderLinked())
 					Log(LogLevel::Warning) << name << "'s holder is not linked up!";
-				else if (!holder->second->getDomain())
+				else if (!doesHolderHaveCharacterDomain())
 					Log(LogLevel::Warning) << name << "' holder has no domain but has vassals?";
 			}
 		}
 	}
+}
+
+bool CK3::Title::areDFLiegeAndDJLiegeSet() const
+{
+	return dfLiege && djLiege;
+}
+
+bool CK3::Title::areDFLiegeAndDJLiegeSame() const
+{
+	if (!areDFLiegeAndDJLiegeSet())
+		return false; // Can't check if they're not set.
+	return dfLiege->first == djLiege->first;
+}
+
+bool CK3::Title::doesHolderHaveCharacterDomain() const
+{
+	return isHolderSet() && isHolderLinked() && holder->second->getCharacterDomain();
+}
+
+std::set<std::string> CK3::Title::getTitleNamesFromHolderDomain() const
+{
+	std::set<std::string> toReturn;
+	if (!doesHolderHaveCharacterDomain())
+		return toReturn;
+	
+	const auto holderTitles = holder->second->getCharacterDomain()->getDomain();
+
+	for (const auto& [domainTitleID, domainTitle]: holderTitles)
+		if (domainTitle)
+			toReturn.insert(domainTitle->getName());
+
+	return toReturn;
 }
