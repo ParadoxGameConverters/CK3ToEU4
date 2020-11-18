@@ -245,7 +245,7 @@ link = { eu4 = slovak ck3 = slovien }
 
 link = { eu4 = croatian ck3 = croatian tech = eastern gfx = easterngfx }
 link = { eu4 = serbian ck3 = serbian tech = eastern gfx = easterngfx }
-link = { eu4 = romanian ck3 = vlach tech = eastern gfx = easterngfx }
+link = { eu4 = romanian ck3 = vlach ck3 = thracian ck3 = dacian tech = eastern gfx = easterngfx } # dacian and thracian deserve a "Thracian" culture
 link = { eu4 = bulgarian ck3 = bulgarian tech = eastern gfx = easterngfx }
 link = { eu4 = slovene ck3 = carantanian tech = eastern gfx = easterngfx }
 link = { eu4 = bosnian ck3 = bosnian tech = eastern gfx = easterngfx }
@@ -406,7 +406,7 @@ link = { eu4 = carthaginian ck3 = numidian ck3 = carthaginian tech = western gfx
 link = { eu4 = gaulic ck3 = belgae ck3 = gallic tech = western gfx = westerngfx }
 link = { eu4 = pannonian ck3 = celtic_pannonian tech = western gfx = easterngfx }
 link = { eu4 = oldspain ck3 = celtiberian ck3 = iberian ck3 = lusoiberian tech = western gfx = westerngfx }
-link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek ck3 = macedonian ck3 = thracian ck3 = dacian tech = eastern gfx = easterngfx }
+link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek ck3 = macedonian tech = eastern gfx = easterngfx }
 link = { eu4 = getian ck3 = getian tech = nomad_group gfx = easterngfx }
 link = { eu4 = anatolian ck3 = ionic ck3 = cappadocian ck3 = phrygian tech = eastern gfx = easterngfx }
 link = { eu4 = pontic_greek ck3 = pontic tech = eastern gfx = easterngfx }
