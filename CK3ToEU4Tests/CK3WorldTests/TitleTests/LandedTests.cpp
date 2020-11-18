@@ -18,7 +18,7 @@ TEST(CK3World_LandedTitlesTests, titlePrimitivesDefaultToBlank)
 	ASSERT_FALSE(titles.isLandless());
 	ASSERT_FALSE(titles.getColor());
 	ASSERT_FALSE(titles.getCapital());
-	ASSERT_FALSE(titles.getProvince()->first);
+	ASSERT_FALSE(titles.getProvince());
 }
 
 TEST(CK3World_LandedTitlesTests, titlePrimitivesCanBeLoaded)

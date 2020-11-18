@@ -73,7 +73,12 @@ class Title: commonItems::parser
 
 	[[nodiscard]] std::optional<commonItems::Color> getColor() const;
 	[[nodiscard]] bool isLandless() const;
-
+	[[nodiscard]] bool areDFLiegeAndDJLiegeSet() const;
+	[[nodiscard]] bool areDFLiegeAndDJLiegeSame() const;
+	[[nodiscard]] bool isHolderSet() const { return holder != std::nullopt; }
+	[[nodiscard]] bool isHolderLinked() const { return holder && holder->second; }
+	[[nodiscard]] bool doesHolderHaveCharacterDomain() const;
+	[[nodiscard]] std::set<std::string> getTitleNamesFromHolderDomain() const;
 	[[nodiscard]] LEVEL getLevel() const;
 
 	// linkage
@@ -108,6 +113,7 @@ class Title: commonItems::parser
 	void addGeneratedVassal(const std::pair<std::string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
 	void loadHoldingTitle(const std::pair<std::string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
 	void setElectorate() { electorate = true; }
+	void relinkDeFactoVassals();
 
 	// conversion
 	void loadEU4Tag(const std::pair<std::string, std::shared_ptr<EU4::Country>>& theCountry) { tagCountry = theCountry; }

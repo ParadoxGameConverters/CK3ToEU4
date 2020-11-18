@@ -35,7 +35,7 @@ TEST(CK3World_CharacterTests, loadValuesDefaultToBlank)
 	ASSERT_FALSE(character.isCouncilor());
 	ASSERT_FALSE(character.isFemale());
 	ASSERT_FALSE(character.getSpouse());
-	ASSERT_FALSE(character.getDomain());
+	ASSERT_FALSE(character.getCharacterDomain());
 	ASSERT_FALSE(character.isDead());
 }
 
@@ -133,5 +133,5 @@ TEST(CK3World_CharacterTests, characterDomainCanBeLoaded)
 
 	const CK3::Character character(input, 42);
 
-	ASSERT_TRUE(character.getDomain()->isPowerfulVassal());
+	ASSERT_TRUE(character.getCharacterDomain()->isPowerfulVassal());
 }

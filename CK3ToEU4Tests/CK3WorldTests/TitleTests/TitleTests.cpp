@@ -1,10 +1,12 @@
+#include "../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../CK3toEU4/Source/CK3World/Characters/Characters.h"
 #include "../CK3toEU4/Source/CK3World/Geography/CountyDetail.h"
 #include "../CK3toEU4/Source/CK3World/Geography/ProvinceHolding.h"
 #include "../CK3toEU4/Source/CK3World/Titles/LandedTitles.h"
 #include "../CK3toEU4/Source/CK3World/Titles/Title.h"
+#include "../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "../CK3toEU4/Source/Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "gtest/gtest.h"
-#include <sstream>
 
 TEST(CK3World_TitleTests, idCanBeSet)
 {
@@ -101,7 +103,8 @@ TEST(CK3World_TitleTests, nameCanBeCleanedOfGUIJunk)
 
 	std::stringstream input2;
 	input2 << "key=\"k_grenada\"\n";
-	input2 << "name=\"\x15TOOLTIP:FAITH,catholic \x15L Catholic\x15!\x15! \x15ONCLICK:TITLE,733 \x15TOOLTIP:LANDED_TITLE,733 \x15L Lotharingia\x15!\x15!\x15!\"\n";
+	input2
+		 << "name=\"\x15TOOLTIP:FAITH,catholic \x15L Catholic\x15!\x15! \x15ONCLICK:TITLE,733 \x15TOOLTIP:LANDED_TITLE,733 \x15L Lotharingia\x15!\x15!\x15!\"\n";
 	const CK3::Title theTitle2(input2, 1);
 	ASSERT_EQ("Catholic Lotharingia", theTitle2.getDisplayName());
 }
@@ -273,7 +276,7 @@ TEST(CK3World_TitleTests, buildingWeighWithoutCountyfulClayThrowsExceptions)
 	landedTitles.loadTitles(landedStream);
 	auto lc = landedTitles.getFoundTitles().find("c_county")->second;
 	c.second->loadClay(lc);
-	
+
 	try
 	{
 		auto test = c.second->getBuildingWeight(devWeightMapper);
@@ -342,7 +345,7 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	b1.second->loadClay(lb1);
 	b2.second->loadClay(lb2);
 	b3.second->loadClay(lb3);
-	
+
 	try
 	{
 		auto test = c.second->getBuildingWeight(devWeightMapper);
@@ -352,4 +355,169 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	{
 		ASSERT_STREQ("Barony b_barony1 of c_county has no clay province?", e.what());
 	}
+}
+
+TEST(CK3World_TitleTests, dfVassalsCanBeRelinked)
+{
+	std::stringstream charInput;
+	charInput << "11={\n";
+	charInput << "\tfirst_name = \"bob spongepants\"\n";
+	charInput << "\tlanded_data = {\n";
+	charInput << "\t\tdomain = { 3 4 1 2 }\n"; // guy holds 4 titles. first is primary, then listed in order of importance.
+	charInput << "\t\trealm_capital = 1\n";	 // this is his capital, a county (in game a barony but we're abstracting).
+	charInput << "\t}\n";
+	charInput << "}\n";
+	CK3::Characters characters(charInput);
+
+	std::stringstream titleInput;
+	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";	// this one is his capital.
+	titleInput << "2 = { key = c_county2 holder = 11 de_facto_liege = 3 de_jure_liege = 4  }\n"; // this one links to his primary title. -> This is wrong.
+	titleInput << "3 = { key = d_duchy1 holder = 11 de_jure_vassals = { 1 } }\n";						// this is primary title.
+	titleInput << "4 = { key = d_duchy2 holder = 11 de_jure_vassals = { 2 } }\n";						// this is secondary duchy.
+	CK3::Titles titles(titleInput);
+
+	// Fist we put characters into titles.
+	titles.linkCharacters(characters);
+	// And titles into characters.
+	characters.linkTitles(titles);
+	// And titles into titles.
+	titles.linkTitles();
+
+	// then we tell the primary title to relink wrongly linked vassals.
+	const auto& duchy1 = titles.getTitles().find("d_duchy1")->second;
+	duchy1->relinkDeFactoVassals();
+
+	// now let's grab the county2
+	const auto& county2 = titles.getTitles().find("c_county2")->second;
+
+	ASSERT_EQ(4, county2->getDFLiege()->first);											// it is properly linked to duchy2 now.
+	ASSERT_EQ("d_duchy2", county2->getDFLiege()->second->getName());				// link works
+	ASSERT_EQ(1, duchy1->getDFVassals().size());											// duchy1 has only 1 dfvassal
+	ASSERT_EQ("c_county1", duchy1->getDFVassals().begin()->second->getName()); // and that's county1.
+
+	// and finally
+	const auto& duchy2 = titles.getTitles().find("d_duchy2")->second;
+	ASSERT_EQ(1, duchy2->getDFVassals().size());											// duchy2 has the vassal registered
+	ASSERT_EQ("c_county2", duchy2->getDFVassals().begin()->second->getName()); // and linked.
+}
+
+TEST(CK3World_TitleTests, DFLiegeAndDJLiegeSetCanBeChecked)
+{
+	std::stringstream titleInput;
+	CK3::Title title(titleInput, 1);
+
+	ASSERT_FALSE(title.areDFLiegeAndDJLiegeSet());
+
+	title.loadDFLiege(std::pair(2, nullptr));
+	ASSERT_FALSE(title.areDFLiegeAndDJLiegeSet());
+
+	title.loadDJLiege(std::pair(3, nullptr));
+	ASSERT_TRUE(title.areDFLiegeAndDJLiegeSet());
+}
+
+TEST(CK3World_TitleTests, DFLiegeAndDJLiegeSameCanBeChecked)
+{
+	std::stringstream titleInput;
+	titleInput << "key = c_county1\n";
+	titleInput << "holder = 11\n";
+	titleInput << "de_facto_liege = 2\n";
+	titleInput << "de_jure_liege = 3\n";
+	CK3::Title title(titleInput, 1);
+
+	ASSERT_TRUE(title.areDFLiegeAndDJLiegeSet()); // They are set.
+
+	ASSERT_FALSE(title.areDFLiegeAndDJLiegeSame()); // Not the same.
+
+	title.loadDFLiege(std::pair(3, nullptr)); // setting to same
+
+	ASSERT_TRUE(title.areDFLiegeAndDJLiegeSame());
+}
+
+TEST(CK3World_TitleTests, isHolderSetCanBeChecked)
+{
+	std::stringstream titleInput;
+	titleInput << "key = c_county1\n";
+	CK3::Title title(titleInput, 1);
+
+	ASSERT_FALSE(title.isHolderSet()); // No Holder
+
+	title.loadHolder(std::pair(1, nullptr));
+
+	ASSERT_TRUE(title.isHolderSet()); // Yes holder.
+}
+
+TEST(CK3World_TitleTests, isHolderLinkedCanBeChecked)
+{
+	std::stringstream titleInput;
+	titleInput << "key = c_county1\n";
+	titleInput << "holder = 12\n";
+	CK3::Title title(titleInput, 1);
+
+	ASSERT_TRUE(title.isHolderSet());	  // Yes Holder
+	ASSERT_FALSE(title.isHolderLinked()); // Not linked
+
+	auto holder = std::make_shared<CK3::Character>(titleInput, 12); // Using any stream just for init.
+	title.loadHolder(std::pair(static_cast<long long>(12), holder));
+
+	ASSERT_TRUE(title.isHolderLinked()); // Linked
+}
+
+TEST(CK3World_TitleTests, doesHolderHaveCharacterDomainCanBeChecked)
+{
+	std::stringstream titleInput;
+	titleInput << "key = c_county1\n";
+	titleInput << "holder = 12\n";
+	CK3::Title title(titleInput, 1);
+	auto dummyHolder = std::make_shared<CK3::Character>(titleInput, 12); // Using any stream just for init.
+	title.loadHolder(std::pair(static_cast<long long>(12), dummyHolder));
+
+	ASSERT_TRUE(title.isHolderSet());			  // Yes Holder
+	ASSERT_TRUE(title.isHolderLinked());		  // Yes linked
+	ASSERT_FALSE(title.doesHolderHaveCharacterDomain()); // No Domain
+
+	// Make a character with a domain
+	
+	std::stringstream charInput;
+	charInput << "first_name = \"bob spongepants\"\n";
+	charInput << "landed_data = {\n";
+	charInput << "\tdomain = { 3 4 1 2 }\n";
+	charInput << "}\n";
+	auto holder = std::make_shared<CK3::Character>(charInput, 12);
+
+	title.loadHolder(std::pair(static_cast<long long>(12), holder));
+	
+	ASSERT_TRUE(title.doesHolderHaveCharacterDomain()); // Yes Domain
+}
+
+TEST(CK3World_TitleTests, titleNamesFromHoldersDomainCanBeGathered)
+{
+	std::stringstream charInput;
+	charInput << "11={\n";
+	charInput << "\tfirst_name = \"bob spongepants\"\n";
+	charInput << "\tlanded_data = {\n";
+	charInput << "\t\tdomain = { 3 4 1 2 }\n";
+	charInput << "\t\trealm_capital = 1\n";
+	charInput << "\t}\n";
+	charInput << "}\n";
+	CK3::Characters characters(charInput);
+
+	std::stringstream titleInput;
+	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";
+	titleInput << "2 = { key = c_county2 holder = 11 de_facto_liege = 3 de_jure_liege = 4  }\n";
+	titleInput << "3 = { key = d_duchy1 holder = 11 de_jure_vassals = { 1 } }\n";
+	titleInput << "4 = { key = d_duchy2 holder = 11 de_jure_vassals = { 2 } }\n";
+	CK3::Titles titles(titleInput);
+
+	titles.linkCharacters(characters);
+	characters.linkTitles(titles);
+	titles.linkTitles();
+
+	// Now, grab any title.
+	const auto& anyTitle = titles.getTitles().find("d_duchy2")->second;
+	
+	ASSERT_EQ(4, anyTitle->getTitleNamesFromHolderDomain().size());
+	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("c_county1"));
+	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("c_county2"));
+	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("d_duchy1"));
+	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("d_duchy2"));
 }

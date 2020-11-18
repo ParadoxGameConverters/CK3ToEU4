@@ -114,17 +114,17 @@ void CK3::LandedTitles::linkTitles(const Titles& titles)
 	const auto& titleData = titles.getTitles();
 	for (const auto& landedTitle: foundTitles)
 	{
-		if (!landedTitle.second->getCapital())
+		const auto& theCapital = landedTitle.second->getCapital();
+		if (!theCapital)
 			continue;
-		const auto& titleDataItr = titleData.find(landedTitle.second->getCapital()->first);
-		if (titleDataItr != titleData.end())
+		if (const auto& titleDataItr = titleData.find(theCapital->first); titleDataItr != titleData.end())
 		{
 			landedTitle.second->loadCapital(*titleDataItr);
 			++counter;
 		}
 		else
 		{
-			throw std::runtime_error("Landed title " + landedTitle.first + " has a capital " + capital->first + " which has no definition!");
+			throw std::runtime_error("Landed title " + landedTitle.first + " has a capital " + theCapital->first + " which has no definition!");
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed title capitals updated.";

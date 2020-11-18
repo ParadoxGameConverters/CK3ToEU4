@@ -312,7 +312,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 {
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
-	const auto& holderDomain = title.second->getHolder()->second->getDomain();
+	const auto& holderDomain = title.second->getHolder()->second->getCharacterDomain();
 	if (holderDomain && holderDomain->getRealmCapital().first)
 	{
 		const auto& capitalBarony = holderDomain->getRealmCapital();
@@ -468,7 +468,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 
 		// While at it, is this province especially important? Enough so we'd sidestep regular rules?
 		// Check for capital provinces
-		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();
+		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain()->getRealmCapital();
 		if (capitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
 		{
 			// This is the someone's capital, don't assign it away if unnecessary.
@@ -478,7 +478,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		// Check for HRE emperor
 		if (ck3Title.second->getHoldingTitle().second->isHREEmperor())
 		{
-			const auto& HRECapitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getDomain()->getRealmCapital();
+			const auto& HRECapitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain()->getRealmCapital();
 			if (HRECapitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
 			{
 				// This is the empire capital, never assign it away.
@@ -751,7 +751,7 @@ void EU4::World::importAdvisers()
 
 void EU4::World::resolvePersonalUnions()
 {
-	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Untions";
+	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Unions";
 	auto annexCounter = 0;
 	auto puCounter = 0;
 	std::map<long long, std::map<std::string, std::shared_ptr<Country>>> holderTitles;
@@ -771,10 +771,10 @@ void EU4::World::resolvePersonalUnions()
 		relevantHolders.insert(holder);
 		// Does he have a primary title? Of course he does. They all do, but some may have been dropped as provinceless.
 		// Look for first one that has an EU4 tag attached.
-		if (holder.second->getDomain() && !holder.second->getDomain()->getDomain().empty())
+		if (holder.second->getCharacterDomain() && !holder.second->getCharacterDomain()->getDomain().empty())
 		{
 			auto foundTag = false;
-			for (const auto& title: holder.second->getDomain()->getDomain())
+			for (const auto& title: holder.second->getCharacterDomain()->getDomain())
 			{
 				if (title.second->getEU4Tag())
 				{
@@ -944,7 +944,7 @@ void EU4::World::setElectors()
 			if (country.second->getProvinces().empty())
 				continue;
 			const auto& holder = country.second->getTitle()->second->getHolder();
-			if (country.first == "PAP" || holder->second->getDomain()->getDomain()[0].second->getName() == "k_orthodox")
+			if (country.first == "PAP" || holder->second->getCharacterDomain()->getDomain()[0].second->getName() == "k_orthodox")
 			{
 				// override to always be elector
 				electors.emplace_back(country.second);
