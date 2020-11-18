@@ -409,7 +409,7 @@ void CK3::Title::relinkDeFactoVassals()
 					Log(LogLevel::Warning) << name << " has no holder but has vassals?";
 				else if (!isHolderLinked())
 					Log(LogLevel::Warning) << name << "'s holder is not linked up!";
-				else if (!doesHolderHaveCharacterDomain())
+				else
 					Log(LogLevel::Warning) << name << "' holder has no domain but has vassals?";
 			}
 		}
