@@ -280,6 +280,7 @@ link = { eu4 = sidamo ck3 = ethiopian ck3 = somali tech = east_african gfx = afr
 link = { eu4 = sidamo ck3 = welayta tech = east_african gfx = africangfx }
 link = { eu4 = tigray ck3 = ethiopian tech = east_african gfx = africangfx region = tigray_area region = red_sea_coast_area }
 link = { eu4 = amhara ck3 = ethiopian tech = east_african gfx = africangfx }
+link = { eu4 = amhara ck3 = somali tech = east_african gfx = africangfx region = shewa_area }
 link = { eu4 = somali ck3 = somali tech = east_african gfx = africangfx }
 link = { eu4 = daju ck3 = daju tech = east_african gfx = africangfx }
 
@@ -305,8 +306,8 @@ link = { eu4 = nupe ck3 = nupe ck3 = igbo tech = sub_saharan gfx = africangfx }
 link = { eu4 = fon ck3 = ewe tech = sub_saharan gfx = africangfx }
 link = { eu4 = yorumba ck3 = yoruba ck3 = edo tech = sub_saharan gfx = africangfx }
 link = { eu4 = mossi ck3 = mossi tech = sub_saharan gfx = africangfx }
-link = { eu4 = senegambian tech = sub_saharan gfx = africangfx ck3 = serer ck3 = wolof ck3 = mel }
-link = { eu4 = aka tech = sub_saharan gfx = africangfx ck3 = akan ck3 = guan }
+link = { eu4 = senegambian  ck3 = serer ck3 = wolof ck3 = mel tech = sub_saharan gfx = africangfx }
+link = { eu4 = aka ck3 = akan ck3 = guan tech = sub_saharan gfx = africangfx }
 
 
 # Mesoamerican - this is relevant only for azteks holding europe

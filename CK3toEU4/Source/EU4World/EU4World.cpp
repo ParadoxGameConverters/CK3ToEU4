@@ -605,15 +605,6 @@ void EU4::World::linkProvincesToCountries()
 			Log(LogLevel::Warning) << "Province " << province.first << " owner " << province.second->getOwner() << " has no country!";
 		}
 	}
-
-	// 1210 - Dawaro needs to be given to Adal (Since Ethiopia could be a country)
-	if (provinces.find(1210) != provinces.end() && provinces.find(1210)->second)
-	{
-		provinces.find(1210)->second->sterilize();
-		provinces.find(1210)->second->addCore("ADA");
-		provinces.find(1210)->second->setOwner("ADA");
-		provinces.find(1210)->second->setController("ADA");
-	}
 }
 
 void EU4::World::verifyCapitals()
