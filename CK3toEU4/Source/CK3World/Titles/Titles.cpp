@@ -233,17 +233,30 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			else
 			{
 				Log(LogLevel::Error) << "For heaven's sake, title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who is dead or has no definition!";
-				// Attempt recovery.
-				if (title.second->getDFLiege() && title.second->getDFLiege()->second && title.second->getDFLiege()->second->getHolder())
+				// Attempt recovery. Since titles are still unlinked we'll have to iterate to find DFliege's holder manually.
+				if (title.second->getDFLiege())
 				{
-					title.second->loadHolder(*title.second->getDFLiege()->second->getHolder());
-					Log(LogLevel::Error) << "We have recovered this.";
-					++holderCounter;
+					long long replacementHolder = 0;
+					for (const auto& [titleName, theTitle]: titles)
+						if (theTitle->getID() == title.second->getDFLiege()->first)
+						{
+							if (theTitle->isHolderSet())
+								replacementHolder = theTitle->getHolder()->first;
+							break;
+						}
+					
+					if (replacementHolder > 0)
+						if (const auto& replacementHolderItr = characterData.find(replacementHolder); replacementHolderItr != characterData.end())
+						{
+							title.second->loadHolder(*replacementHolderItr);
+							Log(LogLevel::Warning) << "We have recovered from this.";
+							++holderCounter;
+						}
 				}
 				else
 				{
-					title.second->ste
-					Log(LogLevel::Error) << "Recovery failed, title goes dead.";
+					title.second->brickTitle();
+					Log(LogLevel::Error) << "Recovery failed, title " << title.second->getName() << " bricked. Yay. :/";
 				}
 			}
 		}
