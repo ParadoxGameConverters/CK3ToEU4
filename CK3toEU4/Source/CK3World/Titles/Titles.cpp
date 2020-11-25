@@ -171,7 +171,8 @@ void CK3::Titles::linkTitles()
 				}
 				else
 				{
-					throw std::runtime_error("Title " + title.first + " has dejure vassal " + std::to_string(dJVassal.first) + " which has no definition!");
+					// Sigh. Yes, this happens. DEJURE vassals, not defacto! And void! Woe is PDX.
+					Log(LogLevel::Warning) << "Title " << title.first << " has DEJURE vassal " << std::to_string(dJVassal.first) << " which has no definition! Amusing.";
 				}
 			}
 			title.second->loadDJVassals(replacementMap);
@@ -231,7 +232,32 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 			else
 			{
-				throw std::runtime_error("Title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who has no definition!");
+				Log(LogLevel::Error) << "For heaven's sake, title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who is dead or has no definition!";
+				// Attempt recovery. Since titles are still unlinked we'll have to iterate to find DFliege's holder manually.
+				if (title.second->getDFLiege())
+				{
+					long long replacementHolder = 0;
+					for (const auto& [titleName, theTitle]: titles)
+						if (theTitle->getID() == title.second->getDFLiege()->first)
+						{
+							if (theTitle->isHolderSet())
+								replacementHolder = theTitle->getHolder()->first;
+							break;
+						}
+					
+					if (replacementHolder > 0)
+						if (const auto& replacementHolderItr = characterData.find(replacementHolder); replacementHolderItr != characterData.end())
+						{
+							title.second->loadHolder(*replacementHolderItr);
+							Log(LogLevel::Warning) << "We have recovered from this.";
+							++holderCounter;
+						}
+				}
+				else
+				{
+					title.second->brickTitle();
+					Log(LogLevel::Error) << "Recovery failed, title " << title.second->getName() << " bricked. Yay. :/";
+				}
 			}
 		}
 		// claimants

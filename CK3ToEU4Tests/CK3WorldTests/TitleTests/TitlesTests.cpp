@@ -232,8 +232,10 @@ TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeFixesDFLiegeToNullopt)
 	ASSERT_FALSE(titles.getTitles().find("d_duchy1")->second->getDFLiege());
 }
 
-TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)
+TEST(CK3World_TitlesTests, titleLinkMissingDJVassalDropsBrokenVassal)
 {
+	// Incredulous as it may be, yes, missing dejure vassals is a thing.
+	
 	std::stringstream input;
 	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
 	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
@@ -245,7 +247,14 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJVassalThrowsException)
 	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 
-	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+	const auto& duchy1 = titles.getTitles().find("d_duchy1")->second;
+	ASSERT_EQ(3, duchy1->getDJVassals().size());
+	ASSERT_TRUE(duchy1->getDJVassals().contains(9));
+
+	titles.linkTitles(); // dropping junk.
+	
+	ASSERT_EQ(2, duchy1->getDJVassals().size());
+	ASSERT_FALSE(duchy1->getDJVassals().contains(9));
 }
 
 TEST(CK3World_TitlesTests, charactersCanBeLinked)
@@ -295,7 +304,7 @@ TEST(CK3World_TitlesTests, charactersCanBeLinked)
 	ASSERT_EQ("Alice", t1->second->getPreviousHolders()[1].second->getName());
 }
 
-TEST(CK3World_TitlesTests, charactersLinkMissingHolderThrowsException)
+TEST(CK3World_TitlesTests, charactersLinkMissingHolderBricksTitleWithoutDFLiege)
 {
 	std::stringstream input;
 	input << "13 = { key= c_county holder = 9 claim = { 2 3 } heir = { 2 } }\n"; // missing 9
@@ -308,7 +317,31 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHolderThrowsException)
 	input2 << "3 = { first_name = Carol }\n";
 	const CK3::Characters characters(input2);
 
-	ASSERT_THROW(titles.linkCharacters(characters), std::runtime_error);
+	titles.linkCharacters(characters); // This will brick the title 13.
+
+	const auto& county = titles.getTitles().find("c_county")->second;
+	
+	ASSERT_EQ(std::nullopt, county->getHolder());
+}
+
+TEST(CK3World_TitlesTests, charactersLinkMissingHolderRelinksTitleWithDFLiege)
+{
+	std::stringstream input;
+	input << "13 = { key= c_county holder = 9 de_facto_liege = 15  claim = { 2 3 } heir = { 2 } }\n"; // missing 9
+	input << "15 = { key = d_duchy holder = 2 claim = { 1 } heir = { 3 1 } }\n";
+	CK3::Titles titles(input);
+
+	std::stringstream input2;
+	input2 << "1 = { first_name = Alice }\n";
+	input2 << "2 = { first_name = Bob }\n";
+	input2 << "3 = { first_name = Carol }\n";
+	const CK3::Characters characters(input2);
+
+	titles.linkCharacters(characters); // This will relink title to Bob, as he is defacto liege.
+
+	const auto& county = titles.getTitles().find("c_county")->second;
+
+	ASSERT_EQ("Bob", county->getHolder()->second->getName());
 }
 
 TEST(CK3World_TitlesTests, charactersLinkMissingClaimantIgnoresClaimant)

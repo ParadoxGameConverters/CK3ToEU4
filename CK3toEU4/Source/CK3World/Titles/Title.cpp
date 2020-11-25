@@ -207,14 +207,15 @@ void CK3::Title::brickTitle()
 	grantIndependence();
 
 	// Drop from own holder's domain.
-	if (holder)
+	if (holder && holder->second)
 		holder->second->dropTitleFromDomain(ID);
 	// Drop holder
 	holder.reset();
 
 	// release all vassals
 	for (const auto& vassal: dfVassals)
-		vassal.second->grantIndependence();
+		if (vassal.second)
+			vassal.second->grantIndependence();
 	dfVassals.clear(); // just in case?
 }
 
@@ -228,7 +229,7 @@ void CK3::Title::dropTitleFromDFVassals(long long titleID)
 void CK3::Title::grantIndependence()
 {
 	// Drop this title from liege holder's vassals
-	if (dfLiege)
+	if (dfLiege && dfLiege->second)
 		dfLiege->second->dropTitleFromDFVassals(ID);
 
 	// Drop liege
