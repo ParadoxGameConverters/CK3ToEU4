@@ -171,7 +171,8 @@ void CK3::Titles::linkTitles()
 				}
 				else
 				{
-					throw std::runtime_error("Title " + title.first + " has dejure vassal " + std::to_string(dJVassal.first) + " which has no definition!");
+					// Sigh. Yes, this happens. DEJURE vassals, not defacto! And void! Woe is PDX.
+					Log(LogLevel::Warning) << "Title " << title.first << " has DEJURE vassal " << std::to_string(dJVassal.first) << " which has no definition! Amusing.";
 				}
 			}
 			title.second->loadDJVassals(replacementMap);
@@ -231,7 +232,19 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 			else
 			{
-				throw std::runtime_error("Title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who has no definition!");
+				Log(LogLevel::Error) << "For heaven's sake, title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who is dead or has no definition!";
+				// Attempt recovery.
+				if (title.second->getDFLiege() && title.second->getDFLiege()->second && title.second->getDFLiege()->second->getHolder())
+				{
+					title.second->loadHolder(*title.second->getDFLiege()->second->getHolder());
+					Log(LogLevel::Error) << "We have recovered this.";
+					++holderCounter;
+				}
+				else
+				{
+					title.second->ste
+					Log(LogLevel::Error) << "Recovery failed, title goes dead.";
+				}
 			}
 		}
 		// claimants
