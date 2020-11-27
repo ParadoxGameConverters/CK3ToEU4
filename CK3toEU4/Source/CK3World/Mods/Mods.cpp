@@ -57,16 +57,21 @@ void CK3::Mods::loadCK3ModDirectory(const Configuration& theConfiguration)
 
 	LOG(LogLevel::Info) << "\tCK3 mods directory is " << CK3ModsPath;
 
-	auto filenames = commonItems::GetAllFilesInFolder(CK3ModsPath);
-	for (const auto& filename: filenames)
+	const auto diskModNames = commonItems::GetAllFilesInFolder(CK3ModsPath);
+	for (const auto& usedModFileName: theConfiguration.getModFileNames())
 	{
-		if (!theConfiguration.getModFileNames().count("mod/" + filename))
-			continue; // Mod was not enabled by configuration, so move on.
-		if (fs::path(filename).extension() != ".mod")
+		const auto trimmedModFileName = trimPath(usedModFileName);
+		if (!diskModNames.contains(trimmedModFileName))
+		{
+			Log(LogLevel::Warning) << "Savegame uses mod at " << usedModFileName
+										<< " which is not present on disk.  Skipping at your risk, but this can greatly affect conversion.";
+			continue;
+		}
+		if (getExtension(trimmedModFileName) != "mod")
 			continue; // shouldn't be necessary but just in case.
 		try
 		{
-			std::ifstream modFile(fs::u8path(CK3ModsPath + "/" + filename));
+			std::ifstream modFile(fs::u8path(CK3ModsPath + "/" + trimmedModFileName));
 			Mod theMod(modFile);
 			modFile.close();
 
@@ -84,34 +89,38 @@ void CK3::Mods::loadCK3ModDirectory(const Configuration& theConfiguration)
 						}
 						else
 						{
-							throw std::invalid_argument("Mod file " + filename + " points to " + theMod.getPath() + " which does not exist!");
+							Log(LogLevel::Warning) << "Mod file " + usedModFileName + " points to " + theMod.getPath() +
+																 " which does not exist! Skipping at your risk, but this can greatly affect conversion.";
+							continue;
 						}
 					}
 
 					possibleMods.insert(std::make_pair(theMod.getName(), theMod.getPath()));
-					Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " with a mod file at " << CK3ModsPath + "/" + filename
+					Log(LogLevel::Info) << "\t\tFound potential mod named " << theMod.getName() << " with a mod file at " << CK3ModsPath + "/" + trimmedModFileName
 											  << " and itself at " << theMod.getPath();
 				}
 				else
 				{
 					if (!commonItems::DoesFileExist(theMod.getPath()))
 					{
-						throw std::invalid_argument("Mod file " + filename + " points to " + theMod.getPath() + " which does not exist!");
+						Log(LogLevel::Warning) << "Mod file " + usedModFileName + " points to " + theMod.getPath() +
+															 " which does not exist! Skipping at your risk, but this can greatly affect conversion.";
+						continue;
 					}
 
 					possibleCompressedMods.insert(std::make_pair(theMod.getName(), theMod.getPath()));
-					Log(LogLevel::Info) << "\t\tFound a compressed mod named " << theMod.getName() << " with a mod file at " << CK3ModsPath << "/" << filename
-											  << " and itself at " << theMod.getPath();
+					Log(LogLevel::Info) << "\t\tFound a compressed mod named " << theMod.getName() << " with a mod file at " << CK3ModsPath << "/"
+											  << trimmedModFileName << " and itself at " << theMod.getPath();
 				}
 			}
 			else
 			{
-				Log(LogLevel::Warning) << "Mod at " << CK3ModsPath + "/" + filename << " does not look valid.";
+				Log(LogLevel::Warning) << "Mod at " << CK3ModsPath + "/" + trimmedModFileName << " does not look valid.";
 			}
 		}
 		catch (std::exception&)
 		{
-			LOG(LogLevel::Warning) << "Error while reading " << CK3ModsPath << "/" << filename << "! Mod will not be useable for conversions.";
+			LOG(LogLevel::Warning) << "Error while reading " << CK3ModsPath << "/" << trimmedModFileName << "! Mod will not be useable for conversions.";
 		}
 	}
 }

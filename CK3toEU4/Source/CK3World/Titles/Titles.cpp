@@ -153,8 +153,29 @@ void CK3::Titles::linkTitles()
 			}
 			else
 			{
-				throw std::runtime_error(
-					 "Title " + title.first + " has dejure liege " + std::to_string(title.second->getDJLiege()->first) + " which has no definition!");
+				// Sigh. Yes, this happens. DEJURE friggin LIEGE, completely undefined, missing. Well, well.
+				Log(LogLevel::Warning) << "Title " << title.first << " has DEJURE >>LIEGE<< " << std::to_string(title.second->getDJLiege()->first)
+											  << " which has no definition! This is not amusing. Rerouting.";
+				if (title.second->getDFLiege())
+				{
+					if (const auto& dfLiegeItr = IDCache.find(title.second->getDFLiege()->first); dfLiegeItr != IDCache.end())
+					{
+						// We're rerouting title to be dejure under dfliege, whomever this is. The can cause baronies to be dejure under empires, but see if I care at this point.
+						title.second->loadDJLiege(*dfLiegeItr);
+						Log(LogLevel::Warning) << "Rerouted " << title.first << " to dejure liege " << dfLiegeItr->second->getName();
+					}
+					else
+					{
+						Log(LogLevel::Warning) << "Title " << title.first << " also has a missing defacto liege. Your save is likely very broken. Rerouting to void.";
+						title.second->resetDFLiege();
+						title.second->resetDJLiege();
+					}
+				}
+				else
+				{
+					Log(LogLevel::Warning) << "Rerouting failed. Rerouting to void.";
+					title.second->resetDJLiege();
+				}
 			}
 		}
 		// DJVassals

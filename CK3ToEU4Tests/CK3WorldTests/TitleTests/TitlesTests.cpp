@@ -199,20 +199,70 @@ TEST(CK3World_TitlesTests, titlesCanBeLinked)
 	ASSERT_EQ("c_county5", t5->second->getOwnedDJCounties().find("c_county5")->second->getName());
 }
 
-TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeThrowsException)
+TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeReroutesToDFLiegeIfPresentAndHasAHolder)
 {
 	std::stringstream input;
-	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
-	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
-	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7  }\n";
-	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7  }\n";
-	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 9 de_jure_vassals = { 1 2 } }\n"; // There is no 9
-	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } }\n";
-	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } }\n";
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7 holder = 10 }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 8 de_jure_liege = 9 de_jure_vassals = { 1 2 } holder = 10 }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } holder = 10 }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } holder = 10 }\n";
 	CK3::Titles titles(input);
 
-	ASSERT_THROW(titles.linkTitles(), std::runtime_error);
+	const auto& duchy1 = titles.getTitles().at("d_duchy1");
+	ASSERT_EQ(8, duchy1->getDFLiege()->first);
+	ASSERT_EQ(9, duchy1->getDJLiege()->first);
+	
+	titles.linkTitles();
+
+	ASSERT_EQ(8, duchy1->getDFLiege()->first);
+	ASSERT_EQ(8, duchy1->getDJLiege()->first);
+	
+	ASSERT_EQ("k_kingdom1", duchy1->getDJLiege()->second->getName());
+}
+
+TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeNullsDJLiegeIfNoDFLiegePresent)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7 holder = 10 }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "6 = { key = d_duchy1 de_jure_liege = 9 de_jure_vassals = { 1 2 } holder = 10 }\n"; // There is no 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } holder = 10 }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } holder = 10 }\n";
+	CK3::Titles titles(input);
+
+	titles.linkTitles();
+
+	const auto& duchy1 = titles.getTitles().at("d_duchy1");
+
+	ASSERT_EQ(std::nullopt, duchy1->getDJLiege());
+}
+
+TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeNullsDJAndDFLiegeIfBothBroken)
+{
+	std::stringstream input;
+	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6 holder = 10 }\n";
+	input << "3 = { key = c_county3 de_facto_liege = 6 de_jure_liege = 7 holder = 10 }\n";
+	input << "4 = { key = c_county4 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "5 = { key = c_county5 de_facto_liege = 7 de_jure_liege = 7 holder = 10 }\n";
+	input << "6 = { key = d_duchy1 de_facto_liege = 9 de_jure_liege = 9 de_jure_vassals = { 1 2 } holder = 10 }\n"; // There is no 9, 9
+	input << "7 = { key = d_duchy2 de_jure_liege = 8  de_jure_vassals = { 3 4 5 } holder = 10 }\n";
+	input << "8 = { key = k_kingdom1 de_jure_vassals = { 6 7 } holder = 10 }\n";
+	CK3::Titles titles(input);
+
+	titles.linkTitles();
+
+	const auto& duchy1 = titles.getTitles().at("d_duchy1");
+
+	ASSERT_EQ(std::nullopt, duchy1->getDJLiege());
+	ASSERT_EQ(std::nullopt, duchy1->getDFLiege());
 }
 
 TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeFixesDFLiegeToNullopt)
