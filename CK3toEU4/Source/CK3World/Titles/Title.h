@@ -103,6 +103,7 @@ class Title: commonItems::parser
 	void brickTitle();
 	void grantIndependence();
 	void resetDFLiege() { dfLiege.reset(); }
+	void resetDJLiege() { djLiege.reset(); }
 	void setHREEmperor() { HREEmperor = true; }
 	void setInHRE() { inHRE = true; }
 	void dropTitleFromDFVassals(long long titleID);
