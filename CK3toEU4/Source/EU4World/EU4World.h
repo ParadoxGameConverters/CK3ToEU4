@@ -81,7 +81,7 @@ class World
 	void outputFlags(const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
-	void outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const;
+	void outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const std::vector<std::string>& reformedReligions) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;

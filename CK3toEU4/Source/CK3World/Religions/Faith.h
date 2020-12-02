@@ -25,12 +25,14 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getDescription() const { return description; }
 	[[nodiscard]] const auto& getTemplate() const { return religionTemplate; }
 	[[nodiscard]] const auto& getIconPath() const { return iconPath; }
+	[[nodiscard]] const auto& getReformedFlag() const { return reformedFlag; }
 
 	void loadReligion(const std::pair<long long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
 
   private:
 	void registerKeys();
 
+	bool reformedFlag = false;
 	long long ID = 0;
 	std::string tag;
 	std::string religionTemplate;

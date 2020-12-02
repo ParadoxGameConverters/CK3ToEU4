@@ -55,6 +55,18 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 			// This is a new faith.
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
+		else if(faith.second->getReformedFlag()) // This is for unreformed religions that have been reformed (Game only stores this info in the old religon)
+		{
+			const auto& displayName = faith.second->getCustomAdj(); // Catholic, not catholicism
+			LocBlock locBlock;
+			locBlock.english = displayName; //CK3 already calls it "Old Religion", this will just overwrite the default EU4 localization calling it something else.
+			locBlock.french = displayName;
+			locBlock.german = displayName;
+			locBlock.spanish = displayName;
+			localizations.insert(std::pair(faith.second->getName(), locBlock));
+
+			reformedReligions.emplace_back(faith.second->getTemplate());
+		}
 	}
 }
 
@@ -188,6 +200,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.allowedConversion = allowedConversion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
+	LOG(LogLevel::Debug) << countrySecondary;
 	newReligion.province = province;
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;

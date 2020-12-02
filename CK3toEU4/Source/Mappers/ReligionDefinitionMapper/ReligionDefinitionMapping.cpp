@@ -32,9 +32,11 @@ void mappers::ReligionDefinitionMapping::registerKeys()
 			province.clear();
 	});
 	registerKeyword("country_as_secondary", [this](const std::string& unused, std::istream& theStream) {
-		countrySecondary = commonItems::stringOfItem(theStream).getString();
-		if (countrySecondary.size() > 4)
-			countrySecondary = countrySecondary.substr(3, countrySecondary.size() - 4);
+		const auto blobList = commonItems::blobList(theStream).getBlobs();
+		if (blobList.size() > 0)
+		{
+			countrySecondary = blobList[0] + "\n" + blobList[1];
+		}
 		else
 			countrySecondary.clear();
 	});

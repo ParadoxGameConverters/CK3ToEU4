@@ -1,5 +1,5 @@
 #Check for reformed religions in a "HISTORICAL" start
-on_startup = {	
+on_startup = {
 	if = {
 		limit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }
 		#Norse
@@ -192,7 +192,7 @@ on_startup = {
 					}
 				}
 			}
-			set_global_flag = ZZZ_enhanced_kushitism_reformed
+			set_global_flag = ZZZ_enhanced_kushitism_pagan_reformed
 		}
 		#Magyar
 		if = {
@@ -211,7 +211,7 @@ on_startup = {
 					}
 				}
 			}
-			set_global_flag = ZZZ_enhanced_magyar_reformed
+			set_global_flag = ZZZ_enhanced_magyar_pagan_reformed
 		}
 	}
 }
