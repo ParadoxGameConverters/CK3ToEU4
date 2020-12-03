@@ -15,7 +15,7 @@ void CK3::Faith::registerKeys()
 		tag = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("doctrine", [this](const std::string& unused, std::istream& theStream) {
-		doctrines.insert(commonItems::singleString(theStream).getString());
+		doctrines.emplace_back(commonItems::singleString(theStream).getString());
 	});
 	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
 		religion = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
@@ -39,8 +39,7 @@ void CK3::Faith::registerKeys()
 		iconPath = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
-		const auto blobList = commonItems::blobList(theStream).getBlobs();
-		for (const auto& blob: blobList)
+		for (const auto& blob: commonItems::blobList(theStream).getBlobs())
 		{
 			if (blob.find("has_been_reformed")) // This tells you that this UNREFORMED religion has been reformed (This is not for the reformed religion)
 			{

@@ -24,6 +24,7 @@ TEST(CK3World_FaithTests, loadValuesDefaultToBlank)
 	ASSERT_TRUE(faith.getDescription().empty());
 	ASSERT_TRUE(faith.getTemplate().empty());
 	ASSERT_TRUE(faith.getIconPath().empty());
+	ASSERT_TRUE(!faith.getReformedFlag());
 }
 
 TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
@@ -40,19 +41,21 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	input << "desc = \"Custom Desc\"\n";
 	input << "icon = \"gfx/icon.dds\"\n";
 	input << "template = \"catholic\"\n";
+	input << "variables = { \"a bunch of nonsense \nreally\"}";
 
 	const CK3::Faith faith(input, 42);
 
 	ASSERT_EQ("akom_pagan", faith.getName());
 	ASSERT_EQ(commonItems::Color(std::array<int, 3>{229, 178, 76}), faith.getColor());
 	ASSERT_EQ(3, faith.getDoctrines().size());
-	ASSERT_EQ(1, faith.getDoctrines().count("tenet_adorcism"));
-	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_monogamy"));
-	ASSERT_EQ(1, faith.getDoctrines().count("doctrine_deviancy_shunned"));
+	ASSERT_EQ(1, faith.getDoctrines()[0] == "tenet_adorcism");
+	ASSERT_EQ(1, faith.getDoctrines()[1] == "doctrine_monogamy");
+	ASSERT_EQ(1, faith.getDoctrines()[2] == "doctrine_deviancy_shunned");
 	ASSERT_EQ(7, faith.getReligion().first);
 	ASSERT_EQ("Custom Name", faith.getCustomName());
 	ASSERT_EQ("Custom Adj", faith.getCustomAdj());
 	ASSERT_EQ("Custom Desc", faith.getDescription());
 	ASSERT_EQ("gfx/icon.dds", faith.getIconPath());
 	ASSERT_EQ("catholic", faith.getTemplate());
+	ASSERT_FALSE(faith.getReformedFlag());
 }

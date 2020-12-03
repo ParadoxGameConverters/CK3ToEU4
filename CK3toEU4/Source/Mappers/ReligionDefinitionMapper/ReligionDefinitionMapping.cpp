@@ -1,5 +1,6 @@
 #include "ReligionDefinitionMapping.h"
 #include "ParserHelpers.h"
+#include "Log.h"
 
 mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theStream)
 {
@@ -24,21 +25,19 @@ void mappers::ReligionDefinitionMapping::registerKeys()
 		else
 			country.clear();
 	});
+	registerKeyword("country_as_secondary", [this](const std::string& unused, std::istream& theStream) {
+		countrySecondary = commonItems::stringOfItem(theStream).getString();
+		if (countrySecondary.size() > 4)
+			countrySecondary = countrySecondary.substr(3, countrySecondary.size() - 4);
+		else
+			countrySecondary.clear();
+	});
 	registerKeyword("province", [this](const std::string& unused, std::istream& theStream) {
 		province = commonItems::stringOfItem(theStream).getString();
 		if (province.size() > 4)
 			province = province.substr(3, province.size() - 4);
 		else
 			province.clear();
-	});
-	registerKeyword("country_as_secondary", [this](const std::string& unused, std::istream& theStream) {
-		const auto blobList = commonItems::blobList(theStream).getBlobs();
-		if (blobList.size() > 0)
-		{
-			countrySecondary = blobList[0] + "\n" + blobList[1];
-		}
-		else
-			countrySecondary.clear();
 	});
 	registerKeyword("unique_modifiers", [this](const std::string& unused, std::istream& theStream) {
 		unique = commonItems::stringOfItem(theStream).getString();

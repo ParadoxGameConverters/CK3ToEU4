@@ -171,6 +171,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		Log(LogLevel::Warning) << "CK3 Religion Template for " << origName << " does not exist! We will be scraping defaults.";
 	}
 
+	short secondaryCount = 0;
+	short countryCount = 0;
 	for (const auto& doctrine: faith.getDoctrines())
 	{
 		const auto& match = religionDefinitionMapper.getDefinition(doctrine);
@@ -178,10 +180,16 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		{
 			if (!match->getAllowedConversion().empty())
 				allowedConversion += match->getAllowedConversion() + "\n";
-			if (!match->getCountry().empty())
+			if (!match->getCountry().empty() && countryCount < 4) //This should prevent religions from having too many modifiers at once
+			{
 				country += match->getCountry() + "\n";
-			if (!match->getCountrySecondary().empty())
+				countryCount++;
+			}
+			if (!match->getCountrySecondary().empty() && secondaryCount < 2) //Secondary is limited to two
+			{
 				countrySecondary += match->getCountrySecondary() + "\n";
+				secondaryCount++;
+			}
 			if (!match->getProvince().empty())
 				province += match->getProvince() + "\n";
 			if (!match->getUnique().empty())
@@ -200,7 +208,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.allowedConversion = allowedConversion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
-	LOG(LogLevel::Debug) << countrySecondary;
+	
 	newReligion.province = province;
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;

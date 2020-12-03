@@ -41,7 +41,7 @@ class Faith: commonItems::parser
 	std::string customAdjective;
 	std::string description;
 	std::optional<commonItems::Color> color;
-	std::set<std::string> doctrines;
+	std::vector<std::string> doctrines;
 	std::pair<long long, std::shared_ptr<Religion>> religion;
 };
 } // namespace CK3
