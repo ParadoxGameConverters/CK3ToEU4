@@ -41,7 +41,7 @@ class Faith: commonItems::parser
 	std::string customAdjective;
 	std::string description;
 	std::optional<commonItems::Color> color;
-	std::vector<std::string> doctrines;
+	std::vector<std::string> doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS
 	std::pair<long long, std::shared_ptr<Religion>> religion;
 };
 } // namespace CK3

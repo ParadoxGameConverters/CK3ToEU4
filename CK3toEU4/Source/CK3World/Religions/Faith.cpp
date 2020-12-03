@@ -39,14 +39,8 @@ void CK3::Faith::registerKeys()
 		iconPath = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
-		for (const auto& blob: commonItems::blobList(theStream).getBlobs())
-		{
-			if (blob.find("has_been_reformed")) // This tells you that this UNREFORMED religion has been reformed (This is not for the reformed religion)
-			{
-				reformedFlag = true;
-				break;
-			}
-		}
+		if(commonItems::stringOfItem(theStream).getString().find("has_been_reformed"))
+			reformedFlag = true;
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

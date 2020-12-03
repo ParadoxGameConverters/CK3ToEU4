@@ -1,6 +1,5 @@
 #include "ReligionDefinitionMapping.h"
 #include "ParserHelpers.h"
-#include "Log.h"
 
 mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theStream)
 {
