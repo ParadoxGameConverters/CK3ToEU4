@@ -32,6 +32,7 @@ class ReligionMapper: commonItems::parser
 	[[nodiscard]] std::optional<std::string> getEU4ReligionForCK3Religion(const std::string& ck3Religion) const;
 	[[nodiscard]] const auto& getLocalizations() const { return localizations; }
 	[[nodiscard]] const auto& getGeneratedReligions() const { return generatedReligions; }
+	[[nodiscard]] const auto& getReformedReligions() const { return reformedReligions; }
 
   private:
 	void registerKeys();
@@ -44,6 +45,7 @@ class ReligionMapper: commonItems::parser
 	std::map<std::string, LocBlock> localizations;
 
 	std::vector<EU4::GeneratedReligion> generatedReligions;
+	std::vector<std::string> reformedReligions;
 };
 } // namespace mappers
 

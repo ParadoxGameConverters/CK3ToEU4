@@ -38,9 +38,8 @@ link = { eu4 = priscillianism ck3 = priscillianism }
 link = { eu4 = cainitism ck3 = cainitism }
 # Finno-Ugric  
 link = { eu4 = finnish_pagan ck3 = finnish_pagan }
-link = { eu4 = finnish_pagan_reformed ck3 = finnish_reformed }
 # Siberian
-link = { eu4 = animism ck3 = siberian_pagan }
+link = { eu4 = finnish_pagan ck3 = siberian_pagan }
 # Germanic  
 link = { eu4 = norse_pagan ck3 = norse_pagan }
 # Hellenism  
@@ -103,7 +102,6 @@ link = { eu4 = mazdaki ck3 = mazdakism }
 link = { eu4 = khurramism ck3 = khurramism }
 # Zunism  
 link = { eu4 = zun_pagan ck3 = zun_pagan }
-link = { eu4 = zun_pagan_reformed ck3 = zun_pagan_reformed }
 
 # IMP:CK3 addition
 link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }

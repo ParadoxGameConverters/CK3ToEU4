@@ -55,6 +55,18 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 			// This is a new faith.
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
+		else if(faith.second->getReformedFlag()) // This is for unreformed religions that have been reformed (Game only stores this info in the old religon)
+		{
+			const auto& displayName = faith.second->getCustomAdj(); // Catholic, not catholicism
+			LocBlock locBlock;
+			locBlock.english = displayName; //CK3 already calls it "Old Religion", this will just overwrite the default EU4 localization calling it something else.
+			locBlock.french = displayName;
+			locBlock.german = displayName;
+			locBlock.spanish = displayName;
+			localizations.insert(std::pair(faith.second->getName(), locBlock));
+
+			reformedReligions.emplace_back(faith.second->getTemplate());
+		}
 	}
 }
 
@@ -159,6 +171,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		Log(LogLevel::Warning) << "CK3 Religion Template for " << origName << " does not exist! We will be scraping defaults.";
 	}
 
+	short secondaryCount = 0;
+	short countryCount = 0;
 	for (const auto& doctrine: faith.getDoctrines())
 	{
 		const auto& match = religionDefinitionMapper.getDefinition(doctrine);
@@ -166,10 +180,16 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		{
 			if (!match->getAllowedConversion().empty())
 				allowedConversion += match->getAllowedConversion() + "\n";
-			if (!match->getCountry().empty())
+			if (!match->getCountry().empty() && countryCount < 4) //This should prevent religions from having too many modifiers at once
+			{
 				country += match->getCountry() + "\n";
-			if (!match->getCountrySecondary().empty())
+				countryCount++;
+			}
+			if (!match->getCountrySecondary().empty() && secondaryCount < 2) //Secondary is limited to two
+			{
 				countrySecondary += match->getCountrySecondary() + "\n";
+				secondaryCount++;
+			}
 			if (!match->getProvince().empty())
 				province += match->getProvince() + "\n";
 			if (!match->getUnique().empty())
@@ -188,6 +208,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.allowedConversion = allowedConversion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
+	
 	newReligion.province = province;
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;

@@ -64,7 +64,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	Log(LogLevel::Progress) << "88 %";
 
 	LOG(LogLevel::Info) << "<- Writing Religions";
-	outputReligions(theConfiguration, religionMapper.getGeneratedReligions());
+	outputReligions(theConfiguration, religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
 	Log(LogLevel::Progress) << "89 %";
 
 	if (invasion)
@@ -139,8 +139,18 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 }
 
 
-void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
+void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const std::vector<std::string>& reformedReligions) const
 {
+	//Reformed Religion global flag output
+	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_religious_reformation_check.txt");
+	globalFlagFile << "on_startup = {\n\tif={\n\t\tlimit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }";
+	for (const auto& religion: reformedReligions)
+	{
+		globalFlagFile << "\n\t\tset_global_flag = ZZZ_enhanced_" << religion << "_reformed";
+	}
+	globalFlagFile << "\n\t}\n}";
+	globalFlagFile.close();
+
 	for (const auto& religion: generatedReligions)
 	{
 		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");

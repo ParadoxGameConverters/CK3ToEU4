@@ -15,7 +15,7 @@ void CK3::Faith::registerKeys()
 		tag = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("doctrine", [this](const std::string& unused, std::istream& theStream) {
-		doctrines.insert(commonItems::singleString(theStream).getString());
+		doctrines.emplace_back(commonItems::singleString(theStream).getString());
 	});
 	registerKeyword("religion", [this](const std::string& unused, std::istream& theStream) {
 		religion = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
@@ -37,6 +37,10 @@ void CK3::Faith::registerKeys()
 	});
 	registerKeyword("icon", [this](const std::string& unused, std::istream& theStream) {
 		iconPath = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
+		if(commonItems::stringOfItem(theStream).getString().find("has_been_reformed") != std::string::npos)
+			reformedFlag = true;
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

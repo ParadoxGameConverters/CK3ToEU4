@@ -1028,7 +1028,7 @@ country_decisions = {
 	ZZZ_enhanced_reform_kushitism = {
 		major = yes
 		potential = {
-			NOT = { has_global_flag = ZZZ_enhanced_kushitism_reformed }
+			NOT = { has_global_flag = ZZZ_enhanced_kushitism_pagan_reformed }
 			NOT = { has_global_flag = ZZZ_enhanced_random_world }
 			religion = kushitism_pagan
 		}
@@ -1059,7 +1059,7 @@ country_decisions = {
 		
 		effect = {
 			hidden_effect = {
-				set_global_flag = ZZZ_enhanced_kushitism_reformed
+				set_global_flag = ZZZ_enhanced_kushitism_pagan_reformed
 				every_country = {
 					country_event = { id = ZZZ_enhanced_religion.9 }
 				}
@@ -1115,7 +1115,7 @@ country_decisions = {
 	ZZZ_enhanced_reform_magyar = {
 		major = yes
 		potential = {
-			NOT = { has_global_flag = ZZZ_enhanced_magyar_reformed }
+			NOT = { has_global_flag = ZZZ_enhanced_magyar_pagan_reformed }
 			NOT = { has_global_flag = ZZZ_enhanced_random_world }
 			religion = magyar_pagan
 		}
@@ -1146,7 +1146,7 @@ country_decisions = {
 		
 		effect = {
 			hidden_effect = {
-				set_global_flag = ZZZ_enhanced_magyar_reformed
+				set_global_flag = ZZZ_enhanced_magyar_pagan_reformed
 				every_country = {
 					country_event = { id = ZZZ_enhanced_religion.10 }
 				}
