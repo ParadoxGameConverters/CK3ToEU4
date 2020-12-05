@@ -358,7 +358,7 @@ pagan = {
 			yearly_absolutism = 0.5
 		}
 		
-		heretic = { GOAT_SKULL SNAKE_CLAN }
+		heretic = { DARKNESS SNAKE_CLAN }
 	}
 	kushitism_pagan_reformed = {
 		color = { 0 255 255 }
@@ -379,7 +379,7 @@ pagan = {
 			yearly_absolutism = 0.5
 		}
 		
-		heretic = { DARKNESS }
+		heretic = { DARKNESS SNAKE_CLAN }
 	}
 	
 	magyar_pagan = { #Uralic/Taltoism
@@ -408,6 +408,36 @@ pagan = {
 		}
 		
 		heretic = { GOAT_SKULL SNAKE_CLAN }
+	}
+	
+	siberian_pagan = { #Turumism
+		color = { 230 230 230 }
+		icon = 154
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
+	}
+	
+	siberian_pagan_reformed = { #Reformed Turumism
+		color = { 179 179 230 }
+		icon = 155
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
 	}
 	
 	#kiratism -> animism

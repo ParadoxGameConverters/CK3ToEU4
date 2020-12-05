@@ -707,3 +707,75 @@ country_event = {
 		}
 	}
 }
+
+#Siberian/Turumism
+country_event = {
+	id = ZZZ_enhanced_religion.11
+	title = ZZZ_enhanced_religion.1.t
+	desc = ZZZ_enhanced_religion.11.desc
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ZZZ_enhanced_religion.11.a
+		trigger = {
+			religion = siberian_pagan
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 75 }
+		
+		change_religion = siberian_pagan_reformed
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+		capital_scope = {
+			area = {
+				limit = { religion = siberian_pagan }
+				change_religion = siberian_pagan_reformed
+				add_base_tax = 1
+			}
+		}
+		every_owned_province = {
+			limit = { religion = siberian_pagan }
+			random_list = {
+				75 = {
+					change_religion = siberian_pagan_reformed
+				}
+				25 = {
+					add_province_modifier = {
+						name = "heresy"
+						duration = 3650
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = ZZZ_enhanced_religion.10.aa
+		trigger = {
+			tag = FROM
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.10.b
+		trigger = {
+			religion = siberian_pagan
+			NOT = { tag = FROM }
+		}
+		ai_chance = { factor = 25 }
+		add_stability = 1
+		add_country_modifier = {
+			name = "the_proper_old_ways"
+			duration = 3650
+		}		
+	}
+	option = {
+		name = ZZZ_enhanced_religion.10.c
+		trigger = {
+			NOT = { religion = siberian_pagan }
+			NOT = { tag = FROM }
+		}
+	}
+}

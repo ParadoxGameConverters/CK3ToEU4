@@ -9,9 +9,10 @@ ZZZ_enhanced_unreformed_religion = {
 			religion = slavic_pagan
 			religion = hellenic_pagan
 			religion = zun_pagan
-			religion = bon
+			#religion = bon ##Bon is different in CK3
 			religion = kushitism_pagan
 			religion = magyar_pagan
+			religion = siberian_pagan
 		}
 	}
 
