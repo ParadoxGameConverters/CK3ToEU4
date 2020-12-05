@@ -1,7 +1,7 @@
 pagan = {
 	canaanite = {
 		color = { 144 186 19 }
-		icon = 121
+		icon = 153
 		country = {
 			naval_forcelimit = 1
 			global_sailors_modifier = 1.2
@@ -20,7 +20,7 @@ pagan = {
 	}
 	druidism = {
 		color = { 102 66 31 }
-		icon = 149
+		icon = 105
 		country = {
 			tolerance_own = 2
 			tolerance_heretic = 2
@@ -39,7 +39,7 @@ pagan = {
 	
 	kemetism = {
 		color = { 179 45 0 }
-		icon = 56
+		icon = 152
 		country = {
 			legitimacy = 2
 			republican_tradition = 2
@@ -56,7 +56,7 @@ pagan = {
 	}
 	
 	mardukism = {
-		icon = 126
+		icon = 151
 		color = { 128 11 0 }
 		country = {
 			monthly_splendor = 2

@@ -62,7 +62,11 @@
  magyar_pagan_religion_desc:1 "Im ursprünglichen Glauben der Magyaren wird jeder Táltos – oder Priester – von den Göttern bereits vor seiner Geburt auserkoren. Sie werden mit übermenschlicher Stärke, Weisheit und Mächten ausgestattet, und die Magyaren vertrauen darauf, dass diese Táltos ihre Gemeinden schützen und sie zu Wohlstand führen."
  magyar_pagan_reformed: 0 "Reformiertes Uralic"
  magyar_pagan_reformed_religion_desc: 0 "In einem gemeinsamen Glauben vereint, glauben diejenigen, die der reformierten uralischen Kirche angehören, an die Táltos oder Priester, die von den Göttern vor ihrer Geburt ausgewählt wurden. Mit übermenschlicher Stärke, Weisheit und Macht ausgestattet, vertrauen Uralics diesen Táltos an Schutz ihrer Gemeinschaften und Führung zu Wohlstand."
-
+ siberian_pagan: 0 "Turumism"
+ siberian_pagan_desc: 0 "Turumisten glauben an eine horizontale Welt, in der Menschen und Tiere in Clans leben, die durch Bündnis oder Rache miteinander verbunden sind. Die Jagd ist ein zentraler Bestandteil des Gleichgewichts zwischen Leben nehmen und geben, und mit dem Tod reisen alle Seelen flussabwärts, um sich wiederzubeleben der Clan, in dem sie vorher gelebt haben."
+ siberian_pagan_reformed: 0 "Reformierter Turumism"
+ siberian_pagan_reformed_desc: 0 "Die turumistische Kirche predigt eine horizontale Welt, in der Menschen und Tiere in Clans leben, die durch Bündnis oder Rache miteinander verbunden sind. Für Turumisten ist das Gleichgewicht in Leben und Tod äußerst wichtig, und die Verschwendung einer Jagd wird als große Sünde angesehen. Sie glauben, dass im Tod alle Seelen flussabwärts reisen, um in dem Clan, in dem sie zuvor gelebt haben, wiedergeboren zu werden."
+ 
  #Eastern
  harmonized_confucian: 0 "Harmonisiert mit der konfuzianischen Philosophie"
  desc_harmonized_confucian: 0 "Wir haben alle konfuzianischen Ideale in unser Land und unser nationales Ethos aufgenommen."

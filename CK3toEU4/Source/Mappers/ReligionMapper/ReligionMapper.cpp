@@ -48,12 +48,18 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 	 const ReligionGroupScraper& religionGroupScraper,
 	 const LocalizationMapper& localizationMapper)
 {
+	bool hasReformedAfrica = false;
 	for (const auto& faith: faiths.getFaiths())
 	{
 		if (!getEU4ReligionForCK3Religion(faith.second->getName()))
 		{
 			// This is a new faith.
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
+		}
+		else if (getEU4ReligionForCK3Religion(faith.second->getName()) == "west_african_pagan" && !hasReformedAfrica) // Because there are several West African Religions
+		{
+			reformedReligions.emplace_back("west_african_pagan");
+			hasReformedAfrica = true;
 		}
 		else if(faith.second->getReformedFlag()) // This is for unreformed religions that have been reformed (Game only stores this info in the old religon)
 		{

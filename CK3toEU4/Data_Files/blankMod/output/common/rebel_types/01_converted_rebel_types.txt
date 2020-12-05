@@ -410,6 +410,200 @@ baltic_pagan_rebels = {
 		}
 	}
 }
+baltic_pagan_reformed_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = baltic_pagan_reformed
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = baltic_pagan_reformed }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = baltic_pagan_reformed
+			owner = { religion = baltic_pagan_reformed }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = baltic_pagan_reformed }
+			any_neighbor_province = {
+	 			religion = baltic_pagan_reformed
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = baltic_pagan_reformed
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = baltic_pagan_reformed }
+			}
+			change_religion = baltic_pagan_reformed
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = baltic_pagan_reformed
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = baltic_pagan_reformed }
+			}
+			change_religion = baltic_pagan_reformed
+			force_converted = yes
+		}
+	}
+}
 norse_pagan_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
@@ -992,6 +1186,200 @@ zun_pagan_rebels = {
 		}
 	}
 }
+zun_pagan_reformed_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = zun_pagan_reformed
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = zun_pagan_reformed }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = zun_pagan_reformed
+			owner = { religion = zun_pagan_reformed }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = zun_pagan_reformed }
+			any_neighbor_province = {
+	 			religion = zun_pagan_reformed
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = zun_pagan_reformed
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = zun_pagan_reformed }
+			}
+			change_religion = zun_pagan_reformed
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = zun_pagan_reformed
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = zun_pagan_reformed }
+			}
+			change_religion = zun_pagan_reformed
+			force_converted = yes
+		}
+	}
+}
 slavic_pagan_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
@@ -1186,6 +1574,394 @@ slavic_pagan_rebels = {
 		}
 	}
 }
+slavic_pagan_reformed_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = slavic_pagan_reformed
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = slavic_pagan_reformed }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = slavic_pagan_reformed
+			owner = { religion = slavic_pagan_reformed }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = slavic_pagan_reformed }
+			any_neighbor_province = {
+	 			religion = slavic_pagan_reformed
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = slavic_pagan_reformed
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = slavic_pagan_reformed }
+			}
+			change_religion = slavic_pagan_reformed
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = slavic_pagan_reformed
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = slavic_pagan_reformed }
+			}
+			change_religion = slavic_pagan_reformed
+			force_converted = yes
+		}
+	}
+}
+bon_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = bon
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = bon }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = bon
+			owner = { religion = bon }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = bon }
+			any_neighbor_province = {
+	 			religion = bon
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = bon
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = bon }
+			}
+			change_religion = bon
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = bon
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = bon }
+			}
+			change_religion = bon
+			force_converted = yes
+		}
+	}
+}
 bon_reformed_rebels = {
 
 	area = nation 					# Sticks to provinces of their nation
@@ -1376,6 +2152,200 @@ bon_reformed_rebels = {
 				NOT = { religion = bon_reformed }
 			}
 			change_religion = bon_reformed
+			force_converted = yes
+		}
+	}
+}
+hellenic_pagan_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = hellenic_pagan
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = hellenic_pagan }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = hellenic_pagan
+			owner = { religion = hellenic_pagan }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = hellenic_pagan }
+			any_neighbor_province = {
+	 			religion = hellenic_pagan
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = hellenic_pagan
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = hellenic_pagan }
+			}
+			change_religion = hellenic_pagan
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = hellenic_pagan
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = hellenic_pagan }
+			}
+			change_religion = hellenic_pagan
 			force_converted = yes
 		}
 	}
@@ -2346,6 +3316,394 @@ magyar_pagan_reformed_rebels = {
 				NOT = { religion = magyar_pagan_reformed }
 			}
 			change_religion = magyar_pagan_reformed
+			force_converted = yes
+		}
+	}
+}
+siberian_pagan_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = siberian_pagan
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = siberian_pagan }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = siberian_pagan
+			owner = { religion = siberian_pagan }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = siberian_pagan }
+			any_neighbor_province = {
+	 			religion = siberian_pagan
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = siberian_pagan
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = siberian_pagan }
+			}
+			change_religion = siberian_pagan
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = siberian_pagan
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = siberian_pagan }
+			}
+			change_religion = siberian_pagan
+			force_converted = yes
+		}
+	}
+}
+siberian_pagan_reformed_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = siberian_pagan_reformed
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = siberian_pagan_reformed }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = siberian_pagan_reformed
+			owner = { religion = siberian_pagan_reformed }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = siberian_pagan_reformed }
+			any_neighbor_province = {
+	 			religion = siberian_pagan_reformed
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = siberian_pagan_reformed
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = siberian_pagan_reformed }
+			}
+			change_religion = siberian_pagan_reformed
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = siberian_pagan_reformed
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = siberian_pagan_reformed }
+			}
+			change_religion = siberian_pagan_reformed
 			force_converted = yes
 		}
 	}
@@ -10148,6 +11506,786 @@ jain_rebels = {
 				NOT = { religion = jain }
 			}
 			change_religion = jain
+			force_converted = yes
+		}
+	}
+}
+
+######################################################################
+# Imperator rebels. Disgruntled fanatics.
+######################################################################
+canaanite_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = canaanite
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = canaanite }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = canaanite
+			owner = { religion = canaanite }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = canaanite }
+			any_neighbor_province = {
+	 			religion = canaanite
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = canaanite
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = canaanite }
+			}
+			change_religion = canaanite
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = canaanite
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = canaanite }
+			}
+			change_religion = canaanite
+			force_converted = yes
+		}
+	}
+}
+druidism_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = druidism
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = druidism }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = druidism
+			owner = { religion = druidism }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = druidism }
+			any_neighbor_province = {
+	 			religion = druidism
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = druidism
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = druidism }
+			}
+			change_religion = druidism
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = druidism
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = druidism }
+			}
+			change_religion = druidism
+			force_converted = yes
+		}
+	}
+}
+kemetism_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = kemetism
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = kemetism }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = kemetism
+			owner = { religion = kemetism }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = kemetism }
+			any_neighbor_province = {
+	 			religion = kemetism
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = kemetism
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = kemetism }
+			}
+			change_religion = kemetism
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = kemetism
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = kemetism }
+			}
+			change_religion = kemetism
+			force_converted = yes
+		}
+	}
+}
+mardukism_rebels = {
+
+	area = nation 					# Sticks to provinces of their nation
+	government = theocracy 			# Desires Theocracy
+	religion = mardukism
+	defection = religion			# Defects to countries of their religion
+	defect_delay = 120				# Held provinces will auto-defect after 18 months, regardless of accept/enforce demands.
+	independence = none				# Does not strive for independence
+	unit_transfer = yes
+	gfx_type = culture_province
+	
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+	
+	artillery = 0.0
+	infantry = 0.7
+	cavalry = 0.3
+	
+	morale = 1.1
+
+	# Possible handle actions
+	handle_action_negotiate = yes
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+	
+	# The rebel type with the highest modifier for this province gets picked
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			is_overseas = yes
+		}
+		modifier = {
+			factor = 0.0
+			owner = { religion = ROOT }
+		}
+		modifier = {
+			factor = 0.0
+			NOT = { religion = mardukism }
+		}
+		modifier = {
+			factor = 0.001
+			tolerance_to_this = 5
+		}
+		modifier = {
+			factor = 0.5
+			tolerance_to_this = 2
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_country_flag = religious_turmoil }
+		}		
+		modifier = {
+			factor = 2000
+			has_missionary = yes
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { tolerance_to_this = -2 }
+		}
+	}
+ 
+ 	# This is checked for EACH province in the Area of Operations
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 0.0
+			religion = mardukism
+			owner = { religion = mardukism }
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { religion = mardukism }
+			any_neighbor_province = {
+	 			religion = mardukism
+	 			NOT = { has_province_modifier = "forced_conversion" }
+	 		}
+	 	}
+		modifier = {
+			factor = 1.5
+			unrest = 2
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 4
+		}
+		modifier = {
+			factor = 1.5
+			unrest = 6
+		}
+	}
+ 
+ 	# Province Scope
+ 	siege_won_trigger = {
+		NOT = {
+			AND = {
+				owned_by = PAP
+				is_capital = yes
+			}
+		}
+ 	}
+	siege_won_effect = {
+		if = {
+			limit = {
+				religion = mardukism
+			}
+			add_province_modifier = {
+				name = "religious_violence"
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				NOT = { religion = mardukism }
+			}
+			change_religion = mardukism
+			add_province_modifier = {
+				name = "forced_conversion"
+				duration = 730
+			}
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		religion_group = pagan
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+	
+	# Localisation for their demands
+	demands_description = "generic_rebels_demand"
+	
+	# Country Scope	
+	demands_enforced_effect = {
+		if = {
+			limit = {
+				NOT = { religion_group = pagan }
+			}
+			add_prestige = -50
+			every_owned_province = {
+				limit = {
+					has_rebel_faction = REB
+				}
+				add_local_autonomy = 20
+			}
+		}
+		if = {
+			limit = {
+				tag = PAP
+			}
+			add_stability = -1
+		}
+		if = {
+			limit = {
+				religion = mardukism
+			}
+			add_country_modifier = {
+				name = "religious_intolerance"
+				duration = 3650
+			}
+		}
+		if = {
+			limit = {
+				religion_group = pagan
+				NOT = { religion = mardukism }
+			}
+			change_religion = mardukism
 			force_converted = yes
 		}
 	}

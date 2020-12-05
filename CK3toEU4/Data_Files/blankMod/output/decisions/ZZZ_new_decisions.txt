@@ -1198,4 +1198,91 @@ country_decisions = {
 			}
 		}
 	}
+	
+	ZZZ_enhanced_reform_siberian = {
+		major = yes
+		potential = {
+			NOT = { has_global_flag = ZZZ_enhanced_siberian_pagan_reformed }
+			NOT = { has_global_flag = ZZZ_enhanced_random_world }
+			religion = siberian_pagan
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 305  #Perm
+				province_id = 1075 #Tyumen
+				province_id = 1069 #Surgut
+				province_id = 4688 #Baraba (Ob)
+				province_id = 1060 #Irkutsk (Olkhon)
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			government_rank = 2
+			stability = 2
+			owns_core_province = 305  #Perm
+			owns_core_province = 1075 #Tyumen
+			owns_core_province = 1069 #Surgut
+			owns_core_province = 4688 #Baraba (Ob)
+			owns_core_province = 1060 #Irkutsk (Olkhon)
+		}
+		
+		effect = {
+			hidden_effect = {
+				set_global_flag = ZZZ_enhanced_siberian_pagan_reformed
+				every_country = {
+					country_event = { id = ZZZ_enhanced_religion.11 }
+				}
+			}			
+			add_prestige = 100
+			change_religion = siberian_pagan_reformed
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+			capital_scope = {
+				area = {
+					limit = { 
+						religion = siberian_pagan
+						owned_by = ROOT
+					}
+					change_religion = siberian_pagan_reformed
+					add_base_tax = 1
+					add_base_production = 1
+					add_base_manpower = 1
+				}
+			}
+			every_owned_province = {
+				random_list = {
+					75 = {
+						change_religion = siberian_pagan_reformed
+					}
+					25 = {
+						add_province_modifier = {
+							name = "heresy"
+							duration = 3650
+						}
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				NOT = {
+					owns_core_province = 305  #Perm
+					owns_core_province = 1075 #Tyumen
+					owns_core_province = 1069 #Surgut
+					owns_core_province = 4688 #Baraba (Ob)
+					owns_core_province = 1060 #Irkutsk (Olkhon)
+				}
+				factor = 0
+			}
+		}
+	}
 }
