@@ -136,7 +136,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 	LOG(LogLevel::Info) << "-- Distributing Electorates";
 	setElectors();
 
-	LOG(LogLevel::Info) << "*** Good-bye CK2, rest in peace. ***";
+	LOG(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
 }
 
@@ -492,6 +492,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	if (!hreTitle)
 		return;
 	const auto& hreHolder = hreTitle->second->getHolder();
+	Log(LogLevel::Info) << "HRE Holder: " << hreHolder->second->getName();
 	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
 	std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 
@@ -539,10 +540,12 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 			continue;
 		if (hreHolderTitle.second->getLevel() == LEVEL::BARONY) // Absolutely ignore baronies.
 			continue;
+		if (hreHolderTitle.second->getLevel() == LEVEL::KINGDOM && theConfiguration.getShatterHRELevel() == Configuration::SHATTER_HRE_LEVEL::DUTCHY)
+			continue; // This is bricked.
 		if (hreHolderTitle.second->getClay() && !hreHolderTitle.second->getClay()->isLandless())
 		{ // looks solid.
 			hreHolderTitle.second->setHREEmperor();
-			Log(LogLevel::Debug) << "Flagging " << hreHolderTitle.second->getName() << " as His HREship.";
+			Log(LogLevel::Info) << "Flagging " << hreHolderTitle.second->getName() << " as His HREship.";
 			emperorSet = true;
 			break;
 		}
@@ -581,7 +584,6 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 				const auto& djLiege = holderTitle.second->getDJLiege();
 				djLiege->second->addDFVassals(std::map{holderTitle});
 				holderTitle.second->loadDFLiege(*djLiege);
-				Log(LogLevel::Debug) << "Linked " << holderTitle.second->getName() << " into " << holderTitle.second->getDJLiege()->second->getName();
 			}
 		}
 	}
