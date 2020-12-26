@@ -520,8 +520,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 					hreMembers.insert(vassalvassal);
 				}
 				// Bricking the kingdom.
-				if (vassal.second->getHolder()->first != hreHolder->first)
-					brickedPeople.insert(*vassal.second->getHolder());
+				brickedPeople.insert(*vassal.second->getHolder());
 				vassal.second->brickTitle();
 			}
 		}
