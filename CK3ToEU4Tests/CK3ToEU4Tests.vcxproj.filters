@@ -638,6 +638,12 @@
     <ClCompile Include="MapperTests\LocalisationTests\LocalisationTests.cpp">
       <Filter>MapperTests\LocalizationTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\DynamicTemplate.cpp">
+      <Filter>CK3ToEU4\CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\TitleTests\DynamicTemplateTests.cpp">
+      <Filter>Ck3WorldTests\TitleTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

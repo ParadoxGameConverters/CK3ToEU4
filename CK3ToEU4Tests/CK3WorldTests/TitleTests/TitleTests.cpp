@@ -521,3 +521,16 @@ TEST(CK3World_TitleTests, titleNamesFromHoldersDomainCanBeGathered)
 	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("d_duchy1"));
 	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("d_duchy2"));
 }
+
+TEST(CK3World_TitleTests, dynamicTitleRankCanBeAssigned)
+{
+	std::stringstream input;
+	CK3::Title theTitle(input, 1);
+	theTitle.setDynamicLevel(CK3::LEVEL::EMPIRE);
+
+	ASSERT_EQ(CK3::LEVEL::EMPIRE, theTitle.getLevel());
+
+	theTitle.setDynamicLevel(CK3::LEVEL::DUCHY);
+
+	ASSERT_EQ(CK3::LEVEL::DUCHY, theTitle.getLevel());
+}

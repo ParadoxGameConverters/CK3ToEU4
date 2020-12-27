@@ -296,6 +296,11 @@ CK3::LEVEL CK3::Title::getLevel() const
 	if (name.find("e_") == 0)
 		return LEVEL::EMPIRE;
 
+	// for dynamic tiles we may have a level set already.
+	if (dynamicLevel)
+		return *dynamicLevel;
+
+	// If not...
 	// This is the questionable part. It should work for customs as they are treated identically as any other - with dejure parents and all.
 	// exceptions are dynamic mercs, landless religious orders and similar - but those don't hold land, at least initially.
 

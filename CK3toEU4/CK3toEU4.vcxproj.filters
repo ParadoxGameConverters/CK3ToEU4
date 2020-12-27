@@ -400,6 +400,9 @@
     <ClInclude Include="Source\EU4World\Religion\GeneratedReligion.h">
       <Filter>EU4World\Religion</Filter>
     </ClInclude>
+    <ClInclude Include="Source\CK3World\Titles\DynamicTemplate.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -685,6 +688,9 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Religion\GeneratedReligion.cpp">
       <Filter>EU4World\Religion</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CK3World\Titles\DynamicTemplate.cpp">
+      <Filter>CK3World\Titles</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

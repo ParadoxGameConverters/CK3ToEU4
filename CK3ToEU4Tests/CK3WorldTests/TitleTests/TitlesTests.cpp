@@ -513,3 +513,20 @@ TEST(CK3World_TitlesTests, titlesCanBeCongregated)
 	ASSERT_EQ("c_county2", ownedDF8.find("c_county2")->second->getName());
 	ASSERT_EQ("c_county3", ownedDF8.find("c_county3")->second->getName());
 }
+
+TEST(CK3World_TitlesTests, dynamicRanksAreAutoassigned)
+{
+	std::stringstream input;
+	input << "dynamic_templates = {\n";
+	input << "\t{ key = \"x_mc_0\" tier = duchy dyn = yes }\n";
+	input << "\t{ key = \"x_x_1\" tier = empire dyn = yes }\n";
+	input << "}\n";
+	input << "landed_titles = {\n";
+	input << "\t1 = { key = x_mc_0 }\n";
+	input << "\t2 = { key = x_x_1 }\n";
+	input << "}\n";
+	const CK3::Titles titles(input);
+
+	ASSERT_EQ(CK3::LEVEL::DUCHY, titles.getTitles().at("x_mc_0")->getLevel());
+	ASSERT_EQ(CK3::LEVEL::EMPIRE, titles.getTitles().at("x_x_1")->getLevel());
+}

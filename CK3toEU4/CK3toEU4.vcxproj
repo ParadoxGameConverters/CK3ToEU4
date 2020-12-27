@@ -121,6 +121,7 @@
     <ClInclude Include="Source\CK3World\Religions\Faiths.h" />
     <ClInclude Include="Source\CK3World\Religions\Religion.h" />
     <ClInclude Include="Source\CK3World\Religions\Religions.h" />
+    <ClInclude Include="Source\CK3World\Titles\DynamicTemplate.h" />
     <ClInclude Include="Source\CK3World\Titles\LandedTitles.h" />
     <ClInclude Include="Source\CK3World\Titles\Title.h" />
     <ClInclude Include="Source\CK3World\Titles\Titles.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Source\CK3World\Religions\Faiths.cpp" />
     <ClCompile Include="Source\CK3World\Religions\Religion.cpp" />
     <ClCompile Include="Source\CK3World\Religions\Religions.cpp" />
+    <ClCompile Include="Source\CK3World\Titles\DynamicTemplate.cpp" />
     <ClCompile Include="Source\CK3World\Titles\LandedTitles.cpp" />
     <ClCompile Include="Source\CK3World\Titles\Title.cpp" />
     <ClCompile Include="Source\CK3World\Titles\Titles.cpp" />

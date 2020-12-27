@@ -196,7 +196,10 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	// HRE Electorate is set later, once we can do a province/dev check.
 	details.elector = false;
 	if (title->second->isHREEmperor())
+	{
 		details.holyRomanEmperor = true;
+		Log(LogLevel::Info) << ">> HREmperor " << title->second->getName() << " imported into " << tag;
+	}
 	if (title->second->isInHRE())
 		details.inHRE = true;
 	// ditto for secondary_religion and harmonized religions.
