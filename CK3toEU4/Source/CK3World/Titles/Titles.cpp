@@ -2,6 +2,7 @@
 #include "../Characters/Character.h"
 #include "../Characters/Characters.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
+#include "DynamicTemplate.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -12,10 +13,24 @@ CK3::Titles::Titles(std::istream& theStream)
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
+
+	// This bit assigns CK3::Level to dynamic titles that have a rank definition in the save. It should be all of them, but it's CK3, so who knows.
+	if (!dynamicTitleRanks.empty())
+		transcribeDynamicRanks();
 }
 
 void CK3::Titles::registerKeys()
 {
+	registerKeyword("dynamic_templates", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::blobList dynamicRanks(theStream);
+		for (const auto& dynamicTitle: dynamicRanks.getBlobs())
+		{
+			std::stringstream blobStream(dynamicTitle);
+			const DynamicTemplate dynamicTitleTemplate(blobStream);
+			if (!dynamicTitleTemplate.getDynamicTitleKey().empty() && !dynamicTitleTemplate.getDynamicTitleRank().empty())
+				dynamicTitleRanks.insert(std::pair(dynamicTitleTemplate.getDynamicTitleKey(), dynamicTitleTemplate.getDynamicTitleRank()));
+		}
+	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
 		// A bit of recursion is good for the soul.
 		const auto& tempTitles = Titles(theStream);
@@ -53,6 +68,29 @@ void CK3::Titles::registerKeys()
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void CK3::Titles::transcribeDynamicRanks()
+{
+	Log(LogLevel::Info) << "-> Transcribing dynamic ranks.";
+	auto counter = 0;
+	for (const auto& [key, rank]: dynamicTitleRanks)
+	{
+		if (!titles.contains(key))
+			continue; // Yay?
+		if (!titles.at(key))
+			continue; // Huh?
+
+		// There will not be a dynamic county or barony.
+		if (rank == "duchy")
+			titles.at(key)->setDynamicLevel(LEVEL::DUCHY);
+		else if (rank == "kingdom")
+			titles.at(key)->setDynamicLevel(LEVEL::KINGDOM);
+		else if (rank == "empire")
+			titles.at(key)->setDynamicLevel(LEVEL::EMPIRE);
+		counter++;
+	}
+	Log(LogLevel::Info) << "<> Transcribed " << counter << " dynamics.";
 }
 
 void CK3::Titles::linkCoats(const CoatsOfArms& coats)
@@ -160,7 +198,8 @@ void CK3::Titles::linkTitles()
 				{
 					if (const auto& dfLiegeItr = IDCache.find(title.second->getDFLiege()->first); dfLiegeItr != IDCache.end())
 					{
-						// We're rerouting title to be dejure under dfliege, whomever this is. The can cause baronies to be dejure under empires, but see if I care at this point.
+						// We're rerouting title to be dejure under dfliege, whomever this is. The can cause baronies to be dejure under empires, but see if I care at
+						// this point.
 						title.second->loadDJLiege(*dfLiegeItr);
 						Log(LogLevel::Warning) << "Rerouted " << title.first << " to dejure liege " << dfLiegeItr->second->getName();
 					}
@@ -193,7 +232,8 @@ void CK3::Titles::linkTitles()
 				else
 				{
 					// Sigh. Yes, this happens. DEJURE vassals, not defacto! And void! Woe is PDX.
-					Log(LogLevel::Warning) << "Title " << title.first << " has DEJURE vassal " << std::to_string(dJVassal.first) << " which has no definition! Amusing.";
+					Log(LogLevel::Warning) << "Title " << title.first << " has DEJURE vassal " << std::to_string(dJVassal.first)
+												  << " which has no definition! Amusing.";
 				}
 			}
 			title.second->loadDJVassals(replacementMap);
@@ -253,7 +293,8 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 			}
 			else
 			{
-				Log(LogLevel::Error) << "For heaven's sake, title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) + " who is dead or has no definition!";
+				Log(LogLevel::Error) << "For heaven's sake, title " + title.first + " has holder " + std::to_string(title.second->getHolder()->first) +
+													 " who is dead or has no definition!";
 				// Attempt recovery. Since titles are still unlinked we'll have to iterate to find DFliege's holder manually.
 				if (title.second->getDFLiege())
 				{
@@ -265,7 +306,7 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 								replacementHolder = theTitle->getHolder()->first;
 							break;
 						}
-					
+
 					if (replacementHolder > 0)
 						if (const auto& replacementHolderItr = characterData.find(replacementHolder); replacementHolderItr != characterData.end())
 						{

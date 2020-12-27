@@ -98,6 +98,7 @@ class Title: commonItems::parser
 	void loadOwnedDJCounties(const std::map<std::string, std::shared_ptr<Title>>& theOwnedCounties) { ownedDJCounties = theOwnedCounties; }
 
 	// processing
+	void setDynamicLevel(LEVEL theLevel) { dynamicLevel = theLevel; }
 	void cleanUpDisplayName();
 	[[nodiscard]] int flagDeJureHREProvinces();
 	void brickTitle();
@@ -166,6 +167,7 @@ class Title: commonItems::parser
 	std::vector<std::pair<long long, std::shared_ptr<Character>>> previousHolders;
 	bool holderCapital = false;
 	bool HRECapital = false;
+	std::optional<LEVEL> dynamicLevel; // Maybe assigned through dynamic ranks, otherwise getLevel will try to guesstimate.
 };
 } // namespace CK3
 
