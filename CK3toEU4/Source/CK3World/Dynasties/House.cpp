@@ -14,6 +14,9 @@ void CK3::House::registerKeys()
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		name = commonItems::singleString(theStream).getString();
 	});
+	registerKeyword("localized_name", [this](const std::string& unused, std::istream& theStream) {
+		localizedName = commonItems::singleString(theStream).getString();
+	});
 	registerKeyword("prefix", [this](const std::string& unused, std::istream& theStream) {
 		prefix = commonItems::singleString(theStream).getString();
 	});

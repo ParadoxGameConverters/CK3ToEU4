@@ -12,6 +12,7 @@ class House: commonItems::parser
 	House() = default;
 	House(std::istream& theStream, long long housID);
 	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
 	[[nodiscard]] const auto& getPrefix() const { return prefix; }
 	[[nodiscard]] const auto& getDynasty() const { return dynasty; }
 	[[nodiscard]] const auto& getID() const { return houseID; }
@@ -26,6 +27,7 @@ class House: commonItems::parser
 
 	long long houseID = 0;
 	std::string name;
+	std::string localizedName;
 	std::pair<long long, std::shared_ptr<Dynasty>> dynasty;
 	std::string prefix;
 	std::optional<std::pair<long long, std::shared_ptr<Character>>> houseHead; // houses can have missing heads or dead people...

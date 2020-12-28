@@ -549,13 +549,20 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		const auto& prefix = details.holder->getHouse().second->getPrefix();
 		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
 		if (prefixLoc)
-			dynastyName = prefixLoc->english + " ";
-		const auto& dynasty = details.holder->getHouse().second->getName();
-		const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-		if (dynastyLoc)
-			dynastyName += dynastyLoc->english;
+			dynastyName = prefixLoc->english;
+		if (!details.holder->getHouse().second->getLocalizedName().empty())
+		{
+			dynastyName += details.holder->getHouse().second->getLocalizedName();
+		}
 		else
-			dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+		{
+			const auto& dynasty = details.holder->getHouse().second->getName();
+			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
+			if (dynastyLoc)
+				dynastyName += dynastyLoc->english;
+			else
+				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+		}
 		details.monarch.dynasty = dynastyName;
 	}
 
@@ -586,13 +593,20 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		const auto& prefix = spouse->getHouse().second->getPrefix();
 		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
 		if (prefixLoc)
-			dynastyName = prefixLoc->english + " ";
-		const auto& dynasty = spouse->getHouse().second->getName();
-		const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-		if (dynastyLoc)
-			dynastyName += dynastyLoc->english;
+			dynastyName = prefixLoc->english;
+		if (!spouse->getHouse().second->getLocalizedName().empty())
+		{
+			dynastyName += spouse->getHouse().second->getLocalizedName();
+		}
 		else
-			dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+		{
+			const auto& dynasty = spouse->getHouse().second->getName();
+			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
+			if (dynastyLoc)
+				dynastyName += dynastyLoc->english;
+			else
+				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+		}
 		details.queen.dynasty = dynastyName;
 
 		details.queen.adm = std::min((spouse->getSkills().stewardship + spouse->getSkills().learning) / 3, 6);
@@ -676,13 +690,20 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			const auto& prefix = heir.second->getHouse().second->getPrefix();
 			const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
 			if (prefixLoc)
-				dynastyName = prefixLoc->english + " ";
-			const auto& dynasty = heir.second->getHouse().second->getName();
-			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-			if (dynastyLoc)
-				dynastyName += dynastyLoc->english;
+				dynastyName = prefixLoc->english;
+			if (!heir.second->getHouse().second->getLocalizedName().empty())
+			{
+				dynastyName += heir.second->getHouse().second->getLocalizedName();
+			}
 			else
-				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+			{
+				const auto& dynasty = heir.second->getHouse().second->getName();
+				const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
+				if (dynastyLoc)
+					dynastyName += dynastyLoc->english;
+				else
+					dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+			}
 			details.heir.dynasty = dynastyName;
 
 			details.heir.adm = std::min((heir.second->getSkills().stewardship + heir.second->getSkills().learning) / 2, 6);
@@ -1014,15 +1035,16 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	{
 		// Hordes (This is the worst way to do this, but so be it until we get a horde government type)
 		if (regionMapper->provinceIsInRegion(details.capital, "tambov_area") || regionMapper->provinceIsInRegion(details.capital, "ryazan_area") ||
-			regionMapper->provinceIsInRegion(details.capital, "suzdal_area") || regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
-			regionMapper->provinceIsInRegion(details.capital, "ural_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
-			regionMapper->provinceIsInRegion(details.capital, "central_asia_region") || regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
+			 regionMapper->provinceIsInRegion(details.capital, "suzdal_area") || regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
+			 regionMapper->provinceIsInRegion(details.capital, "ural_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
+			 regionMapper->provinceIsInRegion(details.capital, "central_asia_region") || regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
 		{
 			details.reforms.clear();
 			details.reforms = {"steppe_horde"};
 		}
 		// Siberian Tribes
-		else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") || regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
+		else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") ||
+					regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
 		{
 			details.reforms.clear();
 			details.reforms = {"siberian_tribe"};
@@ -1111,27 +1133,27 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Tsardom
 	else if (details.government == "monarchy" &&
-			 (tag == "UKR" || (tag == "RUS" && (orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" ||
-			 details.religion == "slavic_pagan_reformed"))))
+				(tag == "UKR" || (tag == "RUS" && (orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" ||
+																  details.religion == "slavic_pagan_reformed"))))
 	{
 		details.reforms.clear();
 		details.reforms = {"tsardom"};
 	}
 	// Principality
 	else if (details.government == "monarchy" && details.governmentRank != 3 &&
-			 (orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") &&
-			 russianCultures.count(details.primaryCulture) && tag != "POL" && tag != "PAP" && tag != "HLR")
+				(orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") &&
+				russianCultures.count(details.primaryCulture) && tag != "POL" && tag != "PAP" && tag != "HLR")
 	{
 		details.reforms.clear();
 		details.reforms = {"principality"};
 	}
 	// Mamluk (Renamed in converter)
 	else if (muslimReligions.count(details.religion) && title->second->getLaws().count("mercenary_company_succession_law") &&
-			 (regionMapper->provinceIsInRegion(details.capital, "near_east_superregion") ||
-			 regionMapper->provinceIsInRegion(details.capital, "eastern_europe_superregion") ||
-			 regionMapper->provinceIsInRegion(details.capital, "persia_superregion") || regionMapper->provinceIsInRegion(details.capital, "egypt_region") ||
-			 regionMapper->provinceIsInRegion(details.capital, "maghreb_region") ||
-			 regionMapper->provinceIsInRegion(details.capital, "central_asia_region")))
+				(regionMapper->provinceIsInRegion(details.capital, "near_east_superregion") ||
+					 regionMapper->provinceIsInRegion(details.capital, "eastern_europe_superregion") ||
+					 regionMapper->provinceIsInRegion(details.capital, "persia_superregion") || regionMapper->provinceIsInRegion(details.capital, "egypt_region") ||
+					 regionMapper->provinceIsInRegion(details.capital, "maghreb_region") ||
+					 regionMapper->provinceIsInRegion(details.capital, "central_asia_region")))
 	{
 		if (!details.acceptedCultures.count("circassian") && details.primaryCulture != "circassian")
 			details.acceptedCultures.insert("circassian");
@@ -1181,9 +1203,10 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Plutocratic
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") ||
-			  ((details.reforms.count("autocracy_reform") || details.reforms.count("ottoman_government")) && details.governmentRank != 3)) &&
-			  (details.technologyGroup == "indian" || details.technologyGroup == "muslim" || details.technologyGroup == "chinese" ||
-			  details.technologyGroup == "east_african") && hasTradeCenterLevelTwo)
+					 ((details.reforms.count("autocracy_reform") || details.reforms.count("ottoman_government")) && details.governmentRank != 3)) &&
+				(details.technologyGroup == "indian" || details.technologyGroup == "muslim" || details.technologyGroup == "chinese" ||
+					 details.technologyGroup == "east_african") &&
+				hasTradeCenterLevelTwo)
 	{
 		details.reforms.clear();
 		details.reforms = {"plutocratic_reform"};
@@ -1191,8 +1214,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Grand Duchy
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") || details.reforms.count("autocracy_reform")) &&
-			  details.governmentRank == 1 && (tag == "LUX" || tag == "BAD" || tag == "TUS" || tag == "FIN" || tag == "LIT" || details.primaryCulture == "finnish"
-			  || balticCultures.count(details.primaryCulture)))
+				details.governmentRank == 1 &&
+				(tag == "LUX" || tag == "BAD" || tag == "TUS" || tag == "FIN" || tag == "LIT" || details.primaryCulture == "finnish" ||
+					 balticCultures.count(details.primaryCulture)))
 	{
 		details.reforms.clear();
 		details.reforms = {"grand_duchy_reform"};
@@ -1225,7 +1249,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Signoria
 	else if (details.government == "republic" && !details.reforms.count("merchants_reform") && !details.reforms.count("venice_merchants_reform") &&
-			 !details.reforms.count("free_city") && latinCultures.count(details.primaryCulture))
+				!details.reforms.count("free_city") && latinCultures.count(details.primaryCulture))
 	{
 		details.reforms.clear();
 		details.reforms = {"signoria_reform"};
