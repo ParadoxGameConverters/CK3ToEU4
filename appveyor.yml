@@ -28,3 +28,10 @@ deploy:
   artifact: CK3toEU4-0.4dynamic
   prerelease: true
   force_update: true
+- provider: GitHub
+  tag: 0.4D
+  release: 0.4 dynamic_faith_102 - for CK3[1.2] and EU4[1.30]
+  auth_token:
+    secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
+  repository: paradoxGameConverters/CK3ToEU4
+  artifact: CK3toEU4-0.4dynamic
