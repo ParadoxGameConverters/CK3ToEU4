@@ -25,6 +25,6 @@ deploy:
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: ParadoxGameConverters/CK3ToEU4
-  artifact: CK3toEU4-0.4dynamic-prerelease
+  artifact: CK3toEU4-0.4dynamic
   prerelease: true
   force_update: true
