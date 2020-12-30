@@ -17,7 +17,7 @@ test_script:
     (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
 artifacts:
 - path: Release
-  name: CK3toEU4-0.4dynamic-prerelease
+  name: CK3toEU4-0.4dynamic
 deploy:
 - provider: GitHub
   release: windows_development_build
