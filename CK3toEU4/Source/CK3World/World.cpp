@@ -501,8 +501,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	std::map<long long, std::shared_ptr<Title>> hreMembers;
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
-		// Empire is there for x_mc_XYZ mercenary companies that report erroneous levels due to not having land. They will get filtered out later.
-		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY || vassal.second->getLevel() == LEVEL::EMPIRE)
+		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
 		{
 			hreMembers.insert(vassal);
 		}
@@ -623,14 +622,18 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // Not relevant.
 		if (!empire.second->getHolder())
 			continue; // No holder.
-
+		
 		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
 		std::map<long long, std::shared_ptr<Title>> members;
 		for (const auto& vassal: empire.second->getDFVassals())
 		{
-			// Empire is there for x_mc_XYZ mercenary companies that report erroneous levels due to not having land. They will get filtered out later.
-			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY || vassal.second->getLevel() == LEVEL::EMPIRE)
+			if (!vassal.second)
+			{
+				Log(LogLevel::Warning) << "Shattering vassal " << vassal.first << " that isn't linked! Skipping!";
+				continue;				
+			}
+			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
 			{
 				members.insert(vassal);
 			}
@@ -638,12 +641,23 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			{
 				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
 				{ // hard override for special empire members
-					for (const auto& vassalvassal: vassal.second->getDFVassals())
+					
+					for (const auto& vassalVassal: vassal.second->getDFVassals())
 					{
-						members.insert(vassalvassal);
+						if (!vassalVassal.second)
+							Log(LogLevel::Warning) << "VassalVassal " << vassalVassal.first << " has no link!";
+						else
+							members.insert(vassalVassal);
 					}
 					// Bricking the kingdom
-					brickedPeople.insert(*vassal.second->getHolder());
+					if (!vassal.second->getHolder()->second)
+					{
+						Log(LogLevel::Warning) << "Vassal " << vassal.second->getName() << " has no holder linked!";
+					}
+					else
+					{
+						brickedPeople.insert(*vassal.second->getHolder());						
+					}
 					vassal.second->brickTitle();
 				}
 				else
@@ -671,6 +685,21 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		// Same as with HREmperor, we need to roll back counties or duchies that got released from ex-emperor himself or kings.
 		for (const auto& afflictedPerson: brickedPeople)
 		{
+			if (!afflictedPerson.second)
+			{
+				Log(LogLevel::Warning) << "Character " << afflictedPerson.first << " has no link! Cannot fix them.";
+				continue;
+			}
+			else if (!afflictedPerson.second->getCharacterDomain())
+			{
+				Log(LogLevel::Warning) << "Character " << afflictedPerson.first << " has no link to domain! Cannot fix them.";
+				continue;				
+			}
+			else if (afflictedPerson.second->getCharacterDomain()->getDomain().empty())
+			{
+				continue;				
+			}
+
 			const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 			const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
@@ -684,7 +713,6 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 					const auto& djLiege = holderTitle.second->getDJLiege();
 					djLiege->second->addDFVassals(std::map{holderTitle});
 					holderTitle.second->loadDFLiege(*djLiege);
-					Log(LogLevel::Debug) << "Linked " << holderTitle.second->getName() << " into " << holderTitle.second->getDJLiege()->second->getName();
 				}
 			}
 		}
@@ -748,14 +776,14 @@ void CK3::World::filterIndependentTitles()
 			if (indep.first == "k_papal_state")
 			{
 				indep.second->setThePope();
-				Log(LogLevel::Debug) << indep.first << " is the Pope.";
+				Log(LogLevel::Info) << "---> "  << indep.first << " is the Pope.";
 			}
 			else
 			{
 				if (allTitleHolders[holderID].count("k_papal_state"))
 				{
 					indep.second->setThePope();
-					Log(LogLevel::Debug) << indep.first << " belongs to the Pope.";
+					Log(LogLevel::Info) << "---> " << indep.first << " belongs to the Pope.";
 				}
 			}
 		}

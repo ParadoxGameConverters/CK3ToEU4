@@ -162,6 +162,10 @@ jain = {
 	heretic = { TERAPANTHA }
 }
 
+siberian_pagan = {
+	heretic = { GOAT_SKULL FINNIC }
+}
+
 animism = {
 	heretic = { SNAKE_CLAN }
 }
