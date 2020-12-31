@@ -216,11 +216,15 @@ void CK3::Title::brickTitle()
 	holder.reset();
 
 	// release all vassals
+	std::vector<std::shared_ptr<Title>> independentList;
 	for (const auto& vassal: dfVassals)
 		if (vassal.second)
-			vassal.second->grantIndependence();
+			independentList.emplace_back(vassal.second);
 		else
-			Log(LogLevel::Warning) << "Granting independence to " << vassal.first << " that's not linked!"; 
+			Log(LogLevel::Warning) << "Granting independence to " << vassal.first << " that's not linked!";
+
+	for (const auto& independentVassal: independentList)
+		independentVassal->grantIndependence();
 
 	dfVassals.clear(); // just in case?
 }
@@ -392,6 +396,8 @@ void CK3::Title::relinkDeFactoVassals()
 	if (name.starts_with("c_") || name.starts_with("b_"))
 		return; // don't bother with counties and below.
 
+	std::set<long long> dropList;
+	
 	for (const auto& [dfVassalID, dfVassal]: dfVassals)
 	{
 		if (!dfVassal)
@@ -414,7 +420,7 @@ void CK3::Title::relinkDeFactoVassals()
 					// Tell dejure title it's now owner of a brand new vassal.
 					dfVassal->getDJLiege()->second->addDFVassals(std::map{std::pair(dfVassalID, dfVassal)});
 					// And finally...
-					dropTitleFromDFVassals(dfVassalID);
+					dropList.insert(dfVassalID);
 				}
 			}
 			else
@@ -428,6 +434,9 @@ void CK3::Title::relinkDeFactoVassals()
 			}
 		}
 	}
+
+	for (auto dropVassalID: dropList)
+		dropTitleFromDFVassals(dropVassalID);
 }
 
 bool CK3::Title::areDFLiegeAndDJLiegeSet() const
