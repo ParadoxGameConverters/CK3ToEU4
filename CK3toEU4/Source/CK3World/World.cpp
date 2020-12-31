@@ -622,7 +622,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // Not relevant.
 		if (!empire.second->getHolder())
 			continue; // No holder.
-		
+
 		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
 		std::map<long long, std::shared_ptr<Title>> members;
@@ -631,7 +631,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			if (!vassal.second)
 			{
 				Log(LogLevel::Warning) << "Shattering vassal " << vassal.first << " that isn't linked! Skipping!";
-				continue;				
+				continue;
 			}
 			if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
 			{
@@ -641,7 +641,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			{
 				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
 				{ // hard override for special empire members
-					
+
 					for (const auto& vassalVassal: vassal.second->getDFVassals())
 					{
 						if (!vassalVassal.second)
@@ -656,7 +656,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 					}
 					else
 					{
-						brickedPeople.insert(*vassal.second->getHolder());						
+						brickedPeople.insert(*vassal.second->getHolder());
 					}
 					vassal.second->brickTitle();
 				}
@@ -693,11 +693,11 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			else if (!afflictedPerson.second->getCharacterDomain())
 			{
 				Log(LogLevel::Warning) << "Character " << afflictedPerson.first << " has no link to domain! Cannot fix them.";
-				continue;				
+				continue;
 			}
 			else if (afflictedPerson.second->getCharacterDomain()->getDomain().empty())
 			{
-				continue;				
+				continue;
 			}
 
 			const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
@@ -776,7 +776,7 @@ void CK3::World::filterIndependentTitles()
 			if (indep.first == "k_papal_state")
 			{
 				indep.second->setThePope();
-				Log(LogLevel::Info) << "---> "  << indep.first << " is the Pope.";
+				Log(LogLevel::Info) << "---> " << indep.first << " is the Pope.";
 			}
 			else
 			{
