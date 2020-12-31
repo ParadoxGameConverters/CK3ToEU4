@@ -499,6 +499,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 	// First we are composing a list of all HRE members. These are duchies,
 	// so we're also ripping them from under any potential kingdoms.
 	std::map<long long, std::shared_ptr<Title>> hreMembers;
+	std::map<long long, std::shared_ptr<Title>> brickList;
 	for (const auto& vassal: hreTitle->second->getDFVassals())
 	{
 		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
@@ -520,7 +521,7 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 				}
 				// Bricking the kingdom.
 				brickedPeople.insert(*vassal.second->getHolder());
-				vassal.second->brickTitle();
+				brickList.insert(vassal);
 			}
 		}
 		else if (vassal.second->getLevel() != LEVEL::BARONY)
@@ -528,6 +529,9 @@ void CK3::World::shatterHRE(const Configuration& theConfiguration) const
 			Log(LogLevel::Warning) << "Unrecognized HRE vassal: " << vassal.first << " - " << vassal.second->getName();
 		}
 	}
+
+	for (const auto& brick: brickList)
+		brick.second->brickTitle();
 
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
 	if (!hreHolder->second->getCharacterDomain())
@@ -626,6 +630,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
 		std::map<long long, std::shared_ptr<Title>> members;
+		std::map<long long, std::shared_ptr<Title>> brickList;
 		for (const auto& vassal: empire.second->getDFVassals())
 		{
 			if (!vassal.second)
@@ -658,7 +663,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 					{
 						brickedPeople.insert(*vassal.second->getHolder());
 					}
-					vassal.second->brickTitle();
+					brickList.insert(vassal);
 				}
 				else
 				{
@@ -672,6 +677,9 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			}
 		}
 
+		for (const auto& brick: brickList)
+			brick.second->brickTitle();
+		
 		// grant independence to ex-vassals.
 		for (const auto& member: members)
 		{
