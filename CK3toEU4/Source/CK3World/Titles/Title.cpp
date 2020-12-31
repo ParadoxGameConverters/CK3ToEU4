@@ -209,6 +209,9 @@ void CK3::Title::brickTitle()
 	// Drop from own holder's domain.
 	if (holder && holder->second)
 		holder->second->dropTitleFromDomain(ID);
+	else
+		Log(LogLevel::Warning) << "Bricking " << name << " without holder!";
+
 	// Drop holder
 	holder.reset();
 
@@ -216,6 +219,9 @@ void CK3::Title::brickTitle()
 	for (const auto& vassal: dfVassals)
 		if (vassal.second)
 			vassal.second->grantIndependence();
+		else
+			Log(LogLevel::Warning) << "Granting independence to " << vassal.first << " that's not linked!"; 
+
 	dfVassals.clear(); // just in case?
 }
 
@@ -224,6 +230,8 @@ void CK3::Title::dropTitleFromDFVassals(long long titleID)
 	const auto& dfvItr = dfVassals.find(titleID);
 	if (dfvItr != dfVassals.end())
 		dfVassals.erase(dfvItr);
+	else
+		Log(LogLevel::Warning) << "dropping vassal " << titleID << " that doesn't exist!";
 }
 
 void CK3::Title::grantIndependence()
