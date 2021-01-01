@@ -59,7 +59,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "55 %";
 
 	// Which happens now. Translating incoming titles into EU4 tags, with new tags being added to our countries.
-	importCK3Countries(sourceWorld);
+	importCK3Countries(sourceWorld, theConfiguration.getStartDate());
 
 	Log(LogLevel::Progress) << "56 %";
 	// Now we can deal with provinces since we know to whom to assign them. We first import vanilla province data.
@@ -275,7 +275,7 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 	}
 }
 
-void EU4::World::importCK3Countries(const CK3::World& sourceWorld)
+void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption)
 {
 	LOG(LogLevel::Info) << "-> Importing CK3 Countries";
 
@@ -285,30 +285,32 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld)
 	{
 		if (title.second->getLevel() != CK3::LEVEL::EMPIRE)
 			continue;
-		importCK3Country(title, sourceWorld);
+		importCK3Country(title, sourceWorld, startDateOption);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::KINGDOM)
 			continue;
-		importCK3Country(title, sourceWorld);
+		importCK3Country(title, sourceWorld, startDateOption);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::DUCHY)
 			continue;
-		importCK3Country(title, sourceWorld);
+		importCK3Country(title, sourceWorld, startDateOption);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
 			continue;
-		importCK3Country(title, sourceWorld);
+		importCK3Country(title, sourceWorld, startDateOption);
 	}
 	LOG(LogLevel::Info) << ">> " << countries.size() << " total countries recognized.";
 }
 
-void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld)
+void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
+	 const CK3::World& sourceWorld,
+	 Configuration::STARTDATE startDateOption)
 {
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
@@ -352,7 +354,8 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 provinceMapper,
 			 localizationMapper,
 			 rulerPersonalitiesMapper,
-			 sourceWorld.getConversionDate());
+			 sourceWorld.getConversionDate(),
+			 startDateOption);
 		title.second->loadEU4Tag(std::pair(*tag, countryItr->second));
 	}
 	else
@@ -367,7 +370,8 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 provinceMapper,
 			 localizationMapper,
 			 rulerPersonalitiesMapper,
-			 sourceWorld.getConversionDate());
+			 sourceWorld.getConversionDate(),
+			 startDateOption);
 		title.second->loadEU4Tag(std::pair(*tag, newCountry));
 		countries.insert(std::pair(*tag, newCountry));
 	}

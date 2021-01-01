@@ -1,6 +1,7 @@
 #ifndef EU4_COUNTRY_H
 #define EU4_COUNTRY_H
 
+#include "../../Configuration/Configuration.h"
 #include "../../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "CountryDetails.h"
 #include <memory>
@@ -40,7 +41,8 @@ class Country
 		 const mappers::ProvinceMapper& provinceMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
-		 date theConversionDate);
+		 date theConversionDate,
+		 Configuration::STARTDATE startDateOption);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
 	void clearHistoryLessons() { details.historyLessons.clear(); }
 	void registerProvince(std::pair<int, std::shared_ptr<Province>> theProvince) { provinces.insert(std::move(theProvince)); }
@@ -104,7 +106,13 @@ class Country
 	void populateRulers(const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
-		 const mappers::LocalizationMapper& localizationMapper);
+		 const mappers::LocalizationMapper& localizationMapper,
+		 Configuration::STARTDATE startDateOption,
+		 const date& theConversionDate);
+
+	[[nodiscard]] date normalizeDate(const date& incomingDate,
+		 Configuration::STARTDATE startDateOption,
+		 const date& theConversionDate) const; // Uses bookmark date to shift dates if required.
 
 	std::string tag;
 	std::string commonCountryFile;

@@ -1,4 +1,10 @@
 l_latin:
+ STARTDATE: "Dies inceptus eligetur:"
+ STARTDATETIP: "1444 an finis CK?"
+ STARTDATE1: "Per Europa Universale (1444)"
+ STARTDATE1TIP: "Incipitur secundum vanillam EU4."
+ STARTDATE2: "Per Cruciatorum Universalibus (dynamice)"
+ STARTDATE2TIP: "Incipitur secundum ludum transcriptum."
  DEJURE: "Dentur regnibus vindicationes in terris de jure?"
  DEJURETIP: "Aliquibus, sicut BYZ, darentur complures."
  DEJURE1: "Age, quod maxime mali esse potest?"

@@ -1,4 +1,24 @@
 option = {
+	name = start_date
+	displayName = STARTDATE
+	tooltip = STARTDATETIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = STARTDATE1
+			tooltip = STARTDATE1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = STARTDATE2
+			tooltip = STARTDATE2TIP
+			default = false
+		}
+	}
+}
+
+option = {
 	name = dejure
 	displayName = DEJURE
 	tooltip = DEJURETIP

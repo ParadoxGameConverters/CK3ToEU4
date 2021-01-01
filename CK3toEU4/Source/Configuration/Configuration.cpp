@@ -50,6 +50,11 @@ void Configuration::registerKeys()
 		outputName = nameStr.getString();
 		Log(LogLevel::Info) << "Output name set to: " << outputName;
 	});
+	registerKeyword("start_date", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString startDateString(theStream);
+		startDate = STARTDATE(std::stoi(startDateString.getString()));
+		Log(LogLevel::Info) << "Start date set to: " << startDateString.getString();
+	});
 	registerKeyword("i_am_hre", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString hreString(theStream);
 		iAmHre = I_AM_HRE(std::stoi(hreString.getString()));

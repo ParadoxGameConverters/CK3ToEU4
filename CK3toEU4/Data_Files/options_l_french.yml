@@ -1,4 +1,10 @@
 l_french:
+ STARTDATE: "Sélectionnez le signet de départ:"
+ STARTDATETIP: "1444 ou la date de fin CK?"
+ STARTDATE1: "Europa Universalis (1444)"
+ STARTDATE1TIP: "Commencez à la date de début de EU4 vanilla."
+ STARTDATE2: "Crusader Universalis (dynamique)"
+ STARTDATE2TIP: "Commencez à la date du sauvegarde de CK."
  DEJURE: "Les pays devraient-ils obtenir des revendications permanentes sur leurs terres de jure?"
  DEJURETIP: "Certains, comme BYZ, pourraient en obtenir beaucoup."
  DEJURE1: "Ouais, quel est le pire qui puisse arriver?"
