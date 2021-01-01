@@ -1,4 +1,10 @@
 l_english:
+ STARTDATE: "Select starting bookmark:"
+ STARTDATETIP: "1444 or CK end-date?"
+ STARTDATE1: "Europa Universalis (1444)"
+ STARTDATE1TIP: "Start at vanilla EU4 start date."
+ STARTDATE2: "Crusader Universalis (dynamic)"
+ STARTDATE2TIP: "Start at CK savegame date."
  DEJURE: "Should countries get permaclaims on dejure land?"
  DEJURETIP: "Some, like BYZ, might get a lot of those."
  DEJURE1: "Yeah, what's the worst that could happen?"

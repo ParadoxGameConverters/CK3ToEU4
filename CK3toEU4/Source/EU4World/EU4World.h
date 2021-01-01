@@ -38,8 +38,10 @@ class World
 	void verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
 	void importVanillaCountries(const std::string& eu4Path, bool invasion);
 	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
-	void importCK3Countries(const CK3::World& sourceWorld);
-	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title, const CK3::World& sourceWorld);
+	void importCK3Countries(const CK3::World& sourceWorld, const Configuration& theConfiguration);
+	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
+		 const CK3::World& sourceWorld,
+		 const Configuration& theConfiguration);
 	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
 	void importCK3Provinces(const CK3::World& sourceWorld);
 	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(
@@ -81,7 +83,9 @@ class World
 	void outputFlags(const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
-	void outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const std::vector<std::string>& reformedReligions) const;
+	void outputReligions(const Configuration& theConfiguration,
+		 const std::vector<GeneratedReligion>& generatedReligions,
+		 const std::vector<std::string>& reformedReligions) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;

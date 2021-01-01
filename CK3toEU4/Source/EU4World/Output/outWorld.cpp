@@ -165,27 +165,45 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 
 void EU4::World::outputBookmark(const Configuration& theConfiguration, date conversionDate) const
 {
-	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua"))
-		throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua!");
-	std::ofstream defines("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua");
-	defines << "-- Defines modified by the converter\n\n";
-	defines << "\nNDefines.NGame.START_DATE = \"" << conversionDate << "\"\n";
-	defines.close();
-	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt"))
-		throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt!");
+	if (theConfiguration.getStartDate() == Configuration::STARTDATE::CK)
+	{
+		// fix the dynamic bookmark in defines
+		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua"))
+			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua!");
+		std::ofstream defines("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua");
+		defines << "-- Defines modified by the converter\n\n";
+		defines << "\nNDefines.NGame.START_DATE = \"" << conversionDate << "\"\n";
+		defines.close();
+		
+		// fix the dynamic bookmark in bookmark file
+		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt"))
+			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt!");
 
-	std::string startDate = "<CONVERSIONDATE>";
-	std::ostringstream incomingBookmarks;
+		std::string startDate = "<CONVERSIONDATE>";
+		std::ostringstream incomingBookmarks;
 
-	std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
-	incomingBookmarks << bookmarks_txt.rdbuf();
-	bookmarks_txt.close();
-	auto strBookmarks = incomingBookmarks.str();
-	auto pos2 = strBookmarks.find(startDate);
-	strBookmarks.replace(pos2, startDate.length(), conversionDate.toString());
-	std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
-	out_bookmarks_txt << strBookmarks;
-	out_bookmarks_txt.close();
+		std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
+		incomingBookmarks << bookmarks_txt.rdbuf();
+		bookmarks_txt.close();
+		auto strBookmarks = incomingBookmarks.str();
+		auto pos2 = strBookmarks.find(startDate);
+		strBookmarks.replace(pos2, startDate.length(), conversionDate.toString());
+		std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
+		out_bookmarks_txt << strBookmarks;
+		out_bookmarks_txt.close();
+
+		// And wipe regular one
+		std::ifstream bookmarks1444_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark_1444.txt",
+			 std::ofstream::out | std::ofstream::trunc);
+		bookmarks1444_txt.close();		
+	}
+	else
+	{
+		// Vanilla defines are fine, just wipe dynamic bookmark
+		std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt",
+			 std::ofstream::out | std::ofstream::trunc);
+		bookmarks_txt.close();
+	}
 }
 
 void EU4::World::createModFile(const Configuration& theConfiguration) const

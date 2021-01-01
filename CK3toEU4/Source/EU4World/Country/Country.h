@@ -40,7 +40,8 @@ class Country
 		 const mappers::ProvinceMapper& provinceMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
-		 date theConversionDate);
+		 date theConversionDate,
+		 const Configuration& theConfiguration);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
 	void clearHistoryLessons() { details.historyLessons.clear(); }
 	void registerProvince(std::pair<int, std::shared_ptr<Province>> theProvince) { provinces.insert(std::move(theProvince)); }
@@ -104,7 +105,13 @@ class Country
 	void populateRulers(const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
-		 const mappers::LocalizationMapper& localizationMapper);
+		 const mappers::LocalizationMapper& localizationMapper,
+		 const Configuration& theConfiguration,
+		 const date& theConversionDate);
+
+	[[nodiscard]] date normalizeDate(const date& incomingDate,
+		 const Configuration& theConfiguration,
+		 const date& theConversionDate) const; // Uses bookmark date to shift dates if required.
 
 	std::string tag;
 	std::string commonCountryFile;

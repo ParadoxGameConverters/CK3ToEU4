@@ -1,4 +1,10 @@
 l_german:
+ STARTDATE: "Start-Lesezeichen auswählen:"
+ STARTDATETIP: "1444 oder CK Enddatum?"
+ STARTDATE1: "Europa Universalis (1444)"
+ STARTDATE1TIP: "Beginnen Sie am Startdatum von Vanille EU4."
+ STARTDATE2: "Crusader Universalis (dynamisch)"
+ STARTDATE2TIP: "Beginnen Sie am CK-Savegame-Datum."
  DEJURE: "Sollten Länder dauerhafte Ansprüche auf de jure Land erhalten?"
  DEJURETIP: "Einige, wie BYZ, könnten viele davon bekommen."
  DEJURE1: "Ja, was ist das Schlimmste, was passieren kann?"
