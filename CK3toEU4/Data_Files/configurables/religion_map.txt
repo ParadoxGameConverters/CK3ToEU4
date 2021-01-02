@@ -108,3 +108,6 @@ link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }
 link = { eu4 = druidism ck3 = celtic_pagan ck3 = celtic_pagan_old }
 link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
 link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old }
+
+# Mod: Sunset Invasion
+link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }
