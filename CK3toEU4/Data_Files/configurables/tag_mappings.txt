@@ -891,3 +891,6 @@ link = { ck3 = d_sons_kaleva eu4 = SKL }
 link = { ck3 = d_warriors_perun eu4 = WOP }
 link = { ck3 = d_zealots eu4 = ZLT }
 #link = { ck3 = ??? eu4 = FAP } # Fraticelli Papacy
+
+# Mod: Sunset Invasion
+link = { ck3 = e_nahua eu4 = AZT }
