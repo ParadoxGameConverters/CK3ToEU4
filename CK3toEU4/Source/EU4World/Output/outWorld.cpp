@@ -325,18 +325,18 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 
 void EU4::World::outputLocalization(const Configuration& theConfiguration, bool invasion) const
 {
-	std::ofstream english("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_english.yml");
-	std::ofstream french("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_french.yml");
-	std::ofstream spanish("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_spanish.yml");
-	std::ofstream german("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_german.yml");
+	std::ofstream english("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_english.yml");
+	std::ofstream french("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_french.yml");
+	std::ofstream spanish("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_spanish.yml");
+	std::ofstream german("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_german.yml");
 	if (!english.is_open())
-		throw std::runtime_error("Error writing localisation file! Is the output folder writable?");
+		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!french.is_open())
-		throw std::runtime_error("Error writing localisation file! Is the output folder writable?");
+		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!spanish.is_open())
-		throw std::runtime_error("Error writing localisation file! Is the output folder writable?");
+		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!german.is_open())
-		throw std::runtime_error("Error writing localisation file! Is the output folder writable?");
+		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	english << "\xEF\xBB\xBFl_english:\n"; // write BOM
 	french << "\xEF\xBB\xBFl_french:\n";	// write BOM
 	spanish << "\xEF\xBB\xBFl_spanish:\n"; // write BOM

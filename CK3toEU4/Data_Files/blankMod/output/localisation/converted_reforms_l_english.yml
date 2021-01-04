@@ -1,0 +1,28 @@
+﻿l_english:
+ #These are here to replace Country Specific government names to make them more open
+ ottoman_government:3 "Padishah Government"
+ ottoman_government_desc:3 "The Padishah Government is in many ways synonymous with the royal household. The harem ensures that there will never be a lack of heirs for the Padishah, or "Master King"."
+ english_monarchy:3 "Chartered Monarchy"
+ english_monarchy_desc:3 "A Chartered Monarchy is a representative monarchy, with a parliament called regularly by the ruling monarch. It is based on the privileges defined in a charter signed by the Monarch and his vassals."
+ mamluk_government:3 "Circassian Slave Government"
+ mamluk_government_desc:3 "This state was once taken over by Circassian slave soldiers and sustains itself through continued importation of Circassian soldier slaves."
+ indian_sultanate_reform:3 "Dharmic Sultanate"
+ indian_sultanate_reform_desc:3 "Ruled by a Muslim minority the Sultans have had to evolve and expand the traditional Muslim ideas of Kingship. While they remain Islamic states the role of the Dhimmi, traditionally encompassing Jews and Christians, have been extended to the Dharmic religions."
+ prussian_monarchy:3 "Stratocratic Monarchy"
+ prussian_monarchy_desc:3 "A governmental form under a monarch, which can more be described as an army with a state, than a state with an army."
+ prussian_republic_reform:3 "Stratocratic Administration"
+ prussian_republic_reform_desc:3 "A Stratocratic Republic is ruled not by corrupt oligarchs, nor by the will of the ignorant masses, but by its most skilled and proven military commanders. The expansion and protection of our borders are the prime directives for the state.\n\nDisables elections."
+ prussian_republic:3 "Stratocratic Administration"
+ prussian_republic_descs:3 "A Stratocratic Republic is ruled not by corrupt oligarchs, nor by the will of the ignorant masses, but by its most skilled and proven military commanders. The expansion and protection of our borders are the prime directives for the state.\n\nDisables elections."
+ mughal_government:3 "Diwan System"
+ mughal_government_desc:3 "If there is one thing our dynasty has learned over the centuries it is that we must be able to adopt to the local population in the regions we expand into. Let us ensure that we learn from those we conquer so that our empire can keep growing."
+ federal_republic:3 "Federal Republic"
+ federal_republic_desc:3 "The Federal Republic is a federation of states, each with their own independence and governments, with a President who rules for four years after election."
+ 
+ austrian_archduchy_reform:3 "Imperial Archduchy"
+ austrian_archduchy_reform_desc:3 "Although organized similarly to a feudal monarch, the Imperial Archduchy is a step above other duchies. Through long experience of ruling over others - whomever they may be - and arranging dynastic affairs in their favor, the Archdukes have been able to develop an effective system for governing their lands and maintaining their unity."
+ austrian_archduchy:3 "Imperial Archduchy"
+ austrian_archduchy_desc:3 "Although organized similarly to a feudal monarch, the Imperial Archduchy is a step above other duchies. Through long experience of ruling over others - whomever they may be - and arranging dynastic affairs in their favor, the Archdukes have been able to develop an effective system for governing their lands and maintaining their unity."
+ 
+ 
+ 

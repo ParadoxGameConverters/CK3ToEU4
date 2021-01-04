@@ -1,0 +1,26 @@
+﻿l_french:
+ #These are here to replace Country Specific government names to make them more open
+ ottoman_government:3 "Gouvernement Padishah"
+ ottoman_government_desc:3 "Le gouvernement Padishah est à bien des égards synonyme de la maison royale. Le harem garantit qu'il n'y aura jamais de manque d'héritiers pour le Padishah, ou "Maître Roi"."
+ english_monarchy:3 "Monarchie à Charte"
+ english_monarchy_desc:3 "Une monarchie à charte est une monarchie représentative, avec un parlement appelé régulièrement par le monarque au pouvoir. Il repose sur les privilèges définis dans une charte signée par le monarque et ses vassaux."
+ mamluk_government:3 "Gouvernement Des Esclaves Circassiens"
+ mamluk_government_desc:3 "Cet état a été une fois pris en charge par des soldats esclaves circassiens et se maintient grâce à l'importation continue d'esclaves soldats circassiens."
+ indian_sultanate_reform:3 "Sultanat Dharmique"
+ indian_sultanate_reform_desc:3 "Dirigés par une minorité musulmane, les sultans ont dû évoluer et étendre les idées musulmanes traditionnelles de la royauté. Bien qu'ils restent des États islamiques, le rôle des Dhimmi, qui englobe traditionnellement les juifs et les chrétiens, a été étendu aux religions dharmiques."
+ prussian_monarchy:3 "Monarchie Stratocratique"
+ prussian_monarchy_desc:3 "Une forme gouvernementale sous un monarque, qui peut plus être décrite comme une armée avec un État, qu'un État avec une armée."
+ prussian_republic_reform:3 "Administration Stratocratique"
+ prussian_republic_reform_desc:3 "Une République stratocratique n'est dirigée ni par des oligarques corrompus, ni par la volonté des masses ignorantes, mais par ses commandants militaires les plus qualifiés et éprouvés. L'expansion et la protection de nos frontières sont les principales directives de l'État.\n\nDésactive les élections."
+ prussian_republic:3 "Administration Stratocratique"
+ prussian_republic_descs:3 "Une République stratocratique n'est dirigée ni par des oligarques corrompus, ni par la volonté des masses ignorantes, mais par ses commandants militaires les plus qualifiés et éprouvés. L'expansion et la protection de nos frontières sont les principales directives de l'État.\n\nDésactive les élections."
+ mughal_government:3 "Système Diwan"
+ mughal_government_desc:3 "S'il y a une chose que notre dynastie a apprise au fil des siècles, c'est que nous devons être en mesure de nous adapter à la population locale dans les régions où nous nous étendons. Faisons en sorte que nous apprenions de ceux que nous conquérons afin que notre empire puisse continuer de croître."
+ federal_republic:3 "République fédérale"
+ federal_republic_desc:3 "Les États sont une fédération, chaque État étant indépendant et possédant son gouvernement propre. Toutefois un président, élu pour quatre ans, dirige l'ensemble de la fédération."
+ 
+ austrian_archduchy_reform:3 "Archiduché Impérial"
+ austrian_archduchy_reform_desc:3 "Bien qu'organisé de manière similaire à un monarque féodal, l'archiduché impérial est un cran au dessus des autres duchés. Grâce à une longue expérience de la domination sur les autres - quels qu'ils soient - et de l'organisation des affaires dynastiques en leur faveur, les Archiducs ont pu développer un système efficace pour gouverner leurs terres et maintenir leur unité."
+ austrian_archduchy:3 "Archiduché Impérial"
+ austrian_archduchy_desc:3 "Bien qu'organisé de manière similaire à un monarque féodal, l'archiduché impérial est un cran au dessus des autres duchés. Grâce à une longue expérience de la domination sur les autres - quels qu'ils soient - et de l'organisation des affaires dynastiques en leur faveur, les Archiducs ont pu développer un système efficace pour gouverner leurs terres et maintenir leur unité."
+ 

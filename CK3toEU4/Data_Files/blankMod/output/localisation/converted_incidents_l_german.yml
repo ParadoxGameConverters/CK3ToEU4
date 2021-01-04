@@ -1,0 +1,21 @@
+﻿l_german:
+ incident_fraticelli_pope:3 "Der Papst und der Kaiser"
+ incident_fraticelli_pope_member_alert:3 "Jetzt, wo Italien wieder eine Bastion der kaiserlichen Autorität ist, hat der Papst von Rom beantragt, ein Fürst des Heiligen Römischen Reiches zu werden. Wenn der Papst die Autorität des Kaisers akzeptieren würde, hätte dies schlimme Folgen für die gesamte fraticelli Welt. Während Katholiken im Reich selbst ihren Glauben durch die päpstliche Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung gutheißen und sich der Ketzerei zuwenden könnten."
+ incident_fraticelli_pope_emperor_alert:3 "Jetzt, wo Italien wieder eine Bastion der kaiserlichen Autorität ist, hat der Papst von Rom beantragt, ein Fürst des Heiligen Römischen Reiches zu werden. Wenn der Papst die Autorität des Kaisers akzeptieren würde, hätte dies schlimme Folgen für die gesamte fraticelli Welt. Während Katholiken im Reich selbst ihren Glauben durch die päpstliche Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung gutheißen und sich der Ketzerei zuwenden könnten."
+ 
+ 
+ #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
+ incident_pope.1.t:3 "Ein heiliges Reich?"
+ incident_pope.1.d:3 "Italien ist nicht länger das "Schatten-Königreich" und wurde durch die unermüdlichen Bemühungen des Kaisers in die Hände des Heiligen Römischen Reiches zurückgebracht. Der Kirchenstaat muss nun entscheiden, ob er die Hegemonie des Kaisers akzeptiert oder verurteilt und damit ungeschützt und verletzlich vor seiner Haustür sitzt.\n\nDie Autorität des Kaisers anzuerkennen, hätte drastische Folgen für die wahre Christen Welt. Während die Katholiken innerhalb des Reiches ihren Glauben durch die Legitimität der päpstlichen Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung freundlich aufnehmen werden und sich infolgedessen an die Ketzerei wenden könnten."
+ incident_pope.1.a:3 "Wir treten dem Reich bei."
+ incident_pope.1.b:3 "Der Heilige Stuhl muss unabhängig bleiben."
+ pope_incident_tt:3 "Der Kaiser wird entscheiden, ob er den Kirchenstaat in das Heilige Römische Reich aufnimmt.\n§YDies wird drastische Folgen für die gesamte wahre Christen Welt haben.§!"
+ pope_incident_tt2:3 "§YDies wird drastische Folgen für die gesamte wahre Christen Welt haben.§!\n§YWahre Christen außerhalb des Reiches erhalten einen Malus auf ihre Prestige.§!"
+ incident_pope.2.t:3 "Ein heiliges Reich?"
+ incident_pope.2.d:3 "Italien ist nicht länger das "Schatten-Königreich" und wurde durch die unermüdlichen Bemühungen des Kaisers in die Hände des Heiligen Römischen Reiches zurückgebracht. Der Kirchenstaat muss nun entscheiden, ob er die Hegemonie des Kaisers akzeptiert oder verurteilt und damit ungeschützt und verletzlich vor seiner Haustür sitzt.\n\nDem Papst zu erlauben, ein Reichsfürst zu werden, hätte schlimme Folgen für die wahre Christen Welt. Während die Katholiken innerhalb des Reiches ihren Glauben durch die Legitimität der päpstlichen Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung freundlich aufnehmen werden und sich infolgedessen an die Ketzerei wenden könnten."
+ incident_pope.2.a:3 "Der Papst tritt dem Reich bei."
+ incident_pope.2.b:3 "Der Heilige Stuhl muss unabhängig bleiben."
+ incident_pope.3.t:3 "Ein unheiliges Reich"
+ incident_pope.3.d:3 "Der Reichstag hat sich auf einen schrecklichen und untragbaren Beschluss geeinigt: Das Reich wird nicht länger dem wahres Christentum Glauben folgen. Alle unsere Bemühungen, die Würde der Heiligen Mutter Kirche wiederherzustellen, waren umsonst, und wir müssen nun ebenfalls ernsthaft darüber nachdenken, diese verdorbene Institution aufzugeben."
+ incident_pope.3.a:3 "Lassen für diesen Sündenpfuhl hinter uns."
+ incident_pope.3.b:3 "Zum Wohle des Christentums müssen wir bleiben."

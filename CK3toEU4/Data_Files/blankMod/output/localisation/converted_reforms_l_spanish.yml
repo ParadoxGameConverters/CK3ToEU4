@@ -1,0 +1,28 @@
+﻿l_spanish:
+ #These are here to replace Country Specific government names to make them more open
+ ottoman_government:3 "Gobierno de Padishah"
+ ottoman_government_desc:3 "El gobierno de Padishah es en muchos sentidos sinónimo de la familia real. El harén asegura que nunca faltarán herederos para el Padishah, o "Rey Maestro"."
+ english_monarchy:3 "Monarquía Fletada"
+ english_monarchy_desc:3 "Una monarquía autorizada es una monarquía representativa, con un parlamento llamado regularmente por el monarca gobernante. Se basa en los privilegios definidos en una carta firmada por el Monarca y sus vasallos."
+ mamluk_government:3 "Gobierno esclavo circasiano"
+ mamluk_government_desc:3 "Este estado fue tomado una vez por los soldados esclavos circasianos y se mantiene a través de la importación continua de esclavos soldados circasianos."
+ indian_sultanate_reform:3 "Sultanato Dharmico"
+ indian_sultanate_reform_desc:3 "Gobernados por una minoría musulmana, los sultanes han tenido que evolucionar y expandir las ideas musulmanas tradicionales del reinado. Mientras siguen siendo estados islámicos, el papel de los Dhimmi, que tradicionalmente abarca judíos y cristianos, se ha extendido a las religiones dharmicas."
+ prussian_monarchy:3 "Monarquía Estratocrática"
+ prussian_monarchy_desc:3 "Una forma gubernamental bajo un monarca, que se puede describir más como un ejército con un estado, que un estado con un ejército."
+ prussian_republic_reform:3 "Administración Estratocrática"
+ prussian_republic_reform_desc:3 "Una República estratocrática no está gobernada por oligarcas corruptos, ni por la voluntad de las masas ignorantes, sino por sus comandantes militares más hábiles y probados. La expansión y protección de nuestras fronteras son las principales directivas para el estado.\n\nDisable elecciones."
+ prussian_republic:3 "Administración Estratocrática"
+ prussian_republic_descs:3 "Una República estratocrática no está gobernada por oligarcas corruptos, ni por la voluntad de las masas ignorantes, sino por sus comandantes militares más hábiles y probados. La expansión y protección de nuestras fronteras son las principales directivas para el estado.\n\nDisable elecciones."
+ mughal_government:3 "Sistema Diwan"
+ mughal_government_desc:3 "Si hay algo que nuestra dinastía ha aprendido a lo largo de los siglos es que debemos ser capaces de adoptar a la población local en las regiones en las que nos expandimos. Asegurémonos de aprender de aquellos que conquistamos para que nuestro imperio pueda seguir creciendo."
+ federal_republic:3 "República federal"
+ federal_republic_desc:3 "La República federal es la federación de estados, todos independientes y con sus propios gobiernos, con un presidente electo que gobierna cuatro años."
+ 
+ austrian_archduchy_reform:3 "Archiducado Imperial"
+ austrian_archduchy_reform_desc:3 "Aunque organizado de manera similar a un monarca feudal, el Archiducado Imperial está un paso por encima de otros ducados. A través de una larga experiencia de gobernar sobre los demás, sean quienes sean, y organizar los asuntos dinásticos a su favor, los Archiduques han podido desarrollar un sistema efectivo para gobernar sus tierras y mantener su unidad."
+ austrian_archduchy:3 "Archiducado Imperial"
+ austrian_archduchy_desc:3 "Aunque organizado de manera similar a un monarca feudal, el Archiducado Imperial está un paso por encima de otros ducados. A través de una larga experiencia de gobernar sobre los demás, sean quienes sean, y organizar los asuntos dinásticos a su favor, los Archiduques han podido desarrollar un sistema efectivo para gobernar sus tierras y mantener su unidad."
+ 
+ 
+ 

@@ -1,0 +1,21 @@
+﻿l_spanish:
+ incident_fraticelli_pope:3 "El papa y el emperador"
+ incident_fraticelli_pope_member_alert:3 "Ahora que Italia vuelve a ser bastión de la autoridad imperial, el papa de Roma ha solicitado convertirse en príncipe imperial del Sacro Imperio Romano. Que el Papa acepte la autoridad del Emperador tendría graves consecuencias para el mundo Verdaderas cristianas. Si bien los Verdaderas cristianass en el Imperio verían su fe reforzada por la legitimidad que conferiría la pertenencia del Papa, es improbable que aquellos fuera del Imperio reciban bien esa decisión y podrían caer en la herejía."
+ incident_fraticelli_pope_emperor_alert:3 "Ahora que Italia vuelve a ser bastión de la autoridad imperial, el papa de Roma ha solicitado convertirse en príncipe imperial del Sacro Imperio Romano. Que el Papa acepte la autoridad del Emperador tendría graves consecuencias para el mundo Verdaderas cristianas. Si bien los Verdaderas cristianass en el Imperio verían su fe reforzada por la legitimidad que conferiría la pertenencia del Papa, es improbable que aquellos fuera del Imperio reciban bien esa decisión y podrían caer en la herejía."
+
+ 
+ #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
+ incident_pope.1.t:3 "¿Un imperio sacro?"
+ incident_pope.1.d:3 "Italia, ya no un 'Reino en la sombra', ha sido devuelta al redil del Sacro Imperio Romano gracias a los incansables esfuerzos del emperador. Los Estados Pontificios ahora deben elegir si aceptar la hegemonía del Emperador o ser condenado a sentarse desnudo y vulnerable a su puerta.\n\nAceptar la autoridad imperial tendría graves consecuencias en todo el mundo Verdaderas cristianas. Mientras que los Verdaderas cristianass en el Imperio podrían ver su fe reforzada por la legitimidad que otorga tener al Papa de miembro, es improbable que los que estén fuera del imperio se tomen bien tal decisión y podrían caer en la herejía."
+ incident_pope.1.a:3 "Nos uniremos al Imperio."
+ incident_pope.1.b:3 "La Santa Sede permanecerá independiente."
+ pope_incident_tt:3 "El emperador decidirá si aceptar los Estados Pontificios en el Sacro Imperio Romano.\n§YEsto tendrá graves consecuencias en todo el mundo Verdaderas cristianas.§!"
+ pope_incident_tt2:3 "§YEsto tendrá graves consecuencias en todo el mundo Verdaderas cristianas.§!\n§YCatólicos fuera del Imperio recibirán penalizaciones de prestigio.§!"
+ incident_pope.2.t:3 "¿Un imperio sacro?"
+ incident_pope.2.d:3 "Italia, ya no un 'Reino en la sombra', ha sido devuelta al redil del Sacro Imperio Romano gracias a los incansables esfuerzos del emperador. El Papa de Roma ha optado por aceptar la hegemonía del Imperio en lugar de ser condenado a sentarse desnudo y vulnerable a su puerta.\n\nPermitir que el Papa se convierta en un príncipe imperial tendría graves consecuencias en todo el mundo Verdaderas cristianas. Mientras que los Verdaderas cristianass en el Imperio podrían ver su fe reforzada por la legitimidad que otorga tener al Papa de miembro, es improbable que los que estén fuera del imperio se tomen bien tal decisión y podrían caer en la herejía."
+ incident_pope.2.a:3 "El Papa se unirá al Imperio"
+ incident_pope.2.b:3 "La Santa Sede permanecerá independiente."
+ incident_pope.3.t:3 "Un imperio nada sacro"
+ incident_pope.3.d:3 "La Dieta imperial ha proclamado un edicto terrible e intolerable, por el que Imperio ya no sigue la fe cristianismo verdadero. Todos nuestros esfuerzos por restaurar la dignidad de la Santa Madre Iglesia han sido en vano, por lo que hemos de considerar seriamente la posibilidad de abandonar esta institución mancillada."
+ incident_pope.3.a:3 "Partamos de este antro de pecado."
+ incident_pope.3.b:3 "Debemos quedarnos por el bien de la Cristiandad."
