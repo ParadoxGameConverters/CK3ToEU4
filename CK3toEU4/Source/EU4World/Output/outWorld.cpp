@@ -346,19 +346,19 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 	{
 		for (const auto& locblock: country.second->getLocalizations())
 		{
-			english << " " << locblock.first << ": \"" << locblock.second.english << "\"\n";
-			french << " " << locblock.first << ": \"" << locblock.second.french << "\"\n";
-			spanish << " " << locblock.first << ": \"" << locblock.second.spanish << "\"\n";
-			german << " " << locblock.first << ": \"" << locblock.second.german << "\"\n";
+			english << " " << locblock.first << ":3 \"" << locblock.second.english << "\"\n";
+			french << " " << locblock.first << ":3 \"" << locblock.second.french << "\"\n";
+			spanish << " " << locblock.first << ":3 \"" << locblock.second.spanish << "\"\n";
+			german << " " << locblock.first << ":3 \"" << locblock.second.german << "\"\n";
 		}
 	}
 
 	for (const auto& locblock: religionMapper.getLocalizations())
 	{
-		english << " " << locblock.first << ": \"" << locblock.second.english << "\"\n";
-		french << " " << locblock.first << ": \"" << locblock.second.french << "\"\n";
-		spanish << " " << locblock.first << ": \"" << locblock.second.spanish << "\"\n";
-		german << " " << locblock.first << ": \"" << locblock.second.german << "\"\n";
+		english << " " << locblock.first << ":3 \"" << locblock.second.english << "\"\n";
+		french << " " << locblock.first << ":3 \"" << locblock.second.french << "\"\n";
+		spanish << " " << locblock.first << ":3 \"" << locblock.second.spanish << "\"\n";
+		german << " " << locblock.first << ":3 \"" << locblock.second.german << "\"\n";
 	}
 
 	english.close();
