@@ -924,7 +924,7 @@ age_of_revolutions = {
 			allow = {
 				OR = {
 					tag = HAB
-					tag = HRE
+					tag = HLR
 					is_emperor = yes
 				}
 			}

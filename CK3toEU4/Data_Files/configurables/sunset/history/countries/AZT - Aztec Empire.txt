@@ -10,14 +10,6 @@ unit_type = high_american
 capital = 852	# Mexico
 historical_rival = INC
 
-#offensive_defensive = -5
-#land_naval = -5
-#quality_quantity = 5
-#serfdom_freesubjects = -5
-#aristocracy_plutocracy = -5
-#centralization_decentralization = 5
-#innovative_narrowminded = 5
-
 1443.1.1 = {
 	leader = {	
 		name = "Tlotzin Xocoyol"	
@@ -99,7 +91,14 @@ historical_rival = INC
 		adm = 4
 		dip = 3
 		mil = 5
-		leader = {	name = "Moctezuma I"           	type = general	rank = 0	fire = 3	shock = 4	manuever = 4	siege = 0}
+		leader = {	
+			name = "Moctezuma I"
+			type = general
+			fire = 3
+			shock = 4
+			manuever = 4
+			siege = 0
+		}
 	}
 }
 
@@ -110,7 +109,14 @@ historical_rival = INC
 		adm = 4
 		dip = 3
 		mil = 5
-		leader = {	name = "Moctezuma I"           	type = general	rank = 0	fire = 3	shock = 4	manuever = 4	siege = 0}
+		leader = {	
+			name = "Moctezuma I"
+			type = general
+			fire = 3
+			shock = 4
+			manuever = 4
+			siege = 0
+		}
 	}
 }
 
@@ -173,7 +179,14 @@ historical_rival = INC
 		adm = 5
 		dip = 3
 		mil = 6
-		leader = {	name = "Ahuitzotl"             	type = general	fire = 3	shock = 5	manuever = 3	siege = 0}
+		leader = {
+			name = "Ahuitzotl"
+			type = general
+			fire = 3
+			shock = 5
+			manuever = 3
+			siege = 0
+		}
 	}
 }
 		
@@ -184,7 +197,14 @@ historical_rival = INC
 		adm = 5
 		dip = 3
 		mil = 6
-		leader = {	name = "Ahuitzotl"             	type = general	fire = 3	shock = 5	manuever = 3	siege = 0}
+		leader = {
+			name = "Ahuitzotl"
+			type = general
+			fire = 3
+			shock = 5
+			manuever = 3
+			siege = 0
+		}
 	}
 }
 
@@ -199,7 +219,14 @@ historical_rival = INC
 		adm = 2
 		dip = 0
 		mil = 0
-		leader = {	name = "Moctezuma II"          	type = general	fire = 2	shock = 3	manuever = 2	siege = 0}
+		leader = {
+			name = "Moctezuma II"
+			type = general
+			fire = 2
+			shock = 3
+			manuever = 2
+			siege = 0
+		}
 	}
 }
 		
@@ -210,7 +237,14 @@ historical_rival = INC
 		adm = 2
 		dip = 0
 		mil = 0
-		leader = {	name = "Moctezuma II"          	type = general	fire = 2	shock = 3	manuever = 2	siege = 0}
+		leader = {
+			name = "Moctezuma II"
+			type = general
+			fire = 2
+			shock = 3
+			manuever = 2
+			siege = 0
+		}
 	}
 }
 
@@ -237,4 +271,3 @@ historical_rival = INC
 		mil = 0
 	}
 }
-
