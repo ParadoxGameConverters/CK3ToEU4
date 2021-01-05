@@ -1,0 +1,1100 @@
+##############################################
+###   French localization custom strings   ###
+###       Scripted by Nicolas Fouqué       ###
+##############################################
+
+
+#####################################################
+###   Nation Articles // Articles pour les pays   ###
+#####################################################
+
+# Ex.: LE Danemark / l'honneur DU Danemark / le trône DU Danemark / arriver AU Danemark / demander AU Danemark / NOUVEAU-Danemark
+frloc_tags_art_sg_masc_cons_au_01a = {
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Scandinavia / Scandinavie
+		tag = DAN tag = SHL
+		# Balkans
+		tag = MON
+		# British Isles / îles Britanniques
+		tag = LEI tag = WLS tag = KID tag = SLN tag = DMS tag = MNS tag = MTH tag = TYR tag = CNN tag = MCM tag = TRY
+		# Colonies
+		tag = BRZ tag = CAN tag = CHL tag = MEX tag = PEU tag = PRG tag = QUE tag = SNA tag = TEX tag = VNZ tag = VRM
+		# HRE / Saint-Empire
+		tag = ANH tag = BRA tag = BRU tag = MKL tag = PAL tag = TIR tag = WUR
+		# Spain / Espagne
+		tag = LON tag = POR
+		# Italy / Italie
+		tag = MFA
+		# Low Countries / Pays-Bas
+		tag = BRB tag = HAI tag = LUX
+		# Russia / Russie
+		tag = SIB
+		# Arabia / Arabie
+		tag = HDR tag = HED tag = NAJ tag = SHR tag = YEM
+		# Asia Minor / Asie mineure
+		tag = LEB tag = MLK tag = SME tag = SRV
+		# Maghreb
+		tag = FZA tag = GHD tag = MOR tag = MZB tag = SOS tag = TFL
+		# Persia / Perse
+		tag = BPI tag = FRS tag = GAZ tag = KHO tag = KRY tag = LRI tag = SIS tag = TAB
+		# Africa / Afrique
+		tag = BEN tag = JOL tag = KBO tag = KON tag = LOA tag = MAL tag = SOK tag = SON tag = ZIM
+		# East African Additions / Ajouts en Afrique orientale
+		tag = BTI tag = DAR tag = GLE tag = HDY tag = JJI tag = KAF tag = MED tag = MJE tag = MRE tag = SOA tag = WAR
+		# Kongo, Great Lakes & Central Africa / Congo, Grands Lacs et Afrique centrale
+		tag = BSG tag = BUG tag = BUU tag = KLD tag = KRW tag = KSJ tag = KZB tag = NKO tag = RWA tag = RZW
+		# African Additions / Ajouts en Afrique
+		tag = BON tag = DAH tag = DGB tag = KBU tag = NDO tag = YAT tag = ZAF
+		# Madagascar
+		tag = SKA
+		# Far East / Extrême-Orient
+		tag = ANN tag = BEI tag = CHA tag = DAI tag = JAP tag = LNA tag = LXA tag = TIB tag = TOK
+		# Indochina Additions / Ajouts en Indochine
+		tag = KED tag = LIG tag = MPH tag = PRK
+		# Great Tibet tags / Tibet
+		tag = KAM tag = UTS
+		# India / Inde
+		tag = BGA tag = BGL tag = BHU tag = BND tag = BNG tag = BRR tag = BST tag = CMP tag = DEC tag = DHU tag = GHR tag = GRJ tag = GUJ tag = JAJ tag = JAN tag = KAC tag = KAT tag = KHD tag = KSH tag = LDK tag = MAW tag = MER tag = MEW tag = MLB tag = MLW tag = NGP tag = NPL tag = PUN tag = RJP tag = RMP tag = SKK tag = SND tag = TLG tag = TPR tag = TRT tag = VND
+		# CK
+		tag = COH # Le culte de Huitzilopochtli
+	}
+}
+
+frloc_tags_art_sg_masc_cons_dansle_01b = {
+	# Ex.: LE Berry / l'honneur DU Berry / le trône DU Berry / arriver DANS LE Berry / demander AU Berry / NOUVEAU-Berry
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	OR = {
+		has_country_flag = is_kingdom_of_god_flag
+		has_country_flag = unified_islam
+		### USUAL PRIORITY ###
+		# France 
+		tag = BER tag = BOU tag = DAU tag = NEV tag = SPI
+		# HRE / Saint-Empire
+		tag = HLR
+	}
+}
+
+frloc_tags_art_sg_masc_cons_en_01c = {
+	# Ex.: LE Hanovre / l'honneur DU Hanovre / le trône DU Hanovre / arriver EN Hanovre / demander AU Hanovre / NOUVEAU-Hanovre
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# HRE / Saint-Empire
+		tag = HAN
+	}
+}
+
+frloc_tags_art_sg_masc_vow_en_02a = {
+	# Ex.: L'Épire / l'honneur DE L'Épire / le trône D'Épire / arriver EN Épire / demander À L'Épire / NOUVEL-Épire
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Balkans
+		tag = EPI
+		# British Isles / îles Britanniques
+		tag = ULS tag = ORD tag = FLY
+		# France
+		tag = AMG
+		# Spain / Espagne
+		tag = ARA
+		# Asia Minor / Asie mineure
+		tag = IRQ
+		# Persia / Perse
+		tag = AFG
+		# Africa / Afrique
+		tag = ADA tag = AJU
+		# Madagascar
+		tag = MIR
+		# Far East / Extrême-Orient
+		tag = ARK
+		# Great Tibet tags / Tibet
+		tag = PHA
+		# India / Inde
+		tag = ASS tag = ORI tag = YOR
+		# ???
+		tag = HIN
+		tag = ISR # Israël
+	}
+}
+
+frloc_tags_art_sg_masc_vow_dansl_02b = {
+	# Ex.: L'Ordre de Livonie / l'honneur DE L'Ordre de Livonie / le trône DE L'Ordre de Livonie / arriver DANS L'Ordre de Livonie / demander À L'Ordre de Livonie / NOUVEL-Ordre de Livonie
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		has_country_flag = is_gurkani_flag
+		has_country_flag = is_revolutionary_gurkani_flag
+		### USUAL PRIORITY ###
+		# Colonies
+		tag = ILI
+		# Eastern Europe / Europe orientale
+		tag = LIV tag = TEU
+		# African Additions / Ajouts en Afrique
+		tag = AIR
+		# ???
+		tag = ROM
+		# 1.27 steppe tags
+		tag = ILK tag = MGE
+		# CK
+		tag = ADD # L'Ordre d'Addaï
+		tag = AOL # L'Armée de la Lumière
+		tag = BEK # L'Ordre Bektashi
+		tag = OOA # L'Ordre de Saint-Antoine
+	}
+}
+
+frloc_tags_art_sg_fem_cons_de_en_03a = {
+	# Ex.: LA Finlande / l'honneur DE LA Finlande / le trône DE Finlande / arriver EN Finlande / demander À LA Finlande / NOUVELLE-Finlande
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		has_country_flag = is_china_flag
+		has_country_flag = is_revolutionary_china_flag
+		has_country_flag = is_turkey_flag
+		has_country_flag = is_revolutionary_turkey_flag
+		### USUAL PRIORITY ###
+		# Scandinavia / Scandinavie
+		tag = FIN tag = KRL tag = LVA tag = NOR tag = SCA tag = SWE
+		# Balkans
+		tag = BOS tag = BUL tag = CRO tag = CRT tag = DAL tag = GRE tag = HUN tag = MOE tag = MOL tag = RMN tag = SER tag = TRA tag = WAL
+		# British Isles / îles Britanniques
+		tag = GBR tag = HSC tag = KOI tag = NOL
+		# Colonies
+		tag = CAL tag = COL tag = CSC tag = FLO tag = LOU tag = NZL
+		# Eastern Europe / Europe orientale
+		tag = KUR tag = LIT tag = MAZ tag = POL tag = PRU tag = VOL
+		# France 
+		tag = BRI tag = BUR tag = CHP tag = COR tag = FRA tag = GUY tag = NRM tag = PIC tag = PRO
+		# HRE / Saint-Empire
+		tag = BAD tag = BAV tag = BOH tag = DTT tag = EFR tag = FKN tag = HES tag = LAU tag = LOR tag = LOT tag = MEI tag = MVA tag = POM tag = SAX tag = SIL tag = SOR tag = STY tag = SWA tag = SWI tag = THU tag = WES
+		# Spain / Espagne
+		tag = CAS tag = CAT tag = GAL tag = NAV
+		# Italy / Italie
+		tag = SAR tag = SAV tag = SIC tag = TUS
+		# Low Countries / Pays-Bas
+		tag = FRI tag = GEL tag = HOL
+		# Russia / Russie
+		tag = CRI tag = GEO tag = MOS tag = RUS tag = UKR
+		# Asia Minor / Asie mineure
+		tag = KAR tag = MAK tag = SYR
+		# Maghreb
+		tag = KBA tag = TRP
+		# Persia / Perse
+		tag = CIR tag = PER tag = TRS
+		# Far East / Extrême-Orient
+		tag = KOR
+		# India / Inde
+		tag = KRK
+		# ???
+		tag = MSA
+		# CK
+		tag = TRL # Trapalanda
+		tag = CHN # Chine
+		tag = CVS # Tchouvachie
+	}
+}
+
+frloc_tags_art_sg_fem_cons_dela_auseindela_03b = {
+	# Ex.: LA République des Deux Nations / l'honneur DE LA République des Deux Nations / le trône DE LA République des Deux Nations / arriver AU SEIN DE LA République des Deux Nations / demander À LA République des Deux Nations / NOUVELLE-République des Deux Nations
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		has_country_flag = is_hanseatic_league_flag
+		### USUAL PRIORITY ###
+		# Eastern Europe / Europe orientale
+		tag = PLC
+		# Russia / Russie
+		tag = GOL tag = GLH
+		# Asia Minor / Asie mineure
+		tag = MSY
+		# Pirate tags
+		tag = NSS
+		# CK
+		tag = BHS # La Confrérie du Saint-Sépulcre
+		tag = FAP # La Papauté Fraticelli
+	}
+}
+
+frloc_tags_art_sg_fem_vow_d_en_04a = {
+	# Ex.: L'Islande / l'honneur DE L'Islande / le trône D'Islande / arriver EN Islande / demander À L'Islande / NOUVELLE-Islande
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Scandinavia / Scandinavie
+		tag = EST tag = ICE
+		# Balkans
+		tag = ACH tag = ALB tag = HRZ
+		# British Isles / îles Britanniques
+		tag = ENG tag = IRE tag = SCO
+		# Colonies
+		tag = ALA tag = AUS
+		# France 
+		tag = AUV
+		# HRE / Saint-Empire
+		tag = GER tag = HAB
+		# Spain / Espagne
+		tag = ADU tag = SPA
+		# Italy / Italie
+		tag = ETR tag = ITA
+		# Russia / Russie
+		tag = ARM
+		# Asia Minor / Asie mineure
+		tag = ARB
+		# Maghreb
+		tag = EGY
+		# Persia / Perse
+		tag = IME
+		# Africa / Afrique
+		tag = ETH
+		# East African Additions / Ajouts en Afrique orientale
+		tag = ALO
+		# India / Inde
+		tag = ODH
+	}
+}
+
+frloc_tags_art_pl_masc_cons_chezles_05a = {
+	# Ex.: LES Lappons / l'honneur DES Lappons / le trône DES Lappons / arriver CHEZ LES Lappons / demander AUX Lappons / NOUVEAUX-Lappons
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Scandinavia / Scandinavie
+		tag = SMI
+		# Balkans
+		tag = KNI tag = TUR
+		# Russia / Russie
+		tag = BSH tag = NOG tag = ZAZ
+		# Arabia / Arabie
+		tag = ANZ tag = DAW tag = FAD tag = RAS tag = YAS
+		# Asia Minor / Asie mineure
+		tag = AKK tag = AVR tag = SHM
+		# Maghreb
+		tag = MAM
+		# Central Asia / Asie centrale
+		tag = KZH tag = SHY
+		# Persia / Perse
+		tag = QAR tag = QOM tag = TIM
+		# Americas / Amériques
+		tag = AZT tag = CHE tag = CHM tag = CRE tag = HUR tag = INC tag = IRO tag = MAY tag = SHA tag = ZAP
+		# North American Additions / Ajouts en Amérique du Nord
+		tag = ABE tag = APA tag = ARP tag = ASI tag = BLA tag = CAD tag = CHI tag = CHO tag = CHY tag = CNK tag = COC tag = COM tag = FOX tag = HDA tag = ILL tag = ITZ tag = KIC tag = KIO tag = LEN tag = MAH tag = MIK tag = MIX tag = MMI tag = NAH tag = OJI tag = OSA tag = OTT tag = PAW tag = PEQ tag = PIM tag = POT tag = POW tag = PUE tag = SAL tag = SHO tag = SIO tag = SUS tag = TAR tag = TLA tag = TOT tag = WCR tag = WIC tag = XIU
+		# South American Additions / Ajouts en Amérique du Sud
+		tag = ARW tag = CAB tag = CCQ tag = CLA tag = CRA tag = CUA tag = CYA tag = GUA tag = HJA tag = ICM tag = MCA tag = MPC tag = PCJ tag = PTG tag = TPA tag = TPQ tag = TUA tag = WKA
+		# Golden Century Mesoamerican Tags
+		tag = CCM tag = CHT tag = GAM tag = HST tag = KAQ tag = KER tag = LAC tag = LIP tag = MAT tag = MIS tag = MSC tag = OTO tag = TAI tag = YAQ tag = YKT tag = YOK tag = ZNI
+		# Africa / Afrique
+		tag = ASH tag = HAU tag = NUB tag = OYO
+		# East African Additions / Ajouts en Afrique orientale
+		tag = BEJ tag = WLY
+		# Kongo, Great Lakes & Central Africa / Congo, Grands Lacs et Afrique centrale
+		tag = UBH tag = TYO tag = BNY tag = CKW tag = KUB tag = LND tag = LUB tag = YAK tag = MRA tag = TBK tag = MKU
+		# African Additions / Ajouts en Afrique
+		tag = FUL tag = MSI tag = NUP
+		# Madagascar
+		tag = ANT tag = BTS tag = MFY
+		# Far East / Extrême-Orient
+		tag = CHG tag = KHA tag = KHM tag = MCH tag = OIR tag = SST
+		tag = MNG tag = QNG tag = RYU tag = YUA
+		# Indonesia Additions / Ajouts en Indonésie
+		tag = BNJ tag = MAS
+		# Daimyos & New Daimyos 1.20 / Daimyôs et nouveaux daimyôs 1.20
+		tag = AKM tag = AKT tag = AMA tag = ASA tag = ASK tag = CBA tag = CSK tag = DTE tag = HJO tag = HSK tag = HTK tag = IKE tag = IMG tag = ISK tag = ITO tag = KKC tag = KNO tag = KTB tag = MAE tag = MRI tag = ODA tag = OGS tag = OTM tag = OUC tag = RFR tag = SBA tag = SHN tag = SMZ tag = SOO tag = STK tag = TKD tag = TKG tag = TKI tag = TTI tag = UES tag = UTN tag = YMN
+		# Manchuria tags / Mandchourie
+		tag = EJZ tag = MHX tag = MJZ tag = MYR tag = NHX tag = NVK tag = SOL
+		# Mongol tags / Mongols
+		tag = CHH tag = HMI tag = KLK tag = KRC tag = ZUN
+		# Great Tibet tags / Tibet
+		tag = KSD tag = SYG
+		# Non-Han China proper tags & Chinese Revolters / Chine non-han et révoltes chinoises
+		tag = CMI
+		# Siberian Tribes / Tribus sibériennes
+		tag = ANU tag = BRT tag = CHU tag = CHV tag = HOD tag = KMC
+		# India / Inde
+		tag = BAL tag = GDW tag = MAR tag = MUG
+		# 1.27 steppe tags
+		tag = KLM
+		# ???
+		tag = SYN
+		# CK
+		tag = WEI # Wei
+		tag = HND # Han
+		tag = ZAO # Zhao
+		tag = LIO # Liao
+		tag = XIA # Xia
+		tag = DAX # Dai
+		tag = CEG # Cheng
+		tag = SNG # Song
+		tag = YIN # Yin
+	}
+}
+
+frloc_tags_art_pl_masc_cons_aux_05b = {
+	# Ex.: LES États-Unis / l'honneur DES États-Unis / le trône DES États-Unis / arriver AUX États-Unis / demander AUX États-Unis / NOUVEAUX-États-Unis
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Colonies
+		tag = USA
+		# Low Countries / Pays-Bas
+		tag = NED
+		# CK
+		tag = JOM # Jomsvikings
+		tag = HAH # Hashashins
+		tag = TEM # Templiers
+		tag = BOR # Les taureaux de Rishabha
+		tag = COA # Les élus d'Ashoka
+		tag = COD # Les enfants de Dralha
+		tag = COP # Les élus de Perkunas
+		tag = FOA # Les adeptes d'Arjuna
+		tag = HYY # Les Haruriyyah
+		tag = IMM # Les Immortels
+		tag = KCL # Les Chev. de Calatrava
+		tag = KOS # Les Chev. de Santiago
+		tag = KOZ # Les Chev. de Zun
+		tag = LOS # Les seigneurs du ciel
+		tag = MYM # Les Myrmidons
+		tag = SGD # Les gardiens de l'esprit
+		tag = SKL # Les enfants de Kaleva
+		tag = WOP # Les guerriers de Perun
+		tag = ZLT # Les Zélotes
+	}
+}
+
+frloc_tags_art_pl_masc_cons_dansles_05c = {
+	# Ex.: LES États pontificaux / l'honneur DES États pontificaux / le trône DES États pontificaux / arriver DANS LES États pontificaux / demander AUX États pontificaux / NOUVEAUX-États pontificaux
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Italy / Italie
+		tag = PAP
+	}
+}
+
+#frloc_tags_art_pl_masc_vow_X_06a = {} # CURRENTLY UNUSED
+
+frloc_tags_art_pl_fem_cons_aux_07a = {
+	# Ex.: LES Maldives / l'honneur DES Maldives / le trône DES Maldives / arriver AUX Maldives / demander AUX Maldives / NOUVELLES-Maldives
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Colonies
+		tag = CAM tag = WSI
+		# India / Inde
+		tag = DGL
+	}
+}
+
+frloc_tags_art_pl_fem_cons_dansles_07b = {
+	# Ex.: LES Cornouailles / l'honneur DES Cornouailles / le trône DES Cornouailles / arriver DANS LES Cornouailles / demander AUX Cornouailles / NOUVELLES-Cornouailles
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# British Isles / îles Britanniques
+		tag = CRN tag = LOI
+		# Low Countries / Pays-Bas
+		tag = FLA
+		# Spain / Espagne
+		tag = ASU
+		# HRE / Saint-Empire
+		tag = TTL
+		# 1.30 Formables
+		tag = TTS
+	}
+}
+
+#frloc_tags_art_pl_fem_vow_X_08a = {} # CURRENTLY UNUSED
+
+frloc_tags_noart_sg_masc_cons_en_a_09a = {
+	# Ex.: [ø] Novgorod / l'honneur DE Novgorod / le trône DE Novgorod / arriver EN Novgorod / demander À Novgorod / NOUVEAU-Novgorod
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Russia / Russie
+		tag = NOV tag = QAS
+		# South American Additions / Ajouts en Amérique du Sud
+		tag = CSU tag = QTO
+		# Non-Han China proper tags & Chinese Revolters / Chine non-han et révoltes chinoises
+		tag = CDL tag = CGS tag = CHC tag = CYI tag = HUA tag = JIN tag = LNG tag = MIN tag = NNG tag = QIC tag = QIN tag = SHU tag = TNG tag = WUU tag = YAN tag = YUE
+		# India / Inde
+		tag = BAH
+		# ???
+		tag = BAR tag = NZH
+		# Asia Minor / Asie mineure
+		tag = BHT tag = RUM
+	}
+}
+
+frloc_tags_noart_sg_masc_cons_a_a_09b = {
+	# Ex.: [ø] Chypre / l'honneur DE Chypre / le trône DE Chypre / arriver À Chypre / demander À Chypre / NOUVEAU-Chypre
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Balkans
+		tag = CYP
+		# Great Tibet tags / Tibet
+		tag = GUG
+	}
+}
+
+# TODO : might be better if all were plural?
+frloc_tags_noart_sg_masc_cons_en_aux_09c = {
+	# Ex.: [ø] Ming / l'honneur DE Ming / le trône DE Ming / arriver EN Ming / demander AUX Ming / NOUVEAU-Ming
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Far East / Extrême-Orient
+		tag = RYU
+	}
+}
+
+frloc_tags_noart_sg_masc_vow_en_a_10a = {
+	# Ex.: [ø] Alençon / l'honneur D'Alençon / le trône D'Alençon / arriver EN Alençon / demander À Alençon / NOUVEL-Alençon
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# France 
+		tag = ALE
+		# Arabia / Arabie
+		tag = OMA
+		# Persia / Perse
+		tag = ORM
+	}
+}
+
+frloc_tags_noart_sg_masc_vow_a_a_10b = {
+	# Ex.: [ø] Haïti / l'honneur D'Haïti / le trône D'Haïti / arriver À Haïti / demander À Haïti / NOUVEL-Haïti
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Colonies
+		tag = HAT
+	}
+}
+
+frloc_tags_noart_sg_fem_cons_de_en_11a = {
+	# Ex.: [ø] Tchernigov / l'honneur DE Tchernigov / le trône DE Tchernigov / arriver EN Tchernigov / demander À Tchernigov / NOUVELLE-Tchernigov
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Eastern Europe / Europe orientale
+		tag = CHR tag = DNZ tag = KIE tag = KRA tag = RIG
+		# France 
+		tag = ALS tag = FOI tag = TOU
+		# Low Countries / Pays-Bas
+		tag = LIE
+		# Russia / Russie
+		tag = BLO tag = FEO tag = KAZ tag = PLT tag = PRM tag = PSK tag = RSO tag = RYA tag = TVE tag = YAR
+		# Arabia / Arabie
+		tag = BTL tag = HSN tag = MDA tag = MFL tag = MHR tag = NJR
+		# Asia Minor / Asie mineure
+		tag = CND tag = DUL tag = GRM tag = MEN tag = RAM tag = SRU tag = TRE
+		# Maghreb
+		tag = FEZ tag = MRK tag = SLE tag = TET tag = TGT tag = TLC tag = TUN
+		# Central Asia / Asie centrale
+		tag = BUK tag = KHI tag = KOK
+		# Persia / Perse
+		tag = BSR tag = ISF tag = KRM tag = MGR tag = TBR tag = YZD
+		# North American Additions / Ajouts en Amérique du Nord
+		tag = CLM tag = TLX
+		# South American Additions / Ajouts en Amérique du Sud
+		tag = CJA
+		# Golden Century Mesoamerican Tags
+		tag = CNP tag = COI tag = CTM tag = TEO tag = TON tag = XAL
+		# Africa / Afrique
+		tag = MBA tag = MDI tag = MLI tag = SFA tag = SOF tag = ZAN
+		# East African Additions / Ajouts en Afrique orientale
+		tag = ABB tag = DAM tag = HAR tag = HOB tag = JIM tag = PTE
+		# Kongo, Great Lakes & Central Africa / Congo, Grands Lacs et Afrique centrale
+		tag = KIK tag = SYO tag = LDU
+		# African Additions / Ajouts en Afrique
+		tag = JNN tag = KAN tag = KNG tag = KTS tag = TMB tag = YAO tag = ZZZ
+		# Far East / Extrême-Orient
+		tag = BAN tag = BLI tag = CHK tag = CSH tag = CXI tag = CZH tag = FRM tag = LUA tag = MAJ tag = MKS tag = MLC tag = MTR tag = PAT tag = PEG tag = SUK tag = SUL tag = TAU tag = VIE
+		# Indochina Additions / Ajouts en Indochine
+		tag = HSE tag = JOH tag = MYA
+		# Burma additions / Ajouts en Birmanie
+		tag = BPR tag = HSI tag = KAL tag = MKA tag = MMA tag = MNI tag = MPA
+		# Mongol tags / Mongols
+		tag = KAS
+		# India / Inde
+		tag = BDA tag = BHA tag = BIJ tag = CEY tag = CHD tag = DLH tag = DNG tag = DTI tag = GNG tag = GOC tag = GRK tag = GWA tag = HAD tag = JFN tag = JGD tag = JLV tag = JML tag = JNP tag = JPR tag = JSL tag = KGR tag = KJH tag = KLH tag = KLN tag = KLP tag = KLT tag = KMN tag = KMT tag = KND tag = KOC tag = KTU tag = LWA tag = MAB tag = MAD tag = MBL tag = MKP tag = MUL tag = MYS tag = NAG tag = NGA tag = NVR tag = PAN tag = PRB tag = PRD tag = PTA tag = PTL tag = PTT tag = RJK tag = RTT tag = SBP tag = SDY tag = SRG tag = SRH tag = SRM tag = TNJ tag = VIJ
+		# ???
+		tag = HSA tag = JMN tag = KOJ tag = SMO
+	}
+}
+
+frloc_tags_noart_sg_fem_cons_de_a_11b = {
+	# Ex.: [ø] Gotland / l'honneur DE Gotland / le trône DE Gotland / arriver À Gotland / demander À Gotland / NOUVELLE-Gotland
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Scandinavia / Scandinavie
+		tag = GOT
+		# Colonies
+		tag = CUB
+		# Balkans
+		tag = BYZ tag = CEP tag = NAX tag = RAG tag = SLO
+		# HRE / Saint-Empire
+		tag = BAM tag = BRE tag = BRG tag = BYT tag = CLB tag = CLI tag = COB tag = DWT tag = FRN tag = GLG tag = GNV tag = GOS tag = HAM tag = KLE tag = KNZ tag = KOL tag = LBV tag = LPP tag = LUN tag = MAG tag = MAI tag = MBZ tag = MEM tag = MLH tag = MUN tag = NSA tag = NUM tag = PAD tag = PSS tag = REG tag = ROT tag = RUG tag = RUP tag = RVA tag = SLZ tag = STE tag = TNT tag = TRI tag = UBV tag = VER tag = WBG tag = WOL
+		# Spain / Espagne
+		tag = GRA tag = MJO tag = VAL
+		# Italy / Italie
+		tag = BLG tag = FER tag = GEN tag = JAI tag = LAN tag = LUC tag = MAN tag = MLO tag = MOD tag = NAP tag = PAR tag = PDV tag = PGA tag = PIS tag = SIE tag = SPL tag = SZO tag = VEN tag = VRN
+		# Indonesia Additions / Ajouts en Indonésie
+		tag = BLM tag = BTN tag = CRB tag = DMK tag = KUT tag = LFA tag = LNO tag = LUW tag = MGD tag = PGR tag = PLB tag = PSA tag = SAK tag = SUN tag = TER tag = TID tag = PGS tag = TDO tag = MNA tag = CEB tag = BTU
+		# Pirate tags
+		tag = LIB tag = PRY
+	}
+}
+
+# Special case because of the "La" that can't be erased
+frloc_tags_noart_sg_fem_cons_dela_en_11c = {
+	# Ex.: [ø] La Plata / l'honneur DE La Plata / le trône DE La Plata / arriver À La Plata / demander À La Plata / NOUVELLE-La Plata
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Colonies
+		tag = LAP
+		# Pirate tags
+		tag = TOR
+	}
+}
+
+frloc_tags_noart_sg_fem_vow_d_en_12a = {
+	# Ex.: Odoïev / l'honneur D'Odoïev / le trône D'Odoïev / arriver EN Odoïev / demander À Odoïev / NOUVELLE-Odoïev
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Eastern Europe / Europe orientale
+		tag = OKA
+		# France 
+		tag = AVI tag = ORL
+		# Low Countries / Pays-Bas
+		tag = UTR
+		# Russia / Russie
+		tag = AST
+		# Arabia / Arabie
+		tag = ADE tag = ALH
+		# Asia Minor / Asie mineure
+		tag = ARD tag = ARL tag = AYD tag = ERE
+		# Maghreb
+		tag = ALG
+		# Africa / Afrique
+		tag = ENA
+		# East African Additions / Ajouts en Afrique orientale
+		tag = AFA
+		# Far East / Extrême-Orient
+		tag = AYU
+		# Indochina Additions / Ajouts en Indochine
+		tag = AVA
+		# India / Inde
+		tag = AHM tag = IDR
+	}
+}
+
+frloc_tags_noart_sg_fem_vow_d_a_12b = {
+	# Ex.: [ø] Athènes / l'honneur D'Athènes / le trône D'Athènes / arriver À Athènes / demander À Athènes / NOUVELLE-Athènes
+	### HIGHER PRIORITY ###
+	# override_country_name
+	NOT = { has_country_flag = is_china_flag }
+	NOT = { has_country_flag = is_revolutionary_china_flag }
+	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
+	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_kingdom_of_god_flag }
+	NOT = { has_country_flag = is_turkey_flag }
+	NOT = { has_country_flag = is_revolutionary_turkey_flag }
+	NOT = { has_country_flag = unified_islam }
+	OR = {
+		### USUAL PRIORITY ###
+		# Balkans
+		tag = ATH
+		# HRE / Saint-Empire
+		tag = AAC tag = ANS tag = AUG tag = ING tag = OLD tag = OPL tag = OSN tag = ULM
+		# Italy / Italie
+		tag = AQU tag = URB
+		# Far East / Extrême-Orient
+		tag = ATJ
+	}
+}
+
+#frloc_tags_noart_pl_masc_cons_X_13a = {} # CURRENTLY UNUSED
+#frloc_tags_noart_pl_masc_vow_X_14a = {} # CURRENTLY UNUSED
+#frloc_tags_noart_pl_fem_cons_X_15a = {} # CURRENTLY UNUSED
+#frloc_tags_noart_pl_fem_vow_X_16a = {} # CURRENTLY UNUSED
+
+
+
+###################################################
+###   Religion Groups // Familles religieuses   ###
+###################################################
+
+frloc_religion_group_cons = {
+	OR = {
+		religion_group = christian
+		religion_group = dharmic
+		religion_group = pagan
+		religion_group = jewish_group
+		religion_group = zoroastrian_group
+	}
+}
+
+frloc_religion_group_vow = {
+	OR = {
+		religion_group = muslim
+		religion_group = muslirel # La Pléiade
+		religion_group = eastern
+		religion_group = easterrel # La Pléiade
+	}
+}
+
+
+
+####################################################
+### Religion (Main) // Religions (principales)   ###
+####################################################
+
+frloc_religion_masc_cons = { # Fallback
+	NOT = {
+		religion = reformed
+		religion = karaite_faith
+		religion = kushitism_pagan_reformed
+		religion = anglican
+		religion = hinduism
+		religion = ibadi
+		religion = animism
+		religion = inti
+		religion = hellenic_pagan
+		religion = hellenic_pagan_reformed
+		religion = west_african_pagan_reformed
+		religion = alawite
+		religion = magyar_pagan
+		religion = magyar_pagan_reformed
+		religion = orthodox
+		religion = iconoclast
+		religion = zun_pagan_reformed
+		religion = adamites
+		religion = insular_celtic
+		religion = bosnian_church
+	}
+}
+
+frloc_religion_fem_cons = {
+	religion = reformed
+	religion = karaite_faith
+	religion = kushitism_pagan_reformed
+}
+
+frloc_religion_masc_vow = {
+	OR = {
+		religion = anglican
+		religion = hinduism
+		religion = ibadi
+		religion = animism
+		religion = inti
+		religion = hellenic_pagan
+		religion = hellenic_pagan_reformed
+		religion = west_african_pagan_reformed
+		religion = alawite
+		religion = magyar_pagan
+		religion = magyar_pagan_reformed
+	}
+}
+
+frloc_religion_fem_vow = {
+	OR = {
+		religion = orthodox
+		religion = iconoclast
+		religion = zun_pagan_reformed
+		religion = adamites
+		religion = insular_celtic
+		religion = bosnian_church
+	}
+}
+
+
+
+#####################################################
+### Secondary Religion // Religions secondaires   ###
+#####################################################
+
+frloc_secondary_religion_masc_cons = { # Fallback
+	NOT = {
+		secondary_religion = reformed
+		secondary_religion = karaite_faith
+		secondary_religion = kushitism_pagan_reformed
+		secondary_religion = anglican
+		secondary_religion = hinduism
+		secondary_religion = ibadi
+		secondary_religion = animism
+		secondary_religion = inti
+		secondary_religion = hellenic_pagan
+		secondary_religion = hellenic_pagan_reformed
+		secondary_religion = west_african_pagan_reformed
+		secondary_religion = alawite
+		secondary_religion = magyar_pagan
+		secondary_religion = magyar_pagan_reformed
+		secondary_religion = orthodox
+		secondary_religion = iconoclast
+		secondary_religion = zun_pagan_reformed
+		secondary_religion = adamites
+		secondary_religion = insular_celtic
+		secondary_religion = bosnian_church
+	}
+}
+
+frloc_secondary_religion_fem_cons = {
+	secondary_religion = reformed
+	secondary_religion = karaite_faith
+	secondary_religion = kushitism_pagan_reformed
+}
+
+frloc_secondary_religion_masc_vow = {
+	OR = {
+		secondary_religion = anglican
+		secondary_religion = hinduism
+		secondary_religion = ibadi
+		secondary_religion = animism
+		secondary_religion = inti
+		secondary_religion = hellenic_pagan
+		secondary_religion = hellenic_pagan_reformed
+		secondary_religion = west_african_pagan_reformed
+		secondary_religion = alawite
+		secondary_religion = magyar_pagan
+		secondary_religion = magyar_pagan_reformed
+	}
+}
+
+frloc_secondary_religion_fem_vow = {
+	OR = {
+		secondary_religion = orthodox
+		secondary_religion = iconoclast
+		secondary_religion = zun_pagan_reformed
+		secondary_religion = adamites
+		secondary_religion = insular_celtic
+		secondary_religion = bosnian_church
+	}
+}
+
+############################################
+###   Trade Goods // Biens commerciaux   ###
+############################################
+
+frloc_trade_goods_masc_sg_cons = {
+	OR = {
+		trade_goods = wine
+		trade_goods = fish
+		trade_goods = salt
+		trade_goods = copper
+		trade_goods = iron
+		trade_goods = tea
+		trade_goods = coffee
+		trade_goods = cotton
+		trade_goods = sugar
+		trade_goods = tobacco
+		trade_goods = cocoa
+		trade_goods = livestock
+		trade_goods = glass
+		trade_goods = paper
+		trade_goods = coal
+	}
+}
+
+frloc_trade_goods_fem_sg_cons = {
+	OR = {
+		trade_goods = wool
+		trade_goods = silk
+	}
+}
+
+frloc_trade_goods_sg_vow = {
+	OR = {
+		trade_goods = gold
+		trade_goods = ivory
+		trade_goods = incense
+	}
+}
+
+frloc_trade_goods_pl_cons = {
+	OR = {
+		trade_goods = tropical_wood
+		trade_goods = grain
+		trade_goods = fur
+		trade_goods = naval_supplies
+		trade_goods = chinaware
+		trade_goods = dyes
+		trade_goods = gems
+	}
+}
+
+frloc_trade_goods_pl_vow = {
+	OR = {
+		trade_goods = cloth
+		trade_goods = slaves
+		trade_goods = spices
+	}
+}
+
+
+
+#####################################
+###   Parliaments // Parlements   ###
+#####################################
+
+# Ex. : LE Grand conseil / AU Grand conseil / DU Grand conseil
+### Used for most cases, notably as fallback for default_parliament_name: "Parlement"
+frloc_parliament_masc_sg_cons = {
+	NOT = {
+		OR = {
+			tag = ICE # Alting
+			tag = MOS tag = RUS culture_group = east_slavic # Douma
+			culture_group = altaic # Kurultai
+			tag = FRA tag = QUE # Assemblée nationale
+			tag = HUN # Országgyülés
+			tag = SPA culture_group = iberian # Cortes
+			tag = NED # États généraux
+		}
+	}
+}
+
+# Ex. : L'Alting / À L'Alting / DE L'Alting
+frloc_parliament_masc_sg_vow = {
+	tag = ICE # Alting
+}
+
+# Ex. : LA Douma / À LA Douma / DE LA Douma
+frloc_parliament_fem_sg_cons = {
+	OR = {
+		tag = MOS tag = RUS culture_group = east_slavic # Douma
+		culture_group = altaic # Kurultai
+	}
+}
+
+# Ex. : L'Assemblée nationale / À L'Assemblée nationale DE L'Assemblée nationale
+frloc_parliament_fem_sg_vow = {
+	OR = {
+		tag = FRA tag = QUE # Assemblée nationale
+		tag = HUN # Országgyülés
+	}
+}
+
+# Ex. : LES Cortes / AUX Cortes / DES Cortes
+frloc_parliament_masc_pl = {
+	OR = {
+		tag = SPA culture_group = iberian # Cortes
+		tag = NED # États généraux
+	}
+}
+
+#frloc_parliament_fem_pl = {} # CURRENTLY UNUSED
+
