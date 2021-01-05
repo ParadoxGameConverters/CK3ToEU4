@@ -44,6 +44,22 @@ defined_text = {
 defined_text = {
     name = GetOldEra
 
+	text = {
+		localisation_key = string_human_era
+		trigger = {
+			OR = {
+				primary_culture = equine
+				primary_culture = cat
+				primary_culture = bear
+				primary_culture = hedgehog_culture
+				primary_culture = duck_culture
+				primary_culture = dog_culture
+				primary_culture = elephant_culture
+				primary_culture = dragon_culture
+				primary_culture = red_panda
+			}
+		}
+	}
     text = {
         localisation_key = string_song_era
         trigger = {
@@ -172,6 +188,15 @@ defined_text = {
         }
 	}
 	text = {
+		localisation_key = string_praefectus
+		trigger = {
+			OR = {
+				culture_group = roman_group
+				culture_group = barbaro_germanic
+			}
+		}
+	}
+	text = {
 		localisation_key = string_zupan
 		trigger = {
 			culture_group = south_slavic
@@ -204,6 +229,22 @@ defined_text = {
 		}
 	}
 	text = {
+		localisation_key = string_tanner
+		trigger = {
+			OR = {
+				culture_group = equine_group
+				culture_group = cat_group
+				culture_group = bear_group
+				culture_group = hedgehog_group
+				culture_group = duck_group
+				culture_group = dog_group
+				culture_group = elephant_group
+				culture_group = dragon_group
+				culture_group = red_panda_group
+			}
+		}
+	}
+	text = {
         localisation_key = string_official
         trigger = {
 			NOT = { religion_group = muslim }
@@ -218,6 +259,17 @@ defined_text = {
 				culture_group = british
 				culture_group = french
 				culture_group = germanic
+				culture_group = roman_group
+				culture_group = barbaro_germanic
+				culture_group = equine_group
+				culture_group = cat_group
+				culture_group = bear_group
+				culture_group = hedgehog_group
+				culture_group = duck_group
+				culture_group = dog_group
+				culture_group = elephant_group
+				culture_group = dragon_group
+				culture_group = red_panda_group
 			}
         }
 	}
@@ -1744,14 +1796,17 @@ defined_text = {
 	text = {
 		localisation_key = string_ruler_adj_and_title
 		trigger = {
-			NOT = { tag = PAP }
+			NOT = { tag = PAP tag = FAP }
 			has_regency = no
 		}
 	}
 	text = {
 		localisation_key = string_ruler_title
 		trigger = {
-			tag = PAP
+			OR = {
+				tag = PAP
+				tag = FAP
+			}
 		}
 	}
 	text = {
