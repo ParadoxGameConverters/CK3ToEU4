@@ -586,6 +586,7 @@ void EU4::World::alterProvinceDevelopment()
 
 void EU4::World::linkProvincesToCountries()
 {
+
 	// Some of the provinces have linked countries, but new world won't. We need to insert links both ways there.
 	for (const auto& province: provinces)
 	{
@@ -607,6 +608,21 @@ void EU4::World::linkProvincesToCountries()
 		else
 		{
 			Log(LogLevel::Warning) << "Province " << province.first << " owner " << province.second->getOwner() << " has no country!";
+		}
+	}
+
+	// Super Mongolia?
+	if (countries.count("MGE") && !countries.find("MGE")->second->getProvinces().empty())
+	{
+		// Move all Mongolia provinces under Mongol Empire
+		for (const auto& province: provinces)
+		{
+			if (province.second->getOwner() == "KHA")
+			{
+				province.second->setOwner("MGE");
+				province.second->setController("MGE");
+				province.second->addCore("MGE");
+			}
 		}
 	}
 }
