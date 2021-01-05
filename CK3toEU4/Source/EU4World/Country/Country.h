@@ -54,7 +54,9 @@ class Country
 	void setTechGroup(const std::string& tech) { details.technologyGroup = tech; }
 	void setGFX(const std::string& gfx) { details.graphicalCulture = gfx; }
 	void assignReforms(const std::shared_ptr<mappers::RegionMapper>& regionMapper);
-	void initializeAdvisers(const mappers::ReligionMapper& religionMapper, const mappers::CultureMapper& cultureMapper);
+	void initializeAdvisers(const mappers::LocalizationMapper& localizationMapper,
+		 const mappers::ReligionMapper& religionMapper,
+		 const mappers::CultureMapper& cultureMapper);
 	void annexCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry);
 	void clearProvinces() { provinces.clear(); }
 	void setElector() { details.elector = true; }
