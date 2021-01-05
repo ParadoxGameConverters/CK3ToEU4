@@ -2,7 +2,6 @@
  TRL:3 "Trapalanda"
  TRL_ADJ:3 "trapalandienne"
  israelite:3 "israélite"
- old_prussian:3 "vieille-prussienne"
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Obscurité"
  european_tribal_ideas:3 "Doctrines tribales européennes"
@@ -399,3 +398,13 @@
  ZZZ_incredible_omens:3 "Des Présages Incroyables"
  desc_ZZZ_increedible_omens:3 "Ce pays a reçu des présages qui assurent la victoire en ce qui concerne tous ses conflits à venir."
  
+ 
+ ###VANILLA OVERRIDES
+ tengri_events.1.d:3 "Le clergé [Root.GetRelSecMS] s'est montré inhabituellement réticent à coopérer ces derniers temps, clamant haut et fort que si nous nous prétendons intéressés par [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] ce n'est que par intérêt personnel, et que nous ne sommes en aucun cas prêts à l'adopter, [Root.GetLeLaRelSec_CONVERTER] soutenir ou faciliter la diffusion de ses enseignements.\n\nMais, de la même façon, les chamans tengristes se montrent de plus en plus irrités de notre désir apparent de nous appuyer sur les conseils de guides se réclamant d'une foi qui nous est étrangère."
+ tengri_events.2.d:3 "Certains, au sein de notre peuple, ont été plus prompts que d'autres à embrasser [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN]. C'est sans doute parmi les administrateurs que cette religion étrangère s'est le plus grandement répandue et, alors qu'ils regardent par-delà nos frontières pour y trouver une quelconque inspiration spirituelle, ils en retirent aussi quelque enseignement sur la manière de gérer nos territoires."
+ tengri_events.4.d:3 "En soutenant [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN], nous avons créé des liens plus étroits avec certains de nos voisins. Nos chefs ne sont pas toujours d'accord sur tous les sujets, mais nos institutions religieuses ont désormais beaucoup en commun, et les nobles se mêlent en partie les uns aux autres à la faveur de pèlerinages religieux."
+ tengri_events.8.d:3 "Avec le temps, les croyances de nos ancêtres ont été progressivement marginalisées au sein de notre peuple. [Root.GetLeLaRelSec_CONVERTERCap] [Root.GetRelSecN], tout au contraire, a reçu le soutien de nos chefs, et la plupart des prêtres que nous comptons en notre sein [Root.GetLeLaFRelSec_CONVERTER] diffusent, assurant ainsi sa prédominence.\n\nPeut-être le temps est-il venu enfin de se débarrasser des rites chamaniques de ceux qui nous ont précédés, afin d'embrasser pleinement [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] que pratiquent désormais la plupart de nos sujets ?"
+ tengri_events.8.d:3 "Avec le temps, les croyances de nos ancêtres ont été progressivement marginalisées au sein de notre peuple. [Root.GetLeLaRelSec_CONVERTERCap] [Root.GetRelSecN], tout au contraire, a reçu le soutien de nos chefs, et la plupart des prêtres que nous comptons en notre sein [Root.GetLeLaFRelSec_CONVERTER] diffusent, assurant ainsi sa prédominence.\n\nPeut-être le temps est-il venu enfin de se débarrasser des rites chamaniques de ceux qui nous ont précédés, afin d'embrasser pleinement [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] que pratiquent désormais la plupart de nos sujets ?"
+ 
+
+

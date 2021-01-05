@@ -2193,6 +2193,42 @@ province_event = {
 		}
 	}
 	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						religion_group = jewish
+						NOT = { religion = jewish }
+						NOT = { religion = samaritan_faith }
+						NOT = { religion = karaite_faith }
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						religion_group = jewish 
+						NOT = { religion = jewish }
+						NOT = { religion = samaritan_faith }
+						NOT = { religion = karaite_faith }
+					}
+					save_event_target_as = jewish_immigrants_origin
+				}
+				
+			}
+			else = {
+				random_neighbor_province = {
+					limit = { 
+						religion_group = jewish 
+						NOT = { religion = jewish }
+						NOT = { religion = samaritan_faith }
+						NOT = { religion = karaite_faith }
+					}
+					save_event_target_as = jewish_immigrants_origin
+				}
+			}
+		}
+	}
+	
 	
 	option = {
 		name = fetishist_flavor.418.a
@@ -2278,38 +2314,6 @@ province_event = {
 					NOT = { religion = jewish }
 					NOT = { religion = samaritan_faith }
 					NOT = { religion = karaite_faith }
-				}
-			}
-		}
-		
-		immediate = {		
-			hidden_effect = {
-				if = {
-					limit = {
-						any_owned_province = {
-							religion_group = jewish
-							NOT = { religion = jewish }
-							NOT = { religion = samaritan_faith }
-							NOT = { religion = karaite_faith }
-						}
-					}
-					random_owned_province = {
-						religion_group = jewish
-						NOT = { religion = jewish }
-						NOT = { religion = samaritan_faith }
-						NOT = { religion = karaite_faith }
-						save_event_target_as = jewish_immigrants_origin
-					}
-					
-				}
-				else = {
-					random_neighbor_province = {
-						religion_group = jewish
-						NOT = { religion = jewish }
-						NOT = { religion = samaritan_faith }
-						NOT = { religion = karaite_faith }
-						save_event_target_as = jewish_immigrants_origin
-					}
 				}
 			}
 		}
@@ -2826,6 +2830,42 @@ province_event = {
 		}
 	}
 	
+	immediate = {		
+		hidden_effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						religion_group = zoroastrian_group
+						NOT = { religion = zoroastrian }
+						NOT = { religion = mazdaki }
+						NOT = { religion = khurmazta }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion_group = zoroastrian_group
+						NOT = { religion = zoroastrian }
+						NOT = { religion = mazdaki }
+						NOT = { religion = khurmazta }
+					}
+					save_event_target_as = zoroastrian_immigrant_origin
+				}
+				
+			}
+			else = {
+				random_neighbor_province = {
+					limit = {
+						religion_group = zoroastrian_group
+						NOT = { religion = zoroastrian }
+						NOT = { religion = mazdaki }
+						NOT = { religion = khurmazta }
+					}
+					save_event_target_as = zoroastrian_immigrant_origin
+				}
+			}
+		}
+	}
+	
 	
 	option = {
 		name = fetishist_flavor.460.a #
@@ -2868,38 +2908,6 @@ province_event = {
 					NOT = { religion = zoroastrian }
 					NOT = { religion = mazdaki }
 					NOT = { religion = khurmazta }
-				}
-			}
-		}
-		
-		immediate = {		
-			hidden_effect = {
-				if = {
-					limit = {
-						any_owned_province = {
-							religion_group = zoroastrian_group
-							NOT = { religion = zoroastrian }
-							NOT = { religion = mazdaki }
-							NOT = { religion = khurmazta }
-						}
-					}
-					random_owned_province = {
-						religion_group = zoroastrian_group
-						NOT = { religion = zoroastrian }
-						NOT = { religion = mazdaki }
-						NOT = { religion = khurmazta }
-						save_event_target_as = zoroastrian_immigrant_origin
-					}
-					
-				}
-				else = {
-					random_neighbor_province = {
-						religion_group = zoroastrian_group
-						NOT = { religion = zoroastrian }
-						NOT = { religion = mazdaki }
-						NOT = { religion = khurmazta }
-						save_event_target_as = zoroastrian_immigrant_origin
-					}
 				}
 			}
 		}

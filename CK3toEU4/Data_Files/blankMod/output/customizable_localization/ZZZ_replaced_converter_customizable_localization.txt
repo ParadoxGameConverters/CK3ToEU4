@@ -1,0 +1,189 @@
+#Defining a fallback for religions
+defined_text = {
+	name = GetLeLaRelSec_CONVERTER
+	text = {
+		localisation_key = string_le_FR
+		trigger = {
+			frloc_secondary_religion_masc_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_la_FR
+		trigger = {
+			frloc_secondary_religion_fem_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_l_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_vow = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_le_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
+### Ex: "Propagate [it] (sunnism/orthodoxy)" => "[Le] diffuser (sunnisme)/[La] diffuser (orthodoxie)"
+defined_text = {
+	name = GetLeLaFRelSecCap_CONVERTER
+	text = {
+		localisation_key = string_le_cap_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_cons = yes
+				frloc_secondary_religion_masc_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_la_cap_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_fem_cons = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_le_cap_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
+### Ex: "a precept [of] Sunnism/Reform/Hinduism" => "un précepte [du] sunnisme/[de la] Réforme/[de l']iconoclasme" (lower case / minuscule)
+defined_text = {
+	name = GetDuDelaRelSec_CONVERTER
+	text = {
+		localisation_key = string_du_FR
+		trigger = {
+			frloc_secondary_religion_masc_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_dela_FR
+		trigger = {
+			frloc_secondary_religion_fem_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_del_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_vow = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_du_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
+### Ex: "[Of the] Sunnism/Reform/Hinduism " => "[Du] sunnisme/[De la] Réforme/[De l']iconoclasme"
+defined_text = {
+	name = GetDuDelaRelSecCap_CONVERTER
+	text = {
+		localisation_key = string_du_cap_FR
+		trigger = {
+			frloc_secondary_religion_masc_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_dela_cap_FR
+		trigger = {
+			frloc_secondary_religion_fem_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_del_cap_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_vow = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_du_cap_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
+### Ex: "[to] Sunnism/Reform/Hinduism " => "[au] sunnisme/[à la] Réforme/[à l']iconoclasme"
+defined_text = {
+	name = GetAuAlaRelSec_CONVERTER
+	text = {
+		localisation_key = string_au_FR
+		trigger = {
+			frloc_secondary_religion_masc_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_ala_FR
+		trigger = {
+			frloc_secondary_religion_fem_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_al_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_vow = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_au_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
+### Ex: "[To] Sunnism/Reform/Hinduism " => "[Au] sunnisme/[À la] Réforme/[À l']iconoclasme"
+defined_text = {
+	name = GetAuAlaRelSecCap_CONVERTER
+	text = {
+		localisation_key = string_au_cap_FR
+		trigger = {
+			frloc_secondary_religion_masc_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_ala_cap_FR
+		trigger = {
+			frloc_secondary_religion_fem_cons = yes
+		}
+	}
+	text = {
+		localisation_key = string_al_cap_FR
+		trigger = {
+			OR = {
+				frloc_secondary_religion_masc_vow = yes
+				frloc_secondary_religion_fem_vow = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = string_au_cap_FR
+		trigger = {
+			NOT = { frloc_secondary_religion_masc_cons = yes }
+			NOT = { frloc_secondary_religion_fem_cons = yes }
+		}
+	}
+}
