@@ -1277,7 +1277,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 }
 
-void EU4::Country::initializeAdvisers(const mappers::ReligionMapper& religionMapper, const mappers::CultureMapper& cultureMapper)
+void EU4::Country::initializeAdvisers(const mappers::LocalizationMapper& localizationMapper,
+	 const mappers::ReligionMapper& religionMapper,
+	 const mappers::CultureMapper& cultureMapper)
 {
 	// We're doing this one separate from initial country generation so that country's primary culture and religion may have had time to get
 	// initialized.
@@ -1292,10 +1294,19 @@ void EU4::Country::initializeAdvisers(const mappers::ReligionMapper& religionMap
 			continue;
 		Character newAdviser;
 		newAdviser.name = adviser.second->getName();
+		auto localizedName = localizationMapper.getLocBlockForKey(newAdviser.name);
+		if (localizedName)
+			newAdviser.name = localizedName->english;
 		if (adviser.second->getHouse().first)
 		{
 			newAdviser.prefix = adviser.second->getHouse().second->getPrefix();
+			auto localizedPrefix = localizationMapper.getLocBlockForKey(newAdviser.prefix);
+			if (localizedPrefix)
+				newAdviser.prefix = localizedPrefix->english;
 			newAdviser.surname = adviser.second->getHouse().second->getName();
+			auto localizedSurname = localizationMapper.getLocBlockForKey(newAdviser.surname);
+			if (localizedSurname)
+				newAdviser.surname = localizedSurname->english;
 		}
 		if (details.capital)
 			newAdviser.location = details.capital;
