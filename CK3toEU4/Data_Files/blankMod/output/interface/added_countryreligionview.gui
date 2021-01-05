@@ -2226,6 +2226,13 @@ guiTypes = {
 
 			iconType =
 			{
+				name ="adamites_aspects_bg"
+				spriteType = "GFX_anglican_overlay_bg"
+				position = { x= -27 y = -72 }
+			}
+
+			iconType =
+			{
 				name ="cathar_aspects_bg"
 				spriteType = "GFX_anglican_overlay_bg"
 				position = { x= -27 y = -72 }
