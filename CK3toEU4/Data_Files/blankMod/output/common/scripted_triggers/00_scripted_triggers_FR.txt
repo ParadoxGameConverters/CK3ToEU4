@@ -864,79 +864,28 @@ frloc_religion_group_vow = {
 ### Religion (Main) // Religions (principales)   ###
 ####################################################
 
-frloc_religion_masc_cons = {
-	OR = {
-		religion = catholic
-		religion = hussite
-		religion = protestant
-		religion = coptic
-		religion = sunni
-		religion = shiite
-		religion = buddhism
-		religion = vajrayana
-		religion = mahayana
-		religion = confucianism
-		religion = shinto
-		religion = sikhism
-		religion = shamanism
-		religion = totemism
-		religion = nahuatl
-		religion = mesoamerican_religion
-		religion = norse_pagan_reformed
-		religion = tengri_pagan_reformed
-		religion = jewish
-		religion = zoroastrian
-		religion = cathar
-		religion = waldensian
-		religion = lollard
-		religion = monophysite
-		religion = bogomilist
-		religion = monothelite
-		religion = paulician
-		religion = nestorian
-		religion = messalian
-		religion = zikri
-		religion = yazidi
-		religion = kharijite
-		religion = druze
-		religion = hurufi
-		religion = qarmatian
-		religion = pagan_religion
-		religion = baltic_pagan
-		religion = baltic_pagan_reformed
-		religion = finnish_pagan
-		religion = finnish_pagan_reformed
-		religion = norse_pagan
-		religion = slavic_pagan
-		religion = slavic_pagan_reformed
-		religion = tengri_pagan
-		religion = zun_pagan
-		religion = west_african_pagan
-		religion = bon
-		religion = bon_reformed
-		religion = mazdaki
-		religion = manichean
-		religion = khurmatza
-		religion = samaritan_faith
-		religion = jain
-		religion = mutazila
-		religion = quranist
-		religion = zurvanism
-		religion = gayomarthianism
-		religion = khurramism
-		religion = yazidism
-		religion = meshefaresism
-		religion = kitebacilweism
-		religion = gnostic
-		religion = mandeaism
-		religion = valentinianism
-		religion = sethianism
-		religion = priscillianism
-		religion = cainitism
-		religion = kushitism_pagan
-		religion = siberian_pagan
-		religion = siberian_pagan_reformed
-		religion = fraticelli
+frloc_religion_masc_cons = { # Fallback
+	NOT = {
+		religion = reformed
+		religion = karaite_faith
+		religion = kushitism_pagan_reformed
+		religion = anglican
+		religion = hinduism
+		religion = ibadi
+		religion = animism
+		religion = inti
+		religion = hellenic_pagan
+		religion = hellenic_pagan_reformed
+		religion = west_african_pagan_reformed
+		religion = alawite
+		religion = magyar_pagan
+		religion = magyar_pagan_reformed
+		religion = orthodox
+		religion = iconoclast
+		religion = zun_pagan_reformed
+		religion = adamites
+		religion = insular_celtic
+		religion = bosnian_church
 	}
 }
 
@@ -963,12 +912,14 @@ frloc_religion_masc_vow = {
 }
 
 frloc_religion_fem_vow = {
-	religion = orthodox
-	religion = iconoclast
-	religion = zun_pagan_reformed
-	religion = adamites
-	religion = insular_celtic
-	religion = bosnian_church
+	OR = {
+		religion = orthodox
+		religion = iconoclast
+		religion = zun_pagan_reformed
+		religion = adamites
+		religion = insular_celtic
+		religion = bosnian_church
+	}
 }
 
 
@@ -977,79 +928,28 @@ frloc_religion_fem_vow = {
 ### Secondary Religion // Religions secondaires   ###
 #####################################################
 
-frloc_secondary_religion_masc_cons = {
-	OR = {
-		secondary_religion = catholic
-		secondary_religion = hussite
-		secondary_religion = protestant
-		secondary_religion = coptic
-		secondary_religion = sunni
-		secondary_religion = shiite
-		secondary_religion = buddhism
-		secondary_religion = vajrayana
-		secondary_religion = mahayana
-		secondary_religion = confucianism
-		secondary_religion = shinto
-		secondary_religion = sikhism
-		secondary_religion = shamanism
-		secondary_religion = totemism
-		secondary_religion = nahuatl
-		secondary_religion = mesoamerican_secondary_religion
-		secondary_religion = norse_pagan_reformed
-		secondary_religion = tengri_pagan_reformed
-		secondary_religion = jewish
-		secondary_religion = zoroastrian
-		secondary_religion = cathar
-		secondary_religion = waldensian
-		secondary_religion = lollard
-		secondary_religion = monophysite
-		secondary_religion = bogomilist
-		secondary_religion = monothelite
-		secondary_religion = paulician
-		secondary_religion = nestorian
-		secondary_religion = messalian
-		secondary_religion = zikri
-		secondary_religion = yazidi
-		secondary_religion = kharijite
-		secondary_religion = druze
-		secondary_religion = hurufi
-		secondary_religion = qarmatian
-		secondary_religion = pagan_secondary_religion
-		secondary_religion = baltic_pagan
-		secondary_religion = baltic_pagan_reformed
-		secondary_religion = finnish_pagan
-		secondary_religion = finnish_pagan_reformed
-		secondary_religion = norse_pagan
-		secondary_religion = slavic_pagan
-		secondary_religion = slavic_pagan_reformed
-		secondary_religion = tengri_pagan
-		secondary_religion = zun_pagan
-		secondary_religion = west_african_pagan
-		secondary_religion = bon
-		secondary_religion = bon_reformed
-		secondary_religion = mazdaki
-		secondary_religion = manichean
-		secondary_religion = khurmatza
-		secondary_religion = samaritan_faith
-		secondary_religion = jain
-		secondary_religion = mutazila
-		secondary_religion = quranist
-		secondary_religion = zurvanism
-		secondary_religion = gayomarthianism
-		secondary_religion = khurramism
-		secondary_religion = yazidism
-		secondary_religion = meshefaresism
-		secondary_religion = kitebacilweism
-		secondary_religion = gnostic
-		secondary_religion = mandeaism
-		secondary_religion = valentinianism
-		secondary_religion = sethianism
-		secondary_religion = priscillianism
-		secondary_religion = cainitism
-		secondary_religion = kushitism_pagan
-		secondary_religion = siberian_pagan
-		secondary_religion = siberian_pagan_reformed
-		secondary_religion = fraticelli
+frloc_secondary_religion_masc_cons = { # Fallback
+	NOT = {
+		secondary_religion = reformed
+		secondary_religion = karaite_faith
+		secondary_religion = kushitism_pagan_reformed
+		secondary_religion = anglican
+		secondary_religion = hinduism
+		secondary_religion = ibadi
+		secondary_religion = animism
+		secondary_religion = inti
+		secondary_religion = hellenic_pagan
+		secondary_religion = hellenic_pagan_reformed
+		secondary_religion = west_african_pagan_reformed
+		secondary_religion = alawite
+		secondary_religion = magyar_pagan
+		secondary_religion = magyar_pagan_reformed
+		secondary_religion = orthodox
+		secondary_religion = iconoclast
+		secondary_religion = zun_pagan_reformed
+		secondary_religion = adamites
+		secondary_religion = insular_celtic
+		secondary_religion = bosnian_church
 	}
 }
 
@@ -1076,12 +976,14 @@ frloc_secondary_religion_masc_vow = {
 }
 
 frloc_secondary_religion_fem_vow = {
-	secondary_religion = orthodox
-	secondary_religion = iconoclast
-	secondary_religion = zun_pagan_reformed
-	secondary_religion = adamites
-	secondary_religion = insular_celtic
-	secondary_religion = bosnian_church
+	OR = {
+		secondary_religion = orthodox
+		secondary_religion = iconoclast
+		secondary_religion = zun_pagan_reformed
+		secondary_religion = adamites
+		secondary_religion = insular_celtic
+		secondary_religion = bosnian_church
+	}
 }
 
 ############################################
