@@ -325,10 +325,10 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 
 void EU4::World::outputLocalization(const Configuration& theConfiguration, bool invasion) const
 {
-	std::ofstream english("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_english.yml");
-	std::ofstream french("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_french.yml");
-	std::ofstream spanish("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_spanish.yml");
-	std::ofstream german("output/" + theConfiguration.getOutputName() + "/localisation/converter_l_german.yml");
+	std::ofstream english("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_english.yml");
+	std::ofstream french("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_french.yml");
+	std::ofstream spanish("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_spanish.yml");
+	std::ofstream german("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_german.yml");
 	if (!english.is_open())
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!french.is_open())
