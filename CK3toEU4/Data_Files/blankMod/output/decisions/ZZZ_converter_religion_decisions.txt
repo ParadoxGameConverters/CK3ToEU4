@@ -808,7 +808,7 @@ country_decisions = {
 		}
 	}
 	
-	spreading_of_norse_rituals = {
+	spreading_of_norse_rituals_EXTRA = {
 		potential = {
 			NOT = { has_country_modifier = spreading_norse_rituals }
 			religion = norse_pagan

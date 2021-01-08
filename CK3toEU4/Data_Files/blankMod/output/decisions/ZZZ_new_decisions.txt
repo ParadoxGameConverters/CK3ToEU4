@@ -91,7 +91,7 @@ country_decisions = {
 		ai_importance = 4000
 	}
 	
-	form_manchu_dynasty = {
+	form_manchu_dynasty_EXTRA = {
 		major = yes
 		potential = {
 			tag = QNG
