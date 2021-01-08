@@ -103,6 +103,9 @@
  shamanism_wondering_shamans_EXTRA_title:3 "Wandering Shamans"
  shamanism_wondering_shamans_EXTRA_desc:3 "We have come to control areas far beyond the limits of our faith and as a result a great number of heathens look to us for guidance. Let us send forth our Shamans to spread our faith and to teach those among our new subjects who are able to become Shamans themselves."
  
+ spreading_of_norse_rituals_EXTRA_title:0 "Spreading of $RELIGION$ Rituals"
+ spreading_of_norse_rituals_EXTRA_desc:0 "Converting to the $RELIGION$ religion requires nothing, every person is able to direct their own religious rituals. As long as you honor the Aesirs - Odin, Thor, Freja and Snotra - you are considered a follower of the Asatru. Let us encourage more and more of our subjects to learn of our gods so that they can at least start to worship them "
+
  armenia_nation_EXTRA_title:3 "Kingdom of Armenia"
  armenia_nation_EXTRA_desc:3 "The Kingdom of Armenia once dominated the Caucasus. Time was not kind to our ancestors, however, and neighboring empires saw weakness in our internal divisions and used it to conquer our people. Let us drive out these invaders and re-establish the Kingdom and Church of Armenia."
  
@@ -133,6 +136,9 @@
  steppe_horde_reform_EXTRA_title:3 "Reform the Government"
  steppe_horde_reform_EXTRA_desc:3 "For many years now our more advanced neighbors have laughed at us for our backward form of government. Well, no longer - as of today our great leader is a King!"
  
+ form_manchu_dynasty_EXTRA_title:0 "Qing Dynasty"
+ form_manchu_dynasty_EXTRA_desc:0 "We have taken the Northern Capital and defeated the false emperors. The Middle Kingdom must be united under a Manchu banner. Our dynasty shall reign for a thousand years!"
+  
  pagan_conversion_to_gnostic_title:3 "Convert to Gnosticism"
  pagan_conversion_to_gnostic_desc:3 "Convert to Gnosticism"
  pagan_conversion_to_gnostic_tooltip:3 "[Root.GetName] will adopt a Gnostic faith as practiced by their subjects as the new state religion."
