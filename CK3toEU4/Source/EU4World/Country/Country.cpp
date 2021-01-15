@@ -667,7 +667,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		{
 			if (heir.second->isDead())
 				continue; // This one is dead. Next, please.
-			
+
 			actualName = heir.second->getName();
 			const auto& heirNameLoc = localizationMapper.getLocBlockForKey(actualName);
 			if (heirNameLoc)
