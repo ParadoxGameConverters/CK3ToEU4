@@ -756,6 +756,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			details.heir.claim = 89; // good enough?
 			details.heir.personalities = rulerPersonalitiesMapper.evaluatePersonalities(heir.second);
 			details.heir.isSet = true;
+			break;
 		}
 	}
 
