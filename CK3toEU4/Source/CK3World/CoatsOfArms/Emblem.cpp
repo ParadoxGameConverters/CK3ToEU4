@@ -15,13 +15,37 @@ void CK3::Emblem::registerKeys()
 		texture = commonItems::singleString(theStream).getString();
 	});
 	registerKeyword("color1", [this](const std::string& unused, std::istream& theStream) {
-		color1 = laFabricaDeColor.getColor(theStream);
+		try
+		{
+			color1 = laFabricaDeColor.getColor(theStream);
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Warning) << e.what() << " - sidestepping with black.";
+			color1 = commonItems::Color(std::array<int, 3>{0, 0, 0});
+		}
 	});
 	registerKeyword("color2", [this](const std::string& unused, std::istream& theStream) {
-		color2 = laFabricaDeColor.getColor(theStream);
+		try
+		{
+			color2 = laFabricaDeColor.getColor(theStream);
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Warning) << e.what() << " - sidestepping with black.";
+			color2 = commonItems::Color(std::array<int, 3>{0, 0, 0});
+		}
 	});
 	registerKeyword("color3", [this](const std::string& unused, std::istream& theStream) {
-		color3 = laFabricaDeColor.getColor(theStream);
+		try
+		{
+			color3 = laFabricaDeColor.getColor(theStream);
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Warning) << e.what() << " - sidestepping with black.";
+			color3 = commonItems::Color(std::array<int, 3>{0, 0, 0});
+		}
 	});
 	registerKeyword("mask", [this](const std::string& unused, std::istream& theStream) {
 		mask = commonItems::intList(theStream).getInts();
