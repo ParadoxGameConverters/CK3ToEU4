@@ -49,7 +49,7 @@ link = { eu4 = frankish ck3 = frankish tech = western gfx = westerngfx }
 link = { eu4 = cornish ck3 = english ck3 = breton tech = western gfx = westerngfx province = 233 province = 4373 }
 link = { eu4 = cornish ck3 = cornish tech = western gfx = westerngfx }
 link = { eu4 = english ck3 = english tech = western gfx = westerngfx }
-link = { eu4 = anglo_saxon ck3 = cumbrian ck3 = anglo_saxon tech = western gfx = westerngfx }
+link = { eu4 = anglo_saxon ck3 = anglo_saxon tech = western gfx = westerngfx }
 link = { eu4 = frisian ck3 = dutch tech = western gfx = westerngfx region = weser_area region = frisia_area }
 link = { eu4 = flemish ck3 = dutch tech = western gfx = westerngfx region = wallonia_area region = flanders_area }
 link = { eu4 = frisian ck3 = frisian tech = western gfx = westerngfx }
@@ -133,7 +133,7 @@ link = { eu4 = coptic ck3 = coptic tech = eastern gfx = easterngfx }
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
 link = { eu4 = scottish ck3 = scottish tech = western gfx = westerngfx }
 link = { eu4 = highland_scottish ck3 = gaelic ck3 = pictish tech = western gfx = westerngfx }
-link = { eu4 = welsh ck3 = welsh tech = western gfx = westerngfx }
+link = { eu4 = welsh ck3 = cumbrian ck3 = welsh tech = western gfx = westerngfx }
 link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
 # Finno-Ugric
