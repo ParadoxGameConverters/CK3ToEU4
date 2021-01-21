@@ -381,17 +381,21 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const
 {
+	auto actualConversionDate = conversionDate;
+	if (theConfiguration.getStartDate() == Configuration::STARTDATE::EU)
+		actualConversionDate = date(1444, 11, 11);
+	
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create hre diplomacy file: output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt!");
 	if (emperorTag.empty())
-		output << conversionDate << " = { emperor = --- }\n";
+		output << actualConversionDate << " = { emperor = --- }\n";
 	else
-		output << conversionDate << " = { emperor = " << emperorTag << " }\n";
+		output << actualConversionDate << " = { emperor = " << emperorTag << " }\n";
 	output.close();
 
 	std::ofstream output2("output/" + theConfiguration.getOutputName() + "/history/diplomacy/celestial_empire.txt");
-	output2 << conversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
+	output2 << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
 	output2.close();
 }
 
