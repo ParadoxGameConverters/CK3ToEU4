@@ -429,8 +429,21 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	if (title->second->isThePope())
 		adjSet = true; // We'll use vanilla PAP locs.
 
+	// For custom adjectives we use those directly.
+	if (!adjSet && !title->second->getAdjective().empty())
+	{
+		// This is a custom adjective in UTF8 encoding, usually english only. We copy it ad verbatum.
+		mappers::LocBlock newblock;
+		newblock.english = title->second->getAdjective();
+		newblock.spanish = title->second->getAdjective();
+		newblock.french = title->second->getAdjective();
+		newblock.german = title->second->getAdjective();
+		localizations.insert(std::pair(tag + "_ADJ", newblock));
+		adjSet = true;
+	}
+
 	// See if we use dynasty name.
-	if (details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
+	if (!adjSet && details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
 		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
 		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
 	{
