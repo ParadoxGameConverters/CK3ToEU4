@@ -403,6 +403,9 @@
     <ClInclude Include="Source\CK3World\Titles\DynamicTemplate.h">
       <Filter>CK3World\Titles</Filter>
     </ClInclude>
+    <ClInclude Include="..\commonItems\CommonRegexes.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -691,6 +694,9 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Titles\DynamicTemplate.cpp">
       <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

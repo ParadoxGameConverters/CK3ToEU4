@@ -1,5 +1,6 @@
 #include "RulerPersonalitiesMapping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::RulerPersonalitiesMapping::RulerPersonalitiesMapping(std::istream& theStream)
 {

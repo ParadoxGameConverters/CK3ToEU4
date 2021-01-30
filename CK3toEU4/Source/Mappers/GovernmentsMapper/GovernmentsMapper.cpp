@@ -1,6 +1,7 @@
 #include "GovernmentsMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::GovernmentsMapper::GovernmentsMapper()
 {

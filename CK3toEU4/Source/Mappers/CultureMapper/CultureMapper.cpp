@@ -1,6 +1,7 @@
 #include "CultureMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {

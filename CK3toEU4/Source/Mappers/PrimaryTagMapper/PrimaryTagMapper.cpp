@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "OSCompatibilityLayer.h"
+#include "CommonRegexes.h"
 
 void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfiguration)
 {

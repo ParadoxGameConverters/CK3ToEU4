@@ -18,7 +18,7 @@ class Characters: commonItems::parser
 {
   public:
 	Characters() = default;
-	Characters(std::istream& theStream);
+	void loadCharacters(std::istream& theStream);
 
 	[[nodiscard]] const auto& getCharacters() const { return characters; }
 

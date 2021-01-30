@@ -1,5 +1,6 @@
 #include "ReligionGroupScraping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ReligionGroupScraping::ReligionGroupScraping(std::istream& theStream)
 {

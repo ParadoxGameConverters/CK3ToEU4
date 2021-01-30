@@ -2,6 +2,7 @@
 #include "ProvinceHolding.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::ProvinceHoldings::ProvinceHoldings(std::istream& theStream)
 {

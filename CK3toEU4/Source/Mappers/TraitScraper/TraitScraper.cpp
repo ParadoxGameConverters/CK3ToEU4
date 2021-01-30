@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "TraitScraping.h"
+#include "CommonRegexes.h"
 
 void mappers::TraitScraper::loadTraits(const std::string& fileName)
 {

@@ -1,6 +1,7 @@
 #include "PrimaryTagCultureGroup.h"
 #include "PrimaryTagCulture.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::PrimaryTagCultureGroup::PrimaryTagCultureGroup(std::istream& theStream)
 {

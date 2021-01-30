@@ -1,5 +1,6 @@
 #include "Agreement.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::Agreement::Agreement(std::istream& theStream, std::string theType): type(std::move(theType))
 {

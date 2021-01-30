@@ -1,6 +1,7 @@
 #include "CharacterDomain.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::CharacterDomain::CharacterDomain(std::istream& theStream)
 {

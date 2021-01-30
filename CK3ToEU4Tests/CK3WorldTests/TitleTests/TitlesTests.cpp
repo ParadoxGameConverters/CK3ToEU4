@@ -328,7 +328,8 @@ TEST(CK3World_TitlesTests, charactersCanBeLinked)
 	input2 << "1 = { first_name = Alice }\n";
 	input2 << "2 = { first_name = Bob }\n";
 	input2 << "3 = { first_name = Carol }\n";
-	const CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	titles.linkCharacters(characters);
 
 	const auto& t1 = titles.getTitles().find("c_county");
@@ -365,7 +366,8 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHolderBricksTitleWithoutDFLiege)
 	input2 << "1 = { first_name = Alice }\n";
 	input2 << "2 = { first_name = Bob }\n";
 	input2 << "3 = { first_name = Carol }\n";
-	const CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	titles.linkCharacters(characters); // This will brick the title 13.
 
@@ -385,7 +387,8 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHolderRelinksTitleWithDFLiege)
 	input2 << "1 = { first_name = Alice }\n";
 	input2 << "2 = { first_name = Bob }\n";
 	input2 << "3 = { first_name = Carol }\n";
-	const CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	titles.linkCharacters(characters); // This will relink title to Bob, as he is defacto liege.
 
@@ -405,7 +408,8 @@ TEST(CK3World_TitlesTests, charactersLinkMissingClaimantIgnoresClaimant)
 	input2 << "1 = { first_name = Alice }\n";
 	input2 << "2 = { first_name = Bob }\n";
 	input2 << "3 = { first_name = Carol }\n";
-	const CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	titles.linkCharacters(characters);
 
 	const auto& t1 = titles.getTitles().find("c_county");
@@ -421,7 +425,8 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)
 	std::stringstream input2;
 	input2 << "1 = { first_name = Alice }\n";
 	input2 << "3 = { first_name = Carol }\n";
-	const CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	titles.linkCharacters(characters);
 
 	const auto& t1 = titles.getTitles().find("c_county");

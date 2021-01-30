@@ -1,6 +1,7 @@
 #include "Culture.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::Culture::Culture(std::istream& theStream, long long theID): ID(theID)
 {
