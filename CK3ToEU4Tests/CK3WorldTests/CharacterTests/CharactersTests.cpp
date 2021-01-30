@@ -16,7 +16,8 @@
 TEST(CK3World_CharactersTests, CharactersDefaultToEmpty)
 {
 	std::stringstream input;
-	const CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 
 	ASSERT_TRUE(characters.getCharacters().empty());
 }
@@ -28,7 +29,8 @@ TEST(CK3World_CharactersTests, CharactersCanBeLoaded)
 	input << "13={first_name=\"bob\"}\n";
 	input << "15={first_name=\"alice\"}\n";
 
-	const CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	const auto& b1 = characters.getCharacters().find(11);
 	const auto& b2 = characters.getCharacters().find(13);
 	const auto& b3 = characters.getCharacters().find(15);
@@ -48,7 +50,8 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	std::stringstream input2;
 	input2 << "1={culture = 15}\n";
 	input2 << "2={culture = 13}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	characters.linkCultures(cultures);
 
 	const auto& c1 = characters.getCharacters().find(1);
@@ -67,7 +70,8 @@ TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)
 	std::stringstream input2;
 	input2 << "1={culture = 13}\n";
 	input2 << "2={culture = 15}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkCultures(cultures), std::runtime_error);
 }
@@ -82,7 +86,8 @@ TEST(CK3World_CharactersTests, faithsCanBeLinked)
 	std::stringstream input2;
 	input2 << "1={faith = 15}\n";
 	input2 << "2={faith = 13}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	characters.linkFaiths(faiths);
 
 	const auto& c1 = characters.getCharacters().find(1);
@@ -101,7 +106,8 @@ TEST(CK3World_CharactersTests, linkingMissingFaithThrowsException)
 	std::stringstream input2;
 	input2 << "1 = { faith = 15 }\n";
 	input2 << "2 = { faith = 13 }\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkFaiths(faiths), std::runtime_error);
 }
@@ -116,7 +122,8 @@ TEST(CK3World_CharactersTests, housesCanBeLinked)
 	std::stringstream input2;
 	input2 << "1={dynasty_house = 13}\n";
 	input2 << "2={dynasty_house = 15}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	characters.linkHouses(houses);
 
 	const auto& c1 = characters.getCharacters().find(1);
@@ -135,7 +142,8 @@ TEST(CK3World_CharactersTests, linkingMissingHouseThrowsException)
 	std::stringstream input2;
 	input2 << "1={dynasty_house = 13}\n";
 	input2 << "2={dynasty_house = 15}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkHouses(houses), std::runtime_error);
 }
@@ -149,7 +157,8 @@ TEST(CK3World_CharactersTests, houseLinkingFixesMissingFaithAndCulture)
 	std::stringstream input2;
 	input2 << "1={dynasty_house = 13}\n"; // <- No faith/culture
 	input2 << "2={dynasty_house = 13 faith=9 culture=8}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	houses.linkCharacters(characters); // loads the house head
 	characters.linkHouses(houses);
 
@@ -178,7 +187,8 @@ TEST(CK3World_CharactersTests, titlesCanBeLinked)
 	input2 << "\t\tdomain = { 4 2 }";
 	input2 << "\t}";
 	input2 << "}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 	characters.linkTitles(titles);
 
 	const auto& c1 = characters.getCharacters().find(100);
@@ -211,7 +221,8 @@ TEST(CK3World_CharactersTests, titlesLinkMissingClaimThrowsException)
 	input2 << "\t\tdomain = { 4 2 }";
 	input2 << "\t}";
 	input2 << "}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
 }
@@ -234,7 +245,8 @@ TEST(CK3World_CharactersTests, titlesLinkMissingCapitalThrowsException)
 	input2 << "\t\tdomain = { 4 2 }";
 	input2 << "\t}";
 	input2 << "}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
 }
@@ -257,7 +269,8 @@ TEST(CK3World_CharactersTests, titlesLinkMissingDomainThrowsException)
 	input2 << "\t\tdomain = { 4 2 6 }"; // missing 6
 	input2 << "\t}";
 	input2 << "}\n";
-	CK3::Characters characters(input2);
+	CK3::Characters characters;
+	characters.loadCharacters(input2);
 
 	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
 }
@@ -279,7 +292,8 @@ TEST(CK3World_CharactersTests, charactersCanBeLinked)
 	input << "9 = {\n";
 	input << "\tfirst_name = Carol\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	characters.linkCharacters();
 
 	const auto& c1 = characters.getCharacters().find(1);
@@ -302,7 +316,8 @@ TEST(CK3World_CharactersTests, charactersLinkMissingSpouseResetsSpouse)
 	input << "9 = {\n";
 	input << "\tfirst_name = Carol\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	characters.linkCharacters();
 
 	const auto& c1 = characters.getCharacters().find(1);
@@ -322,7 +337,8 @@ TEST(CK3World_CharactersTests, charactersLinkMissingEmployerThrowsException)
 	input << "\tcourt_data = { employer = 9 }\n";
 	input << "\tfamily_data = { primary_spouse = 1 }\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 
 	ASSERT_THROW(characters.linkCharacters(), std::runtime_error);
 }
@@ -341,7 +357,8 @@ TEST(CK3World_CharactersTests, traitsCanBeLinked)
 	input << "3 = {\n";
 	input << "\tfirst_name = Carol\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	characters.linkCharacters();
 
 	std::stringstream input2;
@@ -375,7 +392,8 @@ TEST(CK3World_CharactersTests, traitsCanBePoked)
 	input << "\tfirst_name = Alice\n";
 	input << "\ttraits = { 1 2 3 }\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	characters.linkCharacters();
 
 	std::stringstream input2;
@@ -401,7 +419,8 @@ TEST(CK3World_CharactersTests, traitsLinkMissingTraitsAreIgnored)
 	input << "\tfirst_name = Alice\n";
 	input << "\ttraits = { 1 2 3 4 9 }\n";
 	input << "}\n";
-	CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 	characters.linkCharacters();
 
 	std::stringstream input2;

@@ -51,7 +51,8 @@ TEST(CK3World_HousesTests, charactersCanBeLinkedIgnoringMissing)
 	input << "1={}\n";
 	input << "2={first_name=\"bob\"}\n";
 	input << "3={first_name=\"alice\"}\n";
-	const CK3::Characters characters(input);
+	CK3::Characters characters;
+	characters.loadCharacters(input);
 
 	std::stringstream input2;
 	input2 << "13={head_of_house = 2}\n";

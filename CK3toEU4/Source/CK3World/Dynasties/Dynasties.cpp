@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
+#include "CommonRegexes.h"
 
 CK3::Dynasties::Dynasties(std::istream& theStream)
 {

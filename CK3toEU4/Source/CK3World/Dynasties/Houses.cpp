@@ -4,6 +4,7 @@
 #include "House.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::Houses::Houses(std::istream& theStream)
 {

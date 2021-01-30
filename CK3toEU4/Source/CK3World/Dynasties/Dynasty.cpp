@@ -1,6 +1,7 @@
 #include "Dynasty.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::Dynasty::Dynasty(std::istream& theStream, long long theGameID): gameID(theGameID)
 {

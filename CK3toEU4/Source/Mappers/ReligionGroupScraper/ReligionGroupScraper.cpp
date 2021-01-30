@@ -3,6 +3,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionGroupScraping.h"
+#include "CommonRegexes.h"
 
 mappers::ReligionGroupScraper::ReligionGroupScraper()
 {

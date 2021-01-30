@@ -1,5 +1,6 @@
 #include "DevWeightsMapper.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::DevWeightsMapper::DevWeightsMapper()
 {

@@ -1,6 +1,7 @@
 #include "Character.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::Character::Character(std::istream& theStream, long long characterID): charID(characterID)
 {

@@ -2,6 +2,7 @@
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 EU4::ProvinceDetails::ProvinceDetails(const std::string& filePath)
 {

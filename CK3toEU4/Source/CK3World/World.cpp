@@ -11,6 +11,7 @@
 #include <filesystem>
 #include <fstream>
 namespace fs = std::filesystem;
+#include "CommonRegexes.h"
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 {
@@ -53,10 +54,15 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		provinceHoldings = ProvinceHoldings(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << provinceHoldings.getProvinceHoldings().size() << " provinces.";
 	});
-	registerRegex("living|dead_unpruneable", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("living", [this](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading potentially alive human beings.";
-		characters = Characters(theStream);
+		characters.loadCharacters(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human entities.";
+	});
+	registerKeyword("dead_unprunable", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading dead people.";
+		characters.loadCharacters(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << characters.getCharacters().size() << " human remains.";
 	});
 	registerKeyword("dynasties", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading dynasties.";

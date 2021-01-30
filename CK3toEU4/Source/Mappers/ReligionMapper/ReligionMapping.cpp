@@ -1,5 +1,6 @@
 #include "ReligionMapping.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ReligionMapping::ReligionMapping(std::istream& theStream)
 {

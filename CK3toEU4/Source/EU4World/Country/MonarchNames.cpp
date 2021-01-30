@@ -2,6 +2,7 @@
 #include "ParserHelpers.h"
 #include "Log.h"
 #include "StringUtils.h"
+#include "CommonRegexes.h"
 
 EU4::MonarchNames::MonarchNames(std::istream& theStream)
 {

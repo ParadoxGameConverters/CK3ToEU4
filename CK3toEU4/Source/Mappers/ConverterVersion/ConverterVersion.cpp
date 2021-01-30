@@ -1,5 +1,6 @@
 #include "ConverterVersion.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::ConverterVersion::ConverterVersion()
 {

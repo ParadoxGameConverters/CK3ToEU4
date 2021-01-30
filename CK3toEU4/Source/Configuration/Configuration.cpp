@@ -5,6 +5,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 auto laFabricaDeColor = commonItems::Color::Factory();
+#include "CommonRegexes.h"
 
 Configuration::Configuration()
 {

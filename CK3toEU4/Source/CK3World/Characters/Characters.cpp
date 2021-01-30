@@ -10,8 +10,9 @@
 #include "CharacterDomain.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
-CK3::Characters::Characters(std::istream& theStream)
+void CK3::Characters::loadCharacters(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);

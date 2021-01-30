@@ -367,7 +367,8 @@ TEST(CK3World_TitleTests, dfVassalsCanBeRelinked)
 	charInput << "\t\trealm_capital = 1\n";	 // this is his capital, a county (in game a barony but we're abstracting).
 	charInput << "\t}\n";
 	charInput << "}\n";
-	CK3::Characters characters(charInput);
+	CK3::Characters characters;
+	characters.loadCharacters(charInput);
 
 	std::stringstream titleInput;
 	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";	// this one is his capital.
@@ -499,8 +500,9 @@ TEST(CK3World_TitleTests, titleNamesFromHoldersDomainCanBeGathered)
 	charInput << "\t\trealm_capital = 1\n";
 	charInput << "\t}\n";
 	charInput << "}\n";
-	CK3::Characters characters(charInput);
-
+	CK3::Characters characters;
+	characters.loadCharacters(charInput);
+	
 	std::stringstream titleInput;
 	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";
 	titleInput << "2 = { key = c_county2 holder = 11 de_facto_liege = 3 de_jure_liege = 4  }\n";

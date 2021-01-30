@@ -7,6 +7,7 @@
 namespace fs = std::filesystem;
 #include "../../CK3World/Titles/LandedTitles.h"
 #include "../../CK3World/Titles/Title.h"
+#include "CommonRegexes.h"
 
 mappers::ProvinceMapper::ProvinceMapper()
 {

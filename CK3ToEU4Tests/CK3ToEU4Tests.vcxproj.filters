@@ -644,6 +644,9 @@
     <ClCompile Include="CK3WorldTests\TitleTests\DynamicTemplateTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

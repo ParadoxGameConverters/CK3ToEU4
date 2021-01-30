@@ -2,6 +2,7 @@
 #include "../RegionMapper/RegionMapper.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {

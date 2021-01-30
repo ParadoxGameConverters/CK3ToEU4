@@ -1,6 +1,7 @@
 #include "Faith.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 CK3::Faith::Faith(std::istream& theStream, long long theID): ID(theID)
 {

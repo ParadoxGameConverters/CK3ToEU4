@@ -1,5 +1,6 @@
 #include "IAmHreMapper.h"
 #include "ParserHelpers.h"
+#include "CommonRegexes.h"
 
 mappers::IAmHreMapper::IAmHreMapper()
 {
