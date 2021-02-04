@@ -22,6 +22,8 @@ EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std:
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
 	const auto startPos = filePath.find("/countries");
+	if (startPos == std::string::npos)
+		throw std::runtime_error("Cannot create country from: " + filePath);
 	commonCountryFile = filePath.substr(startPos + 1, filePath.length() - startPos);
 	details = CountryDetails(filePath);
 
