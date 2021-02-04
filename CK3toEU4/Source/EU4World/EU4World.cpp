@@ -223,14 +223,28 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 	for (const auto& fileName: fileNames)
 	{
 		auto tag = fileName.substr(0, 3);
-		countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);
+		if (countries.contains(tag))
+		{
+			countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);			
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Trying to load " << tag << " from " << fileName << " which isn't defined in any 00_countries.txt!";
+		}
 	}
 	// Now our special tags.
 	fileNames = commonItems::GetAllFilesInFolder("blankMod/output/history/countries/");
 	for (const auto& fileName: fileNames)
 	{
 		auto tag = fileName.substr(0, 3);
-		countries[tag]->loadHistory("blankMod/output/history/countries/" + fileName);
+		if (countries.contains(tag))
+		{
+			countries[tag]->loadHistory("blankMod/output/history/countries/" + fileName);
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Trying to load " << tag << " from " << fileName << " which isn't defined in blankmod 00_countries.txt!";
+		}
 	}
 	if (invasion)
 	{
@@ -238,9 +252,16 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		for (const auto& fileName: fileNames)
 		{
 			auto tag = fileName.substr(0, 3);
-			countries[tag]->setSunsetCountry(true);
-			countries[tag]->clearHistoryLessons();
-			countries[tag]->loadHistory("configurables/sunset/history/countries/" + fileName);
+			if (countries.contains(tag))
+			{
+				countries[tag]->setSunsetCountry(true);
+				countries[tag]->clearHistoryLessons();
+				countries[tag]->loadHistory("configurables/sunset/history/countries/" + fileName);
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "Trying to load sunset " << tag << " from " << fileName << " which isn't defined in sunset's 00_countries.txt!";
+			}
 		}
 	}
 	LOG(LogLevel::Info) << ">> Loaded " << fileNames.size() << " history files.";
@@ -259,8 +280,18 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 
 		// All file paths are in quotes. The ones outside are commented, so we can use those as markers.
 		auto quoteLoc = line.find_first_of('\"');
+		if (quoteLoc == std::string::npos)
+		{
+			Log(LogLevel::Warning) << "Iffy country line: " << line;
+			continue;
+		}
 		auto countryLine = line.substr(quoteLoc + 1, line.length());
 		quoteLoc = countryLine.find_last_of('\"');
+		if (quoteLoc == std::string::npos)
+		{
+			Log(LogLevel::Warning) << "Iffy country line: " << line;
+			continue;
+		}
 		countryLine = countryLine.substr(0, quoteLoc);
 		const auto filePath = sourcePath + "/common/" + countryLine;
 
