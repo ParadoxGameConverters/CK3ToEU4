@@ -72,11 +72,11 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	regionMapper->linkProvinces(provinces);
 	Log(LogLevel::Progress) << "58 %";
 
-	// Next we import ck2 provinces and translate them ontop a significant part of all imported provinces.
+	// Next we import ck provinces and translate them ontop a significant part of all imported provinces.
 	importCK3Provinces(sourceWorld);
 	Log(LogLevel::Progress) << "59 %";
 
-	// With Ck2 provinces linked to those eu4 provinces they affect, we can adjust eu4 province dev values.
+	// With Ck provinces linked to those eu4 provinces they affect, we can adjust eu4 province dev values.
 	if (theConfiguration.getDevelopment() == Configuration::DEVELOPMENT::IMPORT)
 		alterProvinceDevelopment();
 	Log(LogLevel::Progress) << "60 %";
@@ -502,8 +502,26 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		theShares[holderID] += ck3Title.second->getBuildingWeight(devWeightsMapper);
 
 		// While at it, is this province especially important? Enough so we'd sidestep regular rules?
-		// Check for capital provinces
+		// Check for capital provinces but first make sure we're sane.
+
+		if (!ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain())
+		{
+			Log(LogLevel::Warning) << ck3Title.first << "'s holder has no domain, breaking province init!";
+			return *ck3Titles.begin();
+		}
+		if (!ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain()->getRealmCapital().second)
+		{
+			Log(LogLevel::Warning) << ck3Title.first << "'s holder has no realm capital. Likely corruption, breaking province init!";
+			return *ck3Titles.begin();
+		}
+
 		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain()->getRealmCapital();
+		if (!capitalBarony.second->getDFLiege()->second)
+		{
+			Log(LogLevel::Warning) << ck3Title.first << "'s capital barony is unlinked! What?";
+			return *ck3Titles.begin();			
+		}
+		
 		if (capitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
 		{
 			// This is the someone's capital, don't assign it away if unnecessary.

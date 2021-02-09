@@ -79,6 +79,13 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	 const mappers::ProvinceMapper& provinceMapper,
 	 const mappers::CultureMapper& cultureMapper)
 {
+	// Are we sane?
+	if (!details.holder->getCharacterDomain())
+	{
+		Log(LogLevel::Warning) << tag << "'s holder has no domain. Breaking history init.";
+		return;
+	}
+	
 	// --------------- History section
 	details.government.clear();
 	details.reforms.clear();
@@ -118,20 +125,30 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		details.religion.clear();
 	}
 	// Change capitals for anyone not aztec.
+	auto capitalMatchFound = false;
 	if (tag != "AZT")
 	{
-		const auto& capitalMatch =
-			 provinceMapper.getEU4ProvinceNumbers(details.holder->getCharacterDomain()->getRealmCapital().second->getDJLiege()->second->getName());
-		if (!capitalMatch.empty())
+		if (details.holder->getCharacterDomain()->getRealmCapital().second)
 		{
-			details.capital = *capitalMatch.begin();
-		}
-		else
-		{
-			Log(LogLevel::Warning) << "No match for capital: " << details.holder->getCharacterDomain()->getRealmCapital().second->getDJLiege()->second->getName();
-			details.capital = 0;
+			const auto& realmCapital = details.holder->getCharacterDomain()->getRealmCapital().second;
+			if (realmCapital->getDFLiege() && realmCapital->getDFLiege()->second)
+			{
+				const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(realmCapital->getDJLiege()->second->getName());
+				if (!capitalMatch.empty())
+				{
+					details.capital = *capitalMatch.begin();
+					capitalMatchFound = true;
+				}
+			}
 		}
 	}
+
+	if (!capitalMatchFound && tag != "AZT")
+	{
+		Log(LogLevel::Warning) << "No match for capital or missing capital for: " << tag;
+		details.capital = 0;
+	}
+
 	// do we have a culture? Pope is special as always.
 	std::string baseCulture;
 	if (title->second->isThePope())
@@ -535,6 +552,20 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
+	// do we HAVE a ruler? Broken saves come to mind.
+	if (!details.holder)
+	{
+		Log(LogLevel::Warning) << tag << " has no holder. Congratulations.";
+		return;
+	}
+
+	// Does the supposed ruler have a domain at all? Hello broken saves.
+	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
+	{
+		Log(LogLevel::Warning) << tag << "' holder has an empty domain. We can't work with this fellow, skipping ruler init.";
+		return;
+	}
+	
 	// Are we the ruler's primary title? (if he has any)
 	// Potential PU's don't get monarchs. (and those apply for monarchies only)
 	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
@@ -815,6 +846,16 @@ bool EU4::Country::verifyCapital(const mappers::ProvinceMapper& provinceMapper)
 	if (details.capital && provinces.count(details.capital))
 		return false;
 
+	// Embrace the brokenness.
+	if (!details.holder->getCharacterDomain() || !details.holder->getCharacterDomain()->getRealmCapital().second ||
+		 !details.holder->getCharacterDomain()->getRealmCapital().second->getDFLiege() ||
+		 !details.holder->getCharacterDomain()->getRealmCapital().second->getDFLiege()->second)
+	{
+		Log(LogLevel::Warning) << tag << " has likely a broken capital due to save corruption. Remapping.";
+		details.capital = provinces.begin()->second->getProvinceID();
+		return true;
+	}
+	
 	const auto& holderCapitalCounty = details.holder->getCharacterDomain()->getRealmCapital().second->getDFLiege()->second;
 	const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(holderCapitalCounty->getName());
 	if (!capitalMatch.empty())
@@ -984,6 +1025,11 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// GENERIC REFORMS - TODO(#41): Re-enable when we can map those laws to actual reforms. This code is valid for CK3.
 
 	std::set<std::string> laws = title->second->getLaws();
+
+	// Sanity check before proceeding.
+	if (!details.holder->getCharacterDomain())
+		return; // break and forget about reforms for this one.
+	
 	std::string governmentType = "despotic";
 	if (details.holder->getCharacterDomain()->getLaws().count("tribal_authority_3") ||
 		 details.holder->getCharacterDomain()->getLaws().count("crown_authority_3"))
@@ -1301,6 +1347,9 @@ void EU4::Country::initializeAdvisers(const mappers::LocalizationMapper& localiz
 	// initialized.
 	if (!title || !details.holder)
 		return; // Vanilla and the dead do not get these.
+	// Sanity check
+	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
+		return; // hello broken.	
 	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first)
 		return; // PU's don't get advisors on secondary countries.
 
