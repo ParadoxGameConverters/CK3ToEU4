@@ -336,10 +336,11 @@ tenet_ritual_hospitality = {
 ##Pagans
 tenet_adorcism = {
 	country = {
-		leader_shock = 1
+		leader_land_shock = 1
+		leader_naval_shock = 1
 	}
 	country_as_secondary = {
-		leader_shock = 1
+		leader_land_shock = 1
 	}
 }
 
