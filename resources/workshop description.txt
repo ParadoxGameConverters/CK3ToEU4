@@ -31,10 +31,9 @@ Very generally, it takes your Crusader Kings 3 [b]saved game[/b] and converts it
 You then have to [b]enable that mod[/b] when starting EU4 launcher:
 
 [olist]
-[*] Start the EU4 Launcher. Click [i]Mods[/i].
-[*] Click [i]Manage Mods[/i].
-[*] Click [i]Initial playset[/i] and select [i]Add new playset[/i] (or select the playset you're currently using).
-[*] For a fresh playset, directly select the converted mod. Otherwise, on an existing playset in the bottom right corner click [i]Add more mods[/i] and add it.
+[*] Create a new playset in the launcher.
+[*] Add the conversion mod into the new playset, along with other mods you want to use (such as graphical ones)
+[*] On the Home page of the launcher, make sure the new playset is enabled and selected before pressing Play.
 [/olist]
 
 [h2]Troubleshooting and Suggestions[/h2]
