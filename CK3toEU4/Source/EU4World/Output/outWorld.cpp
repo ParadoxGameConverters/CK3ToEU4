@@ -153,13 +153,18 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 
 	for (const auto& religion: generatedReligions)
 	{
+		//Main Religion File
 		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
-		std::ofstream religionRebelFile(
-			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		//Religious Rebels
+		std::ofstream religionRebelFile("output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
+		//Religion Sounds
+		std::ofstream religionSoundFile("output/" + theConfiguration.getOutputName() + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
+		religion.outputSounds(religionSoundFile);
+		religionSoundFile.close();
 	}
 }
 
