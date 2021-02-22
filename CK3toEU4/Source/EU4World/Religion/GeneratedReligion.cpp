@@ -171,38 +171,38 @@ void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
 	output << "sound = {";
 	output << "\n\t" << "name = religion_" << name;
 	output << "\n\t" << "file = ";
-	if (religionGroup.find("christian") != std::string::npos || religionGroup.find("gnostic") != std::string::npos)
+	if (religionGroup == "christian" || religionGroup == "gnostic")
 	{
 		output << "\"tab_religion_christian.wav\"";
 		output << "\n" << "}";		
 		output << "\n" << "sound = {";
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = ";
-		if (unique.find("fervor") != std::string::npos)
+		if (unique == "fervor")
 			output << "\"start_conversion_christian_reformed.wav\"";
-		else if (unique.find("has_patriarchs") != std::string::npos)
+		else if (unique == "has_patriarchs")
 			output << "\"start_conversion_christian_orthodox.wav\"";
-		else if (parent.find("catholic") == std::string::npos)
+		else if (parent != "catholic")
 			output << "\"start_conversion_christian_protestant.wav\"";
 		else
 			output << "\"start_conversion_christian_catholic.wav\"";
 	}
-	else if(religionGroup.find("muslim") != std::string::npos || religionGroup.find("yazidism") != std::string::npos)
+	else if(religionGroup == "muslim" || religionGroup == "yazidism")
 	{
 		output << "\"tab_religion_muslim.wav\"";
 		output << "\n" << "}";		
 		output << "\n" << "sound = {";
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = ";
-		if (religionGroup.find("yazidism") != std::string::npos)
+		if (religionGroup == "yazidism")
 			output << "\"start_conversion_zoroastrian.wav\"";
-		else if (parent.find("ashari") != std::string::npos || parent.find("muwalladi") != std::string::npos || parent.find("maturidi") != std::string::npos ||
-			parent.find("masmudi") != std::string::npos || parent.find("mutazila") != std::string::npos || parent.find("quranist") != std::string::npos)
+		else if (parent == "ashari" || parent == "muwalladi" || parent == "maturidi" ||
+			parent == "masmudi" || parent == "mutazila" || parent == "quranist")
 			output << "\"start_conversion_muslim_sunni.wav\"";
 		else
 			output << "\"start_conversion_muslim_shiite.wav\"";
 	}
-	else if(religionGroup.find("zoroastrian_group") != std::string::npos)
+	else if(religionGroup == "zoroastrian_group")
 	{
 		output << "\"start_conversion_zoroastrian.wav\"";
 		output << "\n" << "}";		
@@ -210,7 +210,7 @@ void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = \"start_conversion_zoroastrian.wav\"";
 	}
-	else if(religionGroup.find("jewish_group") != std::string::npos)
+	else if(religionGroup == "jewish_group")
 	{
 		output << "\"start_conversion_jewish.wav\"";
 		output << "\n" << "}";		
@@ -218,7 +218,7 @@ void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = \"start_conversion_jewish.wav\"";
 	}
-	else if(religionGroup.find("dharmic") != std::string::npos)
+	else if(religionGroup == "dharmic")
 	{
 		output << "\"tab_religion_india.wav\"";
 		output << "\n" << "}";		
@@ -226,22 +226,21 @@ void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = \"start_conversion_eastern_hinduism.wav\"";
 	}
-	else if(religionGroup.find("eastern") != std::string::npos)
+	else if(religionGroup == "eastern")
 	{
 		output << "\"tab_religion_eastern.wav\"";
 		output << "\n" << "}";		
 		output << "\n" << "sound = {";
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = ";
-		if (parent.find("theravada") != std::string::npos || parent.find("mahayana") != std::string::npos || parent.find("vajrayana") != std::string::npos ||
-			parent.find("ari") != std::string::npos || parent.find("lamaism"))
+		if (parent == "theravada" || parent == "mahayana" || parent == "vajrayana" || parent == "ari" || parent == "lamaism")
 			output << "\"start_conversion_eastern_buddhism.wav\"";
 		else
 			output << "\"start_conversion_eastern_confucianism.wav\"";
 	}
 	else //Should only be Pagans, but just in case I'm leaving this open
 	{
-		if(parent.find("norse_pagan") != std::string::npos)
+		if(parent == "norse_pagan")
 			output << "\"start_conversion_norse.wav\"";
 		else
 			output << "\"tab_religion_pagan.wav\"";
@@ -249,12 +248,12 @@ void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
 		output << "\n" << "sound = {";
 		output << "\n\t" << "name = start_convert_" << name;
 		output << "\n\t" << "file = ";
-		if (parent.find("norse_pagan") != std::string::npos || parent.find("baltic_pagan") != std::string::npos)
+		if (parent == "norse_pagan" || parent == "baltic_pagan")
 			output << "\"start_conversion_norse.wav\"";
-		else if(parent.find("waaqism_pagan") != std::string::npos || parent.find("west_african_bori_pagan") != std::string::npos || parent.find("magyar_pagan") != std::string::npos ||
-				parent.find("west_african_bidu_pagan") != std::string::npos || parent.find("siberian_pagan") != std::string::npos || parent.find("tengri_pagan") != std::string::npos ||
-				parent.find("slavic_pagan") != std::string::npos || parent.find("west_african_roog_pagan") != std::string::npos || parent.find("finnish_pagan") != std::string::npos ||
-				parent.find("west_african_pagan") != std::string::npos || parent.find("west_african_orisha_pagan") != std::string::npos || parent.find("akom_pagan") != std::string::npos)
+		else if(parent == "waaqism_pagan" || parent == "west_african_bori_pagan" || parent == "magyar_pagan" ||
+				parent == "west_african_bidu_pagan" || parent == "siberian_pagan" || parent == "tengri_pagan" ||
+				parent == "slavic_pagan" || parent == "west_african_roog_pagan" || parent == "finnish_pagan" ||
+				parent == "west_african_pagan" || parent == "west_african_orisha_pagan" || parent == "akom_pagan")
 			output << "\"start_conversion_pagan_shamanism.wav\"";
 		else
 			output << "\"start_conversion_pagan_animism.wav\"";
