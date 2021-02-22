@@ -190,7 +190,7 @@
 		name = start_convert_quranist
 		file = "start_conversion_muslim_sunni.wav"
 	}
-	#Quranist
+	#Alawite
 	sound = {
 		name = religion_alawite
 		file = "tab_religion_muslim.wav"

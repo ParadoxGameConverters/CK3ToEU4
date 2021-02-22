@@ -165,3 +165,98 @@ void EU4::GeneratedReligion::outputRebels(std::ostream& output) const
 	output << "\n\t" << "}";
 	output << "\n" << "}";
 }
+
+void EU4::GeneratedReligion::outputSounds(std::ostream& output) const
+{
+	output << "sound = {";
+	output << "\n\t" << "name = religion_" << name;
+	output << "\n\t" << "file = ";
+	if (religionGroup == "christian" || religionGroup == "gnostic")
+	{
+		output << "\"tab_religion_christian.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = ";
+		if (unique == "fervor")
+			output << "\"start_conversion_christian_reformed.wav\"";
+		else if (unique == "has_patriarchs")
+			output << "\"start_conversion_christian_orthodox.wav\"";
+		else if (parent != "catholic")
+			output << "\"start_conversion_christian_protestant.wav\"";
+		else
+			output << "\"start_conversion_christian_catholic.wav\"";
+	}
+	else if(religionGroup == "muslim" || religionGroup == "yazidism")
+	{
+		output << "\"tab_religion_muslim.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = ";
+		if (religionGroup == "yazidism")
+			output << "\"start_conversion_zoroastrian.wav\"";
+		else if (parent == "ashari" || parent == "muwalladi" || parent == "maturidi" ||
+			parent == "masmudi" || parent == "mutazila" || parent == "quranist")
+			output << "\"start_conversion_muslim_sunni.wav\"";
+		else
+			output << "\"start_conversion_muslim_shiite.wav\"";
+	}
+	else if(religionGroup == "zoroastrian_group")
+	{
+		output << "\"start_conversion_zoroastrian.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = \"start_conversion_zoroastrian.wav\"";
+	}
+	else if(religionGroup == "jewish_group")
+	{
+		output << "\"start_conversion_jewish.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = \"start_conversion_jewish.wav\"";
+	}
+	else if(religionGroup == "dharmic")
+	{
+		output << "\"tab_religion_india.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = \"start_conversion_eastern_hinduism.wav\"";
+	}
+	else if(religionGroup == "eastern")
+	{
+		output << "\"tab_religion_eastern.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = ";
+		if (parent == "theravada" || parent == "mahayana" || parent == "vajrayana" || parent == "ari" || parent == "lamaism")
+			output << "\"start_conversion_eastern_buddhism.wav\"";
+		else
+			output << "\"start_conversion_eastern_confucianism.wav\"";
+	}
+	else //Should only be Pagans, but just in case I'm leaving this open
+	{
+		if(parent == "norse_pagan")
+			output << "\"start_conversion_norse.wav\"";
+		else
+			output << "\"tab_religion_pagan.wav\"";
+		output << "\n" << "}";		
+		output << "\n" << "sound = {";
+		output << "\n\t" << "name = start_convert_" << name;
+		output << "\n\t" << "file = ";
+		if (parent == "norse_pagan" || parent == "baltic_pagan")
+			output << "\"start_conversion_norse.wav\"";
+		else if(parent == "waaqism_pagan" || parent == "west_african_bori_pagan" || parent == "magyar_pagan" ||
+				parent == "west_african_bidu_pagan" || parent == "siberian_pagan" || parent == "tengri_pagan" ||
+				parent == "slavic_pagan" || parent == "west_african_roog_pagan" || parent == "finnish_pagan" ||
+				parent == "west_african_pagan" || parent == "west_african_orisha_pagan" || parent == "akom_pagan")
+			output << "\"start_conversion_pagan_shamanism.wav\"";
+		else
+			output << "\"start_conversion_pagan_animism.wav\"";
+	}
+	output << "\n" << "}";
+}
