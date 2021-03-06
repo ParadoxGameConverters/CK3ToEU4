@@ -27,6 +27,10 @@ british = {
 	}
 }
 gaelic = {
+	pictish = { 
+		primary = HSC 
+		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest } 
+	}
 }
 latin = {
 	italian = {

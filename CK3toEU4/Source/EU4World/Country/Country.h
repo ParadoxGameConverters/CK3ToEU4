@@ -50,6 +50,7 @@ class Country
 	void clearExcommunicated() { details.excommunicated = false; }
 	void setPrimaryCulture(const std::string& culture);
 	void setMajorityReligion(const std::string& religion);
+	void setAcceptedCultures();
 	void setReligion(const std::string& religion);
 	void setTechGroup(const std::string& tech) { details.technologyGroup = tech; }
 	void setGFX(const std::string& gfx) { details.graphicalCulture = gfx; }

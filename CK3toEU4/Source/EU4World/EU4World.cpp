@@ -663,15 +663,36 @@ void EU4::World::linkProvincesToCountries()
 	// Super Mongolia?
 	if (countries.count("MGE") && !countries.find("MGE")->second->getProvinces().empty())
 	{
-		// Move all Mongolia provinces under Mongol Empire
-		for (const auto& province: provinces)
+		bool isSource = false;
+		for (auto province: countries.find("KHA")->second->getProvinces())
 		{
-			if (province.second->getOwner() == "KHA")
+			if (province.second->getSourceProvince())
 			{
-				province.second->setOwner("MGE");
-				province.second->setController("MGE");
-				province.second->addCore("MGE");
+				isSource = true;
+				break;
 			}
+		}
+		if (!isSource)
+		{
+			// Move all Mongolia provinces under Mongol Empire, only happens if Mongolia is seperate from the Mongol Empire
+			for (const auto& province: provinces)
+			{
+				if (province.second->getOwner() == "KHA")
+				{
+					province.second->setOwner("MGE");
+					province.second->setController("MGE");
+					province.second->addCore("MGE");
+				}
+			}
+
+			// Add cores for provinces in China/Manchuria
+			provinces.find(4674)->second->addCore("MGE");
+			provinces.find(722)->second->addCore("MGE");
+			provinces.find(4675)->second->addCore("MGE");
+			provinces.find(4672)->second->addCore("MGE");
+			provinces.find(702)->second->addCore("MGE");
+			provinces.find(701)->second->addCore("MGE");
+			provinces.find(4223)->second->addCore("MGE");
 		}
 	}
 }
@@ -1322,7 +1343,7 @@ void EU4::World::fixDuplicateNames()
 		if (countryLocs.find(country.first)->second.english.empty())
 			continue;
 		nameMap[countryLocs.find(country.first)->second.english].emplace_back(country.second);
-	}
+	}	
 
 	// Reorder countries in list by development (highest -> lowest)
 	for (auto& countryBatch: nameMap)
@@ -1343,7 +1364,7 @@ void EU4::World::fixDuplicateNames()
 		auto currentBlock = countryBatch.second[0]->getLocalizations().find(countryBatch.second[0]->getTag())->second;
 
 		// Is this a dynastyname? These will follow a bit different rules.
-		auto dynastyName = countryBatch.second[0]->getHasDynastyName();
+		auto dynastyName = countryBatch.second[0]->getHasDynastyName();			
 
 		// Clear out any "Greater" from name.
 		auto greaterdropped = false;
@@ -1573,7 +1594,7 @@ void EU4::World::africanQuestion()
 				provinces.find(2474)->second->sterilize();
 			if (provinces.find(2475) != provinces.end() && provinces.find(2475)->second)
 				provinces.find(2475)->second->sterilize();
-			Log(LogLevel::Info) << "<> Tuat Djado-Tajhari Sterilized";
+			Log(LogLevel::Info) << "<> Djado-Tajhari Sterilized";
 		}
 	}
 	// Central Sahara (Only Waddai and Al-Junaynah)

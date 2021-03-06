@@ -46,7 +46,7 @@ link = { eu4 = old_lombard ck3 = lombard tech = western gfx = westerngfx }
 # West Germanic
 
 link = { eu4 = frankish ck3 = frankish tech = western gfx = westerngfx }
-link = { eu4 = cornish ck3 = english ck3 = breton tech = western gfx = westerngfx province = 233 province = 4373 }
+link = { eu4 = cornish ck3 = english ck3 = breton ck3 = anglo_saxon ck3 = welsh ck3 = cumbrian tech = western gfx = westerngfx province = 233 province = 4373 }
 link = { eu4 = cornish ck3 = cornish tech = western gfx = westerngfx }
 link = { eu4 = english ck3 = english tech = western gfx = westerngfx }
 link = { eu4 = anglo_saxon ck3 = anglo_saxon tech = western gfx = westerngfx }
@@ -129,10 +129,11 @@ link = { eu4 = goths ck3 = crimean_gothic tech = eastern gfx = easterngfx }
 link = { eu4 = coptic ck3 = coptic tech = eastern gfx = easterngfx }
 
 # Celtic
-
+link = { eu4 = highland_scottish ck3 = gaelic tech = western gfx = westerngfx }
+link = { eu4 = highland_scottish ck3 = irish tech = western gfx = westerngfx region = kingdom_of_the_isles_area region = highlands_area region = lowlands_area region = scottish_marches_area }
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
 link = { eu4 = scottish ck3 = scottish tech = western gfx = westerngfx }
-link = { eu4 = highland_scottish ck3 = gaelic ck3 = pictish tech = western gfx = westerngfx }
+link = { eu4 = pictish ck3 = pictish tech = western gfx = westerngfx }
 link = { eu4 = welsh ck3 = cumbrian ck3 = welsh tech = western gfx = westerngfx }
 link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
