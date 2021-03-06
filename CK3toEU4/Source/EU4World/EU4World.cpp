@@ -661,7 +661,7 @@ void EU4::World::linkProvincesToCountries()
 	}
 
 	// Super Mongolia?
-	if (countries.count("MGE") && !countries.find("MGE")->second->getProvinces().empty())
+	if (countries.count("MGE") && !countries.find("MGE")->second->getProvinces().empty() && countries.count("KHA"))
 	{
 		bool isSource = false;
 		for (auto province: countries.find("KHA")->second->getProvinces())
