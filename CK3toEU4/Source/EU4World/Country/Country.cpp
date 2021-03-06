@@ -885,6 +885,25 @@ void EU4::Country::setPrimaryCulture(const std::string& culture)
 		details.heir.culture = culture;
 }
 
+//All cultures that make up more than 33% of a countries dev will start the game as accepted
+void EU4::Country::setAcceptedCultures()
+{
+	std::map<std::string, int> cultureDevelopment; // culture, development
+	int substantialDev = 0;
+	for (const auto& province: provinces)
+	{
+		substantialDev += province.second->getDev();
+		if (!province.second->getCulture().empty())
+			cultureDevelopment[province.second->getCulture()] += province.second->getDev();
+	}
+	substantialDev /= 3;
+	for (const auto& culture: cultureDevelopment)
+	{
+		if (culture.second >= substantialDev)
+			details.acceptedCultures.insert(culture.first);
+	}
+}
+
 void EU4::Country::setMajorityReligion(const std::string& religion)
 {
 	details.majorityReligion = religion;
@@ -922,6 +941,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		}
 		setMajorityReligion(primeReligion);
 	}
+
+	// Sets Accepted Cultures 
+	setAcceptedCultures();
 
 	// Checking to see if we have a center of trade with level 2 or higher
 	bool hasTradeCenterLevelTwo = false;
@@ -995,7 +1017,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 
 	// CULTURES
 	// Russian Cultures (Not all East Slavic)
-	std::set<std::string> russianCultures = {"russian", "ilmenian", "severian", "volhynian", "russian_culture", "novgorodian", "ryazanian"};
+	std::set<std::string> russianCultures = {"russian", "ilmenian", "severian", "volhynian", "russian_culture", "novgorodian", "ryazanian", "byelorussian", "ruthenian"};
 	// Dravidian Culture Group
 	std::set<std::string> dravidianCultures = {"tamil", "telegu", "kannada", "malayalam"};
 	// Western Aryan Culture Group
@@ -1209,8 +1231,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Principality
 	else if (details.government == "monarchy" && details.governmentRank != 3 &&
-				(orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") &&
-				russianCultures.count(details.primaryCulture) && tag != "POL" && tag != "PAP" && tag != "HLR")
+			(orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") &&
+			 russianCultures.count(details.primaryCulture) && tag != "POL" && tag != "PAP" && tag != "HLR")
 	{
 		details.reforms.clear();
 		details.reforms = {"principality"};
