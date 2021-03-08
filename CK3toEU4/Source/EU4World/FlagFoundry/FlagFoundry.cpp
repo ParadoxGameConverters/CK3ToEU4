@@ -9,6 +9,7 @@
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
+#include <ranges>
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -35,7 +36,8 @@ void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, c
 
 void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries,
 	 const Configuration& theConfiguration,
-	 const std::vector<EU4::GeneratedReligion>& religions) const
+	 const std::vector<EU4::GeneratedReligion>& religions,
+	 const CK3::Mods& mods) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -85,7 +87,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	// Time for Religious Rebels
 	for (const auto& religion: religions)
 	{
-		craftRebelFlag(theConfiguration, religion);
+		craftRebelFlag(theConfiguration, religion, mods);
 	}
 }
 
@@ -115,7 +117,7 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	}
 }
 
-void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const
+void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const CK3::Mods& mods) const
 {
 	// Import the generic Rebel Flag
 	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
@@ -126,13 +128,42 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	Magick::Image targetIcon;
 	if (!religion.iconPath.empty())
 	{
-		const auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-		const auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+		auto foundIcon = false;
+		auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+		auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
 		if (commonItems::DoesFileExist(path1))
+		{
+			foundIcon = true;
 			targetIcon.read(path1);
-		else if (commonItems::DoesFileExist(path2))
+		}
+		if (!foundIcon && commonItems::DoesFileExist(path2))
+		{
+			foundIcon = true;
 			targetIcon.read(path2);
-		else
+		}
+		if (!foundIcon)
+		{
+			for (const auto& modDir: mods.getMods() | std::views::values)
+			{
+				path1 = modDir + "/" + religion.iconPath;
+				path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+				if (commonItems::DoesFileExist(path1))
+				{
+					foundIcon = true;
+					targetIcon.read(path1);
+					Log(LogLevel::Debug) << "Found " << path1;
+					break;
+				}
+				if (commonItems::DoesFileExist(path2))
+				{
+					foundIcon = true;
+					targetIcon.read(path2);
+					Log(LogLevel::Debug) << "Found " << path2;
+					break;
+				}
+			}
+		}
+		if (!foundIcon)
 		{
 			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
 			targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
@@ -158,7 +189,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
 }
 
-void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const
+void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions, const CK3::Mods& mods) const
 {
 	std::set<std::string> targetStrips = {"country_icon_religion.dds", "icon_religion.dds", "icon_religion_small.dds", "province_view_religion.dds"};
 	for (const auto& religion: religions)
@@ -167,13 +198,42 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		Magick::Image sourceIcon;
 		if (!religion.iconPath.empty())
 		{
-			const auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-			const auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+			auto foundIcon = false;
+			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";			
 			if (commonItems::DoesFileExist(path1))
+			{
+				foundIcon = true;
 				sourceIcon.read(path1);
-			else if (commonItems::DoesFileExist(path2))
-				sourceIcon.read(path2);
-			else
+			}
+			if (!foundIcon && commonItems::DoesFileExist(path2))
+			{
+				foundIcon = true;
+				sourceIcon.read(path2);				
+			}
+			if (!foundIcon)
+			{
+				for (const auto& modDir: mods.getMods() | std::views::values)
+				{
+					path1 = modDir + "/" + religion.iconPath;
+					path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+					if (commonItems::DoesFileExist(path1))
+					{
+						foundIcon = true;
+						sourceIcon.read(path1);
+						Log(LogLevel::Debug) << "Found2 " << path1;
+						break;
+					}
+					if (commonItems::DoesFileExist(path2))
+					{
+						foundIcon = true;
+						sourceIcon.read(path2);
+						Log(LogLevel::Debug) << "Found2 " << path2;
+						break;
+					}
+				}
+			}
+			if (!foundIcon)
 			{
 				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
 				sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.

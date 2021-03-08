@@ -86,7 +86,7 @@ class World
 	void outputReligions(const Configuration& theConfiguration,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;
-	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const;
+	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const CK3::Mods& mods) const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;

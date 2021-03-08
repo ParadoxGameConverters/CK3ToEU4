@@ -98,7 +98,7 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	Log(LogLevel::Progress) << "95 %";
 
 	LOG(LogLevel::Info) << "<- Writing Religion Icons";
-	outputReligionIcons(theConfiguration, religionMapper.getGeneratedReligions());
+	outputReligionIcons(theConfiguration, religionMapper.getGeneratedReligions(), sourceWorld.getMods());
 	Log(LogLevel::Progress) << "96 %";
 
 	LOG(LogLevel::Info) << "<- Replacing Bookmark";
@@ -106,10 +106,10 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	Log(LogLevel::Progress) << "97 %";
 }
 
-void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions) const
+void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const CK3::Mods& mods) const
 {
 	// edit the strips
-	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions);
+	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions, mods);
 
 	// edit interface file, raw search/replace.
 	const auto originalIcons = religionDefinitionMapper.getOriginalIconCount();
