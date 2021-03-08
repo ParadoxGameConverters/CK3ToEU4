@@ -158,7 +158,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	LOG(LogLevel::Info) << "-- Crafting Flags";
 	flagFoundry.loadImageFolders(theConfiguration, sourceWorld.getMods());
-	flagFoundry.generateFlags(countries, theConfiguration, religionMapper.getGeneratedReligions());
+	flagFoundry.generateFlags(countries, theConfiguration, religionMapper.getGeneratedReligions(), sourceWorld.getMods());
 	Log(LogLevel::Progress) << "76 %";
 
 	// And finally, the Dump.

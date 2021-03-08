@@ -32,13 +32,14 @@ class FlagFoundry
 	FlagFoundry();
 	void generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries,
 		 const Configuration& theConfiguration,
-		 const std::vector<EU4::GeneratedReligion>& religions) const;
+		 const std::vector<EU4::GeneratedReligion>& religions,
+		 const CK3::Mods& mods) const;
 	void loadImageFolders(const Configuration& theConfiguration, const CK3::Mods& mods) const;
-	void extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions) const;
+	void extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions, const CK3::Mods& mods) const;
 
   private:
 	void craftFlag(const std::shared_ptr<Country>& country) const;
-	void craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion) const;
+	void craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const CK3::Mods& mods) const;
 	[[nodiscard]] Magick::Image extendReligionStrip(const Magick::Image& sourceStrip, const Magick::Image& icon) const;
 
 	FlagCrafter flagCrafter;				  // image processor
