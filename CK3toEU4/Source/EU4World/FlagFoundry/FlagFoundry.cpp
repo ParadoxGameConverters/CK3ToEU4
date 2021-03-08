@@ -143,7 +143,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 		}
 		if (!foundIcon)
 		{
-			for (const auto& modDir: mods.getMods() | std::views::values)
+			for (const auto& modDir: mods.getMods() | std::ranges::views::values)
 			{
 				path1 = modDir + "/" + religion.iconPath;
 				path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
@@ -211,7 +211,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 			}
 			if (!foundIcon)
 			{
-				for (const auto& modDir: mods.getMods() | std::views::values)
+				for (const auto& modDir: mods.getMods() | std::ranges::views::values)
 				{
 					path1 = modDir + "/" + religion.iconPath;
 					path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
