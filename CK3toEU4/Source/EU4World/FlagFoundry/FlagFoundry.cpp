@@ -151,14 +151,12 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 				{
 					foundIcon = true;
 					targetIcon.read(path1);
-					Log(LogLevel::Debug) << "Found " << path1;
 					break;
 				}
 				if (commonItems::DoesFileExist(path2))
 				{
 					foundIcon = true;
 					targetIcon.read(path2);
-					Log(LogLevel::Debug) << "Found " << path2;
 					break;
 				}
 			}
@@ -221,14 +219,12 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 					{
 						foundIcon = true;
 						sourceIcon.read(path1);
-						Log(LogLevel::Debug) << "Found2 " << path1;
 						break;
 					}
 					if (commonItems::DoesFileExist(path2))
 					{
 						foundIcon = true;
 						sourceIcon.read(path2);
-						Log(LogLevel::Debug) << "Found2 " << path2;
 						break;
 					}
 				}
