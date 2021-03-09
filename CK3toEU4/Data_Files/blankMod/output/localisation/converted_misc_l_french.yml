@@ -51,3 +51,8 @@
  hellenic_pagan_reformed_rebels_name:3 "Fanatiques $RELIGION$"
  hellenic_pagan_reformed_rebels_desc:3 "Les fanatiques religieux tendent à se soulever dans les provinces contrôlées par des pays d'une autre foi. Ils cherchent à répandre leur foi et s'en prennent aux infidèles."
  hellenic_pagan_reformed_rebels_army:3 "Armée $RELIGION$"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Allocations provinciales"
+ custom_governing_capacity_modifier_desc:1 "En accordant des privilèges et allocations particuliers aux gouverneurs des États, nous pouvons réduire les dépenses liées à leur fonctionnement."
+ 

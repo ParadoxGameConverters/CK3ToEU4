@@ -1,0 +1,629 @@
+# cost = CFixedPoint( base_cost + ( level * level * level_cost ) ).GetTruncated()
+# DEFAULT: base_cost = 0, level_cost = 0.4, max_level = 4
+
+adm_idea_modifiers = {
+	category = ADM
+	
+	custom_idea_global_tax_modifier = {
+		global_tax_modifier = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		default = 2
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				technology_group = western
+			}
+		}
+	}		
+	custom_idea_production_efficiency = {
+		production_efficiency = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18		
+		default = 8
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				technology_group = sub_saharan
+			}
+		}
+	}
+	custom_idea_global_unrest = {
+		global_unrest = -0.5
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18			
+		default = 5
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+				mil = 3
+			}
+		}
+	}
+	custom_idea_stability_cost_modifier = {
+		stability_cost_modifier = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18		
+		default = 3		
+	}
+	custom_idea_missionaries = {
+		missionaries = 1
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 50
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0.75
+				NOT = {
+					any_owned_province = {
+						NOT = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					government = theocracy
+					has_reform = holy_state_reform
+				}
+			}
+			modifier = {
+				factor = 0.9
+				OR = {
+					religion = waldensian
+					religion = paulician
+					religion = mazdaki
+					religion = manichean
+				}
+			}
+			modifier = {
+				factor = 0.7
+				religion = jainism
+			}
+			modifier = {
+				factor = 1.1
+				NOT = { dominant_religion = ROOT }
+				NOT = { has_reform = indian_sultanate_reform }
+			}
+			modifier = {
+				factor = 0.9
+				dominant_religion = ROOT
+			}
+			modifier = {
+				factor = 0.9
+				NOT = {
+					adm = 3
+				}
+			}
+			modifier = {
+				factor = 0.9
+				NOT = {
+					num_of_cities = 15
+				}
+			}
+			modifier = {
+				factor = 1.25
+				any_neighbor_country = {
+					NOT = { 
+						religion = ROOT
+					}
+					any_owned_province = { 
+						is_claim = ROOT 
+					}
+				}
+				mil = 3
+			}
+			modifier = {
+				factor = 1.25
+				any_neighbor_country = {
+					exists = yes
+				}
+				NOT = {
+					any_neighbor_country = {
+						religion = ROOT
+					}
+				}
+				mil = 3
+			}
+		}
+	}	
+	custom_idea_inflation_reduction = {
+		inflation_reduction = 0.05
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				gold = 1
+			}
+			modifier = {
+				factor = 1.1
+				gold = 2
+			}
+			modifier = {
+				factor = 1.1
+				gold = 3
+			}
+			modifier = {
+				factor = 1.1
+				gold = 4
+			}
+			modifier = {
+				factor = 1.1
+				gold = 5
+			}
+		}
+	}
+	custom_idea_inflation_action_cost = {
+		inflation_action_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}	
+	custom_idea_interest = {
+		interest = -0.5
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0.9
+				religion_group = christian
+			}
+		}
+	}	
+	custom_idea_build_cost = {
+		build_cost = -0.05
+		chance = {
+			factor = 1
+		}
+	}	
+	custom_idea_development_cost = {
+		development_cost = -0.1
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				any_owned_province = {
+					development = 20
+				}
+			}
+			modifier = {
+				factor = 1.3
+				NOT = { num_of_cities = 5 }
+			}
+		}
+	}
+	custom_idea_global_missionary_strength = {
+		global_missionary_strength = 0.005
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0.75
+				NOT = {
+					any_owned_province = {
+						NOT = {
+							religion = ROOT
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					government = theocracy
+					has_reform = holy_state_reform
+				}
+			}
+			modifier = {
+				factor = 0.9
+				NOT = {
+					mil = 3
+				}
+			}
+			modifier = {
+				factor = 0.9
+				OR = {
+					religion = waldensian
+					religion = paulician
+					religion = mazdaki
+					religion = manichean
+				}
+			}
+			modifier = {
+				factor = 0.7
+				religion = jainism
+			}
+			modifier = {
+				factor = 1.1
+				religion = iconoclast
+			}
+			modifier = {
+				factor = 1.1
+				NOT = { religious_unity = 0.75 }
+				mil = 3
+				NOT = {
+					dip = 3
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					religion_group = muslim
+				}
+				any_owned_province = {
+					religion_group = muslim
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					religion = coptic
+				}
+				any_owned_province = {
+					religion_group = coptic
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					religion = monophysite
+				}
+				any_owned_province = {
+					religion_group = monophysite
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					religion = bogomilist
+				}
+				any_owned_province = {
+					religion_group = bogomilist
+				}
+			}
+			modifier = {
+				factor = 1.1
+				any_neighbor_country = {
+					NOT = { 
+						religion = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				NOT = {
+					dominant_religion = ROOT
+				}
+			}
+			modifier = {
+				factor = 1.1
+				any_neighbor_country = {
+					exists = yes
+				}
+				NOT = {
+					any_neighbor_country = {
+						religion = ROOT
+					}
+				}
+			}
+		}
+	}	
+	custom_idea_prestige = {
+		prestige = 0.5	
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+				dip = 3
+			}
+		}
+	}
+	custom_idea_prestige_decay = {
+		prestige_decay = -0.005
+	}	
+	custom_idea_legitimacy = {
+		legitimacy = 0.5
+		level_cost_2 = 15
+		max_level = 2
+		
+		# Used for random generation
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { government = monarchy }
+			}
+		}
+	}
+	custom_idea_horde_unity = {
+		horde_unity = 0.5
+		level_cost_2 = 15
+		max_level = 2
+		
+		# Used for random generation
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_reform = steppe_horde }
+				NOT = { has_reform = great_mongol_state_reform }
+			}
+		}
+	}
+	custom_idea_devotion = {
+		devotion = 0.5
+		level_cost_2 = 15
+		max_level = 2
+		
+		# Used for random generation
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { government = theocracy }
+			}
+		}	
+	}
+	custom_idea_republican_tradition = {
+		republican_tradition = 0.15
+		max_level = 2
+		level_cost_1 = 20
+		level_cost_2 = 60	
+		
+		# Used for random generation
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { government = republic }
+			}
+			modifier = {
+				factor = 1.25
+				is_great_power = yes
+			}
+		}
+	}		
+	custom_idea_technology_cost = {
+		technology_cost = -0.05
+		level_cost_1 = 5
+		level_cost_2 = 30
+		max_level = 2
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+				adm = 3
+			}
+		}
+	}
+	custom_idea_idea_cost = {
+		idea_cost = -0.05
+		max_level = 2	
+		level_cost_1 = 3
+		level_cost_2 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				adm = 3
+			}
+		}
+	}		
+	custom_idea_advisor_cost = {
+		advisor_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+		}
+	}	
+	custom_idea_advisor_pool = {
+		advisor_pool = 1
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 30
+	}	
+	custom_idea_tolerance_own = {
+		tolerance_own = 1
+		max_level = 2
+		level_cost_1 = 3
+		level_cost_2 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				dominant_religion = ROOT
+			}
+			modifier = {
+				factor = 1.25
+				government = theocracy
+			}
+		}
+	}
+	custom_idea_tolerance_heretic = {
+		tolerance_heretic = 1
+		max_level = 2
+		level_cost_1 = 3
+		level_cost_2 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				NOT = { dominant_religion = ROOT }
+			}
+			modifier = {
+				factor = 0
+				government = theocracy
+			}
+		}
+	}
+	custom_idea_tolerance_heathen = {
+		tolerance_heathen = 1
+		max_level = 2
+		level_cost_1 = 3
+		level_cost_2 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				NOT = { dominant_religion = ROOT }
+			}
+			modifier = {
+				factor = 0
+				government = theocracy
+			}
+		}
+	}
+	custom_idea_heir_chance = {
+		heir_chance = 0.25
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { government = monarchy }
+			}
+		}
+	}
+	custom_idea_enemy_core_creation = {
+		enemy_core_creation = 0.15
+		chance = {
+			factor = 0
+		}
+	}
+	custom_idea_core_creation = {
+		core_creation = -0.05
+		chance = {
+			factor = 0.8
+			modifier = {
+				factor = 2
+				num_of_cities = 25
+			}
+			modifier = {
+				factor = 1.25
+				mil = 3
+			}
+		}
+	}
+	custom_idea_vassal_income = {
+		vassal_income = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { vassal = 1 }
+			}
+			modifier = {
+				factor = 3
+				vassal = 2
+			}
+		}
+	}
+	custom_idea_religious_unity = {
+		religious_unity = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				religious_unity = 0.95
+			}
+			modifier = {
+				factor = 1.1
+				NOT = { religious_unity = 0.75 }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { religious_unity = 0.50 }
+			}
+			modifier = {
+				factor = 1.25
+				NOT = { religious_unity = 0.25 }
+			}
+			modifier = {
+				factor = 1.15
+				religion = jainism
+			}
+			modifier = {
+				factor = 1.15
+				religion = buddhism
+			}
+		}
+	}
+	custom_idea_global_autonomy = {
+		global_autonomy = -0.05		
+		level_cost_1 = 5
+		level_cost_2 = 30
+		max_level = 2
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+				adm = 3
+			}
+		}
+	}
+	custom_idea_imperial_authority = {
+		imperial_authority = 0.1
+		level_cost_1 = 5
+		level_cost_2 = 30
+		max_level = 2
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				is_part_of_hre = no
+			}
+			modifier = {
+				factor = 4
+				is_emperor = yes
+			}
+		}
+	}
+	custom_idea_free_adm_policy = {
+		free_adm_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 20
+				adm = 6
+			}
+		}
+	}
+	custom_idea_possible_adm_policy = {
+		possible_adm_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+	}
+}

@@ -53,3 +53,8 @@
  hellenic_pagan_reformed_rebels_name:3 "Fanáticos del $RELIGION$"
  hellenic_pagan_reformed_rebels_desc:3 "Los fanáticos religiosos suelen aparecer en provincias controladas por una nación con distintas creencias. Pretenden difundir su doctrina y castigar a los infieles."
  hellenic_pagan_reformed_rebels_army:3 "Ejército del $RELIGION$"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Sobresueldos provinciales"
+ custom_governing_capacity_modifier_desc:0 "Concediendo privilegios y sobresueldos especiales a nuestros gobernadores provinciales, podemos reducir ligeramente los gastos de sus servicios."
+ 

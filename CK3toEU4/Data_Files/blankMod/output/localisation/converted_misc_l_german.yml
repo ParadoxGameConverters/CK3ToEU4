@@ -53,3 +53,8 @@
  hellenic_pagan_reformed_rebels_name:3 "$RELIGION$ Fanatiker"
  hellenic_pagan_reformed_rebels_desc:3 "Religiöse Fanatiker erheben sich vor allem in Provinzen, deren Religion von der Staatsreligion abweicht. Sie wollen ihre Religion verbreiten und alle Ungläubigen bekehren."
  hellenic_pagan_reformed_rebels_army:3 "$RELIGION$ Armee"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Provinzialzulagen"
+ custom_governing_capacity_modifier_desc:1 "Durch die Gewährung besonderer Privilegien und Zulagen an unsere Staatsgouverneure können wir die Kosten ihrer Dienstleistungen geringfügig reduzieren."
+ 
