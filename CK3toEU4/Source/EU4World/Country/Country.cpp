@@ -524,7 +524,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = title->second->getAdjective();
 		newblock.french = title->second->getAdjective();
 		newblock.german = title->second->getAdjective();
-		localizations.insert(std::pair(tag, newblock));
+		localizations.insert(std::pair(tag + "_ADJ", newblock));
 		adjSet = true;
 	}
 
@@ -543,6 +543,29 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	// out of ideas.
 	if (!adjSet)
 		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj?";
+
+	// Setting Up Idea Names
+	if (adjSet && !localizations.find(tag + "_ADJ")->second.english.empty())
+	{
+		mappers::LocBlock newblock;
+		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Ideas"; // Roman Ideas
+		newblock.spanish = "Ideas de " + localizations.find(tag + "_ADJ")->second.spanish;
+		newblock.french = "Doctrines " + localizations.find(tag + "_ADJ")->second.french;
+		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ideen";
+		localizations.insert(std::pair(tag + "_ideas", newblock));
+
+		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Traditions"; // Roman Traditions
+		newblock.spanish = "Tradiciones de " + localizations.find(tag + "_ADJ")->second.spanish;
+		newblock.french = "traditions " + localizations.find(tag + "_ADJ")->second.french;
+		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Traditionen";
+		localizations.insert(std::pair(tag + "_ideas_start", newblock));
+
+		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Ambition"; // Roman Ambition
+		newblock.spanish = "Ambición de " + localizations.find(tag + "_ADJ")->second.spanish;
+		newblock.french = "ambitions " + localizations.find(tag + "_ADJ")->second.french;
+		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ambitionen";
+		localizations.insert(std::pair(tag + "_ideas_bonus", newblock));
+	}
 }
 
 void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
@@ -1222,9 +1245,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		details.reforms = {"prussian_monarchy"};
 	}
 	// Tsardom
-	else if (details.government == "monarchy" &&
-				(tag == "UKR" || (tag == "RUS" && (orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" ||
-																  details.religion == "slavic_pagan_reformed"))))
+	else if (details.government == "monarchy" && (tag == "UKR" || (tag == "RUS" && (orthodoxReligions.count(details.religion) ||
+			 details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed"))))
 	{
 		details.reforms.clear();
 		details.reforms = {"tsardom"};
@@ -1239,11 +1261,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Mamluk (Renamed in converter)
 	else if (muslimReligions.count(details.religion) && title->second->getLaws().count("mercenary_company_succession_law") &&
-				(regionMapper->provinceIsInRegion(details.capital, "near_east_superregion") ||
-					 regionMapper->provinceIsInRegion(details.capital, "eastern_europe_superregion") ||
-					 regionMapper->provinceIsInRegion(details.capital, "persia_superregion") || regionMapper->provinceIsInRegion(details.capital, "egypt_region") ||
-					 regionMapper->provinceIsInRegion(details.capital, "maghreb_region") ||
-					 regionMapper->provinceIsInRegion(details.capital, "central_asia_region")))
+			(regionMapper->provinceIsInRegion(details.capital, "near_east_superregion") || regionMapper->provinceIsInRegion(details.capital, "eastern_europe_superregion") ||
+			 regionMapper->provinceIsInRegion(details.capital, "persia_superregion") || regionMapper->provinceIsInRegion(details.capital, "egypt_region") ||
+			 regionMapper->provinceIsInRegion(details.capital, "maghreb_region") || regionMapper->provinceIsInRegion(details.capital, "central_asia_region")))
 	{
 		if (!details.acceptedCultures.count("circassian") && details.primaryCulture != "circassian")
 			details.acceptedCultures.insert("circassian");
@@ -1253,49 +1273,44 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		details.reforms = {"mamluk_government"};
 	}
 	// Indian Sultanate (Renamed in Converter)
-	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("autocracy_reform") || details.reforms.count("iqta") ||
-					 details.reforms.count("ottoman_government")) &&
-				muslimReligions.count(details.religion) && indianReligions.count(details.majorityReligion))
+	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("autocracy_reform") || details.reforms.count("iqta") || details.reforms.count("ottoman_government")) &&
+			  muslimReligions.count(details.religion) && indianReligions.count(details.majorityReligion))
 	{
 		details.reforms.clear();
 		details.reforms = {"indian_sultanate_reform"};
 	}
 	// Mandala
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy")) && details.technologyGroup == "chinese" &&
-				(paganReligions.count(details.religion) || muslimReligions.count(details.religion) || easternReligions.count(details.religion) ||
-					 indianReligions.count(details.religion)))
+			  (paganReligions.count(details.religion) || muslimReligions.count(details.religion) || easternReligions.count(details.religion) || indianReligions.count(details.religion)))
 	{
 		details.reforms.clear();
 		details.reforms = {"mandala_reform"};
 	}
 	// Nayankara
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy")) && indianReligions.count(details.religion) &&
-				details.technologyGroup == "indian" &&
-				(dravidianCultures.count(details.primaryCulture) || details.primaryCulture == "oriya" || details.primaryCulture == "sinhala"))
+			  details.technologyGroup == "indian" && (dravidianCultures.count(details.primaryCulture) || details.primaryCulture == "oriya" || details.primaryCulture == "sinhala"))
 	{
 		details.reforms.clear();
 		details.reforms = {"nayankara_reform"};
 	}
 	// Rajput
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") || details.reforms.count("autocracy_reform")) &&
-				details.technologyGroup == "indian" && details.primaryCulture != "marathi" &&
-				(details.primaryCulture == "vindhyan" || westAryanCultures.count(details.primaryCulture)))
+			  details.technologyGroup == "indian" && details.primaryCulture != "marathi" && (details.primaryCulture == "vindhyan" || westAryanCultures.count(details.primaryCulture)))
 	{
 		details.reforms.clear();
 		details.reforms = {"rajput_kingdom"};
 	}
 	// Gond Kingdom
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") || details.reforms.count("autocracy_reform")) &&
-				details.technologyGroup == "indian" && details.primaryCulture == "gondi")
+			  details.technologyGroup == "indian" && details.primaryCulture == "gondi")
 	{
 		details.reforms.clear();
 		details.reforms = {"gond_kingdom"};
 	}
 	// Plutocratic
-	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") ||
-					 ((details.reforms.count("autocracy_reform") || details.reforms.count("ottoman_government")) && details.governmentRank != 3)) &&
-				(details.technologyGroup == "indian" || details.technologyGroup == "muslim" || details.technologyGroup == "chinese" ||
-					 details.technologyGroup == "east_african") &&
+	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") || ((details.reforms.count("autocracy_reform") ||
+			  details.reforms.count("ottoman_government")) && details.governmentRank != 3)) && (details.technologyGroup == "indian" || details.technologyGroup == "muslim" ||
+			  details.technologyGroup == "chinese" || details.technologyGroup == "east_african") &&
 				hasTradeCenterLevelTwo)
 	{
 		details.reforms.clear();
@@ -1304,9 +1319,8 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Grand Duchy
 	else if ((details.reforms.count("feudalism_reform") || details.reforms.count("english_monarchy") || details.reforms.count("autocracy_reform")) &&
-				details.governmentRank == 1 &&
-				(tag == "LUX" || tag == "BAD" || tag == "TUS" || tag == "FIN" || tag == "LIT" || details.primaryCulture == "finnish" ||
-					 balticCultures.count(details.primaryCulture)))
+			  details.governmentRank == 1 && (tag == "LUX" || tag == "BAD" || tag == "TUS" || tag == "FIN" || tag == "LIT" || details.primaryCulture == "finnish" ||
+			  balticCultures.count(details.primaryCulture)))
 	{
 		details.reforms.clear();
 		details.reforms = {"grand_duchy_reform"};
@@ -1320,12 +1334,17 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		details.reforms.clear();
 		details.reforms = {"peasants_republic"};
 	}
+	else if (details.reforms.count("peasants_republic") && details.primaryCulture == "swiss")
+	{
+		details.reforms.clear();
+		details.reforms = {"united_cantons_reform"};
+	}
 	// Free City (HRE) - These have already been set in EU4World.cpp by the setFreeCities() method
 
 	// Veche Republic
-	else if (details.government == "republic" && details.governmentRank != 3 &&
-				(orthodoxReligions.count(details.religion) || details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") &&
-				russianCultures.count(details.primaryCulture) && tag != "POL" && tag != "PAP" && tag != "HLR")
+	else if (details.government == "republic" && details.governmentRank != 3 && (orthodoxReligions.count(details.religion) ||
+			 details.religion == "slavic_pagan" || details.religion == "slavic_pagan_reformed") && russianCultures.count(details.primaryCulture) &&
+			 tag != "POL" && tag != "PAP" && tag != "HLR")
 	{
 		details.reforms.clear();
 		details.reforms = {"veche_republic"};
@@ -1339,7 +1358,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	}
 	// Signoria
 	else if (details.government == "republic" && !details.reforms.count("merchants_reform") && !details.reforms.count("venice_merchants_reform") &&
-				!details.reforms.count("free_city") && latinCultures.count(details.primaryCulture))
+			 !details.reforms.count("free_city") && latinCultures.count(details.primaryCulture))
 	{
 		details.reforms.clear();
 		details.reforms = {"signoria_reform"};

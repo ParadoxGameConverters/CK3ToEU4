@@ -66,3 +66,8 @@
  wonder_underground_city_petra:3 "Petra"
  desc_wonder_underground_city_petra:3 "The great desert city of Petra has existed for hundreds of years"
  
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Provincial Allowances"
+ custom_governing_capacity_modifier_desc:1 "By granting special privileges and allowances to our State Governors, we can cut back slightly on the expenses of their services."
+ 
+ 

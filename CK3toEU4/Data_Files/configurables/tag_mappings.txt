@@ -37,6 +37,8 @@ link = { ck3 = c_dyrrachion eu4 = ALB }
 link = { ck3 = d_athens eu4 = ATH }
 link = { ck3 = c_attica eu4 = ATH }
 link = { ck3 = k_bosnia eu4 = BOS }
+link = { ck3 = d_bosna eu4 = BOS }
+#link = { ck3 = d_bosnia eu4 = BOS } This appears in the loc, but doesn't appear in 00_landed_titles?
 link = { ck3 = k_bulgaria eu4 = BUL }
 link = { ck3 = d_bulgaria eu4 = BUL }
 link = { ck3 = e_byzantium eu4 = BYZ }

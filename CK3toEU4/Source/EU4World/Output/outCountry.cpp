@@ -146,6 +146,9 @@ std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 
 void EU4::Country::outputCommons(std::ostream& output) const
 {
+	// Activates Dynamic Ideas, *ONLY APPLIES TO COUNTRIES THAT WOULD RECIEVE GENERIC NATIONAL IDEAS!*
+	output << "ck2_converter_generated = yes\n";
+
 	if (!details.graphicalCulture.empty())
 		output << "graphical_culture = " << details.graphicalCulture << "\n";
 	if (details.color)

@@ -1,0 +1,498 @@
+mil_idea_modifiers = {
+	category = MIL	
+	
+	custom_idea_land_morale = {
+		land_morale = 0.05
+		default = 1
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				any_neighbor_country = { 
+					any_owned_province = { 
+						is_claim = ROOT 
+					} 
+				}
+			}
+			modifier = {
+				factor = 1.2
+				is_great_power = yes
+			}
+			modifier = {
+				factor = 1.1
+				uses_fervor = yes
+			}
+		}
+	}
+	custom_idea_discipline = {
+		discipline = 0.025
+		default = 6
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				any_neighbor_country = { 
+					any_owned_province = { 
+						is_claim = ROOT 
+					} 
+				}
+			}
+			modifier = {
+				factor = 1.3
+				is_great_power = yes
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_reform = prussian_monarchy
+					has_reform = prussian_republic_reform
+					has_reform = ottoman_government
+					has_reform = rajput_kingdom
+				}
+			}
+		}
+	}
+	custom_idea_land_maintenance_modifier = {
+		land_maintenance_modifier = -0.05
+		default = 10
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 4
+				OR = {
+					has_reform = tsardom
+					has_reform = principality
+				}
+			}
+		}
+	}
+	custom_idea_merc_maintenance_modifier = {
+		merc_maintenance_modifier = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				government = republic
+			}
+			modifier = {
+				factor = 2
+				NOT = { num_of_cities = 3 }
+			}
+			modifier = {
+				factor = 5
+				has_reform = united_cantons_reform
+			}
+		}
+	}
+	custom_idea_mercenary_manpower = {
+		mercenary_manpower = 0.125
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 1.1
+				government = republic
+			}
+			modifier = {
+				factor = 5
+				has_reform = united_cantons_reform
+			}
+		}
+	}
+	custom_idea_land_forcelimit_modifier = {
+		land_forcelimit_modifier = 0.075
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				grain = 3
+			}
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+			}
+		}
+	}
+	custom_idea_global_manpower_modifier = {
+		global_manpower_modifier = 0.075
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				technology_group = eastern
+			}
+			modifier = {
+				factor = 1.1
+				is_great_power = yes
+			}
+		}
+	}
+	custom_idea_manpower_recovery_speed = {
+		manpower_recovery_speed = 0.05
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				OR = {
+					technology_group = indian
+					technology_group = muslim
+					technology_group = eastern
+					technology_group = ottoman
+				}
+			}
+		}
+	}
+	custom_idea_reinforce_speed = {
+		reinforce_speed = 0.075
+		chance = {
+			factor = 0.5
+		}
+	}
+	custom_idea_hostile_attrition = {
+		hostile_attrition = 0.5
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				NOT = { num_of_cities = 6 }
+				NOT = { total_development = 30 }
+			}
+			modifier = {
+				factor = 1.1
+				religion_group = pagan
+			}
+		}
+	}
+	custom_idea_army_tradition = {
+		army_tradition = 0.5
+		level_cost_2 = 15
+		max_level = 2
+		chance = {
+			factor = 0
+		}
+	}
+	custom_idea_army_tradition_decay = {
+		army_tradition_decay = -0.005
+		level_cost_2 = 15
+		max_level = 2
+		chance = {
+			factor = 0
+		}
+	}
+	custom_idea_leader_land_fire = {
+		leader_land_fire = 1
+		max_level = 2
+		level_cost_1 = 30
+		level_cost_2 = 140
+		chance = {
+			factor = 0.4
+			modifier = {
+				factor = 2
+				mil = 3
+			}
+		}
+	}
+	custom_idea_leader_land_shock = {
+		leader_land_shock = 1
+		max_level = 2
+		level_cost_1 = 30
+		level_cost_2 = 140
+		chance = {
+			factor = 0.4
+			modifier = {
+				factor = 2
+				mil = 3
+			}
+		}
+	}
+	custom_idea_leader_land_manuever = {
+		leader_land_manuever = 1
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 50
+		chance = {
+			factor = 0.4
+			modifier = {
+				factor = 2
+				mil = 3
+			}
+		}
+	}	
+	custom_idea_leader_siege = {
+		leader_siege = 1
+		max_level = 2
+		level_cost_1 = 30
+		level_cost_2 = 140
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 2
+				mil = 3
+			}
+		}
+	}	
+	custom_idea_regiment_recruit_speed = {
+		global_regiment_recruit_speed = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_idea_prestige_from_land = {
+		prestige_from_land = 0.25
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_idea_defensiveness = {
+		defensiveness = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				OR = {
+					religion = baltic_pagan
+					religion = baltic_pagan_reformed
+				}
+			}
+		}
+	}
+	custom_idea_siege_ability = {
+		siege_ability = 0.05
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 2
+				technology_group = ottoman
+			}
+		}
+	}
+	custom_idea_vassal_forcelimit_bonus = {
+		vassal_forcelimit_bonus = 0.5		
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_subjects = 1 }
+			}
+			modifier = {
+				factor = 0.9
+				NOT = {
+					NOT = { num_of_subjects = 2 }
+				}
+			}
+		}
+	}	
+	custom_idea_infantry_power = {
+		infantry_power = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				technology_group = western
+				technology_group = sub_saharan
+				technology_group = high_american
+			}
+			modifier = {
+				factor = 1.25
+				government = tribal
+				NOT = { has_reform = steppe_horde }
+				NOT = { has_reform = great_mongol_state_reform }
+			}
+		}
+	}
+	custom_idea_cavalry_power = {
+		cavalry_power = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 5
+				OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+					has_reform = cossacks_reform
+				}
+			}
+			modifier = {
+				factor = 1.1
+				OR = {
+					technology_group = muslim
+					technology_group = eastern
+					technology_group = sub_saharan
+				}
+			}
+			modifier = {
+				factor = 1.1
+				primary_culture = polish
+			}
+			modifier = {
+				factor = 1.25
+				calc_true_if = {
+					any_owned_province = {
+						has_terrain = steppe 
+					}
+					amount = 4
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}
+	}
+	custom_idea_artillery_power = {
+		artillery_power = 0.05
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				OR = {
+					technology_group = chinese
+					technology_group = ottoman
+				}
+			}
+		}
+	}
+	custom_idea_infantry_cost = {
+		infantry_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				OR = {
+					technology_group = eastern
+					technology_group = indian
+					technology_group = chinese
+				}
+			}
+		}
+	}
+	custom_idea_cavalry_cost = {
+		cavalry_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				OR = {
+					technology_group = muslim
+					technology_group = eastern
+					technology_group = indian
+					technology_group = sub_saharan
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+					has_reform = cossacks_reform
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}
+	}
+	custom_idea_artillery_cost = {
+		artillery_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				OR = {
+					technology_group = chinese
+					technology_group = ottoman
+				}
+			}
+		}
+	}
+	custom_idea_fort_maintenance = {
+		fort_maintenance_modifier = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 1.5
+				NOT = {
+					num_of_cities = 10
+				}
+				capital_scope = {
+					OR = {
+						has_terrain = mountain
+						has_terrain = highlands
+						has_terrain = hills
+					}
+				}
+			}
+		}
+	}
+	custom_idea_free_mil_policy = {
+		free_mil_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 20
+				mil = 6
+			}
+		}
+	}
+	custom_idea_possible_mil_policy = {
+		possible_mil_policy = 1
+		max_level = 1
+		level_cost_1 = 30
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				OR = {
+					has_reform = prussian_monarchy
+					has_reform = prussian_republic_reform
+				}
+				mil = 5
+			}
+		}
+	}
+}

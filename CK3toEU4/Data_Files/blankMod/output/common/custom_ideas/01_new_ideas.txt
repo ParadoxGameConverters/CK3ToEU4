@@ -1,0 +1,115 @@
+# cost = CFixedPoint( base_cost + ( level * level * level_cost ) ).GetTruncated()
+# DEFAULT: base_cost = 0, level_cost = 0.4, max_level = 4
+
+new_idea_adm_modifiers = {
+	category = ADM	
+	custom_idea_years_of_nationalism = {
+		years_of_nationalism = -5
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				is_great_power = yes
+				mil = 4
+			}
+		}
+	}
+	custom_idea_female_advisor_chance = {
+		female_advisor_chance = 0.1
+		max_level = 10
+		level_cost_1 = 0
+		level_cost_2 = 0
+		level_cost_3 = 0
+		level_cost_4 = 0
+		level_cost_5 = 0
+		level_cost_6 = 0
+		level_cost_7 = 0
+		level_cost_8 = 0
+		level_cost_9 = 0
+		level_cost_10 = 0
+		chance = {
+			factor = 0
+		}
+	}
+}
+
+new_idea_mil_modifiers = {
+	category = MIL	
+	custom_idea_female_generals = {
+		may_recruit_female_generals = yes
+		max_level = 1
+		level_cost_1 = 5
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+		}
+	}
+}
+
+
+new_idea_dip_modifiers = {
+	category = DIP	
+	
+	custom_idea_global_sailors_modifier = {
+		global_sailors_modifier = 0.1
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 3 }
+			}
+		}
+	}
+	custom_idea_sailors_recovery_speed = {
+		sailors_recovery_speed = 0.05
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 3 }
+			}
+		}
+	}
+	custom_idea_slave_raiders = {
+		may_perform_slave_raid = yes
+		max_level = 1
+		level_cost_1 = 20
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+			modifier = {
+				factor = 0
+				religion_group = christian
+				NOT = { has_reform = monastic_order_reform }
+			}
+			modifier = {
+				factor = 5
+				religion = norse_pagan_reformed
+			}
+			modifier = {
+				factor = 10
+				NOT = { num_of_cities = 2 }
+				capital_scope = {
+					is_island = yes
+				}
+			}
+			modifier = {
+				factor = 10
+				capital_scope = {
+					region = maghreb_region
+				}
+			}
+		}
+	}
+}
+
+	

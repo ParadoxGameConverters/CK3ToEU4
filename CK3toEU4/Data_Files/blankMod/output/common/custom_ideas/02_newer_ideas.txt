@@ -1,0 +1,886 @@
+# cost = CFixedPoint( base_cost + ( level * level * level_cost ) ).GetTruncated()
+# DEFAULT: base_cost = 0, level_cost = 0.4, max_level = 4
+
+newer_idea_adm_modifiers = {
+	category = ADM	
+	custom_yearly_harmony = {
+		yearly_harmony = 0.25
+		max_level = 2
+		level_cost_2 = 5
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { religion = confucianism }
+			}
+		}
+	}
+	custom_harmonization_speed = {
+		harmonization_speed = 0.1
+		max_level = 2
+		level_cost_2 = 10
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { religion = confucianism }
+			}
+		}
+	}
+	custom_meritocracy = {
+		meritocracy = 0.5
+		max_level = 2
+		level_cost_2 = 15
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				is_emperor_of_china = no
+			}
+		}
+	}
+	custom_monarch_admin_power = {
+		monarch_admin_power = 1
+		max_level = 1
+		level_cost_1 = 60
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				adm = 6
+			}
+		}
+	}
+	custom_max_absolutism = {
+		max_absolutism = 5
+		level_cost_2 = 5
+		level_cost_3 = 15
+		level_cost_4 = 30
+		chance = {
+			factor = 0.2
+			modifier = {
+				factor = 0
+				government = republic
+				NOT = { has_reform = prussian_republic_reform }
+				NOT = { has_reform = cossacks_reform }
+			}
+			modifier = {
+				factor = 5
+				is_great_power = yes
+				OR = {
+					has_reform = ottoman_government
+					has_reform = autocracy_reform
+				}
+			}
+			modifier = {
+				factor = 1.5
+				is_great_power = yes
+			}
+		}
+	}
+	custom_yearly_absolutism = {
+		yearly_absolutism = 0.5
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 60
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				is_great_power = yes
+			}
+		}
+	}
+	custom_administrative_efficiency = {
+		administrative_efficiency = 0.05
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 60
+		chance = {
+			factor = 0.25
+		}
+	}
+	custom_institution_spread_from_true_faith = {
+		institution_spread_from_true_faith = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				OR = {
+					has_reform = indian_sultanate_reform
+					NOT = { religious_unity = 0.6 }
+				}
+			}
+		}
+	}
+	custom_global_institution_spread = {
+		global_institution_spread = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.33
+		}
+	}
+	custom_embracement_cost = {
+		embracement_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_governing_capacity_modifier = {
+		governing_capacity_modifier = 0.1
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.3
+				OR = {
+					num_of_cities = 30
+					AND = {
+						num_of_cities = 20
+						has_reform = merchants_reform
+					}
+				}
+			}
+		}
+	}
+	custom_church_power_modifier = {
+		church_power_modifier = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				uses_church_power = no
+			}
+		}
+	}
+	custom_yearly_corruption = {
+		yearly_corruption = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+		}
+	}
+	custom_caravan_power = {
+		caravan_power = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_ports = 10
+			}
+			modifier = {
+				factor = 2
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+		}
+	}
+	custom_monthly_fervor_increase = {
+		monthly_fervor_increase = 1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				uses_fervor = no
+			}
+		}
+	}
+	custom_global_trade_goods_size_modifier = {
+		global_trade_goods_size_modifier = 0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.5
+				government = republic
+			}
+		}
+	}
+	custom_adm_tech_cost_modifier = {
+		adm_tech_cost_modifier = -0.05
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				adm = 5
+			}
+		}
+	}
+	custom_build_time = {
+		build_time = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_state_maintenance_modifier = {
+		state_maintenance_modifier = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_autonomy_change_time = {
+		autonomy_change_time = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+}
+
+newer_idea_mil_modifiers = {
+	category = MIL	
+	custom_merc_discipline = {
+		mercenary_discipline = 0.025
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 10
+				has_reform = united_cantons_reform
+			}
+		}
+	}
+	custom_rival_border_fort_maintenance = {
+		rival_border_fort_maintenance = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_siege_blockade_progress = {
+		siege_blockade_progress = 1
+		max_level = 1
+		level_cost_1 = 5
+		chance = {
+			factor = 0
+		}
+	}
+	custom_cav_to_inf_ratio = {
+		cav_to_inf_ratio = 0.15
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion_group = pagan }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_reform = steppe_horde }
+				NOT = { has_reform = great_mongol_state_reform }
+				NOT = { has_reform = cossacks_reform }
+			}
+		}
+	}
+	custom_artillery_bonus_vs_fort = {
+		artillery_bonus_vs_fort = 1
+		max_level = 2
+		level_cost_1 = 3
+		level_cost_2 = 10
+		chance = {
+			factor = 0
+		}
+	}
+	custom_monarch_military_power = {
+		monarch_military_power = 1
+		max_level = 1
+		level_cost_1 = 60
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				mil = 6
+			}
+		}
+	}
+	custom_backrow_artillery_damage = {
+		backrow_artillery_damage = 0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 4
+				OR = {
+					has_reform = mughal_government
+					culture_group = french
+					culture = byelorussian
+				}
+			}
+		}
+	}
+	custom_harsh_treatment_cost = {
+		harsh_treatment_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_fire_damage_received = {
+		fire_damage_received = -0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				is_great_power = yes
+				mil = 3
+			}
+		}
+	}
+	custom_shock_damage_received = {
+		shock_damage_received = -0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				mil = 3
+			}
+		}
+	}
+	custom_cavalry_flanking = {
+		cavalry_flanking = 0.25
+		max_level = 2
+		level_cost_2 = 10
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion_group = pagan }
+			}
+			modifier = {
+				factor = 0
+				NOT = { has_reform = steppe_horde }
+				NOT = { has_reform = great_mongol_state_reform }
+				NOT = { has_reform = cossacks_reform }
+			}
+		}
+	}
+	custom_shock_damage = {
+		shock_damage = 0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.25
+				mil = 3
+			}
+			modifier = {
+				factor = 2
+				government = tribal
+			}
+			modifier = {
+				factor = 1.25
+				OR = {
+					has_reform = steppe_horde
+					has_reform = great_mongol_state_reform
+					has_reform = cossacks_reform
+				}
+			}
+		}
+	}
+	custom_fire_damage = {
+		fire_damage = 0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1.1
+		}
+	}
+	custom_movement_speed = {
+		movement_speed = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.9
+		}
+	}
+	custom_army_tradition_from_battle = {
+		army_tradition_from_battle = 0.5
+		max_level = 2
+		level_cost_2 = 5
+		chance = {
+			factor = 0
+		}
+	}
+	custom_monthly_militarized_society = {
+		monthly_militarized_society = 0.05
+		level_cost_2 = 5
+		level_cost_3 = 15		
+		level_cost_4 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_reform = prussian_monarchy }
+				NOT = { has_reform = prussian_republic_reform }
+			}
+		}
+	}
+	custom_reinforce_cost_modifier = {
+		reinforce_cost_modifier = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_loot_amount = {
+		loot_amount = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_garrison_size = {
+		garrison_size = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_land_attrition = {
+		land_attrition = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_mil_tech_cost_modifier = {
+		mil_tech_cost_modifier = -0.05
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				mil = 5
+			}
+		}
+	}
+	custom_free_leader_pool = {
+		free_leader_pool = 1
+		max_level = 2
+		level_cost_2 = 10
+		chance = {
+			factor = 0
+		}
+	}
+	custom_global_regiment_cost = {
+		global_regiment_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_mercenary_cost = {
+		mercenary_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 4
+				has_reform = united_cantons_reform
+			}
+		}
+	}
+	custom_recover_army_morale_speed = {
+		recover_army_morale_speed = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+}
+
+
+newer_idea_dip_modifiers = {
+	category = DIP	
+	custom_warscore_cost_vs_other_religion = {
+		warscore_cost_vs_other_religion = -0.125
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 15
+		chance = {
+			factor = 0
+		}
+	}
+	custom_war_taxes_cost_modifier = {
+		war_taxes_cost_modifier = -0.5
+		max_level = 2
+		level_cost_1 = 10
+		level_cost_2 = 20
+		chance = {
+			factor = 0
+		}
+	}
+	custom_monarch_diplomatic_power = {
+		monarch_diplomatic_power = 1
+		max_level = 1
+		level_cost_1 = 60
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 10
+				dip = 6
+			}
+		}
+	}
+	custom_liberty_desire_from_subject_development = {
+		liberty_desire_from_subject_development = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { num_of_subjects = 1 }
+			}
+		}
+	}
+	custom_reduced_liberty_desire_on_same_continent = {
+		reduced_liberty_desire_on_same_continent = 10
+		max_level = 2
+		level_cost_2 = 10
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { num_of_subjects = 1 }
+			}
+		}
+	}
+	custom_naval_tradition_from_battle = {
+		naval_tradition_from_battle = 0.5
+		max_level = 2
+		level_cost_2 = 5
+		chance = {
+			factor = 0
+		}
+	}
+	custom_capture_ship_chance = {
+		capture_ship_chance = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_sunk_ship_morale_hit_recieved = {
+		sunk_ship_morale_hit_recieved = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 7 }
+			}
+		}
+	}
+	custom_global_naval_engagement_modifier = {
+		global_naval_engagement_modifier = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 10 }
+			}
+		}
+	}
+	custom_global_ship_trade_power = {
+		global_ship_trade_power = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 10 }
+			}
+		}
+	}
+	custom_native_assimilation = {
+		native_assimilation = 0.15
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_native_uprising_chance = {
+		native_uprising_chance = -0.25
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_reduced_liberty_desire = {
+		reduced_liberty_desire = 5
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.33
+			modifier = {
+				factor = 0
+				NOT = { num_of_subjects = 1 }
+			}
+		}
+	}
+	custom_migration_cooldown = {
+		migration_cooldown = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { num_of_cities = 2 }
+				has_reform = siberian_tribe
+			}
+		}
+	}
+	custom_envoy_travel_time = {
+		envoy_travel_time = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_province_warscore_cost = {
+		province_warscore_cost = -0.1
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 0
+		}
+	}
+	custom_dip_tech_cost_modifier = {
+		dip_tech_cost_modifier = -0.05
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				dip = 5
+			}
+		}
+	}
+	custom_papal_influence = {
+		papal_influence = 1
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion = catholic }
+			}
+			modifier = {
+				factor = 1.25
+				government = theocracy
+			}
+		}
+	}
+	custom_trade_range_modifier = {
+		trade_range_modifier = 0.2
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_auto_explore_adjacent_to_colony = {
+		auto_explore_adjacent_to_colony = yes
+		max_level = 1
+		chance = {
+			factor = 0
+		}
+	}
+	custom_unjustified_demands = {
+		unjustified_demands = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_rebel_support_efficiency = {
+		rebel_support_efficiency = 0.2
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_placed_merchant_power = {
+		placed_merchant_power = 5
+		max_level = 2
+		level_cost_2 = 10
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				OR = {
+					has_reform = plutocratic_reform
+					has_reform = merchants_reform
+				}
+			}
+		}
+	}
+	custom_global_own_trade_power = {
+		global_own_trade_power = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 1.1
+				dip = 4
+			}
+		}
+	}
+	custom_recover_navy_morale_speed = {
+		recover_navy_morale_speed = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_global_foreign_trade_power = {
+		global_foreign_trade_power = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+	custom_improve_relation_modifier = {
+		improve_relation_modifier = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.33
+			modifier = {
+				factor = 0
+				is_emperor = no
+			}
+		}
+	}
+	custom_possible_condottieri = {
+		possible_condottieri = 0.25
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { has_reform = united_cantons_reform }
+			}
+			modifier = {
+				factor = 0
+				is_part_of_hre = no
+			}
+		}
+	}
+	custom_naval_attrition = {
+		naval_attrition = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+}
+
+	
