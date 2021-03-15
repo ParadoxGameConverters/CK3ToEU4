@@ -1,4 +1,4 @@
-﻿l_spanish:
+﻿﻿l_spanish:
  JOM: "Jomsvikingos"
  JOM_ADJ: "Jomsvikinga"
  HAH: "Asesinos"
@@ -54,3 +54,5 @@
  hellenic_pagan_reformed_rebels_desc: "Los fanáticos religiosos suelen aparecer en provincias controladas por una nación con distintas creencias. Pretenden difundir su doctrina y castigar a los infieles."
  hellenic_pagan_reformed_rebels_army: "Ejército del $RELIGION$"
  string_from_ck3:0 "Un[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]... ¡Espere, este es un juego convertido de Crusader Kings!\n\nComo Equipo de los Convertidores, Le damos la bienvenida al nuevo paso de Su megacampaña. Ojalá no haya mucha mapa-lepra, pero quién sabe.\n\nSi Usted tiene alguna sugerencia o desea señalar algún error, publíquelo en el hilo del foro dedicado y consideraremos su opinión.\n\nSi Usted planea tener un time-lapse de IA, puede ingresar al modo observador abriendo la consola y escribiendo observer. Si no, reanudemos:\n\nUn[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]..."
+ ECUMENICAL_PATRIARCH:0 "Patriarca Ecuménico"
+ ECUMENICAL_MATRIARCH:0 "Matriarca Ecuménica"

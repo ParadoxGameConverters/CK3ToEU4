@@ -1,4 +1,4 @@
-﻿l_german:
+﻿﻿l_german:
  JOM: "Jomswikinger"
  JOM_ADJ: "Jomswikingisch"
  HAH: "Hashshashine"
@@ -54,3 +54,5 @@
  hellenic_pagan_reformed_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, deren Religion von der Staatsreligion abweicht. Sie wollen ihre Religion verbreiten und alle Ungläubigen bekehren."
  hellenic_pagan_reformed_rebels_army: "$RELIGION$ Armee"
  string_from_ck3:0 "[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert... Halte mal, dies ist ein von Crusader Kings konvertiertes Spiel!\n\nAls Konverter-Mannschaft begrüßen wir Sie zum neuen Schritt Ihrer Großkampagne. Hoffentlich gibt es nicht zu viel Grenzenaussatz, aber wer weiß.\n\nWenn Sie Vorschläge haben oder einen Fehler melden möchten, posten Sie ihn im speziellen Forenthread und wir werden Ihre Eingabe berücksichtigen.\n\nWenn Sie einen Nur-KI-Zeitraffer geplant haben, können Sie in den Beobachtermodus wechseln, indem Sie die Konsole öffnen und darin observer schreiben. Wenn nicht, fahren wir fort:\n\n[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert..."
+ ECUMENICAL_PATRIARCH:0 "Ökumenischer Patriarch"
+ ECUMENICAL_MATRIARCH:0 "Ökumenische Matriarch"
