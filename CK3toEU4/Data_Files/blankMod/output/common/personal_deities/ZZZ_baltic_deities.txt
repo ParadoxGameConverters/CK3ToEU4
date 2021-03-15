@@ -1,0 +1,113 @@
+perkunas =
+{
+	discipline = 0.05
+	leader_land_shock = 1
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 43
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}			
+	}		
+}
+
+ausrine =
+{
+	diplomatic_upkeep = 1
+	improve_relation_modifier = 0.10
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 44
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}			
+	}		
+}
+
+saule =
+{
+	production_efficiency = 0.1
+	global_trade_goods_size_modifier = 0.1
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 45
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}			
+	}		
+}
+
+laima =
+{
+	global_unrest = -1
+	global_tax_modifier = 0.1
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 46
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}			
+	}		
+}
+
+gabija =
+{
+	hostile_attrition = 1.0
+	defensiveness = 0.2
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 47
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}		
+	}		
+}
+
+dievas =
+{
+	land_morale = 0.1
+	core_creation = -0.10
+	
+	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	sprite = 48
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}		
+	}		
+}

@@ -1,0 +1,155 @@
+mena_pagan = {	
+
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 1 1 }
+	crusade_name = HOLY_WAR
+	canaanite = {
+		color = { 144 186 19 }
+		icon = 151
+		country = {
+			naval_forcelimit = 1
+			global_sailors_modifier = 1.2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			naval_forcelimit = 0.5
+			global_sailors_modifier = 1.1
+		}
+		center_of_religion = 379 # Jerusalem
+		heretic = { MOLOCHITES AMMONITES JEBUSAEI MOABITES EDOMITES }
+		allowed_conversion = { jewish }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	
+	kemetism = {
+		color = { 179 45 0 }
+		icon = 152
+		country = {
+			legitimacy = 2
+			republican_tradition = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			legitimacy = 1
+			republican_tradition = 1
+		}
+		personal_deity = yes
+		heretic = { KUSHITE SPHYNX }
+	}
+	
+	mardukism = {
+		icon = 153
+		color = { 128 11 0 }
+		country = {
+			monthly_splendor = 2
+			harsh_treatment_cost = -0.3
+		}
+		province = {
+			local_defensiveness = 0.1
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			monthly_splendor = 1
+			harsh_treatment_cost = -0.1
+		}
+		heretic = { DANIEL SUMER }
+		allowed_conversion = { jewish }
+	}
+	arab_pagan = {
+		color = { 140 20 50 }
+		icon = 161
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			prestige = 1
+			land_attrition = -0.10
+		}
+
+		uses_piety = yes
+		declare_war_in_regency = yes
+		
+		heretic = { BEAR_SPIRIT SNAKE_CLAN }
+	}
+	cybelene = {
+		color = { 155 13 81 }
+		icon = 158
+		country = {
+			tolerance_own = 1
+			advisor_pool = 1
+		}
+		country_as_secondary = {
+			advisor_pool = 1
+			stability_cost_modifier = -0.1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		heretic = { SPHYNX }
+	}
+	armenian_pagan = {
+		color = { 0.33 0.42 0.18 }
+		icon = 162
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			prestige = 1
+			land_attrition = -0.10
+		}
+		heretic = { SPHYNX }
+	}
+	caucasian_pagan = {
+		color = { 0.8 0.2 0.2 }
+		icon = 163
+		province = {
+			local_missionary_strength = 0.01
+		}
+		country = {
+			tolerance_heathen = 1
+			defensiveness = 0.1
+		}
+		country_as_secondary = {
+			global_regiment_recruit_speed = -0.10
+			defensiveness = 0.2
+		}
+		heretic = { SPHYNX }
+	}
+	atenism = {
+		color = { 0.9 0.8 0.4 }
+		icon = 170
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			enemy_core_creation = 0.2
+			hostile_attrition = 1
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			tolerance_heathen = 2
+		}
+		uses_piety = yes
+		heretic = { SPHYNX }
+	}
+}

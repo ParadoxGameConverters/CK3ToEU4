@@ -1,6 +1,8 @@
 # Usage:
 # link = { eu4 = eu4religion ck3 = ck3faith }
 # multiple ck3 entires are allowed (and encouraged), multiple eu4 are not.
+# A special entry "school" can be used when mapping to sunni or shiite, specifying
+# the Muslim school of law for EU4
 
 # Akom  
 link = { eu4 = shamanism ck3 = akom_pagan }
@@ -42,13 +44,19 @@ link = { eu4 = finnish_pagan ck3 = finnish_pagan }
 link = { eu4 = siberian_pagan ck3 = siberian_pagan }
 # Germanic  
 link = { eu4 = norse_pagan ck3 = norse_pagan }
+link = { eu4 = germanic_pagan ck3 = germanic_pagan }
+link = { eu4 = anglo_pagan ck3 = anglo_pagan }
 # Hellenism  
-link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = anatolian_pagan ck3 = anatolian_pagan_old ck3 = dacian_pagan ck3 = dacian_pagan_old }
+link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = eleusinian_mysteries }
 # Hinduism  
 link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam  
-link = { eu4 = sunni ck3 = ashari ck3 = muwalladi ck3 = maturidi ck3 = masmudi }
-link = { eu4 = shiite ck3 = ismaili ck3 = nizari ck3 = zayidi ck3 = imami ck3 = ghulat ck3 = alevi }
+link = { eu4 = sunni ck3 = ashari school = hanbali_school }
+link = { eu4 = sunni ck3 = muwalladi ck3 = masmudi school = maliki_school }
+link = { eu4 = sunni ck3 = maturidi school = hanafi_school }
+link = { eu4 = shiite ck3 = ismaili school = ismaili_school }
+link = { eu4 = shiite ck3 = zayidi school = zaidi_school }
+link = { eu4 = shiite ck3 = nizari ck3 = imami ck3 = ghulat ck3 = alevi }
 link = { eu4 = ibadi ck3 = ibadi }
 link = { eu4 = mutazila ck3 = mutazila }
 link = { eu4 = quranist ck3 = quranist }
@@ -69,7 +77,7 @@ link = { eu4 = magyar_pagan ck3 = magyar_pagan }
 # Mundhum  
 link = { eu4 = animism ck3 = kiratism ck3 = yumaism }
 # Paganism  
-link = { eu4 = pagan_religion ck3 = pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = berber_pagan ck3 = berber_pagan_old ck3 = caucasian_pagan ck3 = caucasian_pagan_old ck3 = iberian_pagan ck3 = iberian_pagan_old }
+link = { eu4 = pagan_religion ck3 = pagan }
 # Qiangic  
 link = { eu4 = confucianism ck3 = rrmeaism }
 link = { eu4 = animism ck3 = melieism }
@@ -78,7 +86,7 @@ link = { eu4 = slavic_pagan ck3 = slavic_pagan }
 # Taoism  
 link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism  
-link = { eu4 = tengri_pagan ck3 = tengri_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
+link = { eu4 = tengri_pagan ck3 = tengri_pagan }
 # Waaqism  
 link = { eu4 = shamanism ck3 = waaqism_pagan }
 # West African  
@@ -95,7 +103,7 @@ link = { eu4 = meshefaresism ck3 = meshefaresism }
 link = { eu4 = kitebacilweism ck3 = kitebacilweism }
 # Zoroastrianism  
 link = { eu4 = zoroastrian ck3 = mazdayasna }
-link = { eu4 = zurvanism ck3 = zurvanism ck3 = urartuism }
+link = { eu4 = zurvanism ck3 = zurvanism }
 link = { eu4 = gayomarthianism ck3 = gayomarthianism }
 link = { eu4 = khurmazta ck3 = khurmazta }
 link = { eu4 = mazdaki ck3 = mazdakism }
@@ -104,10 +112,26 @@ link = { eu4 = khurramism ck3 = khurramism }
 link = { eu4 = zun_pagan ck3 = zun_pagan }
 
 # IMP:CK3 addition
-link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }
+## Celtic
 link = { eu4 = druidism ck3 = celtic_pagan ck3 = celtic_pagan_old }
-link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
+link = { eu4 = briton_pagan ck3 = briton_paganism }
+link = { eu4 = gallic_pagan ck3 = gallic_celtic }
+link = { eu4 = gaelic_pagan ck3 = gaelic_paganism }
+link = { eu4 = celtiberian_pagan ck3 = celtiberian_paganism }
+## Semitic
+link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }
+link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old }
 link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old }
-
-# Mod: Sunset Invasion
-link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }
+## Perso-Caucasian
+link = { eu4 = mithraism ck3 = mithraic_mysteries }
+link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism }
+link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old }
+link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
+## Egyptian
+link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
+link = { eu4 = atenism ck3 = atenist_pagan }
+## Others
+link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
+link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old }
+link = { eu4 = shamanism ck3 = berber_pagan ck3 = berber_pagan_old }
+link = { eu4 = iberian_pagan ck3 = iberian_pagan ck3 = iberian_pagan_old }

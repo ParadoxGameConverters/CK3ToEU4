@@ -1,4 +1,5 @@
 # This is everything but Reformed Tengri and Reformed Norse, since those are defined by the converter
+# As well as the immense pagan group being split by continents
 # All hail EU4 being additive! (Don't actually hail it, it's annoying)
 
 christian = {
@@ -1389,11 +1390,11 @@ dharmic = {
 	crusade_name = CRUSADE
 }
 
-pagan = {
+pagan = { # Pagan group is split
 
 	flags_with_emblem_percentage = 10
-	flag_emblem_index_range = { 83 96 }
-
+	flag_emblem_index_range = { 2 10 }
+	crusade_name = HOLY_WAR
 	animism = {
 		color = { 127 0 0 }
 		icon = 11
@@ -1411,6 +1412,13 @@ pagan = {
 		
 		heretic = { SNAKE_CLAN }
 	}
+	harmonized_modifier = harmonized_pagan
+}
+african_pagan = {
+	crusade_name = JIHAD
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 51 52 }
+	
 	shamanism = { #Fetishism, tag kept to avoid breaking saves.
 		color = { 127 76 76 }
 		icon = 12
@@ -1429,6 +1437,12 @@ pagan = {
 		fetishist_cult = yes
 		heretic = { GOAT_SKULL }
 	}
+}
+american_pagan = {
+	crusade_name = HOLY_WAR
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 83 88 }
+	
 	totemism = {
 		color = { 127 115 115 }
 		icon = 13
@@ -1549,9 +1563,6 @@ pagan = {
 	#	can_have_secondary_religion = yes
 	#	heretic = { OLD_TENGRI }
 	#}
-	
-	crusade_name = CRUSADE
-	harmonized_modifier = harmonized_pagan
 }
 
 jewish_group = {

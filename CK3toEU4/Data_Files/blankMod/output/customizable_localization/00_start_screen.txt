@@ -1,0 +1,1818 @@
+#AVIALABLE CUSTOM LOCALISATION KEYS
+#When adding new custom loc keys, add them to the appropriate category (or add a new one) and describe them. Name the strings "String_X" where x is its content.
+# To not display anything, you can use 'localisation_key = ""'
+# Please add one example sentence for each key.
+
+#As this list grow organize with categories.
+#Current loc keys in this file:
+#StartScreenUpLeft
+#StartScreenUpRight
+#StartScreenDownLeft
+#StartScreenDownRight
+
+### Main title of start screen
+#Ex: "The Empire of Man, 2017"
+defined_text = {
+    name = StartScreenTitle
+	random = no
+	
+	text = {
+		
+        localisation_key = string_screen_title_plural
+        trigger = {
+			tag_with_plural_name_trigger = yes
+        }
+    }
+    text = {
+        localisation_key = string_screen_title_papacy
+        trigger = {
+			tag = PAP
+        }
+    }
+    text = {
+        localisation_key = string_screen_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+### Upper left title textbox
+#Ex: "Sweden's Situation"
+defined_text = {
+    name = StartScreenUpLeftTitle
+	random = no #Pick first that fits
+
+	#Country Specific:
+	
+	#Africa
+	
+	#India
+	
+	#East Asia:
+	text = {
+        localisation_key = string_start_title_great_ming
+        trigger = {
+			tag = MNG
+		}
+    }
+	text = {
+        localisation_key = string_start_title_mongolia
+        trigger = {
+			tag = KHA
+		}
+    }
+	text = {
+        localisation_key = string_start_title_shogunate
+        trigger = {
+			has_reform = shogunate
+		}
+    }
+	text = {
+        localisation_key = string_start_title_daimyo
+        trigger = {
+			has_reform = daimyo
+		}
+    }
+	text = {
+        localisation_key = string_start_title_korea
+        trigger = {
+			tag = KOR
+		}
+    }
+	
+	#Americas:
+	
+	#Europe:
+	text = {
+        localisation_key = string_start_title_aragon
+        trigger = {
+			tag = ARA
+			has_ruler = "Alfons V"
+		}
+    }
+	text = {
+        localisation_key = string_start_title_denmark
+        trigger = {
+			tag = DAN
+			has_ruler = "Christopher III"
+		}
+    }
+	text = {
+        localisation_key = string_start_title_ottomans
+        trigger = {
+			tag = TUR
+		}
+    }
+	text = {
+        localisation_key = string_start_title_sweden_norway
+        trigger = {
+			OR = {
+				tag = SWE
+				tag = NOR
+			}
+			is_subject_of = DAN
+		}
+    }
+	text = {
+        localisation_key = string_start_title_austria
+        trigger = {
+			tag = HAB
+			NOT = { is_year = 1452 }
+		}
+    }
+	text = {
+        localisation_key = string_start_title_bavarians
+        trigger = {
+			OR = {
+				tag = ING
+				tag = UBV
+				tag = LBV
+			}
+			NOT = { is_year = 1445 }
+		}
+    }
+	text = { #Saxony
+		localisation_key = string_start_title_saxony
+		trigger = {
+			tag = SAX
+			NOT = { is_year = 1454 }
+		}
+	}
+	text = { #Thuringia
+		localisation_key = string_start_title_thuringia
+		trigger = {
+			tag = THU
+			NOT = { is_year = 1454 }
+		}
+	}
+	text = {
+        localisation_key = string_start_title_hungary
+        trigger = {
+			OR = {
+				tag = HUN
+				tag = CRO
+			}
+			NOT = { is_year = 1445 }
+		}
+    }
+	text = {
+        localisation_key = string_start_title_burgundy
+        trigger = {
+			tag = BUR
+			NOT = { is_year = 1467 }
+		}
+    }
+	text = {
+        localisation_key = string_start_title_bohemia
+        trigger = {
+			tag = BOH
+			NOT = { is_year = 1457 }
+		}
+    }
+	text = {
+        localisation_key = string_start_title_castile
+        trigger = {
+			tag = CAS
+		}
+    }
+	text = {
+        localisation_key = string_start_title_poland
+        trigger = {
+			tag = POL
+		}
+    }
+	text = {
+        localisation_key = string_start_title_france
+        trigger = {
+			tag = FRA
+			NOT = { is_year = 1461 }
+		}
+    }
+	text = {
+        localisation_key = string_start_title_france_fallback
+        trigger = {
+			tag = FRA
+		}
+    }
+	text = {
+        localisation_key = string_start_title_trebizond
+        trigger = {
+			tag = TRE
+		}
+    }
+	text = {
+        localisation_key = string_start_title_provence
+        trigger = {
+			tag = PRO
+		}
+    }
+	text = {
+        localisation_key = string_start_title_brittany
+        trigger = {
+			tag = BRI
+		}
+    }
+	text = {
+        localisation_key = string_start_title_hanseatic
+        trigger = {
+			OR = {
+				tag = HAM
+				tag = BRE
+				tag = HSA
+			}
+		}
+    }
+	
+	text = {
+		localisation_key = string_start_title_byzantium
+		trigger = {
+			tag = BYZ
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_naples
+		trigger = {
+			tag = NAP
+		}
+	}
+	
+	text = {
+		localisation_key = string_start_title_genoa
+		trigger = {
+			tag = GEN
+		}
+	}
+	
+	#Middle & Near East
+	text = {
+        localisation_key = string_start_title_hisn_kayfa
+        trigger = {
+			tag = HSN
+			dynasty = Ayyubid
+		}
+    }
+	text = {
+		localisation_key = string_start_title_georgia_imereti
+		trigger = {
+			OR = {
+				tag = GEO
+				tag = IME
+			}
+			NOT = { is_year = 1490 }
+		}
+	}
+	text = {
+		localisation_key = string_start_title_samtskhe
+		trigger = {
+			tag = SME
+			NOT = { is_year = 1490 }
+		}
+	}
+	
+	#Generic:
+	text = {
+        localisation_key = string_start_title_horde
+        trigger = {
+			has_reform = steppe_horde
+        }
+    }
+	text = {
+        localisation_key = string_start_title_monarchy_regency #Actually same as fallback
+        trigger = {
+			has_regency = yes
+			OR = {
+				government = monarchy
+				government = tribal
+			}
+        }
+    }
+    text = {
+        localisation_key = string_start_title_monarchy_plural
+        trigger = {
+			#has_regency = no
+			government = monarchy
+			tag_with_plural_name_trigger = yes
+        }
+    }
+    text = {
+        localisation_key = string_start_title_monarchy
+        trigger = {
+			#has_regency = no
+			government = monarchy
+        }
+    }
+	text = {
+        localisation_key = string_start_title_republic
+        trigger = {
+			government = republic
+        }
+    }
+    text = {
+        localisation_key = string_start_title_theocracy
+        trigger = {
+			government = theocracy
+        }
+    }
+	text = {
+        localisation_key = string_start_title_native_council
+        trigger = {
+			government = native
+        }
+    }
+	#Final Fallback
+	text = {
+        localisation_key = string_start_title_fallback
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+### Upper right title textbox
+#Ex: "Muscovy is Orthodox"
+defined_text = {
+    name = StartScreenUpRightTitle
+	random = no
+
+	text = {
+        localisation_key = string_start_religion_mechanic_title_plural
+        trigger = {
+			tag_with_plural_name_trigger = yes
+        }
+    }
+    text = {
+        localisation_key = string_start_religion_mechanic_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+### Lower left title textbox
+#Ex: "Sweden is a Swedish Kingdom"
+defined_text = {
+    name = StartScreenDownLeftTitle
+	random = no
+
+    text = {
+        localisation_key = string_start_culture_government_title_plural
+		trigger = {
+			tag_with_plural_name_trigger = yes
+		}
+	}
+    text = {
+        localisation_key = string_start_culture_government_title
+		trigger = {
+			always = yes
+		}
+    }
+}
+
+### Lower right title textbox
+#Ex: "The Island of Japan"
+defined_text = {
+    name = StartScreenDownRightTitle
+	random = no
+
+   
+	text = {
+        localisation_key = string_start_east_asia_moh_title #Japan, Eoc and Tributaries
+        trigger = {
+			has_dlc = "Mandate of Heaven"
+			capital_scope = {
+				OR = {
+					region = mongolia_region
+					region = manchuria_region
+					region = east_siberia_region
+					region = tibet_region
+					area = shanshan_area
+					area = tarim_basin_area
+					superregion = far_east_superregion
+					superregion = china_superregion
+					superregion = east_indies_superregion
+				}
+			}
+        }
+    }
+	text = {
+        localisation_key = string_start_east_asia_title #Japan
+        trigger = {
+			capital_scope = {
+				OR = {
+					region = mongolia_region
+					region = manchuria_region
+					region = east_siberia_region
+					region = tibet_region
+					area = shanshan_area
+					area = tarim_basin_area
+					superregion = far_east_superregion
+					superregion = china_superregion
+					superregion = east_indies_superregion
+				}
+			}
+        }
+    }
+	text = {
+        localisation_key = string_start_europe #The HRE
+        trigger = {
+			capital_scope = {
+				continent = europe
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = string_start_no_special_region_title
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = capital_continent_title
+	random = no
+
+   
+	text = {
+        localisation_key = asia #Asia
+		trigger = {
+			capital_scope = {
+				continent = asia
+			}
+		}
+    }
+	text = {
+        localisation_key = europe #Europe
+        trigger = {
+			capital_scope = {
+				continent = europe
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = africa
+        trigger = {
+			capital_scope = {
+				continent = africa
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = north_america
+        trigger = {
+			capital_scope = {
+				continent = north_america
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = south_america
+        trigger = {
+			capital_scope = {
+				continent = south_america
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = oceania
+        trigger = {
+			capital_scope = {
+				continent = oceania
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = new_world
+        trigger = {
+			capital_scope = {
+				continent = new_world
+			}
+        }
+    }
+}
+
+### Upper left description textbox
+#Ex: "The Ayyubid dynasty, once the scourge of Christianity, and the masters of Syria, Egypt and Arabia, still remain in the Kurdistani fortress of Hisn Kayfa. Fiercely independent, the small state has managed to survive in independence amidst giants such as the Timurids or Qara Qoyunlu.\nAs 1444 opens the Ayyubid princes have recently managed to overcome their local rivals and former vassals, the Artuqids, and solidified their hold over their small principality by the Tigris."
+
+defined_text = {
+    name = StartScreenUpLeftDesc
+	random = no
+
+	#Later Start Dates
+	text = {
+		localisation_key = string_from_ck3
+		trigger = { always = yes }
+	}
+}
+
+### Upper right description textbox
+#Ex: ""
+defined_text = {
+    name = StartScreenUpRightDesc
+	random = no
+	
+	#Religion Mechanics - Base Text, these refer to custom loc keys below to insert DLC specific information.
+	#Christians:
+	#Orthodox (Patriarch Authority)
+	text = {
+        localisation_key = string_start_religion_orthodox
+        trigger = {
+			religion = orthodox
+        }
+    }
+	#Catholics (Papacy & The Reformation)
+	text = {
+        localisation_key = string_start_religion_catholic
+        trigger = {
+			religion = catholic
+        }
+    }
+	#Protestant (The Reformation)
+	text = {
+        localisation_key = string_start_religion_protestant
+        trigger = {
+			religion = protestant
+        }
+    }
+	#Reformed (The Reformation)
+	text = {
+        localisation_key = string_start_religion_reformed
+        trigger = {
+			religion = reformed
+        }
+    }
+	#Coptic
+	text = {
+        localisation_key = string_start_religion_coptic
+        trigger = {
+			religion = coptic
+        }
+    }
+	#Muslims (Piety):
+	text = {
+        localisation_key = string_start_religion_muslim_sunni
+        trigger = {
+			religion = sunni
+        }
+    }
+	text = {
+        localisation_key = string_start_religion_muslim_shiite
+        trigger = {
+			religion = shiite
+        }
+    }
+	text = {
+        localisation_key = string_start_religion_muslim_ibadi
+        trigger = {
+			religion = ibadi
+        }
+    }
+	#Eastern - Buddhists
+	text = {
+        localisation_key = string_start_religion_buddhist_theravada
+        trigger = {
+			religion = buddhism #Theravada
+        }
+    }
+	text = {
+        localisation_key = string_start_religion_buddhist_mahayana
+        trigger = {
+			religion = mahayana
+        }
+    }
+	text = {
+        localisation_key = string_start_religion_buddhist_vajrayana
+        trigger = {
+			religion = vajrayana
+        }
+    }
+	#Confucian
+	text = {
+        localisation_key = string_start_religion_confucianism
+        trigger = {
+			religion = confucianism
+        }
+    }
+	#Shinto
+	text = {
+        localisation_key = string_start_religion_shinto
+        trigger = {
+			religion = shinto
+        }
+    }
+	#Hindu
+	text = {
+        localisation_key = string_start_religion_hindu
+        trigger = {
+			religion = hinduism
+        }
+    }
+	#Sikh
+	text = {
+        localisation_key = string_start_religion_sikh
+        trigger = {
+			religion = sikhism
+        }
+    }
+	#Fetishist
+	text = {
+        localisation_key = string_start_religion_fetishist
+        trigger = {
+			religion = shamanism #Fetishist
+        }
+    }
+	#Fetishist
+	text = {
+        localisation_key = string_start_religion_tengri
+        trigger = {
+			religion = tengri_pagan_reformed #Tengri
+        }
+    }
+	#Inti
+	text = {
+        localisation_key = string_start_religion_inti
+        trigger = {
+			religion = inti
+        }
+    }
+	#Nahuatl
+	text = {
+        localisation_key = string_start_religion_nahuatl
+        trigger = {
+			religion = nahuatl
+        }
+    }
+	#Mayan
+	text = {
+        localisation_key = string_start_religion_mayan
+        trigger = {
+			religion = mesoamerican_religion
+        }
+    }
+	#Zoroastrianism
+	text = {
+        localisation_key = string_start_religion_zoroastrian
+        trigger = {
+			religion = zoroastrian
+        }
+    }
+	#Norse
+	text = {
+        localisation_key = string_start_religion_norse
+        trigger = {
+			religion = norse_pagan_reformed
+        }
+    }
+	#Fallback (Currently used by Animism, Judaism and Totemism)
+	text = {
+        localisation_key = string_start_religion_fallback
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Describing the bonuses from this religion (not really a dynamic key, just used to make the texts more modular and easier to edit).
+defined_text = {
+	name = start_religion_intro
+	random = no
+	text = {
+        localisation_key = string_start_religion_intro_text
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+
+#DLC Mechanics (these keys are inserted into the keys above, see the localization file)
+#Muslim Schools
+defined_text = {
+	name = start_religion_muslim_dlc_check
+	random = no
+	text = {
+        localisation_key = string_muslim_school #Has to end with \n
+        trigger = {
+			religion_group = muslim
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = string_muslim_school_no #\n
+        trigger = {
+			NOT = { has_dlc = "Cradle of Civilization" }
+        }
+    }
+}
+
+#Iconography & Consecrate Patriarchs
+defined_text = {
+	name = start_religion_orthodox_dlc_check
+	random = no
+	text = {
+        localisation_key = string_orthodox_icons #Has to end with \n
+        trigger = {
+			religion = orthodox
+			has_dlc = "Third Rome"
+        }
+    }
+	text = {
+        localisation_key = string_orthodox_icons_no #\n
+        trigger = {
+			religion = orthodox
+			NOT = { has_dlc = "Third Rome" }
+        }
+    }
+}
+
+#Tordesillas
+defined_text = {
+	name = start_religion_catholic_tordesillas
+	random = no
+	text = {
+        localisation_key = string_catholic_tordesillas #Has to end with \n
+        trigger = {
+			religion = catholic
+			has_dlc = "El Dorado"
+        }
+    }
+	text = {
+        localisation_key = string_catholic_tordesillas_no #\n
+        trigger = {
+			religion = catholic
+			NOT = { has_dlc = "El Dorado" }
+        }
+    }
+}
+
+#Church Power
+defined_text = {
+	name = start_protestant_church_power
+	random = no
+	text = {
+        localisation_key = string_church_power_info #Has to end with \n
+        trigger = {
+			religion = protestant
+			has_dlc = "Common Sense"
+        }
+    }
+	text = {
+        localisation_key = string_church_power_info_no #\n
+        trigger = {
+			religion = protestant
+			NOT = { has_dlc = "Common Sense" }
+        }
+    }
+}
+
+#Fervor
+defined_text = {
+	name = start_reformed_fervor
+	random = no
+	text = {
+        localisation_key = string_fervor_info #Has to end with \n
+        trigger = {
+			religion = reformed
+			has_dlc = "Wealth of Nations"
+        }
+    }
+	text = {
+        localisation_key = string_fervor_info_no #\n
+        trigger = {
+			religion = reformed
+			NOT = { has_dlc = "Wealth of Nations" }
+        }
+    }
+}
+
+
+#Coptic Blessings
+defined_text = {
+	name = start_coptic_blessings
+	random = no
+	text = {
+        localisation_key = string_blessings_info #Has to end with \n
+        trigger = {
+			religion = coptic
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_blessings_info_no #\n
+        trigger = {
+			religion = coptic
+			NOT = { has_dlc = "Rights of Man" }
+        }
+    }
+}
+
+#Buddhist Karma
+defined_text = {
+	name = start_buddhist_karma
+	random = no
+	text = {
+        localisation_key = string_karma_info #Has to end with \n
+        trigger = {
+			OR = {
+				religion = buddhism
+				religion = mahayana
+				religion = vajrayana
+			}
+			has_dlc = "Common Sense"
+        }
+    }
+	text = {
+        localisation_key = string_karma_info_no #\n
+        trigger = {
+			OR = {
+				religion = buddhism
+				religion = mahayana
+				religion = vajrayana
+			}
+			NOT = { has_dlc = "Common Sense" }
+        }
+    }
+}
+
+#Confucian Harmonization
+defined_text = {
+	name = start_confucian_harmonization
+	random = no
+	text = {
+        localisation_key = string_harmonization_info #Has to end with \n
+        trigger = {
+			religion = confucianism
+			has_dlc = "Mandate of Heaven"
+        }
+    }
+	text = {
+        localisation_key = string_harmonization_info_no #\n
+        trigger = {
+			religion = confucianism
+			NOT = { has_dlc = "Mandate of Heaven" }
+        }
+    }
+}
+
+
+#Shinto Isolationism
+defined_text = {
+	name = start_shinto_isolationism
+	random = no
+	text = {
+        localisation_key = string_isolationism_info #Has to end with \n
+        trigger = {
+			religion = shinto
+			has_dlc = "Mandate of Heaven"
+        }
+    }
+	text = {
+        localisation_key = string_isolationism_info_no #\n
+        trigger = {
+			religion = shinto
+			NOT = { has_dlc = "Mandate of Heaven" }
+        }
+    }
+}
+
+#Hindu Deities
+defined_text = {
+	name = start_hindu_deities
+	random = no
+	text = {
+        localisation_key = string_deities_info #Has to end with \n
+        trigger = {
+			religion = hinduism
+			has_dlc = "Wealth of Nations"
+        }
+    }
+	text = {
+        localisation_key = string_deities_info_no #\n
+        trigger = {
+			religion = hinduism
+			NOT = { has_dlc = "Wealth of Nations" }
+        }
+    }
+}
+
+#Fetishist Cults
+defined_text = {
+	name = start_fetishist_cults
+	random = no
+	text = {
+        localisation_key = string_cults_info #Has to end with \n
+        trigger = {
+			religion = shamanism
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_cults_info_no #\n
+        trigger = {
+			religion = shamanism
+			NOT = { has_dlc = "Rights of Man" }
+        }
+    }
+}
+
+#Tengri Syncretism
+defined_text = {
+	name = start_tengri_syncretism
+	random = no
+	text = {
+        localisation_key = string_syncretism_info #Has to end with \n
+        trigger = {
+			religion = tengri_pagan_reformed #Tengri
+			has_dlc = "The Cossacks"
+        }
+    }
+	text = {
+        localisation_key = string_syncretism_info_no #\n
+        trigger = {
+			religion = tengri_pagan_reformed #Tengri
+			NOT = { has_dlc = "The Cossacks" }
+        }
+    }
+}
+
+#Inti Authority
+defined_text = {
+	name = start_inti_authority
+	random = no
+	text = {
+        localisation_key = string_authority_info #Has to end with \n
+        trigger = {
+			religion = inti
+			has_dlc = "El Dorado"
+        }
+    }
+	text = {
+        localisation_key = string_authority_info_no #\n
+        trigger = {
+			religion = inti
+			NOT = { has_dlc = "El Dorado" }
+        }
+    }
+}
+
+
+#Nahuatl DOOM!
+defined_text = {
+	name = start_nahuatl_doom
+	random = no
+	text = {
+        localisation_key = string_doom_info #Has to end with \n
+        trigger = {
+			religion = nahuatl
+			has_dlc = "El Dorado"
+        }
+    }
+	text = {
+        localisation_key = string_doom_info_no #\n
+        trigger = {
+			religion = nahuatl
+			NOT = { has_dlc = "El Dorado" }
+        }
+    }
+}
+
+#Mayan Mechanics
+defined_text = {
+	name = start_mayan_mechanics
+	random = no
+	text = {
+        localisation_key = string_mayan_info #Has to end with \n
+        trigger = {
+			religion = mesoamerican_religion
+			has_dlc = "El Dorado"
+        }
+    }
+	text = {
+        localisation_key = string_mayan_info_no #\n
+        trigger = {
+			religion = mesoamerican_religion
+			NOT = { has_dlc = "El Dorado" }
+        }
+    }
+}
+
+### Lower left description textbox
+#Ex: "As a Russian Nation Muscovy has...."
+defined_text = {
+    name = StartScreenDownLeftDesc
+	random = no
+
+    text = {
+        localisation_key = string_government_culture_explanation
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Culture specific Mechanics
+defined_text = {
+    name = startup_culture_explanation
+	random = no
+
+    text = {
+        localisation_key = string_manchu_culture
+        trigger = {
+			primary_culture = manchu
+			has_dlc = "Mandate of Heaven"
+        }
+    }
+	text = {
+        localisation_key = string_no_special_culture
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Base Government Explanation
+defined_text  = {
+    name = startup_government_explanation
+	random = no
+	
+    text = {
+        localisation_key = string_start_government_monarchy_regency
+        trigger = {
+			has_regency = yes
+			government = monarchy
+        }
+    }
+	text = {
+        localisation_key = string_start_government_monarchy
+        trigger = {
+			government = monarchy
+        }
+    }
+	text = {
+        localisation_key = string_start_government_republic
+        trigger = {
+			government = republic
+        }
+    }
+	text = {
+        localisation_key = string_start_government_papacy
+        trigger = {
+			has_reform = papacy_reform
+        }
+    }
+	text = {
+        localisation_key = string_start_government_theocracy
+        trigger = {
+			government = theocracy
+        }
+    }
+	text = {
+        localisation_key = string_start_government_native_councils_plural
+        trigger = {
+			tag_with_plural_name_trigger = yes
+			OR = {
+				has_reform = siberian_tribe
+				government = native
+			}
+       }
+    }
+	text = {
+        localisation_key = string_start_government_native_councils
+        trigger = {
+			OR = {
+				has_reform = siberian_tribe
+				government = native
+			}
+       }
+    }
+}
+
+defined_text = {
+	name = startup_government_heirs
+	random = no
+	
+	text = {
+		localisation_key = string_start_government_heirs
+		trigger = {
+			government = monarchy
+			NOT = { has_reform = mamluk_government }
+			NOT = { has_reform = steppe_horde }
+		}
+	}
+	text = {
+		localisation_key = string_start_government_horde_heirs
+		trigger = {
+			government = monarchy
+			has_reform = steppe_horde
+		}
+	}
+	text = {
+		localisation_key = string_start_government_heirs_no
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+#Factions for Merchant & Veche Republics, Celestial Empire, Revolutionary Republic
+defined_text  = {
+    name = startup_government_factions
+	random = no
+
+    text = {
+        localisation_key = string_start_factions
+        trigger = {
+			OR = {
+				has_government_attribute = is_merchant_republic
+				has_reform = veche_republic
+				AND = { 
+					has_reform = celestial_empire
+					NOT = { has_dlc = "Mandate of Heaven" }
+				}
+				AND = { 
+					is_revolutionary_republic_trigger = yes
+					has_dlc = "Rights of Man"
+				}
+			}
+		}
+    }
+	text = {
+        localisation_key = string_start_factions_no
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text  = {
+    name = startup_estates_explanation
+	random = no
+	text = {
+        localisation_key = string_startup_estates_explanation_cossacks
+        trigger = {
+			has_dlc = "The Cossacks"
+			has_estate = estate_cossacks
+        }
+    }
+    
+	text = {
+        localisation_key = string_startup_estates_explanation
+        trigger = {
+			has_estate = yes
+			NOT = {
+				has_estate = estate_cossacks
+			}
+		}
+    }
+	text = {
+        localisation_key = string_startup_estates_explanation_no
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Tribal Reforms
+defined_text  = {
+    name = startup_government_tribal
+	random = no
+
+    text = {
+        localisation_key = string_tribal_reform
+        trigger = {
+			government = tribal
+		}
+    }
+	text = {
+        localisation_key = string_tribal_reform_no
+        trigger = {
+			always = yes
+        }
+    }
+}
+#Tribal Federations don't get institution spread penalties.
+defined_text  = {
+    name = startup_government_tribal_institution_penalty
+	random = no
+
+    text = {
+        localisation_key = string_tribal_institution_penalty
+        trigger = {
+			NOT = { has_reform = tribal_federation }
+		}
+    }
+	text = {
+        localisation_key = string_tribal_institution_penalty_no
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#DLC Content Explanation
+#Consorts
+defined_text  = {
+    name = startup_consorts_explanation
+	random = no
+
+    text = {
+        localisation_key = string_start_consorts
+        trigger = {
+			government = monarchy
+			NOT = { has_reform = iqta }
+			NOT = { has_reform = steppe_horde }
+			NOT = { has_reform = mamluk_government }
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_start_consorts_no #Empty string
+        trigger = {
+			NOT = { has_dlc = "Rights of Man" }
+        }
+    }
+}
+
+#Devotion
+defined_text  = {
+    name = startup_devotion_explanation
+	random = no
+
+    text = {
+        localisation_key = string_start_devotion
+        trigger = {
+			government = theocracy
+			has_dlc = "Common Sense"
+        }
+    }
+	text = {
+        localisation_key = string_start_devotion_no #Empty string
+        trigger = {
+			NOT = { has_dlc = "Common Sense" }
+        }
+    }
+}
+
+#Russian Interactions
+defined_text  = {
+    name = startup_russian_government_interactions
+	random = no
+
+    text = {
+        localisation_key = string_start_russian_mechanics
+        trigger = {
+			has_government_mechanic = russian_mechanic
+        }
+    }
+	text = {
+        localisation_key = string_start_russian_mechanics_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Iqta
+defined_text  = {
+    name = startup_iqta_government
+	random = no
+
+    text = {
+        localisation_key = string_start_iqta
+        trigger = {
+			has_reform = iqta
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = string_start_iqta_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Feudal Theocracy
+defined_text  = {
+    name = startup_feudal_theocracy_government
+	random = no
+
+    text = {
+        localisation_key = string_start_feudal_theocracy
+        trigger = {
+			has_reform = feudal_theocracy
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = string_start_feudal_theocracy_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Ottoman Government
+defined_text  = {
+    name = startup_ottoman_government_harem
+	random = no
+
+    text = {
+        localisation_key = string_start_harem
+        trigger = {
+			has_reform = ottoman_government
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_start_harem_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Ottoman Government - Pashas And Janissaries
+defined_text  = {
+    name = startup_ottoman_government_pashas
+	random = no
+
+    text = {
+        localisation_key = string_start_pashas
+        trigger = {
+			has_reform = ottoman_government
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = string_start_pashas_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Mamluk Government
+defined_text  = {
+    name = startup_tribal_federation_government
+	random = no
+
+    text = {
+        localisation_key = string_start_tribal_federation
+        trigger = {
+			has_reform = tribal_federation
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = start_tribal_federation_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Mamluk Government
+defined_text  = {
+    name = startup_mamluk_government
+	random = no
+
+    text = {
+        localisation_key = string_start_mamluks
+        trigger = {
+			has_reform = mamluk_government
+			has_dlc = "Cradle of Civilization"
+        }
+    }
+	text = {
+        localisation_key = string_start_harem_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Trade League
+defined_text  = {
+    name = startup_government_trade_league
+	random = no
+
+    text = {
+        localisation_key = string_start_trade_league
+        trigger = {
+			OR = {
+				has_government_attribute = is_merchant_republic
+				has_reform = veche_republic
+			}
+			has_dlc = "Mare Nostrum"
+        }
+    }
+	text = {
+        localisation_key = string_start_trade_league_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Parliaments
+defined_text  = {
+    name = startup_government_parliaments
+	random = no
+
+    text = {
+        localisation_key = string_start_parliaments
+        trigger = {
+			has_parliament = yes
+        }
+    }
+	text = {
+        localisation_key = string_start_parliaments_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Prussian Monarchies
+defined_text  = {
+    name = startup_government_prussian
+	random = no
+
+    text = {
+        localisation_key = string_start_prussian_government
+        trigger = {
+			has_reform = prussian_monarchy
+        }
+    }
+	text = {
+        localisation_key = string_start_prussian_government_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Prussian Monarchies DLC Part
+defined_text  = {
+    name = startup_government_prussian_dlc
+	random = no
+
+    text = {
+        localisation_key = string_start_prussian_government_dlc
+        trigger = {
+			has_dlc = "Rights of Man"
+        }
+    }
+	text = {
+        localisation_key = string_start_prussian_government_dlc_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Elective Monarchies
+defined_text  = {
+    name = startup_government_elective
+	random = no
+	
+    text = {
+        localisation_key = string_start_elective_monarchy
+        trigger = {
+			has_reform = elective_monarchy
+			has_dlc = "Res Publica"
+        }
+    }
+	text = {
+        localisation_key = string_start_elective_monarchy_not_yet
+        trigger = {
+			tag = POL
+			has_dlc = "Res Publica"
+        }
+    }
+	text = {
+        localisation_key = string_start_elective_monarchy_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Hordes - Horde Unity
+defined_text  = {
+    name = startup_government_horde
+	random = no
+
+    text = {
+        localisation_key = string_start_horde
+        trigger = {
+			has_reform = steppe_horde
+			has_dlc = "The Cossacks"
+        }
+    }
+	text = {
+        localisation_key = string_start_horde_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Native Council
+defined_text  = {
+    name = startup_government_native_council
+	random = no
+	
+	text = {
+        localisation_key = string_start_native_council_opm
+        trigger = {
+			government = native
+			has_dlc = "Conquest of Paradise"
+			NOT = { num_of_cities = 2 }
+        }
+    }
+    text = {
+        localisation_key = string_start_native_council
+        trigger = {
+			government = native
+			has_dlc = "Conquest of Paradise"
+        }
+    }
+	text = {
+        localisation_key = string_native_council_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Siberian Council
+defined_text  = {
+    name = startup_government_siberian_native_council
+	random = no
+	
+	text = {
+        localisation_key = string_start_siberian_native_council_opm
+        trigger = {
+			has_reform = siberian_tribe
+			has_dlc = "Conquest of Paradise"
+			NOT = { num_of_cities = 2 }
+        }
+    }
+	text = {
+        localisation_key = string_siberian_native_council_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Meritocracy
+defined_text  = {
+    name = startup_government_meritocracy
+	random = no
+	
+	text = {
+        localisation_key = string_start_meritocracy
+        trigger = {
+			has_reform = celestial_empire
+			has_dlc = "Mandate of Heaven"
+        }
+    }
+	text = {
+        localisation_key = string_meritocracy_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+#Shogunate
+defined_text  = {
+    name = startup_government_shogunate
+	random = no
+	
+	text = {
+        localisation_key = string_start_shogunate_moh
+        trigger = {
+			has_reform = shogunate
+			has_dlc = "Mandate of Heaven"
+        }
+    }
+	text = {
+        localisation_key = string_start_shogunate
+        trigger = {
+			has_reform = shogunate
+			NOT = { has_dlc = "Mandate of Heaven" }
+        }
+    }
+	text = {
+        localisation_key = string_shogunate_no #Empty string
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+### Lower right description textbox
+#Ex: "Looong text about the HRE"
+defined_text = {
+    name = StartScreenDownRightDesc
+	random = no
+
+    text = {
+        localisation_key = string_start_east_asia_description #Japan, Eoc and Tributaries
+        trigger = {
+			has_dlc = "Mandate of Heaven"
+			capital_scope = {
+				OR = {
+					region = mongolia_region
+					region = manchuria_region
+					region = east_siberia_region
+					region = tibet_region
+					area = shanshan_area
+					area = tarim_basin_area
+					superregion = far_east_superregion
+					superregion = china_superregion
+					superregion = east_indies_superregion
+				}
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = string_start_africa_americas_description
+        trigger = {
+			capital_scope = {
+				OR = {
+					AND = {
+						continent = africa
+						NOT = { region = maghreb_region }
+						NOT = { region = egypt_region }
+					}
+					continent = new_world
+					continent = north_america
+					continent = south_america
+				}
+			}
+        }
+    }
+	
+	text = {
+        localisation_key = string_start_no_special_region_description
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = start_tributaries_descriptions
+	random = no
+
+    text = {
+        localisation_key = string_tributaries_desc
+        trigger = {
+			has_dlc = "Mandate of Heaven"
+			capital_scope = {
+				OR = {
+					continent = asia
+					region = ural_region
+					region = crimea_region #Pontic Steppe
+				}
+			}
+        }
+    }
+	text = {
+        localisation_key = string_tributaries_desc_no #Empty String
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = start_eoc_tributaries_descriptions
+	random = no
+
+    text = {
+        localisation_key = string_eoc_tributaries_desc
+        trigger = {
+			has_dlc = "Mandate of Heaven"
+			capital_scope = {
+				OR = {
+					continent = asia
+					region = ural_region
+					region = crimea_region #Pontic Steppe
+				}
+			}
+        }
+    }
+	text = {
+        localisation_key = string_eoc_tributaries_desc_no #Empty String
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = start_imperial_cities_description
+	random = no
+
+    text = {
+        localisation_key = string_imperial_cities_desc
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+    name = start_shogun_holders_through_the_years #used to display right clan name for the Shogunate in startup screen.
+	random = no
+
+    text = {
+        localisation_key = ASK
+        trigger = {
+			exists = ASK
+			ASK = {
+				has_reform = shogunate
+			}
+        }
+    }
+	text = {
+        localisation_key = ODA
+        trigger = {
+			exists = ODA
+			ODA = {
+				has_reform = shogunate
+			}
+        }
+    }
+	text = {
+        localisation_key = TKG
+        trigger = {
+			exists = TKG
+			TKG = {
+				has_reform = shogunate
+			}
+        }
+    }
+}
+
+defined_text = {
+    name = start_anglicanism_description
+	random = no
+
+    text = {
+        localisation_key = string_anglicanism_desc
+        trigger = {
+					has_dlc = "Rule Britannia"
+					culture_group = british
+        }
+    }
+	text = {
+        localisation_key = string_anglicanism_no #Empty String
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = start_dharma_gov_reforms
+	random = no
+	
+    text = {
+        localisation_key = string_dharma_government_reforms
+    }
+}
+
+defined_text = {
+	name = start_cossacks_steppe_nomads
+	random = no
+	
+	text = {
+		localisation_key = string_cossacks_steppe_nomads
+        trigger = {
+			has_reform = steppe_horde
+			has_dlc = "The Cossacks"
+        }
+	}
+	text = {
+		localisation_key = string_cossacks_steppe_nomads_no
+        trigger = {
+			always = yes
+        }
+	}
+}

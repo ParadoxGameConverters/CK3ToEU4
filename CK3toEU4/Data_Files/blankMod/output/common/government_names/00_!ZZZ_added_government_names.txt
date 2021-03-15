@@ -31,3 +31,80 @@ grand_duchy_monarchy = {
 		}
 	}
 }
+suffet = {
+	ruler_male = {
+		3 = SUFFET
+		2 = SUFFET
+	}
+	ruler_female = {
+		3 = SUFFET_fem
+		2 = SUFFET_fem
+	}
+	trigger = {
+		culture_group = punic_group
+	}
+}
+pharaoh = {
+	rank = {
+		3 = EMPIRE
+		2 = KINGDOM
+	}
+	ruler_male = {
+		3 = PHARAOH
+		2 = PHARAOH
+	}
+	ruler_female = {
+		3 = PHARAOH_fem
+		2 = PHARAOH_fem
+	}
+	trigger = {
+		religion = kemetism
+	}
+}
+ecumenical_patriarch = {
+	rank = {
+		3 = PATRIARCHATE
+		2 = PATRIARCHATE
+		1 = PATRIARCHATE
+	}
+	ruler_male = {
+		3 = ECUMENICAL_PATRIARCH
+		2 = ECUMENICAL_PATRIARCH
+		1 = ECUMENICAL_PATRIARCH
+	}
+	ruler_female = {
+		3 = ECUMENICAL_MATRIARCH
+		2 = ECUMENICAL_MATRIARCH
+		1 = ECUMENICAL_MATRIARCH
+	}
+	trigger = { government = theocracy religion = orthodox }
+}
+ruling_prince = {
+	rank = {
+		2 = PRINCEDOM
+		1 = PRINCEDOM
+	}
+	ruler_male = {
+		2 = PRINCE
+		1 = PRINCE
+	}
+	ruler_female = {
+		2 = PRINCESS
+		1 = PRINCESS
+	}
+	trigger = { OR = { tag = SWI tag = ARM } government = monarchy }
+}
+dauphin = {
+	heir_male = {
+		1 = DAUPHIN
+		2 = DAUPHIN
+		3 = DAUPHIN
+	}
+
+	heir_female = {
+		1 = DAUPHIN_fem
+		2 = DAUPHIN_fem
+		3 = DAUPHIN_fem
+	}
+	trigger = { culture_group = french }
+}

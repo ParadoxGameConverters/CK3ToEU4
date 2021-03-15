@@ -1,0 +1,125 @@
+amun =
+{
+         global_tax_modifier = 0.1
+         navy_tradition = 1
+
+         allow = { religion = kemetism }
+         sprite = 55
+
+         ai_will_do = {
+                   factor = 1
+                   modifier = {
+                           factor = 2
+                           personality = ai_capitalist
+                   }
+                   modifier = {
+                           factor = 2
+                           personality = ai_militarist
+                   }
+        }
+}
+
+maat =
+{
+        stability_cost_modifier = -0.10
+        global_unrest = -1
+
+        allow = { religion = kemetism }
+        sprite = 56
+
+        ai_will_do = {
+                  factor = 1
+                  modifier = {
+                          factor = 3
+                          personality = ai_capitalist
+                  }
+                  modifier = {
+                          factor = 2
+                          personality = ai_diplomat
+                  }
+        }
+}
+
+ra =
+{
+        hostile_attrition = 1.0
+        recover_army_morale_speed = 0.05
+
+        allow = { religion = kemetism }
+        sprite = 57
+
+        ai_will_do = {
+                  factor = 1
+                  modifier = {
+                          factor = 2
+                          personality = ai_militarist
+                  }
+                  modifier = {
+                          factor = 0.5
+                          personality = ai_capitalist
+                  }
+        }
+}
+
+seth =
+{
+         infantry_power = 0.1
+         global_manpower_modifier = 0.1
+
+         allow = { religion = kemetism }
+         sprite = 58
+
+         ai_will_do = {
+                   factor = 1
+                   modifier = {
+                           factor = 3
+                           personality = ai_militarist
+                   }
+                   modifier = {
+                          factor = 0.5
+                          personality = ai_capitalist
+                   }
+        }
+}    
+
+isis =
+{
+        heir_chance = 0.50
+        manpower_recovery_speed = 0.25
+
+        allow = { religion = kemetism }
+        sprite = 59
+
+        ai_will_do = {
+                  factor = 1
+                  modifier = {
+                          factor = 3
+                          personality = ai_diplomat
+                  }
+                  modifier = {
+                          factor = 0.5
+                          personality = ai_militarist
+                  }
+        }
+}
+
+anubis =
+{
+        global_unrest = -1
+        discipline = 0.05
+
+        allow = { religion = kemetism }
+        sprite = 60
+
+        ai_will_do = {
+                  factor = 1
+                  modifier = {
+                          factor = 2
+                          personality = ai_militarist
+                  }
+                  modifier = {
+                          factor = 2
+                          personality = ai_capitalist
+                  }
+        }
+}

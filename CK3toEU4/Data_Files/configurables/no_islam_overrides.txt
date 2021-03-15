@@ -1,0 +1,81 @@
+## Religious rewrite
+
+# Since we may convert worlds without Islam existing/having ever existed,
+# it's best we also consider over-the-CK3 lands to adhere to such scenario
+
+# The converter will check if any province in the CK3 save has a Muslim faith
+# (e.g. Sunni, Shiite, Ibadi, etc.) and, if it doesn't, it'll change the religions of the
+# following provinces accordingly
+
+# We are not doing the same with Christian faiths because there is no Christian province
+# in the over-the-CK3 lands
+
+# Syntax:
+# link = { province = [EU4 province] religion = [new EU4 religion] }
+
+# Ibadi
+link = { province = 1201 religion = shamanist } # Zanzibar
+
+# Sunni
+## Malaysia - Indonesia
+link = { province = 593 religion = theravada } # Nakhon Si Thammarat
+link = { province = 594 religion = theravada } # Pattani
+link = { province = 2391 religion = theravada } # Thalang
+link = { province = 2394 religion = theravada } # Kedah
+link = { province = 595 religion = hinduism } # Perak
+link = { province = 596 religion = hinduism } # Malacca
+link = { province = 2392 religion = hinduism } #Selangor
+link = { province = 597 religion = hinduism } # Johor
+link = { province = 598 religion = hinduism } # Pahang
+link = { province = 599 religion = hinduism } # Kelantan
+link = { province = 2393 religion = hinduism } # Terengganu
+link = { province = 2686 religion = hinduism } # Bintan
+link = { province = 617 religion = hinduism } # Lamuri
+link = { province = 2673 religion = hinduism } # Pasai
+link = { province = 2685 religion = hinduism } # Gayo
+link = { province = 618 religion = hinduism } # Deli
+link = { province = 619 religion = hinduism } # Batak
+link = { province = 2674 religion = hinduism } # Peureulak
+link = { province = 620 religion = hinduism } # Siak
+link = { province = 659 religion = hinduism } # Lingga
+link = { province = 2675 religion = hinduism } # Rokan
+link = { province = 2676 religion = hinduism } # Indragiri
+link = { province = 2677 religion = hinduism } # Jambi
+link = { province = 621 religion = theravada } # Bengkulu
+link = { province = 622 religion = theravada } # Palembang
+link = { province = 623 religion = theravada } # Tulangbewang
+link = { province = 2678 religion = theravada } # Bangka
+link = { province = 636 religion = theravada } # Brunei
+link = { province = 637 religion = theravada } # Jesselton
+link = { province = 2703 religion = theravada } # Lehad Datu
+link = { province = 2704 religion = theravada } # Sibu
+link = { province = 2705 religion = theravada } # Kuching
+link = { province = 640 religion = hinduism } # Pontianak
+link = { province = 2706 religion = hinduism } # Katapang
+link = { province = 651 religion = animist } # Sulu
+link = { province = 655 religion = animist } # Palawan
+
+## Africa
+link = { province = 788 religion = shamanist } # Angoche
+link = { province = 1195 religion = shamanist } # Mozambique
+link = { province = 4020 religion = shamanist } # Comoros
+link = { province = 4049 religion = shamanist } # Ibo
+link = { province = 1111 religion = shamanist } # Arguin
+link = { province = 1186 religion = shamanist } # Sofala
+link = { province = 1192 religion = shamanist } # Quelimane
+link = { province = 1196 religion = shamanist } # Kilwa
+link = { province = 1198 religion = shamanist } # Lindi
+link = { province = 1202 religion = shamanist } # Mombasa
+link = { province = 1203 religion = shamanist } # Malindi
+link = { province = 1204 religion = shamanist } # Lamu
+link = { province = 2774 religion = shamanist } # Kismayo
+link = { province = 2796 religion = shamanist } # Pate
+link = { province = 2679 religion = shamanist } # Belitung
+link = { province = 2682 religion = hinduism } # Pariaman
+link = { province = 2683 religion = animist } # Mentawai
+link = { province = 2684 religion = animist } # Nias
+link = { province = 2775 religion = shamanist } # Merca
+link = { province = 2794 religion = shamanist} # Barawa
+link = { province = 4026 religion = shamanist } # Antemoro
+link = { province = 4029 religion = shamanist } # Antanosy
+link = { province = 4051 religion = shamanist } # Ewaso Ngiro
