@@ -32,7 +32,7 @@ gothic_group = {
 			Thurisinburg Thurisinhilda Thusnelda Walburg Waldburg
 			Walhild Waloburg Waluburg
 	}
-	visigothic = { }
+	visigothic = { primary = CAS }
 	ostrogothic = { }
 	getian = { }
 	gothic = { }
@@ -41,14 +41,17 @@ barbaro_germanic = {
 	graphical_culture = westerngfx
 	vandal = { }
 	frankish = {
+		primary = FRA
 		male_names = { Abbo Aega Agobard Allowin Arnulf Asselin Berno Berthaire Bruno Cassyon Cheldric Childebrand Clodomir Clotaire Corbinian Dodo Ebroin Ebrulf Emme Evroult Faro Gerold Grifo Grimbald Hartmut Helinand Hildebold Hildeprand Humbert Imbert Jocelin Lambert Lanfranc Lebuin Letard Liudhard Liudolf Lul Mansuet Omer Reginar Reol Richomer Rothad Sergi Sicho Vedast Werinbert Willibrord Zwentibold }
 		dynasty_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
 	}
 	suebi = {
+		primary = POR
 		male_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
 		dynasty_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
 	}
 	old_lombard = {
+		primary = ITA
 		male_names = { Adaloald Agilulf Aistulf Alahis Alboin Ansprand Arioald Aripert Authari Cleph Cunincpert Desideri Garibald Godepert Grimuald Hildeprand Liutpert Liutprand Parctarit Perctarit Raginpert Ragnipert Ratchis Rodoald Rothari }
 		dynasty_names = { Albhi Aleard Amistada Balda Degan Gadoald Gairulf Gisulph Gotefred Gualenghi Haimon Haistulf Hardman Harjowalda Hauptwolf Nok Ragin Rambold Reginmund Ridbald Rudonis Sala Schirald Schiriwaite Sigebald Teudald Tierwysch Wala Walfrit Zazza }
 	}
@@ -171,17 +174,17 @@ roman_group = {
 	graphical_culture = westerngfx
 	# For the sake of simplicity, all the names are shared throughout the whole group
 	roman = { primary = ROM }
-	hispanic = {  }
-	gaulic = {  }
-	theodisc = {  }
-	pannonian = {  }
-	wenedyk = {  }
-	britannian = {  }
-	hyperborean = {  }
-	salinatorian = { }
-	bazramani = { }
-	euxinian = { }
-	xliponian = { }
+	hispanic = { primary = ROM }
+	gaulic = { primary = ROM }
+	theodisc = { primary = ROM }
+	pannonian = { primary = ROM }
+	wenedyk = { primary = ROM }
+	britannian = { primary = ROM }
+	hyperborean = { primary = ROM }
+	salinatorian = { primary = ROM }
+	bazramani = { primary = ROM }
+	euxinian = { primary = ROM }
+	xliponian = { primary = ROM }
 		male_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
 		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
 		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
@@ -249,7 +252,7 @@ equine_group = {
 	graphical_culture = westerngfx
 	
 	equine = {
-
+		primary = TRL
 		male_names = {
 			Spot Star Spirit Blaze Lucky Chief Rain Stormy Duke Traveler "Clever Hans" Dreamer Midnight Twilight Arion Carlos Triumph
 		}
@@ -263,6 +266,7 @@ equine_group = {
 }
 cat_group = {
 	cat = {
+		primary = TRL
 		male_names = { Mittens Fluffy Tom Smudge Shado
 		}
 		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
@@ -271,6 +275,7 @@ cat_group = {
 }
 bear_group = {
 	bear = {
+		primary = TRL
 		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams
 		}
 		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
@@ -279,6 +284,7 @@ bear_group = {
 }
 hedgehog_group = {
 	hedgehog_culture = {
+		primary = TRL
 		male_names = { Hughues Echinus Erinus Kidnae Micro Mesyo Aurion Sclaterion Rix Spike Pokey Quillem Quilliam Quillington Sanic Knucklys Silver Lancelot Galahad Cyrus Pincushion Hedgehog
 			Grumpy Crisp Pinecone Sam Wiggles Stig Xerxes "Mr. Tiggy-Winkle" Nails Thorn Ringo Groogy Punk Hedgepig August Blaine Saul Sonic
 		}
@@ -288,6 +294,7 @@ hedgehog_group = {
 }
 duck_group = {
 	duck_culture = {
+		primary = TRL
 		male_names = { Daffy Quacker Huck Waddles Donald Dominic Whitewing Duckus Quackmire Eggbert Howard Scrooge Winghelm Ludwing Gladstone Cake Blunder Duck Quackers Pippi Face Grape Anaheim
 			Quackel Beaky Nottington Drake Mallard Hans Scrooge Darkwing Huey Dewey Louie Bolivar Mårten Maarten Cornelius Havbard Knase Kalle Arne Dylan Emelio Greg Paul
 		}
@@ -297,6 +304,7 @@ duck_group = {
 }
 dog_group = {
 	dog_culture = {
+		primary = TRL
 		male_names = { Fido Alfonso Basil Albert Alistair Elmer Gilbert Alwin Brantley Kendrik Psyche Pluck Buckler Spigot Lance Lurcher Watch Keeper Brigade Fencer Butcher Blazer Prowess Craftsman
 			Forester Counsellor Spoiler Hurry Fury Growler Riot Bloomer Rome Blossom Hebe Hilary Jolity Gazer Eyebright Much Force Trooper Bustle Bubbler Rockdove Stubborn Yelp Pele-mele
 			Strongboy Sky Sunbeam Bodkin Wistful Gnome Tracks Dash Blake Buddy Goofy Pluto Killer Max Bonzo Zico Santi Cotte Ruff Trigger Mini Toby Doglas Good Bad Cujo Louis "Mr Wuffles"
@@ -310,6 +318,7 @@ dog_group = {
 }
 elephant_group = {
 	elephant_culture = {
+		primary = TRL
 		male_names = { Doot Trumpo Snoot Pyyrhus Kandula Jumbo Elephant Setu Dhriti Bhaanu Bhadra Zain Barbar Pompadour Booper Dombo Abul Abbas Hanno Zaeem Hannibal Baal Hasdrubal Babur
 			Batyr Pollux Castor Mr-Tusk Gaj Brant Kamboj Hastin Gajendra Airawat Tej Toti Yathra Ghaazi Chotu Baahi Bakhsh Behru Zaki Cornelius Surus
 		}
@@ -319,6 +328,7 @@ elephant_group = {
 }
 dragon_group = {
 	dragon_culture = {
+		primary = TRL
 		male_names = { Fafnir Midgard Apopis Ladon Colchidei Piton Vouivre Drac Gorynych Bantu Mannu Khozen Morzas Xemcel Medeus Morva Nils Bahamut Leviathan Ryujin Zilant Typhos Puff Nyx
 			Teethless Smokey Deathwing Quicksilver "Grey Ghost" Seasmoke Pyre Scorch Dragon Wyrm Lindwurm Dovah Vlad Rattleskin Ash Benedict Rakshasha Draco Dracul
 			Drago Fafner Errol Glaedr Glaurung Icefyre Falkor Nagini Rathalos Piff Fred Voidaltarah Ddraig Drdrake Morttalis Barney
@@ -329,6 +339,7 @@ dragon_group = {
 }
 red_panda_group = {
 	red_panda = {
+		primary = TRL
 		male_names = {
 			Pandolf Pandulf Shifu Panda Basil Spark Ning Benjamin Sawyer Ceba Pabu Ponga Bamboo Kaala Puffball Oolong
 			Chai Semper Vira Song Masala Ila Zeya Carson Harold Stellar Lhotse Wasabi Sabi Khusi Sundar Manasa Bo Mohini

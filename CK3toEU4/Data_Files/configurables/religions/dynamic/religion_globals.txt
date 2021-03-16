@@ -248,6 +248,10 @@ magyar_pagan = { #Uralic/Taltoism
 	heretic = { GOAT_SKULL SNAKE_CLAN }
 }
 
+siberian_pagan = { #Uralic/Taltoism
+	heretic = { GOAT_SKULL FINNIC }
+}
+
 jewish = {
 	heretic = { SAMARITAN KARAITE }
 }	
@@ -317,4 +321,80 @@ priscillianism = {
 
 cainitism = {
 	heretic = { SOCINIAN EUSTATHIANS }
+}
+
+germanic_pagan = {
+	heretic = { GOAT_SKULL }
+}
+
+anglo_pagan = {
+	heretic = { GOAT_SKULL }
+}
+
+scythian_pagan = {
+	heretic = { GOAT_SKULL FINNIC }
+}
+
+zamolxism = {
+	heretic = { SERAPIS }
+}
+
+mithraism = {
+	heretic = { SERAPIS }
+}
+
+iberian_pagan = {
+	heretic = { SERAPIS }
+}
+
+canaanite = {
+	heretic = { SERAPIS }
+}
+
+kemetism = {
+	heretic = { KUSHITE SPHYNX }
+}
+
+mardukism = {
+	heretic = { DANIEL SUMER }
+}
+
+arab_pagan = {
+	heretic = { BEAR_SPIRIT SNAKE_CLAN }
+}
+
+cybelene = {
+	heretic = { SPHYNX }
+}
+
+armenian_pagan = {
+	heretic = { SPHYNX }
+}
+
+caucasian_pagan = {
+	heretic = { SPHYNX }
+}
+
+atenism = {
+	heretic = { SPHYNX }
+}
+
+druidism = {
+	heretic = { ELUVEITIE SPHYNX }
+}
+
+briton_pagan = {
+	heretic = { ELUVEITIE ASTERIX }
+}
+
+gallic_pagan = {
+	heretic = { ELUVEITIE ASTERIX }
+}
+
+gaelic_pagan = {
+	heretic = { ELUVEITIE ASTERIX }
+}
+
+celtiberian_pagan = {
+	heretic = { ELUVEITIE ASTERIX }
 }

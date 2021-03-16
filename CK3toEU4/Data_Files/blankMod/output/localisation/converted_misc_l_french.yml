@@ -54,3 +54,8 @@
  string_from_ck3:0 "Un[Root.GetXEDir] [Root.Monarch.GetTitle] [Root.GetRootAdjMS][Root.GetXEDir], qui règne à [From.Capital.GetCapitalName]... Attendez, mais c'est un jeu converti de Crusader Kings!\n\nL'Équipe des Convertisseurs vous souhaite la bienvenue dans la nouvelle étape de votre mégacampagne. Nous espérons qu'il n'y a pas trop de lèpre des frontières, mais qui sait.\n\nSi vous avez des suggestions ou si vous souhaitez signaler un bogue, postez-le sur le fil de discussion dédié du forum et nous irons prendre en compte votre contribution.\n\nSi vous avez le désire d'avoir un accélére d'IA, vous pouvez entrer en modalité "Observeur" en ouvrant la console et en y tapant observer. Sinon, on continue:\n\nUn[Root.GetXEDir] [Root.Monarch.GetTitle] [Root.GetRootAdjMS][Root.GetXEDir], qui règne à [From.Capital.GetCapitalName]..."
  ECUMENICAL_PATRIARCH:0 "Patriarche Œcuménique"
  ECUMENICAL_MATRIARCH:0 "Matriarche Œcuménique"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Allocations provinciales"
+ custom_governing_capacity_modifier_desc:1 "En accordant des privilèges et allocations particuliers aux gouverneurs des États, nous pouvons réduire les dépenses liées à leur fonctionnement."
+ 

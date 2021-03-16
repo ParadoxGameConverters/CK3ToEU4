@@ -1,7 +1,7 @@
 # Usage:
 # link = { eu4 = eu4religion ck3 = ck3faith }
 # multiple ck3 entires are allowed (and encouraged), multiple eu4 are not.
-# A special entry "school" can be used when mapping to sunni or shiite, specifying
+# A special entry "school" can be used when mapping to Muslim religions, specifying
 # the Muslim school of law for EU4
 
 # Akom  
@@ -103,7 +103,7 @@ link = { eu4 = meshefaresism ck3 = meshefaresism }
 link = { eu4 = kitebacilweism ck3 = kitebacilweism }
 # Zoroastrianism  
 link = { eu4 = zoroastrian ck3 = mazdayasna }
-link = { eu4 = zurvanism ck3 = zurvanism }
+link = { eu4 = zurvanism ck3 = zurvanism ck3 = urartuism }
 link = { eu4 = gayomarthianism ck3 = gayomarthianism }
 link = { eu4 = khurmazta ck3 = khurmazta }
 link = { eu4 = mazdaki ck3 = mazdakism }
@@ -124,7 +124,7 @@ link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old }
 link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old }
 ## Perso-Caucasian
 link = { eu4 = mithraism ck3 = mithraic_mysteries }
-link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism }
+link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old }
 link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old }
 link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 ## Egyptian
@@ -135,3 +135,6 @@ link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
 link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old }
 link = { eu4 = shamanism ck3 = berber_pagan ck3 = berber_pagan_old }
 link = { eu4 = iberian_pagan ck3 = iberian_pagan ck3 = iberian_pagan_old }
+
+# Mod: Sunset Invasion
+link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }
