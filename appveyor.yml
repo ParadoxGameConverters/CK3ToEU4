@@ -17,7 +17,7 @@ test_script:
     (new-object net.webclient).UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\tests.xml))
 artifacts:
 - path: Release
-  name: CK3toEU4-0.4dynamic
+  name: CK3toEU4-0.6finnish
 deploy:
 - provider: GitHub
   release: windows_development_build
@@ -25,13 +25,13 @@ deploy:
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: ParadoxGameConverters/CK3ToEU4
-  artifact: CK3toEU4-0.4dynamic
+  artifact: CK3toEU4-0.6finnish
   prerelease: true
   force_update: true
 - provider: GitHub
-  tag: 0.4D
-  release: 0.4 dynamic_faith_102 - for CK3[1.2] and EU4[1.30]
+  tag: 0.6F
+  release: 0.6 finnish_pagan - for CK3[1.3] and EU4[1.30]
   auth_token:
     secure: LBJzs4y9j0N5y0ajp7gmVk3Pvnec1UU5pTCdIMbQYUddEXQnWTJ79FXsd9SCs7YQ
   repository: paradoxGameConverters/CK3ToEU4
-  artifact: CK3toEU4-0.4dynamic
+  artifact: CK3toEU4-0.6finnish
