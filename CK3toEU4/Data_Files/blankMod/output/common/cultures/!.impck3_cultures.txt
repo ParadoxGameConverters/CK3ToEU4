@@ -48,11 +48,12 @@ lost_cultures_group = {
 		}
 	}
 }
-germanic = {
-	getian = { }
-	vandal = { }
-	gothic = { }
-}
 byzantine = {
 	alexandrine = { }
+	prettanian = { }
+	hyperborean_greek = { }
+	gaulish_greek = { }
+	spanish_greek = { }
+	german_greek = { }
+	mena_greek = { }
 }

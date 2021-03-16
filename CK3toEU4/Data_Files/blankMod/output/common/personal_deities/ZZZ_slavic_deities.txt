@@ -1,0 +1,121 @@
+perun = 
+{
+	hostile_attrition = 1.0
+	defensiveness = 0.2
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 37
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}			
+	}	
+}
+
+jarilo =
+{
+	land_morale = 0.1
+	discipline = 0.05
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 38
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}		
+	}
+}
+
+lada =
+{
+	naval_morale = 0.15
+	navy_tradition = 1
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 39
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}		
+	}	
+}
+
+veles = 
+{
+	leader_land_fire = 1
+	global_trade_goods_size_modifier = 0.1
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 40
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}		
+	}	
+}
+
+svarog = 
+{
+	production_efficiency = 0.1
+	manpower_recovery_speed = 0.20
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 41
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}		
+	}	
+}
+
+svetovid =
+{
+	global_unrest = -1
+	global_tax_modifier = 0.1
+	
+	allow = { OR = { religion = slavic_pagan religion = slavic_pagan_reformed } }
+	sprite = 42
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}			
+	}		
+}

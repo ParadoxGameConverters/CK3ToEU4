@@ -1,0 +1,96 @@
+south_europe_pagan = {
+	can_form_personal_unions = yes
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 54 58 }
+	crusade_name = HOLY_WAR
+	hellenic_pagan = {
+		icon = 58
+		color = { 0.6 0.1 0.1 } #153 25.5 25.5
+		country = {
+			tolerance_own = 1
+			development_cost = -0.1
+		}
+		country_as_secondary = {
+			development_cost = -0.1
+		}
+		
+		personal_deity = yes
+		
+		heretic = { GOAT_SKULL }	
+		allowed_conversion = { hellenic_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	hellenic_pagan_reformed = {
+		icon = 58
+		color = { 190 32 32 }
+		country = {
+			tolerance_own = 1
+			development_cost = -0.1
+		}
+		country_as_secondary = {
+			development_cost = -0.1
+		}
+		
+		personal_deity = yes
+		
+		heretic = { GOAT_SKULL }	
+	}
+	zamolxism = {
+		color = { 0.0 0 100 }
+		icon = 159
+		province = {
+			local_missionary_strength = 0.06
+		}
+		country = {
+			global_tax_modifier = 0.05
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			infantry_power = 0.1
+			tolerance_heathen = 1
+		}
+
+		heretic = { SERAPIS }
+	}
+	mithraism = {
+		color = { 210 0 0 }
+		icon = 160
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_own = 1
+			global_tax_modifier = 0.05
+		}
+		country_as_secondary = {
+			advisor_pool = 1
+			global_tax_modifier = 0.05
+		}
+		heretic = { SERAPIS }
+		declare_war_in_regency = yes
+	}
+	iberian_pagan = {
+		color = { 0.91 0.71 0.82 }
+		icon = 164
+		
+		country = {
+			tolerance_heathen = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			loot_amount = 0.25
+		}
+		heretic = { SERAPIS }
+	}
+}

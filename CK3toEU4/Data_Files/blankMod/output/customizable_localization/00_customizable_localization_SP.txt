@@ -2618,6 +2618,42 @@ defined_text = {
 		localisation_key = gnostic_rel
 		trigger = { religion_group = gnostic }
 	}
+	text = {
+		localisation_key = american_pagan_rel
+		trigger = { religion_group = american_pagan }
+	}
+	text = {
+		localisation_key = north_europe_pagan_rel
+		trigger = { religion_group = north_europe_pagan }
+	}
+	text = {
+		localisation_key = central_europe_pagan_rel
+		trigger = { religion_group = central_europe_pagan }
+	}
+	text = {
+		localisation_key = steppe_pagan_rel
+		trigger = { religion_group = steppe_pagan }
+	}
+	text = {
+		localisation_key = asian_pagan_rel
+		trigger = { religion_group = asian_pagan }
+	}
+	text = {
+		localisation_key = south_europe_pagan_rel
+		trigger = { religion_group = south_europe_pagan }
+	}
+	text = {
+		localisation_key = african_pagan_rel
+		trigger = { religion_group = african_pagan }
+	}
+	text = {
+		localisation_key = mena_pagan_rel
+		trigger = { religion_group = mena_pagan }
+	}
+	text = {
+		localisation_key = celtic_pagan_rel
+		trigger = { religion_group = celtic_pagan }
+	}
 }
 
 
@@ -2659,6 +2695,42 @@ defined_text = {
 	text = {
 		localisation_key = gnostic_ms
 		trigger = { religion_group = gnostic }
+	}
+	text = {
+		localisation_key = american_pagan_ms
+		trigger = { religion_group = american_pagan }
+	}
+	text = {
+		localisation_key = north_europe_pagan_ms
+		trigger = { religion_group = north_europe_pagan }
+	}
+	text = {
+		localisation_key = central_europe_pagan_ms
+		trigger = { religion_group = central_europe_pagan }
+	}
+	text = {
+		localisation_key = steppe_pagan_ms
+		trigger = { religion_group = steppe_pagan }
+	}
+	text = {
+		localisation_key = asian_pagan_ms
+		trigger = { religion_group = asian_pagan }
+	}
+	text = {
+		localisation_key = south_europe_pagan_ms
+		trigger = { religion_group = south_europe_pagan }
+	}
+	text = {
+		localisation_key = african_pagan_ms
+		trigger = { religion_group = african_pagan }
+	}
+	text = {
+		localisation_key = mena_pagan_ms
+		trigger = { religion_group = mena_pagan }
+	}
+	text = {
+		localisation_key = celtic_pagan_ms
+		trigger = { religion_group = celtic_pagan }
 	}
 }
 
@@ -2702,6 +2774,42 @@ defined_text = {
 		localisation_key = gnostic_fs
 		trigger = { religion_group = gnostic }
 	}
+	text = {
+		localisation_key = american_pagan_fs
+		trigger = { religion_group = american_pagan }
+	}
+	text = {
+		localisation_key = north_europe_pagan_fs
+		trigger = { religion_group = north_europe_pagan }
+	}
+	text = {
+		localisation_key = central_europe_pagan_fs
+		trigger = { religion_group = central_europe_pagan }
+	}
+	text = {
+		localisation_key = steppe_pagan_fs
+		trigger = { religion_group = steppe_pagan }
+	}
+	text = {
+		localisation_key = asian_pagan_fs
+		trigger = { religion_group = asian_pagan }
+	}
+	text = {
+		localisation_key = south_europe_pagan_fs
+		trigger = { religion_group = south_europe_pagan }
+	}
+	text = {
+		localisation_key = african_pagan_fs
+		trigger = { religion_group = african_pagan }
+	}
+	text = {
+		localisation_key = mena_pagan_fs
+		trigger = { religion_group = mena_pagan }
+	}
+	text = {
+		localisation_key = celtic_pagan_fs
+		trigger = { religion_group = celtic_pagan }
+	}
 }
 
 
@@ -2743,6 +2851,42 @@ defined_text = {
 	text = {
 		localisation_key = gnostic_mp
 		trigger = { religion_group = gnostic }
+	}
+	text = {
+		localisation_key = american_pagan_mp
+		trigger = { religion_group = american_pagan }
+	}
+	text = {
+		localisation_key = north_europe_pagan_mp
+		trigger = { religion_group = north_europe_pagan }
+	}
+	text = {
+		localisation_key = central_europe_pagan_mp
+		trigger = { religion_group = central_europe_pagan }
+	}
+	text = {
+		localisation_key = steppe_pagan_mp
+		trigger = { religion_group = steppe_pagan }
+	}
+	text = {
+		localisation_key = asian_pagan_mp
+		trigger = { religion_group = asian_pagan }
+	}
+	text = {
+		localisation_key = south_europe_pagan_mp
+		trigger = { religion_group = south_europe_pagan }
+	}
+	text = {
+		localisation_key = african_pagan_mp
+		trigger = { religion_group = african_pagan }
+	}
+	text = {
+		localisation_key = mena_pagan_mp
+		trigger = { religion_group = mena_pagan }
+	}
+	text = {
+		localisation_key = celtic_pagan_mp
+		trigger = { religion_group = celtic_pagan }
 	}
 }
 
@@ -2786,6 +2930,42 @@ defined_text = {
 		localisation_key = gnostic_fp
 		trigger = { religion_group = gnostic }
 	}
+	text = {
+		localisation_key = american_pagan_fp
+		trigger = { religion_group = american_pagan }
+	}
+	text = {
+		localisation_key = north_europe_pagan_fp
+		trigger = { religion_group = north_europe_pagan }
+	}
+	text = {
+		localisation_key = central_europe_pagan_fp
+		trigger = { religion_group = central_europe_pagan }
+	}
+	text = {
+		localisation_key = steppe_pagan_fp
+		trigger = { religion_group = steppe_pagan }
+	}
+	text = {
+		localisation_key = asian_pagan_fp
+		trigger = { religion_group = asian_pagan }
+	}
+	text = {
+		localisation_key = south_europe_pagan_fp
+		trigger = { religion_group = south_europe_pagan }
+	}
+	text = {
+		localisation_key = african_pagan_fp
+		trigger = { religion_group = african_pagan }
+	}
+	text = {
+		localisation_key = mena_pagan_fp
+		trigger = { religion_group = mena_pagan }
+	}
+	text = {
+		localisation_key = celtic_pagan_fp
+		trigger = { religion_group = celtic_pagan }
+	}
 }
 
 
@@ -2795,14 +2975,9 @@ defined_text = {
 	text = {
 		localisation_key = string_low_el_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -2822,14 +2997,9 @@ defined_text = {
 	text = {
 		localisation_key = string_El_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -2851,14 +3021,9 @@ defined_text = {
 	text = {
 		localisation_key = string_low_del_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -2878,14 +3043,9 @@ defined_text = {
 	text = {
 		localisation_key = string_up_Del_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -2908,14 +3068,9 @@ defined_text = {
 	text = {
 		localisation_key = string_al_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -2935,14 +3090,9 @@ defined_text = {
 	text = {
 		localisation_key = string_Al_SP
 		trigger = {
-			OR = { # TODO: all feminine names in this list have to be inserted under the following trigger
-				religion_group = christian
-				religion_group = dharmic
-				religion_group = pagan
-				religion_group = jewish_group
-				religion_group = zoroastrian_group
-				religion_group = gnostic
-				religion_group = yazidi
+			NOT = { 
+				religion_group = muslim
+				religion_group = eastern
 			}
 		}
 	}
@@ -3329,6 +3479,66 @@ defined_text = {
 		localisation_key = jain_rel
 		trigger = { religion = jain }
 	}
+	text = {
+		localisation_key = germanic_pagan_rel
+		trigger = { religion = germanic_pagan }
+	}
+	text = {
+		localisation_key = anglo_pagan_rel
+		trigger = { religion = anglo_pagan }
+	}
+	text = {
+		localisation_key = cybelene_rel
+		trigger = { religion = cybelene }
+	}
+	text = {
+		localisation_key = zamolxism_rel
+		trigger = { religion = zamolxism }
+	}
+	text = {
+		localisation_key = mithraism_rel
+		trigger = { religion = mithraism }
+	}
+	text = {
+		localisation_key = arab_pagan_rel
+		trigger = { religion = arab_pagan }
+	}
+	text = {
+		localisation_key = armenian_pagan_rel
+		trigger = { religion = armenian_pagan }
+	}
+	text = {
+		localisation_key = caucasian_pagan_rel
+		trigger = { religion = caucasian_pagan }
+	}
+	text = {
+		localisation_key = iberian_pagan_rel
+		trigger = { religion = iberian_pagan }
+	}
+	text = {
+		localisation_key = scythian_pagan_rel
+		trigger = { religion = scythian_pagan }
+	}
+	text = {
+		localisation_key = briton_pagan_rel
+		trigger = { religion = briton_pagan }
+	}
+	text = {
+		localisation_key = gallic_pagan_rel
+		trigger = { religion = gallic_pagan }
+	}
+	text = {
+		localisation_key = gaelic_pagan_rel
+		trigger = { religion = gaelic_pagan }
+	}
+	text = {
+		localisation_key = celtiberian_pagan_rel
+		trigger = { religion = celtiberian_pagan }
+	}
+	text = {
+		localisation_key = atenism_rel
+		trigger = { religion = atenism }
+	}
 }
 
 
@@ -3697,6 +3907,66 @@ defined_text = {
 		localisation_key = jain_ms
 		trigger = { religion = jain }
 	}
+	text = {
+		localisation_key = germanic_pagan_ms
+		trigger = { religion = germanic_pagan }
+	}
+	text = {
+		localisation_key = anglo_pagan_ms
+		trigger = { religion = anglo_pagan }
+	}
+	text = {
+		localisation_key = cybelene_ms
+		trigger = { religion = cybelene }
+	}
+	text = {
+		localisation_key = zamolxism_ms
+		trigger = { religion = zamolxism }
+	}
+	text = {
+		localisation_key = mithraism_ms
+		trigger = { religion = mithraism }
+	}
+	text = {
+		localisation_key = arab_pagan_ms
+		trigger = { religion = arab_pagan }
+	}
+	text = {
+		localisation_key = armenian_pagan_ms
+		trigger = { religion = armenian_pagan }
+	}
+	text = {
+		localisation_key = caucasian_pagan_ms
+		trigger = { religion = caucasian_pagan }
+	}
+	text = {
+		localisation_key = iberian_pagan_ms
+		trigger = { religion = iberian_pagan }
+	}
+	text = {
+		localisation_key = scythian_pagan_ms
+		trigger = { religion = scythian_pagan }
+	}
+	text = {
+		localisation_key = briton_pagan_ms
+		trigger = { religion = briton_pagan }
+	}
+	text = {
+		localisation_key = gallic_pagan_ms
+		trigger = { religion = gallic_pagan }
+	}
+	text = {
+		localisation_key = gaelic_pagan_ms
+		trigger = { religion = gaelic_pagan }
+	}
+	text = {
+		localisation_key = celtiberian_pagan_ms
+		trigger = { religion = celtiberian_pagan }
+	}
+	text = {
+		localisation_key = atenism_ms
+		trigger = { religion = atenism }
+	}
 }
 
 
@@ -4063,6 +4333,66 @@ defined_text = {
 	text = {
 		localisation_key = jain_fs
 		trigger = { religion = jain }
+	}
+	text = {
+		localisation_key = germanic_pagan_fs
+		trigger = { religion = germanic_pagan }
+	}
+	text = {
+		localisation_key = anglo_pagan_fs
+		trigger = { religion = anglo_pagan }
+	}
+	text = {
+		localisation_key = cybelene_fs
+		trigger = { religion = cybelene }
+	}
+	text = {
+		localisation_key = zamolxism_fs
+		trigger = { religion = zamolxism }
+	}
+	text = {
+		localisation_key = mithraism_fs
+		trigger = { religion = mithraism }
+	}
+	text = {
+		localisation_key = arab_pagan_fs
+		trigger = { religion = arab_pagan }
+	}
+	text = {
+		localisation_key = armenian_pagan_fs
+		trigger = { religion = armenian_pagan }
+	}
+	text = {
+		localisation_key = caucasian_pagan_fs
+		trigger = { religion = caucasian_pagan }
+	}
+	text = {
+		localisation_key = iberian_pagan_fs
+		trigger = { religion = iberian_pagan }
+	}
+	text = {
+		localisation_key = scythian_pagan_fs
+		trigger = { religion = scythian_pagan }
+	}
+	text = {
+		localisation_key = briton_pagan_fs
+		trigger = { religion = briton_pagan }
+	}
+	text = {
+		localisation_key = gallic_pagan_fs
+		trigger = { religion = gallic_pagan }
+	}
+	text = {
+		localisation_key = gaelic_pagan_fs
+		trigger = { religion = gaelic_pagan }
+	}
+	text = {
+		localisation_key = celtiberian_pagan_fs
+		trigger = { religion = celtiberian_pagan }
+	}
+	text = {
+		localisation_key = atenism_fs
+		trigger = { religion = atenism }
 	}
 }
 
@@ -4431,6 +4761,66 @@ defined_text = {
 		localisation_key = jain_mp
 		trigger = { religion = jain }
 	}
+	text = {
+		localisation_key = germanic_pagan_mp
+		trigger = { religion = germanic_pagan }
+	}
+	text = {
+		localisation_key = anglo_pagan_mp
+		trigger = { religion = anglo_pagan }
+	}
+	text = {
+		localisation_key = cybelene_mp
+		trigger = { religion = cybelene }
+	}
+	text = {
+		localisation_key = zamolxism_mp
+		trigger = { religion = zamolxism }
+	}
+	text = {
+		localisation_key = mithraism_mp
+		trigger = { religion = mithraism }
+	}
+	text = {
+		localisation_key = arab_pagan_mp
+		trigger = { religion = arab_pagan }
+	}
+	text = {
+		localisation_key = armenian_pagan_mp
+		trigger = { religion = armenian_pagan }
+	}
+	text = {
+		localisation_key = caucasian_pagan_mp
+		trigger = { religion = caucasian_pagan }
+	}
+	text = {
+		localisation_key = iberian_pagan_mp
+		trigger = { religion = iberian_pagan }
+	}
+	text = {
+		localisation_key = scythian_pagan_mp
+		trigger = { religion = scythian_pagan }
+	}
+	text = {
+		localisation_key = briton_pagan_mp
+		trigger = { religion = briton_pagan }
+	}
+	text = {
+		localisation_key = gallic_pagan_mp
+		trigger = { religion = gallic_pagan }
+	}
+	text = {
+		localisation_key = gaelic_pagan_mp
+		trigger = { religion = gaelic_pagan }
+	}
+	text = {
+		localisation_key = celtiberian_pagan_mp
+		trigger = { religion = celtiberian_pagan }
+	}
+	text = {
+		localisation_key = atenism_mp
+		trigger = { religion = atenism }
+	}
 }
 
 
@@ -4797,6 +5187,66 @@ defined_text = {
 	text = {
 		localisation_key = jain_fp
 		trigger = { religion = jain }
+	}
+	text = {
+		localisation_key = germanic_pagan_fp
+		trigger = { religion = germanic_pagan }
+	}
+	text = {
+		localisation_key = anglo_pagan_fp
+		trigger = { religion = anglo_pagan }
+	}
+	text = {
+		localisation_key = cybelene_fp
+		trigger = { religion = cybelene }
+	}
+	text = {
+		localisation_key = zamolxism_fp
+		trigger = { religion = zamolxism }
+	}
+	text = {
+		localisation_key = mithraism_fp
+		trigger = { religion = mithraism }
+	}
+	text = {
+		localisation_key = arab_pagan_fp
+		trigger = { religion = arab_pagan }
+	}
+	text = {
+		localisation_key = armenian_pagan_fp
+		trigger = { religion = armenian_pagan }
+	}
+	text = {
+		localisation_key = caucasian_pagan_fp
+		trigger = { religion = caucasian_pagan }
+	}
+	text = {
+		localisation_key = iberian_pagan_fp
+		trigger = { religion = iberian_pagan }
+	}
+	text = {
+		localisation_key = scythian_pagan_fp
+		trigger = { religion = scythian_pagan }
+	}
+	text = {
+		localisation_key = briton_pagan_fp
+		trigger = { religion = briton_pagan }
+	}
+	text = {
+		localisation_key = gallic_pagan_fp
+		trigger = { religion = gallic_pagan }
+	}
+	text = {
+		localisation_key = gaelic_pagan_fp
+		trigger = { religion = gaelic_pagan }
+	}
+	text = {
+		localisation_key = celtiberian_pagan_fp
+		trigger = { religion = celtiberian_pagan }
+	}
+	text = {
+		localisation_key = atenism_fp
+		trigger = { religion = atenism }
 	}
 }
 

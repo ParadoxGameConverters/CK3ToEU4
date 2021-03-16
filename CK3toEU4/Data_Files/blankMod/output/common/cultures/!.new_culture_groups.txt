@@ -18,158 +18,170 @@ oghuz = {
 		primary = UZB
 	}
 }
-
+gothic_group = {
+	graphical_culture = westerngfx
+	male_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
+	dynasty_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
+	female_names = {
+		Actihild Aschild Baldhild Casthild Castiburg Duomburg Duomhild
+			Eidburg Eidhild Eidsunne Eidwalda Geriburg Gerrhild Gunborg
+			Gundhild Hildborg Hildwald Hramburg Hramhild Hramis Hrauchild
+			Hraugiburg Ingiburg Ingihild Laighild Leigiburg Malburg Malhild
+			Marchild Mundhild Randild Rhamis Richild Rigiburg Sigiburg
+			Sigihild Sunburg Sunhild Theodeburg Theothild Thurishilda
+			Thurisinburg Thurisinhilda Thusnelda Walburg Waldburg
+			Walhild Waloburg Waluburg
+	}
+	visigothic = { }
+	ostrogothic = { }
+	getian = { }
+	gothic = { }
+}
 barbaro_germanic = {
 	graphical_culture = westerngfx
-
-	male_names = { Gunther Rolf }
-	
+	vandal = { }
 	frankish = {
-		primary = FRA
 		male_names = { Abbo Aega Agobard Allowin Arnulf Asselin Berno Berthaire Bruno Cassyon Cheldric Childebrand Clodomir Clotaire Corbinian Dodo Ebroin Ebrulf Emme Evroult Faro Gerold Grifo Grimbald Hartmut Helinand Hildebold Hildeprand Humbert Imbert Jocelin Lambert Lanfranc Lebuin Letard Liudhard Liudolf Lul Mansuet Omer Reginar Reol Richomer Rothad Sergi Sicho Vedast Werinbert Willibrord Zwentibold }
 		dynasty_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
 	}
 	suebi = {
-		primary = POR
 		male_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
 		dynasty_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
 	}
 	old_lombard = {
-		primary = ITA
 		male_names = { Adaloald Agilulf Aistulf Alahis Alboin Ansprand Arioald Aripert Authari Cleph Cunincpert Desideri Garibald Godepert Grimuald Hildeprand Liutpert Liutprand Parctarit Perctarit Raginpert Ragnipert Ratchis Rodoald Rothari }
 		dynasty_names = { Albhi Aleard Amistada Balda Degan Gadoald Gairulf Gisulph Gotefred Gualenghi Haimon Haistulf Hardman Harjowalda Hauptwolf Nok Ragin Rambold Reginmund Ridbald Rudonis Sala Schirald Schiriwaite Sigebald Teudald Tierwysch Wala Walfrit Zazza }
 	}
-	visigothic = {
-		primary = CAS
-		male_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
-		dynasty_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
+	varangian = {
+		male_names = {
+			Acthram Acthrauc Actmund Actobald Actogais Actogast Actoleik Actomar
+			Actrand Actric Actwald Agenaric Aginaric Aktumer Arbogais Arbogan
+			Arbogast Arbolaik Arbomund Arbram Arbrand Arbrauc Arbric Arbwald Ariogaesus Ariogais Ascaric Ascobald Ascogast Ascoger Ascohram
+			Ascohrauc Ascoht Ascoleik Ascomund Ascorand Ascoric Ascowald
+			Baldhrauc Baldo Baldogais Baldogast Baldric Baldwald Bauto
+			Casthrauc Castleik Castrand Castric Charietto Chariovalda
+			Chrocus Danko Duomact Duomeid Duomogan Duomogar Duomogast
+			Duomolaik Duomorand Duomorauc Duomoric Edobich Eidgais
+			Eidgast Eidhram Eidhrauc Eidleik Eidmund Eidobald Eidoht
+			Eidowald Eidrand Eidric Erbemar Erbo Erpmund Flavius Geno Genobald Genobaud
+			Genomund Genoram Genorand Genric Genwald Gerand Gerhram
+			Gerhrauc Geric Gero Gerogast Gerolaik Gerorauc Gerwald
+			Gundhram Gundleik Gundmar Gundobald Gundogan Gundogar Gundogast
+			Gundomund Gundowald Gundrand Gundrauc Gundric Hariowald Heri
+			Hildeid Hildgan Hildhram Hildobald Hildogais Hildogast Hildoht
+			Hildoleik Hildomund Hildrand Hildrauc Hildric Hildwald Hrambald
+			Hramgast Hramleik Hramo Hramric Hramund Hramwald Hraucwald
+			Hraugmund Hraugram Hraugric Hroco Ingast Ingbald Inger Ingmund
+			Ingoht Ingoleik Ingomar Ingram Ingrand Ingrauc Ingric Ingsun
+			Inguiomer Ingwald Laikwald Leigmund Leikbolad Leikrauc Leko
+			Malact Malleik Mallobald Mallobaudes Mallovendus Malo Malobald
+			Malogan Malogast Maloger Malogund Maloram Malorand Malorauc
+			Maloric Malowind Malwald Marcobold Marcogan Marcogast Marcoger
+			Marcogund Marcoleik Marcomer Marcomund Marcoram Marcorauc
+			Marcwald Markoht Marobod Marodouus Mederic Mero Merobald
+			Merobaudes Merogais Mundobald Mundogast Mundoger Nebigast
+			Randleik Randmund Rando Randobald Randram Randrauc Richomeres
+			Ricomar Rigleik Rigmund Rigrand Rigwald Segestes Segimer
+			Segimund Sesithank Sigact Sigeid Sigibald Sigigais Sigigan
+			Sigigast Sigigund Sigimar Sigimund Sigiram Sigirand Sigirauc
+			Sigismund Sigisun Siglaik Sigo Sigric Sigwald Sunbald Sungan
+			Sunger Sunlaik Sunnact Sunneid Sunneram Sunno Sunnogast
+			Sunnomund Sunnorauc Sunnoric Sunrand Sunwald Tanchild Tancoht
+			Tancram Tancrand Tancric Tancwald Teutomer Theodeid Theodlaik
+			Theodo Theodobald Theodogais Theodogan Theodogast Theodogund
+			Theodoht Theodomer Theodomund Theodoram Theodorand Theodoric
+			Theodrauc Theodwald Thumelicus Thuribald Thurigais Thurigast
+			Thurisegan Thuriseid Thuriserand Thuriseric Thurismund
+			Thurisoht Thuriswald Tuombald Tuomo Tuomogund Tuomoleik
+			Tuomomund Tuomwald Ukromer Vakromar Valao Vangio Walao
+			Walbald Waldmund Waldo Waldogast Waldrand Walgar Walgast
+			Walha Walmund Walogan Walolaik Walorand Walram Walrauc Walric Windo
+		}
+		dynasty_names = {
+			Tuomid Andicid Dagaricid Gelimerian Geroldian Malaricid
+			Marbodian Theodian Marcolian Sigid Rigleikid Tancrid Malogrian
+			Gundrid Segimandrid Dwaldid Merobaudian Eidigian
+			Gerhaucrian Hildganid Hramrid Ingohdrid Ingrammid Malactian
+		}
+	}
+	mena_german = { 
+		male_names = {
+			Acthram Acthrauc Actmund Actobald Actogais Actogast Actoleik Actomar
+			Actrand Actric Actwald Agenaric Aginaric Aktumer Arbogais Arbogan
+			Arbogast Arbolaik Arbomund Arbram Arbrand Arbrauc Arbric Arbwald Ariogaesus Ariogais Ascaric Ascobald Ascogast Ascoger Ascohram
+			Ascohrauc Ascoht Ascoleik Ascomund Ascorand Ascoric Ascowald
+			Baldhrauc Baldo Baldogais Baldogast Baldric Baldwald Bauto
+			Casthrauc Castleik Castrand Castric Charietto Chariovalda
+			Chrocus Danko Duomact Duomeid Duomogan Duomogar Duomogast
+			Duomolaik Duomorand Duomorauc Duomoric Edobich Eidgais
+			Eidgast Eidhram Eidhrauc Eidleik Eidmund Eidobald Eidoht
+			Eidowald Eidrand Eidric Erbemar Erbo Erpmund Flavius Geno Genobald Genobaud
+			Genomund Genoram Genorand Genric Genwald Gerand Gerhram
+			Gerhrauc Geric Gero Gerogast Gerolaik Gerorauc Gerwald
+			Gundhram Gundleik Gundmar Gundobald Gundogan Gundogar Gundogast
+			Gundomund Gundowald Gundrand Gundrauc Gundric Hariowald Heri
+			Hildeid Hildgan Hildhram Hildobald Hildogais Hildogast Hildoht
+			Hildoleik Hildomund Hildrand Hildrauc Hildric Hildwald Hrambald
+			Hramgast Hramleik Hramo Hramric Hramund Hramwald Hraucwald
+			Hraugmund Hraugram Hraugric Hroco Ingast Ingbald Inger Ingmund
+			Ingoht Ingoleik Ingomar Ingram Ingrand Ingrauc Ingric Ingsun
+			Inguiomer Ingwald Laikwald Leigmund Leikbolad Leikrauc Leko
+			Malact Malleik Mallobald Mallobaudes Mallovendus Malo Malobald
+			Malogan Malogast Maloger Malogund Maloram Malorand Malorauc
+			Maloric Malowind Malwald Marcobold Marcogan Marcogast Marcoger
+			Marcogund Marcoleik Marcomer Marcomund Marcoram Marcorauc
+			Marcwald Markoht Marobod Marodouus Mederic Mero Merobald
+			Merobaudes Merogais Mundobald Mundogast Mundoger Nebigast
+			Randleik Randmund Rando Randobald Randram Randrauc Richomeres
+			Ricomar Rigleik Rigmund Rigrand Rigwald Segestes Segimer
+			Segimund Sesithank Sigact Sigeid Sigibald Sigigais Sigigan
+			Sigigast Sigigund Sigimar Sigimund Sigiram Sigirand Sigirauc
+			Sigismund Sigisun Siglaik Sigo Sigric Sigwald Sunbald Sungan
+			Sunger Sunlaik Sunnact Sunneid Sunneram Sunno Sunnogast
+			Sunnomund Sunnorauc Sunnoric Sunrand Sunwald Tanchild Tancoht
+			Tancram Tancrand Tancric Tancwald Teutomer Theodeid Theodlaik
+			Theodo Theodobald Theodogais Theodogan Theodogast Theodogund
+			Theodoht Theodomer Theodomund Theodoram Theodorand Theodoric
+			Theodrauc Theodwald Thumelicus Thuribald Thurigais Thurigast
+			Thurisegan Thuriseid Thuriserand Thuriseric Thurismund
+			Thurisoht Thuriswald Tuombald Tuomo Tuomogund Tuomoleik
+			Tuomomund Tuomwald Ukromer Vakromar Valao Vangio Walao
+			Walbald Waldmund Waldo Waldogast Waldrand Walgar Walgast
+			Walha Walmund Walogan Walolaik Walorand Walram Walrauc Walric Windo
+		}
+		dynasty_names = {
+			Tuomid Andicid Dagaricid Gelimerian Geroldian Malaricid
+			Marbodian Theodian Marcolian Sigid Rigleikid Tancrid Malogrian
+			Gundrid Segimandrid Dwaldid Merobaudian Eidigian
+			Gerhaucrian Hildganid Hramrid Ingohdrid Ingrammid Malactian
+		}
 	}
 	female_names = {
-		Adele Adelgunde Adelheid Adolfine Agatha Agnes Alexandra Alice Alina Aline Alma Alwina Alwine Amalia Amalie Amanda 
-		Amelie Andrea Angela Angelika Angelina Anika Anita Anja Anke Ann-Katrin Anna Anne Annegret Anneli Annelie Anneliese 
-		Annemarie Anni Annika Annina Anny Antje Antonia Astrid Augusta Auguste Barbara Bärbel Beate Beatrice Beatrix 
-		Bernadette Berta Bertha Bettina Bianca Bianka Birgit Brigitte Britta Brunhild Brünhild Brunhilde Brünhilde Cäcilia 
-		Cäcilie Caren Carina Carla Carmen Carolin Caroline Catarina Catharina Cathrin Catrin Cecilia Cecilie Celina Celine 
-		Charlotte Chiara Christa Christel Christiane Christina Christine Clara Claudia Constanze Cordula Corina Corinna 
-		Cornelia Dagmar Daniela Denise Desirée Désirée Diana Dietlind Dietlinde Dora Doris Dorothea Edda Edith Elena 
-		Eleonora Eleonore Elfriede Elisa Elisabeth Elise Elke Ella Ellen Elli Elly Elma Elsa Elsbeth Else Elvira Emelie 
-		Emely Emilia Emilie Emily Emma Emmeline Emmi Emmy Erdmute Erica Erika Erna Ester Esther Eugenie Eva Evelyn 
-		Fabienne Fanny Felicia Felicitas Felizia Felizitas Finja Finnja Fiona Flora Florentina Florentine Franziska Frauke 
-		Freya Frida Fridegunde Frieda Friedegund Friedegunde Friederike Gabriela Gabriele Genoveva Gerda Gerlind Gerlinde 
-		Gertraud Gertrud Gertrudis Gesine Gina Gisela Grete Gretel Grethe Gudrun Gunda Gundula Hanna Hannah Hanne Hannelore 
-		Hedwig Heide Heidemarie Heidi Heike Helena Helene Helga Helge Hella Helmina Helmine Henny Hermina Hermine Herta 
-		Hertha Hilda Hilde Hildegard Hulda Ida Ilse Ines Inga Inge Ingeborg Ingeburg Ingrid Irene Irina Iris Irma Irmela 
-		Irmelin Irmgard Isabel Isabell Isabella Isabelle Isolde Ivonne Jacqueline Jana Janina Janine Jaqueline Jasmin 
-		Jennifer Jessica Johanna Johanne Josefine Josephine Judith Jule Julia Juliane Jutta Kai Karen Karin Karina Karla 
-		Karolin Karoline Katarina Käte Katharina Käthe Kathrin Katja Katrin Kerstin Kim Kirsten Klara Konstanze Kristin 
-		Kristina Kunigunde Lara Larissa Laura Lea Lena Leni Leoni Leonie Leonore Liane Liesel Lieselotte Lili Lilli Lilly 
-		Lina Linda Lisa Liselotte Lore Lotte Louisa Louise Lucia Lucie Luisa Luise Lulu Luna Luzia Luzie Lydia Madeleine 
-		Madleen Madlen Madlene Magda Magdalena Magdalene Maike Maja Manuela Mareike Marga Margareta Margarete Margaretha 
-		Margarethe Margit Margot Margret Margrit Maria Marianne Marie Marie-Theres Marie-Therese Marina Marion Marleen 
-		Marlen Marlene Marlies Marlis Marta Martha Martina Mathilde Maya Mechthild Meike Melanie Melina Melissa 
-		Merle Meta Mia Michaela Michelle Minna Miriam Mirjam Mona Monica Monika Nadia Nadin Nadine Nadja Natali Natalie 
-		Natascha Nathalie Neele Nele Nicola Nicole Nina Noemi Nora Oda Olga Olivia Ottilie Patricia Patrizia Paula Paulina 
-		Pauline Petra Pia Rachel Rafaela Raffaela Rahel Ramona Raphaela Rebecca Rebekka Regina Renate Ricarda Rita Rolanda 
-		Ronja Rosa Rose Rosemarie Roswitha Ruth Sabina Sabine Sabrina Samantha Sandra Sara Sarah Saskia Selina Seraphina 
-		Seraphine Sibylle Sieglind Sieglinde Siglind Siglinde Sigrid Silke Silvia Simone Sina Sissi Sofia Sofie Sonja Sophia 
-		Sophie Stefanie Stella Stephanie Susanna Svenja Swenja Sybille Sylvia Tabea Tamara Tanja Tatjana Teresa Thekla 
-		Theres Theresa Therese Theresia Thirza Tina Tirza Traute Trude Ulrike Ursel Ursula Uta Ute Valentina Valerie Vanessa 
-		Vera Verena Verona Veronika Victoria Viktoria Walburg Walburga Waldtraud Waldtraut Walpurga Walpurgis Waltraud 
-		Waltraut Wanja Wibke Wiebke Wilhelmina Wilhelmine Wilma Xenia Yasmin Yvonne Zäzilia Zäzilie Zoe
-	}
-	dynasty_names = {
-		"von Oldenburg" "von Mecklenburg" "von Hohenzollern" "von Habsburg"
-		"von Zweibrücken" "von Wittelsbach" "von Holstein" "von Hesse-Kassel" "von Holstein-Gottorp"
-		"von Pfalz-Neumarkt" "von Braunschweig-Lüneburg" "von Hannover" "von Wettin"
-		# CKII
-		"von Rügen" "von Diepholz" "von Silesia-Glogau" "von Bibra" "von Bodeck" 
-		"Boeselager" "Jaworski" "Brauchitsch" "von Bülow" 
-		"von Calw" "von Cham" "von Steutzlingen" "von Wetterau" "von Julichgau" 
-		"von Helffenstein" "von Venis" "von Kyburg" "von Arbon" "von Urach" "von Cilli" "von Utlede" 
-		"von Katzenelnbogen" "von Altena" "von der Marck" "von Hessen" "von Arnsberg" "von Bucheck" 
-		"Walter" "Grelle" "von Dolen" "von Liebnitz" "von Virneberg"
-		"Rübsamen" "von Bardewik" "Vorrade" "Warendorp" "Lüneburg" "Wittenborg" "von Klingenberg" 
-		"von Parchim" "von Kärnten" "von Rügen" "von Neuenburg" "von Werle" "von Mecklemburg" 
-		"von Wittenberg" "von Brandenburg" "von Glogau" "von Rendsburg" "von Pommern" 
-		"von Slesvig" "von Plain" "von Formbach" "von Wasserburg" 
-		"von Lengenfeld" "von Eberstein" "von Heinsberg" "von Weimar"
-		"von Andechs" "von Sulzbach" "von Kleve" "von Versfleth" "von Wickerode" 
-		"von Winzenburg" "von Thüringen" "von Bogen" "von Meissen" "von Genf" 
-		"von Arstein" "von Veldenz" "von Landsberg" "von Franken" "von Babenberg" "von Berg" "von Hohenstauf" 
-		"von Saarbrucken" "von Puteledorg" "von Henneberg" "von Stade" "von Sommerchenberg" 
-		"von Kirchberg" "von Württemberg" "von Tübingen" "von Raabs" 
-		"von Heimbach" "von Nörvenich" "von Jülich" "von Metz" "von Limburg" 
-		"von Eppstein" "von Luxemburg" "von Hornes" "von Sachsen" 
-		"von Beilstein" "von Eppenstein" "von Lusatia" "Orlamunde"
-		"von Hohenstaufen" "von Otakar" "Weimar" "von Tirol"
-		"von Haldensleben" "von Schweinfurt" "von Stad" "von Rheinfelden" 
-		"von Ringelheim" "de Luxembourg" "Hainaut" "von Lenzburg" "Prochaska" 
-		"von Boulogne" "von Nordheim" "von Egisheim" "Asperger" "Hunfriding" 
-		"Witte" "von Hagen" "von Mölln" "Runese" Pleskow 
-		"von Supplingenburg" "von Plotzkau" "von Katlenburg" "von Goslar"
-		"von Wunstorf" "von Goltern" "von Wölpe" "von Nellenburg" "von Arnstein" "von Holte"
-		"von Wippra" "von der Mark" "von Diest" "von Rietberg" "von Löningen" "von Corvey" 
-		"von Steinfurt" "von Tecklenburg" "von Rüssel" "von Waldeck" "von Ravensberg" "von Weyhe" "von Hoya" 
-		"von Dachau" "von Bassenheim" "von Kerpen" "von Tunna" "von Salza" "von Malberg" "von Hohenlohe" 
-		"von Wüllersleben" "von Osterna" "von Sangershausen" "von Heldrungen" 
-		"von Orseln" "von Nauen" "Suerbeer" "von Lunen" 
-		"von Vechta" "Pernstein" "von Schwerin" "von Dorpat" "von Haseldorf" "von Vyshusen" "von Dolen" 
-		"von Friesack" "von Hildesheim" "von Lechsgmünd" "von Komburg" 
-		"von Stahleck" "von Ziegenhain" "von Dinslaken" "von Lambach" "von Pluyvoise" 
-		"von Scharfenberg" "von Leistenberg" "von Schwarzburg" "von Badewide" "von Wassel" 
-		"von Dassel" "von Greyerz" "von Grenchen" "von Abensberg" "von Grünberg" 
-		"von Lichtenberg" "von Hachberg" "von Wartenberg" "von Wolfach" "von Gudensberg"
-		"von Gerhausen" "von Signau" "von Groitzsch" "von Frickingen" "von Sigmaringen" "von Regensburg" 
-		"von Lurngau" "von Leibrechtskirchen" "von Meran" "von Treven" "Gross" "Gualch" "Beck"
-		"zu Schwaben" "von Attems" "von Schweipünt" "von Saffenberg" "von Nörvenich" "von Querfurt" 
-		"von Mansfeld" "von Kärnten" "von Eschenloch" "von Naumburg" "von Schrapelnau" 
-		"von Magdeburg" "von Hardegg" "von Arneburg" "von Seeburg" "von Veldenz" "von Schmidtburg" 
-		"von Bamberg" "von Kyrburg" "von Baumberg" "von Stolzenberg" "von Altenbaumberg" "von Tyrol" 
-		"von Ortenburg" "von Wangen" "von Frontenhausen" "von Andechs" "von Eurasburg" "von Geroldseck" 
-		"von Bocksberg" "von Vinstingen" "von Schoenecken" "von Daun" "von Leiningen" 
-		"von Hohenfels" "von Hunolstein" "von Blankenheim" "von Salm" "von Falkenstein" "von Sponheim" 
-		"von Brunshorn" "von Stein" "von Bikkenbach" "von Heinsberg" "van Valkenburg" "von Sayn" 
-		"von Veringen" "von Gruningen" "von Eselsberg" "von Muhlhausen" "von Pfirt" 
-		"von Lövenstein" "von Landau" "von Tschudi" "von Glarus" "von Chalôns" "von Ratzeburg" 
-		"von Schlawe" "von Schwelz" "von Liebschau" "von der Lippe" "von Schauenburg" "von Rostock" 
-		"von Gustrow" "von Rendsburg" "von Segeberg" "von Neuhaus" "von Friedenthal" "von Rosenberg" 
-		"von Waldenstein" "von Altenburg" "von Pernstein" "von Monheim" "von Urslingen" 
-		"von Assel" "von Osnabrück" "von Münster" "von Kleve" "von Jülich" 
-		"von Andernach" "von Göttingen"
-		"von Pfalz" "von Baden" "von Nordgau" "von Metz" "von Sundgau" "von Bern" 
-		"von Schwyz" "von Neuchatel" "von Aargau" "von Breisgau" "von Fürstenberg"
-		"von Württemberg" "von Franken" "von Thüringen" "von Weimar" "von Celle" 
-		"von Amsberg" "von Wolgast" "von Altmark" "von Anhalt" 
-		"von Plauen" "von Ansbach" "von Kempten" "von Arnim" "von Trent" 
-		"von Innsbruck" "von Lausitz" "von Stettin" 
-		"von Abensberg"  "von Berlichingen" "von Beetzen" 
-		"Sieghardinger" "von Walbeck"
-		#Prussian
-		"von Knorring" "von Creytzen" Sack "von Taube" "Wöhrmann"
-		#Rheinlaender
-		"von Keller" "von der Mark" "von Wittelsbach" "von Baden" "Rotberg"
-		#Hessian
-		"von Frankenstein" "von Taube" "von Uffeln" "von Hessen" "von Boyneburg"
-		#Hannoveran
-		"von Schack" "von Fabrice" "von Hardenberg" "von Welf" "von Schauenburg" "von Holstein-Gottorp" "Askanier" "von Oldenburg"
+		Actihild Aschild Baldhild Casthild Castiburg Duomburg Duomhild
+			Eidburg Eidhild Eidsunne Eidwalda Geriburg Gerrhild Gunborg
+			Gundhild Hildborg Hildwald Hramburg Hramhild Hramis Hrauchild
+			Hraugiburg Ingiburg Ingihild Laighild Leigiburg Malburg Malhild
+			Marchild Mundhild Randild Rhamis Richild Rigiburg Sigiburg
+			Sigihild Sunburg Sunhild Theodeburg Theothild Thurishilda
+			Thurisinburg Thurisinhilda Thusnelda Walburg Waldburg
+			Walhild Waloburg Waluburg
 	}
 }
 roman_group = {
 	graphical_culture = westerngfx
 	# For the sake of simplicity, all the names are shared throughout the whole group
 	roman = { primary = ROM }
-	hispanic = { primary = ROM }
-	aegyptian = { primary = ROM }
-	arabus = { primary = ROM }
-	carthaginian = { primary = ROM }
-	graecus = { primary = ROM }
-	gaulic = { primary = ROM }
-	hispanic = { primary = ROM }
-	theodisc = { primary = ROM }
-	pannonian = { primary = ROM }
-	wenedyk = { primary = ROM }
-	britannian = { primary = ROM }
-	hyperborean = { primary = ROM }
+	hispanic = {  }
+	gaulic = {  }
+	theodisc = {  }
+	pannonian = {  }
+	wenedyk = {  }
+	britannian = {  }
+	hyperborean = {  }
+	salinatorian = { }
+	bazramani = { }
+	euxinian = { }
+	xliponian = { }
 		male_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
 		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
 		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
@@ -237,7 +249,6 @@ equine_group = {
 	graphical_culture = westerngfx
 	
 	equine = {
-		primary = TRL
 
 		male_names = {
 			Spot Star Spirit Blaze Lucky Chief Rain Stormy Duke Traveler "Clever Hans" Dreamer Midnight Twilight Arion Carlos Triumph
@@ -252,7 +263,6 @@ equine_group = {
 }
 cat_group = {
 	cat = {
-		primary = TRL
 		male_names = { Mittens Fluffy Tom Smudge Shado
 		}
 		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
@@ -261,7 +271,6 @@ cat_group = {
 }
 bear_group = {
 	bear = {
-		primary = TRL
 		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams
 		}
 		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
@@ -270,7 +279,6 @@ bear_group = {
 }
 hedgehog_group = {
 	hedgehog_culture = {
-		primary = TRL
 		male_names = { Hughues Echinus Erinus Kidnae Micro Mesyo Aurion Sclaterion Rix Spike Pokey Quillem Quilliam Quillington Sanic Knucklys Silver Lancelot Galahad Cyrus Pincushion Hedgehog
 			Grumpy Crisp Pinecone Sam Wiggles Stig Xerxes "Mr. Tiggy-Winkle" Nails Thorn Ringo Groogy Punk Hedgepig August Blaine Saul Sonic
 		}
@@ -280,7 +288,6 @@ hedgehog_group = {
 }
 duck_group = {
 	duck_culture = {
-		primary = TRL
 		male_names = { Daffy Quacker Huck Waddles Donald Dominic Whitewing Duckus Quackmire Eggbert Howard Scrooge Winghelm Ludwing Gladstone Cake Blunder Duck Quackers Pippi Face Grape Anaheim
 			Quackel Beaky Nottington Drake Mallard Hans Scrooge Darkwing Huey Dewey Louie Bolivar Mårten Maarten Cornelius Havbard Knase Kalle Arne Dylan Emelio Greg Paul
 		}
@@ -290,7 +297,6 @@ duck_group = {
 }
 dog_group = {
 	dog_culture = {
-		primary = TRL
 		male_names = { Fido Alfonso Basil Albert Alistair Elmer Gilbert Alwin Brantley Kendrik Psyche Pluck Buckler Spigot Lance Lurcher Watch Keeper Brigade Fencer Butcher Blazer Prowess Craftsman
 			Forester Counsellor Spoiler Hurry Fury Growler Riot Bloomer Rome Blossom Hebe Hilary Jolity Gazer Eyebright Much Force Trooper Bustle Bubbler Rockdove Stubborn Yelp Pele-mele
 			Strongboy Sky Sunbeam Bodkin Wistful Gnome Tracks Dash Blake Buddy Goofy Pluto Killer Max Bonzo Zico Santi Cotte Ruff Trigger Mini Toby Doglas Good Bad Cujo Louis "Mr Wuffles"
@@ -304,7 +310,6 @@ dog_group = {
 }
 elephant_group = {
 	elephant_culture = {
-		primary = TRL
 		male_names = { Doot Trumpo Snoot Pyyrhus Kandula Jumbo Elephant Setu Dhriti Bhaanu Bhadra Zain Barbar Pompadour Booper Dombo Abul Abbas Hanno Zaeem Hannibal Baal Hasdrubal Babur
 			Batyr Pollux Castor Mr-Tusk Gaj Brant Kamboj Hastin Gajendra Airawat Tej Toti Yathra Ghaazi Chotu Baahi Bakhsh Behru Zaki Cornelius Surus
 		}
@@ -314,7 +319,6 @@ elephant_group = {
 }
 dragon_group = {
 	dragon_culture = {
-		primary = TRL
 		male_names = { Fafnir Midgard Apopis Ladon Colchidei Piton Vouivre Drac Gorynych Bantu Mannu Khozen Morzas Xemcel Medeus Morva Nils Bahamut Leviathan Ryujin Zilant Typhos Puff Nyx
 			Teethless Smokey Deathwing Quicksilver "Grey Ghost" Seasmoke Pyre Scorch Dragon Wyrm Lindwurm Dovah Vlad Rattleskin Ash Benedict Rakshasha Draco Dracul
 			Drago Fafner Errol Glaedr Glaurung Icefyre Falkor Nagini Rathalos Piff Fred Voidaltarah Ddraig Drdrake Morttalis Barney
@@ -325,7 +329,6 @@ dragon_group = {
 }
 red_panda_group = {
 	red_panda = {
-		primary = TRL
 		male_names = {
 			Pandolf Pandulf Shifu Panda Basil Spark Ning Benjamin Sawyer Ceba Pabu Ponga Bamboo Kaala Puffball Oolong
 			Chai Semper Vira Song Masala Ila Zeya Carson Harold Stellar Lhotse Wasabi Sabi Khusi Sundar Manasa Bo Mohini
@@ -342,5 +345,232 @@ red_panda_group = {
 		dynasty_names = { "Experience" }
 	}
 }
+punic_group = {
+	male_names = {
+		Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodo Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+		Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+		Paltibaal Philosir Boodes Bomical Gisgo Malchus Abdhamon Abibaal Abirami Ahumm Eshmounhilles Eshmouniaton Itthobaal
+		Ummashtart Melqartshama Batnoam Urumilki Yehomilk Yadamilk Baaliaton Barekbaal Gerbaal Gerimilki Khiletzbaal Tabnit Yutpan Zimrida
+		Danel Kanmi Maharbaal Milkpilles Melqartpilles Milkyaton Massinissa Hiempsal Juba
+	}
+	female_names = {
+		Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar Adiya Tabua Yapa Ytab Suhaima Huldu Mashah Gamila Asherah Izavel Iezabel Elissa Muttunbaal
+	}
+	dynasty_names = {
+		Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid
+		Bodonid Bostarid Chelbesid Eshbaalid Eugorid Hannid
+		Hiramid Magid Mattanid Metallid Milkiramid Philosirid
+		Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
+	}
+	carthaginian = {  }
+	ythalonim = {  }
+	ualonuth = {  }
+	sicorathi = {  }
+	symacom = {  }
+	ysthyalm = {  }
+	sythchy = {  }
+	ynnocho = {  }
+	mlachthi = {  }
+	inythmum = {  }
+	gadolite = {  }
+	bythlimmoth = {  }
+	sidonian = {  }
+	taliaite = {  }
+	lacanite = {  }
+	epicrateian = {  }
+	pmpese = {  }
+	ythbynuthi = {  }
+	ychibarku = {  }
+	liphocaneth = {  }
+	mysehi = {  }
+}
+old_mashriqi = {
+	coptic = {
+		dynasty_names = {
+			Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais
+		}
+		male_names = {
+			Seka Khayu Tiu Thesh Neheb Wazner Mekh "Iry-Hor" Sekhen Serqer Narmer "Hor-Aha" Djer Djet Den Semerkhet "Qa'a" Sneferka Raneb Nynetjer Senedj Neferkara Hudjefa Djoser Sekhemkhet Sanakht Khaba Huni Sneferu Khufu Khafre Djdefre Menkaure Thamphtis Userkaf Sahure Neferefre Shepseskare Nyuserre Unas Teti "Dejkadre Shemai" Neferkare Merenhor Nikare Intef "Sankhkare Mentuhotep" Menkare Segerseni Senusret Nerikare Sonbef Sebkay Sobekhotep Dedumose Sheeshi Nehesy Sheneh Semenre Rahotep "Nebpehtire Ahmose" Amenhotep Thutmose  "Awybre Hor" Akhenaten Tutankhamun Ramesses Herihor Piankh Pinedjem Masaharta Menkheperre Smendes Pinedjem
+		}
+		female_names = {
+			"Sobekkare Sobekneferu" Hatshepsut Tentamun Nitocris Neit Cleopatra Neferneferuaten Nefertiti 
+		}
+	}
+	phoenician = { #EU Rome
+		dynasty_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid 
+		Milkiramid Philosirid
+		}
+		male_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir
+		}
+		female_names = {
+			Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar
+		}
+	}
+	aramaic = { #EU Rome
+		dynasty_names = {
+			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid 
+			Milkiramid Philosirid
+		}
+		male_names = {
+			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes 
+			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram 
+			Paltibaal Philosir
+		}
+		female_names = {
+			Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar
+		}
+	}
+}
+chaldean = {
+	babylonian = {
+		dynasty_names = {
+			Amorite Sealand Larsa Kassite 
+		}
+		male_names = {
+			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
+		}
+		female_names = {
+			Nana Allatu Belit Zirrabanit Tiamat
+		}
+	}
+	assyrian = {
+		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
+		male_names = {
+			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
+		}
+		female_names = {
+			Nana Allatu Belit Zirrabanit Tiamat
+		}
+	}
+}
+hittite_group = {
+	male_names = {
+		Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+		Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+		Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+	}
+	female_names = {
+		Arachne Callirhoe Omphale Nyssia Tudo
+	}
+	dynasty_names = {
+		Aramid Arid Arkhid Asinid Arsacid Deiocid Menid Pacorid
+		Savacid Vardanid Surenid Karinid Gaumatid Gobryasid
+		Hydarnid Smerdid Vivanid Xerxid Abadanid Orontid Atropatid
+		Mithridatid Artiaxid Mihranid Chosroid Artashid Bagabignid Cambysid
+		Frataraka
+		Maeoniae Heraclidae Mermnadae
+	}
+	luwian = { }
+	lydian = { }
+	hittite = { }
+	phrygian = { }
+}
+scythian_group = {
+	scythian = {
+		dynasty_names = {
+			Abeacid Galatid Madyid Palacid Partatid
+		}
+		male_names = {
+			Abeacus Apsyrtos Arpharnes Askhkadar Atheas Galat Kuluk Madyes Oltak Palacus Partatua Skilurus Skunxa Spadines Tasius Zanticus Respendial
+		}
+		female_names = {
+			Amage Ghadani Opoin Polemakratia
+		}
+	}
+	sarmatian = { }
+	male_names = {
+		Airawanta Ajatasatru Ajite Alp Ambare Ampratasarme Amrataraksite Amratodane Anande Anathapindike Aniruddhe Andhave Anktsas Arjune Aranemi Arnyartate Arslam Arthadarsi Aryamarg Aryaske Aryatewe Aryawarme Aryottame Asokamitre Asokaraksite Asoke Asarte Astawi Atakke Atidivakare Atyuccagami Atraikatte Bimbasare Caitike Caiytiska Cakravar Cakule Candramukhe Candravasu Candre Caracate Cina Cinatyuti Citre Cittaraksite Cowaske Dandakamal Devarakste Dhanike Dipankar Dirghanakhe Dravyasvare Durmukhe Ekasrinke Erkatsole Esmine Etrise Gayakasyape Gayasirs Gaye Gunacamdre Gunasampade Hariscandre Hastake Hetubalike Indradhvaje Indratewe Indre Indriske Issapake Jatisrone Jetavam Jñanacamndre Jñanaghose Jñanakame Jñanakupte Jñanamokse Jñanasene Jñanasome Jñanasthite Jñanawirye Kadike Kalodaye Kalyanamokse Kalyanavraddhi Kalyanawartane Kanake Kanaske Kanthake Kapilavarne Kapilavastu Kas Kasyap Katakarni Kaundinye
+		Kauravye Kausal Kemarcune Kentarske Kercampey Kercapiske Kerdipole Kereptanne Kimne Klenkarako Klpapatre Klyotiska Kotile Koysam Ksemankare Ksmarjune Ksmawarme Ksmate Ksmateworsa Ksmika Kulkera Kumarapunye Kumpante Kunacamttrakau Kunacamttre Kwirapabhadra Lariska Mahasammate Mahisvare Manisvare Mitrakseme Mitraske Mitre Moksasene Moksasome Moksawarme Molyoke Mukalanti Munkhare Murdhagate Nandabala Nandake Nande Nandipale Nasme Natte Naradeve Nirot Nupura Nyagrodhe Padmakesar Padmottare Pakacandre Pañcasikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
+		Pravare Priyadeve Ptompile Puñaiyse Puñakame Puñaraksite Puñicamndre Punyamitre Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare Samantatir Samcite Samghatrate Sanavasi Sanghasarme Sankene Sanum Saputanase Sarasike Sarmacamdre Sarsire Satuma Satyake Satyaraksite Sidhasamgha Siladewe Silamitre Silarakite Silaraksi Silasoma Silavande Silawarne Silayase Silopake Simpraye Siñcake Sinke Sinku Skanatatte Skwarle Slacamndre Solarke Some Srestake Sudarse Sudas Suddhodane Sujate Sukase Suklodane Sunaksatre Sunetre Sutasome Sutate Swarnabuspe Swarnatepe Tarmacandre Tarmaraksite Tenare Tohkem Tonke Tukik Tunka Tusi Udanalankar Udayi Ulkamukhe Uluke Upage Upagupte Upanande
+		Uposathe Urbilvakasyape Uttaraphalguni Uttare Vaisravane Vaitike Varddhane Vidusake Vimalapuspe Vinaise Visale Wamsok Warwattaske Waryaruci Waryasene Wasampile Wasave Wiryadewe Wiryamitre Wiryasanti Wiryasiñi Wisikke Wrauske Yanayase Yarpalaske Yasa Yasawine Yase Yasonaka Yastare Yonge Yonu Ype Yudhisthire Yugaraje
+	}
+	female_names = {
+		Ampratasene Amratasene Arjuna Arunavati Aryakose Aryaraksite Ayardhyame Bhadra Canca Dhrtirastre Jñati Kolite Kosthile Malika Maya Nagasene Priyasarini Punyasene Purike Purnaya Purohite Putere Raknaska Revati Roce Saci Santa Santisene Sari Sthulananda Sudarsane Sumagati Sumaise Sumati Sundari Suwarte Tarmawirne Tartvisara Tati Tisye Upatisye Uppal Uppalavarna Vasisthe Vitasake Yasaraksite Yasodhara
+	}
+	dynasty_names = {
+		Kausalid Gankari Tenarian Ytarimid Tripuskaran Dantapurian
+		Baransian Yurpaskan Rohinian Vaidan Vaisalian Iksvakuian
+		Kausikan Sakkan Kasakid Yarkamid Bharukid Cadotid Lyamid Kunlayad
+	}
+}
+celts = {
+	male_names = {
+		Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+		Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+		Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+		Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+		Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+		Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+		Venutius Viridorix Vosenius Vodenos
+	}
+	female_names = {
+		Aife Airmed Ancasta Banna Billica Boudica Bricta Cata Cartimandua Chiomara Damona Diseta Gwendolen Litavis Iamcilla Maeve Verica
+		Cingetessa Conna Catia Carssouna Cunovinna Illica Lovernisca Magunna Lucilia Oconea Ria Rosula Senica Sentica Sulicena
+		Vassura Vinoma Vorvena Urca Veloriga Velibia Totia Titocuna Velbutena Seniciana Senila Vrocata Exuperata Deiana Cunolava Cunsa Aucissa
+		Allauna Alatucca Aessicunia Bodicacia Britivenda Catissena Cantisena 
+	}
+	dynasty_names = {
+		Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+		Punician Tautalid Correian Divicid Duratian Elitovian
+		Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+		Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+	}
+	belgian = { }
+	gaulish = { }
+	scordiscian = { }
+	celtiberian = { }
+}
+dacian_group = {
+		dynasty_names = {
+		Adaid Amatokid Aulouporid Aulouzonid Bendidorid Berisadid Bessid Bithid
+		Brinkainid Brinkazenid Brinkazerid Brinkazid Bryzid Byzid Kelsinid Kelsid
+		Kersobleptid Kerzulid Ketriporid Kocaid Delid Dentubrisid Dentupid Deopid
+		Deospurid Desakenthid Diaskenthid Diazenid Dizapid Dizaporid Dizid
+		Dizazelpid Dolenid Drenid Eptaikenthid Eptapid Eptaporid Eptenid Eptezenid
+		Ezbenid Gaidrid Hebryzelmid Kenthid Kersid Kersibaulid Kersobleptid
+		Ketriporid Ketrizeid Kotid Maisadid Markiporid Mukakenthid Mukapaibid
+		Mukapid Mukaporid Mukatralid Mukazenid Naiporid Oliporid Porid Pytrid
+		Raizdid Raskid Rekiperid Rhaskid Rhaskuporid Rheboulid Rhesid Rhoemetalkid
+		Sadalid Satrid Sortid Seikiperid Seuthid Skarid Skilid Skostodokid
+		Sparatokid Taruthinid Terid Tzitzid Zieisid Ziepyrid Zilid Zipaibid Zipyrid
+	}
 
-
+	male_names = {
+	   Adaios Amatokos Aulouporis Aulouzon Bendidoros Berisades Bessos Bithos Brinkainos Brinkazenis Brinkazeris Brinkazis Bryzos Byzas Delos Dentoubrisa Dentoupes Deopos Deosporis Desakenthos Diaskenthos Diazenis Dizapes Dizapor Dizas Dizazelpis Dolens Drenis Eptaikenthos Eptapis Eptaporis Eptenis Eptezenis Ezbenis Gaidres Hebryzelmis Kelsinos Kelsos Kenthos Kerses Kerzoula Kersibaulos Kersobleptes Ketriporis Ketrizeis Kokaios Kotys Maisades Markipor Moukakenthos Moukapaibes Moukapius Moukaporis Moukatralis Moukazenis Naipor Olipor Poris Pytros Raizdos Raskos Rekiper Rhaskos Rhaskuporis Rheboulas Rhesos Rhoemetalces Sadalas Satres Sautes Seikiper Seuthes Skaris Skilas Skostodokos Sparadokos Taruthinas Teres Tzitzis Zieisis Ziepyros Ziles Zipaibes Zipyron
+	}
+	
+	female_names = {
+	   Bendidora Daizo Dentustaina Dentusykos Dida Dinentilla Dizo Drigissa Epteporis Eptepos Eptesykos Ettela Kerza Mania Moka Mokasokos Mukko Mukapora Murko Nanea Purizia Rheskutorme Rhymesikos Sinna Sita Torkoula
+	}
+	dacian = { }
+	thracian = { }
+}
+tyrrhenian = {
+	male_names = {
+		Amtnie Amuni Anche Anthai Aninas Arunth Araz Arzni Arnth Autu Aule Cei Ceile Ceisi
+		Cire Cnaive Clate Cruthni Cuinte Cursni Fapi Felce Felsnas Fulu Hapre Hirumina Husi
+		Carcuna Carthasie Ceisie Cavie Larce Laris Larth Larthuza Laucie Lauche Lethei
+		Licine Lucer Mamurce Marce Murila Numna Pesna Petru Plikasnas Plute Presnte
+		Pumpu Puplie Cupe Ranazu Rasce Ruvfe Ruifre Sanchuna Scarpe Sethre Spitus Spurie Squrie
+		Tarchi Teitur Thefri Thucer Ticusna Tite Tlesna Tursikina Tusnute Uchsie Uchulni Usele
+		Vel Velchaie Velthur Venel Vetus Vipie
+	}
+	female_names = {
+		Anina Aprthni Apunei Arunthia Arzna Arntha Ati Aula Ceia Culni Cursi Cusua Fasthi
+		Hasthi Hercnei Kanuta Larthi Lethi Luci Matun Metli Numni Pulia Racu Ramtha Ranthu
+		Ravnthu Satlnei Sela Semni Sethri Squria Squlina Tanchuil Tarcha Teituri Thanchvil
+		Thana Thefrina Thestia Thuceru Ticusnei Titi Veli Velchina Venela Vesi Vipi
+	}
+	dynasty_names = {
+		Acilu Acrate Apurthe Campane Ceice Cencu Creice Cesu Crespe Curces Cuthna Herma
+		Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
+		Venala Ventese Veru Zalle
+	}
+	etrurian = { primary = ETR }
+	rhaetian = { }
+	lemnian = { }	
+}

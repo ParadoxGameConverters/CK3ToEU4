@@ -1,0 +1,100 @@
+celtic_pagan = {
+	can_form_personal_unions = yes
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 4 6 }
+	crusade_name = HOLY_WAR
+	druidism = {
+		color = { 102 66 31 }
+		icon = 105
+		country = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	briton_pagan = {
+		color = { 0.1 0.1 0.6 }
+		icon = 166
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			land_maintenance_modifier = -0.10
+			land_forcelimit_modifier  = 0.2
+			land_morale = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			land_morale = 0.05
+		}
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	gallic_pagan = {
+		color = { 0.1 0.6 0.1 }
+		icon = 167
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			land_maintenance_modifier = -0.10
+			global_manpower_modifier = 0.2
+			land_morale = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			galley_power = 0.2
+		}
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	gaelic_pagan = {
+		color = { 0.1 0.4 0.1 }
+		icon = 168
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			hostile_attrition = 1
+			defensiveness = 0.2
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			global_tax_modifier = 0.1
+		}
+
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	celtiberian_pagan = {
+		color = { 0.2 0.7 0.2 }
+		icon = 169
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			defensiveness = 0.2
+			enemy_core_creation = 0.2
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			defensiveness = 0.2
+		}
+		
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+}

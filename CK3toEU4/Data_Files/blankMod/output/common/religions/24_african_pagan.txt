@@ -1,0 +1,103 @@
+african_pagan = {	
+	west_african_pagan = {
+		color = { 104 60 0 }
+		icon = 12
+		country = {
+			tolerance_heathen = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			diplomatic_reputation = 1
+		}
+
+		fetishist_cult = yes
+		heretic = { GOAT_SKULL }
+		allowed_conversion = { west_african_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	west_african_pagan_reformed = {
+		color = { 255 160 0 }
+		icon = 52
+		country = {
+			tolerance_heathen = 3
+			tolerance_heretic = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country_as_secondary = {
+			tolerance_heathen = 3
+			diplomatic_reputation = 1
+		}
+
+		fetishist_cult = yes
+		heretic = { GOAT_SKULL }
+	}
+	
+	##New to CK3
+	#Akom -> Fetishism
+	#Donyi-Poloism/Sedism -> Animism
+	kushitism_pagan = {
+		color = { 0.15 1 0.7 } #38.25 255 178.5
+		icon = 145
+		country = {
+			legitimacy = 1
+			devotion = 1
+			horde_unity = 1
+			meritocracy = 1
+			republican_tradition = 0.5
+			max_absolutism = 10
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			max_absolutism = 5
+			yearly_absolutism = 0.5
+		}
+		
+		heretic = { DARKNESS SNAKE_CLAN }
+		allowed_conversion = { kushitism_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	kushitism_pagan_reformed = {
+		color = { 0 255 255 }
+		icon = 146
+		country = {
+			legitimacy = 1
+			devotion = 1
+			horde_unity = 1
+			meritocracy = 1
+			republican_tradition = 0.5
+			max_absolutism = 10
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country_as_secondary = {
+			max_absolutism = 5
+			yearly_absolutism = 0.5
+		}
+		
+		heretic = { DARKNESS SNAKE_CLAN }
+	}
+}

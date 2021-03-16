@@ -1,0 +1,962 @@
+# Edited event 13 to avoid Persia to become Shiite if Muhammad is yet to be born
+
+########################################
+# Major Flavor Events                  #
+########################################
+
+namespace = flavor_per
+normal_or_historical_nations = yes
+
+# Turko-Persian Conflicts: Shiite rebels
+country_event = {
+	id = flavor_per.3560
+	title = "flavor_per.EVTNAME3560"
+	desc = "flavor_per.EVTDESC3560"
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		NOT = { has_country_flag = PER_had_event_3560 }
+		is_year = 1450
+		NOT = { is_year = 1550 }
+		tag = PER
+		religion = shiite
+		any_neighbor_country = {
+			tag = TUR
+			religion = sunni
+			any_owned_province = {
+				religion = shiite
+			}
+		}
+		TUR = { is_free_or_tributary_trigger = yes }
+		NOT = { alliance_with = TUR }
+		NOT = { war_with = TUR }
+	}
+
+	mean_time_to_happen = {
+		months = 2000
+	}
+	
+	immediate = {
+		set_country_flag = PER_had_event_3560
+	}
+	
+	option ={ # Support the Turkish Shiites
+		name = "flavor_per.EVTOPTA3560"
+		add_stability_or_adm_power = yes
+		add_years_of_income = -0.2
+		TUR = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_rebels
+			}
+			country_event = { id = flavor_tur.3360 days = 10 tooltip = "flavor_per.EVTTOOLTIP3560" }
+		}
+	}
+	option = { # Leave them to their fate
+		name = "flavor_per.EVTOPTB3560"
+		add_stability = -1
+	}
+	option = {		# Betray the Turkish rebels
+		name = "flavor_per.EVTOPTC3560"
+		add_stability = -2
+		add_opinion = {
+			who = ROOT
+			modifier = did_not_support_rebels
+		}
+	}
+}
+
+# Murad III's campaigns against Persia
+country_event = {
+	id = flavor_per.3562
+	title = "flavor_per.EVTNAME3562"
+	desc = "flavor_per.EVTDESC3562"
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Teach the Turks a lesson!
+		name = "flavor_per.EVTOPTA3562"
+		add_stability_or_adm_power = yes
+		TUR = {
+			random_owned_province = {
+				limit = {
+					NOT = { is_core = PER }
+					NOT = { is_claim = PER }
+					any_neighbor_province = {
+						owned_by = PER
+					}
+				}
+				add_claim = PER
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = border_aggression
+			}
+		}
+	}
+	option = {		# Ignore the Turkish threats
+		name = "flavor_per.EVTOPTB3562"
+		add_stability = -1
+	}
+	option = {		# Seek a diplomatic solution
+		name = "flavor_per.EVTOPTC3562"
+		TUR = {
+			add_opinion = {
+				who = ROOT
+				modifier = successful_diplomacy
+			}
+		}
+	}
+}
+
+# Turko-Persian Tension
+country_event = {
+	id = flavor_per.3563
+	title = "flavor_per.EVTNAME3563"
+	desc = "flavor_per.EVTDESC3563"
+	picture = LAND_MILITARY_eventPicture
+
+	trigger = {
+		NOT = { has_country_flag = PER_had_event_3563 }
+		is_year = 1600
+		NOT = { is_year = 1650 }
+		tag = PER
+		any_neighbor_country = {
+			tag = TUR
+			any_owned_province = {
+				controlled_by = REB
+			}
+		}
+		TUR = { is_free_or_tributary_trigger = yes }
+		NOT = { alliance_with = TUR }
+		NOT = { war_with = TUR }
+	}
+
+	mean_time_to_happen = {
+		months = 1000
+	}
+	
+	immediate = {
+		set_country_flag = PER_had_event_3563
+	}
+
+	option = {		# Support the Turkish rebels and prepare for war
+		name = "flavor_per.EVTOPTA3563"
+		add_years_of_income = -0.2
+		TUR = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_rebels
+			}
+			country_event = { id = flavor_tur.3363 days = 10 tooltip = "flavor_per.EVTTOOLTIP3560" }
+		}
+	}
+	option = {		# Concentrate on internal issues
+		name = "flavor_per.EVTOPTB3563"
+		add_adm_power = 25
+	}
+}
+
+
+########################################
+# Flavor Events for Persia
+#
+# written by Sara Wendel-Örtqvist & Henrik Lohmander
+########################################
+
+#The Reforms of Ismail
+country_event = {
+	id = flavor_per.1
+	title = "flavor_per.EVTNAME1"
+	desc = "flavor_per.EVTDESC1"
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { #Reform
+		name = "flavor_per.EVTOPTA1"
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_small_effect = yes
+		}
+		if = {
+			limit = {
+				NOT = { government_rank = 3 }
+			}
+			set_government_rank = 3
+		}
+		416 = { #Tabriz
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 1
+		}
+		429 = { #Isfahan
+			add_base_tax = 3
+			add_base_production = 3
+			add_base_manpower = 1
+		}
+		2215 = { #Qazvin
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 1
+		}
+		2218 = { #Shiraz
+			add_base_tax = 2
+			add_base_production = 2
+		}
+		428 = { #Teheran
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		433 = { #Yazd
+			add_base_tax = 1
+			add_base_production = 1
+		}
+		2213 = { #Qom
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		2212 = { #Zanjan
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+}
+
+#The Reforms of Abbas the Great
+country_event = {
+	id = flavor_per.2
+	title = "flavor_per.EVTNAME2"
+	desc = "flavor_per.EVTDESC2"
+	picture = REFORM_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		is_year = 1580
+		owns = 429
+		NOT = {
+			is_year = 1640
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 150
+	}
+	
+	option = { #Reform
+		name = "flavor_per.EVTOPTA1"
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_small_effect = yes
+		}
+		add_piety = 0.25
+		add_adm_power = 50
+		add_mil_power = 50
+		add_dip_power = 50
+	}
+}
+
+# The Advisors of Abbas the Great
+country_event = {
+	id = flavor_per.3
+	title = "flavor_per.EVTNAME3"
+	desc = "flavor_per.EVTDESC3"
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		is_year = 1590
+		owns = 429
+		NOT = {
+			is_year = 1640
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 150
+	}
+	
+	option = { # Hire the English advisors
+		name = "flavor_per.EVTOPTA3"
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_small_effect = yes
+		}
+		add_ruler_modifier = { name = per_abbas_advisors }
+		add_stability = -1
+	}
+	option = { # Rely on ones
+		name = "flavor_per.EVTOPTB3"
+		add_stability_or_adm_power = yes
+	}
+}
+
+# Political Turmoil
+country_event = {
+	id = flavor_per.4
+	title = "flavor_per.EVTNAME4"
+	desc = "flavor_per.EVTDESC4"
+	picture = LIBERUM_VETO_eventPicture
+	
+	trigger = {
+		tag = PER
+		is_year = 1580
+		NOT = {
+			has_country_modifier = per_political_turmoil_timer
+		}
+		NOT = {
+			mil = 4
+		}
+		NOT = {
+			dip = 4
+		}
+		NOT = {
+			adm = 4
+		}
+		has_regency = no
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	option = { #Let the Clans fight
+		name = "flavor_per.EVTOPTA4"
+		hidden_effect = {
+			add_country_modifier = {
+				name = per_political_turmoil_timer
+				duration = 365
+				hidden = yes
+			}
+		}
+		add_stability = -1
+	}
+	option = { #Buy the loyalty of the Clans
+		name = "flavor_per.EVTOPTB4"
+		hidden_effect = {
+			add_country_modifier = {
+				name = per_political_turmoil_timer
+				duration = 365
+				hidden = yes
+			}
+		}
+		add_years_of_income = -1
+	}
+}
+
+# Political Fragmentation
+country_event = {
+	id = flavor_per.5
+	title = "flavor_per.EVTNAME5"
+	desc = "flavor_per.EVTDESC5"
+	picture = LIBERUM_VETO_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		is_year = 1635
+		NOT = {
+			has_country_modifier = per_political_fragmentation_timer
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+	}
+	
+	option = { # Let the factions conspire
+		name = "flavor_per.EVTOPTA5"
+		hidden_effect = {
+			add_country_modifier = {
+				name = per_political_fragmentation_timer
+				duration = 365
+				hidden = yes
+			}
+		}
+		add_stability_or_adm_power = yes
+	}
+	option = { # Tighten state control
+		name = "flavor_per.EVTOPTB5"
+		hidden_effect = {
+			add_country_modifier = {
+				name = per_political_fragmentation_timer
+				duration = 365
+				hidden = yes
+			}
+		}
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				is_core = PER
+			}
+			add_base_tax = 1
+			add_base_manpower = 1
+		}
+	}
+}
+
+#The Afghan Rebellions
+country_event = {
+	id = flavor_per.6
+	title = "flavor_per.EVTNAME6"
+	desc = "flavor_per.EVTDESC6"
+	picture = ANGRY_MOB_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		NOT = { primary_culture = afghani }
+		NOT = { exists = AFG }
+		any_owned_province = { culture = afghani }
+	}
+
+	mean_time_to_happen = {
+		months = 2000
+	}
+	
+	option = { #Curses!
+		name = "flavor_per.EVTOPTA6"
+		random_owned_province = {
+			limit = { culture = afghani }
+			area = {
+				limit = {
+					owned_by = ROOT
+				}
+				add_province_modifier = {
+					name = add_unrest_10_modifier
+					duration = 1825
+				}
+			}
+		}
+	}
+}
+
+########################################
+# Additional Flavor Events for Persia
+#
+# written by Henrik Lohmander
+########################################
+
+#Persian Miniature Painting
+country_event = {
+	id = flavor_per.7
+	title = flavor_per.7.t
+	desc = flavor_per.7.d
+	picture = BIG_BOOK_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		NOT = { is_year = 1600 }
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { #Ok
+		name = flavor_per.7.a
+		add_prestige = 10
+		add_country_modifier = {
+				name = per_miniature_school
+				duration = 3650
+		}
+	}
+}
+
+#Iskander Munshi
+country_event = {
+	id = flavor_per.8
+	title = flavor_per.8.t
+	desc = flavor_per.8.d
+	picture = BIG_BOOK_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		is_year = 1620
+		NOT = { is_year = 1635 }
+	}
+
+	mean_time_to_happen = {
+		months = 45
+	}
+	
+	option = { #
+		name = flavor_per.8.a
+		add_legitimacy = 10
+		add_prestige = 5
+	}
+}
+
+#The Shrines of Najaf
+country_event = {
+	id = flavor_per.9
+	title = flavor_per.9.t
+	desc = flavor_per.9.d
+	picture = PRAYING_eventPicture
+	
+	is_triggered_only = yes
+
+	
+	option = { #Whatever is needed we must provide.
+		name = flavor_per.9.a
+		ai_chance = {
+			factor = 1
+		}
+		add_years_of_income = -0.1
+		2311 = {
+			add_province_modifier = {
+				name = "per_najaf"
+				duration = -1
+			}
+		}
+	}
+	
+	option = { #We must practice restraint.
+		name = flavor_per.9.b
+		ai_chance = {
+			factor = 0
+		}
+		2311 = {
+			add_province_modifier = {
+				name = "per_najaf"
+				duration = 7300
+			}
+		}
+	}
+}
+
+#Rise of the Mushashaiya
+country_event = {
+	id = flavor_per.10
+	title = flavor_per.10.t
+	desc = flavor_per.10.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = MSY }
+		is_year = 1445
+		NOT = { is_year = 1455 }
+		any_owned_province = {
+			is_core = MSY
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = { #
+		name = flavor_per.10.a
+		every_province = {
+			limit = {
+				is_core = MSY
+				NOT = { owned_by = MSY }
+			}
+			add_province_modifier = {
+				name = "per_mushashaiya"
+				duration = 3650
+			}
+		}
+	}
+	
+}
+
+#Rise of the Safawiya
+country_event = {
+	id = flavor_per.11
+	title = flavor_per.11.t
+	desc = flavor_per.11.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { tag = ARL }
+		is_year = 1455
+		NOT = { is_year = 1465 }
+		OR = {
+			any_neighbor_country = {
+					tag = ARL
+			}
+			any_owned_province = {
+				is_core = ARL
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = { #
+		name = flavor_per.11.a
+		every_province = {
+			limit = {
+				NOT = { owned_by = ARL }
+				OR = {
+					is_core = ARL
+					AND = {
+						religion = shiite
+						any_neighbor_province = {
+							owned_by = ARL
+						}
+					}
+				}
+			}
+			add_province_modifier = {
+				name = "per_safawiya"
+				duration = 3650
+			}
+		}
+	}
+}
+
+#Qizilbash Tribesmen Assemble
+country_event = {
+	id = flavor_per.12
+	title = flavor_per.12.t
+	desc = flavor_per.12.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		exists = PER
+		NOT = { tag = PER }
+		is_year = 1450
+		NOT = { is_year = 1580 }
+		num_of_owned_provinces_with = {
+				value = 6
+				culture = persian
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 390
+		
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				has_province_modifier = per_mushashaiya
+			}
+		}
+		modifier = {
+			factor = 0.75
+			any_owned_province = {
+				has_province_modifier = per_safawiya
+			}
+		}
+		modifier = {
+			factor = 0.75
+			num_of_owned_provinces_with = {
+				value = 8
+				culture = persian
+			}
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture = persian
+				}
+				set_province_flag = per_qizilbash
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture = persian
+					NOT = { has_province_flag = per_qizilbash }
+				}
+				set_province_flag = per_qizilbash
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					culture = persian
+					NOT = { has_province_flag = per_qizilbash }
+				}
+				set_province_flag = per_qizilbash
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_core = PER
+					culture = azerbaijani
+					NOT = { has_province_flag = per_qizilbash }
+				}
+				set_province_flag = per_qizilbash
+			}
+		}
+	}
+	
+	option = { #Ok.
+		name = flavor_per.12.a
+		random_owned_province = {
+			limit = {
+				has_province_flag = per_qizilbash
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				friend = PER
+			}
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = per_qizilbash
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				friend = PER
+			}
+			clr_province_flag = per_qizilbash
+		}
+	}
+}
+
+#Persia and Shiism
+
+country_event = {
+	id = flavor_per.13
+	title = flavor_per.13.t
+	desc = flavor_per.13.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		is_free_or_tributary_trigger = yes
+		NOT = { is_year = 1630 }
+		any_country = {
+			is_neighbor_of = PER
+			OR = {
+				dominant_religion = sunni
+				dominant_religion = shiite
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = { #
+		name = flavor_per.13.a
+		ai_chance = { factor = 1 }
+		if = {
+			limit = {
+				NOT = { religion = shiite }
+			}
+			change_religion = shiite
+		}
+		add_country_modifier = {
+			name = per_shia_conversion_policy
+			duration = 3650
+		}
+		set_country_flag = per_shiite_policies
+	}
+	
+	option = { #
+		name = flavor_per.13.b
+		ai_chance = { factor = 0 }
+		add_stability_or_adm_power = yes
+	}
+}
+
+#The Sunni Ulema
+country_event = {
+	id = flavor_per.14
+	title = flavor_per.14.t
+	desc = flavor_per.14.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		religion = shiite
+		has_country_flag = per_shiite_policies
+	}
+
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = { # Carrot
+		name = flavor_per.14.a
+		ai_chance = { factor = 1 }
+		add_country_modifier = {
+			name = per_pragmatic_ulema
+			duration = 3650
+		}
+	}
+	
+	option = { # Whip
+		name = flavor_per.14.b
+		ai_chance = { factor = 0 }
+		add_country_modifier = {
+			name = per_conversion_of_the_clergy
+			duration = 1825
+		}
+	}
+}
+
+#Shiite Brain Drain
+
+country_event = {
+	id = flavor_per.15
+	title = flavor_per.15.t
+	desc = flavor_per.15.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		religion = shiite
+		has_country_flag = per_shiite_policies
+	}
+
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = { # Welcome them with open arms
+		name = flavor_per.15.a
+		ai_chance = { factor = 1 }
+		add_piety = 0.1
+		every_country = {
+			limit = {
+				OR = {
+					religion = shiite
+					any_owned_province = {
+						religion = shiite
+					}
+				}
+			}
+			add_opinion = { who = PER modifier = opinion_irritated }
+		}
+		add_country_modifier = {
+			name = per_shiite_immigration
+			duration = 7300
+		}
+	}
+	
+	#option = { # Turn them away
+	#	name = flavor_per.15.b
+	#	ai_chance = { factor = 0 }
+	#	add_piety = -0.25
+	#	add_stability_or_adm_power = yes
+	#}
+}
+
+#Restructuring of Isfahan
+country_event = {
+	id = flavor_per.16
+	title = flavor_per.16.t
+	desc = flavor_per.16.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		religion = shiite
+		is_year = 1580
+		NOT = { is_year = 1630 }
+		owns_core_province = 429
+		NOT = { capital = 429 }
+		years_of_income = 0.2
+	}
+
+	mean_time_to_happen = {
+		months = 150
+	}
+	
+	option = { #Let us build a new, truly Persian capital.
+		name = flavor_per.16.a
+		ai_chance = {
+			factor = 1
+		}
+		add_years_of_income = -0.15
+		set_country_flag = per_isfahan_construction
+		set_capital = 429
+		429 = {
+			add_province_modifier = {
+				name = "per_building_isfahan"
+				duration = -1
+			}
+		}
+	}
+	
+	option = { #Our current capital fit our current needs
+		name = flavor_per.16.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability_or_adm_power = yes
+	}
+}
+
+#Isfahan - Finished
+country_event = {
+	id = flavor_per.17
+	title = flavor_per.17.t
+	desc = flavor_per.17.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = PER
+		had_country_flag = { flag = per_isfahan_construction days = 3650 }
+		owns_core_province = 429
+		429 = {
+			has_province_modifier = per_building_isfahan
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 168
+	}
+	
+	option = { #Great!
+		name = flavor_per.17.a
+		add_prestige = 20
+		429 = {
+			remove_province_modifier = per_building_isfahan
+			add_province_modifier = {
+				name = "per_isfahan_maidan"
+				duration = -1
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,124 @@
+steppe_pagan = {
+
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 57 57 }
+	crusade_name = HOLY_WAR
+	tengri_pagan = {
+		icon = 125
+		color = { 0 30 108 }
+		country = {
+			cav_to_inf_ratio = 0.25
+			global_regiment_cost = -0.2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			army_tradition_decay = -0.1
+			raze_power_gain = 0.15
+		}
+		can_have_secondary_religion = yes
+		heretic = { GOAT_SKULL }
+		allowed_conversion = { tengri_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	magyar_pagan = { #Uralic/Taltoism
+		color = { 250 120 90 }
+		icon = 147
+		country = {
+			free_policy = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			free_mil_policy = 1
+		}
+		
+		heretic = { GOAT_SKULL SNAKE_CLAN }
+		allowed_conversion = { magyar_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	magyar_pagan_reformed = { #Uralic/Taltoism
+		color = { 212 106 80 }
+		icon = 148
+		country = {
+			free_policy = 1
+		}
+		country_as_secondary = {
+			free_mil_policy = 1
+		}
+		
+		heretic = { GOAT_SKULL SNAKE_CLAN }
+	}
+	
+	siberian_pagan = { #Turumism
+		color = { 230 230 230 }
+		icon = 154
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
+		allowed_conversion = { siberian_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	
+	siberian_pagan_reformed = { #Reformed Turumism
+		color = { 179 179 230 }
+		icon = 155
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
+	}
+	scythian_pagan = {
+		color = { 0.5 0.19 0.2 }
+		icon = 165
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heretic = 1
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			build_cost = -0.1
+			defensiveness = 0.2
+		}
+		heretic = { GOAT_SKULL FINNIC }
+	}
+}	

@@ -1,0 +1,96 @@
+asian_pagan = {
+
+	flags_with_emblem_percentage = 10
+	flag_emblem_index_range = { 65 67 }
+	crusade_name = CRUSADE
+	zun_pagan = {
+		icon = 128
+		color = { 1.0 0.9 0.05 } #255 229.5 12.75
+		
+		country = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		
+		heretic = { DARKNESS }	
+		allowed_conversion = { zun_pagan_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	zun_pagan_reformed = {
+		icon = 43
+		color = { 0.9 1.0 0.0 } #229.5 255 0
+		
+		country = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		
+		heretic = { DARKNESS }	
+	}
+	
+	bon = {
+		color = { 8 140 131 }
+		icon = 129
+		country = {
+			tolerance_heretic = 1
+			shock_damage_received = -0.1
+		}
+		country_as_secondary = {
+			horde_unity = 1
+			shock_damage_received = -0.1
+		}
+		province = {
+			local_defensiveness = 0.1
+		}
+		
+		heretic = { ZEN }
+		
+		uses_karma = yes
+		allowed_conversion = { bon_reformed }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	bon_reformed = {
+		color = { 6 116 108 }
+		icon = 60
+		country = {
+			tolerance_heretic = 1
+			shock_damage_received = -0.1
+		}
+		country_as_secondary = {
+			horde_unity = 1
+			shock_damage_received = -0.1
+		}
+		province = {
+			local_defensiveness = 0.1
+		}
+		
+		heretic = { ZEN }
+		
+		uses_karma = yes
+	}
+}

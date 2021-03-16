@@ -1,0 +1,121 @@
+ukko =
+{
+	land_morale = 0.1
+	discipline = 0.025
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 31
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}		
+	}
+}
+
+tapio = 
+{
+	hostile_attrition = 1.0
+	defensiveness = 0.2
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 32
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}			
+	}	
+}
+
+ahti =
+{
+	naval_morale = 0.20
+	navy_tradition = 1
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 33
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}		
+	}	
+}
+
+mielikki = 
+{
+	leader_land_fire = 1
+	global_trade_goods_size_modifier = 0.1
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 34
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}		
+	}	
+}
+
+akras = 
+{
+	production_efficiency = 0.1
+	manpower_recovery_speed = 0.20
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 35
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}		
+	}	
+}
+
+tuoni =
+{
+	global_unrest = -1
+	global_tax_modifier = 0.1
+	
+	allow = { OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
+	sprite = 36
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}			
+	}		
+}
