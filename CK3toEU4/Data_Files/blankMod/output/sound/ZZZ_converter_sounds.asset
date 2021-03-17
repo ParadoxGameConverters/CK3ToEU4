@@ -776,21 +776,3 @@
   name = start_convert_atenism
   file = "start_conversion_muslim_shiite.wav"
  }
-
- sound = {
-  name = religion_aztec_pagan
-  file = "tab_religion_america.wav"
- }
- sound = {
-  name = start_convert_aztec_pagan
-  file = "start_conversion_pagan_shamanism.wav"
- }
-
- sound = {
-  name = religion_pagan_religion_reformed
-  file = "tab_religion_pagan.wav"
- }
- sound = {
-  name = start_convert_pagan_religion_reformed
-  file = "start_conversion_pagan_animism.wav"
- }
