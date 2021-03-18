@@ -91,10 +91,6 @@ french = {
 	}
 }
 finno_ugric = {
-	komi = {
-		primary = PRM
-		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
-	}
 	mordvin = {
 		primary = MDV
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
