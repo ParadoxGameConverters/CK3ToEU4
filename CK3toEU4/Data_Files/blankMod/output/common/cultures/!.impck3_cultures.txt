@@ -1,5 +1,6 @@
 lost_cultures_group = {
 	oldspain = { #Pre-Roman Iberia
+		primary = SPA
 		male_names = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
@@ -12,6 +13,7 @@ lost_cultures_group = {
 		}
 	}
 	illyrian = {
+		primary = ILR
 		male_names = {
 			Andinos Andios Anneses Annos Aplis Aploudos Aplos Apouros Baidaros Baizo Baizos Baolios Bardourios Bato Byoukos Byousas Bizo Bryoukos Karrios Daiekos Daitor Dasantos Dasios Dazomenos Dazos Epikaris Iettos Implaios Laidikalios Laidietis Laidos Labios Ledros Massurios Messios Messor Paio Panentios Panes Panto Pantos Plannios Plares Prorados Sarnos Skenobarbos Sestos Statanios Statikos Statos Souttis Temaios Tizios Tritonos Tritos Turelios Ulkidios Baranos Baridios Bendo Bepos Berzoulos
 			Karbanios Germanos Labianos Pinsos Pladomenos Verzaieos # Of Dalmatian origin
@@ -35,6 +37,7 @@ lost_cultures_group = {
 		}
 	}
 	nuragic = {
+		primary = SAR
 		male_names = {
 			Abadutiker Punicus Ambon Abaraban Andobales Balkar Babpo Biurtetel Bosilkas Budar Caro Culcas Gargoris Indo Iscerbeles Kara Korbis Korribilo Mandonio Magavarico
 			Lagunas Orisos Otirgeter Nisunin Nereildun Tiresio Otigirteker Redukeno Sakarbik Sosintaucer Sosian Seihar Skarisker Sacarisker Tureno Turibas Unibelos Urcetices Uxentio Umarilo Talskubilos
@@ -49,11 +52,11 @@ lost_cultures_group = {
 	}
 }
 byzantine = {
-	alexandrine = { }
-	prettanian = { }
-	hyperborean_greek = { }
-	gaulish_greek = { }
-	spanish_greek = { }
-	german_greek = { }
-	mena_greek = { }
+	alexandrine = { primary = BYZ }
+	prettanian = { primary = BYZ }
+	hyperborean_greek = { primary = BYZ }
+	gaulish_greek = { primary = BYZ }
+	spanish_greek = { primary = BYZ }
+	german_greek = { primary = BYZ }
+	mena_greek = { primary = BYZ }
 }

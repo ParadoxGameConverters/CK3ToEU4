@@ -33,9 +33,9 @@ grand_duchy_monarchy = {
 }
 suffet = {
 	rank = {
-		1 = DUCHY
-		2 = KINGDOM
-		3 = EMPIRE
+		1 = REPUBLIC
+		2 = GRAND_REPUBLIC
+		3 = GREAT_REPUBLIC
 	}
 	ruler_male = {
 		3 = SUFFET
@@ -49,6 +49,7 @@ suffet = {
 	}
 	trigger = {
 		culture_group = punic_group
+		government = republic
 	}
 }
 pharaoh = {
@@ -69,6 +70,7 @@ pharaoh = {
 	}
 	trigger = {
 		religion = kemetism
+		OR = { government = monarchy government = theocracy }
 	}
 }
 ecumenical_patriarch = {
@@ -92,20 +94,30 @@ ecumenical_patriarch = {
 ruling_prince = {
 	rank = {
 		1 = PRINCEDOM
-		2 = KINGDOM
-		3 = EMPIRE
+		2 = PRINCEDOM
+		3 = GREAT_PRINCEDOM
 	}
 	ruler_male = {
 		1 = PRINCE
-		2 = KING
-		3 = EMPEROR
+		2 = PRINCE
+		3 = GREAT_PRINCE
 	}
 	ruler_female = {
 		1 = PRINCESS
-		2 = QUEEN
-		3 = EMPRESS
+		2 = PRINCESS
+		3 = GREAT_PRINCESS
 	}
-	trigger = { OR = { tag = SWI tag = ARM } government = monarchy }
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+	consort_female = {
+		1 = PRINCESS
+		2 = PRINCESS
+		3 = GREAT_PRINCESS
+	}
+	trigger = { OR = { tag = SWI tag = ARM culture = swiss } government = monarchy }
 }
 dauphin = {
 	rank = {
@@ -136,5 +148,5 @@ dauphin = {
 		2 = DAUPHIN_fem
 		3 = DAUPHIN_fem
 	}
-	trigger = { culture_group = french }
+	trigger = { culture_group = french government = monarchy }
 }

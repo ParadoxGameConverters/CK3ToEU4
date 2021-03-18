@@ -1,0 +1,57 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 67 96 179 }
+
+revolutionary_colors = { 12 14 0 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	religious_ideas
+	maritime_ideas	
+	administrative_ideas
+	offensive_ideas
+	economic_ideas
+	expansion_ideas
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {
+	"Hanno #4" = 40
+	"Malchus #1" = 10
+	"Mago #3" = 30
+	"Hasdrubal #1" = 10
+	"Hamilcar #2" = 20
+	"Himilco #2" = 20
+	"Hannibal #1" = 50
+	"Gisco #1" = 10
+	"Bomilcar #1" = 10
+	
+	"Dido #1" = -1
+}
+
+leader_names = {
+	Hannibal
+	Hasdrubal
+	Hamilcar
+	Mago
+	Barqa
+}
+
+ship_names = {
+	Alim Fattah Razzaq Wahhab Qahhar Ghaffar
+	Musawwir Bari Khaliq Mutakabbir Jabbar
+	Aziz Muhaymin Mu'min Salam Quddus Malik
+	Rahim Rahman
+}

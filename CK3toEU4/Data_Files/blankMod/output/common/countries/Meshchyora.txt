@@ -1,0 +1,66 @@
+graphical_culture = westerngfx
+
+color = { 50 150 55 }
+revolutionary_colors = { 0 15 16 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	offensive_ideas
+	economic_ideas
+	diplomatic_ideas
+	aristocracy_ideas
+	spy_ideas
+	religious_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	swedish_gallop
+	swedish_gustavian
+	swedish_caroline
+	swedish_arme_blanche
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+leader_names = {
+	Azegid Gachegid Zhebegid
+	Lunegid Zhunegid Irtegid
+	Moshegid Rategid
+	Yugra Syktyvkar
+}
+
+ship_names = {
+	Noroava Olota Ordava Pemka Poshayka
+	Tekay Tetyava  Tundya Unzhutka Yalgava
+}
+
+monarch_names = {
+	"Mohkku #0" = 20
+	"Mokci #0" = 20
+	"Náhkol #0" = 20
+	"Päevalemb #0" = 10
+	"Sulev #0" = 10
+	"Pivtsay #0" = 10
+	"Pokshayka #0" = 5
+	"Shypicha #0" = 5
+	"Irter #0" = 5
+	"Karuvald #0" = 5
+	"Piho #0" = 0
+	"Varaka #0" = 0
+	"Náinnas #0" = 0
+	
+	"Nyayka #0" = -1
+	"Vidyava #0" = -1
+	"Poshayka #0" = -1
+	"Satu #0" = -1
+}

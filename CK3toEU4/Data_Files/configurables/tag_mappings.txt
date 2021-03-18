@@ -92,6 +92,7 @@ link = { ck3 = d_moray eu4 = HSC }
 link = { ck3 = k_ireland eu4 = IRE }
 link = { ck3 = c_athlone eu4 = FLY }
 link = { ck3 = c_ossory eu4 = KID }
+link = { ck3 = k_mann_the_isles eu4 = KOI }
 link = { ck3 = d_the_isles eu4 = KOI }
 link = { ck3 = c_isle_of_man eu4 = KOI }
 link = { ck3 = d_leinster eu4 = LEI }
@@ -896,3 +897,18 @@ link = { ck3 = d_zealots eu4 = ZLT }
 
 # Mod: Sunset Invasion
 link = { ck3 = e_nahua eu4 = AZT }
+
+# Some more things
+link = { ck3 = k_daneland eu4 = DNL } # Daneland
+# link = { ck3 = k_danelaw eu4 = DNL } # Danelaw - skipped because DNL is here just for a cultural shenanigan
+link = { ck3 = k_mordvinia eu4 = MDV } # Mordvinia
+link = { ck3 = d_mordvinia eu4 = MDV } # Mordvinia
+link = { ck3 = k_pechenegs eu4 = PCH } # Pechenegs
+link = { ck3 = d_pecheneg eu4 = PCH } # Pecheneg
+link = { ck3 = c_pecheneg eu4 = PCH } # Pecheneg
+link = { ck3 = k_cuman eu4 = CMN } # Cuman
+link = { ck3 = d_khazaria eu4 = KHZ } # Khazaria
+link = { ck3 = d_thrace eu4 = THR } # Thrace
+link = { ck3 = c_phrygia eu4 = PHR } # Phrygia
+link = { ck3 = k_africa eu4 = AFR } # Africa
+link = { ck3 = e_north_sea eu4 = ENS } # Empire of the North Sea
