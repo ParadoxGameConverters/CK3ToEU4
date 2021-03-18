@@ -8,7 +8,7 @@
 # North Germanic
 
 link = { eu4 = icelandic ck3 = norse ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
-link = { eu4 = elsinorian ck3 = norse ck3 = danish ck3 = anglo_saxon ck3 = english tech = western gfx = westerngfx owner = DNL } # ...owned by Daneland
+link = { eu4 = elsinorian ck3 = norse ck3 = danish tech = western gfx = westerngfx owner = DNL } # ...owned by Daneland
 link = { eu4 = swedish ck3 = swedish tech = western gfx = westerngfx }
 link = { eu4 = norwegian ck3 = norwegian tech = western gfx = westerngfx }
 link = { eu4 = danish ck3 = danish tech = western gfx = westerngfx }
