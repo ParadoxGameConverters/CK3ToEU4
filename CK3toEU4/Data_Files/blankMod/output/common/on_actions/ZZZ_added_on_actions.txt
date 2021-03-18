@@ -220,9 +220,88 @@
 
 #Scripted effect for Extra Fetishist cult mechanics.
 on_battle_lost_country = {
+	##VANILLA
+	battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
+	random_events = {
+		90 = 0
+		10 = friendship_events.1 #Historical Friendship Broken
+	}
+	##MODDED
 	ZZZ_enhanced_converter_battle_cult_spreading_effect = yes
 }
 on_province_owner_change = {
+	##VANILLA
+	events = {
+		japan.1
+	}
+	
+	if = {
+		limit = {
+			OR = {
+				has_province_modifier = wine_bonus_prod
+				has_province_modifier = grain_bonus_prod
+			}
+			FROM = { has_reform = monastic_breweries_reform }
+			NOT = { owner = { has_reform = monastic_breweries_reform } }
+		}
+		remove_province_modifier = wine_bonus_prod
+		remove_province_modifier = grain_bonus_prod
+	}
+	
+	if = {
+		limit = {
+			NOT = {
+				OR = {
+					has_province_modifier = wine_bonus_prod
+					has_province_modifier = grain_bonus_prod
+				}
+			}
+			owner = { has_reform = monastic_breweries_reform }
+			NOT = { FROM = { has_reform = monastic_breweries_reform } }
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					trade_goods = wine
+				}
+				add_province_modifier = { 
+					name = wine_bonus_prod
+					duration = -1
+					hidden = yes
+				}
+			}
+			if = {
+				limit = {
+					trade_goods = grain
+				}
+				add_province_modifier = { 
+					name = grain_bonus_prod
+					duration = -1
+					hidden = yes
+				}
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			owned_by = SRU
+			exists = ARA
+		}
+		ARA = {
+			set_country_flag = ARA_defeat_saruhan
+		}
+	}
+	if = {
+		limit = {
+			NOT = { owner = { religion_group = muslim } }
+			has_province_modifier = sufi_shrine
+		}
+		remove_province_modifier = sufi_shrine
+	}
+	on_province_owner_change_estate_privileges_effect = yes
+	
+	##MODDED
 	if = {
 		limit = {
 			has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
