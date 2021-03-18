@@ -162,7 +162,7 @@ newer_idea_adm_modifiers = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				uses_church_power = no
+				uses_church_aspects = no
 			}
 		}
 	}

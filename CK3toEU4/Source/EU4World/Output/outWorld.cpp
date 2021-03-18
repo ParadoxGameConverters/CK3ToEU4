@@ -142,8 +142,34 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const std::vector<std::string>& reformedReligions) const
 {
 	//Reformed Religion global flag output
-	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_religious_reformation_check.txt");
-	globalFlagFile << "on_startup = {\n\tif={\n\t\tlimit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }";
+	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_replaced_on_startup.txt");
+	//Basegame stuff first
+	globalFlagFile << "on_startup = {\n\t"
+	<< "emperor = {\n\t\t"
+		<<	"save_global_event_target_as = Emperor\n\t"
+	<< "}\n\t"
+	<< "if = {\n\t\t"
+		<<	"limit = { is_emperor_of_china = yes }\n\t\t"
+		<<	"save_global_event_target_as = EmperorOfChina\n\t"
+	<< "}\n\t"
+	<< "events = {\n\t\t"
+		<<	"muslim_school_events.20 #Pick School #flavor_fra .15000 #Make the French Revolution happen if starting in 1789\n\t"
+	<< "}\n\t"
+	<< "if = {\n\t\t"
+		<<	"limit = { has_dlc = \"Cradle of Civilization\" has_country_modifier = tur_janissary }\n\t\t"
+		<<	"remove_country_modifier = tur_janissary\n\t"
+	<< "}\n\t"
+	<< "initialize_schools_effect = yes #This is only used here but is used for readability of on_action file.\n\n\t"
+	<< "if = {\n\t\t"
+		<<	"limit = { NOT = { has_country_flag = new_flavour_bav_13_has_been_triggered } OR = { tag = UBV tag = LBV tag = ING } }\n\t\t"
+		<<  "set_country_flag = new_flavour_bav_13_has_been_triggered country_event = { id = new_flavour_bav.13 days = 90 } #better not to allow almost instant DOWs\n\t"
+	<< "}\n\t"
+	<< "if = {\n\t\t"
+		<<	"limit = { tag = FRA started_in = 1789.7.14 NOT = { is_year = 1790 } NOT = { has_disaster = french_revolution } }\n\t\t"
+		<<  "add_disaster_progress = { value = 100 disaster = french_revolution }\n\t"
+	<< "}\n\t";
+	//Now our stuff
+	globalFlagFile << "if={\n\t\tlimit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }";
 	for (const auto& religion: reformedReligions)
 	{
 		globalFlagFile << "\n\t\tset_global_flag = ZZZ_enhanced_" << religion << "_reformed";
