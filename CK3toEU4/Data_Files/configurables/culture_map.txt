@@ -162,10 +162,9 @@ link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 link = { eu4 = finnish ck3 = finnish tech = eastern gfx = westerngfx }
 link = { eu4 = sapmi ck3 = sami tech = eastern gfx = inuitgfx }
 link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
-link = { eu4 = komi ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
-link = { eu4 = uralic ck3 = mari ck3 = merya tech = eastern gfx = inuitgfx }
+link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
 
