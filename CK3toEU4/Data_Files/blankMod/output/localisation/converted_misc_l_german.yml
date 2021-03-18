@@ -56,3 +56,9 @@
  string_from_ck3:0 "[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert... Halte mal, dies ist ein von Crusader Kings konvertiertes Spiel!\n\nAls Konverter-Mannschaft begrüßen wir Sie zum neuen Schritt Ihrer Großkampagne. Hoffentlich gibt es nicht zu viel Grenzenaussatz, aber wer weiß.\n\nWenn Sie Vorschläge haben oder einen Fehler melden möchten, posten Sie ihn im speziellen Forenthread und wir werden Ihre Eingabe berücksichtigen.\n\nWenn Sie einen Nur-KI-Zeitraffer geplant haben, können Sie in den Beobachtermodus wechseln, indem Sie die Konsole öffnen und darin observer schreiben. Wenn nicht, fahren wir fort:\n\n[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert..."
  ECUMENICAL_PATRIARCH:0 "Ökumenischer Patriarch"
  ECUMENICAL_MATRIARCH:0 "Ökumenische Matriarch"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Provinzialzulagen"
+ custom_governing_capacity_modifier_desc:1 "Durch die Gewährung besonderer Privilegien und Zulagen an unsere Staatsgouverneure können wir die Kosten ihrer Dienstleistungen geringfügig reduzieren."
+ 
+ 

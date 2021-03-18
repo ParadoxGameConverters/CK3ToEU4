@@ -1,1 +1,351 @@
-## File should be deleted
+pagan = {
+	germanic_pagan = {
+		color = { 180 180 180 }
+		icon = 156
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			land_maintenance_modifier = -0.10
+			land_forcelimit_modifier  = 0.2
+			land_morale = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			land_morale = 0.05
+		}
+
+		personal_deity = yes
+		
+		heretic = { GOAT_SKULL }
+	}
+	anglo_pagan = {
+		color = { 0 80 0 }
+		icon = 157
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_own = 1
+			global_unrest = -1
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			loot_amount = 0.25
+		}
+		fervor = yes
+		heretic = { GOAT_SKULL }
+	}	
+	scythian_pagan = {
+		color = { 0.5 0.19 0.2 }
+		icon = 165
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heretic = 1
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			build_cost = -0.1
+			defensiveness = 0.2
+		}
+		heretic = { GOAT_SKULL FINNIC }
+	}
+	zamolxism = {
+		color = { 0.0 0 100 }
+		icon = 159
+		province = {
+			local_missionary_strength = 0.06
+		}
+		country = {
+			global_tax_modifier = 0.05
+			tolerance_heathen = 1
+		}
+		country_as_secondary = {
+			infantry_power = 0.1
+			tolerance_heathen = 1
+		}
+
+		heretic = { SERAPIS }
+	}
+	mithraism = {
+		color = { 210 0 0 }
+		icon = 160
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_own = 1
+			global_tax_modifier = 0.05
+		}
+		country_as_secondary = {
+			advisor_pool = 1
+			global_tax_modifier = 0.05
+		}
+		heretic = { SERAPIS }
+		declare_war_in_regency = yes
+	}
+	iberian_pagan = {
+		color = { 0.91 0.71 0.82 }
+		icon = 164
+		
+		country = {
+			tolerance_heathen = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			loot_amount = 0.25
+		}
+		heretic = { SERAPIS }
+	}
+	canaanite = {
+		color = { 144 186 19 }
+		icon = 151
+		country = {
+			naval_forcelimit = 1
+			global_sailors_modifier = 1.2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			naval_forcelimit = 0.5
+			global_sailors_modifier = 1.1
+		}
+		center_of_religion = 379 # Jerusalem
+		heretic = { MOLOCHITES AMMONITES JEBUSAEI MOABITES EDOMITES }
+		allowed_conversion = { jewish }
+		on_convert = {
+			add_prestige = -100
+			add_stability = -1
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
+	}
+	
+	kemetism = {
+		color = { 179 45 0 }
+		icon = 152
+		country = {
+			legitimacy = 2
+			republican_tradition = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			legitimacy = 1
+			republican_tradition = 1
+		}
+		personal_deity = yes
+		heretic = { KUSHITE SPHYNX }
+	}
+	
+	mardukism = {
+		icon = 153
+		color = { 128 11 0 }
+		country = {
+			monthly_splendor = 2
+			harsh_treatment_cost = -0.3
+		}
+		province = {
+			local_defensiveness = 0.1
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			monthly_splendor = 1
+			harsh_treatment_cost = -0.1
+		}
+		heretic = { DANIEL SUMER }
+		allowed_conversion = { jewish }
+	}
+	arab_pagan = {
+		color = { 140 20 50 }
+		icon = 161
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			prestige = 1
+			land_attrition = -0.10
+		}
+
+		uses_piety = yes
+		declare_war_in_regency = yes
+		
+		heretic = { BEAR_SPIRIT SNAKE_CLAN }
+	}
+	cybelene = {
+		color = { 155 13 81 }
+		icon = 158
+		country = {
+			tolerance_own = 1
+			advisor_pool = 1
+		}
+		country_as_secondary = {
+			advisor_pool = 1
+			stability_cost_modifier = -0.1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		heretic = { SPHYNX }
+	}
+	armenian_pagan = {
+		color = { 0.33 0.42 0.18 }
+		icon = 162
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+		}
+		country_as_secondary = {
+			prestige = 1
+			land_attrition = -0.10
+		}
+		heretic = { SPHYNX }
+	}
+	caucasian_pagan = {
+		color = { 0.8 0.2 0.2 }
+		icon = 163
+		province = {
+			local_missionary_strength = 0.01
+		}
+		country = {
+			tolerance_heathen = 1
+			defensiveness = 0.1
+		}
+		country_as_secondary = {
+			global_regiment_recruit_speed = -0.10
+			defensiveness = 0.2
+		}
+		heretic = { SPHYNX }
+	}
+	atenism = {
+		color = { 0.9 0.8 0.4 }
+		icon = 170
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			enemy_core_creation = 0.2
+			hostile_attrition = 1
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			tolerance_heathen = 2
+		}
+		uses_piety = yes
+		heretic = { SPHYNX }
+	}
+	
+	druidism = {
+		color = { 102 66 31 }
+		icon = 105
+		country = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	briton_pagan = {
+		color = { 0.1 0.1 0.6 }
+		icon = 166
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			land_maintenance_modifier = -0.10
+			land_forcelimit_modifier  = 0.2
+			land_morale = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			land_morale = 0.05
+		}
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	gallic_pagan = {
+		color = { 0.1 0.6 0.1 }
+		icon = 167
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			land_maintenance_modifier = -0.10
+			global_manpower_modifier = 0.2
+			land_morale = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			galley_power = 0.2
+		}
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	gaelic_pagan = {
+		color = { 0.1 0.4 0.1 }
+		icon = 168
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			hostile_attrition = 1
+			defensiveness = 0.2
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			global_tax_modifier = 0.1
+		}
+
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+	celtiberian_pagan = {
+		color = { 0.2 0.7 0.2 }
+		icon = 169
+		
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			defensiveness = 0.2
+			enemy_core_creation = 0.2
+		}
+		country_as_secondary = {
+			hostile_attrition = 1
+			defensiveness = 0.2
+		}
+		
+		heretic = { ELUVEITIE ASTERIX }
+		uses_karma = yes
+	}
+}

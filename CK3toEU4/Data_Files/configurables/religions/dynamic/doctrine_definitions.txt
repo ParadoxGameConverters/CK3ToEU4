@@ -454,6 +454,18 @@ tenet_warmonger = {
 		ae_impact = -0.1
 	}
 }
+
+tenet_gruesome_festivals = {
+	country = {
+		infantry_power = 0.05
+	}
+	country_as_secondary = {
+		infantry_power = 0.05
+	}
+	not_unique_modifiers = {
+		declare_war_in_regency = yes
+	}
+}
 ##Syncretic
 tenet_eastern_syncretism = {
 	allowed_conversion = {

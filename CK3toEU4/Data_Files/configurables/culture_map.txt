@@ -7,16 +7,16 @@
 
 # North Germanic
 
+link = { eu4 = icelandic ck3 = norse ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
 link = { eu4 = swedish ck3 = swedish tech = western gfx = westerngfx }
 link = { eu4 = norwegian ck3 = norwegian tech = western gfx = westerngfx }
 link = { eu4 = danish ck3 = danish tech = western gfx = westerngfx }
-link = { eu4 = icelandic ck3 = norse ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
 link = { eu4 = hannoverian ck3 = old_saxon tech = western gfx = westerngfx }
 link = { eu4 = norse ck3 = norse tech = western gfx = westerngfx }
 
 # German: the split
-link = { eu4 = swabian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx province = 68 province = 4765 province = 4714 province = 4713 province = 4711 province = 1880 province = 1872 province = 1868 }
-link = { eu4 = alsatian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = brittany_area region = normandy_area region = lorraine_area region = picardy_area region = champagne_area region = ile_de_france_area region = loire_area region = bourgogne_area region = west_burgundy_area region = poitou_area region = orleans_area region = alsace_area }
+link = { eu4 = swabian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = alsace_area region = lower_swabia_area region = upper_swabia_area region = north_rhine_area region = upper_rhineland_area }
+link = { eu4 = alsatian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = lorraine_area region = brittany_area region = normandy_area region = lorraine_area region = picardy_area region = champagne_area region = ile_de_france_area region = loire_area region = bourgogne_area region = west_burgundy_area region = poitou_area region = orleans_area }
 link = { eu4 = austrian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = austria_proper_area region = inner_austria_area region = tirol_area region = carinthia_area region = italy_region region = carpathia_region region = balkan_region }
 link = { eu4 = bavarian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = lower_bavaria_area region = upper_bavaria_area region = east_bavaria_area }
 link = { eu4 = franconian ck3 = german ck3 = saxon ck3 = franconian ck3 = bavarian ck3 = swabian tech = western gfx = westerngfx region = franconia_area region = upper_franconia_area }
@@ -47,7 +47,7 @@ link = { eu4 = old_lombard ck3 = lombard tech = western gfx = westerngfx }
 # West Germanic
 
 link = { eu4 = frankish ck3 = frankish tech = western gfx = westerngfx }
-link = { eu4 = cornish ck3 = english ck3 = breton tech = western gfx = westerngfx province = 233 province = 4373 }
+link = { eu4 = cornish ck3 = english ck3 = breton ck3 = anglo_saxon ck3 = welsh ck3 = cumbrian tech = western gfx = westerngfx province = 233 province = 4373 }
 link = { eu4 = cornish ck3 = cornish tech = western gfx = westerngfx }
 link = { eu4 = english ck3 = english tech = western gfx = westerngfx }
 link = { eu4 = anglo_saxon ck3 = anglo_saxon tech = western gfx = westerngfx }
@@ -99,12 +99,12 @@ link = { eu4 = neapolitan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = we
 link = { eu4 = piedmontese ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = piedmont_area region = savoy_dauphine_area region = provence_area region = romandie_area }
 link = { eu4 = romagnan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = emilia_romagna_area }
 link = { eu4 = sardinian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = corsica_sardinia_area }
-link = { eu4 = sicilian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = sicily_area }
+link = { eu4 = sicilian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = sicily_area region = western_sicily_area }
 link = { eu4 = tuscan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = tuscany_area }
 link = { eu4 = venetian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = venetia_area region = carinthia_area region = tirol_area }
 link = { eu4 = dalmatian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = east_adriatic_coast_area region = croatia_area region = albania_area }
-link = { eu4 = sicilian ck3 = sicilian tech = western gfx = westerngfx } # Fallback
-link = { eu4 = italian ck3 = italian ck3 = cisalpine tech = western gfx = westerngfx } #Fallback
+link = { eu4 = sicilian ck3 = sicilian tech = western gfx = westerngfx } #Fallback
+link = { eu4 = italian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx } #Fallback
 
 # Iberian
 
@@ -148,11 +148,11 @@ link = { eu4 = mena_greek ck3 = susite ck3 = azotite ck3 = carchidonian tech = e
 link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek tech = eastern gfx = easterngfx }
 
 # Celtic
-
+link = { eu4 = highland_scottish ck3 = gaelic tech = western gfx = westerngfx }
+link = { eu4 = highland_scottish ck3 = irish tech = western gfx = westerngfx region = kingdom_of_the_isles_area region = highlands_area region = lowlands_area region = scottish_marches_area }
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
 link = { eu4 = scottish ck3 = scottish ck3 = iweric ck3 = transadrianic tech = western gfx = westerngfx }
-link = { eu4 = highland_scottish ck3 = gaelic ck3 = pictish ck3 = cumbrian tech = western gfx = westerngfx }
-link = { eu4 = welsh ck3 = welsh ck3 = brythonic tech = western gfx = westerngfx }
+link = { eu4 = welsh ck3 = welsh ck3 = cumbrian ck3 = brythonic tech = western gfx = westerngfx }
 link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
 # Finno-Ugric
@@ -163,7 +163,8 @@ link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
 link = { eu4 = komi ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
-link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = khanty tech = eastern gfx = inuitgfx }
+link = { eu4 = uralic ck3 = mari ck3 = merya tech = eastern gfx = inuitgfx }
+link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
 
 # Baltic
@@ -331,7 +332,7 @@ link = { eu4 = aka ck3 = akan ck3 = guan tech = sub_saharan gfx = africangfx }
 
 # Mesoamerican - this is relevant only for azteks holding europe
 
-link = { eu4 = aztek ck3 = nahuatl tech = high_american gfx = southamericagfx }
+link = { eu4 = aztek ck3 = nahuatl ck3 = otomitl tech = high_american gfx = southamericagfx }
 
 # Aryan Indian
 

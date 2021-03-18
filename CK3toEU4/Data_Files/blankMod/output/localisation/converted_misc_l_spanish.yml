@@ -56,3 +56,8 @@
  string_from_ck3:0 "Un[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]... ¡Espere, este es un juego convertido de Crusader Kings!\n\nComo Equipo de los Convertidores, Le damos la bienvenida al nuevo paso de Su megacampaña. Ojalá no haya mucha mapa-lepra, pero quién sabe.\n\nSi Usted tiene alguna sugerencia o desea señalar algún error, publíquelo en el hilo del foro dedicado y consideraremos su opinión.\n\nSi Usted planea tener un time-lapse de IA, puede ingresar al modo observador abriendo la consola y escribiendo observer. Si no, reanudemos:\n\nUn[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]..."
  ECUMENICAL_PATRIARCH:0 "Patriarca Ecuménico"
  ECUMENICAL_MATRIARCH:0 "Matriarca Ecuménica"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Sobresueldos provinciales"
+ custom_governing_capacity_modifier_desc:0 "Concediendo privilegios y sobresueldos especiales a nuestros gobernadores provinciales, podemos reducir ligeramente los gastos de sus servicios."
+ 

@@ -66,5 +66,12 @@
  wonder_underground_city_petra: "Petra"
  desc_wonder_underground_city_petra: "The great desert city of Petra has existed for hundreds of years"
  string_from_ck3:0 "A [Root.GetAdjective] [Root.Monarch.GetTitle], ruling from [From.Capital.GetCapitalName]... Wait, this is a game converted from Crusader Kings!\n\nAs the Converters Team we welcome you to the new step of your megacampaign. Hopefully there isn't a lot of bordergore, but who knows.\n\nIf you have any suggestions or you want to signal any bug, post it on the dedicated forum thread and we'll consider your input.\n\nIf you planned to have an AI timelapse, you can enter the Observer mode by opening the console and typing observer. If not, then let's resume:\n\nA [Root.GetAdjective] [Root.Monarch.GetTitle], ruling from [From.Capital.GetCapitalName]..."
+ 
+ #Patriarch
  ECUMENICAL_PATRIARCH:0 "Ecumenical Patriarch"
  ECUMENICAL_MATRIARCH:0 "Ecumenical Matriarch"
+ 
+ #Custom Idea Forgotten by PDX, text taken from old state maintenance text
+ custom_governing_capacity_modifier:1 "Provincial Allowances"
+ custom_governing_capacity_modifier_desc:1 "By granting special privileges and allowances to our State Governors, we can cut back slightly on the expenses of their services."
+ 

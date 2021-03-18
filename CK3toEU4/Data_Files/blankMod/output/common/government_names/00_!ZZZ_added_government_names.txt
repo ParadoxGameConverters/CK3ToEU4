@@ -32,13 +32,20 @@ grand_duchy_monarchy = {
 	}
 }
 suffet = {
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
 	ruler_male = {
 		3 = SUFFET
 		2 = SUFFET
+		1 = SUFFET
 	}
 	ruler_female = {
 		3 = SUFFET_fem
 		2 = SUFFET_fem
+		1 = SUFFET_fem
 	}
 	trigger = {
 		culture_group = punic_group
@@ -46,16 +53,19 @@ suffet = {
 }
 pharaoh = {
 	rank = {
-		3 = EMPIRE
+		1 = NOME
 		2 = KINGDOM
+		3 = EMPIRE
 	}
 	ruler_male = {
-		3 = PHARAOH
+		1 = NOMARCH
 		2 = PHARAOH
+		3 = PHARAOH
 	}
 	ruler_female = {
-		3 = PHARAOH_fem
+		1 = NOMARCH
 		2 = PHARAOH_fem
+		3 = PHARAOH_fem
 	}
 	trigger = {
 		religion = kemetism
@@ -63,38 +73,58 @@ pharaoh = {
 }
 ecumenical_patriarch = {
 	rank = {
-		3 = PATRIARCHATE
-		2 = PATRIARCHATE
 		1 = PATRIARCHATE
+		2 = PATRIARCHATE
+		3 = PATRIARCHATE
 	}
 	ruler_male = {
-		3 = ECUMENICAL_PATRIARCH
-		2 = ECUMENICAL_PATRIARCH
 		1 = ECUMENICAL_PATRIARCH
+		2 = ECUMENICAL_PATRIARCH
+		3 = ECUMENICAL_PATRIARCH
 	}
 	ruler_female = {
-		3 = ECUMENICAL_MATRIARCH
-		2 = ECUMENICAL_MATRIARCH
 		1 = ECUMENICAL_MATRIARCH
+		2 = ECUMENICAL_MATRIARCH
+		3 = ECUMENICAL_MATRIARCH
 	}
 	trigger = { government = theocracy religion = orthodox }
 }
 ruling_prince = {
 	rank = {
-		2 = PRINCEDOM
 		1 = PRINCEDOM
+		2 = KINGDOM
+		3 = EMPIRE
 	}
 	ruler_male = {
-		2 = PRINCE
 		1 = PRINCE
+		2 = KING
+		3 = EMPEROR
 	}
 	ruler_female = {
-		2 = PRINCESS
 		1 = PRINCESS
+		2 = QUEEN
+		3 = EMPRESS
 	}
 	trigger = { OR = { tag = SWI tag = ARM } government = monarchy }
 }
 dauphin = {
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = KING
+		3 = EMPEROR
+	}
+	ruler_female = {
+		1 = PRINCESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	
 	heir_male = {
 		1 = DAUPHIN
 		2 = DAUPHIN

@@ -1,5 +1,4 @@
 pagan = {
-	can_form_personal_unions = yes
 	pagan_religion = {
 		color = { 0 0 0 }
 		icon = 121
@@ -16,15 +15,6 @@ pagan = {
 		}
 		
 		heretic = { SNAKE_CLAN GOAT_SKULL }
-		allowed_conversion = { pagan_religion_reformed }
-		on_convert = {
-			add_prestige = -100
-			add_stability = -1
-			add_country_modifier = {
-				name = "conversion_zeal"
-				duration = 3650
-			}
-		}
 	}
 	pagan_religion_reformed = {
 		color = { 127 127 127 }
@@ -43,8 +33,7 @@ pagan = {
 		
 		heretic = { SNAKE_CLAN GOAT_SKULL }
 	}
-}
-american_pagan = {
+	
 	aztec_pagan = {
 		color = { 81 101 81 }
 		icon = 56
@@ -63,8 +52,394 @@ american_pagan = {
 		doom = yes
 		declare_war_in_regency = yes
 		religious_reforms = yes
-		reform_tooltip = NAHUATL_REFORM_TOOLTIP
-		
+		reform_tooltip = NAHUATL_REFORM_TOOLTIP		
 		heretic = { NAHUATL_HERETIC }
+	}
+	
+	baltic_pagan = {
+		icon = 126
+		color = { 0.8 0.4 0.15 } #204 102 38.25
+		country = {
+			fort_maintenance_modifier = -0.1
+			tolerance_own = 1
+		}
+		province = {
+			local_defensiveness = 0.1
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			fort_maintenance_modifier = -0.1
+			shock_damage_received = -0.1
+		}
+		heretic = { DIEVANS }
+		personal_deity = yes
+	}
+	baltic_pagan_reformed = {
+		icon = 53
+		color = { 0.75 0.5 0.35 } #191.25 127.5 89.25
+		country = {
+			fort_maintenance_modifier = -0.1
+			tolerance_own = 1
+		}
+		province = {
+			local_defensiveness = 0.1
+			local_missionary_strength = -0.02
+		}
+		country_as_secondary = {
+			fort_maintenance_modifier = -0.1
+			shock_damage_received = -0.1
+		}
+		heretic = { OLD_ROMUVA }	
+		personal_deity = yes
+	}
+	
+	finnish_pagan = {
+		icon = 124
+		color = { 0.6 0.7 0.15 } #153 178.5 38.25
+		country = {
+			defensiveness = 0.1
+			num_accepted_cultures = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			num_accepted_cultures = 1
+			defensiveness = 0.1
+		}
+		heretic = { FINNIC }
+		personal_deity = yes
+	}
+	finnish_pagan_reformed = {
+		icon = 54
+		color = { 0.65 0.65 0.1 } #165.75 165.75 25.5
+		country = {
+			defensiveness = 0.1
+			num_accepted_cultures = 1
+		}
+		country_as_secondary = {
+			num_accepted_cultures = 1
+			defensiveness = 0.1
+		}
+		heretic = { OLD_SUOMENUSKO }	
+		personal_deity = yes
+	}
+	
+	norse_pagan = {
+		icon = 122
+		color = { 240 240 240 }
+		country = {
+			land_forcelimit_modifier = 0.10
+			naval_forcelimit_modifier = 0.10
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			galley_power = 0.2
+		}
+		
+		personal_deity = yes
+		
+		heretic = { OLD_GERMANIC }	
+	}
+	
+	slavic_pagan = {
+		icon = 123
+		color = { 0.8 0.8 0.3 } #204 204 76.5
+		country = {
+			culture_conversion_cost = -0.15
+		}
+		province = {
+			local_manpower_modifier = 0.1
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			manpower_recovery_speed = 0.1
+			advisor_pool = 1
+		}
+		
+		heretic = { RODNOVERY }
+		personal_deity = yes
+	}
+	slavic_pagan_reformed = {
+		icon = 55
+		color = { 0.85 0.73 0.4 } #216.75 186.15 102
+		country = {
+			culture_conversion_cost = -0.15
+		}
+		province = {
+			local_manpower_modifier = 0.1
+		}
+		country_as_secondary = {
+			manpower_recovery_speed = 0.1
+			advisor_pool = 1
+		}
+		
+		heretic = { OLD_SLAVIC }	
+		personal_deity = yes
+	}
+		
+	tengri_pagan = {
+		icon = 125
+		color = { 0 30 108 }
+		country = {
+			cav_to_inf_ratio = 0.25
+			global_regiment_cost = -0.2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			army_tradition_decay = -0.1
+			raze_power_gain = 0.15
+		}
+		can_have_secondary_religion = yes
+		heretic = { GOAT_SKULL }
+	}
+	magyar_pagan = { #Uralic/Taltoism
+		color = { 250 120 90 }
+		icon = 147
+		country = {
+			free_policy = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			free_mil_policy = 1
+		}
+		
+		heretic = { GOAT_SKULL SNAKE_CLAN }
+	}
+	magyar_pagan_reformed = { #Uralic/Taltoism
+		color = { 212 106 80 }
+		icon = 148
+		country = {
+			free_policy = 1
+		}
+		country_as_secondary = {
+			free_mil_policy = 1
+		}
+		
+		heretic = { GOAT_SKULL SNAKE_CLAN }
+	}
+	
+	siberian_pagan = { #Turumism
+		color = { 230 230 230 }
+		icon = 154
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
+	}	
+	siberian_pagan_reformed = { #Reformed Turumism
+		color = { 179 179 230 }
+		icon = 155
+		country = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		country_as_secondary = {
+			prestige = 0.5
+			diplomatic_reputation = 1
+		}
+		
+		heretic = { GOAT_SKULL FINNIC }
+	}
+	
+	zun_pagan = {
+		icon = 128
+		color = { 1.0 0.9 0.05 } #255 229.5 12.75
+		
+		country = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		
+		heretic = { DARKNESS }
+	}
+	zun_pagan_reformed = {
+		icon = 43
+		color = { 0.9 1.0 0.0 } #229.5 255 0
+		
+		country = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		country_as_secondary = {
+			tolerance_own = 3
+			hostile_attrition = 1
+		}
+		
+		heretic = { DARKNESS }	
+	}
+	
+	bon = {
+		color = { 8 140 131 }
+		icon = 129
+		country = {
+			tolerance_heretic = 1
+			shock_damage_received = -0.1
+		}
+		country_as_secondary = {
+			horde_unity = 1
+			shock_damage_received = -0.1
+		}
+		province = {
+			local_defensiveness = 0.1
+		}
+		
+		heretic = { ZEN }
+		
+		uses_karma = yes
+	}
+	bon_reformed = {
+		color = { 6 116 108 }
+		icon = 60
+		country = {
+			tolerance_heretic = 1
+			shock_damage_received = -0.1
+		}
+		country_as_secondary = {
+			horde_unity = 1
+			shock_damage_received = -0.1
+		}
+		province = {
+			local_defensiveness = 0.1
+		}
+		
+		heretic = { ZEN }
+		
+		uses_karma = yes
+	}
+	
+	hellenic_pagan = {
+		icon = 58
+		color = { 0.6 0.1 0.1 } #153 25.5 25.5
+		country = {
+			tolerance_own = 1
+			development_cost = -0.1
+		}
+		country_as_secondary = {
+			development_cost = -0.1
+		}
+		
+		personal_deity = yes
+		
+		heretic = { GOAT_SKULL }
+	}
+	hellenic_pagan_reformed = {
+		icon = 58
+		color = { 190 32 32 }
+		country = {
+			tolerance_own = 1
+			development_cost = -0.1
+		}
+		country_as_secondary = {
+			development_cost = -0.1
+		}
+		
+		personal_deity = yes
+		
+		heretic = { GOAT_SKULL }	
+	}
+	
+	west_african_pagan = {
+		color = { 104 60 0 }
+		icon = 12
+		country = {
+			tolerance_heathen = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			diplomatic_reputation = 1
+		}
+
+		fetishist_cult = yes
+		heretic = { GOAT_SKULL }
+	}
+	west_african_pagan_reformed = {
+		color = { 255 160 0 }
+		icon = 52
+		country = {
+			tolerance_heathen = 3
+			tolerance_heretic = 2
+			diplomatic_reputation = 1
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country_as_secondary = {
+			tolerance_heathen = 3
+			diplomatic_reputation = 1
+		}
+
+		fetishist_cult = yes
+		heretic = { GOAT_SKULL }
+	}
+	
+	##New to CK3
+	#Akom -> Fetishism
+	#Donyi-Poloism/Sedism -> Animism
+	kushitism_pagan = {
+		color = { 0.15 1 0.7 } #38.25 255 178.5
+		icon = 145
+		country = {
+			legitimacy = 1
+			devotion = 1
+			horde_unity = 1
+			meritocracy = 1
+			republican_tradition = 0.5
+			max_absolutism = 10
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			max_absolutism = 5
+			yearly_absolutism = 0.5
+		}
+		
+		heretic = { DARKNESS SNAKE_CLAN }
+	}
+	kushitism_pagan_reformed = {
+		color = { 0 255 255 }
+		icon = 146
+		country = {
+			legitimacy = 1
+			devotion = 1
+			horde_unity = 1
+			meritocracy = 1
+			republican_tradition = 0.5
+			max_absolutism = 10
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country_as_secondary = {
+			max_absolutism = 5
+			yearly_absolutism = 0.5
+		}
+		
+		heretic = { DARKNESS SNAKE_CLAN }
 	}
 }

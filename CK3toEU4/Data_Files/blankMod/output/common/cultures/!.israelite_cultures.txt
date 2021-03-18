@@ -1,15 +1,15 @@
 israelite = {
-	ashkenazi = {  }
-	sephardi = {  }
-	knaanic = {  }
-	magogic = {  }
-	yevanic = {  }
-	mizrahi = {  }
+	ashkenazi = { primary = ISR }
+	sephardi = { primary = ISR }
+	knaanic = { primary = ISR }
+	magogic = { primary = ISR }
+	yevanic = { primary = ISR }
+	mizrahi = { primary = ISR }
 	israeli = { primary = ISR }
-	misrayim = {  }
-	zarphatic = {  }
-	laaz = {  }
-	kaifeng = {  }
+	misrayim = { primary = ISR }
+	zarphatic = { primary = ISR }
+	laaz = { primary = ISR }
+	kaifeng = { primary = ISR }
 	#Names are shared throughout the entire group
 		male_names = {
 			Abraham Albert Benjamin Daniel David Franz Gustav Heinrich Hermann Isaak Ignatz Jakob Jeremias Josef Leonhard Michael Mose Salomon Saul Shmuel

@@ -10,6 +10,7 @@ germanic = {
 		primary = ALS
 	}
 	sudeten = {
+		primary = BOH
 	}
 }
 scandinavian = {
@@ -21,6 +22,7 @@ scandinavian = {
 }
 british = {
 	anglo_saxon = {
+		primary = ENG
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -54,6 +56,10 @@ british = {
 	}
 }
 gaelic = {
+	pictish = { 
+		primary = SCO 
+		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest } 
+	}
 }
 latin = {
 	italian = {
@@ -76,12 +82,11 @@ french = {
 }
 finno_ugric = {
 	komi = {
+		primary = FIN
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
 	mordvin = {
-		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
-	}
-	khanty = {
+		primary = FIN
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
 	meshchera = {
@@ -164,6 +169,7 @@ east_slavic = {
 				Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
 	}
 	kishinyov = {
+		primary = VOL
 		dynasty_names = { Aleksseyev Antonov Azarov Badanov Brusilov Budonnyy Chibisov Denikin
 				Dragomirov Frolov Golivin Grishin Gurko Ivanov Konev Konstantinov Kornilov
 				Kolchak Kuropatkin Lazarev Makarov Men'shikov Nakhimov Nebogatov
@@ -173,16 +179,17 @@ east_slavic = {
 }
 baltic = {
 	old_prussian = {
+		primary = PRU
 		male_names = {
-		Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
-		Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
-		Gediminas Gedivilas Gintaras Gintautas Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas 
-		Karijotas Kesgaila Kestutis Korigaila Korybutas
-		Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas Movkoldas 
-		Narimantas Povilas Pukuveras Rimantas 
-		Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas 
-		Traidenis Treniotas Vainius Vaisvilkas Valimantas Zygimantas
-		Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas 
+			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
+			Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
+			Gediminas Gedivilas Gintaras Gintautas Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas 
+			Karijotas Kesgaila Kestutis Korigaila Korybutas
+			Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas Movkoldas 
+			Narimantas Povilas Pukuveras Rimantas 
+			Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas 
+			Traidenis Treniotas Vainius Vaisvilkas Valimantas Zygimantas
+			Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas 
 		}
 		female_names = {
 			Aldona Anele Audra Ausra Birute Dannila Danute Evalda Gaudimante Giedre Gintare Jevna Kenna 
@@ -201,17 +208,29 @@ baltic = {
 }
 byzantine = {
 	anatolian = {
+		primary = BYZ
 	}
 	magnagreek = {
+		primary = BYZ
 	}
 }
 caucasian = {
 	alan = {
+		primary = GEO
 		dynasty_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
+	}
+	assyrian = {
+		primary = GEO
+		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
+	}
+	coptic = {
+		primary = EGY
+		dynasty_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
 	}
 }
 turko_semitic = {
 	frencharab = {
+		primary = FRA
 		dynasty_names = {
 			"Mirdasid" "Maanid" "al-Shihab"  Yakubid Hassanid
 			Katkhuda Abaza Qasimiyya Qitas al-Qazdughli 
@@ -234,12 +253,16 @@ maghrebi = {
 }
 iranian = {
 	sogdian = {
+		primary = KOK
 	}
 	tocharian = {
+		primary = KAS
 	}
 	saka = {
+		primary = KAS
 	}
-	tajik = { 
+	tajik = {
+		primary = TRS
 	}
 }
 altaic = {
