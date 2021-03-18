@@ -15698,6 +15698,10 @@ defined_text = {
 		localisation_key = string_lemnian_ms
 		trigger = { OR = { primary_culture = lemnian culture = lemnian}}
 	}
+	text = {
+		localisation_key = elsinorian_ms
+		trigger = { OR = { primary_culture = elsinorian culture = elsinorian }}
+	}
 }						
 						
 						
@@ -17687,6 +17691,10 @@ defined_text = {
 	text = {
 		localisation_key = string_lemnian_fs
 		trigger = { OR = { primary_culture = lemnian culture = lemnian}}
+	}
+	text = {
+		localisation_key = elsinorian
+		trigger = { OR = { primary_culture = elsinorian culture = elsinorian }}
 	}
 }						
 						
@@ -19678,6 +19686,10 @@ defined_text = {
 		localisation_key = string_lemnian_mp
 		trigger = { OR = { primary_culture = lemnian culture = lemnian}}
 	}
+	text = {
+		localisation_key = elsinorian_mp
+		trigger = { OR = { primary_culture = elsinorian culture = elsinorian }}
+	}
 }						
 
 
@@ -21667,6 +21679,10 @@ defined_text = {
 	text = {
 		localisation_key = string_lemnian_fp
 		trigger = { OR = { primary_culture = lemnian culture = lemnian}}
+	}
+	text = {
+		localisation_key = elsinorian_fp
+		trigger = { OR = { primary_culture = elsinorian culture = elsinorian }}
 	}
 }						
 

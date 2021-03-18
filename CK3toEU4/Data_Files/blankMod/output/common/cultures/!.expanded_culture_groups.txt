@@ -10,7 +10,7 @@ germanic = {
 		primary = ALS
 	}
 	sudeten = {
-		primary = BOH
+		primary = SUD
 	}
 }
 scandinavian = {
@@ -18,6 +18,16 @@ scandinavian = {
 		primary = SCA
 		dynasty_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
 		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
+	}
+	elsinorian = {
+		primary = DNL
+		dynasty_names = {
+			Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+			Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs
+			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
+			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
+			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
+		}
 	}
 }
 british = {
@@ -81,15 +91,12 @@ french = {
 	}
 }
 finno_ugric = {
-	komi = {
-		primary = FIN
-		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
-	}
 	mordvin = {
-		primary = FIN
+		primary = MDV
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
 	meshchera = {
+		primary = MSH
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
 	}
 }
@@ -179,7 +186,7 @@ east_slavic = {
 }
 baltic = {
 	old_prussian = {
-		primary = PRU
+		primary = PRT
 		male_names = {
 			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
 			Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
@@ -218,14 +225,6 @@ caucasian = {
 	alan = {
 		primary = GEO
 		dynasty_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
-	}
-	assyrian = {
-		primary = GEO
-		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
-	}
-	coptic = {
-		primary = EGY
-		dynasty_names = { Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais }
 	}
 }
 turko_semitic = {

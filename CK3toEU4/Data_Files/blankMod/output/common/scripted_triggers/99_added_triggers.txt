@@ -71,6 +71,7 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = SNG }
 			NOT = { tag = YIN }
 			NOT = { tag = CHN }
+			NOT = { tag = ENS } # Empire of the North Sea
 		}
 	}
 }

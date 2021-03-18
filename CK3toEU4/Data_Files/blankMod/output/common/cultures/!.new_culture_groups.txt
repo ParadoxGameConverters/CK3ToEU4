@@ -1,9 +1,9 @@
 oghuz = {
 	pecheneg = {
-		primary = GLH
+		primary = PCH
 	}
 	cuman = {
-		primary = GLH
+		primary = CMN
 	}
 	bolghar = {
 		primary = BUL
@@ -12,7 +12,7 @@ oghuz = {
 		primary = AVR
 	}
 	khazar = {
-		primary = KAZ
+		primary = KHZ
 	}
 	karluk = {
 		primary = UZB
@@ -373,30 +373,31 @@ punic_group = {
 		Hiramid Magid Mattanid Metallid Milkiramid Philosirid
 		Gisgoid Gerbalid Hammid Eugarid Mashhid Ummashid
 	}
-	carthaginian = {  }
-	ythalonim = {  }
-	ualonuth = {  }
-	sicorathi = {  }
-	symacom = {  }
-	ysthyalm = {  }
-	sythchy = {  }
-	ynnocho = {  }
-	mlachthi = {  }
-	inythmum = {  }
-	gadolite = {  }
-	bythlimmoth = {  }
-	sidonian = {  }
-	taliaite = {  }
-	lacanite = {  }
-	epicrateian = {  }
-	pmpese = {  }
-	ythbynuthi = {  }
-	ychibarku = {  }
-	liphocaneth = {  }
-	mysehi = {  }
+	carthaginian = { primary = AFR }
+	ythalonim = { primary = AFR }
+	ualonuth = { primary = AFR }
+	sicorathi = { primary = AFR }
+	symacom = { primary = AFR }
+	ysthyalm = { primary = AFR }
+	sythchy = { primary = AFR }
+	ynnocho = { primary = AFR }
+	mlachthi = { primary = AFR }
+	inythmum = { primary = AFR }
+	gadolite = { primary = AFR }
+	bythlimmoth = { primary = AFR }
+	sidonian = { primary = AFR }
+	taliaite = { primary = AFR }
+	lacanite = { primary = AFR }
+	epicrateian = { primary = AFR }
+	pmpese = { primary = AFR }
+	ythbynuthi = { primary = AFR }
+	ychibarku = { primary = AFR }
+	liphocaneth = { primary = AFR }
+	mysehi = { primary = AFR }
 }
 old_mashriqi = {
 	coptic = {
+		primary = EGY
 		dynasty_names = {
 			Thinis Memphis Abydos Herakleopolis Thebes Itjtawy Avaris Bubastis Sais
 		}
@@ -408,6 +409,7 @@ old_mashriqi = {
 		}
 	}
 	phoenician = { #EU Rome
+		primary = LEB
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid 
 		Milkiramid Philosirid
@@ -422,6 +424,7 @@ old_mashriqi = {
 		}
 	}
 	aramaic = { #EU Rome
+		primary = ISR
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid 
 			Milkiramid Philosirid
@@ -438,6 +441,7 @@ old_mashriqi = {
 }
 chaldean = {
 	babylonian = {
+		primary = IRQ
 		dynasty_names = {
 			Amorite Sealand Larsa Kassite 
 		}
@@ -449,6 +453,7 @@ chaldean = {
 		}
 	}
 	assyrian = {
+		primary = SYR
 		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
@@ -475,13 +480,14 @@ hittite_group = {
 		Frataraka
 		Maeoniae Heraclidae Mermnadae
 	}
-	luwian = { }
+	luwian = { primary = TRO }
 	lydian = { }
 	hittite = { }
-	phrygian = { }
+	phrygian = { primary = PHR }
 }
 scythian_group = {
 	scythian = {
+		primary = SCY
 		dynasty_names = {
 			Abeacid Galatid Madyid Palacid Partatid
 		}
@@ -530,10 +536,10 @@ celts = {
 		Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
 		Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
 	}
-	belgian = { }
-	gaulish = { }
+	belgian = { primary = BEL }
+	gaulish = { primary = FRA }
 	scordiscian = { }
-	celtiberian = { }
+	celtiberian = { primary = GAL }
 }
 dacian_group = {
 		dynasty_names = {
@@ -557,8 +563,8 @@ dacian_group = {
 	female_names = {
 	   Bendidora Daizo Dentustaina Dentusykos Dida Dinentilla Dizo Drigissa Epteporis Eptepos Eptesykos Ettela Kerza Mania Moka Mokasokos Mukko Mukapora Murko Nanea Purizia Rheskutorme Rhymesikos Sinna Sita Torkoula
 	}
-	dacian = { }
-	thracian = { }
+	dacian = { primary = RMN }
+	thracian = { primary = THR }
 }
 tyrrhenian = {
 	male_names = {
@@ -582,6 +588,6 @@ tyrrhenian = {
 		Venala Ventese Veru Zalle
 	}
 	etrurian = { primary = ETR }
-	rhaetian = { }
-	lemnian = { }	
+	rhaetian = { primary = ETR }
+	lemnian = { primary = ETR }	
 }

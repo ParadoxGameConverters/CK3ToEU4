@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = elsinorian
+religion = catholic
+technology_group = western
+historical_friend = DAN
+capital = 12 #Sjaelland
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -15
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 7
+}

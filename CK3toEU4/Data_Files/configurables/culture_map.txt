@@ -8,6 +8,7 @@
 # North Germanic
 
 link = { eu4 = icelandic ck3 = norse ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
+link = { eu4 = elsinorian ck3 = norse ck3 = danish tech = western gfx = westerngfx owner = DNL } # ...owned by Daneland
 link = { eu4 = swedish ck3 = swedish tech = western gfx = westerngfx }
 link = { eu4 = norwegian ck3 = norwegian tech = western gfx = westerngfx }
 link = { eu4 = danish ck3 = danish tech = western gfx = westerngfx }
@@ -148,6 +149,7 @@ link = { eu4 = mena_greek ck3 = susite ck3 = azotite ck3 = carchidonian tech = e
 link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek tech = eastern gfx = easterngfx }
 
 # Celtic
+link = { eu4 = pictish ck3 = pictish tech = western gfx = westerngfx }
 link = { eu4 = highland_scottish ck3 = gaelic tech = western gfx = westerngfx }
 link = { eu4 = highland_scottish ck3 = irish tech = western gfx = westerngfx region = kingdom_of_the_isles_area region = highlands_area region = lowlands_area region = scottish_marches_area }
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
@@ -160,10 +162,9 @@ link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 link = { eu4 = finnish ck3 = finnish tech = eastern gfx = westerngfx }
 link = { eu4 = sapmi ck3 = sami tech = eastern gfx = inuitgfx }
 link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
-link = { eu4 = komi ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
-link = { eu4 = uralic ck3 = mari ck3 = merya tech = eastern gfx = inuitgfx }
+link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
 
