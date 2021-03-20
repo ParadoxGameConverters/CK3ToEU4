@@ -1,0 +1,26 @@
+name: Build and run tests
+on:
+  push:
+    branches-ignore:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build_and_test:
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: "Init submodules"
+      run: |
+       git submodule update --init --recursive
+    - name: "Build solution"
+      run: |
+       cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+       .\MSBuild.exe -m -p:Configuration=Release $Env:GITHUB_WORKSPACE\CK3toEU4.sln
+    - name: "Run tests"
+      run: |
+       cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release\
+       .\CK3ToEU4Tests.exe
