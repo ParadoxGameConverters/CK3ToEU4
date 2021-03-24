@@ -130,7 +130,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	{
 		auto foundIcon = false;
 		auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-		auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+		auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 		if (commonItems::DoesFileExist(path1))
 		{
 			foundIcon = true;
@@ -146,7 +146,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 			for (const auto& modDir: mods.getMods() | std::ranges::views::values)
 			{
 				path1 = modDir + "/" + religion.iconPath;
-				path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+				path2 = modDir + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 				if (commonItems::DoesFileExist(path1))
 				{
 					foundIcon = true;
@@ -198,7 +198,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		{
 			auto foundIcon = false;
 			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";			
+			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";			
 			if (commonItems::DoesFileExist(path1))
 			{
 				foundIcon = true;
@@ -214,7 +214,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 				for (const auto& modDir: mods.getMods() | std::ranges::views::values)
 				{
 					path1 = modDir + "/" + religion.iconPath;
-					path2 = modDir + "/gfx/interface/icons/religion/" + religion.iconPath + ".dds";
+					path2 = modDir + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 					if (commonItems::DoesFileExist(path1))
 					{
 						foundIcon = true;
