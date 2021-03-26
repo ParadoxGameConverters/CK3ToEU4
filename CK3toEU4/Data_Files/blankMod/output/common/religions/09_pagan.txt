@@ -131,18 +131,36 @@ pagan = {
 		country = {
 			land_forcelimit_modifier = 0.10
 			naval_forcelimit_modifier = 0.10
-		}
-		province = {
-			local_missionary_strength = 0.02
-		}
+		}		
 		country_as_secondary = {
 			merc_maintenance_modifier = -0.1
 			galley_power = 0.2
+		}
+		province = {
+			local_missionary_strength = 0.02
 		}
 		
 		personal_deity = yes
 		
 		heretic = { OLD_GERMANIC }	
+	}
+	norse_pagan_reformed = {
+		icon = 21
+		color = { 191 191 191 }
+		country = {
+			land_forcelimit_modifier = 0.10
+			naval_forcelimit_modifier = 0.10
+		}
+		country_as_secondary = {
+			merc_maintenance_modifier = -0.1
+			galley_power = 0.2
+		}
+		province = {
+		}
+		
+		personal_deity = yes
+		
+		heretic = { OLD_NORSE }	
 	}
 	
 	slavic_pagan = {
