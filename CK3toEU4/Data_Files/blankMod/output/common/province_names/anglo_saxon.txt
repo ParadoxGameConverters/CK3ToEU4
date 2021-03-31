@@ -3,41 +3,79 @@
 411 = "Mosul"
 1854 = "Sihhem"
 908 = "Minnesota"
-952 = "James Êa"
+952 = "James Ê¡"
 953 = "Marianland"
-963 = { "Albany" "Albany on Nîwum Eoforwîce" }
-965 = { "Nîweoforwîcburg" "Nîweoforwîcburg" }
-967 = { "Rhode Îeg" "Providence" }
+963 = { "Albany" "Albany on Nî·µm Eoforwî£¥" }
+965 = { "Nî·¥oforwî£¢urg" "Nî·¥oforwî£¢urg" }
+967 = { "Rhode Î¥g" "Providence" }
 968 = { "Massachusetts" "Boston" }
-970 = { "Nîwu Hâmtûnscîr" "Portesmuða" }
+970 = { "Nî·µ Hâ­´Ã»nscî²¢ "Portesmuð¡¢ }
 973 = { "Vancouver" "Vancouver" }
-982 = "Lidwicnæsîeg"
-983 = "Eadweardes Æþelinges Iegland"
+982 = "Lidwicnæ³®eg"
+983 = "Eadweardes Æ¾elinges Iegland"
 989 = "Ontario"
 993 = { "Cynelic Beorg" "Cynelic Beorg" }
 994 = { "Quebec" "Quebecbeorg" }
 
 492 = "Puerto Rico"
-2524 = "Indiæna"
-2561 = { "Sûþtun" "Sûþtun" }
+2524 = "Indiæ®¡"
+2561 = { "SÃ»Ã¾tun" "SÃ»Ã¾tun" }
 2563 = { "Vermont" "Montpelier" }
 2569 = { "Halifax" "Halifax" }
 2585 = "Ottawa"
-2592 = "Sæfern"
+2592 = "Sæ¦¥rn"
 2670 = { "Toronto" "Toronto" }
 
 #Ireland
-4379 = "Offalyscîr"
+4379 = "Offalyscî²¢
 
 #Italy
 104 = { "Megelan" "Megelan" }
 
 #Germany
 134 = { "Uigenna" "Uigenna" }
+41 = "Cyningesbeorg"
 
 #England proper
-234="Hâmtûnescîr" #Hampshire
-236="Lunden" #London
-237="Oxnaford" #Oxford
-245="Eoforwîc" #York
-249="Ægrscîr" #Ayrshire
+375 = "Limerice"
+238 = "Ê¡stseaxe"
+1860 = "NorÃ¾folc"
+4370 = "Bê¤¥sfordscî²¢
+243 = "Lincolnscî²¢
+1861 = "Dê¯²aby"
+4376 = "Ligeraceaster"
+250 = "PerÃ¾"
+369 = "Orcanege"
+373 = "Difelinscî²¢ # Dublinshire
+235 = "Cent"
+236 = "Lunden"
+237 = "Oxnaford"
+4371 = "SuÃ¾seaxe"
+249 = "Æ§rscî²¢
+251 = "Aberdon"
+244 = "Lonceasterscî²¢
+246 = "NorÃ¾hymbraland"
+247 = "Cumbraland"
+4375 = "Ceaster"
+253 = "Uterra Suð²¥¹ar"
+4364 = "Innera Suð²¥¹ar"
+233 = "Cornweall"
+234 = "Hâ­´Ã»nscî²¢
+4130 = "Sumorsæ´¥"
+4373 = "Defena"
+4374 = "Dorsæ´¥"
+239 = "Glê¡·caester"
+4372 = "Cofentreo"
+245 = "Eoforwî£¢
+4367 = "Hul"
+4785 = "Scê¡°feld"
+
+# Low Countries
+90 = "Brycg"
+1865 = "Gæ®´"
+100 = "Fresland"
+1931 = "Uterra Fresland"
+96 = "Sæ¬¡nd"
+92 = "Brysel"
+93 = "Lê¯¤ic"
+94 = "Letseburg"
