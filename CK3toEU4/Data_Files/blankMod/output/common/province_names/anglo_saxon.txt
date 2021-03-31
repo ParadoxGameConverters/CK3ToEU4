@@ -34,10 +34,48 @@
 
 #Germany
 134 = { "Uigenna" "Uigenna" }
+41 = "Cyningesbeorg"
 
 #England proper
-234="Hâmtûnescîr" #Hampshire
-236="Lunden" #London
-237="Oxnaford" #Oxford
-245="Eoforwîc" #York
-249="Ægrscîr" #Ayrshire
+375 = "Limerice"
+238 = "Êastseaxe"
+1860 = "Norþfolc"
+4370 = "Bêdesfordscîr"
+243 = "Lincolnscîr"
+1861 = "Dêoraby"
+4376 = "Ligeraceaster"
+250 = "Perþ"
+369 = "Orcanege"
+373 = "Difelinscîr" # Dublinshire
+235 = "Cent"
+236 = "Lunden"
+237 = "Oxnaford"
+4371 = "Suþseaxe"
+249 = "Ægrscîr"
+251 = "Aberdon"
+244 = "Lonceasterscîr"
+246 = "Norþhymbraland"
+247 = "Cumbraland"
+4375 = "Ceaster"
+253 = "Uterra Suðreyar"
+4364 = "Innera Suðreyar"
+233 = "Cornweall"
+234 = "Hâmtûnscîr"
+4130 = "Sumorsæte"
+4373 = "Defena"
+4374 = "Dorsæte"
+239 = "Glêawcaester"
+4372 = "Cofentreo"
+245 = "Eoforwîc"
+4367 = "Hul"
+4785 = "Scêaðfeld"
+
+# Low Countries
+90 = "Brycg"
+1865 = "Gænt"
+100 = "Fresland"
+1931 = "Uterra Fresland"
+96 = "Sæland"
+92 = "Brysel"
+93 = "Lêodic"
+94 = "Letseburg"
