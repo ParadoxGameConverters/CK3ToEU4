@@ -475,6 +475,7 @@ link = { eu4 = lemnian ck3 = lemnian tech = western gfx = westerngfx }
 link = { eu4 = thracian ck3 = thracian tech = eastern gfx = easterngfx }
 link = { eu4 = dacian ck3 = dacian tech = eastern gfx = easterngfx }
 link = { eu4 = getian ck3 = getian tech = nomad_group gfx = easterngfx }
+link = { eu4 = albanian ck3 = dalmatian tech = eastern gfx = easterngfx region = albania_area region = bulgaria_area region = macedonia_area region = northern_greece_area region = morea_area region = thrace_area region = silistria_area region = sicily_area region = naples_area region = calabria_area region = apulia_area region = western_sicily_area region = anatolia_region }
 link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 ## Extra
 link = { eu4 = oldspain ck3 = iberian tech = western gfx = westerngfx }
