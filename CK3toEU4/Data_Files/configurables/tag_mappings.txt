@@ -912,3 +912,14 @@ link = { ck3 = d_thrace eu4 = THR } # Thrace
 link = { ck3 = c_phrygia eu4 = PHR } # Phrygia
 link = { ck3 = k_africa eu4 = AFR } # Africa
 link = { ck3 = e_north_sea eu4 = ENS } # Empire of the North Sea
+
+# I:R titles
+link = { ck3 = d_IMPTOCK3_ELA eu4 = MTH } # Eblana/Dublin => Meath
+link = { ck3 = k_IMPTOCK3_ELA eu4 = MTH } # Eblana/Dublin => Meath
+link = { ck3 = e_IMPTOCK3_ELA eu4 = MTH } # Eblana/Dublin => Meath
+link = { ck3 = d_IMPTOCK3_ETR eu4 = ETR } # Etruria
+link = { ck3 = k_IMPTOCK3_ETR eu4 = ETR } # Etruria
+link = { ck3 = e_IMPTOCK3_ETR eu4 = ETR } # Etruria
+link = { ck3 = d_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
+link = { ck3 = k_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
+link = { ck3 = e_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
