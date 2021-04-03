@@ -1,0 +1,91 @@
+celtiberian_g = {
+	male_names = {
+		Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+		Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+		Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+		Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+		Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+		Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+		Venutius Viridorix Vosenius Vodenos
+	}
+	female_names = {
+		Aife Airmed Ancasta Banna Billica Boudica Bricta Cata Cartimandua Chiomara Damona Diseta Gwendolen Litavis Iamcilla Maeve Verica
+		Cingetessa Conna Catia Carssouna Cunovinna Illica Lovernisca Magunna Lucilia Oconea Ria Rosula Senica Sentica Sulicena
+		Vassura Vinoma Vorvena Urca Veloriga Velibia Totia Titocuna Velbutena Seniciana Senila Vrocata Exuperata Deiana Cunolava Cunsa Aucissa
+		Allauna Alatucca Aessicunia Bodicacia Britivenda Catissena Cantisena 
+	}
+	dynasty_names = {
+		Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+		Punician Tautalid Correian Divicid Duratian Elitovian
+		Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+		Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+	}
+	celtiberian = { primary = SPA } # Fallback
+	baetican = { primary = ADU }
+	emporionian = { primary = CAT }
+	manzanarian = { primary = CAS }
+	cantabric = { primary = LON }
+	tagonian = { primary = POR }
+}
+celts = {
+	male_names = {
+		Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+		Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+		Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+		Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+		Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+		Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+		Venutius Viridorix Vosenius Vodenos
+	}
+	female_names = {
+		Aife Airmed Ancasta Banna Billica Boudica Bricta Cata Cartimandua Chiomara Damona Diseta Gwendolen Litavis Iamcilla Maeve Verica
+		Cingetessa Conna Catia Carssouna Cunovinna Illica Lovernisca Magunna Lucilia Oconea Ria Rosula Senica Sentica Sulicena
+		Vassura Vinoma Vorvena Urca Veloriga Velibia Totia Titocuna Velbutena Seniciana Senila Vrocata Exuperata Deiana Cunolava Cunsa Aucissa
+		Allauna Alatucca Aessicunia Bodicacia Britivenda Catissena Cantisena 
+	}
+	dynasty_names = {
+		Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+		Punician Tautalid Correian Divicid Duratian Elitovian
+		Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+		Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+	}
+	belgian = { primary = BEL } # Fallback
+	gaulish = { primary = FRA } # Fallback
+	auscian = { primary = GUY }
+	armorican = { primary = BRI }
+	lugdunian = { primary = BUR }
+	lutetian = { primary = ORL }
+	neustrian = { primary = NRM }
+	arelatian = { primary = PRO }
+	scaldic = { primary = HAI }
+	treverian = { primary = LUX }
+	helvetian = { primary = SWI }
+	lepontic = { primary = MLO }
+}
+scordiscian_g = {
+	male_names = {
+		Acco Addedomarus Adiatuanus Adminius Aiorix Ambicatos Andecombogius Aneroestes Ariovistus Arverus Arvirargus Atis Avitus 
+		Bellicianus Bellovesus Boduognatus Boio Boiorix Bolgios Brennus Bricussa Britomaris Brucetius Buite Cailtram Caractacus 
+		Carvilius Cassivellaunus Cattulanus Cartorites Catugnatus Cavarinus Cavarus Celatus Cingetorix Coilus Commios Comux Concolitanus Correus Cottius Crixus
+		Cunobelinus Diviciacus Divico Donnus Drappes Dubnovellaunus Dumnacus Ducarius Duratios Dumnocoveros Dumnorix Elitovius Etitovius Epatticus
+		Galan Galba Guiderius Iacus Iccius Immanuentius Inamarcus Inammicus Indutiomarus Kimarcus Lucterius Lugotorix Lutarius Mallaius Mandubracius Marganus Mascelio
+		Orgetorix Prasutagus Segovax Sinatus Sinorix Sisillius Talorc Tasciovanus Tasgetius Taximagulus Teutomalius Tincomarus Togodumnus Vertiscus
+		Venutius Viridorix Vosenius Vodenos
+	}
+	female_names = {
+		Aife Airmed Ancasta Banna Billica Boudica Bricta Cata Cartimandua Chiomara Damona Diseta Gwendolen Litavis Iamcilla Maeve Verica
+		Cingetessa Conna Catia Carssouna Cunovinna Illica Lovernisca Magunna Lucilia Oconea Ria Rosula Senica Sentica Sulicena
+		Vassura Vinoma Vorvena Urca Veloriga Velibia Totia Titocuna Velbutena Seniciana Senila Vrocata Exuperata Deiana Cunolava Cunsa Aucissa
+		Allauna Alatucca Aessicunia Bodicacia Britivenda Catissena Cantisena 
+	}
+	dynasty_names = {
+		Ambonid Auarosian Audaxian Carosian Culchian Leukian Mandonian
+		Punician Tautalid Correian Divicid Duratian Elitovian
+		Galbid Iacid Marganid Sinatid Vodenosian Indutian Dumnid Epatticid
+		Teutomalian Viridorrian Magunnid Brennid Boian Tannid Iccian Galanid
+	}
+	scordiscian = { primary = HUN } # Fallback
+	noric = { primary = HAB }
+	vindelician = { primary = AUG } # Augsburg = Augusta Vindelicorum
+	multavian = { primary = BOH }
+}

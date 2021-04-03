@@ -1,0 +1,315 @@
+# Pre-Christian names
+# Based mostly on Latin or Greek, to avoid toponyms based or taken
+# from languages that may not have existed in the megacampaign
+
+# Anatolia
+326 = "Ancyra"
+4312 = "Dorylæum"
+4313 = "Gangra"
+
+318 = "Trogitis"
+319 = "Mobolla"
+2297 = "Magnesia"
+2298 = "Attaleia"
+4309 = "Euanthia"
+
+2302 = "Myrsine"
+332 = "Gurgum"
+2303 = "Melitea"
+2308 = "Callirrhoe"
+4310 = "Tephrice"
+
+330 = "Trapezous"
+331 = "Karno K'aghak'"
+2305 = "Acilisene"
+
+322 = "Cotyæum"
+1848 = "Isparta"
+4308 = "Attouda"
+4311 = "Medethœyx"
+
+316 = "Nicomedia"
+317 = "Prusa"
+2296 = "Mysia"
+
+325 = "Timonion"
+328 = "Sinope"
+2299 = "Bithynia"
+2304 = "Zanicum"
+
+323 = "Iconium"
+324 = "Laranda"
+2301 = "Mazaca"
+4307 = "Garsaura"
+
+329 = "Sebaste"
+1846 = "Amasia"
+2300 = "Hattusa"
+4314 = "Mocissus"
+4315 = "Eudoxia"
+
+# Britain
+375 = "Regia"
+376 = "Connugenum"
+4119 = "Sligacum"
+
+238 = "Camulodunum" # Colchester
+1860 = "Icenodunum"
+4370 = "Bedaiatus"
+
+243 = "Corieltauvium"
+1861 = "Derventio"
+4376 = "Ligore"
+
+250 = "Silva"
+252 = "Osnesta"
+369 = "Orcas"
+4110 = "Catæum"
+4363 = "Limes"
+
+373 = "Eblana"
+374 = "Lagenia"
+4120 = "Quercetum"
+4379 = "Fælgia"
+
+235 = "Cantia"
+236 = "Londinium"
+237 = "Bubuliatus" # Oxen's ford
+4371 = "Noviomagus" # Chichester
+
+248 = "Luguduniana"
+249 = "Ar"
+251 = "Devana"
+4361 = "Rosbrog"
+4362 = "Dunphris"
+
+4118 = "Corcagia"
+4377 = "Ormomonia"
+4378 = "Desmomonia"
+
+244 = "Lunæcastrum"
+246 = "Transabia"
+247 = "Combrogum"
+4375 = "Deva"
+
+372 = "Esugenomagus"
+4121 = "Ultonia"
+4380 = "Conallomagus"
+
+233 = "Cornubia"
+234 = "Hamtum"
+4130 = "Somertum"
+4373 = "Dumnonia"
+4374 = "Durnovaria"
+
+239 = "Glevum"
+240 = "Viroconium"
+4372 = "Coventria"
+
+245 = "Eboracum"
+4367 = "Hullum"
+4368 = "Cheiloschisium"
+4785 = "Ager Scethi"
+
+# Hungary
+155 = "Pax"
+1953 = "Betula"
+1954 = "Araxa"
+4125 = "Salisnox"
+
+135 = "Scarbantia"
+153 = "Aquincum"
+1864 = "Fornix"
+4126 = "Bagasim"
+4240 = "Annamatia"
+
+# France
+190 = "Elaver"
+195 = "Lemovicia"
+199 = "Arvernia"
+4697 = "Crosa"
+4777 = "Segusiavorum"
+
+169 = "An-Arvor"
+170 = "Penn-Ar-Bed"
+171 = "Gwened"
+172 = "Naoned"
+4384 = "Redonum"
+
+181 = "Reistetes"
+186 = "Durocortorum"
+4390 = "Tricassium"
+
+192 = "Divio"
+193 = "Liber"
+4764 = "Salinæ"
+
+173 = "Lapurdum"
+175 = "Ausciorum"
+176 = "Beneharnum"
+4694 = "Fuxium"
+
+174 = "Burdigala"
+194 = "Petrocorii"
+198 = "Aveyro"
+4112 = "Carcin"
+
+182 = "Œsia"
+183 = "Lutetia"
+185 = "Nemosum"
+4388 = "Autricum"
+
+196 = "Tolosa"
+200 = "Mons Pessulanus"
+2753 = "Narbo"
+4391 = "Ardesca"
+4695 = "Carsaco"
+
+177 = "Cenomannia"
+178 = "Andecavia"
+4389 = "Turenna"
+
+187 = "Barra"
+188 = "Divodorum"
+189 = "Mosa"
+4766 = "Verodunum"
+
+167 = "Caletes"
+168 = "Cadomum"
+1879 = "Alenconium"
+4385 = "Armorica"
+
+179 = "Bituria"
+184 = "Cenabum"
+4776 = "Blesæ"
+
+87 = "Calesium"
+88 = "Nemetacum"
+89 = "Ambianum"
+1743 = "Camaracum"
+
+180 = "Magna Pictavia"
+4111 = "Santonica"
+4386 = "Minor Pictavia"
+4387 = "Engolisma"
+
+201 = "Aquæ Sextiæ"
+202 = "Avennio"
+2991 = "Calcarium"
+4696 = "Telo"
+
+203 = "Lugdunum"
+204 = "Isara"
+205 = "Camberia"
+4719 = "Bressia"
+
+191 = "Noviodunum"
+1877 = "Quadrigellæ"
+4392 = "Autessiodurum"
+
+# Northern Italy
+2985 = "Phocæa" # "Capitanata" is a Byzantine name
+
+101 = "Genua"
+102 = "Nicæa"
+2992 = "Ingaunum"
+
+104 = "Mediolanum"
+1862 = "Cremona"
+2979 = "Novaria"
+4728 = "Ticinum"
+4740 = "Novocomum"
+
+103 = "Taurasia"
+1875 = "Cuneum"
+2981 = "Tanarus"
+4727 = "Salutiæ"
+
+107 = "Brixia"
+109 = "Mantua"
+4739 = "Bergomum"
+
+# Low Countries
+90 = "Brugæ"
+1865 = "Ganda"
+4769 = "Insula"
+
+# Austria
+75 = "Argentoratum"
+1880 = "Aldechiarcum"
+4765 = "Mulhusia"
+
+133 = "Transennia"
+134 = "Vindobona"
+1770 = "Manartia"
+4761 = "Druna"
+4762 = "Vindolucum"
+
+72 = "Brisgovia"
+74 = "Aquæ Matthiacæ"
+4714 = "Durlaca"
+
+129 = "Carniola"
+# 130 = "Istria"
+1769 = "Polis" # Gorica
+4738 = "Tergeste"
+4751 = "Cellæ"
+
+76 = "Salisburgum"
+4709 = "Passovia"
+4760 = "Landishuta"
+
+128 = "Ciscarinthia"
+132 = "Styria"
+1863 = "Græcia"
+4759 = "Transcarinthia"
+
+# Switzerland
+165 = "Berna"
+1867 = "Viviscus"
+1871 = "Pœnina"
+4720 = "Genava"
+4721 = "Nuithonia"
+
+166 = "Urania"
+1869 = "Turicum"
+1870 = "Sanctogallum"
+1873 = "Curia Rhætorum"
+4722 = "Glion"
+
+119 = "Sena"
+114 = "Ravna"
+178 = "Andecavorum"
+180 = "Lemonum"
+4389 = "Turonorum"
+108 = "Berua"
+4740 = "Clauna"
+4709 = "Boiodurum"
+4239 = "Singidunum"
+
+372 = "Tiros Esugeni"
+373 = "Medios"
+374 = "Laigin"
+375 = "Lanum Equom"
+376 = "Cunovaliaxta"
+4119 = "Sleggion"
+4120 = "Cella Daru"
+4121 = "Ulaith"
+
+236 = "Londinion"
+233 = "Cornovia"
+245 = "Eboracom"
+247 = "Comrygh"
+4365 = "Moniyos"
+69 = "Moridunom"
+4366 = "Gumorigomagos"
+240 = "Toribriga"
+239 = "Glevom"
+4130 = "Vlatis Sami"
+237 = "Damomiatus"
+235 = "Cantio"
+240 = "Pagensis"
+4367 = "Cebno"
+239 = "Cagrom Glevom"
+249 = "Agrona"
+4362 = "Rheged"
