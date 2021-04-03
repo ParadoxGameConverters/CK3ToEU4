@@ -463,15 +463,16 @@ link = { eu4 = sarmatian ck3 = sarmatian tech = nomad_group gfx = muslimgfx }
 
 ## Celtic
 ### Celtiberian
-link = { eu4 = baetican ck3 = celtiberian tech = western gfx = westerngfx region = lower_andalucia_area region = upper_andalucia_area }
-link = { eu4 = emporionian ck3 = celtiberian tech = western gfx = westerngfx region = aragon_area region = catalonia_area region = valencia_area region = baleares_area }
-link = { eu4 = manzanarian ck3 = celtiberian tech = western gfx = westerngfx region = castille_area region = toledo_area }
-link = { eu4 = cantabric ck3 = celtiberian tech = western gfx = westerngfx region = asturias_area region = leon_area region = basque_country }
-link = { eu4 = tagonian ck3 = celtiberian tech = western gfx = westerngfx region = alentejo_area region = beieras_area region = galicia_area region = extremadura_area }
-link = { eu4 = celtiberian ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx } # Fallback
+link = { eu4 = baetican ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx region = lower_andalucia_area region = upper_andalucia_area }
+link = { eu4 = emporionian ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx region = aragon_area region = catalonia_area region = valencia_area region = baleares_area }
+link = { eu4 = manzanarian ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx region = castille_area region = toledo_area }
+link = { eu4 = cantabric ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx region = asturias_area region = leon_area region = basque_country }
+link = { eu4 = tagonian ck3 = celtiberian ck3 = lusoiberian tech = western gfx = westerngfx region = alentejo_area region = beieras_area region = galicia_area region = extremadura_area }
+link = { eu4 = celtiberian ck3 = celtiberian tech = western gfx = westerngfx } # Fallback
+link = { eu4 = tagonian ck3 = lusoiberian tech = western gfx = westerngfx } # Fallback
 
 ### Gaulish/Belgian
-link = { eu4 = auscian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country }
+link = { eu4 = auscian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country region = catalonia_area }
 link = { eu4 = armorican ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = brittany_area }
 link = { eu4 = lugdunian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = bourgogne_area region = west_burgundy_area }
 link = { eu4 = lutetian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = lorraine_area region = picardy_area region = champagne_area region = ile_de_france_area region = loire_area region = poitou_area region = orleans_area }
