@@ -13,6 +13,7 @@ mappers::PrimaryTagCultureGroup::PrimaryTagCultureGroup(std::istream& theStream)
 void mappers::PrimaryTagCultureGroup::registerKeys()
 {
 	registerKeyword("graphical_culture", commonItems::ignoreItem);
+	registerKeyword("second_graphical_culture", commonItems::ignoreItem);
 	registerKeyword("unit", commonItems::ignoreItem);
 	registerKeyword("leader", commonItems::ignoreItem);
 	registerKeyword("is_overseas", commonItems::ignoreItem);
