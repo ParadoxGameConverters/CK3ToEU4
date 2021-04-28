@@ -1,14 +1,57 @@
 israelite = {
-	ashkenazi = { primary = ISR }
-	sephardi = { primary = ISR }
+	ashkenazi = {
+		primary = ISR
+		dynasty_names = {
+			Abramovitch Ashkenazi Bernstein Birnbaum Bloch Cantor Cohen Frank Friedländer Ginsberg Goldstein Horowitz Israel Jacobsohn Kagan Kaplan Klein
+			Levin Luria Morgenstern Nathan Oren Rosenthal Sachs Schapiro Schwartz Weinstein Weiss
+		}
+	}
+	sephardi = {
+		primary = ISR
+		dynasty_names = {
+			Banai Barak "Ben Ami" Benveniste Canetti Cantor Cardoso Cohen Disraeli Gaon Golan Halevi Levy Maimon Mizrachi Montefiore Peretz Rafaeli Saban 
+			Sassoon Sebag
+		}
+	}
 	knaanic = { primary = ISR }
 	magogic = { primary = ISR }
 	yevanic = { primary = ISR }
-	mizrahi = { primary = ISR }
+	mizrahi = {
+		primary = ISR
+		male_names = {
+			Chaikeh Eli Jonah Asher Aron Abel Abraham Avraam Gabriel Gershon Gideon Isaac
+			Israel Issachar Jacob Joel Joseph Mordecai Manasseh Moses Naftali Nathan Reuven Samson Samuel
+			Simeon Simon Solomon Yohanan Zachariah Chaim Moshe Malachi Jaffe Maimon Melamed Nathan
+			Amiel Benjamin Lazarus Matai Meshach Noah Shulamith Shylock Seraphim Seth Shafir Shailen
+			Saul Tivon Yechezkel Yehudi Yan Yanis Ronas Yosef Tobias Tov Dov Zakai Zakur Zamir Zabulon
+		}
+		dynasty_names = {
+			Abrach Abocassis Abu Habibi Hadad Haziz Hysh Jamil Khalili Maklof Mofaz Mograbi
+			Nazarian Naqqash Sabag Sassoon Shamy Sharabani Sheriki Shirazi Soliman Yarkoni Zangi Zeitouni
+		}
+	}
 	israeli = { primary = ISR }
 	misrayim = { primary = ISR }
 	zarphatic = { primary = ISR }
-	laaz = { primary = ISR }
+	laaz = {
+		primary = ISR
+		male_names = {
+			Primo Elia Elìas Elio Giona Aronne Abele Abramo Ciro Prospero Manuele Immanuel
+			Emanuele Esaù Davide David Gabriele Gideone Michele Isacco Israel Issachar Giacobbe Gioele
+			Giuseppe Mordecai Moses Naftali Sansone Samuel Samuele Simeone Simon Simone Solomone
+			Zaccaria Malachia Beniamino Giobbe Lazzaro Noè Shulamith Tullio Serafino Seth Saulo Taddeo
+			Giovanni Yanis Ronas Silvio Tobia Giacomo Enrico Emilio René Salvatore Franco Felice Sergio
+			Oscar Hugo Ugo Haim Aldo Arturo Angelo Azaria Shlomo Sisto Vittorio Umberto Giacomo Cino
+		}
+		dynasty_names = {
+			Artom Ascoli Brescia Colombo Cohen Coen Como Cremona Barzilai Behar Benetton
+			Bachi Calabresi Carpi Cantoni Fano Ferri Finzi Fiorentini Foà Franceschini Fubini Efrati
+			"de Benedetti" D'Ancona "da Como" "di Segni" "della Seta" "della Rocca" Ezra Guastalla Gattegno
+			Ginzburg Gluck Iezzi Liegi Lombroso Luzzatto Mayer Milano Montalcino Montefiore Levi
+			Livorno Luna Piperno Ravenna Ottolenghi Schiff Segre Sinigallia Spizzichino Supino Venezia
+			Vivanti Zargani Orvieto Galante Petito Modiano Modigliani Morpurgo Canetti Treves Parenzo
+		}
+	}
 	kaifeng = { primary = ISR }
 	#Names are shared throughout the entire group
 		male_names = {

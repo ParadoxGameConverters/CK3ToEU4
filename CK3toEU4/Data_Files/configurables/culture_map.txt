@@ -183,28 +183,34 @@ link = { eu4 = chuvash ck3 = chuvash tech = nomad_group gfx = muslimgfx }
 link = { eu4 = mishary ck3 = mongol tech = nomad_group gfx = muslimgfx region = ural_region region = russia_region }
 link = { eu4 = nogaybak ck3 = kimek tech = nomad_group gfx = muslimgfx }
 link = { eu4 = siberian ck3 = mongol tech = nomad_group gfx = muslimgfx region = west_siberia_region }
-link = { eu4 = buryat ck3 = buryat ck3 = uriankhai tech = nomad_group gfx = inuitgfx }
+link = { eu4 = buryat ck3 = buryat tech = nomad_group gfx = inuitgfx }
+link = { eu4 = yakut ck3 = uriankhai tech = nomad_group gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = ostyak ck3 = laktan tech = nomad_group gfx = inuitgfx }
+link = { eu4 = bulgarian ck3 = bolghar tech = eastern gfx = easterngfx region = balkan_region } # Bolghars assimilated into Bulgarians
 
 # Altaic
 
-link = { eu4 = turkmeni ck3 = turkish tech = nomad_group gfx = muslimgfx region = transcaspia_area region = khiva_area region = kyzylkum_area region = merv_area }
-link = { eu4 = khazak ck3 = turkish tech = nomad_group gfx = muslimgfx region = lower_yik_area region = nogai_area region = kazakhstan_area region = syr_darya_area region = balchasj_area region = jetysuu_area }
-link = { eu4 = uzbehk ck3 = turkish tech = nomad_group gfx = muslimgfx region = transoxiana_area region = arys_area region = ferghana_area region = kashgaria_area region = termez_area}
+link = { eu4 = turkmeni ck3 = turkish tech = nomad_group gfx = muslimgfx region = central_asia_region }
+link = { eu4 = azerbaijani ck3 = turkish tech = muslim gfx = muslimgfx region = caucasia_region region = persia_region }
+link = { eu4 = khorasani ck3 = turkish tech = muslim gfx = muslimgfx region = khorasan_region }
 link = { eu4 = turkish ck3 = turkish tech = ottoman gfx = muslimgfx }
+link = { eu4 = khazak ck3 = naiman tech = nomad_group gfx = muslimgfx }
 
 link = { eu4 = pecheneg ck3 = pecheneg tech = ottoman gfx = muslimgfx }
 link = { eu4 = cuman ck3 = cuman tech = muslim gfx = easterngfx }
 link = { eu4 = khazar ck3 = khazar tech = muslim gfx = muslimgfx }
 link = { eu4 = bolghar ck3 = bolghar tech = nomad_group gfx = muslimgfx }
+link = { eu4 = hungarian ck3 = avar tech = eastern gfx = easterngfx region = carpathia_region } # Pannonian Avars
 link = { eu4 = avar ck3 = avar tech = nomad_group gfx = muslimgfx }
 link = { eu4 = oirats ck3 = oirat ck3 = yughur tech = chinese gfx = asiangfx }
+link = { eu4 = oirats ck3 = kerait tech = nomad_group gfx = muslimgfx region = crimea_region } # Keraites are ancestors to the Kalmyks
 link = { eu4 = khalkha ck3 = mongol tech = chinese gfx = asiangfx region = mongolia_region region = tibet_region region = north_china_region region = buryatia_area }
-link = { eu4 = khalkha ck3 = naiman ck3 = kerait ck3 = ongud tech = chinese gfx = asiangfx }
+link = { eu4 = khalkha ck3 = kerait ck3 = ongud tech = chinese gfx = asiangfx }
 link = { eu4 = mongol ck3 = mongol tech = chinese gfx = asiangfx } #Fallback
 # EU4 Mongol is outside ck3
 link = { eu4 = kirgiz ck3 = kirghiz ck3 = kipchak tech = nomad_group gfx = asiangfx }
-link = { eu4 = karluk ck3 = karluk tech = nomad_group gfx = asiangfx }
+link = { eu4 = uyghur ck3 = karluk tech = nomad_group gfx = asiangfx region = mongolia_region region = north_china_region region = tibet_region }
+link = { eu4 = uzbehk ck3 = karluk tech = nomad_group gfx = muslimgfx }
 link = { eu4 = uyghur ck3 = uyghur tech = nomad_group gfx = muslimgfx }
 link = { eu4 = khitan ck3 = khitan tech = nomad_group gfx = asiangfx }
 link = { eu4 = sogdian ck3 = sogdian tech = nomad_group gfx = asiangfx }
@@ -277,8 +283,6 @@ link = { eu4 = hungarian ck3 = hungarian ck3 = mogyer tech = eastern gfx = easte
 
 # Iranian
 
-link = { eu4 = azerbaijani ck3 = persian tech = muslim gfx = muslimgfx region = azerbaijan_area region = shirvan_area region = dagestan_area }
-link = { eu4 = khorasani ck3 = persian tech = muslim gfx = muslimgfx region = khorasan_area }
 link = { eu4 = mazandarani ck3 = persian tech = muslim gfx = muslimgfx region = tabarestan_area }
 link = { eu4 = mazandarani ck3 = daylamite tech = muslim gfx = muslimgfx }
 link = { eu4 = luri ck3 = persian tech = muslim gfx = muslimgfx region = luristan_area region = khuzestan_area }
