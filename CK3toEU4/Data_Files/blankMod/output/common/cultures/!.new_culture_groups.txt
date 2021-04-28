@@ -1,4 +1,18 @@
 oghuz = {
+	# Pecheneg name pool used as default one
+	male_names = { 
+		Çelgil Aba Baitzas Balgor Batan Batas Bator Bayça Biçkili Bizel Boru Bula Giazis Ildey
+		Ipa Ipaos Kabuksin Karaca Kaydum Kegen Konel Korkutan Kortan Kostas Kourkoutai
+		Kuchug Kuerçi Kugel Kure Kürä Metiga Sol Suru Tatus Teber Temir Tyrach Yavdi Yazi Yeke
+	}
+	female_names = {
+		Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Ayasun Ayten Bozçin Dilek Esin Gulçiçek Gulay Gunduz Gundes Gunes Ilkay Ipek Ipekel Irge
+		Karacik Mala Mutlu Peksen Samur Sarica Sati Sevilay Sevindik Sibel Sirin Sirma Songul Tekçe Tura Umay Usunbike Yasar Yeldem Yildiz
+	}
+	dynasty_names = {
+		Kankali Tzopon Paguman Belermen Thonuzoba Yüregir Beçenek Bügdüz Üçok Çavuldur
+		Bayandur Irtim Talmat Batas Alayuntlu Çepni Eymür Salgurlu Kankali
+	}
 	pecheneg = {
 		primary = PTZ
 	}
@@ -7,30 +21,60 @@ oghuz = {
 	}
 	bolghar = {
 		primary = BUL
+		male_names = {
+			Almish Alzek Anzi Apskhih Araslan Asparukh Balamber Bars Bataul Batbayan Batoya Batulia Bayan Belkermak Bezmer Boyan Bulger Buzan Chepa Chinialush Dengizikh
+			Dizeng Dometa Dristar Drong Dukum Ellak Elemag Ernakh Eskhakh Goleda Gostun Guar Hudbad Iani Irnek Isbul Islivan Isperikh Ispor Kälaç Kano Karan Karaton
+			Kardam Kharaton Khinialon Khudbard Kordil Kormesiy Kormisosh Kotrag Krovat Krum Kuber Kubrat Kurt Kutrigur Kuvrat Labertam Magotin Malamir Mugel Odolgan Okhsi
+			Okhsun Okors Omurtag Onegavon Organ Organa Ornag Oshi Ostro Pagan Pakhtiyar Paväl Praksa Rassate Rugila Sabin Sandil Sandilkh Sarkhan Sartäç Savin Sevar Shilki
+			Sondoke Tähtaman Tarasiy Taridin Tatra Telec Telerig Tervel Timër Timëreç
+			Timërpälat Tingiz Tiradin Tokhtaman Toktu Tsog Tsul Tuk Umor Uturgur Vakrim Venda
+			Vetam Vinekh Yani
+			Yavantey Yençepi Yerneslu Yeçtirek Zabergan Zenti Tukiy Aydar Irkhan Batir
+		}
+		dynasty_names = {
+			Vokil Altsikur Kashu Barskhan Barsil Balanjar Vokil Erdevulu Silkid Bilar Sabir Esegel Izgil Askil
+			Bersula Urazgilid Kalmagorid Klyuch Ureñ Mayna Yasach Utka Bezd Kurnal Mesha Kaban
+			Oshnya Tolkish Izgar Sulcha Karmal
+		}
 	}
 	avar = {
 		primary = AVR
+		male_names = {
+			Ahmad Ali Magomed Magomedkhan Magomet Muhamad Muhamadkhan
+			Muhammad Murad Nurmagomed Nurmuhamad Ramazan Rasul Ruslan Shamil Sultan
+		}
+		dynasty_names = {
+			Sabir Akhasir Kazarig Kidar Ghidatli Gumbekh Kharoda Ghunib Yandalal Tsumadal
+			Tsuntab
+		}
 	}
 	khazar = {
 		primary = KHZ
-	}
-	karluk = {
-		primary = UZB
+		male_names = {
+			Kozar Karadach Ziebel "Böri Shad" Irbis Khalga Kaban Busir Barjik Bihar Prisbit
+			Baghatur Dyggvi Tarkhan Zachariah "Yazir Bulash" Chorpan Tarkhan "Alp Tarkhan"
+			Tar'mach Hazer Bulan Sabriel Obadiah Hezekiah Manasseh Chanukkah Isaac Zebulun
+			Manasseh Nisi Aaron Menahem Benjamin Joseph David Georgius Tzul Tzitzak
+		}
 	}
 }
 gothic_group = {
 	graphical_culture = westerngfx
-	male_names = { Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar }
-	dynasty_names = { Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro }
+	male_names = {
+		Agriwulfa Aspar Ataulfo Bigeli Braga Brandila Cannabao Colias Fastida Feletheo Galindo Gerung Heldebaldo Hermenigildo Hrodrigo Hunigild Ibba Inna Modare Naulabato Rausimodo Recaredo Rodolfo Sigisvulto Theodemer Theudi Valaravans Veduco Viliaro Visimar
+	}
+	dynasty_names = {
+		Aniano Ariari Arius Ataulph Atharid Baduila Cyrila Farnobio Feva Fretela Friderico Gaiseri Gundeharo Heldefred Hermangild Hernegliscu Hildebado Huml Hunimund Leuvibild Nidada Retemeri Rhima Saphrax Sueridu Sunnia Theoderi Tribigild Videric Vidimiro
+	}
 	female_names = {
 		Actihild Aschild Baldhild Casthild Castiburg Duomburg Duomhild
-			Eidburg Eidhild Eidsunne Eidwalda Geriburg Gerrhild Gunborg
-			Gundhild Hildborg Hildwald Hramburg Hramhild Hramis Hrauchild
-			Hraugiburg Ingiburg Ingihild Laighild Leigiburg Malburg Malhild
-			Marchild Mundhild Randild Rhamis Richild Rigiburg Sigiburg
-			Sigihild Sunburg Sunhild Theodeburg Theothild Thurishilda
-			Thurisinburg Thurisinhilda Thusnelda Walburg Waldburg
-			Walhild Waloburg Waluburg
+		Eidburg Eidhild Eidsunne Eidwalda Geriburg Gerrhild Gunborg
+		Gundhild Hildborg Hildwald Hramburg Hramhild Hramis Hrauchild
+		Hraugiburg Ingiburg Ingihild Laighild Leigiburg Malburg Malhild
+		Marchild Mundhild Randild Rhamis Richild Rigiburg Sigiburg
+		Sigihild Sunburg Sunhild Theodeburg Theothild Thurishilda
+		Thurisinburg Thurisinhilda Thusnelda Walburg Waldburg
+		Walhild Waloburg Waluburg
 	}
 	visigothic = { primary = CAS }
 	ostrogothic = { }
@@ -267,8 +311,9 @@ equine_group = {
 cat_group = {
 	cat = {
 		primary = TRL
-		male_names = { Mittens Fluffy Tom Smudge Shado
-		}
+		male_names = { Mittens Fluffy Tom Smudge Shado }
+		female_names = { Onyx Momo Artemis Carina Freya "Almond Blossom" Grizabella
+		Modella Moscato "Pawdry Hepburn" Tahini Ursula Zuri Clove Pewter }
 		dynasty_names = { "Vermin" "Tabby" "Tabby" "Bramblepelt" "Kitten" "Katturan" "Purr" "Bahari" "Cat" "Stalker" "O'Malley" "Tiger" "Scottish Folds" "Jellicle" "Sphynxes" "Cat" "Katturan" "Jellicle" "Critterkiller" "Manx" "Heavyside" "Purr" "von Furrington" "Felis Catus" "Meow" "Tiger" "Vermin" "Vermin" "Kitten" "Night" "Hairball" "Bramblepelt" "Meow" "Hiss" "Hiss" "Felis Catus" "Vermin" "Feline" "Feline" "Heavyside" "Purr" "Tom" "Tabby" "Katturan" "Meow" "Tom" "Wildcat" "Bramblepelt" "Felidae" "Feral" "Felidae" "Tabby" "-in-Boots" "Kitten" "Wildcat" "Bramblepelt" "Furry" "Ratcatcher" "Meow" "Feral" "Night" "Cat" "Bahari" "Freyja" "Scottish Folds" "Naberezhnye" "Lampron"
 		}
 	}
@@ -276,8 +321,9 @@ cat_group = {
 bear_group = {
 	bear = {
 		primary = TRL
-		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams
-		}
+		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams }
+		female_names = { Winona Wilhelmina Edwina Maggie Samantha Maddie Ellie Audrey Precious
+		Abby Bitsy Coco Millie Hannah Princess Polly Taffy Candy Penelope Bella Wilma Betty Betsy }
 		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
 		}
 	}
@@ -288,6 +334,8 @@ hedgehog_group = {
 		male_names = { Hughues Echinus Erinus Kidnae Micro Mesyo Aurion Sclaterion Rix Spike Pokey Quillem Quilliam Quillington Sanic Knucklys Silver Lancelot Galahad Cyrus Pincushion Hedgehog
 			Grumpy Crisp Pinecone Sam Wiggles Stig Xerxes "Mr. Tiggy-Winkle" Nails Thorn Ringo Groogy Punk Hedgepig August Blaine Saul Sonic
 		}
+		female_names = { Bijou Blondie Gabby Ginger Goldie Gracie Hazel Izzy Kahlua Kenya Luna
+		Muffy Pandora Penny Pinky Piper Pixie "Powder Puff" Zen Zoe }
 		dynasty_names = { "Solisorex" "Eulipotyphla" "Talpidae" "Teja" "Scutisorex" "Crocidura" "Solisorex" "Surdisorex" "Teja" "Neohylomys" "Sylvisorex" "Atelerix" "Congosorex" "Neohylomys" "Hylomys" "Teja" "Paraechinus" "Mesechinus" "Surdisorex" "Scutisorex" "Teja" "Neohylomys" "Paraechinus" "Ruwenzorisorex" "Neohylomys" "Deinogalerix" "Chimarrogale" "Eulipotyphla" "Pholidocercus" "Crocidura" "Quill" "Neotetracus" "Echinosorex" "Solisorex" "Silvacola" "Podogymnura" "Erinaceus" "Diplomesodon" "Echinosorex" "Hylomys" "Hylomys" "Neotetracus" "Erinaceinae" "Surdisorex" "Scutisorex" "Prickles" "Hylomys" "Echinosorex" "Hylomys" "Crocidura" "Mesechinus" "Floof" "Floof" "Echinosorex" "Crocidura" "Silvacola" "Soricidae" "Myosorex" "Echinosorex" "Thorn" "Pholidocercus" "Prickles" "Teja" "Flesberg" "Königsberg" "Ragnit" "Königsberg" "Bahaduran"
 		}
 	}
@@ -298,6 +346,8 @@ duck_group = {
 		male_names = { Daffy Quacker Huck Waddles Donald Dominic Whitewing Duckus Quackmire Eggbert Howard Scrooge Winghelm Ludwing Gladstone Cake Blunder Duck Quackers Pippi Face Grape Anaheim
 			Quackel Beaky Nottington Drake Mallard Hans Scrooge Darkwing Huey Dewey Louie Bolivar Mårten Maarten Cornelius Havbard Knase Kalle Arne Dylan Emelio Greg Paul
 		}
+		female_names = { Holly Marigold Lily Harper Gabby Willow Jade Molly Penny Tulip
+		Peach Bella Jasmine Millie Zoey Gracie Dixie Lacey Sadie Lucy Daisy Daphne }
 		dynasty_names = { "Callduck" "Tachyeres" "Dununge" "Netta" "Chenonetta" "Anka" "Asarcornis" "Runner" "Quackel" "Lophonetta" "Amazonetta" "Mallard" "Netta" "Dununge" "Mallard" "Biziura" "Cakeduck" "Runner" "Dununge" "McDuck" "Pteronetta" "Duckling" "Anka" "Callduck" "Biziura" "Dunstanetta" "Flapper" "Duckling" "Duckling" "Neochen" "Callduck" "Dunstanetta" "Asarcornis" "Chenonetta" "Alopochen" "Malta" "Biziura" "Anka" "Duckling" "Biziura" "Callduck" "Malta" "Cakeduck" "Biziura" "Asarcornis" "Mallard" "Malta" "Neochen" "Neochen" "Asarcornis" "Flapper" "Runner" "Duckling" "Flapper" "Mallard" "Aix" "Tachyeres"
 		}
 	}
@@ -312,6 +362,8 @@ dog_group = {
 			Sam Maxx Kelvin Rozz Ajax Zorro Clifford Dali Milton Watson Laddie Amundsen Hercules Hackenschmidt Samson Sammy Skipper Caruso Sub Ulysses Spotty Bosun Slobbers Splitlip Swanker
 			Chirgwin Steamer Wuffler
 		}
+		female_names = { Bella Lucy Daisy Molly Maggie Lola Sophie Chloe Sadie Bailey
+		Coco Lily Gracie Roxy Abby Zoey Stella Zoe Ginger Penny }
 		dynasty_names = { "Labrador" "Maltipoo" "Coonhound" "Pawser" "Woofington" "Setter" "Setter" "Maltipoo" "Goldenboi" "Pinscher" "Setter" "Puppy" "Boxer" "Maltipoo" "Canaan" "Houndyr" "Woofer" "Yeller" "Barbet" "Barbet" "Setter" "Pollicle" "Blepper" "Corso" "McDogface" "Girl" "Boxer" "Labradoodle" "Puppy" "Pawser" "Woofington" "von Sploot" "McDogface" "Sheperd" "Bork" "Houndyr" "Pawser" "Terrier" "Goodboye" "Eekimo" "Girl" "Dog" "Labradoodle" "Affenpinecher" "Goodboye" "Boxer" "Bracco" "Dane" "Bluetick" "Woofer" "Corso" "Labrador" "Puppy" "Zittau" "Bithor"
 		}
 	}
@@ -333,6 +385,33 @@ dragon_group = {
 			Teethless Smokey Deathwing Quicksilver "Grey Ghost" Seasmoke Pyre Scorch Dragon Wyrm Lindwurm Dovah Vlad Rattleskin Ash Benedict Rakshasha Draco Dracul
 			Drago Fafner Errol Glaedr Glaurung Icefyre Falkor Nagini Rathalos Piff Fred Voidaltarah Ddraig Drdrake Morttalis Barney
 		}
+		female_names = {
+			Adalon Aerihykloarara Aglaraerose Agrelia Agyrtelughwau Alaerurrgos "Alrue Crownshield"
+			Alustriel Amaeraszantha "Ammaratha Cyndusk" Amnemis Amrennathed Anyo Araemra
+			Araugauthos Arellaxerrontoal "Argenta Purenote" Arkheltingril "Arlauthra Manytalons"
+			"Arnfalamme Redwing" Arsekaslyx Arsentorkillauri Arveiaturace Augaurath Aurgloroasa
+			Azarvilandral Azurphax Behrshimmer Calathanorgoth Calaunthriina Carynnallerastis Casarial
+			Chathuuladroth Cheleen Chellewis Chloracridara Chlorahskiir Chloris Claugiyliamatar
+			Clytemorrenestrix Cragnortherma Daereveroese Dermawellindrar Despayr Dheubpurcwenpyl
+			Draconobalen Eboanaflimoth Emikaiwufeg Eshaedra Esmerandanna Essembramaerytha
+			"Faelrae Garthammus" Faenphaele "Faye Pixie" Felrivenser "Fi Lendicol" "Fll'Yissetat"
+			Fyrentennimar Garlokantha Gaulauntyr Gestaniius Ghaulantatra "Gracy Cooper" Grinnsira
+			Halarglautha Havarlan Heltipyre Hulrundrar Icasaracht Idrizraele Iiurrendeem Ilnezhara
+			Ingeireirautha Iryklathagra Ividilandyr Iymrith Izzerazz Jaerathindryl Jalanvaloss Janic
+			Jhanilmexa Jharakkan Kalaughra Karasendrieth Karselridrith Kasidikal Kastrandrethilian
+			Kraxx Landillew Larithylar Lhammaruntosz "Li Kit Su" Mahrlee Mairogra Malazan Maughrysear
+			Meliordianix Menexalavoss "Mera Quicksilver" Miirym Mistinarperadnacles Mornauguth
+			Nabalnyth Naelere Nalavarauthatoryl Narbdy Narlgathra Naxorlytaalsxar Nilanthe Nurvureem
+			Nusas Ormalagos Otaaryliakkarnos Ouranalathra Pharyssolnyth Prasinopilith Quelindritar
+			Ralionate Razylymingeir "Rylatar'ralah'tyma" Safsaf Saryndalaghlothtor Saurglyce Scorlachash
+			"Sh'derra D'zeer" Shattershree Shhuusshuru Shianax Shorliail Silverywing Sirvinhandra
+			Skarlthoon Skurge "Slavin'krath'magaal" Sneighfanglen Ssssurist Sunsettalithanz Surpuryte
+			"Symarra Brightmoon" Taraunramorlamurla Tarith Tauntzoth Tazmikella Tenaarlaktor
+			Thmaughra Thraxata Thyka Tlanchass Tsenshivah Tyra Tyssaklera Ueurwen Uluuthavarra
+			Urnalithorgathla Valamaradace Velora Venomindhar Venzentilax Verthandrantalynx
+			Vilholin Xanscilathampos Yiarni Yindoth Ylithargathril Ylveraasahlisar Zathrantramix
+			Zellenesterex Zormapalearath Zundaerazylym "Zz'Pzora"
+		}
 		dynasty_names = { "Kytrapan" "Vorcasymath" "Kytrapan" "Carrafyrt" "Noighyd" "of the Fires" "Grautarrein" "Grautarrein" "of the Sun" "of the Skies" "of the Moon" "Grautarrein" "of the Skies" "Rainbowscale" "Carrafyrt" "of the Moon" "of the Waters" "Noighyd" "Mc’scale" "Colichir" "Eorikamat" "Colichir" "Grautarrein" "Vorcasymath" "Rackart" "of the Skies" "Vorcasymath" "Vilisynther" "of the Moon" "Kosorrat" "of the Waters" "of the Waters" "Seserriff" "Noighyd" "of the Moon" "of the Fires" "Vilisynther" "Gemhide" "of the Waters" "Vilisynther" "Goldscale" "Mc’scale" "Colichir" "Kerokarvar" "Kerokarvar" "Dragaret" "Kerokarvar" "Kytrapan" "Rainbowscale" "Grautarrein" "of the Moon" "Vorcasymath" "of the Skies" "Grautarrein" "of the Moon" "Colichir" "Kerokarvar" "Eorikamat" "of the Earths" "Colichir" "Noighyd" "of the Earths" "of the Fires" "Mc’scale" "Dragaret" "Draokoran" "Vilisynther" "of the Stars" "Vorcasymath" "of the Fires" "Mc’scale" "Eorikamat" "Lipari" "Cefalú" "Mazara" "Caltabellotta" "Catania" "Latakiah" "Rabat"
 		}
 	}
@@ -346,6 +425,7 @@ red_panda_group = {
 			Kevyn Phoenix Avi Katar Berry Barrie Pumori Ambrus Albert Feng Chonk Jackie Nutmeg Sabal Peyton Eli Red Babu
 			Kilian Grongo
 		}
+		female_names = { "Xiong Mao" }
 		female_names = {
 			Josefin Pandolfina Shifu Panda Susana Liling Betsy Scarlett Ceba Pabu Ponga Bamboo Kaala Puffball Oolong
 			Chai Semper Vira Song Sonya Miko Nava Cini Masala Panna Piya Satya Sonika Ila Zeya Yukiko Hazel Maude Jaya
@@ -440,26 +520,35 @@ old_mashriqi = {
 	}
 }
 chaldean = {
+	dynasty_names = {
+		Babylon Akkad Dur-Kurigalzu Nippur Borsippa Sippar Opis Mari Shushan
+		Eshnunna Ellasar Erech Kutna Sirpurla Neribtum Ashur Nineveh Nimrud Arbela
+		Nuzi Arrapkha Tutub Shaduppum Rapiqum "Mashkan Shapir" Tuttul Ramad Ana
+		Haradum Agrab Uqair Gubba Hafriyat Nagar "Shubat Enlil" Urhai Urkesh Awan Riblah
+		Tayma
+	}
 	babylonian = {
 		primary = IRQ
-		dynasty_names = {
-			Amorite Sealand Larsa Kassite 
-		}
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
+			Abu-Waqar Belteshazzar Duzi Ea Gaga Igigi Kurigalzu Lakhmu Merodach blaadan
+			Nebuchadnezzar Opis Shadrach Tayma Urhammu Zaidu
 		}
 		female_names = {
 			Nana Allatu Belit Zirrabanit Tiamat
+			Anatu Beltis Davcina Ishtar Kalumtum Lilith Mylitta Omarosa Sybella
 		}
 	}
 	assyrian = {
 		primary = SYR
-		dynasty_names = { Ahmadi Algafari Assadi Homsi Nasser }
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
+			Addai Betheil Bilgamish Daweska Dawis Diklat Febo Gewargis Jira Narsai Nona Rameel
+			Ukba Yohanan Yonan Yosip
 		}
 		female_names = {
 			Nana Allatu Belit Zirrabanit Tiamat
+			Ator Betheil Bredil Diklat "Il-Shvai" Imama Kasrin Nohara Nona Shamiram Tayara Yalda
 		}
 	}
 }
@@ -468,6 +557,15 @@ hittite_group = {
 		Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
 		Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
 		Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
+		Labarna Hattusili Mursili Hantili Zidanta Ammuna Huzziya Telipinus Alluwamna Tahurwaili
+		Muwatalli Tudhaliya Arnuwanda Suppiluliuma Urhi-Teshub Kurunta Asmi-Sarruma
+		Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+		Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+		Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+		Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+		Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+		Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+		Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
 	}
 	female_names = {
 		Arachne Callirhoe Omphale Nyssia Tudo
@@ -477,27 +575,51 @@ hittite_group = {
 		Savacid Vardanid Surenid Karinid Gaumatid Gobryasid
 		Hydarnid Smerdid Vivanid Xerxid Abadanid Orontid Atropatid
 		Mithridatid Artiaxid Mihranid Chosroid Artashid Bagabignid Cambysid
-		Frataraka
 		Maeoniae Heraclidae Mermnadae
+		Idmon Manes Atys Lydus Iardanus Agron Meles Myrsus Candaules Myrsilus
+		Alcaeus Belus Ninus Gyges Ardys Sadyattes Alyattes Croesus Cotys Asies
+		Tmolus Tantalus Tyrrhenus Torubus Heracles Dascylus Arnossus Arselis
 	}
-	luwian = { primary = TRO }
-	lydian = { }
-	hittite = { }
-	phrygian = { primary = PHR }
-}
-scythian_group = {
-	scythian = {
-		primary = SCY
-		dynasty_names = {
-			Abeacid Galatid Madyid Palacid Partatid
-		}
+	luwian = {
+		primary = TRO
 		male_names = {
-			Abeacus Apsyrtos Arpharnes Askhkadar Atheas Galat Kuluk Madyes Oltak Palacus Partatua Skilurus Skunxa Spadines Tasius Zanticus Respendial
+			Acamas Adrestus Aeneas Amphimachus Amphius Antiphus Archilochus Ascanius Asius Chromius Ennomus Epistrophus
+			Euphemus Eurypylus Glaucus Hector Hippothous Memnon Mesthles Nastes Odius Pandarus Peirous Phorcys
+			Pylaemenes Pylaeus Pyraechmes Rhesus Sarpedon Antenor Aesyetes Deiphobus Helenus Polydorus Troilus
+			Polites Kebriones Gorgythion Agathon Mestor Doryclus Democoon Lycaon Pammon Dius Isus Antiphonus
+			Echemmon Archemachus Aretus Deiopites Dryops Evagoras Evander Polymedon Aegeoneus Aesacus Astygonus
+			Atas Bias Chersidamas Clonius Echephron Hippodamas Hipponous Hyperion Hyperochus Idomeneus Laodocus
+			Lysithous Melanippus Mylius Philaemon Telestas Antinous Astynomus Axion Biantes Brissonius Cheirodamas
+			Chrysolaus Dolon Eresus Heron Hippasus Hipposidus Ilagus Lysides Palaemon Polymelus Proneos Protodamas
+			Chaon Idaeus Chryses
 		}
 		female_names = {
-			Amage Ghadani Opoin Polemakratia
+			Cassandra Laodice Theano Penthesilea Cleomestra Hecuba Medesicaste Creusa Medusa
+			Aristodeme Lysimache Polyxena Demnosia Demosthea Ethionome Henicea Iliona Lysianassa
+			Nereis Phegea Philomela Aristomache Clymene Xenodice Deinome Metioche Peisis Cleodice
 		}
 	}
+	lydian = { }
+	hittite = { }
+	phrygian = {
+		primary = PHR
+		male_names = {
+			Acmon Dymas Asius Otreus Eioneus Proteus Sangarius Phoenix Agenor Gordias
+			Adrastus Midas Lityerses Anchurus Mygdon Coroebus Pelops Tantalus Atreus
+			Atlas Oenomaus Pittheus Troezen Alcathous Dimoetes Pleisthenes Thyestes
+			Copreus Hippalcimus Sciron Cleones Letreus Perseus Alcaeus Sthenelus Mestor
+			Electryon Chrysippus Marmax Porthaon Euryalus Eurymachus Crotalus Acrias
+			Capetus Lycurgus Lasius Chalcodon Tricolonus Lycaon Aristomachus Prias
+			Pelagon Aeolius Cronius Erythras Leucon Magnes Agamemnon
+		}
+		female_names = {
+			Hecuba Eunoe Cybele Zoe Damodice Anaximene Dione Euryanassa Eurythemista
+			Linos Hippodamia Astydameia Nicippe Lysidice Eurydice Axioche Danais Astyoche
+		}
+	}
+}
+scythian_group = {
+	scythian = { primary = SCY }
 	sarmatian = { }
 	scolotian = { primary = ZAZ }
 	male_names = {
