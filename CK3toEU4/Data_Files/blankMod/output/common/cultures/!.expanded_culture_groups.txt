@@ -47,39 +47,84 @@ scandinavian = {
 			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
 		}
 	}
+	ruotsish = { primary = FIN }
+	holmgardrian = { primary = NOV }
+	marisbaltician = { primary = EST }
+	miklagardrian = { primary = BYZ }
+	serklandic = { } # No primary because it's truly a joke
+	romsborgian = { primary = ITA }
 }
 british = {
-	anglo_saxon = {
-		primary = ENG
-		dynasty_names = {
-			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
-			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
-			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
-		}
+	hibernic = {
+		primary = IRE
 		male_names = {
-			Arncytel Balthere Beorhtfrith Beorhthelm Beorhtmær Beorhtnoth Beorhtric Beorhtsige Beorhtwine_Beorhtwine Beorn_Beorn Beornræd Beornwulf
-			Burgheard Byrhtnoth Cearl Cenfus Cenræd Cenwulf Ceolwulf Cerdic Copsige
-			Cuthberht Cuthræd Cynehelm Cynewulf Cytelbearn Eadberht Eadfrith Eadgar Eadmund Eadmær Eadric
-			Eadræd Eadsige Eadulf Eadweald Eadweard Eadwig Eadwine Eadwulf Ealdhun Ealdmund Ealdræd Ealdwine
-			Ealdwulf Eanberht Eanfrith Eanhere Eardwulf Eastmund Ecgberht Ecgfrith Gamall Godwine Gospatric Guthfrith Guthmund
-			Gyrth Hacon Harold Heahberht Hereberht Hereweald Hereweard Hlothere Hrodberht Inwær Leofheah Leofhelm
-			Leofric Leofweald Leofwine Maccus Morcar Mærleswegn Offa Onlaf Ordgar
-			Oscytel Oshere Osmund Osric Osræd Osulf Osweald Oswine Oswulf Peter Rædwulf_Ralph Rægenweald Scule
-			Sigeberht Sigehelm Sigeric Sigeræd Sighere Siweard Stigand Swegn Swithelm Swithræd Swæfræd Sæbert Sælræd Sæweald
-			Sæxbald Sæxræd Thoræd Thurcytel Thurfrith Tostig Uhtræd Ulfcytel Waltheof Werestan Wiglaf Wihtræd
-			Wistan Wulf Wulfgar Wulfgeat Wulfhelm Wulfhere Wulfmær Wulfnoth Wulfstan Ælfgar Ælfmær Ælfnoth Ælfric Ælfræd_Alfred Ælfsige
-			Ælfstan Ælfwald Ælfweard Ælfwig Ælfwine Ælle Æthelbald Æthelberht Æthelfrith Æthelhere Æthelmær
-			Æthelric Æthelræd_Ailred Æthelsige Æthelstan Æthelweald Æthelweard Æthelwine Æthelwold Æthelwulf
-			Eormenred Eorcenberht Eormenric Eadbald Rædwald
+			Abban Eveny Allen Albert Anlon Ambrose Hugh Aidan Egan Angus Ardal Barry
+			Behellagh Becan Bercan Brasil Brendan Bryan Buagh Collin Carbry Calvagh Kevin
+			Kyle Kevan Craig Cartagh Cahal Cahir Caffar Callaghan Cain Kienan Keiran Kennedy
+			Killian Kenny Kerill Colman Cole Cowan Connell Conan Conary Connor Conley Charles
+			Crevan Crohan Cronan Cumin Covey Dahy Darragh Declan Desmond Donald Donnelly
+			Donough Denis Dudley Dowan Dougal Douglas Dowling Achy Hector Enan Enna
+			Ercan Ernan Ever Evin Erevan Eochy Owen Fachny Falvy Felan Faragh Firdorcha Fergananym
+			Fergal Farrell Fehin Phelim Philip Feagh Finnin Fintan Finbar Fial Garvan Glasny Jarlath
+			Lysach Laserian Loughlin Loman Lonan Lorcan Larkin Lewy Melaghlin Maelisa Munchin
+			Mogue Mayog Meyler Malcolm Mailmorye Meyler Melrone Mahon Murtagh Murry Maurice
+			Murrough Nevan Neese Naghtan Nessan Neil Noel Oran Ossian Ryan Revelin Ronan Ross
+			Rowan Rory Sidney Shiel Sivny Sweeney Teague Timothy Thallach Tierny Turlough Trevor Toal
+			Toole Owney Ualarg
 		}
 		female_names = {
-			Agatha Balthild Beorhtflæd Beorhtgifu Beorhtgyth Beorhtwaru Beorhtwynn Beornflæd Beorngyth Blæja Burgflæd Ceolflæd Cristina
-			Cuthburg Cwenburg Cyneburg Cynegyth Cynehild Cyneswith Cynethryth Eadburg Eadflæd Eadgifu Eadgyth Eadhburh Eadhild Ealdgyth
-			Ealhflæd Ealhswith Eanswith Ecgfrida Ecgwyn Godgifu Gunhilda Gytha Helga Heregyth Hereswith Hextilda Hungifu Judith
-			Leofflæd Leofgifu Leofrun Leofwaru Leofwynn Margaret_Margaret Maud Matilda Mildrith Octreda Sifflæd Sigrid Sæthryth Wulfflæd Wulfgifu
-			Wulfgyth Wulfhild Wulfrun Wulfthryth Wulfwaru Wulfwynn Wynnflæd Wærburg Æbba Ælfflæd Ælfgifu Ælfgyth Ælflæda_Ælflæda Ælfrida
-			Ælfswith Ælfthryth Ælfwynn Æthelburg Æthelflæd Æthelgifu Æthelhild Æthelræda_Æthelreda Æthelswith Æthelthryth
-			Æthelburh Seaxburh Wihtburh
+			Eveleen Evin Alvy Anya Ashlin Atty Eymur Enat Eavan Eva Ellen Attracta Barduv Bevin
+			Vivian Blanid Blinna Brigid Bronagh Buanad Keeva Keelin Keevnat Kinnat Keira Cleena
+			Cloda Devnet Downet Dymphna Derval Dervorghil Dervla Deidre Dianiv Dorothy Dooley
+			Ernet Asna Avelyn Edna Evir Emer Aideen Whiltierna Fedelma Feenat Fiona Fyin Fenella
+			Flannad Fola Forvla Feenawn Gelace Gobnat Gormly Grania Enid Ita Lasareena Mave Maeve
+			Mella Meeda Monica More Moreen Meenat Monat Morrin Muriel Myrna None Neve Noelle
+			Noreen Ornat Onora Orla Peggy Pegeen Renny Rinach Rose Sally Searla Sheema Slaney Sally
+			Tualah Agnes
+		}
+		dynasty_names = {
+			Barry Beary Blake Bligh Boyle Bracken Braden Brady Braiden Branagan Brandane Brandon Bree
+			Brennan Brontë Bryan Bryant Cagney Calhoun Callaghan Callan Callen Cameron Carey Carmadie
+			Carnahan Carr Carrick Carrol Carroll Casey Cassidy Caven Christy Clancy Clinton Cochrane
+			Coday Cody Coffey Cogley Collins Coltrain Coltrane Comiskey Conleth Conley Conlon Connally
+			Connel Connell Connelley Connelly Connely Conner Connolly Connor Cool Corey Corkran
+			Cormack Cormag Cormick Corr Costello Cowan Coyle Coyne Creagh Crigan Crosby Cuin Culligan
+			Curry Daley Daly Danaher Daniel Davenport Day Delaney Desmond Devin Devlin Devor Devoy
+			Dillon Docherty Doherty Dolan Donaher Donnelley Donnelly Donoghue Donohew Donoho
+			Donovan Dormer Dougherty Dowling Doyle Driscoll Duane Duffy Dullaghan Dullahan Duncan
+			Dunlavey Dunleavy Ennis Fahey Fahy Fallon Faraday Farrell Fay Feagans Ferrall Ferrick Finnegan
+			Flaherty Flanagan Flanigan Flannagan Flannigan Flattery Flavin Flynn Forbes Fyall Gaffney
+			Gahan Gallagher Gallaher Galliher Galway Gannon Gaughan George Geraghty Gerety Gill
+			Gillooly Glacken Glackin Golliher Gordon Gormley Guilfoyle Guinness Haggerty Hanna
+			Harrington Hart Harvey Hassan Hayes Heneghan Hennessey Hennessy Hennigan Henry Hickey
+			Higgens Higgins Horan Hurley Karns Kavanagh Keady Keagan Kealy Keane Kearney Kearns
+			Keegan Keehn Keeley Keely Keene Kelleher Kelley Kellogg Kelly Kenna Kennedy Keogh Keough
+			Kerry Kerwin Kilcullen Kilday Kildow Kilduff Killeen Kilroy Kinney Kinnie Kinsella Kirlin Kirwan
+			Kissane Kyle Lafferty Lalor Lane Laverty Leamy Leary Leland Lennon Lennox Levy Lewis Logan
+			Lohan Looney Lydon Lynn Mackfall MacNeven MacPhail Mahan Malone Manahan Manning
+			Manus Marley Mayhan McAfee McAleese McAloon McAlpine McAtee McAuley McAuliffe
+			McAvoy McBride McCabe McCadden McCafferty McCandless McCanless McCardell McCarren
+			McCarry McCartney McCary McCaw McClellan McClelland McCluskie McCollom McConaghy
+			McCool McCorkle McCorry McCowen McCullagh McCulloch McCullough McCune McCurtain
+			McCutchan McDade McDaid McDermott McDevitt McDonagh McDonnell McDormand
+			McDowell McDuffie McEachern McElderry McElrath McElroy McElveen McElwee McEnany
+			McEnerny McEnery McEvoy McFadden McFadyen McFall McFaul McGarry McGaugh McGee 
+			McGinley McGinnis McGoogan McGough McGovern McGrath McGreevy McGuiness McGuinn
+			McGuire McGurk McHale McHenry McIlrath McIndoe McIver McJunkin McJunkins McKaig 
+			McKaughan McKee McKeever McKelvey McKelvie McKeon McKevitt McKibbin McKinstry 
+			McKittrick McKown McLaughlin McLean McLeish McLoughlin McMahon McManigal McManus
+			McMinn McMurphy McNabb McNairy McNally McNaughton McNear McNeese McNelis 
+			McNellis McNew McNish McOmber McParland McPartland McPeak McPhail McQuade 
+			McQuaid McQueen McQuilken McQuitty McShea McSweeney McTigue Mecum Megill Mehaffey
+			Merrigan Millican Milligan Mills Monahan Mooney Moran Morgan Moriarty Morris Morrow
+			Muldoon Mulhern Mulkern Mullally Mullaly Mullican Mulligan Murphy Murtagh Nash Neal 
+			Neale Neil Neill Nolan O O'Brien O'Casey O'Connell O'Connor O'Dare O'Dea O'Donnell 
+			O'Donovan O'Flynn O'Hara O'Keefe O'Leary O'Malley O'Neil O'Neill O'Reilly O'Riley O'Riordan
+			O'Rourke Oscar O'Shaughnessy O'Shea O'Sullivan Owen Quigg Quigley Quinn Rafferty Reagan
+			Redmond Regan Reid Reilly Riley Robbins Rohan Rooney Rowan Ruane Ryan Scally Scanlon
+			Scully Shanahan Shane Shannon Sharkey Shaughnessy Shay Shea Shealy Sheedy Sheridan Shiley
+			Shinnick Shortell Skelly Solivan Sullivan Sweeney Taaffe Taylor Teague Tierney Timothy Toohey
+			Touhey Welshans Wheelan Wheeland Whelan
 		}
 	}
 }
@@ -233,7 +278,40 @@ west_slavic = {
 			Zosza Zynka
 		}
 		dynasty_names = { 
-			Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska" }
+			Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska"
+			Breza Byzewski Cieminski Derdowski Klawiter Pacholski Pellowski Fehr Kilian Kósyk Symank
+		}
+	}
+	chrobatian = {
+		primary = TRA
+		male_names = {
+			Kresimir Stjepan Almos Dimitrije Zvonimir Trpimir Goislav Slavic Svetoslav Miroslav Mutimir 
+			Ladislav Karlo Andrej Luj Pero Vladislav Vjenceslav Aleksandar Dragutin Fauszty Franjo Gavrilo Ivan 
+			Juraj Luka Matija Marko Mihajlo Milan Mirko Nenad Nikola Slavko Toma Vladko Zvonomir
+			Adam Andrija Bartol Bartolomeus Besar Bojan Boris Branimir Castimir Danail Daniel Dmitar 
+			Dobromir Dragan Dragomir Drzislav Dujam Duym Filip Philip Gaspar Gheorghe George Grigorii 
+			Hranislav Hrvoje Igor Ioan John Ivan John Ivanis Jitej Karlo Charles Koloman Koloman 
+			Ladislav Ljudevit Ljutomisl Lovro Matej Matthew Mihajlo Milman Mislav Mutimir
+			Nikolitza Nicholas Ognjen Petar Peter Prohor Radomir Ratimir Sebeslav Seslav Slavich 
+			Stanislav Stjepan Sulvan Teodor Tomislav Tvrdoslav Tvrtko Ulfo Ulf Vid Vitomir Vlaicu
+			Vukan Zvonimir Kresimir Gregory Caspar Josip
+		}
+		female_names = {
+			Adriana Anna Borislava Cededa Doroteja Dorothy Ekaterina Catherine Helena Helen Jadviga 
+			Jovana Kera Ladika Maria Maria Mihaela Nada Petra Viola Yolanda Jadranka Mare
+			Antonija Capeka Dragana Dubravka Emilija Emily Gordana Jagoda Jelena Jelka Lucija Lucia 
+			Catherine Marija Maria Marijana Mirjana Mirna Mojca Natalija Natasha
+			Rijeka Silvija Snjezana Sofija Sophia Suzana Susana Svjetlana Suronja Tatjana Tihana 
+			Vedrana Visnja Vjekoslava Zlata Zvonimira Valerija Katalin
+		}
+		dynasty_names = {
+			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic" 
+			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
+			"Bebek" "Svetoslavic" "Krešimirovic" "Domagojevic" "Feštetic" "Gorjanski"
+			"Svacic" "Kobilic" "Lackovic" "Šubic"
+			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga" 
+			"Crnkovic" "Cerva" "Rubido"
+		}
 	}
 }
 carpathian = {
@@ -372,6 +450,40 @@ turko_semitic = {
 			Karima Khandan Khaterah Khatira Kinah Lala Madiha Mahdokht Nazy Neelab Negar Niki Nikoo Noushin Rabiya
 			Mahsa Mahwash Marwa Mastana Mehri Mina Minoo Munawwar Muzhdah Nahal Najela Nasiba Nastaran Nazaneen 
 			Rajiya Sadiya Salma Sitara Thana Zahra Zahra Zuhayra
+		}
+	}
+	gagauz = {
+		primary = RMN
+		
+		dynasty_names = {
+			Pasalî Kendighelean Kristioglo Esir Harlamenco Constantinov Tarnavsky Kissa Ciachir
+			Deli Dushkov Pasha Formuzal Papazoglu Stoianoglo Tomaily Topal Vlah Zanet Zanetov
+		}
+		male_names = {
+			Mehmet Mustafa Murat Ahmet Selim Osman Mahmut Süleyman Bayezid Orhan Abdulaziz Abdülhamit Ibrahim 
+			Abdülmecit Abdullah Cem Cihangir Alaattin Isa Musa Ömer Seyfettin Yakup Yusuf Giyasettin Numan 
+			Ali Davut Hasan Hüseyin Ishak Kamer Kasim Korkut Emin Iskender Halil Sait Hamit Ertugrul Izzettin 
+			Nizamettin Sinan Ferhat Salih Ismail Cüneyt Bahadir Hizir Harun Cemal Inal Celalettin Ilyas 
+			Dursun Ramazan Recep Abdulrahman Hayrettin
+			Çagri Çaka Afsin Ahmet Aksonqor Alaeddin Ali Alkan "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz 
+			Aydin Aydogan Aydogdu Aytekin Böru Bulend Bahadir Balaban Basbuga Batuhan Baturay Baybars 
+			Bayezid Baytas Belek Berkan Berkiyaruk Bozan Bugra Burak Cuneyd Dundar Danismend Davud David 
+			Demir Dogan Dogukan Dukak Erdem Ertan Ertekin Ertugrul Gunduz Hasan Hasan Hizir Ibrahim Ilgazi 
+			Inal Iskender Alexander Kurboga Kaikaus Kaikhusraw Kaiqobad Kara Karatay Kasim Kaya Kaytun 
+			Kemal Kiliç Korkut Kutalmis Kutay Kutlug Mursel Mahmud Mehmed Meliksah Mengucek Mesud Murad 
+			Mustafa Orhan Osman Porsuk Rustem Ramazan Ridvan Söbuk Sökmen Sönmez Suleyman Saim Saltuk 
+			Saruca Savtekin Savur Sehinsah Selçuk Selim Sencer Sinan Tanrivermis Tekin Timurtas Togay 
+			Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus Uluç Umur Yakut Yaman Yinal 
+			Yunus
+		}
+		female_names = {
+			Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bahar Banu 
+			Bozçin Canan Ceylan Dunya Dilber Dilek Emine Esin Fatma Firuze Gulçiçek Gulay Gulbahar Gulfem 
+			Gulsum Gumus Gunduz Gundes Gunes Hatice Hayat Huriye Ilkay Ilknur Ipek Ipekel Irge Karacik Lale 
+			Leyla Mala Mansure Merve Mutlu Nagihan Nergis Neslihan Nilufer Nur Peksen Terkhen Samur Sarica 
+			Sati Sehnaz Serap Serife Sevilay Sevindik Sibel Sibylla Sirin Sirma Songul Sumru Tekçe Tura 
+			Umay Usunbike Vahide Yasar Yeldem Yildiz Zehra Zuhal Hatice Safiye Zeynep Hürrem Mihrimah Nurbanu 
+			Handan Alime Kösem Hüma 
 		}
 	}
 }
