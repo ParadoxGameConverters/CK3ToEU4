@@ -88,7 +88,7 @@ link = { eu4 = old_lombard ck3 = lombard tech = western gfx = westerngfx } # Fal
 
 ## Splitting Frankish
 link = { eu4 = septimanian ck3 = frankish tech = western gfx = westerngfx region = catalonia_area region = pyrenees_area region = guyenne_area region = languedoc_area }
-link = { eu4 = aquitainian ck3 = frankish tech = western gfx = westerngfx region = poitou_area region = orleans_area region = loire_area region = massif_central_area }
+link = { eu4 = aquitanian_frankish ck3 = frankish tech = western gfx = westerngfx region = poitou_area region = orleans_area region = loire_area region = massif_central_area }
 link = { eu4 = neustrian ck3 = frankish tech = western gfx = westerngfx region = brittany_area region = normandy_area region = ile_de_france_area region = champagne_area region = picardy_area }
 link = { eu4 = burgundian_frankish ck3 = frankish tech = western gfx = westerngfx region = provence_area region = savoy_dauphine_area region = bourgogne_area region = west_burgundy_area region = romandie_area }
 link = { eu4 = austrasian ck3 = frankish tech = western gfx = westerngfx region = alsace_area region = lorraine_area region = low_countries_region region = north_german_region }
