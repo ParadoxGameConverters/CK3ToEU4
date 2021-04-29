@@ -150,3 +150,13 @@ dauphin = {
 	}
 	trigger = { culture_group = french government = monarchy }
 }
+fara = {
+	rank = { 1 = FARA }
+	ruler_male = { 1 = DUKE }
+	ruler_female = { 1 = DUCHESS }
+	trigger = {
+		NOT = { government_rank = 2 }
+		culture_group = old_lombard_g
+		government = monarchy
+	}
+}

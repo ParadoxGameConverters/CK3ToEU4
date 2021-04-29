@@ -12630,6 +12630,18 @@ defined_text = {
 		localisation_key = string_scordiscian_g_ms
 		trigger = { culture_group = scordiscian_g }
 	}
+	text = {
+		localisation_key = string_old_lombard_ms
+		trigger = { culture_group = old_lombard_g }
+	}
+	text = {
+		localisation_key = string_frankish_ms
+		trigger = { culture_group = frankish_g }
+	}
+	text = {
+		localisation_key = string_anglo_saxon_ms
+		trigger = { culture_group = anglo_saxon_g }
+	}
 }
 
 
@@ -13003,6 +13015,18 @@ defined_text = {
 	text = {
 		localisation_key = string_scordiscian_g_fs
 		trigger = { culture_group = scordiscian_g }
+	}
+	text = {
+		localisation_key = string_old_lombard_fs
+		trigger = { culture_group = old_lombard_g }
+	}
+	text = {
+		localisation_key = string_frankish_fs
+		trigger = { culture_group = frankish_g }
+	}
+	text = {
+		localisation_key = string_anglo_saxon_fs
+		trigger = { culture_group = anglo_saxon_g }
 	}
 }
 
@@ -13378,6 +13402,18 @@ defined_text = {
 		localisation_key = string_scordiscian_g_mp
 		trigger = { culture_group = scordiscian_g }
 	}
+	text = {
+		localisation_key = string_old_lombard_mp
+		trigger = { culture_group = old_lombard_g }
+	}
+	text = {
+		localisation_key = string_frankish_mp
+		trigger = { culture_group = frankish_g }
+	}
+	text = {
+		localisation_key = string_anglo_saxon_mp
+		trigger = { culture_group = anglo_saxon_g }
+	}
 }
 
 
@@ -13751,6 +13787,18 @@ defined_text = {
 	text = {
 		localisation_key = string_scordiscian_g_fp
 		trigger = { culture_group = scordiscian_g }
+	}
+	text = {
+		localisation_key = string_old_lombard_fp
+		trigger = { culture_group = old_lombard_g }
+	}
+	text = {
+		localisation_key = string_frankish_fp
+		trigger = { culture_group = frankish_g }
+	}
+	text = {
+		localisation_key = string_anglo_saxon_fp
+		trigger = { culture_group = anglo_saxon_g }
 	}
 }
 
@@ -15830,6 +15878,110 @@ defined_text = {
 		localisation_key = string_scolotian_ms
 		trigger = { OR = { primary_culture = scolotian culture = scolotian } }
 	}
+	text = {
+		localisation_key = string_ruotsish_ms
+		trigger = { OR = { primary_culture = ruotsish culture = ruotsish } }
+	}
+	text = {
+		localisation_key = string_holmgardrian_ms
+		trigger = { OR = { primary_culture = holmgardrian culture = holmgardrian } }
+	}
+	text = {
+		localisation_key = string_marisbaltician_ms
+		trigger = { OR = { primary_culture = marisbaltician culture = marisbaltician } }
+	}
+	text = {
+		localisation_key = string_miklagardrian_ms
+		trigger = { OR = { primary_culture = miklagardrian culture = miklagardrian } }
+	}
+	text = {
+		localisation_key = string_serklandic_ms
+		trigger = { OR = { primary_culture = serklandic culture = serklandic } }
+	}
+	text = {
+		localisation_key = string_romsborgian_ms
+		trigger = { OR = { primary_culture = romsborgian culture = romsborgian } }
+	}
+	text = {
+		localisation_key = string_tuscian_ms
+		trigger = { OR = { primary_culture = tuscian culture = tuscian } }
+	}
+	text = {
+		localisation_key = string_spoletan_ms
+		trigger = { OR = { primary_culture = spoletan culture = spoletan } }
+	}
+	text = {
+		localisation_key = string_beneventine_ms
+		trigger = { OR = { primary_culture = beneventine culture = beneventine } }
+	}
+	text = {
+		localisation_key = string_salernian_ms
+		trigger = { OR = { primary_culture = salernian culture = salernian } }
+	}
+	text = {
+		localisation_key = string_veronese_ms
+		trigger = { OR = { primary_culture = veronese culture = veronese } }
+	}
+	text = {
+		localisation_key = string_septimanian_ms
+		trigger = { OR = { primary_culture = septimanian culture = septimanian } }
+	}
+	text = {
+		localisation_key = string_aquitanian_ms
+		trigger = { OR = { primary_culture = aquitanian culture = aquitanian } }
+	}
+	text = {
+		localisation_key = string_neustrian_ms
+		trigger = { OR = { primary_culture = neustrian culture = neustrian } }
+	}
+	text = {
+		localisation_key = string_burgundian_frankish_ms
+		trigger = { OR = { primary_culture = burgundian_frankish culture = burgundian_frankish } }
+	}
+	text = {
+		localisation_key = string_austrasian_ms
+		trigger = { OR = { primary_culture = austrasian culture = austrasian } }
+	}
+	text = {
+		localisation_key = string_agilolfingian_ms
+		trigger = { OR = { primary_culture = agilolfingian culture = agilolfingian } }
+	}
+	text = {
+		localisation_key = string_hibernic_ms
+		trigger = { OR = { primary_culture = hibernic culture = hibernic } }
+	}
+	text = {
+		localisation_key = string_northumbrian_ms
+		trigger = { OR = { primary_culture = northumbrian culture = northumbrian } }
+	}
+	text = {
+		localisation_key = string_mercian_ms
+		trigger = { OR = { primary_culture = mercian culture = mercian } }
+	}
+	text = {
+		localisation_key = string_wessexian_ms
+		trigger = { OR = { primary_culture = wessexian culture = wessexian } }
+	}
+	text = {
+		localisation_key = string_essexian_ms
+		trigger = { OR = { primary_culture = essexian culture = essexian } }
+	}
+	text = {
+		localisation_key = string_east_anglian_ms
+		trigger = { OR = { primary_culture = east_anglian culture = east_anglian } }
+	}
+	text = {
+		localisation_key = string_ecgfrithian_ms
+		trigger = { OR = { primary_culture = ecgfrithian culture = ecgfrithian } }
+	}
+	text = {
+		localisation_key = string_gagauz_ms
+		trigger = { OR = { primary_culture = gagauz culture = gagauz } }
+	}
+	text = {
+		localisation_key = string_chrobatian_ms
+		trigger = { OR = { primary_culture = chrobatian culture = chrobatian } }
+	}
 }						
 						
 						
@@ -17903,6 +18055,110 @@ defined_text = {
 	text = {
 		localisation_key = string_scolotian_fs
 		trigger = { OR = { primary_culture = scolotian culture = scolotian } }
+	}
+	text = {
+		localisation_key = string_ruotsish_fs
+		trigger = { OR = { primary_culture = ruotsish culture = ruotsish } }
+	}
+	text = {
+		localisation_key = string_holmgardrian_fs
+		trigger = { OR = { primary_culture = holmgardrian culture = holmgardrian } }
+	}
+	text = {
+		localisation_key = string_marisbaltician_fs
+		trigger = { OR = { primary_culture = marisbaltician culture = marisbaltician } }
+	}
+	text = {
+		localisation_key = string_miklagardrian_fs
+		trigger = { OR = { primary_culture = miklagardrian culture = miklagardrian } }
+	}
+	text = {
+		localisation_key = string_serklandic_fs
+		trigger = { OR = { primary_culture = serklandic culture = serklandic } }
+	}
+	text = {
+		localisation_key = string_romsborgian_fs
+		trigger = { OR = { primary_culture = romsborgian culture = romsborgian } }
+	}
+	text = {
+		localisation_key = string_tuscian_fs
+		trigger = { OR = { primary_culture = tuscian culture = tuscian } }
+	}
+	text = {
+		localisation_key = string_spoletan_fs
+		trigger = { OR = { primary_culture = spoletan culture = spoletan } }
+	}
+	text = {
+		localisation_key = string_beneventine_fs
+		trigger = { OR = { primary_culture = beneventine culture = beneventine } }
+	}
+	text = {
+		localisation_key = string_salernian_fs
+		trigger = { OR = { primary_culture = salernian culture = salernian } }
+	}
+	text = {
+		localisation_key = string_veronese_fs
+		trigger = { OR = { primary_culture = veronese culture = veronese } }
+	}
+	text = {
+		localisation_key = string_septimanian_fs
+		trigger = { OR = { primary_culture = septimanian culture = septimanian } }
+	}
+	text = {
+		localisation_key = string_aquitanian_fs
+		trigger = { OR = { primary_culture = aquitanian culture = aquitanian } }
+	}
+	text = {
+		localisation_key = string_neustrian_fs
+		trigger = { OR = { primary_culture = neustrian culture = neustrian } }
+	}
+	text = {
+		localisation_key = string_burgundian_frankish_fs
+		trigger = { OR = { primary_culture = burgundian_frankish culture = burgundian_frankish } }
+	}
+	text = {
+		localisation_key = string_austrasian_fs
+		trigger = { OR = { primary_culture = austrasian culture = austrasian } }
+	}
+	text = {
+		localisation_key = string_agilolfingian_fs
+		trigger = { OR = { primary_culture = agilolfingian culture = agilolfingian } }
+	}
+	text = {
+		localisation_key = string_hibernic_fs
+		trigger = { OR = { primary_culture = hibernic culture = hibernic } }
+	}
+	text = {
+		localisation_key = string_northumbrian_fs
+		trigger = { OR = { primary_culture = northumbrian culture = northumbrian } }
+	}
+	text = {
+		localisation_key = string_mercian_fs
+		trigger = { OR = { primary_culture = mercian culture = mercian } }
+	}
+	text = {
+		localisation_key = string_wessexian_fs
+		trigger = { OR = { primary_culture = wessexian culture = wessexian } }
+	}
+	text = {
+		localisation_key = string_essexian_fs
+		trigger = { OR = { primary_culture = essexian culture = essexian } }
+	}
+	text = {
+		localisation_key = string_east_anglian_fs
+		trigger = { OR = { primary_culture = east_anglian culture = east_anglian } }
+	}
+	text = {
+		localisation_key = string_ecgfrithian_fs
+		trigger = { OR = { primary_culture = ecgfrithian culture = ecgfrithian } }
+	}
+	text = {
+		localisation_key = string_gagauz_fs
+		trigger = { OR = { primary_culture = gagauz culture = gagauz } }
+	}
+	text = {
+		localisation_key = string_chrobatian_fs
+		trigger = { OR = { primary_culture = chrobatian culture = chrobatian } }
 	}
 }						
 						
@@ -19978,6 +20234,110 @@ defined_text = {
 		localisation_key = string_scolotian_mp
 		trigger = { OR = { primary_culture = scolotian culture = scolotian } }
 	}
+	text = {
+		localisation_key = string_ruotsish_mp
+		trigger = { OR = { primary_culture = ruotsish culture = ruotsish } }
+	}
+	text = {
+		localisation_key = string_holmgardrian_mp
+		trigger = { OR = { primary_culture = holmgardrian culture = holmgardrian } }
+	}
+	text = {
+		localisation_key = string_marisbaltician_mp
+		trigger = { OR = { primary_culture = marisbaltician culture = marisbaltician } }
+	}
+	text = {
+		localisation_key = string_miklagardrian_mp
+		trigger = { OR = { primary_culture = miklagardrian culture = miklagardrian } }
+	}
+	text = {
+		localisation_key = string_serklandic_mp
+		trigger = { OR = { primary_culture = serklandic culture = serklandic } }
+	}
+	text = {
+		localisation_key = string_romsborgian_mp
+		trigger = { OR = { primary_culture = romsborgian culture = romsborgian } }
+	}
+	text = {
+		localisation_key = string_tuscian_mp
+		trigger = { OR = { primary_culture = tuscian culture = tuscian } }
+	}
+	text = {
+		localisation_key = string_spoletan_mp
+		trigger = { OR = { primary_culture = spoletan culture = spoletan } }
+	}
+	text = {
+		localisation_key = string_beneventine_mp
+		trigger = { OR = { primary_culture = beneventine culture = beneventine } }
+	}
+	text = {
+		localisation_key = string_salernian_mp
+		trigger = { OR = { primary_culture = salernian culture = salernian } }
+	}
+	text = {
+		localisation_key = string_veronese_mp
+		trigger = { OR = { primary_culture = veronese culture = veronese } }
+	}
+	text = {
+		localisation_key = string_septimanian_mp
+		trigger = { OR = { primary_culture = septimanian culture = septimanian } }
+	}
+	text = {
+		localisation_key = string_aquitanian_mp
+		trigger = { OR = { primary_culture = aquitanian culture = aquitanian } }
+	}
+	text = {
+		localisation_key = string_neustrian_mp
+		trigger = { OR = { primary_culture = neustrian culture = neustrian } }
+	}
+	text = {
+		localisation_key = string_burgundian_frankish_mp
+		trigger = { OR = { primary_culture = burgundian_frankish culture = burgundian_frankish } }
+	}
+	text = {
+		localisation_key = string_austrasian_mp
+		trigger = { OR = { primary_culture = austrasian culture = austrasian } }
+	}
+	text = {
+		localisation_key = string_agilolfingian_mp
+		trigger = { OR = { primary_culture = agilolfingian culture = agilolfingian } }
+	}
+	text = {
+		localisation_key = string_hibernic_mp
+		trigger = { OR = { primary_culture = hibernic culture = hibernic } }
+	}
+	text = {
+		localisation_key = string_northumbrian_mp
+		trigger = { OR = { primary_culture = northumbrian culture = northumbrian } }
+	}
+	text = {
+		localisation_key = string_mercian_mp
+		trigger = { OR = { primary_culture = mercian culture = mercian } }
+	}
+	text = {
+		localisation_key = string_wessexian_mp
+		trigger = { OR = { primary_culture = wessexian culture = wessexian } }
+	}
+	text = {
+		localisation_key = string_essexian_mp
+		trigger = { OR = { primary_culture = essexian culture = essexian } }
+	}
+	text = {
+		localisation_key = string_east_anglian_mp
+		trigger = { OR = { primary_culture = east_anglian culture = east_anglian } }
+	}
+	text = {
+		localisation_key = string_ecgfrithian_mp
+		trigger = { OR = { primary_culture = ecgfrithian culture = ecgfrithian } }
+	}
+	text = {
+		localisation_key = string_gagauz_mp
+		trigger = { OR = { primary_culture = gagauz culture = gagauz } }
+	}
+	text = {
+		localisation_key = string_chrobatian_mp
+		trigger = { OR = { primary_culture = chrobatian culture = chrobatian } }
+	}
 }						
 
 
@@ -22051,6 +22411,110 @@ defined_text = {
 	text = {
 		localisation_key = string_scolotian_fp
 		trigger = { OR = { primary_culture = scolotian culture = scolotian } }
+	}
+	text = {
+		localisation_key = string_ruotsish_fp
+		trigger = { OR = { primary_culture = ruotsish culture = ruotsish } }
+	}
+	text = {
+		localisation_key = string_holmgardrian_fp
+		trigger = { OR = { primary_culture = holmgardrian culture = holmgardrian } }
+	}
+	text = {
+		localisation_key = string_marisbaltician_fp
+		trigger = { OR = { primary_culture = marisbaltician culture = marisbaltician } }
+	}
+	text = {
+		localisation_key = string_miklagardrian_fp
+		trigger = { OR = { primary_culture = miklagardrian culture = miklagardrian } }
+	}
+	text = {
+		localisation_key = string_serklandic_fp
+		trigger = { OR = { primary_culture = serklandic culture = serklandic } }
+	}
+	text = {
+		localisation_key = string_romsborgian_fp
+		trigger = { OR = { primary_culture = romsborgian culture = romsborgian } }
+	}
+	text = {
+		localisation_key = string_tuscian_fp
+		trigger = { OR = { primary_culture = tuscian culture = tuscian } }
+	}
+	text = {
+		localisation_key = string_spoletan_fp
+		trigger = { OR = { primary_culture = spoletan culture = spoletan } }
+	}
+	text = {
+		localisation_key = string_beneventine_fp
+		trigger = { OR = { primary_culture = beneventine culture = beneventine } }
+	}
+	text = {
+		localisation_key = string_salernian_fp
+		trigger = { OR = { primary_culture = salernian culture = salernian } }
+	}
+	text = {
+		localisation_key = string_veronese_fp
+		trigger = { OR = { primary_culture = veronese culture = veronese } }
+	}
+	text = {
+		localisation_key = string_septimanian_fp
+		trigger = { OR = { primary_culture = septimanian culture = septimanian } }
+	}
+	text = {
+		localisation_key = string_aquitanian_fp
+		trigger = { OR = { primary_culture = aquitanian culture = aquitanian } }
+	}
+	text = {
+		localisation_key = string_neustrian_fp
+		trigger = { OR = { primary_culture = neustrian culture = neustrian } }
+	}
+	text = {
+		localisation_key = string_burgundian_frankish_fp
+		trigger = { OR = { primary_culture = burgundian_frankish culture = burgundian_frankish } }
+	}
+	text = {
+		localisation_key = string_austrasian_fp
+		trigger = { OR = { primary_culture = austrasian culture = austrasian } }
+	}
+	text = {
+		localisation_key = string_agilolfingian_fp
+		trigger = { OR = { primary_culture = agilolfingian culture = agilolfingian } }
+	}
+	text = {
+		localisation_key = string_hibernic_fp
+		trigger = { OR = { primary_culture = hibernic culture = hibernic } }
+	}
+	text = {
+		localisation_key = string_northumbrian_fp
+		trigger = { OR = { primary_culture = northumbrian culture = northumbrian } }
+	}
+	text = {
+		localisation_key = string_mercian_fp
+		trigger = { OR = { primary_culture = mercian culture = mercian } }
+	}
+	text = {
+		localisation_key = string_wessexian_fp
+		trigger = { OR = { primary_culture = wessexian culture = wessexian } }
+	}
+	text = {
+		localisation_key = string_essexian_fp
+		trigger = { OR = { primary_culture = essexian culture = essexian } }
+	}
+	text = {
+		localisation_key = string_east_anglian_fp
+		trigger = { OR = { primary_culture = east_anglian culture = east_anglian } }
+	}
+	text = {
+		localisation_key = string_ecgfrithian_fp
+		trigger = { OR = { primary_culture = ecgfrithian culture = ecgfrithian } }
+	}
+	text = {
+		localisation_key = string_gagauz_fp
+		trigger = { OR = { primary_culture = gagauz culture = gagauz } }
+	}
+	text = {
+		localisation_key = string_chrobatian_fp
+		trigger = { OR = { primary_culture = chrobatian culture = chrobatian } }
 	}
 }						
 
