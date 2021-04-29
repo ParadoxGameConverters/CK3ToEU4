@@ -26,7 +26,7 @@ link = { eu4 = serklandic ck3 = norse tech = muslim gfx = westerngfx region = in
 link = { eu4 = romsborgian ck3 = norse tech = western gfx = westerngfx region = italy_region }
 link = { eu4 = norse ck3 = norse tech = western gfx = westerngfx } # Fallback
 
-link = { eu4 = icelandic ck3 = norwegian ck3 = danish ck3 = swedish province = 370 province = 371 tech = western gfx = westerngfx }
+link = { eu4 = icelandic ck3 = norwegian ck3 = danish ck3 = swedish region = subarctic_islands_area tech = western gfx = westerngfx }
 link = { eu4 = elsinorian ck3 = danish tech = western gfx = westerngfx owner = DNL } # Owned by Daneland
 link = { eu4 = swedish ck3 = swedish tech = western gfx = westerngfx }
 link = { eu4 = norwegian ck3 = norwegian tech = western gfx = westerngfx }
