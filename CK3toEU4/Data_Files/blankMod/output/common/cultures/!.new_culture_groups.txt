@@ -1021,7 +1021,7 @@ frankish_g = {
 	dynasty_names = { Aega Agilbert Artaud Bandeson Berchar Bernard Birin Blank Brun Bruno Burkhart Charibert Charivi Childebert Childeric Chlodobert Chlodowig Emme Grimald Landric Lothar Lul Radeburg Razo Rodbert Sergi Theudebald Theudebert Theuderic Werinbert Wighard }
 	
 	septimanian = { primary = GUY }
-	aquitanian = { primary = AUV }
+	aquitanian_frankish = { primary = AUV }
 	neustrian = { primary = ORL }
 	burgundian_frankish = { primary = BUR }
 	austrasian = { primary = LOR }
