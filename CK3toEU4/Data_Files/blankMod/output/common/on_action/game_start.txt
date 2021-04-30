@@ -1,0 +1,290 @@
+# Called from code after history generation
+# Empty scope
+on_game_start = {
+	events = {
+		fp1_scandinavian_adventurers.0004	# FP1 - Organise Norse adventurers.
+		fp1_scandinavian_adventurers.0011	# FP1 - Corral famous Norse adventurers that haven't done much yet.
+		fp1_scandinavian_adventurers.0021	# FP1 - Mark game-start prioritised adventurers.
+	}
+
+	effect = {
+		### HRE SETUP ###
+		if = {
+			limit = { exists = title:e_hre.holder }
+			title:e_hre.holder = {
+				every_vassal = {
+					limit = {
+						vassal_contract_has_modifiable_obligations = yes
+					}
+					vassal_contract_decrease_obligation_level = feudal_government_taxes
+					vassal_contract_decrease_obligation_level = feudal_government_levies
+				}
+			}
+		}
+		### RELIGIOUS THINGS ###
+		religion:islam_religion = { # Set up Holy Site Buildings to be buildable in Holy Sites
+			every_faith = {
+				every_holy_site = {
+					limit = {
+						title_province = {
+							has_special_building_slot = no
+						}
+					}
+					title_province = {
+						add_special_building_slot = holy_site_mosque_01
+					}
+				}
+			}
+		}
+		
+		religion:christianity_religion = {
+			every_faith = {
+				every_holy_site = {
+					limit = {
+						title_province = {
+							has_special_building_slot = no
+						}
+					}
+					title_province = {
+						add_special_building_slot = holy_site_cathedral_01
+					}
+				}
+			}
+		}
+		
+		faith:old_bon = { # Has already been reformed into new bon.
+			set_variable = { name = has_been_reformed }
+		}
+
+		every_religion_global = {
+			limit = {
+				OR = {
+					this = religion:hinduism_religion
+					this = religion:buddhism_religion
+					this = religion:jainism_religion
+					this = religion:tani_religion
+					this = religion:bon_religion
+				}
+			}
+			every_faith = {
+				every_holy_site = {
+					limit = {
+						title_province = {
+							has_special_building_slot = no
+						}
+					}
+					title_province = {
+						add_special_building_slot = holy_site_indian_grand_temple_01
+					}
+				}
+			}
+		}
+		
+		every_religion_global = {
+			limit = {
+				is_in_family = rf_pagan
+			}
+			every_faith = {
+				every_holy_site = {
+					limit = {
+						title_province = {
+							has_special_building_slot = no
+						}
+					}
+					title_province = {
+						add_special_building_slot = holy_site_pagan_grand_temple_01
+					}
+				}
+			}
+		}
+		
+		every_religion_global = {
+			every_faith = {
+				every_holy_site = {
+					limit = {
+						title_province = {
+							has_special_building_slot = no
+						}
+					}
+					title_province = {
+						add_special_building_slot = holy_site_other_grand_temple_01
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				game_start_date <= 1000.1.1
+			}
+			title:e_scandinavia = { set_coa = e_scandinavia_norse }
+			title:k_sweden = { set_coa = k_sweden_norse }
+			title:d_svealand = { set_coa = d_svealand_norse }
+			title:c_upland = { set_coa = c_upland_norse }
+			title:c_gastrikland = { set_coa = c_gastrikland_norse }
+			title:c_sodermannaland = { set_coa = c_sodermannaland_norse }
+			title:c_aland = { set_coa = c_aland_norse }
+			title:d_bergslagen = { set_coa = d_bergslagen_norse }
+			title:c_vastmanland = { set_coa = c_vastmanland_norse  }
+			title:c_varmland = { set_coa = c_varmland_norse }
+			title:c_dalarna = { set_coa = c_dalarna_norse }
+			title:c_dalabergslagen = { set_coa = c_dalabergslagen_norse }
+			title:d_vastergotland = { set_coa = d_vastergotland_norse }
+			title:c_vastergotland = { set_coa = c_vastergotland_norse }
+			title:c_skara = { set_coa = c_skara_norse }
+			title:c_dal = { set_coa = c_dal_norse }
+			title:c_nordmark = { set_coa = c_nordmark_norse }
+			title:d_ostergotland = { set_coa = d_ostergotland_norse }
+			title:c_ostergotland = { set_coa = c_ostergotland_norse }
+			title:c_kinda = { set_coa = c_kinda_norse }
+			title:c_narke = { set_coa = c_narke_norse }
+			title:d_smaland = { set_coa = d_smaland_norse }
+			title:c_more = { set_coa = c_more_norse }
+			title:c_sevede = { set_coa = c_sevede_norse }
+			title:c_varend = { set_coa = c_varend_norse }
+			title:c_njudung = { set_coa = c_njudung_norse }
+			title:c_finnveden = { set_coa = c_finnveden_norse }
+			title:c_oland = { set_coa = c_oland_norse }
+			title:d_norrland = { set_coa = d_norrland_norse }
+			title:c_halsingland = { set_coa = c_halsingland_norse }
+			title:c_medelpad = { set_coa = c_medelpad_norse }
+			title:c_angermanland = { set_coa = c_angermanland_norse }
+			title:d_gotland = { set_coa = d_gotland_norse }
+			title:c_gutland = { set_coa = c_gutland_norse }
+			title:k_norway = { set_coa = k_norway_norse }
+			title:d_viken = { set_coa = d_viken_norse }
+			title:c_vingulmork = { set_coa = c_vingulmork_norse }
+			title:c_raniriki = { set_coa = c_raniriki_norse }
+			title:c_vestfold = { set_coa = c_vestfold_norse }
+			title:c_telemark = { set_coa = c_telemark_norse }
+			title:d_agder = { set_coa = d_agder_norse }
+			title:c_nedenes = { set_coa = c_nedenes_norse }
+			title:c_agdeside = { set_coa = c_agdeside_norse }
+			title:d_vestlandi = { set_coa = d_vestlandi_norse }
+			title:c_rogalandi = { set_coa = c_rogalandi_norse }
+			title:c_hordalandi = { set_coa = c_hordalandi_norse }
+			title:c_sogn = { set_coa = c_sogn_norse }
+			title:d_trandalog = { set_coa = d_trandalog_norse }
+			title:c_trandheim = { set_coa = c_trandheim_norse }
+			title:c_norwegian_more = { set_coa = c_norwegian_more_norse }
+			title:c_firdafylki = { set_coa = c_firdafylki_norse }
+			title:d_dalir = { set_coa = d_dalir_norse }
+			title:c_hedmork = { set_coa = c_hedmork_norse }
+			title:c_gudbrandsdalir = { set_coa = c_gudbrandsdalir_norse }
+			title:c_eystridalir = { set_coa = c_eystridalir_norse }
+			title:c_gauldala = { set_coa = c_gauldala_norse }
+			title:d_halogaland = { set_coa = d_halogaland_norse }
+			title:c_vastvag = { set_coa = c_vastvag_norse }
+			title:c_bothin = { set_coa = c_bothin_norse }
+			title:c_namdalfylki = { set_coa = c_namdalfylki_norse }
+			title:d_iceland = { set_coa = d_iceland_norse }
+			title:c_vestisland = { set_coa = c_vestisland_norse }
+			title:c_nordrland = { set_coa = c_nordrland_norse }
+			title:c_austisland = { set_coa = c_austisland_norse }
+			title:c_sudurland = { set_coa = c_sudurland_norse }
+			title:d_northern_isles = { set_coa = d_northern_isles_norse }
+			title:c_orkney = { set_coa = c_orkney_norse }
+			title:c_faereyar = { set_coa = c_faereyar_norse }
+			title:c_shetland = { set_coa = c_shetland_norse }
+			title:d_jamtland = { set_coa = d_jamtland_norse }
+			title:c_jamtfir = { set_coa = c_jamtfir_norse }
+			title:c_morarna = { set_coa = c_morarna_norse }
+			title:c_helgum = { set_coa = c_helgum_norse }
+			title:c_harjadalen = { set_coa = c_harjadalen_norse }
+			title:k_denmark = { set_coa = k_denmark_norse }
+			title:d_sjaelland = { set_coa = d_sjaelland_norse }
+			title:c_sjaelland = { set_coa = c_sjaelland_norse }
+			title:c_fyn = { set_coa = c_fyn_norse }
+			title:c_lolland_falster = { set_coa = c_lolland_falster_norse }
+			title:d_skane = { set_coa = d_skane_norse }
+			title:c_skane = { set_coa = c_skane_norse }
+			title:c_halland = { set_coa = c_halland_norse }
+			title:c_bornholm = { set_coa = c_bornholm_norse }
+			title:c_blekinge = { set_coa = c_blekinge_norse }
+			title:d_jylland = { set_coa = d_jylland_norse }
+			title:c_aarhus = { set_coa = c_aarhus_norse }
+			title:c_viborg = { set_coa = c_viborg_norse }
+			title:c_ringkobing = { set_coa = c_ringkobing_norse }
+			title:c_aalborg = { set_coa = c_aalborg_norse }
+			title:d_slesvig = { set_coa = d_slesvig_norse }
+			title:c_slesvig = { set_coa = c_slesvig_norse }
+			title:c_vorbasse = { set_coa = c_vorbasse_norse }
+			title:c_ribe = { set_coa = c_ribe_norse }
+			title:d_york = { set_coa = d_york_norse }
+			title:c_east_riding = { set_coa = c_east_riding_norse }
+			title:d_western_isles = { set_coa = d_western_isles_norse }
+			title:c_inner_hebrides = { set_coa = c_inner_hebrides_norse  }
+			title:c_dublin = { set_coa = c_dublin_norse }
+			title:c_argyll = { set_coa = c_argyll_norse }
+		}
+	}
+}
+
+# Like on_game_start, except it is called once the host (or player, in single player) exits the lobby. Good for anything where you need to know who the players are, or what the game rules are
+on_game_start_after_lobby = {
+	effect = {
+		### GAME RULE: VIEW ON SAME-SEX RELATIONS
+		if = {
+			limit = { has_game_rule = accepted_same_sex_relations }
+			game_rule_accepted_same_sex_relations_effect = yes
+		}
+
+		### GAME RULE: RANDOM RULER PLACEMENT
+		if = {
+			limit = { NOT = { has_game_rule = random_ruler_placement_off } }
+			game_rule_random_ruler_placement_effect = yes
+		}
+
+		### GAME RULE: RANDOMIZE FAITH
+		if = {
+			limit = { has_game_rule = randomized_faiths_on }
+			game_rule_randomize_faith_effect = yes
+		}
+
+		### GAME RULE: FAITH ACCEPTANCE
+		if = {
+			limit = { has_game_rule = full_faith_acceptance }
+			game_rule_faith_acceptance_effect = yes
+		}
+
+		### GAME RULE: GENDER EQUALITY ###
+		if = {
+			limit = { has_game_rule = full_gender_equality }
+			game_rule_full_gender_equality_effect = yes
+		}
+		else_if = {
+			limit = { has_game_rule = inversed_gender_equality }
+			game_rule_inversed_gender_equality_effect = yes #todo fix
+		}
+
+		### GAME RULE: SEXUALITY DISTRIBUTION ###
+		if = {
+			limit = { NOT = { has_game_rule = sexuality_distribution_default } }
+			game_rule_sexuality_distribution_effect = yes
+		}
+
+		# Parts about achievements removed
+		every_player = { # Welcoming event
+			trigger_event = {
+				id = welcome.1
+				days = 0
+			}
+		}
+		# Pregnancy time!
+		every_living_character = {
+			limit = { has_trait = pregnant }
+			make_pregnant = {
+				father = scope:thefather
+				number_of_children = 1
+			}
+			every_spouse = { # i.e. the husband
+				limit = { is_alive = yes }
+				set_pregnancy_assumed_father = yes
+			}
+		}
+	}
+
+	events = {
+		game_rule.1000	#Autopopulate families.
+		game_rule.1011	#Hungarian Migration management.
+	}
+}

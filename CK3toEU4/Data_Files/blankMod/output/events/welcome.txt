@@ -1,0 +1,17 @@
+namespace = welcome
+welcome.1 = {
+	hidden = no
+	type = letter_event
+	opening = { desc = welcome_title }
+	desc = welcome_desc
+	
+	trigger = { }
+	
+	sender = character:converter_team
+	
+	immediate = {
+		character:converter_team = { death = natural }
+	}
+
+	option = { name = welcome_ok }
+}
