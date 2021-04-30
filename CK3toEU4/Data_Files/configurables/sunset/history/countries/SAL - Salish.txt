@@ -2,6 +2,7 @@ government = tribal
 add_government_reform = tribal_despotism
 government_rank = 1
 primary_culture = salish
+add_accepted_culture = athabascan
 religion = totemism
 technology_group = high_american
 unit_type = high_american

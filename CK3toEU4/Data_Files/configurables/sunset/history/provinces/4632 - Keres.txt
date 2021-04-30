@@ -1,13 +1,10 @@
-owner = NAH
-
-controller = NAH
-
-add_core = NAH
+owner = PUE
+controller = PUE
 add_core = PUE
 add_core = KER
 
-culture = navajo
-
+culture = pueblo
+capital = "Zia"
 religion = totemism
 
 base_tax = 4

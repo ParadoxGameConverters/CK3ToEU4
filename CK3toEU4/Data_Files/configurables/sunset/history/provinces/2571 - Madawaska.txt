@@ -1,0 +1,20 @@
+# No previous file for Madawaska
+
+owner = MLS
+controller = MLS
+add_core = MLS
+is_city = yes
+culture = maliseet
+religion = totemism
+capital = "Madawaska"
+trade_goods = naval_supplies
+hre = no
+base_tax = 4
+base_production = 2
+base_manpower = 4
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

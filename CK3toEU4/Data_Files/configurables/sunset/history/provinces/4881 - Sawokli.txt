@@ -1,0 +1,21 @@
+# No previous file for Sawokli
+
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = CRE
+add_core = ICH
+culture = creek
+religion = totemism
+capital = "Sawokli"
+trade_goods = salt
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

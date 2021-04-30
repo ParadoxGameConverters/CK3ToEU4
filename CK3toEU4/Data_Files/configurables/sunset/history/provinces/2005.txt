@@ -1,13 +1,9 @@
-owner = ASI
-
-controller = ASI
-
-add_core = ASI
-add_core = CHY
-
-culture = nakota
+owner = BLA
+controller = BLA
+add_core = BLA
+capital = "Asinaan"
+culture = blackfoot
 religion = totemism
-
 base_tax = 2
 base_production = 2
 base_manpower = 2

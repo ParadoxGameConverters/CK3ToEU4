@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+mercantilism = 0.1
+government_rank = 1
+technology_group = high_american
+religion = totemism
+primary_culture = maliseet
+capital = 2571
+1444.11.11= {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

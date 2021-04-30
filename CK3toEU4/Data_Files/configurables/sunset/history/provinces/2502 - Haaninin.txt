@@ -1,0 +1,21 @@
+
+owner = COM
+controller = COM
+add_core = COM
+add_core = BLA
+add_core = KIO
+culture = shoshone
+religion = totemism
+capital = "Haaninin"
+trade_goods = fur
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2
+is_city = yes
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

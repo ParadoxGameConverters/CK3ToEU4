@@ -162,7 +162,7 @@ newer_idea_adm_modifiers = {
 			factor = 0.1
 			modifier = {
 				factor = 0
-				uses_church_aspects = no
+				church_power = no
 			}
 		}
 	}
@@ -345,7 +345,7 @@ newer_idea_mil_modifiers = {
 				OR = {
 					has_reform = mughal_government
 					culture_group = french
-					culture = byelorussian
+					primary_culture = byelorussian
 				}
 			}
 		}
@@ -703,20 +703,20 @@ newer_idea_dip_modifiers = {
 			}
 		}
 	}
-	custom_migration_cooldown = {
-		migration_cooldown = -0.1
-		level_cost_2 = 3
-		level_cost_3 = 9
-		level_cost_4 = 18
-		chance = {
-			factor = 0.5
-			modifier = {
-				factor = 0
-				NOT = { num_of_cities = 2 }
-				has_reform = siberian_tribe
-			}
-		}
-	}
+	#custom_migration_cooldown = {
+	#	migration_cooldown = -0.1
+	#	level_cost_2 = 3
+	#	level_cost_3 = 9
+	#	level_cost_4 = 18
+	#	chance = {
+	#		factor = 0.5
+	#		modifier = {
+	#			factor = 0
+	#			NOT = { num_of_cities = 2 }
+	#			has_reform = siberian_tribe
+	#		}
+	#	}
+	#}
 	custom_envoy_travel_time = {
 		envoy_travel_time = -0.1
 		level_cost_2 = 3

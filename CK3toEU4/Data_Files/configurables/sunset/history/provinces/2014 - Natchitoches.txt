@@ -1,0 +1,21 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = CAD
+add_core = NTC
+culture = caddo
+religion = totemism
+
+base_tax = 10
+base_production = 8
+base_manpower = 2
+
+trade_goods = cotton
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

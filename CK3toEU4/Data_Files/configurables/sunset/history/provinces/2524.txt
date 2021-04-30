@@ -1,10 +1,9 @@
-owner = SHA
+owner = MMI
+controller = MMI
+add_core = MMI
+add_core = OSA
 
-controller = SHA
-
-add_core = SHA
-
-culture = shawnee
+culture = osage
 religion = totemism
 
 base_tax = 2

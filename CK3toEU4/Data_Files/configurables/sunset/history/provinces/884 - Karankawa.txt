@@ -1,0 +1,22 @@
+#884 - Karankawa
+
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = CAD
+culture = caddo
+religion = nahuatl
+capital = "Karankawa"
+trade_goods = grain
+hre = no
+base_tax = 5
+base_production = 3
+base_manpower = 5
+native_size = 10
+native_ferocity = 3
+native_hostileness = 5
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

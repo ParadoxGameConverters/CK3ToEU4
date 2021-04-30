@@ -1,0 +1,19 @@
+# No previous file for Chinko
+
+owner = ILL
+controller = ILL
+add_core = ILL
+add_core = PEO
+culture = illini
+religion = totemism
+capital = "Chinko"
+trade_goods = fur
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

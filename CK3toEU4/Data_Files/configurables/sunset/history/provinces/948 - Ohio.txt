@@ -1,0 +1,22 @@
+owner = SHA
+controller = SHA
+add_core = SHA
+add_core = CLG
+add_claim = LEN
+
+culture = shawnee
+religion = totemism
+capital = "Ohio"
+base_tax = 5
+base_production = 5
+base_manpower = 5
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

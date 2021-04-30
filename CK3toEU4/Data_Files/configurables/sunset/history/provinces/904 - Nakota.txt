@@ -1,0 +1,21 @@
+owner = SIO
+controller = SIO
+add_core = SIO
+add_core = OEO
+
+culture = dakota
+religion = totemism
+capital = "Nakota"
+base_tax = 15
+base_production = 3
+base_manpower = 7
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

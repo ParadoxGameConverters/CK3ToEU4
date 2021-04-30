@@ -1,0 +1,22 @@
+# No previous file for Makandwewin
+
+
+owner = ASI
+controller = ASI
+add_core = ASI
+add_core = CHY
+is_city = yes
+culture = cheyenne
+religion = totemism
+capital = "Makandwewinni"
+trade_goods = fur
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+

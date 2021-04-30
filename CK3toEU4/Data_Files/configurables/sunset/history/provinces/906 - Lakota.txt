@@ -1,0 +1,21 @@
+owner = ASI
+controller = ASI
+add_core = ASI
+add_core = SIO
+add_core = LAK
+culture = dakota
+religion = totemism
+capital = "Lakota"
+base_tax = 12
+base_production = 2
+base_manpower = 8
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

@@ -1,0 +1,19 @@
+# No previous file for Westenhuck
+
+owner = WAM
+controller = WAM
+add_core = WAM
+add_core = MAH
+culture = mahican
+religion = totemism
+capital = "Westenhuck"
+trade_goods = naval_supplies
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

@@ -1,0 +1,21 @@
+#993 - Hochelega
+
+owner = OTT
+controller = OTT
+add_core = OTT
+add_core = OSH
+is_city = yes
+culture = laurentian
+religion = totemism
+capital = "Hochelega"
+trade_goods = fur
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 6
+center_of_trade = 1
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

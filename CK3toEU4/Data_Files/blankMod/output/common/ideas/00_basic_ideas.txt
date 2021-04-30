@@ -21,6 +21,7 @@ aristocracy_ideas = {
 			government = theocracy
 			government = tribal
 		}
+		NOT = { has_reform = steppe_horde }
 	}
 	
 	noble_knights = {
@@ -99,6 +100,127 @@ plutocracy_ideas = {
 
 	ai_will_do = {
 		factor = 0.4
+	}
+}
+
+horde_gov_ideas = {
+	category = MIL
+	
+	bonus = {
+		cavalry_power = 0.25
+	}
+	
+	trigger = {
+		has_reform = steppe_horde
+	}
+	
+	horse_lords = {
+		cavalry_cost = -0.33
+	}
+	beyond_the_sun = {
+		ae_impact = -0.1
+	}
+	mandate_of_the_khan = {
+		religious_unity = 0.25
+	}
+	there_shall_be_no_grass = {
+		land_attrition = -0.2
+	}
+	horde_loyalty = {
+		global_unrest = -1
+	}
+	watchers_of_the_silk_road = {	
+		caravan_power = 0.20
+	}
+	a_magnanimous_empire = {
+		num_accepted_cultures = 2
+	}
+	
+	ai_will_do = {
+		factor = 20
+	}
+}
+
+theocracy_gov_ideas = {
+	category = MIL
+	
+	bonus = {
+		global_heretic_missionary_strength = 0.01
+		church_loyalty_modifier = 0.1
+		brahmins_hindu_loyalty_modifier = 0.1
+		brahmins_muslim_loyalty_modifier = 0.1
+	}
+	
+	trigger = {
+		government = theocracy
+	}
+	servants_of_god = {
+		devotion = 1
+	}
+	by_the_grace_of_god = {
+		fire_damage_received = -0.1
+	}
+	friends_in_high_places = {
+		leader_cost = -0.2
+	}
+	flesh_is_weak = {
+		land_morale = 0.1
+	}
+	alpha_and_omega = {
+		enforce_religion_cost = -0.1
+		culture_conversion_cost = -0.1
+	}
+	conviction_of_sin = {
+		global_unrest = -2
+	}
+	martyrs = {
+		global_manpower_modifier = 0.15
+	}
+	ai_will_do = {
+		factor = 0.9
+		modifier = {
+			factor = 0
+			has_idea_group = humanist_ideas
+		}
+	}
+}
+
+indigenous_ideas = {
+	category = MIL
+
+	bonus = {
+		global_institution_spread = 0.25
+	}
+
+	trigger = {
+		has_government_attribute = enables_natives_idea_group
+	}
+
+	indigenous_bountiful_land = {
+		tribal_development_growth = 0.05
+		development_cost = -0.05
+	}
+	indigenous_irregular_warfare = {
+		hostile_attrition = 1
+	}
+	indigenous_constitution = {
+		monthly_reform_progress_modifier = 0.25
+	}
+	indigenous_braves = {
+		land_morale = 0.10
+	}
+	indigenous_controlled_burns = {
+		global_manpower_modifier = 0.2
+	}
+	indigenous_trade_with_foreigners = {
+		idea_cost = -0.1
+	}
+	indigenous_treaties = {
+		province_warscore_cost = -0.2
+	}
+
+	ai_will_do = {
+		factor = 1.0
 	}
 }
 
@@ -521,7 +643,7 @@ exploration_ideas = {
 		modifier = {
 			factor = 0
 			NOT = { num_of_ports = 1 }
-			NOT = { 
+			NOT = {
 				any_owned_province = { 
 					is_in_capital_area = yes
 					has_empty_adjacent_province = yes
@@ -1090,7 +1212,7 @@ naval_ideas = {
 
 	bonus = {
 		ship_durability = 0.1
-		allowed_marine_fraction = 0.05
+		allowed_marine_fraction = 0.1
 	}
 
 	boarding_parties = {

@@ -1,0 +1,21 @@
+owner = CHI
+controller = CHI
+add_core = CHI
+add_core = CIA
+add_core = CCA
+culture = yuchi
+religion = totemism
+
+base_tax = 2
+base_production = 1
+base_manpower = 6
+
+trade_goods = grain
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

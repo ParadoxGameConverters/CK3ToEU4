@@ -1,15 +1,11 @@
-owner = AZT
-
-controller = AZT
-
-add_core = AZT
+owner = NAH
+controller = NAH
+add_core = NAH
 add_core = APA
 
 culture = apache
 
-religion = nahuatl
-
-discovered_by = mesoamerican
+religion = totemism
 
 base_tax = 2
 base_production = 2 

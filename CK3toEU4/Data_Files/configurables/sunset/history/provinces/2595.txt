@@ -1,7 +1,21 @@
-culture = athabascan
+owner = BLA
+controller = BLA
+add_core = BLA
+
+culture = chipewyan
+religion = totemism
+capital = "Kesyehotinne"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2
+trade_goods = fur
 
 discovered_by = high_american
 discovered_by = north_american
 discovered_by = mesoamerican
 discovered_by = south_american
 discovered_by = andean
+
+citysize = 1000

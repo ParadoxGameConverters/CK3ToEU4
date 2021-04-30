@@ -1,0 +1,21 @@
+owner = SIO
+controller = SIO
+add_core = SIO
+add_core = WCY
+
+culture = dakota
+religion = totemism
+capital = "Dakota"
+base_tax = 9
+base_production = 9
+base_manpower = 9
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

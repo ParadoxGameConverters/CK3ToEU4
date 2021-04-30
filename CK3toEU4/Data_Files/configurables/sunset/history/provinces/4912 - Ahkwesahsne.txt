@@ -1,0 +1,20 @@
+
+owner = IRO
+controller = IRO
+add_core = IRO
+capital = "Kaniatarowanen"
+culture = laurentian
+religion = totemism
+trade_goods = unknown
+base_tax = 2
+base_production = 2
+base_manpower = 1
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

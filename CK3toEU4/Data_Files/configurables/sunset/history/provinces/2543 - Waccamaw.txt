@@ -1,0 +1,21 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = COF
+
+culture = catawba
+religion = totemism
+capital = "Waccamaw"
+base_tax = 4
+base_production = 4
+base_manpower = 2
+
+trade_goods = fish
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

@@ -26,6 +26,21 @@ vassal = {
 march = {
 	first = AZT
 	second = MCA
-	start_date = 769.1.1
-	end_date = 1822.1.1
+	start_date = 1444.1.1
+	end_date = 1800.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = INC
+	second = GUA
+	start_date = 1444.1.1
+	end_date = 1800.1.1
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = INC
+	second = CUA
+	start_date = 1444.1.1
+	end_date = 1800.1.1
 }

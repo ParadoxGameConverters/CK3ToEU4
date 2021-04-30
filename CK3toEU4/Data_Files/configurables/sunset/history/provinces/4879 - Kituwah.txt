@@ -1,0 +1,17 @@
+owner = CHE
+controller = CHE
+add_core = CHE
+capital = "Kituwah"
+is_city = yes
+culture = cherokee
+religion = totemism
+trade_goods = tobacco
+base_tax = 5
+base_production = 7
+base_manpower = 2
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

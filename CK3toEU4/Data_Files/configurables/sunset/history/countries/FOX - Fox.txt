@@ -1,7 +1,8 @@
 government = monarchy
 add_government_reform = autocracy_reform
 mercantilism = 0.1
-primary_culture = chiwere
+primary_culture = mesquakie
+add_accepted_culture = chiwere
 religion = totemism
 technology_group = high_american
 unit_type = high_american

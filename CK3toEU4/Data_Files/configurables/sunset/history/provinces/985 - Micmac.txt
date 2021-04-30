@@ -1,0 +1,18 @@
+#985 - Micmac
+
+owner = MIK
+controller = MIK
+add_core = MIK
+culture = mikmaq
+religion = totemism
+capital = "Micmac"
+trade_goods = fish
+hre = no
+base_tax = 7
+base_production = 2
+base_manpower = 9
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

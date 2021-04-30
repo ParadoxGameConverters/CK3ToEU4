@@ -1,0 +1,25 @@
+#994 - Stadacona
+
+owner = STA
+controller = STA
+add_core = STA
+add_core = OSH
+is_city = yes
+culture = laurentian
+religion = totemism
+capital = "Stadacona"
+trade_goods = naval_supplies
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+add_permanent_province_modifier = {
+	name = saint_lawrence_estuary_modifier
+	duration = -1
+}

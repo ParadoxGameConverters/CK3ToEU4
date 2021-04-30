@@ -1,0 +1,24 @@
+owner = SHA
+controller = SHA
+add_core = SHA
+add_core = HWK
+
+culture = shawnee
+religion = totemism
+capital = "Kanawha"
+base_tax = 2
+base_production = 1
+base_manpower = 4
+
+trade_goods = iron
+latent_trade_goods = {
+	coal
+}
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

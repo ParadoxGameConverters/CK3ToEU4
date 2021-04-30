@@ -1,0 +1,22 @@
+# No previous file for Mengkonkia
+
+owner = ILL
+controller = ILL
+add_core = ILL
+add_core = OSA
+culture = miami
+religion = totemism
+capital = "Mengkonkia"
+trade_goods = fur
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

@@ -1,0 +1,19 @@
+#2012 - Arsigantegok
+
+owner = OTT
+controller = OTT
+add_core = OTT
+add_core = ABE
+culture = abenaki
+religion = totemism
+capital = "Arsigantegok"
+trade_goods = naval_supplies
+hre = no
+base_tax = 7
+base_production = 3
+base_manpower = 8
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

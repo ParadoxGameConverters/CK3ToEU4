@@ -1,0 +1,26 @@
+owner = CHE
+controller = CHE
+add_core = CHE
+add_core = POW
+
+culture = cherokee
+religion = totemism
+capital = "Chesapeake"
+base_tax = 10
+base_production = 6
+base_manpower = 7
+
+trade_goods = tobacco
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+add_permanent_province_modifier = {
+	name = james_estuary_modifier
+	duration = -1
+}

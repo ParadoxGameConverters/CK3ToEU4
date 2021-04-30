@@ -63,6 +63,9 @@ technology = {
 	enable = mamluk_cavalry_charge	
 	enable = south_american_warfare	
 	enable = ha_xantican_warrior
+	enable = aboriginal_boomerang
+	enable = aboriginal_warrior
+	enable = pacific_spearman
 }
 
 technology = {
@@ -128,6 +131,10 @@ technology = {
 	enable = chinese_footsoldier		
 	enable = japanese_footsoldier	
 	enable = ha_reformed_xantican_warrior
+	enable = aboriginal_ambusher
+	enable = aboriginal_infantry
+	enable = aboriginal_reformed_boomerang
+	enable = pacific_reformed_spearman
 	
 	combat_width = 2
 }
@@ -157,6 +164,8 @@ technology = {
 	enable = japanese_samurai	
 	enable = shaybani	
 	enable = high_american_horsemen
+	enable = aboriginal_horseman	
+	enable = pacific_horseman				 
 	
 	combat_width = 2
 }
@@ -235,6 +244,10 @@ technology = {
 	enable = indian_elephant	
 	enable = steppe_riders
 	enable = high_american_rifle_cavalry
+	enable = aboriginal_outback_warriors
+	enable = aboriginal_cavalry
+	enable = pacific_island_warriors
+	enable = pacific_cavalry
 }
 
 technology = {
@@ -317,6 +330,11 @@ technology = {
 	enable = reformed_mughal_mansabdar	
 	enable = steppe_lancers
 	enable = high_american_hussar
+	enable = aboriginal_hussar
+	enable = aboriginal_arquebusier
+	enable = aboriginal_tasmanian_arquebusier
+	enable = pacific_hussar
+	enable = pacific_arquebusier 
 	
 	combat_width = 2
 }
@@ -389,6 +407,8 @@ technology = {
 	enable = leather_cannon	
 	enable = steppe_mounted_raiders
 	enable = ha_xoloti
+	enable = aboriginal_swarm_cav
+	enable = pacific_swarm_cav				 
 	
 	combat_width = 2
 }
@@ -420,6 +440,8 @@ technology = {
 	enable = south_american_swarm
 	enable = steppe_infantry
 	enable = high_american_swarm
+	enable = aboriginal_riflemen
+	enable = pacific_riflemen
 }
 
 technology = {
@@ -501,6 +523,8 @@ technology = {
 	enable = steppe_cavalry
 	enable = ha_foreign_influenced_infantry
 	enable = high_american_dragoon
+	enable = aboriginal_dragoon
+	enable = pacific_dragoon
 }
 
 technology = {
@@ -561,6 +585,8 @@ technology = {
 	enable = eastern_skirmisher
 	enable = steppe_rifles
 	enable = ha_reformed_influenced_infantry
+	enable = aboriginal_guerrillas
+	enable = pacific_guerrillas
 	
 	combat_width = 2
 }

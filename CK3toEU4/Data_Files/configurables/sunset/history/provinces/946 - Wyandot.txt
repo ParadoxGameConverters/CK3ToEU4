@@ -1,0 +1,23 @@
+owner = SHA
+controller = SHA
+add_core = SHA
+add_core = MMI
+add_core = FOX
+add_claim = HUR
+
+culture = miami
+religion = totemism
+capital = "Wyandot"
+base_tax = 2
+base_production = 5
+base_manpower = 4
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

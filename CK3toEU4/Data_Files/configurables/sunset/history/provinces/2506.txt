@@ -1,12 +1,9 @@
-owner = PUE
-
-controller = PUE
-
-add_core = PUE
+owner = SHO
+controller = SHO
 add_core = SHO
 
 culture = shoshone
-
+capital = "Kuccuntikka"
 religion = totemism
 
 base_tax = 2

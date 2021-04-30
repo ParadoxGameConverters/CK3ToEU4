@@ -1,0 +1,25 @@
+owner = CHE
+controller = CHE
+add_core = CHE
+add_core = TSC
+add_permanent_claim = IRO # This is Iroquois culture in the basegame, but is simply too far away to reasonably make a core
+
+culture = iroquois
+religion = totemism
+capital = "Tuscarora"
+base_tax = 2
+base_production = 4
+base_manpower = 4
+
+trade_goods = tobacco
+latent_trade_goods = {
+	coal
+}
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

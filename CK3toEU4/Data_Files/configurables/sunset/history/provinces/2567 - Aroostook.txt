@@ -1,0 +1,18 @@
+# No previous file for Aroostook
+
+owner = MLS
+controller = MLS
+add_core = MLS
+culture = maliseet
+religion = totemism
+capital = "Aroostook"
+trade_goods = unknown
+hre = no
+base_tax = 2
+base_production = 1
+base_manpower = 2
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

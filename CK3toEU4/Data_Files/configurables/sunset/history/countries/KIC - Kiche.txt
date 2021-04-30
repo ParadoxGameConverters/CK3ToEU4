@@ -13,6 +13,9 @@ adm =3
 dip =1
 mil =2
 }}
+1444.10.29 = { #stop them rebelling early
+	add_truce_with = AZT
+}
 1475.1.1 =
 {monarch ={name ="Vahxak i-Kaam"
 dynasty ="K'iche'"
