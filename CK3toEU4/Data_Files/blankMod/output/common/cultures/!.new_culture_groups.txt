@@ -206,6 +206,7 @@ barbaro_germanic = {
 }
 roman_group = {
 	graphical_culture = westerngfx
+	country = { force_march_free = yes } # Roman legionnaires go fast
 	# For the sake of simplicity, all the names are shared throughout the whole group
 	roman = { primary = ROM }
 	hispanic = { primary = ROM }
@@ -286,6 +287,17 @@ equine_group = {
 	graphical_culture = westerngfx
 	
 	equine = {
+		country = {
+			infantry_cost = 100000 # Make Horse only use cavalry
+			artillery_cost = 100000
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 		primary = TRL
 		male_names = {
 			Spot Star Spirit Blaze Lucky Chief Rain Stormy Duke Traveler "Clever Hans" Dreamer Midnight Twilight Arion Carlos Triumph
@@ -299,6 +311,15 @@ equine_group = {
 	}
 }
 cat_group = {
+		country = {
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	cat = {
 		primary = TRL
 		male_names = { Mittens Fluffy Tom Smudge Shado }
@@ -309,6 +330,16 @@ cat_group = {
 	}
 }
 bear_group = {
+		country = {
+			infantry_shock = 2
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	bear = {
 		primary = TRL
 		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams }
@@ -319,6 +350,15 @@ bear_group = {
 	}
 }
 hedgehog_group = {
+		country = {
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	hedgehog_culture = {
 		primary = TRL
 		male_names = { Hughues Echinus Erinus Kidnae Micro Mesyo Aurion Sclaterion Rix Spike Pokey Quillem Quilliam Quillington Sanic Knucklys Silver Lancelot Galahad Cyrus Pincushion Hedgehog
@@ -331,6 +371,16 @@ hedgehog_group = {
 	}
 }
 duck_group = {
+		country = {
+			capture_ship_chance = 0.1 # "Captain, I fished some swimming ducks!"
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	duck_culture = {
 		primary = TRL
 		male_names = { Daffy Quacker Huck Waddles Donald Dominic Whitewing Duckus Quackmire Eggbert Howard Scrooge Winghelm Ludwing Gladstone Cake Blunder Duck Quackers Pippi Face Grape Anaheim
@@ -343,6 +393,16 @@ duck_group = {
 	}
 }
 dog_group = {
+		country = {
+			movement_speed = 0.14 # Dog: 29 mph / Human: 4 mph
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	dog_culture = {
 		primary = TRL
 		male_names = { Fido Alfonso Basil Albert Alistair Elmer Gilbert Alwin Brantley Kendrik Psyche Pluck Buckler Spigot Lance Lurcher Watch Keeper Brigade Fencer Butcher Blazer Prowess Craftsman
@@ -359,6 +419,17 @@ dog_group = {
 	}
 }
 elephant_group = {
+		country = {
+			infantry_cost = 100000 # Make Elephant only use cavalry
+			artillery_cost = 100000
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	elephant_culture = {
 		primary = TRL
 		male_names = { Doot Trumpo Snoot Pyyrhus Kandula Jumbo Elephant Setu Dhriti Bhaanu Bhadra Zain Barbar Pompadour Booper Dombo Abul Abbas Hanno Zaeem Hannibal Baal Hasdrubal Babur
@@ -369,6 +440,17 @@ elephant_group = {
 	}
 }
 dragon_group = {
+		country = {
+			movement_speed = 0.2 # Dragon: 22 mph / Human: 4 mph
+			artillery_bonus_vs_fort = 100 # Dragons just *melt* forts
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	dragon_culture = {
 		primary = TRL
 		male_names = { Fafnir Midgard Apopis Ladon Colchidei Piton Vouivre Drac Gorynych Bantu Mannu Khozen Morzas Xemcel Medeus Morva Nils Bahamut Leviathan Ryujin Zilant Typhos Puff Nyx
@@ -407,6 +489,15 @@ dragon_group = {
 	}
 }
 red_panda_group = {
+		country = {
+			diplomatic_upkeep = -10 # No diplomacy for animals
+			culture_conversion_cost = -1 # The animal genocides humans
+			num_accepted_cultures = -100 # No accepted cultures for animals
+		}
+		province = {
+			local_culture_conversion_cost = -1 # Repopulating animal owned provinces
+			local_years_of_nationalism = -100
+		}
 	red_panda = {
 		primary = TRL
 		male_names = {
