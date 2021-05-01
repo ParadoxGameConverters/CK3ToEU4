@@ -741,7 +741,7 @@ country_event = {
 		uses_cults = yes
 		has_dlc = "Rights of Man"
 		any_owned_province = {
-			NOT = { uses_cults = yes }
+			NOT = { OWNER = { uses_cults = yes } }
 			OR = {
 				AND = {
 					religion_group = eastern
@@ -2009,7 +2009,7 @@ country_event = {
 		has_adopted_cult = enkai_cult
 		has_dlc = "Rights of Man"
 		any_owned_province = {
-			uses_cults = yes
+			OWNER = { uses_cults = yes }
 			NOT = { religion = shamanism }
 			NOT = { has_province_modifier = god_is_black }
 			NOT = { has_province_modifier = god_is_red }

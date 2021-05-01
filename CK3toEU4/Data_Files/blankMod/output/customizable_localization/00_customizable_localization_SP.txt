@@ -3217,7 +3217,7 @@ defined_text = {
 	# From CK3 - they're the default name anyway
 	text = {
 		localisation_key = adamite_rel
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_rel
@@ -3241,7 +3241,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism
@@ -3262,10 +3262,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism
@@ -3327,10 +3323,10 @@ defined_text = {
 		localisation_key = cathar_rel
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_rel
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_rel
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_rel
 		trigger = { religion = waldensian }
@@ -3645,7 +3641,7 @@ defined_text = {
 	# From CK3
 	text = {
 		localisation_key = adamite_ms
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_ms
@@ -3669,7 +3665,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism_ms
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism_ms
@@ -3690,10 +3686,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism_ms
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic_ms
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism_ms
@@ -3755,10 +3747,10 @@ defined_text = {
 		localisation_key = cathar_ms
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_ms
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_ms
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_ms
 		trigger = { religion = waldensian }
@@ -3820,8 +3812,8 @@ defined_text = {
 		trigger = { religion = qarmatian }
 	}
 	text = {
-		localisation_key = pagan_msigion_ms
-		trigger = { religion = pagan_msigion }
+		localisation_key = pagan_religion_ms
+		trigger = { religion = pagan_religion }
 	}
 	text = {
 		localisation_key = baltic_pagan_ms
@@ -4072,7 +4064,7 @@ defined_text = {
 	# From CK3
 	text = {
 		localisation_key = adamite_fs
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_fs
@@ -4096,7 +4088,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism_fs
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism_fs
@@ -4117,10 +4109,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism_fs
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic_fs
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism_fs
@@ -4182,10 +4170,10 @@ defined_text = {
 		localisation_key = cathar_fs
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_fs
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_fs
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_fs
 		trigger = { religion = waldensian }
@@ -4247,8 +4235,8 @@ defined_text = {
 		trigger = { religion = qarmatian }
 	}
 	text = {
-		localisation_key = pagan_fsigion_fs
-		trigger = { religion = pagan_fsigion }
+		localisation_key = pagan_religion_fs
+		trigger = { religion = pagan_religion }
 	}
 	text = {
 		localisation_key = baltic_pagan_fs
@@ -4499,7 +4487,7 @@ defined_text = {
 	# From CK3
 	text = {
 		localisation_key = adamite_mp
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_mp
@@ -4523,7 +4511,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism_mp
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism_mp
@@ -4544,10 +4532,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism_mp
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic_mp
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism_mp
@@ -4609,10 +4593,10 @@ defined_text = {
 		localisation_key = cathar_mp
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_mp
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_mp
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_mp
 		trigger = { religion = waldensian }
@@ -4674,8 +4658,8 @@ defined_text = {
 		trigger = { religion = qarmatian }
 	}
 	text = {
-		localisation_key = pagan_mpigion_mp
-		trigger = { religion = pagan_mpigion }
+		localisation_key = pagan_religion_mp
+		trigger = { religion = pagan_religion }
 	}
 	text = {
 		localisation_key = baltic_pagan_mp
@@ -4926,7 +4910,7 @@ defined_text = {
 	# From CK3
 	text = {
 		localisation_key = adamite_fp
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_fp
@@ -4950,7 +4934,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism_fp
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism_fp
@@ -4971,10 +4955,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism_fp
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic_fp
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism_fp
@@ -5036,10 +5016,10 @@ defined_text = {
 		localisation_key = cathar_fp
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_fp
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_fp
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_fp
 		trigger = { religion = waldensian }
@@ -5101,8 +5081,8 @@ defined_text = {
 		trigger = { religion = qarmatian }
 	}
 	text = {
-		localisation_key = pagan_fpigion_fp
-		trigger = { religion = pagan_fpigion }
+		localisation_key = pagan_religion_fp
+		trigger = { religion = pagan_religion }
 	}
 	text = {
 		localisation_key = baltic_pagan_fp

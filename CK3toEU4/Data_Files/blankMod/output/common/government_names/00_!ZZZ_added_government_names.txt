@@ -117,7 +117,7 @@ ruling_prince = {
 		2 = PRINCESS
 		3 = GREAT_PRINCESS
 	}
-	trigger = { OR = { tag = SWI tag = ARM culture = swiss } government = monarchy }
+	trigger = { OR = { tag = SWI tag = ARM primary_culture = swiss } government = monarchy }
 }
 dauphin = {
 	rank = {

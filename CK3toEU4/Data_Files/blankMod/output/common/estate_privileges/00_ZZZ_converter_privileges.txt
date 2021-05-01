@@ -6,7 +6,7 @@ estate_church_papal_emissary = {
 	is_valid = {
 		OR = {
 			religion = catholic
-			religion = fraticelli
+			#religion = fraticelli
 		}
 		NOT = { tag = PAP }
 		NOT = { tag = FAP }
@@ -53,16 +53,16 @@ estate_church_papal_emissary = {
 				}
 			}
 		}
-		modifier = {
-			factor = 0.75
-			religion = fraticelli
-			NOT = {
-				reverse_has_opinion = {
-					who = FAP
-					value = 50
-				}
-			}
-		}
+		#modifier = {
+		#	factor = 0.75
+		#	religion = fraticelli
+		#	NOT = {
+		#		reverse_has_opinion = {
+		#			who = FAP
+		#			value = 50
+		#		}
+		#	}
+		#}
 	}
 }
 

@@ -3134,7 +3134,7 @@ defined_text = {
 	# From CK3 - they're the default name anyway
 	text = {
 		localisation_key = adamite_rel
-		trigger = { religion = adamite }
+		trigger = { religion = adamites }
 	}
 	text = {
 		localisation_key = insular_celtic_rel
@@ -3158,7 +3158,7 @@ defined_text = {
 	}
 	text = {
 		localisation_key = yazidism
-		trigger = { religion = yazidism }
+		trigger = { religion = yazidi }
 	}
 	text = {
 		localisation_key = meshefaresism
@@ -3179,10 +3179,6 @@ defined_text = {
 	text = {
 		localisation_key = khurramism
 		trigger = { religion = khurramism }
-	}
-	text = {
-		localisation_key = gnostic
-		trigger = { religion = gnostic }
 	}
 	text = {
 		localisation_key = mandeaism
@@ -3244,10 +3240,10 @@ defined_text = {
 		localisation_key = cathar_rel
 		trigger = { religion = cathar }
 	}
-	text = {
-		localisation_key = fraticelli_rel
-		trigger = { religion = fraticelli }
-	}
+	#text = {
+	#	localisation_key = fraticelli_rel
+	#	trigger = { religion = fraticelli }
+	#}
 	text = {
 		localisation_key = waldensian_rel
 		trigger = { religion = waldensian }
