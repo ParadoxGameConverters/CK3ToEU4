@@ -175,6 +175,14 @@ void EU4::ProvinceDetails::registerKeys()
 		const commonItems::singleString effectStr(theStream);
 		vaisyasBurghers = effectStr.getString() == "yes";
 	});
+	registerKeyword("1441.1.1", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString effectStr(theStream);
+		datedInfo = effectStr.getString();
+	});
+	registerKeyword("1444.1.1", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString effectStr(theStream);
+		datedInfo = effectStr.getString();
+	});	
 	registerRegex(R"(\d+.\d+.\d+)", commonItems::ignoreItem);
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
