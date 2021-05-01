@@ -46,6 +46,7 @@ class ProvinceDetails: commonItems::parser
 	std::string religion;
 	std::string tradeGoods;
 	std::string estate;
+	std::string datedInfo;
 	std::set<std::string> cores;
 	std::set<std::string> discoveredBy;
 	std::set<std::string> latentGoods;

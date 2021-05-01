@@ -90,5 +90,7 @@ std::ostream& EU4::operator<<(std::ostream& output, const Province& province)
 		output << "unrest = " << province.details.unrest << "\n";
 	if (province.details.nationalism)
 		output << "add_nationalism = " << province.details.nationalism << "\n";
+	if (!province.details.datedInfo.empty() && !province.getSourceProvince())
+		output << province.details.datedInfo;
 	return output;
 }
