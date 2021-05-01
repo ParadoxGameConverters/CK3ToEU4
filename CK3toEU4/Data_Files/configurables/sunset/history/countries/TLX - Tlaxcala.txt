@@ -7,6 +7,7 @@ unit_type = high_american
 capital = 850
 fixed_capital = 850 # Cannot move capital away from this province & no power cost to move to it
 
+
 #Rulers of Tizatlan
 1440.1.1 = {
 	monarch = {
@@ -16,6 +17,9 @@ fixed_capital = 850 # Cannot move capital away from this province & no power cos
 		dip = 2
 		mil = 3
 	}
+}
+1444.10.29 = { #stop them rebelling early
+	add_truce_with = AZT
 }
 
 1450.1.1 = {

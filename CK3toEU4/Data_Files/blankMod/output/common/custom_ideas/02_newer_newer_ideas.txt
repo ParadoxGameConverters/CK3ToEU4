@@ -130,7 +130,7 @@ newer_newer_idea_mil_modifiers = {
 				OR = {
 					has_reform = mughal_government
 					culture_group = french
-					culture = byelorussian
+					primary_culture = byelorussian
 				}
 			}
 		}

@@ -1,0 +1,22 @@
+owner = SUS
+controller = SUS
+add_core = SUS
+add_core = TIO
+add_core = ERI
+
+culture = tionontate
+religion = totemism
+capital = "Allegheny"
+base_tax = 2
+base_production = 2
+base_manpower = 4
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

@@ -1,0 +1,21 @@
+# No previous file for Tatteroa
+
+owner = SHA
+controller = SHA
+add_core = SHA
+add_core = HWK
+is_city = yes
+culture = shawnee
+religion = totemism
+capital = "Tatteroa"
+trade_goods = fur
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

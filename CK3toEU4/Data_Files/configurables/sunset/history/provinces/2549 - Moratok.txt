@@ -1,0 +1,25 @@
+owner = CHE
+controller = CHE
+add_core = CHE
+add_core = POW
+add_core = TSC
+
+culture = cherokee
+religion = totemism
+capital = "Moratok"
+base_tax = 2
+base_production = 1
+base_manpower = 2
+
+trade_goods = tobacco
+latent_trade_goods = {
+	coal
+}
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

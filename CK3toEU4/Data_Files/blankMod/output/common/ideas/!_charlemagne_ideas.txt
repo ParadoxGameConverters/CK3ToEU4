@@ -10,7 +10,7 @@ karling_ideas = {
 		dynasty = "Karling"
 		OR = {
 			religion = catholic
-			religion = fraticelli
+			#religion = fraticelli
 		}
 		government = monarchy
 	}

@@ -1,0 +1,19 @@
+# No previous file for Mamaceqtaw
+
+owner = FOX
+controller = FOX
+add_core = FOX
+add_core = OJI
+culture = anishinabe
+religion = totemism
+capital = "Mamaceqtaw"
+trade_goods = fur
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

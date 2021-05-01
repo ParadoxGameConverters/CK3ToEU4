@@ -7,6 +7,7 @@ religion = inti
 primary_culture = muisca
 capital = 825
 unit_type = south_american
+
 1444.1.1 =
 {monarch ={name ="Meicuchuca"
 dynasty ="Bacatá"
@@ -25,6 +26,9 @@ adm =3
 dip =3
 mil =2
 }}
+1444.10.29 = { #stop them rebelling early
+	add_truce_with = AZT
+}
 1470.1.1 =
 {monarch ={name ="Saguamanchica"
 dynasty ="Bacatá"

@@ -14,6 +14,9 @@ adm =4
 dip =2
 mil =4
 }}
+1444.10.29 = { #stop them rebelling early
+	add_truce_with = AZT
+}
 1454.1.1 =
 {monarch ={name ="Tzitzipandaquare"
 dynasty ="Uacusecha"

@@ -686,9 +686,9 @@ age_of_absolutism = {
 					AND = {
 						government_rank = 2
 						OR = {
-							culture = dutch
-							culture = flemish
-							culture = frisian
+							primary_culture = dutch
+							primary_culture = flemish
+							primary_culture = frisian
 						}
 					}
 				}
@@ -707,7 +707,7 @@ age_of_absolutism = {
 					tag = SCA
 					AND = {
 						government_rank = 2
-						culture = swedish
+						primary_culture = swedish
 					}
 					AND = {
 						government_rank = 3

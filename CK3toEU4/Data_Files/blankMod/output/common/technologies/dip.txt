@@ -14,7 +14,8 @@ technology = { #Early Ships
 	naval_morale			=	2.0
 	range					=	60
 	may_fabricate_claims = yes
-
+	
+	enable = war_canoe
 }
 
 technology = { #Merchants & Trade
@@ -35,7 +36,7 @@ technology = { #The Barque
 	trade_range				=	100
 	enable = cog
 	enable = galley
-
+	naval_engagement_width = 20
 }
 
 # The 30 big techs from here on
@@ -49,10 +50,9 @@ technology = { #The Early Carrack
 	range					= 	100
 	trade_efficiency 		= 	0.02
 	global_colonial_growth	= 	15
+	may_build_flagships = yes				  
 	
 	enable = early_carrack
-
-
 }
 
 technology = { #Marketplace
@@ -92,6 +92,7 @@ technology = { #Naval Ambitions
 	naval_morale			= 0.3
 	range					= 115
 	impressment_offices 	= yes
+	naval_engagement_width = 10					
 }
 
 technology  = { #Docks
@@ -147,7 +148,7 @@ technology = { #Man of War
 	may_slander_merchants = yes
 
 	naval_battery = yes
-	
+	naval_engagement_width = 15
 }
 
 technology = { #Chartered Companies
@@ -215,7 +216,7 @@ technology = { #Line of Battle
 	naval_morale			=	0.5
 	may_sow_discontent = yes
 
-	
+	naval_engagement_width = 10
 }
 
 technology = { #The War Galleon
@@ -265,6 +266,7 @@ technology = { #Limes
 	reduced_naval_attrition = yes
 	enable = twodecker
 	enable = trabakul
+	naval_engagement_width = 5
 }
 
 technology = { #Heavy Frigates
@@ -291,6 +293,7 @@ technology = { #The Archipelago Frigate
 	trade_range				=	20
 	enable = archipelago_frigate
 	may_corrupt_officials = yes
+	naval_engagement_width = 10
 
 }
 

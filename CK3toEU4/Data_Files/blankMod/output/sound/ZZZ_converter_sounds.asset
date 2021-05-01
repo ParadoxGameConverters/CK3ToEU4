@@ -9,10 +9,10 @@
 		file = "start_conversion_christian_reformed.wav"
 	}
 	#Fraticelli
-	sound = {
-		name = religion_fraticelli
-		file = "tab_religion_christian.wav"
-	}
+	#sound = {
+	#	name = religion_fraticelli
+	#	file = "tab_religion_christian.wav"
+	#}
 	sound = {
 		name = start_convert_fraticelli
 		file = "start_conversion_christian_catholic.wav"

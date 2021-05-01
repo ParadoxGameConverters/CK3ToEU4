@@ -1,0 +1,22 @@
+owner = CHE
+controller = CHE
+add_core = CHE
+add_core = COF
+add_core = JOA
+
+culture = catawba
+religion = totemism
+capital = "Cheraw"
+base_tax = 5
+base_production = 7
+base_manpower = 2
+
+trade_goods = tobacco
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

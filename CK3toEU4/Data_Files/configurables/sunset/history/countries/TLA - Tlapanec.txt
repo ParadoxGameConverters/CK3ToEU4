@@ -7,9 +7,15 @@ religion = nahuatl
 primary_culture = tlapanec
 capital = 849
 
-1440.1.1 =
-{monarch ={name ="Jituh Zniá"
-adm =2
-dip =2
-mil =3
-}}
+1444.10.29 = { #stop them rebelling early
+	add_truce_with = AZT
+}
+1440.1.1 = {
+	monarch ={
+		name ="Jituh Zniá"
+		adm =2
+		dip =2
+		mil =3
+	}
+}
+

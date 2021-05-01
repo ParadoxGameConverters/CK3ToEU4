@@ -313,8 +313,8 @@ dip_idea_modifiers = {
 			}
 			modifier = {
 				factor = 3
-				any_empty_neighbor_province = {
-					 native_size = 1
+				any_owned_province = {
+					has_empty_adjacent_province = yes
 				}
 			}
 			modifier = {
@@ -598,8 +598,8 @@ dip_idea_modifiers = {
 			}
 			modifier = {
 				factor = 1.25
-				any_empty_neighbor_province = {
-					 native_size = 1
+				any_owned_province = {
+					has_empty_adjacent_province = yes
 				}
 			}
 		}	

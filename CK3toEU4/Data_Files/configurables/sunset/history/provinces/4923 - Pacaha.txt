@@ -1,0 +1,21 @@
+# No previous file for Pacaha
+
+owner = WIC
+controller = WIC
+add_core = WIC
+add_core = CAQ
+add_core = PCH
+is_city = yes
+culture = yoron
+religion = totemism
+capital = "Satsukhdin"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 1
+base_manpower = 2
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

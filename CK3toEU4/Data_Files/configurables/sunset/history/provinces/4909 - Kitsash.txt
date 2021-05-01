@@ -1,0 +1,20 @@
+# No previous file for Kitsash
+
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = WIC
+culture = wichita
+religion = nahuatl
+capital = "Kitsash"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 1
+base_manpower = 6
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

@@ -62,8 +62,11 @@ country_event = {
 	option = {
 		name = "religious_events.18.z2" #
 		ai_chance = { factor = 100 }
-		trigger = { any_owned_province = { religion = fraticelli } }
-		change_religion = fraticelli
+		trigger = { 
+			always = no
+			#any_owned_province = { religion = fraticelli }
+		}
+		#change_religion = fraticelli
 		add_stability = -4
 	}
 	option = {

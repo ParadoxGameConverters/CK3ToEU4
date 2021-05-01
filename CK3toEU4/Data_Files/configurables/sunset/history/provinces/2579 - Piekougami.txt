@@ -1,0 +1,16 @@
+owner = INN
+controller = INN
+add_core = INN
+capital = "Piekougami"
+culture = innu
+religion = totemism
+trade_goods = fur
+base_tax = 2
+base_production = 1
+base_manpower = 2
+
+discovered_by = andean
+discovered_by = high_american
+discovered_by = mesoamerican
+discovered_by = north_american
+discovered_by = south_american

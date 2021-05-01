@@ -1,11 +1,11 @@
-add_core = BLA
-add_core = WCR
-owner = BLA
-controller = BLA
+owner = CHY
+controller = CHY
+add_core = CHY
+add_core = NEH
 
-culture = blackfoot
+culture = plains_cree
 religion = totemism
-capital = "Hebina"
+capital = "Woods cree"
 trade_goods = fur
 hre = no
 base_tax = 5

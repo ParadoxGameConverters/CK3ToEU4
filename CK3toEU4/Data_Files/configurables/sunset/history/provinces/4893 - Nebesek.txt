@@ -1,0 +1,20 @@
+# No previous file for Nebesek
+
+owner = OTT
+controller = OTT
+add_core = OTT
+add_core = OSH
+add_core = STA
+culture = laurentian
+religion = totemism
+capital = "Nebesek"
+trade_goods = fish
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

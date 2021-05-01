@@ -1,0 +1,22 @@
+owner = HUR
+controller = HUR
+add_core = HUR
+add_core = TIO
+add_core = ATW
+
+culture = tionontate
+religion = totemism
+capital = "Niagara"
+base_tax = 5
+base_production = 5
+base_manpower = 2
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

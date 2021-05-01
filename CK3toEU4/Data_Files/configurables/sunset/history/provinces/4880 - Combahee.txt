@@ -1,0 +1,20 @@
+# No previous file for Combahee
+
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = ALT
+culture = yamasee
+religion = totemism
+capital = "Combahee"
+trade_goods = tobacco
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

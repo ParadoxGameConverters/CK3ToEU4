@@ -10,7 +10,7 @@ knights_of_santiago_ideas = {
 		tag = KOS
 		OR = {
 			religion = catholic
-			religion = fraticelli
+			#religion = fraticelli
 		}
 		government = theocracy
 	}

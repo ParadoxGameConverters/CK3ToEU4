@@ -1,0 +1,19 @@
+# No previous file for Pitahawirata
+
+owner = PAW
+controller = PAW
+add_core = PAW
+culture = pawnee
+religion = totemism
+capital = "Pitahawirata"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+

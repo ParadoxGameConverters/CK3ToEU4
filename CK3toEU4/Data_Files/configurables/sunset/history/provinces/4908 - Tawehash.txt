@@ -1,0 +1,19 @@
+# No previous file for Tawehash
+
+owner = WIC
+controller = WIC
+add_core = WIC
+culture = wichita
+religion = totemism
+capital = "Tawehash"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+discovered_by = mesoamerican
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

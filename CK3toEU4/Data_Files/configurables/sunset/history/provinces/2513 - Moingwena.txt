@@ -1,0 +1,22 @@
+owner = ILL
+controller = ILL
+add_core = ILL
+add_core = PEO
+add_core = CAO
+
+culture = illini
+religion = totemism
+capital = "Moingwena"
+base_tax = 2
+base_production = 1
+base_manpower = 2
+
+trade_goods = grain
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

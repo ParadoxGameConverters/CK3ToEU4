@@ -1,0 +1,24 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = NTZ
+culture = natchez
+
+religion = totemism
+capital = "Bayougoula"
+
+base_tax = 7
+base_production = 2
+base_manpower = 8
+
+trade_goods = cotton
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+

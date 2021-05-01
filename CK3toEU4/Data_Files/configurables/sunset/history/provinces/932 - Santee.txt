@@ -1,0 +1,29 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = COF
+
+culture = catawba
+capital = "Santee"
+religion = totemism
+
+add_permanent_province_modifier = {
+	name = santee_estuary_modifier
+	duration = -1
+}
+
+base_tax = 5
+base_production = 8
+base_manpower = 2
+
+trade_goods = cotton
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000
+
+

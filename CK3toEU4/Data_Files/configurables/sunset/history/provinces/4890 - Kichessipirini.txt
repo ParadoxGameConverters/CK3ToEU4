@@ -1,0 +1,20 @@
+# No previous file for Kichessipirini
+
+owner = OTT
+controller = OTT
+add_core = OTT
+add_core = AGQ
+culture = algonquin
+religion = totemism
+capital = "Kichessipirini"
+trade_goods = naval_supplies
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

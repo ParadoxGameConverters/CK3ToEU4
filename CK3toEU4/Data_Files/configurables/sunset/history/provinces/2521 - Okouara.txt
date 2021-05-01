@@ -1,0 +1,22 @@
+owner = FOX
+controller = FOX
+add_core = FOX
+add_core = POT
+add_core = OEO
+
+culture = mesquakie
+religion = totemism
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

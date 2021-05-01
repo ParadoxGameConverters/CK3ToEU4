@@ -1,0 +1,21 @@
+owner = HUR
+controller = HUR
+add_core = HUR
+add_core = ATT
+
+culture = huron
+religion = totemism
+capital = "Attignawantan"
+base_tax = 10
+base_production = 8
+base_manpower = 8
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

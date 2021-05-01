@@ -1,0 +1,22 @@
+# No previous file for Sihabi
+
+owner = CHY
+controller = CHY
+add_core = CHY
+add_core = ASI
+add_core = NAK
+
+culture = cheyenne
+religion = totemism
+capital = "Sihabi"
+trade_goods = fur
+hre = no
+base_tax = 3
+base_production = 2
+base_manpower = 6
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

@@ -1,10 +1,9 @@
 owner = FOX
-
 controller = FOX
-
 add_core = FOX
+add_core = OEO
 
-culture = chiwere
+culture = mesquakie
 religion = totemism
 
 base_tax = 6

@@ -1,0 +1,21 @@
+owner = IRO
+controller = IRO
+add_core = IRO
+add_core = ONO
+
+culture = iroquois
+religion = totemism
+capital = "Onondaga"
+base_tax = 15
+base_production = 7
+base_manpower = 7
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

@@ -1,0 +1,24 @@
+owner = AZT
+controller = AZT
+add_core = AZT
+add_core = MSC
+
+culture = mescalero
+
+religion = nahuatl
+
+discovered_by = mesoamerican
+
+base_tax = 2
+base_production = 1
+base_manpower = 2
+
+trade_goods = grain
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

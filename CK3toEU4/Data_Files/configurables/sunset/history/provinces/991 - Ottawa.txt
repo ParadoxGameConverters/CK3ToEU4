@@ -1,0 +1,21 @@
+owner = OJI
+controller = OJI
+add_core = OJI
+add_core = AGQ
+
+culture = algonquin
+religion = totemism
+capital = "Nipissing"
+base_tax = 3
+base_production = 6
+base_manpower = 1
+
+trade_goods = fur
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+citysize = 1000

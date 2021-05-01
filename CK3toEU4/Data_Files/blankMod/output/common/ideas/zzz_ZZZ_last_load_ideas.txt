@@ -2,7 +2,7 @@ irish_ideas = {
 	trigger = {
 		OR = {
 			tag = IRE
-			culture = irish
+			primary_culture = irish
 		}
 	}
 }

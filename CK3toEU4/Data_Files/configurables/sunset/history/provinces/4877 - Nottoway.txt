@@ -1,0 +1,20 @@
+# No previous file for Nottoway
+
+owner = CHE
+controller = CHE
+add_core = CHE
+add_permanent_claim = IRO # This is Iroquois culture in the basegame, but is simply too far away to reasonably make a core
+add_core = TSC
+culture = iroquois
+religion = totemism
+capital = "Nottoway"
+trade_goods = tobacco
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 6
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean

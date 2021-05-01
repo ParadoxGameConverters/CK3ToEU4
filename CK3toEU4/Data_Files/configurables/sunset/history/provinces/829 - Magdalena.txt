@@ -1,0 +1,25 @@
+owner = MCA
+controller = MCA
+add_core = MCA
+add_core = TAI
+
+culture = muisca
+religion = animism
+capital = "Tairo"
+base_tax = 7
+base_production = 1
+base_manpower = 3
+
+trade_goods = cocoa
+
+discovered_by = high_american
+discovered_by = north_american
+discovered_by = mesoamerican
+discovered_by = south_american
+discovered_by = andean
+
+discovered_by = mesoamerican
+
+discovered_by = andean
+
+citysize = 1000
