@@ -214,6 +214,25 @@ option = { # We support this, but manually, if players wish it.
 		}
 	}
 }
+option = { #Historic (eurocentric) vs. Dynamic Insitutions/idea selection
+	name = dynamicInstitutions
+	displayName = INSTITUTIONS
+	tooltip = INSTITUTIONSTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = INSTITUTIONS1
+			tooltip = INSTITUTIONS1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = INSTITUTIONS2
+			tooltip = INSTITUTIONS2TIP
+			default = false
+		}
+	}
+}
 option = {
 	name = output_name
 	displayName = MODNAME
