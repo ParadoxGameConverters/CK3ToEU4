@@ -13,9 +13,3 @@ jobs:
         modPath: "CK3toEU4/Data_Files/blankMod/output"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Upload artifact
-      if: always() # so even if the check fails, the log is uploaded
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: cwtools_output
-        path: output.json 
