@@ -391,7 +391,7 @@ new_world_i = {
 			has_idea = quest_for_the_new_world
 			OR = {
 				num_of_trade_companies = 1
-				colony = 1
+				num_of_colonies = 1
 			}
 			OR = {
 				north_america = { has_discovered = PREV }
@@ -467,7 +467,7 @@ new_world_i = {
 					is_capital = yes
 				}
 				owner = {
-					colony = 1
+					num_of_colonies = 1
 					any_subject_country = {
 						is_colonial_nation = yes
 						OR = {
