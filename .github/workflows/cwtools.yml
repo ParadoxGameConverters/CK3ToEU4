@@ -1,0 +1,21 @@
+name: CWTools CI
+
+on: [pull_request, push] # other events may work but are not supported
+
+jobs:
+  cwtools_job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1 # required
+    - uses: cwtools/cwtools-action@v1.0.0
+      with:
+        game: eu4
+        modPath: "CK3toEU4/Data_Files/blankMod/output"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload artifact
+      if: always() # so even if the check fails, the log is uploaded
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: cwtools_output
+        path: output.json 
