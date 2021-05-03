@@ -66,6 +66,11 @@ class Configuration: commonItems::parser
 		CLEAR_SIBERIA = 1,
 		LEAVE_SIBERIA = 2
 	};
+	enum class INSTITUTIONS
+	{
+		HISTORIC = 1,
+		DYNAMIC = 2
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -80,6 +85,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getShatterHRELevel() const { return shatterHRELevel; }
 	[[nodiscard]] const auto& getSiberia() const { return siberia; }
 	[[nodiscard]] const auto& getSunset() const { return sunset; }
+	[[nodiscard]] const auto& getDynamicInstitutions() const { return dynamicInstitutions; }
 	[[nodiscard]] const auto& getDevelopment() const { return development; }
 	[[nodiscard]] const auto& getModFileNames() const { return modFileNames; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
@@ -105,6 +111,7 @@ class Configuration: commonItems::parser
 	SHATTER_LEVEL shatterLevel = SHATTER_LEVEL::DUTCHY;
 	SIBERIA siberia = SIBERIA::CLEAR_SIBERIA;
 	SUNSET sunset = SUNSET::DEFAULT;
+	INSTITUTIONS dynamicInstitutions = INSTITUTIONS::HISTORIC;
 	DEVELOPMENT development = DEVELOPMENT::IMPORT;
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;

@@ -96,6 +96,11 @@ void Configuration::registerKeys()
 		sunset = SUNSET(std::stoi(sunsetString.getString()));
 		Log(LogLevel::Info) << "Sunset set to: " << sunsetString.getString();
 	});
+	registerKeyword("dynamicInstitutions", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::singleString dynamicInstitutionsString(theStream);
+		dynamicInstitutions = INSTITUTIONS(std::stoi(dynamicInstitutionsString.getString()));
+		Log(LogLevel::Info) << "Dynamic Institutions set to: " << dynamicInstitutionsString.getString();
+	});
 	registerKeyword("development", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString developmentString(theStream);
 		development = DEVELOPMENT(std::stoi(developmentString.getString()));
