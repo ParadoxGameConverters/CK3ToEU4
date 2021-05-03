@@ -417,6 +417,8 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 	{
 		if (fileName.find(".txt") == std::string::npos)
 			continue;
+		if (fileName.starts_with("~"))
+			continue;
 		try
 		{
 			const auto id = std::stoi(fileName);

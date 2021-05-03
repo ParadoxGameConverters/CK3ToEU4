@@ -11,6 +11,7 @@ namespace fs = std::filesystem;
 void EU4::World::output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
 {
 	const auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
+	const auto dynamicInstitutions = theConfiguration.getDynamicInstitutions() == Configuration::INSTITUTIONS::DYNAMIC;
 	const date conversionDate = sourceWorld.getConversionDate();
 	LOG(LogLevel::Info) << "<- Creating Output Folder";
 
@@ -71,6 +72,11 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	{
 		LOG(LogLevel::Info) << "<- Writing Sunset Invasion Files";
 		outputInvasionExtras(theConfiguration);
+	}
+	if (dynamicInstitutions)
+	{
+		LOG(LogLevel::Info) << "<- Writing Dynamic Institution Files";
+		outputDynamicInstitutions(theConfiguration);
 	}
 
 	LOG(LogLevel::Info) << "<- Writing Advisers";
@@ -283,6 +289,19 @@ void EU4::World::outputInvasionExtras(const Configuration& theConfiguration) con
 	files = commonItems::GetAllFilesInFolder("configurables/sunset/decisions/");
 	for (const auto& file: files)
 		commonItems::TryCopyFile("configurables/sunset/decisions/" + file, "output/" + theConfiguration.getOutputName() + "/decisions/" + file);
+}
+
+void EU4::World::outputDynamicInstitutions(const Configuration& theConfiguration) const
+{
+	// Dynamic Institions
+	auto files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/institutions/");
+	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/institutions/");
+	for (const auto& file: files)
+		commonItems::TryCopyFile("configurables/dynamicInstitutions/institutions/" + file, "output/" + theConfiguration.getOutputName() + "/common/institutions/" + file);
+	// Dynamic Ideas
+	files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/ideas/");
+	for (const auto& file: files)
+		commonItems::TryCopyFile("configurables/dynamicInstitutions/ideas/" + file, "output/" + theConfiguration.getOutputName() + "/common/ideas/" + file);
 }
 
 void EU4::World::outputCommonCountriesFile(const Configuration& theConfiguration) const

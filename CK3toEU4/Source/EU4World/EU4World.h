@@ -82,6 +82,7 @@ class World
 	void outputDiplomacy(const Configuration& theConfiguration, const std::vector<std::shared_ptr<Agreement>>& agreements, bool invasion) const;
 	void outputFlags(const Configuration& theConfiguration) const;
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
+	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
 	void outputReligions(const Configuration& theConfiguration,
 		 const std::vector<GeneratedReligion>& generatedReligions,
