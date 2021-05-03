@@ -2,6 +2,7 @@ owner = INC
 controller = INC
 add_core = INC
 add_core = CYA
+add_core = ARW
 culture = guajiro
 religion = inti
 discovered_by = high_american
