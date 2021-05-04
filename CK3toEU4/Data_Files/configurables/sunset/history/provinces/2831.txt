@@ -4,6 +4,7 @@ controller = INC
 
 add_core = INC
 add_core = PCJ
+add_core = CRA
 
 culture = aimara
 
