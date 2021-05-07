@@ -3,10 +3,10 @@
 #include "../../CK3World/Religions/Faiths.h"
 #include "../ReligionDefinitionMapper/ReligionDefinitionMapper.h"
 #include "../ReligionGroupScraper/ReligionGroupScraper.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "ReligionMapping.h"
-#include "CommonRegexes.h"
 
 mappers::ReligionMapper::ReligionMapper()
 {
@@ -27,20 +27,23 @@ mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
 void mappers::ReligionMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
-		const ReligionMapping theMapping(theStream);
-		for (const auto& ck3Religion: theMapping.getCK3Religions())
-		{
-			CK3toEU4ReligionMap.insert(std::make_pair(ck3Religion, theMapping.getEU4Religion()));
-		}
+		for (const ReligionMapping theMapping(theStream); const auto& ck3Religion: theMapping.getCK3Religions())
+			CK3toEU4ReligionMap.emplace(ck3Religion, std::make_pair(theMapping.getEU4Religion(), theMapping.getEU4School()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion(const std::string& ck3Religion) const
 {
-	const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion);
-	if (mapping != CK3toEU4ReligionMap.end())
-		return mapping->second;
+	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
+		return mapping->second.first;
+	return std::nullopt;
+}
+
+std::optional<std::string> mappers::ReligionMapper::getEU4SchoolForCK3Religion(const std::string& ck3Religion) const
+{
+	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
+		return mapping->second.second;
 	return std::nullopt;
 }
 
@@ -57,16 +60,18 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 			// This is a new faith.
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
-		else if (getEU4ReligionForCK3Religion(faith.second->getName()) == "west_african_pagan" && !hasReformedAfrica) // Because there are several West African Religions
+		else if (getEU4ReligionForCK3Religion(faith.second->getName()) == "west_african_pagan" &&
+					!hasReformedAfrica) // Because there are several West African Religions
 		{
 			reformedReligions.emplace_back("west_african_pagan");
 			hasReformedAfrica = true;
 		}
-		else if(faith.second->getReformedFlag()) // This is for unreformed religions that have been reformed (Game only stores this info in the old religon)
+		else if (faith.second->getReformedFlag()) // This is for unreformed religions that have been reformed (Game only stores this info in the old religon)
 		{
 			const auto& displayName = faith.second->getCustomAdj(); // Catholic, not catholicism
 			LocBlock locBlock;
-			locBlock.english = displayName; //CK3 already calls it "Old Religion", this will just overwrite the default EU4 localization calling it something else.
+			locBlock.english = displayName; // CK3 already calls it "Old Religion", this will just overwrite the default EU4 localization calling it something
+													  // else.
 			locBlock.french = displayName;
 			locBlock.german = displayName;
 			locBlock.spanish = displayName;
@@ -117,25 +122,32 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 
 	// Rebels
 	LocBlock rebelBlock;
-	//Title
+	// Title
 	rebelBlock.english = "Religious";
 	rebelBlock.french = "Dévots";
 	rebelBlock.german = "Religiöse";
 	rebelBlock.spanish = "Religioso";
 	localizations.insert(std::pair(faithName + "_rebels_title", rebelBlock));
-	//Name
+	// Name
 	rebelBlock.english = "$RELIGION$ Zealots";
 	rebelBlock.french = "Fanatiques $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Fanatiker";
 	rebelBlock.spanish = "Fanáticos de $RELIGION$";
 	localizations.insert(std::pair(faithName + "_rebels_name", rebelBlock));
-	//Desc
-	rebelBlock.english = "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers.";
-	rebelBlock.french = "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s\'en prennent à tous les infidèles.";
-	rebelBlock.german = "Religiöse Fanatiker neigen dazu, sich in Provinzen zu erheben, die von Nationen eines anderen Glaubens kontrolliert werden. Sie versuchen, ihren Glauben zu verbreiten und alle Ungläubigen zu quälen.";
-	rebelBlock.spanish = "Los fanáticos religiosos suelen aparecer en provincias controladas por naciones que practican una creencia diferente. Buscan propagar su fe y sofocar a todos los infieles.";
+	// Desc
+	rebelBlock.english =
+		 "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers.";
+	rebelBlock.french =
+		 "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre "
+		 "leur foi et s\'en prennent à tous les infidèles.";
+	rebelBlock.german =
+		 "Religiöse Fanatiker neigen dazu, sich in Provinzen zu erheben, die von Nationen eines anderen Glaubens kontrolliert werden. Sie versuchen, ihren "
+		 "Glauben zu verbreiten und alle Ungläubigen zu quälen.";
+	rebelBlock.spanish =
+		 "Los fanáticos religiosos suelen aparecer en provincias controladas por naciones que practican una creencia diferente. Buscan propagar su fe y sofocar "
+		 "a todos los infieles.";
 	localizations.insert(std::pair(faithName + "_rebels_desc", rebelBlock));
-	//Army
+	// Army
 	rebelBlock.english = "$RELIGION$ Army";
 	rebelBlock.french = "Armée $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Armee";
@@ -187,12 +199,12 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 		{
 			if (!match->getAllowedConversion().empty())
 				allowedConversion += match->getAllowedConversion() + "\n";
-			if (!match->getCountry().empty() && countryCount < 4) //This should prevent religions from having too many modifiers at once
+			if (!match->getCountry().empty() && countryCount < 4) // This should prevent religions from having too many modifiers at once
 			{
 				country += match->getCountry() + "\n";
 				countryCount++;
 			}
-			if (!match->getCountrySecondary().empty() && secondaryCount < 2) //Secondary is limited to two
+			if (!match->getCountrySecondary().empty() && secondaryCount < 2) // Secondary is limited to two
 			{
 				countrySecondary += match->getCountrySecondary() + "\n";
 				secondaryCount++;
@@ -215,7 +227,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.allowedConversion = allowedConversion;
 	newReligion.country = country;
 	newReligion.countrySecondary = countrySecondary;
-	
+
 	newReligion.province = province;
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;
@@ -247,5 +259,5 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	generatedReligions.emplace_back(newReligion);
 
 	// and register it.
-	CK3toEU4ReligionMap.insert(std::pair(origName, faithName));
+	CK3toEU4ReligionMap.emplace(origName, std::make_pair(faithName, std::nullopt));
 }

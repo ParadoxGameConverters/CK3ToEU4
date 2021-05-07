@@ -3,7 +3,6 @@
 #include "../../CK3toEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
 #include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
 #include "../../CK3toEU4/Source/Mappers/ReligionMapper/ReligionMapper.h"
-#include "../../CK3toEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -18,7 +17,6 @@ TEST(Mappers_ReligionMapperTests, nonMatchGivesEmptyOptional)
 	ASSERT_FALSE(eu4Religion);
 }
 
-
 TEST(Mappers_ReligionMapperTests, eu4ReligionCanBeFound)
 {
 	std::stringstream input;
@@ -28,6 +26,17 @@ TEST(Mappers_ReligionMapperTests, eu4ReligionCanBeFound)
 
 	const auto& eu4Religion = theMapper.getEU4ReligionForCK3Religion("ck3Religion");
 	ASSERT_EQ("eu4Religion", eu4Religion);
+}
+
+TEST(Mappers_ReligionMapperTests, eu4SchoolCanBeFound)
+{
+	std::stringstream input;
+	input << "link = { eu4 = eu4Religion ck3 = ck3Religion school = some_school }";
+
+	const mappers::ReligionMapper theMapper(input);
+
+	const auto& eu4School = theMapper.getEU4SchoolForCK3Religion("ck3Religion");
+	ASSERT_EQ("some_school", *eu4School);
 }
 
 
@@ -95,7 +104,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	mappers::ReligionDefinitionMapper definitions(input4, input5);
 
 	mappers::LocalizationMapper localizationMapper;
-	
+
 	ASSERT_FALSE(theMapper.getEU4ReligionForCK3Religion("dyn_faith_345")); // There is no mapping like this, yet.
 	theMapper.importCK3Faiths(faiths, definitions, scraper, localizationMapper);
 	ASSERT_TRUE(theMapper.getEU4ReligionForCK3Religion("dyn_faith_345")); // Now something exists.

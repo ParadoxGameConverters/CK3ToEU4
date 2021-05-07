@@ -1,6 +1,6 @@
 #include "ReligionMapping.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ReligionMapping::ReligionMapping(std::istream& theStream)
 {
@@ -12,12 +12,13 @@ mappers::ReligionMapping::ReligionMapping(std::istream& theStream)
 void mappers::ReligionMapping::registerKeys()
 {
 	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString religionString(theStream);
-		eu4Religion = religionString.getString();
+		eu4Religion = commonItems::getString(theStream);
 	});
 	registerKeyword("ck3", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::singleString religionString(theStream);
-		ck3Religions.insert(religionString.getString());
+		ck3Religions.insert(commonItems::getString(theStream));
+	});
+	registerKeyword("school", [this](const std::string& unused, std::istream& theStream) {
+		eu4School = commonItems::getString(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

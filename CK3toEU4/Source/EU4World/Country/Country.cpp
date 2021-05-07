@@ -115,9 +115,15 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		baseReligion = details.holder->getFaith()->second->getName();
 	if (baseReligion.empty())
 		Log(LogLevel::Warning) << tag << " base faith has no name!";
-	const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
-	if (religionMatch)
+
+	// religious_school we imported needs to be cleared before we try setting it along with religion.
+	details.religiousSchool.clear();	
+	if (const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion); religionMatch)
+	{
 		details.religion = *religionMatch;
+		if (const auto& schoolMatch = religionMapper.getEU4SchoolForCK3Religion(baseReligion); schoolMatch)
+			details.religiousSchool = *schoolMatch;
+	}
 	else
 	{
 		// We failed to get a religion. This is not an issue. We'll set it later from the majority of owned provinces.
@@ -199,8 +205,6 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 
 	// Unit type should automatically match tech group. If not we'll add logic for it here.
 	details.unitType.clear();
-	// religious_school can be picked by player at leisure.
-	details.religiousSchool.clear();
 	// ditto for cults
 	details.cults.clear();
 	// We fill accepted cultures later, manually, once we can do a provincial census
