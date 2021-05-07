@@ -11,13 +11,13 @@ mappers::ReligionMapping::ReligionMapping(std::istream& theStream)
 
 void mappers::ReligionMapping::registerKeys()
 {
-	registerKeyword("eu4", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("eu4", [this](std::istream& theStream) {
 		eu4Religion = commonItems::getString(theStream);
 	});
-	registerKeyword("ck3", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("ck3", [this](std::istream& theStream) {
 		ck3Religions.insert(commonItems::getString(theStream));
 	});
-	registerKeyword("school", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("school", [this](std::istream& theStream) {
 		eu4School = commonItems::getString(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);

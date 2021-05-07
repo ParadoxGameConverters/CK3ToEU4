@@ -26,7 +26,7 @@ mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
 
 void mappers::ReligionMapper::registerKeys()
 {
-	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("link", [this](std::istream& theStream) {
 		for (const ReligionMapping theMapping(theStream); const auto& ck3Religion: theMapping.getCK3Religions())
 			CK3toEU4ReligionMap.emplace(ck3Religion, std::make_pair(theMapping.getEU4Religion(), theMapping.getEU4School()));
 	});
