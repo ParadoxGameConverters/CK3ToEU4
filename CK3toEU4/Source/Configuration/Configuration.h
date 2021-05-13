@@ -63,8 +63,9 @@ class Configuration: commonItems::parser
 	};
 	enum class SIBERIA
 	{
-		CLEAR_SIBERIA = 1,
-		LEAVE_SIBERIA = 2
+		SMALL_SIBERIA = 1,
+		CLEAR_SIBERIA = 2,
+		LEAVE_SIBERIA = 3
 	};
 	enum class INSTITUTIONS
 	{

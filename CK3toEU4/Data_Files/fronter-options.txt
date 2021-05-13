@@ -193,6 +193,12 @@ option = {
 			tooltip = GULAG2TIP
 			default = false
 		}
+		radioOption = {
+			name = 3
+			displayName = GULAG3
+			tooltip = GULAG3TIP
+			default = false
+		}
 	}
 }
 option = { # We support this, but manually, if players wish it.
