@@ -21,6 +21,10 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 			scrapeLanguage("french", mod.second + "/localization");
 			scrapeLanguage("german", mod.second + "/localization");
 			scrapeLanguage("spanish", mod.second + "/localization");
+			scrapeLanguage("english", mod.second + "/localization/replace");
+			scrapeLanguage("french", mod.second + "/localization/replace");
+			scrapeLanguage("german", mod.second + "/localization/replace");
+			scrapeLanguage("spanish", mod.second + "/localization/replace");
 		}
 	}
 
