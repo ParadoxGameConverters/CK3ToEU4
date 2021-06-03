@@ -1,7 +1,7 @@
 government = tribal
 add_government_reform = tribal_kingdom
 government_rank = 2
-mercantilism = 0.1
+mercantilism = 10
 primary_culture = cree
 add_accepted_culture = inuit
 religion = totemism
