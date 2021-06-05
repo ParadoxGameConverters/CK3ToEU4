@@ -3,7 +3,7 @@
 government = monarchy
 add_government_reform = autocracy_reform
 add_army_professionalism = 0.05
-mercantilism = 0.1
+mercantilism = 10
 primary_culture = pequot
 religion = totemism
 technology_group = high_american

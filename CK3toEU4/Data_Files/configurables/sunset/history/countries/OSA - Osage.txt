@@ -1,6 +1,6 @@
 government = monarchy
 add_government_reform = autocracy_reform
-mercantilism = 0.1
+mercantilism = 10
 primary_culture = osage
 religion = totemism
 technology_group = high_american
