@@ -4,6 +4,6 @@ tags={
 }
 name="CK3 to EU4 Converter"
 picture="thumbnail.png"
-supported_version="1.3.*"
+supported_version="1.4.*"
 path="mod/ck3toeu4"
 remote_file_id="2241203093"
