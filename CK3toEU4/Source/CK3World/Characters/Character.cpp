@@ -24,9 +24,13 @@ void CK3::Character::registerKeys()
 	});
 	registerKeyword("culture", [this](const std::string& unused, std::istream& theStream) {
 		culture = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		if (culture->first == 4294967295)
+			culture.reset();
 	});
 	registerKeyword("faith", [this](const std::string& unused, std::istream& theStream) {
 		faith = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		if (faith->first == 4294967295)
+			faith.reset();
 	});
 	registerKeyword("dynasty_house", [this](const std::string& unused, std::istream& theStream) {
 		house = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
