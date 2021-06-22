@@ -1,11 +1,11 @@
 #include "LandedTitles.h"
 #include "../Geography/CountyDetails.h"
 #include "../Geography/ProvinceHoldings.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
 #include "Titles.h"
-#include "CommonRegexes.h"
 
 // This is a recursive class that scrapes 00_landed_titles.txt (and related files) looking for title colors, landlessness,
 // and most importantly relation between baronies and barony provinces so we can link titles to actual clay.
@@ -103,7 +103,8 @@ void CK3::LandedTitles::linkCountyDetails(const CountyDetails& countyDetails)
 		}
 		else
 		{
-			throw std::runtime_error("Landed title " + landedTitle.first + " has no definition in counties={} section of the save game!");
+			// Nothing. People with missing titles from mods and whatnot can have holes on their map.
+			Log(LogLevel::Warning) << "Landed title " << landedTitle.first << " has no definition in counties={} section of the save game!";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed titles updated.";

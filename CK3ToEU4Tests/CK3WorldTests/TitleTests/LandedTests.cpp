@@ -196,21 +196,6 @@ TEST(CK3World_LandedTitlesTests, countiesCanBeLinked)
 	ASSERT_EQ(99, c2->second->getCounty()->second->getDevelopment());
 }
 
-TEST(CK3World_LandedTitlesTests, missingCountiesLinkThrowsException)
-{
-	std::stringstream input;
-	input << "e_empire1 = { k_kingdom2 = { c_county3 = { b_barony4 = { province = 12 } } } }\n";
-	input << "c_county5 = { }\n";
-	CK3::LandedTitles titles;
-	titles.loadTitles(input);
-
-	std::stringstream input2;
-	input2 << "c_county3 = { development = 89 }\n";
-	const CK3::CountyDetails counties(input2);
-
-	ASSERT_THROW(titles.linkCountyDetails(counties), std::runtime_error);
-}
-
 TEST(CK3World_LandedTitlesTests, titlesCanBeLinked)
 {
 	std::stringstream input;
