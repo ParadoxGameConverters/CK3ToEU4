@@ -98,9 +98,9 @@ class Configuration: commonItems::parser
 	void setOutputName();
 	void verifyCK3Path();
 	void verifyEU4Path() const;
+	[[nodiscard]] std::optional<GameVersion> getRawVersion(const std::string& filePath) const;
 	void verifyCK3Version(const mappers::ConverterVersion& converterVersion) const;
 	void verifyEU4Version(const mappers::ConverterVersion& converterVersion) const;
-	[[nodiscard]] std::optional<GameVersion> getRawVersion(const std::string& filePath) const;
 
 	std::string SaveGamePath;
 	std::string CK3Path;
