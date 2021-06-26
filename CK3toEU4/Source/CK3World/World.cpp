@@ -13,7 +13,7 @@
 namespace fs = std::filesystem;
 #include "CommonRegexes.h"
 
-CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
+CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const mappers::ConverterVersion& converterVersion)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
@@ -32,10 +32,21 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration)
 		const commonItems::singleString startDateString(theStream);
 		startDate = date(startDateString.getString());
 	});
-	registerKeyword("version", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("version", [this, converterVersion](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString versionString(theStream);
 		CK3Version = GameVersion(versionString.getString());
 		Log(LogLevel::Info) << "<> Savegame version: " << versionString.getString();
+
+		if (converterVersion.getMinSource() > CK3Version)
+		{
+			Log(LogLevel::Error) << "Converter requires a minimum save from v" << converterVersion.getMinSource().toShortString();
+			throw std::runtime_error("Savegame vs converter version mismatch!");
+		}
+		if (!converterVersion.getMaxSource().isLargerishThan(CK3Version))
+		{
+			Log(LogLevel::Error) << "Converter requires a maximum save from v" << converterVersion.getMaxSource().toShortString();
+			throw std::runtime_error("Savegame vs converter version mismatch!");
+		}
 	});
 	registerKeyword("variables", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading variable flags.";

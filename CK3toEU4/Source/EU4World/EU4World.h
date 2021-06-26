@@ -45,8 +45,7 @@ class World
 	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
 	void importCK3Provinces(const CK3::World& sourceWorld);
 	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(
-		 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
-		 const CK3::World& sourceWorld) const;
+		 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
 
 	// processing
 	void alterProvinceDevelopment();

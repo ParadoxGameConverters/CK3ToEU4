@@ -464,7 +464,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		if (ck3Titles.empty())
 			continue;
 		// Next, we find what province to use as its initializing source.
-		const auto& sourceProvince = determineProvinceSource(ck3Titles, sourceWorld);
+		const auto& sourceProvince = determineProvinceSource(ck3Titles);
 		if (!sourceProvince)
 		{
 			Log(LogLevel::Warning) << "Mismap on CK3 province import for EU4 province: " << province.first;
@@ -481,8 +481,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 }
 
 std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::determineProvinceSource(
-	 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles,
-	 const CK3::World& sourceWorld) const
+	 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const
 {
 	// determine ownership by province development.
 	std::map<long long, std::map<std::string, std::shared_ptr<CK3::Title>>> theClaims; // holderID, offered province sources
@@ -496,9 +495,15 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	for (auto ck3Title: ck3Titles)
 	{
 		if (!ck3Title.second->getHoldingTitle().second)
-			throw std::runtime_error(ck3Title.first + " has no holding title?");
+		{
+			Log(LogLevel::Error) << ck3Title.first << " has no holding title? Did you import this save from an old version?";
+			continue;	
+		}		
 		if (!ck3Title.second->getHoldingTitle().second->getHolder())
-			throw std::runtime_error(ck3Title.first + " has no holding title holder?");
+		{
+			Log(LogLevel::Error) << ck3Title.first + " has no holding title holder? Did you import this save from an old version?";
+			continue;
+		}
 		const auto holderID = ck3Title.second->getHoldingTitle().second->getHolder()->first; // this is the fellow owning this land.
 		theClaims[holderID].insert(ck3Title);
 		theShares[holderID] += ck3Title.second->getBuildingWeight(devWeightsMapper);
