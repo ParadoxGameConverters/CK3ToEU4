@@ -1,6 +1,6 @@
 #include "ConverterVersion.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ConverterVersion::ConverterVersion()
 {
@@ -23,20 +23,16 @@ void mappers::ConverterVersion::registerKeys()
 	registerSetter("source", source);
 	registerSetter("target", target);
 	registerKeyword("minSource", [this](std::istream& theStream) {
-		const auto tempString = commonItems::getString(theStream);
-		minSource = GameVersion(tempString);
+		minSource = GameVersion(commonItems::getString(theStream));
 	});
 	registerKeyword("maxSource", [this](std::istream& theStream) {
-		const auto tempString = commonItems::getString(theStream);
-		maxSource = GameVersion(tempString);
+		maxSource = GameVersion(commonItems::getString(theStream));
 	});
 	registerKeyword("minTarget", [this](std::istream& theStream) {
-		const auto tempString = commonItems::getString(theStream);
-		minTarget = GameVersion(tempString);
+		minTarget = GameVersion(commonItems::getString(theStream));
 	});
 	registerKeyword("maxTarget", [this](std::istream& theStream) {
-		const auto tempString = commonItems::getString(theStream);
-		maxTarget = GameVersion(tempString);
+		maxTarget = GameVersion(commonItems::getString(theStream));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
