@@ -1,14 +1,14 @@
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
-
-#include "Date.h"
+#include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "Parser.h"
 #include <set>
 
 class Configuration: commonItems::parser
 {
   public:
-	Configuration();
+	Configuration() = default;
+	explicit Configuration(const mappers::ConverterVersion& converterVersion);
 	explicit Configuration(std::istream& theStream);
 
 	enum class STARTDATE
@@ -98,6 +98,9 @@ class Configuration: commonItems::parser
 	void setOutputName();
 	void verifyCK3Path();
 	void verifyEU4Path() const;
+	[[nodiscard]] std::optional<GameVersion> getRawVersion(const std::string& filePath) const;
+	void verifyCK3Version(const mappers::ConverterVersion& converterVersion) const;
+	void verifyEU4Version(const mappers::ConverterVersion& converterVersion) const;
 
 	std::string SaveGamePath;
 	std::string CK3Path;

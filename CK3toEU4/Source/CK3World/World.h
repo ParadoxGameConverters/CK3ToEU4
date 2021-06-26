@@ -1,6 +1,6 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
-
+#include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
@@ -29,7 +29,7 @@ namespace CK3
 class World: commonItems::parser
 {
   public:
-	explicit World(const std::shared_ptr<Configuration>& theConfiguration);
+	explicit World(const std::shared_ptr<Configuration>& theConfiguration, const mappers::ConverterVersion& converterVersion);
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
 	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }

@@ -7,8 +7,8 @@
 void convertCK3ToEU4(const mappers::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Progress) << "0 %";
-	auto theConfiguration = std::make_shared<Configuration>();
-	const CK3::World sourceWorld(theConfiguration);
+	const auto theConfiguration = std::make_shared<Configuration>(converterVersion);
+	const CK3::World sourceWorld(theConfiguration, converterVersion);
 	EU4::World destWorld(sourceWorld, *theConfiguration, converterVersion);
 	LOG(LogLevel::Info) << "* Conversion complete *";
 	Log(LogLevel::Progress) << "100 %";
