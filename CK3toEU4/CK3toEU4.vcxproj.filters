@@ -13,9 +13,6 @@
     <Filter Include="Mappers">
       <UniqueIdentifier>{2a5df4d5-c31b-4499-be11-931a1356868a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Mappers\ConverterVersion">
-      <UniqueIdentifier>{27a93aa9-ba9f-4627-88dd-76912dace149}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EU4World">
       <UniqueIdentifier>{2af33946-3f4b-49d3-8494-fa3060f35c77}</UniqueIdentifier>
     </Filter>
@@ -123,17 +120,11 @@
     <ClInclude Include="Source\Configuration\Configuration.h">
       <Filter>Configuration</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Mappers\ConverterVersion\ConverterVersion.h">
-      <Filter>Mappers\ConverterVersion</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\EU4World\EU4World.h">
       <Filter>EU4World</Filter>
     </ClInclude>
     <ClInclude Include="Source\EU4World\Output\outModFile.h">
-      <Filter>EU4World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EU4World\Output\outConverterVersion.h">
       <Filter>EU4World\Output</Filter>
     </ClInclude>
     <ClInclude Include="..\commonItems\Date.h">
@@ -406,6 +397,9 @@
     <ClInclude Include="..\commonItems\CommonRegexes.h">
       <Filter>CommonItems</Filter>
     </ClInclude>
+    <ClInclude Include="..\commonItems\ConverterVersion.h">
+      <Filter>CommonItems</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -427,9 +421,6 @@
     <ClCompile Include="Source\Configuration\Configuration.cpp">
       <Filter>Configuration</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Mappers\ConverterVersion\ConverterVersion.cpp">
-      <Filter>Mappers\ConverterVersion</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\EU4World\EU4World.cpp">
       <Filter>EU4World</Filter>
@@ -438,9 +429,6 @@
       <Filter>EU4World\Output</Filter>
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp">
-      <Filter>EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EU4World\Output\outConverterVersion.cpp">
       <Filter>EU4World\Output</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\Date.cpp">
@@ -696,6 +684,9 @@
       <Filter>CK3World\Titles</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>CommonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
       <Filter>CommonItems</Filter>
     </ClCompile>
   </ItemGroup>

@@ -13,7 +13,7 @@
 namespace fs = std::filesystem;
 #include "CommonRegexes.h"
 
-CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const mappers::ConverterVersion& converterVersion)
+CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
@@ -696,7 +696,7 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 
 		for (const auto& brick: brickList)
 			brick.second->brickTitle();
-		
+
 		// grant independence to ex-vassals.
 		for (const auto& member: members)
 		{

@@ -2,13 +2,14 @@
 #include "Color.h"
 #include "CommonFunctions.h"
 #include "CommonRegexes.h"
+#include "GameVersion.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include <fstream>
 auto laFabricaDeColor = commonItems::Color::Factory();
 
-Configuration::Configuration(const mappers::ConverterVersion& converterVersion)
+Configuration::Configuration(const commonItems::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Info) << "Reading configuration file";
 	registerKeys();
@@ -157,64 +158,16 @@ void Configuration::setOutputName()
 	Log(LogLevel::Info) << "Using output name " << outputName;
 }
 
-std::optional<GameVersion> Configuration::getRawVersion(const std::string& filePath) const
+void Configuration::verifyCK3Version(const commonItems::ConverterVersion& converterVersion) const
 {
-	if (!commonItems::DoesFileExist(filePath))
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " does not exist. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	std::ifstream versionFile(filePath);
-	if (!versionFile.is_open())
-	{
-		Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " cannot be opened. Proceeding blind.";
-		return std::nullopt;
-	}
-
-	while (!versionFile.eof())
-	{
-		std::string line;
-		std::getline(versionFile, line);
-		if (line.find("rawVersion") == std::string::npos)
-			continue;
-		auto pos = line.find(':');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(pos + 1, line.length());
-		pos = line.find_first_of('\"');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(pos + 1, line.length());
-		pos = line.find_first_of('\"');
-		if (pos == std::string::npos)
-		{
-			Log(LogLevel::Warning) << "Failure extracting version: " << filePath << " has broken rawVersion. Proceeding blind.";
-			return std::nullopt;
-		}
-		line = line.substr(0, pos);
-		Log(LogLevel::Info) << "\tVersion is: " << line;
-		return GameVersion(line);
-	}
-
-	Log(LogLevel::Warning) << "Failure verifying version: " << filePath << " doesn't contain rawVersion. Proceeding blind.";
-	return std::nullopt;
-}
-
-void Configuration::verifyCK3Version(const mappers::ConverterVersion& converterVersion) const
-{
-	const auto CK3Version = getRawVersion(CK3Path + "../launcher/launcher-settings.json");
+	const auto CK3Version = GameVersion::extractVersionFromLauncher(CK3Path + "../launcher/launcher-settings.json");
 	if (!CK3Version)
 	{
 		Log(LogLevel::Error) << "CK3 version could not be determined, proceeding blind!";
 		return;
 	}
+
+	Log(LogLevel::Info) << "CK3 version: " << CK3Version->toShortString();
 
 	if (converterVersion.getMinSource() > *CK3Version)
 	{
@@ -225,19 +178,21 @@ void Configuration::verifyCK3Version(const mappers::ConverterVersion& converterV
 	if (!converterVersion.getMaxSource().isLargerishThan(*CK3Version))
 	{
 		Log(LogLevel::Error) << "CK3 version is v" << CK3Version->toShortString() << ", converter requires maximum v"
-									<< converterVersion.getMinSource().toShortString() << "!";
+									<< converterVersion.getMaxSource().toShortString() << "!";
 		throw std::runtime_error("Converter vs CK3 installation mismatch!");
 	}
 }
 
-void Configuration::verifyEU4Version(const mappers::ConverterVersion& converterVersion) const
+void Configuration::verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const
 {
-	const auto EU4Version = getRawVersion(EU4Path + "/launcher-settings.json");
+	const auto EU4Version = GameVersion::extractVersionFromLauncher(EU4Path + "/launcher-settings.json");
 	if (!EU4Version)
 	{
 		Log(LogLevel::Error) << "EU4 version could not be determined, proceeding blind!";
 		return;
 	}
+
+	Log(LogLevel::Info) << "EU4 version: " << EU4Version->toShortString();
 
 	if (converterVersion.getMinTarget() > *EU4Version)
 	{

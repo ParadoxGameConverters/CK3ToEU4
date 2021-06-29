@@ -1,10 +1,10 @@
 #include "CK3ToEU4Converter.h"
-#include "Configuration/Configuration.h"
 #include "CK3World/World.h"
+#include "Configuration/Configuration.h"
 #include "EU4World/EU4World.h"
 #include "Log.h"
 
-void convertCK3ToEU4(const mappers::ConverterVersion& converterVersion)
+void convertCK3ToEU4(const commonItems::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Progress) << "0 %";
 	const auto theConfiguration = std::make_shared<Configuration>(converterVersion);
