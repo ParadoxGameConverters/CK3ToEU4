@@ -178,7 +178,7 @@ void Configuration::verifyCK3Version(const commonItems::ConverterVersion& conver
 	if (!converterVersion.getMaxSource().isLargerishThan(*CK3Version))
 	{
 		Log(LogLevel::Error) << "CK3 version is v" << CK3Version->toShortString() << ", converter requires maximum v"
-									<< converterVersion.getMinSource().toShortString() << "!";
+									<< converterVersion.getMaxSource().toShortString() << "!";
 		throw std::runtime_error("Converter vs CK3 installation mismatch!");
 	}
 }
