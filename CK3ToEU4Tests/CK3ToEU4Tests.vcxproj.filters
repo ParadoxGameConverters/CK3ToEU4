@@ -10,14 +10,8 @@
     <Filter Include="MapperTests">
       <UniqueIdentifier>{0be6794b-7d73-46ca-8d6f-af8d92d700b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MapperTests\ConverterVersionTests">
-      <UniqueIdentifier>{2befaf67-4e3d-4493-95bf-2258ea0787d6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CK3ToEU4\Mappers">
       <UniqueIdentifier>{51d5cc9a-2852-4185-879c-ed1d57fb42a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ConverterVersion">
-      <UniqueIdentifier>{b590e4b9-a439-4deb-866a-f75500b9ebe1}</UniqueIdentifier>
     </Filter>
     <Filter Include="CK3ToEU4\Configuration">
       <UniqueIdentifier>{d5abe392-461d-445d-88ee-e8e1af6aa287}</UniqueIdentifier>
@@ -224,17 +218,11 @@
     <ClCompile Include="..\commonItems\StringUtils.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp">
-      <Filter>CK3ToEU4\Mappers\ConverterVersion</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
       <Filter>CK3ToEU4\Configuration</Filter>
     </ClCompile>
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp">
       <Filter>ConfigurationTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
@@ -548,9 +536,6 @@
     <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMappingTests.cpp">
       <Filter>MapperTests\TitleTagMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp">
-      <Filter>MapperTests\ConverterVersionTests</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp">
       <Filter>MapperTests\NamedColorTests</Filter>
     </ClCompile>
@@ -645,6 +630,9 @@
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\ConvenientParser.cpp">
+      <Filter>CK3ToEU4\commonItems</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
   </ItemGroup>

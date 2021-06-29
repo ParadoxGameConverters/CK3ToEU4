@@ -8,7 +8,8 @@ int main(const int argc, const char* argv[])
 	{
 		std::ofstream clearLog("log.txt");
 		clearLog.close();
-		const mappers::ConverterVersion converterVersion;
+		commonItems::ConverterVersion converterVersion;
+		converterVersion.loadVersion("configurables/version.txt");
 		Log(LogLevel::Info) << converterVersion;
 		if (argc >= 2)
 		{

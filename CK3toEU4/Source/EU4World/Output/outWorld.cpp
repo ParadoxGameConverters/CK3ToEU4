@@ -8,7 +8,7 @@ namespace fs = std::filesystem;
 #include "../Province/EU4Province.h"
 #include "OSCompatibilityLayer.h"
 
-void EU4::World::output(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
+void EU4::World::output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
 {
 	const auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 	const auto dynamicInstitutions = theConfiguration.getDynamicInstitutions() == Configuration::INSTITUTIONS::DYNAMIC;
@@ -112,7 +112,9 @@ void EU4::World::output(const mappers::ConverterVersion& converterVersion, const
 	Log(LogLevel::Progress) << "97 %";
 }
 
-void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const CK3::Mods& mods) const
+void EU4::World::outputReligionIcons(const Configuration& theConfiguration,
+	 const std::vector<GeneratedReligion>& generatedReligions,
+	 const CK3::Mods& mods) const
 {
 	// edit the strips
 	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions, mods);
@@ -145,36 +147,39 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 }
 
 
-void EU4::World::outputReligions(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const std::vector<std::string>& reformedReligions) const
+void EU4::World::outputReligions(const Configuration& theConfiguration,
+	 const std::vector<GeneratedReligion>& generatedReligions,
+	 const std::vector<std::string>& reformedReligions) const
 {
-	//Reformed Religion global flag output
+	// Reformed Religion global flag output
 	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_replaced_on_startup.txt");
-	//Basegame stuff first
+	// Basegame stuff first
 	globalFlagFile << "on_startup = {\n\t"
-	<< "emperor = {\n\t\t"
-		<<	"save_global_event_target_as = Emperor\n\t"
-	<< "}\n\t"
-	<< "if = {\n\t\t"
-		<<	"limit = { is_emperor_of_china = yes }\n\t\t"
-		<<	"save_global_event_target_as = EmperorOfChina\n\t"
-	<< "}\n\t"
-	<< "events = {\n\t\t"
-		<<	"muslim_school_events.20 #Pick School #flavor_fra .15000 #Make the French Revolution happen if starting in 1789\n\t"
-	<< "}\n\t"
-	<< "if = {\n\t\t"
-		<<	"limit = { has_dlc = \"Cradle of Civilization\" has_country_modifier = tur_janissary }\n\t\t"
-		<<	"remove_country_modifier = tur_janissary\n\t"
-	<< "}\n\t"
-	<< "initialize_schools_effect = yes #This is only used here but is used for readability of on_action file.\n\n\t"
-	<< "if = {\n\t\t"
-		<<	"limit = { NOT = { has_country_flag = new_flavour_bav_13_has_been_triggered } OR = { tag = UBV tag = LBV tag = ING } }\n\t\t"
-		<<  "set_country_flag = new_flavour_bav_13_has_been_triggered country_event = { id = new_flavour_bav.13 days = 90 } #better not to allow almost instant DOWs\n\t"
-	<< "}\n\t"
-	<< "if = {\n\t\t"
-		<<	"limit = { tag = FRA started_in = 1789.7.14 NOT = { is_year = 1790 } NOT = { has_disaster = french_revolution } }\n\t\t"
-		<<  "add_disaster_progress = { value = 100 disaster = french_revolution }\n\t"
-	<< "}\n\t";
-	//Now our stuff
+						<< "emperor = {\n\t\t"
+						<< "save_global_event_target_as = Emperor\n\t"
+						<< "}\n\t"
+						<< "if = {\n\t\t"
+						<< "limit = { is_emperor_of_china = yes }\n\t\t"
+						<< "save_global_event_target_as = EmperorOfChina\n\t"
+						<< "}\n\t"
+						<< "events = {\n\t\t"
+						<< "muslim_school_events.20 #Pick School #flavor_fra .15000 #Make the French Revolution happen if starting in 1789\n\t"
+						<< "}\n\t"
+						<< "if = {\n\t\t"
+						<< "limit = { has_dlc = \"Cradle of Civilization\" has_country_modifier = tur_janissary }\n\t\t"
+						<< "remove_country_modifier = tur_janissary\n\t"
+						<< "}\n\t"
+						<< "initialize_schools_effect = yes #This is only used here but is used for readability of on_action file.\n\n\t"
+						<< "if = {\n\t\t"
+						<< "limit = { NOT = { has_country_flag = new_flavour_bav_13_has_been_triggered } OR = { tag = UBV tag = LBV tag = ING } }\n\t\t"
+						<< "set_country_flag = new_flavour_bav_13_has_been_triggered country_event = { id = new_flavour_bav.13 days = 90 } #better not to allow "
+							"almost instant DOWs\n\t"
+						<< "}\n\t"
+						<< "if = {\n\t\t"
+						<< "limit = { tag = FRA started_in = 1789.7.14 NOT = { is_year = 1790 } NOT = { has_disaster = french_revolution } }\n\t\t"
+						<< "add_disaster_progress = { value = 100 disaster = french_revolution }\n\t"
+						<< "}\n\t";
+	// Now our stuff
 	globalFlagFile << "if={\n\t\tlimit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }";
 	for (const auto& religion: reformedReligions)
 	{
@@ -185,16 +190,18 @@ void EU4::World::outputReligions(const Configuration& theConfiguration, const st
 
 	for (const auto& religion: generatedReligions)
 	{
-		//Main Religion File
+		// Main Religion File
 		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
-		//Religious Rebels
-		std::ofstream religionRebelFile("output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		// Religious Rebels
+		std::ofstream religionRebelFile(
+			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
-		//Religion Sounds
-		std::ofstream religionSoundFile("output/" + theConfiguration.getOutputName() + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
+		// Religion Sounds
+		std::ofstream religionSoundFile(
+			 "output/" + theConfiguration.getOutputName() + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
 		religion.outputSounds(religionSoundFile);
 		religionSoundFile.close();
 	}
@@ -211,7 +218,7 @@ void EU4::World::outputBookmark(const Configuration& theConfiguration, date conv
 		defines << "-- Defines modified by the converter\n\n";
 		defines << "\nNDefines.NGame.START_DATE = \"" << conversionDate << "\"\n";
 		defines.close();
-		
+
 		// fix the dynamic bookmark in bookmark file
 		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt"))
 			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt!");
@@ -232,7 +239,7 @@ void EU4::World::outputBookmark(const Configuration& theConfiguration, date conv
 		// And wipe regular one
 		std::ifstream bookmarks1444_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark_1444.txt",
 			 std::ofstream::out | std::ofstream::trunc);
-		bookmarks1444_txt.close();		
+		bookmarks1444_txt.close();
 	}
 	else
 	{
@@ -262,7 +269,7 @@ void EU4::World::createModFile(const Configuration& theConfiguration) const
 	output2.close();
 }
 
-void EU4::World::outputVersion(const mappers::ConverterVersion& converterVersion, const Configuration& theConfiguration) const
+void EU4::World::outputVersion(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration) const
 {
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/ck3toeu4_version.txt");
 	if (!output.is_open())
@@ -297,7 +304,8 @@ void EU4::World::outputDynamicInstitutions(const Configuration& theConfiguration
 	auto files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/institutions/");
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/institutions/");
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/dynamicInstitutions/institutions/" + file, "output/" + theConfiguration.getOutputName() + "/common/institutions/" + file);
+		commonItems::TryCopyFile("configurables/dynamicInstitutions/institutions/" + file,
+			 "output/" + theConfiguration.getOutputName() + "/common/institutions/" + file);
 	// Dynamic Ideas
 	files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/ideas/");
 	for (const auto& file: files)
@@ -434,7 +442,7 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 	auto actualConversionDate = conversionDate;
 	if (theConfiguration.getStartDate() == Configuration::STARTDATE::EU)
 		actualConversionDate = date(1444, 11, 11);
-	
+
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create hre diplomacy file: output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt!");

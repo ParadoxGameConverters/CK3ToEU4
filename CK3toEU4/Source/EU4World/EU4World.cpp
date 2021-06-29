@@ -14,7 +14,7 @@ namespace fs = std::filesystem;
 #include <cmath>
 #include <fstream>
 
-EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const mappers::ConverterVersion& converterVersion)
+EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 
@@ -225,7 +225,7 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		auto tag = fileName.substr(0, 3);
 		if (countries.contains(tag))
 		{
-			countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);			
+			countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);
 		}
 		else
 		{
@@ -497,8 +497,8 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		if (!ck3Title.second->getHoldingTitle().second)
 		{
 			Log(LogLevel::Error) << ck3Title.first << " has no holding title? Did you import this save from an old version?";
-			continue;	
-		}		
+			continue;
+		}
 		if (!ck3Title.second->getHoldingTitle().second->getHolder())
 		{
 			Log(LogLevel::Error) << ck3Title.first + " has no holding title holder? Did you import this save from an old version?";
@@ -526,9 +526,9 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		if (!capitalBarony.second->getDFLiege()->second)
 		{
 			Log(LogLevel::Warning) << ck3Title.first << "'s capital barony is unlinked! What?";
-			return *ck3Titles.begin();			
+			return *ck3Titles.begin();
 		}
-		
+
 		if (capitalBarony.second->getDFLiege()->second->getName() == ck3Title.second->getName())
 		{
 			// This is the someone's capital, don't assign it away if unnecessary.
@@ -1350,7 +1350,7 @@ void EU4::World::fixDuplicateNames()
 		if (countryLocs.find(country.first)->second.english.empty())
 			continue;
 		nameMap[countryLocs.find(country.first)->second.english].emplace_back(country.second);
-	}	
+	}
 
 	// Reorder countries in list by development (highest -> lowest)
 	for (auto& countryBatch: nameMap)
@@ -1371,7 +1371,7 @@ void EU4::World::fixDuplicateNames()
 		auto currentBlock = countryBatch.second[0]->getLocalizations().find(countryBatch.second[0]->getTag())->second;
 
 		// Is this a dynastyname? These will follow a bit different rules.
-		auto dynastyName = countryBatch.second[0]->getHasDynastyName();			
+		auto dynastyName = countryBatch.second[0]->getHasDynastyName();
 
 		// Clear out any "Greater" from name.
 		auto greaterdropped = false;

@@ -1,12 +1,12 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
-#include "../Mappers/ConverterVersion/ConverterVersion.h"
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
 #include "../Mappers/TraitScraper/TraitScraper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
+#include "ConverterVersion.h"
 #include "Cultures/Cultures.h"
 #include "Dynasties/Dynasties.h"
 #include "Dynasties/Houses.h"
@@ -29,7 +29,7 @@ namespace CK3
 class World: commonItems::parser
 {
   public:
-	explicit World(const std::shared_ptr<Configuration>& theConfiguration, const mappers::ConverterVersion& converterVersion);
+	explicit World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);
 
 	[[nodiscard]] const auto& getConversionDate() const { return endDate; }
 	[[nodiscard]] const auto& getIndeps() const { return independentTitles; }

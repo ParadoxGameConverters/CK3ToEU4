@@ -123,14 +123,12 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ConverterVersion\ConverterVersion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
@@ -165,6 +163,7 @@
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\ConvenientParser.cpp" />
+    <ClCompile Include="..\commonItems\ConverterVersion.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
@@ -205,7 +204,6 @@
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
-    <ClCompile Include="MapperTests\ConverterVersion\ConverterVersionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
     <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp" />
