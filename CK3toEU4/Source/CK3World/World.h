@@ -14,7 +14,7 @@
 #include "GameVersion.h"
 #include "Geography/CountyDetails.h"
 #include "Geography/ProvinceHoldings.h"
-#include "Mods/Mods.h"
+#include "ModLoader/ModLoader.h"
 #include "Parser.h"
 #include "Religions/Faiths.h"
 #include "Religions/Religions.h"

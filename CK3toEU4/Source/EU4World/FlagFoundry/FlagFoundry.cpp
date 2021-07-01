@@ -1,7 +1,6 @@
 ﻿#include "FlagFoundry.h"
 #include "../../CK3World/CoatsOfArms/CoatOfArms.h"
 #include "../../CK3World/Dynasties/House.h"
-#include "../../CK3World/Mods/Mods.h"
 #include "../../CK3World/Titles/Title.h"
 #include "../../Configuration/Configuration.h"
 #include "../Country/Country.h"
@@ -20,24 +19,24 @@ EU4::FlagFoundry::FlagFoundry()
 	flagCrafter.loadWarehouse(warehouse);
 }
 
-void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, const CK3::Mods& mods) const
+void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, const Mods& mods) const
 {
 	std::set<std::string> folders;
 	folders.insert(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
-	for (const auto& [modName, modPath]: mods.getMods())
+	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(modPath + "/gfx/coat_of_arms/"))
+		if (!commonItems::DoesFolderExist(mod.path + "/gfx/coat_of_arms/"))
 			continue;
-		Log(LogLevel::Info) << "<> Loading some garments from " << modName;
-		folders.insert(modPath + "/gfx/coat_of_arms/");
+		Log(LogLevel::Info) << "<> Loading some garments from [" << mod.name << "]";
+		folders.insert(mod.path + "/gfx/coat_of_arms/");
 	}
 	warehouse->loadImageFolders(folders);
 }
 
 void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr<Country>>& countries,
 	 const Configuration& theConfiguration,
-	 const std::vector<EU4::GeneratedReligion>& religions,
-	 const CK3::Mods& mods) const
+	 const std::vector<GeneratedReligion>& religions,
+	 const Mods& mods) const
 {
 	// prep the battleground.
 	if (!commonItems::DeleteFolder("flags.tmp"))
@@ -117,7 +116,7 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 	}
 }
 
-void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const CK3::Mods& mods) const
+void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const Mods& mods) const
 {
 	// Import the generic Rebel Flag
 	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
@@ -143,10 +142,10 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 		}
 		if (!foundIcon)
 		{
-			for (const auto& modDir: mods.getMods() | std::ranges::views::values)
+			for (const auto& mod: mods)
 			{
-				path1 = modDir + "/" + religion.iconPath;
-				path2 = modDir + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+				path1 = mod.path + "/" + religion.iconPath;
+				path2 = mod.path + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 				if (commonItems::DoesFileExist(path1))
 				{
 					foundIcon = true;
@@ -187,7 +186,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	baseFlag.write("flags.tmp/" + religion.name + "_rebels.tga");
 }
 
-void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions, const CK3::Mods& mods) const
+void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& religions, const Mods& mods) const
 {
 	std::set<std::string> targetStrips = {"country_icon_religion.dds", "icon_religion.dds", "icon_religion_small.dds", "province_view_religion.dds"};
 	for (const auto& religion: religions)
@@ -211,10 +210,10 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 			}
 			if (!foundIcon)
 			{
-				for (const auto& modDir: mods.getMods() | std::ranges::views::values)
+				for (const auto& mod: mods)
 				{
-					path1 = modDir + "/" + religion.iconPath;
-					path2 = modDir + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+					path1 = mod.path + "/" + religion.iconPath;
+					path2 = mod.path + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 					if (commonItems::DoesFileExist(path1))
 					{
 						foundIcon = true;

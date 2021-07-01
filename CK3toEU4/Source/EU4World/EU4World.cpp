@@ -21,7 +21,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	LOG(LogLevel::Info) << "-> Reading Words";
-	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods().getMods());
+	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods());
 	Log(LogLevel::Progress) << "50 %";
 
 	// Scrape Primary Tags for nationalities

@@ -114,7 +114,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 
 void EU4::World::outputReligionIcons(const Configuration& theConfiguration,
 	 const std::vector<GeneratedReligion>& generatedReligions,
-	 const CK3::Mods& mods) const
+	 const Mods& mods) const
 {
 	// edit the strips
 	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions, mods);

@@ -2,7 +2,7 @@
 #define CONFIGURATION_H
 #include "ConverterVersion.h"
 #include "Parser.h"
-#include <set>
+#include "ModLoader/ModLoader.h"
 
 class Configuration: commonItems::parser
 {
@@ -88,10 +88,10 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getSunset() const { return sunset; }
 	[[nodiscard]] const auto& getDynamicInstitutions() const { return dynamicInstitutions; }
 	[[nodiscard]] const auto& getDevelopment() const { return development; }
-	[[nodiscard]] const auto& getModFileNames() const { return modFileNames; }
+	[[nodiscard]] const auto& getMods() const { return mods; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
 
-	void setModFileNames(const std::set<std::string>& mods) { modFileNames = mods; }
+	void setMods(const Mods& theMods) { mods = theMods; }
 
   private:
 	void registerKeys();
@@ -119,7 +119,7 @@ class Configuration: commonItems::parser
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
 
-	std::set<std::string> modFileNames;
+	Mods mods;
 };
 
 #endif // CONFIGURATION_H

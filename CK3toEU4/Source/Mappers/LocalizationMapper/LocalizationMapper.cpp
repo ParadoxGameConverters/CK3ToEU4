@@ -5,7 +5,7 @@
 #include <fstream>
 #include <set>
 
-void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const std::map<std::string, std::string>& mods)
+void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods)
 {
 	scrapeLanguage("english", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("french", theConfiguration.getCK3Path() + "localization");
@@ -14,17 +14,17 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 
 	for (const auto& mod: mods)
 	{
-		if (commonItems::DoesFolderExist(mod.second + "localization"))
+		if (commonItems::DoesFolderExist(mod.path + "localization"))
 		{
-			Log(LogLevel::Info) << "\t>> Found some words in: " << mod.second + "/localization";
-			scrapeLanguage("english", mod.second + "/localization");
-			scrapeLanguage("french", mod.second + "/localization");
-			scrapeLanguage("german", mod.second + "/localization");
-			scrapeLanguage("spanish", mod.second + "/localization");
-			scrapeLanguage("english", mod.second + "/localization/replace");
-			scrapeLanguage("french", mod.second + "/localization/replace");
-			scrapeLanguage("german", mod.second + "/localization/replace");
-			scrapeLanguage("spanish", mod.second + "/localization/replace");
+			Log(LogLevel::Info) << "\t>> Found some words in: [" << mod.name + "]";
+			scrapeLanguage("english", mod.path + "/localization");
+			scrapeLanguage("french", mod.path + "/localization");
+			scrapeLanguage("german", mod.path + "/localization");
+			scrapeLanguage("spanish", mod.path + "/localization");
+			scrapeLanguage("english", mod.path + "/localization/replace");
+			scrapeLanguage("french", mod.path + "/localization/replace");
+			scrapeLanguage("german", mod.path + "/localization/replace");
+			scrapeLanguage("spanish", mod.path + "/localization/replace");
 		}
 	}
 

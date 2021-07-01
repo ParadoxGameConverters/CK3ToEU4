@@ -110,12 +110,6 @@ void Configuration::registerKeys()
 		development = DEVELOPMENT(std::stoi(developmentString.getString()));
 		Log(LogLevel::Info) << "Development set to: " << developmentString.getString();
 	});
-	registerKeyword("selectedMods", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::stringList modsList(theStream);
-		const auto& theList = modsList.getStrings();
-		modFileNames.insert(theList.begin(), theList.end());
-		Log(LogLevel::Info) << modFileNames.size() << " mods selected by configuration. Deselected mods will be ignored.";
-	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
