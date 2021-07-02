@@ -18,11 +18,14 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
 	});
-	registerKeyword("mods", [theConfiguration](const std::string& unused, std::istream& theStream) {
+	registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
-		const auto modsList = commonItems::stringList(theStream).getStrings();
-		theConfiguration->setModFileNames(std::set(modsList.begin(), modsList.end()));
-		Log(LogLevel::Info) << "<> Savegame claims " << theConfiguration->getModFileNames().size() << " mods used.";
+		for (const auto& path: commonItems::getStrings(theStream))
+			mods.emplace_back(Mod("", path));
+		Log(LogLevel::Info) << "<> Savegame claims " << mods.size() << " mods used.";
+		commonItems::ModLoader modLoader;
+		modLoader.loadMods(theConfiguration->getCK3DocPath(), mods);
+		mods = modLoader.getMods();
 	});
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString dateString(theStream);
@@ -115,7 +118,6 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	Log(LogLevel::Progress) << "10 %";
 
 	LOG(LogLevel::Info) << "* Priming Converter Components *";
-	mods.loadModDirectory(*theConfiguration);
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
@@ -347,16 +349,16 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 			continue;
 		namedColors.loadColors(theConfiguration.getCK3Path() + "common/named_colors/" + file);
 	}
-	for (const auto& mod: mods.getMods())
+	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.second + "common/named_colors"))
+		if (!commonItems::DoesFolderExist(mod.path + "common/named_colors"))
 			continue;
-		Log(LogLevel::Info) << "<> Loading some colors from " << mod.first;
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/named_colors"))
+		Log(LogLevel::Info) << "<> Loading some colors from [" << mod.name << "]";
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/named_colors"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
-			namedColors.loadColors(mod.second + "common/named_colors/" + file);
+			namedColors.loadColors(mod.path + "common/named_colors/" + file);
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
@@ -371,16 +373,16 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 			continue;
 		landedTitles.loadTitles(theConfiguration.getCK3Path() + "common/landed_titles/" + file);
 	}
-	for (const auto& mod: mods.getMods())
+	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.second + "common/landed_titles"))
+		if (!commonItems::DoesFolderExist(mod.path + "common/landed_titles"))
 			continue;
-		Log(LogLevel::Info) << "<> Loading some landed titles from " << mod.first;
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/landed_titles"))
+		Log(LogLevel::Info) << "<> Loading some landed titles from [" << mod.name << "]";
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/landed_titles"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
-			landedTitles.loadTitles(mod.second + "common/landed_titles/" + file);
+			landedTitles.loadTitles(mod.path + "common/landed_titles/" + file);
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
@@ -395,16 +397,16 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 			continue;
 		traitScraper.loadTraits(theConfiguration.getCK3Path() + "common/traits/" + file);
 	}
-	for (const auto& mod: mods.getMods())
+	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.second + "common/traits"))
+		if (!commonItems::DoesFolderExist(mod.path + "common/traits"))
 			continue;
-		Log(LogLevel::Info) << "<> Loading some character traits from " << mod.first;
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.second + "common/traits"))
+		Log(LogLevel::Info) << "<> Loading some character traits from [" << mod.name << "]";
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/traits"))
 		{
 			if (file.find(".txt") == std::string::npos)
 				continue;
-			traitScraper.loadTraits(mod.second + "common/traits/" + file);
+			traitScraper.loadTraits(mod.path + "common/traits/" + file);
 		}
 	}
 	LOG(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
