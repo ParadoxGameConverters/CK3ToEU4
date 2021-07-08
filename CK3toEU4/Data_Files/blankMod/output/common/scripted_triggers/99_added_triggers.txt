@@ -37,6 +37,11 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { was_tag = SNG }
 			NOT = { was_tag = YIN }
 			NOT = { was_tag = CHN }
+			NOT = { was_tag = USA }
+			NOT = { was_tag = CAN }
+			NOT = { was_tag = BRZ }
+			NOT = { was_tag = AUS }
+			NOT = { was_tag = MEX }
 			NOT = { tag = MUG }
 			NOT = { tag = TUR }
 			NOT = { tag = BYZ }
@@ -72,6 +77,11 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = YIN }
 			NOT = { tag = CHN }
 			NOT = { tag = ENS } # Empire of the North Sea
+			NOT = { tag = USA }
+			NOT = { tag = CAN }
+			NOT = { tag = BRZ }
+			NOT = { tag = AUS }
+			NOT = { tag = MEX }
 		}
 	}
 }

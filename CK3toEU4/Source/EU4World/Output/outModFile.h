@@ -1,7 +1,7 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-#include <ostream>
+#include "GameVersion.h"
 
 namespace EU4
 {
@@ -9,6 +9,7 @@ class ModFile
 {
   public:
 	std::string outname;
+	GameVersion version;
 
 	friend std::ostream& operator<<(std::ostream& output, const ModFile& modFile);
 };

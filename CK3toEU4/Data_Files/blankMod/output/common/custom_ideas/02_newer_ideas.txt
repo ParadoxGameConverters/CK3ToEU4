@@ -7,11 +7,18 @@ newer_idea_adm_modifiers = {
 		yearly_harmony = 0.25
 		max_level = 2
 		level_cost_2 = 5
+		enabled = {
+			has_dlc = "Mandate of Heaven"
+		}
 		chance = {
 			factor = 0.5
 			modifier = {
 				factor = 0
 				NOT = { religion = confucianism }
+			}
+			modifier = {
+				factor = 2
+				religion = confucianism
 			}
 		}
 	}
@@ -19,11 +26,18 @@ newer_idea_adm_modifiers = {
 		harmonization_speed = 0.1
 		max_level = 2
 		level_cost_2 = 10
+		enabled = {
+			has_dlc = "Mandate of Heaven"
+		}
 		chance = {
 			factor = 0.5
 			modifier = {
 				factor = 0
 				NOT = { religion = confucianism }
+			}
+			modifier = {
+				factor = 2
+				religion = confucianism
 			}
 		}
 	}
@@ -36,6 +50,10 @@ newer_idea_adm_modifiers = {
 			modifier = {
 				factor = 0
 				is_emperor_of_china = no
+			}
+			modifier = {
+				factor = 2
+				is_emperor_of_china = yes
 			}
 		}
 	}
@@ -158,11 +176,24 @@ newer_idea_adm_modifiers = {
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Common Sense"
+		}
 		chance = {
-			factor = 0.1
+			factor = 0.5
 			modifier = {
 				factor = 0
-				church_power = no
+				NOT = { religion = anglican }
+				NOT = { religion = hussite }
+				NOT = { religion = protestant }
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					religion = anglican
+					religion = hussite
+					religion = protestant
+				}
 			}
 		}
 	}
@@ -199,11 +230,18 @@ newer_idea_adm_modifiers = {
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Wealth of Nations"
+		}
 		chance = {
-			factor = 1
+			factor = 0.5
 			modifier = {
 				factor = 0
-				uses_fervor = no
+				NOT = { religion = reformed }
+			}
+			modifier = {
+				factor = 2
+				religion = reformed
 			}
 		}
 	}
@@ -282,7 +320,7 @@ newer_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.2
 		}
 	}
 	custom_siege_blockade_progress = {
@@ -290,7 +328,11 @@ newer_idea_mil_modifiers = {
 		max_level = 1
 		level_cost_1 = 5
 		chance = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
 		}
 	}
 	custom_cav_to_inf_ratio = {
@@ -356,7 +398,7 @@ newer_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.2
 		}
 	}
 	custom_fire_damage_received = {
@@ -460,12 +502,22 @@ newer_idea_mil_modifiers = {
 		level_cost_2 = 5
 		level_cost_3 = 15		
 		level_cost_4 = 30
+		enabled = {
+			has_dlc = "Rights of Man"
+		}
 		chance = {
-			factor = 1
+			factor = 0.5
+			modifier = {
+				factor = 2
+				OR = {
+					has_reform = prussian_republic
+					has_reform = prussian_monarchy
+				}
+			}
 			modifier = {
 				factor = 0
+				NOT = { has_reform = prussian_republic }
 				NOT = { has_reform = prussian_monarchy }
-				NOT = { has_reform = prussian_republic_reform }
 			}
 		}
 	}
@@ -567,7 +619,7 @@ newer_idea_dip_modifiers = {
 		level_cost_1 = 5
 		level_cost_2 = 15
 		chance = {
-			factor = 0
+			factor = 0.25
 		}
 	}
 	custom_war_taxes_cost_modifier = {
@@ -621,7 +673,11 @@ newer_idea_dip_modifiers = {
 		max_level = 2
 		level_cost_2 = 5
 		chance = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
 		}
 	}
 	custom_capture_ship_chance = {
@@ -630,7 +686,11 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
 		}
 	}
 	custom_sunk_ship_morale_hit_recieved = {
@@ -678,7 +738,7 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.25
 		}
 	}
 	custom_native_uprising_chance = {
@@ -687,7 +747,7 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.25
 		}
 	}
 	custom_reduced_liberty_desire = {
@@ -703,27 +763,31 @@ newer_idea_dip_modifiers = {
 			}
 		}
 	}
-	#custom_migration_cooldown = {
-	#	migration_cooldown = -0.1
-	#	level_cost_2 = 3
-	#	level_cost_3 = 9
-	#	level_cost_4 = 18
-	#	chance = {
-	#		factor = 0.5
-	#		modifier = {
-	#			factor = 0
-	#			NOT = { num_of_cities = 2 }
-	#			has_reform = siberian_tribe
-	#		}
-	#	}
-	#}
+	custom_migration_cooldown = {
+		migration_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 2
+				religion = totemism
+			}
+			modifier = {
+				factor = 0
+				NOT = { religion = totemism }
+			}
+		}
+	}
 	custom_envoy_travel_time = {
 		envoy_travel_time = -0.1
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.15
 		}
 	}
 	custom_province_warscore_cost = {
@@ -731,7 +795,7 @@ newer_idea_dip_modifiers = {
 		max_level = 2
 		level_cost_2 = 20
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	custom_dip_tech_cost_modifier = {
@@ -768,14 +832,14 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.25
 		}
 	}
 	custom_auto_explore_adjacent_to_colony = {
 		auto_explore_adjacent_to_colony = yes
 		max_level = 1
 		chance = {
-			factor = 0
+			factor = 0.15
 		}
 	}
 	custom_unjustified_demands = {
@@ -784,7 +848,7 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.75
 		}
 	}
 	custom_rebel_support_efficiency = {
@@ -830,7 +894,11 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
 		}
 	}
 	custom_global_foreign_trade_power = {
@@ -839,7 +907,7 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.15
 		}
 	}
 	custom_improve_relation_modifier = {
@@ -878,7 +946,11 @@ newer_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
 		}
 	}
 }

@@ -389,9 +389,30 @@ new_world_i = {
 		is_in_capital_area = yes
 		owner = { 
 			has_idea = quest_for_the_new_world
+			#at least one province colonised or colonising, or have a subject colony
 			OR = {
-				num_of_trade_companies = 1
-				num_of_colonies = 1
+				any_owned_province = {
+					OR = {
+						continent = north_america
+						continent = south_america
+						continent = new_world
+					}
+				}
+				any_subject_country = {
+					OR = {
+						is_subject_of_type = colony
+						is_subject_of_type = crown_colony
+						is_subject_of_type = private_enterprise
+						is_subject_of_type = self_governing_colony
+					}
+					capital_scope = {
+						OR = {
+							continent = north_america
+							continent = south_america
+							continent = new_world
+						}
+					}
+				}
 			}
 			OR = {
 				north_america = { has_discovered = PREV }
@@ -467,7 +488,7 @@ new_world_i = {
 					is_capital = yes
 				}
 				owner = {
-					num_of_colonies = 1
+					colony = 1
 					any_subject_country = {
 						is_colonial_nation = yes
 						OR = {

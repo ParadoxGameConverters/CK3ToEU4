@@ -85,6 +85,7 @@ technology = {
 	year = 769
 	
 	land_morale = 	0.5
+	may_drill = yes
 }
 
 technology = {

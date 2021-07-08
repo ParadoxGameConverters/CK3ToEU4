@@ -1,0 +1,791 @@
+leviathan_idea_adm_modifiers = {
+	category = ADM
+
+	custom_yearly_zeal = {
+		yearly_revolutionary_zeal = 0.5
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 60
+		chance = {
+			factor = 0
+		}
+		enabled = {
+			has_dlc = "Emperor"
+		}
+	}
+
+	custom_missionary_strength_heretics = {
+		global_heretic_missionary_strength = 0.01
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 15
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				religion = confucianism
+			}
+		}
+	}
+
+	custom_missionary_strength_heathens = {
+		global_heathen_missionary_strength = 0.01
+		max_level = 2
+		level_cost_1 = 5
+		level_cost_2 = 15
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				religion = confucianism
+			}
+		}
+	}
+
+	custom_missionary_maintenance = {
+		missionary_maintenance_cost = -0.1 
+		chance = {
+			factor = 0.75
+			modifier = {
+				factor = 0
+				religion = confucianism
+			}
+		}
+	}
+
+	custom_tribal_development_growth = {
+		tribal_development_growth = 0.075
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+
+	custom_great_project_upgrade_cost = {
+		great_project_upgrade_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Leviathan"
+		}
+		chance = {
+			factor = 0.5
+		}
+	}
+
+	custom_all_power_cost = {
+		all_power_cost = -0.05
+		max_level = 2
+		level_cost_1 = 30
+		level_cost_2 = 60
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_country_admin_power = {
+		country_admin_power = 1
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_monthly_splendor = {
+		monthly_splendor = 2
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+		}
+		enabled = {
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+
+	custom_monthly_heir_claim_increase = {
+		monthly_heir_claim_increase = 0.2
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+
+	custom_monthly_support_heir_gain = {
+		monthly_support_heir_gain = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+
+	custom_monthly_federation_favor_growth = {
+		monthly_federation_favor_growth = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+
+	custom_yearly_tribal_allegiance = {
+		yearly_tribal_allegiance = 0.5
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}
+
+	custom_imperial_mandate = {
+		imperial_mandate = 0.1
+		level_cost_1 = 5
+		level_cost_2 = 30
+		max_level = 2
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_emperor_of_china = no
+			}
+		}
+		enabled = {
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+
+	custom_election_cycle = {
+		election_cycle = -1
+		level_cost_1 = 30
+		max_level = 1
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { government = republic }
+			}
+		}
+	}
+
+	custom_reelection_cost = {
+		reelection_cost = -0.15
+		level_cost_1 = 10
+		level_cost_2 = 20
+		max_level = 2
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { government = republic }
+			}
+		}
+	}
+
+	custom_state_governing_cost = {
+		state_governing_cost = -0.05
+		chance = {
+			factor = 0.33
+		}
+	}
+
+	custom_trade_company_governing_cost = {
+		trade_company_governing_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.33
+		}
+	}
+
+	custom_expand_administration_cost = {
+		expand_administration_cost = -0.25
+		level_cost_1 = 5
+		level_cost_2 = 25
+		max_level = 2
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_curia_powers_cost = {
+		curia_powers_cost = -0.15
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Emperor"
+		}
+		chance = {
+			factor = 1
+			modifier = {
+				NOT = { religion = catholic }
+				factor = 0
+			}
+		}
+	}
+
+	custom_prestige_per_development_from_conversion = {
+		prestige_per_development_from_conversion = 0.5
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+		}
+	}
+
+	custom_good_monthly_karma = {
+		monthly_karma = 0.001
+		max_level = 2
+		level_cost_1 = 9
+		level_cost_2 = 18
+		enabled = {
+			has_dlc = "Common Sense"
+		}
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { religion = buddhism }
+				NOT = { religion = vajrayana }
+				NOT = { religion = mahayana }
+			}
+		}
+	}
+
+	custom_bad_monthly_karma = {
+		monthly_karma = -0.001
+		max_level = 2
+		level_cost_1 = 9
+		level_cost_2 = 18
+		enabled = {
+			has_dlc = "Common Sense"
+		}
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { religion = buddhism }
+				NOT = { religion = vajrayana }
+				NOT = { religion = mahayana }
+			}
+		}
+	}
+
+	custom_min_autonomy_in_territories = {
+		min_autonomy_in_territories = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_free_policy = {
+		free_policy = 1
+		max_level = 1
+		level_cost_1 = 25
+		chance = {
+			factor = 0.2
+		}
+	}
+
+	custom_possible_policy = {
+		possible_policy = 1
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.2
+		}
+	}
+
+	custom_innovativeness_gain = {
+		innovativeness_gain = 0.25
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Rule Britannia"
+		}
+		chance = {
+			factor = 0.5
+		}
+	}
+
+	custom_cb_on_religious_enemies = {
+		cb_on_religious_enemies = yes
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.01
+		}
+	}
+
+	custom_idea_claim_colonies = {
+		idea_claim_colonies = yes
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}
+	}
+}
+
+leviathan_idea_dip_modifiers = {
+	category = DIP
+
+	custom_trade_company_investment_cost = {
+		trade_company_investment_cost = -0.15
+		max_level = 2
+		level_cost_2 = 20
+		chance = {
+			factor = 0.15
+		}
+		enabled = {
+			has_dlc = "Dharma"
+		}
+	}
+
+	custom_admiral_cost = {
+		admiral_cost = -0.25
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 30
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+
+	custom_global_naval_barrage_cost = {
+		global_naval_barrage_cost = -0.15
+	
+		enabled = {
+			has_dlc = "Golden Century"
+		}
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+
+	custom_accept_vassalization_reasons = {
+		accept_vassalization_reasons = 15
+		max_level = 2
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_transfer_trade_power_reasons = {
+		transfer_trade_power_reasons = 25
+		max_level = 2
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_country_diplomatic_power = {
+		country_diplomatic_power = 1
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_discovered_relations_impact = {
+		discovered_relations_impact = -0.25
+		max_level = 4
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.1
+		}
+	}
+
+	custom_center_of_trade_upgrade_cost = {
+		center_of_trade_upgrade_cost = -0.1
+	
+		enabled = {
+			has_dlc = "Dharma"
+		}
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+		}
+	}
+
+	custom_idea_slave_raiders_on_same_religion = {
+		may_perform_slave_raid_on_same_religion = yes
+		max_level = 1
+		level_cost_1 = 40
+		enabled = {
+			OR = {
+				has_dlc = "Mare Nostrum"
+				has_dlc = "Golden Century"
+			}
+		}
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+
+	custom_ship_power_propagation = {
+		ship_power_propagation = 0.1
+		max_level = 4
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+			modifier = {
+				factor = 1.5
+				any_owned_province = {
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+		}
+	}
+
+	custom_expel_minorities_cost = {
+		expel_minorities_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.1
+		}
+	
+		enabled = {
+			has_dlc = "Golden Century"
+		}
+	}
+
+	custom_colonist_placement_chance = {
+		colonist_placement_chance = 0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}	
+	}
+
+	custom_appoint_cardinal_cost = {
+		appoint_cardinal_cost = -0.25
+		level_cost_1 = 10
+		level_cost_2 = 20
+		max_level = 2
+		enabled = {
+			has_dlc = "Emperor"
+		}
+		chance = {
+			factor = 1
+			modifier = {
+				NOT = { religion = catholic }
+				factor = 0
+			}
+		}
+	}
+
+	custom_enforce_religion_cost = {
+		enforce_religion_cost = -0.25
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_promote_culture_cost = {
+		promote_culture_cost = -0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 1.5
+				NOT = { dominant_culture = ROOT }
+			}
+		}
+	}
+
+	custom_rival_change_cost = {
+		rival_change_cost = -0.25
+		level_cost_1 = 9
+		level_cost_2 = 18
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_global_ship_repair = {
+		global_ship_repair = 0.1
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+
+	custom_global_ship_cost = {
+		global_ship_cost = -0.05
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}
+	}
+
+	custom_reduced_stab_impacts = {
+		reduced_stab_impacts = yes
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.01
+		}
+	}
+
+	custom_may_explore = {
+		may_explore = yes
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.01
+		}
+	}
+}
+
+leviathan_idea_mil_modifiers = {
+	category = MIL
+
+	custom_yearly_army_professionalism = {
+		yearly_army_professionalism = 0.005
+		enabled = {
+			has_dlc = "Cradle of Civilization"
+		}
+		chance = {
+			factor = 0.5
+		}
+	}
+
+	custom_drill_gain_modifier = {
+		drill_gain_modifier = 0.125
+		enabled = {
+			has_dlc = "Cradle of Civilization"
+		}
+		chance = {
+			factor = 1
+		}
+	}
+
+	custom_drill_decay_modifier = {
+		drill_decay_modifier = -0.125
+		enabled = {
+			has_dlc = "Cradle of Civilization"
+		}
+		chance = {
+			factor = 0.75
+		}
+	}
+
+	custom_infantry_fire = {
+		infantry_fire = 1
+		max_level = 1
+		level_cost_1 = 25
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_infantry_shock = {
+		infantry_shock = 1
+		max_level = 1
+		level_cost_1 = 25
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_cavalry_fire = {
+		cavalry_fire = 1
+		max_level = 1
+		level_cost_1 = 25
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 2
+				has_reform = steppe_horde
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}		
+	}
+
+	custom_cavalry_shock = {
+		cavalry_shock = 1
+		max_level = 1
+		level_cost_1 = 25
+		chance = {
+			factor = 0.1
+			modifier = {
+				factor = 2
+				has_reform = steppe_horde
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					technology_group = andean
+					technology_group = south_american
+					technology_group = mesoamerican
+					technology_group = north_american
+				}
+			}
+		}	
+	}
+
+	custom_artillery_shock = {
+		artillery_shock = 1
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 25
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_reserves_organisation = {
+		reserves_organisation = 0.15
+		max_level = 4
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_global_supply_limit_modifier = {
+		global_supply_limit_modifier = 0.1
+		max_level = 4
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 1
+		}
+	}
+
+	custom_general_cost = {
+		general_cost = -0.25
+		max_level = 2
+		level_cost_1 = 15
+		level_cost_2 = 30
+		chance = {
+			factor = 0.25
+		}
+	}
+
+	custom_raze_power_gain = {
+		raze_power_gain = 0.1
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { government = tribal }
+			}
+		}
+	}
+
+	custom_manpower_in_true_faith_provinces = {
+		manpower_in_true_faith_provinces = 0.1
+		chance = {
+			factor = 0.5
+		}
+	}
+
+	custom_country_military_power = {
+		country_military_power = 1
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.05
+		}
+	}
+
+	custom_extra_manpower_at_religious_war = {
+		extra_manpower_at_religious_war = yes
+		max_level = 1
+		level_cost_1 = 50
+		chance = {
+			factor = 0.15
+			modifier = {
+				factor = 2
+				dominant_religion = ROOT
+			}
+		}
+	}
+}

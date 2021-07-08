@@ -61,7 +61,7 @@ age_of_discovery = {
 				any_owned_province = {
 					is_core = ROOT
 					controlled_by = owner
-					development = 30
+					development_discounting_tribal = 30
 				}
 			}
 		}
@@ -74,10 +74,7 @@ age_of_discovery = {
 		
 		obj_two_unions = {
 			allow = {
-				OR = {
-					religion_group = christian
-					religion_group = gnostic
-				}
+				religion_group = christian
 			}
 			personal_union  = 2
 		}
@@ -85,7 +82,6 @@ age_of_discovery = {
 		obj_many_vassals = {
 			allow = {
 				NOT = { religion_group = christian }
-				NOT = { religion_group = gnostic }
 			}
 			vassal = 5
 		}		
@@ -285,7 +281,6 @@ age_of_reformation = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
-				religion = adamites
 			}
 		}
 		
@@ -304,7 +299,7 @@ age_of_reformation = {
 		}
 		
 		obj_colonial_empire = {
-			num_of_colonies = 5
+			colony = 5
 		}
 		
 		obj_force_converted = {
@@ -492,10 +487,7 @@ age_of_reformation = {
 					tag = LIT
 					AND = {
 						government_rank = 3
-						OR = {
-							culture_group = west_slavic
-							tag = LIT
-						}
+						culture_group = west_slavic
 					}
 				}
 			}
@@ -885,6 +877,7 @@ age_of_revolutions = {
 			allow = {
 				OR = {
 					tag = PRU
+					tag = GER
 					has_reform = prussian_monarchy 
 					has_reform = prussian_republic_reform
 				}

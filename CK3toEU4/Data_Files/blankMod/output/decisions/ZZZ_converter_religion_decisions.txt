@@ -376,6 +376,7 @@ country_decisions = {
 			owns_core_province = 441 #Various locations suggested to have been the site of these fires.
 			owns_core_province = 2223 #Various locations suggested to have been the site of these fires.
 		}
+		major = yes
 		effect = {	
 			add_country_modifier = {
 				name = "royal_fires_modifier"
