@@ -367,6 +367,15 @@ adm_idea_modifiers = {
 				NOT = { has_reform = steppe_horde }
 				NOT = { has_reform = great_mongol_state_reform }
 			}
+			modifier = {
+				factor = 0
+				OR = {
+					government = republic
+					government = theocracy
+					government = native
+					government = monarchy
+				}
+			}
 		}
 	}
 	custom_idea_devotion = {
@@ -381,6 +390,10 @@ adm_idea_modifiers = {
 				factor = 0
 				NOT = { government = theocracy }
 			}
+			modifier = {
+				factor = 0
+				uses_devotion = no
+			}
 		}	
 	}
 	custom_idea_republican_tradition = {
@@ -393,7 +406,7 @@ adm_idea_modifiers = {
 		chance = {
 			factor = 1
 			modifier = {
-				factor = 0
+				factor = 0.25
 				NOT = { government = republic }
 			}
 			modifier = {
@@ -458,6 +471,11 @@ adm_idea_modifiers = {
 			modifier = {
 				factor = 1.25
 				government = theocracy
+			}
+			modifier = {
+				factor = 0.15
+				num_of_cities = 1
+				NOT = { num_of_cities = 50 }
 			}
 		}
 	}
@@ -546,7 +564,7 @@ adm_idea_modifiers = {
 		}
 	}
 	custom_idea_religious_unity = {
-		religious_unity = 0.05
+		religious_unity = 0.075
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18
@@ -625,5 +643,8 @@ adm_idea_modifiers = {
 		possible_adm_policy = 1
 		max_level = 1
 		level_cost_1 = 30
+		chance = {
+			factor = 0.25
+		}
 	}
 }

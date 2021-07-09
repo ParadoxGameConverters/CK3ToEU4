@@ -318,6 +318,7 @@ christian = {
 	anglican = {
 		color = { 135 77 255 }
 		icon = 28
+		allow_female_defenders_of_the_faith = yes
 
 		allowed_center_conversion = {
 			catholic

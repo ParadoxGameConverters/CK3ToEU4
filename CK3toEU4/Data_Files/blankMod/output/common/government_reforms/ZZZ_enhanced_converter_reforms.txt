@@ -387,13 +387,15 @@ federal_republic = {
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
-		blocked_call_diet = yes
 	}
 	conditional = {
 		allow = {
 			has_dlc = "Common Sense"
 		}
 		has_parliament = yes
+		custom_attributes = {
+			blocked_call_diet = yes
+		}
 	}
 	duration = 4
 }
@@ -401,6 +403,7 @@ tsardom = {
 	icon = "king"
 	allow_normal_conversion = yes
 	potential = {
+		culture_group = east_slavic
 		OR = {
 			religion = orthodox
 			religion = monothelite

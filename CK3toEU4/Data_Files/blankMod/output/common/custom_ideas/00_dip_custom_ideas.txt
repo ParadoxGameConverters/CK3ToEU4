@@ -249,7 +249,17 @@ dip_idea_modifiers = {
 	custom_idea_global_tariffs = {
 		global_tariffs = 0.05
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				factor = 0
+				capital_scope = {
+					OR = {
+						continent = north_america
+						continent = south_america
+						continent = new_world
+					}
+				}
+			}
 		}
 	}
 	custom_idea_diplomatic_reputation = {
@@ -392,7 +402,7 @@ dip_idea_modifiers = {
 		level_cost_2 = 30
 		max_level = 2
 		chance = {
-			factor = 0.5
+			factor = 0.75
 		}
 	}		
 	custom_idea_war_exhaustion_cost = {
@@ -401,7 +411,7 @@ dip_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 1
 		}		
 	}	
 	custom_idea_navy_tradition = {
@@ -513,7 +523,7 @@ dip_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.75
 		}
 	}		
 	custom_idea_spy_defense = {
@@ -522,7 +532,7 @@ dip_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.75
 		}
 	}	
 	custom_idea_ship_recruit_speed = {
@@ -553,7 +563,7 @@ dip_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}	
 	custom_idea_prestige_from_naval = {
@@ -872,5 +882,53 @@ dip_idea_modifiers = {
 		possible_dip_policy = 1
 		max_level = 1
 		level_cost_1 = 30
+		chance = {
+			factor = 0.25
+		}
+	}
+	custom_idea_transport_power = {
+		transport_power = 0.1
+		level_cost_2 = 1
+		level_cost_3 = 3
+		level_cost_4 = 6	
+
+		# Used for random generation
+		chance = {
+			factor = 0.25
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}			
+	}
+	custom_idea_possible_disengagement_chance = {
+		disengagement_chance = 0.05
+
+		# Used for random generation
+		chance = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				NOT = { num_of_ports = 1 }
+			}
+		}			
+	}
+	custom_idea_yearly_karma_decay = {
+		yearly_karma_decay = 0.005
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		enabled = {
+			has_dlc = "Common Sense"
+		}
+		chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { religion = buddhism }
+				NOT = { religion = vajrayana }
+				NOT = { religion = mahayana }
+			}
+		}
 	}
 }

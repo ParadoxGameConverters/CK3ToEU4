@@ -164,6 +164,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// And finally, the Dump.
 	LOG(LogLevel::Info) << "---> The Dump <---";
 	modFile.outname = theConfiguration.getOutputName();
+	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld);
 	LOG(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
 }

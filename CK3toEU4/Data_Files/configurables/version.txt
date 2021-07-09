@@ -1,10 +1,10 @@
 # Version info
 
-version = "0.7"
-name = "Gayomarthian"
+version = "0.8H"
+name = "Hellenic"
 source = "CK3"
 minSource = "1.3"
 maxSource = "1.4"
 target = "EU4"
-minTarget = "1.31"
-maxTarget = "1.31.4"
+minTarget = "1.31.5"
+maxTarget = "1.31"

@@ -51,7 +51,11 @@ emperor_idea_adm_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				NOT = { has_estate = estate_church }
+				factor = 0
+			}
 		}
 	}
 	
@@ -61,7 +65,11 @@ emperor_idea_adm_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				NOT = { has_estate = estate_dhimmi }
+				factor = 0
+			}
 		}
 	}
 	
@@ -71,7 +79,11 @@ emperor_idea_adm_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				NOT = { has_estate = estate_jains }
+				factor = 0
+			}
 		}
 	}
 }
@@ -85,7 +97,11 @@ emperor_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				NOT = { has_estate = estate_burghers }
+				factor = 0
+			}
 		}
 	}
 	
@@ -95,7 +111,11 @@ emperor_idea_dip_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
+			modifier = {
+				NOT = { has_estate = estate_vaisyas }
+				factor = 0
+			}
 		}
 	}
 	
@@ -125,7 +145,7 @@ emperor_idea_dip_modifiers = {
 		level_cost_3 = 15		
 		level_cost_4 = 30
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 
 		enabled = {
@@ -143,7 +163,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	
@@ -153,7 +173,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18		
 		chance = {
-			factor = 0
+			factor = 0.25
 		}
 	}
 	
@@ -163,7 +183,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	
@@ -173,7 +193,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	
@@ -183,7 +203,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	
@@ -193,7 +213,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	
@@ -203,7 +223,7 @@ emperor_idea_mil_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 }

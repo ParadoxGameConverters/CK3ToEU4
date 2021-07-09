@@ -173,7 +173,7 @@ mil_idea_modifiers = {
 		level_cost_2 = 15
 		max_level = 2
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	custom_idea_army_tradition_decay = {
@@ -181,7 +181,7 @@ mil_idea_modifiers = {
 		level_cost_2 = 15
 		max_level = 2
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	custom_idea_leader_land_fire = {
@@ -251,7 +251,7 @@ mil_idea_modifiers = {
 		level_cost_3 = 9
 		level_cost_4 = 18
 		chance = {
-			factor = 0
+			factor = 0.5
 		}
 	}
 	custom_idea_defensiveness = {
