@@ -1622,6 +1622,8 @@ zoroastrian_group = {
 			tolerance_own = 1
 		}
 		
+		holy_sites = { 358 1227 2313 1234 419 }
+		
 		blessings = {
 			blessing_yasna
 			blessing_haoma

@@ -13,6 +13,8 @@ zoroastrian_group = {
 			tolerance_heretic = 1
 		}
 		
+		holy_sites = { 358 1227 2313 1234 419 }
+		
 		blessings = {
 			blessing_yasna
 			blessing_haoma
@@ -50,6 +52,8 @@ zoroastrian_group = {
 			production_efficiency = 0.15
 		}
 		
+		holy_sites = { 358 1227 2313 1234 419 }
+		
 		blessings = {
 			blessing_yasna
 			blessing_haoma
@@ -74,6 +78,8 @@ zoroastrian_group = {
 		country_as_secondary = {
 			stability_cost_modifier = -0.25
 		}
+		
+		holy_sites = { 358 1227 2313 1234 419 }
 		
 		blessings = {
 			blessing_yasna
