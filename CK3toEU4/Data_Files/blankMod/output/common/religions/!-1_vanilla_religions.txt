@@ -1622,6 +1622,14 @@ zoroastrian_group = {
 			tolerance_own = 1
 		}
 		
+		blessings = {
+			blessing_yasna
+			blessing_haoma
+			blessing_navjote
+			blessing_manthras
+			blessing_dakhma
+		}
+		
 		heretic = { MAZDAKI MANICHEAN }	
 	}
 	
