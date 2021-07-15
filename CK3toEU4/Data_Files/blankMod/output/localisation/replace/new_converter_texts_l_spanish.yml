@@ -4,6 +4,16 @@ l_spanish:
  israelite:3 "Israelita"
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Oscuridad"
+ 
+ #Blessings
+ mazdaki_blessings:0 "Rituales"
+ pick_mazdaki_blessing:0 "Escoger Ritual"
+ zurvanism_blessings:0 "Rituales"
+ pick_zurvanism_blessing:0 "Escoger Ritual"
+ gayomarthianism_blessings:0 "Rituales"
+ pick_gayomarthianism_blessing:0 "Escoger Ritual"
+ 
+ #Ideas
  european_tribal_ideas:3 "Ideas tribales europeas"
  european_tribal_ideas_start:3 "Tradiciones tribales europeas"
  european_tribal_ideas_bonus:3 "Ambiciones tribales europeas"

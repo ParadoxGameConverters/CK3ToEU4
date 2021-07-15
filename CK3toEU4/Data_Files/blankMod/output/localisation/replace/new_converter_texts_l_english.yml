@@ -5,6 +5,14 @@
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Darkness" 
  
+ #Blessings
+ mazdaki_blessings:0 "Rituals"
+ pick_mazdaki_blessing:0 "Pick Ritual"
+ zurvanism_blessings:0 "Rituals"
+ pick_zurvanism_blessing:0 "Pick Ritual"
+ gayomarthianism_blessings:0 "Rituals"
+ pick_gayomarthianism_blessing:0 "Pick Ritual"
+ 
  ##Fetishist Cults
  west_african_pagan_reformed_cult:3 "Eldership"
  west_african_pagan_reformed_cult_desc:3 "We follow the ways of our kin who have shown us the greater truths in the universe and we have become stronger as a result."
