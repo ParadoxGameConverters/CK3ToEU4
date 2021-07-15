@@ -4,6 +4,16 @@
  israelite:3 "Israelit"
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Finsternis"
+ 
+ #Blessings
+ mazdaki_blessings:0 "Rituale"
+ pick_mazdaki_blessing:0 "Wählen Sie Ritual"
+ zurvanism_blessings:0 "Rituale"
+ pick_zurvanism_blessing:0 "Wählen Sie Ritual"
+ gayomarthianism_blessings:0 "Rituale"
+ pick_gayomarthianism_blessing:0 "Wählen Sie Ritual"
+ 
+ #Ideas
  european_tribal_ideas:3 "Europäische Stammesideen"
  european_tribal_ideas_start:3 "Europäische Stammestraditionen"
  european_tribal_ideas_bonus:3 "Europäische Stammesambitionen"

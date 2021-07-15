@@ -12,6 +12,8 @@ zoroastrian_group = {
 			global_unrest = -1
 			tolerance_heretic = 1
 		}
+
+		holy_sites = { 421 4430 2223 441 2235 }
 		
 		blessings = {
 			blessing_yasna
@@ -50,6 +52,8 @@ zoroastrian_group = {
 			production_efficiency = 0.15
 		}
 		
+		holy_sites = { 421 4430 2223 441 2235 }
+		
 		blessings = {
 			blessing_yasna
 			blessing_haoma
@@ -74,6 +78,8 @@ zoroastrian_group = {
 		country_as_secondary = {
 			stability_cost_modifier = -0.25
 		}
+		
+		holy_sites = { 421 4430 2223 441 2235 }
 		
 		blessings = {
 			blessing_yasna
