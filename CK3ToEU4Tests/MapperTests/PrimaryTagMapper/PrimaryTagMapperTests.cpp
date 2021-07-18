@@ -27,7 +27,7 @@ TEST(Mappers_PrimaryTagMapperTests, TagMapperReturnsNullOnMiss)
 	input << "group1 = { culture1 = {primary = TAG} culture2 = {} culture3 = {primary = GAT} }\n";
 	input << "group2 = { culture4 = {primary = GAT} culture5 = {} culture6 = {primary = GOT} }\n";
 	const mappers::PrimaryTagMapper tagMapper(input);
-	
+
 	ASSERT_FALSE(tagMapper.getPrimaryTagForCulture("culture2"));
 	ASSERT_FALSE(tagMapper.getPrimaryTagForCulture("culture5"));
 }

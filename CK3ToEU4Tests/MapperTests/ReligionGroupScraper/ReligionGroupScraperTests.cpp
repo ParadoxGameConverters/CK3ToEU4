@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraping.h"
 #include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
+#include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraping.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

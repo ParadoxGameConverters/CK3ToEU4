@@ -44,7 +44,7 @@ class CultureMappingRule: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::string destinationCulture;
 	std::string techGroup;
 	std::string gfx;

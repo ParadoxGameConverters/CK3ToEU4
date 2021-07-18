@@ -1,8 +1,8 @@
 #include "MonarchNames.h"
-#include "ParserHelpers.h"
-#include "Log.h"
-#include "StringUtils.h"
 #include "CommonRegexes.h"
+#include "Log.h"
+#include "ParserHelpers.h"
+#include "StringUtils.h"
 
 EU4::MonarchNames::MonarchNames(std::istream& theStream)
 {
@@ -17,7 +17,7 @@ void EU4::MonarchNames::registerKeys()
 		auto chance = commonItems::singleInt(theStream).getInt();
 		const auto nameData = parseName(nameBlock);
 		if (nameData)
-			monarchNames.insert(std::pair(nameData->first, std::pair(nameData->second, chance)));		
+			monarchNames.insert(std::pair(nameData->first, std::pair(nameData->second, chance)));
 	});
 }
 

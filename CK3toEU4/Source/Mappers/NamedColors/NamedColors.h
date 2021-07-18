@@ -1,7 +1,7 @@
 #ifndef NAMED_COLORS_H
 #define NAMED_COLORS_H
-#include "Parser.h"
 #include "Color.h"
+#include "Parser.h"
 extern commonItems::Color::Factory laFabricaDeColor;
 
 namespace mappers

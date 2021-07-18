@@ -21,7 +21,7 @@ TEST(CK3World_EmblemTests, emblemPrimitivesCanBeLoaded)
 	laFabricaDeColor.addNamedColor("white", commonItems::Color(std::array<int, 3>{255, 255, 255}));
 	laFabricaDeColor.addNamedColor("blue", commonItems::Color(std::array<int, 3>{0, 0, 255}));
 	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
-	
+
 	std::stringstream input;
 	input << "texture = \"so_smooth\"\n";
 	input << "color1 = white\n";

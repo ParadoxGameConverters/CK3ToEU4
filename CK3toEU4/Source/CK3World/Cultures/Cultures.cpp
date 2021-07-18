@@ -1,8 +1,8 @@
 #include "Cultures.h"
+#include "CommonRegexes.h"
 #include "Culture.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::Cultures::Cultures(std::istream& theStream)
 {

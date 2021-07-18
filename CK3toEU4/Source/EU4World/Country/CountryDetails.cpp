@@ -1,8 +1,8 @@
 #include "CountryDetails.h"
+#include "CommonRegexes.h"
 #include "MonarchNames.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 EU4::CountryDetails::CountryDetails(const std::string& filePath)
 {

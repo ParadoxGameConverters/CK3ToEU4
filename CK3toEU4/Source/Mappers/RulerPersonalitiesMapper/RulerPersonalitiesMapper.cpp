@@ -1,8 +1,8 @@
 #include "RulerPersonalitiesMapper.h"
 #include "../../CK3World/Characters/Character.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::RulerPersonalitiesMapper::RulerPersonalitiesMapper()
 {

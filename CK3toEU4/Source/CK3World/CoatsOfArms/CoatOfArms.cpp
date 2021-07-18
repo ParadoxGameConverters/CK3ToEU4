@@ -1,7 +1,7 @@
 #include "CoatOfArms.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::CoatOfArms::CoatOfArms(std::istream& theStream, long long theID): ID(theID)
 {

@@ -1,6 +1,6 @@
 #include "outCountry.h"
-#include "outCharacter.h"
 #include "OSCompatibilityLayer.h"
+#include "outCharacter.h"
 
 std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 {

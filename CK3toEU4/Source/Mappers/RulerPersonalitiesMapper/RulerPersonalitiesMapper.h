@@ -1,8 +1,8 @@
 #ifndef RULER_PERSONALITY_MAPPER_H
 #define RULER_PERSONALITY_MAPPER_H
 
-#include "RulerPersonalitiesMapping.h"
 #include "Parser.h"
+#include "RulerPersonalitiesMapping.h"
 #include <set>
 
 namespace CK3

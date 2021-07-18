@@ -2,12 +2,12 @@
 #include "../Characters/Character.h"
 #include "../Characters/Characters.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
+#include "CommonRegexes.h"
 #include "DynamicTemplate.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
-#include "CommonRegexes.h"
 
 CK3::Titles::Titles(std::istream& theStream)
 {

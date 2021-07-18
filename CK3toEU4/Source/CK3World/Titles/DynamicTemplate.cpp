@@ -1,6 +1,6 @@
 #include "DynamicTemplate.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 CK3::DynamicTemplate::DynamicTemplate(std::istream& theStream)
 {

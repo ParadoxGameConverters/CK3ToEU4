@@ -79,7 +79,7 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 				if (language == "spanish")
 					newBlock.spanish = value;
 				localizations.insert(std::pair(key, newBlock));
-			}			
+			}
 		}
 	}
 }

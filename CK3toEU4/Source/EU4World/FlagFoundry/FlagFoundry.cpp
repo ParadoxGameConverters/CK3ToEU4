@@ -197,7 +197,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		{
 			auto foundIcon = false;
 			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";			
+			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
 			if (commonItems::DoesFileExist(path1))
 			{
 				foundIcon = true;
@@ -206,7 +206,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 			if (!foundIcon && commonItems::DoesFileExist(path2))
 			{
 				foundIcon = true;
-				sourceIcon.read(path2);				
+				sourceIcon.read(path2);
 			}
 			if (!foundIcon)
 			{

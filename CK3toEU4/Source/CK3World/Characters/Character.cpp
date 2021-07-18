@@ -1,7 +1,7 @@
 #include "Character.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::Character::Character(std::istream& theStream, long long characterID): charID(characterID)
 {
@@ -129,7 +129,7 @@ void CK3::Character::dropTitleFromDomain(long long titleID)
 				replacementDomain.emplace_back(title);
 		}
 		characterDomain->loadDomain(replacementDomain);
-	}	
+	}
 }
 
 bool CK3::Character::hasTrait(const std::string& wantedTrait) const

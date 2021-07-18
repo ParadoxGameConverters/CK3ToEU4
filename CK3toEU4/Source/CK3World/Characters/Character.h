@@ -101,7 +101,7 @@ class Character: commonItems::parser
 	std::map<long long, std::shared_ptr<Character>> councilors;
 
 	long long tempTitle = 0; // temporary variable for recursive scrapes.
-	double accumulated = 0; // temporary variable for recursive scrapes.
+	double accumulated = 0;	 // temporary variable for recursive scrapes.
 };
 } // namespace CK3
 

@@ -17,7 +17,6 @@ class Recolorer
 	[[nodiscard]] static Magick::Image craftTextureImage(const coloredImage& imageBlock);
 
   private:
-
 	struct patternColorMasks // For reference only. Not used.
 	{
 		commonItems::Color color1 = commonItems::Color(std::array<int, 3>{255, 0, 0});

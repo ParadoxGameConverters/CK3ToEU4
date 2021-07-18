@@ -215,12 +215,12 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJLiegeReroutesToDFLiegeIfPresentAndH
 	const auto& duchy1 = titles.getTitles().at("d_duchy1");
 	ASSERT_EQ(8, duchy1->getDFLiege()->first);
 	ASSERT_EQ(9, duchy1->getDJLiege()->first);
-	
+
 	titles.linkTitles();
 
 	ASSERT_EQ(8, duchy1->getDFLiege()->first);
 	ASSERT_EQ(8, duchy1->getDJLiege()->first);
-	
+
 	ASSERT_EQ("k_kingdom1", duchy1->getDJLiege()->second->getName());
 }
 
@@ -278,14 +278,14 @@ TEST(CK3World_TitlesTests, titleLinkMissingDFLiegeFixesDFLiegeToNullopt)
 	input << "8 = { key = k_kingdom1 holder = 8 de_jure_vassals = { 6 7 } }\n";
 	CK3::Titles titles(input);
 	titles.linkTitles();
-	
+
 	ASSERT_FALSE(titles.getTitles().find("d_duchy1")->second->getDFLiege());
 }
 
 TEST(CK3World_TitlesTests, titleLinkMissingDJVassalDropsBrokenVassal)
 {
 	// Incredulous as it may be, yes, missing dejure vassals is a thing.
-	
+
 	std::stringstream input;
 	input << "1 = { key = c_county1 de_facto_liege = 6 de_jure_liege = 6 }\n";
 	input << "2 = { key = c_county2 de_facto_liege = 6 de_jure_liege = 6  }\n";
@@ -302,7 +302,7 @@ TEST(CK3World_TitlesTests, titleLinkMissingDJVassalDropsBrokenVassal)
 	ASSERT_TRUE(duchy1->getDJVassals().contains(9));
 
 	titles.linkTitles(); // dropping junk.
-	
+
 	ASSERT_EQ(2, duchy1->getDJVassals().size());
 	ASSERT_FALSE(duchy1->getDJVassals().contains(9));
 }
@@ -372,7 +372,7 @@ TEST(CK3World_TitlesTests, charactersLinkMissingHolderBricksTitleWithoutDFLiege)
 	titles.linkCharacters(characters); // This will brick the title 13.
 
 	const auto& county = titles.getTitles().find("c_county")->second;
-	
+
 	ASSERT_EQ(std::nullopt, county->getHolder());
 }
 
@@ -413,7 +413,7 @@ TEST(CK3World_TitlesTests, charactersLinkMissingClaimantIgnoresClaimant)
 	titles.linkCharacters(characters);
 
 	const auto& t1 = titles.getTitles().find("c_county");
-	ASSERT_EQ(1, t1->second->getClaimants().size());	
+	ASSERT_EQ(1, t1->second->getClaimants().size());
 }
 
 TEST(CK3World_TitlesTests, charactersLinkMissingHeirDropsHeir)

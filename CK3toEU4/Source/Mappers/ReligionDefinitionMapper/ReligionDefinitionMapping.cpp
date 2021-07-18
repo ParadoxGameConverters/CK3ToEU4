@@ -1,6 +1,6 @@
 #include "ReligionDefinitionMapping.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theStream)
 {
@@ -11,7 +11,7 @@ mappers::ReligionDefinitionMapping::ReligionDefinitionMapping(std::istream& theS
 
 void mappers::ReligionDefinitionMapping::registerKeys()
 {
-	registerKeyword("allowed_conversion", [this](const std::string& unused, std::istream& theStream) {		
+	registerKeyword("allowed_conversion", [this](const std::string& unused, std::istream& theStream) {
 		allowedConversion = commonItems::stringOfItem(theStream).getString();
 		if (allowedConversion.size() > 4)
 			allowedConversion = allowedConversion.substr(3, allowedConversion.size() - 4);

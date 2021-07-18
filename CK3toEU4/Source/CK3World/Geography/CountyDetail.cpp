@@ -1,7 +1,7 @@
 #include "CountyDetail.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::CountyDetail::CountyDetail(std::istream& theStream)
 {

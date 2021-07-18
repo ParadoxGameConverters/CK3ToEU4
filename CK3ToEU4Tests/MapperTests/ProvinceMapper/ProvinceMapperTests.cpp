@@ -287,7 +287,7 @@ TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
 
 	// Grab a title to match against mapper.
 	auto county2 = titles.getTitles().find("c_county2");
-	
+
 	ASSERT_EQ(2, provinceMapper.getEU4ProvinceNumbers(county2->first).size());
 	ASSERT_EQ(2, provinceMapper.getEU4ProvinceNumbers(county2->first)[0]);
 	ASSERT_EQ(1, provinceMapper.getEU4ProvinceNumbers(county2->first)[1]);

@@ -13,9 +13,13 @@ class Agreement: commonItems::parser
 	Agreement() = default;
 	Agreement(std::istream& theStream, std::string theType);
 	Agreement(std::string _first, std::string _second, std::string _type, const date& _start_date):
-		 type(std::move(_type)), first(std::move(_first)), second(std::move(_second)), startDate(_start_date) {}
+		 type(std::move(_type)), first(std::move(_first)), second(std::move(_second)), startDate(_start_date)
+	{
+	}
 	Agreement(std::string _first, std::string _second, std::string _type, std::string subject_type, const date& _start_date):
-		 type(std::move(_type)), first(std::move(_first)), second(std::move(_second)), subjectType(std::move(subject_type)), startDate(_start_date) {}
+		 type(std::move(_type)), first(std::move(_first)), second(std::move(_second)), subjectType(std::move(subject_type)), startDate(_start_date)
+	{
+	}
 	void updateTags(const std::string& oldTag, const std::string& newTag);
 
 	[[nodiscard]] const auto& getFirst() const { return first; }

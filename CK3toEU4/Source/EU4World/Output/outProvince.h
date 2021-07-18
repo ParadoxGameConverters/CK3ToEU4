@@ -2,7 +2,6 @@
 #define OUT_PROVINCE_H
 
 #include "../Province/EU4Province.h"
-#include <ostream>
 
 namespace EU4
 {

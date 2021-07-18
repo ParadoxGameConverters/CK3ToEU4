@@ -1,8 +1,8 @@
 #include "ProvinceDetails.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 EU4::ProvinceDetails::ProvinceDetails(const std::string& filePath)
 {
@@ -175,8 +175,8 @@ void EU4::ProvinceDetails::registerKeys()
 		const commonItems::singleString effectStr(theStream);
 		vaisyasBurghers = effectStr.getString() == "yes";
 	});
-	// These two hard overrides are necessary for Palembang and similar countries outside CK scope that are assigned ownership in a 1444 history block instead directly.
-	// Without us replicating the 1441/1444 block they'd remain uncolonized in any conversion.
+	// These two hard overrides are necessary for Palembang and similar countries outside CK scope that are assigned ownership in a 1444 history block instead
+	// directly. Without us replicating the 1441/1444 block they'd remain uncolonized in any conversion.
 	registerKeyword("1441.1.1", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString effectStr(theStream);
 		datedInfo = effectStr.getString();
@@ -184,7 +184,7 @@ void EU4::ProvinceDetails::registerKeys()
 	registerKeyword("1444.1.1", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString effectStr(theStream);
 		datedInfo = effectStr.getString();
-	});	
+	});
 	registerRegex(R"(\d+.\d+.\d+)", commonItems::ignoreItem);
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

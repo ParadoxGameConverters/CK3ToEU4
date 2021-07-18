@@ -1,6 +1,6 @@
 #include "ProvinceMappingsVersion.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 mappers::ProvinceMappingsVersion::ProvinceMappingsVersion(std::istream& theStream)
 {

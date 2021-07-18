@@ -1,9 +1,9 @@
 #include "ReligionGroupScraper.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 #include "ReligionGroupScraping.h"
-#include "CommonRegexes.h"
 
 mappers::ReligionGroupScraper::ReligionGroupScraper()
 {

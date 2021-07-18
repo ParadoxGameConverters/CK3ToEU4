@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
 #include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatOfArms.h"
+#include "../../CK3toEU4/Source/CK3World/CoatsOfArms/CoatsOfArms.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "gtest/gtest.h"
 #include <sstream>

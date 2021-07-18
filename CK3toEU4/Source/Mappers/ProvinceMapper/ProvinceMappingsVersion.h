@@ -1,8 +1,8 @@
 #ifndef PROVINCE_MAPPING_VERSION_H
 #define PROVINCE_MAPPING_VERSION_H
 
-#include "ProvinceMapping.h"
 #include "Parser.h"
+#include "ProvinceMapping.h"
 
 namespace mappers
 {
@@ -16,7 +16,7 @@ class ProvinceMappingsVersion: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::vector<std::shared_ptr<ProvinceMapping>> mappings;
 };
 } // namespace mappers

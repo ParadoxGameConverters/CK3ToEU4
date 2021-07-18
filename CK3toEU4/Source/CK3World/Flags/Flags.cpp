@@ -1,7 +1,7 @@
 #include "Flags.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 // This file loads data flags ("flag_re_restored_antioch"), not graphical flags.
 // Since game uses this type of syntax:

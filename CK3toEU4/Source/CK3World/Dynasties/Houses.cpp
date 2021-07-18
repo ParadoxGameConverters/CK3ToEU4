@@ -1,10 +1,10 @@
 #include "Houses.h"
 #include "../Characters/Characters.h"
+#include "CommonRegexes.h"
 #include "Dynasties.h"
 #include "House.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::Houses::Houses(std::istream& theStream)
 {

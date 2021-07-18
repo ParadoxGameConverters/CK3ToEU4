@@ -17,7 +17,7 @@ class ReligionMapping: commonItems::parser
 
   private:
 	void registerKeys();
-	
+
 	std::set<std::string> ck3Religions;
 	std::string eu4Religion;
 	std::optional<std::string> eu4School;

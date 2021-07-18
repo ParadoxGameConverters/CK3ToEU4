@@ -18,7 +18,7 @@ TEST(Mappers_NamedColorsTests, ColorsCanBeLoaded)
 	input << "red 		= hsv {		0.02 	0.8 	0.45 	}\n";
 	input << "blue 		= hsv {		0.58 	0.8 	0.4 	} \n";
 	input << "brown 		= hsv360 {	021 	074 	045		} \n";
-	
+
 	mappers::NamedColors colors;
 	colors.loadColors(input);
 
@@ -43,7 +43,7 @@ TEST(Mappers_NamedColorsTests, ColorsCanBeOverriddenByMods)
 	input << "red 		= hsv {		0.02 	0.8 	0.45 	}\n";
 	input << "gold 		= hsv {		0.58 	0.8 	0.4 	} \n";
 	colors.loadColors(input);
-	
+
 	std::stringstream input2;
 	input2 << "gold 		= hsv360 {	021 	074 	045		} \n";
 	colors.loadColors(input2);

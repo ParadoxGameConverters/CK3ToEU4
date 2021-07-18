@@ -8,9 +8,9 @@
 #include "../Titles/Titles.h"
 #include "Character.h"
 #include "CharacterDomain.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 void CK3::Characters::loadCharacters(std::istream& theStream)
 {

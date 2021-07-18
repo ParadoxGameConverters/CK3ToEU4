@@ -2,7 +2,6 @@
 #define OUT_AGREEMENT_H
 
 #include "../Diplomacy/Agreement.h"
-#include <ostream>
 
 namespace EU4
 {

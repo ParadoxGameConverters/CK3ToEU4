@@ -2,10 +2,10 @@
 #define EU4_FLAG_FOUNDRY_H
 #include "Color.h"
 #include "FlagCrafter.h"
+#include "ModLoader/ModLoader.h"
 #include <map>
 #include <memory>
 #include <string>
-#include "ModLoader/ModLoader.h"
 
 class Configuration;
 
