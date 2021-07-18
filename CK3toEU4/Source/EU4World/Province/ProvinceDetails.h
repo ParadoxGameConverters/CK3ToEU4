@@ -1,8 +1,8 @@
 #ifndef EU4_PROVINCE_DETAILS_H
 #define EU4_PROVINCE_DETAILS_H
 
-#include "ProvinceModifier.h"
 #include "Parser.h"
+#include "ProvinceModifier.h"
 #include <set>
 
 namespace EU4

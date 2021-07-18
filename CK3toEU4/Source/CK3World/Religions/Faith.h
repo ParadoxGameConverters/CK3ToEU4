@@ -1,7 +1,7 @@
 #ifndef CK3_FAITH_H
 #define CK3_FAITH_H
-#include "Parser.h"
 #include "Color.h"
+#include "Parser.h"
 #include <set>
 
 extern commonItems::Color::Factory laFabricaDeColor;
@@ -41,7 +41,8 @@ class Faith: commonItems::parser
 	std::string customAdjective;
 	std::string description;
 	std::optional<commonItems::Color> color;
-	std::vector<std::string> doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS
+	std::vector<std::string>
+		 doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS
 	std::pair<long long, std::shared_ptr<Religion>> religion;
 };
 } // namespace CK3

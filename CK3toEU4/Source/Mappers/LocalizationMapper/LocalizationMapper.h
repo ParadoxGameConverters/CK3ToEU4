@@ -1,9 +1,9 @@
 #ifndef LOCALIZATION_MAPPER
 #define LOCALIZATION_MAPPER
+#include "ModLoader/ModLoader.h"
 #include <map>
 #include <optional>
 #include <string>
-#include "ModLoader/ModLoader.h"
 
 class Configuration;
 namespace mappers
@@ -29,7 +29,7 @@ class LocalizationMapper
 	void scrapeLanguage(const std::string& language, const std::string& path);
 
 	[[nodiscard]] static std::pair<std::string, std::string> determineKeyLocalizationPair(const std::string& text);
-	
+
 	std::map<std::string, LocBlock> localizations;
 };
 } // namespace mappers

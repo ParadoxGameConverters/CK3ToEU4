@@ -1,7 +1,7 @@
 #include "House.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::House::House(std::istream& theStream, long long housID): houseID(housID)
 {

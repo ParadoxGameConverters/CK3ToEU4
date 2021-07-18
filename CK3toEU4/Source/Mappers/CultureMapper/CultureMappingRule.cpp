@@ -1,8 +1,8 @@
 #include "CultureMappingRule.h"
 #include "../RegionMapper/RegionMapper.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 mappers::CultureMappingRule::CultureMappingRule(std::istream& theStream)
 {
@@ -84,7 +84,7 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const std::
 	// Asking for a regions check without an incoming province is pointless.
 	if (!regions.empty() && !eu4Province)
 		return std::nullopt;
-	
+
 	// This is a regions check, that checks if a provided province is within that region.
 	if (eu4Province && !regions.empty())
 	{

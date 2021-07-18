@@ -1,9 +1,9 @@
 #include "Dynasties.h"
+#include "../CoatsOfArms/CoatsOfArms.h"
+#include "CommonRegexes.h"
 #include "Dynasty.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "../CoatsOfArms/CoatsOfArms.h"
-#include "CommonRegexes.h"
 
 CK3::Dynasties::Dynasties(std::istream& theStream)
 {

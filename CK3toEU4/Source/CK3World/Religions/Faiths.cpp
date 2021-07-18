@@ -1,9 +1,9 @@
 #include "Faiths.h"
+#include "CommonRegexes.h"
 #include "Faith.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Religions.h"
-#include "CommonRegexes.h"
 
 CK3::Faiths::Faiths(std::istream& theStream)
 {

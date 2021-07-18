@@ -112,9 +112,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	Log(LogLevel::Progress) << "97 %";
 }
 
-void EU4::World::outputReligionIcons(const Configuration& theConfiguration,
-	 const std::vector<GeneratedReligion>& generatedReligions,
-	 const Mods& mods) const
+void EU4::World::outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const
 {
 	// edit the strips
 	flagFoundry.extendReligionStrips(theConfiguration, generatedReligions, mods);

@@ -130,9 +130,9 @@ Magick::Image EU4::Recolorer::craftTextureImage(const coloredImage& imageBlock)
 	// Now shave off only positives
 	const auto gray = Magick::Image(geometry, Magick::ColorRGB(0.5, 0.5, 0.5));
 	tempMask = blueChannel;
-	tempMask.composite(gray, "0x0", MagickCore::MinusSrcCompositeOp); // minus once, to get to black, but we need to double the scale.
-	tempMask.composite(tempMask, "0x0", MagickCore::PlusCompositeOp); // this is now almost entirely black with whiter blotches.
-	tempMask.negate(); // back to white with darker blotches where we should brighten the image
+	tempMask.composite(gray, "0x0", MagickCore::MinusSrcCompositeOp);				// minus once, to get to black, but we need to double the scale.
+	tempMask.composite(tempMask, "0x0", MagickCore::PlusCompositeOp);				// this is now almost entirely black with whiter blotches.
+	tempMask.negate();																			// back to white with darker blotches where we should brighten the image
 	workingImage.composite(tempMask, "0x0", MagickCore::DivideSrcCompositeOp); // And by dividing, we're brightening those darker pixels from mask.
 
 	// Apply original alpha

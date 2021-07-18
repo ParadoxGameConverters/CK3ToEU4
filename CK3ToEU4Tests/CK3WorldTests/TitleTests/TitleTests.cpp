@@ -472,12 +472,12 @@ TEST(CK3World_TitleTests, doesHolderHaveCharacterDomainCanBeChecked)
 	auto dummyHolder = std::make_shared<CK3::Character>(titleInput, 12); // Using any stream just for init.
 	title.loadHolder(std::pair(static_cast<long long>(12), dummyHolder));
 
-	ASSERT_TRUE(title.isHolderSet());			  // Yes Holder
-	ASSERT_TRUE(title.isHolderLinked());		  // Yes linked
+	ASSERT_TRUE(title.isHolderSet());						  // Yes Holder
+	ASSERT_TRUE(title.isHolderLinked());					  // Yes linked
 	ASSERT_FALSE(title.doesHolderHaveCharacterDomain()); // No Domain
 
 	// Make a character with a domain
-	
+
 	std::stringstream charInput;
 	charInput << "first_name = \"bob spongepants\"\n";
 	charInput << "landed_data = {\n";
@@ -486,7 +486,7 @@ TEST(CK3World_TitleTests, doesHolderHaveCharacterDomainCanBeChecked)
 	auto holder = std::make_shared<CK3::Character>(charInput, 12);
 
 	title.loadHolder(std::pair(static_cast<long long>(12), holder));
-	
+
 	ASSERT_TRUE(title.doesHolderHaveCharacterDomain()); // Yes Domain
 }
 
@@ -502,7 +502,7 @@ TEST(CK3World_TitleTests, titleNamesFromHoldersDomainCanBeGathered)
 	charInput << "}\n";
 	CK3::Characters characters;
 	characters.loadCharacters(charInput);
-	
+
 	std::stringstream titleInput;
 	titleInput << "1 = { key = c_county1 holder = 11 de_facto_liege = 3 de_jure_liege = 3 }\n";
 	titleInput << "2 = { key = c_county2 holder = 11 de_facto_liege = 3 de_jure_liege = 4  }\n";
@@ -516,7 +516,7 @@ TEST(CK3World_TitleTests, titleNamesFromHoldersDomainCanBeGathered)
 
 	// Now, grab any title.
 	const auto& anyTitle = titles.getTitles().find("d_duchy2")->second;
-	
+
 	ASSERT_EQ(4, anyTitle->getTitleNamesFromHolderDomain().size());
 	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("c_county1"));
 	ASSERT_TRUE(anyTitle->getTitleNamesFromHolderDomain().contains("c_county2"));

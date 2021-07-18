@@ -2,9 +2,9 @@
 #define RELIGION_DEFINITION_MAPPER_H
 
 #include "Parser.h"
+#include "ReligionDefinitionMapping.h"
 #include <map>
 #include <optional>
-#include "ReligionDefinitionMapping.h"
 
 namespace mappers
 {

@@ -1,6 +1,6 @@
 #include "ProvinceModifier.h"
-#include "ParserHelpers.h"
 #include "CommonRegexes.h"
+#include "ParserHelpers.h"
 
 EU4::ProvinceModifier::ProvinceModifier(std::istream& theStream)
 {

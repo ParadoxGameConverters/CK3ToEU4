@@ -1,6 +1,6 @@
+#include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Religion.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Religions.h"
-#include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -62,7 +62,7 @@ TEST(CK3World_ReligionsTests, faithsCanBeLinked)
 
 	const auto& r1Faiths = r1->second->getFaiths();
 	const auto& r2Faiths = r2->second->getFaiths();
-	
+
 	ASSERT_EQ(1, r1Faiths.size());
 	ASSERT_EQ("theravada", r1Faiths.find(15)->second->getName());
 	ASSERT_EQ(2, r2Faiths.size());

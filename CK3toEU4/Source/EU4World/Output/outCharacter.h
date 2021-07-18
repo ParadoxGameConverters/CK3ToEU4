@@ -3,7 +3,6 @@
 
 #include "../Country/Country.h"
 #include "../Country/CountryDetails.h"
-#include <ostream>
 
 namespace EU4
 {

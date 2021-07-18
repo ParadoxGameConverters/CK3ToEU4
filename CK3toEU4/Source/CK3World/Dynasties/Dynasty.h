@@ -21,7 +21,7 @@ class Dynasty: commonItems::parser
   private:
 	void registerKeys();
 
-	std::string dynID; // this is actual key, looks like an int but is actually string.
+	std::string dynID;	 // this is actual key, looks like an int but is actually string.
 	long long gameID = 0; // this is savegame key
 	std::optional<std::pair<long long, std::shared_ptr<CoatOfArms>>> coa;
 	bool appropriateRealmName = false;

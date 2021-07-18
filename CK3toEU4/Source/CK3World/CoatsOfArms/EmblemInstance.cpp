@@ -1,7 +1,7 @@
 #include "EmblemInstance.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::EmblemInstance::EmblemInstance(std::istream& theStream)
 {

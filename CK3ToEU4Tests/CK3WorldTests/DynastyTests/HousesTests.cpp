@@ -1,9 +1,9 @@
+#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
-#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
-#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
@@ -73,10 +73,10 @@ TEST(CK3World_HousesTests, dynastiesCanBeLinked)
 	input << "23={name=\"dynn_Villeneuve\"\n dynasty=15}\n";
 	input << "25={name=\"dynn_Fournier\"\n dynasty=13}\n";
 	CK3::Houses houses(input);
-	
+
 	std::stringstream input2;
 	input2 << "13={coat_of_arms_id = 1}\n";
-	input2 << "15={coat_of_arms_id = 2}\n";	
+	input2 << "15={coat_of_arms_id = 2}\n";
 	const CK3::Dynasties dynasties(input2);
 	houses.linkDynasties(dynasties);
 

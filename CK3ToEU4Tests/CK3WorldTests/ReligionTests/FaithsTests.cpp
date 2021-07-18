@@ -1,7 +1,7 @@
 #include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
-#include "../../CK3toEU4/Source/CK3World/Religions/Religions.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Religion.h"
+#include "../../CK3toEU4/Source/CK3World/Religions/Religions.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

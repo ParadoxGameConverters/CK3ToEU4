@@ -1,8 +1,8 @@
 #ifndef PRIMARY_TAG_MAPPER_H
 #define PRIMARY_TAG_MAPPER_H
 
-#include "Parser.h"
 #include "../../Configuration/Configuration.h"
+#include "Parser.h"
 
 namespace mappers
 {

@@ -1,10 +1,10 @@
 #include "CountyDetails.h"
 #include "../Cultures/Cultures.h"
 #include "../Religions/Faiths.h"
+#include "CommonRegexes.h"
 #include "CountyDetail.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::CountyDetails::CountyDetails(std::istream& theStream)
 {

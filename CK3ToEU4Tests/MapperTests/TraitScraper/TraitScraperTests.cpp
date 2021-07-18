@@ -67,7 +67,7 @@ TEST(Mappers_TraitScraperTests, traitsCanBeOverriddenByMods)
 	input2 << "nutrait2 = { index = 6 }\n";
 	input2 << "nutrait3 = { index = 8 }\n";
 	traitScraper.loadTraits(input2);
-	
+
 	ASSERT_EQ(3, traitScraper.getTraits().size());
 	ASSERT_EQ("nutrait1", traitScraper.getTraits().find(4)->second);
 	ASSERT_EQ("nutrait2", traitScraper.getTraits().find(6)->second);

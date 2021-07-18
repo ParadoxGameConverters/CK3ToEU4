@@ -20,7 +20,7 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 	{
 		const auto probe = warehouse->getCoA(coa.getID());
 		if (probe.first)
-			return probe.second;		
+			return probe.second;
 	}
 
 	// Crafting time.	Get a background image.
@@ -32,7 +32,7 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 		auto subimage = craftFlagFromCoA(*sub);
 		subs.emplace_back(std::pair(*sub, subimage));
 	}
-	
+
 	// Get emblems.
 	const auto coloredEmblems = warehouse->getColoredTextures(coa.getColoredEmblems());
 	const auto texturedEmblems = warehouse->getTexturedTextures(coa.getTexturedEmblems());
@@ -43,7 +43,7 @@ Magick::Image EU4::FlagCrafter::craftFlagFromCoA(const CK3::CoatOfArms& coa) con
 
 	if (coa.getID()) // subcoats won't have an ID.
 		warehouse->storeCoA(coa.getID(), imagePair.first);
-	
+
 	return imagePair.first;
 }
 
@@ -181,7 +181,7 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 						greenInverse.negate();
 						// Create a faux new image, transparent, and put emblem into proper position
 						auto faux = Magick::Image(Magick::Geometry(workingImage.size().width(), workingImage.size().height()), Magick::Color("transparent"));
-						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);						
+						faux.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
 						// Extract the alpha channel and exclude whatever is supposed to be masked
 						auto fauxAlpha = faux;
 						fauxAlpha.channel(MagickCore::AlphaChannel);
@@ -217,16 +217,15 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 						faux.composite(fauxAlpha, "0x0", MagickCore::CopyAlphaCompositeOp);
 						workingImage.composite(faux, "0x0", MagickCore::OverCompositeOp);
 					}
-				}					
+				}
 			}
 			else
 			{
 				// No masks, straight clip.
 				workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
 			}
-			
 		}
-		
+
 		// Position sub
 		if (!instance.getOffset().empty()) // We won't paste anything without a position - which should only happen on user error.
 		{
@@ -235,13 +234,10 @@ std::pair<Magick::Image, Magick::Image> EU4::FlagCrafter::imposeEmblemInstancesO
 				Log(LogLevel::Warning) << "Invalid emblem instance position command, array size: " << instance.getPosition().size();
 				continue;
 			}
-			const auto targetX =
-				 static_cast<size_t>(instance.getOffset()[0] * static_cast<double>(width));
-			const auto targetY =
-				 static_cast<size_t>(instance.getOffset()[1] * static_cast<double>(height));
+			const auto targetX = static_cast<size_t>(instance.getOffset()[0] * static_cast<double>(width));
+			const auto targetY = static_cast<size_t>(instance.getOffset()[1] * static_cast<double>(height));
 			workingImage.composite(workingEmblem, targetX, targetY, MagickCore::OverCompositeOp);
 		}
-
 	}
 	return std::pair(workingImage, imagePair.second);
 }

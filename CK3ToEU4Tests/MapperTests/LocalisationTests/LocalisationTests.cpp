@@ -1,6 +1,6 @@
 #include "../../CK3toEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
-#include "gtest/gtest.h"
 #include "CommonFunctions.h"
+#include "gtest/gtest.h"
 
 TEST(Mappers_LocalisationTests, localisationsCanBeLoadedAndMatched)
 {
@@ -20,7 +20,7 @@ TEST(Mappers_LocalisationTests, localisationsCanBeLoadedAndMatched)
 	locs.scrapeStream(input, "english");
 	locs.scrapeStream(input2, "french");
 	locs.scrapeStream(input3, "english");
-	
+
 	ASSERT_EQ("replaced value 1", locs.getLocBlockForKey("key1")->english);
 	ASSERT_EQ("value \"subquoted\" 2", locs.getLocBlockForKey("key2")->english);
 	ASSERT_EQ("valuee 1", locs.getLocBlockForKey("key1")->french);

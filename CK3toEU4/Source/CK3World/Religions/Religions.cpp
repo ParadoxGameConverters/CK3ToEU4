@@ -1,8 +1,8 @@
 #include "Religions.h"
-#include "Religion.h"
+#include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
+#include "Religion.h"
 
 CK3::Religions::Religions(std::istream& theStream)
 {
@@ -34,7 +34,7 @@ void CK3::Religions::linkFaiths(const Faiths& theFaiths)
 	{
 		const auto& religionFaiths = religion.second->getFaiths();
 		std::map<long long, std::shared_ptr<Faith>> replacementMap;
-		
+
 		for (const auto& faith: religionFaiths)
 		{
 			const auto& faithDataItr = faithData.find(faith.first);
@@ -44,9 +44,8 @@ void CK3::Religions::linkFaiths(const Faiths& theFaiths)
 			}
 			else
 			{
-				throw std::runtime_error(
-					 "Religion " + religion.second->getName() + " has faith " + std::to_string(faith.first) + " which has no definition!");
-			}			
+				throw std::runtime_error("Religion " + religion.second->getName() + " has faith " + std::to_string(faith.first) + " which has no definition!");
+			}
 		}
 		religion.second->loadFaiths(replacementMap);
 		++counter;

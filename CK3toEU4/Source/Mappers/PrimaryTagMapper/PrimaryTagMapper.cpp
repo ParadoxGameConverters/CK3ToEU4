@@ -1,9 +1,9 @@
-#include "PrimaryTagCultureGroup.h"
 #include "PrimaryTagMapper.h"
-#include "Log.h"
-#include "ParserHelpers.h"
-#include "OSCompatibilityLayer.h"
 #include "CommonRegexes.h"
+#include "Log.h"
+#include "OSCompatibilityLayer.h"
+#include "ParserHelpers.h"
+#include "PrimaryTagCultureGroup.h"
 
 void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfiguration)
 {
@@ -13,7 +13,7 @@ void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfigur
 		parseFile("blankMod/output/common/cultures/" + filename);
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/"))
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + filename);
-	
+
 	clearRegisteredKeywords();
 	LOG(LogLevel::Info) << "<> " << cultureTags.size() << " culture tags located.";
 }
@@ -30,7 +30,7 @@ void mappers::PrimaryTagMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, [this](const std::string& unused, std::istream& theStream) {
 		const PrimaryTagCultureGroup theGroup(theStream);
 		const auto& collectedTags = theGroup.getCollectedTags();
-		cultureTags.insert(collectedTags.begin(), collectedTags.end());		
+		cultureTags.insert(collectedTags.begin(), collectedTags.end());
 	});
 }
 

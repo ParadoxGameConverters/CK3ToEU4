@@ -3,10 +3,10 @@
 #include "../Characters/Character.h"
 #include "../Geography/CountyDetail.h"
 #include "../Geography/ProvinceHolding.h"
+#include "CommonRegexes.h"
 #include "LandedTitles.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "CommonRegexes.h"
 
 CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 {
@@ -398,7 +398,7 @@ void CK3::Title::relinkDeFactoVassals()
 		return; // don't bother with counties and below.
 
 	std::set<long long> dropList;
-	
+
 	for (const auto& [dfVassalID, dfVassal]: dfVassals)
 	{
 		if (!dfVassal)
@@ -462,7 +462,7 @@ std::set<std::string> CK3::Title::getTitleNamesFromHolderDomain() const
 	std::set<std::string> toReturn;
 	if (!doesHolderHaveCharacterDomain())
 		return toReturn;
-	
+
 	const auto holderTitles = holder->second->getCharacterDomain()->getDomain();
 
 	for (const auto& [domainTitleID, domainTitle]: holderTitles)

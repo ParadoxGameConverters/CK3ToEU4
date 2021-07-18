@@ -1,7 +1,7 @@
 #ifndef CK3_RELIGIONS_H
 #define CK3_RELIGIONS_H
-#include "Parser.h"
 #include "Faiths.h"
+#include "Parser.h"
 
 namespace CK3
 {

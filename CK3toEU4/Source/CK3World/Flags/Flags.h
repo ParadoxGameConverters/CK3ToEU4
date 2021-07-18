@@ -19,7 +19,7 @@ class Flags: commonItems::parser
 
 	std::string itemType;
 	std::string incomingFlag;
-	std::set<std::string> flags;	
+	std::set<std::string> flags;
 };
 } // namespace CK3
 
