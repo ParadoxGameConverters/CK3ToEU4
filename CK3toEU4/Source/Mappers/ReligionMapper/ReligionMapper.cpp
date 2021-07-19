@@ -10,11 +10,11 @@
 
 mappers::ReligionMapper::ReligionMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing religion mappings.";
+	Log(LogLevel::Info) << "-> Parsing religion mappings.";
 	registerKeys();
 	parseFile("configurables/religion_map.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> Loaded " << CK3toEU4ReligionMap.size() << " religious links.";
+	Log(LogLevel::Info) << "<> Loaded " << CK3toEU4ReligionMap.size() << " religious links.";
 }
 
 mappers::ReligionMapper::ReligionMapper(std::istream& theStream)

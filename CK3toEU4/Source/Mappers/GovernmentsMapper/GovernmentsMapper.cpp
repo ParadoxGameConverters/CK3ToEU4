@@ -5,11 +5,11 @@
 
 mappers::GovernmentsMapper::GovernmentsMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing government mappings.";
+	Log(LogLevel::Info) << "-> Parsing government mappings.";
 	registerKeys();
 	parseFile("configurables/government_map.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> Loaded " << govMappings.size() << " governmental links.";
+	Log(LogLevel::Info) << "<> Loaded " << govMappings.size() << " governmental links.";
 }
 
 mappers::GovernmentsMapper::GovernmentsMapper(std::istream& theStream)

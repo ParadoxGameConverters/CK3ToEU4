@@ -11,12 +11,12 @@ namespace fs = std::filesystem;
 
 mappers::ProvinceMapper::ProvinceMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing province mappings";
+	Log(LogLevel::Info) << "-> Parsing province mappings";
 	registerKeys();
 	parseFile("configurables/province_mappings.txt");
 	clearRegisteredKeywords();
 	createMappings();
-	LOG(LogLevel::Info) << "<> " << mappings.size() << " mappings loaded.";
+	Log(LogLevel::Info) << "<> " << mappings.size() << " mappings loaded.";
 }
 
 mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream)
@@ -161,5 +161,5 @@ void mappers::ProvinceMapper::transliterateMappings(std::map<std::string, std::s
 			}
 		}
 	}
-	LOG(LogLevel::Info) << "<> " << counter << " mappings validated.";
+	Log(LogLevel::Info) << "<> " << counter << " mappings validated.";
 }

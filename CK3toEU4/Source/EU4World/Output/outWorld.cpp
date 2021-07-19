@@ -13,7 +13,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	const auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 	const auto dynamicInstitutions = theConfiguration.getDynamicInstitutions() == Configuration::INSTITUTIONS::DYNAMIC;
 	const date conversionDate = sourceWorld.getConversionDate();
-	LOG(LogLevel::Info) << "<- Creating Output Folder";
+	Log(LogLevel::Info) << "<- Creating Output Folder";
 
 	commonItems::TryCreateFolder("output");
 	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
@@ -23,11 +23,11 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	}
 	Log(LogLevel::Progress) << "80 %";
 
-	LOG(LogLevel::Info) << "<- Copying Mod Template";
+	Log(LogLevel::Info) << "<- Copying Mod Template";
 	commonItems::CopyFolder("blankMod/output", "output/output");
 	Log(LogLevel::Progress) << "81 %";
 
-	LOG(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
 	commonItems::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "82 %";
 
@@ -42,72 +42,72 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/localisation/");
 	Log(LogLevel::Progress) << "83 %";
 
-	LOG(LogLevel::Info) << "<- Crafting .mod File";
+	Log(LogLevel::Info) << "<- Crafting .mod File";
 	createModFile(theConfiguration);
 	Log(LogLevel::Progress) << "84 %";
 
 	// Record converter version
-	LOG(LogLevel::Info) << "<- Writing version";
+	Log(LogLevel::Info) << "<- Writing version";
 	outputVersion(converterVersion, theConfiguration);
 	Log(LogLevel::Progress) << "85 %";
 
 	// Output common\countries.txt
-	LOG(LogLevel::Info) << "<- Creating countries.txt";
+	Log(LogLevel::Info) << "<- Creating countries.txt";
 	outputCommonCountriesFile(theConfiguration);
 	Log(LogLevel::Progress) << "86 %";
 
-	LOG(LogLevel::Info) << "<- Writing Country Commons";
+	Log(LogLevel::Info) << "<- Writing Country Commons";
 	outputCommonCountries(theConfiguration);
 	Log(LogLevel::Progress) << "87 %";
 
-	LOG(LogLevel::Info) << "<- Writing Country Histories";
+	Log(LogLevel::Info) << "<- Writing Country Histories";
 	outputHistoryCountries(theConfiguration);
 	Log(LogLevel::Progress) << "88 %";
 
-	LOG(LogLevel::Info) << "<- Writing Religions";
+	Log(LogLevel::Info) << "<- Writing Religions";
 	outputReligions(theConfiguration, religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
 	Log(LogLevel::Progress) << "89 %";
 
 	if (invasion)
 	{
-		LOG(LogLevel::Info) << "<- Writing Sunset Invasion Files";
+		Log(LogLevel::Info) << "<- Writing Sunset Invasion Files";
 		outputInvasionExtras(theConfiguration);
 	}
 	if (dynamicInstitutions)
 	{
-		LOG(LogLevel::Info) << "<- Writing Dynamic Institution Files";
+		Log(LogLevel::Info) << "<- Writing Dynamic Institution Files";
 		outputDynamicInstitutions(theConfiguration);
 	}
 
-	LOG(LogLevel::Info) << "<- Writing Advisers";
+	Log(LogLevel::Info) << "<- Writing Advisers";
 	outputAdvisers(theConfiguration);
 	Log(LogLevel::Progress) << "90 %";
 
-	LOG(LogLevel::Info) << "<- Writing Provinces";
+	Log(LogLevel::Info) << "<- Writing Provinces";
 	outputHistoryProvinces(theConfiguration);
 	Log(LogLevel::Progress) << "91 %";
 
-	LOG(LogLevel::Info) << "<- Writing Localization";
+	Log(LogLevel::Info) << "<- Writing Localization";
 	outputLocalization(theConfiguration, invasion);
 	Log(LogLevel::Progress) << "92 %";
 
-	LOG(LogLevel::Info) << "<- Writing Emperor";
+	Log(LogLevel::Info) << "<- Writing Emperor";
 	outputEmperor(theConfiguration, conversionDate);
 	Log(LogLevel::Progress) << "93 %";
 
-	LOG(LogLevel::Info) << "<- Writing Diplomacy";
+	Log(LogLevel::Info) << "<- Writing Diplomacy";
 	outputDiplomacy(theConfiguration, diplomacy.getAgreements(), invasion);
 	Log(LogLevel::Progress) << "94 %";
 
-	LOG(LogLevel::Info) << "<- Copying Flags";
+	Log(LogLevel::Info) << "<- Copying Flags";
 	outputFlags(theConfiguration);
 	Log(LogLevel::Progress) << "95 %";
 
-	LOG(LogLevel::Info) << "<- Writing Religion Icons";
+	Log(LogLevel::Info) << "<- Writing Religion Icons";
 	outputReligionIcons(theConfiguration, religionMapper.getGeneratedReligions(), sourceWorld.getMods());
 	Log(LogLevel::Progress) << "96 %";
 
-	LOG(LogLevel::Info) << "<- Replacing Bookmark";
+	Log(LogLevel::Info) << "<- Replacing Bookmark";
 	outputBookmark(theConfiguration, conversionDate);
 	Log(LogLevel::Progress) << "97 %";
 }
@@ -253,7 +253,7 @@ void EU4::World::createModFile(const Configuration& theConfiguration) const
 	std::ofstream output("output/" + theConfiguration.getOutputName() + ".mod");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + ".mod");
-	LOG(LogLevel::Info) << "<< Writing to: "
+	Log(LogLevel::Info) << "<< Writing to: "
 							  << "output/" + theConfiguration.getOutputName() + ".mod";
 	output << modFile;
 	output.close();
@@ -261,7 +261,7 @@ void EU4::World::createModFile(const Configuration& theConfiguration) const
 	std::ofstream output2("output/" + theConfiguration.getOutputName() + "/descriptor.mod");
 	if (!output2.is_open())
 		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + "/descriptor.mod");
-	LOG(LogLevel::Info) << "<< Writing to: "
+	Log(LogLevel::Info) << "<< Writing to: "
 							  << "output/" + theConfiguration.getOutputName() + "/descriptor.mod";
 	output2 << modFile;
 	output2.close();
@@ -453,6 +453,13 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 	std::ofstream output2("output/" + theConfiguration.getOutputName() + "/history/diplomacy/celestial_empire.txt");
 	output2 << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
 	output2.close();
+
+	if (!actualHRETag.empty())
+	{
+		std::ofstream output3("output/" + theConfiguration.getOutputName() + "/i_am_hre.txt");
+		output3 << actualHRETag;
+		output3.close();
+	}
 }
 
 void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const std::vector<std::shared_ptr<Agreement>>& agreements, bool invasion) const
@@ -493,7 +500,7 @@ void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const st
 		}
 		else
 		{
-			LOG(LogLevel::Warning) << "Cannot output diplomatic agreement type " << agreement->getType() << "!";
+			Log(LogLevel::Warning) << "Cannot output diplomatic agreement type " << agreement->getType() << "!";
 		}
 	}
 

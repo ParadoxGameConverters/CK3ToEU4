@@ -18,20 +18,20 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 
-	LOG(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
+	Log(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
-	LOG(LogLevel::Info) << "-> Reading Words";
+	Log(LogLevel::Info) << "-> Reading Words";
 	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods());
 	Log(LogLevel::Progress) << "50 %";
 
 	// Scrape Primary Tags for nationalities
-	LOG(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
+	Log(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
 	Log(LogLevel::Progress) << "51 %";
 
 	// This is our region mapper for eu4 regions, areas and superRegions. It's a pointer because we need
 	// to embed it into every cultureMapper individual mapping. It works faster that way.
-	LOG(LogLevel::Info) << "-> Initializing Geography";
+	Log(LogLevel::Info) << "-> Initializing Geography";
 	regionMapper = std::make_shared<mappers::RegionMapper>();
 	regionMapper->loadRegions(theConfiguration);
 	Log(LogLevel::Progress) << "52 %";
@@ -41,15 +41,15 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "53 %";
 
 	// Our provincemapper is useless for this game. We don't care about baronies, we want <Title> counties.
-	LOG(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
+	Log(LogLevel::Info) << "-> Injecting Geopolitical Nuances Into Clay";
 	provinceMapper.transliterateMappings(sourceWorld.getTitles().getTitles());
 
 	// Verify all incoming c_counties have a mapping that's not empty.
-	LOG(LogLevel::Info) << "-> Verifying all county mappings exist.";
+	Log(LogLevel::Info) << "-> Verifying all county mappings exist.";
 	verifyAllCountyMappings(sourceWorld.getTitles().getTitles());
 
 	// Import CK3 dynamic faiths and register them in religionMapper
-	LOG(LogLevel::Info) << "-> Importing Dynamic Faiths";
+	Log(LogLevel::Info) << "-> Importing Dynamic Faiths";
 	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper, localizationMapper);
 	Log(LogLevel::Progress) << "54 %";
 
@@ -68,7 +68,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "57 %";
 
 	// We can link provinces to regionMapper's bindings, though this is not used at the moment.
-	LOG(LogLevel::Info) << "-> Linking Provinces to Regions";
+	Log(LogLevel::Info) << "-> Linking Provinces to Regions";
 	regionMapper->linkProvinces(provinces);
 	Log(LogLevel::Progress) << "58 %";
 
@@ -82,7 +82,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "60 %";
 
 	// We then link them to their respective countries. Those countries that end up with 0 provinces are defacto dead.
-	LOG(LogLevel::Info) << "-> Linking Provinces to Countries";
+	Log(LogLevel::Info) << "-> Linking Provinces to Countries";
 	linkProvincesToCountries();
 	Log(LogLevel::Progress) << "61 %";
 
@@ -95,7 +95,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// mismaps this is the recovery procedure.
 	// For those, we look at vanilla provinces and override missing bits with vanilla setup. Yeah, a bit more sunni in
 	// hordeland, but it's fine.
-	LOG(LogLevel::Info) << "-> Verifying Religions and Cultures";
+	Log(LogLevel::Info) << "-> Verifying Religions and Cultures";
 	verifyReligionsAndCultures();
 
 	Log(LogLevel::Progress) << "63 %";
@@ -108,20 +108,26 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	resolvePersonalUnions();
 	Log(LogLevel::Progress) << "65 %";
 
-	// We're onto the finesse part of conversion now. HRE was shattered in CK2 World and now we're assigning electorates, free
+	// We're onto the finesse part of conversion now. HRE was shattered in CK3 World and now we're assigning electorates, free
 	// cities, and such.
-	LOG(LogLevel::Info) << "-> Distributing HRE Subtitles";
+	Log(LogLevel::Info) << "-> Distributing HRE Subtitles";
 	distributeHRESubtitles(theConfiguration);
+
+	if (sourceWorld.getHRETitle())
+	{
+		Log(LogLevel::Info) << "-> Marking HRE Title";
+		markHRETag(theConfiguration, sourceWorld.getHRETitle()->first);
+	}
 	Log(LogLevel::Progress) << "66 %";
 
 	// With all religious/cultural matters taken care of, we can now set reforms
-	LOG(LogLevel::Info) << "-> Assigning Country Reforms";
+	Log(LogLevel::Info) << "-> Assigning Country Reforms";
 	assignAllCountryReforms();
 	Log(LogLevel::Progress) << "67 %";
 
 	// Vassalages were set in ck3::world but we have to transcribe those into EU4 agreements.
 	// Ck3 does not support tributaries as such and we care not about alliances.
-	LOG(LogLevel::Info) << "-> Importing Vassals";
+	Log(LogLevel::Info) << "-> Importing Vassals";
 	diplomacy.importVassals(countries);
 	Log(LogLevel::Progress) << "68 %";
 
@@ -156,17 +162,17 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	indianQuestion();
 	Log(LogLevel::Progress) << "75 %";
 
-	LOG(LogLevel::Info) << "-- Crafting Flags";
+	Log(LogLevel::Info) << "-- Crafting Flags";
 	flagFoundry.loadImageFolders(theConfiguration, sourceWorld.getMods());
 	flagFoundry.generateFlags(countries, theConfiguration, religionMapper.getGeneratedReligions(), sourceWorld.getMods());
 	Log(LogLevel::Progress) << "76 %";
 
 	// And finally, the Dump.
-	LOG(LogLevel::Info) << "---> The Dump <---";
+	Log(LogLevel::Info) << "---> The Dump <---";
 	modFile.outname = theConfiguration.getOutputName();
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld);
-	LOG(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
+	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
 }
 
 void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const
@@ -186,7 +192,7 @@ void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared
 
 void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasion)
 {
-	LOG(LogLevel::Info) << "-> Importing Vanilla Countries";
+	Log(LogLevel::Info) << "-> Importing Vanilla Countries";
 	// ---- Loading common/countries/
 	std::ifstream eu4CountriesFile(fs::u8path(eu4Path + "/common/country_tags/00_countries.txt"));
 	if (!eu4CountriesFile.is_open())
@@ -216,9 +222,9 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		sunset.close();
 	}
 
-	LOG(LogLevel::Info) << ">> Loaded " << countries.size() << " countries.";
+	Log(LogLevel::Info) << ">> Loaded " << countries.size() << " countries.";
 
-	LOG(LogLevel::Info) << "-> Importing Vanilla Country History";
+	Log(LogLevel::Info) << "-> Importing Vanilla Country History";
 	// ---- Loading history/countries/
 	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/countries/");
 	for (const auto& fileName: fileNames)
@@ -265,7 +271,7 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 			}
 		}
 	}
-	LOG(LogLevel::Info) << ">> Loaded " << fileNames.size() << " history files.";
+	Log(LogLevel::Info) << ">> Loaded " << fileNames.size() << " history files.";
 }
 
 void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource)
@@ -309,7 +315,7 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 
 void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption)
 {
-	LOG(LogLevel::Info) << "-> Importing CK3 Countries";
+	Log(LogLevel::Info) << "-> Importing CK3 Countries";
 
 	// countries holds all tags imported from EU4. We'll now overwrite some and
 	// add new ones from ck3 titles.
@@ -337,7 +343,7 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration
 			continue;
 		importCK3Country(title, sourceWorld, startDateOption);
 	}
-	LOG(LogLevel::Info) << ">> " << countries.size() << " total countries recognized.";
+	Log(LogLevel::Info) << ">> " << countries.size() << " total countries recognized.";
 }
 
 void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
@@ -411,7 +417,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 
 void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasion)
 {
-	LOG(LogLevel::Info) << "-> Importing Vanilla Provinces";
+	Log(LogLevel::Info) << "-> Importing Vanilla Provinces";
 	// ---- Loading history/provinces
 	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/provinces/");
 	for (const auto& fileName: fileNames)
@@ -437,7 +443,7 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 			Log(LogLevel::Warning) << "Invalid province filename: " << eu4Path << "/history/provinces/" << fileName << " : " << e.what();
 		}
 	}
-	LOG(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
+	Log(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
 	if (invasion)
 	{
 		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/provinces/");
@@ -455,7 +461,7 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 
 void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 {
-	LOG(LogLevel::Info) << "-> Importing CK3 Provinces";
+	Log(LogLevel::Info) << "-> Importing CK3 Provinces";
 	auto counter = 0;
 	// CK3 provinces map to a subset of eu4 provinces. We'll only rewrite those we are responsible for.
 	for (const auto& province: provinces)
@@ -478,7 +484,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 			counter++;
 		}
 	}
-	LOG(LogLevel::Info) << ">> " << counter << " EU4 provinces have been imported from CK3.";
+	Log(LogLevel::Info) << ">> " << counter << " EU4 provinces have been imported from CK3.";
 }
 
 std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::determineProvinceSource(
@@ -592,7 +598,7 @@ void EU4::World::alterProvinceDevelopment()
 	Log(LogLevel::Info) << "-- Scaling Imported provinces";
 
 	auto totalVanillaDev = 0;
-	auto totalCK2Dev = 0;
+	auto totalCK3Dev = 0;
 	auto counter = 0;
 
 	for (const auto& province: provinces)
@@ -635,10 +641,10 @@ void EU4::World::alterProvinceDevelopment()
 		province.second->setDip(std::max(static_cast<int>(std::lround(dip + generalDevelopment)), 1));
 		province.second->setMil(std::max(static_cast<int>(std::lround(mil + generalDevelopment)), 1));
 		counter++;
-		totalCK2Dev += province.second->getDev();
+		totalCK3Dev += province.second->getDev();
 	}
 
-	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK2Dev << " development imported (vanilla had " << totalVanillaDev << ").";
+	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK3Dev << " development imported (vanilla had " << totalVanillaDev << ").";
 }
 
 void EU4::World::linkProvincesToCountries()
@@ -828,19 +834,19 @@ void EU4::World::assignAllCountryReforms()
 
 void EU4::World::importAdvisers()
 {
-	LOG(LogLevel::Info) << "-> Importing Advisers";
+	Log(LogLevel::Info) << "-> Importing Advisers";
 	auto counter = 0;
 	for (const auto& country: countries)
 	{
 		country.second->initializeAdvisers(localizationMapper, religionMapper, cultureMapper);
 		counter += static_cast<int>(country.second->getAdvisers().size());
 	}
-	LOG(LogLevel::Info) << "<> Imported " << counter << " advisers.";
+	Log(LogLevel::Info) << "<> Imported " << counter << " advisers.";
 }
 
 void EU4::World::resolvePersonalUnions()
 {
-	LOG(LogLevel::Info) << "-> Resolving annexations and Personal Unions";
+	Log(LogLevel::Info) << "-> Resolving annexations and Personal Unions";
 	auto annexCounter = 0;
 	auto puCounter = 0;
 	std::map<long long, std::map<std::string, std::shared_ptr<Country>>> holderTitles;
@@ -988,14 +994,32 @@ void EU4::World::resolvePersonalUnions()
 			}
 		}
 	}
-	LOG(LogLevel::Info) << "<> Annexed " << annexCounter << " and PUed " << puCounter << " countries.";
+	Log(LogLevel::Info) << "<> Annexed " << annexCounter << " and PUed " << puCounter << " countries.";
+}
+
+void EU4::World::markHRETag(const Configuration& theConfiguration, const std::string& hreTitleName)
+{
+	if (theConfiguration.getHRE() == Configuration::I_AM_HRE::NONE)
+		return;
+	if (hreTitleName.empty())
+		return;
+	const auto hreTag = titleTagMapper.getTagForTitle(hreTitleName);
+	if (!hreTag)
+	{
+		Log(LogLevel::Warning) << "No known tag for CK3's HRE Title: " << hreTitleName << "! Add it to tag_mappings.txt!";
+		return;
+	}
+	actualHRETag = *hreTag;
+	if (actualHRETag == "HLR")
+		actualHRETag = "HRE";
+	Log(LogLevel::Info) << "<> Marked " << actualHRETag << " as HRE tag.";
 }
 
 void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)
 {
 	if (theConfiguration.getHRE() == Configuration::I_AM_HRE::NONE)
 		return;
-	LOG(LogLevel::Info) << "-> Locating Emperor";
+	Log(LogLevel::Info) << "-> Locating Emperor";
 	// Emperor may or may not be set.
 	for (const auto& country: countries)
 		if (country.second->isHREEmperor())
@@ -1016,7 +1040,7 @@ void EU4::World::distributeHRESubtitles(const Configuration& theConfiguration)
 
 void EU4::World::setElectors()
 {
-	LOG(LogLevel::Info) << "-> Setting Electors";
+	Log(LogLevel::Info) << "-> Setting Electors";
 	std::vector<std::pair<double, std::shared_ptr<Country>>> bishops; // piety-tag
 	std::vector<std::pair<int, std::shared_ptr<Country>>> duchies;		// dev-tag
 	std::vector<std::pair<int, std::shared_ptr<Country>>> republics;	// dev-tag
@@ -1116,12 +1140,12 @@ void EU4::World::setElectors()
 		elector->setElector();
 		Log(LogLevel::Info) << "\t- Electorate set: " << elector->getTag() << " (from " << elector->getTitle()->second->getName() << ")";
 	}
-	LOG(LogLevel::Info) << "<> There are " << electors.size() << " electors recognized.";
+	Log(LogLevel::Info) << "<> There are " << electors.size() << " electors recognized.";
 }
 
 void EU4::World::setFreeCities()
 {
-	LOG(LogLevel::Info) << "-> Setting Free Cities";
+	Log(LogLevel::Info) << "-> Setting Free Cities";
 	// How many free cities do we already have?
 	auto freeCityNum = 0;
 	for (const auto& country: countries)
@@ -1153,7 +1177,7 @@ void EU4::World::setFreeCities()
 			}
 		}
 	}
-	LOG(LogLevel::Info) << "<> There are " << freeCityNum << " free cities.";
+	Log(LogLevel::Info) << "<> There are " << freeCityNum << " free cities.";
 }
 
 void EU4::World::distributeClaims(const Configuration& theConfiguration)
@@ -1166,7 +1190,7 @@ void EU4::World::distributeClaims(const Configuration& theConfiguration)
 
 	Log(LogLevel::Info) << "-- Distributing DeJure Claims";
 	auto counter = 0;
-	std::map<std::string, std::set<std::string>> claimsRegister; // ck2 county name, eu4 tag claims
+	std::map<std::string, std::set<std::string>> claimsRegister; // ck3 county name, eu4 tag claims
 
 	// Mapping all countries with all their claims.
 	for (const auto& country: countries)
@@ -1627,7 +1651,7 @@ void EU4::World::indianQuestion()
 {
 	// countries with capitals in india or persia superregions, need to have their provinces updated to buddhism (from vajrayana),
 	// as well as state religion if vajrayana.
-	LOG(LogLevel::Info) << "-> Resolving the Indian Question";
+	Log(LogLevel::Info) << "-> Resolving the Indian Question";
 	auto countryCounter = 0;
 	auto provinceCounter = 0;
 
@@ -1663,5 +1687,5 @@ void EU4::World::indianQuestion()
 				}
 		}
 	}
-	LOG(LogLevel::Info) << "-> " << countryCounter << " countries and " << provinceCounter << " provinces resolved.";
+	Log(LogLevel::Info) << "-> " << countryCounter << " countries and " << provinceCounter << " provinces resolved.";
 }

@@ -15,7 +15,7 @@ void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfigur
 		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + filename);
 
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> " << cultureTags.size() << " culture tags located.";
+	Log(LogLevel::Info) << "<> " << cultureTags.size() << " culture tags located.";
 }
 
 mappers::PrimaryTagMapper::PrimaryTagMapper(std::istream& theStream)

@@ -56,6 +56,7 @@ class World
 	void importAdvisers();
 	void resolvePersonalUnions();
 	void distributeHRESubtitles(const Configuration& theConfiguration);
+	void markHRETag(const Configuration& theConfiguration, const std::string& hreTitleName);
 	void setElectors();
 	void setFreeCities();
 	void distributeClaims(const Configuration& theConfiguration);
@@ -110,6 +111,7 @@ class World
 	FlagFoundry flagFoundry;
 
 	std::string emperorTag;
+	std::string actualHRETag;
 };
 } // namespace EU4
 

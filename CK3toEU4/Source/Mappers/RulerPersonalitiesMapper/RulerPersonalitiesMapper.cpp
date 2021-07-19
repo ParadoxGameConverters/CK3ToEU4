@@ -6,11 +6,11 @@
 
 mappers::RulerPersonalitiesMapper::RulerPersonalitiesMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing Ruler Personalities";
+	Log(LogLevel::Info) << "-> Parsing Ruler Personalities";
 	registerKeys();
 	parseFile("configurables/ruler_personalities.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> " << theMappings.size() << " personalities loaded.";
+	Log(LogLevel::Info) << "<> " << theMappings.size() << " personalities loaded.";
 }
 
 mappers::RulerPersonalitiesMapper::RulerPersonalitiesMapper(std::istream& theStream)

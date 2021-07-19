@@ -12,11 +12,11 @@ mappers::CultureMapper::CultureMapper(std::istream& theStream)
 
 mappers::CultureMapper::CultureMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing culture mappings.";
+	Log(LogLevel::Info) << "-> Parsing culture mappings.";
 	registerKeys();
 	parseFile("configurables/culture_map.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> Loaded " << cultureMapRules.size() << " cultural links.";
+	Log(LogLevel::Info) << "<> Loaded " << cultureMapRules.size() << " cultural links.";
 }
 
 void mappers::CultureMapper::loadRegionMapper(const std::shared_ptr<RegionMapper>& theRegionMapper)

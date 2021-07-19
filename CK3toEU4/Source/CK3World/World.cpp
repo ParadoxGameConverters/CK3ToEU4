@@ -15,7 +15,7 @@ namespace fs = std::filesystem;
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
-	LOG(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
+	Log(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
 	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
 	});
 	registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
@@ -108,7 +108,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 	Log(LogLevel::Progress) << "4 %";
 
-	LOG(LogLevel::Info) << "-> Verifying CK3 save.";
+	Log(LogLevel::Info) << "-> Verifying CK3 save.";
 	verifySave(theConfiguration->getSaveGamePath());
 	processSave(theConfiguration->getSaveGamePath());
 	Log(LogLevel::Progress) << "5 %";
@@ -117,45 +117,45 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	parseStream(metaData);
 	Log(LogLevel::Progress) << "10 %";
 
-	LOG(LogLevel::Info) << "* Priming Converter Components *";
+	Log(LogLevel::Info) << "* Priming Converter Components *";
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
 
-	LOG(LogLevel::Info) << "* Parsing Gamestate *";
+	Log(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
 	parseStream(gameState);
 	Log(LogLevel::Progress) << "20 %";
 	clearRegisteredKeywords();
 
-	LOG(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
+	Log(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
 	crosslinkDatabases();
 	Log(LogLevel::Progress) << "30 %";
 
 	// processing
-	LOG(LogLevel::Info) << "-- Flagging HRE Provinces";
+	Log(LogLevel::Info) << "-- Flagging HRE Provinces";
 	flagHREProvinces(*theConfiguration);
-	LOG(LogLevel::Info) << "-- Shattering HRE";
+	Log(LogLevel::Info) << "-- Shattering HRE";
 	shatterHRE(*theConfiguration);
-	LOG(LogLevel::Info) << "-- Shattering Empires";
+	Log(LogLevel::Info) << "-- Shattering Empires";
 	shatterEmpires(*theConfiguration);
-	LOG(LogLevel::Info) << "-- Filtering Independent Titles";
+	Log(LogLevel::Info) << "-- Filtering Independent Titles";
 	filterIndependentTitles();
-	LOG(LogLevel::Info) << "-- Splitting Off Vassals";
+	Log(LogLevel::Info) << "-- Splitting Off Vassals";
 	splitVassals(*theConfiguration);
-	LOG(LogLevel::Info) << "-- Rounding Up Some People";
+	Log(LogLevel::Info) << "-- Rounding Up Some People";
 	gatherCourtierNames();
-	LOG(LogLevel::Info) << "-- Congregating DeFacto Counties for Independent Titles";
+	Log(LogLevel::Info) << "-- Congregating DeFacto Counties for Independent Titles";
 	congregateDFCounties();
-	LOG(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
+	Log(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
 	congregateDJCounties();
-	LOG(LogLevel::Info) << "-- Filtering Landless Titles";
+	Log(LogLevel::Info) << "-- Filtering Landless Titles";
 	filterLandlessTitles();
-	LOG(LogLevel::Info) << "-- Distributing Electorates";
+	Log(LogLevel::Info) << "-- Distributing Electorates";
 	setElectors();
 
-	LOG(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
+	Log(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
 }
 
@@ -168,15 +168,15 @@ void CK3::World::processSave(const std::string& saveGamePath)
 			processRegularSave(saveGamePath);
 			break;
 		case SaveType::ZIPFILE:
-			LOG(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
+			Log(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
 			processCompressedSave(saveGamePath);
 			break;
 		case SaveType::AUTOSAVE:
-			LOG(LogLevel::Info) << "-> Importing ironman CK3 autosave.";
+			Log(LogLevel::Info) << "-> Importing ironman CK3 autosave.";
 			processAutoSave(saveGamePath);
 			break;
 		case SaveType::IRONMAN:
-			LOG(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
+			Log(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
 			processIronManSave(saveGamePath);
 			break;
 		case SaveType::INVALID:
@@ -390,7 +390,7 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 
 void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 {
-	LOG(LogLevel::Info) << "-> Examiming Personalities";
+	Log(LogLevel::Info) << "-> Examiming Personalities";
 	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
 	{
 		if (file.find(".txt") == std::string::npos)
@@ -409,7 +409,7 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 			traitScraper.loadTraits(mod.path + "common/traits/" + file);
 		}
 	}
-	LOG(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
+	Log(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
 }
 
 void CK3::World::crosslinkDatabases()
