@@ -10,6 +10,6 @@ void convertCK3ToEU4(const commonItems::ConverterVersion& converterVersion)
 	const auto theConfiguration = std::make_shared<Configuration>(converterVersion);
 	const CK3::World sourceWorld(theConfiguration, converterVersion);
 	EU4::World destWorld(sourceWorld, *theConfiguration, converterVersion);
-	LOG(LogLevel::Info) << "* Conversion complete *";
+	Log(LogLevel::Info) << "* Conversion complete *";
 	Log(LogLevel::Progress) << "100 %";
 }

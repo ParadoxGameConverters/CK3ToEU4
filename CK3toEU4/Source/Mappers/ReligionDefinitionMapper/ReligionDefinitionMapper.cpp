@@ -5,7 +5,7 @@
 
 mappers::ReligionDefinitionMapper::ReligionDefinitionMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing religion definitions.";
+	Log(LogLevel::Info) << "-> Parsing religion definitions.";
 	registerKeys();
 	parseFile("configurables/religions/dynamic/current_icons.txt");
 	parseFile("configurables/religions/dynamic/doctrine_definitions.txt");
@@ -13,7 +13,7 @@ mappers::ReligionDefinitionMapper::ReligionDefinitionMapper()
 	registerStaticKeys();
 	parseFile("configurables/religions/dynamic/religion_globals.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> Loaded " << mappings.size() << " religious intricacies.";
+	Log(LogLevel::Info) << "<> Loaded " << mappings.size() << " religious intricacies.";
 }
 
 mappers::ReligionDefinitionMapper::ReligionDefinitionMapper(std::istream& theStream1, std::istream& theStream2)

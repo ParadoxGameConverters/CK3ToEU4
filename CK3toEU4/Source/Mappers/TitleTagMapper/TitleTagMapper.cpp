@@ -6,11 +6,11 @@
 
 mappers::TitleTagMapper::TitleTagMapper()
 {
-	LOG(LogLevel::Info) << "-> Parsing Tag mappings";
+	Log(LogLevel::Info) << "-> Parsing Tag mappings";
 	registerKeys();
 	parseFile("configurables/tag_mappings.txt");
 	clearRegisteredKeywords();
-	LOG(LogLevel::Info) << "<> " << theMappings.size() << " mappings loaded.";
+	Log(LogLevel::Info) << "<> " << theMappings.size() << " mappings loaded.";
 }
 
 mappers::TitleTagMapper::TitleTagMapper(std::istream& theStream)

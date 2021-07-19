@@ -36,6 +36,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getMods() const { return mods; }
 	[[nodiscard]] const auto& getTitles() const { return titles; }
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
+	[[nodiscard]] const auto& getHRETitle() const { return hreTitle; }
 
   private:
 	// savegame processing
@@ -54,7 +55,7 @@ class World: commonItems::parser
 	// postparsing weave
 	void crosslinkDatabases();
 
-	// CK2World processing
+	// CK3World processing
 	void flagHREProvinces(const Configuration& theConfiguration);
 	void shatterHRE(const Configuration& theConfiguration) const;
 	void shatterEmpires(const Configuration& theConfiguration) const;

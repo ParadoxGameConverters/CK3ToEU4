@@ -28,7 +28,7 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 		}
 	}
 
-	LOG(LogLevel::Info) << ">> " << localizations.size() << " words read.";
+	Log(LogLevel::Info) << ">> " << localizations.size() << " words read.";
 }
 
 void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, const std::string& path)
