@@ -458,7 +458,7 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 	{
 		std::ofstream output3("output/" + theConfiguration.getOutputName() + "/i_am_hre.txt");
 		output3 << actualHRETag;
-		output3.close();		
+		output3.close();
 	}
 }
 

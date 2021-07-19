@@ -116,7 +116,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	if (sourceWorld.getHRETitle())
 	{
 		Log(LogLevel::Info) << "-> Marking HRE Title";
-		markHRETag(theConfiguration, sourceWorld.getHRETitle()->first);		
+		markHRETag(theConfiguration, sourceWorld.getHRETitle()->first);
 	}
 	Log(LogLevel::Progress) << "66 %";
 
