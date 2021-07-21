@@ -38,6 +38,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getTitles() const { return titles; }
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 	[[nodiscard]] const auto& getHRETitle() const { return hreTitle; }
+	[[nodiscard]] auto doesIslamExist() const { return islamExists; }
 
   private:
 	// savegame processing
@@ -67,6 +68,7 @@ class World: commonItems::parser
 	void congregateDJCounties();
 	void filterLandlessTitles();
 	void setElectors();
+	void checkForIslam();
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
@@ -92,6 +94,8 @@ class World: commonItems::parser
 
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> hreTitle; // loaded by configuration option.
 	std::map<std::string, std::shared_ptr<Title>> independentTitles;
+
+	bool islamExists = false;
 
 	enum class SaveType
 	{

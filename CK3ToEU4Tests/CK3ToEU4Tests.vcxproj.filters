@@ -208,6 +208,12 @@
     <Filter Include="MapperTests\VassalSplitoffMapperTests">
       <UniqueIdentifier>{13ee96cc-14f3-4e84-b28f-35f548c5efee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\IslamOverrideMapper">
+      <UniqueIdentifier>{a5e620c1-9913-4278-8cc2-25967adbc89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\IslamOverrideMapperTests">
+      <UniqueIdentifier>{6d99ed23-0fcb-4b92-aaca-a939da0752e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -646,6 +652,18 @@
     </ClCompile>
     <ClCompile Include="MapperTests\VassalSplitoffMapper\VassalSplitoffMapperTests.cpp">
       <Filter>MapperTests\VassalSplitoffMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMapperTests.cpp">
+      <Filter>MapperTests\IslamOverrideMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp">
+      <Filter>MapperTests\IslamOverrideMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

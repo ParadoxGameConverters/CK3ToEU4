@@ -1,0 +1,90 @@
+## Religious rewrite
+
+# Since we may convert worlds without Islam existing/having ever existed,
+# it's best we also consider over-the-CK3 lands to adhere to such scenario
+
+# The converter will check if any province in the CK3 save has a Muslim faith
+# (e.g. Sunni, Shiite, Ibadi, etc.) and, if it doesn't, it'll change the religions of the
+# following provinces accordingly
+
+# We are not doing the same with Christian faiths because there is no Christian province
+# in the over-the-CK3 lands
+
+# Syntax:
+# link = { province = [EU4 province] religion = [new EU4 religion] }
+
+# Ibadi
+link = { province = 1201 religion = shamanism } # Zanzibar
+
+# Sunni
+## Malaysia - Indonesia
+link = { province = 593 religion = buddhism } # Nakhon Si Thammarat
+link = { province = 594 religion = buddhism } # Pattani
+link = { province = 2391 religion = buddhism } # Thalang
+link = { province = 2394 religion = buddhism } # Kedah
+link = { province = 4813 religion = buddhism } # Pengang
+link = { province = 4812 religion = buddhism } # Gerik
+link = { province = 595 religion = hinduism } # Perak
+link = { province = 596 religion = hinduism } # Malacca
+link = { province = 2392 religion = hinduism } # Selangor
+link = { province = 597 religion = hinduism } # Johor
+link = { province = 4815 religion = hinduism } # Singapura
+link = { province = 598 religion = hinduism } # Pahang
+link = { province = 599 religion = hinduism } # Kelantan
+link = { province = 2393 religion = hinduism } # Terengganu
+link = { province = 2686 religion = hinduism } # Bintan
+link = { province = 617 religion = hinduism } # Lamuri
+link = { province = 2673 religion = hinduism } # Pasai
+link = { province = 2685 religion = hinduism } # Gayo
+link = { province = 618 religion = hinduism } # Riau
+link = { province = 4809 religion = hinduism } # Langkat
+link = { province = 4810 religion = hinduism } # Deli
+link = { province = 619 religion = hinduism } # Batak
+link = { province = 2674 religion = hinduism } # Peureulak
+link = { province = 620 religion = hinduism } # Siak
+link = { province = 659 religion = hinduism } # Lingga
+link = { province = 2675 religion = hinduism } # Rokan
+link = { province = 2676 religion = hinduism } # Indragiri
+link = { province = 4816 religion = hinduism } # Rengat
+link = { province = 2677 religion = hinduism } # Jambi
+link = { province = 621 religion = buddhism } # Bengkulu
+link = { province = 622 religion = buddhism } # Palembang
+link = { province = 623 religion = buddhism } # Tulangbewang
+link = { province = 2678 religion = buddhism } # Bangka
+link = { province = 636 religion = buddhism } # Brunei
+link = { province = 4805 religion = buddhism } # Bintulu
+link = { province = 4806 religion = buddhism } # Kapit
+link = { province = 4804 religion = buddhism } # Kuching
+link = { province = 637 religion = buddhism } # Jesselton
+link = { province = 2703 religion = buddhism } # Lehad Datu
+link = { province = 2704 religion = buddhism } # Sibu
+link = { province = 2705 religion = buddhism } # Kuching
+link = { province = 640 religion = hinduism } # Pontianak
+link = { province = 2706 religion = hinduism } # Katapang
+link = { province = 651 religion = animism } # Sulu
+link = { province = 655 religion = animism } # Palawan
+
+## Africa
+link = { province = 788 religion = shamanism } # Angoche
+link = { province = 1195 religion = shamanism } # Mozambique
+link = { province = 4020 religion = shamanism } # Comoros
+link = { province = 4049 religion = shamanism } # Ibo
+link = { province = 1111 religion = shamanism } # Arguin
+link = { province = 1186 religion = shamanism } # Sofala
+link = { province = 1192 religion = shamanism } # Quelimane
+link = { province = 1196 religion = shamanism } # Kilwa
+link = { province = 1198 religion = shamanism } # Lindi
+link = { province = 1202 religion = shamanism } # Mombasa
+link = { province = 1203 religion = shamanism } # Malindi
+link = { province = 1204 religion = shamanism } # Lamu
+link = { province = 2774 religion = shamanism } # Kismayo
+link = { province = 2796 religion = shamanism } # Pate
+link = { province = 2679 religion = shamanism } # Belitung
+link = { province = 2682 religion = hinduism } # Pariaman
+link = { province = 2683 religion = animism } # Mentawai
+link = { province = 2684 religion = animism } # Nias
+link = { province = 2775 religion = shamanism } # Merca
+link = { province = 2794 religion = shamanism} # Barawa
+link = { province = 4026 religion = shamanism } # Antemoro
+link = { province = 4029 religion = shamanism } # Antanosy
+link = { province = 4051 religion = shamanism } # Ewaso Ngiro

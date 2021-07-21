@@ -4,12 +4,16 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
 #include "Characters/CharacterDomain.h"
+#include "Geography/CountyDetail.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
+#include "Religions/Faith.h"
+#include "Religions/Religion.h"
 #include "Titles/Title.h"
 #include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
+#include <ranges>
 namespace fs = std::filesystem;
 #include "CommonRegexes.h"
 
@@ -134,6 +138,8 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	Log(LogLevel::Progress) << "30 %";
 
 	// processing
+	Log(LogLevel::Info) << "-- Checking For Religions";
+	checkForIslam();
 	Log(LogLevel::Info) << "-- Flagging HRE Provinces";
 	flagHREProvinces(*theConfiguration);
 	Log(LogLevel::Info) << "-- Shattering HRE";
@@ -504,6 +510,23 @@ void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
 
 	const auto counter = theHre->second->flagDeJureHREProvinces();
 	Log(LogLevel::Info) << "<> " << counter << " HRE provinces flagged.";
+}
+
+void CK3::World::checkForIslam()
+{
+	for (const auto& [name, county]: countyDetails.getCountyDetails())
+	{
+		Log(LogLevel::Debug) << name << " - " << county->getFaith().second->getReligion().second->getName();
+		if (!county->getFaith().second)
+			continue;
+		if (!county->getFaith().second->getReligion().second)
+			continue;
+		if (county->getFaith().second->getReligion().second->getName() == "islam_religion" && name != "c_kuozhou") // sigh
+		{
+			islamExists = true;
+			return;
+		}
+	}
 }
 
 void CK3::World::shatterHRE(const Configuration& theConfiguration) const

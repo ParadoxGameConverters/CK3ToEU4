@@ -4,6 +4,7 @@
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
+#include "../Mappers/IslamOverrideMapper/IslamOverrideMapper.h"
 #include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 #include "../Mappers/ProvinceMapper/ProvinceMapper.h"
@@ -67,6 +68,7 @@ class World
 	void siberianQuestion(const Configuration& theConfiguration);
 	void africanQuestion();
 	void indianQuestion();
+	void religiousQuestion(bool doesIslamExist);
 
 	// output
 	void output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
@@ -105,6 +107,7 @@ class World
 	mappers::DevWeightsMapper devWeightsMapper;
 	mappers::ReligionDefinitionMapper religionDefinitionMapper;
 	mappers::ReligionGroupScraper religionGroupScraper;
+	mappers::IslamOverrideMapper islamOverrideMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;
