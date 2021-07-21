@@ -4,6 +4,7 @@
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
 #include "../Mappers/TraitScraper/TraitScraper.h"
+#include "../Mappers/VassalSplitoffMapper/VassalSplitoffMapper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
 #include "ConverterVersion.h"
@@ -87,6 +88,7 @@ class World: commonItems::parser
 	mappers::IAmHreMapper iAmHreMapper;
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;
 	mappers::TraitScraper traitScraper;
+	mappers::VassalSplitoffMapper vassalSplitoffMapper;
 
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> hreTitle; // loaded by configuration option.
 	std::map<std::string, std::shared_ptr<Title>> independentTitles;

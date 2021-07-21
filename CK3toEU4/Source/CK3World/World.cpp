@@ -864,7 +864,8 @@ void CK3::World::splitVassals(const Configuration& theConfiguration)
 			const auto& vassalProvincesClaimed = vassal.second->coalesceDFCounties();
 
 			// a vassal goes indep if they control 1/relevantvassals + 10% land.
-			const double threshold = static_cast<double>(countiesClaimed.size()) / relevantVassals + 0.1 * static_cast<double>(countiesClaimed.size());
+			double threshold = static_cast<double>(countiesClaimed.size()) / relevantVassals + 0.1 * static_cast<double>(countiesClaimed.size());
+			threshold *= vassalSplitoffMapper.getFactor();
 			if (static_cast<double>(vassalProvincesClaimed.size()) > threshold)
 				newIndeps.insert(std::pair(vassal.second->getName(), vassal.second));
 		}
