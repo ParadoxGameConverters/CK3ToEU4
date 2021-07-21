@@ -112,6 +112,9 @@
     <Filter Include="CommonItems\ModLoader">
       <UniqueIdentifier>{55ecf61d-6900-4f6d-95e7-715012a9d5cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\VassalSplitoffMapper">
+      <UniqueIdentifier>{806bdf7c-db4b-425d-9908-5938cc59f48f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -399,6 +402,9 @@
     </ClInclude>
     <ClInclude Include="..\commonItems\ModLoader\ModParser.h">
       <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.h">
+      <Filter>Mappers\VassalSplitoffMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -688,6 +694,9 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
       <Filter>CommonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
+      <Filter>Mappers\VassalSplitoffMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

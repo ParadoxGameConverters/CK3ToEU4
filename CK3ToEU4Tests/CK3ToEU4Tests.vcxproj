@@ -160,6 +160,7 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp" />
     <ClCompile Include="..\commonItems\Color.cpp" />
     <ClCompile Include="..\commonItems\CommonFunctions.cpp" />
     <ClCompile Include="..\commonItems\ConvenientParser.cpp" />
@@ -235,6 +236,7 @@
     <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMappingTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp" />
+    <ClCompile Include="MapperTests\VassalSplitoffMapper\VassalSplitoffMapperTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
