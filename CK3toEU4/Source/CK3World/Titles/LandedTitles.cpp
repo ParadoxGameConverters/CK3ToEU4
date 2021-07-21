@@ -126,7 +126,7 @@ void CK3::LandedTitles::linkTitles(const Titles& titles)
 		}
 		else
 		{
-			throw std::runtime_error("Landed title " + landedTitle.first + " has a capital " + theCapital->first + " which has no definition!");
+			Log(LogLevel::Error) << "Landed title " + landedTitle.first + " has a capital " + theCapital->first + " which has no definition!";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " landed title capitals updated.";
