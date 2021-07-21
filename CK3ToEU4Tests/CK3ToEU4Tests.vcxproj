@@ -138,6 +138,8 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp" />
@@ -216,6 +218,8 @@
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMapperTests.cpp" />
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp" />
     <ClCompile Include="MapperTests\LocalisationTests\LocalisationTests.cpp" />
+    <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMapperTests.cpp" />
+    <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMappingTests.cpp" />
     <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp" />

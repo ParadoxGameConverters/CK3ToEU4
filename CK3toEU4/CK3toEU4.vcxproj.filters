@@ -118,6 +118,9 @@
     <Filter Include="Mappers\IslamOverrideMapper">
       <UniqueIdentifier>{dc085540-f137-42ae-92ae-c9586833083f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\LocDegraderMapper">
+      <UniqueIdentifier>{0e3acfab-e2f9-46f5-83a4-ec4cf202a5bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -414,6 +417,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.h">
       <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LocDegraderMapper\LocDegraderMapper.h">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.h">
+      <Filter>Mappers\LocDegraderMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -712,6 +721,12 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp">
       <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp">
+      <Filter>Mappers\LocDegraderMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

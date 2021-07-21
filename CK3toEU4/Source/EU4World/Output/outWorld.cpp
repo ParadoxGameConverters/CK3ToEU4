@@ -1,12 +1,13 @@
 #include "../../CK3World/World.h"
+#include "../../Configuration/Configuration.h"
 #include "../EU4World.h"
+#include "../Province/EU4Province.h"
+#include "CommonFunctions.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 #include <filesystem>
 #include <fstream>
 namespace fs = std::filesystem;
-#include "../../Configuration/Configuration.h"
-#include "../Province/EU4Province.h"
-#include "OSCompatibilityLayer.h"
 
 void EU4::World::output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
 {
@@ -393,28 +394,28 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!german.is_open())
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
-	english << "\xEF\xBB\xBFl_english:\n"; // write BOM
-	french << "\xEF\xBB\xBFl_french:\n";	// write BOM
-	spanish << "\xEF\xBB\xBFl_spanish:\n"; // write BOM
-	german << "\xEF\xBB\xBFl_german:\n";	// write BOM
+	english << commonItems::utf8BOM << "l_english:\n"; // write BOM
+	french << commonItems::utf8BOM << "l_french:\n";	// write BOM
+	spanish << commonItems::utf8BOM << "l_spanish:\n"; // write BOM
+	german << commonItems::utf8BOM << "l_german:\n";	// write BOM
 
 	for (const auto& country: countries)
 	{
 		for (const auto& locblock: country.second->getLocalizations())
 		{
-			english << " " << locblock.first << ":3 \"" << locblock.second.english << "\"\n";
-			french << " " << locblock.first << ":3 \"" << locblock.second.french << "\"\n";
-			spanish << " " << locblock.first << ":3 \"" << locblock.second.spanish << "\"\n";
-			german << " " << locblock.first << ":3 \"" << locblock.second.german << "\"\n";
+			english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
+			french << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.french) << "\"\n";
+			spanish << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.spanish) << "\"\n";
+			german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
 		}
 	}
 
 	for (const auto& locblock: religionMapper.getLocalizations())
 	{
-		english << " " << locblock.first << ":3 \"" << locblock.second.english << "\"\n";
-		french << " " << locblock.first << ":3 \"" << locblock.second.french << "\"\n";
-		spanish << " " << locblock.first << ":3 \"" << locblock.second.spanish << "\"\n";
-		german << " " << locblock.first << ":3 \"" << locblock.second.german << "\"\n";
+		english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
+		french << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.french) << "\"\n";
+		spanish << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.spanish) << "\"\n";
+		german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
 	}
 
 	english.close();
