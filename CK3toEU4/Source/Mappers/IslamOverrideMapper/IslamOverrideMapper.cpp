@@ -22,7 +22,7 @@ mappers::IslamOverrideMapper::IslamOverrideMapper(std::istream& theStream)
 
 void mappers::IslamOverrideMapper::registerKeys()
 {
-	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("link", [this](std::istream& theStream) {
 		const IslamOverrideMapping newMapping(theStream);
 		if (newMapping.getReplacementMapping().first && !newMapping.getReplacementMapping().second.empty())
 			replacements.emplace(newMapping.getReplacementMapping());

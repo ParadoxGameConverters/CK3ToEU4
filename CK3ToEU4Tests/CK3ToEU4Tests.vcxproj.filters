@@ -214,6 +214,12 @@
     <Filter Include="MapperTests\IslamOverrideMapperTests">
       <UniqueIdentifier>{6d99ed23-0fcb-4b92-aaca-a939da0752e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\LocDegraderMapper">
+      <UniqueIdentifier>{e63ab097-631a-473c-80f7-eb2a828261ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\LocDegraderMapperTests">
+      <UniqueIdentifier>{74a70cc4-b6a5-4d14-987c-74b7e23a8d15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -664,6 +670,18 @@
     </ClCompile>
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp">
       <Filter>MapperTests\IslamOverrideMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMapperTests.cpp">
+      <Filter>MapperTests\LocDegraderMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMappingTests.cpp">
+      <Filter>MapperTests\LocDegraderMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

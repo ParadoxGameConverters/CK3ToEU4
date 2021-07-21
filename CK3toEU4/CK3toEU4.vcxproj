@@ -160,6 +160,8 @@
     <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.h" />
     <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.h" />
     <ClInclude Include="Source\Mappers\LocalizationMapper\LocalizationMapper.h" />
+    <ClInclude Include="Source\Mappers\LocDegraderMapper\LocDegraderMapper.h" />
+    <ClInclude Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.h" />
     <ClInclude Include="Source\Mappers\NamedColors\NamedColors.h" />
     <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.h" />
     <ClInclude Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.h" />
@@ -262,6 +264,8 @@
     <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
     <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
     <ClCompile Include="Source\Mappers\LocalizationMapper\LocalizationMapper.cpp" />
+    <ClCompile Include="Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp" />
+    <ClCompile Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp" />
     <ClCompile Include="Source\Mappers\NamedColors\NamedColors.cpp" />
     <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp" />
     <ClCompile Include="Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp" />

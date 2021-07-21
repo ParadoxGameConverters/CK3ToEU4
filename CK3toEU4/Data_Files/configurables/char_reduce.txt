@@ -1,0 +1,75 @@
+##### CHARACTER MAPPING #####
+# Used to tell how to substitute non-1252 chars
+# link = { utf8 = "utf8 character" win1252 = "win1252 substitute" }
+# As an example, ł --> l, hence Płock will become Plock
+
+# Transliteration is stupid slow so keep this file small, only what's really necessary.
+
+## LATIN - LOWERCASE
+
+link = { utf8 = "ā" win1252 = "â" }
+link = { utf8 = "ē" win1252 = "ê" }
+link = { utf8 = "ī" win1252 = "î" }
+link = { utf8 = "ō" win1252 = "ô" }
+link = { utf8 = "ū" win1252 = "û" }
+link = { utf8 = "ă" win1252 = "a" }
+link = { utf8 = "ą" win1252 = "a" }
+link = { utf8 = "ę" win1252 = "e" }
+link = { utf8 = "ě" win1252 = "ê" }
+link = { utf8 = "ı" win1252 = "ï" }
+link = { utf8 = "ĩ" win1252 = "i" }
+link = { utf8 = "ő" win1252 = "õ" }
+link = { utf8 = "ů" win1252 = "u" }
+link = { utf8 = "č" win1252 = "ch" }
+link = { utf8 = "ď" win1252 = "d'" }
+link = { utf8 = "ğ" win1252 = "g'" }
+link = { utf8 = "ł" win1252 = "l" }
+link = { utf8 = "ń" win1252 = "n" }
+link = { utf8 = "ň" win1252 = "n" }
+link = { utf8 = "ř" win1252 = "r" }
+link = { utf8 = "ṛ" win1252 = "ri" } # See Rigveda
+link = { utf8 = "ș" win1252 = "š" }
+link = { utf8 = "ś" win1252 = "sh" }
+link = { utf8 = "ț" win1252 = "t" }
+link = { utf8 = "ź" win1252 = "z" }
+link = { utf8 = "ż" win1252 = "ž" }
+link = { utf8 = "ĉ" win1252 = "cx" } # Esperanto support because people are mad
+link = { utf8 = "ĝ" win1252 = "gx" }
+link = { utf8 = "ĥ" win1252 = "hx" }
+link = { utf8 = "ĵ" win1252 = "jx" }
+link = { utf8 = "ŝ" win1252 = "sx" }
+link = { utf8 = "ŭ" win1252 = "û" }
+
+## LATIN - UPPERCASE
+link = { utf8 = "Ā" win1252 = "Â" }
+link = { utf8 = "Ē" win1252 = "Ê" }
+link = { utf8 = "Ī" win1252 = "Î" }
+link = { utf8 = "Ō" win1252 = "Ô" }
+link = { utf8 = "Ū" win1252 = "Û" }
+link = { utf8 = "Ă" win1252 = "A" }
+link = { utf8 = "Ą" win1252 = "A" }
+link = { utf8 = "Ę" win1252 = "E" }
+link = { utf8 = "Ě" win1252 = "Ê" }
+link = { utf8 = "İ" win1252 = "I" }
+link = { utf8 = "Ĩ" win1252 = "I" }
+link = { utf8 = "Ő" win1252 = "Õ" }
+link = { utf8 = "Ů" win1252 = "U" }
+link = { utf8 = "Č" win1252 = "Ch" }
+link = { utf8 = "Ď" win1252 = "D'" }
+link = { utf8 = "Ğ" win1252 = "G'" }
+link = { utf8 = "Ł" win1252 = "L" }
+link = { utf8 = "Ń" win1252 = "N" }
+link = { utf8 = "Ň" win1252 = "N" }
+link = { utf8 = "Ř" win1252 = "R" }
+link = { utf8 = "Ṛ" win1252 = "Ri" } # See Rigveda
+link = { utf8 = "Ș" win1252 = "Š" }
+link = { utf8 = "Ś" win1252 = "Sh" }
+link = { utf8 = "Ț" win1252 = "T" }
+link = { utf8 = "Ź" win1252 = "Z" }
+link = { utf8 = "Ż" win1252 = "Ž" }
+link = { utf8 = "Ĉ" win1252 = "Cx" } # Esperanto support because people are insane
+link = { utf8 = "Ĝ" win1252 = "Gx" }
+link = { utf8 = "Ĥ" win1252 = "Hx" }
+link = { utf8 = "Ĵ" win1252 = "Jx" }
+link = { utf8 = "Ŝ" win1252 = "Sx" }
+link = { utf8 = "Ŭ" win1252 = "Û" }

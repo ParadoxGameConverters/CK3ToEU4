@@ -5,6 +5,7 @@
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/IslamOverrideMapper/IslamOverrideMapper.h"
+#include "../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/PrimaryTagMapper/PrimaryTagMapper.h"
 #include "../Mappers/ProvinceMapper/ProvinceMapper.h"
@@ -108,6 +109,7 @@ class World
 	mappers::ReligionDefinitionMapper religionDefinitionMapper;
 	mappers::ReligionGroupScraper religionGroupScraper;
 	mappers::IslamOverrideMapper islamOverrideMapper;
+	mappers::LocDegraderMapper locDegrader;
 
 	ModFile modFile;
 	Diplomacy diplomacy;
