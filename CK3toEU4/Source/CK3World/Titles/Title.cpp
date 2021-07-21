@@ -176,7 +176,6 @@ void CK3::Title::cleanUpDisplayName()
 	displayName = newName;
 }
 
-
 int CK3::Title::flagDeJureHREProvinces()
 {
 	auto counter = 0;

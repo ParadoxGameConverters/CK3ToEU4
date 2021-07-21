@@ -1,7 +1,4 @@
 #include "EU4World.h"
-#include "Log.h"
-#include <filesystem>
-namespace fs = std::filesystem;
 #include "../CK3World/Characters/Character.h"
 #include "../CK3World/Geography/CountyDetail.h"
 #include "../CK3World/Geography/ProvinceHolding.h"
@@ -9,10 +6,14 @@ namespace fs = std::filesystem;
 #include "../CK3World/Religions/Religion.h"
 #include "../CK3World/Titles/Title.h"
 #include "../Configuration/Configuration.h"
+#include "Log.h"
 #include "OSCompatibilityLayer.h"
 #include "Province/EU4Province.h"
 #include <cmath>
+#include <filesystem>
 #include <fstream>
+#include <ranges>
+namespace fs = std::filesystem;
 
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
@@ -160,6 +161,8 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Indian buddhisms
 	indianQuestion();
+	// No-Islam worlds
+	religiousQuestion(sourceWorld.doesIslamExist());
 	Log(LogLevel::Progress) << "75 %";
 
 	Log(LogLevel::Info) << "-- Crafting Flags";
@@ -173,6 +176,39 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld);
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
+}
+
+void EU4::World::religiousQuestion(bool doesIslamExist)
+{
+	if (doesIslamExist)
+		return;
+
+	auto counterProvince = 0;
+	auto counterCountry = 0;
+	// Update the provinces then.
+	for (const auto& [provinceID, province]: provinces)
+	{
+		const auto& replacementReligion = islamOverrideMapper.getReplacementReligionForProvince(provinceID);
+		if (replacementReligion)
+		{
+			province->setReligion(*replacementReligion);
+			++counterProvince;
+		}
+	}
+	// Now fix the countries with capitals in said provinces.
+	for (const auto& country: countries | std::views::values)
+	{
+		const auto& capitalID = country->getCapitalID();
+		if (!capitalID)
+			continue; // shrug
+		const auto& replacementReligion = islamOverrideMapper.getReplacementReligionForProvince(capitalID);
+		if (replacementReligion)
+		{
+			country->setReligion(*replacementReligion);
+			++counterCountry;
+		}
+	}
+	Log(LogLevel::Info) << ">> Updated " << counterProvince << " provinces and " << counterCountry << " countries.";
 }
 
 void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const

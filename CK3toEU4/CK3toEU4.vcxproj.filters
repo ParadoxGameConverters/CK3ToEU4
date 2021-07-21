@@ -115,6 +115,9 @@
     <Filter Include="Mappers\VassalSplitoffMapper">
       <UniqueIdentifier>{806bdf7c-db4b-425d-9908-5938cc59f48f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\IslamOverrideMapper">
+      <UniqueIdentifier>{dc085540-f137-42ae-92ae-c9586833083f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -405,6 +408,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.h">
       <Filter>Mappers\VassalSplitoffMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.h">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.h">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -697,6 +706,12 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
       <Filter>Mappers\VassalSplitoffMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
