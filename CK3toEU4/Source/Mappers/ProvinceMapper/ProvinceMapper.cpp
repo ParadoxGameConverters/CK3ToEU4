@@ -82,8 +82,8 @@ std::map<std::string, std::shared_ptr<CK3::Title>> mappers::ProvinceMapper::getC
 			}
 			else
 			{
-				throw std::runtime_error(
-					 "Province mapper error - requested ck3 province ID " + std::to_string(ck3ID) + " is invalid. We cannot find related county. Farewell.");
+				Log(LogLevel::Error) << "Province mapper error - requested ck3 province ID " << std::to_string(ck3ID)
+											<< " is invalid. We cannot find related county.";
 			}
 		}
 	}
@@ -128,15 +128,24 @@ void mappers::ProvinceMapper::transliterateMappings(std::map<std::string, std::s
 		if (title.second->getLevel() == CK3::LEVEL::BARONY)
 		{
 			if (!title.second->getClay() || !title.second->getClay()->getProvince())
-				throw std::runtime_error("Barony " + title.first + " has no province data and is unmappable!");
+			{
+				Log(LogLevel::Error) << "Barony " + title.first + " has no province data and is unmappable!";
+				continue;
+			}
 			// This is indeed a barony. Is it broken?
 			if (!title.second->getDJLiege())
-				throw std::runtime_error("Barony " + title.first + " has no county and is unmappable!");
+			{
+				Log(LogLevel::Error) << "Barony " + title.first + " has no county and is unmappable!";
+				continue;
+			}
 			auto baronyID = title.second->getClay()->getProvince()->first;
 			auto countyTitle = std::pair(title.second->getDJLiege()->second->getName(), title.second->getDJLiege()->second);
 			// Is the county sane?
 			if (countyTitle.second->getLevel() != CK3::LEVEL::COUNTY || !countyTitle.second->getClay() || !countyTitle.second->getClay()->getCounty())
-				throw std::runtime_error("Barony " + title.first + " has an insane county and is unmappable!");
+			{
+				Log(LogLevel::Error) << "Barony " + title.first + " has an insane county and is unmappable!";
+				continue;
+			}
 			theMatrix.insert(std::pair(baronyID, countyTitle));
 		}
 	}
@@ -157,7 +166,7 @@ void mappers::ProvinceMapper::transliterateMappings(std::map<std::string, std::s
 			else
 			{
 				// We're mapping to something unheard of. Let's not.
-				throw std::runtime_error("Province mapping ck3 = " + std::to_string(ck3ID) + " is invalid. We cannot find related county.");
+				Log(LogLevel::Error) << "Province mapping ck3 = " + std::to_string(ck3ID) + " is invalid. We cannot find related county.";
 			}
 		}
 	}

@@ -217,7 +217,7 @@ TEST(CK3World_LandedTitlesTests, titlesCanBeLinked)
 	ASSERT_EQ(2, c2->second->getCapital()->second->getCoA()->first);
 }
 
-TEST(CK3World_LandedTitlesTests, missingTitlesLinkThrowsException)
+TEST(CK3World_LandedTitlesTests, missingTitlesLinkDoesNothing)
 {
 	std::stringstream input;
 	input << "d_duchy1 = { capital = c_county1\n c_county1 = { b_barony1 = { province = 22 } } } }\n";
@@ -229,5 +229,10 @@ TEST(CK3World_LandedTitlesTests, missingTitlesLinkThrowsException)
 	input2 << "13={key=\"c_county1\"\n coat_of_arms_id = 1}\n";
 	CK3::Titles titles(input2);
 
-	ASSERT_THROW(clays.linkTitles(titles), std::runtime_error);
+	clays.linkTitles(titles);
+	const auto& c1 = clays.getFoundTitles().find("d_duchy1");
+	const auto& c2 = clays.getFoundTitles().find("d_duchy2");
+
+	ASSERT_EQ(1, c1->second->getCapital()->second->getCoA()->first);
+	ASSERT_EQ(nullptr, c2->second->getCapital()->second);
 }

@@ -82,7 +82,7 @@ TEST(Mappers_ProvinceMapperTests, canLookupCK3TitlesAmongMultipleRules)
 	ASSERT_EQ("County2", provinceMapper.getCK3Titles(2).find("c_county2")->second->getDisplayName());
 }
 
-TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionForClaylessBaronies)
+TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationDoesNothingForClaylessBaronies)
 {
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
@@ -114,18 +114,14 @@ TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionFo
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
 
-	try
-	{
-		provinceMapper.transliterateMappings(titles.getTitles());
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Barony b_barony2 has no province data and is unmappable!", e.what());
-	}
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	ASSERT_EQ(1, provinceMapper.getCK3Titles(1).size());
+	ASSERT_EQ("County1", provinceMapper.getCK3Titles(1).find("c_county1")->second->getDisplayName());
+	ASSERT_TRUE(provinceMapper.getCK3Titles(2).empty());
 }
 
-TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionForDejureLessBaronies)
+TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationdoesNothingForDejureLessBaronies)
 {
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
@@ -157,18 +153,14 @@ TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionFo
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
 
-	try
-	{
-		provinceMapper.transliterateMappings(titles.getTitles());
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Barony b_barony2 has no county and is unmappable!", e.what());
-	}
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	ASSERT_EQ(1, provinceMapper.getCK3Titles(1).size());
+	ASSERT_EQ("County1", provinceMapper.getCK3Titles(1).find("c_county1")->second->getDisplayName());
+	ASSERT_TRUE(provinceMapper.getCK3Titles(2).empty());
 }
 
-TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionForInsaneCounties)
+TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationDoesNothingForInsaneCounties)
 {
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
@@ -199,18 +191,14 @@ TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionFo
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
 
-	try
-	{
-		provinceMapper.transliterateMappings(titles.getTitles());
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Barony b_barony2 has an insane county and is unmappable!", e.what());
-	}
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	ASSERT_EQ(1, provinceMapper.getCK3Titles(1).size());
+	ASSERT_EQ("County1", provinceMapper.getCK3Titles(1).find("c_county1")->second->getDisplayName());
+	ASSERT_TRUE(provinceMapper.getCK3Titles(2).empty());
 }
 
-TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionForInvalidMapping)
+TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationDoesNothingForInvalidMapping)
 {
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
@@ -242,15 +230,11 @@ TEST(Mappers_ProvinceMapperTests, provinceMapperTransliterationThrowsExceptionFo
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
 
-	try
-	{
-		provinceMapper.transliterateMappings(titles.getTitles());
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Province mapping ck3 = 3 is invalid. We cannot find related county.", e.what());
-	}
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	ASSERT_EQ(1, provinceMapper.getCK3Titles(1).size());
+	ASSERT_EQ("County1", provinceMapper.getCK3Titles(1).find("c_county1")->second->getDisplayName());
+	ASSERT_TRUE(provinceMapper.getCK3Titles(2).empty());
 }
 
 TEST(Mappers_ProvinceMapperTests, canLookupEU4Provinces)
