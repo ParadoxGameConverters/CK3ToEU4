@@ -2,7 +2,19 @@
  theocratic_government_norse_pagan_reformed:3 "Kriegerkult"
  theocratic_government_ruler_norse_pagan_reformed:3 "Kriegsführer"
  
- #New Countries
+ #From Vanilla Converter
+ JOM: "Jomswikinger"
+ JOM_ADJ: "Jomswikingisch"
+ HAH: "Hashshashine"
+ HAH_ADJ: "Hashshashinisch"
+ ROM: "Roemisches Imperium"
+ ROM_ADJ: "Roemisch"
+ ISR: "Israel"
+ ISR_ADJ: "Israelisch"
+ TEM: "Tempelritter"
+ TEM_ADJ: "Templer"
+ 
+ #New Countries Added By Us
  ADD:3 "Orden des Heiligen Addai"
  ADD_ADJ:3 "Heiligaddaisch"
  ADD_ADJ2:3 "Heiligaddaisch"
