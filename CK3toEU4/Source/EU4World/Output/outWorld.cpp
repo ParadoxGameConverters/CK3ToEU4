@@ -463,15 +463,22 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 
 		if (actualHRETag != "HRE")
 		{
-			std::ifstream input("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
-			std::stringstream inStream;
-			inStream << input.rdbuf();
-			auto eventFileString = inStream.str();
-			input.close();
-			eventFileString = std::regex_replace(eventFileString, std::regex("HLR"), actualHRETag);
-			output.open("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
-			output << eventFileString;
-			output.close();
+			std::ifstream input(theConfiguration.getEU4Path() + "/events/HolyRomanEmpire.txt");
+			if (!input.is_open())
+			{
+				Log(LogLevel::Warning) << "Where is " << theConfiguration.getEU4Path() << "/events/HolyRomanEmpire.txt?!";
+			}
+			else
+			{
+				std::stringstream inStream;
+				inStream << input.rdbuf();
+				auto eventFileString = inStream.str();
+				input.close();
+				eventFileString = std::regex_replace(eventFileString, std::regex("HLR"), actualHRETag);
+				output.open("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
+				output << eventFileString;
+				output.close();
+			}
 		}
 	}
 }
