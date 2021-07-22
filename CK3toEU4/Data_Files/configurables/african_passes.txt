@@ -1,0 +1,27 @@
+# We tend to sterilize african passes into subsaharan basin to slow down voracious speed at which europeans or north africans tend to expand
+# southwards and eat entire africa.
+
+# Each pass has two ends. If the same country holds both ends of a pass, or if those ends are in HRE, the pass will not be sterilized.
+
+# To disable this behavior simply comment or delete relevant lines. Feel free to add new ones if that would suit your need.
+
+pass = {
+	name = "Tuat"
+	endA = { 2460 2466 }
+	endB = { 1128 }
+	sterilize = { 1127 }
+}
+
+pass = {
+	name = "Djado-Tajhari"
+	endA = { 2448 }
+	endB = { 2275 2277 }
+	sterilize = { 2474 2475 }
+}
+
+pass = {
+	name = "Central Sahara"
+	endA = { 1219 }
+	endB = { 2288 1159 }
+	sterilize = { 774 2932 }
+}

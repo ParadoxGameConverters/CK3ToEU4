@@ -1,6 +1,7 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
 #include "../CK3World/World.h"
+#include "../Mappers/AfricanPassesMapper/AfricanPassesMapper.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
@@ -110,6 +111,7 @@ class World
 	mappers::ReligionGroupScraper religionGroupScraper;
 	mappers::IslamOverrideMapper islamOverrideMapper;
 	mappers::LocDegraderMapper locDegrader;
+	mappers::AfricanPassesMapper africanPassesMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;

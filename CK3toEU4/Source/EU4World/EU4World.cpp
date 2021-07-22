@@ -1635,51 +1635,63 @@ void EU4::World::africanQuestion()
 {
 	Log(LogLevel::Info) << "-- Checking Africa";
 
-	// If a country has a province on both ends of the pass it stays, otherwise the pass is getting cleared
-	// Tuat Pass
-	if (provinces.find(1128) != provinces.end() && provinces.find(1128)->second && provinces.find(2466) != provinces.end() && provinces.find(2466)->second &&
-		 provinces.find(2460) != provinces.end() && provinces.find(2460)->second)
+	// If a country has a province on both ends of the pass, or if they are in HRE, it stays, otherwise the pass is getting cleared
+
+	for (const auto& pass: africanPassesMapper.getPasses())
 	{
-		if (!(countries.find(provinces.find(1127)->second->getOwner())->second->isinHRE()) &&
-			 provinces.find(1128)->second->getOwner() != provinces.find(2466)->second->getOwner() &&
-			 provinces.find(1128)->second->getOwner() != provinces.find(2460)->second->getOwner())
+		std::vector<int> allProvinces = pass.getEndA();
+		allProvinces.insert(allProvinces.end(), pass.getEndB().begin(), pass.getEndB().end());
+		allProvinces.insert(allProvinces.end(), pass.getSterilizeProvinces().begin(), pass.getSterilizeProvinces().end());
+
+		// first check the sanity of all provinces.
+		auto sanity = true;
+		for (const auto& provinceID: allProvinces)
 		{
-			if (provinces.find(1127) != provinces.end() && provinces.find(1127)->second)
-				provinces.find(1127)->second->sterilize();
-			Log(LogLevel::Info) << "<> Tuat Sterilized";
+			if (provinces.find(provinceID) == provinces.end())
+			{
+				Log(LogLevel::Warning) << "Province " << provinceID << " in pass " << pass.getName() << " not found! Skipping!";
+				sanity = false;
+				break;
+			}
+			if (!provinces.find(provinceID)->second)
+			{
+				Log(LogLevel::Warning) << "Province " << provinceID << " in pass " << pass.getName() << " is dangling! Skipping!";
+				sanity = false;
+				break;
+			}
 		}
-	}
-	// Djado-Tajhari Pass
-	if (provinces.find(2448) != provinces.end() && provinces.find(2448)->second && provinces.find(2275) != provinces.end() && provinces.find(2275)->second &&
-		 provinces.find(2277) != provinces.end() && provinces.find(2277)->second)
-	{
-		if (!(countries.find(provinces.find(2474)->second->getOwner())->second->isinHRE()) &&
-			 !(countries.find(provinces.find(2475)->second->getOwner())->second->isinHRE()) &&
-			 provinces.find(2448)->second->getOwner() != provinces.find(2275)->second->getOwner() &&
-			 provinces.find(2448)->second->getOwner() != provinces.find(2277)->second->getOwner())
+		if (!sanity)
+			continue;
+
+		// check owners of pass ends.
+		std::vector<int> endProvinces = pass.getEndA();
+		endProvinces.insert(endProvinces.end(), pass.getEndB().begin(), pass.getEndB().end());
+		std::map<std::string, std::vector<int>> ownerProvinces;
+
+		for (const auto& provinceID: endProvinces)
 		{
-			if (provinces.find(2474) != provinces.end() && provinces.find(2474)->second)
-				provinces.find(2474)->second->sterilize();
-			if (provinces.find(2475) != provinces.end() && provinces.find(2475)->second)
-				provinces.find(2475)->second->sterilize();
-			Log(LogLevel::Info) << "<> Djado-Tajhari Sterilized";
+			if (!provinces.find(provinceID)->second->getOwner().empty())
+				ownerProvinces[provinces.find(provinceID)->second->getOwner()].emplace_back(provinceID);
 		}
-	}
-	// Central Sahara (Only Waddai and Al-Junaynah)
-	if (provinces.find(1219) != provinces.end() && provinces.find(1219)->second && provinces.find(2288) != provinces.end() && provinces.find(2288)->second &&
-		 provinces.find(1159) != provinces.end() && provinces.find(1159)->second)
-	{
-		if (!(countries.find(provinces.find(2932)->second->getOwner())->second->isinHRE()) &&
-			 !(countries.find(provinces.find(774)->second->getOwner())->second->isinHRE()) &&
-			 provinces.find(1219)->second->getOwner() != provinces.find(2288)->second->getOwner() &&
-			 provinces.find(1219)->second->getOwner() != provinces.find(1159)->second->getOwner())
+		if (ownerProvinces.size() == 1 && ownerProvinces.begin()->second.size() == endProvinces.size())
+			continue; // all under same owner.
+
+		// check HRE
+		std::vector<int> hreProvinces;
+		for (const auto& provinceID: endProvinces)
 		{
-			if (provinces.find(774) != provinces.end() && provinces.find(774)->second)
-				provinces.find(774)->second->sterilize();
-			if (provinces.find(2932) != provinces.end() && provinces.find(2932)->second)
-				provinces.find(2932)->second->sterilize();
-			Log(LogLevel::Info) << "<> Central Sahara Sterilized";
+			const auto& country = countries.find(provinces.find(provinceID)->second->getOwner());
+			if (country != countries.end() && country->second && country->second->isinHRE())
+				hreProvinces.emplace_back(provinceID);
 		}
+		if (hreProvinces.size() == endProvinces.size())
+			continue; // all provinces in hre
+
+		// sterilize
+		for (const auto& provinceID: pass.getSterilizeProvinces())
+			provinces.find(provinceID)->second->sterilize();
+
+		Log(LogLevel::Info) << "<> " << pass.getName() << " Pass Sterilized.";
 	}
 }
 
