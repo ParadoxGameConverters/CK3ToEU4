@@ -451,15 +451,28 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 		output << actualConversionDate << " = { emperor = " << emperorTag << " }\n";
 	output.close();
 
-	std::ofstream output2("output/" + theConfiguration.getOutputName() + "/history/diplomacy/celestial_empire.txt");
-	output2 << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
-	output2.close();
+	output.open("output/" + theConfiguration.getOutputName() + "/history/diplomacy/celestial_empire.txt");
+	output << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
+	output.close();
 
 	if (!actualHRETag.empty())
 	{
-		std::ofstream output3("output/" + theConfiguration.getOutputName() + "/i_am_hre.txt");
-		output3 << actualHRETag;
-		output3.close();
+		output.open("output/" + theConfiguration.getOutputName() + "/i_am_hre.txt");
+		output << actualHRETag;
+		output.close();
+
+		if (actualHRETag != "HRE")
+		{
+			std::ifstream input("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
+			std::stringstream inStream;
+			inStream << input.rdbuf();
+			auto eventFileString = inStream.str();
+			input.close();
+			eventFileString = std::regex_replace(eventFileString, std::regex("HLR"), actualHRETag);
+			output.open("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
+			output << eventFileString;
+			output.close();
+		}
 	}
 }
 

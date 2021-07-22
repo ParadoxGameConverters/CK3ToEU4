@@ -1,0 +1,437 @@
+
+
+namespace = hre_event
+
+# Privilegia triggers for Emperor...
+country_event = {
+	id = 9073
+	title = "EVTNAME9073"
+	desc = "EVTDESC9073"
+	picture = HRE_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "EVTOPTA9073"
+	}
+}
+
+# ...and for member states
+country_event = {
+	id = 9074
+	title = "EVTNAME9074"
+	desc = "EVTDESC9074"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA9074"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				will_back_next_reform = no
+			}			
+			
+		}
+		emperor = {
+			vassalize = ROOT
+		}
+	}
+	
+	option = {
+		name = "EVTOPTB9074"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				will_back_next_reform = yes
+			}			
+			
+		}
+		every_owned_province = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			add_claim = emperor
+		}
+		every_owned_province = {
+			set_in_empire = no
+		}
+		emperor = {
+			add_opinion = { who = ROOT modifier = opinion_left_empire }
+		}
+		add_opinion = { who = emperor modifier = opinion_united_empire }
+		elector = no
+	
+	}
+}
+
+# Renovatio triggers for Emperor...
+country_event = {
+	id = 9075
+	title = "EVTNAME9075"
+	desc = "EVTDESC9075"
+	picture = HRE_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA9075"
+		change_tag = HLR
+		restore_country_name_effect = yes
+		add_country_modifier = {
+			name = "rome_reborn"
+			duration = -1
+		}
+		every_province = {
+			limit = {
+				is_part_of_hre = yes
+				OR = {
+					owned_by = ROOT
+					owner = { is_neighbor_of = ROOT }
+				}
+				NOT = { is_core = ROOT }
+			}
+			add_core = emperor
+		}
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+				is_emperor = no
+				num_of_cities = 1
+			}
+			country_event = { id = 9076 }
+		}
+		dismantle_hre = yes
+		set_government_rank = 3
+		add_adm_power = 250
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		swap_non_generic_missions = yes
+	}
+}
+
+# ...and for member states
+country_event = {
+	id = 9076
+	title = "EVTNAME9076"
+	desc = "EVTDESC9076"
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "EVTOPTA9076"
+		HLR = {
+			inherit = ROOT
+		}
+	}
+}
+
+# On Action: Emperor from same dynasty
+country_event = {
+	id = 900
+	title = "EVTNAME900"
+	desc = "EVTDESC900_01"
+	picture = KING_SICK_IN_BED_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	option = {
+		name = "EVTOPTA900"
+		add_imperial_influence = 10
+		if = {
+			limit = { has_dlc = "Common Sense" }
+			random_country = {
+				limit = {
+					has_reform = free_city 
+					religion = catholic
+					is_at_war = no
+				}
+				country_event = {
+					id = free_cities.6
+					tooltip = free_cities.6.tt1
+				}						
+			}			
+		}
+	}
+}
+
+# On Action: HRE Prince released by the emperor
+country_event = {
+	id = 901	
+	title = "EVTNAME901"
+	desc = "EVTDESC901"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = { add_scaled_imperial_influence = 10 }
+	}
+
+	option = {
+		name = "EVTOPTA901"
+		tooltip = { add_scaled_imperial_influence = 10 }
+	}
+}
+
+# On Action: HRE Prince converts to non-Emperor religion
+country_event = {
+	id = 902
+	title = "EVTNAME902"
+	desc = "EVTDESC902"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		hre_religion_treaty = no
+	}
+	
+	immediate = {
+		hidden_effect = { add_scaled_imperial_influence = -5 }
+	}
+
+	option = {
+		name = "EVTOPTA902"
+		tooltip = { add_scaled_imperial_influence = -5 }
+	}
+}
+
+# On Action: HRE Prince converts to Emperor's religion
+country_event = {
+	id = 903
+	title = "EVTNAME903"
+	desc = "EVTDESC903"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+		hre_religion_treaty = no
+	}
+	
+	immediate = {
+		hidden_effect = { add_scaled_imperial_influence = 5 }
+	}
+	
+	option = {
+		name = "EVTOPTA903"
+		tooltip = { add_scaled_imperial_influence = 5 }
+	}
+}
+
+# On Action: Emperor wins HRE defensive war
+country_event = {
+	id = 904	
+	title = "EVTNAME904"
+	desc = "EVTDESC904"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+
+	immediate = {
+		hidden_effect = { add_scaled_imperial_influence = 5 }
+	}
+
+	option = {
+		name = "EVTOPTA904"
+		tooltip = { add_scaled_imperial_influence = 5 }
+	}
+}
+
+# On Action: HRE member annexed by non-HRE country
+country_event = {
+	id = 905
+	title = "EVTNAME905"
+	desc = "EVTDESC905"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = { add_imperial_influence = -10 }	#not scaled
+	}
+	
+	option = {
+		name = "EVTOPTA905"
+		tooltip = { add_imperial_influence = -10 }	#not scaled
+	}
+}
+
+
+# On Action: HRE member released from non-HRE vassalage
+country_event = {
+	id = 907
+	title = "EVTNAME907"
+	desc = "EVTDESC907"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = { add_scaled_imperial_influence = 5 }
+	}
+	
+	option = {
+		name = "EVTOPTA907"
+		tooltip = { add_scaled_imperial_influence = 5 }
+	}
+}
+
+# On Action: Emperor coming to the defense of a HRE member
+country_event = {
+	id = 908
+	title = "EVTNAME908"
+	desc = "EVTDESC908"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = { add_imperial_influence = 5 }
+	}
+	
+	option = {
+		name = "EVTOPTA908"
+		tooltip = { add_imperial_influence = 5 }
+	}
+}
+
+# On Action: Emperor NOT coming to the defense of a HRE member
+country_event = {
+	id = 909
+	title = "EVTNAME909"
+	desc = "EVTDESC909"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_emperor = yes
+	}
+	
+	immediate = {
+		hidden_effect = { add_imperial_influence = -10 }		#not scaled!
+	}
+	
+	option = {
+		name = "EVTOPTA909"
+		tooltip = { add_imperial_influence = -10 }		#not scaled!
+	}
+}
+
+# On Action: HRE Member takes a HRE province from an outside country in a peace
+province_event = {
+	id = 950
+	title = "EVTNAME950"
+	desc = "EVTDESC950"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { is_claim = ROOT }
+		NOT = { is_core = ROOT }
+	}
+	
+	option = {
+		name = "EVTOPTA950"
+		add_claim = ROOT
+	}
+}
+
+#Germany/Italy Formed - Leaving Empire
+country_event = {
+	id = hre_event.5
+	title = "hre_event.5.t"
+	desc = "hre_event.5.d"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hre_event.5.a" #Ok.
+		add_imperial_influence = -75
+		add_prestige = -10
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_left_empire
+			}
+		}
+	}
+}
+
+# Perpetual Diet
+province_event = {
+	id = hre_event.6
+	title = "hre_event.6.t"
+	desc = "hre_event.6.d"
+	picture = HRE_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = {
+		every_country = {
+			limit = {
+				is_part_of_hre = yes
+			}
+			country_event = { id = hre_event.7 }
+		}
+	}
+
+	option = {
+		name = EXCELLENT
+	}
+}
+
+country_event = {
+	id = hre_event.7
+	title = "hre_event.7.t"
+	desc = "hre_event.7.d"
+	picture = HRE_eventPicture
+	goto = from
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hre_event.7.a"
+	}
+}

@@ -4,6 +4,7 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
 #include "Characters/CharacterDomain.h"
+#include "CommonRegexes.h"
 #include "Geography/CountyDetail.h"
 #include "Log.h"
 #include "OSCompatibilityLayer.h"
@@ -15,7 +16,6 @@
 #include <fstream>
 #include <ranges>
 namespace fs = std::filesystem;
-#include "CommonRegexes.h"
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
