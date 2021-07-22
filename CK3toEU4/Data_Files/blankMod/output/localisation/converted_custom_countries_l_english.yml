@@ -2,7 +2,19 @@
  theocratic_government_norse_pagan_reformed:3 "Warrior Cult"
  theocratic_government_ruler_norse_pagan_reformed:3 "Warleader"
  
- #New Countries
+ #From Vanilla Converter
+ JOM: "Jomsvikings"
+ JOM_ADJ: "Jomsviking"
+ HAH: "Hashshashins"
+ HAH_ADJ: "Hashshashin"
+ ROM: "Roman Empire"
+ ROM_ADJ: "Roman"
+ ISR: "Israel"
+ ISR_ADJ: "Israeli"
+ TEM: "Knights Templar"
+ TEM_ADJ: "Templar"
+ 
+ #New Countries Added By Us
  ADD:3 "Order of St. Addai"
  ADD_ADJ:3 "St. Addai"
  ADD_ADJ2:3 "St. Addai"

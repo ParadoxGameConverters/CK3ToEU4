@@ -2,7 +2,19 @@
  theocratic_government_norse_pagan_reformed:3 "Culte du guerrier"
  theocratic_government_ruler_norse_pagan_reformed:3 "Chef de guerre"
  
- #New Countries
+ #From Vanilla Converter
+ JOM: "Jomsvikings"
+ JOM_ADJ: "jomsviking"
+ HAH: "Hashshashins"
+ HAH_ADJ: "hashshashin"
+ ROM: "Empire romain"
+ ROM_ADJ: "romaine"
+ ISR: "Israël"
+ ISR_ADJ: "israëlienne"
+ TEM: "Chevaliers du Temple"
+ TEM_ADJ: "templière"
+ 
+ #New Countries Added By Us
  ADD:3 "Ordre de Saint Addaï"
  ADD_ADJ:3 "de Saint Addaï"
  ADD_ADJ2:3 "Saint-Addaïo"
