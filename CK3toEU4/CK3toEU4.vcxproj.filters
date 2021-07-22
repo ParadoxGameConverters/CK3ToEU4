@@ -121,6 +121,9 @@
     <Filter Include="Mappers\LocDegraderMapper">
       <UniqueIdentifier>{0e3acfab-e2f9-46f5-83a4-ec4cf202a5bc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\AfricanPassesMapper">
+      <UniqueIdentifier>{2ae84b2b-09b6-433a-a995-a799f51725ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -423,6 +426,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.h">
       <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.h">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.h">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -727,6 +736,12 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp">
       <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

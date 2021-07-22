@@ -151,6 +151,8 @@
     <ClInclude Include="Source\EU4World\Religion\GeneratedReligion.h" />
     <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Helpers\rakaly_wrapper.h" />
+    <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.h" />
+    <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
@@ -255,6 +257,8 @@
     <ClCompile Include="Source\EU4World\Province\ProvinceModifier.cpp" />
     <ClCompile Include="Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
+    <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />

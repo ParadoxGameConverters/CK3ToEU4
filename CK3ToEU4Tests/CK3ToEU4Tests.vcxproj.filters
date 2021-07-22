@@ -220,6 +220,12 @@
     <Filter Include="MapperTests\LocDegraderMapperTests">
       <UniqueIdentifier>{74a70cc4-b6a5-4d14-987c-74b7e23a8d15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\AfricanPassesMapper">
+      <UniqueIdentifier>{c694a361-7087-426b-8dea-7a44aee9cd67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\AfricanPassesMapperTests">
+      <UniqueIdentifier>{a2940191-13b6-4ef5-9973-8bb739bab84c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -682,6 +688,18 @@
     </ClCompile>
     <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMappingTests.cpp">
       <Filter>MapperTests\LocDegraderMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMapperTests.cpp">
+      <Filter>MapperTests\AfricanPassesMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMappingTests.cpp">
+      <Filter>MapperTests\AfricanPassesMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\AfricanPassesMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
