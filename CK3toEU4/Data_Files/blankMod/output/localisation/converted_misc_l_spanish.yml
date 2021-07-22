@@ -1,12 +1,5 @@
 ﻿﻿l_spanish:
 
- #Important
- string_from_ck3:0 "Un[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]... ¡Espere, este es un juego convertido de Crusader Kings!\n\nComo Equipo de los Convertidores, Le damos la bienvenida al nuevo paso de Su megacampaña. Ojalá no haya mucha mapa-lepra, pero quién sabe.\n\nSi Usted tiene alguna sugerencia o desea señalar algún error, publíquelo en el hilo del foro dedicado y consideraremos su opinión.\n\nSi Usted planea tener un time-lapse de IA, puede ingresar al modo observador abriendo la consola y escribiendo observer. Si no, reanudemos:\n\nUn[Root.GetXaDir] [Root.Monarch.GetTitle] [Root.GetAdjective], gobernando desde [Root.Capital.GetCapitalName]..."
-
- #Patriarch
- ECUMENICAL_PATRIARCH:0 "Patriarca Ecuménico"
- ECUMENICAL_MATRIARCH:0 "Matriarca Ecuménica"
- 
  #Wonders (Province Modifiers)
  wonder_cathedral:0 "Gran Catedral"
  desc_wonder_cathedral:0 "Un testimonio de la piedad de su constructor, la iglesia se extiende hasta el cielo."

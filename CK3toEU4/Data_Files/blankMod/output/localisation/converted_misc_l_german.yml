@@ -1,12 +1,5 @@
 ﻿﻿l_german:
 
- #Important
- string_from_ck3:0 "[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert... Halte mal, dies ist ein von Crusader Kings konvertiertes Spiel!\n\nAls Konverter-Mannschaft begrüßen wir Sie zum neuen Schritt Ihrer Großkampagne. Hoffentlich gibt es nicht zu viel Grenzenaussatz, aber wer weiß.\n\nWenn Sie Vorschläge haben oder einen Fehler melden möchten, posten Sie ihn im speziellen Forenthread und wir werden Ihre Eingabe berücksichtigen.\n\nWenn Sie einen Nur-KI-Zeitraffer geplant haben, können Sie in den Beobachtermodus wechseln, indem Sie die Konsole öffnen und darin observer schreiben. Wenn nicht, fahren wir fort:\n\n[Root.GetMEinEine] [Root.GetAdjective]e [Root.Monarch.GetTitle], [Root.GetMderdie] aus [Root.Capital.GetCapitalName] regiert..."
- 
- #Patriarch
- ECUMENICAL_PATRIARCH:0 "Ökumenischer Patriarch"
- ECUMENICAL_MATRIARCH:0 "Ökumenische Matriarch"
- 
  #Wonders (Province Modifiers)
  wonder_cathedral:0 "Große Kathedrale"
  desc_wonder_cathedral:0 "Als Zeugnis der Frömmigkeit ihres Erbauers streckt sich die Kirche bis in den Himmel."
