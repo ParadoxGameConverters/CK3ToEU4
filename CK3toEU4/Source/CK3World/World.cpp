@@ -521,7 +521,7 @@ void CK3::World::checkForIslam()
 			continue;
 		if (!county->getFaith().second->getReligion().second)
 			continue;
-		if (county->getFaith().second->getReligion().second->getName() == "islam_religion" && name != "c_kuozhou") // sigh
+		if (county->getFaith().second->getReligion().second->getName() == "islam_religion")
 		{
 			islamExists = true;
 			return;
