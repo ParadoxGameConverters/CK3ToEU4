@@ -371,11 +371,20 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 	for (const auto& barony: djVassals)
 	{
 		if (!barony.second)
-			throw std::runtime_error("Running unlinked vassals, are we? " + std::to_string(barony.first) + " has no link.");
+		{
+			Log(LogLevel::Error) << "Running unlinked vassals, are we? " << std::to_string(barony.first) << " has no link.";
+			continue;
+		}
 		if (!barony.second->getClay())
-			throw std::runtime_error("Supposed barony " + barony.second->getName() + " of " + name + " has no clay?");
+		{
+			Log(LogLevel::Error) << "Supposed barony " << barony.second->getName() << " of " << name << " has no clay?";
+			continue;
+		}
 		if (!barony.second->getClay()->getProvince() || !barony.second->getClay()->getProvince()->second)
-			throw std::runtime_error("Barony " + barony.second->getName() + " of " + name + " has no clay province?");
+		{
+			Log(LogLevel::Error) << "Barony " << barony.second->getName() << " of " << name << " has no clay province?";
+			continue;
+		}
 		const auto& baronyProvince = barony.second->getClay()->getProvince();
 		buildingCount += baronyProvince->second->countBuildings();
 		if (!baronyProvince->second->getHoldingType().empty())

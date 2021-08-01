@@ -648,6 +648,14 @@ void EU4::World::alterProvinceDevelopment()
 		const auto& baronies = province.second->getSourceProvince()->getDFVassals();
 		for (const auto& barony: baronies)
 		{
+			if (!barony.second)
+				continue;
+			if (!barony.second->getClay())
+				continue;
+			if (!barony.second->getClay()->getProvince())
+				continue;
+			if (!barony.second->getClay()->getProvince()->second)
+				continue;
 			const auto& provinceData = barony.second->getClay()->getProvince()->second;
 			if (provinceData->getHoldingType().empty())
 				continue;

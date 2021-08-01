@@ -87,7 +87,7 @@ TEST(CK3World_HousesTests, dynastiesCanBeLinked)
 	ASSERT_EQ(1, h2->second->getDynasty().second->getCoA()->first);
 }
 
-TEST(CK3World_HousesTests, linkingMissingDynastyThrowsException)
+TEST(CK3World_HousesTests, linkingMissingDynastyDoesNothing)
 {
 	std::stringstream input;
 	input << "23={name=\"dynn_Villeneuve\"\n dynasty=15}\n";
@@ -97,6 +97,11 @@ TEST(CK3World_HousesTests, linkingMissingDynastyThrowsException)
 	std::stringstream input2;
 	input2 << "15={coat_of_arms_id = 2}\n";
 	const CK3::Dynasties dynasties(input2);
+	houses.linkDynasties(dynasties);
 
-	ASSERT_THROW(houses.linkDynasties(dynasties), std::runtime_error);
+	const auto& h1 = houses.getHouses().find(23);
+	const auto& h2 = houses.getHouses().find(25);
+
+	ASSERT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
+	ASSERT_EQ(nullptr, h2->second->getDynasty().second);
 }
