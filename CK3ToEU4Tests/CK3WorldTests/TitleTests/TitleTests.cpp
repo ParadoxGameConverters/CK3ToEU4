@@ -288,7 +288,7 @@ TEST(CK3World_TitleTests, buildingWeighWithoutCountyfulClayThrowsExceptions)
 	}
 }
 
-TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExceptions)
+TEST(CK3World_TitleTests, buildingWeighIgnoresProvincelessBaronyClays)
 {
 	std::stringstream devWeightMapperStream;
 	devWeightMapperStream << "dev_from_building = 0.1\n";
@@ -324,15 +324,8 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	lc->loadCountyDetails(countyDetail);
 	c.second->loadClay(lc);
 
-	try
-	{
-		auto test = c.second->getBuildingWeight(devWeightMapper);
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Supposed barony b_barony1 of c_county has no clay?", e.what());
-	}
+	auto test = c.second->getBuildingWeight(devWeightMapper);
+	EXPECT_NEAR(3.5, test, 0.001); // 7 developmenmt inherent to county * 0.5/dev.
 
 	std::stringstream landedStream2;
 	landedStream2 << "b_barony1 = { province = 12 } \n";
@@ -346,15 +339,8 @@ TEST(CK3World_TitleTests, buildingWeighWithoutProvincefulBaronyClaysThrowsExcept
 	b2.second->loadClay(lb2);
 	b3.second->loadClay(lb3);
 
-	try
-	{
-		auto test = c.second->getBuildingWeight(devWeightMapper);
-		FAIL();
-	}
-	catch (const std::runtime_error& e)
-	{
-		ASSERT_STREQ("Barony b_barony1 of c_county has no clay province?", e.what());
-	}
+	test = c.second->getBuildingWeight(devWeightMapper);
+	EXPECT_NEAR(3.5, test, 0.001); // 7 developmenmt inherent to county * 0.5/dev.
 }
 
 TEST(CK3World_TitleTests, dfVassalsCanBeRelinked)

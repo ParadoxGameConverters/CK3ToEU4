@@ -69,8 +69,8 @@ void CK3::Houses::linkDynasties(const Dynasties& dynasties)
 		}
 		else
 		{
-			throw std::runtime_error(
-				 "House " + std::to_string(house.first) + " has dynasty " + std::to_string(house.second->getDynasty().first) + " which has no definition!");
+			Log(LogLevel::Error) << "House " << std::to_string(house.first) << " has dynasty " << std::to_string(house.second->getDynasty().first)
+										<< " which has no definition!";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " houses updated.";
