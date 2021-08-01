@@ -7,8 +7,7 @@ pagan = {
 		}
 		country = {
 			land_maintenance_modifier = -0.10
-			land_forcelimit_modifier  = 0.2
-			land_morale = 0.10
+			land_forcelimit_modifier  = 0.1
 		}
 		country_as_secondary = {
 			merc_maintenance_modifier = -0.1
@@ -108,19 +107,18 @@ pagan = {
 		color = { 144 186 19 }
 		icon = 151
 		country = {
-			naval_forcelimit = 1
-			global_sailors_modifier = 1.2
+			naval_forcelimit_modifier = 0.10
+			global_sailors_modifier = 0.10
 		}
 		province = {
 			local_missionary_strength = 0.02
 		}
 		country_as_secondary = {
-			naval_forcelimit = 0.5
-			global_sailors_modifier = 1.1
+			naval_forcelimit_modifier = 0.05
+			global_sailors_modifier = 0.05
 		}
 		center_of_religion = 379 # Jerusalem
 		heretic = { MOLOCHITES AMMONITES JEBUSAEI MOABITES EDOMITES }
-		allowed_conversion = { jewish }
 		on_convert = {
 			add_prestige = -100
 			add_stability = -1
@@ -157,7 +155,6 @@ pagan = {
 			harsh_treatment_cost = -0.3
 		}
 		province = {
-			local_defensiveness = 0.1
 			local_missionary_strength = 0.02
 		}
 		country_as_secondary = {
@@ -165,7 +162,6 @@ pagan = {
 			harsh_treatment_cost = -0.1
 		}
 		heretic = { DANIEL SUMER }
-		allowed_conversion = { jewish }
 	}
 	arab_pagan = {
 		color = { 140 20 50 }
@@ -280,13 +276,12 @@ pagan = {
 			local_missionary_strength = 0.02
 		}
 		country = {
-			land_maintenance_modifier = -0.10
-			land_forcelimit_modifier  = 0.2
-			land_morale = 0.10
+			tolerance_own = 1
+			land_forcelimit_modifier  = 0.05
 		}
 		country_as_secondary = {
 			merc_maintenance_modifier = -0.1
-			land_morale = 0.05
+			hostile_attrition = 1
 		}
 		heretic = { ELUVEITIE ASTERIX }
 		uses_karma = yes
@@ -300,12 +295,11 @@ pagan = {
 		}
 		country = {
 			land_maintenance_modifier = -0.10
-			global_manpower_modifier = 0.2
-			land_morale = 0.10
+			tolerance_own = 1
 		}
 		country_as_secondary = {
 			merc_maintenance_modifier = -0.1
-			galley_power = 0.2
+			hostile_attrition = 1
 		}
 		heretic = { ELUVEITIE ASTERIX }
 		uses_karma = yes
@@ -319,7 +313,7 @@ pagan = {
 		}
 		country = {
 			hostile_attrition = 1
-			defensiveness = 0.2
+			tolerance_own = 1
 		}
 		country_as_secondary = {
 			hostile_attrition = 1
@@ -337,12 +331,12 @@ pagan = {
 			local_missionary_strength = 0.02
 		}
 		country = {
-			defensiveness = 0.2
-			enemy_core_creation = 0.2
+			tolerance_own = 1
+			enemy_core_creation = 0.1
 		}
 		country_as_secondary = {
 			hostile_attrition = 1
-			defensiveness = 0.2
+			defensiveness = 0.1
 		}
 		
 		heretic = { ELUVEITIE ASTERIX }
