@@ -48,7 +48,7 @@ pagan = {
 		}
 		country_as_secondary = {
 			build_cost = -0.1
-			defensiveness = 0.2
+			defensiveness = 0.1
 		}
 		heretic = { GOAT_SKULL FINNIC }
 	}
@@ -227,7 +227,7 @@ pagan = {
 		}
 		country_as_secondary = {
 			global_regiment_recruit_speed = -0.10
-			defensiveness = 0.2
+			defensiveness = 0.1
 		}
 		heretic = { SPHYNX }
 	}
