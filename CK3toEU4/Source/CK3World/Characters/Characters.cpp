@@ -175,8 +175,8 @@ void CK3::Characters::linkTitles(const Titles& titles)
 			}
 			else
 			{
-				throw std::runtime_error(
-					 "Character " + std::to_string(character.first) + " claims title " + std::to_string(claim.first) + " which has no definition!");
+				Log(LogLevel::Error) << "Character " << std::to_string(character.first) << " claims title " << std::to_string(claim.first)
+											<< " which has no definition!";
 			}
 		}
 		character.second->loadClaims(replacementClaims);
