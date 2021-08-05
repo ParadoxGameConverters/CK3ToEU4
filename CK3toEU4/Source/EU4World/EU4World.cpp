@@ -1672,25 +1672,31 @@ void EU4::World::africanQuestion()
 			continue;
 
 		// check owners of pass ends.
+		std::set<std::string> ownersA;
+		std::set<std::string> ownersB;
 		bool hasStart = false;
 		bool hasEnd = false;
 
 		for (const auto& provinceID: pass.getEndA())
 		{
 			if (!provinces.find(provinceID)->second->getOwner().empty())
-				hasStart = true;
+				ownersA.insert(provinces.find(provinceID)->second->getOwner());
 		}
 		for (const auto& provinceID: pass.getEndB())
 		{
 			if (!provinces.find(provinceID)->second->getOwner().empty())
-				hasEnd = true;
+				ownersB.insert(provinces.find(provinceID)->second->getOwner());
 		}
-		if (hasStart && hasEnd)
+		for (const auto& owner: ownersA)
+		{
+			if (!ownersB.find(owner)->empty())
+				hasStart = true;
+		}
+		if (hasStart)
 			continue; // all under same owner.
 
 		// check HRE
 		hasStart = false;
-		hasEnd = false;
 
 		for (const auto& provinceID: pass.getEndA())
 		{
