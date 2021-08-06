@@ -1672,27 +1672,48 @@ void EU4::World::africanQuestion()
 			continue;
 
 		// check owners of pass ends.
-		std::vector<int> endProvinces = pass.getEndA();
-		endProvinces.insert(endProvinces.end(), pass.getEndB().begin(), pass.getEndB().end());
-		std::map<std::string, std::vector<int>> ownerProvinces;
+		std::set<std::string> ownersA;
+		std::set<std::string> ownersB;
+		bool hasStart = false;
+		bool hasEnd = false;
 
-		for (const auto& provinceID: endProvinces)
+		for (const auto& provinceID: pass.getEndA())
 		{
 			if (!provinces.find(provinceID)->second->getOwner().empty())
-				ownerProvinces[provinces.find(provinceID)->second->getOwner()].emplace_back(provinceID);
+				ownersA.insert(provinces.find(provinceID)->second->getOwner());
 		}
-		if (ownerProvinces.size() == 1 && ownerProvinces.begin()->second.size() == endProvinces.size())
+		for (const auto& provinceID: pass.getEndB())
+		{
+			if (!provinces.find(provinceID)->second->getOwner().empty())
+				ownersB.insert(provinces.find(provinceID)->second->getOwner());
+		}
+		for (const auto& owner: ownersA)
+		{
+			if (!ownersB.contains(owner))
+			{
+				hasStart = true;
+				break;
+			}
+		}
+		if (hasStart)
 			continue; // all under same owner.
 
 		// check HRE
-		std::vector<int> hreProvinces;
-		for (const auto& provinceID: endProvinces)
+		hasStart = false;
+
+		for (const auto& provinceID: pass.getEndA())
 		{
 			const auto& country = countries.find(provinces.find(provinceID)->second->getOwner());
 			if (country != countries.end() && country->second && country->second->isinHRE())
-				hreProvinces.emplace_back(provinceID);
+				hasStart = true;
 		}
-		if (hreProvinces.size() == endProvinces.size())
+		for (const auto& provinceID: pass.getEndB())
+		{
+			const auto& country = countries.find(provinces.find(provinceID)->second->getOwner());
+			if (country != countries.end() && country->second && country->second->isinHRE())
+				hasEnd = true;
+		}
+		if (hasStart && hasEnd)
 			continue; // all provinces in hre
 
 		// sterilize
