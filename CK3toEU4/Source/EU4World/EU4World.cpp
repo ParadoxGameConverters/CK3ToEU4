@@ -1692,14 +1692,17 @@ void EU4::World::africanQuestion()
 		}
 		for (const auto& owner: ownersA)
 		{
-			if (!ownersB.contains(owner))
+			if (ownersB.contains(owner))
 			{
 				hasStart = true;
 				break;
 			}
 		}
 		if (hasStart)
+		{
+			Log(LogLevel::Info) << "<- " << pass.getName() << " Pass colonized.";
 			continue; // all under same owner.
+		}
 
 		// check HRE
 		hasStart = false;
@@ -1717,7 +1720,10 @@ void EU4::World::africanQuestion()
 				hasEnd = true;
 		}
 		if (hasStart && hasEnd)
+		{
+			Log(LogLevel::Info) << "<- " << pass.getName() << " Pass HREified.";
 			continue; // all provinces in hre
+		}
 
 		// sterilize
 		for (const auto& provinceID: pass.getSterilizeProvinces())
