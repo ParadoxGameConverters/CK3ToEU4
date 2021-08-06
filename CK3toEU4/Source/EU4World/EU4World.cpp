@@ -1689,8 +1689,11 @@ void EU4::World::africanQuestion()
 		}
 		for (const auto& owner: ownersA)
 		{
-			if (!ownersB.find(owner)->empty())
+			if (!ownersB.contains(owner))
+			{
 				hasStart = true;
+				break;
+			}
 		}
 		if (hasStart)
 			continue; // all under same owner.
