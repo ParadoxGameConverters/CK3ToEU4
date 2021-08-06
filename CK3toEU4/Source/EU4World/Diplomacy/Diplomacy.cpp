@@ -5,6 +5,15 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
+EU4::Diplomacy::Diplomacy()
+{
+	Log(LogLevel::Info) << "-> Loading Eastern Diplomacy";
+	registerKeys();
+	parseFile("configurables/chinese_tributaries.txt");
+	clearRegisteredKeywords();
+	Log(LogLevel::Info) << ">> " << agreements.size() << " tributaries loaded.";
+}
+
 void EU4::Diplomacy::registerKeys()
 {
 	registerKeyword("dependency", [this](const std::string& type, std::istream& theStream) {
@@ -69,4 +78,27 @@ bool EU4::Diplomacy::isCountryJunior(const std::string& tag) const
 			return true;
 	}
 	return false;
+}
+
+void EU4::Diplomacy::filterDeadRelationships(const std::map<std::string, std::shared_ptr<Country>>& countries)
+{
+	Log(LogLevel::Info) << "-> Filtering dead relationships.";
+
+	std::vector<std::shared_ptr<Agreement>> newAgreements;
+	std::set<std::string> landlessCountries;
+
+	for (const auto& [countryTag, country]: countries)
+		if (country->getProvinces().empty())
+			landlessCountries.insert(countryTag);
+
+	// All countries we process must have provinces.
+	for (const auto& agreement: agreements)
+		if (landlessCountries.contains(agreement->getFirst()) && agreement->getFirst() != "MNG" || landlessCountries.contains(agreement->getSecond()))
+			continue;
+		else
+			newAgreements.emplace_back(agreement);
+
+	Log(LogLevel::Info) << "<> " << agreements.size() - newAgreements.size() << " dead relationship(s) filtered.";
+
+	agreements.swap(newAgreements);
 }

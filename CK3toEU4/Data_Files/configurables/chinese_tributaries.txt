@@ -1,0 +1,120 @@
+# Chinese Tributaries
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = KOR
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = RYU
+	start_date = 769.1.1
+	end_date = 1609.4.5
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = DAI
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = AYU
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = SYG
+	start_date = 769.1.1
+	end_date = 1472.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = HMI
+	start_date = 769.1.1
+	end_date = 1473.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CHA
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = LXA
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = KHM
+	start_date = 769.1.1
+	end_date = 1644.4.22
+}
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MMA
+	start_date = 769.1.1
+	end_date = 1449.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MLC
+	start_date = 769.1.1
+	end_date = 1511.9.10
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = PGS
+	start_date = 769.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = TDO
+	start_date = 769.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MJZ
+	start_date = 769.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MHX
+	start_date = 769.1.1
+	end_date = 1618.1.1
+}
