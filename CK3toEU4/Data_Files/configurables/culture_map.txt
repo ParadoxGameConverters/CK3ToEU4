@@ -184,12 +184,23 @@ link = { eu4 = visigothic ck3 = visigothic tech = western gfx = westerngfx }
 # Byzantine
 
 link = { eu4 = armenian ck3 = armenian tech = eastern gfx = easterngfx }
-link = { eu4 = goths ck3 = greek tech = eastern gfx = easterngfx region = crimea_area }
-link = { eu4 = pontic_greek ck3 = greek tech = eastern gfx = easterngfx region = erzurum_area }
-link = { eu4 = anatolian ck3 = greek tech = eastern gfx = easterngfx region = germiyan_area region = karaman_area region = ankara_area region = cukurova_area region = rum_area region = dulkadir_area region = kastamonu_area region = mashriq_region }
+link = { eu4 = goths ck3 = greek tech = eastern gfx = easterngfx region = crimea_region region = ruthenia_region lower_yik_area }
+link = { eu4 = bactrian ck3 = greek tech = eastern gfx = easterngfx region = khorasan_region region = central_asia_region }
+link = { eu4 = pontic_greek ck3 = greek tech = eastern gfx = easterngfx region = caucasia_region region = erzurum_area province = 2304 province = 4315 province = 329 }
+link = { eu4 = anatolian ck3 = greek tech = eastern gfx = easterngfx region = anatolia_region province = 4298 province = 4292 }
 link = { eu4 = anatolian ck3 = anatolian tech = eastern gfx = easterngfx }
+link = { eu4 = empurian ck3 = greek tech = eastern gfx = westerngfx region = iberia_region }
+link = { eu4 = histrian ck3 = greek tech = eastern gfx = westerngfx region = carpathia_region region = poland_region province = 4706 }
+link = { eu4 = kyrenaikan ck3 = greek tech = eastern gfx = westerngfx region = maghreb_region province = 356 province = 357 }
 link = { eu4 = magnagreek ck3 = greek tech = eastern gfx = westerngfx region = italy_region }
 link = { eu4 = magnagreek ck3 = italiote ck3 = hyperochian ck3 = xarthic tech = eastern gfx = westerngfx }
+link = { eu4 = messalian ck3 = greek tech = eastern gfx = westerngfx region = france_region }
+link = { eu4 = ptolemaic ck3 = greek tech = eastern gfx = westerngfx region = egypt_region region = red_sea_coast_area region = upper_nubia_area region = dongola_area }
+link = { eu4 = leucaethiopian ck3 = greek tech = eastern gfx = westerngfx region = africa_superregion region = southern_africa_superregion }
+link = { eu4 = pulian ck3 = greek tech = eastern gfx = westerngfx region = south_german_region }
+link = { eu4 = seleucian ck3 = greek tech = eastern gfx = westerngfx region = mashriq_region region = persia_region }
+link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
+link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
 link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian tech = eastern gfx = easterngfx }
 link = { eu4 = circassian ck3 = alan ck3 = georgian ck3 = assyrian ck3 = coptic tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
@@ -223,6 +234,7 @@ link = { eu4 = sapmi ck3 = sami tech = eastern gfx = inuitgfx }
 link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
 link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
+link = { eu4 = ingrian ck3 = mari ck3 = merya ck3 = komi ck3 = mordvin tech = eastern gfx = inuitgfx region = karelia_area region = estonia_ingria_area province = 35 province = 274 province = 37 }
 link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = komi tech = eastern gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
