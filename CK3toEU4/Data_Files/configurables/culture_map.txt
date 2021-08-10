@@ -184,7 +184,7 @@ link = { eu4 = visigothic ck3 = visigothic tech = western gfx = westerngfx }
 # Byzantine
 
 link = { eu4 = armenian ck3 = armenian tech = eastern gfx = easterngfx }
-link = { eu4 = goths ck3 = greek tech = eastern gfx = easterngfx region = crimea_region region = ruthenia_region lower_yik_area }
+link = { eu4 = goths ck3 = greek tech = eastern gfx = easterngfx region = crimea_region region = ruthenia_region region = lower_yik_area }
 link = { eu4 = bactrian ck3 = greek tech = eastern gfx = easterngfx region = khorasan_region region = central_asia_region }
 link = { eu4 = pontic_greek ck3 = greek tech = eastern gfx = easterngfx region = caucasia_region region = erzurum_area province = 2304 province = 4315 province = 329 }
 link = { eu4 = anatolian ck3 = greek tech = eastern gfx = easterngfx region = anatolia_region province = 4298 province = 4292 }
