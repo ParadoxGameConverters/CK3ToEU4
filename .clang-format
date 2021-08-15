@@ -10,10 +10,12 @@ AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: false
-AllowShortLambdasOnASingleLine: true
+AllowShortLambdasOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
+BraceWrapping:
+	BeforeLambdaBody: false
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBraces: Allman

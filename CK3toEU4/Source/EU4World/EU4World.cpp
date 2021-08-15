@@ -792,7 +792,12 @@ void EU4::World::verifyCapitals()
 template <typename KeyType, typename ValueType> std::pair<KeyType, ValueType> get_max(const std::map<KeyType, ValueType>& x)
 {
 	using pairtype = std::pair<KeyType, ValueType>;
-	return *std::max_element(x.begin(), x.end(), [](const pairtype& p1, const pairtype& p2) { return p1.second < p2.second; });
+	return *std::max_element(x.begin(),
+		 x.end(),
+		 [](const pairtype& p1, const pairtype& p2)
+		 {
+			 return p1.second < p2.second;
+		 });
 }
 
 void EU4::World::verifyReligionsAndCultures()
@@ -1438,7 +1443,12 @@ void EU4::World::fixDuplicateNames()
 
 	// Reorder countries in list by development (highest -> lowest)
 	for (auto& countryBatch: nameMap)
-		std::sort(countryBatch.second.begin(), countryBatch.second.end(), [](auto a, auto b) { return a->getDevelopment() > b->getDevelopment(); });
+		std::sort(countryBatch.second.begin(),
+			 countryBatch.second.end(),
+			 [](auto a, auto b)
+			 {
+				 return a->getDevelopment() > b->getDevelopment();
+			 });
 
 	// Now we iterate through all batches and sort out the names.
 	for (const auto& countryBatch: nameMap)
