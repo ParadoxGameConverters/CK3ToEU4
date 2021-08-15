@@ -5,10 +5,10 @@
 #include "../../Configuration/Configuration.h"
 #include "../Country/Country.h"
 #include "../Religion/GeneratedReligion.h"
+#include "CommonFunctions.h"
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
-#include <ranges>
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -196,9 +196,16 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		if (!religion.iconPath.empty())
 		{
 			auto foundIcon = false;
-			auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
+			auto trimmedIconPath = trimPath(trimExtension(religion.iconPath));
+			auto overridePath = "configurables/gfx/custom_faith_icons/" + trimmedIconPath + ".dds"; // one of these three should be it.
+			auto path1 = theConfiguration.getCK3Path() + religion.iconPath;
 			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
-			if (commonItems::DoesFileExist(path1))
+			if (commonItems::DoesFileExist(overridePath))
+			{
+				foundIcon = true;
+				sourceIcon.read(overridePath);
+			}
+			if (!foundIcon && commonItems::DoesFileExist(path1))
 			{
 				foundIcon = true;
 				sourceIcon.read(path1);
