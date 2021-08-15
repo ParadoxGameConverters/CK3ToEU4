@@ -134,18 +134,22 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	auto capitalMatchFound = false;
 	if (tag != "AZT")
 	{
-		if (details.holder->getCharacterDomain()->getRealmCapital().second)
+		if (details.holder->getCharacterDomain() && details.holder->getCharacterDomain()->getRealmCapital().second)
 		{
 			const auto& realmCapital = details.holder->getCharacterDomain()->getRealmCapital().second;
 			if (realmCapital->getDFLiege() && realmCapital->getDFLiege()->second)
 			{
-				const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(realmCapital->getDJLiege()->second->getName());
+				const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(realmCapital->getDFLiege()->second->getName());
 				if (!capitalMatch.empty())
 				{
 					details.capital = *capitalMatch.begin();
 					capitalMatchFound = true;
 				}
 			}
+		}
+		else
+		{
+			Log(LogLevel::Warning) << tag << " (" << title->first << ") holder has no character domain. Terrific.";
 		}
 	}
 

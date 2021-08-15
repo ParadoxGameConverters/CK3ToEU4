@@ -14,6 +14,8 @@ AllowShortLambdasOnASingleLine: false
 AllowShortLoopsOnASingleLine: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
+BraceWrapping:
+	BeforeLambdaBody: false
 BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBraces: Allman

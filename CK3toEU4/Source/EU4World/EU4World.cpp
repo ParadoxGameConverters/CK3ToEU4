@@ -389,19 +389,33 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	 const CK3::World& sourceWorld,
 	 Configuration::STARTDATE startDateOption)
 {
+	// Are we being fed crap?
+	if (!title.second)
+	{
+		Log(LogLevel::Error) << "We're converting " << title.first << " which doesnt even exist! This save is corrupted.";
+		return;
+	}
+
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
-	const auto& holderDomain = title.second->getHolder()->second->getCharacterDomain();
-	if (holderDomain && holderDomain->getRealmCapital().first)
+	if (title.second->getHolder()->second)
 	{
-		const auto& capitalBarony = holderDomain->getRealmCapital();
-		const auto& capitalCounty = capitalBarony.second->getDJLiege();
-		if (capitalCounty)
+		const auto& holderDomain = title.second->getHolder()->second->getCharacterDomain();
+		if (holderDomain && holderDomain->getRealmCapital().first)
 		{
-			const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(capitalCounty->second->getName());
-			if (!capitalMatch.empty())
-				eu4CapitalID = *capitalMatch.begin();
+			const auto& capitalBarony = holderDomain->getRealmCapital();
+			const auto& capitalCounty = capitalBarony.second->getDJLiege();
+			if (capitalCounty)
+			{
+				const auto& capitalMatch = provinceMapper.getEU4ProvinceNumbers(capitalCounty->second->getName());
+				if (!capitalMatch.empty())
+					eu4CapitalID = *capitalMatch.begin();
+			}
 		}
+	}
+	else
+	{
+		Log(LogLevel::Error) << title.first << " has no holder! This is BAD! Proceeding blind.";
 	}
 
 	// Mapping the title to a tag
@@ -778,9 +792,12 @@ void EU4::World::verifyCapitals()
 template <typename KeyType, typename ValueType> std::pair<KeyType, ValueType> get_max(const std::map<KeyType, ValueType>& x)
 {
 	using pairtype = std::pair<KeyType, ValueType>;
-	return *std::max_element(x.begin(), x.end(), [](const pairtype& p1, const pairtype& p2) {
-		return p1.second < p2.second;
-	});
+	return *std::max_element(x.begin(),
+		 x.end(),
+		 [](const pairtype& p1, const pairtype& p2)
+		 {
+			 return p1.second < p2.second;
+		 });
 }
 
 void EU4::World::verifyReligionsAndCultures()
@@ -1426,11 +1443,12 @@ void EU4::World::fixDuplicateNames()
 
 	// Reorder countries in list by development (highest -> lowest)
 	for (auto& countryBatch: nameMap)
-	{
-		std::sort(countryBatch.second.begin(), countryBatch.second.end(), [](auto a, auto b) {
-			return a->getDevelopment() > b->getDevelopment();
-		});
-	}
+		std::sort(countryBatch.second.begin(),
+			 countryBatch.second.end(),
+			 [](auto a, auto b)
+			 {
+				 return a->getDevelopment() > b->getDevelopment();
+			 });
 
 	// Now we iterate through all batches and sort out the names.
 	for (const auto& countryBatch: nameMap)
