@@ -43,6 +43,7 @@ An list of those who contributed effort to this mammoth undertaking
 * Idhrendur 								- Sanity Checks and Review
 * IohannesIohannium (aka Mysterious_Italy) 	- Data Files
 * Elfangor 									- Data Files
+* Plati										- Religious Icons
 * Silver Wizard 							- Coding support
 * Zemurin 									- The Weave
 
