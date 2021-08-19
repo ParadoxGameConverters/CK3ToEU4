@@ -365,9 +365,6 @@ link = { ck3 = c_tula eu4 = QAS }
 link = { ck3 = e_russia eu4 = RUS }
 link = { ck3 = d_ryazan eu4 = RYA }
 link = { ck3 = c_ryazan eu4 = RYA }
-link = { ck3 = k_sibir eu4 = SIB }
-link = { ck3 = d_sibir eu4 = SIB }
-link = { ck3 = c_sibir eu4 = SIB }
 link = { ck3 = c_tver eu4 = TVE }
 link = { ck3 = k_ruthenia eu4 = UKR }
 link = { ck3 = k_white_rus eu4 = UKR }
@@ -806,6 +803,10 @@ link = { ck3 = c_sriksetra eu4 = BPR } #Glory to Prome!
 
 #Siberia
 
+link = { ck3 = e_siberia eu4 = SIB }
+link = { ck3 = k_sibir eu4 = SIB }
+link = { ck3 = d_sibir eu4 = SIB }
+link = { ck3 = c_sibir eu4 = SIB }
 link = { ck3 = k_buryatia eu4 = BRT }
 
 #Indonesia
