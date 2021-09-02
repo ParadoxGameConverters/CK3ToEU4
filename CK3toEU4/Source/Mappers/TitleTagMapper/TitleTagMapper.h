@@ -25,7 +25,8 @@ class TitleTagMapper: commonItems::parser
 	std::set<std::string> usedTags;
 
 	char generatedEU4TagPrefix = 'Z';
-	int generatedEU4TagSuffix = 0;
+	char generatedEU4TagMidfix = '0';
+	char generatedEU4TagSuffix = '0';
 };
 } // namespace mappers
 
