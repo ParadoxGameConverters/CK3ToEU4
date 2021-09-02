@@ -88,4 +88,5 @@ scordiscian_g = {
 	noric = { primary = HAB }
 	vindelician = { primary = AUG } # Augsburg = Augusta Vindelicorum
 	multavian = { primary = BOH }
+	galatian = { primary = TUR }
 }

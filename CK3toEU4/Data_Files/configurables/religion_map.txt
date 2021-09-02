@@ -138,3 +138,9 @@ link = { eu4 = iberian_pagan ck3 = iberian_pagan ck3 = iberian_pagan_old }
 
 # Mod: Sunset Invasion
 link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }
+
+# Mod: East Asia Reboot
+link = { eu4 = protestant ck3 = protestant }
+link = { eu4 = reformed ck3 = reformed }
+link = { eu4 = confucianism ck3 = tianrenganying ck3 = sanjiaoheliu ck3 = lixue ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
+link = { eu4 = shinto ck3 = shinto ck3 = ainuism }

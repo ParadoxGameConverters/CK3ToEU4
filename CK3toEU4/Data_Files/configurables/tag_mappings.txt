@@ -39,6 +39,7 @@ link = { ck3 = c_attica eu4 = ATH }
 link = { ck3 = k_bosnia eu4 = BOS }
 link = { ck3 = d_bosna eu4 = BOS }
 #link = { ck3 = d_bosnia eu4 = BOS } This appears in the loc, but doesn't appear in 00_landed_titles?
+link = { ck3 = e_bulgaria eu4 = BUL }
 link = { ck3 = k_bulgaria eu4 = BUL }
 link = { ck3 = d_bulgaria eu4 = BUL }
 link = { ck3 = e_byzantium eu4 = BYZ }
@@ -67,6 +68,7 @@ link = { ck3 = d_aegean_islands eu4 = NAX }
 link = { ck3 = c_naxos eu4 = NAX }
 link = { ck3 = d_ragusa eu4 = RAG }
 link = { ck3 = c_ragusa eu4 = RAG }
+link = { ck3 = e_serbia eu4 = SER }
 link = { ck3 = k_serbia eu4 = SER }
 link = { ck3 = d_rashka eu4 = SER }
 link = { ck3 = d_nyitra eu4 = SLO }
@@ -77,6 +79,7 @@ link = { ck3 = k_ottoman eu4 = TUR }
 link = { ck3 = k_dacia eu4 = WAL }
 link = { ck3 = d_muntenia eu4 = WAL } # Oltenia => Wallachia
 link = { ck3 = d_oltenia eu4 = WAL } # Muntenia => Wallachia
+link = { ck3 = k_albania eu4 = ALB }
 
 # British Isles
 
@@ -239,6 +242,7 @@ link = { ck3 = c_wurttemberg eu4 = WUR }
 
 # Spain
 
+link = { ck3 = e_cordoba eu4 = ADU }
 link = { ck3 = k_andalusia eu4 = ADU }
 link = { ck3 = k_aragon eu4 = ARA }
 link = { ck3 = d_aragon eu4 = ARA }
@@ -924,3 +928,77 @@ link = { ck3 = e_IMPTOCK3_ETR eu4 = ETR } # Etruria
 link = { ck3 = d_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 link = { ck3 = k_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 link = { ck3 = e_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
+
+# Mod: East Asia Reboot
+link = { ck3 = e_china eu4 = CHN }
+link = { ck3 = k_zin eu4 = QIN }
+link = { ck3 = k_liang eu4 = LNG }
+link = { ck3 = k_drieu eu4 = ZAO }
+link = { ck3 = k_en eu4 = YAN }
+link = { ck3 = k_zei eu4 = QIC }
+link = { ck3 = k_zzin eu4 = JIN }
+link = { ck3 = k_ngo eu4 = WUU }
+link = { ck3 = k_wat eu4 = YUE }
+
+link = { ck3 = k_annam eu4 = ANN }
+link = { ck3 = d_bangkok eu4 = AYU }
+link = { ck3 = c_ayutthaya eu4 = AYU }
+link = { ck3 = k_champa eu4 = CHA }
+link = { ck3 = k_champasak eu4 = CHK }
+link = { ck3 = d_champasak eu4 = CHK }
+link = { ck3 = c_champasak eu4 = CHK }
+link = { ck3 = e_vietnam eu4 = DAI }
+link = { ck3 = k_dai_nam eu4 = DAI }
+link = { ck3 = e_japan eu4 = JAP }
+link = { ck3 = e_shogunate eu4 = JAP }
+link = { ck3 = k_honshu eu4 = JAP }
+
+link = { ck3 = k_yezo eu4 = ANU }
+link = { ck3 = d_hokkaido eu4 = ANU }
+
+link = { ck3 = e_khmer eu4 = KHM }
+link = { ck3 = k_cambodia eu4 = KHM }
+link = { ck3 = d_cambodia eu4 = KHM }
+link = { ck3 = e_korea eu4 = KOR }
+link = { ck3 = k_joseon eu4 = KOR }
+link = { ck3 = k_luang_prabang eu4 = LUA }
+link = { ck3 = d_luang_prabang eu4 = LUA }
+link = { ck3 = e_manchuria eu4 = MCH }
+link = { ck3 = k_jin eu4 = MCH }
+link = { ck3 = d_kelantan eu4 = PAT }
+link = { ck3 = c_pattani eu4 = PAT }
+link = { ck3 = k_ryukyu eu4 = RYU }
+link = { ck3 = d_ryukyu eu4 = RYU }
+link = { ck3 = d_sukhothai eu4 = SUK }
+link = { ck3 = c_sukhothai eu4 = SUK }
+link = { ck3 = d_zienghai eu4 = TOK }
+link = { ck3 = k_vientiane eu4 = VIE }
+link = { ck3 = d_vientiane eu4 = VIE }
+link = { ck3 = c_vientiane eu4 = VIE }
+link = { ck3 = d_taiwan eu4 = FRM }
+
+link = { ck3 = e_dali eu4 = CDL }
+
+link = { ck3 = k_jiok eu4 = SHU }
+link = { ck3 = k_chio eu4 = CHC }
+
+link = { ck3 = e_turkey eu4 = TUR }
+link = { ck3 = e_austria eu4 = HAB }
+link = { ck3 = k_prussia eu4 = PRU }
+link = { ck3 = d_baden eu4 = BAD }
+link = { ck3 = d_berg eu4 = BRG }
+link = { ck3 = d_wurzburg eu4 = WBG }
+link = { ck3 = k_wurttemberg eu4 = WUR }
+link = { ck3 = k_westfalia eu4 = WES }
+link = { ck3 = k_hanover eu4 = HAN }
+link = { ck3 = e_maratha eu4 = MAR }
+link = { ck3 = k_oudh eu4 = ODH }
+link = { ck3 = k_jaisalmer eu4 = JSL }
+link = { ck3 = d_maldives eu4 = DGL }
+link = { ck3 = k_romania eu4 = RMN }
+link = { ck3 = k_sikkim eu4 = SKK }
+link = { ck3 = d_sikkim eu4 = SKK }
+link = { ck3 = k_tts eu4 = TTS }
+link = { ck3 = e_tang eu4 = TNG }
+link = { ck3 = e_jurchen_china eu4 = JIN }
+link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
