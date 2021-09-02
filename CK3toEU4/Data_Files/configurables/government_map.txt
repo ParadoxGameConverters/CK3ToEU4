@@ -4,9 +4,11 @@
 
 # General
 link = { gov = monarchy ck3gov = feudal_government ck3gov = clan_government }
-link = { gov = theocracy ck3gov = theocracy_government ck3gov = holy_order_government }
+link = { gov = theocracy ck3gov = theocracy_government ck3gov = holy_order_government ck3gov = holy_order_government_2 }
 link = { gov = republic ck3gov = republic_government ck3gov = mercenary_government } 
 link = { gov = tribal ck3gov = tribal_government }
+
+
 
 # Targeted
 # link = { title = k_papal_state gov = theocracy reform = papacy_reform } # Special case handled by the converter internally.
