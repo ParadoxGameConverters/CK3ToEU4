@@ -219,7 +219,49 @@ roman_group = {
 	bazramani = { primary = ROM }
 	euxinian = { primary = ROM }
 	xliponian = { primary = ROM }
-		male_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
+	
+	sabellian = {
+		primary = NAP
+		dynasty_names = {
+			Aemilius Aurelius Calpurnius Calvisius Claudius Curtius Flavius Ligarius Marcius
+			Minatius Oppius Opsius Ostorius Pantuleius Petronius Pinarius Pompilius Pomponius
+			Poppaeus Quirinius Ranius Rubellius Sabinius Safinius Sallustius Saturius Sertorius
+			Sicinius Tarpeius Tineius Titius Valerius Asinius Vetius Cassius Decimius Egnatius
+			Gavius Gellius Herennius Obellius Ofilius Oppidius Opsidius Otacilius Paccius
+			Pacidius Papius Papinius Percennius Petreius Pontius Scutarius Vibius "Pontius Pilatus"
+		}
+	}
+	old_ligurian = {
+		primary = GEN
+		dynasty_names = {
+			Alpinus Apuanus Bagiennus Beretinus Bimbellus Brinias Boax Casuentillanus
+			Cavaturinus Celelas Cerdicias Decias Dectuminus Docilius Ectinus Eguiturus
+			Epanterius Euburias Frinias Garulus Genuas Hercas Iemerus Ingaunus Intemelius
+			Ilvas Irias Laevus Lapicinus Libicus Libuus Magellus Mucellus Maricus Nematurus
+			Nerusus Odias Oratellus Olivarus Oxybius Sabas Segusinus Sotus Statiellus Sueltrus
+			Tigullus Triullatus Turus Vediantius Veiturius Langas Mentovinus Sestrinus Utrinus
+			Veleias Vellaunus Venenus Venisanus Vesubianus Vibellus
+		}
+	}
+	venetic = {
+		primary = VEN
+		dynasty_names = {
+			Histrus Carnus Catarus Catalus Secussis Lopsus
+		}
+	}
+	siculian = { 
+		primary = SIC
+		dynasty_names = {
+			Abacaenus Abolla Aetna Agathyrnus Acrillae Ameselus Apollonius Assorus Brucoli Capizzi
+			Caronia Casmenae Catania Cefalus Chersonesus Comicianus Daedalius Drepanus Enna Entella
+			Eryx Gela Halaesa Helorus Hippana "Hybla Gereatis" "Hybla Heraea" "Hybla Maior" Ichana
+			Ietas Imachara Inycus Licata Longaricus Mactorio "Megara Hyblaea" "Monte Bubbonia"
+			Motyo Mytistrato Naxus Netus Pirama Pitinianus Sciaccus Segestus Selinuns Soluntus
+			Taormina Tarantus "Termini Imerese" Tindari
+		}
+	}
+	
+	male_names = { Acilius Aebutius Aelius Aemilius Albius Amatius Annaeus Anneius Annius Antonius Arrius
 		Artorius Asinius Atilius Atius Aurelius Autronius Caecilius Caedicius Caelius Calidius
 		Calpurnius Cassius Claudius Cloelius Cocceius Cominius Cornelius Coruncanius Curiatius
 		Curius Curtius Decius Didius Domitius Duilius Durmius Equitius Fabius Fabricius Fannius
