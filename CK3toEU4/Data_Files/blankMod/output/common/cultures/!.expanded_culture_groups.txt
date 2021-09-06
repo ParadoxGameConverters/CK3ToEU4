@@ -15,18 +15,18 @@ germanic = {
 			Rosen Rosenberg Rosenblum Rosenfeld Rosenthal Roth Rothkopf Rothschild Rothstein
 			Sauber Scheuchzer Schild Schmidt Schmitt Schneider Schubert Schumann Schwartz
 			Schwarz Schwarzkopf Schweitzer Stein Stern Strauss Vettel Weinstein Weintraub Weishaupt
-			"von Lothringen" "von Metz" "von Bolchen" "von ChÃ¢teau-Salins" "von Didenhofen"
-			"von Forbach" "von Saarburg" "von SaargemÃ¼nd" "von Erstein" "von Hagenau" "von Molsheim"
-			"von Schlettstadt" "von StraÃŸburg" "von WeiÃŸenburg" "von Zabern" "von Altkirch"
-			"von Colmar" "von Gebweiler" "von MÃ¼lhausen" "von Rappoltsweiler" "von Thann"
+			"von Lothringen" "von Metz" "von Bolchen" "von Château-Salins" "von Didenhofen"
+			"von Forbach" "von Saarburg" "von Saargemünd" "von Erstein" "von Hagenau" "von Molsheim"
+			"von Schlettstadt" "von Straßburg" "von Weißenburg" "von Zabern" "von Altkirch"
+			"von Colmar" "von Gebweiler" "von Mülhausen" "von Rappoltsweiler" "von Thann"
 		}
 	}
 	sudeten = {
 		primary = SUD
 		dynasty_names = {
-			"von Prag" Pilsner "von Karlsbad" "von Aussig" "von Reichenberg" "von KÃ¶niggrÃ¤tz"
-			"von Pardubitz" "von Iglau" Budweiser "von BrÃ¼nn" OlmÃ¼tzer "von Ostrau" Zliner PreÃŸburger
-			"von PreÃŸburg" "von Tyrnau" "von Trentschin" Laugaricio "von Neutra" "von Sillein"
+			"von Prag" Pilsner "von Karlsbad" "von Aussig" "von Reichenberg" "von Königgrätz"
+			"von Pardubitz" "von Iglau" Budweiser "von Brünn" Olmützer "von Ostrau" Zliner Preßburger
+			"von Preßburg" "von Tyrnau" "von Trentschin" Laugaricio "von Neutra" "von Sillein"
 			Solna "von Neusohl" "von Eperies" Fragopolis "von Kaschau"
 		}
 	}
@@ -34,16 +34,16 @@ germanic = {
 scandinavian = {
 	norse = {
 		primary = SCA
-		dynasty_names = { ArnÃ³rsson Ãsgeirsson Benediktsson Bjarnasen BjÃ¶rnsson Eggers EldjÃ¡rn Hafstein Hansen
-		Hermannsson JohÃ¡nesson JÃ³nsson MagnÃºsson StefÃ¡nsson Steinthosson ThÃ³rdarson ThÃ³rhallson ThorlÃ¡ksson Thurs }
+		dynasty_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
 	}
 	elsinorian = {
 		primary = DNL
 		dynasty_names = {
-			ArnÃ³rsson Ãsgeirsson Benediktsson Bjarnasen BjÃ¶rnsson Eggers EldjÃ¡rn Hafstein Hansen
-			Hermannsson JohÃ¡nesson JÃ³nsson MagnÃºsson StefÃ¡nsson Steinthosson ThÃ³rdarson ThÃ³rhallson ThorlÃ¡ksson Thurs
-			Godhelming Beorming Eorling Ã†bbing HÃ¦sting Ã†lling Eadricing Eadwulfing Leodwalding
-			Ã†thelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
+			Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
+			Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs
+			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
+			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
 			Beorning Iceling Wuffing Wihtgilsing Ross Ciesla Rowe Borthwick
 		}
 	}
@@ -84,7 +84,7 @@ british = {
 		}
 		dynasty_names = {
 			Barry Beary Blake Bligh Boyle Bracken Braden Brady Braiden Branagan Brandane Brandon Bree
-			Brennan BrontÃ« Bryan Bryant Cagney Calhoun Callaghan Callan Callen Cameron Carey Carmadie
+			Brennan Brontë Bryan Bryant Cagney Calhoun Callaghan Callan Callen Cameron Carey Carmadie
 			Carnahan Carr Carrick Carrol Carroll Casey Cassidy Caven Christy Clancy Clinton Cochrane
 			Coday Cody Coffey Cogley Collins Coltrain Coltrane Comiskey Conleth Conley Conlon Connally
 			Connel Connell Connelley Connelly Connely Conner Connolly Connor Cool Corey Corkran
@@ -137,7 +137,7 @@ gaelic = {
 latin = {
 	italian = {
 		primary = ITA
-		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La MÃ rmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
+		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
 	}
 }
 iberian	= {
@@ -145,21 +145,21 @@ iberian	= {
 french = {
 	outremer = {
 		primary = KOJ
-		male_names = { Achille Adolphe Adrien Aimable Alphonse AmÃ©dÃ©e Antoine Armand August Augustin
-		Charles Daniel Denis Ã‰douard Elie Ã‰ttiene EugÃ¨ne FÃ©licien FÃ©lix Fernand
-		FranÃ§ois FrÃ©dÃ©ric Georges Guillaume Gustave Henri Hubert Hugo Jacques Jean
-		Joseph Jules Julien Lazare LÃ©opold Leroy Louis Lucien Matthieu Michel
-		NapolÃ©on Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
+		male_names = { Achille Adolphe Adrien Aimable Alphonse Amédée Antoine Armand August Augustin
+		Charles Daniel Denis Édouard Elie Éttiene Eugène Félicien Félix Fernand
+		François Frédéric Georges Guillaume Gustave Henri Hubert Hugo Jacques Jean
+		Joseph Jules Julien Lazare Léopold Leroy Louis Lucien Matthieu Michel
+		Napoléon Nicolas Patrice Paul Philippe Pierre Robert Thibaut Thierry Thomas }
 		dynasty_names = { Emicho "Sans-Avoir" Gautier "de Taranto" Bohemond Tancred Herman
 		"de Hauteville" "de Salerno" "de Bouillon" Godfrey Eustace "de Boulogne" Baldwin
 		"de Fauquembergues" Galilee Nazareth "de Bazoches" Gervaise Fulcher "de Chartres"
 		"de le Bourg" "de Saint-Pol" Grenier "de Hainaut" Grez Raymond "de Saint-Gilles"
-		"de Monteil" Cerdagne "Le Puy" BÃ©arn Bigorre Guinard "de Roussillon" Aicard "d'Arles"
+		"de Monteil" Cerdagne "Le Puy" Béarn Bigorre Guinard "de Roussillon" Aicard "d'Arles"
 		"de Lusignan" Berenguer Aguilers Raimbaut Roman "d'Orange" Odo Bayeux Chocques
-		Curthose "de Guader" HÃ©ribrand Hierges Vermandois Coucy Embriaco MontlhÃ©ry Alan
+		Curthose "de Guader" Héribrand Hierges Vermandois Coucy Embriaco Montlhéry Alan
 		Lastours "d'Auvergne" "de Bourgogne" "de Blois" "de Toulouse" "de Boulogne"
-		"de Provence" Lemarquis "de Flandre" "de Bretagne" "de Normandie" "de La TrÃ©moille"
-		GÃªnes Lotharingie Tarente ArmÃ©nie CroisÃ© Fatimide Danichmendide "de Roum" Arslan }
+		"de Provence" Lemarquis "de Flandre" "de Bretagne" "de Normandie" "de La Trémoille"
+		Gênes Lotharingie Tarente Arménie Croisé Fatimide Danichmendide "de Roum" Arslan }
 	}
 }
 finno_ugric = {
@@ -177,11 +177,11 @@ finno_ugric = {
 	meshchera = {
 		primary = MSH
 		male_names = { 
-			Anzyl Barash Izegre KÃ¼rtn'ypatyr Izi Yolagay YÃ¼kserge YÃ¼shterge Lapkas
+			Anzyl Barash Izegre Kürtn'ypatyr Izi Yolagay Yükserge Yüshterge Lapkas
 			Maska Ozanay Oshegre Parsay Chotkar Shembuy Shumat Yumpatyr Yamshan
 		}
 		female_names = {
-			Ayvi Astalche YÃ¼ksÃ¼dyr Kechevi KugÃ¼dyr Oshalche Pashache Salika Tulpeledysh
+			Ayvi Astalche Yüksüdyr Kechevi Kugüdyr Oshalche Pashache Salika Tulpeledysh
 			Uviy Shymay Evika
 		}
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
@@ -194,92 +194,92 @@ west_slavic = {
 	slovak = {
 		primary = SLO
 		male_names = {
-			AlbÃ­n Alexander AndrÃ¡s Andrej AugustÃ­n Basil CypriÃ¡n Dalibor Dezider Dominik 
-			Eugen Fedor Ferdinand FrantiÅ¡ek Frico Gabriel GustÃ¡v Imrich JÃ¡chym JÃ¡n 
-			Janko Jozef Juraj Karol Ladislav Levoslav MariÃ¡n Marko Martin Matej 
-			Michal MikulÃ¡Å¡ Milan MiloÅ¡ Miloslav Miroslav Pavel Pavol Peter Ratislav 
-			Rudolf Samuel Sergej Å tefan SvetozÃ¡r Tibor TomÃ¡Å¡ Viliam VladimÃ­r Vojtech
+			Albín Alexander András Andrej Augustín Basil Cyprián Dalibor Dezider Dominik 
+			Eugen Fedor Ferdinand František Frico Gabriel Gustáv Imrich Jáchym Ján 
+			Janko Jozef Juraj Karol Ladislav Levoslav Marián Marko Martin Matej 
+			Michal Mikuláš Milan Miloš Miloslav Miroslav Pavel Pavol Peter Ratislav 
+			Rudolf Samuel Sergej Štefan Svetozár Tibor Tomáš Viliam Vladimír Vojtech
 		}
 		female_names = {
 			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana
 		}
 		dynasty_names = {
-			Stibor Bel Kollar PodmanickÃ½ HatnanskÃ½ Pongrac Bosniak VeselÃ©ni Zichy Turzo AndrÃ¡Å¡i
-			ZapolskÃ½ Palfi CÃ¡ki BalaÅ¡a BÃ¡thory
-			Ãchim BÃ¡zlic Bella BeneÅ¡ Blaho CatloÅ¡ Cikker Clementis Daxner Dubcek 
-			FiguÅ¡-BystrÃ½ FreÅ¡o Gojdic Golian Hlinka HodÅ¾a Hopko Hurban Hurban-VajanskÃ½ HusÃ¡k 
-			Ivanka Kafenda KardoÅ¡ Kocak Kupkovic Mach Macudzinski MalÃ¡r Malovec Markovic 
-			Masaryk MÃ³ry Moyses RÃ¡zus RohÃ¡cek Rudnay SelepcÃ©ni Sidor Å kultÃ©ty-GÃ¡briÅ¡ Å mik 
-			Sokol Å tefÃ¡nik Suchon Å verma Tiso Trcka Tuka Turanec Viest Zoch
+			Stibor Bel Kollar Podmanickı Hatnanskı Pongrac Bosniak Veseléni Zichy Turzo Andráši
+			Zapolskı Palfi Cáki Balaša Báthory
+			Áchim Bázlic Bella Beneš Blaho Catloš Cikker Clementis Daxner Dubcek 
+			Figuš-Bystrı Frešo Gojdic Golian Hlinka Hoda Hopko Hurban Hurban-Vajanskı Husák 
+			Ivanka Kafenda Kardoš Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic 
+			Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik 
+			Sokol Štefánik Suchon Šverma Tiso Trcka Tuka Turanec Viest Zoch
 		}
 	}
 	old_pommeranian = {
 		primary = POM
 		male_names = { 
-			AbdÃ³n AbÃ©lk AdÃ³lf AdÃ³m AdriÃ³n Agapit AgÃ¹st AgÃ¹stin AleksÃ£der AlfÃ³nks
-			AmadeÃ¹sz AndrzÃ©j AntÃ³n AntÃ³sz AnzÃ©lm ApÃ²lo Ark Arturk AugÃ¹st AugÃ¹stin AÃ¹reliÃ³n
-			Barnim BartlomiÃ©n Bazyl BazylÃ«szk BÃ©nk Beno Bink BlazÃ©j BÃ²gdÃ³n BÃ²gÃ¹mil
-			BÃ²gÃ¹slÃ´w BÃ²gÃ¹sz BÃ²lesk BÃ²leslÃ´w BÃ²nawentura BÃ²ris BÃ²rzÃ«slÃ´w BÃ²rzÃ«szk
-			Cekestin CÃ©lk Cemirk Cezari Chilk ChÃ²cemir ChÃ²ck Cyd Cyl CypriÃ³n CzeslÃ´w
-			CzÃ´rk DamiÃ³n DaniÃ©l DÃ©mk DÃ©Ã² DÃ©Ã¹szk DobrogÃ²st DÃ³nk DonÃ´ld Ã‰d Ã‰dmÃ¹nd
-			Ã‰dwin Ã‰dwÃ´rd EfrÃ©m EliÃ´sz Ã‰lk Ã‰manuÃ©l Ã‰mil Ã‰razm Ã‰rik Ã‰rnest EÃ¹geniusz Ã‰wÃ´ld
-			EzechiÃ©l FaÃ¹stin FelicjÃ³n FÃ©liks FÃ©lk FerdinÃ´nd FlorÃ«szk FloriÃ³n FlÃ³rk FrÃ£cÃ«szk
-			FrancÃ«szk Franik Franulk Franusz FrÃ©d FrÃ©mk FridrÃ«szk Fridrich GabriÃ©l Genk Gerat
-			GrÃ©gÃ³r GrzegÃ³rz GrzÃ«mislÃ´w Grzenia GrzÃ©szk GÃ¹st GÃ¹stÃ´w Gwido HadriÃ³n HÃ©nk
-			HerkÃ¹les Hermiczk Hiacynt Hilari HipÃ²lt HÃ²norÃ´t HÃ¹bert HÃ¹gÃ² JacÃ£ti Jack JadÃ³m
-			JÃ£droch JÃ£drzej JakÃ³b JakÃ¹b Jark JaroslÃ´w Jarosz Jasz JeremiÃ´sz Jerzi Jignac Jignacy
-			Jignacylk JigÃ³r Jinocenti JireneÃ¹sz Jirk JizydÃ³r JÃ³fk JÃ³nk Jop JÃ³zk JuliÃ³n Jurk KadzmiÃ©rz
-			KajetÃ³n KarÃ³l Kasjusz KlaÃ¹diusz KlÃ©mÃ£s Klimk KÃ³nrÃ´d KÃ³rdiÃ²n KÃ²rnÃ©l KÃ²rnÃ©liusz
-			KrÃ«szk KrÃ«sztof KristiÃ³n Kristk KsÃ£der Kaswer LazÃ´rz LÃ©Ã³n LÃ©Ã³nÃ´rd LÃ©szk LÃ©tk
-			LiÃ´szk Lizk Lojs Loszk LubÃ²gÃ²st LucjÃ³n Luck LukÃ´sz MacÃ©j Mack Maksulk MaksymiliÃ³n
-			MarÃ©czk MariÃ³n Marusz MatÃ©Ã¹sz MatÃ©Ã¹szk Matis MelchiÃ³r Mestwin Metodi MichÃ´l
-			MieczÃ«slÃ´w MiÃ©tk Miklosz MikÃ²lÃ´j MiloslÃ´w Mirk MirÃ³n MiroslÃ´w Mojzesz MÃ´rcÃ«n
-			MscÃ«wÃ²j Narck Natsk NÃ©liuszk NÃ©lk Nest NikÃ²dÃ©m NikÃ²sz NÃ³rbert Nufri Ã”brÃ³m Ã’do
-			Ã’ktawiÃ³n Ã’laf Ã’lgerd Ã’nufri Ã’to Ã’widiusz Pankrac Pelagiusz PÃ©lk Petroniusz Pioch
-			Pit Placyd ProkÃ²p ProtÃ´z PrzemÃ«slÃ´w RadoslÃ´w RafÃ´l RajmÃ¹nd RedÃ³mir RedoslÃ´w RÃ©mi
-			RiszÃ´rd RÃ³man RÃ³mk RÃ³mÃ¹Ã´ld RudÃ³lf SÃ£domir Salk SambÃ³r SamsÃ³n SamÃ¹Ã©l SebastiÃ³n
-			SÃ«kstus Sewerin SlawÃ²mir SobieslÃ´w Stancjusz StanislÃ´w Stazyjk SubislÃ´w SwiÃ£tobÃ³r
-			SwiÃ£topÃ´lk Sylk SymÃ©Ã³n SzczepÃ³n SzÃ«mÃ³n Szimk SzimÃ³n SztefÃ³n TadeÃ¹sz TÃ©dÃ³r
-			TelesfÃ³r TÃ©Ã²bÃ´ld TÃ©Ã²dozjusz TÃ©Ã³fil TimÃ³n TimÃ²teÃ¹sz TobiÃ´sz TÃ³mk TomÃ´sz TÃ³na
-			Ã™rbÃ³n Wack WaclÃ´w WalÃ£ti WaldÃ©mÃ´r Waleri WaleriÃ³n Walis WartÃ«slÃ´w Wawrzinc
-			WenÃ£cjusz Wenk WespazjÃ³n Wick WieslÃ´w WikÃ² WiktÃ³r Wilem WincÃ£t Wisk WislÃ´w
-			WitÃ³ld WitoslÃ´w WladislÃ´w WlodzmiÃ©rz WÃ²jcech WÃ²jk WÃ²jtilk ZbigÃ³rz ZdzyslÃ´w
-			ZemÃ²wit ZÃ©nk Zenobiusz ZenÃ³n ZydÃ³r Zygfrid ZygmÃ¹nd ZygÃ¹szk
+			Abdón Abélk Adólf Adóm Adrión Agapit Agùst Agùstin Aleksãder Alfónks
+			Amadeùsz Andrzéj Antón Antósz Anzélm Apòlo Ark Arturk Augùst Augùstin Aùrelión
+			Barnim Bartlomién Bazyl Bazylëszk Bénk Beno Bink Blazéj Bògdón Bògùmil
+			Bògùslôw Bògùsz Bòlesk Bòleslôw Bònawentura Bòris Bòrzëslôw Bòrzëszk
+			Cekestin Célk Cemirk Cezari Chilk Chòcemir Chòck Cyd Cyl Cyprión Czeslôw
+			Czôrk Damión Daniél Démk Déò Déùszk Dobrogòst Dónk Donôld Éd Édmùnd
+			Édwin Édwôrd Efrém Eliôsz Élk Émanuél Émil Érazm Érik Érnest Eùgeniusz Éwôld
+			Ezechiél Faùstin Felicjón Féliks Félk Ferdinônd Florëszk Florión Flórk Frãcëszk
+			Francëszk Franik Franulk Franusz Fréd Frémk Fridrëszk Fridrich Gabriél Genk Gerat
+			Grégór Grzegórz Grzëmislôw Grzenia Grzészk Gùst Gùstôw Gwido Hadrión Hénk
+			Herkùles Hermiczk Hiacynt Hilari Hipòlt Hònorôt Hùbert Hùgò Jacãti Jack Jadóm
+			Jãdroch Jãdrzej Jakób Jakùb Jark Jaroslôw Jarosz Jasz Jeremiôsz Jerzi Jignac Jignacy
+			Jignacylk Jigór Jinocenti Jireneùsz Jirk Jizydór Jófk Jónk Jop Józk Julión Jurk Kadzmiérz
+			Kajetón Karól Kasjusz Klaùdiusz Klémãs Klimk Kónrôd Kórdiòn Kòrnél Kòrnéliusz
+			Krëszk Krësztof Kristión Kristk Ksãder Kaswer Lazôrz Léón Léónôrd Lészk Létk
+			Liôszk Lizk Lojs Loszk Lubògòst Lucjón Luck Lukôsz Macéj Mack Maksulk Maksymilión
+			Maréczk Marión Marusz Matéùsz Matéùszk Matis Melchiór Mestwin Metodi Michôl
+			Mieczëslôw Miétk Miklosz Mikòlôj Miloslôw Mirk Mirón Miroslôw Mojzesz Môrcën
+			Mscëwòj Narck Natsk Néliuszk Nélk Nest Nikòdém Nikòsz Nórbert Nufri Ôbróm Òdo
+			Òktawión Òlaf Òlgerd Ònufri Òto Òwidiusz Pankrac Pelagiusz Pélk Petroniusz Pioch
+			Pit Placyd Prokòp Protôz Przemëslôw Radoslôw Rafôl Rajmùnd Redómir Redoslôw Rémi
+			Riszôrd Róman Rómk Rómùôld Rudólf Sãdomir Salk Sambór Samsón Samùél Sebastión
+			Sëkstus Sewerin Slawòmir Sobieslôw Stancjusz Stanislôw Stazyjk Subislôw Swiãtobór
+			Swiãtopôlk Sylk Syméón Szczepón Szëmón Szimk Szimón Sztefón Tadeùsz Tédór
+			Telesfór Téòbôld Téòdozjusz Téófil Timón Timòteùsz Tobiôsz Tómk Tomôsz Tóna
+			Ùrbón Wack Waclôw Walãti Waldémôr Waleri Walerión Walis Wartëslôw Wawrzinc
+			Wenãcjusz Wenk Wespazjón Wick Wieslôw Wikò Wiktór Wilem Wincãt Wisk Wislôw
+			Witóld Witoslôw Wladislôw Wlodzmiérz Wòjcech Wòjk Wòjtilk Zbigórz Zdzyslôw
+			Zemòwit Zénk Zenobiusz Zenón Zydór Zygfrid Zygmùnd Zygùszk
 		}
 		female_names = { 
-			Ada AdÃ©lajda AdÃ©lka Adka Adolfa Adrianka AgnÃ©s AgnÃ©sa AgnÃ©szka AgrÃ«pina AgÃ¹la AgÃ¹stina
-			AgÃ¹stinka Ala Aldka AlicjÃ´ Alojza Aluszka Amanda AmÃ©la AnastazjÃ´ Andzela AnÃ©czka
-			AnÃ©ta AntÃ³na Antosza Anula Anusza AnzÃ©lma ApÃ²la ApÃ²loniÃ´ Ariadka Arnolda Astrida
-			AÃ¹rÃ©la BarbÃ´rka BarÃ«sza Barnimira Barnislawa BastiÃ³nka Beatricza BÃ©jata Benia Beniamina
-			Bernatka BÃ©ta Binka BÃ²gdana BÃ´ra BÃ´sza BÃ²zena Bronisa CecyliÃ´ CÃ©lka CÃ«sa ChÃ²ca ChÃ²cemira
-			ChwÃ´lÃ«ska ChwÃ´lÃ«slawa Cyda Cyla Daga Darga DargÃ²mira DariÃ´ Darka DÃ©la DÃ©lka Dianka
-			Disa Ditka Dolfa DÃ³lfka Dona DÃ³nka Dorotka Dzina Editka Ã‰dwarda ElÃ©Ã³nora Elza ElzbiÃ©ta
-			Elzunia Ã‰ma Ã‰manuela Ã‰mila Ã‰mka Emka Ã‰rnesta Ã‰ska Ã‰stera EÃ¹geniÃ´ Ã‰wa Ã‰welina Ã‰wka
-			Ã‰wÃ¹nka Fabisa FaÃ¹stÃ«na Fela FelicÃ«ta Felicjana FelicjÃ´ FÃ©liksa FÃ©lka FilÃ«pa FlorÃ«szka
-			FrancÃ«szka Franiszka Franusza FrÃ©da FridrÃ«szka Fridrisza Gasza Gata Gena Genia Gerata
-			Gertka Gizela Gizka GnÃ©sa GÃ²rzÃ«mira GÃ²sza Gracjana GracjÃ´ Grazina Grizelda Grizka
-			GrzÃ«mislawa GÃ¹stawa GÃ¹stka Gwidka Gwidona Henia Henrieta Hermenegilda Hildegarda
-			Hipka HipÃ²lita HÃ¹berta Jadza Jagata JagnÃ©szka JagÃ²da Janulka JÃ©wa JÃ©welina JÃ©wka JÃ©wÃ¹nka
-			Jida Jidka Jiga Jilona Jinga JingebÃ²rga Jingrida Jinka JirÃ©na Jirka Jiwa JiwÃ³na Jizabela
-			Jizka Jizolda Jizydora Jolanta Juditka JuliÃ´ Juliszka Julka KalÃ«na KarolÃ«na Kasza KatarzÃ«na
-			KatarzÃ«nÃ´ Klarka KlaÃ¹diÃ´ KlaÃ¹dka Klotidla KÃ³stancja Kristiana KsÃ£dra Ksawra KÃ¹ndza
-			KÃ¹negÃ¹nda LaÃ¹ra LaÃ¹rka LÃ«liana LÃ«liÃ´ LÃ©nka LÃ©Ã³narda LÃ©Ã²sza LÃ«pka LicÃ«ta Liska Liza LÃ³ra
-			Lucjana LucjÃ´ Lucka Lujiza Magdusza MagÃ²rzata Majka MarÃ«na MarÃ«szka Marila MariÃ´
-			Mariola MarlÃ©na Marusza MÃ©la MichalÃ«na Michasza MieczÃ«slawa MiÃ©tka NarcÃ«za NataliÃ´
-			Natka NatÃ´lka NÃ©lka NÃ©ska Nesta NÃ©tka Niczka Nika NÃ³rberta NÃ³rka Ã’ldzka Ã’lÃ«wiÃ´
-			Ã’lga Ã’lka Ã’rszula Ã’tÃ«liÃ´ PatricjÃ´ PaÃ¹la PaÃ¹lÃ«na PelagiÃ´ PÃ©lka PlacÃ«da PÃ²la PÃ²lÃ«sza
-			PÃ²lÃ³na RajmÃ¹nda RÃ©beka Redzina RemigiÃ´ RÃ©mka RÃ©szka Riszarda Riszka RÃ³berta
-			RÃ³mana RÃ³mka RÃ³mÃ¹akda RÃ³za RÃ³zÃ«czka RÃ³zela RÃ³zka Rudolfa Saloma Samka SerafÃ«na
-			SÃ©rafka SewerÃ«na StÃ£ca Stanka StazjÃ´ Stazyjka Stina Stridka SulÃ«slawa SwiÃ£toslawa Sylka
-			SylwiÃ´ Sylwka SztefaniÃ´ Sztefka Taja TÃ©czelka TÃ©kla Telimena TÃ©lka TÃ©Ã²dozjÃ´ TerÃ©za
-			Tila TilÃ«szka TrÃ©ska WalÃ£tina Waleska Waliska WÃ©rÃ³nika WÃ©rsa WÃ©rsza Wicka Wiesa
-			Wikta Wiktora WiktÃ³rka Wilemina Wileminka Wilka WincÃ£ta WirdziniÃ´ Wiska Wladislawa
-			Zana ZbiÃ©tka Zdzyslawa Zefka Zelka ZÃ©lma ZÃ©nka Zenona Zofijka ZofiÃ´ Zofka Zoldka
+			Ada Adélajda Adélka Adka Adolfa Adrianka Agnés Agnésa Agnészka Agrëpina Agùla Agùstina
+			Agùstinka Ala Aldka Alicjô Alojza Aluszka Amanda Améla Anastazjô Andzela Anéczka
+			Anéta Antóna Antosza Anula Anusza Anzélma Apòla Apòloniô Ariadka Arnolda Astrida
+			Aùréla Barbôrka Barësza Barnimira Barnislawa Bastiónka Beatricza Béjata Benia Beniamina
+			Bernatka Béta Binka Bògdana Bôra Bôsza Bòzena Bronisa Cecyliô Célka Cësa Chòca Chòcemira
+			Chwôlëska Chwôlëslawa Cyda Cyla Daga Darga Dargòmira Dariô Darka Déla Délka Dianka
+			Disa Ditka Dolfa Dólfka Dona Dónka Dorotka Dzina Editka Édwarda Eléónora Elza Elzbiéta
+			Elzunia Éma Émanuela Émila Émka Emka Érnesta Éska Éstera Eùgeniô Éwa Éwelina Éwka
+			Éwùnka Fabisa Faùstëna Fela Felicëta Felicjana Felicjô Féliksa Félka Filëpa Florëszka
+			Francëszka Franiszka Franusza Fréda Fridrëszka Fridrisza Gasza Gata Gena Genia Gerata
+			Gertka Gizela Gizka Gnésa Gòrzëmira Gòsza Gracjana Gracjô Grazina Grizelda Grizka
+			Grzëmislawa Gùstawa Gùstka Gwidka Gwidona Henia Henrieta Hermenegilda Hildegarda
+			Hipka Hipòlita Hùberta Jadza Jagata Jagnészka Jagòda Janulka Jéwa Jéwelina Jéwka Jéwùnka
+			Jida Jidka Jiga Jilona Jinga Jingebòrga Jingrida Jinka Jiréna Jirka Jiwa Jiwóna Jizabela
+			Jizka Jizolda Jizydora Jolanta Juditka Juliô Juliszka Julka Kalëna Karolëna Kasza Katarzëna
+			Katarzënô Klarka Klaùdiô Klaùdka Klotidla Kóstancja Kristiana Ksãdra Ksawra Kùndza
+			Kùnegùnda Laùra Laùrka Lëliana Lëliô Lénka Léónarda Léòsza Lëpka Licëta Liska Liza Lóra
+			Lucjana Lucjô Lucka Lujiza Magdusza Magòrzata Majka Marëna Marëszka Marila Mariô
+			Mariola Marléna Marusza Méla Michalëna Michasza Mieczëslawa Miétka Narcëza Nataliô
+			Natka Natôlka Nélka Néska Nesta Nétka Niczka Nika Nórberta Nórka Òldzka Òlëwiô
+			Òlga Òlka Òrszula Òtëliô Patricjô Paùla Paùlëna Pelagiô Pélka Placëda Pòla Pòlësza
+			Pòlóna Rajmùnda Rébeka Redzina Remigiô Rémka Részka Riszarda Riszka Róberta
+			Rómana Rómka Rómùakda Róza Rózëczka Rózela Rózka Rudolfa Saloma Samka Serafëna
+			Sérafka Sewerëna Stãca Stanka Stazjô Stazyjka Stina Stridka Sulëslawa Swiãtoslawa Sylka
+			Sylwiô Sylwka Sztefaniô Sztefka Taja Téczelka Tékla Telimena Télka Téòdozjô Teréza
+			Tila Tilëszka Tréska Walãtina Waleska Waliska Wérónika Wérsa Wérsza Wicka Wiesa
+			Wikta Wiktora Wiktórka Wilemina Wileminka Wilka Wincãta Wirdziniô Wiska Wladislawa
+			Zana Zbiétka Zdzyslawa Zefka Zelka Zélma Zénka Zenona Zofijka Zofiô Zofka Zoldka
 			Zosza Zynka
 		}
 		dynasty_names = { 
 			Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska"
-			Breza Byzewski Cieminski Derdowski Klawiter Pacholski Pellowski Fehr Kilian KÃ³syk Symank
+			Breza Byzewski Cieminski Derdowski Klawiter Pacholski Pellowski Fehr Kilian Kósyk Symank
 		}
 	}
 	chrobatian = {
@@ -307,8 +307,8 @@ west_slavic = {
 		dynasty_names = {
 			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic" 
 			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
-			"Bebek" "Svetoslavic" "KreÅ¡imirovic" "Domagojevic" "FeÅ¡tetic" "Gorjanski"
-			"Svacic" "Kobilic" "Lackovic" "Å ubic"
+			"Bebek" "Svetoslavic" "Krešimirovic" "Domagojevic" "Feštetic" "Gorjanski"
+			"Svacic" "Kobilic" "Lackovic" "Šubic"
 			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga" 
 			"Crnkovic" "Cerva" "Rubido"
 		}
@@ -392,9 +392,9 @@ baltic = {
 			# From Behindthename
 			Bender Brandenburg Butgereit Coors Danzig Daschke Didschus Dobileit Eichhorst
 			Exkorn Fratzke Goettner Grawert Gruendemann Guja Hittel Hopp Jacko
-			KahlweiÃŸ Kallaur Kallweit Kass Kaulitz Kienlien Krauczun Krauledat Kruschel
+			Kahlweiß Kallaur Kallweit Kass Kaulitz Kienlien Krauczun Krauledat Kruschel
 			Kurpjuhn Kurpjuweit Kurschat Kushner Leissmann Lenkeit Lickert Littman Lohmeyer
-			Netzke Pinewell PreÃ¼ss Prusseit Puschat Pust Redlinger Ribbeck Rudat Schmoeckel
+			Netzke Pinewell Preüss Prusseit Puschat Pust Redlinger Ribbeck Rudat Schmoeckel
 			Strasser Strauser Tadeus Teitloff Tessmer Turnbo Welk Wowereit Zipplies Zoransky
 		}
 	}
@@ -444,19 +444,19 @@ caucasian = {
 	alan = {
 		primary = GEO
 		male_names = {
-			Afako Akhsar Akhsarbek Akhsartag Alan Alibek Alimbeg Alyksandr AslÃ¦nbeg Aslanbeg
-			Asmat Atsamaz Bakhva Barysbi Batradz Batyradz Baxva Bega BekyzÃ¦ Dauyt Dimitr
-			DzÃ¦uyg Dzakhot Dzambeg Dzambolat Dzankhot Dzantemir Dzaug Dzhambulad Elbazduko
-			Elbrus Fedyr GÃ¦mÃ¦t Gaito GeuÃ¦rgi GiuÃ¦rgi Irbeg Irbek Isaq Kaurbek Kazbek
-			Khadzhimurat Khazbi Khetag KuydzÃ¦g LazÃ¦r Makharbeg Makharbek Mikhal Misost
-			MushtÃ¦fa Nikala Nikhala Phaule Qambolat SÃ¦rmÃ¦t Sakhandzheri SauarmÃ¦g Sauarmag
-			Seqa SoslÃ¦nbeg SoslÃ¦nbek Soslanbek Sozyr Sozyryqo TÃ¦tÃ¦rqan Tamerlan Torez Totradz
-			Tsomak Tsomaq Tsotsoko Tugan Uryzmag Uyryzmag Vano ZhamirÃ¦t Znaur
+			Afako Akhsar Akhsarbek Akhsartag Alan Alibek Alimbeg Alyksandr Aslænbeg Aslanbeg
+			Asmat Atsamaz Bakhva Barysbi Batradz Batyradz Baxva Bega Bekyzæ Dauyt Dimitr
+			Dzæuyg Dzakhot Dzambeg Dzambolat Dzankhot Dzantemir Dzaug Dzhambulad Elbazduko
+			Elbrus Fedyr Gæmæt Gaito Geuærgi Giuærgi Irbeg Irbek Isaq Kaurbek Kazbek
+			Khadzhimurat Khazbi Khetag Kuydzæg Lazær Makharbeg Makharbek Mikhal Misost
+			Mushtæfa Nikala Nikhala Phaule Qambolat Særmæt Sakhandzheri Sauarmæg Sauarmag
+			Seqa Soslænbeg Soslænbek Soslanbek Sozyr Sozyryqo Tætærqan Tamerlan Torez Totradz
+			Tsomak Tsomaq Tsotsoko Tugan Uryzmag Uyryzmag Vano Zhamiræt Znaur
 		}
 		female_names = {
-			Agunda AllÃ¦ ArianÃ¦ Atsyrukhs Dzerassa ElenÃ¦ FatimÃ¦ IrinÃ¦ Lira MariÃ¦ MariamÃ¦
-			MaryamÃ¦ MeryemÃ¦ NataliÃ¦ OlgÃ¦ Roksalana Rushana SarÃ¦ SvetlanÃ¦ VeronikÃ¦ Zalina
-			ZarinÃ¦ ZinÃ¦
+			Agunda Allæ Arianæ Atsyrukhs Dzerassa Elenæ Fatimæ Irinæ Lira Mariæ Mariamæ
+			Maryamæ Meryemæ Nataliæ Olgæ Roksalana Rushana Saræ Svetlanæ Veronikæ Zalina
+			Zarinæ Zinæ
 		}
 		dynasty_names = { Andiyev Ashuraliyev Basiev Bazayev Bestayev Chibirov Din Dudarova Dzhanayev Fadzayev Farniev Gabulov Gassiev Gazyumov Guriev Khapov Khetagurov Kokoity Kusov Nyxas Pagayev Pliyeva Sanakoyev Tibilov Tokaty Torchinov Toshinori Valiyev Zangiev Zazirov }
 	}
@@ -475,7 +475,7 @@ turko_semitic = {
 		male_names = {
 			al-Nasr al-Mu'azzam al-Salih al-'Adil al-Kamil al-Ashraf al-Afdal Tadj Mujir ud-Din Djamal ud-Din 
 			ud-Din Shams Saif 'Abbas 'Abd al-Rahman Anwar Atuf Bakr Fahd Hakim Harun Hikmat Hisham Husayn 
-			Jamaal Karim MalÃ®k Mirza Muhammad RashÃ®d Rusul Shimun TarÃ®q Usama Yasir Yusuf Zaid ZÃ®yad Isma'il 	
+			Jamaal Karim Malîk Mirza Muhammad Rashîd Rusul Shimun Tarîq Usama Yasir Yusuf Zaid Zîyad Isma'il 	
 			Jafar Shihab
 		}
 		female_names = {
@@ -489,34 +489,34 @@ turko_semitic = {
 		primary = RMN
 		
 		dynasty_names = {
-			PasalÃ® Kendighelean Kristioglo Esir Harlamenco Constantinov Tarnavsky Kissa Ciachir
+			Pasalî Kendighelean Kristioglo Esir Harlamenco Constantinov Tarnavsky Kissa Ciachir
 			Deli Dushkov Pasha Formuzal Papazoglu Stoianoglo Tomaily Topal Vlah Zanet Zanetov
 		}
 		male_names = {
-			Mehmet Mustafa Murat Ahmet Selim Osman Mahmut SÃ¼leyman Bayezid Orhan Abdulaziz AbdÃ¼lhamit Ibrahim 
-			AbdÃ¼lmecit Abdullah Cem Cihangir Alaattin Isa Musa Ã–mer Seyfettin Yakup Yusuf Giyasettin Numan 
-			Ali Davut Hasan HÃ¼seyin Ishak Kamer Kasim Korkut Emin Iskender Halil Sait Hamit Ertugrul Izzettin 
-			Nizamettin Sinan Ferhat Salih Ismail CÃ¼neyt Bahadir Hizir Harun Cemal Inal Celalettin Ilyas 
+			Mehmet Mustafa Murat Ahmet Selim Osman Mahmut Süleyman Bayezid Orhan Abdulaziz Abdülhamit Ibrahim 
+			Abdülmecit Abdullah Cem Cihangir Alaattin Isa Musa Ömer Seyfettin Yakup Yusuf Giyasettin Numan 
+			Ali Davut Hasan Hüseyin Ishak Kamer Kasim Korkut Emin Iskender Halil Sait Hamit Ertugrul Izzettin 
+			Nizamettin Sinan Ferhat Salih Ismail Cüneyt Bahadir Hizir Harun Cemal Inal Celalettin Ilyas 
 			Dursun Ramazan Recep Abdulrahman Hayrettin
-			Ã‡agri Ã‡aka Afsin Ahmet Aksonqor Alaeddin Ali Alkan "AlpÂ Arslan" "AlpÂ Yurek" Alptigin Artuk Ayaz 
-			Aydin Aydogan Aydogdu Aytekin BÃ¶ru Bulend Bahadir Balaban Basbuga Batuhan Baturay Baybars 
+			Çagri Çaka Afsin Ahmet Aksonqor Alaeddin Ali Alkan "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz 
+			Aydin Aydogan Aydogdu Aytekin Böru Bulend Bahadir Balaban Basbuga Batuhan Baturay Baybars 
 			Bayezid Baytas Belek Berkan Berkiyaruk Bozan Bugra Burak Cuneyd Dundar Danismend Davud David 
 			Demir Dogan Dogukan Dukak Erdem Ertan Ertekin Ertugrul Gunduz Hasan Hasan Hizir Ibrahim Ilgazi 
 			Inal Iskender Alexander Kurboga Kaikaus Kaikhusraw Kaiqobad Kara Karatay Kasim Kaya Kaytun 
-			Kemal KiliÃ§ Korkut Kutalmis Kutay Kutlug Mursel Mahmud Mehmed Meliksah Mengucek Mesud Murad 
-			Mustafa Orhan Osman Porsuk Rustem Ramazan Ridvan SÃ¶buk SÃ¶kmen SÃ¶nmez Suleyman Saim Saltuk 
-			Saruca Savtekin Savur Sehinsah SelÃ§uk Selim Sencer Sinan Tanrivermis Tekin Timurtas Togay 
-			Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus UluÃ§ Umur Yakut Yaman Yinal 
+			Kemal Kiliç Korkut Kutalmis Kutay Kutlug Mursel Mahmud Mehmed Meliksah Mengucek Mesud Murad 
+			Mustafa Orhan Osman Porsuk Rustem Ramazan Ridvan Söbuk Sökmen Sönmez Suleyman Saim Saltuk 
+			Saruca Savtekin Savur Sehinsah Selçuk Selim Sencer Sinan Tanrivermis Tekin Timurtas Togay 
+			Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus Uluç Umur Yakut Yaman Yinal 
 			Yunus
 		}
 		female_names = {
-			Ã‡iÃ§ek Ã‡ilen Ã‡iltanesi Ã–zgul Ã–zlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bahar Banu 
-			BozÃ§in Canan Ceylan Dunya Dilber Dilek Emine Esin Fatma Firuze GulÃ§iÃ§ek Gulay Gulbahar Gulfem 
+			Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bahar Banu 
+			Bozçin Canan Ceylan Dunya Dilber Dilek Emine Esin Fatma Firuze Gulçiçek Gulay Gulbahar Gulfem 
 			Gulsum Gumus Gunduz Gundes Gunes Hatice Hayat Huriye Ilkay Ilknur Ipek Ipekel Irge Karacik Lale 
 			Leyla Mala Mansure Merve Mutlu Nagihan Nergis Neslihan Nilufer Nur Peksen Terkhen Samur Sarica 
-			Sati Sehnaz Serap Serife Sevilay Sevindik Sibel Sibylla Sirin Sirma Songul Sumru TekÃ§e Tura 
-			Umay Usunbike Vahide Yasar Yeldem Yildiz Zehra Zuhal Hatice Safiye Zeynep HÃ¼rrem Mihrimah Nurbanu 
-			Handan Alime KÃ¶sem HÃ¼ma 
+			Sati Sehnaz Serap Serife Sevilay Sevindik Sibel Sibylla Sirin Sirma Songul Sumru Tekçe Tura 
+			Umay Usunbike Vahide Yasar Yeldem Yildiz Zehra Zuhal Hatice Safiye Zeynep Hürrem Mihrimah Nurbanu 
+			Handan Alime Kösem Hüma 
 		}
 	}
 }
@@ -536,8 +536,8 @@ iranian = {
 			Dandakamal Devarakste Dhanike Dipankar Dirghanakhe Dravyasvare Durmukhe Ekasrinke
 			Erkatsole Esmine Etrise Gayakasyape Gayasirs Gaye Gunacamdre Gunasampade Hariscandre
 			Hastake Hetubalike Indradhvaje Indratewe Indre Indriske Issapake Jatisrone Jetavam
-			JÃ±anacamndre JÃ±anaghose JÃ±anakame JÃ±anakupte JÃ±anamokse JÃ±anasene JÃ±anasome
-			JÃ±anasthite JÃ±anawirye Kadike Kalodaye Kalyanamokse Kalyanavraddhi Kalyanawartane
+			Jñanacamndre Jñanaghose Jñanakame Jñanakupte Jñanamokse Jñanasene Jñanasome
+			Jñanasthite Jñanawirye Kadike Kalodaye Kalyanamokse Kalyanavraddhi Kalyanawartane
 			Kanake Kanaske Kanthake Kapilavarne Kapilavastu Kas Kasyap Katakarni Kaundinye
 			Kauravye Kausal Kemarcune Kentarske Kercampey Kercapiske Kerdipole Kereptanne Kimne
 			Klenkarako Klpapatre Klyotiska Kotile Koysam Ksemankare Ksmarjune Ksmawarme Ksmate
@@ -545,24 +545,24 @@ iranian = {
 			Kwirapabhadra Lariska Mahasammate Mahisvare Manisvare Mitrakseme Mitraske Mitre
 			Moksasene Moksasome Moksawarme Molyoke Mukalanti Munkhare Murdhagate Nandabala
 			Nandake Nande Nandipale Nasme Natte Naradeve Nirot Nupura Nyagrodhe Padmakesar
-			Padmottare Pakacandre PaÃ±casikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
-			Pravare Priyadeve Ptompile PuÃ±aiyse PuÃ±akame PuÃ±araksite PuÃ±icamndre Punyamitre
+			Padmottare Pakacandre Pañcasikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
+			Pravare Priyadeve Ptompile Puñaiyse Puñakame Puñaraksite Puñicamndre Punyamitre
 			Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare 
 			Samantatir Samcite Samghatrate Sanavasi Sanghasarme Sankene Sanum Saputanase Sarasike
 			Sarmacamdre Sarsire Satuma Satyake Satyaraksite Sidhasamgha Siladewe Silamitre Silarakite
-			Silaraksi Silasoma Silavande Silawarne Silayase Silopake Simpraye SiÃ±cake Sinke Sinku
+			Silaraksi Silasoma Silavande Silawarne Silayase Silopake Simpraye Siñcake Sinke Sinku
 			Skanatatte Skwarle Slacamndre Solarke Some Srestake Sudarse Sudas Suddhodane Sujate
 			Sukase Suklodane Sunaksatre Sunetre Sutasome Sutate Swarnabuspe Swarnatepe Tarmacandre
 			Tarmaraksite Tenare Tohkem Tonke Tukik Tunka Tusi Udanalankar Udayi Ulkamukhe Uluke
 			Upage Upagupte Upanande Uposathe Urbilvakasyape Uttaraphalguni Uttare Vaisravane
 			Vaitike Varddhane Vidusake Vimalapuspe Vinaise Visale Wamsok Warwattaske Waryaruci
-			Waryasene Wasampile Wasave Wiryadewe Wiryamitre Wiryasanti WiryasiÃ±i Wisikke
+			Waryasene Wasampile Wasave Wiryadewe Wiryamitre Wiryasanti Wiryasiñi Wisikke
 			Wrauske Yanayase Yarpalaske Yasa Yasawine Yase Yasonaka Yastare Yonge Yonu Ype
 			Yudhisthire Yugaraje
 		}
 		dynasty_names = {
-			Arkwi Erkent KarweÃ±e Kaum LykaÅ¡ke MeÃ±e Samudtar Å ana Å aumo Å cirye Totka
-			ArÅ¡iÃ±Ã±e Gushi Asmires Garinei Thagures KuÅ¡iÃ±Ã±e Oichardes Piades Rabanes Siziges
+			Arkwi Erkent Karweñe Kaum Lykaške Meñe Samudtar Šana Šaumo Šcirye Totka
+			Aršiññe Gushi Asmires Garinei Thagures Kušiññe Oichardes Piades Rabanes Siziges
 		}
 		primary = KAS
 	}
@@ -644,15 +644,15 @@ japanese_g = {
 tibetan_group = {
 	tangut = {
 		primary = TAU
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche ChÃ¶phel Shakabpa Tashi }
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
 	}
 	zhangzhung = {
 		primary = GUG
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche ChÃ¶phel Shakabpa Tashi }
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
 	}
 	sumpa = {
 		primary = TIB
-		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche ChÃ¶phel Shakabpa Tashi }
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
 	}
 }
 malay = {
