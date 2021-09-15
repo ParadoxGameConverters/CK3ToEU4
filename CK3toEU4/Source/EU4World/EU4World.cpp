@@ -554,6 +554,11 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	// about their integrity. None hail from wastelands or lakes or other junk.
 	for (auto ck3Title: ck3Titles)
 	{
+		if (!ck3Title.second)
+		{
+			Log(LogLevel::Error) << ck3Title.first << " doesn't even exist and isn't mappable to a province. wheee.";
+			continue;
+		}
 		if (!ck3Title.second->getHoldingTitle().second)
 		{
 			Log(LogLevel::Error) << ck3Title.first << " has no holding title? Did you import this save from an old version?";
@@ -583,7 +588,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		}
 
 		const auto& capitalBarony = ck3Title.second->getHoldingTitle().second->getHolder()->second->getCharacterDomain()->getRealmCapital();
-		if (!capitalBarony.second->getDFLiege()->second)
+		if (!capitalBarony.second->getDFLiege() || !capitalBarony.second->getDFLiege()->second)
 		{
 			Log(LogLevel::Warning) << ck3Title.first << "'s capital barony is unlinked! What?";
 			return *ck3Titles.begin();
