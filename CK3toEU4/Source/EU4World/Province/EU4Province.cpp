@@ -57,7 +57,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	}
 	else
 	{
-		Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
+		Log(LogLevel::Warning) << "CK3 Faith '" << baseReligion << "' for EU4 province " << provID << " has no mapping! Substituting holder's.";
 	}
 
 	// Attempt to use religion of ruler in THAT province.
@@ -74,7 +74,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 			}
 			else
 			{
-				Log(LogLevel::Warning) << "CK3 Faith " << baseReligion << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+				Log(LogLevel::Warning) << "CK3 Faith '" << baseReligion << "' for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 			}
 		}
 	}
@@ -98,7 +98,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	}
 	else
 	{
-		Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for EU4 province " << provID << " has no mapping! Substituting holder's.";
+		Log(LogLevel::Warning) << "CK3 Culture '" << baseCulture << "' for EU4 province " << provID << " has no mapping! Substituting holder's.";
 	}
 	// Attempt to use primary culture of ruler in THAT province.
 	if (!cultureSet)
@@ -114,7 +114,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 			}
 			else
 			{
-				Log(LogLevel::Warning) << "CK3 Culture " << baseCulture << " for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
+				Log(LogLevel::Warning) << "CK3 Culture '" << baseCulture << "' for holder of EU4 province " << provID << " has no mapping! Substituting TAG's.";
 			}
 		}
 	}
