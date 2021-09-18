@@ -1383,6 +1383,573 @@ dharmic = {
 		heretic = { MASANDIS }
 
 		date = 1499.01.01
+
+		gurus = {
+			guru_nanak = {
+				trigger = {
+					always = yes
+				}
+				chance = {
+					factor = 1000
+				}
+				modifier = {
+					country_admin_power = 1
+				}
+				teachings = {
+					share_and_consume = {
+						type = ADM
+						cost = 50
+
+						global_unrest = -1
+					}
+					work_honestly = {
+						type = DIP
+						cost = 50
+
+						production_efficiency = 0.05
+					}
+					recite_his_name = {
+						type = MIL
+						cost = 50
+
+						global_regiment_cost = -0.025
+					}
+				}
+			}
+			guru_angad = {
+				trigger = {
+					is_year = 1539
+					is_month = 9
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1540
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1541
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1542
+					}
+					modifier = {
+						factor = 2
+						is_year = 1543
+					}
+					modifier = {
+						factor = 2
+						is_year = 1544
+					}
+				}
+				modifier = {
+					country_military_power = 1
+				}
+				teachings = {
+					gurmukhi_script_teaching = {
+						type = ADM
+						cost = 50
+
+						technology_cost = -0.025
+					}
+					temple_langar = {
+						type = DIP
+						cost = 50
+
+						church_loyalty_modifier = 0.05
+					}
+					wrestling_akhara = {
+						type = MIL
+						cost = 50
+
+						yearly_army_professionalism = 0.005
+					}
+				}
+			}
+			guru_amar_das = {
+				trigger = {
+					is_year = 1552
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1553
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1554
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1555
+					}
+					modifier = {
+						factor = 2
+						is_year = 1556
+					}
+					modifier = {
+						factor = 2
+						is_year = 1557
+					}
+				}
+				modifier = {
+					country_diplomatic_power = 1
+				}
+				teachings = {
+					dasvandh_collection = {
+						type = ADM
+						cost = 50
+
+						global_tax_modifier = 0.05
+					}
+					anand_karaj = {
+						type = DIP
+						cost = 50
+
+						diplomatic_reputation = 1
+					}
+					sanghat_equality = {
+						type = MIL
+						cost = 50
+
+						nobles_loyalty_modifier = 0.05
+						rajput_exclusive_loyalty_modifier = 0.05
+						maratha_exclusive_loyalty_modifier = 0.05
+					}
+				}
+			}
+			guru_ram_das = {
+				trigger = {
+					is_year = 1574
+					is_month = 9
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1575
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1576
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1577
+					}
+					modifier = {
+						factor = 2
+						is_year = 1578
+					}
+					modifier = {
+						factor = 2
+						is_year = 1579
+					}
+				}
+				modifier = {
+					country_admin_power = 1
+				}
+				teachings = {
+					legitimize_inheritance = {
+						type = ADM
+						cost = 50
+
+						legitimacy = 0.25
+						republican_tradition = 0.1
+						devotion = 0.25
+						horde_unity = 0.25
+						meritocracy = 0.1
+					}
+					scripture_hymns = {
+						type = DIP
+						cost = 50
+
+						prestige = 0.5
+					}
+					masand_system = {
+						type = MIL
+						cost = 50
+
+						global_manpower_modifier = 0.1
+					}
+				}
+			}
+			guru_arjan = {
+				trigger = {
+					is_year = 1581
+					is_month = 9
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1582
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1583
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1584
+					}
+					modifier = {
+						factor = 2
+						is_year = 1585
+					}
+					modifier = {
+						factor = 2
+						is_year = 1586
+					}
+				}
+				modifier = {
+					country_diplomatic_power = 1
+				}
+				teachings = {
+					adi_granth = {
+						type = ADM
+						cost = 50
+
+						global_institution_spread = 0.1
+					}
+					the_abode_of_god = {
+						type = DIP
+						cost = 50
+
+						religious_unity = 0.1
+					}
+					martyrdom = {
+						type = MIL
+						cost = 50
+
+						land_morale = 0.05
+					}
+				}
+			}
+			guru_hargobind = {
+				trigger = {
+					is_year = 1606
+					is_month = 6
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1607
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1608
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1609
+					}
+					modifier = {
+						factor = 2
+						is_year = 1610
+					}
+					modifier = {
+						factor = 2
+						is_year = 1611
+					}
+				}
+				modifier = {
+					country_military_power = 1
+				}
+				teachings = {
+					throne_of_the_timeless_one = {
+						type = ADM
+						cost = 50
+
+						legitimacy = 0.25
+						republican_tradition = 0.1
+						devotion = 0.25
+						horde_unity = 0.25
+						meritocracy = 0.1
+					}
+					protection_of_the_poor = {
+						type = DIP
+						cost = 50
+
+						war_exhaustion = -0.025
+					}
+					miri_and_piri = {
+						type = MIL
+						cost = 50
+
+						discipline = 0.025
+					}
+				}
+			}
+			guru_har_rai = {
+				trigger = {
+					is_year = 1644
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1645
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1646
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1647
+					}
+					modifier = {
+						factor = 2
+						is_year = 1648
+					}
+					modifier = {
+						factor = 2
+						is_year = 1649
+					}
+				}
+				modifier = {
+					country_diplomatic_power = 1
+				}
+				teachings = {
+					impartial_manjis = {
+						type = ADM
+						cost = 50
+
+						yearly_corruption = -0.05
+					}
+					the_fragrance_of_a_flower = {
+						type = DIP
+						cost = 50
+
+						improve_relation_modifier = 0.1
+					}
+					one_guru = {
+						type = MIL
+						cost = 50
+
+						nobles_loyalty_modifier = 0.05
+						rajput_exclusive_loyalty_modifier = 0.05
+						maratha_exclusive_loyalty_modifier = 0.05
+					}
+				}
+			}
+			guru_har_krishan = {
+				trigger = {
+					is_year = 1661
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1662
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1663
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1664
+					}
+					modifier = {
+						factor = 2
+						is_year = 1665
+					}
+					modifier = {
+						factor = 2
+						is_year = 1666
+					}
+				}
+				modifier = {
+					country_diplomatic_power = 1
+				}
+				teachings = {
+					treat_the_sick = {
+						type = ADM
+						cost = 50
+
+						monarch_admin_power = 1
+					}
+					illiterate_recites_saloks = {
+						type = DIP
+						cost = 50
+
+						monarch_diplomatic_power = 1
+					}
+					young_humility = {
+						type = MIL
+						cost = 50
+
+						monarch_military_power = 1
+					}
+				}
+			}
+			guru_tegh_bahadur = {
+				trigger = {
+					is_year = 1665
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1666
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1667
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1668
+					}
+					modifier = {
+						factor = 2
+						is_year = 1669
+					}
+					modifier = {
+						factor = 2
+						is_year = 1670
+					}
+				}
+				modifier = {
+					country_admin_power = 1
+				}
+				teachings = {
+					the_word_of_sikh = {
+						type = ADM
+						cost = 50
+
+						missionaries = 1
+					}
+					all_kings_must_pass = {
+						type = DIP
+						cost = 50
+
+						tolerance_heretic = 2
+					}
+					resist_persecution = {
+						type = MIL
+						cost = 50
+
+						hostile_attrition = 1
+					}
+				}
+			}
+			guru_gobind_singh = {
+				trigger = {
+					is_year = 1675
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1676
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1677
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1678
+					}
+					modifier = {
+						factor = 2
+						is_year = 1679
+					}
+					modifier = {
+						factor = 2
+						is_year = 1680
+					}
+				}
+				modifier = {
+					country_admin_power = 1
+				}
+				teachings = {
+					pluralism = {
+						type = ADM
+						cost = 50
+
+						advisor_cost = -0.1
+					}
+					dharam_yudh = {
+						type = DIP
+						cost = 50
+
+						war_taxes_cost_modifier = -0.5
+					}
+					the_khalsa_sikh = {
+						type = MIL
+						cost = 50
+
+						yearly_army_professionalism = 0.005
+					}
+				}
+			}
+			guru_granth_sahib = {
+				trigger = {
+					is_year = 1708
+					is_month = 3
+				}
+				chance = {
+					factor = 5
+					modifier = {
+						factor = 1.5
+						is_year = 1709
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1710
+					}
+					modifier = {
+						factor = 1.5
+						is_year = 1711
+					}
+					modifier = {
+						factor = 2
+						is_year = 1712
+					}
+					modifier = {
+						factor = 2
+						is_year = 1713
+					}
+				}
+				modifier = {
+					state_maintenance_modifier = -0.5
+					drill_decay_modifier = -0.25
+				}
+				teachings = {
+					eternally_living_guru = {
+						type = ADM
+						cost = 50
+
+						development_cost = -0.1
+					}
+					divine_justice = {
+						type = DIP
+						cost = 50
+
+						trade_efficiency = 0.1
+					}
+					the_unchanging_writing = {
+						type = MIL
+						cost = 50
+
+						drill_gain_modifier = 0.5
+					}
+				}
+			}
+		}
 	}
 	
 	harmonized_modifier = harmonized_dharmic
