@@ -19,6 +19,21 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 
+	// Load correct province mappings.
+	bool initProvinceMapper = false;
+	for (const auto& mod: sourceWorld.getMods())
+	{
+		if (commonItems::DoesFileExist("configurables/" + mod.name + "_province_mappings.txt"))
+		{
+			Log(LogLevel::Info) << ">> Found matching province mappings for mod [" << mod.name << "], loading.";
+			provinceMapper = mappers::ProvinceMapper("configurables/" + mod.name + "_province_mappings.txt");
+			initProvinceMapper = true;
+			break;
+		}
+	}
+	if (!initProvinceMapper)
+		provinceMapper = mappers::ProvinceMapper("configurables/province_mappings.txt");
+
 	Log(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	Log(LogLevel::Info) << "-> Reading Words";
@@ -797,12 +812,9 @@ void EU4::World::verifyCapitals()
 template <typename KeyType, typename ValueType> std::pair<KeyType, ValueType> get_max(const std::map<KeyType, ValueType>& x)
 {
 	using pairtype = std::pair<KeyType, ValueType>;
-	return *std::max_element(x.begin(),
-		 x.end(),
-		 [](const pairtype& p1, const pairtype& p2)
-		 {
-			 return p1.second < p2.second;
-		 });
+	return *std::max_element(x.begin(), x.end(), [](const pairtype& p1, const pairtype& p2) {
+		return p1.second < p2.second;
+	});
 }
 
 void EU4::World::verifyReligionsAndCultures()
@@ -1448,12 +1460,9 @@ void EU4::World::fixDuplicateNames()
 
 	// Reorder countries in list by development (highest -> lowest)
 	for (auto& countryBatch: nameMap)
-		std::sort(countryBatch.second.begin(),
-			 countryBatch.second.end(),
-			 [](auto a, auto b)
-			 {
-				 return a->getDevelopment() > b->getDevelopment();
-			 });
+		std::sort(countryBatch.second.begin(), countryBatch.second.end(), [](auto a, auto b) {
+			return a->getDevelopment() > b->getDevelopment();
+		});
 
 	// Now we iterate through all batches and sort out the names.
 	for (const auto& countryBatch: nameMap)

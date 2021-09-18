@@ -9,22 +9,22 @@ namespace fs = std::filesystem;
 #include "../../CK3World/Titles/Title.h"
 #include "CommonRegexes.h"
 
-mappers::ProvinceMapper::ProvinceMapper()
-{
-	Log(LogLevel::Info) << "-> Parsing province mappings";
-	registerKeys();
-	parseFile("configurables/province_mappings.txt");
-	clearRegisteredKeywords();
-	createMappings();
-	Log(LogLevel::Info) << "<> " << mappings.size() << " mappings loaded.";
-}
-
 mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
 	createMappings();
+}
+
+mappers::ProvinceMapper::ProvinceMapper(const std::string& fileName)
+{
+	Log(LogLevel::Info) << "-> Parsing province mappings";
+	registerKeys();
+	parseFile(fileName);
+	clearRegisteredKeywords();
+	createMappings();
+	Log(LogLevel::Info) << "<> " << mappings.size() << " mappings loaded.";
 }
 
 void mappers::ProvinceMapper::registerKeys()
