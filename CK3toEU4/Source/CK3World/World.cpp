@@ -514,9 +514,8 @@ void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
 
 void CK3::World::checkForIslam()
 {
-	for (const auto& [name, county]: countyDetails.getCountyDetails())
+	for (const auto& county: countyDetails.getCountyDetails() | std::views::values)
 	{
-		Log(LogLevel::Debug) << name << " - " << county->getFaith().second->getReligion().second->getName();
 		if (!county->getFaith().second)
 			continue;
 		if (!county->getFaith().second->getReligion().second)
