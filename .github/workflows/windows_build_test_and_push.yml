@@ -1,0 +1,66 @@
+name: Build, test and publish 
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build_and_test:
+    runs-on: [self-hosted, windows] 
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        submodules: recursive
+
+    - name: "Get previous tag"
+      if: ${{ github.event_name == 'push' }}
+      id: previoustag
+      uses: "WyriHaximus/github-action-get-previous-tag@v1"
+       
+    - name: "Build solution"
+      run: |
+       cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\"
+       .\MSBuild.exe -m -p:Configuration=Release $Env:GITHUB_WORKSPACE\CK3toEU4.sln
+       
+    - name: "Run tests"
+      run: |
+       cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release\
+       .\CK3ToEU4Tests.exe
+
+    - name: "Prepare release"
+      if: ${{ github.event_name == 'push' }}
+      run: |
+       cd "C:\Program Files\7-Zip\"
+       .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.8Hellenic.zip $Env:GITHUB_WORKSPACE\Release\*
+       
+    - name: "Upload binaries to release"
+      if: ${{ github.event_name == 'push' }}
+      uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ steps.previoustag.outputs.tag }}
+        allowUpdates: true
+        omitBodyDuringUpdate: true
+        omitNameDuringUpdate: true
+        artifacts: CK3toEU4-0.8Hellenic.zip
+        token: ${{ secrets.API_TOKEN_GITHUB }}
+        
+    - name: "Upload binaries to archive"
+      if: ${{ github.event_name == 'push' }}
+      uses: ncipollo/release-action@v1
+      with:
+        tag: windows_development_build
+        allowUpdates: true
+        omitBodyDuringUpdate: true
+        omitNameDuringUpdate: true
+        artifacts: CK3toEU4-0.8Hellenic.zip
+        token: ${{ secrets.API_TOKEN_GITHUB }}
+        
+    - name: "Cleanup"
+      if: ${{ true }}
+      run: |
+        Get-ChildItem -Path $Env:GITHUB_WORKSPACE -Recurse -Force | Remove-Item -force -recurse
+ 
