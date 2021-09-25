@@ -123,8 +123,8 @@ jobs:
        # Check versions of gcc, g++ and cmake
        gcc -v && g++ -v && cmake --version
        # Run your build commands next       
-       chmod u+x build_linux.sh
-       ./build_linux.sh
+       chmod u+x build_linux_foreign.sh
+       ./build_linux_foreign.sh
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
