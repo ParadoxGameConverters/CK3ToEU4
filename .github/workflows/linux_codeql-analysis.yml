@@ -15,8 +15,9 @@ on:
     - cron: '0 16 * * 6'
 
 jobs:
-  analyze:
-    name: Analyze
+  analyze_main:
+    name: Analyze Local
+    if: github.repository_owner == 'ParadoxGameConverters'
     runs-on: [self-hosted, linux]
 
     strategy:
@@ -61,3 +62,69 @@ jobs:
     - name: Cleanup
       uses: colpal/actions-clean@v1
       if: ${{ true }} # To ensure this step runs even when earlier steps fail      
+
+  analyze:
+    name: Analyze Foreign
+    if: github.repository_owner != 'ParadoxGameConverters'
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        # Override automatic language detection by changing the below list
+        # Supported options are ['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
+        language: ['cpp']
+        # Learn more...
+        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        # We must fetch at least the immediate parents so that if this is
+        # a pull request then we can checkout the head.
+        fetch-depth: 0
+        submodules: recursive
+
+    # Initializes the CodeQL tools for scanning.
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+        # If you wish to specify custom queries, you can do so here or in a config file.
+        # By default, queries listed here will override any specified in a config file. 
+        # Prefix the list here with "+" to use these queries and those in the config file.
+        # queries: ./path/to/local/query, your-org/your-repo/queries@main
+
+    # ℹ️ Command-line programs to run using the OS shell.
+    # 📚 https://git.io/JvXDl
+       
+    - name: Build solution
+      run: |
+       sudo apt-get update
+       sudo apt-get install libcurl4-openssl-dev
+       mkdir $HOME/usr
+       export PATH="$HOME/usr/bin:$PATH"
+       wget https://cmake.org/files/v3.17/cmake-3.17.2-Linux-x86_64.sh
+       chmod +x cmake-3.17.2-Linux-x86_64.sh
+       ./cmake-3.17.2-Linux-x86_64.sh --prefix=$HOME/usr --exclude-subdir --skip-license
+       sudo apt-key adv --fetch-keys https://repos.codelite.org/CodeLite.asc
+       sudo apt-add-repository 'deb https://repos.codelite.org/wx3.1.3/ubuntu/ bionic universe'
+       sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+       sudo apt-get update
+       sudo apt-get install gcc-11 g++-11
+       sudo apt-get install libwxbase3.1-0-unofficial3 libwxbase3.1unofficial3-dev libwxgtk3.1-0-unofficial3 libwxgtk3.1unofficial3-dev wx3.1-headers wx-common
+       # Link gcc-11 and g++-11 to their standard commands
+       sudo ln -s /usr/bin/gcc-11 /usr/local/bin/gcc
+       sudo ln -s /usr/bin/g++-11 /usr/local/bin/g++
+       # Export CC and CXX to tell cmake which compiler to use
+       export CC=/usr/bin/gcc-11
+       export CXX=/usr/bin/g++-11
+       # Check versions of gcc, g++ and cmake
+       gcc -v && g++ -v && cmake --version
+       # Run your build commands next       
+       chmod u+x build_linux.sh
+       ./build_linux.sh
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1

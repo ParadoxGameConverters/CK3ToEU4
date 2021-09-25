@@ -8,7 +8,9 @@ on:
       - master
 
 jobs:
-  build_and_test:
+  build_test_and_publish:
+    name: Build, test and publish local
+    if: github.repository_owner == 'ParadoxGameConverters'
     runs-on: [self-hosted, windows] 
     steps:
     - uses: actions/checkout@v2
@@ -64,3 +66,23 @@ jobs:
       run: |
         Get-ChildItem -Path $Env:GITHUB_WORKSPACE -Recurse -Force | Remove-Item -force -recurse
  
+  build_test:
+    name: Build and test foreign
+    if: github.repository_owner != 'ParadoxGameConverters'
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        submodules: recursive
+        
+    - name: "Build solution"
+      run: |
+       cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+       .\MSBuild.exe -m -p:Configuration=Release $Env:GITHUB_WORKSPACE\CK3toEU4.sln
+       
+    - name: "Run tests"
+      run: |
+       cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release
+       .\CK3ToEU4Tests.exe
