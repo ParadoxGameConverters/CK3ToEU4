@@ -1,0 +1,46 @@
+spriteTypes = {	
+	spriteType = {
+		name = "PLATIANDALUS"
+		texturefile = "gfx//event_pictures//plati_andalus_native.dds"
+	}
+	spriteType = {
+		name = "PLATINORSE"
+		texturefile = "gfx//event_pictures//plati_pagan_norse.dds"
+	}
+	spriteType = {
+		name = "PLATISHRINE"
+		texturefile = "gfx//event_pictures//plati_pagan_shrine.dds"
+	}
+	spriteType = {
+		name = "PLATIRUNE"
+		texturefile = "gfx//event_pictures//plati_pagan_runestone.dds"
+	}
+	spriteType = {
+		name = "PLATISHAMAN"
+		texturefile = "gfx//event_pictures//plati_pagan_shaman.dds"
+	}
+	spriteType = {
+		name = "PLATIJEWISH"
+		texturefile = "gfx//event_pictures//plati_jewish.dds"
+	}
+	spriteType = {
+		name = "PLATIZOROASTRIAN"
+		texturefile = "gfx//event_pictures//plati_zoroastrian.dds"
+	}
+	spriteType = {
+		name = "PLATIRENAISSANCE"
+		texturefile = "gfx//event_pictures//plati_pagan_renaissance.dds"
+	}
+	spriteType = {
+		name = "PLATIPRINTING"
+		texturefile = "gfx//event_pictures//plati_printing_pagan.dds"
+	}
+	spriteType = {
+		name = "PLATIGNOSTIC"
+		texturefile = "gfx//event_pictures//plati_gnostic.dds"
+	}
+	spriteType = {
+		name = "PLATIYAZIDI"
+		texturefile = "gfx//event_pictures//plati_yazidi.dds"
+	}
+}

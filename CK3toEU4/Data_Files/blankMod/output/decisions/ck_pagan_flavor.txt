@@ -1,0 +1,36 @@
+country_decisions = {
+
+	runestone_decision = {
+		potential = {
+			OR = {
+				AND = {
+					culture_group = scandinavian
+					religion_group = pagan						#in case they reform or find a custom faith
+				}
+				religion = norse_pagan_reformed
+			}
+			
+			NOT = {
+				has_ruler_modifier = plati_pagan_flavor_runestone_ancestor
+				has_ruler_modifier = plati_pagan_flavor_runestone_selfish
+			}
+			
+			OR = {							#for rulers that are worth something
+				adm = 4
+				dip = 4
+				mil = 4
+			}
+		}
+		
+		allow = {
+			is_at_war = no
+			years_of_income = 0.5
+		}
+		
+		effect = {
+			add_years_of_income = -0.5
+			country_event = { id = plati_flavor_ckeu.27 }
+		}
+	}
+	
+}

@@ -1,0 +1,551 @@
+norse_cultural_ideas = {
+	start = {
+		advisor_cost = -0.1			#Mead halls, Althingi tradition
+		naval_morale = 0.15			#Needs little explanation
+	}
+
+	bonus = { prestige = 1 }
+
+	trigger = {
+		OR = {
+			primary_culture = danish
+			primary_culture = norwegian
+			primary_culture = norse
+			primary_culture = elsinorian
+			primary_culture = ruotsish
+			primary_culture = holmgardrian
+			primary_culture = marisbaltician
+			primary_culture = miklagardrian
+		}
+	}
+	free = yes
+
+	norse_viking_fury = {
+		land_morale = 0.15			#Perhaps should tune it down to 10, but 15 seems fair for those fellas
+	}
+	norse_conquerors = {
+		promote_culture_cost = -0.25		#normans
+	}
+	norse_sea_identity = {
+		naval_attrition = -0.2
+		may_explore = yes
+	}
+	norse_vinlandsaga = {
+		colonists = 1
+		range = 0.33
+	}
+	norse_settle_homeland = {
+		development_cost = -0.1
+	}
+	norse_meritocracy = {				#Lawspeakers
+		global_unrest = -1
+	}
+	norse_regional_subjects = {									#north sea empire
+		liberty_desire_from_subject_development = -0.15
+	}
+}
+###################################################################
+iberian_muslim_cultural_ideas = {
+	start = {
+		tolerance_heathen = 4
+		global_institution_spread = 0.1
+	}
+
+	bonus = { technology_cost = -0.1 }
+
+	trigger = {
+		OR = {
+			culture_group = iberian
+			capital_scope = { region = iberia_region }
+		}
+		religion_group = muslim
+	}
+	free = yes
+
+	iberian_al_andalus = {
+		land_morale = 0.15			#Equivalent to Castilian/Spanish/Andalusian +15%
+	}
+	iberian_bastion_of_thought = {
+		idea_cost = -0.1				#Andalusian scholars, Ibn Arabi
+		monthly_piety = -0.001				
+	}	
+	iberian_andalusian_architecture = {
+		prestige = 1					#Alcazar, Alhambra
+	}
+	iberian_secure_african_ports = {
+		global_foreign_trade_power = 0.1
+		light_ship_cost = -0.1
+	}
+	iberian_slave_trade = {
+		trade_efficiency = 0.1
+	}
+	iberian_further_into_america = {
+		colonists = 1					#Iberian nation, duh!
+	}
+	iberian_global_caliphate = {
+		land_forcelimit_modifier = 0.33
+	}
+}
+###################################################################
+latgalian_cultural_ideas = {
+	start = {
+		republican_tradition = 0.3				#Eldership, Military Democracy tradition
+		infantry_cost = -0.15
+	}
+
+	bonus = { discipline = 0.05 }
+
+	trigger = {
+		primary_culture = latvian					#unlike estonia and lithuania, LVA and latvian culture has no ideas
+	}
+	free = yes
+
+	latgalian_hillforts = {
+		fort_maintenance_modifier = -0.15
+	}
+	latgalian_river_daugava = {								#daugava estuary, riga
+		trade_steering = 0.20
+	}
+	latgalian_forests_and_swamps = {
+		leader_land_manuever = 1
+	}
+	latgalian_festival_feast_tradition = {				#Martini, Jani, Veli etc
+		global_unrest = -1
+	}
+	latgalian_religious_pragmatism = {
+		religious_unity = 0.25
+	}
+	latgalian_atmoda = {							#latvian word for national awakening
+		same_culture_advisor_cost = -0.2
+	}
+	latgalian_riflemen = {						#wiki
+		infantry_power = 0.10
+		fire_damage = 0.05
+	}
+}
+###################################################################
+slavic_cultural_ideas = {
+	start = {
+		advisor_pool = 1
+		infantry_power = 0.1
+	}
+
+	bonus = { land_forcelimit_modifier = 0.25 }
+
+	trigger = {
+		culture_group = east_slavic
+	}
+	free = yes
+
+	slavic_boyars = {
+		nobles_loyalty_modifier = 0.1
+		nobles_influence_modifier = 0.1
+	}
+	slavic_byzantine_influence = {
+		global_institution_spread = 0.1
+	}
+	slavic_river_settlements = {						#viking route and settlements
+		global_own_trade_power = 0.15				
+	}
+	slavic_crush_the_nomads = {
+		shock_damage_received = -0.1
+	}
+	slavic_old_ties = {									#kievan rus knyaz politics - santa barbara
+		fabricate_claims_cost = -0.25
+	}
+	slavic_novgorod_merchants = {
+		merchants = 1
+	}
+	slavic_unite_the_rus = {
+		ae_impact = -0.15
+	}
+}
+###################################################################
+albion_cultural_ideas = {
+	start = {
+		infantry_power = 0.10						#same as england
+		culture_conversion_cost = -0.15				#normans
+	}
+
+	bonus = { privateer_efficiency = 0.15 }					#francis drake
+
+	trigger = {
+		culture_group = british							#Mostly for independent duchies in Britain
+	}
+	free = yes
+
+	albion_islanders = {
+		navy_tradition = 1
+	}
+	albion_charter_rights = {						#Magna Carta
+		diplomatic_reputation = 1
+	}
+	albion_costal_defenses = {
+		ship_durability = 0.05
+	}
+	albion_legacy_of_viking_wars = {				#viking invasions, normans
+		land_morale = 0.1
+	}
+	albion_forge_a_new_kingom = {						#anglo saxon england, prior to william the bad boy
+		core_creation = -0.1
+	}
+	albion_guarantees = {								#English Parliament
+		legitimacy = 1
+		republican_tradition = 0.3
+	}
+	albion_beyond_the_atlantic = {
+		global_colonial_growth = 20
+	}
+}
+###################################################################
+celtic_culture_ideas = {
+	start = {
+		mil_advisor_cost = -0.15			#clans
+		land_morale = 0.10
+	}
+
+	bonus = { global_sailors_modifier = 0.25 }
+
+	trigger = {
+		culture_group = gaelic
+	}
+	free = yes
+
+	celtic_highlanders = {
+		war_exhaustion = -0.03
+	}
+	celtic_ensure_clan_loyalty = {
+		nobles_loyalty_modifier = 0.10
+	}
+	celtic_repel_the_anglo_saxons = {
+		shock_damage = 0.1
+	}
+	celtic_centralize = {					#clan infighting
+		autonomy_change_time = -0.25
+	}
+	celtic_growth_of_agriculture = {				#potatoes
+		production_efficiency = 0.1				
+	}
+	celtic_english_laws = {
+		global_tax_modifier = 0.1
+	}
+	celtic_identity = {
+		prestige = 1
+	}
+}
+###################################################################
+ugric_cultural_ideas = {
+	start = {
+		shock_damage_received = -0.1
+		fort_maintenance_modifier = -0.2
+	}
+
+	bonus = { discipline = 0.05 }
+
+	trigger = {
+		culture_group = finno_ugric
+		always = no										#scrapped, needs more research
+	}
+	free = yes
+
+	ugric_uncompromising_terrain = {
+		hostile_attrition = 1
+	}
+	ugric_fierce_independence = {
+		defensiveness = 0.20
+	}
+	ugric_religious_pragmatism = {
+		tolerance_heathen = 1
+		tolerance_heretic = 2
+	}
+	ugric_seek_new_allies = {
+		diplomats = 1
+	}
+	ugric_welcome_foreigners = {
+		development_cost = -0.1
+	}
+	ugric_cultural_revival = {
+		same_culture_advisor_cost = -0.2
+	}
+	ugric_united_people = {
+		global_unrest = -1
+	}
+}
+###################################################################
+latin_muslim_cultural_ideas = {
+	start = {
+		tolerance_heathen = 4							#similarly to Ottomans and Andalusians
+		mercenary_discipline = 0.05
+	}
+
+	bonus = { global_spy_defence = 0.33 }
+
+	trigger = {
+		OR = {
+			culture_group = latin
+			capital_scope = { region = italy_region }				#emirate of Sicily, for example
+		}
+		religion_group = muslim
+	}
+	free = yes
+
+	latin_glorious_conquests = {
+		diplomatic_reputation = 1
+	}
+	latin_ancient_knowledge = {							#echoes of Islamic Golden age
+		technology_cost = -0.1
+	}
+	latin_christian_statesmen = {
+		state_maintenance_modifier = -0.33
+		dhimmi_influence_modifier = 0.1
+		monthly_piety = -0.001							#deviation from sharia
+	}
+	latin_christian_condottieri = {
+		mercenary_manpower = 0.33
+	}
+	latin_rival_andalusian_architecture = {
+		prestige = 1
+	}
+	latin_mediterranean_authority = {
+		galley_power = 0.2
+		navy_tradition_decay = -0.01
+	}
+	latin_victory_through_mercy = {
+		global_unrest = -1
+		dhimmi_loyalty_modifier = 0.05
+	}
+}
+###################################################################
+levantine_christian_cultural_ideas = {
+	start = {
+		global_manpower_modifier = 0.15
+		papal_influence = 2
+		monthly_fervor_increase = 0.25
+		church_power_modifier = 0.1
+	}
+
+	bonus = { prestige = 1 }
+
+	trigger = {
+		OR = {
+			culture_group = turko_semitic
+			capital_scope = { region = mashriq_region }
+		}
+		religion_group = christian									#in case crusaders are successful
+	}
+	free = yes
+
+	levantine_birthplace_of_christianity = {					#antioch
+		missionaries = 1
+	}
+	levantine_crusades = {										#crusader victory, outremer
+		discipline = 0.05
+	}
+	levantine_restoration_of_holy_land = {
+		build_cost = -0.15
+	}
+	levantine_pacify_the_tribes = {								#kurds, bedouins
+		harsh_treatment_cost = -0.25
+	}
+	levantine_crossroads_of_cultures = {
+		num_accepted_cultures = 1
+	}
+	levantine_western_and_eastern_war_thought = {
+		free_mil_policy = 1
+	}
+	levantine_outremer = {
+		tolerance_own = 2
+	}
+}
+###################################################################
+jewish_tribal_cultural_ideas = {
+	start = {
+		religious_unity = 0.15
+		discipline = 0.05
+	}
+
+	bonus = { trade_efficiency = 0.1 }
+
+	trigger = {
+		government = tribal					#usually for pagan tribals converting to Judaism
+		religion_group = jewish_group
+	}
+	free = yes
+
+	jewish_tribal_people_of_exile = {
+		same_culture_advisor_cost = -0.25
+	}
+	jewish_tribal_religious_toleration = {
+		tolerance_heathen = 3
+	}
+	jewish_tribal_diaspora = {
+		global_foreign_trade_power = 0.15
+	}
+	jewish_tribal_chosen_people = {
+		land_morale = 0.1
+	}
+	jewish_tribal_influential_rabbi = {
+		church_influence_modifier = 0.1
+		church_loyalty_modifier = 0.1
+	}
+	jewish_tribal_banking = {
+		inflation_reduction = 0.1
+	}
+	jewish_tribal_new_jerusalem = {
+		prestige_decay = -0.015
+	}
+}
+###################################################################
+arabempire_ideas = {
+	start = {
+		governing_capacity_modifier = 0.1
+		land_morale = 0.1
+	}
+
+	bonus = { global_institution_spread = 0.15 }
+
+	trigger = {
+		tag = ARB									#very often theres going to be a converted caliphate - why not add an idea set to them?
+		religion_group = muslim
+	}
+	free = yes
+
+	arabempire_the_last_prophet = {
+		tolerance_own = 2
+	}
+	arabempire_ships_of_the_desert = {
+		global_trade_power = 0.25
+	}
+	arabempire_masterful_horsemanship = {
+		cavalry_power = 0.25
+		cavalry_cost = -0.15
+	}
+	arabempire_restore_the_golden_age_of_islam = {
+		prestige = 0.5
+		idea_cost = -0.10
+	}
+	arabempire_red_sea_fleet = {
+		global_ship_trade_power = 0.25
+	}
+	arabempire_spice_trade_ambition = {
+		trade_steering = 0.2
+		merchants = 1
+	}
+	arabempire_regional_administration = {
+		state_maintenance_modifier = -0.25
+		num_accepted_cultures = 1
+	}
+}
+###################################################################
+egyptian_muslim_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		cavalry_power = 0.15
+	}
+
+	bonus = { global_tax_modifier = 0.15 }
+
+	trigger = {
+		primary_culture = al_misr_arabic					#often used by caliphates in egypt region, for example, ayyubids, sometimes even fatimids
+		religion_group = muslim
+	}
+	free = yes
+
+	egyptian_muslim_granary_of_mediterranean = {
+		production_efficiency = 0.1
+	}
+	egyptian_muslim_slave_soldiers = {
+		discipline = 0.05
+	}
+	egyptian_muslim_camel_riders = {
+		cavalry_cost = -0.2
+	}
+	egyptian_muslim_protecting_the_pilgrims = {
+		diplomatic_reputation = 1
+	}
+	egyptian_muslim_mediterranean_merchants = {
+		merchants = 1
+	}
+	egyptian_muslim_egyptian_madrasas = {
+		technology_cost = -0.05
+		global_institution_spread = 0.1
+	}
+	egyptian_muslim_sultan_of_egypt = {
+		prestige = 1
+	}
+}
+###################################################################
+axumite_ideas = {
+	start = {
+		tolerance_heathen = 3
+		discipline = 0.05
+	}
+
+	bonus = { technology_cost = -0.1 }
+
+	trigger = {
+		religion_group = jewish_group							#in case we have non-Israeli jewish nations
+		OR = {
+			capital_scope = { region = horn_of_africa_region }
+			capital_scope = { region = egypt_region }
+			capital_scope = { region = sahel_region }
+		}
+	}
+	free = yes
+
+	bti_legacy_of_queen_judith = {									#reusing Semien ideas
+	}
+	bti_mountain_kingdom = {
+	}
+	bti_kebra_nagast = {
+	}
+	bti_builders_and_artists = {
+	}
+	bti_gideon_dynasty = {
+	}
+	bti_lost_tribe = {
+	}
+	bti_haskalah = {
+	}
+}
+###################################################################
+african_christian_ideas = {
+	start = {
+		global_sailors_modifier = 0.2
+		land_attrition = -0.10
+	}
+
+	bonus = { colonists = 1 }					#Iberian influence
+
+	trigger = {	
+		religion_group = christian										#in case crusaders are successful
+		OR = {
+			capital_scope = { region = maghreb_region }
+			culture_group = maghrebi
+		}
+	}
+	free = yes
+
+	african_christian_ties_with_rome = {
+		papal_influence = 2
+	}
+	african_christian_berber_traditions = {						#unruly nomadic people
+		tolerance_heathen = 2
+	}
+	african_christian_establish_new_trade_hubs = {				#fezzan corridors, mediterranean trade
+		global_own_trade_power = 0.15
+	}
+	african_christian_bastion_of_faith = {						#unfriendly neighbors, geography
+		defensiveness = 0.20
+	}
+	african_christian_cross_saharan_trade = {
+		missionaries = 1
+	}
+	african_christian_haven_for_religious_refugees = {
+		global_institution_spread = 0.1
+	}
+	african_christian_enroach_on_pirate_strongholds = {
+		naval_forcelimit_modifier = 0.25
+	}
+}
+###################################################################

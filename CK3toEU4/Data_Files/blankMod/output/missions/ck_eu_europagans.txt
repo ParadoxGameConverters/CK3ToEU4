@@ -1,0 +1,139 @@
+#Missions for european pagans
+ck_eu_europagan_missions_1 = {
+
+	slot = 5
+	
+	has_country_shield = no
+	generic = yes
+	ai = yes
+	
+	potential = {
+		AND = {
+			capital_scope = {
+				continent = europe
+			}
+			religion_group = pagan
+		}
+	}
+	
+	ck_eu_europagan_missions_1_task_1 = {						#profit from war
+		icon = mission_entrepot_of_india
+		position = 1
+		
+		trigger = {
+			num_of_war_reparations = 4
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = plati_mis_mod_europagan_warprofit
+				duration = 7300
+			}
+		}
+	}
+	ck_eu_europagan_missions_1_task_2 = {						#raiding traditions
+		icon = mission_sponsor_piracy
+		position = 2
+		
+		trigger = {
+			num_ships_privateering = 50
+		}
+		
+		effect = {
+			add_treasury = 500
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 10
+			}
+		}
+	}
+	ck_eu_europagan_missions_1_task_3 = {						#wealth of homeland
+		icon = mission_african_gold
+		position = 3
+		
+		required_missions = { build_temples }
+		
+		trigger = {
+			all_states = {
+				has_state_edict = edict_encourage_development
+				NOT = { devastation = 0.1 }
+			}
+			is_in_deficit = no
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = plati_mis_mod_europagan_development
+				duration = 7300
+			}
+		}
+	}
+	ck_eu_europagan_missions_1_task_4 = {						#Syncretism
+		icon = mission_portuguese_ceylon
+		position = 4
+		
+		trigger = {
+			religious_unity = 0.95
+			num_of_owned_provinces_with = {
+				value = 30
+				NOT = { religion = ROOT }
+			}
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = plati_mis_mod_europagan_syncretic
+				duration = 7300
+			}
+		}
+	}
+	ck_eu_europagan_missions_1_task_5 = {						#pagan fury
+		icon = mission_the_french_menace
+		position = 5
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 379
+				province_id = 183
+				province_id = 118
+			}
+		}
+		
+		trigger = {
+			OR = {
+				has_won_war_against = {
+					who = FRA
+					max_years_since = 30
+				}
+				has_won_war_against = {
+					who = PAP
+					max_years_since = 30
+				}
+				has_won_war_against = {
+					who = HLR
+					max_years_since = 30
+				}
+				has_won_war_against = {
+					who = KOJ
+					max_years_since = 30
+				}
+				AND = {
+					NOT = {
+						exists = FRA
+						exists = PAP
+						exists = HLR
+						exists = KOJ
+					}
+					is_great_power = yes
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = plati_mis_mod_europagan_pagan_fury
+				duration = -1
+			}
+		}
+	}
+}
