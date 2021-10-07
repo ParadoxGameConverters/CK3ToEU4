@@ -1,0 +1,156 @@
+﻿l_english:
+ ############## Extra Modifiers for CK3 - EU4 (Missions, Events) ###############################
+ ########
+ plati_christian_mission_modifier: "Christian Mission"
+ desc_plati_christian_mission_modifier: "This province has a firmly established religious mission, spreading the word of Christ."
+ plati_christian_mission_boost: "Christian Technology"
+ desc_plati_christian_mission_boost: "Newly arrived theologians and missionaries have brought useful knowledge on European advancements in technology."
+ plati_christ_faith_enforced: "Faith Enforced"
+ desc_plati_christ_faith_enforced: ""
+ plati_pagan_influence_christ: "Pagan Influence"
+ desc_plati_pagan_influence_christ: ""
+ plati_pagan_cosmopolitan_nobility: "Cosmopolitan Nobility"
+ desc_plati_pagan_cosmopolitan_nobility: ""
+ plati_andalus_colonial_policy_religious_orders: "Religious orders in the New World"
+ desc_plati_andalus_colonial_policy_religious_orders: ""
+ plati_andalus_colonial_policy_amir_governors: "Amir overseas Viceroys"
+ desc_plati_andalus_colonial_policy_amir_governors: ""
+ plati_andalus_colonial_policy_dhimmi_governing: "Dhimmi colonial Governors"
+ desc_plati_andalus_colonial_policy_dhimmi_governing: ""
+ plati_conversion_efforts: "Converting Natives"
+ desc_plati_conversion_efforts: ""
+ plati_harsh_treatment: "Clashing with Natives"
+ desc_plati_harsh_treatment: ""
+ plati_protestant_influx: "Protestant Refugees"
+ desc_plati_protestant_influx: ""
+ plati_upkeeped_sacred_sites: "Upkeep of Sacred sites"
+ desc_plati_upkeeped_sacred_sites: ""
+ plati_sacred_sates_need_upkeep: "Sacred sites need Upkeep"
+ desc_plati_sacred_sates_need_upkeep: ""
+ plati_honoring_ancestor_codified: "Ancestor immortalized as Legend"
+ desc_plati_honoring_ancestor_codified: ""
+ plati_dipl_hospital: "Favorable Partners"
+ desc_plati_dipl_hospital: ""
+ plati_dipl_friends: "New Connections"
+ desc_plati_dipl_friends: ""
+ plati_feast_navy: "Ye ol' Sailors!"
+ desc_plati_feast_navy: ""
+ plati_feast_solder: "Feasts do help Morale"
+ desc_plati_feast_solder: ""
+ plati_feast_leader: "Honored Leadership"
+ desc_plati_feast_leader: ""
+ plati_feast_relig: "United in Prayers"
+ desc_plati_feast_relig: ""
+ plati_incompetent_ruler: "Incompetence"
+ desc_plati_incompetent_ruler: ""
+ 
+ #
+ 
+ plati_mis_mod_baltic_religious: "Steadfast Faith"
+ desc_plati_mis_mod_baltic_religious: ""
+ plati_mis_mod_baltic_nobles: "Supportive Nobles"
+ desc_plati_mis_mod_baltic_nobles: ""
+ plati_mis_mod_baltic_great_power: "Major Power"
+ desc_plati_mis_mod_baltic_plati_mis_mod_baltic_great_power: ""
+ plati_mis_mod_baltic_government: "Refined Governance"
+ desc_plati_mis_mod_baltic_government: ""
+ 
+ plati_mis_mod_europagan_warprofit: "Fearsome Raiders"
+ desc_plati_mis_mod_europagan_warprofit: ""
+ plati_mis_mod_europagan_development: "Prospering Times"
+ desc_plati_mis_mod_europagan_development: ""
+ plati_mis_mod_europagan_syncretic: "Pagan Cosmopolitanism"
+ desc_plati_mis_mod_europagan_syncretic: ""
+ plati_mis_mod_europagan_pagan_fury: "Pagan Fury"
+ desc_plati_mis_mod_europagan_pagan_fury: ""
+ 
+ plati_mis_mod_norse_vikings: "Vikings never left!"
+ desc_plati_mis_mod_norse_vikings: ""
+ plati_mis_mod_norse_vinlandsaga: "Vinlandsaga"
+ desc_plati_mis_mod_norse_vinlandsaga: ""
+ plati_mis_mod_norse_northseaemp: "North Sea Empire"
+ desc_plati_mis_mod_norse_northseaemp: ""
+ plati_mis_mod_norse_navalsup: "Scandinavian Maritime Industry"
+ desc_plati_mis_mod_norse_navalsup: ""
+ 
+ plati_mis_mod_eurmuslim_dhimmi: "New Minds, New Thoughts"
+ desc_plati_mis_mod_eurmuslim_dhimmi: ""
+ plati_mis_mod_eurmuslim_islam_sword: "Sword of Islam"
+ desc_plati_mis_mod_eurmuslim_islam_sword: ""
+ plati_mis_mod_eurmuslim_golden_age: "Revival of Science and Culture"
+ desc_plati_mis_mod_eurmuslim_golden_age: ""
+ plati_mis_mod_eurmuslim_ibn_battuta: "Legacy of Ibn Battuta"
+ desc_plati_mis_mod_eurmuslim_ibn_battuta: ""
+ 
+ #
+ 
+ plati_saaremaa_mod: "Pirates of Saaremaa"
+ desc_plati_saaremaa_mod: ""
+ 
+ plati_pagan_flavor_runestone_ancestor: "Raised a Runestone"
+ desc_plati_pagan_flavor_runestone_ancestor: "Our ruler has raised a runestone, honoring his ancestor."
+ 
+ plati_pagan_flavor_runestone_selfish: "Raised a Runestone"
+ desc_plati_pagan_flavor_runestone_selfish: "Our ruler has raised a runestone to commemorate his talents."
+ 
+ plati_pagan_flavor_sacrifices_human: "Human Sacrifices"
+ desc_plati_pagan_flavor_sacrifices_human: ""
+ 
+ plati_pagan_flavor_sacrifices_animal: "Animal Sacrifices"
+ desc_plati_pagan_flavor_sacrifices_animal: ""
+ 
+ plati_shaman_mod_prov: "Talented Local Priest"
+ desc_plati_shaman_mod_prov: ""
+ 
+ plati_pagan_syncretism: "Syncretism"
+ desc_plati_pagan_syncretism: ""
+ 
+ plati_pagan_antisyncr: "Disfavoring Syncretism"
+ desc_plati_pagan_antisyncr: ""
+ 
+ plati_ruler_worshipped: "Cult of Ruler"
+ desc_plati_ruler_worshipped: ""
+ 
+ #
+ 
+ plati_jewish_third_temple: "The Third Temple"
+ desc_plati_jewish_third_temple: ""
+ 
+ plati_jewish_high_priesthood: "Restored High Priesthood"
+ desc_plati_jewish_high_priesthood: ""
+ 
+ plati_jewish_david_warrior: "David's Mighty Warriors"
+ desc_plati_jewish_david_warrior: ""
+ 
+ #
+ 
+ plati_pagan_renaissance: "Pagan Revival"
+ desc_plati_pagan_renaissance: ""
+ 
+ #
+ 
+ plati_restored_persia: "Persia Restored"
+ desc_plati_restored_persia: ""
+ 
+ plati_achaemenid_legacy: "Achaemenid Legacy"
+ desc_plati_achaemenid_legacy: ""
+ 
+ plati_zoro_toler: "Merging of Traditions"
+ desc_plati_zoro_toler: ""
+ 
+ plati_zoro_miss: "Purity of Faith"
+ desc_plati_zoro_miss: ""
+ 
+ #
+ 
+ plati_seeking_gnosis: "Attaining Gnosis"
+ desc_plati_seeking_gnosis: ""
+ plati_return_to_creator: "Men seek Liberation"
+ desc_plati_return_to_creator: ""
+ 
+ plati_ruler_yazidi_adm: "Avatar of Cibrayil"
+ desc_plati_ruler_yazidi_adm: ""
+ plati_ruler_yazidi_dip: "Avatar of Ezazil"
+ desc_plati_ruler_yazidi_dip: ""
+ plati_ruler_yazidi_mil: "Avatar of Mikayil"
+ desc_plati_ruler_yazidi_adm: ""

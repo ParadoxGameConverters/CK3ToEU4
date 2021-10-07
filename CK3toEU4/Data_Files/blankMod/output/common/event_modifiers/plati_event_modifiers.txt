@@ -1,0 +1,266 @@
+plati_christian_mission_modifier = {			#Christian missionaries create a School/Church
+	local_missionary_strength = -0.10
+	local_institution_spread = 0.33
+	local_development_cost = -0.1
+}
+plati_christian_mission_boost = {			#Christian missionaries bring tech
+	technology_cost = -0.1
+}
+plati_christ_faith_enforced = {				#
+	tolerance_own = 1
+	tolerance_heathen = -2
+}
+plati_pagan_influence_christ = {			#
+	idea_cost = -0.1
+	church_loyalty_modifier = -0.1
+}
+plati_pagan_cosmopolitan_nobility = {			#
+	diplomatic_reputation = 1
+	nobles_loyalty_modifier = 0.05
+	nobles_influence_modifier = 0.1
+}
+plati_andalus_colonial_policy_religious_orders = {
+	native_assimilation = 0.2
+	establish_order_cost = -0.15
+	church_influence_modifier = 0.1
+}
+plati_andalus_colonial_policy_amir_governors = {
+	native_uprising_chance = -0.2
+	global_tariffs = 0.15
+	nobles_influence_modifier = 0.1
+}
+plati_andalus_colonial_policy_dhimmi_governing = {
+	colonists = 1
+	monthly_piety = -0.001
+	dhimmi_influence_modifier = 0.1
+}
+
+plati_conversion_efforts = {
+	global_missionary_strength = 0.015
+	native_assimilation = 0.33
+}
+plati_harsh_treatment = {
+	infantry_power = 0.10
+	tolerance_own = 1
+}
+plati_protestant_influx = {
+	global_institution_spread = 0.25
+	unrest_catholic_provinces = 2
+}
+
+plati_upkeeped_sacred_sites = {
+	prestige = 0.5
+	religious_unity = 0.15
+}
+plati_sacred_sates_need_upkeep = {
+	tolerance_own = -1
+	church_loyalty_modifier = -0.1
+}
+plati_honoring_ancestor_codified = {
+	prestige = 0.5
+	nobles_loyalty_modifier = 0.1
+}
+
+plati_dipl_hospital = {
+	diplomatic_reputation = 1
+}
+plati_dipl_friends = {
+	improve_relation_modifier = 0.35
+}
+plati_feast_navy = {
+	naval_morale = 0.1
+}
+plati_feast_solder = {
+	land_morale = 0.10
+}
+plati_feast_leader = {
+	mil_tech_cost_modifier = -0.1
+	army_tradition = 1
+}
+plati_feast_relig = {
+	tolerance_own = 2
+	religious_unity = 0.25
+}
+plati_incompetent_ruler = {
+	prestige = -1
+	prestige_decay = 0.01
+}
+
+
+###############################################
+
+plati_mis_mod_baltic_religious = {
+	tolerance_own = 2
+}
+plati_mis_mod_baltic_nobles = {
+	cavalry_cost = -0.20
+}
+plati_mis_mod_baltic_great_power = {
+	diplomatic_reputation = 1
+	diplomatic_upkeep = 1
+}
+plati_mis_mod_baltic_government = {
+	state_maintenance_modifier = -0.25
+}
+
+####
+
+plati_mis_mod_europagan_warprofit = {
+	diplomatic_reputation = 1
+	prestige_decay = -0.01
+}
+plati_mis_mod_europagan_development = {
+	production_efficiency = 0.20
+	build_cost = -0.15
+}
+plati_mis_mod_europagan_syncretic = {
+	idea_cost = -0.1
+	advisor_pool = 1
+}
+plati_mis_mod_europagan_pagan_fury = {
+	land_morale = 0.10
+}
+
+####
+
+plati_mis_mod_norse_vikings = {
+	naval_tradition_from_battle = 0.5
+	navy_tradition_decay = -0.01
+}
+plati_mis_mod_norse_vinlandsaga = {
+	prestige = 0.5
+	global_colonial_growth = 20
+}
+plati_mis_mod_norse_northseaemp = {
+	reduced_liberty_desire_on_same_continent = 10
+	diplomatic_upkeep = 1
+}
+plati_mis_mod_norse_navalsup = {
+	global_ship_recruit_speed = -0.2
+	global_sailors_modifier = 0.33
+}
+
+####
+
+plati_mis_mod_eurmuslim_dhimmi = {
+	global_institution_spread = 0.15
+	embracement_cost = -0.15
+}
+plati_mis_mod_eurmuslim_islam_sword = {
+	land_morale = 0.10
+}
+plati_mis_mod_eurmuslim_golden_age = {
+	idea_cost = -0.1
+	free_adm_policy = 1
+}
+plati_mis_mod_eurmuslim_ibn_battuta = {
+	global_foreign_trade_power = 0.25
+	envoy_travel_time = -0.15
+}
+
+####
+
+plati_saaremaa_mod = {
+	naval_maintenance_modifier = -0.1
+	naval_morale = 0.1
+}
+
+####
+
+plati_pagan_flavor_runestone_ancestor = {
+	prestige_decay = -0.01
+}
+plati_pagan_flavor_runestone_selfish = {
+	legitimacy = 1
+}
+
+####
+
+plati_pagan_flavor_sacrifices_human = {
+	tolerance_own = 1
+	harsh_treatment_cost = -0.15
+}
+plati_pagan_flavor_sacrifices_animal = {
+	tolerance_own = 1
+}
+plati_shaman_mod_prov = {
+	local_unrest = -2
+	tax_income = 1
+}
+plati_pagan_syncretism = {
+	religious_unity = 0.25
+}
+plati_pagan_antisyncr = {
+	global_heretic_missionary_strength = 0.02
+}
+plati_ruler_worshipped = {
+	global_tax_modifier = 0.10
+	prestige_decay = -0.01
+	devotion = 1
+	republican_tradition = -1
+	church_influence_modifier = -0.1
+}
+
+###
+
+plati_jewish_third_temple = {						#province, permanent
+	tolerance_own = 1
+	prestige = 1
+	local_manpower_modifier = 1
+}
+plati_jewish_high_priesthood = {					#permanent
+	governing_capacity_modifier = 0.1
+	church_loyalty_modifier = 0.1
+	church_influence_modifier = 0.1
+}
+plati_jewish_david_warrior = {
+	land_morale = 0.10
+	army_tradition_decay = -0.01
+}
+
+###
+
+plati_pagan_renaissance = {
+	idea_cost = -0.1
+	stability_cost_modifier = 0.5
+	global_missionary_strength = 0.05
+	missionary_maintenance_cost = -0.33
+}
+
+plati_restored_persia = {
+	prestige_decay = -0.01
+	trade_efficiency = 0.1
+}
+plati_achaemenid_legacy = {
+	governing_capacity_modifier = 0.1
+}
+plati_zoro_miss = {
+	global_missionary_strength = 0.02
+	religious_unity = -0.2
+}
+plati_zoro_toler = {
+	tolerance_own = -1
+	tolerance_heathen = 1
+	tolerance_heretic = 1
+}
+plati_seeking_gnosis = {
+	idea_cost = -0.1
+	technology_cost = -0.1
+}
+plati_return_to_creator = {
+	land_morale = 0.15
+	global_tax_modifier = -0.10
+	production_efficiency = -0.10
+}
+plati_ruler_yazidi_adm = {
+	global_tax_modifier = 0.15
+	global_unrest = -2
+}
+plati_ruler_yazidi_dip = {
+	trade_efficiency = 0.15
+	placed_merchant_power = 3
+}
+plati_ruler_yazidi_mil = {
+	land_morale = 0.15
+	war_exhaustion = -0.02
+}

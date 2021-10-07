@@ -1,0 +1,776 @@
+country_decisions = {
+
+	swedish_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_sweden_flag }
+			NOT = {
+				exists = SWE
+				tag = DAN
+				tag = FIN
+				tag = SCA
+			}
+			primary_culture = swedish
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1
+				province_id = 2
+				province_id = 5
+				province_id = 8
+				province_id = 9
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 1
+				owns_core_province = 2
+				owns_core_province = 5
+				owns_core_province = 8
+				owns_core_province = 9
+			}
+		}
+		
+		effect = {
+			change_tag = SWE
+			set_country_flag = formed_sweden_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	finnish_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_finland_flag }
+			NOT = {
+				exists = FIN
+				tag = SWE
+				tag = SCA
+				tag = DAN
+			}
+			OR = {
+				primary_culture = finnish
+				primary_culture = komi
+				primary_culture = mordvin
+				primary_culture = khanty
+				primary_culture = meshchera
+			}
+			
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 19
+				province_id = 27
+				province_id = 28
+				province_id = 29
+				province_id = 31
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 19
+				owns_core_province = 27
+				owns_core_province = 28
+				owns_core_province = 29
+				owns_core_province = 31
+			}
+		}
+		
+		effect = {
+			change_tag = FIN
+			set_country_flag = formed_finland_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	denmark_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_danmark_flag }
+			NOT = {
+				exists = DAN
+				tag = FIN
+				tag = SCA
+				tag = SWE
+			}
+			OR = {
+				primary_culture = norse
+				primary_culture = danish
+			}
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 6
+				province_id = 12
+				province_id = 14
+				province_id = 15
+				province_id = 1983
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 6
+				owns_core_province = 12
+				owns_core_province = 14
+				owns_core_province = 15
+				owns_core_province = 1983
+			}
+		}
+		
+		effect = {
+			change_tag = DAN
+			set_country_flag = formed_danmark_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	portugal_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = formed_portugal_flag }
+			NOT = {
+				exists = POR
+				tag = ADU
+				tag = CAS
+				tag = SPA
+			}
+			primary_culture = portugese
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 227
+				province_id = 229
+				province_id = 230
+				province_id = 231
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			AND = {
+				owns_core_province = 227
+				owns_core_province = 229
+				owns_core_province = 230
+				owns_core_province = 231
+			}
+			OR = {
+				AND = {
+					religion_group = christian
+					religious_unity = 0.8
+				}
+			}
+		}
+		effect = {
+			change_tag = POR
+			set_country_flag = formed_portugal_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	aragon_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = formed_aragon_flag }
+			NOT = {
+				exists = ARA
+				tag = POR
+				tag = CAS
+				tag = SPA
+			}
+			OR = {
+				primary_culture = aragonese
+				primary_culture = catalan
+			}
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 220
+				province_id = 212
+				province_id = 213
+				province_id = 214
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			AND = {
+				owns_core_province = 220
+				owns_core_province = 212
+				owns_core_province = 213
+				owns_core_province = 214
+			}
+			OR = {
+				AND = {
+					religion_group = christian
+					religious_unity = 0.8
+				}
+			}
+		}
+		effect = {
+			change_tag = ARA
+			set_country_flag = formed_aragon_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	lithuania_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = formed_lihuania_flag }
+			NOT = {
+				exists = LIT
+				tag = POL
+				tag = PLC
+			}
+			primary_culture = lithuanian
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 271
+				province_id = 272
+				province_id = 270
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			AND = {
+				owns_core_province = 271
+				owns_core_province = 272
+				owns_core_province = 270
+			}
+		}
+		effect = {
+			change_tag = LIT
+			set_country_flag = formed_lihuania_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	############################################################################################################################################################
+	veneto_nation = {
+		major = yes
+		potential = {
+			NOT = { has_country_flag = formed_venice_flag }
+			NOT = {
+				exists = VEN
+				tag = ITA
+				tag = HAB
+				tag = MLO
+			}
+			OR = {
+				primary_culture = venetian
+				primary_culture = lombard
+				primary_culture = umbrian
+			}
+			was_never_end_game_tag_trigger = yes
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 112
+				province_id = 1774
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			AND = {
+				owns_core_province = 112
+				owns_core_province = 1774
+			}
+		}
+		effect = {
+			change_tag = VEN
+			set_country_flag = formed_venice_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
+				change_government = republic
+				add_government_reform = venice_merchants_reform
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	###############################################
+	naples_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_naples_flag }
+			NOT = {
+				exists = NAP
+				tag = SIC
+				tag = PAP
+			}
+			primary_culture = neapolitan
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 121
+				province_id = 122
+				province_id = 123
+				province_id = 2983
+				province_id = 2985
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 121
+				owns_core_province = 122
+				owns_core_province = 123
+				owns_core_province = 2983
+				owns_core_province = 2985
+			}
+		}
+		
+		effect = {
+			change_tag = NAP
+			set_country_flag = formed_naples_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	##########################################################
+	novgorod_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_novgorod_flag }
+			NOT = {
+				exists = NOV
+				tag = RUS
+				tag = MOS
+			}
+			primary_culture = novgorodian
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 310
+				province_id = 33
+				province_id = 2749
+				province_id = 309
+				province_id = 4260
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 310
+				owns_core_province = 33
+				owns_core_province = 2749
+				owns_core_province = 309
+				owns_core_province = 4260
+			}
+		}
+		
+		effect = {
+			change_tag = NOV
+			set_country_flag = formed_novgorod_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					NOT = {
+						government = republic
+					}
+				}
+				change_government = republic
+				add_government_reform = veche_republic
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+	###########################################
+	hungary_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_hungary_flag }
+			NOT = {
+				exists = HUN
+				tag = HAB
+				tag = BOH
+				tag = SER
+				tag = POL
+			}
+			primary_culture = hungarian
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 153
+				province_id = 155
+				province_id = 157
+				province_id = 162
+				province_id = 1951
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			AND = {
+				owns_core_province = 153
+				owns_core_province = 155
+				owns_core_province = 157
+				owns_core_province = 162
+				owns_core_province = 1951
+			}
+		}
+		
+		effect = {
+			change_tag = HUN
+			set_country_flag = formed_hungary_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	###########################################
+	burgundy_nation = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = formed_burgundy_flag }
+			NOT = {
+				exists = BUR
+				tag = FRA
+				tag = NRM
+				tag = HAB
+				tag = PRO
+			}
+			culture_group = french
+			NOT = { government_rank = 2 }
+			was_never_end_game_tag_trigger = yes
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 191
+				province_id = 1877
+				province_id = 4392
+				province_id = 203
+				province_id = 204
+				province_id = 205
+				province_id = 4719
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			primary_culture = burgundian
+			
+			AND = {
+				owns_core_province = 4719
+				owns_core_province = 4392
+				owns_core_province = 1877
+				owns_core_province = 205
+				owns_core_province = 204
+				owns_core_province = 203
+				owns_core_province = 191
+			}
+		}
+		
+		effect = {
+			change_tag = BUR
+			set_country_flag = formed_burgundy_flag
+			swap_non_generic_missions = yes
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

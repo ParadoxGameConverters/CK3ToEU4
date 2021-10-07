@@ -1,0 +1,159 @@
+ck_eu_zoroastrian_missions_1 = {
+
+	slot = 1
+	
+	has_country_shield = yes
+	generic = no
+	ai = yes
+	
+	potential = {
+		religion_group = zoroastrian_group
+		NOT = { tag = PER }								#they got missions of their own
+	}
+	
+	ck_eu_zoroastrian_missions_1_task_1 = {
+	
+		icon = mission_persian_soldiers			#rising flame
+		
+		position = 1
+		
+		trigger = {
+			num_of_active_blessings = 1
+		}
+		
+		effect = {
+			add_permanent_claim = 421
+			add_permanent_claim = 4430
+			add_permanent_claim = 2223
+			add_permanent_claim = 441
+			add_permanent_claim = 2235
+		}
+	}
+	ck_eu_zoroastrian_missions_1_task_2 = {
+	
+		icon = mission_arabian_fort			#keepers of fire
+		
+		position = 2
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 421
+				province_id = 4430
+				province_id = 2223
+				province_id = 441
+				province_id = 2235
+			}
+		}
+		
+		required_missions = {
+			ck_eu_zoroastrian_missions_1_task_1
+		}
+		
+		trigger = {
+			421 = { country_or_non_sovereign_subject_holds = ROOT }
+			4430 = { country_or_non_sovereign_subject_holds = ROOT }
+			2223 = { country_or_non_sovereign_subject_holds = ROOT }
+			441 = { country_or_non_sovereign_subject_holds = ROOT }
+			2235 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		effect = {
+			persia_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ck_eu_zoroastrian_missions_1_task_3 = {
+	
+		icon = mission_into_the_west			#restore persia
+		
+		position = 3
+		
+		provinces_to_highlight = {
+			region = persia_region
+		}
+		
+		required_missions = {
+			ck_eu_zoroastrian_missions_1_task_2
+		}
+		
+		trigger = {
+			persia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion_group = zoroastrian_group
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = plati_restored_persia
+				duration = -1
+			}
+		}
+	}
+	ck_eu_zoroastrian_missions_1_task_4 = {
+	
+		icon = mission_into_persia_1			#revive the empire
+		
+		position = 4
+		
+		required_missions = {
+			ck_eu_zoroastrian_missions_1_task_3
+		}
+		
+		trigger = {
+			government_rank = 3
+			is_great_power = yes
+		}
+		
+		effect = {
+			anatolia_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			mashriq_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ck_eu_zoroastrian_missions_1_task_5 = {
+	
+		icon = mission_into_persia_2			#
+		
+		position = 5
+		
+		required_missions = {
+			ck_eu_zoroastrian_missions_1_task_4
+		}
+		
+		trigger = {
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mashriq_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = plati_achaemenid_legacy
+				duration = -1
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+plati_event_timer = { }
+
+#these are invisible timer modifiers to prevent an event from firing too often, they do not need localization
+
+plati_first_event_timer = { }
+plati_second_event_timer = { }
+plati_third_event_timer = { }
+plati_fourth_event_timer = { }
+plati_fifth_event_timer = { }
+plati_sixt_event_timer = { }
+plati_eight_event_timer = { }
+plati_ten_event_timer = { }
+plati_twelve_event_timer = { }
+plati_thirteen_event_timer = { }
+plati_fifteen_event_timer = { }
+plati_sixteen_event_timer = { }
+plati_ninethen_event_timer = { }
+
+plati_twenty_event_timer = { }
+plati_twenone_event_timer = { }
+plati_twentwo_event_timer = { }
+plati_twenthree_event_timer = { }
+plati_twenfour_event_timer = { }
+plati_twenfive_event_timer = { }
+plati_twensux_event_timer = { }
+plati_twensev_event_timer = { }
+plati_tweneht_event_timer = { }
+plati_twennin_event_timer = { }
+plati_thirteh_event_timer = { }
+plati_thirton_event_timer = { }
+plati_thirtwo_event_timer = { }
+plati_thirthr_event_timer = { }
+plati_thirfour_event_timer = { }
+plati_thirfiv_event_timer = { }
+plati_thirsix_event_timer = { }
+plati_thirsev_event_timer = { }
+plati_thireig_event_timer = { }
+plati_thirnin_event_timer = { }
+plati_fourtin_event_timer = { }
+
+plati_fire_once_pagan = { }
+plati_fire_once_printing = { }
+
+plati_neighbor_cooldown = { }

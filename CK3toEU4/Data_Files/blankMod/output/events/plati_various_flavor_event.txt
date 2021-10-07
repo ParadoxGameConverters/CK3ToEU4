@@ -1,0 +1,2900 @@
+#
+# Various flavor events for European Pagans, Jews, Andalusians and Christians that border pagans
+#
+# Scripted by Plati
+# 05.10.2021
+#
+namespace = plati_flavor_ckeu
+country_event = {
+	id = plati_flavor_ckeu.1
+	
+	title = "plati_flavor_ckeu.EVTNAME1"				#Christian Mission
+	desc = "plati_flavor_ckeu.EVTDESC1"
+	
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_first_event_timer				#Timer, so that event doesnt fire too often
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+			NOT = { has_province_modifier = plati_christian_mission_modifier }
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_first_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+		random_owned_province = { 
+			limit = { 
+				is_state = yes
+				is_capital = no
+				has_owner_religion = yes
+				NOT = { has_province_modifier = plati_christian_mission_modifier }
+			}
+			save_event_target_as = plati_mission_province
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA1"				#Very well, let them come
+		ai_chance = {
+			factor = 20
+		}
+		event_target:plati_mission_province = {
+			add_permanent_province_modifier = {
+				name = "plati_christian_mission_modifier"
+				duration = -1
+			}
+			change_religion = catholic
+			add_base_tax = 1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB1"				#They are not welcome here
+		ai_chance = {
+			factor = 80
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.2
+	
+	title = "plati_flavor_ckeu.EVTNAME2"				#Christian Mission - Converts other provinces
+	desc = "plati_flavor_ckeu.EVTDESC2"
+	
+	picture = RELIGIOUS_CONVERSION_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_second_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			has_province_modifier = plati_christian_mission_modifier
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+			NOT = { has_province_modifier = plati_christian_mission_modifier }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_second_event_timer
+				duration = 3650
+				hidden = yes
+			}
+			random_owned_province = {
+				limit = { 
+					is_state = yes
+					is_capital = no
+					has_owner_religion = yes
+					NOT = { has_province_modifier = plati_christian_mission_modifier }
+				}
+				save_event_target_as = plati_spreading_faith_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA2"						#Let them continue
+		event_target:plati_spreading_faith_province = {
+			change_religion = catholic
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB2"							#Banish them from realm
+		every_owned_province = {
+			limit = { has_province_modifier = plati_christian_mission_modifier }
+			remove_province_modifier = plati_christian_mission_modifier
+		}
+		if = {
+			limit = {
+				has_country_modifier = plati_christian_mission_boost
+			}
+			remove_country_modifier = plati_christian_mission_boost
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC2"							#Cut them down
+		highlight = yes
+		trigger = { ruler_has_personality = cruel_personality }
+		add_years_of_income = 0.1
+		every_owned_province = {
+			limit = { has_province_modifier = plati_christian_mission_modifier }
+			remove_province_modifier = plati_christian_mission_modifier
+		}
+		if = {
+			limit = {
+				has_country_modifier = plati_christian_mission_boost
+			}
+			remove_country_modifier = plati_christian_mission_boost
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.3
+	
+	title = "plati_flavor_ckeu.EVTNAME3"				#Christian mission brings technology
+	desc = "plati_flavor_ckeu.EVTDESC3"
+	
+	picture = BIG_BOOK_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_third_event_timer
+			has_country_modifier = plati_christian_mission_boost
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			has_province_modifier = plati_christian_mission_modifier
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_third_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA3"				#Useful
+		add_country_modifier = { 
+			name = plati_christian_mission_boost
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB3"				#Useful, scholar
+		highlight = yes
+		trigger = {
+			ruler_has_personality_ancestor = { key = scholar }
+		}
+		define_advisor = {
+			type = theologian
+			skill = 3
+			discount = yes
+			religion = catholic
+		}
+		add_country_modifier = { 
+			name = plati_christian_mission_boost
+			duration = 1825
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.4
+	
+	title = "plati_flavor_ckeu.EVTNAME4"			#Pagan merchants harrased
+	desc = "plati_flavor_ckeu.EVTDESC4"
+	
+	picture = FEUDALISM_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_fourth_event_timer
+		}
+		religion_group = christian
+		any_known_country = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fourth_event_timer
+				duration = 4000
+				hidden = yes
+			}
+			random_known_country = {
+				limit = {
+					religion_group = pagan
+					capital_scope = {
+						continent = europe
+					}
+				}
+				save_event_target_as = angered_pagan_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA4"			#Heh, who am I to stop them
+		event_target:angered_pagan_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB4"			#Seize their wealth
+		highlight = yes
+		trigger = {
+			ruler_has_personality = greedy_personality
+		}
+		event_target:angered_pagan_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_displeased
+			}
+		}
+		add_years_of_income = 0.2
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC4"			#Put an end to this
+		event_target:angered_pagan_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+		add_dip_power = 25
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.5
+	
+	title = "plati_flavor_ckeu.EVTNAME5"				#Religious doubts - pagan influence
+	desc = "plati_flavor_ckeu.EVTDESC5"
+	
+	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_fifth_event_timer
+		}
+		AND = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		any_known_country = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fifth_event_timer
+				duration = 2190
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA5"			#BAD
+		ai_chance = {
+			factor = 70
+		}
+		add_country_modifier = { 
+			name = plati_christ_faith_enforced
+			duration = 1825
+		}
+		add_stability = -1
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB5"			#Oh well
+		ai_chance = {
+			factor = 30
+		}
+		add_country_modifier = { 
+			name = plati_pagan_influence_christ
+			duration = 1825
+		}
+		if = {
+			limit = { culture_group = germanic }
+			random_owned_province = {
+					limit = { has_owner_religion = yes }
+					change_religion = norse_pagan
+				}
+		}
+				else_if {
+					limit = { culture_group = scandinavian }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = norse_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = latin }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = hellenic_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = iberian }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = hellenic_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = finno_ugric }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = finnish_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = west_slavic }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = slavic_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = east_slavic }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = slavic_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = baltic }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = baltic_pagan
+					}
+				}
+				else_if {
+					limit = { culture_group = byzantine }
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = hellenic_pagan
+					}
+				}
+				else = {
+					random_owned_province = {
+						limit = { has_owner_religion = yes }
+						change_religion = animism
+					}
+				}
+		every_neighbor_country = {
+			limit = {
+				religion_group = christian
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_mildly_displeased
+			}
+		}
+		if = {
+			limit = {
+				exists = PAP
+				religion = catholic
+			}
+			PAP = {
+				add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.6
+	
+	title = "plati_flavor_ckeu.EVTNAME6"						#Cosmopolitan Nobility
+	desc = "plati_flavor_ckeu.EVTDESC6"
+	
+	picture = CENTRAL_AFRICAN_PORTUGUESE_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_sixt_event_timer
+			has_country_modifier = plati_pagan_cosmopolitan_nobility
+		}
+		AND = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+			has_estate = estate_nobles
+		}
+		any_known_country = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+			government_rank = 2
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_sixt_event_timer
+				duration = 3650
+				hidden = yes
+			}
+			random_country = {
+				limit = { 
+					religion_group = pagan
+					capital_scope = { continent = europe }
+					government_rank = 2
+				}
+				save_event_target_as = plati_pagan_marriage_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA6"						#Ignore
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+		add_country_modifier = { 
+			name = plati_pagan_cosmopolitan_nobility
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB6"						#Ask to stop
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC6"						#Insult
+		highlight = yes
+		trigger = { ruler_has_personality_ancestor = { key = zealot } }
+		event_target:plati_pagan_marriage_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = insulted
+			}
+		}
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.7
+	
+	title = "plati_flavor_ckeu.EVTNAME7"					#Andalusian colonial policy
+	desc = "plati_flavor_ckeu.EVTDESC7"						#High chance Iberian Muslims reign supreme in coverted save - such a major and unique state needs flavor
+	
+	picture = AFRICAN_INDIAN_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		OR = {
+			tag = ADU
+			AND = {
+				government_rank = 2
+				OR = {
+					culture_group = iberian
+					capital_scope = { region = iberia_region }
+				}
+				religion_group = muslim
+				NOT = { exists = ADU }
+			}
+		}
+		colony = 1
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA7"
+		add_country_modifier = {
+			name = plati_andalus_colonial_policy_religious_orders
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB7"
+		add_country_modifier = {
+			name = plati_andalus_colonial_policy_amir_governors
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC7"
+		add_country_modifier = {
+			name = plati_andalus_colonial_policy_dhimmi_governing
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.8
+	
+	title = "plati_flavor_ckeu.EVTNAME8"					#Andalusians and native faith dispute
+	desc = "plati_flavor_ckeu.EVTDESC8"
+	
+	picture = PLATIANDALUS
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_eight_event_timer
+		}
+		religion_group = muslim
+		any_known_country = {
+			is_colonial_nation_of = ROOT
+			religion_group = muslim
+			NOT = { has_country_modifier = plati_conversion_efforts }
+			NOT = { has_country_modifier = plati_harsh_treatment }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 420
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_eight_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA8"					#Leave the natives be
+		random_country = {
+			limit = {
+				is_colonial_nation_of = ROOT
+				NOT = { has_country_modifier = plati_conversion_efforts }
+				NOT = { has_country_modifier = plati_harsh_treatment }
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_mildly_displeased
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB8"					#It is our duty to convert them
+		random_country = {
+			limit = {
+				is_colonial_nation_of = ROOT
+				NOT = { has_country_modifier = plati_conversion_efforts }
+				NOT = { has_country_modifier = plati_harsh_treatment }
+			}
+			add_country_modifier = { 
+				name = plati_conversion_efforts
+				duration = 2000
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+		add_years_of_income = -0.25
+		add_piety = 0.15
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC8"					#Put them to the Sword
+		random_country = {
+			limit = {
+				is_colonial_nation_of = ROOT
+				NOT = { has_country_modifier = plati_conversion_efforts }
+				NOT = { has_country_modifier = plati_harsh_treatment }
+			}
+			add_country_modifier = { 
+				name = plati_harsh_treatment
+				duration = 2000
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+		add_years_of_income = -0.25
+		add_piety = -0.15
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.9
+	
+	title = "plati_flavor_ckeu.EVTNAME9"							#Protestants flee to Andalusia
+	desc = "plati_flavor_ckeu.EVTDESC9"
+	
+	picture = DHIMMI_ESTATE_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		OR = {
+			tag = ADU
+			AND = {
+				government_rank = 2
+				OR = {
+					culture_group = iberian
+					capital_scope = { region = iberia_region }
+				}
+				religion_group = muslim
+				NOT = { exists = ADU }
+			}
+		}
+		any_known_country = {
+			religion_group = christian
+			NOT = { religion = protestant }
+			NOT = { has_idea_group = humanist_ideas }
+			capital_scope = { continent = europe }
+			num_of_owned_provinces_with = {
+				value = 1
+				religion = protestant
+				is_overseas = no
+			}
+		}
+		current_age = age_of_reformation
+	}
+	
+	mean_time_to_happen = {
+		months = 420
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					religion_group = christian
+					NOT = { religion = protestant }
+					NOT = { has_idea_group = humanist_ideas }
+					capital_scope = { continent = europe }
+					num_of_owned_provinces_with = {
+						value = 1
+						religion = protestant
+						is_overseas = no
+					}
+				}
+				save_event_target_as = plati_protestant_refugee_country
+			}
+			random_owned_province = {
+				limit = { 
+					is_state = yes
+					is_capital = no
+					has_owner_religion = yes
+				}
+				save_event_target_as = plati_protestant_refugee_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA9"					#We shall welcome them with open arms
+		ai_chance = {
+			factor = 95
+		}
+		add_country_modifier = { 
+			name = plati_protestant_influx
+			duration = 3650
+		}
+		event_target:plati_protestant_refugee_province = {
+			change_religion = protestant
+			add_base_tax = 1
+			add_base_production = 1
+			add_province_modifier = { 
+				name = religious_zeal_at_conv
+				duration = 3650
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_dhimmi
+			loyalty = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+		event_target:plati_protestant_refugee_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = welcomed_fleeing_protestants
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB9"					#We do not need them
+		ai_chance = {
+			factor = 5
+		}
+		event_target:plati_protestant_refugee_country = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.10
+	
+	title = "plati_flavor_ckeu.EVTNAME10"				#Pope displeased with tolerating neighboring pagans
+	desc = "plati_flavor_ckeu.EVTDESC10"
+	
+	picture = BAD_POPE_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_ten_event_timer
+		}
+		religion = catholic
+		exists = PAP
+		any_neighbor_country = {
+			religion_group = pagan
+			NOT = { has_country_modifier = plati_neighbor_cooldown }
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 420
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					religion_group = pagan
+					NOT = { has_country_modifier = plati_neighbor_cooldown }
+				}
+				save_event_target_as = plati_nearby_pagan_pope_target
+				add_country_modifier = { 
+					name = plati_neighbor_cooldown
+					duration = 3650
+					hidden = yes
+				}
+			}
+			add_country_modifier = {
+				name = plati_ten_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA10"				#That's none of his business
+		ai_chance = {
+			factor = 30
+		}
+		PAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB10"				#There is truth in his words, prepare for war
+		ai_chance = {
+			factor = 70
+		}
+		event_target:plati_nearby_pagan_pope_target = {
+			country_event = { 
+				id = plati_flavor_ckeu.11
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+			reverse_add_casus_belli = {
+				target = ROOT
+				type = cb_border_war
+				months = 12
+			}
+		}
+		add_papal_influence = 10
+		PAP = {
+			add_prestige = 10
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.11
+	
+	title = "plati_flavor_ckeu.EVTNAME11"
+	desc = "plati_flavor_ckeu.EVTDESC11"
+	
+	picture = BAD_POPE_eventPicture
+	
+	is_triggered_only = yes				#event
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA11"				#How dare they
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.12
+	
+	title = "plati_flavor_ckeu.EVTNAME12"							#Unorthodox Catholic scientist harrased
+	desc = "plati_flavor_ckeu.EVTDESC12"
+	
+	picture = DIPLOMAT_INTERROGATION_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twelve_event_timer
+		}
+		NOT = {
+			advisor = theologian
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twelve_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA12"					#He is more than welcome to stay here
+		define_advisor = {
+			type = theologian
+			skill = 2
+			discount = yes
+			religion = catholic
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB12"					#We have enough odd people already
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 5
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.13
+	
+	title = "plati_flavor_ckeu.EVTNAME13"				#Secret pagan gathering discovered
+	desc = "plati_flavor_ckeu.EVTDESC13"
+	
+	picture = PLATISHRINE
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirteen_event_timer
+			full_idea_group = humanist_ideas
+			tag = ADU
+		}
+		OR = {
+			religion_group = christian
+			religion_group = muslim
+		}
+		any_neighbor_country = {
+			religion_group = pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirteen_event_timer
+				duration = 3650
+				hidden = yes
+			}
+			random_neighbor_country = {
+				limit = {
+					religion_group = pagan
+				}
+				save_event_target_as = plati_pagan_cult_exile_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA13"		#Execute the heathens
+		add_stability = -1
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB13"		#Their funny traditions are of no concern to us
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC13"		#Convince them to denounce their ways
+		highlight = yes
+		trigger = {
+			ruler_has_personality_ancestor = { key = silver_tongue }
+		}
+		add_dip_power = -25
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.14
+	
+	title = "plati_flavor_ckeu.EVTNAME14"				#Pagans joining the Religious league
+	desc = "plati_flavor_ckeu.EVTDESC14"
+	
+	picture = HUSSITE_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		religion_group = pagan
+		OR = {
+			in_league = catholic
+			in_league = protestant
+			in_league = cathar
+			in_league = waldensian
+			in_league = reformed
+			in_league = hussite
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA14"				#Our reasons for backing Catholics are our own.
+		trigger = {
+			in_league = catholic
+		}
+		add_prestige = 20
+		every_known_country = {
+			limit = { religion = catholic }
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB14"				#As long we get to figt Catholics, I am happy.
+		trigger = {
+			OR = {
+				in_league = protestant
+				in_league = cathar
+				in_league = waldensian
+				in_league = reformed
+				in_league = hussite
+			}
+		}
+		add_prestige = 20
+		every_known_country = {
+			limit = {
+				OR = {
+					in_league = protestant
+					in_league = cathar
+					in_league = waldensian
+					in_league = reformed
+					in_league = hussite
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.15
+	
+	title = "plati_flavor_ckeu.EVTNAME15"						#Upkeep of Holy Sites
+	desc = "plati_flavor_ckeu.EVTDESC15"
+	
+	picture = PLATISHRINE
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_fifteen_event_timer
+			has_country_modifier = plati_upkeeped_sacred_sites
+			has_country_modifier = plati_sacred_sates_need_upkeep
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fifteen_event_timer
+				duration = 2555
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA15"				#Naturally
+		add_country_modifier = { 
+			name = plati_upkeeped_sacred_sites
+			duration = 2555
+		}
+		add_years_of_income = -0.40
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC15"				#Leave them be
+		add_country_modifier = { 
+			name = plati_sacred_sates_need_upkeep
+			duration = 2555
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC15"				#Of
+		highlight = yes
+		trigger = { ruler_has_personality = obsessive_perfectionist_personality }
+		add_country_modifier = { 
+			name = plati_upkeeped_sacred_sites
+			duration = 3650
+		}
+		add_years_of_income = -0.75
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.16
+	
+	title = "plati_flavor_ckeu.EVTNAME16"					#Honoring Noble Ancestor
+	desc = "plati_flavor_ckeu.EVTDESC16"
+	
+	picture = PLATISHRINE
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_sixteen_event_timer
+			has_country_modifier = plati_honoring_ancestor_codified
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_sixteen_event_timer
+				duration = 2555
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA16"			#We will honor him
+		add_country_modifier = { 
+			name = plati_honoring_ancestor_codified
+			duration = 2555
+		}
+		add_years_of_income = -0.33
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB16"			#He already lives in our memory
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.19
+	
+	title = "plati_flavor_ckeu.EVTNAME19"							#Pagan feast
+	desc = "plati_flavor_ckeu.EVTDESC19"
+	
+	picture = KING_DOING_GREAT_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_ninethen_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+			stability = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_ninethen_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA19"			#Of course, let us commence
+		ai_chance = {
+			factor = 80
+		}
+		
+		custom_tooltip = "plati_flavor_ckeu.19.e.tt"
+		add_years_of_income = -0.5
+		hidden_effect = {
+			random_list = {
+				20 = {
+					country_event = { id = plati_flavor_ckeu.20 }
+				}
+				20 = {
+					country_event = { id = plati_flavor_ckeu.21 }
+				}
+				20 = {
+					country_event = { id = plati_flavor_ckeu.22 }
+				}
+				20 = {
+					country_event = { id = plati_flavor_ckeu.23 }
+				}
+				20 = {
+					country_event = { id = plati_flavor_ckeu.24 }
+				}
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB19"			#Not this year
+		ai_chance = {
+			factor = 20
+		}
+		add_prestige = -5
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.20
+	
+	title = "plati_flavor_ckeu.EVTNAME20"				#Feast: Diplomatic Opportunity
+	desc = "plati_flavor_ckeu.EVTDESC20"
+	
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA20"			#Reputation
+		add_country_modifier = { 
+			name = plati_dipl_hospital
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB20"			#Improve re
+		add_country_modifier = { 
+			name = plati_dipl_friends
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC20"			#Dip power
+		add_dip_power = 75
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.21
+	
+	title = "plati_flavor_ckeu.EVTNAME21"				#Feast: Soldiers
+	desc = "plati_flavor_ckeu.EVTDESC21"
+	
+	picture = NOT_DISCIPLINED_SOLDIERS_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA21"			#Navy
+		add_country_modifier = { 
+			name = plati_feast_navy
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB21"			#Army
+		add_country_modifier = { 
+			name = plati_feast_solder
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC21"			#Generals
+		add_country_modifier = { 
+			name = plati_feast_leader
+			duration = 1825
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.22
+	
+	title = "plati_flavor_ckeu.EVTNAME22"				#Feast: Estates
+	desc = "plati_flavor_ckeu.EVTDESC22"
+	
+	picture = KINGS_CHOICE_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA22"			#Noble
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB22"			#Clergy
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC22"			#Merch
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.23
+	
+	title = "plati_flavor_ckeu.EVTNAME23"				#Feast: Everyone Just Happy
+	desc = "plati_flavor_ckeu.EVTDESC23"
+	
+	picture = FEAST_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA23"			#Stab
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB23"			#Random monarch point
+		random_list = {
+			33 = {
+				change_adm = 1
+			}
+			33 = {
+				change_dip = 1
+			}
+			33 = {
+				change_mil = 1
+			}
+			1 = {
+				change_adm = 1
+				change_dip = 1
+				change_mil = 1
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC23"			#relig bonus
+		add_country_modifier = { 
+			name = plati_feast_relig
+			duration = 1825
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.24
+	
+	title = "plati_flavor_ckeu.EVTNAME24"					#Feast gone wrong!
+	desc = "plati_flavor_ckeu.EVTDESC24"
+	
+	picture = DEBATE_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA24"
+		add_legitimacy = -10
+		add_ruler_modifier = { 
+			name = plati_incompetent_ruler
+			duration = 1825
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB24"
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC24"
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTD24"
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTE24"
+		add_stability = -1
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.25
+	
+	title = "plati_flavor_ckeu.EVTNAME25"						#Saarema!
+	desc = "plati_flavor_ckeu.EVTDESC25"						#en.wikipedia.org/wiki/Inhabitants_of_Saaremaa
+	
+	picture = FLAGSHIP_SUNK_eventPicture
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { has_reform = pirate_republic_reform }
+		owns_core_province = 35
+		NOT = { num_of_cities = 5 }
+		always = no												#scrapped
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_first_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA25"
+		change_government = republic
+		add_government_reform = pirate_republic_reform
+		add_republican_tradition = 50
+		swap_non_generic_missions = yes
+		35 = {
+			move_capital_effect = yes
+			add_base_production = 1
+			add_base_manpower = 2
+		}
+		add_country_modifier = { 
+			name = plati_saaremaa_mod
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB25"
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.27
+	
+	title = "plati_flavor_ckeu.EVTNAME27"						#Runestone
+	desc = "plati_flavor_ckeu.EVTDESC27"
+	
+	picture = PLATIRUNE
+	
+	is_triggered_only = yes				#decision
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA27"
+		add_prestige = 5
+		add_ruler_modifier = {
+			name = plati_pagan_flavor_runestone_ancestor
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB27"
+		add_legitimacy = 5
+		add_ruler_modifier = {
+			name = plati_pagan_flavor_runestone_selfish
+			duration = -1
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.28
+	
+	title = "plati_flavor_ckeu.EVTNAME28"						#Blood sacrifices
+	desc = "plati_flavor_ckeu.EVTDESC28"
+	
+	picture = PLATINORSE
+	
+	trigger = {
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		NOT = { has_country_modifier = plati_twenone_event_timer }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			war_exhaustion = 1
+		}
+		modifier = {
+			factor = 1.5
+			stability = 2
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twenone_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA28"			#human
+		add_country_modifier = { 
+			name = plati_pagan_flavor_sacrifices_human
+			duration = 3650
+		}
+		every_neighbor_country = {
+			limit = { religion_group = christian }
+			add_opinion = {
+				modifier = "tengri_nahuatl_sacrifices"
+				who = ROOT
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB28"			#animal
+		add_country_modifier = {
+			name = plati_pagan_flavor_sacrifices_animal
+			duration = 3650
+		}
+		every_neighbor_country = {
+			limit = { religion_group = christian }
+			add_opinion = {
+				modifier = "entertaining_heathens"
+				who = ROOT
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC28"			#ban this tradition!
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+				has_owner_religion = yes
+			}
+			spawn_rebels = {
+				size = 1
+				leader = noble_zealot
+				type = religious_rebels
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.29
+	
+	title = "plati_flavor_ckeu.EVTNAME29"						#popular local shaman
+	desc = "plati_flavor_ckeu.EVTDESC29"
+	
+	picture = PLATISHAMAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twentwo_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+			NOT = { has_province_modifier = plati_shaman_mod_prov }
+		}	
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twentwo_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+		random_owned_province = { 
+			limit = { 
+				is_state = yes
+				is_capital = no
+				has_owner_religion = yes
+				NOT = { has_province_modifier = plati_shaman_mod_prov }
+			}
+			save_event_target_as = plati_shaman_province
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA29"				#bring him to court				
+		define_advisor = {
+			type = theologian
+			skill = 3
+			cost_multiplier = 0.50
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB29"				#let him remain with his kin
+		event_target:plati_shaman_province = {
+			add_province_modifier = {
+				name = "plati_shaman_mod_prov"
+				duration = 3650
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.30
+	
+	title = "plati_flavor_ckeu.EVTNAME30"						#pagan syncretism
+	desc = "plati_flavor_ckeu.EVTDESC30"
+	
+	picture = PLATISHAMAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twenthree_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = no
+			religion_group = pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twenthree_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+		random_owned_province = { 
+			limit = { 
+				is_state = yes
+				is_capital = no
+				has_owner_religion = no
+				religion_group = pagan
+			}
+			save_event_target_as = plati_syncretic_province
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA30"				#Unity
+		add_country_modifier = { 
+			name = plati_pagan_syncretism
+			duration = 3650
+		}
+		event_target:plati_syncretic_province = {
+			add_base_tax = 1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB30"				#Regardless, our faith is supreme
+		add_country_modifier = { 
+			name = plati_pagan_antisyncr
+			duration = 3650
+		}
+		add_stability = -1
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.31
+	
+	title = "plati_flavor_ckeu.EVTNAME31"						#unaccepted culture wants their gods in pantheon
+	desc = "plati_flavor_ckeu.EVTDESC31"
+	
+	picture = PLATINORSE
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twenfour_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_accepted_culture = no
+			has_owner_culture = no
+			religion_group = pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twenfour_event_timer
+				duration = 3650
+				hidden = yes
+			}
+		}
+		random_owned_province = { 
+			limit = { 
+				is_state = yes
+				is_capital = no
+				has_owner_accepted_culture = no
+				has_owner_culture = no
+				religion_group = pagan
+			}
+			save_event_target_as = plati_dissatisfied_relig_province
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA31"				#very well
+		every_owned_province = {
+			limit = {
+				is_state = yes
+				is_capital = no
+				has_owner_accepted_culture = no
+				has_owner_culture = no
+				religion = event_target:plati_dissatisfied_relig_province
+			}
+			add_nationalism = -5
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -15
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB31"				#no
+		event_target:plati_dissatisfied_relig_province = {
+			spawn_rebels = {
+				size = 1
+				leader = noble_zealot
+				type = religious_rebels
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.32
+	
+	title = "plati_flavor_ckeu.EVTNAME32"						#veneration of ruler
+	desc = "plati_flavor_ckeu.EVTDESC32"
+	
+	picture = PLATISHAMAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twenfive_event_timer
+			has_ruler_modifier = plati_ruler_worshipped
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		stability = 2
+		is_subject = no
+		legitimacy_equivalent = 80
+		prestige = 50
+		NOT = { war_exhaustion = 1 }
+		NOT = { corruption = 1 }
+		is_in_deficit = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+	}
+	
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twenfive_event_timer
+				duration = 14600
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA32"			#who am I to stop them
+		add_ruler_modifier = { 
+			name = plati_ruler_worshipped
+			duration = -1
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB32"			#the clergy must step in!
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.33
+	
+	title = "plati_flavor_ckeu.EVTNAME33"						#divination: bad omens
+	desc = "plati_flavor_ckeu.EVTDESC33"
+	
+	picture = PLATISHAMAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twensux_event_timer
+			has_country_modifier = plati_twensev_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		has_country_modifier = godly_inspiration						#divination, part of base game modifiers
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twensux_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA33"				#oh no!
+		add_stability = -1
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB33"				#you sure?
+		highlight = yes
+		trigger = {
+			ruler_has_personality = embezzler_personality
+		}
+		add_years_of_income = -0.25
+		add_corruption = 2
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.34
+	
+	title = "plati_flavor_ckeu.EVTNAME34"						#divination: good omens
+	desc = "plati_flavor_ckeu.EVTDESC34"
+	
+	picture = PLATISHAMAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twensux_event_timer
+			has_country_modifier = plati_twensev_event_timer
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		has_country_modifier = godly_inspiration						#divination, part of base game modifiers
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twensev_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA34"				#gods favor us
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.35
+	
+	title = "plati_flavor_ckeu.EVTNAME35"						#the third temple - rebuilt!
+	desc = "plati_flavor_ckeu.EVTDESC35"
+	
+	picture = PLATIJEWISH
+	
+	is_triggered_only = yes				#mission
+	
+	major = yes							#kind of a big deal
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA35"				#happy day!
+		add_stability_or_adm_power = yes
+		379 = {
+			add_permanent_province_modifier = { 
+				name = plati_jewish_third_temple
+				duration = -1
+			}
+		}
+		egypt_region = {											#
+			limit = {
+				NOT = { is_permanent_claim = ROOT	}
+				NOT = { is_core = ROOT	}
+			}
+			add_permanent_claim = ROOT
+		}
+		every_known_country = {
+			limit = {
+				religion_group = christian
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+		}
+		every_known_country = {
+			limit = {
+				religion_group = muslim
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.36
+	
+	title = "plati_flavor_ckeu.EVTNAME36"						#JEWISH ONES START HERE
+	desc = "plati_flavor_ckeu.EVTDESC36"						#A jewish homeland
+	
+	picture = PLATIJEWISH
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_twennin_event_timer
+		}
+		religion_group = jewish_group
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_twennin_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA36"				#Excellent!
+		define_advisor = {
+			type = master_of_mint
+			religion = jewish
+			skill = 2
+			discount = yes
+		}
+		define_advisor = {
+			type = treasurer
+			religion = jewish
+			skill = 2
+			discount = yes
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.37
+	
+	title = "plati_flavor_ckeu.EVTNAME37"						#desecration of sanbat
+	desc = "plati_flavor_ckeu.EVTDESC37"
+	
+	picture = PLATIJEWISH
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirteh_event_timer
+		}
+		religion_group = jewish_group
+		OR = {
+			advisor = artist
+			advisor = inquisitor
+			advisor = master_of_mint
+			advisor = natural_scientist
+			advisor = philosopher
+			advisor = theologian
+			advisor = treasurer			
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirteh_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA37"					#
+		add_adm_power = -50
+		if = {
+			limit = { advisor = artist }
+			remove_advisor = artist
+		}
+		if = {
+			limit = { advisor = inquisitor }
+			remove_advisor = inquisitor
+		}
+		if = {
+			limit = { advisor = master_of_mint }
+			remove_advisor = master_of_mint
+		}
+		if = {
+			limit = { advisor = natural_scientist }
+			remove_advisor = natural_scientist
+		}
+		if = {
+			limit = { advisor = philosopher }
+			remove_advisor = philosopher
+		}
+		if = {
+			limit = { advisor = theologian }
+			remove_advisor = theologian
+		}
+		if = {
+			limit = { advisor = treasurer }
+			remove_advisor = treasurer
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB37"					#
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+		add_country_modifier = {
+			name = blasphemous_advisor
+			duration = 3650
+		}	
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.38
+	
+	title = "plati_flavor_ckeu.EVTNAME38"						#jewish convert to christianity
+	desc = "plati_flavor_ckeu.EVTDESC38"
+	
+	picture = PLATIJEWISH
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirton_event_timer
+		}
+		religion_group = jewish_group
+		NOT = { stability = 3 }
+		any_neighbor_country = {
+			religion_group = christian						#neighbor influence
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirton_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+		random_neighbor_country = {
+			limit = {
+				religion_group = christian
+			}
+			save_event_target_as = plati_jew_christian_country
+		}
+		random_owned_province = { 
+			limit = { 
+				is_state = yes
+				is_capital = no
+				has_owner_religion = yes
+			}
+			save_event_target_as = plati_jew_converted_province
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA38"			#Not ideal
+		event_target:plati_jew_converted_province = {
+			change_religion = event_target:plati_jew_christian_country
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.39
+	
+	title = "plati_flavor_ckeu.EVTNAME39"						#Build a new Yeshiva
+	desc = "plati_flavor_ckeu.EVTDESC39"
+	
+	picture = PLATIJEWISH
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirtwo_event_timer
+		}
+		religion_group = jewish_group
+	}
+	
+	mean_time_to_happen = {
+		months = 50
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirtwo_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA39"				#They shall recieve our endorsement
+		add_years_of_income = -0.3
+		add_reform_progress_small_effect = yes
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB39"				#The state can not afford it now
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.40
+	
+	title = "plati_flavor_ckeu.EVTNAME40"						#RENAISSANCE INFLUENCE - CHRISTIANS CONVERT
+	desc = "plati_flavor_ckeu.EVTDESC40"
+	
+	picture = PLATIRENAISSANCE
+	
+	trigger = {
+		any_known_country = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe						#wont fire if paganism has fully lost its former influence in europe
+			}
+		}
+		AND = {
+			religion_group = christian
+			capital_scope = {
+				continent = europe
+			}
+		}
+		current_age = age_of_discovery
+		NOT = { tag = PAP }								#madness
+		NOT = { government = theocracy }				#unlikely that monastic orders and bishoprics going to shift to paganism
+		has_institution = renaissance
+		NOT = {
+			has_country_modifier = plati_fire_once_pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fire_once_pagan
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA40"				#lets just limit it to art and science
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0.25
+				is_excommunicated = yes
+			}
+		}
+		add_prestige = 5
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB40"				#religionname revival has dawned!
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 2.5
+				OR = {
+					has_idea_group = humanist_ideas
+					has_idea_group = innovativeness_ideas
+				}
+			}
+			modifier = {
+				factor = 2.5
+				any_neighbor_country = {
+					religion_group = pagan
+				}
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				religion_group = christian
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+			}
+		}
+		every_neighbor_country = {
+			limit = {
+				religion_group = pagan
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_one_and_same
+			}
+		}
+		if = {
+			limit = { culture_group = scandinavian }
+			change_religion = norse_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = germanic }
+			change_religion = norse_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = latin }
+			change_religion = hellenic_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = iberian }
+			change_religion = hellenic_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = finno_ugric }
+			change_religion = finnish_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = west_slavic }
+			change_religion = slavic_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = east_slavic }
+			change_religion = slavic_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = baltic }
+			change_religion = baltic_pagan_reformed
+		}
+		else_if = {
+			limit = { culture_group = byzantine }
+			change_religion = hellenic_pagan_reformed
+		}
+		else = {
+			change_religion = animist
+		}
+		add_country_modifier = {
+			name = "plati_pagan_renaissance"
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.41
+	
+	title = "plati_flavor_ckeu.EVTNAME41"						#
+	desc = "plati_flavor_ckeu.EVTDESC41"
+	
+	picture = PLATIRENAISSANCE
+	
+	trigger = {
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		current_age = age_of_discovery
+		has_institution = renaissance
+		NOT = {
+			has_country_modifier = plati_fire_once_pagan
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fire_once_pagan
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA41"				#curious
+		add_prestige = 10
+		define_advisor = {
+			type = artist
+			skill = 2
+			cost_multiplier = 0.70
+			religion = catholic
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.42
+	
+	title = "plati_flavor_ckeu.EVTNAME42"						#
+	desc = "plati_flavor_ckeu.EVTDESC42"
+	
+	picture = PLATIPRINTING
+	
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		current_age = age_of_reformation
+		has_institution = printing_press
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+		}
+		NOT = {											#they already have their holy text
+			religion = pagan_religion_reformed
+			religion = baltic_pagan_reformed
+			religion = finnish_pagan_reformed
+			religion = norse_pagan_reformed
+			religion = slavic_pagan_reformed
+			religion = magyar_pagan_reformed
+			religion = siberian_pagan_reformed
+			religion = zun_pagan_reformed
+			religion = bon_reformed
+			religion = hellenic_pagan_reformed
+			religion = west_african_pagan_reformed
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA42"				#interesting
+		add_prestige = 10
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.43
+	
+	title = "plati_flavor_ckeu.EVTNAME43"						#Diaspora
+	desc = "plati_flavor_ckeu.EVTDESC43"
+	
+	picture = PLATIZOROASTRIAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirfour_event_timer
+		}
+		religion_group = zoroastrian_group
+		stability = 2									#to be attractive to refugees
+		capital_scope = {
+			NOT = { development = 40 }					#to keep it from growing stupidly high
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirfour_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA43"
+		random_list = {
+			30 = {
+				capital_scope = { add_base_tax = 1 }
+			}
+			30 = {
+				capital_scope = { add_base_production = 1 }
+			}
+			30 = {
+				capital_scope = { add_base_manpower = 1 }
+			}
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB43"
+		random_list = {
+			30 = {
+				define_advisor = {
+					type = philosopher
+					skill = 2
+					cost_multiplier = 0.30
+				}
+			}
+			30 = {
+				define_advisor = {
+					type = trader
+					skill = 2
+					cost_multiplier = 0.30
+				}
+			}
+			30 = {
+				define_advisor = {
+					type = commandant
+					skill = 2
+					cost_multiplier = 0.30
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.44
+	
+	title = "plati_flavor_ckeu.EVTNAME44"						#Shamanic practices
+	desc = "plati_flavor_ckeu.EVTDESC44"
+	
+	picture = PLATIZOROASTRIAN
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirfiv_event_timer
+		}
+		religion_group = zoroastrian_group
+		any_owned_province = {
+			is_capital = no
+			has_owner_religion = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirfiv_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA44"				#Purity is Peace
+		add_country_modifier = { 
+			name = plati_zoro_miss
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB44"				#Peace is Purity
+		add_country_modifier = { 
+			name = plati_zoro_toler
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.45
+	
+	title = "plati_flavor_ckeu.EVTNAME45"						#pursuit of knowledge
+	desc = "plati_flavor_ckeu.EVTDESC45"
+	
+	picture = PLATIGNOSTIC
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirsix_event_timer
+		}
+		religion_group = gnostic
+		stability = 1
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirsix_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA45"				#curious
+		add_country_modifier = { 
+			name = plati_seeking_gnosis
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.46
+	
+	title = "plati_flavor_ckeu.EVTNAME46"						#denouncing the temporal
+	desc = "plati_flavor_ckeu.EVTDESC46"
+	
+	picture = PLATIGNOSTIC
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirsev_event_timer
+		}
+		religion_group = gnostic
+		crown_land_share = 40
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirsev_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA46"			#ok
+		scaled_estate_church_land_share_effect = yes
+		scaled_estate_nobles_land_share_effect = yes
+		add_years_of_income = -0.5
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB46"			#no
+		add_stability = -1
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.47
+	
+	title = "plati_flavor_ckeu.EVTNAME47"						#returning to creator
+	desc = "plati_flavor_ckeu.EVTDESC47"
+	
+	picture = PLATIGNOSTIC
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thireig_event_timer
+		}
+		religion_group = gnostic
+		is_at_war = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thireig_event_timer
+				duration = 7300
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA47"			#admirable
+		add_country_modifier = { 
+			name = plati_return_to_creator
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB47"			#bad
+		add_stability = -1
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.48
+	
+	title = "plati_flavor_ckeu.EVTNAME48"						#
+	desc = "plati_flavor_ckeu.EVTDESC48"
+	
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thirnin_event_timer
+		}
+		is_religion_enabled = protestant
+		OR = {
+			religion = cathar
+			religion = waldensian
+			religion = lollard
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thirnin_event_timer
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA48"			#yes, let us join the reformation
+		ai_chance = {
+			factor = 30
+		}
+		change_religion = protestant
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB48"			#no, we are true to our faith
+		ai_chance = {
+			factor = 70
+		}
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.49
+	
+	title = "plati_flavor_ckeu.EVTNAME49"						#
+	desc = "plati_flavor_ckeu.EVTDESC49"
+	
+	picture = PLATIYAZIDI
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_fourtin_event_timer
+		}
+		religion_group = yazidism								#such an intriguing faith - really deserve to have at least some flavor
+		any_neighbor_country = {
+			religion_group = muslim
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_fourtin_event_timer
+				duration = 7300
+				hidden = yes
+			}
+			random_neighbor_country = {
+				limit = {
+					religion_group = muslim
+				}
+				save_event_target_as = plati_yazidi_muslim_neighbor
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA49"				#worrisome
+		event_target:plati_yazidi_muslim_neighbor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_witchcraft
+			}
+		}
+		add_casus_belli = {
+		   target = event_target:plati_yazidi_muslim_neighbor
+		   type = cb_border_war
+		   months = 12
+		}
+	}
+}
+country_event = {
+	id = plati_flavor_ckeu.50
+	
+	title = "plati_flavor_ckeu.EVTNAME50"						#ruler believed to be reincarnation
+	desc = "plati_flavor_ckeu.EVTDESC50"
+	
+	picture = PLATIYAZIDI
+	
+	trigger = {
+		NOT = {
+			has_country_modifier = plati_thireig_event_timer
+		}
+		religion_group = yazidism
+		stability = 2
+		OR = {
+			adm = 5
+			dip = 5
+			mil = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = { 
+				name = plati_thireig_event_timer
+				duration = 11600							#something truly special ought to happen rarely
+				hidden = yes
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTA50"
+		add_ruler_modifier = { 
+			name = plati_ruler_yazidi_adm
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTB50"
+		add_ruler_modifier = { 
+			name = plati_ruler_yazidi_dip
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_flavor_ckeu.EVTOPTC50"
+		add_ruler_modifier = { 
+			name = plati_ruler_yazidi_mil
+			duration = -1
+		}
+	}
+}

@@ -1,0 +1,251 @@
+﻿l_english:
+ ############## Flavor events for CK3 - EU4 ###############################
+ ########
+ plati_flavor_ckeu.EVTNAME1: "Christian Mission arrives"
+ plati_flavor_ckeu.EVTDESC1: "Another group of zealous men in rags have arrived - the followers of Christ, or so they call themselves, have come to spread the word of their God and 'bring the light' to our realm. The humbly ask us to allow them to establish a mission and continue preaching in our territory."
+ plati_flavor_ckeu.EVTOPTA1: "Very well, let them come."
+ plati_flavor_ckeu.EVTOPTB1: "They are not welcome here."
+ ########
+ plati_flavor_ckeu.EVTNAME2: "Christian Missionaries spreading Wide"
+ plati_flavor_ckeu.EVTDESC2: "As expected, the proselytizers have diligently preached to our people about their faith and one of our provinces seems to be welcoming their religion."
+ plati_flavor_ckeu.EVTOPTA2: "Let them continue."
+ plati_flavor_ckeu.EVTOPTB2: "Banish them from realm."
+ plati_flavor_ckeu.EVTOPTC2: "Put them all to the sword!"
+ ########
+ plati_flavor_ckeu.EVTNAME3: "Christian mission brings technology"
+ plati_flavor_ckeu.EVTDESC3: "Newly arrived theologians have brought us many scrolls and books as a token of their gratitude for our benevolent allowance for them to preach in our lands. Surprisingly, some of these texts are quite intriguing and carry a great weight of useful knowledge in technology."
+ plati_flavor_ckeu.EVTOPTA3: "I do enjoy a good read."
+ plati_flavor_ckeu.EVTOPTB3: "I need these learned men at my court."
+ ########
+ plati_flavor_ckeu.EVTNAME4: "Religious clashes among Merchants"
+ plati_flavor_ckeu.EVTDESC4: "Relations with Heathens were always tense. Though conversion of entire Europe is a noble thought indeed, sometimes trading with pagans proves to be more useful than clashing with them. Regardless, zealous hate is constantly burning and foreign merchants not worshipping christ often suffer greatly because of this. From time to time, these merchants meet shady men that are more than eager to steal their riches... in the name of Christ, of course."
+ plati_flavor_ckeu.EVTOPTA4: "Heh, who am I to stop them."
+ plati_flavor_ckeu.EVTOPTB4: "Seize all wealth these heathens carry!"
+ plati_flavor_ckeu.EVTOPTC4: "Put an end to this."
+ ########
+ plati_flavor_ckeu.EVTNAME5: "Pagan Influence"
+ plati_flavor_ckeu.EVTDESC5: "The spirit of paganism remains strong in Europe - both diplomatic and aggressive attempts at christianization failed to achieve religious unity on the Continent. Thus, the religious pressure, while going both ways, is constantly affecting mentality of christian man. Disillusioned with the Church teaching, displeased with corruption of the Holy or just finding pagan doctrine, such as poligamy or encouragement of personal wealth, attractive are all stimulating weak-spirited men to turn away from Christ. And so, this is happening in [Root.GetName] as well."
+ plati_flavor_ckeu.EVTOPTA5: "Disgraceful! No tolerance to heathenry!"
+ plati_flavor_ckeu.EVTOPTB5: "They will learn the error of their ways one day."
+ ########
+ plati_flavor_ckeu.EVTNAME6: "Cosmopolitan Nobility"
+ plati_flavor_ckeu.EVTDESC6: "Diplomatic marriage and dynastic connections were the backbone of medieval politics. Alliances and plots were built on this sacred union before God, but recently, some nobles became more 'open minded' in this regard. When a Pagan kingdom projects influence, namely [plati_pagan_marriage_country.GetName], ambitious christian nobles are often eager to seek power even with heathens, be it trade contracts or diplomatic marriage. Our country being no exception."
+ plati_flavor_ckeu.EVTOPTA6: "Turn a blind eye."
+ plati_flavor_ckeu.EVTOPTB6: "Denounce the noble family."
+ plati_flavor_ckeu.EVTOPTC6: "Make sure these barbarians know their place."
+ ########
+ plati_flavor_ckeu.EVTNAME7: "Andalusian Colonial Policy"
+ plati_flavor_ckeu.EVTDESC7: "Upon facing the unprecedented opportunities that lied ahead in the New World, [Root.GetAdjective] [Root.GovernmentName] was presented with various options on how to handle the colonization process. The already influential Holy Orders served as an important unifying force in the Maghreb, particularly Berber inhabited wastes and their operations overseas would be invaluable. While appointment of Amirs as viceroys seemed most reliable, the Dhimmi, who are denied full power in [Root.GetName], could be given a chance at governance in the New World - serving our interests, while elevating themselves as statesmen. The latter option was sure to be criticized by orthodox Muslims. In any case, the colonies would be considered as part of [Root.Getname]."
+ plati_flavor_ckeu.EVTOPTA7: "Religious orders served us well and will continue so in the New World."
+ plati_flavor_ckeu.EVTOPTB7: "We must trust the experience of Amirs."
+ plati_flavor_ckeu.EVTOPTC7: "The Dhimmi will be given governance rights in colonies."
+ ########
+ plati_flavor_ckeu.EVTNAME8: "Natives resist conversion efforts"
+ plati_flavor_ckeu.EVTDESC8: "Our slowly growing colonies harbor those that have native blood flowing through them. Be it newly assimilated tribals or descendants of those, many of them choose to either continue their pagan teaching or, fallen under Dhimmi influence, adopt the teachings of Christianity. Our governors show their concerns and ask that we support them in this turmoil."
+ plati_flavor_ckeu.EVTOPTA8: "Leave the natives be."
+ plati_flavor_ckeu.EVTOPTB8: "It is our duty to show them the Truth."
+ plati_flavor_ckeu.EVTOPTC8: "Demonstrate our superiority through new conquests."
+ ########
+ plati_flavor_ckeu.EVTNAME9: "Protestants seek refuge in [Root.GetName]"
+ plati_flavor_ckeu.EVTDESC9: "The fires of reformation consume Europe and with it equally bright burns hatred and violence. Unity of Catholics was always endangered, but now they might become as divided as never before. While some seek compromise, countries, such as [plati_protestant_refugee_country.GetName] are torn by infighting between Catholics and Protestants. The latter fled their homeland in hopes to find asylum in a place where they might be tolerated and their rights respected - [Root.GetName]. A large group of them has arrived, praying that we will allow them to settle in [plati_protestant_refugee_province.GetCapitalName]."
+ plati_flavor_ckeu.EVTOPTA9: "We shall welcome them with open arms."
+ plati_flavor_ckeu.EVTOPTB9: "Send them away."
+ ########
+ plati_flavor_ckeu.EVTNAME10: "Pope displeased with neighboring Pagans"
+ plati_flavor_ckeu.EVTDESC10: "Pope [PAP.Monarch.GetName] shows his great dissatisfaction with [Root.GetName] and our toleration of neighboring pagans, namely [plati_nearby_pagan_pope_target.GetName]. The Pope greatly encourages us to take up arms and declare war on our heathenous neighbors who are influecing every bordering good christian to doubt his faith. Declining would be sure to anger the Pope, but we will avoid war with [plati_nearby_pagan_pope_target.GetName] this way."
+ plati_flavor_ckeu.EVTOPTA10: "That's none of his business."
+ plati_flavor_ckeu.EVTOPTB10: "God wills it!"
+ ########
+ plati_flavor_ckeu.EVTNAME11: "Religious tensions escalating"
+ plati_flavor_ckeu.EVTDESC11: "Rumors are spreading that a neighboring Catholic country is rallying their troops and blessing their blades in preparation for another crusade - against us! While chance of their attack may not be solid, it is best that we stand prepared for upcoming conflict."
+ plati_flavor_ckeu.EVTOPTA11: "How dare they!"
+ ########
+ plati_flavor_ckeu.EVTNAME12: "Catholic theologian seeks refuge"
+ plati_flavor_ckeu.EVTDESC12: "For reasons known only to him, a man well-learned in letters regarding God and divine, was exiled from his homeland and seeks safe haven here. He offers his service as a theologian, uninterested in preaching among our [Root.Religion.GetName] followers. Regardless, our clergy might grow discontent with such person in court."
+ plati_flavor_ckeu.EVTOPTA12: "He is more than welcome to stay."
+ plati_flavor_ckeu.EVTOPTB12: "[Root.GetName] has enough odd people."
+ ########
+ plati_flavor_ckeu.EVTNAME13: "Pagans among us!"
+ plati_flavor_ckeu.EVTDESC13: "A secret gathering in a secluded place was discovered - a group of peasants, dressed in odd rags have been dancing, singing and celebrating something near a bonfire. Many concerned individuals are sure they are secretly followers of [plati_pagan_cult_exile_country.Religion.GetName] paganism. Influenced by [plati_pagan_cult_exile_country.GetName], no doubt. What course of action must be taken?"
+ plati_flavor_ckeu.EVTOPTA13: "Execute the heathens."
+ plati_flavor_ckeu.EVTOPTB13: "Their funny traditions are of no concern to us."
+ plati_flavor_ckeu.EVTOPTC13: "Convince them to abandon their faith."
+ ########
+ plati_flavor_ckeu.EVTNAME14: "Pagans in Holy League"
+ plati_flavor_ckeu.EVTDESC14: "What seemed to be a moderate religious infighting at first, would eventually explode into one of the bloodiest conflicts Europe has experienced during its history at the time. With reasons way too often being political and economic (rather than religious), it was only natural that non-christians would partake into this conflict for their own needs. While Muslims saw this as an opportunity to shift the balance of power in a way that would benefit them, Pagans too, saw this as an unprecedented opportunity to influence the future of the Continent. In the end, the warlike kingdoms, such as [Root.GetName] could benefit at least from plunder and raids. At least, until the partaking in this bloody conflict took its heavy toll."
+ plati_flavor_ckeu.EVTOPTA14: "Our reasons for backing Catholics are our own."
+ plati_flavor_ckeu.EVTOPTB14: "As long we get to figt Catholics, I am happy."
+ ########
+ plati_flavor_ckeu.EVTNAME15: "Upkeep of Sacred Sites"
+ plati_flavor_ckeu.EVTDESC15: "For european pagans, particularly adherents of [Root.Religion.GetName] faith, many places of worship and rituals are located in deep forests, secluded groves or other places among nature. While these do not require regular maintenance, time takes a toll on them as well and some actions must be taken to keep them orderly and approachable in order to please the Gods and Ancestors. As tradition dictates, time has come for us to do so."
+ plati_flavor_ckeu.EVTOPTA15: "Naturally."
+ plati_flavor_ckeu.EVTOPTB15: "They are holy as is."
+ plati_flavor_ckeu.EVTOPTC15: "We shall beautify them!"
+ ########
+ plati_flavor_ckeu.EVTNAME16: "Immortalizing an Ancestor"
+ plati_flavor_ckeu.EVTDESC16: "The cult of ancestors is fundemantal to [Root.Religion.GetName] faith, and having renowned lineage is often considered more prestigious than riches and titles. Our dynasty, while significant, could benefit greatly by 'uplifting' one of our ancestors and codifying his life and accomplishments into a work of art or literature of epic proportions. This will require monetary investment, however."
+ plati_flavor_ckeu.EVTOPTA16: "We shall honor him."
+ plati_flavor_ckeu.EVTOPTB16: "He already lives in our memory."
+ ########
+ plati_flavor_ckeu.EVTNAME19: "Grand [Root.GetAdjective] Feast of [GetYear]"
+ plati_flavor_ckeu.EVTDESC19: "It is a fundemantal tradition for [Root.Culture.GetName] people to band together in annual celebration, be it Summertime or Winter solstices, veneration of ancestors or worship of the divine. All of which are something to be exalted in and shared with our community. Organizing great festivals to honor and praise what we find dear and sacred brings us all together. Many are convinced that we should arrange a truly grand feast that will take place this year in [Root.Capital.GetName]."
+ plati_flavor_ckeu.EVTOPTA19: "Let us feast together!"
+ plati_flavor_ckeu.EVTOPTB19: "No time for celebrations."
+ plati_flavor_ckeu.19.e.tt: "A grand feast will be held."
+ ########
+ plati_flavor_ckeu.EVTNAME20: "Diplomatic Opportunity"
+ plati_flavor_ckeu.EVTDESC20: "Envoys, officials or just visitors from foreign countries have come to join us in our celebration. While no sustainable alliance can be forged from mere carousing, we should use this unusually large amount of foreigners to our advantage."
+ plati_flavor_ckeu.EVTOPTA20: "Let us show everyone our hospitality!"
+ plati_flavor_ckeu.EVTOPTB20: "The more friends we make, the better!"
+ plati_flavor_ckeu.EVTOPTC20: "Let us strengthen existing connections instead."
+ ########
+ plati_flavor_ckeu.EVTNAME21: "Carousing Soldiers"
+ plati_flavor_ckeu.EVTDESC21: "Men gather in tall halls, shouting praise to our mighty forces that will protect their families and smite our enemies. [Root.GetName] can boast a proud and strong force and this feast is an excellent opportunity to express our gratitude, namely..."
+ plati_flavor_ckeu.EVTOPTA21: "The [Root.Monarch.GetTitle] favors the Navy!"
+ plati_flavor_ckeu.EVTOPTB21: "[Root.GetName] needs strong soldiers!"
+ plati_flavor_ckeu.EVTOPTC21: "Let us drink to mighty [Root.GetAdjective] leaders!"
+ ########
+ plati_flavor_ckeu.EVTNAME22: "Of Estates and Men"
+ plati_flavor_ckeu.EVTDESC22: "Be it highborns, self-made men or priesthood - all are welcome in celebration. Nobles bring memory to tales of their ancestors, merchants share stories of foreign lands, while clergy preserve our traditions and rituals. Yet, this year's praise recieves..."
+ plati_flavor_ckeu.EVTOPTA22: "[Root.GetName] would collapse without Nobility!"
+ plati_flavor_ckeu.EVTOPTB22: "All thanks to wise council of [Root.Religion.GetName] priests!"
+ plati_flavor_ckeu.EVTOPTC22: "Wise men of commerce are responsible for our prosperity!"
+ ########
+ plati_flavor_ckeu.EVTNAME23: "Carousing Grandeur"
+ plati_flavor_ckeu.EVTDESC23: "This year's feast was largest in recent decade. All worthwhile individuals have come to visit [Root.Capital.GetName] and drink to their [Root.Monarch.GetTitle]. Many were fed, many more had a good time. At the heat of celebration, [Root.Monarch.GetName] finds himself at the center of attention with an audience eager to say a toast."
+ plati_flavor_ckeu.EVTOPTA23: "May [Root.GetName] prosper!"
+ plati_flavor_ckeu.EVTOPTB23: "May [Root.Monarch.GetName] prosper!"
+ plati_flavor_ckeu.EVTOPTC23: "May [Root.Religion.GetName] prosper!"
+ ########
+ plati_flavor_ckeu.EVTNAME24: "Catastrophic Feast!"
+ plati_flavor_ckeu.EVTDESC24: "While it started out steady, noone can really tell when it all started to go downhill. What is clear is the result - broken tables and noses, spilled tankards and curses as well as large tension in the air. Instead of unity, the feast resulted in conflict and unrest. And all blames goes to..."
+ plati_flavor_ckeu.EVTOPTA24: "[Root.Monarch.GetTitle] [Root.Monarch.GetName]..."
+ plati_flavor_ckeu.EVTOPTB24: "These scheming nobles!"
+ plati_flavor_ckeu.EVTOPTC24: "Those arrogant priests!"
+ plati_flavor_ckeu.EVTOPTD24: "Merchants and their greed!"
+ plati_flavor_ckeu.EVTOPTE24: "All of us."
+ ########
+ plati_flavor_ckeu.EVTNAME25: "Pirates of Baltic Sea"
+ plati_flavor_ckeu.EVTDESC25: ""
+ plati_flavor_ckeu.EVTOPTA25: "A Pirate's life for me!"
+ plati_flavor_ckeu.EVTOPTB25: "Roguery is just not worth it."
+ ########
+ plati_flavor_ckeu.EVTNAME27: "Raising a Runestone"
+ plati_flavor_ckeu.EVTDESC27: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] has decided to raise a runestone. What inscription shall he apply to it?"
+ plati_flavor_ckeu.EVTOPTA27: "'Honoring the memory of...'"
+ plati_flavor_ckeu.EVTOPTB27: "'[Root.Monarch.GetName] the Great...'"
+ ########
+ plati_flavor_ckeu.EVTNAME28: "[Root.Religion.GetName] and Blood Sacrifices"
+ plati_flavor_ckeu.EVTDESC28: "A widespread tradition among European pagans was blood sacrifices - offering the lives of animals or humans to a deity as an act of propriation or worship. While sometimes it doesnt grow into anything larger than a fancy way of preparing a family dinner, special festivals are seldom held where animals and even men are ritually murdered, often by hanging in Norse cultures. Disregarding our stance on it, many faithful in [Root.GetName] are openly practicing such rituals. While this tradition takes different forms from place to place, our christian neighbors are nothing but disgusted by this 'barbaric' tradition."
+ plati_flavor_ckeu.EVTOPTA28: "Anything to please the Gods!"
+ plati_flavor_ckeu.EVTOPTB28: "Limit this tradition to animals only."
+ plati_flavor_ckeu.EVTOPTC28: "Forbid this tradition!"
+ ########
+ plati_flavor_ckeu.EVTNAME29: "Popular Priest"
+ plati_flavor_ckeu.EVTDESC29: "People tell of a well learned and charismatic priest from [plati_shaman_province.GetName]. Both giving interpretation on doctrine understandable enough for common man and creatively entertaining people during festivals and rituals, he no doubt is a useful man to have."
+ plati_flavor_ckeu.EVTOPTA29: "Bring him to court."
+ plati_flavor_ckeu.EVTOPTB29: "He belongs with his kin."
+ ########
+ plati_flavor_ckeu.EVTNAME30: "Pagan Syncretism"
+ plati_flavor_ckeu.EVTDESC30: "The coexistence of [plati_syncretic_province.Religion.GetName] and the [Root.Religion.GetName] faith has been easier in many ways than we initially feared. There are already many examples of [Root.Religion.GetName] deities being incorporated among the many gods of the [plati_syncretic_province.Religion.GetName] and of [plati_syncretic_province.Religion.GetName] gods and customs being incorporated into the lives of the [Root.Religion.GetName] worshippers. In fact to a certain extent it seems that the same has started happening to many other religions in the far corners of our empire, with many lesser and higher gods being incorporated into the joint [plati_syncretic_province.Religion.GetName]-[Root.Religion.GetName] Pantheon."
+ plati_flavor_ckeu.EVTOPTA30: "Great!"
+ plati_flavor_ckeu.EVTOPTB30: "Our traditions must remain pure!"
+ ########
+ plati_flavor_ckeu.EVTNAME31: "Unaccepted culture demands recongition"
+ plati_flavor_ckeu.EVTDESC31: "People of [plati_dissatisfied_relig_province.GetName] are followers of [plati_dissatisfied_relig_province.Religion.GetName] and them being a culture foreign to us, they naturally have developed a tradition of different deities in their pantheon. [plati_dissatisfied_relig_province.Culture.GetName] population demand recongition - fusing our [Root.Religion.GetName] traditions with the wide range of their own distinct [plati_dissatisfied_relig_province.Religion.GetName] beliefs. Should we accept, these people will no doubt be grateful to such respect demonstrated to them, but our Priesthood will be furious with such drastic changes in doctrine."
+ plati_flavor_ckeu.EVTOPTA31: "We shall welcome their Gods."
+ plati_flavor_ckeu.EVTOPTB31: "Outrageous demands!"
+ ########
+ plati_flavor_ckeu.EVTNAME32: "Veneration of a [Root.Monarch.GetTitle]"
+ plati_flavor_ckeu.EVTDESC32: "Due to popularity of [Root.Monarch.GetName], many of the faithful are of conviction that stability and peace the realm enjoys is due to [Root.Monarch.GetHerHis] rule. More so, [Root.Monarch.GetTitle] [Root.Monarch.GetName] is believed to be sent to [Root.GetName] by the Gods themselves that divinely sanctioned [Root.Monarch.GetHerHis] governance. In other words: our ruler is being worshipped as a demi-god [Root.Monarch.GetHerselfHimself]!"
+ plati_flavor_ckeu.EVTOPTA32: "People believe what they wish."
+ plati_flavor_ckeu.EVTOPTB32: "Put an end to it!"
+ ########
+ plati_flavor_ckeu.EVTNAME33: "Bad Omens"
+ plati_flavor_ckeu.EVTDESC33: "Upon carefully interpreting the signs during their rituals, our Diviners have come to a concensus that dark times are ahead for [Root.GetName]. Bad omens tell us of future defeats in battle, collapse of economy and rampart disease consuming the country."
+ plati_flavor_ckeu.EVTOPTA33: "The Gods are upset!"
+ plati_flavor_ckeu.EVTOPTB33: "Perhaps you misinterpreted the signs?"
+ ########
+ plati_flavor_ckeu.EVTNAME34: "Good Omens"
+ plati_flavor_ckeu.EVTDESC34: "Upon carefully interpreting the signs during their rituals, our Diviners have come to a concensus that brigh future is ahead for [Root.GetName]. Good omens tell us of future victories over our enemies, unprecedented wealth and overall well-being of country."
+ plati_flavor_ckeu.EVTOPTA34: "The Gods favor us!"
+ ########
+ plati_flavor_ckeu.EVTNAME35: "The Third Temple finally complete!"
+ plati_flavor_ckeu.EVTDESC35: "At long last, the successor of Solomon's Temple and the Second Temple is finally completed in [Root.GetName]! The Messianic Age is almost upon us!"
+ plati_flavor_ckeu.EVTOPTA35: "Glorious!"
+ ########
+ plati_flavor_ckeu.EVTNAME36: "A Jewish Homeland?"
+ plati_flavor_ckeu.EVTDESC36: "Word is spreading about a rising [Root.GovernmentName] of [Root.GetName] among the Jews of the Diaspora. A slow but increasingly steady trickle of immigrants have begun to appear at our borders, hoping to live and serve in a state where they are not confined to Ghettos or restricted by laws and prejudice."
+ plati_flavor_ckeu.EVTOPTA36: "Welcome home."
+ ########
+ plati_flavor_ckeu.EVTNAME37: "Desecration of the Sabbath"
+ plati_flavor_ckeu.EVTDESC37: "On the Seventh Day after Igziabeher had created the world, He rested. In His honor, we keep the seventh day of the week holy. During the Sabbath, from sundown the day previous until the stars emerge, we do not work, write or cook. We even do not light any fires. Desecrating the Sabbath is a crime against God's laws.\n\nWord has gotten out that one of our most trusted advisors, [Root.Adm_Advisor.GetName], often works during Sabbath. While some of the more extreme protesters demand that [Root.Adm_Advisor.GetSheHe] be stoned to death for [Root.Adm_Advisor.GetHerHis] sinful ways, we do not want to set a dangerous precedent. After all, [Root.Adm_Advisor.GetName] is not the only one at court to violate the Sabbath, even though [Root.Adm_Advisor.GetSheHe] is the most regular and least discreet culprit. Simply firing [Root.Adm_Advisor.GetHerHim] would surely appease the majority, although [Root.Adm_Advisor.GetHerHis] experience would make it a great loss..."
+ plati_flavor_ckeu.EVTOPTA37: "We cannot allow such a poor moral character to represent our government."
+ plati_flavor_ckeu.EVTOPTB37: "[Root.Adm_Advisor.GetName] is too important to our [Root.GovernmentName]. [Root.Adm_Advisor.GetSheHeCap] will stay."
+ ########
+ plati_flavor_ckeu.EVTNAME38: "Christian Influence"
+ plati_flavor_ckeu.EVTDESC38: "Ever since the birth of Christianity, time and time again Jewish have betrayed their faith and undergone conversion by declaring Jesus of Nazareth the prophesied Messiah. While often this happened due to repressions and violence from various overlords, sometimes such actions are taken by theological arguments and charismatic missionaries. Most likely due to the influence of [plati_jew_christian_country.GetName] and their proselytizers, people of [plati_jew_converted_province.GetCapitalName] have openly denounced [Root.Religion.GetName] and coverted to [plati_jew_christian_country.Religion.GetName] faith."
+ plati_flavor_ckeu.EVTOPTA38: "Ok."
+ ########
+ plati_flavor_ckeu.EVTNAME39: "Funding a new Yeshiva"
+ plati_flavor_ckeu.EVTDESC39: "Yeshiva is a Jewish educational institution that focuses on the study of traditional religious texts, primarily the Talmud and the Torah, and halacha (Jewish law). The studying is usually done through daily shiurim (lectures or classes) as well as in study pairs called chavrusas (Aramaic for 'friendship' or 'companionship'). Traditionally, every town rabbi had the right to maintain a number of full-time or part-time pupils in the town's beth midrash (study hall), which was usually adjacent to the synagogue. Their cost of living was covered by community taxation. But now that the [Root.Religion.GetName] faith has finally its own state, the Clergy has mildly asked the [Root.Monarch.GetTitle] for funding of such establishment."
+ plati_flavor_ckeu.EVTOPTA39: "Naturally."
+ plati_flavor_ckeu.EVTOPTB39: "Our treasury has other priorities."
+ ########
+ plati_flavor_ckeu.EVTNAME40: "Renaissance and Paganism"
+ plati_flavor_ckeu.EVTDESC40: "The ideals of Renaissance are finally fully embraced in [Root.GovernmentName] of [Root.GetName]. After centuries of christian dominance over science and philosophy, interest in Roman and Greek scholars of old was once again reignited. So has the interest in pagan thought that was once dominant in Europe resurfaced. Renaissance artists admire antiquity, while learned men debate on classical Greek philosophy. And more daring ones - oppose seemingly archaic views christianity has on science, education and even social norms. A significant number of them are influenced by remaining pagan kingdoms that still stand to this day in Europe. But perhaps this creative curiosity is only a surface of a deeper desire our culture has for faiths of Old? Is it perhaps time to re-embrace our pagan legacy?"
+ plati_flavor_ckeu.EVTOPTA40: "Let us limit the movement to arts and sciences."
+ plati_flavor_ckeu.EVTOPTB40: "Pax Deorum!"
+ ########
+ plati_flavor_ckeu.EVTNAME41: "Renaissance and Paganism"
+ plati_flavor_ckeu.EVTDESC41: "Renaissance being a movement primarily constituted of fascination of antiquity and pre-christian Rome, had a somewhat different shape in pagan world. Unlike artistic confrontation with the Church, it was a time of national myths, heroic epics, pagan literature and art - all of which was greatly encouraged and supported by priesthood. Theologians delved deeper into secrets of the occult, mystical and shamanic. Many christian talents that were persecuted by conservative church found safe haven in pagan kingdoms, creating monumental architecture, fascinating paintings and astonishing inventions. Tales of mighty heroes, cunning tricksters and wrathful Gods blossomed like never before. Sacred Groves, Holy Sites and even minor Runestones slowly grew into Exquisite Temples, Robust Monuments and Major Landmarks. For [Root.GetName], it sure seemed like a Golden Age in culture."
+ plati_flavor_ckeu.EVTOPTA41: "Curious."
+ ########
+ plati_flavor_ckeu.EVTNAME42: "Codification of Pagan Myths"
+ plati_flavor_ckeu.EVTDESC42: "Many traditions and beliefs of old were lost due to Oral tradition practiced by ancient peoples. For a long time, [Root.Religion.GetName] myths and legends were also shared and taught verbally, them rarely being immortalized on paper. Snorri Sturluson described the events in Prose Edda centuries after their actual dates - mostly based on information carried by the words of skalds and bards, portion of which believed to be unreliable. However, with the birth of printing industry, many countries, including [Root.GetName] begun a massive culture campaign with sole purpose of codifying hundreds, if not thousands of tales, stories, songs, traditions and every inch of folklore they could find. Some faiths have experienced 'inflexibility' and saw rise of previously unseen 'fundamentalists', favoring some books and tales as holy texts - no doubt influenced by Abrahamic faiths. This movement was not widespread, however, and the cosmopolitan outlook pagans often shared in their traditions continued on. But if a future Lord or [Root.Monarch.GetTitle] decides to force their religion on others, these texts will surely aid them."
+ plati_flavor_ckeu.EVTOPTA42: "Interesting."
+ ########
+ plati_flavor_ckeu.EVTNAME43: "Zoroastrian Diaspora"
+ plati_flavor_ckeu.EVTDESC43: "Word has spread among the various exiled Zoroastrian communities of our veneration of the [Root.Religion.GetName] faith. The fire temples of [Root.GetCapitalName] have attracted particular fame, and now great numbers of Zoroastrians have begun to arrive in the area to start a new life in what they hope will be a more hospitable land. Steady stream of scholars, merchants and other valuable men and women will certainly help the area grow."
+ plati_flavor_ckeu.EVTOPTA43: "Excellent."
+ plati_flavor_ckeu.EVTOPTB43: "The best shall join our court."
+ ########
+ plati_flavor_ckeu.EVTNAME44: "Merging of Practices"
+ plati_flavor_ckeu.EVTDESC44: "The incorporation of cultural and local rituals is quite common and traditions have been passed down in historically Zoroastrian communities such as herbal healing practices, wedding ceremonies, and the like. Traditionally, Zoroastrian rituals have also included shamanic elements involving mystical methods such as spirit travel to the invisible realm and involving the consumption of fortified wine, Haoma, mang, and other ritual aids. Faiths, other than [Root.Religion.GetName], are practiced in [Root.GetName]. The priesthood is clashing between each other in regards to the question of syncretism or purity of faith."
+ plati_flavor_ckeu.EVTOPTA44: "Peace in Purity."
+ plati_flavor_ckeu.EVTOPTB44: "Purity in Peace."
+ ########
+ plati_flavor_ckeu.EVTNAME45: "Achieving Gnosis"
+ plati_flavor_ckeu.EVTDESC45: "Through knowledge, the divine spark that rests inside all humans may be liberated and returned to its heavenly source in the spirit-realm. Our Gnostic tradition of attaining wisdom has resulted in influx of many great minds."
+ plati_flavor_ckeu.EVTOPTA45: "Interesting."
+ ########
+ plati_flavor_ckeu.EVTNAME46: "Denouncing the Worldy"
+ plati_flavor_ckeu.EVTDESC46: "Ever growing land share the [Root.GovernmentName] controls directly has caused great worries among [Root.Religion.GetName] population. Instead of liberating ourselves from wordly posessions and attaining reunification with the creator, our [Root.Monarch.GetTitle] seems to cherish the temporal world quite a bit."
+ plati_flavor_ckeu.EVTOPTA46: "Renounce the Temporal!"
+ plati_flavor_ckeu.EVTOPTB46: "They are overreacting..."
+ ########
+ plati_flavor_ckeu.EVTNAME47: "Reuniting with the Creator"
+ plati_flavor_ckeu.EVTDESC47: "Many of the [Root.Religion.GetName] faithful have shown greater zealotry than usual - instead of attaining liberation though Gnosis, they decided that the fastest and surest way to reunite with the Creator is through leaving the material body and posessions. Our soldiers are willing to fight more fiercely during the ongoing war, hoping that they might attain liberation. This influx of zealous soldiers also means that laborers are little interested in further growing their wealth."
+ plati_flavor_ckeu.EVTOPTA47: "Support the movement."
+ plati_flavor_ckeu.EVTOPTB47: "Stop the movement."
+ ########
+ plati_flavor_ckeu.EVTNAME48: "[Root.Religion.GetName] Traditions"
+ plati_flavor_ckeu.EVTDESC48: "[Root.Religion.GetName] traditions are still remembered amongst the people of [Root.GetName]. Now that the thesis of Luther has been widely known, more and more important people are openly declaring themselves to be Protestant rather than [Root.Religion.GetName]. We must decide whether to retain a distinct [Root.Religion.GetName] identity or join the wider Protestant Reformation."
+ plati_flavor_ckeu.EVTOPTA48: "We shall join the Reformation!"
+ plati_flavor_ckeu.EVTOPTB48: "We shall retain our distinct [Root.Religion.GetName] faith."
+ ########
+ plati_flavor_ckeu.EVTNAME49: "Yazidi-[plati_yazidi_muslim_neighbor.Religion.GetName] conflict"
+ plati_flavor_ckeu.EVTDESC49: "The Yazidi religion is regarded as 'devil-worship' by Muslims and Islamists. Yazidis have been persecuted by the surrounding Muslims since the medieval ages by neighbouring Muslim Arab and Kurdish tribes and principalities. [plati_yazidi_muslim_neighbor.Monarch.GetTitle] of [plati_yazidi_muslim_neighbor.GetName] has been demonstrating particularly violent zealotry, targeting border villages and caravans. It is unlikely that hostilities with [plati_yazidi_muslim_neighbor.GetName] will end soon..."
+ plati_flavor_ckeu.EVTOPTA49: "Worrisome."
+ ########
+ plati_flavor_ckeu.EVTNAME50: "Ruler perceived as Reincarnation"
+ plati_flavor_ckeu.EVTDESC50: "Our [Root.Monarch.GetTitle] is believed to be one of the sacred reincarnations of the Seven Angels. Already beloved and now worshipped - [Root.Monarch.GetName] is carrying great burden of expectations and hopes. Whatever course we take, one thing is clear - Melek Taus truly has blessed [Root.GetName]."
+ plati_flavor_ckeu.EVTOPTA50: "I come bearing peace."
+ plati_flavor_ckeu.EVTOPTB50: "I will bring prosperity."
+ plati_flavor_ckeu.EVTOPTC50: "I shall deliver victories."
+ ########
+ plati_flavor_ckeu.EVTNAME99: ""
+ plati_flavor_ckeu.EVTDESC99: ""
+ plati_flavor_ckeu.EVTOPTA99: ""
+ plati_flavor_ckeu.EVTOPTB99: ""
+ 
