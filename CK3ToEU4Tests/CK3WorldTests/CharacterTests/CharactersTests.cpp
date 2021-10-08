@@ -233,7 +233,7 @@ TEST(CK3World_CharactersTests, titlesLinkMissingClaimDropsErrantClaim)
 	ASSERT_FALSE(c1->second->getClaims().contains(6));
 }
 
-TEST(CK3World_CharactersTests, titlesLinkMissingCapitalThrowsException)
+TEST(CK3World_CharactersTests, titlesLinkMissingCapitalIgnoresCapitalLinking)
 {
 	std::stringstream input;
 	input << "1 = { key=c_county1 }\n";
@@ -253,8 +253,12 @@ TEST(CK3World_CharactersTests, titlesLinkMissingCapitalThrowsException)
 	input2 << "}\n";
 	CK3::Characters characters;
 	characters.loadCharacters(input2);
+	characters.linkTitles(titles);
 
-	ASSERT_THROW(characters.linkTitles(titles), std::runtime_error);
+	const auto& c1 = characters.getCharacters().find(100);
+
+	ASSERT_EQ(6, c1->second->getCharacterDomain()->getRealmCapital().first);
+	ASSERT_FALSE(c1->second->getCharacterDomain()->getRealmCapital().second);
 }
 
 TEST(CK3World_CharactersTests, titlesLinkMissingDomainThrowsException)

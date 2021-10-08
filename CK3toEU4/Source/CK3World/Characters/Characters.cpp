@@ -131,7 +131,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 	for (const auto& character: characters)
 	{
 		const auto& domain = character.second->getCharacterDomain();
-		if (domain)
+		if (domain && domain->getRealmCapital().first)
 		{
 			// load realm capital
 			auto titleDataItr = IDCache.find(domain->getRealmCapital().first);
@@ -142,8 +142,7 @@ void CK3::Characters::linkTitles(const Titles& titles)
 			}
 			else
 			{
-				throw std::runtime_error("Character " + std::to_string(character.first) + " has capital " + std::to_string(domain->getRealmCapital().first) +
-												 " which has no definition!");
+				Log(LogLevel::Warning) << "Character " << character.first << " has capital " << domain->getRealmCapital().first << " which has no definition!";
 			}
 			// load owned including landless titles ("the domain").
 			std::vector<std::pair<long long, std::shared_ptr<Title>>> replacementDomain;
