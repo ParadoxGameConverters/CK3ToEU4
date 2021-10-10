@@ -937,9 +937,9 @@ void EU4::World::resolvePersonalUnions()
 	// We're filling the registry first.
 	for (const auto& country: countries)
 	{
-		if (!country.second->getTitle())
+		if (!country.second->getTitle() || !country.second->getTitle()->second)
 			continue;
-		if (!country.second->getTitle()->second->getHolder())
+		if (!country.second->getTitle()->second->getHolder() || !country.second->getTitle()->second->getHolder()->second)
 			continue;
 		// we have a holder.
 		const auto& holder = *country.second->getTitle()->second->getHolder();
@@ -952,6 +952,8 @@ void EU4::World::resolvePersonalUnions()
 			auto foundTag = false;
 			for (const auto& title: holder.second->getCharacterDomain()->getDomain())
 			{
+				if (!title.second)
+					continue; // this title is broken.
 				if (title.second->getEU4Tag())
 				{
 					foundTag = true;

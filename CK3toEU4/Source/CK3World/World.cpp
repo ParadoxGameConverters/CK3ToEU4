@@ -918,13 +918,16 @@ void CK3::World::gatherCourtierNames()
 
 	for (const auto& character: characters.getCharacters())
 	{
+		// Do you even exist?
+		if (!character.second)
+			continue;
 		// Hello. Are you an employed individual?
 		if (!character.second->isCouncilor() && !character.second->getEmployer())
 			continue;
 		// If you have a steady job, we need your employer's references.
 		if (character.second->isCouncilor())
 		{
-			if (character.second->getEmployer())
+			if (character.second->getEmployer() && character.second->getEmployer()->second)
 			{
 				// easiest case.
 				holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
@@ -934,11 +937,13 @@ void CK3::World::gatherCourtierNames()
 			{
 				// this councilor is landed and works for his liege.
 				const auto& characterPrimaryTitle = character.second->getCharacterDomain()->getDomain()[0];
+				if (!characterPrimaryTitle.second)
+					continue; // corruption
 				const auto& liegeTitle = characterPrimaryTitle.second->getDFLiege();
-				if (!liegeTitle)
+				if (!liegeTitle || liegeTitle->second)
 					continue; // I dislike this character. I think it is time he was let go.
 				const auto& liege = liegeTitle->second->getHolder();
-				if (!liege)
+				if (!liege || !liege->second)
 					continue; // Or maybe we should fire his liege.
 				holderCourtiers[liege->first].insert(std::pair(character.second->getName(), character.second->isFemale()));
 				holderCouncilors[liege->first].insert(character);
