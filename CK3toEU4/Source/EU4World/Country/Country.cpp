@@ -599,6 +599,8 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 
 	// Are we the ruler's primary title? (if he has any)
 	// Potential PU's don't get monarchs. (and those apply for monarchies only)
+	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
+		return; // corruption
 	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
 		return;
 
@@ -1409,6 +1411,8 @@ void EU4::Country::initializeAdvisers(const mappers::LocalizationMapper& localiz
 	// Sanity check
 	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
 		return; // hello broken.
+	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
+		return; // hello double broken
 	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first)
 		return; // PU's don't get advisors on secondary countries.
 
