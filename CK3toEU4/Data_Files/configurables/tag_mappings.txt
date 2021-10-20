@@ -219,7 +219,7 @@ link = { ck3 = d_moravia eu4 = MVA }
 link = { ck3 = c_nurnberg eu4 = NUM }
 link = { ck3 = c_nassau eu4 = NSA }
 link = { ck3 = c_oldenburg eu4 = OLD }
-#link = { ck3 = ??? eu4 = PAL }
+link = { ck3 = d_west_franconia eu4 = PAL }
 link = { ck3 = k_pomerania eu4 = POM }
 link = { ck3 = d_pommerania eu4 = POM }
 link = { ck3 = c_ravensburg eu4 = RVA }
@@ -859,7 +859,6 @@ link = { ck3 = c_coburg eu4 = COB }
 link = { ck3 = k_lotharingia eu4 = LOT }
 link = { ck3 = c_orvieto eu4 = PGA } #Has temple-city Perugia
 link = { ck3 = k_sicily eu4 = TTS }
-link = { ck3 = d_west_franconia eu4 = FKN }
 link = { ck3 = d_east_franconia eu4 = FKN }
 link = { ck3 = d_swabia eu4 = SWA }
 
