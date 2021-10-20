@@ -176,6 +176,7 @@ TEST(CK3World_TitleTests, buildingWeightIsCalculated)
 	devWeightMapperStream << "dev_from_building = 0.1\n";
 	devWeightMapperStream << "dev_from_holding = 0.2\n";
 	devWeightMapperStream << "dev_from_development = 0.5\n";
+	devWeightMapperStream << "dev_treshold = 4.0\n";
 	auto devWeightMapper = mappers::DevWeightsMapper(devWeightMapperStream);
 
 	std::stringstream landedStream;
@@ -191,7 +192,7 @@ TEST(CK3World_TitleTests, buildingWeightIsCalculated)
 	auto lc = landedTitles.getFoundTitles().find("c_county")->second;
 
 	std::stringstream countyDetailStream;
-	countyDetailStream << "development = 7\n";
+	countyDetailStream << "development = 17\n";
 	auto countyDetail = std::pair("c_county", std::make_shared<CK3::CountyDetail>(countyDetailStream));
 
 	std::stringstream provinceHolding1Stream;
@@ -228,12 +229,12 @@ TEST(CK3World_TitleTests, buildingWeightIsCalculated)
 	b3.second->loadClay(lb3);
 	c.second->loadDJVassals(std::map{b1, b2, b3});
 
-	// dev: 7 * 0.5 = 3.5
+	// dev: (17 - 4) * 0.5 = 6.5
 	// holdings: 2 * 0.2 = 0.4
 	// buildings: 2 * 0.1 = 0.2
-	// total: 4.1
+	// total: 7.1
 
-	ASSERT_NEAR(4.1, c.second->getBuildingWeight(devWeightMapper), 0.001);
+	EXPECT_NEAR(7.1, c.second->getBuildingWeight(devWeightMapper), 0.001);
 }
 
 TEST(CK3World_TitleTests, buildingWeighWithoutCountyfulClayThrowsExceptions)

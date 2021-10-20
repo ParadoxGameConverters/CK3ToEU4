@@ -716,7 +716,8 @@ void EU4::World::alterProvinceDevelopment()
 				mil += baronyDev * 2 / 3; // two thirds to mil
 			}
 		}
-		double generalDevelopment = province.second->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
+		const auto development = province.second->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
+		double generalDevelopment = std::max(0.0, development - devWeightsMapper.getDevTreshold());
 		generalDevelopment *= devWeightsMapper.getDevFromDev() / 3;
 		province.second->setAdm(std::max(static_cast<int>(std::lround(adm + generalDevelopment)), 1));
 		province.second->setDip(std::max(static_cast<int>(std::lround(dip + generalDevelopment)), 1));

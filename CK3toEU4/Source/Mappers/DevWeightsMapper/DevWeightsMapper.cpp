@@ -30,5 +30,8 @@ void mappers::DevWeightsMapper::registerKeys()
 		const commonItems::singleDouble devDbl(theStream);
 		devFromDev = devDbl.getDouble();
 	});
+	registerKeyword("dev_treshold", [this](std::istream& theStream) {
+		devTreshold = commonItems::getDouble(theStream);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
