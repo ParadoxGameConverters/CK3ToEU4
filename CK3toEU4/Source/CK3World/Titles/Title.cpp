@@ -392,7 +392,7 @@ double CK3::Title::getBuildingWeight(const mappers::DevWeightsMapper& devWeights
 	}
 
 	const auto totalDev = devWeightsMapper.getDevFromHolding() * holdingCount + devWeightsMapper.getDevFromBuilding() * buildingCount +
-								 devWeightsMapper.getDevFromDev() * development;
+								 std::max(0.0, development - devWeightsMapper.getDevTreshold()) * devWeightsMapper.getDevFromDev();
 	return totalDev;
 }
 

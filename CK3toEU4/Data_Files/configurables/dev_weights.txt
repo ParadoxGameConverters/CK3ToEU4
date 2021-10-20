@@ -5,5 +5,8 @@
 dev_from_building = 0.25
 dev_from_holding = 0.75
 dev_from_development = 0.1
+dev_treshold = 50.0
+
+# formula is: (sum of all building upgrades) * dev_from_building + (sum of holdings) * dev_from_holding + max(0, (dev - dev_treshold)) * dev_from_development
 
 # If the world seems underdeveloped, try with dev_from_building = 0.3 or 0.35. dev_from_holding is usually fine as is, as well as dev from development.

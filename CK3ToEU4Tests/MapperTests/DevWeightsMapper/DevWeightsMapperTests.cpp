@@ -58,3 +58,22 @@ TEST(Mappers_DevWeightsMapperTests, devFromDevelopmentCanBeSet)
 
 	ASSERT_NEAR(0.7, theMapper.getDevFromDev(), 0.001);
 }
+
+TEST(Mappers_DevWeightsMapperTests, devTresholdDefaultsToZero)
+{
+	std::stringstream input;
+
+	const mappers::DevWeightsMapper theMapper(input);
+
+	EXPECT_NEAR(0, theMapper.getDevTreshold(), 0.001);
+}
+
+TEST(Mappers_DevWeightsMapperTests, devTresholdCanBeSet)
+{
+	std::stringstream input;
+	input << "dev_treshold = 50.0\n";
+
+	const mappers::DevWeightsMapper theMapper(input);
+
+	EXPECT_NEAR(50.0, theMapper.getDevTreshold(), 0.001);
+}

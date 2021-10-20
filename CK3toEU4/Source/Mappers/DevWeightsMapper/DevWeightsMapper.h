@@ -14,6 +14,7 @@ class DevWeightsMapper: commonItems::parser
 	[[nodiscard]] const auto& getDevFromBuilding() const { return devFromBuilding; }
 	[[nodiscard]] const auto& getDevFromHolding() const { return devFromHolding; }
 	[[nodiscard]] const auto& getDevFromDev() const { return devFromDev; }
+	[[nodiscard]] const auto& getDevTreshold() const { return devTreshold; }
 
   private:
 	void registerKeys();
@@ -21,6 +22,7 @@ class DevWeightsMapper: commonItems::parser
 	double devFromBuilding = 0;
 	double devFromHolding = 0;
 	double devFromDev = 0;
+	double devTreshold = 0;
 };
 } // namespace mappers
 
