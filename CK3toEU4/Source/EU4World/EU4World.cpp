@@ -1393,7 +1393,8 @@ void EU4::World::distributeForts()
 			elegibleAreas[*areaName]++;
 		}
 
-		// And we put a fort in every one of those.
+		// And we put a fort in every third?
+		auto counter = 0;
 		for (const auto& province: country.second->getProvinces())
 		{
 			const auto& areaName = regionMapper->getParentAreaName(province.first);
@@ -1403,6 +1404,12 @@ void EU4::World::distributeForts()
 				continue;
 			if (elegibleAreas[*areaName] <= 2)
 				continue;
+			if (counter < 2)
+			{
+				++counter;
+				continue;
+			}
+			counter = 0;
 
 			province.second->buildFort();
 			counterOther++;
