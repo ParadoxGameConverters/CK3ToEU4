@@ -54,7 +54,7 @@ leviathan_idea_adm_modifiers = {
 	}
 
 	custom_tribal_development_growth = {
-		tribal_development_growth = 0.075
+		tribal_development_growth = 0.015
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18

@@ -81,7 +81,7 @@ country_decisions = {
 				remove_government_reform = elective_monarchy
 				add_government_reform = autocracy_reform
 				set_legacy_government = administrative_monarchy
-				remove_heir = yes
+				remove_heir = {}
 				add_absolutism = 10
 			}
 		}

@@ -1001,3 +1001,17 @@ link = { ck3 = k_tts eu4 = TTS }
 link = { ck3 = e_tang eu4 = TNG }
 link = { ck3 = e_jurchen_china eu4 = JIN }
 link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
+
+# 1.32 Songhai / Origins
+
+link = { ck2 = d_wagadugu eu4 = WGD } # Wagadugu
+link = { ck2 = c_wagadugu eu4 = WGD } # Wagadugu
+link = { ck2 = c_kurumba eu4 = ZND } # Zandoma
+link = { ck2 = k_gurma eu4 = GUR } # Gurma
+link = { ck2 = d_lower_gurma eu4 = GUR } # Gurma
+link = { ck2 = d_upper_gurma eu4 = GUR } # Gurma
+link = { ck2 = c_gurma eu4 = GUR } # Gurma
+link = { ck2 = c_upper_gurma eu4 = GUR } # Gurma
+link = { ck2 = k_nubia eu4 = NUB } # Nubia
+link = { ck2 = d_wadai eu4 = WAD } # Wadai
+link = { ck2 = c_wadai eu4 = WAD } # Wadai

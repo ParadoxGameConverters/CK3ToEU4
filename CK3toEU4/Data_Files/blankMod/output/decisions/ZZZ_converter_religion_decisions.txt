@@ -39,7 +39,7 @@ country_decisions = {
 		effect = {
 			if = {
 				limit = { has_heir = yes }
-				kill_heir = yes
+				kill_heir = {}
 			}
 			every_neighbor_country = {
 				limit = {
