@@ -33,11 +33,20 @@ jobs:
        cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release\
        .\CK3ToEU4Tests.exe
 
+    - name: "Build updater executable"
+      run: |
+       cd Fronter/Updater
+       pip3 install -r requirements.txt
+       pyinstaller --onefile --icon=updater.ico updater.py
+       mkdir ../../Release/Updater
+       mv dist/updater.exe ../../Release/Updater/updater.exe       
+
     - name: "Prepare release"
       if: ${{ github.event_name == 'push' }}
       run: |
        cd "C:\Program Files\7-Zip\"
        .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular.zip $Env:GITHUB_WORKSPACE\Release\*
+       cp $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular.zip $Env:GITHUB_WORKSPACE\CK3toEU4-latest.zip
        
     - name: "Upload binaries to release"
       if: ${{ github.event_name == 'push' }}
@@ -58,7 +67,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: CK3toEU4-0.9Insular.zip
+        artifacts: CK3toEU4-0.9Insular.zip, CK3toEU4-latest.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
     - name: "Cleanup"
