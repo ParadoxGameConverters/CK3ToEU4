@@ -42,6 +42,12 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { was_tag = BRZ }
 			NOT = { was_tag = AUS }
 			NOT = { was_tag = MEX }
+			NOT = { was_tag = ETH }
+			NOT = { was_tag = AKS }
+			NOT = { was_tag = GZI }
+			NOT = { was_tag = SOM }
+			NOT = { was_tag = RZI }
+			NOT = { was_tag = MAL }
 			NOT = { tag = MUG }
 			NOT = { tag = TUR }
 			NOT = { tag = BYZ }
@@ -82,6 +88,12 @@ was_never_end_game_tag_trigger = {	#Country Scope
 			NOT = { tag = BRZ }
 			NOT = { tag = AUS }
 			NOT = { tag = MEX }
+			NOT = { tag = ETH }
+			NOT = { tag = AKS }
+			NOT = { tag = GZI }
+			NOT = { tag = SOM }
+			NOT = { tag = RZI }
+			NOT = { tag = MAL }
 		}
 	}
 }

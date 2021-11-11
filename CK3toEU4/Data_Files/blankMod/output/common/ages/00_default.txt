@@ -59,8 +59,10 @@ age_of_discovery = {
 			custom_trigger_tooltip = {
 				tooltip = obj_30_development_city_tooltip
 				any_owned_province = {
-					is_core = ROOT
-					controlled_by = owner
+					exclude_from_progress = {
+						is_core = ROOT
+						controlled_by = owner
+					}
 					development_discounting_tribal = 30
 				}
 			}

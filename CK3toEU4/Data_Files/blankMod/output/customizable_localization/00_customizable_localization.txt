@@ -3761,3 +3761,285 @@ defined_text = {
 		localisation_key = sin_adultery
 	}
 }
+
+### Polynesian Rework
+defined_text = {
+    name = GetPolynesianSacredArea
+
+    text = {
+        localisation_key = string_sacred_area_fijian
+        trigger = {
+			primary_culture = melanesian
+        }
+    }
+    text = {
+        localisation_key = string_sacred_area_hawaiian
+        trigger = {
+			OR = {
+				tag = HAW
+				tag = KAA
+				tag = MAU
+				tag = OAH
+				tag = UHW
+			}
+        }
+    }
+	text = {
+        localisation_key = string_sacred_area_polynesian
+        trigger = {
+			OR = {
+				primary_culture = maori
+				primary_culture = polynesian
+			}
+			NOT = {
+				OR = {
+					tag = HAW
+					tag = KAA
+					tag = MAU
+					tag = OAH
+					tag = UHW
+				}
+			}
+        }
+	}
+}
+
+defined_text = {
+    name = GetPolynesianDance
+
+    text = {
+        localisation_key = string_dance_fijian
+        trigger = {
+			primary_culture = melanesian
+        }
+    }
+    text = {
+        localisation_key = string_dance_hawaiian
+        trigger = {
+			OR = {
+				tag = HAW
+				tag = KAA
+				tag = MAU
+				tag = OAH
+				tag = UHW
+			}
+        }
+    }
+	text = {
+        localisation_key = string_dance_maori
+        trigger = {
+			primary_culture = maori
+        }
+	}
+	text = {
+        localisation_key = string_dance_samoan
+        trigger = {
+			tag = SAM
+        }
+	}
+	text = {
+        localisation_key = string_dance_tongan
+        trigger = {
+			tag = TOG
+        }
+	}
+}
+
+defined_text = {
+    name = GetMaliReligionGenorisityMissionText
+
+    text = {
+        localisation_key = mal_give_gold_away_desc_muslim
+        trigger = {
+			religion_group = muslim
+        }
+    }
+    text = {
+        localisation_key = mal_give_gold_away_desc_fetishist
+        trigger = {
+			NOT = { religion_group = muslim }
+        }
+    }
+}
+
+defined_text = {
+    name = GetHeirPrimaryCultFeature
+
+    text = {
+        localisation_key = empty_text
+        trigger = {
+            NOT = { has_country_flag = enabled_cult_for_heirs }
+        }
+    }
+
+    text = {
+        localisation_key = primary_cults_for_heirs_tt
+        trigger = {
+            has_country_flag = enabled_cult_for_heirs
+        }
+    }
+}
+
+defined_text = {
+    name = GetMaliRegionalCapital
+
+    text = {
+        localisation_key = empty_text
+        trigger = {
+            NOT = { has_country_flag = mal_visit_foreign_capital }
+        }
+    }
+
+    text = {
+        localisation_key = mal_visiting_foreign_regional_power
+        trigger = {
+            has_country_flag = mal_visit_foreign_capital
+        }
+    }
+}
+
+defined_text = {
+    name = GetMaliPigrimageTour
+
+    text = {
+        localisation_key = GREAT_PILGRIMAGE
+        trigger = {
+            NOT = { has_country_modifier = mal_advisors_journey }
+        }
+    }
+
+    text = {
+        localisation_key = GREAT_TOUR
+        trigger = {
+            has_country_modifier = mal_advisors_journey
+        }
+    }
+}
+
+defined_text = {
+    name = GetSelectableMissionTitle
+
+    text = {
+        localisation_key = SELECTABLE_MISSION_TITLE
+    }
+}
+
+defined_text = {
+    name = GetSelectableMissionDescription
+
+    text = {
+        localisation_key = SELECTABLE_MISSION_DESCRIPTION
+    }
+}
+
+defined_text = {
+    name = GetNumConvertedProvinces
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_converted_religion
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_CONVERTED_PROVINCES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_converted_religion
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+	name = OppositeEmbassyHolderName
+
+	text = {
+		localisation_key = persian_embassy_holder_name
+		trigger = {
+			tag = event_target:kilwan_embassy_holder
+		}
+	}
+	text = {
+		localisation_key = kilwan_embassy_holder_name
+		trigger = {
+			tag = event_target:persian_embassy_holder
+		}
+	}
+}
+
+defined_text = {
+	name = OppositeEmbassyHolderAdjective
+
+	text = {
+		localisation_key = persian_embassy_holder_adjective
+		trigger = {
+			tag = event_target:kilwan_embassy_holder
+		}
+	}
+	text = {
+		localisation_key = kilwan_embassy_holder_adjective
+		trigger = {
+			tag = event_target:persian_embassy_holder
+		}
+	}
+}
+
+defined_text = {
+	name = OppositeEmbassyHolderReligion
+
+	text = {
+		localisation_key = persian_embassy_holder_religion
+		trigger = {
+			tag = event_target:kilwan_embassy_holder
+		}
+	}
+	text = {
+		localisation_key = kilwan_embassy_holder_religion
+		trigger = {
+			tag = event_target:persian_embassy_holder
+		}
+	}
+}
+
+defined_text = {
+	name = GetLegitimacyOrSimilarCurrency
+
+	text = {
+		localisation_key = republican_tradition
+		trigger = {
+			government = republic
+		}
+	}
+	text = {
+		localisation_key = devotion
+		trigger = {
+			uses_devotion = yes
+		}
+	}
+	text = {
+		localisation_key = meritocracy
+		trigger = {
+			has_dlc = "Mandate of Heaven"
+			has_reform = celestial_empire
+		}
+	}
+	text = {
+		localisation_key = horde_unity
+		trigger = {
+			is_nomad = yes
+		}
+	}
+	text = {
+		localisation_key = legitimacy
+		#default
+	}
+}
+

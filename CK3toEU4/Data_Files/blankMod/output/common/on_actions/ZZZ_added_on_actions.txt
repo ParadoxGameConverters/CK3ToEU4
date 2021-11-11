@@ -1,224 +1,5 @@
-#Check for reformed religions in a "HISTORICAL" start
-###Not Needed for CK3 since all reformed faiths are dynamic
-#on_startup = {
-	
-	#if = {
-	#	limit = { NOT = { has_global_flag = ZZZ_enhanced_random_world } }
-	#	#Norse
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = norse_pagan_reformed
-	#						ruler_religion = norse_pagan_reformed
-	#						heir_religion = norse_pagan_reformed
-	#						consort_religion = norse_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = norse_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_norse_pagan_reformed
-	#	}	
-	#	
-	#	#Baltic
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = baltic_pagan_reformed
-	#						ruler_religion = baltic_pagan_reformed
-	#						heir_religion = baltic_pagan_reformed
-	#						consort_religion = baltic_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = baltic_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_baltic_pagan_reformed
-	#	}
-	#	#Finnish
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = finnish_pagan_reformed
-	#						ruler_religion = finnish_pagan_reformed
-	#						heir_religion = finnish_pagan_reformed
-	#						consort_religion = finnish_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = finnish_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_finnish_pagan_reformed
-	#	}
-	#	#Aztec is weird
-	#	#Slavic
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = slavic_pagan_reformed
-	#						ruler_religion = slavic_pagan_reformed
-	#						heir_religion = slavic_pagan_reformed
-	#						consort_religion = slavic_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = slavic_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_slavic_pagan_reformed
-	#	}
-	#	#Tengri
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = tengri_pagan_reformed
-	#						ruler_religion = tengri_pagan_reformed
-	#						heir_religion = tengri_pagan_reformed
-	#						consort_religion = tengri_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = tengri_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_tengri_pagan_reformed
-	#	}
-	#	#West African
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = west_african_pagan_reformed
-	#						ruler_religion = west_african_pagan_reformed
-	#						heir_religion = west_african_pagan_reformed
-	#						consort_religion = west_african_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = west_african_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_west_african_pagan_reformed
-	#	}
-	#	#Hellenic
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = hellenic_pagan_reformed
-	#						ruler_religion = hellenic_pagan_reformed
-	#						heir_religion = hellenic_pagan_reformed
-	#						consort_religion = hellenic_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = hellenic_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_hellenic_pagan_reformed
-	#	}
-	#	#Zun
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = zun_pagan_reformed
-	#						ruler_religion = zun_pagan_reformed
-	#						heir_religion = zun_pagan_reformed
-	#						consort_religion = zun_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = zun_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_zun_pagan_reformed
-	#	}
-	#	#Bon
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = bon_reformed
-	#						ruler_religion = bon_reformed
-	#						heir_religion = bon_reformed
-	#						consort_religion = bon_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = bon_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_bon_reformed
-	#	}
-	#	#Kushite
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = kushitism_pagan_reformed
-	#						ruler_religion = kushitism_pagan_reformed
-	#						heir_religion = kushitism_pagan_reformed
-	#						consort_religion = kushitism_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = kushitism_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_kushitism_pagan_reformed
-	#	}
-	#	#Magyar
-	#	if = {
-	#		limit = {
-	#			OR = {
-	#				any_country = {
-	#					OR = {
-	#						religion = magyar_pagan_reformed
-	#						ruler_religion = magyar_pagan_reformed
-	#						heir_religion = magyar_pagan_reformed
-	#						consort_religion = magyar_pagan_reformed
-	#					}
-	#				}
-	#				any_province = {
-	#					religion = magyar_pagan_reformed
-	#				}
-	#			}
-	#		}
-	#		set_global_flag = ZZZ_enhanced_magyar_pagan_reformed
-	#	}
-	#}
-#}
-
 #Scripted effect for Extra Fetishist cult mechanics.
+
 on_battle_lost_country = {
 	##VANILLA
 	battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
@@ -229,6 +10,7 @@ on_battle_lost_country = {
 	##MODDED
 	ZZZ_enhanced_converter_battle_cult_spreading_effect = yes
 }
+
 on_province_owner_change = {
 	##VANILLA
 	events = {
@@ -300,6 +82,107 @@ on_province_owner_change = {
 		remove_province_modifier = sufi_shrine
 	}
 	on_province_owner_change_estate_privileges_effect = yes
+	judaism_on_province_change_religion_or_change_owner_effect = yes
+	kongo_on_province_change_culture_or_change_owner_effect = yes
+	
+	if = {
+		limit = {
+			region = indo_china_region
+			has_building = farm_estate
+			trade_goods = grain
+			owner = {
+				has_mission = mnd_khm_irrigation 
+				NOT = {
+					OR = {
+						has_estate = estate_vaisyas
+						has_estate = estate_burghers
+					}
+				}
+			}
+		}
+		add_province_modifier = {
+			name = grain_production_improved
+			duration = 7300
+		}
+	}
+
+	if = {
+		limit = {
+			trade_goods = gold
+			NOT = { has_province_modifier = estate_burghers_control_over_gold_mine }
+			owner = {
+				has_estate_privilege = estate_burghers_control_over_the_mint
+			}
+		}
+		add_province_modifier = {
+			name = estate_burghers_control_over_gold_mine
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				religion = ROOT
+				culture_group = ROOT
+				has_estate_privilege = estate_church_one_faith_one_culture
+			}
+			NOT = { has_province_modifier = estate_church_united_faith_and_culture }
+		}
+		add_province_modifier = {
+			name = estate_church_united_faith_and_culture
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				NOT = { culture_group = ROOT }
+				has_owner_accepted_culture = no
+				has_estate_privilege = estate_church_one_faith_one_culture
+			}
+			NOT = { has_province_modifier = estate_church_false_culture }
+		}
+		add_province_modifier = {
+			name = estate_church_false_culture
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_modifier = son_fetishism_as_secondary_religion
+			}
+			religion = shamanism
+			NOT = { has_province_modifier = son_fetishism_as_secondary_religion_province }
+		}
+		add_province_modifier = {
+			name = son_fetishism_as_secondary_religion_province
+			duration = -1
+			desc = son_fetishism_as_secondary_religion_province_desc
+		}
+	}
+	
+	if = {
+		limit = {
+			province_id = 379
+			owner = {
+				NOT = { religion = jewish }
+			}
+		}
+		remove_country_modifier = third_temple_country_modifier
+	}
+	else_if = {
+		limit = {
+			OR = {
+				owner = {
+					NOT = { has_country_modifier = son_fetishism_as_secondary_religion }
+				}
+				NOT = { religion = shamanism }
+			}
+			has_province_modifier = son_fetishism_as_secondary_religion_province
+		}
+		remove_province_modifier = son_fetishism_as_secondary_religion_province
+	}
 	
 	##MODDED
 	if = {

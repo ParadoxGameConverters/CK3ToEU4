@@ -81,6 +81,18 @@ estate_church_clerical_ministers = {
 			}
 			if = {
 				limit = {
+					has_dlc = "Emperor"
+				}
+				NOT = { religion = hussite }
+			}
+			if = {
+				limit = {
+					has_dlc = "Origins"
+				}
+				NOT = { religion = jewish }
+			}
+			if = {
+				limit = {
 					has_dlc = "Wealth of Nations"
 				}
 				uses_fervor = no #Reformed/Messalian/Waldensian/Lollard/Qarmatian
@@ -125,6 +137,24 @@ estate_church_clerical_ministers = {
 		trigger = {
 			has_dlc = "Common Sense"
 			uses_church_aspects = yes #Protetants/Anglicans/Cathars/Bogomilists
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Emperor"
+			religion = hussite
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_dlc = "Origins"
+			religion = jewish
 		}
 		modifier = {
 			church_power_modifier = 0.1
@@ -186,6 +216,11 @@ estate_church_clerical_ministers = {
 			}
 			religion = protestant
 			num_of_aspects = 3
+		}
+		modifier = {
+			factor = 10
+			religion = orthodox
+			has_dlc = "Third Rome"
 		}
 	}
 }

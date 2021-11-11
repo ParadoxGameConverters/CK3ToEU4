@@ -4421,7 +4421,7 @@ country_event = {
 				country_event = { id = ZZZ_enhanced_fetishist.77 days = 7 }
 			}
 			50 = {
-				kill_heir = yes
+				kill_heir = {}
 			}
 		}
 	}
