@@ -81,7 +81,6 @@
 	link = { ck3 = 1454 ck3 = 7648 ck3 = 7651 ck3 = 7657 ck3 = 7676 ck3 = 7673 ck3 = 7670 ck3 = 7654 ck3 = 7643 eu4 = 1065 } # Abakan, Jerjul, Kizir, Kyzylkul, Songuu Aallar, Chagdy Aallar, Burugu Aallar, Anja, Julym -> Kuznetsk
 	link = { ck3 = 7631 ck3 = 7625 ck3 = 7666 ck3 = 7664 ck3 = 7635 eu4 = 1066 } # Katu-Yaryk, Western Tannu, Uul Chors, Shor, Kantegir -> Altai Uriankhai
 	link = { ck3 = 1205 eu4 = 1070 } # Narim -> Narim
-	link = { } # NOTHING -> DROPPED
 	link = { ck3 = 7439 ck3 = 1462 ck3 = 7738 ck3 = 7736 ck3 = 7441 ck3 = 7449 ck3 = 7447 eu4 = 1068 } # Chulym, Kyzyl Char, Shishina, Mana, Kojuk, Yenisei, Sochur -> Ket
 	link = { ck3 = 7679 eu4 = 2443 } # Karauda -> Kan
 	link = { ck3 = 7755 ck3 = 7751 eu4 = 2432 } # Tulun, Bura -> Chulym
@@ -645,8 +644,8 @@
 	link = { ck3 = 8480 ck3 = 8451 eu4 = 2779 } # El Waak, Fudalhi -> Afder
 	link = { ck3 = 8459 eu4 = 2776 } # Jilib -> Afgooye
 	link = { ck3 = 8481 eu4 = 2777 } # Lag Dera -> Bardera
-	link = { ck3 = 8455 ck3 = 8468 ck3 = 8457 eu4 = 2781 } # Luuq, Qalaafe, Jubba -> Gedo
-	link = { ck3 = 8467 eu4 = 2785 } # Hiraab -> El Buur
+	link = { ck3 = 8455 ck3 = 8457 eu4 = 2781 } # Luuq, Jubba -> Gedo
+	link = { ck3 = 8467 ck3 = 8468 eu4 = 2785 } # Hiraab, Qalaafe -> El Buur
 	link = { ck3 = 8465 eu4 = 2795 } # Mareeg -> Meregh
 	link = { ck3 = 8512 eu4 = 2784 } # Mudug -> Galkayo
 	link = { ck3 = 8466 eu4 = 2783 } # Hobyo -> Hobyo
@@ -668,7 +667,8 @@
 	link = { ck3 = 6694 ck3 = 6701 eu4 = 1135 } # Yatenga, Seno -> Yatenga
 	link = { ck3 = 6561 eu4 = 2274 } # Air -> Air
 	link = { ck3 = 8008 ck3 = 8001 ck3 = 8000 eu4 = 1138 } # Kumasi, Upper Bono, Afram -> Kumasi
-	link = { ck3 = 6936 ck3 = 6929 ck3 = 6933 eu4 = 2256 } # Kuisugu, Pendjari, Mamprusi -> Dagbon
+	link = { ck3 = 6719 ck3 = 6929 eu4 = 1136 } # Biun, Pendjari -> Gurma
+	link = { ck3 = 6936 ck3 = 6942 eu4 = 2256 } # Kuisugu, Dagomba -> Dagbon
 	link = { ck3 = 8030 ck3 = 8042 eu4 = 2295 } # Nanumba, Sokode -> Atakora
 	link = { ck3 = 6912 ck3 = 8061 ck3 = 6910 eu4 = 1144 } # Oyo, Ibadan, Ilorin -> Oyo
 	link = { ck3 = 8073 eu4 = 2289 } # Edo -> Ondo
@@ -677,8 +677,8 @@
 	link = { ck3 = 6632 ck3 = 6633 eu4 = 1123 } # Dodugu, Soso -> Segu
 	link = { ck3 = 6619 eu4 = 1131 } # Massina -> Massina
 	link = { ck3 = 6615 ck3 = 6611 eu4 = 2260 } # Mema, Kouga -> Mema
-	link = { ck3 = 6946 ck3 = 6944 ck3 = 6942 eu4 = 2267 } # Daboya, Gonja, Dagomba -> Tenkodogo
-	link = { ck3 = 6699 ck3 = 6947 eu4 = 1137 } # Wagadugu, Po -> Wagadugu
+	link = { ck3 = 6946 ck3 = 6933 ck3 = 6947 eu4 = 2267 } # Daboya, Mamprusi, Po -> Tenkodogo
+	link = { ck3 = 6699 eu4 = 1137 } # Wagadugu -> Wagadugu
 	link = { ck3 = 6566 ck3 = 6564 ck3 = 6465 eu4 = 1130 } # Tadmekka, Tessalit, Tamentit -> Tadmekka
 	link = { ck3 = 6678 eu4 = 2264 } # Oudalan -> Hombori
 	link = { ck3 = 6582 eu4 = 2262 } # Upper Gurma -> Karabara
@@ -692,7 +692,7 @@
 	link = { ck3 = 6568 eu4 = 2270 } # Dyamare -> Dallol
 	link = { ck3 = 6714 eu4 = 1142 } # Dendi -> Dendi
 	link = { ck3 = 6683 ck3 = 6688 eu4 = 2268 } # Bura, Say -> Aribanda
-	link = { ck3 = 6686 ck3 = 6719 eu4 = 1136 eu4 = 2266 } # MANY-TO-MANY: Gurma, Biun -> Gurma, Bilanga
+	link = { ck3 = 6686 eu4 = 2266 } # Gurma -> Bilanga
 	link = { ck3 = 6545 ck3 = 6547 eu4 = 1154 } # Kaduna, Guwari -> Zazzau
 	link = { ck3 = 6540 eu4 = 1150 eu4 = 1148 } # Sokoto -> Zamfara, Gobir
 	link = { ck3 = 6537 ck3 = 6543 eu4 = 1149 } # Katsina, Zaria -> Katsina
@@ -726,7 +726,7 @@
 	link = { ck3 = 6984 ck3 = 6980 ck3 = 6989 eu4 = 1122 } # Tyendugu, Nyene, Worodugu -> Bagoe
 	link = { ck3 = 6737 ck3 = 6733 eu4 = 1121 } # Bure, Kankan -> Bure
 	link = { ck3 = 8071 eu4 = 1147 } # Benin -> Benin
-	link = { ck3 = 6970 ck3 = 6961 eu4 = 2254 } # Bono, Begho -> Bonoman
+	link = { ck3 = 6970 ck3 = 6961 ck3 = 6944 eu4 = 2254 } # Bono, Begho, Gonja -> Bonoman
 	link = { ck3 = 6967 eu4 = 2257 } # Bonoso -> Denkyira
 	link = { ck3 = 8017 ck3 = 8020 ck3 = 8024 ck3 = 8012 eu4 = 2258 } # Fante, Wassa, Aowin, Adanse -> Cape Coast
 	link = { ck3 = 8031 ck3 = 8006 eu4 = 1139 } # Ewe, Kwahu-Akyem -> Gold Coast
@@ -1341,7 +1341,7 @@
 	link = { ck3 = 2114 eu4 = 1865 } # Brugge -> Ghent
 	link = { ck3 = 2125 eu4 = 90 } # Yperen -> Bruges
 	link = { comment = "# Nothern Islands" }
-	link = { ck3 = 1 ck3 = 3 eu4 = 370 } # Vestrland, Suðrland -> Reykjavik
+	link = { ck3 = 3 ck3 = 1 eu4 = 370 } # Suðrland, Vestrland -> Reykjavik
 	link = { ck3 = 4 ck3 = 5 eu4 = 371 } # Austrland, Norðrland -> Akureyri
 	link = { ck3 = 7 eu4 = 1978 } # Shetland -> Shetland
 	link = { ck3 = 6 eu4 = 1979 } # Færeyjar -> Färöarna

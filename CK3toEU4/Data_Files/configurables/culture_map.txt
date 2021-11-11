@@ -395,8 +395,8 @@ link = { eu4 = saka ck3 = saka tech = muslim gfx = muslimgfx }
 link = { eu4 = kanuri ck3 = kanuri ck3 = sao tech = sub_saharan gfx = africangfx }
 link = { eu4 = hausa ck3 = hausa tech = sub_saharan gfx = africangfx }
 link = { eu4 = bilala ck3 = zaghawa tech = sub_saharan gfx = africangfx region = kanem_area }
-link = { eu4 = zaghawa ck3 = zaghawa tech = sub_saharan gfx = africangfx }
 link = { eu4 = tunjur ck2 = zaghawa ck3 = daju tech = sub_saharan gfx = africangfx region = darfur_central_sahara_area }
+link = { eu4 = zaghawa ck3 = zaghawa tech = sub_saharan gfx = africangfx }
 
 # East African
 link = { eu4 = beja ck3 = beja tech = east_african gfx = africangfx }
