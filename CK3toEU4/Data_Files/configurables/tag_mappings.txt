@@ -396,7 +396,6 @@ link = { ck3 = c_hadramawt eu4 = HDR }
 link = { ck3 = d_mecca eu4 = HED }
 link = { ck3 = d_lebanon eu4 = LEB }
 link = { ck3 = c_beirut eu4 = LEB }
-link = { ck3 = k_nubia eu4 = MAK }
 link = { ck3 = d_makuria eu4 = MAK }
 link = { ck3 = d_medina eu4 = MDA }
 link = { ck3 = c_medina eu4 = MDA }
@@ -536,7 +535,7 @@ link = { ck3 = k_mali eu4 = MAL }
 link = { ck3 = d_manding eu4 = MAL }
 link = { ck3 = d_mogadishu eu4 = MDI }
 link = { ck3 = c_mogadishu eu4 = MDI }
-link = { ck3 = d_kordofan eu4 = NUB } #Nub is Funj, in timeframe Makuria is a better k_nubia
+link = { ck3 = d_kordofan eu4 = NUB } #Nub is Funj
 link = { ck3 = c_kordofan eu4 = NUB }
 link = { ck3 = d_oyo eu4 = OYO }
 link = { ck3 = c_oyo eu4 = OYO }
@@ -780,8 +779,7 @@ link = { ck3 = d_kong eu4 = KNG }
 link = { ck3 = c_kong eu4 = KNG }
 link = { ck3 = d_katsina eu4 = KTS }
 link = { ck3 = c_katsina eu4 = KTS }
-link = { ck3 = d_wagadugu eu4 = MSI } #Historical area of Mossi dominance
-link = { ck3 = c_wagadugu eu4 = MSI }
+link = { ck3 = k_gur eu4 = MSI } #Historical area of Mossi dominance
 link = { ck3 = d_nupe eu4 = NUP }
 link = { ck3 = c_nupe eu4 = NUP }
 link = { ck3 = d_timbuktu eu4 = TMB }
@@ -1006,18 +1004,25 @@ link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
 
 link = { ck3 = d_wagadugu eu4 = WGD } # Wagadugu
 link = { ck3 = c_wagadugu eu4 = WGD } # Wagadugu
-link = { ck3 = c_kurumba eu4 = ZND } # Zandoma
+link = { ck3 = c_kurumba eu4 = ZND } # Zandoma, county maps to Liptako, the one province with a Zandoma core
+link = { ck3 = c_po eu4 = TEN } # Tenkodogo
 link = { ck3 = k_gurma eu4 = GUR } # Gurma
 link = { ck3 = d_lower_gurma eu4 = GUR } # Gurma
 link = { ck3 = d_upper_gurma eu4 = GUR } # Gurma
 link = { ck3 = c_gurma eu4 = GUR } # Gurma
 link = { ck3 = c_upper_gurma eu4 = GUR } # Gurma
-link = { ck3 = k_nubia eu4 = NUB } # Nubia
+link = { ck3 = k_nubia eu4 = NBI } # Nubia
 link = { ck3 = d_wadai eu4 = WAD } # Wadai
 link = { ck3 = c_wadai eu4 = WAD } # Wadai
 link = { ck3 = d_aksum eu4 = AKS } # Aksum
-link = { ck3 = d_kebbi eu4 = KBI } # Kebbi
-link = { ck3 = c_kebbi eu4 = KBI } # Kebbi
-link = { ck3 = d_gobir eu4 = GOB } # Gobir
-link = { ck3 = c_gobir eu4 = GOB } # Gobir
-link = { ck3 = c_daura eu4 = DAU } # Daura
+link = { ck3 = k_outer_ajuraan eu4 = OGD } # Ogaaden
+link = { ck3 = d_shabelle eu4 = OGD } # Ogaaden
+link = { ck3 = c_gidaya eu4 = OGD } # Ogaaden
+link = { ck3 = c_ganale eu4 = OGD } # Ogaaden
+
+#Tabbed out of PDX 00_countries.txt
+#link = { ck3 = d_kebbi eu4 = KBI } # Kebbi
+#link = { ck3 = c_kebbi eu4 = KBI } # Kebbi
+#link = { ck3 = d_gobir eu4 = GOB } # Gobir
+#link = { ck3 = c_gobir eu4 = GOB } # Gobir
+#link = { ck3 = c_daura eu4 = DAU } # Daura

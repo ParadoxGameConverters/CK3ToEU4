@@ -19,9 +19,10 @@ pass = {
 	sterilize = { 2474 2475 }
 }
 
-pass = {
-	name = "Central Sahara"
-	endA = { 1219 }
-	endB = { 2288 1159 }
-	sterilize = { 774 2932 }
-}
+##Obsoleted with Origins
+#pass = {
+#	name = "Central Sahara"
+#	endA = { 1219 }
+#	endB = { 2288 1159 }
+#	sterilize = { 774 2932 }
+#}
