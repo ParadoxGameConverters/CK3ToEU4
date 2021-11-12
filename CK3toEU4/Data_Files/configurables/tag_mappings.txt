@@ -905,9 +905,9 @@ link = { ck3 = k_daneland eu4 = DNL } # Daneland
 # link = { ck3 = k_danelaw eu4 = DNL } # Danelaw - skipped because DNL is here just for a cultural shenanigan
 link = { ck3 = k_mordvinia eu4 = MDV } # Mordvinia
 link = { ck3 = d_mordvinia eu4 = MDV } # Mordvinia
-link = { ck3 = k_pechenegs eu4 = PCH } # Pechenegs
-link = { ck3 = d_pecheneg eu4 = PCH } # Pecheneg
-link = { ck3 = c_pecheneg eu4 = PCH } # Pecheneg
+link = { ck3 = k_pechenegs eu4 = PTZ } # Pechenegs
+link = { ck3 = d_pecheneg eu4 = PTZ } # Pecheneg
+link = { ck3 = c_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = k_cuman eu4 = CMN } # Cuman
 link = { ck3 = d_khazaria eu4 = KHZ } # Khazaria
 link = { ck3 = d_thrace eu4 = THR } # Thrace
