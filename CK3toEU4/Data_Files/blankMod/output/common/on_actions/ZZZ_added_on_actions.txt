@@ -122,34 +122,6 @@ on_province_owner_change = {
 	if = {
 		limit = {
 			owner = {
-				religion = ROOT
-				culture_group = ROOT
-				has_estate_privilege = estate_church_one_faith_one_culture
-			}
-			NOT = { has_province_modifier = estate_church_united_faith_and_culture }
-		}
-		add_province_modifier = {
-			name = estate_church_united_faith_and_culture
-			duration = -1
-		}
-	}
-	if = {
-		limit = {
-			owner = {
-				NOT = { culture_group = ROOT }
-				has_owner_accepted_culture = no
-				has_estate_privilege = estate_church_one_faith_one_culture
-			}
-			NOT = { has_province_modifier = estate_church_false_culture }
-		}
-		add_province_modifier = {
-			name = estate_church_false_culture
-			duration = -1
-		}
-	}
-	if = {
-		limit = {
-			owner = {
 				has_country_modifier = son_fetishism_as_secondary_religion
 			}
 			religion = shamanism

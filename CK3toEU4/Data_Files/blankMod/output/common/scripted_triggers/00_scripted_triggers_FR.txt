@@ -5208,6 +5208,26 @@ frloc_tags_art_sg_masc_vow_en_02a = {
 		tag = ASS tag = ORI tag = YOR
 		# ???
 		tag = HIN
+		# Dynamic Tags - SAVE Trading Cities AND Amerindian Federations
+		AND = {
+			is_dynamic_tag = yes
+			NOT = {
+				OR = {
+					# NOT Amerindian Federations
+					tag = F00 tag = F01 tag = F02 tag = F03 tag = F04 tag = F05 tag = F06 tag = F07 tag = F08 tag = F09
+					tag = F10 tag = F11 tag = F12 tag = F13 tag = F14 tag = F15 tag = F16 tag = F17 tag = F18 tag = F19
+					# NOT Trading Cities
+					tag = T00 tag = T01 tag = T02 tag = T03 tag = T04 tag = T05 tag = T06 tag = T07 tag = T08 tag = T09
+					tag = T10 tag = T11 tag = T12 tag = T13 tag = T14 tag = T15 tag = T16 tag = T17 tag = T18 tag = T19
+					tag = T20 tag = T21 tag = T22 tag = T23 tag = T24 tag = T25 tag = T26 tag = T27 tag = T28 tag = T29
+					tag = T30 tag = T31 tag = T32 tag = T33 tag = T34 tag = T35 tag = T36 tag = T37 tag = T38 tag = T39
+					tag = T40 tag = T41 tag = T42 tag = T43 tag = T44 tag = T45 tag = T46 tag = T47 tag = T48 tag = T49
+					tag = T50 tag = T51 tag = T52 tag = T53 tag = T54 tag = T55 tag = T56 tag = T57 tag = T58 tag = T59
+					tag = T60 tag = T61 tag = T62 tag = T63 tag = T64 tag = T65 tag = T66 tag = T67 tag = T68 tag = T69
+					tag = T70 tag = T71 tag = T72 tag = T73 tag = T74
+				}
+			}
+		}
 	}
 }
 
@@ -5358,6 +5378,9 @@ frloc_tags_art_sg_fem_cons_dela_auseindela_03b = {
 		tag = MSY
 		# Pirate tags
 		tag = NSS
+		# Dynamic Tags - Native Federations
+		tag = F00 tag = F01 tag = F02 tag = F03 tag = F04 tag = F05 tag = F06 tag = F07 tag = F08 tag = F09
+		tag = F10 tag = F11 tag = F12 tag = F13 tag = F14 tag = F15 tag = F16 tag = F17 tag = F18 tag = F19
 		
 		## Modded
 		# CK
@@ -5908,7 +5931,7 @@ frloc_tags_noart_sg_fem_cons_de_en_11a = {
 }
 
 frloc_tags_noart_sg_fem_cons_de_a_11b = {
-	# Ex.: (ø) Gotland / l'honneur DE Gotland / le trône DE Gotland / arriver À Gotland / demander À Gotland / NOUVELLE-Gotland
+	# Ex.: (ø) Venise / l'honneur DE Venise / le trône DE Venise / arriver À Venise / demander À Venise / NOUVELLE-Venise
 	### HIGHER PRIORITY ###
 	# override_country_name
 	NOT = { has_country_flag = is_china_flag }
@@ -5950,6 +5973,15 @@ frloc_tags_noart_sg_fem_cons_de_a_11b = {
 		tag = LIB tag = PRY
 		# Oceanic tags
 		tag = KAA tag = MAU tag = VIL tag = VNL
+		# Dynamic Tags - Trading Cities
+		tag = T00 tag = T01 tag = T02 tag = T03 tag = T04 tag = T05 tag = T06 tag = T07 tag = T08 tag = T09
+		tag = T10 tag = T11 tag = T12 tag = T13 tag = T14 tag = T15 tag = T16 tag = T17 tag = T18 tag = T19
+		tag = T20 tag = T21 tag = T22 tag = T23 tag = T24 tag = T25 tag = T26 tag = T27 tag = T28 tag = T29
+		tag = T30 tag = T31 tag = T32 tag = T33 tag = T34 tag = T35 tag = T36 tag = T37 tag = T38 tag = T39
+		tag = T40 tag = T41 tag = T42 tag = T43 tag = T44 tag = T45 tag = T46 tag = T47 tag = T48 tag = T49
+		tag = T50 tag = T51 tag = T52 tag = T53 tag = T54 tag = T55 tag = T56 tag = T57 tag = T58 tag = T59
+		tag = T60 tag = T61 tag = T62 tag = T63 tag = T64 tag = T65 tag = T66 tag = T67 tag = T68 tag = T69
+		tag = T70 tag = T71 tag = T72 tag = T73 tag = T74
 	}
 }
 
