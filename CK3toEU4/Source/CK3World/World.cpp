@@ -30,6 +30,17 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration->getCK3DocPath(), mods);
 		mods = modLoader.getMods();
+		for (const auto& mod: mods)
+			if (mod.name == "CoA Designer")
+			{
+				Log(LogLevel::Notice) << "CoA Designer mod enabed; player CoA will be generated.";
+				coaDesigner = true;
+			}
+	});
+	registerKeyword("currently_played_characters", [this](std::istream& theStream) {
+		auto playedCharacters = commonItems::getLlongs(theStream);
+		if (!playedCharacters.empty())
+			playerID = playedCharacters[0];
 	});
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString dateString(theStream);
@@ -161,8 +172,30 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	Log(LogLevel::Info) << "-- Distributing Electorates";
 	setElectors();
 
+	if (coaDesigner && playerID)
+	{
+		Log(LogLevel::Info) << "-- Locating Player Title.";
+		locatePlayerTitle(theConfiguration);
+	}
+
 	Log(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
 	Log(LogLevel::Progress) << "47 %";
+}
+
+void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConfiguration)
+{
+	for (const auto& title: independentTitles)
+		if (title.second->getHolder() && title.second->getHolder()->first == *playerID)
+		{
+			Log(LogLevel::Info) << "Player title: " << title.second->getName();
+			playerTitle = title.first;
+			break;
+		}
+
+	if (playerTitle)
+	{
+		theConfiguration->setCraftFlagForPlayerTitle(*playerTitle);
+	}
 }
 
 void CK3::World::processSave(const std::string& saveGamePath)

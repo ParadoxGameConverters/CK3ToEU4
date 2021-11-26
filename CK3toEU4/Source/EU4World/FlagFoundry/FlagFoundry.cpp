@@ -71,6 +71,13 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 		if (commonItems::DoesFileExist("blankMod/output/gfx/flags/" + country.first + ".tga"))
 			continue; // This will be copied over by outWorld.
 
+		if (theConfiguration.getPlayerTitle() && country.second->getTitle() && country.second->getTitle()->first == *theConfiguration.getPlayerTitle())
+		{
+			// We're crafting player's title flag manually.
+			craftFlag(country.second);
+			continue;
+		}
+
 		// Otherwise, do we need a flag at all?
 		if (commonItems::DoesFileExist(theConfiguration.getEU4Path() + "/gfx/flags/" + country.first + ".tga"))
 			continue; // We'll be using vanilla flag.

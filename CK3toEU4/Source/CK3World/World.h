@@ -39,6 +39,8 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 	[[nodiscard]] const auto& getHRETitle() const { return hreTitle; }
 	[[nodiscard]] auto doesIslamExist() const { return islamExists; }
+	[[nodiscard]] auto isCoADesignerEnabled() const { return coaDesigner; }
+	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
 
   private:
 	// savegame processing
@@ -69,9 +71,13 @@ class World: commonItems::parser
 	void filterLandlessTitles();
 	void setElectors();
 	void checkForIslam();
+	void locatePlayerTitle(const std::shared_ptr<Configuration>& theConfiguration);
 
 	date endDate = date("1444.11.11");
 	date startDate = date("1.1.1");
+	std::optional<long long> playerID;
+	std::optional<std::string> playerTitle;
+	bool coaDesigner = false;
 	GameVersion CK3Version;
 	Titles titles;
 	ProvinceHoldings provinceHoldings;
