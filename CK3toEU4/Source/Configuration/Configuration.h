@@ -88,6 +88,9 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getDynamicInstitutions() const { return dynamicInstitutions; }
 	[[nodiscard]] const auto& getDevelopment() const { return development; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
+	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
+
+	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
   private:
 	void registerKeys();
@@ -114,6 +117,8 @@ class Configuration: commonItems::parser
 	DEVELOPMENT development = DEVELOPMENT::IMPORT;
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
+
+	std::optional<std::string> playerTitle;
 };
 
 #endif // CONFIGURATION_H
