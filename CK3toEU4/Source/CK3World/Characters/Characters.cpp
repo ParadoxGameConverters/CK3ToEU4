@@ -214,8 +214,8 @@ void CK3::Characters::linkCharacters()
 			}
 			else
 			{
-				throw std::runtime_error("Character " + std::to_string(character.first) + " has employer " +
-												 std::to_string(character.second->getEmployer()->first) + " which has no definition!");
+				// sigh.
+				character.second->resetEmployer();
 			}
 		}
 	}
