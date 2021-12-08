@@ -334,7 +334,7 @@ TEST(CK3World_CharactersTests, charactersLinkMissingSpouseResetsSpouse)
 	ASSERT_FALSE(c1->second->getSpouse());
 }
 
-TEST(CK3World_CharactersTests, charactersLinkMissingEmployerThrowsException)
+TEST(CK3World_CharactersTests, charactersLinkMissingEmployerResetsEmployer)
 {
 	std::stringstream input;
 	input << "1 = {\n";
@@ -349,8 +349,10 @@ TEST(CK3World_CharactersTests, charactersLinkMissingEmployerThrowsException)
 	input << "}\n";
 	CK3::Characters characters;
 	characters.loadCharacters(input);
+	characters.linkCharacters();
 
-	ASSERT_THROW(characters.linkCharacters(), std::runtime_error);
+	const auto& c1 = characters.getCharacters().find(1);
+	ASSERT_FALSE(c1->second->getEmployer());
 }
 
 TEST(CK3World_CharactersTests, traitsCanBeLinked)

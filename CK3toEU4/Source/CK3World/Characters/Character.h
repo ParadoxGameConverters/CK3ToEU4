@@ -61,6 +61,7 @@ class Character: commonItems::parser
 	void loadEmployer(const std::pair<long long, std::shared_ptr<Character>>& theEmployer) { employer = theEmployer; }
 	void loadSpouse(const std::pair<long long, std::shared_ptr<Character>>& theSpouse) { spouse = theSpouse; }
 	void resetSpouse() { spouse.reset(); }
+	void resetEmployer() { employer.reset(); }
 	void loadTraits(const std::map<int, std::string>& theTraits) { traits = theTraits; }
 
 	// processing
