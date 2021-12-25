@@ -45,8 +45,8 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       run: |
        cd "C:\Program Files\7-Zip\"
-       .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular.zip $Env:GITHUB_WORKSPACE\Release\*
-       cp $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular.zip $Env:GITHUB_WORKSPACE\CK3toEU4-latest-win-x64.zip
+       .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular-win-x64.zip $Env:GITHUB_WORKSPACE\Release\*
+       cp $Env:GITHUB_WORKSPACE\CK3toEU4-0.9Insular-win-x64.zip $Env:GITHUB_WORKSPACE\CK3toEU4-latest-win-x64.zip
        
     - name: "Upload binaries to release"
       if: ${{ github.event_name == 'push' }}
@@ -56,7 +56,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: CK3toEU4-0.9Insular.zip
+        artifacts: CK3toEU4-0.9Insular-win-x64.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
     - name: "Upload binaries to archive"
@@ -67,7 +67,7 @@ jobs:
         allowUpdates: true
         omitBodyDuringUpdate: true
         omitNameDuringUpdate: true
-        artifacts: CK3toEU4-0.9Insular.zip, CK3toEU4-latest-win-x64.zip
+        artifacts: CK3toEU4-0.9Insular-win-x64.zip, CK3toEU4-latest-win-x64.zip
         token: ${{ secrets.API_TOKEN_GITHUB }}
         
     - name: "Cleanup"
