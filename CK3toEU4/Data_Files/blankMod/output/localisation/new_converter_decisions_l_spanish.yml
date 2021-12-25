@@ -1,40 +1,40 @@
 ﻿l_spanish:
  ZZZ_enhanced_reform_norse_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_norse_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_baltic_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_baltic_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_finnish_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_finnish_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_tengri_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_tengri_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_slavic_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_slavic_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_zun_pagan_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_zun_pagan_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_bon_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_bon_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_hellenic_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_hellenic_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
-  
+
  ZZZ_enhanced_reform_kushitism_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_kushitism_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
-  
+
  ZZZ_enhanced_reform_magyar_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_magyar_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
- 
+
  ZZZ_enhanced_reform_siberian_title:3 "Reforma [Root.Religion.GetellaReligion] [Root.Religion.GetReligion]"
  ZZZ_enhanced_reform_siberian_desc:3 "Reformar la fe [Root.Religion.GetReligionFS] en una religión organizada. La fe reformada no tiene malus de conversión y no es más fácil de convertir para otras religiones."
-  
+
  ZZZ_enhanced_reform_african_title:3 "Adoptar Reformas Religiosas"
  ZZZ_enhanced_reform_african_desc:3 "Se nos ha demostrado que a veces las viejas formas no siempre son las mejores. Uno puede cambiar con los tiempos y aún conservar su herencia y personalidad. Hay quienes no les va a gustar, pero debemos arrastrar a nuestros chamanes a la era moderna y adoptar esas reformas que han funcionado tan bien para otros."
- 
+
  ZZZ_spreading_of_reformed_pagan_rituals_title:3 "Difusión de rituales $RELIGION$s"
  ZZZ_spreading_of_reformed_pagan_rituals_desc:3 "La conversión a la religión $RELIGION$ no requiere nada, cada persona puede dirigir sus propios rituales religiosos. Mientras lleve a cabo los rituales adecuados, se le considera un verdadero seguidor creyente. Alentemos a más y más de nuestros sujetos a aprender de nuestras formas para que al menos puedan comenzar a adorarlos."
 
@@ -63,13 +63,13 @@
 
  test_act_EXTRA_title:3 "Aprobar la Test Act"
  test_act_EXTRA_desc:3 "Excluye a los que no sean miembros de la iglesia establecida de cualquier cargo militar o civil, reservando ese privilegio para los miembros que hayan recibido la comunión según los debidos ritos de nuestra iglesia nacional."
-	
+
  dissolution_of_the_monasteries_EXTRA_title:3 "Aprobar la ley de disolución de monasterios"
  dissolution_of_the_monasteries_EXTRA_desc:3 "Incrementa el control y el poder del monarca al autorizar la incautación de cualquier propiedad eclesiástica con ingresos anuales inferiores a determinado valor."
-	
+
  popery_act_EXTRA_title:3 "Aprobar la ley del papismo"
  popery_act_EXTRA_desc:3 "Adopta medidas para reducir la influencia católica al ofrecer dinero a cualquiera dispuesto a declarar contra un sacerdote u obispo católicos que haya sido descubierto celebrando servicios religiosos."
-	
+
  trade_propagation_convert_to_islam_EXTRA_title:3 "Adopta el Islam como religión estatal"
  trade_propagation_convert_to_islam_EXTRA_desc:3 "El Islam ha crecido hasta ser la religión dominante entre nuestros súbditos y nobleza. Es hora de unirnos a la comunidad de los fieles."
 

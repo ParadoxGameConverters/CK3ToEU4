@@ -6,7 +6,7 @@ IMPORTANT LINKS
 
 Forum Release Thread: https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/
 Forum Development Thread: https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-thread.1415140/
-Github project: https://github.com/ParadoxGameConverters/CK3toEU4
+GitHub project: https://github.com/ParadoxGameConverters/CK3toEU4
 Windows development build: https://github.com/ParadoxGameConverters/CK3toEU4/releases/tag/windows_development_build
 
 ----

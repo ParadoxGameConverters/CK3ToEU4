@@ -27,7 +27,7 @@ historical_units = {
 	russian_mass
 }
 
-monarch_names = {	
+monarch_names = {
 	"Ivan #0" = 1
 	"Fedir #0" = 1
 	"Oleksander #0" = 1
@@ -77,24 +77,24 @@ monarch_names = {
 	"Terentiy #0" = 1
 	"Valeriy #0" = 1
 	"Yakim #0" = 1
-	
+
 	"Kalyna #0" = -1
 	"Oxana #0" = -1
 	"Zoya #0" = -1
 }
 
 leader_names = {
-	Davydova Sydorenko Lysenko Babko Shchukarev 
-	Trfimenko Tyutyunnikov Hlushkov Filitov Kondratyuk 
-	Antonovych Horbachov Doroshenko Drahomanov Maksymovych 
-	Ohloblyn Stojko Yavornytsky Bogolyubov Bunyakovskii 
+	Davydova Sydorenko Lysenko Babko Shchukarev
+	Trfimenko Tyutyunnikov Hlushkov Filitov Kondratyuk
+	Antonovych Horbachov Doroshenko Drahomanov Maksymovych
+	Ohloblyn Stojko Yavornytsky Bogolyubov Bunyakovskii
 	Chebotaryov Cholesky Hnedenko Kravchuk Fomenko Korolyuk
 	Mytropolsky Oleinik Ostrogradsky Petryshyn Pogorelov
 	Poretsky Potapow Samoilenko Shafarevich Sharkovsky
 	Shatunovsky Skorokhod Shtokalo Sleszynski Urysohn Vashchenko
 	Voronoy Avramenko Chuperchuk Dmytrenko Krivokhyzha Pryma
-	Shekera Vantukh Vasylenko Verkhovynets 
-	
+	Shekera Vantukh Vasylenko Verkhovynets
+
 	Golitzin Kaibula Kamenski Kolzoff Mensjikov Mustislavski "Ostermann Tolstoy" Paletskij Rajevski
 }
 
@@ -106,7 +106,7 @@ ship_names = {
 	Sudak "Kriviy Rig" Svitlovods'k  Khersones Tovaristsch
 	Rurik Moscha Volga Schorna Coluna Klin Iausa
 	Cortiza Mosnisk Olescho Piersek Troitzkoy Wolok
-	
+
 }
 
 army_names = {
@@ -114,5 +114,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

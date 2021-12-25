@@ -1,5 +1,5 @@
 # Maintain parity with vanilla culture groups at all costs or lose vanilla culture group colors!
-# New culture groups must be added to other files, alphabetically after this one. 
+# New culture groups must be added to other files, alphabetically after this one.
 # Update this file for every EU4 vanilla update.
 
 germanic = {
@@ -108,17 +108,17 @@ british = {
 			McCool McCorkle McCorry McCowen McCullagh McCulloch McCullough McCune McCurtain
 			McCutchan McDade McDaid McDermott McDevitt McDonagh McDonnell McDormand
 			McDowell McDuffie McEachern McElderry McElrath McElroy McElveen McElwee McEnany
-			McEnerny McEnery McEvoy McFadden McFadyen McFall McFaul McGarry McGaugh McGee 
+			McEnerny McEnery McEvoy McFadden McFadyen McFall McFaul McGarry McGaugh McGee
 			McGinley McGinnis McGoogan McGough McGovern McGrath McGreevy McGuiness McGuinn
-			McGuire McGurk McHale McHenry McIlrath McIndoe McIver McJunkin McJunkins McKaig 
-			McKaughan McKee McKeever McKelvey McKelvie McKeon McKevitt McKibbin McKinstry 
+			McGuire McGurk McHale McHenry McIlrath McIndoe McIver McJunkin McJunkins McKaig
+			McKaughan McKee McKeever McKelvey McKelvie McKeon McKevitt McKibbin McKinstry
 			McKittrick McKown McLaughlin McLean McLeish McLoughlin McMahon McManigal McManus
-			McMinn McMurphy McNabb McNairy McNally McNaughton McNear McNeese McNelis 
-			McNellis McNew McNish McOmber McParland McPartland McPeak McPhail McQuade 
+			McMinn McMurphy McNabb McNairy McNally McNaughton McNear McNeese McNelis
+			McNellis McNew McNish McOmber McParland McPartland McPeak McPhail McQuade
 			McQuaid McQueen McQuilken McQuitty McShea McSweeney McTigue Mecum Megill Mehaffey
 			Merrigan Millican Milligan Mills Monahan Mooney Moran Morgan Moriarty Morris Morrow
-			Muldoon Mulhern Mulkern Mullally Mullaly Mullican Mulligan Murphy Murtagh Nash Neal 
-			Neale Neil Neill Nolan O O'Brien O'Casey O'Connell O'Connor O'Dare O'Dea O'Donnell 
+			Muldoon Mulhern Mulkern Mullally Mullaly Mullican Mulligan Murphy Murtagh Nash Neal
+			Neale Neil Neill Nolan O O'Brien O'Casey O'Connell O'Connor O'Dare O'Dea O'Donnell
 			O'Donovan O'Flynn O'Hara O'Keefe O'Leary O'Malley O'Neil O'Neill O'Reilly O'Riley O'Riordan
 			O'Rourke Oscar O'Shaughnessy O'Shea O'Sullivan Owen Quigg Quigley Quinn Rafferty Reagan
 			Redmond Regan Reid Reilly Riley Robbins Rohan Rooney Rowan Ruane Ryan Scally Scanlon
@@ -129,9 +129,9 @@ british = {
 	}
 }
 gaelic = {
-	pictish = { 
-		primary = SCO 
-		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest } 
+	pictish = {
+		primary = SCO
+		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest }
 	}
 }
 latin = {
@@ -176,7 +176,7 @@ finno_ugric = {
 	}
 	meshchera = {
 		primary = MSH
-		male_names = { 
+		male_names = {
 			Anzyl Barash Izegre Kürtn'ypatyr Izi Yolagay Yükserge Yüshterge Lapkas
 			Maska Ozanay Oshegre Parsay Chotkar Shembuy Shumat Yumpatyr Yamshan
 		}
@@ -189,15 +189,15 @@ finno_ugric = {
 }
 south_slavic = {
 }
-west_slavic = {	
+west_slavic = {
 	graphical_culture = easterngfx
 	slovak = {
 		primary = SLO
 		male_names = {
-			Albín Alexander András Andrej Augustín Basil Cyprián Dalibor Dezider Dominik 
-			Eugen Fedor Ferdinand František Frico Gabriel Gustáv Imrich Jáchym Ján 
-			Janko Jozef Juraj Karol Ladislav Levoslav Marián Marko Martin Matej 
-			Michal Mikuláš Milan Miloš Miloslav Miroslav Pavel Pavol Peter Ratislav 
+			Albín Alexander András Andrej Augustín Basil Cyprián Dalibor Dezider Dominik
+			Eugen Fedor Ferdinand František Frico Gabriel Gustáv Imrich Jáchym Ján
+			Janko Jozef Juraj Karol Ladislav Levoslav Marián Marko Martin Matej
+			Michal Mikuláš Milan Miloš Miloslav Miroslav Pavel Pavol Peter Ratislav
 			Rudolf Samuel Sergej Štefan Svetozár Tibor Tomáš Viliam Vladimír Vojtech
 		}
 		female_names = {
@@ -206,16 +206,16 @@ west_slavic = {
 		dynasty_names = {
 			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
 			Zapolský Palfi Cáki Balaša Báthory
-			Áchim Bázlic Bella Beneš Blaho Catloš Cikker Clementis Daxner Dubcek 
-			Figuš-Bystrý Frešo Gojdic Golian Hlinka Hodža Hopko Hurban Hurban-Vajanský Husák 
-			Ivanka Kafenda Kardoš Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic 
-			Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik 
+			Áchim Bázlic Bella Beneš Blaho Catloš Cikker Clementis Daxner Dubcek
+			Figuš-Bystrý Frešo Gojdic Golian Hlinka Hodža Hopko Hurban Hurban-Vajanský Husák
+			Ivanka Kafenda Kardoš Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic
+			Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik
 			Sokol Štefánik Suchon Šverma Tiso Trcka Tuka Turanec Viest Zoch
 		}
 	}
 	old_pommeranian = {
 		primary = POM
-		male_names = { 
+		male_names = {
 			Abdón Abélk Adólf Adóm Adrión Agapit Agùst Agùstin Aleksãder Alfónks
 			Amadeùsz Andrzéj Antón Antósz Anzélm Apòlo Ark Arturk Augùst Augùstin Aùrelión
 			Barnim Bartlomién Bazyl Bazylëszk Bénk Beno Bink Blazéj Bògdón Bògùmil
@@ -246,7 +246,7 @@ west_slavic = {
 			Witóld Witoslôw Wladislôw Wlodzmiérz Wòjcech Wòjk Wòjtilk Zbigórz Zdzyslôw
 			Zemòwit Zénk Zenobiusz Zenón Zydór Zygfrid Zygmùnd Zygùszk
 		}
-		female_names = { 
+		female_names = {
 			Ada Adélajda Adélka Adka Adolfa Adrianka Agnés Agnésa Agnészka Agrëpina Agùla Agùstina
 			Agùstinka Ala Aldka Alicjô Alojza Aluszka Amanda Améla Anastazjô Andzela Anéczka
 			Anéta Antóna Antosza Anula Anusza Anzélma Apòla Apòloniô Ariadka Arnolda Astrida
@@ -277,7 +277,7 @@ west_slavic = {
 			Zana Zbiétka Zdzyslawa Zefka Zelka Zélma Zénka Zenona Zofijka Zofiô Zofka Zoldka
 			Zosza Zynka
 		}
-		dynasty_names = { 
+		dynasty_names = {
 			Obroditen Gryfita "z Liubic" Swieca Grzymala Jastrzebiec Lodzia Lubicz Nalecz Gniewosz "z Roztoki" "ze Slupska"
 			Breza Byzewski Cieminski Derdowski Klawiter Pacholski Pellowski Fehr Kilian Kósyk Symank
 		}
@@ -285,31 +285,31 @@ west_slavic = {
 	chrobatian = {
 		primary = TRA
 		male_names = {
-			Kresimir Stjepan Almos Dimitrije Zvonimir Trpimir Goislav Slavic Svetoslav Miroslav Mutimir 
-			Ladislav Karlo Andrej Luj Pero Vladislav Vjenceslav Aleksandar Dragutin Fauszty Franjo Gavrilo Ivan 
+			Kresimir Stjepan Almos Dimitrije Zvonimir Trpimir Goislav Slavic Svetoslav Miroslav Mutimir
+			Ladislav Karlo Andrej Luj Pero Vladislav Vjenceslav Aleksandar Dragutin Fauszty Franjo Gavrilo Ivan
 			Juraj Luka Matija Marko Mihajlo Milan Mirko Nenad Nikola Slavko Toma Vladko Zvonomir
-			Adam Andrija Bartol Bartolomeus Besar Bojan Boris Branimir Castimir Danail Daniel Dmitar 
-			Dobromir Dragan Dragomir Drzislav Dujam Duym Filip Philip Gaspar Gheorghe George Grigorii 
-			Hranislav Hrvoje Igor Ioan John Ivan John Ivanis Jitej Karlo Charles Koloman Koloman 
+			Adam Andrija Bartol Bartolomeus Besar Bojan Boris Branimir Castimir Danail Daniel Dmitar
+			Dobromir Dragan Dragomir Drzislav Dujam Duym Filip Philip Gaspar Gheorghe George Grigorii
+			Hranislav Hrvoje Igor Ioan John Ivan John Ivanis Jitej Karlo Charles Koloman Koloman
 			Ladislav Ljudevit Ljutomisl Lovro Matej Matthew Mihajlo Milman Mislav Mutimir
-			Nikolitza Nicholas Ognjen Petar Peter Prohor Radomir Ratimir Sebeslav Seslav Slavich 
+			Nikolitza Nicholas Ognjen Petar Peter Prohor Radomir Ratimir Sebeslav Seslav Slavich
 			Stanislav Stjepan Sulvan Teodor Tomislav Tvrdoslav Tvrtko Ulfo Ulf Vid Vitomir Vlaicu
 			Vukan Zvonimir Kresimir Gregory Caspar Josip
 		}
 		female_names = {
-			Adriana Anna Borislava Cededa Doroteja Dorothy Ekaterina Catherine Helena Helen Jadviga 
+			Adriana Anna Borislava Cededa Doroteja Dorothy Ekaterina Catherine Helena Helen Jadviga
 			Jovana Kera Ladika Maria Maria Mihaela Nada Petra Viola Yolanda Jadranka Mare
-			Antonija Capeka Dragana Dubravka Emilija Emily Gordana Jagoda Jelena Jelka Lucija Lucia 
+			Antonija Capeka Dragana Dubravka Emilija Emily Gordana Jagoda Jelena Jelka Lucija Lucia
 			Catherine Marija Maria Marijana Mirjana Mirna Mojca Natalija Natasha
-			Rijeka Silvija Snjezana Sofija Sophia Suzana Susana Svjetlana Suronja Tatjana Tihana 
+			Rijeka Silvija Snjezana Sofija Sophia Suzana Susana Svjetlana Suronja Tatjana Tihana
 			Vedrana Visnja Vjekoslava Zlata Zvonimira Valerija Katalin
 		}
 		dynasty_names = {
-			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic" 
-			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic" 
+			"Trpimirovic" "Mihaljevic" "Subic" "Hrvatinic"
+			"Kosaca" "Vukcic" "Vukasin" "Dukasin" "Babonic" "Frankopan" "Kacic" "Draskovic"
 			"Bebek" "Svetoslavic" "Krešimirovic" "Domagojevic" "Feštetic" "Gorjanski"
 			"Svacic" "Kobilic" "Lackovic" "Šubic"
-			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga" 
+			"Berislavic" "Nepilic" "Jalacic" "Zrinski" "Garaj" "Eltz" "Kaboga"
 			"Crnkovic" "Cerva" "Rubido"
 		}
 	}
@@ -367,21 +367,21 @@ baltic = {
 	old_prussian = {
 		primary = PRT
 		male_names = {
-			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas 
+			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas
 			Daugvilas Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas
-			Gediminas Gedivilas Gintaras Gintautas Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas 
+			Gediminas Gedivilas Gintaras Gintautas Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas
 			Karijotas Kesgaila Kestutis Korigaila Korybutas
-			Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas Movkoldas 
-			Narimantas Povilas Pukuveras Rimantas 
-			Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas 
+			Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas Movkoldas
+			Narimantas Povilas Pukuveras Rimantas
+			Rimgaila Rimvydas Ringaudas Sarunas Skirgaila Songaila Svarnas Svitrigaila Tarvydas Tovtivilas
 			Traidenis Treniotas Vainius Vaisvilkas Valimantas Zygimantas
-			Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas 
+			Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas
 			Ansas Bertulis Blade Bladis Brone Bronys Cardel Ceslaus Cilas Desider Dowid Endris
 			Ensel Ertmon Gerge Gils Jowalis Kristups Labrenz Lenert Mertin Pinkus Prenkus
 			Prenskas Sellius Tanius Timas Valtin Willus
 		}
 		female_names = {
-			Aldona Anele Audra Ausra Birute Dannila Danute Evalda Gaudimante Giedre Gintare Jevna Kenna 
+			Aldona Anele Audra Ausra Birute Dannila Danute Evalda Gaudimante Giedre Gintare Jevna Kenna
 			Mikova Roze Saule Svajone Vida Laima
 		}
 		dynasty_names = {
@@ -473,50 +473,50 @@ turko_semitic = {
 			"al-Lurini" "al-Wabaruisi" "al-Kursiki" "al-Nayfrini"
 		}
 		male_names = {
-			al-Nasr al-Mu'azzam al-Salih al-'Adil al-Kamil al-Ashraf al-Afdal Tadj Mujir ud-Din Djamal ud-Din 
-			ud-Din Shams Saif 'Abbas 'Abd al-Rahman Anwar Atuf Bakr Fahd Hakim Harun Hikmat Hisham Husayn 
-			Jamaal Karim Malîk Mirza Muhammad Rashîd Rusul Shimun Tarîq Usama Yasir Yusuf Zaid Zîyad Isma'il 	
+			al-Nasr al-Mu'azzam al-Salih al-'Adil al-Kamil al-Ashraf al-Afdal Tadj Mujir ud-Din Djamal ud-Din
+			ud-Din Shams Saif 'Abbas 'Abd al-Rahman Anwar Atuf Bakr Fahd Hakim Harun Hikmat Hisham Husayn
+			Jamaal Karim Malîk Mirza Muhammad Rashîd Rusul Shimun Tarîq Usama Yasir Yusuf Zaid Zîyad Isma'il
 			Jafar Shihab
 		}
 		female_names = {
-			Ihsan Marwa Aisha Aziza Duha Farida Golbahar Gulnar Gulnaz Gulpari Hafsa Hasti Huma Ibtisam Jalila Kamala 
+			Ihsan Marwa Aisha Aziza Duha Farida Golbahar Gulnar Gulnaz Gulpari Hafsa Hasti Huma Ibtisam Jalila Kamala
 			Karima Khandan Khaterah Khatira Kinah Lala Madiha Mahdokht Nazy Neelab Negar Niki Nikoo Noushin Rabiya
-			Mahsa Mahwash Marwa Mastana Mehri Mina Minoo Munawwar Muzhdah Nahal Najela Nasiba Nastaran Nazaneen 
+			Mahsa Mahwash Marwa Mastana Mehri Mina Minoo Munawwar Muzhdah Nahal Najela Nasiba Nastaran Nazaneen
 			Rajiya Sadiya Salma Sitara Thana Zahra Zahra Zuhayra
 		}
 	}
 	gagauz = {
 		primary = RMN
-		
+
 		dynasty_names = {
 			Pasalî Kendighelean Kristioglo Esir Harlamenco Constantinov Tarnavsky Kissa Ciachir
 			Deli Dushkov Pasha Formuzal Papazoglu Stoianoglo Tomaily Topal Vlah Zanet Zanetov
 		}
 		male_names = {
-			Mehmet Mustafa Murat Ahmet Selim Osman Mahmut Süleyman Bayezid Orhan Abdulaziz Abdülhamit Ibrahim 
-			Abdülmecit Abdullah Cem Cihangir Alaattin Isa Musa Ömer Seyfettin Yakup Yusuf Giyasettin Numan 
-			Ali Davut Hasan Hüseyin Ishak Kamer Kasim Korkut Emin Iskender Halil Sait Hamit Ertugrul Izzettin 
-			Nizamettin Sinan Ferhat Salih Ismail Cüneyt Bahadir Hizir Harun Cemal Inal Celalettin Ilyas 
+			Mehmet Mustafa Murat Ahmet Selim Osman Mahmut Süleyman Bayezid Orhan Abdulaziz Abdülhamit Ibrahim
+			Abdülmecit Abdullah Cem Cihangir Alaattin Isa Musa Ömer Seyfettin Yakup Yusuf Giyasettin Numan
+			Ali Davut Hasan Hüseyin Ishak Kamer Kasim Korkut Emin Iskender Halil Sait Hamit Ertugrul Izzettin
+			Nizamettin Sinan Ferhat Salih Ismail Cüneyt Bahadir Hizir Harun Cemal Inal Celalettin Ilyas
 			Dursun Ramazan Recep Abdulrahman Hayrettin
-			Çagri Çaka Afsin Ahmet Aksonqor Alaeddin Ali Alkan "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz 
-			Aydin Aydogan Aydogdu Aytekin Böru Bulend Bahadir Balaban Basbuga Batuhan Baturay Baybars 
-			Bayezid Baytas Belek Berkan Berkiyaruk Bozan Bugra Burak Cuneyd Dundar Danismend Davud David 
-			Demir Dogan Dogukan Dukak Erdem Ertan Ertekin Ertugrul Gunduz Hasan Hasan Hizir Ibrahim Ilgazi 
-			Inal Iskender Alexander Kurboga Kaikaus Kaikhusraw Kaiqobad Kara Karatay Kasim Kaya Kaytun 
-			Kemal Kiliç Korkut Kutalmis Kutay Kutlug Mursel Mahmud Mehmed Meliksah Mengucek Mesud Murad 
-			Mustafa Orhan Osman Porsuk Rustem Ramazan Ridvan Söbuk Sökmen Sönmez Suleyman Saim Saltuk 
-			Saruca Savtekin Savur Sehinsah Selçuk Selim Sencer Sinan Tanrivermis Tekin Timurtas Togay 
-			Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus Uluç Umur Yakut Yaman Yinal 
+			Çagri Çaka Afsin Ahmet Aksonqor Alaeddin Ali Alkan "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz
+			Aydin Aydogan Aydogdu Aytekin Böru Bulend Bahadir Balaban Basbuga Batuhan Baturay Baybars
+			Bayezid Baytas Belek Berkan Berkiyaruk Bozan Bugra Burak Cuneyd Dundar Danismend Davud David
+			Demir Dogan Dogukan Dukak Erdem Ertan Ertekin Ertugrul Gunduz Hasan Hasan Hizir Ibrahim Ilgazi
+			Inal Iskender Alexander Kurboga Kaikaus Kaikhusraw Kaiqobad Kara Karatay Kasim Kaya Kaytun
+			Kemal Kiliç Korkut Kutalmis Kutay Kutlug Mursel Mahmud Mehmed Meliksah Mengucek Mesud Murad
+			Mustafa Orhan Osman Porsuk Rustem Ramazan Ridvan Söbuk Sökmen Sönmez Suleyman Saim Saltuk
+			Saruca Savtekin Savur Sehinsah Selçuk Selim Sencer Sinan Tanrivermis Tekin Timurtas Togay
+			Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus Uluç Umur Yakut Yaman Yinal
 			Yunus
 		}
 		female_names = {
-			Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bahar Banu 
-			Bozçin Canan Ceylan Dunya Dilber Dilek Emine Esin Fatma Firuze Gulçiçek Gulay Gulbahar Gulfem 
-			Gulsum Gumus Gunduz Gundes Gunes Hatice Hayat Huriye Ilkay Ilknur Ipek Ipekel Irge Karacik Lale 
-			Leyla Mala Mansure Merve Mutlu Nagihan Nergis Neslihan Nilufer Nur Peksen Terkhen Samur Sarica 
-			Sati Sehnaz Serap Serife Sevilay Sevindik Sibel Sibylla Sirin Sirma Songul Sumru Tekçe Tura 
-			Umay Usunbike Vahide Yasar Yeldem Yildiz Zehra Zuhal Hatice Safiye Zeynep Hürrem Mihrimah Nurbanu 
-			Handan Alime Kösem Hüma 
+			Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Aslihan Ayasun Ayla Ayse Ayten Azize Bahar Banu
+			Bozçin Canan Ceylan Dunya Dilber Dilek Emine Esin Fatma Firuze Gulçiçek Gulay Gulbahar Gulfem
+			Gulsum Gumus Gunduz Gundes Gunes Hatice Hayat Huriye Ilkay Ilknur Ipek Ipekel Irge Karacik Lale
+			Leyla Mala Mansure Merve Mutlu Nagihan Nergis Neslihan Nilufer Nur Peksen Terkhen Samur Sarica
+			Sati Sehnaz Serap Serife Sevilay Sevindik Sibel Sibylla Sirin Sirma Songul Sumru Tekçe Tura
+			Umay Usunbike Vahide Yasar Yeldem Yildiz Zehra Zuhal Hatice Safiye Zeynep Hürrem Mihrimah Nurbanu
+			Handan Alime Kösem Hüma
 		}
 	}
 }
@@ -547,7 +547,7 @@ iranian = {
 			Nandake Nande Nandipale Nasme Natte Naradeve Nirot Nupura Nyagrodhe Padmakesar
 			Padmottare Pakacandre Pañcasikhi Pawaske Pesane Prabhankare Prabhase Pranada Prasamnake
 			Pravare Priyadeve Ptompile Puñaiyse Puñakame Puñaraksite Puñicamndre Punyamitre
-			Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare 
+			Purtas Rahule Raktadewe Ratnacuda Ratnasikhi Rsivadam Rudramukhe Rudrasarme Sagare
 			Samantatir Samcite Samghatrate Sanavasi Sanghasarme Sankene Sanum Saputanase Sarasike
 			Sarmacamdre Sarsire Satuma Satyake Satyaraksite Sidhasamgha Siladewe Silamitre Silarakite
 			Silaraksi Silasoma Silavande Silawarne Silayase Silopake Simpraye Siñcake Sinke Sinku
@@ -716,7 +716,7 @@ tartar = {
 		}
 		dynasty_names = { Abash Agish Baran Karach Karam Kashkar Kolu Kurak Mishaik "Mis Si" Mosol Temir Tenish Vanyut Yaku Cavash Elmen Fyodorov Pajtule Chapayev Husa Celepi Bichurin
 		Yakovlev Volkov Husankaj Yut Youne Markov Yegorov Pavlov Aygi }
-	}		
+	}
 }
 lost_cultures_group = { # Emptied
 }

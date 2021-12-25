@@ -2,7 +2,7 @@
  incident_fraticelli_pope:3 "The Pope and the Emperor"
  incident_fraticelli_pope_member_alert:3 "With Italy once again a bastion of Imperial authority, the Pope of Rome has petitioned to become an Imperial Prince of the Holy Roman Empire. For the Pope to accept the authority of the Emperor would have dire ramifications for the Fraticelli world. While Fraticelli faithful in the Empire might have their faith emboldened through the legitimacy conferred by Papal membership, those outside of the Empire are unlikely to take kindly to such a decision and may turn to heresy."
  incident_fraticelli_pope_emperor_alert:3 "With Italy once again a bastion of Imperial authority, the Pope of Rome has petitioned to become an Imperial Prince of the Holy Roman Empire. For the Pope to accept the authority of the Emperor would have dire ramifications for the Fraticelli world. While Fraticelli faithful in the Empire might have their faith emboldened through the legitimacy conferred by Papal membership, those outside of the Empire are unlikely to take kindly to such a decision and may turn to heresy."
- 
+
  #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
  incident_pope.1.t:3 "A Holy Empire?"
  incident_pope.1.d:3 "Italy, no longer the ‘Shadow Kingdom’, has been returned into the fold of the Holy Roman Empire through the relentless efforts of the Emperor. The Papal State must now choose whether to accept the hegemony of the Emperor or be condemned to sit naked and vulnerable on its doorstep.\n\nTo accept the authority of the Emperor would have dire ramifications for the Christian world. While True Christians in the Empire might have their faith emboldened through the legitimacy conferred by Papal membership, those outside of the Empire are unlikely to take kindly to such a decision and may turn to heresy."
@@ -18,4 +18,3 @@
  incident_pope.3.d:3 "The Imperial Diet of the Empire has settled on a terrible and intolerable edict: that the Empire will no longer follow the True Christian faith. All our efforts to restore the dignity of the Holy Mother Church have been for naught, and so we must give serious consideration to abandoning this tainted institution."
  incident_pope.3.a:3 "Let us depart this den of sin."
  incident_pope.3.b:3 "We must remain for the good of Christendom."
- 

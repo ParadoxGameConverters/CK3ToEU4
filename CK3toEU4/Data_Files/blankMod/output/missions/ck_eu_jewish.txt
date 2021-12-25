@@ -1,25 +1,25 @@
 ck_eu_jewish_missions_1 = {
 
 	slot = 1
-	
+
 	has_country_shield = yes
 	generic = no
 	ai = yes
-	
+
 	potential = {
 		religion_group = jewish_group
 	}
-	
+
 	ck_eu_jewish_missions_1_task_1 = {
-	
+
 		icon = the_land_of_moses						#Restore Israel
-		
+
 		position = 1
-		
+
 		provinces_to_highlight = {
 			area = palestine_area
 		}
-		
+
 		trigger = {
 			OR = {
 				AND = {
@@ -33,7 +33,7 @@ ck_eu_jewish_missions_1 = {
 				tag = ISR
 			}
 		}
-		
+
 		effect = {
 			add_prestige = 50
 			if = {
@@ -50,20 +50,20 @@ ck_eu_jewish_missions_1 = {
 		}
 	}
 	ck_eu_jewish_missions_1_task_2 = {
-	
+
 		icon = jerusalem						#Build the Third Temple
-		
+
 		position = 2
-		
+
 		provinces_to_highlight = {
 			province_id = 379
 		}
-		
+
 		required_missions = {
 			ck_eu_jewish_missions_1_task_1
 		}
 
-		
+
 		trigger = {
 			capital = 379
 			379 = {
@@ -77,7 +77,7 @@ ck_eu_jewish_missions_1 = {
 				limit = {
 					has_dlc = "Leviathan"
 				}
-				379 = { 
+				379 = {
 					has_great_project = {
 						type = holy_city_jerusalem
 						tier = 3
@@ -85,21 +85,21 @@ ck_eu_jewish_missions_1 = {
 				}
 			}
 		}
-		
+
 		effect = {
 			country_event = { id = plati_flavor_ckeu.35 }
 		}
 	}
 	ck_eu_jewish_missions_1_task_3 = {
-	
+
 		icon = mission_hands_praying						#Restore the Faith High Priesthood
-		
+
 		position = 3
-		
+
 		required_missions = {
 			ck_eu_jewish_missions_1_task_2
 		}
-		
+
 		trigger = {
 			legitimacy_equivalent = 100
 			is_great_power = yes
@@ -108,25 +108,25 @@ ck_eu_jewish_missions_1 = {
 				loyalty = 70
 			}
 		}
-		
+
 		effect = {
 			define_advisor = {
 				type = theologian
 				skill = 3
 				cost_multiplier = 0.1
 			}
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_jewish_high_priesthood
 				duration = -1
 			}
 		}
 	}
 	ck_eu_jewish_missions_1_task_4 = {
-	
+
 		icon = personal_diplomacy						#Jewish Diaspora
-		
+
 		position = 4
-		
+
 		trigger = {
 			employed_advisor = {
 				category = ADM
@@ -142,7 +142,7 @@ ck_eu_jewish_missions_1 = {
 			}
 			num_of_cities = 50
 		}
-		
+
 		effect = {
 			add_adm_power = 100
 			add_dip_power = 100
@@ -150,11 +150,11 @@ ck_eu_jewish_missions_1 = {
 		}
 	}
 	ck_eu_jewish_missions_1_task_5 = {
-	
+
 		icon = the_latin_empire						#David's Mighty Warriors
-		
+
 		position = 5
-		
+
 		trigger = {
 			has_global_modifier_value = {
 				which = discipline
@@ -162,10 +162,10 @@ ck_eu_jewish_missions_1 = {
 				extra_shortcut = yes
 			}
 		}
-		
+
 		effect = {
 			create_general = { tradition = 70 }
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_jewish_david_warrior
 				duration = 10950
 			}

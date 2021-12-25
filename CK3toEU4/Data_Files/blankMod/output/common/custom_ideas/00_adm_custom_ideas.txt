@@ -3,7 +3,7 @@
 
 adm_idea_modifiers = {
 	category = ADM
-	
+
 	custom_idea_global_tax_modifier = {
 		global_tax_modifier = 0.05
 		level_cost_2 = 3
@@ -17,12 +17,12 @@ adm_idea_modifiers = {
 				technology_group = western
 			}
 		}
-	}		
+	}
 	custom_idea_production_efficiency = {
 		production_efficiency = 0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18		
+		level_cost_4 = 18
 		default = 8
 		chance = {
 			factor = 1
@@ -36,7 +36,7 @@ adm_idea_modifiers = {
 		global_unrest = -0.5
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18			
+		level_cost_4 = 18
 		default = 5
 		chance = {
 			factor = 1
@@ -51,8 +51,8 @@ adm_idea_modifiers = {
 		stability_cost_modifier = -0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
-		level_cost_4 = 18		
-		default = 3		
+		level_cost_4 = 18
+		default = 3
 	}
 	custom_idea_missionaries = {
 		missionaries = 1
@@ -115,11 +115,11 @@ adm_idea_modifiers = {
 			modifier = {
 				factor = 1.25
 				any_neighbor_country = {
-					NOT = { 
+					NOT = {
 						religion = ROOT
 					}
-					any_owned_province = { 
-						is_claim = ROOT 
+					any_owned_province = {
+						is_claim = ROOT
 					}
 				}
 				mil = 3
@@ -137,7 +137,7 @@ adm_idea_modifiers = {
 				mil = 3
 			}
 		}
-	}	
+	}
 	custom_idea_inflation_reduction = {
 		inflation_reduction = 0.05
 		chance = {
@@ -172,7 +172,7 @@ adm_idea_modifiers = {
 		chance = {
 			factor = 0
 		}
-	}	
+	}
 	custom_idea_interest = {
 		interest = -0.5
 		max_level = 2
@@ -185,13 +185,13 @@ adm_idea_modifiers = {
 				religion_group = christian
 			}
 		}
-	}	
+	}
 	custom_idea_build_cost = {
 		build_cost = -0.05
 		chance = {
 			factor = 1
 		}
-	}	
+	}
 	custom_idea_development_cost = {
 		development_cost = -0.1
 		max_level = 2
@@ -302,7 +302,7 @@ adm_idea_modifiers = {
 			modifier = {
 				factor = 1.1
 				any_neighbor_country = {
-					NOT = { 
+					NOT = {
 						religion = ROOT
 					}
 				}
@@ -325,9 +325,9 @@ adm_idea_modifiers = {
 				}
 			}
 		}
-	}	
+	}
 	custom_idea_prestige = {
-		prestige = 0.5	
+		prestige = 0.5
 		chance = {
 			factor = 1
 			modifier = {
@@ -339,12 +339,12 @@ adm_idea_modifiers = {
 	}
 	custom_idea_prestige_decay = {
 		prestige_decay = -0.005
-	}	
+	}
 	custom_idea_legitimacy = {
 		legitimacy = 0.5
 		level_cost_2 = 15
 		max_level = 2
-		
+
 		# Used for random generation
 		chance = {
 			factor = 1
@@ -358,7 +358,7 @@ adm_idea_modifiers = {
 		horde_unity = 0.5
 		level_cost_2 = 15
 		max_level = 2
-		
+
 		# Used for random generation
 		chance = {
 			factor = 1
@@ -382,7 +382,7 @@ adm_idea_modifiers = {
 		devotion = 0.5
 		level_cost_2 = 15
 		max_level = 2
-		
+
 		# Used for random generation
 		chance = {
 			factor = 1
@@ -394,14 +394,14 @@ adm_idea_modifiers = {
 				factor = 0
 				uses_devotion = no
 			}
-		}	
+		}
 	}
 	custom_idea_republican_tradition = {
 		republican_tradition = 0.15
 		max_level = 2
 		level_cost_1 = 20
-		level_cost_2 = 60	
-		
+		level_cost_2 = 60
+
 		# Used for random generation
 		chance = {
 			factor = 1
@@ -414,7 +414,7 @@ adm_idea_modifiers = {
 				is_great_power = yes
 			}
 		}
-	}		
+	}
 	custom_idea_technology_cost = {
 		technology_cost = -0.05
 		level_cost_1 = 5
@@ -431,7 +431,7 @@ adm_idea_modifiers = {
 	}
 	custom_idea_idea_cost = {
 		idea_cost = -0.05
-		max_level = 2	
+		max_level = 2
 		level_cost_1 = 3
 		level_cost_2 = 18
 		chance = {
@@ -441,7 +441,7 @@ adm_idea_modifiers = {
 				adm = 3
 			}
 		}
-	}		
+	}
 	custom_idea_advisor_cost = {
 		advisor_cost = -0.05
 		level_cost_2 = 3
@@ -450,13 +450,13 @@ adm_idea_modifiers = {
 		chance = {
 			factor = 1
 		}
-	}	
+	}
 	custom_idea_advisor_pool = {
 		advisor_pool = 1
 		max_level = 2
 		level_cost_1 = 5
 		level_cost_2 = 30
-	}	
+	}
 	custom_idea_tolerance_own = {
 		tolerance_own = 1
 		max_level = 2
@@ -597,7 +597,7 @@ adm_idea_modifiers = {
 		}
 	}
 	custom_idea_global_autonomy = {
-		global_autonomy = -0.05		
+		global_autonomy = -0.05
 		level_cost_1 = 5
 		level_cost_2 = 30
 		max_level = 2

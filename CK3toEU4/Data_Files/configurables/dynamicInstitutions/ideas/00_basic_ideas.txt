@@ -23,7 +23,7 @@ aristocracy_ideas = {
 		NOT = { government = theocracy }
 		NOT = { has_reform = steppe_horde }
 	}
-	
+
 	noble_knights = {
 		cavalry_power = 0.10
 		cavalry_cost = -0.10
@@ -49,15 +49,15 @@ aristocracy_ideas = {
 	noble_resilience = {
 		mercenary_manpower = 0.20
 	}
-	
+
 
 	ai_will_do = {
 		factor = 0.45
-		
+
 		modifier = {
 			factor = 0.5
 			is_subject = yes
-		}	
+		}
 	}
 }
 
@@ -105,15 +105,15 @@ plutocracy_ideas = {
 
 horde_gov_ideas = {
 	category = MIL
-	
+
 	bonus = {
 		cavalry_power = 0.25
 	}
-	
+
 	trigger = {
 		has_reform = steppe_horde
 	}
-	
+
 	horse_lords = {
 		cavalry_cost = -0.33
 	}
@@ -129,13 +129,13 @@ horde_gov_ideas = {
 	horde_loyalty = {
 		global_unrest = -1
 	}
-	watchers_of_the_silk_road = {	
+	watchers_of_the_silk_road = {
 		caravan_power = 0.20
 	}
 	a_magnanimous_empire = {
 		num_accepted_cultures = 2
 	}
-	
+
 	ai_will_do = {
 		factor = 20
 	}
@@ -143,14 +143,14 @@ horde_gov_ideas = {
 
 theocracy_gov_ideas = {
 	category = MIL
-	
+
 	bonus = {
 		global_heretic_missionary_strength = 0.01
 		church_loyalty_modifier = 0.1
 		brahmins_hindu_loyalty_modifier = 0.1
 		brahmins_muslim_loyalty_modifier = 0.1
 	}
-	
+
 	trigger = {
 		government = theocracy
 	}
@@ -328,10 +328,10 @@ spy_ideas = {
 	efficient_spies = {
 		spy_offence = 0.5
 		advisor_cost = -0.10
-	}	
-	
+	}
+
 	agent_training = {
-		diplomats = 1		
+		diplomats = 1
 	}
 
 	vetting = {
@@ -341,12 +341,12 @@ spy_ideas = {
 	state_propaganda = {
 		ae_impact = -0.2
 	}
-	
+
 	claim_fabrication = {
 		fabricate_claims_cost = -0.25
 		can_fabricate_for_vassals = yes
 	}
-	
+
 	privateers = {
 		embargo_efficiency = 0.25
 		privateer_efficiency = 0.33
@@ -591,7 +591,7 @@ exploration_ideas = {
 	colonial_ventures = {
 		colonists = 1
 	}
-	
+
 	overseas_exploration = {
 		range = 0.5
 	}
@@ -622,7 +622,7 @@ exploration_ideas = {
 		modifier = {
 			factor = 0
 			is_subject = yes
-		}		
+		}
 		modifier = {
 			factor = 0
 			primitives = yes
@@ -644,17 +644,17 @@ exploration_ideas = {
 			factor = 0
 			NOT = { num_of_ports = 1 }
 			NOT = {
-				any_owned_province = { 
+				any_owned_province = {
 					is_in_capital_area = yes
 					has_empty_adjacent_province = yes
-				} 
+				}
 			}
 		}
 		modifier = {
 			factor = 0.1
 			NOT = { num_of_ports = 3 }
-			NOT = { 
-				any_owned_province = { 
+			NOT = {
+				any_owned_province = {
 					is_in_capital_area = yes
 					has_empty_adjacent_province = yes
 				}
@@ -764,7 +764,7 @@ exploration_ideas = {
 				OR = {
 					region = france_region
 					region = low_countries_region
-					region = scandinavia_region	
+					region = scandinavia_region
 					region = italy_region
 					region = north_german_region
 					region = baltic_region
@@ -1165,11 +1165,11 @@ influence_ideas = {
 	tribute_system = {
 		vassal_income = 0.25
 	}
-	
+
 	additional_loyalist_recruitment = {
 		reduced_liberty_desire = 15
 	}
-	
+
 	integrated_elites = {
 		diplomatic_annexation_cost = -0.25
 	}

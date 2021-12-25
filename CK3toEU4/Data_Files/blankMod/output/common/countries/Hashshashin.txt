@@ -7,17 +7,17 @@ color = { 100 100 0 }
 
 leader_names = {
 
-	"Hassan" "Abbas" "Abolhassan" "Afshar" "Ahmad" "Akbar" "Ali" "Allahyar" "Amin" "Anushirvan" 
-	"Aram" "Ardahan" "Ardavan" "Ardeshir" "Assad" "Aurang" "Ayeshah" "Babak" "Bahman" "Bahram" 
-	"Bakhtiar" "Behrad" "Behrouz" "Bozorg" "Danush" "Darab" "Dariush" "Davud" "Djamasp" "Ebrahim" 
-	"Ehsan" "Esfandiar" "Eskander" "Esma'il" "Faramarz" "Faraz" "Fareed" "Farhad" "Fariborz" "Farroukh" 
-	"Farrukhzad" "Farzad" "Fath" "Ferdows" "Fereedun" "Ghobad" "Gholam" "Godarz" "Goshtasb" "Hafez" 
-	"Hazarasp" "Hedayat" "Hooshyar" "Hormoz" "Hossein" "Humayun" "Jahandar" "Jahangir" "Jahanshah" "Jamshid" 
-	"Javeed" "Kambiz" "Kamran" "Kavoos" "Keyghobad" "Keykhosrau" "Kharmandar" "Khashayar" "Kavadh" "Khodadad" 
-	"Khosrau" "Khudayar" "Khurshid" "Kurush" "Mahmud" "Manuchihr" "Manushihr" "Marzuban" "Mashad" "Mehrab" 
-	"Mehrzad" "Mohammed" "Morad" "Morteza" "Mozaffar" "Nard" "Naveed" "Nawid" "Nezam" "Parviz" 
-	"Pashang" "Peroz" "Pujman" "Reza" "Rostam" "Ruhollah" "Sadri" "Salman" "Shahab" "Shahbaz" 
-	"Shahin" "Shahram" "Shahrokh" "Shahruz" "Shahryar" "Shayan" "Sina" "Tahmasb" "Vahhab" "Vahid" 
+	"Hassan" "Abbas" "Abolhassan" "Afshar" "Ahmad" "Akbar" "Ali" "Allahyar" "Amin" "Anushirvan"
+	"Aram" "Ardahan" "Ardavan" "Ardeshir" "Assad" "Aurang" "Ayeshah" "Babak" "Bahman" "Bahram"
+	"Bakhtiar" "Behrad" "Behrouz" "Bozorg" "Danush" "Darab" "Dariush" "Davud" "Djamasp" "Ebrahim"
+	"Ehsan" "Esfandiar" "Eskander" "Esma'il" "Faramarz" "Faraz" "Fareed" "Farhad" "Fariborz" "Farroukh"
+	"Farrukhzad" "Farzad" "Fath" "Ferdows" "Fereedun" "Ghobad" "Gholam" "Godarz" "Goshtasb" "Hafez"
+	"Hazarasp" "Hedayat" "Hooshyar" "Hormoz" "Hossein" "Humayun" "Jahandar" "Jahangir" "Jahanshah" "Jamshid"
+	"Javeed" "Kambiz" "Kamran" "Kavoos" "Keyghobad" "Keykhosrau" "Kharmandar" "Khashayar" "Kavadh" "Khodadad"
+	"Khosrau" "Khudayar" "Khurshid" "Kurush" "Mahmud" "Manuchihr" "Manushihr" "Marzuban" "Mashad" "Mehrab"
+	"Mehrzad" "Mohammed" "Morad" "Morteza" "Mozaffar" "Nard" "Naveed" "Nawid" "Nezam" "Parviz"
+	"Pashang" "Peroz" "Pujman" "Reza" "Rostam" "Ruhollah" "Sadri" "Salman" "Shahab" "Shahbaz"
+	"Shahin" "Shahram" "Shahrokh" "Shahruz" "Shahryar" "Shayan" "Sina" "Tahmasb" "Vahhab" "Vahid"
 	"Vali" "Varshasb" "Vishtasb" "Yazdegerd" "Yousef" "Zahak" "Zakaria" "Zand" "Zia" }
 monarch_names = {
 	"Hassan #1" = 12

@@ -16,7 +16,7 @@ on_province_owner_change = {
 	events = {
 		japan.1
 	}
-	
+
 	if = {
 		limit = {
 			OR = {
@@ -29,7 +29,7 @@ on_province_owner_change = {
 		remove_province_modifier = wine_bonus_prod
 		remove_province_modifier = grain_bonus_prod
 	}
-	
+
 	if = {
 		limit = {
 			NOT = {
@@ -46,7 +46,7 @@ on_province_owner_change = {
 				limit = {
 					trade_goods = wine
 				}
-				add_province_modifier = { 
+				add_province_modifier = {
 					name = wine_bonus_prod
 					duration = -1
 					hidden = yes
@@ -56,7 +56,7 @@ on_province_owner_change = {
 				limit = {
 					trade_goods = grain
 				}
-				add_province_modifier = { 
+				add_province_modifier = {
 					name = grain_bonus_prod
 					duration = -1
 					hidden = yes
@@ -84,14 +84,14 @@ on_province_owner_change = {
 	on_province_owner_change_estate_privileges_effect = yes
 	judaism_on_province_change_religion_or_change_owner_effect = yes
 	kongo_on_province_change_culture_or_change_owner_effect = yes
-	
+
 	if = {
 		limit = {
 			region = indo_china_region
 			has_building = farm_estate
 			trade_goods = grain
 			owner = {
-				has_mission = mnd_khm_irrigation 
+				has_mission = mnd_khm_irrigation
 				NOT = {
 					OR = {
 						has_estate = estate_vaisyas
@@ -133,7 +133,7 @@ on_province_owner_change = {
 			desc = son_fetishism_as_secondary_religion_province_desc
 		}
 	}
-	
+
 	if = {
 		limit = {
 			province_id = 379
@@ -155,7 +155,7 @@ on_province_owner_change = {
 		}
 		remove_province_modifier = son_fetishism_as_secondary_religion_province
 	}
-	
+
 	##MODDED
 	if = {
 		limit = {

@@ -4,7 +4,7 @@
  israelite:3 "israélite"
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Obscurité"
- 
+
  #Blessings
  mazdaki_blessings:0 "Rituels"
  pick_mazdaki_blessing:0 "Choisissez Rituel"
@@ -14,7 +14,7 @@
  pick_gayomarthianism_blessing:0 "Choisissez Rituel"
  nestorian_blessings:0 "Bénédictions"
  pick_nestorian_blessing:0 "Choisir la Bénédiction"
- 
+
  #Ideas
  european_tribal_ideas:3 "Doctrines tribales européennes"
  european_tribal_ideas_start:3 "tradition tribales européennes"
@@ -35,7 +35,7 @@
  side_by_side_desc:3 "Nous savons que la force ne réside pas dans le nombre, mais bien dans les liens qui nous unissent. Nous ne connaissons pas la peur sur le champ de bataille, car nous savons que nos frères d'armes gardent nos arrières."
  hero_of_the_legends:3 "Héros des légendes"
  hero_of_the_legends_desc:3 "Lorsque nous étions jeunes, nous avons été nourris du lait de notre mère et des légendes anciennes. La plus connue d'entre elles parle d'un puissant héros qui mènera un jour notre peuple à la grandeur. Et son arrivée approche. Nous le sentons dans notre sang."
- 
+
  ##Fetishist Cults
  west_african_pagan_reformed_cult:3 "Eldership"
  west_african_pagan_reformed_cult_desc:3 "Nous suivons les voies de nos parents qui nous ont montré les plus grandes vérités dans l'univers et nous sommes devenus plus forts en conséquence."
@@ -59,7 +59,7 @@
  gnostic_cult_desc: 0 "Nous reconnaissons que le monde matériel est une création fausse et terrible dirigée par le démiurge. Nous attendons avec impatience notre salut du monde matériel."
  yazidi_cult: 0 "Yazidi"
  yazidi_cult_desc: 0 "Nous honorons Melek Taus, le premier des 7 anges, compagnon d'Adam, sauveur d'Abraham et souverain choisi de Dieu. Par lui, nous trouvons le salut auprès du Tout-Puissant."
- 
+
  ##Personal Deities
  #Khurmazta
  ZZZ_enhanced_desi:3 "Desi"
@@ -74,7 +74,7 @@
  ZZZ_enhanced_wishaghn_desc:3 "Wishaghn est le dieu de la victoire."
  ZZZ_enhanced_zurvan:3 "Zurvan"
  ZZZ_enhanced_zurvan_desc:3 "Zurvan est le dieu de la connaissance et le roi des dieux."
- 
+
  #Triggered Mods
  ZZZ_enhanced_unreformed_religion:3 "Païen Non Réformé"
  desc_ZZZ_enhanced_unreformed_religion:3 "Ce pays suit une religion païenne non réformée. Cela rend les conversions plus difficiles jusqu'à ce qu'ils soient en mesure de réformer leur foi."
@@ -82,8 +82,8 @@
  desc_fraticelli_rome:3 "Occuper Rome en tant que Fraticelli, ne pouvait rien faire d'autre que susciter l'indignation générale."
  fraticelli_subjugation:3 "Assujettissement de la papauté"
  desc_fraticelli_subjugation:3 "Nous avons soumis les terres de la papauté. Cela nuit à notre position aux yeux des autres fidèles de Fraticelli."
- 
- 
+
+
  #Country Mods
  west_african_pagan_reformed_migration_into_ZZZ:3 "Efforts de Réforme"
  desc_west_african_pagan_reformed_migration_into_ZZZ:3 "Certains éléments de la société souhaitent opérer des changements dans notre société, à la fois religieux et administratif."
@@ -109,8 +109,8 @@
  desc_ZZZ_bon_pagan_migration_into_africa:3 "Un grand nombre de fidèles Bön ont émigré dans cette province. Ils ont promis de travailler dur et de ne causer aucun problème."
  ZZZ_spreading_of_reformed_pagan_rituals:3 "$RELIGION$ Rituels"
  desc_ZZZ_spreading_of_reformed_pagan_rituals_title:3 "Ce pays a commencé un sérieux effort concerté pour répandre les rituels $RELIGION$ parmi la population."
- 
- 
+
+
  #Triggered Province Mods
  ZZZ_enhanced_mighty_temple:3 "Grand Temple"
  desc_ZZZ_enhanced_mighty_temple:3 "Un grand temple aux dieux, comparable au Panthéon ou au Parthénon se dresse ici."
@@ -118,7 +118,7 @@
  desc_ZZZ_enhanced_zoro_mecca:3 "Nous avons été chassés de nos terres par l'envahisseur musulman. Nos anciens temples ont été profanés et les feux éternels de Zoroastre éteints, mais maintenant nous avons notre revanche. [Root.GetCapitalName], ville sainte de l'Islam, est sous notre contrôle."
  ZZZ_enhanced_hellenic_rome:3 "La Reconquête de Rome"
  desc_ZZZ_enhanced_hellenic_rome:3 "Il y a longtemps, les païens chrétiens nous ont menés presque au bord de l'extinction, mais nous avons persévéré et avec l'aide des dieux, nous avons repris Rome et vengé la mort de l'Empire."
- 
+
  #Province Mods
  ZZZ_defend_the_motherland_baltic_cult:3 "Défense de la Tradition"
  desc_ZZZ_defend_the_motherland_baltic_cult:3 "En tant que disciples des Divas et des Pelkkunas, nous avons l'obligation de défendre fermement nos terres et notre mode de vie."
@@ -144,15 +144,15 @@
  desc_ZZZ_great_omens:3 "Ce pays a reçu de grands présages en ce qui concerne ses conflits à venir."
  ZZZ_incredible_omens:3 "Des Présages Incroyables"
  desc_ZZZ_increedible_omens:3 "Ce pays a reçu des présages qui assurent la victoire en ce qui concerne tous ses conflits à venir."
- 
- 
+
+
  ###VANILLA OVERRIDES
  tengri_events.1.d:3 "Le clergé [Root.GetRelSecMS] s'est montré inhabituellement réticent à coopérer ces derniers temps, clamant haut et fort que si nous nous prétendons intéressés par [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] ce n'est que par intérêt personnel, et que nous ne sommes en aucun cas prêts à l'adopter, [Root.GetLeLaRelSec_CONVERTER] soutenir ou faciliter la diffusion de ses enseignements.\n\nMais, de la même façon, les chamans tengristes se montrent de plus en plus irrités de notre désir apparent de nous appuyer sur les conseils de guides se réclamant d'une foi qui nous est étrangère."
  tengri_events.2.d:3 "Certains, au sein de notre peuple, ont été plus prompts que d'autres à embrasser [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN]. C'est sans doute parmi les administrateurs que cette religion étrangère s'est le plus grandement répandue et, alors qu'ils regardent par-delà nos frontières pour y trouver une quelconque inspiration spirituelle, ils en retirent aussi quelque enseignement sur la manière de gérer nos territoires."
  tengri_events.4.d:3 "En soutenant [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN], nous avons créé des liens plus étroits avec certains de nos voisins. Nos chefs ne sont pas toujours d'accord sur tous les sujets, mais nos institutions religieuses ont désormais beaucoup en commun, et les nobles se mêlent en partie les uns aux autres à la faveur de pèlerinages religieux."
  tengri_events.8.d:3 "Avec le temps, les croyances de nos ancêtres ont été progressivement marginalisées au sein de notre peuple. [Root.GetLeLaRelSec_CONVERTERCap] [Root.GetRelSecN], tout au contraire, a reçu le soutien de nos chefs, et la plupart des prêtres que nous comptons en notre sein [Root.GetLeLaFRelSec_CONVERTER] diffusent, assurant ainsi sa prédominence.\n\nPeut-être le temps est-il venu enfin de se débarrasser des rites chamaniques de ceux qui nous ont précédés, afin d'embrasser pleinement [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] que pratiquent désormais la plupart de nos sujets ?"
  tengri_events.8.d:3 "Avec le temps, les croyances de nos ancêtres ont été progressivement marginalisées au sein de notre peuple. [Root.GetLeLaRelSec_CONVERTERCap] [Root.GetRelSecN], tout au contraire, a reçu le soutien de nos chefs, et la plupart des prêtres que nous comptons en notre sein [Root.GetLeLaFRelSec_CONVERTER] diffusent, assurant ainsi sa prédominence.\n\nPeut-être le temps est-il venu enfin de se débarrasser des rites chamaniques de ceux qui nous ont précédés, afin d'embrasser pleinement [Root.GetLeLaRelSec_CONVERTER] [Root.GetRelSecN] que pratiquent désormais la plupart de nos sujets ?"
- 
+
  # Deities
  ukko:0 "Ukko"
  tapio:0 "Tapio"

@@ -24,10 +24,10 @@ historical_units = {
 	napoleonic_lancers
 }
 
-monarch_names = {	
+monarch_names = {
 	"Myrmidon #1" = 2
 	"Achilles #1" = 2
-	
+
 	"Basileios #0" = 1
 	"Leon #0" = 1
 	"Bardas #0" = 1
@@ -70,7 +70,7 @@ monarch_names = {
 	"Valerian #0" = 1
 	"Gallienus #0" = 1
 	"Quintillus #0" = 1
-	"Aurelian #0" = 1	
+	"Aurelian #0" = 1
 	"Tacitus #0" = 1
 	"Florian #0" = 1
 	"Probus #0" = 1
@@ -240,34 +240,34 @@ monarch_names = {
 	"Valerios #0" = 1
 	"Zacharias #0" = 1
 	"Zenobios #0" = 1
-	
+
 	"Eurymedousa #0" = -2
 	"Severina #0" = -1
-	"Anastasia #0" = -1	
+	"Anastasia #0" = -1
 }
 
 leader_names = {
-	"Basileios" "Leon" "Bardas" "Marinos" "Anastasia" "Konstantinos" "Augustus" "Tiberius" "Caligula" "Claudius" 
-	"Nero" "Galba" "Otho" "Vitellius" "Vespasian" "Titus" "Domitian" "Nerva" "Trajan" "Hadrian" 
-	"Antoninus" "Lucius" "Marcus" "Commodus" "Pertinax" "Julian" "Septimius" "Geta" "Caracalla" "Macrinus" 
-	"Heliogabalus" "Alexander" "Maximinus" "Gordian" "Pupienus" "Balbinus" "Philip" "Decius" "Trebonianus" "Aemilian" 
-	"Valerian" "Gallienus" "Quintillus" "Aurelian" "Severina" "Tacitus" "Florian" "Probus" "Carus" "Numerian" 
-	"Carinus" "Diocletian" "Constantius" "Galerius" "Licinius" "Constantine" "Constans" "Jovian" "Valentinian" "Valens" 
-	"Gratian" "Theodosius" "Arcadius" "Honorius" "Pulcheria" "Marcian" "Zenon" "Basiliskos" "Anastasios" "Ioustinos" 
-	"Ioustinianos" "Tiberios" "Maurikios" "Phokas" "Herakleios" "Herakleonas" "Konstas" "Leontios" "Philippikos" "Theodosios" 
-	"Artavasdos" "Eirene" "Nikephoros" "Stavrakios" "Michael" "Theophilos" "Adrianos" "Akakios" "Alexandros" "Alexios" 
-	"Anatolios" "Andreas" "Andronikos" "Anthemios" "Anthimos" "Antiochos" "Antonios" "Apollonios" "Arsenios" "Artemios" 
-	"Athanasios" "Bartholomaios" "Belisarios" "Boethios" "Bosporios" "Christophoros" "Chrysanthos" "Chrysogonos" "Damianos" "Daniel" 
-	"David" "Demetrios" "Diogenes" "Dionysios" "Dorotheos" "Eirenaios" "Eudoxios" "Eustratios" "Eugenios" "Euphemios" 
-	"Eusebios" "Eustathios" "Evangelos" "Gabriel" "Gennadios" "Georgios" "Gerasimos" "Germanos" "Gregoras" "Gregorios" 
-	"Hektorios" "Helias" "Hierotheos" "Himerios" "Hippolytos" "Hypatios" "Iakobos" "Ignatios" "Innokentios" "Ioannes" 
-	"Ioannikios" "Iordanes" "Ioseph" "Isaakios" "Isaias" "Isidoros" "Ioulianos" "Kaisarios" "Kallinikos" "Kallistos" 
-	"Komitas" "Konstantios" "Kosmas" "Kyriakos" "Kyrillos" "Kyros" "Laurentios" "Lazaros" "Loukas" "Makarios" 
-	"Manuel" "Markos" "Matthaios" "Maximos" "Megistos" "Meletios" "Methodios" "Narses" "Neophytos" "Niketas" 
-	"Nikodemos" "Nikolaos" "Niphon" "Orestes" "Pamphilios" "Pankratios" "Pantoleon" "Paschalis" "Pavlos" "Pelagios" 
-	"Petros" "Philaretos" "Philippos" "Philotheos" "Photios" "Polykarpos" "Porphyrios" "Prokopios" "Pyrros" "Raphail" 
-	"Romanos" "Sabas" "Samuel" "Serapion" "Sebastianos" "Sergios" "Stephanos" "Staurakios" "Symeon" "Symmachos" 
-	"Theocharistos" "Theodoros" "Theodotos" "Theodoulos" "Theoktistos" "Theophanes" "Theophylaktos" "Thomas" "Traianos" "Timotheos" 
+	"Basileios" "Leon" "Bardas" "Marinos" "Anastasia" "Konstantinos" "Augustus" "Tiberius" "Caligula" "Claudius"
+	"Nero" "Galba" "Otho" "Vitellius" "Vespasian" "Titus" "Domitian" "Nerva" "Trajan" "Hadrian"
+	"Antoninus" "Lucius" "Marcus" "Commodus" "Pertinax" "Julian" "Septimius" "Geta" "Caracalla" "Macrinus"
+	"Heliogabalus" "Alexander" "Maximinus" "Gordian" "Pupienus" "Balbinus" "Philip" "Decius" "Trebonianus" "Aemilian"
+	"Valerian" "Gallienus" "Quintillus" "Aurelian" "Severina" "Tacitus" "Florian" "Probus" "Carus" "Numerian"
+	"Carinus" "Diocletian" "Constantius" "Galerius" "Licinius" "Constantine" "Constans" "Jovian" "Valentinian" "Valens"
+	"Gratian" "Theodosius" "Arcadius" "Honorius" "Pulcheria" "Marcian" "Zenon" "Basiliskos" "Anastasios" "Ioustinos"
+	"Ioustinianos" "Tiberios" "Maurikios" "Phokas" "Herakleios" "Herakleonas" "Konstas" "Leontios" "Philippikos" "Theodosios"
+	"Artavasdos" "Eirene" "Nikephoros" "Stavrakios" "Michael" "Theophilos" "Adrianos" "Akakios" "Alexandros" "Alexios"
+	"Anatolios" "Andreas" "Andronikos" "Anthemios" "Anthimos" "Antiochos" "Antonios" "Apollonios" "Arsenios" "Artemios"
+	"Athanasios" "Bartholomaios" "Belisarios" "Boethios" "Bosporios" "Christophoros" "Chrysanthos" "Chrysogonos" "Damianos" "Daniel"
+	"David" "Demetrios" "Diogenes" "Dionysios" "Dorotheos" "Eirenaios" "Eudoxios" "Eustratios" "Eugenios" "Euphemios"
+	"Eusebios" "Eustathios" "Evangelos" "Gabriel" "Gennadios" "Georgios" "Gerasimos" "Germanos" "Gregoras" "Gregorios"
+	"Hektorios" "Helias" "Hierotheos" "Himerios" "Hippolytos" "Hypatios" "Iakobos" "Ignatios" "Innokentios" "Ioannes"
+	"Ioannikios" "Iordanes" "Ioseph" "Isaakios" "Isaias" "Isidoros" "Ioulianos" "Kaisarios" "Kallinikos" "Kallistos"
+	"Komitas" "Konstantios" "Kosmas" "Kyriakos" "Kyrillos" "Kyros" "Laurentios" "Lazaros" "Loukas" "Makarios"
+	"Manuel" "Markos" "Matthaios" "Maximos" "Megistos" "Meletios" "Methodios" "Narses" "Neophytos" "Niketas"
+	"Nikodemos" "Nikolaos" "Niphon" "Orestes" "Pamphilios" "Pankratios" "Pantoleon" "Paschalis" "Pavlos" "Pelagios"
+	"Petros" "Philaretos" "Philippos" "Philotheos" "Photios" "Polykarpos" "Porphyrios" "Prokopios" "Pyrros" "Raphail"
+	"Romanos" "Sabas" "Samuel" "Serapion" "Sebastianos" "Sergios" "Stephanos" "Staurakios" "Symeon" "Symmachos"
+	"Theocharistos" "Theodoros" "Theodotos" "Theodoulos" "Theoktistos" "Theophanes" "Theophylaktos" "Thomas" "Traianos" "Timotheos"
 	"Tryphon" "Valerios" "Zacharias" "Zenobios"
 }
 
@@ -281,7 +281,7 @@ ship_names = {
 	Feronia Fides Flora Fornax Fontus Fortuna Fulgora Furrina Genius Gratiae Hercules Hermaphroditus
 	Hilaritas Honos Hora Indiges Intercidona Inuus Invidia Isis Iris Janus Juno Jupiter Justitia
 	Juturna Juventas Lares Laverna Levana Letum Liber Libera Liberalitas Libertas Libitina Lua
-	Lucina Luna Lupercus Lympha "Mana Genita" Manes Mania Mantus Mars "Mater Matuta" Meditrina 
+	Lucina Luna Lupercus Lympha "Mana Genita" Manes Mania Mantus Mars "Mater Matuta" Meditrina
 	Mephitis Mellonia Mercury Minerva Mithras Molae Moneta Mors Morta Murcia "Mutunus Tutunus"
 	Naenia Nascio Necessitas Nemesis Neptune Nerio Neverita Nixi Nona Nox Opis Orcus Palatua
 	Pales Parcae Pax Penates Picumnus Picus Pietas Pilumnus Pluto Poena Pomona Porrima Portunes
@@ -298,7 +298,7 @@ army_names = {
 }
 
 fleet_names = {
-	"Classis Alexandrina" "Classis Seleucena" "Classis Carpathia" "Classis Venetum" 
-	"Classis Constantinopolis" "Classis Roma" "Classis Adrianopolis" "Classis Atlanticum" 
+	"Classis Alexandrina" "Classis Seleucena" "Classis Carpathia" "Classis Venetum"
+	"Classis Constantinopolis" "Classis Roma" "Classis Adrianopolis" "Classis Atlanticum"
 	"Classis Mediterraneus" "Classis Euxeinos Pontos"
 }

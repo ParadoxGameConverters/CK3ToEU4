@@ -69,7 +69,7 @@ monophysite = {
 }
 
 bogomilist = {
-	heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }		
+	heretic = { OLD_BELIEVER MOLOKAN DUKHOBOR KHLYST SKOPTSY ICONOCLAST }
 }
 
 monothelite = {
@@ -100,7 +100,7 @@ mutazila = { #Qadariyah
 	heretic = { HARURI SUFRI NAJADAT AZRAQI }
 }
 
-quranist = { 
+quranist = {
 	heretic = { BEKTASHI AHMADI YAZIDI }
 }
 
@@ -142,7 +142,7 @@ mahayana = {
 
 confucianism = {
 	heretic = { TAOIST }
-	
+
 	harmonized_modifier = harmonized_other_eastern
 }
 
@@ -175,24 +175,24 @@ shamanism = {
 }
 
 totemism = {
-	heretic = { BEAR_SPIRIT }	
+	heretic = { BEAR_SPIRIT }
 }
 
 inti = {
-	heretic = { INTI_HERETIC }	
+	heretic = { INTI_HERETIC }
 }
 
 nahuatl = {
-	heretic = { NAHUATL_HERETIC }	
+	heretic = { NAHUATL_HERETIC }
 }
 
 mesoamerican_religion = {
-	heretic = { MESOAMERICAN_HERETIC }	
+	heretic = { MESOAMERICAN_HERETIC }
 }
 
 norse_pagan = {
-	heretic = { OLD_NORSE }	
-}	
+	heretic = { OLD_NORSE }
+}
 
 tengri_pagan = {
 	heretic = { OLD_TENGRI }
@@ -214,19 +214,19 @@ baltic_pagan = {
 }
 
 finnish_pagan = {
-	heretic = { FINNIC }	
+	heretic = { FINNIC }
 }
 
 norse_pagan = {
-	heretic = { OLD_GERMANIC }	
+	heretic = { OLD_GERMANIC }
 }
 
 slavic_pagan = {
-	heretic = { RODNOVERY }	
+	heretic = { RODNOVERY }
 }
 
 zun_pagan = {
-	heretic = { DARKNESS }	
+	heretic = { DARKNESS }
 }
 
 bon = {
@@ -234,7 +234,7 @@ bon = {
 }
 
 hellenic_pagan = {
-	heretic = { GOAT_SKULL }	
+	heretic = { GOAT_SKULL }
 }
 
 west_african_pagan = {
@@ -254,7 +254,7 @@ siberian_pagan = { #Uralic/Taltoism
 
 jewish = {
 	heretic = { SAMARITAN KARAITE }
-}	
+}
 
 samaritan_faith = {
 	heretic = { KARAITE }
@@ -265,8 +265,8 @@ karaite_faith = {
 }
 
 zoroastrian = {
-	heretic = { MAZDAKI MANICHEAN }	
-}	
+	heretic = { MAZDAKI MANICHEAN }
+}
 mazdaki = {
 	heretic = { MANICHEAN }
 }
@@ -301,7 +301,7 @@ kitebacilweism = {
 
 manichean = {
 	heretic = { SOCINIAN MAZDAKI EUSTATHIANS }
-}	
+}
 
 mandeaism = {
 	heretic = { SOCINIAN EUSTATHIANS }

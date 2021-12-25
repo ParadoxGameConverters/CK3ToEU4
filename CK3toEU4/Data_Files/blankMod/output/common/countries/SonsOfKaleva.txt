@@ -27,7 +27,7 @@ historical_units = {
 	russian_mass
 }
 
-monarch_names = {	
+monarch_names = {
 	"Aatos #0" = 1
 	"Kettu #0" = 1
 	"Pentti #0" = 1
@@ -79,53 +79,53 @@ monarch_names = {
 }
 
 leader_names = {
-	Aatos Ahma Aimo Armas Arvo Asikko Ensio Haapa Hannu Havu Hintsa Ihanti Into Jalo Jurva Kaleva Kalevi 
-	Kettu Kolli Lalli Lauri_Laurence LemettiMielitty Miemo Mikko_Michael Oiva Onni Otso Pyry Päiviö 
-	Pentti Reko Sampo Satajalka Satatieto Seppo Susi Tapani Terho Toivo Ukko Uoti Urho Väinö Valta Valto 
+	Aatos Ahma Aimo Armas Arvo Asikko Ensio Haapa Hannu Havu Hintsa Ihanti Into Jalo Jurva Kaleva Kalevi
+	Kettu Kolli Lalli Lauri_Laurence LemettiMielitty Miemo Mikko_Michael Oiva Onni Otso Pyry Päiviö
+	Pentti Reko Sampo Satajalka Satatieto Seppo Susi Tapani Terho Toivo Ukko Uoti Urho Väinö Valta Valto
 	Veli Vesa Voitto Erkki_Erik Kaarle_Charles Johannes_John Risto_Christopher Olavi_Olaf Petri
 	Henri Yrjö Valteri Riku Matti Jaakoppi Taisto Paavo Aatso Ahvo Aarto Asko Tuokko Rieti
 	Kauro Kuuti Pekko Soini Tuure Turo Tommo Tohmas
-	
-	Ággi Áigesárri Áilu Ámmot Ára Árrajuoksa Ásllat Èoavvá Ahkemiella Algebaeivi Baeivi Baeivvet Biejan 
+
+	Ággi Áigesárri Áilu Ámmot Ára Árrajuoksa Ásllat Èoavvá Ahkemiella Algebaeivi Baeivi Baeivvet Biejan
 	Bijás Bilzi Dávgon Duttá Gáivvas Gáktu Henes Járre Jeansa Juvven Lágon Lávrrohas Leammá Mellet Mihka
 	Mohkku Mokci Náhkol Náinnas Njulgu Oaván Orddot Rástos Riibma Ruigi Sárra Speaidna Viggu
-	
-	Aare Agul Ahas Aho Ahti Ahvo Alar Alo Alur Aopelg Aotõiv Arp Arvet Arvo Atko Aul Aulemb Eeri Elmar 
+
+	Aare Agul Ahas Aho Ahti Ahvo Alar Alo Alur Aopelg Aotõiv Arp Arvet Arvo Atko Aul Aulemb Eeri Elmar
 	Hain Haljas Heameel Heatõiv Hoovatõiv Hurmas Hurmetõiv Hõimulemb Hüvalemb Hüvameel Hüvatõiv Igalemb
 	Igapäiv Ihalemb Ihameel Ihar Ihatõiv Ihavald Illimar Ilmalemb Ilmar Ilvelemb Jaolemb Kaalep Kaarel
-	Kaaren Kahar Kahru Kahrulemb Kahus Kaido Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel 
-	Kaupo Kaur Kiur Kiurupelg Koit Kosk Kudres Küllelemb Leetõiv Lembit Leppetõiv Lible Lättelemb 
-	Manivald Mart Maru Mati Mats Meelis Mehis Meigo Neeme Niglas Ohetõiv Ohevald Olev Onni 
-	Otelemb Ott Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev Susi Sutemeel Sutepelg Tambet 
-	Tarva Tarvet Tasulemb Toivo Toom Tunne Tutkas Tuul Tõeleid Tõiv Tõivulemb Tõll Tõnn Uku Urmas Uru 
-	Valdur Vambola Vandemeel Varjelemb Vello Venno Vesse Vihavald Vililemb Vilimeel Vilitõiv 
+	Kaaren Kahar Kahru Kahrulemb Kahus Kaido Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel
+	Kaupo Kaur Kiur Kiurupelg Koit Kosk Kudres Küllelemb Leetõiv Lembit Leppetõiv Lible Lättelemb
+	Manivald Mart Maru Mati Mats Meelis Mehis Meigo Neeme Niglas Ohetõiv Ohevald Olev Onni
+	Otelemb Ott Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev Susi Sutemeel Sutepelg Tambet
+	Tarva Tarvet Tasulemb Toivo Toom Tunne Tutkas Tuul Tõeleid Tõiv Tõivulemb Tõll Tõnn Uku Urmas Uru
+	Valdur Vambola Vandemeel Varjelemb Vello Venno Vesse Vihavald Vililemb Vilimeel Vilitõiv
 	Vilivald Vootele Väino Värvo Õigemeel Ülo
-	
-	Andyamo Arnaz Arti Artis Arvo Aymort Azeg Biur Biyar Burmort Chichayka Chuga Dergun Deryab Dobrinya 
-	Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey Kezhevat Kichay Koksha 
-	Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Nuyaksha Nuyanza Nuyat Nydog Nylog 
-	Odeg Onika Osh Oshmar Oshypel Ovtay Ozheg Ozhmeg Pakstyan Paksyay Paksyut Parush Pivtsay Pokshayka 
-	Putyayka Pyera Rateg Rayda Sarin Sektev Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka 
-	Tuhan Tyueykezhut Tyutyuk Tugan Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas Viryay Vokan 
+
+	Andyamo Arnaz Arti Artis Arvo Aymort Azeg Biur Biyar Burmort Chichayka Chuga Dergun Deryab Dobrinya
+	Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey Kezhevat Kichay Koksha
+	Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Nuyaksha Nuyanza Nuyat Nydog Nylog
+	Odeg Onika Osh Oshmar Oshypel Ovtay Ozheg Ozhmeg Pakstyan Paksyay Paksyut Parush Pivtsay Pokshayka
+	Putyayka Pyera Rateg Rayda Sarin Sektev Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka
+	Tuhan Tyueykezhut Tyutyuk Tugan Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas Viryay Vokan
 	Yirkap Ylvan Zarny Zhebeg Zhuneg Zyryan
-	
-	Alik Hasaba Kako Kharuchi Kolik Mandak Nabtiko Nenyts Nga Ngënoh Noumea Num Nyalku Panay Pudak 
-	Salinder Samatu Sarak Sirtya Somatu Syudbya Tatva Tolik Vesei Wayngachi Xëryuchi Yadne Yapti Yar 
+
+	Alik Hasaba Kako Kharuchi Kolik Mandak Nabtiko Nenyts Nga Ngënoh Noumea Num Nyalku Panay Pudak
+	Salinder Samatu Sarak Sirtya Somatu Syudbya Tatva Tolik Vesei Wayngachi Xëryuchi Yadne Yapti Yar
 	Yavlad Yurak
-	
-	Chichayka Chumbulat Dergun Deryab Dobrinya Erziya Inzhay Kezhapa Kezhay Kezhedey Kezhevat Kichay 
+
+	Chichayka Chumbulat Dergun Deryab Dobrinya Erziya Inzhay Kezhapa Kezhay Kezhedey Kezhevat Kichay
 	Kubrat Malyaka Malyy Meltsayka Mordvinko Moksha Nalka Nuyaksha Nuyanza Nuyat Ovtay Shoksha
-	Varaka Vechkas Velmayka Virdyan Viryas Viryay Atyamas Azyren Chipaz Kardaz Kinyak Koshel Murunza 
-	Naruchad Nishkepaz Orunza Puresh Purysho Saksa Shkay Surt Tul Tunya Tutyra Tylmache Tylze Tyushten 
+	Varaka Vechkas Velmayka Virdyan Viryas Viryay Atyamas Azyren Chipaz Kardaz Kinyak Koshel Murunza
+	Naruchad Nishkepaz Orunza Puresh Purysho Saksa Shkay Surt Tul Tunya Tutyra Tylmache Tylze Tyushten
 	Tyushtya Uzhara Varmanpaz
 }
 
 ship_names = {
-	Achai Achunai Aharon Alechsandri Ammi Chananel Chaninai Chanoch Chaim Chayim Chelbo 
-	Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina 
-	Elazar Elchanan Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi 
-	Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Yisrael Yitzchak 
-	Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Jerusalem "Bēt Laḥm" Yerushaláyim 
+	Achai Achunai Aharon Alechsandri Ammi Chananel Chaninai Chanoch Chaim Chayim Chelbo
+	Chisdai Chiyya Chizkiyah Chofni Chushiel Daniel David Dimi Dodai Dudai Efrayim Eina
+	Elazar Elchanan Rava Ravai Ravi Ravya Reuven Rivai Saadiah Sechok Shabsai Shalom Shanoi
+	Shemaryah Sherira Sheshna Shila Shimon Shinoi Shlomo Shmuel Sorgo Sulam Yisrael Yitzchak
+	Yoel Yosef Yoshiah Yosi Yuda Zakkai Zelekman Zuiskind Jerusalem "Bēt Laḥm" Yerushaláyim
 	Acre Ashdod Beit Shemesh Haifa Nazareth Tira
 }
 
@@ -134,5 +134,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

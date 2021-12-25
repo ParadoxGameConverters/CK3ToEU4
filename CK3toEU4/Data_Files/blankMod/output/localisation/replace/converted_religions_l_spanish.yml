@@ -41,7 +41,7 @@
  samaritan_faith:3 "Samaritana"
  karaite_faith:3 "Karaita"
  jain:3 "Jain"
- 
+
  mazdaki_religion_desc:3 "Mazdak fue un sacerdote zoroastriano que afirmaba ser profeta de Ahura Mazda. Intentó reformar la religión con elementos gnósticos y defendía las posesiones comunitarias y los programas de bienestar."
  manichean_religion_desc:3 "El maniqueísmo es una religión gnóstica que incorpora elementos del cristianismo, el zoroastrismo, el budismo y el gnosticismo."
  baltic_pagan_reformed_religion_desc:3 "El culto báltico reformado tiene un libro sagrado con un mito sobre la creación, capítulos sobre los dioses y un libro de profecías. La iglesia también tiene una liturgia estandarizada y una jerarquía eclesiástica formal liderada por el alto sacerdote de Dievas."
@@ -81,7 +81,7 @@
  pagan_religion_religion_desc:3 "Desde los albores de la historia, tanto Europa como el Medio Oriente han sido el hogar de innumerables religiones y cultos paganos no relacionados con las religiones abrahámicas."
  aztec_pagan_religion_desc:3 "La religión azteca presenta un mito de la creación centrado en el sacrificio, incluso los dioses fueron sacrificados para mantener el sol en movimiento. Esto se refleja en los numerosos festivales y rituales de la religión, que presentan sacrificios humanos a gran escala. Los principales dioses son Huitzilopochtli, dios de la guerra y el sacrificio humano, Tlaloc, dios del trueno y la lluvia, Xiuhtecuhtli, dios del fuego, Xipe Totec, 'nuestro Señor el Desollado' y Quetzalcóatl, dios de la sabiduría."
  west_african_pagan_reformed_religion_desc:3 "La religión africana reformada es una fusión de muchas creencias populares, con un solo Libro Sagrado que incluye un mito de la creación, capítulos sobre los espíritus, fábulas de tótems animales y dioses."
- 
+
 # From CK3
  #Christian
  adamites: "Adanita"
@@ -112,7 +112,7 @@
  HOLY_SITE_379_DESC:0 "Como una de las religiones abrahámicas, los yazidíes consideran a Jerusalén como una ciudad sagrada, que debe ser celebrada con el mayor respeto y cuidado."
  HOLY_SITE_4326_DESC:0 "Una de las ciudades más antiguas y prestigiosas del mundo, Nishapur ha sido la capital de más de un gran imperio, exudando prestigio y poder de su núcleo."
  HOLY_SITE_430_DESC:0 "Se dice que fue el lugar del entierro de los 3 magos, Bushehr es importante no solo estratégicamente sino también teológicamente."
- 
+
  #Mazdan
  zurvanism:0 "Zurvanismo"
  zurvanism_religion_desc:0 "Los zurvanitas creen que Ahura Mazda y Angra Mainyu eran gemelos iguales pero opuestos, nacidos de Zurvan, el Creador de todo. El zurvanismo hace gran hincapié en ayudar a Ahura Mazda mediante arrancando de raíz el mal y las falsedades."
@@ -121,7 +121,7 @@
  khurramism:0 "Khurramismo"
  khurramism_religion_desc:0 "En un mundo de Luz y Oscuridad, los gobernantes injustos deben ser depuestos en apoyo de lo que es bueno. Mediante profetas como Mazdek, Mahoma y Abu Muslim, los khurramitas creen que la divinidad nació en la humanidad y que un día volverá para guiarles como el Mesías."
 
- 
+
  #Gnostic
  gnostic: "Gnosticismo"
  gnostic_religion_desc: "El gnosticismo es una colección de diferentes teorías religiosas, en su mayoría centradas en el dualismo, con la idea de que el mundo material es fruto del Mal."
@@ -137,7 +137,7 @@
  priscillianism_adherent_plural:0 "priscilianistas"
  cainitism:0 "Cainitismo"
  cainitism_religion_desc:0 "Caín fue la primera víctima del mal del Demiurgo, creador de toda materia física. Como la materia y los cuerpos son malvados, los cuerpos deben ser mancillados y destruidos mediante el pecado para liberar la auténtica alma humana de su interior."
- 
+
  #Pagan
  kushitism_pagan:1 "Kushitismo"
  kushitism_pagan_religion_desc:0 "Aquí se mantiene fuerte la veneración a los dioses aniguos, así como el venerar el límiete entre vida y muerte."
@@ -157,7 +157,7 @@
  desc_harmonized_confucian: 0 "Hemos incorporado todos los ideales confucianos en nuestro país y el espíritu nacional."
  harmonized_other_eastern: 0 "Armonizado con Eastern"
  desc_harmonized_other_eastern: 0 "Hemos incorporado todas las religiones orientales en nuestro país y la ética nacional."
- 
+
 # From Imperator
 
  canaanite: "Canaanita"

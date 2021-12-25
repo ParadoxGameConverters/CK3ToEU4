@@ -41,7 +41,7 @@
  samaritan_faith:3 "Samaritan"
  karaite_faith:3 "Karaite"
  jain:3 "Jain"
- 
+
  #Descriptions
  pagan_religion_religion_desc:3 "Since the dawn of history, both Europe and the Middle East have been home to countless Pagan religions and cults unrelated to the Abrahamic faiths."
  bon_religion_desc:3 "Bön is the ancient indigenous pre-Buddhist religion of Tibet. It is shamanistic and animistic in nature with multiple deities. After the introduction of Buddhism to Tibet, Bön adopted many of its elements."
@@ -63,7 +63,7 @@
  hellenic_pagan_reformed_religion_desc:3 "The Hellenistic religion is polytheistic, with a pantheon of twelve major gods including Jupiter, Mars, Mercury, Venus, Minerva and Vesta. It originated in ancient Greece and with the conquests of Alexander the Great and the Roman Empire, it would go on to become the dominant religion in the Mediterranean world until the rise of Christendom."
  jain_religion_desc:3 "Jainism is a religion of incredible antiquity, stemming from the ascetic Sramana tradition of India, in opposition to the priestly Brahmins and the caste system. The guiding principle of Jainism is Ahimsa - non-violence - which is more radically interpreted than in any other religion."
  cathar_religion_desc:3 "The Cathar, or Albigensian, heresy rejects confession and the holiness of the clergy and of the Pope. They only have a single sacrament - the Consolation - to remove sin and turn the believer into a Cathar 'Perfect'."
- fraticelli_religion_desc:3 "The Fraticelli, or 'Little Brethren', is a Catholic heresy that originated in the Fransiscan Order of monks. It is devoted to poverty and asceticism - especially for men of the cloth. Fraticelli heretics are violently opposed to Church wealth and displays of opulence."
+ fraticelli_religion_desc:3 "The Fraticelli, or 'Little Brethren', is a Catholic heresy that originated in the Franciscan Order of monks. It is devoted to poverty and asceticism - especially for men of the cloth. Fraticelli heretics are violently opposed to Church wealth and displays of opulence."
  waldensian_religion_desc:3 "Originally a reform movement within the Catholic church, Waldensian heretics are anti-clerical and advocate a return to vows of poverty. They are opposed to capital punishment and believe that laymen can also administer the sacraments."
  lollard_religion_desc:3 "Lollard heretics are opposed to perceived corruption within the Catholic Church. Like many Catholic heresies, they loathe the wealth and ostentation of the clergy and advocate a return to a more original form of Christianity."
  monophysite_religion_desc:3 "Monophysitism is an early Christian heresy which states that Christ had but a single nature. This is the opposite of the Nestorian position where Christ has two separate natures - one divine and one human."
@@ -78,13 +78,13 @@
  kharijite_religion_desc:3 "The Kharijites are a branch of Islam that was marginalized and repressed early in the 7th century. They believe that any unrepentant sinner is a Kafir, also rejecting the notion of infallibility of the Caliphs."
  druze_religion_desc:3 "The Druze religion originated in the Ismaili sect of Shi'a Islam, but has many features of gnosticism, neoplatonism in addition to the Abrahamic religions."
  hurufi_religion_desc:3 "The Hurufi faith is a mystical, kabbalistic, Sufi sect within Islam."
- qarmatian_religion_desc:3 "The Qarmatians are a heteredox branch of Shi'a Islam that combine elements of Zoroastrianism. They reject the mainstream succession of the Shi'ite rulers and the Hajj pilgrimage." 
+ qarmatian_religion_desc:3 "The Qarmatians are a heterodox branch of Shi'a Islam that combine elements of Zoroastrianism. They reject the mainstream succession of the Shi'ite rulers and the Hajj pilgrimage."
  samaritan_faith_religion_desc:3 "Samaritanism is an Abrahamic religion closely related to Judaism. Samaritans assert their worship is the true religion of the ancient Israelites prior to the Babylonian Exile, preserved by those who remained in the Land of Israel, as opposed to Judaism, which they assert is a related but altered and amended religion."
  karaite_faith_religion_desc:3 "Karaite Judaism is a Jewish movement characterized by the recognition of the Tanakh alone as its supreme legal authority in Jewish religious law and theology. In this it is distinct from mainstream Rabbinic Judaism. Karaites maintain that all of the divine commandments handed down to Moses by God were recorded in the written Torah, without additional Oral Law or explanation."
  khurmazta_religion_desc:3 "Khurmazta (Zarvana) is syncretic form of Zoroastrianism which was practiced among the Sogdians. It mixes Zoroastrianism with Hinduism, Buddhism and various pagan religions. Aside from Khurmazta, lesser deities such as Weshparkar, God of Wind, are worshipped and made offerings, usually in form of small statues."
  mazdaki_religion_desc:3 "Mazdak was a Zoroastrian priest who claimed to be a prophet of Ahura Mazda. He attempted to reform the religion with Gnostic elements, and advocated communal possessions and welfare programs."
  manichean_religion_desc:3 "Manichaeism is a Gnostic religion which incorporates elements of Christianity, Zoroastrianism, Buddhism and Gnosticism."
-  
+
 ## From CK3
  #Christian
  adamites: "Adamite"
@@ -111,11 +111,11 @@
  kitebacilweism:0 "Kitêbacilweism"
  kitebacilweism_religion_desc:0 "Kitêbacilweists are followers of the Book of Revelation, which tells of Xwedê's greatness."
  HOLY_SITE_411_DESC:0 "Mosul is home to Lalish, a mountain valley and temple in Ninawa. It is the holiest temple of the Yazidis. It is the location of the tomb of the Sheikh Adi ibn Musafir, a central figure of the Yazidi faith."
- HOLY_SITE_385_DESC:0 "Mecca is famous as the holy site of Islam. Control of it for the Yazidi faithful would be proof that it is towards Lalish we should pray, not Mecca." 
+ HOLY_SITE_385_DESC:0 "Mecca is famous as the holy site of Islam. Control of it for the Yazidi faithful would be proof that it is towards Lalish we should pray, not Mecca."
  HOLY_SITE_379_DESC:0 "As one of the Abrahamic faiths, Yazidis hold Jerusalem as a sacred city, to be held with the utmost respect and care."
  HOLY_SITE_4326_DESC:0 "One of the oldest and most prestigious cities in the world, Nishapur has been the capital of more than one great empire, exuding prestige and power from its nucleus."
  HOLY_SITE_430_DESC:0 "Said to have been the burial site of the 3 magi, Bushehr is important not just strategically but theologically as well."
- 
+
  #Mazdan
  zurvanism:0 "Zurvanism"
  zurvanism_religion_desc:0 "Zurvanists believe that Ahura Mazda and Angra Mainyu were equal but opposite twins, born from Zurvan, the Creator of everything. Zurvanism heavily emphasizes aiding Ahura Mazda by rooting out of evil and falsehoods."
@@ -123,7 +123,7 @@
  gayomarthianism_religion_desc:0 "Based on the idea that Ahura Mazda, through his thoughts, created evil spirits by accident, Gayomarthians reject the infallibility of the Lord of Wisdom, and instead emphasize ritualistic practice to learn Truth in communion with Ahura Mazda."
  khurramism:0 "Khurramism"
  khurramism_religion_desc:0 "In a world of Light and Darkness, unjust rulers must be overthrown in support of what is good. Through prophets such as Mazdak, Muhammad and Abu Muslim, Khurramites believe that the divine is born into humanity, and will one day return to lead them as the Messiah."
- 
+
  #Gnostic
  gnostic: "Gnosticism"
  gnostic_religion_desc: "Gnosticism is a collection of different religious theories, mostly centered on dualism, with the idea that the material world is the fruit of the Evil."
@@ -136,10 +136,10 @@
  sethianism:0 "Sethianism"
  sethianism_religion_desc:0 "The Unknown God emanated all existence into the perfect Pleroma, filled by gracious aeons, first among them Barbelo the Mother-Father.\nA corruption caused the existence of Yaldabaoth, who stole a shred of divinity and created the material world. However, when he created mankind, he accidentally gave them his stolen spark of divinity. Yaldabaoth will spend eternity attempting to reclaim his power, while mankind must strive to return themselves to Barbelo and the Unknown God."
  priscillianism:0 "Priscillianism"
- priscillianism_religion_desc:0 "There exists two kingdoms, one of Light and one of Darkness. Human souls were intended to conquer the Kingdom of Darkness, but fell and were trapped in the material realm. Among humans there were Twelve Patriarchs of Light who failed to overcome the Darkness, as they were split between body and soul. Thus God sent the Saviour to earth, and through his death once again enabled the freeing of human spirits."
+ priscillianism_religion_desc:0 "There exists two kingdoms, one of Light and one of Darkness. Human souls were intended to conquer the Kingdom of Darkness, but fell and were trapped in the material realm. Among humans there were Twelve Patriarchs of Light who failed to overcome the Darkness, as they were split between body and soul. Thus God sent the Savior to earth, and through his death once again enabled the freeing of human spirits."
  cainitism:0 "Cainitism"
  cainitism_religion_desc:0 "Caine was the first victim of the Evil of the Demiurge, creator of all physical matter. Since matter and bodies are evil, bodies must be defiled and destroyed through sinfulness, so that the true human soul within can be freed."
- 
+
  #Pagan
  kushitism_pagan:1 "Kushitism"
  kushitism_pagan_religion_desc:0 "Veneration of the ancient gods remains strong here, as does the veneration of the boundary between life and death."
@@ -153,15 +153,15 @@
  siberian_pagan_desc:0 "Turumists believe in a horizontal world where men and beasts all live in clans, linked together through alliance or vengeance. Hunting is a core part of the equilibrium between taking and giving life, and with death all souls travel downstream to reincarnate in the clan they lived in previously."
  siberian_pagan_reformed:0 "Reformed Turumism"
  siberian_pagan_reformed_desc:0 "The Turumist Church preaches a horizontal world where men and beasts all live in clans, linked together through alliance or vengeance. For Turumists, equilibrium in life and death is extremely important, and wasting a hunt is seen as a great sin. They believe that in death all souls travel downstream to reincarnate in the clan they lived in previously."
- 
+
  #Eastern
  harmonized_confucian:0 "Harmonized with Confucian Philosophy"
  desc_harmonized_confucian:0 "We have incorporated all Confucian ideals in our country and national ethos."
  harmonized_other_eastern:0 "Harmonized with Eastern"
  desc_harmonized_other_eastern:0 "We have incorporated all Eastern faiths in our country and national ethos."
- 
+
  # From Imperator
- 
+
  canaanite: "Canaanite"
  canaanite_religion_desc: "The Canaanite religion venerates a number of Gods and their aspects, in a polytheistic manner. Baal is regarded as the chief deity in a complex hierarchy of lesser gods, which were often worshiped at shrines found on mountains or hilltops."
  druidism: "Druidism"
@@ -197,7 +197,7 @@
  armenian_pagan_religion_desc:0 "The Khaldic pantheon represents a religion which grew out of the Urartian culture, many centuries before. A principally polytheistic faith, the chief god was known as Khaldi, and was worshiped as a warrior god."
  caucasian_pagan_religion_desc:0 "Possibly connected to the nearby Anatolian religions, the pantheon of the Caucasian-Iberia region was ruled over by the god Armaz."
  iberian_pagan_religion_desc:0 "Essentially a hybrid polytheistic religion, Iberian religious practices involve the veneration of animal spirits, as well as ancestor worship. Various Hellenic and Phoenician gods were worshiped by the Iberians, as well as local deities such as Betatun or Ataecina."
- scythian_pagan_religion_desc:0 "Originating in Scythian lands, this pantheistic faith worshiped seven principal gods, often equated to those of the Greek pantheon. Elements of the earlier polytheistic folk religion of the scythians still remains, as does the practice of horse sacrifice and chariot burials, similar to those of the Celts."
+ scythian_pagan_religion_desc:0 "Originating in Scythian lands, this pantheistic faith worshiped seven principal gods, often equated to those of the Greek pantheon. Elements of the earlier polytheistic folk religion of the Scythians still remains, as does the practice of horse sacrifice and chariot burials, similar to those of the Celts."
  briton_pagan_religion_desc:0 "The Celts of Britain worshipped all things of nature, a generally laid back and peaceloving people, but if pushed could be ferocious in battle often fighting completely nude say for their elaborate body tattoos."
  gallic_pagan_religion_desc:0 "The Gauls were a proud and mighty people of western and central Europe, much like their neighbors in the British Isles, they found tranquility through nature and worshipped all things in the natural world."
  gaelic_pagan_religion_desc:0 "The Gaels followed a pantheon similar to that of their neighbors, the Celts, the Gaelic people worshipped all things in the natural world, Druids and Bards are held highly in Gaelic culture."

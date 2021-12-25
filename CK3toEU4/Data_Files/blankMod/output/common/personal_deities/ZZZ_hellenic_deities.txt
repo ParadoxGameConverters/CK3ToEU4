@@ -1,14 +1,14 @@
 # Do not change tags in here without changing every other reference to them.
-# If adding new dieties, make sure they are uniquely named.
+# If adding new deities, make sure they are uniquely named.
 
 jupiter =
 {
 	religious_unity = 0.10
 	legitimacy = 0.1
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -37,9 +37,9 @@ luno =
 	yearly_corruption = -0.1
 	core_creation = -0.10
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -64,9 +64,9 @@ neptunus =
 	naval_morale = 0.10
 	global_sailors_modifier = 0.10
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -103,9 +103,9 @@ venus =
 	heir_chance = 0.5
 	manpower_recovery_speed = 0.1
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -130,9 +130,9 @@ mars =
 	leader_land_fire = 1
 	discipline = 0.05
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -162,9 +162,9 @@ ceres =
 	global_tax_modifier = 0.1
 	development_cost = -0.1
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -189,9 +189,9 @@ vulcan =
 	production_efficiency = 0.1
 	land_maintenance_modifier = -0.1
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -216,9 +216,9 @@ minerva =
 	innovativeness_gain = 0.5
 	idea_cost = -0.15
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -243,9 +243,9 @@ diana =
 	fire_damage = 0.1
 	province_warscore_cost = -0.10
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -274,9 +274,9 @@ apollo =
 	tolerance_own = 2
 	prestige = 0.5
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -301,9 +301,9 @@ mercury =
 	global_trade_power = 0.1
 	privateer_efficiency = 0.2
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
@@ -328,9 +328,9 @@ vesta =
 	global_unrest = -1
 	advisor_cost = -0.2
 
-	allow = { 
+	allow = {
 		OR = {
-			religion = hellenic_pagan 
+			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}

@@ -76,7 +76,7 @@ estate_church_clerical_ministers = {
 				limit = {
 					has_dlc = "Common Sense"
 				}
-				uses_church_aspects = no #Protetants/Anglicans/Cathars/Bogomilists
+				uses_church_aspects = no #Protestants/Anglicans/Cathars/Bogomilists
 				uses_karma = no #Buddhism/Vajrayana/Mahayana/Bon/Reformed Bon
 			}
 			if = {
@@ -101,7 +101,7 @@ estate_church_clerical_ministers = {
 				limit = {
 					has_dlc = "Cradle of Civilization"
 				}
-				NOT = { 
+				NOT = {
 					religion_group = muslim
 					NOT = { religion = qarmatian }
 					NOT = { religion = yazidi }

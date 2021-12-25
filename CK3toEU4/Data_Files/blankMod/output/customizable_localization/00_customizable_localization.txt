@@ -537,11 +537,11 @@ defined_text = {
 }
 
 #Gets name of the religious scholars you currently have invited. Uses loc for schools.
-#Ex: The Maliki scholars we have invited are making themselves at home. 
+#Ex: The Maliki scholars we have invited are making themselves at home.
 defined_text = {
 	name = GetReligiousScholars
 	random = no
-	
+
 	text = {
 		localisation_key = ismaili_school
 		trigger = {
@@ -594,7 +594,7 @@ defined_text = {
 	name = GetFancyTradeGood #province scope
 	random = no
 
-	
+
 	#Gems
 	text = {
 		localisation_key = string_mother_of_pearl
@@ -681,7 +681,7 @@ defined_text = {
 			superregion = india_superregion
 		}
 	}
-	
+
 	#Gold
 	text = {
 		localisation_key = string_imperial_eggs
@@ -736,7 +736,7 @@ defined_text = {
 			NOT = { is_year = 1500 }
 		}
 	}
-	
+
 	#Cloth
 	text = {
 		localisation_key = string_fustians
@@ -769,7 +769,7 @@ defined_text = {
 			trade_goods = cloth
 		}
 	}
-	
+
 	#Silk
 	text = {
 		localisation_key = string_taffeta
@@ -778,7 +778,7 @@ defined_text = {
 			trade_goods = silk
 		}
 	}
-	
+
 	#Incense
 	text = {
 		localisation_key = string_frankincense
@@ -787,7 +787,7 @@ defined_text = {
 			trade_goods = incense
 		}
 	}
-	
+
 	#Spices
 	text = {
 		localisation_key = string_cardamom
@@ -852,9 +852,9 @@ defined_text = {
 			area = spice_islands_area
 		}
 	}
-	
+
 	#Fallbacks for Cloth, Silk, Spices, Tropical Wood, Cloth, Gems, Gold, Paper, Glass, Ivory, Chinaware and Incense
-	
+
 	text = {
 		localisation_key = string_perfume
 		trigger = {
@@ -891,9 +891,9 @@ defined_text = {
 			trade_goods = tropical_wood
 		}
 	}
-	
+
 	text = {
-		localisation_key = string_jewellery 
+		localisation_key = string_jewellery
 		trigger = { #province scope
 			OR = {
 				trade_goods = gems
@@ -930,7 +930,7 @@ defined_text = {
 	name = GetFancyTradeGood_LOW #province scope
 	random = no
 
-	
+
 	#Gems
 	text = {
 		localisation_key = string_l_mother_of_pearl
@@ -1017,7 +1017,7 @@ defined_text = {
 			superregion = india_superregion
 		}
 	}
-	
+
 	#Gold
 	text = {
 		localisation_key = string_l_imperial_eggs
@@ -1072,7 +1072,7 @@ defined_text = {
 			NOT = { is_year = 1500 }
 		}
 	}
-	
+
 	#Cloth
 	text = {
 		localisation_key = string_l_fustians
@@ -1105,7 +1105,7 @@ defined_text = {
 			trade_goods = cloth
 		}
 	}
-	
+
 	#Silk
 	text = {
 		localisation_key = string_l_taffeta
@@ -1114,7 +1114,7 @@ defined_text = {
 			trade_goods = silk
 		}
 	}
-	
+
 	#Incense
 	text = {
 		localisation_key = string_l_frankincense
@@ -1123,7 +1123,7 @@ defined_text = {
 			trade_goods = incense
 		}
 	}
-	
+
 	#Spices
 	text = {
 		localisation_key = string_l_cardamom
@@ -1188,9 +1188,9 @@ defined_text = {
 			area = spice_islands_area
 		}
 	}
-	
+
 	#Fallbacks for Cloth, Silk, Spices, Tropical Wood, Cloth, Gems, Gold, Paper, Glass, Ivory, Chinaware and Incense
-	
+
 	text = {
 		localisation_key = string_l_perfume
 		trigger = {
@@ -1227,9 +1227,9 @@ defined_text = {
 			trade_goods = tropical_wood
 		}
 	}
-	
+
 	text = {
-		localisation_key = string_l_jewellery 
+		localisation_key = string_l_jewellery
 		trigger = { #province scope
 			OR = {
 				trade_goods = gems
@@ -1377,9 +1377,9 @@ defined_text = {
 defined_text = {
     name = GetDefiniteArticleBeforePluralCountry
 	random = no
-	
+
 	text = {
-		
+
         localisation_key = string_definite_article_before_country
         trigger = {
 			tag_with_plural_name_trigger = yes
@@ -1398,7 +1398,7 @@ defined_text = {
 defined_text = {
     name = GetRulerOrRegency
 	random = no
-	
+
 	text = {
         localisation_key = string_ruler_name_really
         trigger = {
@@ -1418,7 +1418,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeTitle
 	random = no
-	
+
 	text = {
     localisation_key = flavor_eng.9880.t1
 		trigger = {
@@ -1464,7 +1464,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeLocation
 	random = no
-	
+
 	text = {
     localisation_key = flavor_eng.9880.loc0
 		trigger = {
@@ -1515,7 +1515,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeSubject
 	random = no
-	
+
 	text = {
     localisation_key = flavor_eng.9880.sub1
 		trigger = {
@@ -1592,7 +1592,7 @@ defined_text = {
 defined_text = {
 	name = GetUsableName
 	random = no
-	
+
 	text = {
 		localisation_key = plural_country_name
 		trigger = {
@@ -1656,7 +1656,7 @@ defined_text = {
 defined_text = {
 	name = GetUsableNameCap
 	random = no
-	
+
 	text = {
 		localisation_key = plural_country_name_CAP
 		trigger = {
@@ -2327,21 +2327,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorName
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorName.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorName.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorName.M
 		trigger = {
@@ -2354,21 +2354,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorTitle
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorTitle.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorTitle.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorTitle.M
 		trigger = {
@@ -2381,21 +2381,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorSheHeCap
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHeCap.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHeCap.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHeCap.M
 		trigger = {
@@ -2408,21 +2408,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorSheHe
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHe.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHe.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorSheHe.M
 		trigger = {
@@ -2435,21 +2435,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHisCap
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHisCap.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHisCap.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHisCap.M
 		trigger = {
@@ -2462,21 +2462,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHis
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHis.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHis.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHis.M
 		trigger = {
@@ -2489,21 +2489,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHim
 	random = no
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHim.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHim.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-	
+
 	text = {
 		localisation_key = EventAdvisorHerHim.M
 		trigger = {
@@ -2519,14 +2519,14 @@ defined_text = {
 defined_text = {
 	name = GetNobilityOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_nobles_name
 		trigger = {
 			has_estate = estate_nobles
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_nobles
 		trigger = {
@@ -2538,14 +2538,14 @@ defined_text = {
 defined_text = {
 	name = GetBurghersOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_burghers_name
 		trigger = {
 			has_estate = estate_burghers
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_burghers
 		trigger = {
@@ -2557,14 +2557,14 @@ defined_text = {
 defined_text = {
 	name = GetChurchOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_church_name
 		trigger = {
 			has_estate = estate_church
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_church
 		trigger = {
@@ -2576,14 +2576,14 @@ defined_text = {
 defined_text = {
 	name = GetTribesOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_nomadic_tribes_name
 		trigger = {
 			has_estate = estate_nomadic_tribes
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_nomadic_tribes
 		trigger = {
@@ -2595,14 +2595,14 @@ defined_text = {
 defined_text = {
 	name = GetDhimmiOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_dhimmi_name
 		trigger = {
 			has_estate = estate_dhimmi
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_dhimmi
 		trigger = {
@@ -2614,14 +2614,14 @@ defined_text = {
 defined_text = {
 	name = GetCossacksOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_cossacks_name
 		trigger = {
 			has_estate = estate_cossacks
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_cossacks
 		trigger = {
@@ -2633,14 +2633,14 @@ defined_text = {
 defined_text = {
 	name = GetVaisyasOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_vaisyas_name
 		trigger = {
 			has_estate = estate_vaisyas
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_vaisyas
 		trigger = {
@@ -2652,14 +2652,14 @@ defined_text = {
 defined_text = {
 	name = GetBrahminsOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_brahmins_name
 		trigger = {
 			has_estate = estate_brahmins
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_brahmins
 		trigger = {
@@ -2671,14 +2671,14 @@ defined_text = {
 defined_text = {
 	name = GetJainsOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_jains_name
 		trigger = {
 			has_estate = estate_jains
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_jains
 		trigger = {
@@ -2690,14 +2690,14 @@ defined_text = {
 defined_text = {
 	name = GetRajputOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_rajput_name
 		trigger = {
 			has_estate = estate_rajput
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_rajput
 		trigger = {
@@ -2709,14 +2709,14 @@ defined_text = {
 defined_text = {
 	name = GetMarathaOrFallbackName
 	random = no
-	
+
 	text = {
 		localisation_key = country_estate_maratha_name
 		trigger = {
 			has_estate = estate_maratha
 		}
 	}
-	
+
 	text = {
 		localisation_key = estate_maratha
 		trigger = {
@@ -2728,7 +2728,7 @@ defined_text = {
 defined_text = {
 	name = GetLegitimacyOrMeritocracy
 	random = no
-	
+
 	text = {
 		localisation_key = meritocracy
 		trigger = {
@@ -2736,7 +2736,7 @@ defined_text = {
 			has_dlc = "Mandate of Heaven"
 		}
 	}
-	
+
 	text = {
 		localisation_key = legitimacy
 		trigger = {
@@ -2752,7 +2752,7 @@ defined_text = {
 defined_text = {
 	name = GetExileAdvisorAAnTitle
 	random = no
-	
+
 	text = {
 		localisation_key = a_philosopher
 		trigger = {

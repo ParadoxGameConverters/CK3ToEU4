@@ -31,24 +31,24 @@ pagan_religion_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -75,7 +75,7 @@ pagan_religion_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -93,7 +93,7 @@ pagan_religion_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -131,7 +131,7 @@ pagan_religion_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -162,21 +162,21 @@ pagan_religion_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -226,24 +226,24 @@ baltic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -270,7 +270,7 @@ baltic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -288,7 +288,7 @@ baltic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -326,7 +326,7 @@ baltic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -357,21 +357,21 @@ baltic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -420,24 +420,24 @@ baltic_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -464,7 +464,7 @@ baltic_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -482,7 +482,7 @@ baltic_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -520,7 +520,7 @@ baltic_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -551,21 +551,21 @@ baltic_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -614,24 +614,24 @@ norse_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -658,7 +658,7 @@ norse_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -676,7 +676,7 @@ norse_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -714,7 +714,7 @@ norse_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -745,21 +745,21 @@ norse_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -808,24 +808,24 @@ tengri_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -852,7 +852,7 @@ tengri_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -870,7 +870,7 @@ tengri_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -908,7 +908,7 @@ tengri_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -939,21 +939,21 @@ tengri_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1002,24 +1002,24 @@ zun_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -1046,7 +1046,7 @@ zun_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -1064,7 +1064,7 @@ zun_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -1102,7 +1102,7 @@ zun_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -1133,21 +1133,21 @@ zun_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1196,24 +1196,24 @@ zun_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -1240,7 +1240,7 @@ zun_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -1258,7 +1258,7 @@ zun_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -1296,7 +1296,7 @@ zun_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -1327,21 +1327,21 @@ zun_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1390,24 +1390,24 @@ slavic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -1434,7 +1434,7 @@ slavic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -1452,7 +1452,7 @@ slavic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -1490,7 +1490,7 @@ slavic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -1521,21 +1521,21 @@ slavic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1584,24 +1584,24 @@ slavic_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -1628,7 +1628,7 @@ slavic_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -1646,7 +1646,7 @@ slavic_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -1684,7 +1684,7 @@ slavic_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -1715,21 +1715,21 @@ slavic_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1778,24 +1778,24 @@ bon_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -1822,7 +1822,7 @@ bon_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -1840,7 +1840,7 @@ bon_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -1878,7 +1878,7 @@ bon_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -1909,21 +1909,21 @@ bon_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -1972,24 +1972,24 @@ bon_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2016,7 +2016,7 @@ bon_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -2034,7 +2034,7 @@ bon_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -2072,7 +2072,7 @@ bon_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -2103,21 +2103,21 @@ bon_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -2166,24 +2166,24 @@ hellenic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2210,7 +2210,7 @@ hellenic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -2228,7 +2228,7 @@ hellenic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -2266,7 +2266,7 @@ hellenic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -2297,21 +2297,21 @@ hellenic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -2360,24 +2360,24 @@ hellenic_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2404,7 +2404,7 @@ hellenic_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -2422,7 +2422,7 @@ hellenic_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -2460,7 +2460,7 @@ hellenic_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -2491,21 +2491,21 @@ hellenic_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -2554,24 +2554,24 @@ kushitism_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2598,7 +2598,7 @@ kushitism_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -2616,7 +2616,7 @@ kushitism_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -2654,7 +2654,7 @@ kushitism_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -2685,21 +2685,21 @@ kushitism_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -2748,24 +2748,24 @@ kushitism_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2792,7 +2792,7 @@ kushitism_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -2810,7 +2810,7 @@ kushitism_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -2848,7 +2848,7 @@ kushitism_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -2879,21 +2879,21 @@ kushitism_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -2942,24 +2942,24 @@ magyar_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -2986,7 +2986,7 @@ magyar_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3004,7 +3004,7 @@ magyar_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -3042,7 +3042,7 @@ magyar_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -3073,21 +3073,21 @@ magyar_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -3136,24 +3136,24 @@ magyar_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -3180,7 +3180,7 @@ magyar_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3198,7 +3198,7 @@ magyar_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -3236,7 +3236,7 @@ magyar_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -3267,21 +3267,21 @@ magyar_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -3330,24 +3330,24 @@ siberian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -3374,7 +3374,7 @@ siberian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3392,7 +3392,7 @@ siberian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -3430,7 +3430,7 @@ siberian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -3461,21 +3461,21 @@ siberian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -3524,24 +3524,24 @@ siberian_pagan_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -3568,7 +3568,7 @@ siberian_pagan_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3586,7 +3586,7 @@ siberian_pagan_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -3624,7 +3624,7 @@ siberian_pagan_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -3655,21 +3655,21 @@ siberian_pagan_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -3718,24 +3718,24 @@ pagan_religion_reformed_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -3762,7 +3762,7 @@ pagan_religion_reformed_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3780,7 +3780,7 @@ pagan_religion_reformed_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -3818,7 +3818,7 @@ pagan_religion_reformed_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -3849,21 +3849,21 @@ pagan_religion_reformed_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -3916,24 +3916,24 @@ cathar_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -3960,7 +3960,7 @@ cathar_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -3978,7 +3978,7 @@ cathar_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4016,7 +4016,7 @@ cathar_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -4047,21 +4047,21 @@ cathar_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -4113,24 +4113,24 @@ waldensian_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -4157,7 +4157,7 @@ waldensian_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -4175,7 +4175,7 @@ waldensian_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4213,7 +4213,7 @@ waldensian_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -4244,21 +4244,21 @@ waldensian_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -4308,24 +4308,24 @@ lollard_religion_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -4352,7 +4352,7 @@ lollard_religion_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -4370,7 +4370,7 @@ lollard_religion_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4408,7 +4408,7 @@ lollard_religion_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -4439,21 +4439,21 @@ lollard_religion_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -4503,24 +4503,24 @@ monophysite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -4547,7 +4547,7 @@ monophysite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -4565,7 +4565,7 @@ monophysite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4603,7 +4603,7 @@ monophysite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -4634,21 +4634,21 @@ monophysite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -4698,24 +4698,24 @@ bogomilist_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -4742,7 +4742,7 @@ bogomilist_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -4760,7 +4760,7 @@ bogomilist_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4798,7 +4798,7 @@ bogomilist_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -4829,21 +4829,21 @@ bogomilist_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -4893,24 +4893,24 @@ monothelite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -4937,7 +4937,7 @@ monothelite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -4955,7 +4955,7 @@ monothelite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -4993,7 +4993,7 @@ monothelite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5024,21 +5024,21 @@ monothelite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -5088,24 +5088,24 @@ iconoclast_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -5132,7 +5132,7 @@ iconoclast_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -5150,7 +5150,7 @@ iconoclast_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -5188,7 +5188,7 @@ iconoclast_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5219,21 +5219,21 @@ iconoclast_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -5283,24 +5283,24 @@ paulician_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -5327,7 +5327,7 @@ paulician_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -5345,7 +5345,7 @@ paulician_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -5383,7 +5383,7 @@ paulician_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5414,21 +5414,21 @@ paulician_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -5478,24 +5478,24 @@ nestorian_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -5522,7 +5522,7 @@ nestorian_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -5540,7 +5540,7 @@ nestorian_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -5578,7 +5578,7 @@ nestorian_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5609,21 +5609,21 @@ nestorian_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -5673,24 +5673,24 @@ messalian_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -5717,7 +5717,7 @@ messalian_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -5735,7 +5735,7 @@ messalian_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -5773,7 +5773,7 @@ messalian_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5804,21 +5804,21 @@ messalian_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -5868,24 +5868,24 @@ adamites_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -5912,7 +5912,7 @@ adamites_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -5930,7 +5930,7 @@ adamites_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -5968,7 +5968,7 @@ adamites_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -5999,21 +5999,21 @@ adamites_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -6062,24 +6062,24 @@ bosnian_church_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -6106,7 +6106,7 @@ bosnian_church_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -6124,7 +6124,7 @@ bosnian_church_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -6162,7 +6162,7 @@ bosnian_church_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -6193,21 +6193,21 @@ bosnian_church_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = christian
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -6260,24 +6260,24 @@ zikri_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -6304,7 +6304,7 @@ zikri_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -6322,7 +6322,7 @@ zikri_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -6360,7 +6360,7 @@ zikri_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -6391,21 +6391,21 @@ zikri_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -6454,24 +6454,24 @@ kharijite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -6498,7 +6498,7 @@ kharijite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -6516,7 +6516,7 @@ kharijite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -6554,7 +6554,7 @@ kharijite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -6585,21 +6585,21 @@ kharijite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -6649,24 +6649,24 @@ druze_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -6693,7 +6693,7 @@ druze_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -6711,7 +6711,7 @@ druze_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -6749,7 +6749,7 @@ druze_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -6780,21 +6780,21 @@ druze_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -6844,24 +6844,24 @@ hurufi_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -6888,7 +6888,7 @@ hurufi_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -6906,7 +6906,7 @@ hurufi_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -6944,7 +6944,7 @@ hurufi_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -6975,21 +6975,21 @@ hurufi_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -7038,24 +7038,24 @@ qarmatian_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -7082,7 +7082,7 @@ qarmatian_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -7100,7 +7100,7 @@ qarmatian_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -7138,7 +7138,7 @@ qarmatian_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -7169,21 +7169,21 @@ qarmatian_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -7232,24 +7232,24 @@ mutazila_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -7276,7 +7276,7 @@ mutazila_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -7294,7 +7294,7 @@ mutazila_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -7332,7 +7332,7 @@ mutazila_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -7363,21 +7363,21 @@ mutazila_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -7426,24 +7426,24 @@ quranist_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -7470,7 +7470,7 @@ quranist_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -7488,7 +7488,7 @@ quranist_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -7526,7 +7526,7 @@ quranist_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -7557,21 +7557,21 @@ quranist_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -7620,24 +7620,24 @@ alawite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -7664,7 +7664,7 @@ alawite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -7682,7 +7682,7 @@ alawite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -7720,7 +7720,7 @@ alawite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -7751,21 +7751,21 @@ alawite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = muslim
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -7818,24 +7818,24 @@ yazidi_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -7862,7 +7862,7 @@ yazidi_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -7880,7 +7880,7 @@ yazidi_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -7918,7 +7918,7 @@ yazidi_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -7949,21 +7949,21 @@ yazidi_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = yazidism
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8012,24 +8012,24 @@ meshefaresism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -8056,7 +8056,7 @@ meshefaresism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -8074,7 +8074,7 @@ meshefaresism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -8112,7 +8112,7 @@ meshefaresism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -8143,21 +8143,21 @@ meshefaresism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = yazidism
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8206,24 +8206,24 @@ kitebacilweism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -8250,7 +8250,7 @@ kitebacilweism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -8268,7 +8268,7 @@ kitebacilweism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -8306,7 +8306,7 @@ kitebacilweism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -8337,21 +8337,21 @@ kitebacilweism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = yazidism
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8404,24 +8404,24 @@ mazdaki_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -8448,7 +8448,7 @@ mazdaki_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -8466,7 +8466,7 @@ mazdaki_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -8504,7 +8504,7 @@ mazdaki_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -8535,21 +8535,21 @@ mazdaki_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = zoroastrian_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8599,24 +8599,24 @@ khurmazta_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -8643,7 +8643,7 @@ khurmazta_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -8661,7 +8661,7 @@ khurmazta_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -8699,7 +8699,7 @@ khurmazta_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -8730,21 +8730,21 @@ khurmazta_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = zoroastrian_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8793,24 +8793,24 @@ zurvanism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -8837,7 +8837,7 @@ zurvanism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -8855,7 +8855,7 @@ zurvanism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -8893,7 +8893,7 @@ zurvanism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -8924,21 +8924,21 @@ zurvanism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = zoroastrian_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -8987,24 +8987,24 @@ gayomarthianism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -9031,7 +9031,7 @@ gayomarthianism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -9049,7 +9049,7 @@ gayomarthianism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -9087,7 +9087,7 @@ gayomarthianism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -9118,21 +9118,21 @@ gayomarthianism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = zoroastrian_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -9181,24 +9181,24 @@ khurramism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -9225,7 +9225,7 @@ khurramism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -9243,7 +9243,7 @@ khurramism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -9281,7 +9281,7 @@ khurramism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -9312,21 +9312,21 @@ khurramism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = zoroastrian_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -9379,24 +9379,24 @@ manichean_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -9423,7 +9423,7 @@ manichean_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -9441,7 +9441,7 @@ manichean_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -9479,7 +9479,7 @@ manichean_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -9510,21 +9510,21 @@ manichean_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -9573,24 +9573,24 @@ mandeaism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -9617,7 +9617,7 @@ mandeaism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -9635,7 +9635,7 @@ mandeaism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -9673,7 +9673,7 @@ mandeaism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -9704,21 +9704,21 @@ mandeaism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -9767,24 +9767,24 @@ valentinianism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -9811,7 +9811,7 @@ valentinianism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -9829,7 +9829,7 @@ valentinianism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -9867,7 +9867,7 @@ valentinianism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -9898,21 +9898,21 @@ valentinianism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -9961,24 +9961,24 @@ sethianism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10005,7 +10005,7 @@ sethianism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -10023,7 +10023,7 @@ sethianism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -10061,7 +10061,7 @@ sethianism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -10092,21 +10092,21 @@ sethianism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -10155,24 +10155,24 @@ priscillianism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10199,7 +10199,7 @@ priscillianism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -10217,7 +10217,7 @@ priscillianism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -10255,7 +10255,7 @@ priscillianism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -10286,21 +10286,21 @@ priscillianism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -10349,24 +10349,24 @@ cainitism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10393,7 +10393,7 @@ cainitism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -10411,7 +10411,7 @@ cainitism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -10449,7 +10449,7 @@ cainitism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -10480,21 +10480,21 @@ cainitism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = gnostic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -10547,24 +10547,24 @@ samaritan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10591,7 +10591,7 @@ samaritan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -10609,7 +10609,7 @@ samaritan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -10647,7 +10647,7 @@ samaritan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -10678,21 +10678,21 @@ samaritan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = jewish_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -10742,24 +10742,24 @@ karaite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10786,7 +10786,7 @@ karaite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -10804,7 +10804,7 @@ karaite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -10842,7 +10842,7 @@ karaite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -10873,21 +10873,21 @@ karaite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = jewish_group
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -10940,24 +10940,24 @@ jain_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -10984,7 +10984,7 @@ jain_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11002,7 +11002,7 @@ jain_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -11040,7 +11040,7 @@ jain_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -11071,21 +11071,21 @@ jain_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = dharmic
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -11138,24 +11138,24 @@ canaanite_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -11182,7 +11182,7 @@ canaanite_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11200,7 +11200,7 @@ canaanite_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -11238,7 +11238,7 @@ canaanite_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -11269,21 +11269,21 @@ canaanite_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -11332,24 +11332,24 @@ druidism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -11376,7 +11376,7 @@ druidism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11394,7 +11394,7 @@ druidism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -11432,7 +11432,7 @@ druidism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -11463,21 +11463,21 @@ druidism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -11526,24 +11526,24 @@ kemetism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -11570,7 +11570,7 @@ kemetism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11588,7 +11588,7 @@ kemetism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -11626,7 +11626,7 @@ kemetism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -11657,21 +11657,21 @@ kemetism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -11720,24 +11720,24 @@ mardukism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -11764,7 +11764,7 @@ mardukism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11782,7 +11782,7 @@ mardukism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -11820,7 +11820,7 @@ mardukism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -11851,21 +11851,21 @@ mardukism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -11914,24 +11914,24 @@ germanic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -11958,7 +11958,7 @@ germanic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -11976,7 +11976,7 @@ germanic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12014,7 +12014,7 @@ germanic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -12045,21 +12045,21 @@ germanic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -12108,24 +12108,24 @@ anglo_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -12152,7 +12152,7 @@ anglo_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -12170,7 +12170,7 @@ anglo_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12208,7 +12208,7 @@ anglo_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -12239,21 +12239,21 @@ anglo_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -12302,24 +12302,24 @@ cybelene_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -12346,7 +12346,7 @@ cybelene_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -12364,7 +12364,7 @@ cybelene_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12402,7 +12402,7 @@ cybelene_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -12433,21 +12433,21 @@ cybelene_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -12496,24 +12496,24 @@ zamolxism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -12540,7 +12540,7 @@ zamolxism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -12558,7 +12558,7 @@ zamolxism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12596,7 +12596,7 @@ zamolxism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -12627,21 +12627,21 @@ zamolxism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -12690,24 +12690,24 @@ mithraism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -12734,7 +12734,7 @@ mithraism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -12752,7 +12752,7 @@ mithraism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12790,7 +12790,7 @@ mithraism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -12821,21 +12821,21 @@ mithraism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -12884,24 +12884,24 @@ arab_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -12928,7 +12928,7 @@ arab_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -12946,7 +12946,7 @@ arab_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -12984,7 +12984,7 @@ arab_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13015,21 +13015,21 @@ arab_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -13078,24 +13078,24 @@ armenian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -13122,7 +13122,7 @@ armenian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -13140,7 +13140,7 @@ armenian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -13178,7 +13178,7 @@ armenian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13209,21 +13209,21 @@ armenian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -13272,24 +13272,24 @@ caucasian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -13316,7 +13316,7 @@ caucasian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -13334,7 +13334,7 @@ caucasian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -13372,7 +13372,7 @@ caucasian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13403,21 +13403,21 @@ caucasian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -13466,24 +13466,24 @@ iberian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -13510,7 +13510,7 @@ iberian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -13528,7 +13528,7 @@ iberian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -13566,7 +13566,7 @@ iberian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13597,21 +13597,21 @@ iberian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -13660,24 +13660,24 @@ scythian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -13704,7 +13704,7 @@ scythian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -13722,7 +13722,7 @@ scythian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -13760,7 +13760,7 @@ scythian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13791,21 +13791,21 @@ scythian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -13854,24 +13854,24 @@ briton_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -13898,7 +13898,7 @@ briton_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -13916,7 +13916,7 @@ briton_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -13954,7 +13954,7 @@ briton_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -13985,21 +13985,21 @@ briton_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -14048,24 +14048,24 @@ gallic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -14092,7 +14092,7 @@ gallic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -14110,7 +14110,7 @@ gallic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -14148,7 +14148,7 @@ gallic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -14179,21 +14179,21 @@ gallic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -14242,24 +14242,24 @@ gaelic_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -14286,7 +14286,7 @@ gaelic_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -14304,7 +14304,7 @@ gaelic_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -14342,7 +14342,7 @@ gaelic_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -14373,21 +14373,21 @@ gaelic_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -14436,24 +14436,24 @@ celtiberian_pagan_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -14480,7 +14480,7 @@ celtiberian_pagan_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -14498,7 +14498,7 @@ celtiberian_pagan_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -14536,7 +14536,7 @@ celtiberian_pagan_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -14567,21 +14567,21 @@ celtiberian_pagan_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {
@@ -14630,24 +14630,24 @@ atenism_rebels = {
 	independence = none				# Does not strive for independence
 	unit_transfer = yes
 	gfx_type = culture_province
-	
+
 	resilient = no
 	reinforcing = yes
 	general = yes
 	smart = yes
-	
+
 	artillery = 0.0
 	infantry = 0.7
 	cavalry = 0.3
-	
+
 	morale = 1.1
 
 	# Possible handle actions
 	handle_action_negotiate = yes
 	handle_action_stability = yes
 	handle_action_build_core = yes
-	handle_action_send_missionary = yes		
-	
+	handle_action_send_missionary = yes
+
 	# The rebel type with the highest modifier for this province gets picked
 	spawn_chance = {
 		factor = 1
@@ -14674,7 +14674,7 @@ atenism_rebels = {
 		modifier = {
 			factor = 5.0
 			owner = { has_country_flag = religious_turmoil }
-		}		
+		}
 		modifier = {
 			factor = 2000
 			has_missionary = yes
@@ -14692,7 +14692,7 @@ atenism_rebels = {
 			NOT = { tolerance_to_this = -2 }
 		}
 	}
- 
+
  	# This is checked for EACH province in the Area of Operations
 	movement_evaluation = {
 		factor = 1
@@ -14730,7 +14730,7 @@ atenism_rebels = {
 			unrest = 6
 		}
 	}
- 
+
  	# Province Scope
  	siege_won_trigger = {
 		NOT = {
@@ -14761,21 +14761,21 @@ atenism_rebels = {
 			}
 		}
 	}
-	
+
 	# Country scope
 	can_negotiate_trigger = {
 		religion_group = pagan
 	}
-	
+
 	# Country scope
 	can_enforce_trigger = {
 		always = yes
 	}
-	
-	# Localisation for their demands
+
+	# Localization for their demands
 	demands_description = "generic_rebels_demand"
-	
-	# Country Scope	
+
+	# Country Scope
 	demands_enforced_effect = {
 		if = {
 			limit = {

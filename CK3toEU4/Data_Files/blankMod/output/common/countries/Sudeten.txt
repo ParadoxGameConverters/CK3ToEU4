@@ -74,18 +74,18 @@ monarch_names = {
 	"Ulrich #0" = 0
 	"Viktor #0" = 0
 	"Waldemar #0" = 0
-	
+
 	"Annegret #0" = -1
 	"Beata #0" = -1
 	"Elise #0" = -1
 }
 
 leader_names = {
-	Hoppe Herzburg Ackermann Alberti 
+	Hoppe Herzburg Ackermann Alberti
 	Albrecht Alvensleben Amman Annecke Anthe
-	Bauer Bause Ehrenberg Erxleben Feuerstack 
+	Bauer Bause Ehrenberg Erxleben Feuerstack
 	Flachsbart Genthe Gerstung Held Isaack
-	Janeck Jantke Kersten Kleinau März Nehmiz 
+	Janeck Jantke Kersten Kleinau März Nehmiz
 	Rumpf Scharfe SChauseil Schieck "von Zerbst"
 }
 
@@ -97,5 +97,5 @@ ship_names = {
 }
 
 army_names = {
-	"Armee von $PROVINCE$" 
+	"Armee von $PROVINCE$"
 }

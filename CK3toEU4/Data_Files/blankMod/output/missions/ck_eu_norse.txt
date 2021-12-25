@@ -1,11 +1,11 @@
 ck_eu_norse_missions_1 = {
 
 	slot = 1
-	
+
 	has_country_shield = yes
 	generic = no
 	ai = yes
-	
+
 	potential = {
 		culture_group = scandinavian
 		religion_group = pagan
@@ -18,13 +18,13 @@ ck_eu_norse_missions_1 = {
 		NOT = { tag = RUS }
 		NOT = { tag = DAN }
 	}
-	
+
 	ck_eu_norse_missions_1_task_1 = {
-	
+
 		icon = mission_disrupt_portuguese_trade			#Viking Legacy
-		
+
 		position = 1
-		
+
 		trigger = {
 			calc_true_if = {
 				all_country = {
@@ -36,65 +36,65 @@ ck_eu_norse_missions_1 = {
 				amount = 10
 			}
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_norse_vikings
 				duration = 7300
 			}
 		}
 	}
 	ck_eu_norse_missions_1_task_2 = {
-	
+
 		icon = mississippi_company			#Vinlandsaga
-		
+
 		position = 2
-		
+
 		trigger = {
 			colony = 1
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_norse_vinlandsaga
 				duration = 7300
 			}
 		}
 	}
 	ck_eu_norse_missions_1_task_3 = {
-	
+
 		icon = mission_rb_scottish_north_sea_trade			#North Sea Empire
-		
+
 		position = 3
-		
+
 		provinces_to_highlight = {
-			province_id = 248		#scotland
-			province_id = 17		#norway
-			province_id = 12		#danmark
+			province_id = 248		#Scotland
+			province_id = 17		#Norway
+			province_id = 12		#Denmark
 			NOT = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
-		
+
 		trigger = {
 			248 = { country_or_non_sovereign_subject_holds = ROOT }
 			17 = { country_or_non_sovereign_subject_holds = ROOT }
 			12 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_norse_northseaemp
 				duration = -1
 			}
 		}
 	}
 	ck_eu_norse_missions_1_task_4 = {
-	
+
 		icon = mission_danzig_or_war			#Dominate Baltic Trade
-		
+
 		position = 4
-		
+
 		trigger = {
 			OR = {
 				AND = {
@@ -109,7 +109,7 @@ ck_eu_norse_missions_1 = {
 				}
 			}
 		}
-		
+
 		effect = {
 			add_treasury = 500
 			capital_scope = {
@@ -119,17 +119,17 @@ ck_eu_norse_missions_1 = {
 		}
 	}
 	ck_eu_norse_missions_1_task_5 = {
-	
+
 		icon = overshadow_venice			#Dominate Naval Industry
-		
+
 		position = 5
-		
+
 		trigger = {
 			production_leader = { trade_goods =  naval_supplies }
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_norse_navalsup
 				duration = -1
 			}

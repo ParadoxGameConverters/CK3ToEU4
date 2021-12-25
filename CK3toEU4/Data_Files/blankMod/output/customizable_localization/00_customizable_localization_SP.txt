@@ -2316,7 +2316,7 @@ defined_text = {
 }
 
 
-# Ex: "drunkard" => "borrach[ín]/borrach[ina] 
+# Ex: "drunkard" => "borrach[ín]/borrach[ina]
 defined_text = {
 	name = GetininaCnjMil
 	text = {
@@ -2975,7 +2975,7 @@ defined_text = {
 	text = {
 		localisation_key = string_low_el_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -2997,7 +2997,7 @@ defined_text = {
 	text = {
 		localisation_key = string_El_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -3021,7 +3021,7 @@ defined_text = {
 	text = {
 		localisation_key = string_low_del_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -3043,7 +3043,7 @@ defined_text = {
 	text = {
 		localisation_key = string_up_Del_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -3068,7 +3068,7 @@ defined_text = {
 	text = {
 		localisation_key = string_al_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -3090,7 +3090,7 @@ defined_text = {
 	text = {
 		localisation_key = string_Al_SP
 		trigger = {
-			NOT = { 
+			NOT = {
 				religion_group = muslim
 				religion_group = eastern
 			}
@@ -3213,7 +3213,7 @@ defined_text = {
 		trigger = { religion = jewish }
 	}
 
-	
+
 	# From CK3 - they're the default name anyway
 	text = {
 		localisation_key = adamite_rel
@@ -5664,121 +5664,121 @@ defined_text = {
 	}
 }
 
-# Ex: "drunkard" => "borrach[ín]/borrach[ina]"			
-defined_text = {			
-	name = GetininaCnjEvent		
-	text = {		
-		localisation_key = string_GetininaCnjAdm	
-		trigger = {	
+# Ex: "drunkard" => "borrach[ín]/borrach[ina]"
+defined_text = {
+	name = GetininaCnjEvent
+	text = {
+		localisation_key = string_GetininaCnjAdm
+		trigger = {
 			has_country_flag = advisor_events_adm
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetininaCnjDip	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetininaCnjDip
+		trigger = {
 			has_country_flag = advisor_events_dip
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetininaCnjMil	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetininaCnjMil
+		trigger = {
 			has_country_flag = advisor_events_mil
-		}	
-	}		
-}			
+		}
+	}
+}
 
 # Ex: "[Treasurer]" => "[tesorero]/[tesorera]" (lower case)
-defined_text = {			
-	name = GetCnjEvent		
-	text = {		
-		localisation_key = string_GetCnjAdm	
-		trigger = {	
+defined_text = {
+	name = GetCnjEvent
+	text = {
+		localisation_key = string_GetCnjAdm
+		trigger = {
 			has_country_flag = advisor_events_adm
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetCnjDip	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetCnjDip
+		trigger = {
 			has_country_flag = advisor_events_dip
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetCnjMil	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetCnjMil
+		trigger = {
 			has_country_flag = advisor_events_mil
-		}	
-	}		
-}			
+		}
+	}
+}
 
 
 # Ex: "catch [him/her]" => "capturar[lo/la]"
-defined_text = {			
-	name = GetlolaCnjEvent		
-	text = {		
-		localisation_key = string_GetlolaCnjAdm	
-		trigger = {	
+defined_text = {
+	name = GetlolaCnjEvent
+	text = {
+		localisation_key = string_GetlolaCnjAdm
+		trigger = {
 			has_country_flag = advisor_events_adm
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetlolaCnjDip	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetlolaCnjDip
+		trigger = {
 			has_country_flag = advisor_events_dip
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetlolaCnjMil	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetlolaCnjMil
+		trigger = {
 			has_country_flag = advisor_events_mil
-		}	
-	}		
-}			
+		}
+	}
+}
 
 # Ex: "Hold [him/her]" => "[Lo/La] sostuvo"
-defined_text = {			
-	name = GetLoLaCnjEvent		
-	text = {		
-		localisation_key = string_GetLoLaCnjAdm	
-		trigger = {	
+defined_text = {
+	name = GetLoLaCnjEvent
+	text = {
+		localisation_key = string_GetLoLaCnjAdm
+		trigger = {
 			has_country_flag = advisor_events_adm
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetLoLaCnjDip	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetLoLaCnjDip
+		trigger = {
 			has_country_flag = advisor_events_dip
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetLoLaCnjMil	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetLoLaCnjMil
+		trigger = {
 			has_country_flag = advisor_events_mil
-		}	
-	}		
-}			
+		}
+	}
+}
 
 # Ex: "reach [him/her]" => alcanzar[le/la]"
-defined_text = {			
-	name = GetlelaCnjEvent		
-	text = {		
-		localisation_key = string_GetlelaCnjAdm	
-		trigger = {	
+defined_text = {
+	name = GetlelaCnjEvent
+	text = {
+		localisation_key = string_GetlelaCnjAdm
+		trigger = {
 			has_country_flag = advisor_events_adm
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetlelaCnjDip	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetlelaCnjDip
+		trigger = {
 			has_country_flag = advisor_events_dip
-		}	
-	}		
-	text = {		
-		localisation_key = string_GetlelaCnjMil	
-		trigger = {	
+		}
+	}
+	text = {
+		localisation_key = string_GetlelaCnjMil
+		trigger = {
 			has_country_flag = advisor_events_mil
-		}	
-	}		
-}			
+		}
+	}
+}
 
 # Ex: "Told [him/her]" => "[Le/La] dijo"
 defined_text = {
