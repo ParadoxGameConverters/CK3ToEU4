@@ -43,9 +43,9 @@
  desc_plati_feast_relig: ""
  plati_incompetent_ruler: "Incompetence"
  desc_plati_incompetent_ruler: ""
- 
+
  #
- 
+
  plati_mis_mod_baltic_religious: "Steadfast Faith"
  desc_plati_mis_mod_baltic_religious: ""
  plati_mis_mod_baltic_nobles: "Supportive Nobles"
@@ -54,7 +54,7 @@
  desc_plati_mis_mod_baltic_plati_mis_mod_baltic_great_power: ""
  plati_mis_mod_baltic_government: "Refined Governance"
  desc_plati_mis_mod_baltic_government: ""
- 
+
  plati_mis_mod_europagan_warprofit: "Fearsome Raiders"
  desc_plati_mis_mod_europagan_warprofit: ""
  plati_mis_mod_europagan_development: "Prospering Times"
@@ -63,7 +63,7 @@
  desc_plati_mis_mod_europagan_syncretic: ""
  plati_mis_mod_europagan_pagan_fury: "Pagan Fury"
  desc_plati_mis_mod_europagan_pagan_fury: ""
- 
+
  plati_mis_mod_norse_vikings: "Vikings never left!"
  desc_plati_mis_mod_norse_vikings: ""
  plati_mis_mod_norse_vinlandsaga: "Vinlandsaga"
@@ -72,7 +72,7 @@
  desc_plati_mis_mod_norse_northseaemp: ""
  plati_mis_mod_norse_navalsup: "Scandinavian Maritime Industry"
  desc_plati_mis_mod_norse_navalsup: ""
- 
+
  plati_mis_mod_eurmuslim_dhimmi: "New Minds, New Thoughts"
  desc_plati_mis_mod_eurmuslim_dhimmi: ""
  plati_mis_mod_eurmuslim_islam_sword: "Sword of Islam"
@@ -81,73 +81,73 @@
  desc_plati_mis_mod_eurmuslim_golden_age: ""
  plati_mis_mod_eurmuslim_ibn_battuta: "Legacy of Ibn Battuta"
  desc_plati_mis_mod_eurmuslim_ibn_battuta: ""
- 
+
  #
- 
+
  plati_saaremaa_mod: "Pirates of Saaremaa"
  desc_plati_saaremaa_mod: ""
- 
+
  plati_pagan_flavor_runestone_ancestor: "Raised a Runestone"
  desc_plati_pagan_flavor_runestone_ancestor: "Our ruler has raised a runestone, honoring his ancestor."
- 
+
  plati_pagan_flavor_runestone_selfish: "Raised a Runestone"
  desc_plati_pagan_flavor_runestone_selfish: "Our ruler has raised a runestone to commemorate his talents."
- 
+
  plati_pagan_flavor_sacrifices_human: "Human Sacrifices"
  desc_plati_pagan_flavor_sacrifices_human: ""
- 
+
  plati_pagan_flavor_sacrifices_animal: "Animal Sacrifices"
  desc_plati_pagan_flavor_sacrifices_animal: ""
- 
+
  plati_shaman_mod_prov: "Talented Local Priest"
  desc_plati_shaman_mod_prov: ""
- 
+
  plati_pagan_syncretism: "Syncretism"
  desc_plati_pagan_syncretism: ""
- 
+
  plati_pagan_antisyncr: "Disfavoring Syncretism"
  desc_plati_pagan_antisyncr: ""
- 
+
  plati_ruler_worshipped: "Cult of Ruler"
  desc_plati_ruler_worshipped: ""
- 
+
  #
- 
+
  plati_jewish_third_temple: "The Third Temple"
  desc_plati_jewish_third_temple: ""
- 
+
  plati_jewish_high_priesthood: "Restored High Priesthood"
  desc_plati_jewish_high_priesthood: ""
- 
+
  plati_jewish_david_warrior: "David's Mighty Warriors"
  desc_plati_jewish_david_warrior: ""
- 
+
  #
- 
+
  plati_pagan_renaissance: "Pagan Revival"
  desc_plati_pagan_renaissance: ""
- 
+
  #
- 
+
  plati_restored_persia: "Persia Restored"
  desc_plati_restored_persia: ""
- 
+
  plati_achaemenid_legacy: "Achaemenid Legacy"
  desc_plati_achaemenid_legacy: ""
- 
+
  plati_zoro_toler: "Merging of Traditions"
  desc_plati_zoro_toler: ""
- 
+
  plati_zoro_miss: "Purity of Faith"
  desc_plati_zoro_miss: ""
- 
+
  #
- 
+
  plati_seeking_gnosis: "Attaining Gnosis"
  desc_plati_seeking_gnosis: ""
  plati_return_to_creator: "Men seek Liberation"
  desc_plati_return_to_creator: ""
- 
+
  plati_ruler_yazidi_adm: "Avatar of Cibrayil"
  desc_plati_ruler_yazidi_adm: ""
  plati_ruler_yazidi_dip: "Avatar of Ezazil"

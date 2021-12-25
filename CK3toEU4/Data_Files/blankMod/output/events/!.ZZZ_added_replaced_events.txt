@@ -5,9 +5,9 @@ country_event = {
 	title = "religious_events.18.t"
 	desc = "religious_events.18.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "religious_events.18.a" #
 		ai_chance = { factor = 100 }
@@ -50,7 +50,7 @@ country_event = {
 		change_religion = anglican
 		add_stability = -4
 	}
-	
+
 	##MODDED###
 	option = {
 		name = "religious_events.18.z1" #
@@ -62,7 +62,7 @@ country_event = {
 	option = {
 		name = "religious_events.18.z2" #
 		ai_chance = { factor = 100 }
-		trigger = { 
+		trigger = {
 			always = no
 			#any_owned_province = { religion = fraticelli }
 		}
@@ -82,49 +82,49 @@ country_event = {
 		trigger = { any_owned_province = { religion = lollard } }
 		change_religion = lollard
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z5" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = monophysite } }
 		change_religion = monophysite
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z6" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = bogomilist } }
 		change_religion = bogomilist
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z7" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = monothelite } }
 		change_religion = monothelite
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z8" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = iconoclast } }
 		change_religion = iconoclast
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z9" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = paulician } }
 		change_religion = paulician
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z10" #
 		ai_chance = { factor = 100 }
 		trigger = { any_owned_province = { religion = messalian } }
 		change_religion = messalian
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.18.z11" #
 		ai_chance = { factor = 100 }
@@ -145,8 +145,8 @@ country_event = {
 		trigger = { any_owned_province = { religion = bosnian_church } }
 		change_religion = bosnian_church
 		add_stability = -4
-	}	
-	
+	}
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -159,9 +159,9 @@ country_event = {
 	title = "religious_events.19.t"
 	desc = "religious_events.19.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "religious_events.19.a" #
 		ai_chance = { factor = 100 }
@@ -183,7 +183,7 @@ country_event = {
 		change_religion = ibadi
 		add_stability = -4
 	}
-	
+
 	##MODDED###
 	option = {
 		name = "religious_events.19.z1" #
@@ -227,7 +227,7 @@ country_event = {
 		trigger = { any_owned_province = { religion = mutazila } }
 		change_religion = mutazila
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.19.z8" #
 		ai_chance = { factor = 100 }
@@ -242,7 +242,7 @@ country_event = {
 		change_religion = alawite
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -255,9 +255,9 @@ country_event = {
 	title = "religious_events.21.t"
 	desc = "religious_events.21.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "religious_events.21.a" #
 		ai_chance = { factor = 100 }
@@ -272,7 +272,7 @@ country_event = {
 		change_religion = sikhism
 		add_stability = -4
 	}
-	
+
 	##MODDED###
 	option = {
 		name = "religious_events.21.z1" #
@@ -281,7 +281,7 @@ country_event = {
 		change_religion = jain
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -294,9 +294,9 @@ country_event = {
 	title = "religious_events.22.t"
 	desc = "religious_events.22.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "religious_events.22.a" #
 		ai_chance = { factor = 100 }
@@ -304,7 +304,7 @@ country_event = {
 		change_religion = zoroastrian
 		add_stability = -4
 	}
-	
+
 	##MODDED###
 	option = {
 		name = "religious_events.22.z1" #
@@ -312,7 +312,7 @@ country_event = {
 		trigger = { any_owned_province = { religion = mazdaki } }
 		change_religion = mazdaki
 		add_stability = -4
-	}	
+	}
 	option = {
 		name = "religious_events.22.z2" #
 		ai_chance = { factor = 100 }
@@ -341,7 +341,7 @@ country_event = {
 		change_religion = khurramism
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -354,9 +354,9 @@ country_event = {
 	title = "religious_events.23.t"
 	desc = "religious_events.23.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = "religious_events.23.a" #
 		ai_chance = { factor = 100 }
@@ -364,7 +364,7 @@ country_event = {
 		change_religion = jewish
 		add_stability = -4
 	}
-	
+
 	##MODDED###
 	option = {
 		name = "religious_events.23.z1" #
@@ -380,7 +380,7 @@ country_event = {
 		change_religion = karaite
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -394,7 +394,7 @@ country_event = {
 	title = "religious_events.999.t"
 	desc = "religious_events.999.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -439,7 +439,7 @@ country_event = {
 		change_religion = cainitism
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.
@@ -452,7 +452,7 @@ country_event = {
 	title = "religious_events.998.t"
 	desc = "religious_events.998.d"
 	picture = COURT_eventPicture
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -476,7 +476,7 @@ country_event = {
 		change_religion = kitebacilweism
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.f" #
 		ai_chance = { factor = 1 } #AI should pick this if the event somehow triggers despite none of the above being possible.

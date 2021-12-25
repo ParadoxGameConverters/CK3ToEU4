@@ -22,7 +22,7 @@ historical_units = {
 	reformed_steppe_rifles
 }
 
-monarch_names = {	
+monarch_names = {
 	"Hydarnes #0" = 50
 	"Hormazd #0" = 50
 	"Maziar #0" = 50
@@ -80,7 +80,7 @@ monarch_names = {
 	"Toqtamish #0" = 20
 	"Urus #1" = 20
 	"Yamghurchi #0" = 20
-	
+
 	"Fatima #0" = -1
 	"Ibtisam #0" = -1
 	"Jalila #0" = -1
@@ -110,7 +110,7 @@ ship_names = {
 	Gayomard Gayomart "Geus-Tasan" "Geus-Urvan" Haoma
 	Haurvatat Humay Hvar Hvarekhshaeta Indar Indra Izha
 	Jamshid Jeh Karshipta Kavi Khara "Khshathra vairya"
-	Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao 
+	Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao
 	Mashyane Mashye Menog Mithra Nairyosangha Nanghaithya
 	Neriosang Ormazd Peris Peshdadians Rapithwin Rashnu
 	Rustam Saurva Simurgh "Spenta Mainyu" Sraosa Srosh
@@ -125,5 +125,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

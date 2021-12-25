@@ -43,7 +43,7 @@ leviathan_idea_adm_modifiers = {
 	}
 
 	custom_missionary_maintenance = {
-		missionary_maintenance_cost = -0.1 
+		missionary_maintenance_cost = -0.1
 		chance = {
 			factor = 0.75
 			modifier = {
@@ -384,7 +384,7 @@ leviathan_idea_dip_modifiers = {
 
 	custom_global_naval_barrage_cost = {
 		global_naval_barrage_cost = -0.15
-	
+
 		enabled = {
 			has_dlc = "Golden Century"
 		}
@@ -435,7 +435,7 @@ leviathan_idea_dip_modifiers = {
 
 	custom_center_of_trade_upgrade_cost = {
 		center_of_trade_upgrade_cost = -0.1
-	
+
 		enabled = {
 			has_dlc = "Dharma"
 		}
@@ -498,7 +498,7 @@ leviathan_idea_dip_modifiers = {
 		chance = {
 			factor = 0.1
 		}
-	
+
 		enabled = {
 			has_dlc = "Golden Century"
 		}
@@ -515,7 +515,7 @@ leviathan_idea_dip_modifiers = {
 				factor = 0
 				NOT = { num_of_ports = 1 }
 			}
-		}	
+		}
 	}
 
 	custom_appoint_cardinal_cost = {
@@ -682,7 +682,7 @@ leviathan_idea_mil_modifiers = {
 					technology_group = north_american
 				}
 			}
-		}		
+		}
 	}
 
 	custom_cavalry_shock = {
@@ -704,7 +704,7 @@ leviathan_idea_mil_modifiers = {
 					technology_group = north_american
 				}
 			}
-		}	
+		}
 	}
 
 	custom_artillery_shock = {

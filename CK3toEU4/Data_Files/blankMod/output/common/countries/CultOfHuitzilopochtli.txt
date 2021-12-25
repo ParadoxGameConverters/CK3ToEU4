@@ -17,7 +17,7 @@ historical_units = {
 	mexican_guerilla_warfare
 }
 
-monarch_names = {	
+monarch_names = {
 	"Moctezuma #0" = 1
 	"Auitzotl #0" = 1
 	"Axayacatl #0" = 1
@@ -58,7 +58,7 @@ monarch_names = {
 	"Xocoyol #0" = 1
 	"Yaztachimal #0" = 1
 	"Zolton #0" = 1
-	
+
 	"Centehua #0" = -1
 	"Moyolehuani #0" = -1
 	"Yaotl #0" = -1
@@ -77,7 +77,7 @@ ship_names = {
 	Acolmiztli Acolnahuacat "Ah Hoya" "Ah Tzenul" Amimitl Apanecatl Atl Atlau Axoloa
 	Camaxtli Centeot Centzonuiznaua Chalchiuhtlatonal Chalchiuhtlicue Chalchiutotolin Chalmecalt Chalmecaucihuilt
 	Chantico Chichomexochtli Chicomecoatl Chiconahuai Chihalma Chualchihuitlcue Cihuacaotyl Cinteotl
-	Citlalatonac Citlalicue Ciucoatl Coatlicue Cochimetl Coyolxauhqui Cuauhcoatl 
+	Citlalatonac Citlalicue Ciucoatl Coatlicue Cochimetl Coyolxauhqui Cuauhcoatl
 	Ehehcatl Eueucoyotl
 	"Hopop Can" Huehueteotl Huitzilopochtli Huixtocihuatl
 	Itzcoliuhqui Itzli Itzpapalotl Itzpzpalotl Ixtlilton Iztamixcoatzin
@@ -98,5 +98,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

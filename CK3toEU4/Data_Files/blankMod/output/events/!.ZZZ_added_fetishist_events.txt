@@ -6,9 +6,9 @@ country_event = {
 	title = fetishist_flavor.11.t #Never Seen
 	desc = fetishist_flavor.11.t #Never Seen
 	picture = POPE_PREACHING_eventPicture #Never Seen
-	
+
 	hidden = yes
-		
+
 	immediate = {
 		random_neighbor_country = {
 			limit = {
@@ -110,7 +110,7 @@ country_event = {
 						NOT = { uses_cults = yes }
 						ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
 					}
-					
+
 				}
 			}
 			if = {
@@ -303,7 +303,7 @@ country_event = {
 					country_event = { id = ZZZ_enhanced_fetishist.12 }
 				}
 			}
-			
+
 		}
 	}
 
@@ -345,7 +345,7 @@ country_event = {
 				AND = {
 					OR = {
 						religion = aztec_pagan
-						religion = nahuatl						
+						religion = nahuatl
 					}
 					ROOT = { NOT = { has_unlocked_cult = south_central_american_cult } }
 				}
@@ -439,9 +439,9 @@ country_event = {
 	title = fetishist_flavor.21.t #Never Seen
 	desc = fetishist_flavor.21.t #Never Seen
 	picture = POPE_PREACHING_eventPicture #Never Seen
-	
+
 	hidden = yes
-		
+
 	immediate = {
 		random_owned_province = {
 			limit = {
@@ -868,9 +868,9 @@ country_event = {
 	title = fetishist_flavor.21.t #Never Seen
 	desc = fetishist_flavor.21.t #Never Seen
 	picture = POPE_PREACHING_eventPicture #Never Seen
-	
+
 	hidden = yes
-		
+
 	immediate = {
 		random_owned_province = {
 			limit = {
@@ -889,9 +889,9 @@ country_event = {
 				country_event = { id = ZZZ_enhanced_fetishist.4 }
 			}
 		}
-		
+
 	}
-	
+
 	trigger = {
 		uses_cults = yes
 		NOT = { has_unlocked_cult = west_african_pagan_reformed_cult }
@@ -931,7 +931,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.4.a
-		unlock_cult = west_african_pagan_reformed_cult 
+		unlock_cult = west_african_pagan_reformed_cult
 	}
 }
 
@@ -954,7 +954,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.5.a
-		unlock_cult = tengri_cult 
+		unlock_cult = tengri_cult
 	}
 }
 
@@ -977,7 +977,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.6.a
-		unlock_cult = baltic_cult 
+		unlock_cult = baltic_cult
 	}
 }
 
@@ -1000,7 +1000,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.7.a
-		unlock_cult = finnish_cult 
+		unlock_cult = finnish_cult
 	}
 }
 
@@ -1023,7 +1023,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.8.a
-		unlock_cult = slavic_cult 
+		unlock_cult = slavic_cult
 	}
 }
 
@@ -1046,7 +1046,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.9.a
-		unlock_cult = zunist_cult 
+		unlock_cult = zunist_cult
 	}
 }
 
@@ -1379,7 +1379,7 @@ country_event = {
 		has_adopted_cult = central_african_ancestor_cult
 		NOT = { has_ruler_modifier = ancestral_support }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1409,7 +1409,7 @@ country_event = {
 		NOT = { religion = shamanism }
 		has_adopted_cult = central_african_ancestor_cult
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1443,7 +1443,7 @@ country_event = {
 		has_adopted_cult = central_african_ancestor_cult
 		has_ruler_modifier = ancestral_shrine_caretaker
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1476,7 +1476,7 @@ country_event = {
 		is_year = 1500 #At least one dead ruler by now?
 		NOT = { has_ruler_flag = had_ancestor_deified }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1505,14 +1505,14 @@ province_event = {
 			has_adopted_cult = mwari_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 		modifier = {
 			factor = 0.8
-			NOT = { 
+			NOT = {
 				uses_cults = yes
 				NOT = { religion = shamanism }
 			}
@@ -1521,7 +1521,7 @@ province_event = {
 
 	option = {
 		name = fetishist_flavor.150.a #
-		trigger = { 
+		trigger = {
 			OR = {
 				religion = west_african_pagan
 				religion = west_african_pagan_reformed
@@ -1541,8 +1541,8 @@ province_event = {
 	}
 	option = {
 		name = fetishist_flavor.150.c #
-		trigger = { 
-			NOT = { 
+		trigger = {
+			NOT = {
 				uses_cults = yes
 				NOT = { religion = shamanism }
 			}
@@ -1574,9 +1574,9 @@ province_event = {
 			has_adopted_cult = mwari_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1603,7 +1603,7 @@ country_event = {
 			is_looted = yes
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_owned_province = {
@@ -1612,7 +1612,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1658,9 +1658,9 @@ province_event = {
 			}
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1688,7 +1688,7 @@ country_event = {
 		has_adopted_cult = mwari_cult
 		num_of_cities = 5
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1729,9 +1729,9 @@ province_event = {
 		is_in_capital_area = yes
 		is_capital = no
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1833,11 +1833,11 @@ country_event = {
 		NOT = { religion = shamanism }
 		has_adopted_cult = cwezi_cult
 	}
-	
+
 	mean_time_to_happen = {
 		months = 300
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_owned_province = {
@@ -1915,7 +1915,7 @@ country_event = {
 		}
 		desc = fetishist_flavor.174.da
 	}
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -1923,7 +1923,7 @@ country_event = {
 		has_adopted_cult = cwezi_cult
 		NOT = { stability = 3 }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -1946,7 +1946,7 @@ country_event = {
 	title = fetishist_flavor.175.t
 	desc = fetishist_flavor.175.d
 	picture = TRIBES_MEETING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -1958,11 +1958,11 @@ country_event = {
 			NOT = { has_province_modifier = local_demagogue }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_owned_province = {
@@ -2024,7 +2024,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			random_owned_province = {
-				limit = { 
+				limit = {
 					OR = {
 						religion = west_african_pagan
 						religion = west_african_pagan_reformed
@@ -2060,7 +2060,7 @@ country_event = {
 				67 = { country_event = { id = fetishist_flavor.209 days = 9 } }
 				33 = { country_event = { id = fetishist_flavor.210 days = 9 } }
 			}
-		}	
+		}
 	}
 
 	#Let it be
@@ -2167,7 +2167,7 @@ province_event = {
 	title = fetishist_flavor.418.t
 	desc = fetishist_flavor.418.d
 	picture = KINGS_CHOICE_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_capital = no
@@ -2178,9 +2178,9 @@ province_event = {
 
 		NOT = { has_province_flag = fetishist_jewish_immigrants }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -2190,7 +2190,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			if = {
@@ -2203,20 +2203,20 @@ province_event = {
 					}
 				}
 				random_owned_province = {
-					limit = { 
-						religion_group = jewish 
+					limit = {
+						religion_group = jewish
 						NOT = { religion = jewish }
 						NOT = { religion = samaritan_faith }
 						NOT = { religion = karaite_faith }
 					}
 					save_event_target_as = jewish_immigrants_origin
 				}
-				
+
 			}
 			else = {
 				random_neighbor_province = {
-					limit = { 
-						religion_group = jewish 
+					limit = {
+						religion_group = jewish
 						NOT = { religion = jewish }
 						NOT = { religion = samaritan_faith }
 						NOT = { religion = karaite_faith }
@@ -2226,12 +2226,12 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.418.a
 		custom_tooltip = fetishist_flavor.418.a.tt
-		
+
 		change_religion = jewish
 
 		add_base_tax = 1
@@ -2257,9 +2257,9 @@ province_event = {
 				}
 			}
 		}
-		
+
 		change_religion = samaritan_faith
-		
+
 		add_base_tax = 1
 
 		add_province_modifier = {
@@ -2283,9 +2283,9 @@ province_event = {
 				}
 			}
 		}
-		
+
 		change_religion = karaite_faith
-		
+
 		add_base_tax = 1
 
 		add_province_modifier = {
@@ -2315,9 +2315,9 @@ province_event = {
 				}
 			}
 		}
-		
+
 		change_religion = event_target:jewish_immigrants_origin
-		
+
 		add_base_tax = 1
 
 		add_province_modifier = {
@@ -2401,13 +2401,13 @@ country_event = {
 	title = fetishist_flavor.420.t
 	desc = fetishist_flavor.420.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		NOT = { religion = shamanism }
 		has_adopted_cult = jewish_cult
-		
+
 		OR = {
 			advisor = artist
 			advisor = inquisitor
@@ -2415,10 +2415,10 @@ country_event = {
 			advisor = natural_scientist
 			advisor = philosopher
 			advisor = theologian
-			advisor = treasurer			
+			advisor = treasurer
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 400
 	}
@@ -2464,7 +2464,7 @@ country_event = {
 		add_country_modifier = {
 			name = blasphemous_advisor
 			duration = 3650
-		}	
+		}
 	}
 }
 
@@ -2474,7 +2474,7 @@ country_event = {
 	title = fetishist_flavor.450.t
 	desc = fetishist_flavor.450.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_adopted_cult = christianity_cult
 		uses_cults = yes
@@ -2484,11 +2484,11 @@ country_event = {
 			religion_group = christian
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 380
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_neighbor_country = {
@@ -2497,7 +2497,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = fetishist_flavor.450.a #
 		event_target:christian_neighbor = {
@@ -2519,7 +2519,7 @@ country_event = {
 	title = fetishist_flavor.451.t
 	desc = fetishist_flavor.451.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_adopted_cult = christianity_cult
 		uses_cults = yes
@@ -2529,12 +2529,12 @@ country_event = {
 			religion_group = christian
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 380
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.451.a #
 		custom_tooltip = fetishist_flavor.451.a.tt
@@ -2556,7 +2556,7 @@ province_event = {
 	title = fetishist_flavor.452.t
 	desc = fetishist_flavor.452.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_capital = no
@@ -2571,11 +2571,11 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
-	}	
-	
+	}
+
 	immediate = {
 		hidden_effect = {
 			owner = {
@@ -2590,9 +2590,9 @@ province_event = {
 			}
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	option = {
 		name = fetishist_flavor.452.a #Allow it.
 		change_religion = event_target:christian_missionary_origin
@@ -2619,7 +2619,7 @@ country_event = {
 	title = fetishist_flavor.455.t
 	desc = fetishist_flavor.455.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_adopted_cult = islam_cult
 		uses_cults = yes
@@ -2627,12 +2627,12 @@ country_event = {
 		has_dlc = "Rights of Man"
 		NOT = { has_ruler_modifier = qadi_in_fetishist_lands }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 500
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.455.a #
 		add_ruler_modifier = {
@@ -2652,24 +2652,24 @@ province_event = {
 	title = fetishist_flavor.456.t
 	desc = fetishist_flavor.456.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		owner = {
 			uses_cults = yes
 			has_adopted_cult = islam_cult
-		}		
-		NOT = { religion = shamanism }		
+		}
+		NOT = { religion = shamanism }
 		NOT = { has_province_modifier = shirazi_merchant_presence }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 380
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.456.a #
 		add_province_modifier = {
@@ -2685,50 +2685,50 @@ province_event = {
 	title = fetishist_flavor.457.t
 	desc = fetishist_flavor.457.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		religion_group = muslim
 		owner = {
 			uses_cults = yes
 			NOT = { religion = shamanism }
-			has_adopted_cult = islam_cult			
+			has_adopted_cult = islam_cult
 		}
 		has_dlc = "Rights of Man"
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = fetishist_flavor.457.a #
 		owner = {
 			add_adm_power = -25
 		}
 	}
-	
+
 	option = {
 		name = fetishist_flavor.457.b #
 		if = {
 			limit = { can_spawn_rebels = sunni_rebels }
 			spawn_rebels = {
-				type = sunni_rebels 
+				type = sunni_rebels
 				size = 1
 			}
 		}
 		if = {
 			limit = { can_spawn_rebels = ibadi_rebels }
 			spawn_rebels = {
-				type = ibadi_rebels 
+				type = ibadi_rebels
 				size = 1
 			}
 		}
 		if = {
 			limit = { can_spawn_rebels = shiite_rebels }
 			spawn_rebels = {
-				type = shiite_rebels 
+				type = shiite_rebels
 				size = 1
 			}
 		}
@@ -2741,8 +2741,8 @@ province_event = {
 	title = fetishist_flavor.458.t
 	desc = fetishist_flavor.458.d
 	picture = POPE_PREACHING_eventPicture
-	
-	trigger = {		
+
+	trigger = {
 		NOT = { religion = shamanism }
 		has_dlc = "Rights of Man"
 		owner = {
@@ -2755,7 +2755,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			owner = {
@@ -2770,9 +2770,9 @@ province_event = {
 			}
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -2792,8 +2792,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.458.a #
 		change_religion = event_target:muslim_missionary_origin
@@ -2806,7 +2806,7 @@ province_event = {
 	title = fetishist_flavor.460.t
 	desc = fetishist_flavor.460.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_capital = no
@@ -2816,9 +2816,9 @@ province_event = {
 			has_adopted_cult = zoroastrian_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -2828,8 +2828,8 @@ province_event = {
 			}
 		}
 	}
-	
-	immediate = {		
+
+	immediate = {
 		hidden_effect = {
 			if = {
 				limit = {
@@ -2849,7 +2849,7 @@ province_event = {
 					}
 					save_event_target_as = zoroastrian_immigrant_origin
 				}
-				
+
 			}
 			else = {
 				random_neighbor_province = {
@@ -2864,8 +2864,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.460.a #
 		change_religion = zoroastrian
@@ -2886,7 +2886,7 @@ province_event = {
 				}
 			}
 		}
-		change_religion = mazdaki 
+		change_religion = mazdaki
 		add_province_modifier = {
 			name = "zoroastrian_migration_into_africa"
 			duration = 3650
@@ -2910,9 +2910,9 @@ province_event = {
 				}
 			}
 		}
-		
+
 		change_religion = event_target:zoroastrian_immigrant_origin
-		
+
 		add_province_modifier = {
 			name = "zoroastrian_migration_into_africa"
 			duration = 3650
@@ -2930,12 +2930,12 @@ province_event = {
 				}
 			}
 		}
-		change_religion = khurmazta 
+		change_religion = khurmazta
 		add_province_modifier = {
 			name = "zoroastrian_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = fetishist_flavor.460.b #
 		owner = {
@@ -2950,7 +2950,7 @@ province_event = {
 	title = fetishist_flavor.461.t
 	desc = fetishist_flavor.461.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_capital = no
@@ -2960,13 +2960,13 @@ province_event = {
 			has_adopted_cult = zoroastrian_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 460
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_list = {
@@ -2975,7 +2975,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = fetishist_flavor.461.a #
 		trigger_switch = {
@@ -2987,7 +2987,7 @@ province_event = {
 				}
 				clr_province_flag = fetishist_zoroastrian_unrest
 			}
-			fetishist_reaction = {				
+			fetishist_reaction = {
 				if = {
 					limit = {
 						owner = { religion = west_african_pagan }
@@ -3015,7 +3015,7 @@ province_event = {
 				clr_province_flag = fetishist_reaction
 			}
 		}
-		
+
 	}
 }
 
@@ -3030,22 +3030,22 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.51.t
 	desc = ZZZ_enhanced_fetishist.51.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
-		has_adopted_cult = west_african_pagan_reformed_cult		
+		has_adopted_cult = west_african_pagan_reformed_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 365
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.51.a
-		
+
 		add_adm_power = 50
 		increase_legitimacy_medium_effect = yes
 		add_meritocracy = 5
@@ -3057,49 +3057,49 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.52.t
 	desc = ZZZ_enhanced_fetishist.52.d
 	picture = POPE_PREACHING_eventPicture
-	
-	trigger = {
-		has_dlc = "Rights of Man"
-		uses_cults = yes
-		has_adopted_cult = west_african_pagan_reformed_cult		
-	}
-	
-	is_mtth_scaled_to_size = 1
-	
-	mean_time_to_happen = {
-		months = 365
-	}
-	
-	option = {
-		name = ZZZ_enhanced_fetishist.52.a
-		
-		add_adm_power = -25
-		reduce_legitimacy_small_effect = yes
-		add_meritocracy = -5
-	}
-}
-#Honouring the ancestors
-country_event = {
-	id = ZZZ_enhanced_fetishist.53
-	title = ZZZ_enhanced_fetishist.53.t
-	desc = ZZZ_enhanced_fetishist.53.d
-	picture = FETISHIST_FIRE_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = west_african_pagan_reformed_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
+	mean_time_to_happen = {
+		months = 365
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.52.a
+
+		add_adm_power = -25
+		reduce_legitimacy_small_effect = yes
+		add_meritocracy = -5
+	}
+}
+#Honoring the ancestors
+country_event = {
+	id = ZZZ_enhanced_fetishist.53
+	title = ZZZ_enhanced_fetishist.53.t
+	desc = ZZZ_enhanced_fetishist.53.d
+	picture = FETISHIST_FIRE_eventPicture
+
+	trigger = {
+		has_dlc = "Rights of Man"
+		uses_cults = yes
+		has_adopted_cult = west_african_pagan_reformed_cult
+	}
+
+	is_mtth_scaled_to_size = 1
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.53.a
-		
+
 		add_stability_or_adm_power = yes
 	}
 }
@@ -3109,7 +3109,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.54.t
 	desc = ZZZ_enhanced_fetishist.54.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		NOT = { religion = west_african_pagan_reformed }
 		has_dlc = "Rights of Man"
@@ -3120,9 +3120,9 @@ province_event = {
 			has_adopted_cult = west_african_pagan_reformed_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -3132,8 +3132,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.54.a #
 		change_religion = west_african_pagan_reformed
@@ -3159,25 +3159,25 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.55.t
 	desc = ZZZ_enhanced_fetishist.55.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = baltic_cult
 		NOT = { has_country_flag = ZZZ_sacrifice_to_divas }
-		
+
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.55.a
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.5
 		}
@@ -3191,13 +3191,13 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.55.b
-		
+
 		add_legitimacy = -15
 		add_horde_unity = -15
 		add_devotion = -15
 		add_meritocracy = -15
 		add_republican_tradition = -7.5
-	}	
+	}
 }
 #Sacrifice Pays Off
 country_event = {
@@ -3205,23 +3205,23 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.56.t
 	desc = ZZZ_enhanced_fetishist.56.d
 	picture = FEAST_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		has_country_flag = ZZZ_sacrifice_to_divas
 	}
-	
+
 	mean_time_to_happen = {
 		months = 24
 	}
-	
+
 	immediate = {
 		hidden_effect = { clr_country_flag = ZZZ_sacrifice_to_divas }
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.56.a
-		
+
 		add_legitimacy = 15
 		add_horde_unity = 15
 		add_devotion = 15
@@ -3236,23 +3236,23 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.57.t
 	desc = ZZZ_enhanced_fetishist.57.d
 	picture = ENCOMIENDA_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		has_country_flag = ZZZ_sacrifice_to_divas
 	}
-	
+
 	mean_time_to_happen = {
 		months = 24
 	}
-	
+
 	immediate = {
 		hidden_effect = { clr_country_flag = ZZZ_sacrifice_to_divas }
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.57.a
-		
+
 		add_prestige = -5
 	}
 }
@@ -3262,7 +3262,7 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.58.t
 	desc = ZZZ_enhanced_fetishist.58.d
 	picture = FORT_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -3278,18 +3278,18 @@ country_event = {
 				is_in_war = {
 					attacker_leader = PREV
 				}
-			}	
+			}
 		}
 		NOT = { has_country_modifier = ZZZ_defend_the_motherland_baltic_cult }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 12
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.58.a
-		
+
 		add_country_modifier = {
 			name = ZZZ_defend_the_motherland_baltic_cult
 			duration = 1825
@@ -3302,7 +3302,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.59.t
 	desc = ZZZ_enhanced_fetishist.59.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = local_fortress }
@@ -3313,9 +3313,9 @@ province_event = {
 			has_adopted_cult = baltic_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -3328,8 +3328,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.59.a
 		trigger = {
@@ -3373,7 +3373,7 @@ province_event = {
 			name = "ZZZ_baltic_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.59.b
 		owner = {
@@ -3390,7 +3390,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.60.t
 	desc = ZZZ_enhanced_fetishist.60.desc
 	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		owner = {
@@ -3403,16 +3403,16 @@ province_event = {
 			trade_goods = livestock
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.60.a
-		
+
 		add_mil_power = -50
 		hidden_effect = {
 			set_province_flag = ZZZ_cleared_out_poachers
@@ -3420,8 +3420,8 @@ province_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.60.b
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.5
 		}
@@ -3435,7 +3435,7 @@ province_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.60.c
-		
+
 		add_prestige = -10
 		add_province_modifier = {
 			name = "ZZZ_enhanced_poachers"
@@ -3453,8 +3453,8 @@ province_event = {
 				}
 			}
 		}
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = 0.5
 		}
@@ -3475,23 +3475,23 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.61.t
 	desc = ZZZ_enhanced_fetishist.61.d
 	picture = TRADE_GOODS_FURS_FISH_AND_SALT_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		has_province_flag = ZZZ_cleared_out_poachers
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = { clr_country_flag = ZZZ_cleared_out_poachers }
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.61.a
-		
+
 		add_prestige = 10
 		add_province_modifier = {
 			name = "ZZZ_enhanced_animal_boom"
@@ -3505,7 +3505,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.62.t
 	desc = ZZZ_enhanced_fetishist.62.desc
 	picture = ENCOMIENDA_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_enhanced_poachers }
@@ -3518,16 +3518,16 @@ province_event = {
 			has_province_modifier = ZZZ_enhanced_poachers
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.62.a
-		
+
 		add_mil_power = -75
 		hidden_effect = {
 			set_province_flag = ZZZ_cleared_out_poachers
@@ -3535,8 +3535,8 @@ province_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.62.b
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -1
 		}
@@ -3551,7 +3551,7 @@ province_event = {
 	option = {
 		name = ZZZ_enhanced_fetishist.62.c
 		trigger = {
-			owner = { 
+			owner = {
 				OR = {
 					ruler_has_personality  = bold_fighter_personality
 					ruler_has_personality  = conqueror_personality
@@ -3560,7 +3560,7 @@ province_event = {
 				}
 			}
 		}
-					
+
 		add_mil_power = -150
 		every_neighbor_province = {
 			limit = { has_province_modifier = ZZZ_enhanced_poachers }
@@ -3575,7 +3575,7 @@ province_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.62.d
-		
+
 		add_prestige = -10
 		add_province_modifier = {
 			name = "ZZZ_enhanced_poachers"
@@ -3593,8 +3593,8 @@ province_event = {
 				}
 			}
 		}
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = 1
 		}
@@ -3615,7 +3615,7 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.63.t
 	desc = ZZZ_enhanced_fetishist.63.desc
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -3630,35 +3630,35 @@ country_event = {
 		NOT = { has_reform = ottoman_government }
 		has_government_attribute = heir
 	}
-	
+
 	mean_time_to_happen = {
 		months = 2700 #Same as Hunting Accident
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.63.a
 		trigger = {
 			NOT = { heir_adm = 6 }
 		}
-		
+
 		change_heir_adm = 1
 		if = {
-			limit = { 
+			limit = {
 				heir_has_personality = craven_personality
 			}
 			remove_heir_personality = craven_personality
 			add_heir_personality = martial_educator_personality
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.63.b
 		trigger = {
 			NOT = { heir_dip = 6 }
 		}
-		
+
 		change_heir_dip = 1
 		if = {
-			limit = { 
+			limit = {
 				heir_has_personality = craven_personality
 			}
 			remove_heir_personality = craven_personality
@@ -3670,10 +3670,10 @@ country_event = {
 		trigger = {
 			NOT = { heir_mil = 6 }
 		}
-		
+
 		change_heir_mil = 1
 		if = {
-			limit = { 
+			limit = {
 				heir_has_personality = craven_personality
 			}
 			remove_heir_personality = craven_personality
@@ -3688,7 +3688,7 @@ country_event = {
 			heir_mil = 6
 		}
 		if = {
-			limit = { 
+			limit = {
 				heir_has_personality = craven_personality
 			}
 			remove_heir_personality = craven_personality
@@ -3703,7 +3703,7 @@ country_event = {
 			duration = -1
 		}
 	}
-	
+
 }
 #Pet Lion dies
 country_event = {
@@ -3711,19 +3711,19 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.64.t
 	desc = ZZZ_enhanced_fetishist.64.d
 	picture = DEATH_OF_HEIR_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		has_country_modifier = ZZZ_enhanced_pet_lion
 	}
-	
+
 	mean_time_to_happen = {
 		months = 120 #Average Lion lifespan is 10-14 years
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.64.a
-		
+
 		add_mil_power = -1
 		remove_country_modifier = ZZZ_enhanced_pet_lion
 	}
@@ -3734,7 +3734,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.65.t
 	desc = ZZZ_enhanced_fetishist.65.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_finnish_pagan_migration_into_africa }
@@ -3744,9 +3744,9 @@ province_event = {
 			has_adopted_cult = finnish_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -3759,8 +3759,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.65.a
 		trigger = {
@@ -3796,7 +3796,7 @@ province_event = {
 			name = "ZZZ_finnish_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.65.b
 		owner = {
@@ -3813,22 +3813,22 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.66.t
 	desc = ZZZ_enhanced_fetishist.66.d
 	picture = COURT_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = slavic_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.66.a
-		
+
 		add_dip_power = 100
 	}
 }
@@ -3838,34 +3838,34 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.67.t
 	desc = ZZZ_enhanced_fetishist.67.d
 	picture = BAD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = slavic_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 420
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.67.a
-		
+
 		add_stability = -1
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.67.b
-		
+
 		add_legitimacy = -20
 		add_horde_unity = -20
 		add_devotion = -20
 		add_meritocracy = -20
 		add_republican_tradition = -10
 	}
-	
+
 }
 #Spread of Slavic Pagan
 province_event = {
@@ -3873,7 +3873,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.68.t
 	desc = ZZZ_enhanced_fetishist.68.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_slavic_pagan_migration_into_africa }
@@ -3883,9 +3883,9 @@ province_event = {
 			has_adopted_cult = slavic_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 500
 		modifier = {
@@ -3898,8 +3898,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.68.a
 		trigger = {
@@ -3937,7 +3937,7 @@ province_event = {
 			name = "ZZZ_slavic_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.68.b
 		owner = {
@@ -3954,23 +3954,23 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.69.t
 	desc = ZZZ_enhanced_fetishist.69.d
 	picture = HORDE_ON_HORSEBACK_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_good_horses }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.69.a
-		
+
 		if = {
 			limit = { NOT = { has_country_modifier = ZZZ_enhanced_poor_horses } }
 			add_country_modifier = {
@@ -3986,7 +3986,7 @@ country_event = {
 				duration = 1825
 			}
 		}
-		
+
 	}
 }
 #Poor Horses
@@ -3995,23 +3995,23 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.70.t
 	desc = ZZZ_enhanced_fetishist.70.d
 	picture = BAD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_poor_horses }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.70.a
-		
+
 		if = {
 			limit = { NOT = { has_country_modifier = ZZZ_enhanced_good_horses } }
 			add_country_modifier = {
@@ -4022,7 +4022,7 @@ country_event = {
 		else_if = {
 			limit = { has_country_modifier = ZZZ_enhanced_good_horses }
 			remove_country_modifier = ZZZ_enhanced_good_horses
-		}		
+		}
 	}
 }
 #The White Stallion
@@ -4031,21 +4031,21 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.71.t
 	desc = ZZZ_enhanced_fetishist.71.d
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = tengri_cult
 		NOT = { has_country_modifier = ZZZ_enhanced_white_stallion }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 999
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.71.a
-		
+
 		add_country_modifier = {
 			name = "ZZZ_enhanced_white_stallion"
 			duration = -1
@@ -4056,7 +4056,7 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.71.b
-		
+
 		add_country_modifier = {
 			name = "ZZZ_enhanced_white_stallion"
 			duration = -1
@@ -4067,7 +4067,7 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.71.c
-		
+
 		add_country_modifier = {
 			name = "ZZZ_enhanced_white_stallion"
 			duration = -1
@@ -4083,19 +4083,19 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.72.t
 	desc = ZZZ_enhanced_fetishist.72.d
 	picture = DEATH_OF_HEIR_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		has_country_modifier = ZZZ_enhanced_white_stallion
 	}
-	
+
 	mean_time_to_happen = {
 		months = 660 #55 Years, far longer than the average 25-30 a horse lives
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.72.a
-		
+
 		remove_country_modifier = ZZZ_enhanced_white_stallion
 		hidden_effect = {
 			clr_country_flag = ZZZ_enhanced_shadowfax
@@ -4110,7 +4110,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.73.t
 	desc = ZZZ_enhanced_fetishist.73.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_tengri_pagan_migration_into_africa }
@@ -4120,9 +4120,9 @@ province_event = {
 			has_adopted_cult = tengri_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -4135,8 +4135,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.73.a
 		trigger = {
@@ -4196,7 +4196,7 @@ province_event = {
 				duration = 3650
 			}
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.73.b
 		owner = {
@@ -4213,24 +4213,24 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.74.t
 	desc = ZZZ_enhanced_fetishist.74.d
 	picture = ACCUSATION_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = zunist_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.74.a
-		
+
 		add_stability_or_adm_power = yes
-		if = { 
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.5
 		}
@@ -4241,13 +4241,13 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.74.b
-		
+
 		add_legitimacy = -20
 		add_horde_unity = -20
 		add_devotion = -20
 		add_meritocracy = -20
 		add_republican_tradition = -10
-		if = { 
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = 0.5
 		}
@@ -4264,9 +4264,9 @@ country_event = {
 				ruler_has_personality = righteous_personality
 			}
 		}
-		
+
 		add_stability_or_adm_power = yes
-		if = { 
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.01
 		}
@@ -4282,22 +4282,22 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.75.t
 	desc = ZZZ_enhanced_fetishist.75.d
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = zunist_cult
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.75.a
-		
+
 		if = {
 			limit = {
 				monthly_income = 35
@@ -4325,7 +4325,7 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.75.b
-		
+
 		if = {
 			limit = {
 				monthly_income = 35
@@ -4353,7 +4353,7 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.75.c
-		
+
 		if = {
 			limit = {
 				monthly_income = 35
@@ -4379,7 +4379,7 @@ country_event = {
 			add_meritocracy_effect = yes
 		}
 	}
-	
+
 }
 #Heir is Judged
 country_event = {
@@ -4387,7 +4387,7 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.76.t
 	desc = ZZZ_enhanced_fetishist.76.d
 	picture = BAD_WITH_MONARCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -4408,14 +4408,14 @@ country_event = {
 		}
 		NOT = { heir_has_personality = immortal_personality }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 720
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.76.a
-		
+
 		random_list = {
 			50 = {
 				country_event = { id = ZZZ_enhanced_fetishist.77 days = 7 }
@@ -4433,7 +4433,7 @@ country_event = {
 				ruler_has_personality = malevolent_personality
 			}
 		}
-		
+
 		add_heir_claim = -50
 		add_legitimacy = -25
 		add_horde_unity = -25
@@ -4448,12 +4448,12 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.77.t
 	desc = ZZZ_enhanced_fetishist.77.d
 	picture = GOOD_WITH_MONARCH_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.77.a
-		
+
 		if = {
 			limit = {
 				NOT = { heir_has_personality = just_personality	}
@@ -4470,7 +4470,7 @@ country_event = {
 			remove_heir_personality = fertile_personality
 			remove_heir_personality = well_advised_personality
 			remove_heir_personality = benevolent_personality
-			remove_heir_personality = zealot_personality 
+			remove_heir_personality = zealot_personality
 			remove_heir_personality = pious_personality
 			remove_heir_personality = lawgiver_personality
 			remove_heir_personality = midas_touched_personality
@@ -4502,12 +4502,12 @@ country_event = {
 			remove_heir_personality = loose_lips_personality
 			remove_heir_personality = obsessive_perfectionist_personality
 			remove_heir_personality = malevolent_personality
-			remove_heir_personality = humane_personality  
+			remove_heir_personality = humane_personality
 			remove_heir_personality = petty_personality
-			
+
 			add_heir_personality = just_personality
 		}
-		add_heir_claim = 100		
+		add_heir_claim = 100
 		increase_heir_adm_effect = yes
 		increase_heir_dip_effect = yes
 		increase_heir_mil_effect = yes
@@ -4519,7 +4519,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.78.t
 	desc = ZZZ_enhanced_fetishist.78.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_zunist_pagan_migration_into_africa }
@@ -4529,9 +4529,9 @@ province_event = {
 			has_adopted_cult = zunist_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -4544,8 +4544,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.78.a
 		trigger = {
@@ -4581,7 +4581,7 @@ province_event = {
 			name = "ZZZ_zunist_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.78.b
 		owner = {
@@ -4598,7 +4598,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.79.t
 	desc = ZZZ_enhanced_fetishist.79.d
 	picture = ST_PETERS_CHURCH_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		is_capital = yes
@@ -4615,16 +4615,16 @@ province_event = {
 		NOT = { has_province_modifier = ZZZ_enhanced_mighty_temple_being_built }
 		NOT = { has_province_modifier = ZZZ_enhanced_mighty_temple }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.79.a
-		
+
 		if = {
 			limit = { has_building = cathedral }
 			add_province_modifier = {
@@ -4639,7 +4639,7 @@ province_event = {
 		}
 		if = {
 			limit = { has_building = temple }
-			
+
 			add_building_construction = {
 				building = cathedral
 				speed = 9
@@ -4655,7 +4655,7 @@ province_event = {
 			}
 		}
 		if = {
-			limit = { 
+			limit = {
 				NOT = { has_building = cathedral }
 				NOT = { has_building = temple }
 			}
@@ -4674,14 +4674,14 @@ province_event = {
 			}
 		}
 		custom_tooltip = ZZZ_enhanced_fetishist.79.a.tt
-		tooltip = { 
+		tooltip = {
 			add_province_triggered_modifier = ZZZ_enhanced_mighty_temple
 		}
-		
+
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.79.b
-		
+
 		add_prestige = -5
 	}
 }
@@ -4692,29 +4692,29 @@ province_event = {
 	desc = ZZZ_enhanced_fetishist.80.d
 	picture = ST_PETERS_CHURCH_eventPicture
 	hidden = yes
-	
+
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
 				NOT = { has_building = cathedral }
 				has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
 			}
 			province_event = { id = ZZZ_enhanced_fetishist.81 }
 		}
 		if = {
-			limit = { 
+			limit = {
 				has_building = cathedral
 				has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
 			}
 			province_event = { id = ZZZ_enhanced_fetishist.82 }
 		}
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.80.a
-	}	
+	}
 }
 #Cathedral Gone
 province_event = {
@@ -4722,14 +4722,14 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.81.t
 	desc = ZZZ_enhanced_fetishist.81.d
 	picture = COUNTRY_COLLAPSE_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.81.a
-		
+
 		remove_province_modifier = ZZZ_enhanced_mighty_temple_being_built
-	}	
+	}
 }
 #Grand Temple Built
 province_event = {
@@ -4737,18 +4737,18 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.82.t
 	desc = ZZZ_enhanced_fetishist.82.d
 	picture = ST_PETERS_CHURCH_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.82.a
-		
+
 		remove_province_modifier = ZZZ_enhanced_mighty_temple_being_built
 		add_province_triggered_modifier = ZZZ_enhanced_mighty_temple
 		hidden_effect = {
 			set_country_flag = ZZZ_enhanced_has_built_grand_temple
 		}
-	}	
+	}
 }
 #Grand Temple Lost to Invaders
 country_event = {
@@ -4756,14 +4756,14 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.83.t
 	desc = ZZZ_enhanced_fetishist.83.d
 	picture = COUNTRY_COLLAPSE_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.83.a
-		
+
 		FROM = { remove_province_modifier = ZZZ_enhanced_mighty_temple_being_built }
-	}	
+	}
 }
 #Sacrifice for the gods
 country_event = {
@@ -4771,7 +4771,7 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.84.t
 	desc = ZZZ_enhanced_fetishist.84.desc
 	picture = FETISHIST_FIRE_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
@@ -4779,18 +4779,18 @@ country_event = {
 		NOT = { has_country_modifier = ZZZ_bad_omens }
 		NOT = { has_country_modifier = ZZZ_good_omens }
 		NOT = { has_country_modifier = ZZZ_great_omens }
-		NOT = { has_country_modifier = ZZZ_incredible_omens	}		
+		NOT = { has_country_modifier = ZZZ_incredible_omens	}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 270
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.84.a
-		
+
 		add_treasury = -5
 		random_list = {
 			50 = {
@@ -4804,14 +4804,14 @@ country_event = {
 					name = "ZZZ_good_omens"
 					duration = 3650
 				}
-			}			
+			}
 		}
 		country_event = { id = ZZZ_enhanced_fetishist.85 days = 1 }
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.84.b
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.25
 		}
@@ -4849,8 +4849,8 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.84.c
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -0.5
 		}
@@ -4888,8 +4888,8 @@ country_event = {
 	}
 	option = {
 		name = ZZZ_enhanced_fetishist.84.d
-		
-		if = { 
+
+		if = {
 			limit = { monthly_income = 20 }
 			add_years_of_income = -1
 		}
@@ -4947,9 +4947,9 @@ country_event = {
 		desc = ZZZ_enhanced_fetishist.85.d4
 	}
 	picture = FETISHIST_FIRE_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.85.a
 		trigger = {
@@ -5002,7 +5002,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.86.t
 	desc = ZZZ_enhanced_fetishist.86.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_hellenic_pagan_migration_into_africa }
@@ -5012,9 +5012,9 @@ province_event = {
 			has_adopted_cult = hellenic_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -5027,8 +5027,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.86.a
 		trigger = {
@@ -5064,7 +5064,7 @@ province_event = {
 			name = "ZZZ_hellenic_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.86.b
 		owner = {
@@ -5089,7 +5089,7 @@ country_event = {
 		is_year = 1500 #At least one dead ruler by now?
 		NOT = { has_ruler_flag = had_ancestor_deified }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -5106,7 +5106,7 @@ country_event = {
 	title = fetishist_flavor.505.t
 	desc = fetishist_flavor.505.d
 	picture = ADVISOR_eventPicture
-	
+
 	trigger = {
 		uses_cults = yes
 		has_adopted_cult = pagan_cult
@@ -5116,11 +5116,11 @@ country_event = {
 			has_owner_religion = yes
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 350
 	}
-	
+
 	option = {
 		name = fetishist_flavor.505.a # The goldsmith becomes famous
 		add_prestige = 15
@@ -5151,7 +5151,7 @@ country_event = {
 		has_adopted_cult = pagan_cult
 		NOT = { has_ruler_modifier = ancestral_support }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -5183,7 +5183,7 @@ country_event = {
 		uses_cults = yes
 		has_adopted_cult = pagan_cult
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -5216,7 +5216,7 @@ country_event = {
 		has_adopted_cult = pagan_cult
 		has_ruler_modifier = ancestral_shrine_caretaker
 	}
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
@@ -5357,18 +5357,18 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.94.t
 	desc = ZZZ_enhanced_fetishist.94.d
 	picture = ADVISOR_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		uses_cults = yes
 		has_adopted_cult = bon_cult
 		NOT = { has_country_modifier = selfless_guru }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 350
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.94.a # Make advisor
 		add_meritocracy_effect = yes
@@ -5425,7 +5425,7 @@ country_event = {
 	title = ZZZ_enhanced_fetishist.95.t
 	desc = ZZZ_enhanced_fetishist.95.d
 	picture = FEUDALISM_eventPicture
-	
+
 	trigger = {
 		uses_cults = yes
 		has_adopted_cult = bon_cult
@@ -5451,15 +5451,15 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 350
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.95.a # So it is
 		add_adm_power = -15
-	
+
 		event_target:bon_neighbor = {
 			add_opinion = {
 				who = ROOT
@@ -5475,7 +5475,7 @@ province_event = {
 	title = ZZZ_enhanced_fetishist.96.t
 	desc = ZZZ_enhanced_fetishist.96.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_dlc = "Rights of Man"
 		NOT = { has_province_modifier = ZZZ_bon_pagan_migration_into_africa }
@@ -5485,9 +5485,9 @@ province_event = {
 			has_adopted_cult = bon_cult
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -5500,8 +5500,8 @@ province_event = {
 			}
 		}
 	}
-	
-	
+
+
 	option = {
 		name = ZZZ_enhanced_fetishist.96.a
 		trigger = {
@@ -5537,7 +5537,7 @@ province_event = {
 			name = "ZZZ_bon_pagan_migration_into_africa"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.96.b
 		owner = {
@@ -5567,7 +5567,7 @@ country_event = {
 
 	option = {
 		name = ZZZ_enhanced_fetishist.97.a
-		unlock_cult = gnostic_cult 
+		unlock_cult = gnostic_cult
 	}
 }
 #Discovering Yazidi cult
@@ -5600,18 +5600,18 @@ country_event = {
 	title = fetishist_flavor.99.t
 	desc = fetishist_flavor.99.d
 	picture = RELIGIOUS_TURMOIL_eventPicture
-	
+
 	trigger = {
 		has_adopted_cult = gnostic_cult
 		has_unlocked_cult = christianity_cult
 		uses_cults = yes
 		has_dlc = "Rights of Man"
 	}
-	
+
 	mean_time_to_happen = {
 		months = 500
-	}	
-	
+	}
+
 	option = {
 		name = fetishist_flavor.99.a
 		add_years_of_income = -0.25
@@ -5645,20 +5645,20 @@ country_event = {
 	title = fetishist_flavor.100.t
 	desc = fetishist_flavor.100.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
-	trigger = {		
+
+	trigger = {
 		uses_cults = yes
 		has_adopted_cult = gnostic_cult
 		has_dlc = "Rights of Man"
 		NOT = { has_country_modifier = religious_tolerance }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 380
-	}	
-	
+	}
+
 	option = {
 		name = fetishist_flavor.100.a
 		add_country_modifier = {
@@ -5674,7 +5674,7 @@ country_event = {
 	title = fetishist_flavor.101.t
 	desc = fetishist_flavor.101.d
 	picture = BATTLE_eventPicture
-	
+
 	trigger = {
 		uses_cults = yes
 		has_adopted_cult = gnostic_cult
@@ -5682,9 +5682,9 @@ country_event = {
 		NOT = { has_country_modifier = bold_warriors }
 		NOT = { has_country_modifier = disciplined_warriors }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 		modifier = {
@@ -5692,14 +5692,14 @@ country_event = {
 			is_at_war = yes
 		}
 	}
-	
+
 	option = {
 		name = fetishist_flavor.101.a
 		add_country_modifier = {
 			name = "bold_warriors"
 			duration = 3650
 		}
-	}	
+	}
 	option = {
 		name = fetishist_flavor.101.b
 		add_country_modifier = {
@@ -5735,7 +5735,7 @@ province_event = {
 	title = fetishist_flavor.102.t
 	desc = fetishist_flavor.102.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_owner_religion = yes
 		has_dlc = "Rights of Man"
@@ -5754,7 +5754,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			owner = {
@@ -5774,9 +5774,9 @@ province_event = {
 			}
 		}
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -5785,8 +5785,8 @@ province_event = {
 				religion_group = gnostic
 			}
 		}
-	}	
-	
+	}
+
 	option = {
 		name = fetishist_flavor.102.a #
 		change_religion = event_target:gnostic_missionary_origin
@@ -5814,18 +5814,18 @@ country_event = {
 	title = fetishist_flavor.103.t
 	desc = fetishist_flavor.103.d
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_adopted_cult = yazidi_cult
 		uses_cults = yes
 		has_dlc = "Rights of Man"
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.103.a
 		add_adm_power = 100
@@ -5838,21 +5838,21 @@ country_event = {
 	title = fetishist_flavor.104.t
 	desc = fetishist_flavor.104.d
 	picture = MERCHANTS_TALKING_eventPicture
-	
+
 	trigger = {
 		uses_cults = yes
 		has_adopted_cult = yazidi_cult
 		has_dlc = "Rights of Man"
 		NOT = { has_country_modifier = efficienct_merchants }
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 380
 	}
-	
-	
+
+
 	option = {
 		name = fetishist_flavor.104.a #
 		add_province_modifier = {
@@ -5878,7 +5878,7 @@ province_event = {
 	title = fetishist_flavor.105.t
 	desc = fetishist_flavor.105.d
 	picture = ANGRY_MOB_eventPicture
-	
+
 	trigger = {
 		religion_group = yazidism
 		owner = {
@@ -5887,24 +5887,24 @@ province_event = {
 		}
 		has_dlc = "Rights of Man"
 	}
-	
+
 	is_mtth_scaled_to_size = 1
-	
+
 	mean_time_to_happen = {
 		months = 360
 	}
-	
+
 	option = {
 		name = fetishist_flavor.105.a #
 		owner = {
 			add_adm_power = -50
 		}
 	}
-	
+
 	option = {
 		name = fetishist_flavor.105.b #
 		spawn_rebels = {
-			type = yazidi_rebels 
+			type = yazidi_rebels
 			size = 2
 		}
 	}
@@ -5916,7 +5916,7 @@ province_event = {
 	title = fetishist_flavor.106.t
 	desc = fetishist_flavor.106.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
+
 	trigger = {
 		has_owner_religion = yes
 		has_dlc = "Rights of Man"
@@ -5928,7 +5928,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			owner = {
@@ -5941,7 +5941,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 		modifier = {
@@ -5951,7 +5951,7 @@ province_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_fetishist.106.a
 		change_religion = event_target:yazidi_migrant_origin
@@ -5961,7 +5961,7 @@ province_event = {
 				duration = 1825
 			}
 		}
-	}	
+	}
 	option = {
 		name = ZZZ_enhanced_fetishist.106.b
 		owner = {

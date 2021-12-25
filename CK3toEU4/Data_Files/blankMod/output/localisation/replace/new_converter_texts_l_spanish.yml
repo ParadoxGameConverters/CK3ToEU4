@@ -4,7 +4,7 @@
  israelite:3 "Israelita"
  TERAPANTHA:3 "Terapantha"
  DARKNESS:3 "Oscuridad"
- 
+
  #Blessings
  mazdaki_blessings:0 "Rituales"
  pick_mazdaki_blessing:0 "Escoger Ritual"
@@ -14,7 +14,7 @@
  pick_gayomarthianism_blessing:0 "Escoger Ritual"
  nestorian_blessings: 0 "Bendiciones"
  pick_nestorian_blessing: 0 "Elige Bendición"
- 
+
  #Ideas
  european_tribal_ideas:3 "Ideas tribales europeas"
  european_tribal_ideas_start:3 "Tradiciones tribales europeas"
@@ -30,12 +30,12 @@
  ancestral_pride:3 "Orgullo ancestral"
  ancestral_pride_desc:3 "Nuestro pueblo siempre se ha sentido muy orgulloso de su pasado, que ha mantenido la fuerza inquebrantable de nuestro espíritu durante épocas de cosechas insuficientes y largas guerras."
  arctolatry:3 "Culto al oso"
- arctolatry_desc:3 "Desde la antigüedad practicamos el culto a los osos. Nuestros guerreros estudian el modo de luchar de los osos e imitan su ferocidad en el campo de batalla." 
+ arctolatry_desc:3 "Desde la antigüedad practicamos el culto a los osos. Nuestros guerreros estudian el modo de luchar de los osos e imitan su ferocidad en el campo de batalla."
  side_by_side:3 "Hombro con hombro"
  side_by_side_desc:3 "Sabemos que la fuerza no se basa en los números, sino que se encuentra en los lazos que existen entre nosotros. En el campo de batalla somos intrépidos porque sabemos que contamos con el respaldo de nuestros compañeros."
  hero_of_the_legends:3 "Héroe de leyenda"
  hero_of_the_legends_desc:3 "De pequeños, nos criaron con leche materna y antiguas leyendas. Las más conocidas hablan de un poderoso héroe que un día traerá la grandeza a nuestra nación. Su llegada está cerca, lo sentimos en la sangre."
- 
+
  ##Fetishist Cults
  west_african_pagan_reformed_cult:3 "Anciano"
  west_african_pagan_reformed_cult_desc:3 "Seguimos los caminos de nuestros parientes que nos han mostrado las verdades más grandes en el universo y como resultado nos hemos vuelto más fuertes."
@@ -59,7 +59,7 @@
  gnostic_cult_desc: 0 "Reconocemos que el mundo material es una creación falsa y terrible gobernada por el demiurgo. Esperamos nuestra salvación del mundo material."
  yazidi_cult: 0 "Yazidi"
  yazidi_cult_desc: 0 "Honramos a Melek Taus, el primero entre los 7 ángeles, compañero de Adán, salvador de Abraham y gobernante elegido de Dios. A través de él encontramos la salvación con el Todopoderoso."
- 
+
  ##Personal Deities
  #Khurmazta
  ZZZ_enhanced_desi:3 "Desi"
@@ -74,7 +74,7 @@
  ZZZ_enhanced_wishaghn_desc:3 "Wishaghn es el dios de la victoria."
  ZZZ_enhanced_zurvan:3 "Zurvan"
  ZZZ_enhanced_zurvan_desc:3 "Zurvan es el dios del conocimiento y el rey de los dioses."
- 
+
  #Triggered Mods
  ZZZ_enhanced_unreformed_religion:3 "Pagano No Reformado"
  desc_ZZZ_enhanced_unreformed_religion:3 "Este país sigue una religión pagana no reformada. Esto dificulta las conversiones hasta que puedan reformar su fe."
@@ -82,8 +82,8 @@
  desc_fraticelli_rome:3 "Ocupar Roma como un Fraticelli no podía hacer otra cosa que provocar la indignación general."
  fraticelli_subjugation:3 "Subyugación del Papado"
  desc_fraticelli_subjugation:3 "Hemos subyugado las tierras del papado. Esto hiere nuestra posición a los ojos de otros Fraticelli Fieles."
- 
- 
+
+
  #Country Mods
  west_african_pagan_reformed_migration_into_ZZZ:3 "Esfuerzos de Reforma"
  desc_west_african_pagan_reformed_migration_into_ZZZ:3 "Ciertos elementos de la sociedad desean promulgar cambios en nuestra sociedad, tanto religiosa como administrativamente."
@@ -109,8 +109,8 @@
  desc_ZZZ_bon_pagan_migration_into_africa:3 "Un gran número de fieles Bön han emigrado a esta provincia. Prometieron trabajar duro y no causar problemas."
  ZZZ_spreading_of_reformed_pagan_rituals:3 "$RELIGION$ Rituales"
  desc_ZZZ_spreading_of_reformed_pagan_rituals_title:3 "Este país ha comenzado un serio esfuerzo concertado para difundir los rituales de $ RELIGION $ entre la población."
- 
- 
+
+
  #Triggered Province Mods
  ZZZ_enhanced_mighty_temple:3 "Gran Templo"
  desc_ZZZ_enhanced_mighty_temple:3 "Un gran templo para los dioses, comparable al Panteón o Partenón se encuentra aquí."
@@ -118,7 +118,7 @@
  desc_ZZZ_enhanced_zoro_mecca:3 "Fuimos expulsados de nuestras tierras por el invasor musulmán. Nuestros antiguos templos fueron profanados y los fuegos eternos de Zoroastro se extinguieron, pero ahora tenemos nuestra venganza. [Root.GetCapitalName], ciudad santa del Islam, se encuentra bajo nuestro control."
  ZZZ_enhanced_hellenic_rome:3 "La Reconquista de Roma"
  desc_ZZZ_enhanced_hellenic_rome:3 "Hace mucho tiempo, los paganos cristianos nos llevaron casi al borde de la extinción, pero hemos perseverado y con la ayuda de los dioses hemos retomado Roma y vengado la muerte del Imperio."
- 
+
  #Province Mods
  ZZZ_defend_the_motherland_baltic_cult:3 "Defensa de la Tradicion"
  desc_ZZZ_defend_the_motherland_baltic_cult:3 "Como seguidores de Divas y Pelkkunas, tenemos la obligación de defender firmemente nuestras tierras y nuestra forma de vida."
@@ -144,7 +144,7 @@
  desc_ZZZ_great_omens:3 "Este país ha recibido grandes augurios con respecto a sus próximos conflictos."
  ZZZ_incredible_omens:3 "Presagios Increíbles"
  desc_ZZZ_increedible_omens:3 "Este país ha recibido presagios que aseguran la victoria en lo que respecta a todos sus próximos conflictos."
- 
+
  # Deities
  ukko:0 "Ukko"
  tapio:0 "Tapio"

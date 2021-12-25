@@ -24,7 +24,7 @@ historical_units = {
 	napoleonic_lancers
 }
 
-monarch_names = {	
+monarch_names = {
 	"Don Garcia #0" = 1
 	"Fernando Icaza #0" = 1
 	"Martín Pérez #0 de Siones" = 1
@@ -55,7 +55,7 @@ monarch_names = {
 	"García López #0 de Padilla" = 1
 	"Juan Carlos #1" = 1
 	"Felipe #6" = 1
-	
+
 	"Ana #0" = -15
 	"María Teresa #0" = -10
 	"Isabel #0" = -10
@@ -66,11 +66,11 @@ leader_names = {
 	"Martín Martínez" "Ruy Díaz de Yanguas" "Rodrigo Garcés" "Martín Fernández de Quintana"
 	"Gonzalo Yáñez de Novoa" "Martín Ruiz de Cevallos" "Gómez Manrique" "Fernando Ordóñez"
 	"Pedro Yáñez""Juan González" "Ruy Pérez de Leon" "Diego López de Santsoles"
-	"Garci López de Padilla" "Juan Núñez de Prado" "Diego Garcia de Padilla" 
+	"Garci López de Padilla" "Juan Núñez de Prado" "Diego Garcia de Padilla"
 	"Martín López de Córdoba" "Pedro Muñiz de Godoy y Sandoval" "Pedro Álvarez de Pereira"
 	"Gonzalo Núñez de Guzmán" "Fernando de Padilla" "Alfonso" "Pedro Girón" "Rodrigo"
 	"García López de Padilla" "Juan Carlos" "Felipe"
-	
+
 	"Pedro Fernández de Castro" "Fernando Díaz de Castro" "Sanch Fernández de Lemus"
 	"Gonzalo Rodríguez" "Suero Rodríguez" "Sancho Rodríguez" "Fernando González de Marañón"
 	"Pedro Arias" "García González de Candamio" "Fernán Pérez" "Pedro Alfonso de León"

@@ -3,8 +3,8 @@
  TRL_ADJ:3 "Trapalandian"
  israelite:3 "Israelite"
  TERAPANTHA:3 "Terapantha"
- DARKNESS:3 "Darkness" 
- 
+ DARKNESS:3 "Darkness"
+
  #Blessings
  mazdaki_blessings:0 "Rituals"
  pick_mazdaki_blessing:0 "Pick Ritual"
@@ -14,8 +14,8 @@
  pick_gayomarthianism_blessing:0 "Pick Ritual"
  nestorian_blessings:0 "Blessings"
  pick_nestorian_blessing:0 "Pick Blessing"
- 
- 
+
+
  ##Fetishist Cults
  west_african_pagan_reformed_cult:3 "Eldership"
  west_african_pagan_reformed_cult_desc:3 "We follow the ways of our kin who have shown us the greater truths in the universe and we have become stronger as a result."
@@ -24,7 +24,7 @@
  baltic_cult:3 "Romuva"
  baltic_cult_desc:3 "We are the defenders of Pelkkunas. We stand strong and fast for the glory of Divas, Pelkkunas and our people. With their blessing we shall never flag or fail."
  finnish_cult:3 "Suomenusko"
- finnish_cult_desc:3 "We honour the animals of our land and appease their ancestral mothers, the Emmus with the proper rituals and rites."
+ finnish_cult_desc:3 "We honor the animals of our land and appease their ancestral mothers, the Emmus with the proper rituals and rites."
  slavic_cult:3 "Rodnovery"
  slavic_cult_desc:3 "We believe in the Three-Tiered world tree. Offerings are made to Pelun, Dagbbog, Mokkoss and Ladah who look over the tree from above. Care is made to not neglect Vales who sustains the structure and cares for the dead."
  zunist_cult:3 "Zunism"
@@ -32,14 +32,14 @@
  bon_cult:3 "Bön"
  bon_cult_desc:3 "We dedicate ourselves to prayer, diligence and devotion so that we may incarnate and achieve sutra, tantra and Dzogchen. Our homes have been fortified with the protection of gods, whom we build seats for in our houses."
  hellenic_cult:3 "Hellenic"
- hellenic_cult_desc:3 "We honour the gods of Olympus and dedicate ourselves to becoming the best of men."
+ hellenic_cult_desc:3 "We honor the gods of Olympus and dedicate ourselves to becoming the best of men."
  pagan_cult:3 "Paken"
  pagan_cult_desc:3 "We have embraced those whose beliefs are different than our own, adopting their practices and sacrificing to their gods. We have only become stronger for it."
  gnostic_cult:3 "Nostikk"
  gnostic_cult_desc:3 "We recognize that the material world is a false and terrible creation ruled by the demiurge. We look forward to our salvation from the material world."
  yazidi_cult:3 "Yazidi"
- yazidi_cult_desc:3 "We honour Melek Taus, the first among the 7 angels, companion of Adam, saviour of Abraham and chosen ruler of God. Through him we find salvation with the Almighty."
- 
+ yazidi_cult_desc:3 "We honor Melek Taus, the first among the 7 angels, companion of Adam, savior of Abraham and chosen ruler of God. Through him we find salvation with the Almighty."
+
  ##Personal Deities
  #Khurmazta
  ZZZ_enhanced_desi:3 "Desi"
@@ -54,7 +54,7 @@
  ZZZ_enhanced_wishaghn_desc:3 "Wishaghn is the god of victory."
  ZZZ_enhanced_zurvan:3 "Zurvan"
  ZZZ_enhanced_zurvan_desc:3 "Zurvan is the god of knowledge and the king of the gods."
- 
+
  #Triggered Mods
  ZZZ_enhanced_unreformed_religion:3 "Unreformed Pagan"
  desc_ZZZ_enhanced_unreformed_religion:3 "This country follows an unreformed pagan religion. This makes conversions harder until they are able to reform their faith."
@@ -62,13 +62,13 @@
  desc_fraticelli_rome:3 "To occupy Rome as a Fraticelli, could do nothing other than elicit general outrage."
  fraticelli_subjugation:3 "Subjugation of the Papacy"
  desc_fraticelli_subjugation:3 "We have subjugated the lands of the Papacy. This injures our standing in the eyes of other Fraticelli Faithful."
- 
- 
+
+
  #Country Mods
  west_african_pagan_reformed_migration_into_ZZZ:3 "Reformation Efforts"
  desc_west_african_pagan_reformed_migration_into_ZZZ:3 "Certain elements of society wish to enact change in our society, both religiously and administratively."
  ZZZ_baltic_pagan_migration_into_africa:3 "Romuvan Migration"
- desc_ZZZ_baltic_pagan_migration_into_africa:3 "A large number of Romuva faithful have migrated to this province. They have worked tirelessly to improve [Root.GetName]'s defences as thanks."
+ desc_ZZZ_baltic_pagan_migration_into_africa:3 "A large number of Romuva faithful have migrated to this province. They have worked tirelessly to improve [Root.GetName]'s defenses as thanks."
  ZZZ_enhanced_poachers:3 "Uncontrolled Poachers"
  desc_ZZZ_enhanced_poachers:3 "Poachers and Game Hunters who only kill for sport are rampant in [Root.GetName]. This has resulted in an increased black market and an incensed population angry that the government appears to be doing nothing."
  ZZZ_enhanced_animal_boom:3 "Animal Population Boom"
@@ -84,13 +84,13 @@
  ZZZ_enhanced_mighty_temple_being_built:3 "Grand Temple Being Built"
  desc_ZZZ_enhanced_mighty_temple_being_built:3 "A grand temple to the gods is currently being built within [Root.GetCapitalName]."
  ZZZ_hellenic_pagan_migration_into_africa:3 "Hellenic Migration"
- desc_ZZZ_hellenic_pagan_migration_into_africa:3 "A large number of Hellenic faithful have migrated to this province. They have promised to help better adminstrate [Root.GetName]."
+ desc_ZZZ_hellenic_pagan_migration_into_africa:3 "A large number of Hellenic faithful have migrated to this province. They have promised to help better administrate [Root.GetName]."
  ZZZ_bon_pagan_migration_into_africa:3 "Bön Migration"
  desc_ZZZ_bon_pagan_migration_into_africa:3 "A large number of Bön faithful have migrated to this province. They have promised to work hard and cause no trouble."
  ZZZ_spreading_of_reformed_pagan_rituals:3 "$RELIGION$ Rituals"
  desc_ZZZ_spreading_of_reformed_pagan_rituals_title:3 "This country has begun a serious concerted effort to spread $RELIGION$ rituals among the population."
- 
- 
+
+
  #Triggered Province Mods
  ZZZ_enhanced_mighty_temple:3 "Grand Temple"
  desc_ZZZ_enhanced_mighty_temple:3 "A grand temple to the gods, comparable to the Pantheon or Parthenon stands here."
@@ -98,9 +98,9 @@
  desc_ZZZ_enhanced_zoro_mecca:3 "We were driven out of our lands by the Muslim invader. Our ancient temples were desecrated and the eternal fires of Zoroaster extinguished, but now we have our revenge. [Root.GetCapitalName], holy city of Islam, lies under our control."
  ZZZ_enhanced_hellenic_rome:3 "The Reconquest of Rome"
  desc_ZZZ_enhanced_hellenic_rome:3 "Long ago the Christian heathens drove us nearly to the brink of extinction, but we have persevered and with the aid of the gods we have retaken Rome and avenged the death of the Empire."
- 
+
  #Province Mods
- ZZZ_defend_the_motherland_baltic_cult:3 "Defence of Tradition"
+ ZZZ_defend_the_motherland_baltic_cult:3 "Defense of Tradition"
  desc_ZZZ_defend_the_motherland_baltic_cult:3 "As followers of Divas and Pelkkunas we have an obligation to staunchly defend our lands and way of life."
  ZZZ_enhanced_pet_lion:3 "Pet Lion"
  desc_ZZZ_enhanced_pet_lion:3 "The royal family has a pet lion that was personally wrestled into submission."
@@ -117,14 +117,14 @@
  ZZZ_tengri_pagan_migration_into_africa2:3 "Tengri Migrant Horsemen"
  desc_ZZZ_tengri_pagan_migration_into_africa2:3 "Migrant Tengri horsemen have entered our service. They bring with them advanced horsemanship and new military techniques."
  ZZZ_bad_omens:3 "Bad Omens"
- desc_ZZZ_bad_omens:3 "This country has recieved poor omens in regards to its upcoming conflicts."
+ desc_ZZZ_bad_omens:3 "This country has received poor omens in regards to its upcoming conflicts."
  ZZZ_good_omens:3 "Good Omens"
- desc_ZZZ_good_omens:3 "This country has recieved good omens in regards to its upcoming conflicts."
+ desc_ZZZ_good_omens:3 "This country has received good omens in regards to its upcoming conflicts."
  ZZZ_great_omens:3 "Great Omens"
- desc_ZZZ_great_omens:3 "This country has recieved great omens in regards to its upcoming conflicts."
+ desc_ZZZ_great_omens:3 "This country has received great omens in regards to its upcoming conflicts."
  ZZZ_incredible_omens:3 "Incredible Omens"
- desc_ZZZ_increedible_omens:3 "This country has recieved omens that assure victory in regards to all of it's upcoming conflicts."
- 
+ desc_ZZZ_increedible_omens:3 "This country has received omens that assure victory in regards to all of it's upcoming conflicts."
+
  # Deities
  ukko:0 "Ukko"
  tapio:0 "Tapio"

@@ -66,7 +66,7 @@ monarch_names = {
 	"Allahyar #0" = 1
 	"Abdol #0" = 1
 	"Hamid #0" = 1
-	
+
 	"Atiya #0" = -1
 	"Pari #0" = -1
 	"Khayr al-Nisa #0" = -1
@@ -80,7 +80,7 @@ monarch_names = {
 leader_names = {
 	Abiwardi Halabi Farrash Murshid Bawardi Qadi Simnani Banu Tamim Khidrshah Chuhra Sabiri Jalili Azizi
 	Shahy Daei Qazai Dalwand Ahrari Fatemi Sabet Ansari
-	
+
 	Hormazd Maziar Shapur Vandad Zartosht
 }
 
@@ -97,7 +97,7 @@ ship_names = {
 	Gayomard Gayomart "Geus-Tasan" "Geus-Urvan" Haoma
 	Haurvatat Humay Hvar Hvarekhshaeta Indar Indra Izha
 	Jamshid Jeh Karshipta Kavi Khara "Khshathra vairya"
-	Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao 
+	Kundrav Mah Mahre Mahrianag Manu Manuchihir Mao
 	Mashyane Mashye Menog Mithra Nairyosangha Nanghaithya
 	Neriosang Ormazd Peris Peshdadians Rapithwin Rashnu
 	Rustam Saurva Simurgh "Spenta Mainyu" Sraosa Srosh
@@ -112,5 +112,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

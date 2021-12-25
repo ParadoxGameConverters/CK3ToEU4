@@ -10,7 +10,7 @@ west_african_pagan_reformed_cult = {
 	ai_will_do = {
 		factor = 15
 		modifier = {
-			personality = ai_capitalist 
+			personality = ai_capitalist
 			factor = 2
 		}
 	}

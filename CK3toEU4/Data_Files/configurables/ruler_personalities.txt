@@ -11,7 +11,7 @@ midas_touched_personality = { education_stewardship_4 = 5 education_stewardship_
 architectural_visionary_personality = { architect = 5 diligent = 2 }
 scholar_personality = { scholar = 5 physician_1 = 5 physician_2 = 5 physician_3 = 5 shy = 2 humble = 1 }
 careful_personality = { shy = 3 temperate = 2 patient = 1 }
-entrepreneur_personality = { whole_of_body = 5 diligent = 2 greedy = 1 } 
+entrepreneur_personality = { whole_of_body = 5 diligent = 2 greedy = 1 }
 industrious_personality = { administrator = 5 diligent = 2 stubborn = 2 }
 expansionist_personality = { ambitious = 3 greedy = 2 }
 navigator_personality = { berserker = 5 viking = 5 adventurer = 2 }
@@ -23,7 +23,7 @@ charismatic_negotiator_personality = { education_diplomacy_4 = 3 education_diplo
 silver_tongue_personality = { education_diplomacy_4 = 3 education_diplomacy_3 = 2 seducer = 5 deceitful = 3 }
 bold_fighter_personality = { gallant = 5 impatient = 3 brave = 2 strong = 1 physique_good_1 = 1 physique_good_2 = 1 }
 tactical_genius_personality = { strategist = 5 education_martial_4 = 3 education_martial_3 = 3 patient = 3 sadistic = 2 intellect_good_3 = 2 intellect_good_1 = 1 shrewd = 1 }
-fierce_negotiator_personality = { gregarious = 3 brave = 2 stubborn = 1 } 
+fierce_negotiator_personality = { gregarious = 3 brave = 2 stubborn = 1 }
 conqueror_personality = { ambitious = 3 stubborn = 2 sadistic = 1 }
 strict_personality = { education_martial_4 = 2 education_martial_3 = 3 unyielding_defender = 3 just = 3 zealous = 2 paranoid = 1 }
 inspiring_leader_personality = { hunter_1 = 5 hunter_2 = 5 hunter_3 = 5 strong = 1 physique_good_1 = 1 physique_good_2 = 1 brave = 1 }
@@ -35,10 +35,10 @@ sinner_personality = { possessed_genetic = 3 cynical = 2 cannibal = 3 gluttonous
 greedy_personality = { greedy = 3 gluttonous = 2 arbitrary = 1 generous = -99 }
 obsessive_perfectionist_personality = { conscientious = 1 charming = 1 callous = 3 arrogant = 2 stubborn = 1 }
 drunkard_personality = { drunkard = 5 hashishiyah = 5 opium_addled = 5 gluttonous = 3 }
-babbling_buffoon_personality = { possessed_genetic = 3 lunatic_genetic = 2 intellect_bad_1 = 2 intellect_bad_2 = 2 intellect_bad_3 = 3 arbitrary = 1 lisping = 1 stuttering = 1 } 
+babbling_buffoon_personality = { possessed_genetic = 3 lunatic_genetic = 2 intellect_bad_1 = 2 intellect_bad_2 = 2 intellect_bad_3 = 3 arbitrary = 1 lisping = 1 stuttering = 1 }
 cruel_personality = { curious = 1 sadistic = 3 impatient = 2 cannibal = 2 arbitrary = 1 education_martial_prowess_1 = 1 compassionate = -99 }
-naive_personality = { pensive = 1 trusting = 2 honest = 1 compassionate = 1 education_diplomacy_1 = 1 intellect_bad_3 = 4 intellect_bad_1 = 1 intellect_bad_2 = 1 } 
-loose_lips_personality = { honest = 2 arbitrary = 1 possessed_genetic = 4 education_intrigue_1 = 1 } 
+naive_personality = { pensive = 1 trusting = 2 honest = 1 compassionate = 1 education_diplomacy_1 = 1 intellect_bad_3 = 4 intellect_bad_1 = 1 intellect_bad_2 = 1 }
+loose_lips_personality = { honest = 2 arbitrary = 1 possessed_genetic = 4 education_intrigue_1 = 1 }
 malevolent_personality = { callous = 3 sadistic = 2 paranoid = 1 compassionate = -99 }
 craven_personality = { craven = 3 shy = 2 lazy = 1 weak = 1 physique_bad_3 = 1 pensive = 1 brave = -99 }
 #immortal_personality = { immortal = 99 } # No immortals yet in CK3

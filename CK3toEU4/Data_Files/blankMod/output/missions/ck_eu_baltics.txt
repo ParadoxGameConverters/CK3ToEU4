@@ -1,11 +1,11 @@
 ck_eu_baltic_missions_1 = {
 
 	slot = 1										#
-	
+
 	has_country_shield = yes
 	generic = no
 	ai = yes
-	
+
 	potential = {
 		culture_group = baltic
 		religion_group = pagan
@@ -14,13 +14,13 @@ ck_eu_baltic_missions_1 = {
 		NOT = { tag = NOV }		#They have their own missions
 		NOT = { tag = RUS }		#They have their own missions
 	}
-	
+
 	ck_eu_baltic_missions_1_task_1 = {
-	
+
 		icon = mission_hands_praying			#faith that binds
-		
+
 		position = 1
-		
+
 		trigger = {
 			OR = {
 				any_neighbor_country = {
@@ -35,26 +35,26 @@ ck_eu_baltic_missions_1 = {
 				}
 			}
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_baltic_religious
 				duration = 3650
 			}
 		}
 	}
 	ck_eu_baltic_missions_1_task_2 = {
-	
+
 		icon = mission_break_the_tatar_yoke			#show of strength
-		
+
 		position = 2
-		
+
 		trigger = {
 			monthly_mil = 10
 			NOT = { num_of_loans = 1 }
 			is_in_deficit = no
 		}
-		
+
 		effect = {
 			baltic_region = {
 				limit = {
@@ -66,34 +66,34 @@ ck_eu_baltic_missions_1 = {
 		}
 	}
 	ck_eu_baltic_missions_1_task_3 = {
-	
-		icon = mission_conquer_riga			#power in the baltic
-		
+
+		icon = mission_conquer_riga			#power in the Baltic
+
 		required_missions = {
 			ck_eu_baltic_missions_1_task_2
 		}
 
 		position = 3
-		
+
 		trigger = {
 			is_great_power = yes
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_baltic_great_power
 				duration = -1
 			}
 		}
 	}
 	ck_eu_baltic_missions_1_task_4 = {
-	
+
 		icon = mission_noble_council			#reign in nobles
-		
+
 		position = 4
-		
+
 		required_missions = { conquer_states }
-		
+
 		trigger = {
 			OR = {
 				NOT = {
@@ -108,25 +108,25 @@ ck_eu_baltic_missions_1 = {
 				}
 			}
 		}
-		
+
 		effect = {
 			add_mil_power = 100
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_baltic_nobles
 				duration = -1
 			}
 		}
 	}
 	ck_eu_baltic_missions_1_task_5 = {
-	
+
 		icon = mission_rb_monopolize_the_channel			#government reforms
-		
+
 		position = 5
-		
+
 		trigger = {
 			has_final_tier_reforms_trigger = yes
 		}
-		
+
 		effect = {
 			add_adm_power = 100
 			add_country_modifier = {

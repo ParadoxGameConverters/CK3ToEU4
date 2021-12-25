@@ -149,7 +149,7 @@ PRU_ideas = {
 		}
 	}
 }
- 
+
 POR_ideas = {
 	trigger = {
 		OR = {
@@ -423,7 +423,7 @@ LIT_ideas = {
 	}
 }
 
-MAM_ideas = {	
+MAM_ideas = {
 	trigger = {
 		OR = {
 			tag = MAM
@@ -976,7 +976,7 @@ WBG_ideas = {
 		tag = WBG
 	}
 }
- 
+
 CEY_ideas = {
 	trigger = {
 		tag = CEY
@@ -1341,14 +1341,14 @@ highland_scottish_ideas = {
 	bonus = {
 		manpower_recovery_speed = 0.1
 	}
-	
+
 	trigger = {
 		OR = {
 			primary_culture = highland_scottish
 			primary_culture = pictish
 		}
 	}
-	
+
 	free = yes
 	hsc_the_wallace = {
 		land_morale = 0.15

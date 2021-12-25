@@ -41,8 +41,8 @@
  samaritan_faith:3 "Samaritain"
  karaite_faith:3 "Karaite"
  jain:3 "Jain"
- 
- 
+
+
   mazdaki_religion_desc:3 "Mazdak était un prêtre zoroastrien qui prétendait être le prophète d'Ahurâ Mazda. Il tenta de réformer la religion en y introduisant des éléments gnostiques, et chercha à mettre en avant une possession communautaire des biens et des programmes de charité."
  manichean_religion_desc:3 "Le manichéisme est une religion gnostique, incorporant des éléments propres au christianisme, au zoroastrianisme au bouddhisme et au gnosticisme."
  baltic_pagan_reformed_religion_desc:3 "La foi baltique réformée dispose d'un Livre Saint, comprenant les mythes de la Création, divers chapitres sur les dieux et un livre consacré aux prophéties. L'Église dispose d'une liturgie uniformisée et d'une hiérarchie bien établie, au sommet de laquelle se trouve le Grand Prêtre des dievs."
@@ -82,7 +82,7 @@
  pagan_religion_religion_desc:3 "Depuis l'aube de l'histoire, l'Europe et le Moyen-Orient abritent d'innombrables religions et cultes païens sans rapport avec les religions abrahamiques."
  aztec_pagan_religion_desc:3 "La religion aztèque présente un mythe de la création centré sur le sacrifice - même les dieux ont été sacrifiés pour faire bouger le soleil. Cela se reflète dans les nombreux festivals et rituels de la religion, qui comportent des sacrifices humains à grande échelle. Les principaux dieux sont Huitzilopochtli, dieu de la guerre et du sacrifice humain, Tlaloc, dieu du tonnerre et de la pluie, Xiuhtecuhtli, dieu du feu, Xipe Totec, Notre Seigneur l'écorché et Quetzalcoatl, dieu de la sagesse."
  west_african_pagan_reformed_religion_desc:3 "La religion africaine réformée est une fusion de nombreuses croyances populaires, avec un seul livre sacré comprenant un mythe de la création, des chapitres sur les esprits, des fables d'animaux totémiques et des dieux."
- 
+
 # From CK3
  #Christian
  adamites: "Adamite"
@@ -122,7 +122,7 @@
  HOLY_SITE_379_DESC:0 "En tant que l'une des religions abrahamiques, les Yézidis considèrent Jérusalem comme une ville sacrée, à tenir avec le plus grand respect et le plus grand soin."
  HOLY_SITE_4326_DESC:0 "L'une des villes les plus anciennes et les plus prestigieuses du monde, Nishapur a été la capitale de plus d'un grand empire, dégageant prestige et puissance de son noyau."
  HOLY_SITE_430_DESC:0 "Dit avoir été le lieu de sépulture des 3 mages, Bushehr est important non seulement stratégiquement mais aussi théologiquement."
- 
+
  #Gnostic
  gnostic: "Gnosticisme"
  gnostic_religion_desc: "Le gnosticisme est un recueil de différentes théories religieuses, principalement centrées sur le dualisme, avec l'idée que le monde matériel est le fruit du mal."
@@ -138,7 +138,7 @@
  priscillianism_religion_desc:0 "Il existe deux royaumes, l'un de lumière et l'autre de ténèbres. Les âmes humaines étaient destinées à conquérir le royaume des ténèbres, mais sont tombées et ont été piégées dans le royaume matériel. Parmi les humains, il y avait douze Patriarches de la Lumière qui n'ont pas réussi à vaincre les ténèbres, car ils étaient divisés entre le corps et l'âme. Ainsi, Dieu envoya le Sauveur sur la terre et, par sa mort, permit une nouvelle fois la libération des esprits humains."
  cainitism:0 "Caïnitisme"
  cainitism_religion_desc:0 "Caïn fut la première victime du Mal du Démiurge, créateur de toute matière physique. Puisque la matière et les corps sont diaboliques, les corps doivent être profanés et détruits par le péché, afin que la véritable âme humaine à l'intérieur puisse être libérée."
- 
+
  #Pagan
  kushitism_pagan:0 "Kushitisme"
  kushitism_pagan_desc:0 "La vénération des anciennes divinités reste forte ici, tout comme la vénération de la frontière entre la vie et la mort."
@@ -158,7 +158,7 @@
  desc_harmonized_confucian: 0 "Nous avons incorporé tous les idéaux confucéens dans notre pays et notre philosophie nationale."
  harmonized_other_eastern: 0 "Harmonized with Eastern"
  desc_harmonized_other_eastern: 0 "Nous avons incorporé toutes les religions orientales dans notre pays et notre philosophie nationale."
- 
+
 # From Imperator
 
  canaanite: "Cananéenne"

@@ -15,8 +15,8 @@ A: Unless they change how cultures, religions or flags work, sure, use mods. Tot
 Q: How can I customize my game after converting?
 A: Use the guide in after_converting.txt in the converter subdirectory. Scan through configurables/ folder and look into the myriad of configuration files - a great majority of these files is intended to be modified by users to achieve specific conversion results.
 
-Q: Is linux supported?
-A: The converter does compile on Linux, and you need to compile it from source it to run it. Clone the github repository + all submodules, and run build_linux.sh. If you already have ImageMagick 7 installed, delete relevant commands from the script. Also you'll need to export LD_PATH for the imagemagick libs so the converter can find them. You may need to export the path even when compiling and installing ImageMagick from source.
+Q: Is Linux supported?
+A: The converter does compile on Linux, and you need to compile it from source it to run it. Clone the GitHub repository + all submodules, and run build_linux.sh. If you already have ImageMagick 7 installed, delete relevant commands from the script. Also you'll need to export LD_PATH for the imagemagick libs so the converter can find them. You may need to export the path even when compiling and installing ImageMagick from source.
 
 Q: Is OSX supported?
 A: No, none of the developers has a Mac and we cannot do a port. If you have experience in coding and are willing to help us, we're always interested.
@@ -32,10 +32,10 @@ https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-development-th
 ### Quick Troubleshooting:
 
 Q: The generated mod was in a different language than my savegame.
-A: At the moment, CK2ToEU4 only guarantees english localisation, but german, french and spanish are nominally supported.
+A: At the moment, CK2ToEU4 only guarantees English localization, but German, French and Spanish are nominally supported.
 
 Q: Some/all country names appear as X25, FRA etc.
-A: This is an issue with the localisation. Only english is guaranteed, and you may be running EU4 in some other localization. Also, CK2 often lacks named and adjectives for various titles in non-english languages. We try to use english localisation when this happens.
+A: This is an issue with the localization. Only English is guaranteed, and you may be running EU4 in some other localization. Also, CK2 often lacks named and adjectives for various titles in non-English languages. We try to use English localization when this happens.
 
 Q: I loaded my mod, but nothing changed. What's wrong?
 A: Is the mod enabled in the launcher? If so, then EU4 refused to load it due to possible errors. Come to PDX forums and upload your save, log.txt and errors.txt so we may debug.

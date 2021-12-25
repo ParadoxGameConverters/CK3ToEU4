@@ -26,7 +26,7 @@ historical_units = {
 	russian_mass
 }
 
-monarch_names = {	
+monarch_names = {
 	"Aishno #0" = 20
 	"Davins #0" = 20
 	"Giemund #0" = 20
@@ -61,23 +61,23 @@ monarch_names = {
 }
 
 leader_names = {
-	Aishno Ako Ankad Baise Balodis Bikshe Borut Bulei Butovit Cirulis Dangeruthe Darbeslave Dausprungas 
-	Davins Demas Dobre Dovyat Dzintis Elmede Erasts Erdzivil Galeine Gastile Gedere Gerden Gibedats 
-	Giemund Golovke Gotene Gunvald Imanta Janis Jaunule Jedetus Juvage Kage Kaire Karijotas Karnak 
-	Kaupo Kerstigens Kiten Klavess Kodere Kuliens Kurlemuse Lammekinus Likiik Litto Lonkogveni Manvydas 
-	Meinekinus Mendune Nameisis Narvait Pliksov Pukiik Pukuveras Ringaudas Rushky Rusins Sabe Sargun 
-	Scurdo Shutr Shvarnas Skornand Sprudeik Stegut Steikint Sviendorog Talivaldis Tautvila Traidenis 
+	Aishno Ako Ankad Baise Balodis Bikshe Borut Bulei Butovit Cirulis Dangeruthe Darbeslave Dausprungas
+	Davins Demas Dobre Dovyat Dzintis Elmede Erasts Erdzivil Galeine Gastile Gedere Gerden Gibedats
+	Giemund Golovke Gotene Gunvald Imanta Janis Jaunule Jedetus Juvage Kage Kaire Karijotas Karnak
+	Kaupo Kerstigens Kiten Klavess Kodere Kuliens Kurlemuse Lammekinus Likiik Litto Lonkogveni Manvydas
+	Meinekinus Mendune Nameisis Narvait Pliksov Pukiik Pukuveras Ringaudas Rushky Rusins Sabe Sargun
+	Scurdo Shutr Shvarnas Skornand Sprudeik Stegut Steikint Sviendorog Talivaldis Tautvila Traidenis
 	Treniota Vaishvilkas Valikaila Vetseke Viesturs Visheiv Vishikut Vishly Vykantas Yudki
-	
-	Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas Daugvilas 
-	Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas Gediminas Gedivilas Gintaras Gintautas 
-	Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas Karijotas Kesgaila Kestutis Korigaila 
-	Korybutas Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas 
-	Movkoldas Narimantas Povilas Pukuveras Rimantas Rimgaila Rimvydas Ringaudas Sarunas Skirgaila 
+
+	Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas Daugvilas
+	Daumantas Dausprungas Dravenis Erdenis Erdvilas Gedigaudas Gediminas Gedivilas Gintaras Gintautas
+	Girdenis Irmantas Jaunutis Jogaila Jovirdas Kantibutas Karijotas Kesgaila Kestutis Korigaila
+	Korybutas Lasukas Lingvenis Liudas Lubartas Lutuveras Merkelis Mindaugas Minigaila Mantvydas
+	Movkoldas Narimantas Povilas Pukuveras Rimantas Rimgaila Rimvydas Ringaudas Sarunas Skirgaila
 	Songaila Svarnas Svitrigaila Tarvydas Tovtivilas Traidenis Treniotas Vainius Vaisvilkas Valimantas
-	Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas Zygimantas 
-	
-	Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis Ekkelis Galindo Gauronas Gerdautas Glande 
+	Vidmantas Vingoldas Virmantas Visvaldis Vizgirdas Vykintas Vytautas Vytenis Zivinbudas Zygimantas
+
+	Alvydas Arelis Auctune Bajoras Beidras Budo Dagonis Ekkelis Galindo Gauronas Gerdautas Glande
 	Golding Jauguttis Karatas Klukis Kugis Milzas Nomedas Prusas Sergonis Ulinniks Ulitis
 }
 
@@ -91,5 +91,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

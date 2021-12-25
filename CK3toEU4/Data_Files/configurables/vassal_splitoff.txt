@@ -1,13 +1,13 @@
 # This file relates to splitting off particularly large vassals into autonomous EU4 vassal states.
 # To disable this behavior, disable vassal splitoff in frontend configuration options tab.
-# 
+#
 # Preamble: Everything below relates only to vassals of 1 tier lower than liege. For emperor kingdoms, for king duchies etc.
 # By default, for a liege with 3 vassals, if any vassal has more than 100/3 + 10% = 43% clay, they will be split off.
-# Ditto for 10 vassals, 100/10 + 10% = 20% clay is the limit. 
-# You can toggle sensitivity here, sensitivity 200 will halve the required percentages (21%, 10%), 
+# Ditto for 10 vassals, 100/10 + 10% = 20% clay is the limit.
+# You can toggle sensitivity here, sensitivity 200 will halve the required percentages (21%, 10%),
 # sensitivity 50 will double them (86%, 40%).
 #
-# Going overboard with sensitivity (<25, >300) will usually mean either noone splits off or everyone splits off.
+# Going overboard with sensitivity (<25, >300) will usually mean either no-one splits off or everyone splits off.
 # It's capped to a range 1-1000.
 
 sensitivity = 100

@@ -5122,7 +5122,7 @@ frloc_tags_art_sg_masc_cons_dansle_01b = {
 		has_country_flag = is_viet_nam_flag
 		has_country_flag = is_nusantara_flag
 		### USUAL PRIORITY ###
-		# France 
+		# France
 		tag = BER tag = BOU tag = DAU tag = NEV tag = SPI
 		# HRE / Saint-Empire
 		tag = HLR
@@ -5308,7 +5308,7 @@ frloc_tags_art_sg_fem_cons_de_en_03a = {
 		tag = CAL tag = COL tag = CSC tag = FLO tag = LOU tag = NZL
 		# Eastern Europe / Europe orientale
 		tag = KUR tag = LIT tag = MAZ tag = POL tag = PRU tag = VOL
-		# France 
+		# France
 		tag = BRI tag = BUR tag = CHP tag = COR tag = FRA tag = GUY tag = NRM tag = PIC tag = PRO
 		# HRE / Saint-Empire
 		tag = BAD tag = BAV tag = BOH tag = DTT tag = EFR tag = FKN tag = HES tag = LAU tag = LOR tag = LOT tag = MEI tag = MVA tag = POM tag = SAX tag = SIL tag = SOR tag = STY tag = SWA tag = SWI tag = THU tag = WES
@@ -5336,7 +5336,7 @@ frloc_tags_art_sg_fem_cons_de_en_03a = {
 		tag = KRK
 		# ???
 		tag = MSA
-		
+
 		#### Modded
 		# CK
 		tag = TRL # Trapalanda
@@ -5381,7 +5381,7 @@ frloc_tags_art_sg_fem_cons_dela_auseindela_03b = {
 		# Dynamic Tags - Native Federations
 		tag = F00 tag = F01 tag = F02 tag = F03 tag = F04 tag = F05 tag = F06 tag = F07 tag = F08 tag = F09
 		tag = F10 tag = F11 tag = F12 tag = F13 tag = F14 tag = F15 tag = F16 tag = F17 tag = F18 tag = F19
-		
+
 		## Modded
 		# CK
 		tag = BHS # La Confrérie du Saint-Sépulcre
@@ -5422,7 +5422,7 @@ frloc_tags_art_sg_fem_vow_d_en_04a = {
 		tag = ENG tag = IRE tag = SCO
 		# Colonies
 		tag = ALA tag = AUS
-		# France 
+		# France
 		tag = AUV
 		# HRE / Saint-Empire
 		tag = GER tag = HAB
@@ -5534,7 +5534,7 @@ frloc_tags_art_pl_masc_cons_chezles_05a = {
 		tag = AWN tag = EOR tag = GMI tag = KAU tag = KUL tag = LAI tag = LAR tag = MIA tag = MLG tag = NOO tag = PLW tag = TIW tag = WRU tag = YNU tag = YOL
 		# Leviathan Maori tags
 		tag = MAA tag = TAK tag = TAN tag = TEA tag = TNK tag = TTT tag = WAI
-		
+
 		####### Modded
 		# CK
 		tag = WEI # Wei
@@ -5816,7 +5816,7 @@ frloc_tags_noart_sg_masc_vow_en_a_10a = {
 	NOT = { has_country_flag = is_pue_flag }
 	OR = {
 		### USUAL PRIORITY ###
-		# France 
+		# France
 		tag = ALE
 		# Arabia / Arabie
 		tag = OMA
@@ -5885,7 +5885,7 @@ frloc_tags_noart_sg_fem_cons_de_en_11a = {
 		### USUAL PRIORITY ###
 		# Eastern Europe / Europe orientale
 		tag = CHR tag = DNZ tag = KIE tag = KRA tag = RIG
-		# France 
+		# France
 		tag = ALS tag = FOI tag = TOU
 		# Low Countries / Pays-Bas
 		tag = LIE
@@ -6045,7 +6045,7 @@ frloc_tags_noart_sg_fem_vow_d_en_12a = {
 		### USUAL PRIORITY ###
 		# Eastern Europe / Europe orientale
 		tag = OKA
-		# France 
+		# France
 		tag = AVI tag = ORL
 		# Low Countries / Pays-Bas
 		tag = UTR
@@ -7491,7 +7491,7 @@ frloc_religion_masc_vow = {
 		religion = animism
 		religion = inti
 		religion = dreamtime
-		
+
 		###Added
 		religion = hellenic_pagan
 		religion = hellenic_pagan_reformed

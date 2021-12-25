@@ -2,8 +2,8 @@
  incident_fraticelli_pope:3 "Der Papst und der Kaiser"
  incident_fraticelli_pope_member_alert:3 "Jetzt, wo Italien wieder eine Bastion der kaiserlichen Autorität ist, hat der Papst von Rom beantragt, ein Fürst des Heiligen Römischen Reiches zu werden. Wenn der Papst die Autorität des Kaisers akzeptieren würde, hätte dies schlimme Folgen für die gesamte fraticelli Welt. Während Katholiken im Reich selbst ihren Glauben durch die päpstliche Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung gutheißen und sich der Ketzerei zuwenden könnten."
  incident_fraticelli_pope_emperor_alert:3 "Jetzt, wo Italien wieder eine Bastion der kaiserlichen Autorität ist, hat der Papst von Rom beantragt, ein Fürst des Heiligen Römischen Reiches zu werden. Wenn der Papst die Autorität des Kaisers akzeptieren würde, hätte dies schlimme Folgen für die gesamte fraticelli Welt. Während Katholiken im Reich selbst ihren Glauben durch die päpstliche Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung gutheißen und sich der Ketzerei zuwenden könnten."
- 
- 
+
+
  #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
  incident_pope.1.t:3 "Ein heiliges Reich?"
  incident_pope.1.d:3 "Italien ist nicht länger das "Schatten-Königreich" und wurde durch die unermüdlichen Bemühungen des Kaisers in die Hände des Heiligen Römischen Reiches zurückgebracht. Der Kirchenstaat muss nun entscheiden, ob er die Hegemonie des Kaisers akzeptiert oder verurteilt und damit ungeschützt und verletzlich vor seiner Haustür sitzt.\n\nDie Autorität des Kaisers anzuerkennen, hätte drastische Folgen für die wahre Christen Welt. Während die Katholiken innerhalb des Reiches ihren Glauben durch die Legitimität der päpstlichen Mitgliedschaft gestärkt bekommen könnten, ist es unwahrscheinlich, dass diejenigen außerhalb des Reiches eine solche Entscheidung freundlich aufnehmen werden und sich infolgedessen an die Ketzerei wenden könnten."

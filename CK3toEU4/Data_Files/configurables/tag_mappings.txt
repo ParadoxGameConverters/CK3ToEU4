@@ -1,8 +1,8 @@
-# syntax: 
+# syntax:
 # single mandatory: eu4 = TAG
 # single optional: ck3 = x_title
 # single optional: capitals = { range of EU4provinceIDs }
-# made up example: ck3 = c_vestisland eu4 = VST capitals = { 1 2 } 
+# made up example: ck3 = c_vestisland eu4 = VST capitals = { 1 2 }
 # Having a capital defined takes presedence over title. e_mongols would turn into VST if they had a capital in EU4 province 1 or 2.
 
 # Scandinavia
@@ -871,7 +871,7 @@ link = { ck3 = d_hashshashin eu4 = HAH }
 link = { ck3 = k_israel eu4 = ISR }
 link = { ck3 = d_knights_templar eu4 = TEM }
 
-#Added By Mod Team - special flavour
+#Added By Mod Team - special flavor
 
 link = { ck3 = d_saint_addai eu4 = ADD }
 #link = { ck3 = ??? eu4 = AOL } # Army of the Light

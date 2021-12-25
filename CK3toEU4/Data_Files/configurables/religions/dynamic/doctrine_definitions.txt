@@ -15,7 +15,7 @@
 #		secondary modifier(s)
 #		#Keep to the two doctrines to keep consistency
 #	}
-#	unique_modifiers =  { 
+#	unique_modifiers =  {
 #		#For unique mechanics such as "uses_karma = yes"
 #	}
 #	not_unique_modifiers =  {
@@ -24,7 +24,7 @@
 #}
 
 # A reformed/custom religion will inherit these tenets and doctrines by pasting them together. Unique_mechanics will appear only once, from the LAST
-# tenet that has it. Bonuses are additive and exclusive! 
+# tenet that has it. Bonuses are additive and exclusive!
 # Having "tolerance_heathen = 2" twice will apply it only once in game,
 # Having "tolerance_heathen = 2" and "tolerance_heathen = 1" will add them together for a total of 3!
 
@@ -54,7 +54,7 @@ tenet_armed_pilgrimages = {
 	country_as_secondary = {
 		warscore_cost_vs_other_religion = -0.25
 	}
-	unique_modifiers =  { 
+	unique_modifiers =  {
 		fervor = yes
 	}
 }
@@ -75,7 +75,7 @@ tenet_communal_identity = {
 	country_as_secondary = {
 		tolerance_own = 1
 	}
-	province = { 
+	province = {
 		local_missionary_strength = -0.02
 	}
 }
@@ -99,7 +99,7 @@ tenet_divine_marriage = {
 	country = {
 		legitimacy = 1
 		horde_unity = 1
-		devotion = 0.5		
+		devotion = 0.5
 		meritocracy = 0.5
 		republican_tradition = 0.5
 	}
@@ -186,7 +186,7 @@ tenet_pastoral_isolation = {
 	country = {
 		development_cost = 0.05
 		tolerance_heathen = 2
-		tolerance_heretic = 1		
+		tolerance_heretic = 1
 	}
 	country_as_secondary = {
 		tolerance_heathen = 2
@@ -212,7 +212,7 @@ tenet_esotericism = {
 		discipline = 0.025
 	}
 	province = {
-		local_missionary_strength = -0.02 
+		local_missionary_strength = -0.02
 	}
 }
 
@@ -224,7 +224,7 @@ tenet_legalism = {
 		global_institution_spread = 0.1
 	}
 	province = {
-		local_missionary_strength = -0.02 
+		local_missionary_strength = -0.02
 	}
 }
 
@@ -504,8 +504,8 @@ tenet_christian_syncretism = {
 		catholic
 		protestant
 		reformed
-		orthodox 
-		coptic 
+		orthodox
+		coptic
 		nestorian
 		messalian
 		adamites
@@ -531,8 +531,8 @@ tenet_islamic_syncretism = {
 		sunni
 		shiite
 		ibadi
-		mutazila 
-		quranist 
+		mutazila
+		quranist
 		alawite
 		zikri
 		kharijite
@@ -634,66 +634,66 @@ tenets = {
 ## Marriage
 doctrine_monogamy = {
 }
-	
+
 doctrine_polygamy = {
-	country = { 
+	country = {
 		heir_chance = 1
 	}
 }
-	
+
 doctrine_concubines = {
-	country = { 
+	country = {
 		heir_chance = 0.5
 	}
 }
 ##Divorce
 doctrine_divorce_disallowed = {
 }
-	
+
 doctrine_divorce_approval = {
 }
-	
+
 doctrine_divorce_allowed = {
 }
 ##Bastardry
 doctrine_bastardry_none = {
 }
-	
+
 doctrine_bastardry_legitimization = {
 }
-	
+
 doctrine_bastardry_all = {
-	country = { 
+	country = {
 		heir_chance = 0.5
 	}
 }
 ##Homosexuality
 doctrine_homosexuality_crime = {
 }
-	
+
 doctrine_homosexuality_shunned = {
 }
-	
+
 doctrine_homosexuality_accepted = {
 }
 ##Deviancy
 doctrine_deviancy_crime = {
 }
-	
+
 doctrine_deviancy_shunned = {
 }
-	
+
 doctrine_deviancy_accepted = {
 }
 ##Adultery
 doctrine_adultery_men_crime = {
 }
-	
+
 doctrine_adultery_men_shunned = {
 }
-	
+
 doctrine_adultery_men_accepted = {
-	country = { 
+	country = {
 		heir_chance = 0.25
 	}
 }
@@ -705,7 +705,7 @@ doctrine_adultery_women_shunned = {
 }
 
 doctrine_adultery_women_accepted  = {
-	country = { 
+	country = {
 		heir_chance = 0.25
 	}
 }

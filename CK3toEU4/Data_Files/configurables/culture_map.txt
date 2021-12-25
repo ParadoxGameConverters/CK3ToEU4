@@ -345,7 +345,7 @@ link = { eu4 = old_pommeranian ck3 = pommeranian tech = western gfx = westerngfx
 link = { eu4 = old_pommeranian ck3 = urslavic tech = western gfx = westerngfx region = vorpommern_area }
 link = { eu4 = schlesian ck3 = czech ck3 = polish ck3 = urslavic tech = western gfx = westerngfx region = silesia_area }
 link = { eu4 = polish ck3 = polish tech = western gfx = westerngfx }
-link = { eu4 = polish ck3 = urslavic tech = western gfx = westerngfx region = poland_region } 
+link = { eu4 = polish ck3 = urslavic tech = western gfx = westerngfx region = poland_region }
 link = { eu4 = sorbian ck3 = polabian tech = western gfx = westerngfx }
 link = { eu4 = czech ck3 = urslavic tech = western gfx = westerngfx region = bohemia_area region = moravia_area }
 link = { eu4 = sorbian ck3 = urslavic tech = western gfx = westerngfx region = north_german_region }

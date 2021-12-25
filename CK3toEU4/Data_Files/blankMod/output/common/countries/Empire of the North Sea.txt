@@ -1,4 +1,4 @@
-graphical_culture = westerngfx	 
+graphical_culture = westerngfx
 
 color = { 0 0 60 }
 
@@ -84,7 +84,7 @@ monarch_names = {
 	"Ulrik #0" = 0
 	"Waldemar #0" = 0
 }
-	 
+
 leader_names = {
 	Andersson Armfeldt "von Ascheberg" Adlercreutz Adlersparre Alkmaar Anckarström
 	Bagge Banér Bielke Brahe
@@ -104,11 +104,11 @@ leader_names = {
 	"Tre Rosor" Torstensson "af Trolle" Toll
 	Wrangel Wachtmeister Wallenberg
 	Åkerhielm
-	Adeler Ahlefeldt Akeleye Amundsen Arenstorff 
+	Adeler Ahlefeldt Akeleye Amundsen Arenstorff
 	Bille Bolt Brockenhuus
 	Christiansen
 	Daa
-	Ebbesen Eberstein Ellbrecht 
+	Ebbesen Eberstein Ellbrecht
 	Falkenskjold Fischer
 	Galt Gersdorff Gjedde Gyldenløve Gyldenstjerne Gøye
 	Harboe Hardenberg Holstein Huitfeldt Høegh

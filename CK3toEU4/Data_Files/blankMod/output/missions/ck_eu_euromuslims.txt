@@ -2,11 +2,11 @@
 ck_eu_euromuslim_missions_1 = {
 
 	slot = 1
-	
+
 	has_country_shield = yes
 	generic = yes
 	ai = yes
-	
+
 	potential = {
 		AND = {
 			capital_scope = {
@@ -17,13 +17,13 @@ ck_eu_euromuslim_missions_1 = {
 		NOT = { tag = GRA }
 		NOT = { tag = ADU }
 	}
-	
+
 	ck_eu_euromuslim_missions_1_task_1 = {
-	
+
 		icon = mission_restore_caliphate_of_cordoba			#dhimmi
-		
+
 		position = 1
-		
+
 		trigger = {
 			estate_loyalty = {
 				estate = estate_dhimmi
@@ -34,20 +34,20 @@ ck_eu_euromuslim_missions_1 = {
 				influence = 50
 			}
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_eurmuslim_dhimmi
 				duration = 7300
 			}
 		}
 	}
 	ck_eu_euromuslim_missions_1_task_2 = {
-	
+
 		icon = mission_subdue_rajputana			#sword of islam
-		
+
 		position = 2
-		
+
 		trigger = {
 			calc_true_if = {
 				all_country = {
@@ -58,42 +58,42 @@ ck_eu_euromuslim_missions_1 = {
 			}
 			is_defender_of_faith = yes
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_eurmuslim_islam_sword
 				duration = 18250
 			}
 		}
 	}
 	ck_eu_euromuslim_missions_1_task_3 = {
-	
+
 		icon = mission_develop_alhambra			#revive the golden age
-		
+
 		position = 3
-		
+
 		trigger = {
 			full_idea_group = innovativeness_ideas
 			num_of_owned_and_controlled_institutions = 1
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_eurmuslim_golden_age
 				duration = -1
 			}
 		}
 	}
 	ck_eu_euromuslim_missions_1_task_4 = {
-	
+
 		icon = a_real_roman_empire			#custodians of rome
-		
+
 		position = 4
-		
+
 		trigger = {
 			118 = { country_or_non_sovereign_subject_holds = ROOT }
 		}
-		
+
 		effect = {
 			add_stability_or_adm_power = yes
 			increase_legitimacy_small_effect = yes
@@ -105,11 +105,11 @@ ck_eu_euromuslim_missions_1 = {
 		}
 	}
 	ck_eu_euromuslim_missions_1_task_5 = {
-	
+
 		icon = mission_trade_in_gold_coast			#control commerce
-		
+
 		position = 5
-		
+
 		trigger = {
 			454 = { has_merchant = ROOT }
 			1295 = { has_merchant = ROOT }
@@ -117,9 +117,9 @@ ck_eu_euromuslim_missions_1 = {
 			1448 = { has_merchant = ROOT }
 			504 = { has_merchant = ROOT }
 		}
-		
+
 		effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_mis_mod_eurmuslim_ibn_battuta
 				duration = -1
 			}

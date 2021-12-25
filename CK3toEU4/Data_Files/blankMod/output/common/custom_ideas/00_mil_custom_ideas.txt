@@ -1,6 +1,6 @@
 mil_idea_modifiers = {
-	category = MIL	
-	
+	category = MIL
+
 	custom_idea_land_morale = {
 		land_morale = 0.05
 		default = 1
@@ -8,10 +8,10 @@ mil_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 1.1
-				any_neighbor_country = { 
-					any_owned_province = { 
-						is_claim = ROOT 
-					} 
+				any_neighbor_country = {
+					any_owned_province = {
+						is_claim = ROOT
+					}
 				}
 			}
 			modifier = {
@@ -31,10 +31,10 @@ mil_idea_modifiers = {
 			factor = 1
 			modifier = {
 				factor = 1.1
-				any_neighbor_country = { 
-					any_owned_province = { 
-						is_claim = ROOT 
-					} 
+				any_neighbor_country = {
+					any_owned_province = {
+						is_claim = ROOT
+					}
 				}
 			}
 			modifier = {
@@ -222,7 +222,7 @@ mil_idea_modifiers = {
 				mil = 3
 			}
 		}
-	}	
+	}
 	custom_idea_leader_siege = {
 		leader_siege = 1
 		max_level = 2
@@ -235,7 +235,7 @@ mil_idea_modifiers = {
 				mil = 3
 			}
 		}
-	}	
+	}
 	custom_idea_regiment_recruit_speed = {
 		global_regiment_recruit_speed = -0.05
 		level_cost_2 = 3
@@ -281,7 +281,7 @@ mil_idea_modifiers = {
 		}
 	}
 	custom_idea_vassal_forcelimit_bonus = {
-		vassal_forcelimit_bonus = 0.5		
+		vassal_forcelimit_bonus = 0.5
 		chance = {
 			factor = 1
 			modifier = {
@@ -295,7 +295,7 @@ mil_idea_modifiers = {
 				}
 			}
 		}
-	}	
+	}
 	custom_idea_infantry_power = {
 		infantry_power = 0.05
 		level_cost_2 = 3
@@ -348,7 +348,7 @@ mil_idea_modifiers = {
 				factor = 1.25
 				calc_true_if = {
 					any_owned_province = {
-						has_terrain = steppe 
+						has_terrain = steppe
 					}
 					amount = 4
 				}

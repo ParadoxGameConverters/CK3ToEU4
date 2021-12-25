@@ -1,66 +1,66 @@
-﻿l_english: 
+﻿l_english:
  #Religion
  ZZZ_enhanced_religion.1.t:3 "The [From.Religion.GetName] Reformation"
- ZZZ_enhanced_religion.1.desc:3 "[From.Monarch.GetTitle] [From.Monarch.GetName] has recieved a vision! In this vision the followers of the gods stood apart, and one by one they were swept aside by a mighty cross made of wood. Soon there were no followers of the gods left, and [From.Monarch.GetTitle] [From.Monarch.GetName] saw Odin himself slowly fading. Suddenly there was a bright light, and there was Thor, smashing the wooden cross, and behind him stood all those swept aside, together destroying that which they were powerless against alone. Trusting in [From.Monarch.GetHerHis] vision, [From.Monarch.GetTitle] [From.Monarch.GetName] has established a new religious hierarchy. Additionally, [From.Monarch.GetSheHe] has also tasked [From.Monarch.GetHerHis] most learned theologians with standardizing the great sagas so that there will be a single definitive edition of each. Collectively these standardized sagas are to be known as The Heilögu Sögurnar."
+ ZZZ_enhanced_religion.1.desc:3 "[From.Monarch.GetTitle] [From.Monarch.GetName] has received a vision! In this vision the followers of the gods stood apart, and one by one they were swept aside by a mighty cross made of wood. Soon there were no followers of the gods left, and [From.Monarch.GetTitle] [From.Monarch.GetName] saw Odin himself slowly fading. Suddenly there was a bright light, and there was Thor, smashing the wooden cross, and behind him stood all those swept aside, together destroying that which they were powerless against alone. Trusting in [From.Monarch.GetHerHis] vision, [From.Monarch.GetTitle] [From.Monarch.GetName] has established a new religious hierarchy. Additionally, [From.Monarch.GetSheHe] has also tasked [From.Monarch.GetHerHis] most learned theologians with standardizing the great sagas so that there will be a single definitive edition of each. Collectively these standardized sagas are to be known as The Heilögu Sögurnar."
  ZZZ_enhanced_religion.1.a:3 "Odin Guides Us!"
  ZZZ_enhanced_religion.1.aa:3 "Odin Guides Us!"
  ZZZ_enhanced_religion.1.b:3 "LIAR! CHARLATAN!"
  ZZZ_enhanced_religion.1.c:3 "Accursed Heathens!"
- 
- ZZZ_enhanced_religion.2.desc:3 "The ancient [From.Religion.GetName] religion is under attack from foreign heathens! A great tale has been making the rounds, firing up the peasantry. Known simply as Amžina Ugnis, or "An Eternal Flame", this story, often performed by bards and mummers, raises the practicioners of [From.Religion.GetName] to a higher level than those that follow other beliefs. The strength of this religious upswell has forced a great conference of theologians. During the conference a few key leaders pushed forward a series of reforms, including a loose but unquestionable hierarchy, and the faith-wide acceptance of the Amžina Ugnis as the definitive holy text for the [From.Religion.GetName] faith."
+
+ ZZZ_enhanced_religion.2.desc:3 "The ancient [From.Religion.GetName] religion is under attack from foreign heathens! A great tale has been making the rounds, firing up the peasantry. Known simply as Amžina Ugnis, or "An Eternal Flame", this story, often performed by bards and mummers, raises the practitioners of [From.Religion.GetName] to a higher level than those that follow other beliefs. The strength of this religious upswell has forced a great conference of theologians. During the conference a few key leaders pushed forward a series of reforms, including a loose but unquestionable hierarchy, and the faith-wide acceptance of the Amžina Ugnis as the definitive holy text for the [From.Religion.GetName] faith."
  ZZZ_enhanced_religion.2.a:3 "The gods have guided these men and women!"
  ZZZ_enhanced_religion.2.aa:3 "The gods have guided these men and women!"
  ZZZ_enhanced_religion.2.b:3 "Blithering idiots!"
  ZZZ_enhanced_religion.2.c:3 "Accursed Heathens!"
- 
+
  ZZZ_enhanced_religion.3.desc:3 "It is time for the hunted to become the hunters. Tired of the constant incursions from neighboring heretics and heathens, [From.Religion.GetName] theologians from across the land gathered together in a great assembly. There they consolidated the myths of the [From.Religion.GetName] into a single epic, The Kalevala. While working on the epic, the theologians decided upon a simple but clear hierarchy, ensuring that the foundations laid at the assembly would not be lost with time."
  ZZZ_enhanced_religion.3.a:3 "We shall destroy those who oppose the gods!"
  ZZZ_enhanced_religion.3.aa:3 "We shall destroy those who oppose the gods!"
  ZZZ_enhanced_religion.3.b:3 "This will destroy [Root.Religion.GetName], not save it!"
  ZZZ_enhanced_religion.3.c:3 "Accursed Heathens!"
- 
- ZZZ_enhanced_religion.4.desc:3 "Vaster than the sky, our faith is unassailable. Or so the [From.Religion.GetName] faithful were taught, but recently this undeniable fact has come under question as heretic and heathen forces encroach upon their holy lands. In response to these aggressions, a great congregation of theologians was called, and it was decided that it was time to strike back. A church hierarchy was formed, a great enumeration of the Holy Inscription Stones was ordered. Using the text gathered from these stones, [From.Monarch.GetTitle] [From.Monarch.GetName] commissioned a massive building project, a large mountain is to have an edited version of all sanctioned inscriptions enscribed upon it, and these chosen texts will collectively become the official tenants of the reformed [From.Religion.GetName] faith. This official collection is to be known simply as The Inscriptions."
+
+ ZZZ_enhanced_religion.4.desc:3 "Vaster than the sky, our faith is unassailable. Or so the [From.Religion.GetName] faithful were taught, but recently this undeniable fact has come under question as heretic and heathen forces encroach upon their holy lands. In response to these aggressions, a great congregation of theologians was called, and it was decided that it was time to strike back. A church hierarchy was formed, a great enumeration of the Holy Inscription Stones was ordered. Using the text gathered from these stones, [From.Monarch.GetTitle] [From.Monarch.GetName] commissioned a massive building project, a large mountain is to have an edited version of all sanctioned inscriptions inscribed upon it, and these chosen texts will collectively become the official tenants of the reformed [From.Religion.GetName] faith. This official collection is to be known simply as The Inscriptions."
  ZZZ_enhanced_religion.4.a:3 "Unassailable once more!"
  ZZZ_enhanced_religion.4.aa:3 "Unassailable once more!"
  ZZZ_enhanced_religion.4.b:3 "Nothing more than a vanity project!"
  ZZZ_enhanced_religion.4.c:3 "Accursed Heathens!"
- 
- ZZZ_enhanced_religion.5.desc:3 "The news spread like wild-fire across all [From.Religion.GetName] lands. There was to be a synod of theologians, the size of which would be unprecedented. Omen readers everywhere had all read the exact same omens, that the gods and the cycles would soon be forgotten if there was no change. Gathered together, the theologians have reformed the [From.Religion.GetName] faith so that it is better equipped to face the challenges of the modern era. With a strict church hierarchy and an official compendium of holy myths and legends known simply as The Tales, the [From.Religion.GetName] faith has succesfully been reborn!"
+
+ ZZZ_enhanced_religion.5.desc:3 "The news spread like wild-fire across all [From.Religion.GetName] lands. There was to be a synod of theologians, the size of which would be unprecedented. Omen readers everywhere had all read the exact same omens, that the gods and the cycles would soon be forgotten if there was no change. Gathered together, the theologians have reformed the [From.Religion.GetName] faith so that it is better equipped to face the challenges of the modern era. With a strict church hierarchy and an official compendium of holy myths and legends known simply as The Tales, the [From.Religion.GetName] faith has successfully been reborn!"
  ZZZ_enhanced_religion.5.a:3 "The cycle will not be broken!"
  ZZZ_enhanced_religion.5.aa:3 "The cycle will not be broken!"
  ZZZ_enhanced_religion.5.b:3 "This will break our circle!"
  ZZZ_enhanced_religion.5.c:3 "Accursed Heathens!"
- 
+
  ZZZ_enhanced_religion.6.desc:3 "The sun breaks through the darkness! The ancient [From.Religion.GetName] religion has been reformed, its teachings and prophecies have been weighted for their authenticity and compiled into a single volume, The Book of the Sun. [From.Religion.GetName] theologians have gathered together in a great convocation, locking the doors until a clear church hierarchy could be established. In celebration of their faith's reformation."
  ZZZ_enhanced_religion.6.a:3 "All shall praise the sun!"
  ZZZ_enhanced_religion.6.aa:3 "All shall praise the sun!"
  ZZZ_enhanced_religion.6.b:3 "Darkness take these heretics!"
  ZZZ_enhanced_religion.6.c:3 "Accursed Heathens!"
- 
+
  ZZZ_enhanced_religion.7.desc:3 "Time marches on, and the followers of the [From.Religion.GetName] religion have become fearful that the old ways will fade away to be replaced by their more aggressive neighbors. In response to these fears, [From.Monarch.GetTitle] [From.Monarch.GetName] has called a great conclave of the most learned theologians of the land. Through many sleepless days and nights, the conclave has emerged in agreement over several important religious matters including the standardization of the Mdodus and the organization of monks."
  ZZZ_enhanced_religion.7.a:3 "The old ways shall never die!"
  ZZZ_enhanced_religion.7.aa:3 "The old ways shall never die!"
  ZZZ_enhanced_religion.7.b:3 "Fools!"
  ZZZ_enhanced_religion.7.c:3 "Accursed Heathens!"
- 
- ZZZ_enhanced_religion.8.desc:3 "Like a phoenix from the ashes, the ancient and revered religion of the Greeks and the Romans has been reborn. Challenging the Christian Church for domination across Europe for the first time in centuries, [From.Monarch.GetTitle] [From.Monarch.GetName] has managed to restore a working hierarchy of Augurs and a codified belief system everymuch as detailed as its Christian and Islamic counterparts. No longer relegated to the past, the adherents of the Hellenic faith now look to the future."
+
+ ZZZ_enhanced_religion.8.desc:3 "Like a phoenix from the ashes, the ancient and revered religion of the Greeks and the Romans has been reborn. Challenging the Christian Church for domination across Europe for the first time in centuries, [From.Monarch.GetTitle] [From.Monarch.GetName] has managed to restore a working hierarchy of Augurs and a codified belief system every much as detailed as its Christian and Islamic counterparts. No longer relegated to the past, the adherents of the Hellenic faith now look to the future."
  ZZZ_enhanced_religion.8.a:3 "Almighty Jupiter, show us the way!"
  ZZZ_enhanced_religion.8.aa:3 "Almighty Jupiter, show us the way!"
  ZZZ_enhanced_religion.8.b:3 "Do they wish to become irrelevant again!?"
  ZZZ_enhanced_religion.8.c:3 "Accursed Heathens!"
- 
- ZZZ_enhanced_religion.9.desc:3 "Once the names of the gods Ra and Osiris struck deep into the hearts of men. For centuries men, fearing death, attempted to burn this bridge between our world and the next, until only the thinnest of planks survived. However, under the leadership of [From.Monarch.GetName] the Kushite faith has been revitalized and brought back to the forfront once more. The bridge, once almost lost, stands strong again."
+
+ ZZZ_enhanced_religion.9.desc:3 "Once the names of the gods Ra and Osiris struck deep into the hearts of men. For centuries men, fearing death, attempted to burn this bridge between our world and the next, until only the thinnest of planks survived. However, under the leadership of [From.Monarch.GetName] the Kushite faith has been revitalized and brought back to the forefront once more. The bridge, once almost lost, stands strong again."
  ZZZ_enhanced_religion.9.a:3 "We shall maintain this bridge forever more!"
  ZZZ_enhanced_religion.9.aa:3 "We shall maintain this bridge forever more!"
  ZZZ_enhanced_religion.9.b:3 "This is a betrayal of the gods!"
- ZZZ_enhanced_religion.9.c:3 "Accursed Heathens!" 
- 
+ ZZZ_enhanced_religion.9.c:3 "Accursed Heathens!"
+
  ZZZ_enhanced_religion.10.desc:3 "They tried to take away the power of the Táltos, lying to our people and proclaiming the supposed wrongness of the Táltos. [Root.Monarch.GetName] knew better, [Root.Monarch.GetSheHe] refused to abandon the chosen of the gods, and under [Root.Monarch.GetHerHim] leadership the Táltos have resumed their rightful place at the head of society. Now with codified laws and practices, our people shall never again be lead astray by those who would oppose the chosen!"
  ZZZ_enhanced_religion.10.a:3 "We follow the Táltos!"
  ZZZ_enhanced_religion.10.aa:3 "We follow the Táltos!"
  ZZZ_enhanced_religion.10.b:3 "The Táltos did not need new laws!"
  ZZZ_enhanced_religion.10.c:3 "Accursed Heathens!"
- 
+
  ZZZ_enhanced_religion.11.desc:3 "Blowing with the harshness of a blizzard, the ancient Turumist religion has been revitalized. Under the careful stewardship of [From.Monarch.GetName], the religion has been reformed into an official Turumist Church ruled by an Archpriest, chosen by shamans who henceforth must be anointed and approved by the official Church."
  ZZZ_enhanced_religion.11.a:3 "A new wind blows!"
  ZZZ_enhanced_religion.11.aa:3 "A new wind blows!"
@@ -71,39 +71,39 @@
  ZZZ_enhanced_fetishist.4.t:3 "Elder Leadership"
  ZZZ_enhanced_fetishist.4.d:3 "We have met and seen people who at first we mistook for our own. However, we soon realized that their ways were different from our own. They were more organized and their shamans all seemed to be trained in the same manner, with a structure that implies that some shamans rank higher than others. Surprisingly, all the shamans of these people accept this and follow their superiors without question. These people claim that once they were much like us, but that they have discovered greater truths about the universe and that in doing so they have been able to beat back those who would challenge the old ways."
  ZZZ_enhanced_fetishist.4.a:3 "And what are these greater truths?"
- 
+
  ZZZ_enhanced_fetishist.5.t:3 "The Horsemasters"
  ZZZ_enhanced_fetishist.5.d:3 "We knew that one could tame a horse and use it for everything ranging from message delivery to battle, but we did not realize that we did not know true mastery until we saw the followers of Tengri ride near [Root.Capital.GetCapitalName]. They did things with their horses that we never thought possible. They attribute part of their people's success to Tengri, the god of the sky. These horsemasters have agreed to teach us how to better handle our own horses so long as we agree to offer our own thanks to Tengri."
- ZZZ_enhanced_fetishist.5.a:3 "May Tengri favour us."
- 
+ ZZZ_enhanced_fetishist.5.a:3 "May Tengri favor us."
+
  ZZZ_enhanced_fetishist.6.t:3 "The Great Defenders"
- ZZZ_enhanced_fetishist.6.d:3 "For many seasons we had heard of a people who had staunchly defended their ways, turning back every invader and ignoring all missionaries. No nation could break these people according to the rumours. We made inquiries and were able to meet some of these fabled peoples. They speak of their devotion to their gods, especially Divas, who rules over all others and Pelkkunas, god of thunder. They have shown us their rites and rituals and have encouraged us to emulate their ways so that we too may be granted the divine protection of Divas."
+ ZZZ_enhanced_fetishist.6.d:3 "For many seasons we had heard of a people who had staunchly defended their ways, turning back every invader and ignoring all missionaries. No nation could break these people according to the rumors. We made inquiries and were able to meet some of these fabled peoples. They speak of their devotion to their gods, especially Divas, who rules over all others and Pelkkunas, god of thunder. They have shown us their rites and rituals and have encouraged us to emulate their ways so that we too may be granted the divine protection of Divas."
  ZZZ_enhanced_fetishist.6.a:3 "We shall be the Defenders of Pelkkunas."
- 
+
  ZZZ_enhanced_fetishist.7.t:3 "The Hunters"
  ZZZ_enhanced_fetishist.7.d:3 "A group of hunters have come to [Root.Capital.GetCapitalName], but these are no ordinary hunters. They dress in strange garb and speak a strange tongue. Through translators we have been able to determine that these hunters have come here on a sacred expedition. Their people believe that all animals have an Emuu, an ancestral mother who must be prayed to when you hunt. In order to ensure that the Emuus will be appeased, these hunters have been traveling to discover the names of new Emmu who are not native to their homeland and as such unknown to them. They have implored us to help them ensure that no animal is ever again hunted without first appeasing the Emmus."
  ZZZ_enhanced_fetishist.7.a:3 "A noble cause."
- 
+
  ZZZ_enhanced_fetishist.8.t:3 "The Three Tiered Tree"
  ZZZ_enhanced_fetishist.8.d:3 "Visitors from a far off land have arrived in [Root.Capital.GetCapitalName]. They bring with them an interesting idea, that the world is perched on a tree, specifically in the middle. The upper branches of this massive "world tree" is where the heavenly bodies lie. We men lie among the middle branches and trunk and at the bottom of the tree extending into the roots is the underworld where the dead go. These visitors have argued most strongly on this point and at times have insisted that we too recognize the world tree and man's place on it."
  ZZZ_enhanced_fetishist.8.a:3 "So we lie in the center then?"
- 
+
  ZZZ_enhanced_fetishist.9.t:3 "Zun The Lawgiver"
- ZZZ_enhanced_fetishist.9.d:3 "We have met people who worship the sun, who they say is the god Zun. Zun is the lawgiver and judges all. Men must aspire to be just and kind in order to live up to the expectations of Zun. Those who commit heinous crimes may be submitted to Zun directly for judgement, by leaving them alone in a desert with no food or water for one week. If the person is found alive after this time, they are deemed to have been judged fit for rehabilitation by Zun. It is said that no-one who has survived has returned the same. Their insistance on justice and fairness has struck a chord with many of our people."
+ ZZZ_enhanced_fetishist.9.d:3 "We have met people who worship the sun, who they say is the god Zun. Zun is the lawgiver and judges all. Men must aspire to be just and kind in order to live up to the expectations of Zun. Those who commit heinous crimes may be submitted to Zun directly for judgement, by leaving them alone in a desert with no food or water for one week. If the person is found alive after this time, they are deemed to have been judged fit for rehabilitation by Zun. It is said that no-one who has survived has returned the same. Their insistence on justice and fairness has struck a chord with many of our people."
  ZZZ_enhanced_fetishist.9.a:3 "Praise the sun!"
- 
+
  ZZZ_enhanced_fetishist.10.t:3 "The Divine Presence"
  ZZZ_enhanced_fetishist.10.d:3 "Strangers from a far-away land have recently encountered us, they bring with them their beliefs. They claim that in order to achieve true happiness in one must dedicate their life to prayer, diligence and devotion. With these one could do many things, including banishing demons. These strangers also claim that houses must be built with extra seats in them for the protecting gods. Already we have heard reports of extra chairs being built in houses near where the strangers visited."
  ZZZ_enhanced_fetishist.10.a:3 "We must study this further."
- 
+
  ZZZ_enhanced_fetishist.11.t:3 "The Olympians"
- ZZZ_enhanced_fetishist.11.d:3 "Traveling scholars have arrived in the court of [Root.Monarch.GetName]. They spend their days arguing with everyone and anyone, oftentimes leading circling arguements that end up with the scholar's partner arguing against what he had stood for just an hour previously. These scholars claim to be the honourary descendants of a long tradition that began centuries ago in a small place called "Glees". They already have a devoted following who have begun to copy them in style and dress, with many even going so far as to join them in their religious practices, which concern making sacrifices to a large number of gods who supposedly live on a large mountain far away called "Olympus"."
+ ZZZ_enhanced_fetishist.11.d:3 "Traveling scholars have arrived in the court of [Root.Monarch.GetName]. They spend their days arguing with everyone and anyone, oftentimes leading circling arguments that end up with the scholar's partner arguing against what he had stood for just an hour previously. These scholars claim to be the honorary descendants of a long tradition that began centuries ago in a small place called "Glees". They already have a devoted following who have begun to copy them in style and dress, with many even going so far as to join them in their religious practices, which concern making sacrifices to a large number of gods who supposedly live on a large mountain far away called "Olympus"."
  ZZZ_enhanced_fetishist.11.a:3 "An unexamined life is not worth living."
- 
+
  ZZZ_enhanced_fetishist.12.t:3 "The Other"
  ZZZ_enhanced_fetishist.12.d:3 "As we have gradually seen more of the world, we have come to realize that there are many peoples who are similar to us, even if they are not perfect mirrors. They have their own rituals, gods and beliefs. As we have interacted with these people, there has naturally been an exchange of culture. It is not unusual nowadays to find local families making a sacrifice to a god known mainly in a land that would take months if not years to reach."
  ZZZ_enhanced_fetishist.12.a:3 "We are more alike than we are different."
- 
+
  ZZZ_enhanced_fetishist.39.aa:3 "So long as they follow the true traditions."
  ZZZ_enhanced_fetishist.39.aa.tt:3 "A large number of Samaritan immigrants settle in the [Root.GetName] province."
  ZZZ_enhanced_fetishist.39.ab:3 "So long as they are true believers."
@@ -114,21 +114,21 @@
  ZZZ_enhanced_fetishist.49.aa:3 "So long as they recognize Mazdak."
  ZZZ_enhanced_fetishist.49.ab:3 "So long as they follow the right path."
  ZZZ_enhanced_fetishist.49.ac:3 "So long as they know truth."
- 
+
  ZZZ_enhanced_fetishist.51.t:3 "Shamans Approve of Hierarchy"
- ZZZ_enhanced_fetishist.51.d:3 "It appears that our attempts to organize the shamans into a viable hierarchy has been met with success. It appears that most shamans like the new order that has been imposed as it standardizes their practices meaning that they can go anywhere without having to worry about upsetting the local population. In addition, many find a hierarchal structure to be reassuring, as it leaves no questions as to who has greater authority in cases of dispute. Overall this has greatly increased not only the shamans's happiness, but our people's as well."
+ ZZZ_enhanced_fetishist.51.d:3 "It appears that our attempts to organize the shamans into a viable hierarchy has been met with success. It appears that most shamans like the new order that has been imposed as it standardizes their practices meaning that they can go anywhere without having to worry about upsetting the local population. In addition, many find a hierarchal structure to be reassuring, as it leaves no questions as to who has greater authority in cases of dispute. Overall this has greatly increased not only the shamans' happiness, but our people's as well."
  ZZZ_enhanced_fetishist.51.a:3 "Excellent!"
  ZZZ_enhanced_fetishist.52.t:3 "Shamans Disapprove of Hierarchy"
- ZZZ_enhanced_fetishist.52.d:3 "It appears that our attempts to organize the shamans into a viable hierarchy has been met with disaster. Use to having almost total authority within their area of control, many shamans have been chafing under what they call "an overly restricting system". There have been inumerable cases of shamans simply ignoring their supposed superiors and acting as they wished. These disgruntled shamans have also used their sway over the people to slander [Root.Monarch.GetTitle] [Root.Monarch.GetName]."
+ ZZZ_enhanced_fetishist.52.d:3 "It appears that our attempts to organize the shamans into a viable hierarchy has been met with disaster. Use to having almost total authority within their area of control, many shamans have been chafing under what they call "an overly restricting system". There have been innumerable cases of shamans simply ignoring their supposed superiors and acting as they wished. These disgruntled shamans have also used their sway over the people to slander [Root.Monarch.GetTitle] [Root.Monarch.GetName]."
  ZZZ_enhanced_fetishist.52.a:3 "Wasn't a hierarchy supposed to stop this nonsense?"
  ZZZ_enhanced_fetishist.53.t:3 "Veneration of the Ancestors"
- ZZZ_enhanced_fetishist.53.d:3 "Our people have always honoured those who came before, and know that they watch over us still, guiding those who seek them. In order to honour our beloved ancestors, [From.Monarch.GetTitle] [From.Monarch.GetName] has conducted a large ceremony in their honour. Attended by thousands, the ceremony went better than expected. Even better, the harvest has been unusually good this year, and many attribute it to the pleasure of the ancestors."
+ ZZZ_enhanced_fetishist.53.d:3 "Our people have always honored those who came before, and know that they watch over us still, guiding those who seek them. In order to honor our beloved ancestors, [From.Monarch.GetTitle] [From.Monarch.GetName] has conducted a large ceremony in their honor. Attended by thousands, the ceremony went better than expected. Even better, the harvest has been unusually good this year, and many attribute it to the pleasure of the ancestors."
  ZZZ_enhanced_fetishist.53.a:3 "May they continue to watch over us."
  ZZZ_enhanced_fetishist.54.t:3 "Clamor For Reform"
  ZZZ_enhanced_fetishist.54.d:3 "Many of our subjects in [Root.GetName] have been exposed to the reforms that have been proposed in order to supposedly bring ourselves into the modern age. Rather than being repelled by these radical changes, the citizens of [Root.GetCapitalName] have been embraced the idea with gusto and several key figures have risen up in support of the reforms. If we wish to put a stop to this, we will need to act sooner rather than later."
  ZZZ_enhanced_fetishist.54.a:3 "Reform can be good."
  ZZZ_enhanced_fetishist.54.b:3 "Let's nip this in the bud."
- 
+
  ZZZ_enhanced_fetishist.55.t:3 "Sacrifices For Divas"
  ZZZ_enhanced_fetishist.55.d:3 "Things have not been going amazing in [Root.GetName] recently. The harvest has been poor and several prominent trading companies have had unexpected setbacks. Nothing that defines a crisis just yet, but the people demand that we take some kind of action. A popular demand has been for the government to offer a large sacrifice to Divas, chief of the gods. Should we risk Divas's wrath?"
  ZZZ_enhanced_fetishist.55.a:3 "It's worth a try."
@@ -139,14 +139,14 @@
  ZZZ_enhanced_fetishist.57.t:3 "Sacrifice Unsuccessful"
  ZZZ_enhanced_fetishist.57.d:3 "It does not appear that Divas has looked kindly upon our sacrifice. The harvest has continued to be poor and several previously wealthy merchant companies have now gone completely bankrupt. The people have not looked kindly on us for their troubles."
  ZZZ_enhanced_fetishist.57.a:3 "Maybe we should've sacrificed cows instead of goats..."
- ZZZ_enhanced_fetishist.58.t:3 "The Great Defence of [Root.GetName]"
+ ZZZ_enhanced_fetishist.58.t:3 "The Great Defense of [Root.GetName]"
  ZZZ_enhanced_fetishist.58.d:3 "We have come under attack by heathens and heretics who would dare defile our sacred ways and our traditions. As proud followers of Divas and Pelkkunas we are obligated to defend [Root.GetName] to the last man."
  ZZZ_enhanced_fetishist.58.a:3 "Rise countrymen, and save [Root.GetName]!"
  ZZZ_enhanced_fetishist.59.t:3 "Romuvans Migrate to [Root.GetName]"
- ZZZ_enhanced_fetishist.59.d:3 "It appears that the small Romuvan community in [Root.GetCapitalName], [Root.GetName] is famous among the greater Romuvan community. We have been approached by a rather large group of Romuvan migrants who wish to join their kin in [Root.GetName]. They have promised to work for the state in exchange for our acquiescense, using their knowledge of fortifications to improve the province's defencibility."
+ ZZZ_enhanced_fetishist.59.d:3 "It appears that the small Romuvan community in [Root.GetCapitalName], [Root.GetName] is famous among the greater Romuvan community. We have been approached by a rather large group of Romuvan migrants who wish to join their kin in [Root.GetName]. They have promised to work for the state in exchange for our acquiescence, using their knowledge of fortifications to improve the province's defensibility."
  ZZZ_enhanced_fetishist.59.a:3 "We welcome our Romuvan brethren and sistren!"
  ZZZ_enhanced_fetishist.59.b:3 "We don't want their kind here."
- 
+
  ZZZ_enhanced_fetishist.60.t:3 "Uncontrollable Poaching"
  ZZZ_enhanced_fetishist.60.desc:3 "Recently [Root.GetName] has become a haven for poachers and game hunters. These people do not kill for need, instead they kill only for profit or sport. A staggering amount of meat that could have fed whole villages has gone to waste and the people have grown restless at the continued inaction of the local authorities. If we do not take action, we risk angering the Emmus, the ancestral mother spirits of the animals and our own people."
  ZZZ_enhanced_fetishist.60.a:3 "Send in the military to clear them out."
@@ -155,7 +155,7 @@
  ZZZ_enhanced_fetishist.60.d:3 "So, how do *I* get involved?"
  ZZZ_enhanced_fetishist.61.t:3 "Animal Population Boom in [Root.GetName]"
  ZZZ_enhanced_fetishist.61.d:3 "For the last few years [Root.GetName] has had an almost unprecedented level of animal growth. Many see this as the Emmus thanking us for ridding [From.GetName] of poachers awhile back. Regardless of the reason, the huge boom has provided extra meat to the local population and more animals means more animal byproducts. Lucrative animal byproducts."
- ZZZ_enhanced_fetishist.61.a:3 "The Emmus have honoured us."
+ ZZZ_enhanced_fetishist.61.a:3 "The Emmus have honored us."
  ZZZ_enhanced_fetishist.62.t:3 "Poaching Spreads"
  ZZZ_enhanced_fetishist.62.desc:3 "Believing that the rise in poaching incidents would be temporary we chose to not take any significant actions against the poachers. However, this fad does not seem to be dying as it has spread to [Root.GetName] and now they too have a poaching epidemic. Should we finally put our foot down?"
  ZZZ_enhanced_fetishist.62.a:3 "That's it, send in the military."
@@ -164,7 +164,7 @@
  ZZZ_enhanced_fetishist.62.d:3 "So you're saying lion heads are on sale again?"
  ZZZ_enhanced_fetishist.62.e:3 "Or we can take advantage of the obvious demand."
  ZZZ_enhanced_fetishist.63.t:3 "[Root.Heir.GetTitle] [Root.Heir.GetName]'s Hunting Trip"
- ZZZ_enhanced_fetishist.63.desc:3 "Recently [Root.Heir.GetTitle] [Root.Heir.GetName], heir of [Root.GetName] decided to go out on a grand hunt with [Root.Heir.GetHerHis] retainers. The [Root.Heir.GetTitle]'s expedition almost met with disaster when [Root.Heir.GetName] ended up seperated from the rest chasing their quarry. [Root.Heir.GetName] ended up in a clearing in the woods. Alone, [Root.Heir.GetName] was suddenly faced with a lion that had been resting nearby. Thinking quickly, [Root.Heir.GetName]..."
+ ZZZ_enhanced_fetishist.63.desc:3 "Recently [Root.Heir.GetTitle] [Root.Heir.GetName], heir of [Root.GetName] decided to go out on a grand hunt with [Root.Heir.GetHerHis] retainers. The [Root.Heir.GetTitle]'s expedition almost met with disaster when [Root.Heir.GetName] ended up separated from the rest chasing their quarry. [Root.Heir.GetName] ended up in a clearing in the woods. Alone, [Root.Heir.GetName] was suddenly faced with a lion that had been resting nearby. Thinking quickly, [Root.Heir.GetName]..."
  ZZZ_enhanced_fetishist.63.a:3 "Used the sidearm [Root.Heir.GetSheHe] had kept handy."
  ZZZ_enhanced_fetishist.63.b:3 "Used [Root.Heir.GetHerHis] horse as bait to give [Root.Heir.GetHerHim] time to take on the Lion."
  ZZZ_enhanced_fetishist.63.c:3 "Drew [Root.Heir.GetHerHis] sword and took it head on."
@@ -181,25 +181,25 @@
  ZZZ_enhanced_fetishist.66.d:3 "Our adoption of Slavic practices has had a most unusual and unexpected result. Dancing styles popular in Slavic lands have become incredibly popular here, especially among the nobility and well to do. This has made the people of our court a highly in-demand commodity not only in the lesser courts of our own country, but in the courts of neighboring countries as well. We have been able to use this opportunity to make connections and find out pertinent information through our court."
  ZZZ_enhanced_fetishist.66.a:3 "May the dance go on!"
  ZZZ_enhanced_fetishist.67.t:3 "Festival Forgotten"
- ZZZ_enhanced_fetishist.67.d:3 "How it happened we do not know. [Root.Ruler.GetTitle] [Root.Ruler.GetName] had it clearly marked off on the official royal calender, initial preparations were made and guest lists were drawn up. Yet somehow it was all forgotten and the holy day came and went with no official event from the government. Perhaps this wouldn't normally be such a problem, but recently a Slavic delegation accused our government of only superficially following their faith, that we did not appreciate their holy rites and rituals. Now that [Root.Monarch.GetTitle] [Root.Monarch.GetName] has forgotten this event, it appears to lend credence to the delegation's accusations."
+ ZZZ_enhanced_fetishist.67.d:3 "How it happened we do not know. [Root.Ruler.GetTitle] [Root.Ruler.GetName] had it clearly marked off on the official royal calendar, initial preparations were made and guest lists were drawn up. Yet somehow it was all forgotten and the holy day came and went with no official event from the government. Perhaps this wouldn't normally be such a problem, but recently a Slavic delegation accused our government of only superficially following their faith, that we did not appreciate their holy rites and rituals. Now that [Root.Monarch.GetTitle] [Root.Monarch.GetName] has forgotten this event, it appears to lend credence to the delegation's accusations."
  ZZZ_enhanced_fetishist.67.a:3 "It's just a day..."
  ZZZ_enhanced_fetishist.67.b:3 "Nonsense, we just needed more time to properly prepare."
  ZZZ_enhanced_fetishist.68.t:3 "Slavic Migration to [Root.GetName]"
  ZZZ_enhanced_fetishist.68.d:3 "We have recently been approached by a large group of migrating Slavic faithful who are looking to make a permanent home in our country. Now it just so happens that there is a sizeable Slavic community in [Root.GetCapitalName] in [Root.GetName] Province. We could easily settle these people in [Root.GetName] and we know that the Slavic people make excellent soldiers, should we take action?"
  ZZZ_enhanced_fetishist.68.a:3 "We shall show them to their new home."
  ZZZ_enhanced_fetishist.68.b:3 "They would turn on us."
- 
+
  ZZZ_enhanced_fetishist.69.t:3 "Exceptional Horses"
  ZZZ_enhanced_fetishist.69.d:3 "It seems that Tengri has blessed us. Our latest stock of horses has been exceptional, they are far stronger, faster and robust than our normal stock. We have been training them for our army and have been extremely impressed, the enemy will not stand a chance!"
  ZZZ_enhanced_fetishist.69.a:3 "Praise Tengri!"
  ZZZ_enhanced_fetishist.70.t:3 "Poor Horses"
- ZZZ_enhanced_fetishist.70.d:3 "Our latest horse stock has been terrible, the beasts are dim even for their species and are weak on top of that. Our shamans have warned that this is a sign that Tengri is displeased with us and that we must be more vigilant about observing the proper rituals and sacrifices required to keep Tengri pleased. Until we have again regained Tengri's favour, we will need to deal with the poor quality of our horses for the forseeable future."
+ ZZZ_enhanced_fetishist.70.d:3 "Our latest horse stock has been terrible, the beasts are dim even for their species and are weak on top of that. Our shamans have warned that this is a sign that Tengri is displeased with us and that we must be more vigilant about observing the proper rituals and sacrifices required to keep Tengri pleased. Until we have again regained Tengri's favor, we will need to deal with the poor quality of our horses for the foreseeable future."
  ZZZ_enhanced_fetishist.70.a:3 "Kuk sugor!"
  ZZZ_enhanced_fetishist.71.t:3 "The White Stallion"
  ZZZ_enhanced_fetishist.71.d:3 "[Root.Monarch.GetTitle] [Root.Monarch.GetName] had the most peculiar thing occur just this month. While visiting the local horse breeder, [Root.Monarch.GetTitle] [Root.Monarch.GetName] was approached by a large white stallion who easily allowed [Root.Monarch.GetTitle] [Root.Monarch.GetName] to ride him. The breeder was amazed, explaining that the horse in question had been unruly since the day he was born and allowed none to lead him, never mind ride him. Pleased, [Root.Monarch.GetTitle] [Root.Monarch.GetName] took the stallion home and soon found that the horse was unmatched in speed or power and would only allow [Root.Monarch.GetTitle] [Root.Monarch.GetName] or [Root.Monarch.GetHerHis] family to ride him."
  ZZZ_enhanced_fetishist.71.a:3 "He shall be named 'Shadowfax'."
  ZZZ_enhanced_fetishist.71.b:3 "We shall name him 'Atrax'."
- ZZZ_enhanced_fetishist.71.c:3 "His name is 'Bree'." 
+ ZZZ_enhanced_fetishist.71.c:3 "His name is 'Bree'."
  ZZZ_enhanced_fetishist.72.t:3 "[ZZZ_enhanced_white_stallion_name] Dies"
  ZZZ_enhanced_fetishist.72.d:3 "Having lived well beyond the years of any other known horse, many were beginning to wonder if [ZZZ_enhanced_white_stallion_name] was immortal. But alas, [ZZZ_enhanced_white_stallion_name] was not immortal and has finally died at an age that future generations will believe to be fabricated. He has been laid to rest in the same graveyard normally reserved for the royal family and a formal funeral was held."
  ZZZ_enhanced_fetishist.72.a:3 "We shall never forget you [ZZZ_enhanced_white_stallion_name]."
@@ -207,7 +207,7 @@
  ZZZ_enhanced_fetishist.73.d:3 "Skilled horsemen and fellow followers of Tengri have arrived in [Owner.Capital.GetCapitalName] seeking an audience with [Owner.Monarch.GetTitle] [Owner.Monarch.GetName]. They seem to wish to settle in one of our provinces, [Root.GetName] specifically. They have promised their services to us in exchange for our acquiescence, should we allow their migration?"
  ZZZ_enhanced_fetishist.73.a:3 "We will ride together!"
  ZZZ_enhanced_fetishist.73.b:3 "They should ride elsewhere."
- 
+
  ZZZ_enhanced_fetishist.74.t:3 "Judgement of Zun"
  ZZZ_enhanced_fetishist.74.d:3 "A man is dragged in front of you and you can feel the heat of anger coursing through your body as the charges are read to you. The man in question is a powerful trader who frequents your court and often invests in the government. There is no doubt that this man must face the judgement of Zun, but his contributions are just so useful and without him we will surely lose some revenue, at least in the sort term."
  ZZZ_enhanced_fetishist.74.a:3 "All must face the Judgement of Zun."
@@ -223,15 +223,15 @@
  ZZZ_enhanced_fetishist.76.a:3 "[Root.Heir.GetName], how could you?"
  ZZZ_enhanced_fetishist.76.b:3 "I see no problem here."
  ZZZ_enhanced_fetishist.77.t:3 "Heir Returns"
- ZZZ_enhanced_fetishist.77.d:3 "To the surprise of many, [Root.Heir.GetTitle] [Root.Heir.GetName] has survived [Root.Heir.GetHerHis] judgement. [Root.Heir.GetSheHe] stumbled into [Root.Capital.GetCapitalName] barely conscious and collapsed as soon as they were approached, but it is undoubtedly [Root.Heir.GetTitle] [Root.Heir.GetName]. [Root.Heir.GetSheHe] is different though, like most who are judged by Zun, [Root.Heir.GetTitle] [Root.Heir.GetName] has returned a different person. Regardless, news of [Root.Heir.GetTitle] [Root.Heir.GetName]'s survival has spread like wildfire throughout [Root.GetName] and the people now see [Root.Heir.GetTitle] [Root.Heir.GetName] as having been annointed by Zun himself."
+ ZZZ_enhanced_fetishist.77.d:3 "To the surprise of many, [Root.Heir.GetTitle] [Root.Heir.GetName] has survived [Root.Heir.GetHerHis] judgement. [Root.Heir.GetSheHe] stumbled into [Root.Capital.GetCapitalName] barely conscious and collapsed as soon as they were approached, but it is undoubtedly [Root.Heir.GetTitle] [Root.Heir.GetName]. [Root.Heir.GetSheHe] is different though, like most who are judged by Zun, [Root.Heir.GetTitle] [Root.Heir.GetName] has returned a different person. Regardless, news of [Root.Heir.GetTitle] [Root.Heir.GetName]'s survival has spread like wildfire throughout [Root.GetName] and the people now see [Root.Heir.GetTitle] [Root.Heir.GetName] as having been anointed by Zun himself."
  ZZZ_enhanced_fetishist.77.a:3 "[Root.Heir.GetTitle] [Root.Heir.GetName] returns!"
  ZZZ_enhanced_fetishist.78.t:3 "Zunist Migration to [Root.GetName]"
  ZZZ_enhanced_fetishist.78.d:3 "We have been approached by fellow followers of Zun, although they come from a land far away. They have come hearing of our devotion to Zun in order to ask for refuge from the heathens. We already have a sizeable Zunist community in [Root.GetName], should we allow these people to settle there?"
  ZZZ_enhanced_fetishist.78.a:3 "Zun loves us all equally."
  ZZZ_enhanced_fetishist.78.b:3 "We do not judge them worthy."
- 
+
  ZZZ_enhanced_fetishist.79.t:3 "A Grand Temple"
- ZZZ_enhanced_fetishist.79.d:3 "We have been diligently worshipping the ancient gods, ensuring that they recieve their proper devotions and sacrifices. Yet we cannot help but feel that something is missing. We have turned to those who came before and we have realized what we were missing. We do not have a proper temple to the gods, not one that can be compared to the ancients anyway. This must be fixed at once, it will be a long and expensive process, but it must be done."
+ ZZZ_enhanced_fetishist.79.d:3 "We have been diligently worshipping the ancient gods, ensuring that they receive their proper devotions and sacrifices. Yet we cannot help but feel that something is missing. We have turned to those who came before and we have realized what we were missing. We do not have a proper temple to the gods, not one that can be compared to the ancients anyway. This must be fixed at once, it will be a long and expensive process, but it must be done."
  ZZZ_enhanced_fetishist.79.a:3 "Begin the construction at once!"
  ZZZ_enhanced_fetishist.79.a.tt:3 "§RWARNING: THE CATHEDRAL MUST BE IN THE PROVINCE FOR IT TO GET THE FOLLOWING MODIFIER!§!\nOnce the Grand Temple has been finished §Y[Root.GetName]§! will get:\n"
  ZZZ_enhanced_fetishist.79.b:3 "On second thought we can't afford this."
@@ -246,23 +246,23 @@
  ZZZ_enhanced_fetishist.83.d:3 "Unfortunately we have lost control of the city in which the Grand Temple was being built, ending our grand dreams with it."
  ZZZ_enhanced_fetishist.83.a:3 "But the time and money, ye gods..."
  ZZZ_enhanced_fetishist.84.t:3 "Haruspicy"
- ZZZ_enhanced_fetishist.84.d:3 "Every now and then one should ask the gods for their favour. In order to do this, one must sacrifice an animal and have a trained expert, usually a shaman, read the bones and entrails of the animals. In doing so, they will be able to determine the favour of the gods. The gods tend to prefer larger sacrifices, but that doesn't mean that they will necessarily look poorly upon a smaller sacrifice. What should we sacrifice for this year's haurispicy reading?"
+ ZZZ_enhanced_fetishist.84.d:3 "Every now and then one should ask the gods for their favor. In order to do this, one must sacrifice an animal and have a trained expert, usually a shaman, read the bones and entrails of the animals. In doing so, they will be able to determine the favor of the gods. The gods tend to prefer larger sacrifices, but that doesn't mean that they will necessarily look poorly upon a smaller sacrifice. What should we sacrifice for this year's haruspicy reading?"
  ZZZ_enhanced_fetishist.84.a:3 "Several birds."
  ZZZ_enhanced_fetishist.84.b:3 "Several goats."
  ZZZ_enhanced_fetishist.84.c:3 "Several sheep."
  ZZZ_enhanced_fetishist.84.d:3 "Several bulls."
  ZZZ_enhanced_fetishist.85.t:3 "Omens Read"
- ZZZ_enhanced_fetishist.85.d1:3 "The shaman in charge of reading the omens was trembling when he reported back from the temple. Nervously, he informed us that the omens could not be interpreted in any other way, the gods were displeased and we did not have their favour. It appears as though bad times are ahead for us."
+ ZZZ_enhanced_fetishist.85.d1:3 "The shaman in charge of reading the omens was trembling when he reported back from the temple. Nervously, he informed us that the omens could not be interpreted in any other way, the gods were displeased and we did not have their favor. It appears as though bad times are ahead for us."
  ZZZ_enhanced_fetishist.85.d2:3 "The shaman in charge of reading the omens appeared rather pleased as he reported back from the temple. The omens look good and the gods smile upon us. It seems as though our endeavors will be met with success."
  ZZZ_enhanced_fetishist.85.d3:3 "The shaman in charge of reading the omens was almost running from the temple to make his report. The omens were not just good, they were great! "The gods have assured me of our future success!" the shaman said, a large grin on his face."
  ZZZ_enhanced_fetishist.85.d4:3 "It seems as though the whole temple emptied as a wave of people rushed towards the palace. Luckily it was with incredible news, the omens could not have been better. "Success is not even a question milord!" one breathless shaman said, the others nodding in agreement."
  ZZZ_enhanced_fetishist.85.a:3 "We have been forsaken..."
- ZZZ_enhanced_fetishist.85.b:3 "The gods have shown us their favour!"
+ ZZZ_enhanced_fetishist.85.b:3 "The gods have shown us their favor!"
  ZZZ_enhanced_fetishist.86.t:3 "Hellenic Migration to [Root.GetName]"
  ZZZ_enhanced_fetishist.86.d:3 "We have been visited by a man who represents a group of Hellenic faithful who have escaped persecution in another country. They hope to find refuge in our own country since they have heard that we too worship their pantheon of gods. We could have them settle in [Root.GetName] if we want them."
  ZZZ_enhanced_fetishist.86.a:3 "Of course they are welcome!"
  ZZZ_enhanced_fetishist.86.b:3 "We have no room for them."
- 
+
  ZZZ_enhanced_fetishist.92.t:3 "The Fourth Path"
  ZZZ_enhanced_fetishist.92.d:3 "We have been taught to follow the Noble Path in order to succesfully incarnated. The Fourth Path, 'Samyag Karman' or Right Action, says that we must not perform sensual misconduct, take that which is not ours, injure or kill. In many ways, Samyag Karman has made our nation stable and prosperous, but it does have its disadvantages. As not to displease the gods, monks in the [no_killing_province.GetName] province have been encouraging our subjects not to join the army. At first their influence was negligible, however, over time the word has spread and we are starting to feel the consequences."
  ZZZ_enhanced_fetishist.92.a:3 "Staying true to the Noble Path is an honorable endeavor."
@@ -286,25 +286,25 @@
  ZZZ_enhanced_fetishist.96.d:3 "A migratory caravan has been stopped heading for [Root.GetName] where a group of Bön faithful had been planning to settle. Apparently they had been sold phony deeds to land in [Root.GetName] and thought that they were an expected presence in the province. Now as it so happens, [Root.GetName] does have plenty of space and if we wanted we could easily accommodate the migrants."
  ZZZ_enhanced_fetishist.96.a:3 "It would be cruel to turn them out now."
  ZZZ_enhanced_fetishist.96.b:3 "It is no business of ours if they were fooled."
- 
+
  ZZZ_enhanced_fetishist.97.t:3 "The Illusion of Reality"
- ZZZ_enhanced_fetishist.97.d:3 "The preachers who have reached our people recently have not been like those that we have seen in the past. They do not speak of the world that we live in as a blessing, but as a curse, forced upon us by the one they call "The Demiurge." They say that true enlightenment and salvation can only be found beyond the material world that we exist in." 
+ ZZZ_enhanced_fetishist.97.d:3 "The preachers who have reached our people recently have not been like those that we have seen in the past. They do not speak of the world that we live in as a blessing, but as a curse, forced upon us by the one they call "The Demiurge." They say that true enlightenment and salvation can only be found beyond the material world that we exist in."
  ZZZ_enhanced_fetishist.97.a:3 "The divine element shall be ours!"
  ZZZ_enhanced_fetishist.98.t:3 "The Peacock Angel"
  ZZZ_enhanced_fetishist.98.d:3 "A small migratory band of people have recently moved into our land. They bring with them peculiar traditions and an even more peculiar religion. They claim that they follow the foremost of the Angels of the one God, who has dominion over the Earth. Attempts to learn more have been surprisingly rebuffed, it seems that these people are not like other religious folk."
  ZZZ_enhanced_fetishist.98.a:3 "Regardless, we too shall follow Melek Taus!"
- 
+
  ZZZ_enhanced_fetishist.99.t:3 "Accusations of Satanism"
- ZZZ_enhanced_fetishist.99.d:3 "Although we follow the way of the Nostikks, there are those in our [Root.GovernmentName] who follow instead the ways of Christianity. Normally this causes no problems, in fact we would argue that our similarities outweigh our differences. However, a group of fiery Christian leaders have been spreading the scandalous rumour that our ways are Satanism and that we worship dark powers. This has caused discontent among our people, how should we respond?"
+ ZZZ_enhanced_fetishist.99.d:3 "Although we follow the way of the Nostikks, there are those in our [Root.GovernmentName] who follow instead the ways of Christianity. Normally this causes no problems, in fact we would argue that our similarities outweigh our differences. However, a group of fiery Christian leaders have been spreading the scandalous rumor that our ways are Satanism and that we worship dark powers. This has caused discontent among our people, how should we respond?"
  ZZZ_enhanced_fetishist.99.a:3 "Start our own propaganda campaign."
  ZZZ_enhanced_fetishist.99.b:3 "Remove the troublemakers permanently."
- ZZZ_enhanced_fetishist.99.c:3 "We need not respond to blowhards." 
- ZZZ_enhanced_fetishist.99.d:3 "Show them the truth by example." 
+ ZZZ_enhanced_fetishist.99.c:3 "We need not respond to blowhards."
+ ZZZ_enhanced_fetishist.99.d:3 "Show them the truth by example."
  ZZZ_enhanced_fetishist.100.t:3 "Global Tolerance"
  ZZZ_enhanced_fetishist.100.d:3 "We have been more successful than usual in our message of tolerance among the masses. We have made it clear that what happens in the material world does not truly matter compared to what occurs in the spiritual. As such, one should not concern oneself overmuch with what others choose to believe or do. For now at least, it appears that the people will act on what we have told them."
  ZZZ_enhanced_fetishist.100.a:3 "Love your neighbors."
  ZZZ_enhanced_fetishist.101.t:3 "Unflinching Resolve"
- ZZZ_enhanced_fetishist.101.d:3 "Our way of thinking has become popular among the soldiers of our army. This has had the unintended, if positive effect of imbuing them with a strong fatalism. Since they know that the material world is an evil place full of naught but pain, they do not fear death or eternity. Our officers have begun to make use of this new-found strength, but cannot agree on wether to focus on general troop morale or if they should use this opportunity to increase discipline."
+ ZZZ_enhanced_fetishist.101.d:3 "Our way of thinking has become popular among the soldiers of our army. This has had the unintended, if positive effect of imbuing them with a strong fatalism. Since they know that the material world is an evil place full of naught but pain, they do not fear death or eternity. Our officers have begun to make use of this new-found strength, but cannot agree on whether to focus on general troop morale or if they should use this opportunity to increase discipline."
  ZZZ_enhanced_fetishist.101.a:3 "Our men shall not flinch."
  ZZZ_enhanced_fetishist.101.b:3 "Our men will act in tandem."
  ZZZ_enhanced_fetishist.101.c:3 "We should be able to do both."
@@ -312,7 +312,7 @@
  ZZZ_enhanced_fetishist.102.d:3 "It seems that missionaries from the [gnostic_missionary_origin.GovernmentName] of [gnostic_missionary_origin.GetName] have been incredibly active in [Root.GetName] in recent times. Seeing that the people shared many of their beliefs, the missionaries have used that basis to spread their own interpretation of the universe. The people of [Root.GetName] can now safely be said to be more [gnostic_missionary_origin.Religion] than [Root.Owner.Religion]."
  ZZZ_enhanced_fetishist.102.a:3 "So be it."
  ZZZ_enhanced_fetishist.102.b:3 "No, no, I think not."
- 
+
  ZZZ_enhanced_fetishist.103.t:3 "Tradition Binds Us All"
  ZZZ_enhanced_fetishist.103.d:3 "Our focus on tradition has gone over well with both local leaders and the general population. Ruling [Root.GetName] has never been easier."
  ZZZ_enhanced_fetishist.103.a:3 "Tradition!"
@@ -328,12 +328,12 @@
  ZZZ_enhanced_fetishist.106.d:3 "A large group of [yazidi_migrant_origin.Religion]s have petitioned [Root.Owner.GetTitle] [Root.Owner.Ruler] to move to [Root.GetName] where they can live in peace. In order to facilitate this move, and in order to ensure that everything goes smoothly, the Yazidis have offered their services in our administration for a time. With several of their members having previously worked as administrators, we would be foolish to turn down this opportunity without first considering the advantages."
  ZZZ_enhanced_fetishist.106.a:3 "Very well, let them in."
  ZZZ_enhanced_fetishist.106.a:3 "Our own administrators are fine, thank you."
- 
+
  #MISC
  ZZZ_enhanced_misc.4.t:3 "The Abolition of Slavery"
  ZZZ_enhanced_misc.4.d:3 "Slavery, once an almost innocuous practice has become a most terrible thing. Long gone are the days of temporary slavery, slaves in the modern world are subjected to a lifetime of servitude that gets passed on to their children. We can no longer condone this practice, and as such the slave trade and slavery is henceforth prohibited throughout our nation."
  ZZZ_enhanced_misc.4.a:3 "Freedom for all!"
- 
+
  religious_events.18.z1:3 "We shall become perfect."
  religious_events.18.z2:3 "We embrace the virtuous and humble path."
  religious_events.18.z3:3 "We shall follow in the path of Peter Waldo."
@@ -347,7 +347,7 @@
  religious_events.18.z11:3 "We shall uphold the teaching of Nestorius."
  religious_events.18.z12:3 "We shall be as Adam was."
  religious_events.18.z13:3 "We shall follow the righteous path."
- 
+
  religious_events.19.z1:3 "We shall follow the seven obligations."
  religious_events.19.z2:3 "We will join the Nation of Melek Taus."
  religious_events.19.z3:3 "Arbitration of religion is for Allah alone."
@@ -357,18 +357,18 @@
  religious_events.19.z7:3 "We must reconcile Allah and evil."
  religious_events.19.z8:3 "Through the Quran alone we find truth."
  religious_events.19.z9:3 "Ali's substance can be transubstantiated."
- 
+
  religious_events.21.z1:3 "We shall seek to end violence."
- 
+
  religious_events.22.z1:3 "We shall follow the teachings of Mazdak."
  religious_events.22.z2:3 "We shall embrace the Khurmazta faith as our own."
  religious_events.22.z3:3 "Before there was nothing, there was Zurvan."
  religious_events.22.z4:3 "Gayõmart shall be our guide."
  religious_events.22.z5:3 "We await the return of the true messiah."
- 
+
  religious_events.23.z1:3 "We will follow the original Torah."
  religious_events.23.z2:3 "The Torah alone is the supreme authority."
- 
+
  religious_events.999.t:0  "[Root.GetName] Converts to Gnosticism"
  religious_events.999.d:0  "Gnostic communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off."
  religious_events.999.z1:3 "The light shall prevail."
@@ -377,11 +377,9 @@
  religious_events.999.z4:3 "The serpent saved men, not damned them."
  religious_events.999.z5:3 "Priscillian has the right of it."
  religious_events.999.z6:3 "We must experience all things in life."
- 
+
  religious_events.998.t:0  "[Root.GetName] Converts to Yazidi"
  religious_events.998.d:0  "Yazidi communities in our country rejoice as they learn of our intention to make their religion our own. All those missionaries sent to the court in [Root.Capital.GetName] have finally paid off."
  religious_events.998.z1:3 "The black book contains the truth."
  religious_events.998.z2:3 "Xwedê is great."
- 
- 
- 
+

@@ -136,7 +136,7 @@ country_decisions = {
 		}
 		ai_importance = 400 #
 	}
-	
+
 	restore_byzantine_empire_EXTRA = { # New Religions/Cultures
 		major = yes
 		potential = {
@@ -308,7 +308,7 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	institute_prussian_monarchy_EXTRA = { #New Religions
 		major = yes
 		potential = {
@@ -342,7 +342,7 @@ country_decisions = {
 				ai = no
 				is_playing_custom_nation = no
 			}
-			NOT = { has_reform = celestial_empire } 
+			NOT = { has_reform = celestial_empire }
 			tag = BRA
 			NOT = { tag = PRU }
 			OR = {
@@ -422,13 +422,13 @@ country_decisions = {
 			change_primary_culture = prussian
 			PRU = {
 				random_owned_province = {
-					limit = { 
-						is_capital = no 
+					limit = {
+						is_capital = no
 						OR = {
 							culture_group = germanic
 							culture = old_prussian
 						}
-					} 
+					}
 					change_culture = prussian
 				}
 			}
@@ -459,7 +459,7 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	prussian_nation_EXTRA = { #New Religions
 		major = yes
 		potential = {
@@ -472,7 +472,7 @@ country_decisions = {
 			}
 			tag = TEU
 			NOT = { tag = PRU }
-			NOT = { has_reform = celestial_empire } 
+			NOT = { has_reform = celestial_empire }
 			OR = {
 				NOT = { exists = PRU }
 				ai = no
@@ -563,7 +563,7 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	prussian_nation_general_EXTRA = { #New Religions
 		major = yes
 		potential = {
@@ -591,7 +591,7 @@ country_decisions = {
 			NOT = { tag = GER }
 			NOT = { tag = HLR }
 			NOT = { tag = BRA }
-			NOT = { has_reform = celestial_empire } 
+			NOT = { has_reform = celestial_empire }
 			NOT = {
 				tag = TEU
 				government = theocracy
@@ -673,13 +673,13 @@ country_decisions = {
 				change_culture = prussian
 			}
 			random_owned_province = {
-				limit = { 
-					is_capital = no 
+				limit = {
+					is_capital = no
 					OR = {
 						culture_group = germanic
 						culture = old_prussian
 					}
-				} 
+				}
 				change_culture = prussian
 			}
 			if = {
@@ -699,7 +699,7 @@ country_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	ruthenian_nation_EXTRA = { #New Cultures
 		major = yes
 		potential = {
@@ -740,7 +740,7 @@ country_decisions = {
 			}
 		}
 		provinces_to_highlight = {
-			OR = {	
+			OR = {
 				AND = {
 					ROOT = { DIP = 5 }
 					OR = {
@@ -768,7 +768,7 @@ country_decisions = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			OR = {
 				#owns everything
 				AND = {
@@ -779,7 +779,7 @@ country_decisions = {
 				}
 				#or owns only core-core stuff but has god like ruler
 				AND = {
-					owns_core_province = 280		#Kiev -center				
+					owns_core_province = 280		#Kiev -center
 					owns_core_province = 283		#Zaporozhie -eastern/southern center of rebellions
 					dip = 5
 				}
@@ -824,9 +824,9 @@ country_decisions = {
 				country_event = { id = ideagroups.1 } #Swap Ideas
 			}
 		}
-		ai_importance = 500		
+		ai_importance = 500
 	}
-	
+
 	russian_nation_EXTRA = { #New Cultures
 		major = yes
 		potential = {
@@ -916,7 +916,7 @@ country_decisions = {
 			owns_core_province = 310			# Novgorod
 			OR = {
 				owns_core_province = 294		# Tver
-				owns_core_province = 308		# Yaroslavl	
+				owns_core_province = 308		# Yaroslavl
 			}
 			OR = {
 				owns_core_province = 301		# Ryazan
@@ -924,8 +924,8 @@ country_decisions = {
 			}
 			OR = {
 				owns_core_province = 306		# Nijni-Novgorod
-				owns_core_province = 307		# Vladimir	
-			}			
+				owns_core_province = 307		# Vladimir
+			}
 		}
 		effect = {
 			if = {
@@ -987,5 +987,5 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
-	
+
 }

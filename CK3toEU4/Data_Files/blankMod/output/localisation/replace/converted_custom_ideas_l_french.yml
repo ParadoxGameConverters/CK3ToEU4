@@ -37,7 +37,7 @@
  roman_ideas_start:"traditions romaines"
  roman_ideas_bonus:"ambitions romaines"
  roman_legions:"Les légions romaines"
- roman_legions_desc:"Les légions de Rome, à leur apogée, étaient considérées comme l'une des meilleures forces de combat que le monde n'ait jamais eu. Avec la renaissance de l'empire, ses armées doivent une nouvelle fois faire leur possible pour n'atteindre rien de moins que cette excellence martiale." 
+ roman_legions_desc:"Les légions de Rome, à leur apogée, étaient considérées comme l'une des meilleures forces de combat que le monde n'ait jamais eu. Avec la renaissance de l'empire, ses armées doivent une nouvelle fois faire leur possible pour n'atteindre rien de moins que cette excellence martiale."
  pax_romana:"Pax Romana"
  pax_romana_desc:"Les lois romaines rayonnent comme un phare au milieu de la mer agitée, et les gens des provinces peuvent dormir sur leurs deux oreilles en sachant que la paix et l'ordre ont été restaurés dans l'empire."
  imperium_sine_fine:"Imperium Sine Fine"
@@ -54,9 +54,9 @@
  knights_templar_ideas_start:"traditions templières"
  knights_templar_ideas_bonus:"ambitions templières"
  latin_rule:"La Règle latine"
- latin_rule_desc:"La Règle latine est un document contenant 72 clauses définissant le comportement idéal d'un Templier. Ils recouvrent tous les aspects religieux, jusqu'à la tenue vestimentaire de l'Ordre." 
+ latin_rule_desc:"La Règle latine est un document contenant 72 clauses définissant le comportement idéal d'un Templier. Ils recouvrent tous les aspects religieux, jusqu'à la tenue vestimentaire de l'Ordre."
  letters_of_credit:"Lettres de crédit"
- letters_of_credit_desc:"Le voyage d'un pèlerin est périlleux à cause des bandits de grand chemin à la recherche des objets de valeur des chrétiens sans défense. L'Ordre a pour tâche de défendre les pèlerins, et une façon de le faire peut être de garder leurs biens et de leur donner une lettre de crédit en échange. Cela les rendra moins susceptibles d'être des cibles pendant les trajets." 
+ letters_of_credit_desc:"Le voyage d'un pèlerin est périlleux à cause des bandits de grand chemin à la recherche des objets de valeur des chrétiens sans défense. L'Ordre a pour tâche de défendre les pèlerins, et une façon de le faire peut être de garder leurs biens et de leur donner une lettre de crédit en échange. Cela les rendra moins susceptibles d'être des cibles pendant les trajets."
  assault_troops_of_the_crusades:"Troupes d'assaut des croisades"
  assault_troops_of_the_crusades_desc:"Les Chevaliers de l'Ordre ont toujours été au front lors des croisades et ont mené la charge contre l'ennemi. Dans une bataille légendaire, il y eut 500 Templiers ont brisé les lignes de la puissante armée de Saladin composée de 26 000 hommes."
  bank_of_europe:"Banque d'Europe"
@@ -138,7 +138,7 @@
  ZZZ_into_the_fold_of_light_desc:3 "Nous considérons nos sujets comme nos propres enfants, les enfants de la lumière. Nous les traitons tous également et avec le même niveau de contrôle."
  ZZZ_into_the_light:3 "Dans la lumière du feu"
  ZZZ_into_the_light_desc:3 "Nous marchons vers la lumière. Nous ne bronchons pas et nous n'hésitons pas. Alors que les muselières clignotent et que l'air devient enfumé avec seulement le flash des pistolets pour éclairer notre chemin, nous nous confions à la lumière et nous ne le faisons pas nous nous tenons à la lumière du feu et continuons notre combat, vivant pour combattre un autre jour."
- 
+
  bektashi_order_ideas:3 "Idées Bektashi"
  bektashi_order_ideas_start:3 "Traditions Bektashi"
  bektashi_order_ideas_bonus:3 "Ambitions Bektashi"
@@ -156,7 +156,7 @@
  ZZZ_bektashi_heterodoxy_desc:3 "Nous ne nous limitons pas uniquement aux rituels et croyances de nos ancêtres. Nous sommes plus que disposés à adopter et à nous adapter aux traditions et coutumes locales. Nous devrons peut-être modifier certaines choses afin de nous assurer qu'elles ne transgressent pas la charia. mais c'est rarement un problème."
  ZZZ_bektashi_need_for_speed:3 "Protection rapide"
  ZZZ_bektashi_need_for_speed_desc:3 "Parfois, nous sommes obligés de nous battre pour nos croyances lorsqu'elles sont attaquées par des puissances étrangères. Lorsque cela se produit, la vitesse est essentielle. Chaque instant perdu est un autre morceau de terre perdu et un autre membre pieux de notre foi abattu . Des croisades à nos jours, nous avons relevé le défi de protéger nos peuples. Nous ne nous arrêterons pas maintenant."
- 
+
  bulls_of_rishabha_ideas:3 "Idées de taureaux"
  bulls_of_rishabha_ideas_start:3 "Traditions Bull"
  bulls_of_rishabha_ideas_bonus:3 "Ambitions Bull"
@@ -174,7 +174,7 @@
  ZZZ_jain_vanijya_desc:3 "Le cinquième des six professions principales, Vanijya est le commerce et le commerce. Là où il y a des gens, le commerce est une fatalité et la poursuite du commerce et du commerce est quelque chose que notre ordre encourage. Un commerce réussi et bien géré profite à toutes les parties et encourage l'harmonie entre tous."
  ZZZ_jain_shilp:3 "Shilp"
  ZZZ_jain_shilp_desc:3 "Sixième des six professions principales, Shilp est l'artisanat. Les artisans qui pratiquent Shilp fournissent au monde à la fois les choses dont nous avons besoin et ce que nous voulons. Les tailleurs créent des vêtements que nous devons porter, les cordonniers créent des chaussures à protéger nos pieds, les sculpteurs créent des œuvres d'art pour tous. Notre ordre a fait en sorte que notre nation soit devenue un centre bien connu des arts, car nous reconnaissons l'importance des artisans pour l'humanité."
- 
+
  brotherhood_of_the_holy_sepulchre_ideas:3 "Idées de confrérie"
  brotherhood_of_the_holy_sepulchre_ideas_start:3 "Traditions de la confrérie"
  brotherhood_of_the_holy_sepulchre_ideas_bonus:3 "Ambitions de fraternité"
@@ -192,7 +192,7 @@
  ZZZ_caravans_of_the_brotherhood_desc:3 "Il est de notre devoir de veiller à ce que les pèlerins qui font le voyage souvent dangereux vers les Lieux Saints sous notre garde puissent le faire sans crainte. Bien que nous ne l'ayons pas voulu, cela a également conduit à nos chemins gardés pour les pèlerins à sont également fréquentés par les caravanes commerciales qui sont plus que disposées à payer un petit péage pour avoir un passage sûr. Leur argent a à son tour été utilisé pour sécuriser encore plus de routes de pèlerins. Ce système profite à tous ceux qui sont impliqués!"
  ZZZ_churches_of_the_holy_sepulchre:3 "Magnificient Construction"
  ZZZ_churches_of_the_holy_sepulchre_desc:3 "Nous avons tout construit, des magnifiques cathédrales aux petites églises locales. Ensuite, nous avons dû les reconstruire quand elles ont été détruites. Nous n'avons jamais cessé de construire, de réparer et de restaurer. Notre nation a une longue histoire de construction magnifique, pourquoi cela devrait-il s'arrêter?"
- 
+
  chosen_of_ashoka_ideas:3 "Idées Ashokan"
  chosen_of_ashoka_ideas_start:3 "Traditions Ashokan"
  chosen_of_ashoka_ideas_bonus:3 "Ambitions Ashokan"
@@ -210,7 +210,7 @@ ZZZ_major_edict_7:3 "Édit majeur VII"
 ZZZ_major_edict_7_desc:3 "Notre ordre a décidé de restaurer le grand édit VII du grand empire Mauryan sous Ashoka. Nous appelons à l'harmonie entre tous les peuples indépendamment de la secte ou de la culture."
 ZZZ_men_to_protect_india:3 "Les hommes pour protéger les innocents"
 ZZZ_men_to_protect_india_desc:3 "Il est du devoir de tout homme de foi non handicapé de s'offrir en cas de besoin. Notre ordre poursuit son devoir sacré de protéger les innocents, et pour ce faire nous recrutons parmi notre population ceux qui connaissent leur devoir."
- 
+
 children_of_dralha_ideas:3 "Enfants d' idées Dralha"
 children_of_dralha_ideas_start:3 "Enfants des traditions Dralha"
 children_of_dralha_ideas_bonus:3 "Enfants des ambitions de Dralha"
@@ -228,7 +228,7 @@ ZZZ_bon_temple_castles:3 "Monastères fortifiés"
 ZZZ_bon_temple_castles_desc:3 "Notre ordre reconnaît depuis longtemps que la séparation des monastères et des fortifications défensives est une idée plutôt stupide. Il n'y a aucune raison qu'un monastère ne puisse pas être fortifié pour résister aux envahisseurs et être toujours un lieu de prière tranquille. Nos monastères ne sont donc pas seulement pratiques , mais aussi grand et complexe, l'envie de tous. Ce double objectif contribue également à réduire les coûts puisque nous ne construisons et ne maintenons qu'une seule structure."
 ZZZ_monk_and_leader:3 "Moines guerriers"
 ZZZ_monk_and_leader_desc:3 "Notre ordre est en grande partie composé de moines guerriers, ceux qui prononcent les vœux du moine mais pratiquent également en continu pour le combat. Ces hommes sont des chefs aptes, connaissant bien la théologie, la philosophie et la stratégie. Nous ne pouvions pas demander un un meilleur bassin de candidats parmi lesquels choisir afin de mener notre nation à la grandeur."
- 
+
 cult_of_huitzilopochtli_ideas:3 "Idées Huitzilopochtli"
 cult_of_huitzilopochtli_ideas_start:3 "Traditions Huitzilopochtli"
 cult_of_huitzilopochtli_ideas_bonus:3 "Ambitions Huitzilopochtli"
@@ -246,7 +246,7 @@ ZZZ_take_to_the_seas_again:3 "Reprenez la mer"
 ZZZ_take_to_the_seas_again_desc:3 "Nos ancêtres sont venus de loin sur ces rives afin d' étancher la soif des dieux qui exigeaient la conquête. Cet appel est de nouveau entendu alors que nous découvrons des terres dans d'autres contrées lointaines. Maintenant, une fois de plus, nous sommes appelés à nos navires pour décoller vers de nouvelles terres."
 ZZZ_aztec_trade_home:3 "Le commerce transatlantique"
 ZZZ_aztec_trade_home_desc:3 "En tant que manifestation de la volonté des dieux, notre culte est en marge du monde Nahua. Pourtant, nous n'avons jamais perdu le contact avec la patrie, et notre commerce avec eux s'est avéré essentiel à notre succès continu dans ce domaine. Nouveau Monde d'Europe, d'Afrique et d'Asie."
- 
+
 chosen_of_perkunas_ideas:3 "Idées choisies"
 chosen_of_perkunas_ideas_start:3 "Traditions choisies"
 chosen_of_perkunas_ideas_bonus:3 "Ambitions choisies"
@@ -264,7 +264,7 @@ ZZZ_the_ choisi:3 "Les élus de Perkunas"
 ZZZ_the_chosen_desc:3 " Le nom de notre ordre est non seulement pour le spectacle Nos membres ont tous été appelés personnellement par. Perkunas , et chaque membre est prêt à mourir pour lui si c'est waht est nécessaire , nous sommes le peuple élu qui le fera. protéger à jamais notre foi et nos voies."
 ZZZ_keep_out_the_invaders:3 "Défense de première frappe"
 ZZZ_keep_out_the_invaders_desc:3 "Notre nation est vue avec envie par nos ennemis. Notre ordre fonctionne 24 heures sur 24 pour défendre notre terre et les gens des mains avides desdits voisins. Grâce à de nombreux procès, nous avons maîtrisé l'art de la première frappe. Un ennemi ne peut pas combattre s'ils sont morts avant d'avoir la chance de tout faire. Nos dirigeants sont devenus les maîtres de ces engagements initiaux, assurant la sécurité continue de notre nation."
- 
+
 followers_of_arjuna_ideas:3 " Idées Arjunan"
 followers_of_arjuna_ideas_start:3 " Traditions Arjunan"
 followers_of_arjuna_ideas_bonus:3 " Ambitions d' Arjunan"
@@ -282,7 +282,7 @@ ZZZ_cheap_gurus:3 "Ascètes et gourous"
 ZZZ_cheap_gurus_desc:3 "Notre ordre, en tant que parfait exemple de la foi, attire naturellement de nombreux ascètes et gourous érudits. Ces hommes et ces femmes sont non seulement bien qualifiés , ils demandent aussi mais une bouchée de pain en échange de leurs services."
 ZZZ_vijaya:3 "Vijaya"
 ZZZ_vijaya_desc:3 "Vijaya," Invincible"était l'une des nombreuses épithètes d'Arjuna. Nos soldats individuellement ne sont pas invincibles, mais en tant qu'ordre, nous pouvons travailler ensemble pour mériter le titre d'Arjuna. Ensemble, nous serons invincibles!"
- 
+
 knights_of_the_sun_ideas:3 "Idées de chevalier zuniste"
 knights_of_the_sun_ideas_start:3 "Traditions des chevaliers zunistes"
 knights_of_the_sun_ideas_bonus:3 "Ambitions du chevalier zuniste"
@@ -318,7 +318,7 @@ ZZZ_use_ships_to_trade_and_ propagate:3 "Commerce et propagation à tout prix"
 ZZZ_use_ships_to_trade_and_propagate_desc:3 "Notre empire maritime a commencé à s'étendre assez loin. Nous avons rencontré un nombre de plus en plus important de personnes qui n'ont même jamais entendu parler de Mahomet. Nos missionnaires, qui souvent voyagent avec nos commerçants, travaillent dur pour faire passer son mot. Nous devons redoubler d'efforts pour propager à la fois notre commerce et notre religion. Nous allons certainement subir des pertes dans le processus, mais nous ne pouvons pas laisser cela nous dissuader!"
 ZZZ_the_true_followers:3 "The True Way"
 ZZZ_the_true_followers_desc:3 "Il y en a beaucoup qui ne comprennent pas la vraie voie. C'est bien, car nous le savons, et nous ne l'oublierons jamais. Notre seule allégeance est au Coran et à la sunna de Mahomet. Trop d'autres se lient entre eux. à des choses comme des lignées ou des œuvres d'une authenticité douteuse. Nous avons confiance dans le Coran et ce qui a été prouvé être vrai. Nous seuls reconnaissons la vraie foi qui apportera le salut."
- 
+
 immortals_ideas:3 "Idées immortelles"
 immortals_ideas_start:3 "Traditions immortelles"
 immortals_ideas_bonus:3 "Ambitions immortelles"
@@ -336,7 +336,7 @@ ZZZ_the_eternal_fires:3 "Les feux éternels"
 ZZZ_the_eternal_fires_desc:3 "Notre ordre maintient certains des feux éternels de Zoroastre, gardés en sécurité pendant des centaines d'années."
 ZZZ_the_whites_of_their_eyes:3 "La marche sans fin"
 ZZZ_the_whites_of_their_eyes_desc:3 "Nos hommes connaissent leur devoir. Les soldats meurent à la guerre, c'est inévitable. Quand un soldat meurt, vous prenez sa place, en silence et sans aucun doute. La chaîne de commandement restera claire et ininterrompue pour le dernier soldat commun. Notre ordonner des marches à travers le feu ennemi jusqu'à ce que nous puissions voir leurs yeux. Ensuite, et alors seulement nous relâcherons notre feu, à bout portant."
- 
+
 knights_of_calatrava_ideas:3 " Idées Calatravan"
 knights_of_calatrava_ideas_start:3 " Traditions Calatravan"
 knights_of_calatrava_ideas_bonus:3 " Ambitions Calatravan"
@@ -354,7 +354,7 @@ ZZZ_light_to_heathens:3 "Apporter la lumière du Christ"
 ZZZ_light_to_heathens_desc:3 "Quand nous marchons sur nos ennemis, nous ne le faisons pas par haine pour eux, mais par amour pour Dieu. Il est de notre devoir de diffuser son message partout où nous allons et de le diffuser autant que possible."
 ZZZ_the_tireless_calatravans:3 "Infatigable"
 ZZZ_the_tireless_calatravans_desc:3 "Notre ordre a maintenu sa discipline pendant de nombreuses années, dépassant de nombreux autres ordres qui ont disparu ou succombent aux pressions du séculier. Notre ordre se souvient cependant de ses racines, et nous ne céderons jamais et nous ne nous rendrons jamais."
- 
+
 knights_of_santiago_ideas:3 "Idées de Santiago"
 knights_of_santiago_ideas_start:3 "Traditions de Santiago"
 knights_of_santiago_ideas_bonus:3 "Ambitions de Santiago"
@@ -372,7 +372,7 @@ ZZZ_santiago_bullarium:3 "Le Bullarium de Santiago"
 ZZZ_santiago_bullarium_desc:3 "Depuis notre fondation, le Pape a jugé bon d'accorder de nombreuses faveurs à notre ordre. Nos membres ont été autorisés à se marier dès le début et nous avons rapidement reçu tous les privilèges et exemptions d'autres ordres monastiques."
 ZZZ_santiago_true_ calling:3 "Our True Calling"
 ZZZ_santiago_true_calling_desc:3 "Il est vrai que nous sommes un ordre militaire et que nous nous battons quand nous le devons. Pourtant, c'est le moindre de nos devoirs, beaucoup plus important est de soigner les malades, d'aider les pauvres et de diffuser le message de Jésus aux monde. Nous combattons avec des épées lorsque cela est nécessaire, mais nous préférons nous battre avec des mots."
- 
+
 lords_of_the_sky_ideas:3 "Sky Lord Ideas"
 lords_of_the_sky_ideas_start:3 "Traditions du Seigneur du ciel"
 lords_of_the_sky_ideas_bonus:3 "Sky Lord Ambitions"
@@ -390,7 +390,7 @@ ZZZ_lords_abroad:3 "Lords of Trade"
 ZZZ_lords_abroad_desc:3 "Bien que notre nation soit surtout connue pour son stock de chevaux inégalé, ce n'est en aucun cas la seule chose que notre nation a à offrir. Au fur et à mesure que de plus en plus de nations en sont conscientes, les demandes pour nos marchandises ont augmenté. a créé d' énormes opportunités pour les commerçants et les entrepreneurs à travers notre pays. Même certains membres de notre ordre se sont impliqués!"
 ZZZ_modern_cavalry:3 "Cavalerie moderne"
 ZZZ_modern_cavalry_desc:3 "Comme les temps changent, nous ne pouvons pas nous permettre de prendre du retard. L'arme a remplacé l'arc pour toutes les questions militaires, sauf les plus spécifiques. Il y a des prophètes du malheur qui prédisent la disparition de la cavalerie, mais nous savons mieux. Ce qui doit est de moderniser la cavalerie afin qu'elle ne prenne pas de retard dans cette course aux armements. Comme nos ancêtres ont appris à maîtriser l'art d'utiliser des arcs sur le dos des chevaux, nous maîtriserons aussi l'art d'utiliser des fusils sur le dos des les chevaux!"
- 
+
 myrmidons_ideas:3 "Idées Myrmidons"
 myrmidons_ideas_start:3 "Traditions Myrmidons"
 myrmidons_ideas_bonus:3 "Ambitions Myrmidons"
@@ -408,7 +408,7 @@ ZZZ_myrmidon_building:3 "Hellenic Glory"
 ZZZ_myrmidon_building_desc:3 "Les Grecs ont construit de puissants temples et statues qui faisaient l'envie du monde. Les Romains ont construit des routes autour de l'ensemble de leur empire ainsi que des projets de construction qui pourraient difficilement être imaginés aujourd'hui. En tant que gardiens de cette histoire, notre ordre a en fait une priorité de poursuivre les traditions grecques et romaines de construction et de développement chaque fois que possible."
 ZZZ_legacy_of_alexander:3 "L'héritage d'Alexandre"
 ZZZ_legacy_of_alexander_desc:3 "Quand on parle du grand peuple de l'histoire, on serait négligent de ne pas parler d'Alexandre le Grand, qui a détruit tous ceux qui se tenaient devant lui et construit un empire qui ne sera pas égalé en taille jusqu'aux Romains. Notre ordre est fier de poursuivre sa tradition d'expansion, apportant avec nous la civilisation!"
- 
+
 order_of_saint_anthony_ideas:3 "Saint Anthony Ideas"
 order_of_saint_anthony_ideas_start:3 "Traditions de Saint Anthony"
 order_of_saint_anthony_ideas_bonus:3 "Ambitions de Saint Antoine"
@@ -426,7 +426,7 @@ ZZZ_coptic_gold:3 "Expérience dorée"
 ZZZ_coptic_gold_desc:3 "Notre commande a été dotée d'une histoire d'or. Pendant des siècles, notre commande a manipulé et parfois même extrait le métal auquel tant de personnes aspirent. Pourtant, nous-mêmes n'avons que les utilisations les plus basiques . En tant qu'ordre ascétique , nous ne nous livrons pas à l'opulence ou à l'excès. En tant que tels, nous savons, mieux que beaucoup d'autres nations, comment contrôler le flux d'or et d'autres objets précieux. Nous avons de la retenue, et avec la retenue vient une meilleure économie."
 ZZZ_order_in_the_ranks:3 "Ordre dans les rangs"
 ZZZ_order_in_the_ranks_desc:3 "Notre nation est devenue grande et puissante, d'autant plus que nous sommes un ordre monastique. Nos effectifs ont grossi et le recrutement ne pourrait pas être meilleur, mais nous ne pouvons pas permettre à cet afflux de nouvelles recrues de ruiner notre discipline. Nous devons nous assurer que les programmes de formation à travers notre nation maintiennent tous des normes et des pratiques strictes. Nous ne pouvons pas nous permettre d'être pris à plat par nos ennemis!"
- 
+
 spirit_guardians_ideas:3 "Spirit Guardian Ideas"
 spirit_guardians_ideas_start:3 "Traditions Spirit Guardian"
 spirit_guardians_ideas_bonus:3 "Ambitions du gardien de l'esprit"
@@ -444,7 +444,7 @@ ZZZ_guardians_of_the_seas:3 "Gardiens de la mer"
 ZZZ_guardians_of_the_seas_desc:3 "Alors que nous cherchons à protéger nos gens à tout prix, nous ne pouvons pas oublier le vaste océan. Nos gens voyagent par bateau vers des endroits partout dans le monde. De même, les gens viennent dans notre pays pour une grande variété de raisons par bateau Nous ne pouvons pas non plus laisser ces personnes subir les horreurs de la piraterie ou de l'ingérence étrangère. Nous devons prendre la mer afin de poursuivre notre mission de tutelle!"
 ZZZ_guardians_of_all:3 "Gardiens de tous"
 ZZZ_guardians_of_all_desc:3 "Le devoir sacré de notre ordre a toujours été d'être les gardiens du peuple. Alors que le monde évolue et que nous nous élargissons, nous avons réalisé que notre mandat doit également être élargi. L'esclavage, autrefois une pratique presque inoffensive est devenu une chose des plus terribles. Il est loin le temps de l'esclavage temporaire, les esclaves du monde moderne sont soumis à une vie de servitude qui se transmet à leurs enfants. Comme ordre, nous ne pouvons plus tolérer cette pratique. L'esclavage doit cesser et notre ordre doit reconnaître la dignité de tous les peuples, quelle que soit leur origine."
- 
+
 sons_of_kaleva_ideas:3 "Idées Kalevan"
 sons_of_kaleva_ideas_start:3 " Traditions Kalevan"
 sons_of_kaleva_ideas_bonus:3 " Kalevan des ambitions de Perun"
@@ -462,7 +462,7 @@ ZZZ_kalevan_expansion:3 "Développer dans l'inconnu"
 ZZZ_kalevan_expansion_desc:3 "Notre mission de diffuser la foi à quiconque nous contactons ne s'arrête pas simplement parce qu'une région est inexplorée et / ou remplie de sauvages. C'est notre travail d'apporter la vérité dans ces régions, quel que soit le danger."
 ZZZ_take_down_the_walls:3 "Abattez ces murs"
 ZZZ_take_down_the_walls_desc:3 "Notre nation a investi assez massivement dans l'artillerie lourde, et cela a fonctionné à merveille pour notre nation. Au fur et à mesure que notre ordre se développe, nous avons constaté que la plupart des nations n'avaient pas encore réalisé le plein potentiel des canons dans les batailles ou sièges. Malheureusement pour eux, nous avons."
- 
+
 warriors_of_perun_ideas:3 " Idées péruniennes"
 warriors_of_perun_ideas_start:3 " Traditions péruniennes"
 warriors_of_perun_ideas_bonus:3 " Ambitions péruniennes"
@@ -481,7 +481,7 @@ ZZZ_one_nation:3 "Guerriers de conformité"
 ZZZ_one_nation_desc:3 "Nous sommes une nation, indivisible. Notre ordre valorise la conformité et nous l'apporterons à notre peuple. Chacun observera les rituels appropriés, tous suivront le calendrier établi pour eux par les calendriers sacrés ! Peu importe jusqu'où vous êtes du centre de notre pays , vous faites toujours partie de notre nation."
 ZZZ_warriors_in_unison:3 "Warriors in Unison"
 ZZZ_warriors_in_unison_desc:3 "Notre ordre n'est pas un groupe hétéroclite , nous sommes l'une des forces les mieux organisées et disciplinées au monde! Tout adversaire qui souhaite affronter la puissance de nos armées doit être prêt à se battre jusqu'au bout, car nos guerriers sont Toujours prêt."
- 
+
 zealots_ideas:3 "Idées de fanatiques"
 zealots_ideas_start:3 "Traditions zélotes"
 zealots_ideas_bonus:3 "Ambitions des Zélotes"
@@ -499,7 +499,7 @@ ZZZ_zealot_purity:3 "Pureté de cause"
 ZZZ_zealot_purity_desc:3 "Nous ne pouvons pas nous permettre de laisser nos mœurs nos traditions soient compromis Nous alsways ! Rester consacré à la lutte contre les envahisseurs étrangers , peu importe ce qu'ils jettent à nous , nous ne pouvons pas nous permettre de laisser restent faibles leaders dans des positions de pouvoir, ils doivent soit se redresser, soit se retrouver au chômage."
 ZZZ_zealot_commerce:3 "Commerce prudent"
 ZZZ_zealot_commerce_desc:3 "Alors que nous négocions avec des pays étrangers et récoltons les richesses de nos propres terres, nous devons veiller à ne pas laisser les choses devenir incontrôlables. De nombreuses familles de notre pays ont géré des opérations bancaires par le passé et, à ce titre, nous connaissons les risques de l'inflation et de la mauvaise économie. Nous ferons tout notre possible pour éviter toute situation qui nous oblige à gonfler la monnaie, mais plutôt nous travaillerons sans relâche pour faire en sorte que l'inflation soit aussi faible que possible."
- 
+
 #Fraticelli Pope
 FAP_ideas:3 "Idées Fraticelli"
 FAP_ideas_start:3 "Traditions Fraticelli"
@@ -517,18 +517,18 @@ ZZZ_love_thy_neighbors:3 "Le Seigneur nous a ordonné de nous aimer les uns les 
 ZZZ_a_loving_hand:3 "Une main aimante"
 ZZZ_a_loving_hand_desc:3 "Nous traitons nos sujets aussi bien que possible, en leur faisant payer seulement ce qu'ils peuvent se permettre. D'autres nations peuvent nous regarder avec incrédulité, mais pourtant nous ne semblons jamais avoir les révoltes et les problèmes des autres nations. Peut-être ces incrédules les dirigeants pouvaient en apprendre davantage du roi des rois et moins de leurs trésoriers avides."
 ZZZ_spread_the_word:3 "Répandre la bonne nouvelle"
-ZZZ_spread_the_word_desc:3 "Il est de notre devoir sacré de diffuser la parole du Seigneur dans le monde. Nous ne pourrons jamais nous reposer tant que le monde entier n'aura pas connu sa gloire et sa compassion. Tous ceux qui peuvent être sauvés doivent être sauvés!" 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ZZZ_spread_the_word_desc:3 "Il est de notre devoir sacré de diffuser la parole du Seigneur dans le monde. Nous ne pourrons jamais nous reposer tant que le monde entier n'aura pas connu sa gloire et sa compassion. Tous ceux qui peuvent être sauvés doivent être sauvés!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+

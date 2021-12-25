@@ -7,12 +7,12 @@
 namespace = plati_flavor_ckeu
 country_event = {
 	id = plati_flavor_ckeu.1
-	
+
 	title = "plati_flavor_ckeu.EVTNAME1"				#Christian Mission
 	desc = "plati_flavor_ckeu.EVTDESC1"
-	
+
 	picture = RELIGION_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_first_event_timer				#Timer, so that event doesnt fire too often
@@ -34,21 +34,21 @@ country_event = {
 			current_age = age_of_reformation
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_first_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
-		random_owned_province = { 
-			limit = { 
+		random_owned_province = {
+			limit = {
 				is_state = yes
 				is_capital = no
 				has_owner_religion = yes
@@ -57,7 +57,7 @@ country_event = {
 			save_event_target_as = plati_mission_province
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA1"				#Very well, let them come
 		ai_chance = {
@@ -82,12 +82,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.2
-	
+
 	title = "plati_flavor_ckeu.EVTNAME2"				#Christian Mission - Converts other provinces
 	desc = "plati_flavor_ckeu.EVTDESC2"
-	
+
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_second_event_timer
@@ -108,20 +108,20 @@ country_event = {
 			NOT = { has_province_modifier = plati_christian_mission_modifier }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_second_event_timer
 				duration = 3650
 				hidden = yes
 			}
 			random_owned_province = {
-				limit = { 
+				limit = {
 					is_state = yes
 					is_capital = no
 					has_owner_religion = yes
@@ -131,7 +131,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA2"						#Let them continue
 		event_target:plati_spreading_faith_province = {
@@ -170,12 +170,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.3
-	
+
 	title = "plati_flavor_ckeu.EVTNAME3"				#Christian mission brings technology
 	desc = "plati_flavor_ckeu.EVTDESC3"
-	
+
 	picture = BIG_BOOK_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_third_event_timer
@@ -191,24 +191,24 @@ country_event = {
 			has_province_modifier = plati_christian_mission_modifier
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_third_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA3"				#Useful
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_christian_mission_boost
 			duration = 1825
 		}
@@ -225,7 +225,7 @@ country_event = {
 			discount = yes
 			religion = catholic
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_christian_mission_boost
 			duration = 1825
 		}
@@ -233,12 +233,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.4
-	
+
 	title = "plati_flavor_ckeu.EVTNAME4"			#Pagan merchants harrased
 	desc = "plati_flavor_ckeu.EVTDESC4"
-	
+
 	picture = FEUDALISM_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_fourth_event_timer
@@ -251,14 +251,14 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fourth_event_timer
 				duration = 4000
 				hidden = yes
@@ -274,7 +274,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA4"			#Heh, who am I to stop them
 		event_target:angered_pagan_country = {
@@ -311,12 +311,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.5
-	
+
 	title = "plati_flavor_ckeu.EVTNAME5"				#Religious doubts - pagan influence
 	desc = "plati_flavor_ckeu.EVTDESC5"
-	
+
 	picture = PROTESTANT_RELIGIOUS_DOUBTS_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_fifth_event_timer
@@ -332,27 +332,27 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fifth_event_timer
 				duration = 2190
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA5"			#BAD
 		ai_chance = {
 			factor = 70
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_christ_faith_enforced
 			duration = 1825
 		}
@@ -363,7 +363,7 @@ country_event = {
 		ai_chance = {
 			factor = 30
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_pagan_influence_christ
 			duration = 1825
 		}
@@ -461,12 +461,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.6
-	
+
 	title = "plati_flavor_ckeu.EVTNAME6"						#Cosmopolitan Nobility
 	desc = "plati_flavor_ckeu.EVTDESC6"
-	
+
 	picture = CENTRAL_AFRICAN_PORTUGUESE_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_sixt_event_timer
@@ -483,20 +483,20 @@ country_event = {
 			government_rank = 2
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 30
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_sixt_event_timer
 				duration = 3650
 				hidden = yes
 			}
 			random_country = {
-				limit = { 
+				limit = {
 					religion_group = pagan
 					capital_scope = { continent = europe }
 					government_rank = 2
@@ -505,14 +505,14 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA6"						#Ignore
 		add_estate_loyalty = {
 			estate = estate_church
 			loyalty = -10
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_pagan_cosmopolitan_nobility
 			duration = 1825
 		}
@@ -539,15 +539,15 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.7
-	
+
 	title = "plati_flavor_ckeu.EVTNAME7"					#Andalusian colonial policy
 	desc = "plati_flavor_ckeu.EVTDESC7"						#High chance Iberian Muslims reign supreme in coverted save - such a major and unique state needs flavor
-	
+
 	picture = AFRICAN_INDIAN_eventPicture
-	
+
 	fire_only_once = yes
 	major = yes
-	
+
 	trigger = {
 		OR = {
 			tag = ADU
@@ -563,11 +563,11 @@ country_event = {
 		}
 		colony = 1
 	}
-	
+
 	mean_time_to_happen = {
 		months = 120
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA7"
 		add_country_modifier = {
@@ -592,12 +592,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.8
-	
+
 	title = "plati_flavor_ckeu.EVTNAME8"					#Andalusians and native faith dispute
 	desc = "plati_flavor_ckeu.EVTDESC8"
-	
+
 	picture = PLATIANDALUS
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_eight_event_timer
@@ -610,21 +610,21 @@ country_event = {
 			NOT = { has_country_modifier = plati_harsh_treatment }
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 420
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_eight_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA8"					#Leave the natives be
 		random_country = {
@@ -647,7 +647,7 @@ country_event = {
 				NOT = { has_country_modifier = plati_conversion_efforts }
 				NOT = { has_country_modifier = plati_harsh_treatment }
 			}
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_conversion_efforts
 				duration = 2000
 			}
@@ -667,7 +667,7 @@ country_event = {
 				NOT = { has_country_modifier = plati_conversion_efforts }
 				NOT = { has_country_modifier = plati_harsh_treatment }
 			}
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_harsh_treatment
 				duration = 2000
 			}
@@ -682,15 +682,15 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.9
-	
+
 	title = "plati_flavor_ckeu.EVTNAME9"							#Protestants flee to Andalusia
 	desc = "plati_flavor_ckeu.EVTDESC9"
-	
+
 	picture = DHIMMI_ESTATE_eventPicture
-	
+
 	fire_only_once = yes
 	major = yes
-	
+
 	trigger = {
 		OR = {
 			tag = ADU
@@ -717,11 +717,11 @@ country_event = {
 		}
 		current_age = age_of_reformation
 	}
-	
+
 	mean_time_to_happen = {
 		months = 420
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_known_country = {
@@ -739,7 +739,7 @@ country_event = {
 				save_event_target_as = plati_protestant_refugee_country
 			}
 			random_owned_province = {
-				limit = { 
+				limit = {
 					is_state = yes
 					is_capital = no
 					has_owner_religion = yes
@@ -748,13 +748,13 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA9"					#We shall welcome them with open arms
 		ai_chance = {
 			factor = 95
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_protestant_influx
 			duration = 3650
 		}
@@ -762,7 +762,7 @@ country_event = {
 			change_religion = protestant
 			add_base_tax = 1
 			add_base_production = 1
-			add_province_modifier = { 
+			add_province_modifier = {
 				name = religious_zeal_at_conv
 				duration = 3650
 			}
@@ -797,12 +797,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.10
-	
+
 	title = "plati_flavor_ckeu.EVTNAME10"				#Pope displeased with tolerating neighboring pagans
 	desc = "plati_flavor_ckeu.EVTDESC10"
-	
+
 	picture = BAD_POPE_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_ten_event_timer
@@ -818,11 +818,11 @@ country_event = {
 			current_age = age_of_reformation
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 420
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_neighbor_country = {
@@ -831,7 +831,7 @@ country_event = {
 					NOT = { has_country_modifier = plati_neighbor_cooldown }
 				}
 				save_event_target_as = plati_nearby_pagan_pope_target
-				add_country_modifier = { 
+				add_country_modifier = {
 					name = plati_neighbor_cooldown
 					duration = 3650
 					hidden = yes
@@ -844,7 +844,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA10"				#That's none of his business
 		ai_chance = {
@@ -863,7 +863,7 @@ country_event = {
 			factor = 70
 		}
 		event_target:plati_nearby_pagan_pope_target = {
-			country_event = { 
+			country_event = {
 				id = plati_flavor_ckeu.11
 			}
 			add_opinion = {
@@ -884,26 +884,26 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.11
-	
+
 	title = "plati_flavor_ckeu.EVTNAME11"
 	desc = "plati_flavor_ckeu.EVTDESC11"
-	
+
 	picture = BAD_POPE_eventPicture
-	
+
 	is_triggered_only = yes				#event
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA11"				#How dare they
 	}
 }
 country_event = {
 	id = plati_flavor_ckeu.12
-	
+
 	title = "plati_flavor_ckeu.EVTNAME12"							#Unorthodox Catholic scientist harrased
 	desc = "plati_flavor_ckeu.EVTDESC12"
-	
+
 	picture = DIPLOMAT_INTERROGATION_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twelve_event_timer
@@ -918,21 +918,21 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twelve_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA12"					#He is more than welcome to stay here
 		define_advisor = {
@@ -956,12 +956,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.13
-	
+
 	title = "plati_flavor_ckeu.EVTNAME13"				#Secret pagan gathering discovered
 	desc = "plati_flavor_ckeu.EVTDESC13"
-	
+
 	picture = PLATISHRINE
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirteen_event_timer
@@ -976,14 +976,14 @@ country_event = {
 			religion_group = pagan
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 600
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirteen_event_timer
 				duration = 3650
 				hidden = yes
@@ -996,7 +996,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA13"		#Execute the heathens
 		add_stability = -1
@@ -1019,15 +1019,15 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.14
-	
+
 	title = "plati_flavor_ckeu.EVTNAME14"				#Pagans joining the Religious league
 	desc = "plati_flavor_ckeu.EVTDESC14"
-	
+
 	picture = HUSSITE_eventPicture
-	
+
 	fire_only_once = yes
 	major = yes
-	
+
 	trigger = {
 		religion_group = pagan
 		OR = {
@@ -1039,11 +1039,11 @@ country_event = {
 			in_league = hussite
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		days = 2
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA14"				#Our reasons for backing Catholics are our own.
 		trigger = {
@@ -1089,12 +1089,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.15
-	
+
 	title = "plati_flavor_ckeu.EVTNAME15"						#Upkeep of Holy Sites
 	desc = "plati_flavor_ckeu.EVTDESC15"
-	
+
 	picture = PLATISHRINE
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_fifteen_event_timer
@@ -1108,24 +1108,24 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 300
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fifteen_event_timer
 				duration = 2555
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA15"				#Naturally
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_upkeeped_sacred_sites
 			duration = 2555
 		}
@@ -1133,7 +1133,7 @@ country_event = {
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTC15"				#Leave them be
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_sacred_sates_need_upkeep
 			duration = 2555
 		}
@@ -1146,7 +1146,7 @@ country_event = {
 		name = "plati_flavor_ckeu.EVTOPTC15"				#Of
 		highlight = yes
 		trigger = { ruler_has_personality = obsessive_perfectionist_personality }
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_upkeeped_sacred_sites
 			duration = 3650
 		}
@@ -1159,12 +1159,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.16
-	
+
 	title = "plati_flavor_ckeu.EVTNAME16"					#Honoring Noble Ancestor
 	desc = "plati_flavor_ckeu.EVTDESC16"
-	
+
 	picture = PLATISHRINE
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_sixteen_event_timer
@@ -1177,24 +1177,24 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 300
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_sixteen_event_timer
 				duration = 2555
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA16"			#We will honor him
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_honoring_ancestor_codified
 			duration = 2555
 		}
@@ -1207,12 +1207,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.19
-	
+
 	title = "plati_flavor_ckeu.EVTNAME19"							#Pagan feast
 	desc = "plati_flavor_ckeu.EVTDESC19"
-	
+
 	picture = KING_DOING_GREAT_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_ninethen_event_timer
@@ -1223,27 +1223,27 @@ country_event = {
 			stability = 1
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_ninethen_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA19"			#Of course, let us commence
 		ai_chance = {
 			factor = 80
 		}
-		
+
 		custom_tooltip = "plati_flavor_ckeu.19.e.tt"
 		add_years_of_income = -0.5
 		hidden_effect = {
@@ -1276,24 +1276,24 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.20
-	
+
 	title = "plati_flavor_ckeu.EVTNAME20"				#Feast: Diplomatic Opportunity
 	desc = "plati_flavor_ckeu.EVTDESC20"
-	
+
 	picture = DIPLOMACY_eventPicture
-	
-	is_triggered_only = yes	
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA20"			#Reputation
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_dipl_hospital
 			duration = 1825
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB20"			#Improve re
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_dipl_friends
 			duration = 1825
 		}
@@ -1305,31 +1305,31 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.21
-	
+
 	title = "plati_flavor_ckeu.EVTNAME21"				#Feast: Soldiers
 	desc = "plati_flavor_ckeu.EVTDESC21"
-	
+
 	picture = NOT_DISCIPLINED_SOLDIERS_eventPicture
-	
-	is_triggered_only = yes	
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA21"			#Navy
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_feast_navy
 			duration = 1825
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB21"			#Army
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_feast_solder
 			duration = 1825
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTC21"			#Generals
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_feast_leader
 			duration = 1825
 		}
@@ -1337,14 +1337,14 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.22
-	
+
 	title = "plati_flavor_ckeu.EVTNAME22"				#Feast: Estates
 	desc = "plati_flavor_ckeu.EVTDESC22"
-	
+
 	picture = KINGS_CHOICE_eventPicture
-	
-	is_triggered_only = yes	
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA22"			#Noble
 		add_estate_loyalty = {
@@ -1369,14 +1369,14 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.23
-	
+
 	title = "plati_flavor_ckeu.EVTNAME23"				#Feast: Everyone Just Happy
 	desc = "plati_flavor_ckeu.EVTDESC23"
-	
+
 	picture = FEAST_eventPicture
-	
-	is_triggered_only = yes	
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA23"			#Stab
 		add_stability_or_adm_power = yes
@@ -1402,7 +1402,7 @@ country_event = {
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTC23"			#relig bonus
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_feast_relig
 			duration = 1825
 		}
@@ -1410,18 +1410,18 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.24
-	
+
 	title = "plati_flavor_ckeu.EVTNAME24"					#Feast gone wrong!
 	desc = "plati_flavor_ckeu.EVTDESC24"
-	
+
 	picture = DEBATE_REPUBLICAN_eventPicture
-	
-	is_triggered_only = yes	
-	
+
+	is_triggered_only = yes
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA24"
 		add_legitimacy = -10
-		add_ruler_modifier = { 
+		add_ruler_modifier = {
 			name = plati_incompetent_ruler
 			duration = 1825
 		}
@@ -1454,36 +1454,36 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.25
-	
+
 	title = "plati_flavor_ckeu.EVTNAME25"						#Saarema!
 	desc = "plati_flavor_ckeu.EVTDESC25"						#en.wikipedia.org/wiki/Inhabitants_of_Saaremaa
-	
+
 	picture = FLAGSHIP_SUNK_eventPicture
-	
+
 	fire_only_once = yes
 	major = yes
-	
+
 	trigger = {
 		NOT = { has_reform = pirate_republic_reform }
 		owns_core_province = 35
 		NOT = { num_of_cities = 5 }
 		always = no												#scrapped
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_first_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA25"
 		change_government = republic
@@ -1495,7 +1495,7 @@ country_event = {
 			add_base_production = 1
 			add_base_manpower = 2
 		}
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_saaremaa_mod
 			duration = -1
 		}
@@ -1507,14 +1507,14 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.27
-	
+
 	title = "plati_flavor_ckeu.EVTNAME27"						#Runestone
 	desc = "plati_flavor_ckeu.EVTDESC27"
-	
+
 	picture = PLATIRUNE
-	
+
 	is_triggered_only = yes				#decision
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA27"
 		add_prestige = 5
@@ -1534,12 +1534,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.28
-	
+
 	title = "plati_flavor_ckeu.EVTNAME28"						#Blood sacrifices
 	desc = "plati_flavor_ckeu.EVTDESC28"
-	
+
 	picture = PLATINORSE
-	
+
 	trigger = {
 		AND = {
 			religion_group = pagan
@@ -1549,7 +1549,7 @@ country_event = {
 		}
 		NOT = { has_country_modifier = plati_twenone_event_timer }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 		modifier = {
@@ -1561,20 +1561,20 @@ country_event = {
 			stability = 2
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twenone_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA28"			#human
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_pagan_flavor_sacrifices_human
 			duration = 3650
 		}
@@ -1619,12 +1619,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.29
-	
+
 	title = "plati_flavor_ckeu.EVTNAME29"						#popular local shaman
 	desc = "plati_flavor_ckeu.EVTDESC29"
-	
+
 	picture = PLATISHAMAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twentwo_event_timer
@@ -1640,23 +1640,23 @@ country_event = {
 			is_capital = no
 			has_owner_religion = yes
 			NOT = { has_province_modifier = plati_shaman_mod_prov }
-		}	
+		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twentwo_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
-		random_owned_province = { 
-			limit = { 
+		random_owned_province = {
+			limit = {
 				is_state = yes
 				is_capital = no
 				has_owner_religion = yes
@@ -1665,9 +1665,9 @@ country_event = {
 			save_event_target_as = plati_shaman_province
 		}
 	}
-	
+
 	option = {
-		name = "plati_flavor_ckeu.EVTOPTA29"				#bring him to court				
+		name = "plati_flavor_ckeu.EVTOPTA29"				#bring him to court
 		define_advisor = {
 			type = theologian
 			skill = 3
@@ -1686,12 +1686,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.30
-	
+
 	title = "plati_flavor_ckeu.EVTNAME30"						#pagan syncretism
 	desc = "plati_flavor_ckeu.EVTDESC30"
-	
+
 	picture = PLATISHAMAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twenthree_event_timer
@@ -1709,21 +1709,21 @@ country_event = {
 			religion_group = pagan
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twenthree_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
-		random_owned_province = { 
-			limit = { 
+		random_owned_province = {
+			limit = {
 				is_state = yes
 				is_capital = no
 				has_owner_religion = no
@@ -1732,10 +1732,10 @@ country_event = {
 			save_event_target_as = plati_syncretic_province
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA30"				#Unity
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_pagan_syncretism
 			duration = 3650
 		}
@@ -1745,7 +1745,7 @@ country_event = {
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB30"				#Regardless, our faith is supreme
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_pagan_antisyncr
 			duration = 3650
 		}
@@ -1754,12 +1754,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.31
-	
+
 	title = "plati_flavor_ckeu.EVTNAME31"						#unaccepted culture wants their gods in pantheon
 	desc = "plati_flavor_ckeu.EVTDESC31"
-	
+
 	picture = PLATINORSE
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twenfour_event_timer
@@ -1778,21 +1778,21 @@ country_event = {
 			religion_group = pagan
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twenfour_event_timer
 				duration = 3650
 				hidden = yes
 			}
 		}
-		random_owned_province = { 
-			limit = { 
+		random_owned_province = {
+			limit = {
 				is_state = yes
 				is_capital = no
 				has_owner_accepted_culture = no
@@ -1802,7 +1802,7 @@ country_event = {
 			save_event_target_as = plati_dissatisfied_relig_province
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA31"				#very well
 		every_owned_province = {
@@ -1833,12 +1833,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.32
-	
+
 	title = "plati_flavor_ckeu.EVTNAME32"						#veneration of ruler
 	desc = "plati_flavor_ckeu.EVTDESC32"
-	
+
 	picture = PLATISHAMAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twenfive_event_timer
@@ -1859,24 +1859,24 @@ country_event = {
 		is_in_deficit = no
 		NOT = { num_of_rebel_controlled_provinces = 1 }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 100
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twenfive_event_timer
 				duration = 14600
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA32"			#who am I to stop them
-		add_ruler_modifier = { 
+		add_ruler_modifier = {
 			name = plati_ruler_worshipped
 			duration = -1
 		}
@@ -1895,12 +1895,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.33
-	
+
 	title = "plati_flavor_ckeu.EVTNAME33"						#divination: bad omens
 	desc = "plati_flavor_ckeu.EVTDESC33"
-	
+
 	picture = PLATISHAMAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twensux_event_timer
@@ -1914,21 +1914,21 @@ country_event = {
 		}
 		has_country_modifier = godly_inspiration						#divination, part of base game modifiers
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twensux_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA33"				#oh no!
 		add_stability = -1
@@ -1945,12 +1945,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.34
-	
+
 	title = "plati_flavor_ckeu.EVTNAME34"						#divination: good omens
 	desc = "plati_flavor_ckeu.EVTDESC34"
-	
+
 	picture = PLATISHAMAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twensux_event_timer
@@ -1964,21 +1964,21 @@ country_event = {
 		}
 		has_country_modifier = godly_inspiration						#divination, part of base game modifiers
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twensev_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA34"				#gods favor us
 		add_stability_or_adm_power = yes
@@ -1986,21 +1986,21 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.35
-	
+
 	title = "plati_flavor_ckeu.EVTNAME35"						#the third temple - rebuilt!
 	desc = "plati_flavor_ckeu.EVTDESC35"
-	
+
 	picture = PLATIJEWISH
-	
+
 	is_triggered_only = yes				#mission
-	
+
 	major = yes							#kind of a big deal
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA35"				#happy day!
 		add_stability_or_adm_power = yes
 		379 = {
-			add_permanent_province_modifier = { 
+			add_permanent_province_modifier = {
 				name = plati_jewish_third_temple
 				duration = -1
 			}
@@ -2034,33 +2034,33 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.36
-	
+
 	title = "plati_flavor_ckeu.EVTNAME36"						#JEWISH ONES START HERE
 	desc = "plati_flavor_ckeu.EVTDESC36"						#A jewish homeland
-	
+
 	picture = PLATIJEWISH
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_twennin_event_timer
 		}
 		religion_group = jewish_group
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_twennin_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA36"				#Excellent!
 		define_advisor = {
@@ -2079,12 +2079,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.37
-	
+
 	title = "plati_flavor_ckeu.EVTNAME37"						#desecration of sanbat
 	desc = "plati_flavor_ckeu.EVTDESC37"
-	
+
 	picture = PLATIJEWISH
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirteh_event_timer
@@ -2097,24 +2097,24 @@ country_event = {
 			advisor = natural_scientist
 			advisor = philosopher
 			advisor = theologian
-			advisor = treasurer			
+			advisor = treasurer
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirteh_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA37"					#
 		add_adm_power = -50
@@ -2156,17 +2156,17 @@ country_event = {
 		add_country_modifier = {
 			name = blasphemous_advisor
 			duration = 3650
-		}	
+		}
 	}
 }
 country_event = {
 	id = plati_flavor_ckeu.38
-	
+
 	title = "plati_flavor_ckeu.EVTNAME38"						#jewish convert to christianity
 	desc = "plati_flavor_ckeu.EVTDESC38"
-	
+
 	picture = PLATIJEWISH
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirton_event_timer
@@ -2182,14 +2182,14 @@ country_event = {
 			has_owner_religion = yes
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirton_event_timer
 				duration = 7300
 				hidden = yes
@@ -2201,8 +2201,8 @@ country_event = {
 			}
 			save_event_target_as = plati_jew_christian_country
 		}
-		random_owned_province = { 
-			limit = { 
+		random_owned_province = {
+			limit = {
 				is_state = yes
 				is_capital = no
 				has_owner_religion = yes
@@ -2210,7 +2210,7 @@ country_event = {
 			save_event_target_as = plati_jew_converted_province
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA38"			#Not ideal
 		event_target:plati_jew_converted_province = {
@@ -2220,35 +2220,35 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.39
-	
+
 	title = "plati_flavor_ckeu.EVTNAME39"						#Build a new Yeshiva
 	desc = "plati_flavor_ckeu.EVTDESC39"
-	
+
 	picture = PLATIJEWISH
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirtwo_event_timer
 		}
 		religion_group = jewish_group
 	}
-	
+
 	mean_time_to_happen = {
 		months = 50
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirtwo_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
-		name = "plati_flavor_ckeu.EVTOPTA39"				#They shall recieve our endorsement
+		name = "plati_flavor_ckeu.EVTOPTA39"				#They shall receive our endorsement
 		add_years_of_income = -0.3
 		add_reform_progress_small_effect = yes
 		add_estate_loyalty = {
@@ -2266,17 +2266,17 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.40
-	
+
 	title = "plati_flavor_ckeu.EVTNAME40"						#RENAISSANCE INFLUENCE - CHRISTIANS CONVERT
 	desc = "plati_flavor_ckeu.EVTDESC40"
-	
+
 	picture = PLATIRENAISSANCE
-	
+
 	trigger = {
 		any_known_country = {
 			religion_group = pagan
 			capital_scope = {
-				continent = europe						#wont fire if paganism has fully lost its former influence in europe
+				continent = europe						#wont fire if paganism has fully lost its former influence in Europe
 			}
 		}
 		AND = {
@@ -2293,21 +2293,21 @@ country_event = {
 			has_country_modifier = plati_fire_once_pagan
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fire_once_pagan
 				duration = -1
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA40"				#lets just limit it to art and science
 		ai_chance = {
@@ -2402,12 +2402,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.41
-	
+
 	title = "plati_flavor_ckeu.EVTNAME41"						#
 	desc = "plati_flavor_ckeu.EVTDESC41"
-	
+
 	picture = PLATIRENAISSANCE
-	
+
 	trigger = {
 		AND = {
 			religion_group = pagan
@@ -2421,21 +2421,21 @@ country_event = {
 			has_country_modifier = plati_fire_once_pagan
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fire_once_pagan
 				duration = -1
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA41"				#curious
 		add_prestige = 10
@@ -2449,15 +2449,15 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.42
-	
+
 	title = "plati_flavor_ckeu.EVTNAME42"						#
 	desc = "plati_flavor_ckeu.EVTDESC42"
-	
+
 	picture = PLATIPRINTING
-	
+
 	fire_only_once = yes
 	major = yes
-	
+
 	trigger = {
 		current_age = age_of_reformation
 		has_institution = printing_press
@@ -2481,11 +2481,11 @@ country_event = {
 			religion = west_african_pagan_reformed
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA42"				#interesting
 		add_prestige = 10
@@ -2493,12 +2493,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.43
-	
+
 	title = "plati_flavor_ckeu.EVTNAME43"						#Diaspora
 	desc = "plati_flavor_ckeu.EVTDESC43"
-	
+
 	picture = PLATIZOROASTRIAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirfour_event_timer
@@ -2509,21 +2509,21 @@ country_event = {
 			NOT = { development = 40 }					#to keep it from growing stupidly high
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirfour_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA43"
 		random_list = {
@@ -2567,12 +2567,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.44
-	
+
 	title = "plati_flavor_ckeu.EVTNAME44"						#Shamanic practices
 	desc = "plati_flavor_ckeu.EVTDESC44"
-	
+
 	picture = PLATIZOROASTRIAN
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirfiv_event_timer
@@ -2583,31 +2583,31 @@ country_event = {
 			has_owner_religion = no
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirfiv_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA44"				#Purity is Peace
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_zoro_miss
 			duration = 3650
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB44"				#Peace is Purity
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_zoro_toler
 			duration = 3650
 		}
@@ -2615,12 +2615,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.45
-	
+
 	title = "plati_flavor_ckeu.EVTNAME45"						#pursuit of knowledge
 	desc = "plati_flavor_ckeu.EVTDESC45"
-	
+
 	picture = PLATIGNOSTIC
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirsix_event_timer
@@ -2629,24 +2629,24 @@ country_event = {
 		stability = 1
 		is_at_war = no
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirsix_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA45"				#curious
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_seeking_gnosis
 			duration = 3650
 		}
@@ -2654,12 +2654,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.46
-	
+
 	title = "plati_flavor_ckeu.EVTNAME46"						#denouncing the temporal
 	desc = "plati_flavor_ckeu.EVTDESC46"
-	
+
 	picture = PLATIGNOSTIC
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirsev_event_timer
@@ -2667,21 +2667,21 @@ country_event = {
 		religion_group = gnostic
 		crown_land_share = 40
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirsev_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA46"			#ok
 		scaled_estate_church_land_share_effect = yes
@@ -2695,12 +2695,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.47
-	
+
 	title = "plati_flavor_ckeu.EVTNAME47"						#returning to creator
 	desc = "plati_flavor_ckeu.EVTDESC47"
-	
+
 	picture = PLATIGNOSTIC
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thireig_event_timer
@@ -2708,24 +2708,24 @@ country_event = {
 		religion_group = gnostic
 		is_at_war = yes
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thireig_event_timer
 				duration = 7300
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA47"			#admirable
-		add_country_modifier = { 
+		add_country_modifier = {
 			name = plati_return_to_creator
 			duration = 3650
 		}
@@ -2737,12 +2737,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.48
-	
+
 	title = "plati_flavor_ckeu.EVTNAME48"						#
 	desc = "plati_flavor_ckeu.EVTDESC48"
-	
+
 	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thirnin_event_timer
@@ -2754,21 +2754,21 @@ country_event = {
 			religion = lollard
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thirnin_event_timer
 				duration = -1
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA48"			#yes, let us join the reformation
 		ai_chance = {
@@ -2790,12 +2790,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.49
-	
+
 	title = "plati_flavor_ckeu.EVTNAME49"						#
 	desc = "plati_flavor_ckeu.EVTDESC49"
-	
+
 	picture = PLATIYAZIDI
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_fourtin_event_timer
@@ -2805,14 +2805,14 @@ country_event = {
 			religion_group = muslim
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_fourtin_event_timer
 				duration = 7300
 				hidden = yes
@@ -2825,7 +2825,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA49"				#worrisome
 		event_target:plati_yazidi_muslim_neighbor = {
@@ -2843,12 +2843,12 @@ country_event = {
 }
 country_event = {
 	id = plati_flavor_ckeu.50
-	
+
 	title = "plati_flavor_ckeu.EVTNAME50"						#ruler believed to be reincarnation
 	desc = "plati_flavor_ckeu.EVTDESC50"
-	
+
 	picture = PLATIYAZIDI
-	
+
 	trigger = {
 		NOT = {
 			has_country_modifier = plati_thireig_event_timer
@@ -2861,38 +2861,38 @@ country_event = {
 			mil = 5
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 60
 	}
-	
+
 	immediate = {
 		hidden_effect = {
-			add_country_modifier = { 
+			add_country_modifier = {
 				name = plati_thireig_event_timer
 				duration = 11600							#something truly special ought to happen rarely
 				hidden = yes
 			}
 		}
 	}
-	
+
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA50"
-		add_ruler_modifier = { 
+		add_ruler_modifier = {
 			name = plati_ruler_yazidi_adm
 			duration = -1
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB50"
-		add_ruler_modifier = { 
+		add_ruler_modifier = {
 			name = plati_ruler_yazidi_dip
 			duration = -1
 		}
 	}
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTC50"
-		add_ruler_modifier = { 
+		add_ruler_modifier = {
 			name = plati_ruler_yazidi_mil
 			duration = -1
 		}
