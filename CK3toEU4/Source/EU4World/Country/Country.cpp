@@ -932,7 +932,7 @@ void EU4::Country::setAcceptedCultures()
 	substantialDev /= 3;
 	for (const auto& culture: cultureDevelopment)
 	{
-		if (culture.second >= substantialDev)
+		if (culture.second >= substantialDev && culture.first != details.primaryCulture)
 			details.acceptedCultures.insert(culture.first);
 	}
 }
