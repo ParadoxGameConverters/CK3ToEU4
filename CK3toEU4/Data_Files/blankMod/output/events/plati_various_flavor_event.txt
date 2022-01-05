@@ -2311,9 +2311,9 @@ country_event = {
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTA40"				#lets just limit it to art and science
 		ai_chance = {
-			factor = 90
+			factor = 98
 			modifier = {
-				factor = 0.25
+				factor = 0.7
 				is_excommunicated = yes
 			}
 		}
@@ -2322,16 +2322,16 @@ country_event = {
 	option = {
 		name = "plati_flavor_ckeu.EVTOPTB40"				#religionname revival has dawned!
 		ai_chance = {
-			factor = 10
+			factor = 2
 			modifier = {
-				factor = 2.5
+				factor = 1.5
 				OR = {
 					has_idea_group = humanist_ideas
 					has_idea_group = innovativeness_ideas
 				}
 			}
 			modifier = {
-				factor = 2.5
+				factor = 1.5
 				any_neighbor_country = {
 					religion_group = pagan
 				}
@@ -2392,7 +2392,7 @@ country_event = {
 			change_religion = hellenic_pagan_reformed
 		}
 		else = {
-			change_religion = animist
+			change_religion = animism
 		}
 		add_country_modifier = {
 			name = "plati_pagan_renaissance"
