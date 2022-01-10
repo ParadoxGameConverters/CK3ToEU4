@@ -1,5 +1,6 @@
 ﻿name = CK3ToEU4
 converterFolder = CK3ToEU4
+backendExePath = CK3ToEU4Converter
 displayName = CK3DISPLAYNAME
 sourceGame = CK3GAME
 targetGame = EU4GAME
