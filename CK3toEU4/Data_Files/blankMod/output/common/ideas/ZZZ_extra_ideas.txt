@@ -216,7 +216,7 @@ BUR_Ideas = {
 	}
 }
 
-GEN_ideas = {
+GEN_Ideas = {
 	trigger = {
 		tag = GEN
 	}
@@ -1071,12 +1071,6 @@ KAS_ideas = {
 LUX_ideas = {
 	trigger = {
 		tag = LUX
-	}
-}
-
-YOR_ideas = {
-	trigger = {
-		tag = YOR
 	}
 }
 
