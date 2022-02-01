@@ -400,6 +400,9 @@ baltic = {
 	}
 }
 byzantine = {
+	hellenistic = {
+		primary = BYZ
+	}
 	anatolian = {
 		primary = BYZ
 	}
