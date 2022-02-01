@@ -562,6 +562,8 @@ link = { eu4 = susquehannock ck3 = susquehannock tech = north_american gfx = nor
 link = { eu4 = cherokee ck3 = cherokee tech = north_american gfx = northamericagfx}
 
 # IMP:CK3
+## Hellenic
+link = { eu4 = hellenistic ck3 = hellenistic }
 ## Carthaginian
 link = { eu4 = carthaginian ck3 = carthaginian tech = western gfx = muslimgfx }
 link = { eu4 = ynnocho ck3 = ynnocho tech = muslim gfx = muslimgfx }
