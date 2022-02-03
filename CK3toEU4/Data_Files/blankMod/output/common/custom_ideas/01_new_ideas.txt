@@ -2,7 +2,7 @@
 # DEFAULT: base_cost = 0, level_cost = 0.4, max_level = 4
 
 new_idea_adm_modifiers = {
-	category = ADM	
+	category = ADM
 	custom_idea_years_of_nationalism = {
 		years_of_nationalism = -5
 		max_level = 2
@@ -37,11 +37,10 @@ new_idea_adm_modifiers = {
 }
 
 new_idea_mil_modifiers = {
-	category = MIL	
+	category = MIL
 	custom_idea_female_generals = {
 		may_recruit_female_generals = yes
 		max_level = 1
-		level_cost_1 = 5
 		chance = {
 			factor = 0.1
 			modifier = {
@@ -54,8 +53,8 @@ new_idea_mil_modifiers = {
 
 
 new_idea_dip_modifiers = {
-	category = DIP	
-	
+	category = DIP
+
 	custom_idea_global_sailors_modifier = {
 		global_sailors_modifier = 0.1
 		chance = {
@@ -112,4 +111,3 @@ new_idea_dip_modifiers = {
 	}
 }
 
-	

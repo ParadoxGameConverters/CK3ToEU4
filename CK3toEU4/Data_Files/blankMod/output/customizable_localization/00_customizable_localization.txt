@@ -3591,6 +3591,8 @@ defined_text = {
 					culture_group = iberian
 					culture_group = east_slavic
 					tag = LIT
+					tag = BYZ
+					tag = ROM
 					culture_group = turko_semitic
 					culture_group = maghrebi
 				}
@@ -3637,6 +3639,8 @@ defined_text = {
 				culture_group = iberian
 				culture_group = east_slavic
 				tag = LIT
+				tag = BYZ
+				tag = ROM
 				culture_group = turko_semitic
 				culture_group = maghrebi
 			}
@@ -3689,6 +3693,8 @@ defined_text = {
 					culture_group = iberian
 					culture_group = east_slavic
 					tag = LIT
+					tag = BYZ
+					tag = ROM
 					culture_group = turko_semitic
 					culture_group = maghrebi
 				}
@@ -3735,6 +3741,8 @@ defined_text = {
 				culture_group = iberian
 				culture_group = east_slavic
 				tag = LIT
+				tag = BYZ
+				tag = ROM
 				culture_group = turko_semitic
 				culture_group = maghrebi
 			}
@@ -4043,3 +4051,27 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = CountConversionsDone
+
+	text = {
+		localisation_key = conversion_variable
+		trigger = {
+			check_variable = {
+				which = num_converted_religion
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = conversion_variable_zero
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = num_converted_religion
+					value = 1
+				}
+			}
+		}
+	}
+}
