@@ -11,12 +11,15 @@ class Culture: commonItems::parser
 	Culture(std::istream& theStream, long long theID);
 
 	[[nodiscard]] auto getID() const { return ID; }
-	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] auto isCanonical() const { return canonical; }
+	[[nodiscard]] std::string getName() const;
 
   private:
 	void registerKeys();
 
 	long long ID = 0;
+	bool canonical = false;
+	std::string culture_template;
 	std::string name;
 };
 } // namespace CK3
