@@ -1,6 +1,8 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
+#include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
 #include "../Mappers/TraitScraper/TraitScraper.h"
@@ -21,8 +23,6 @@
 #include "Religions/Religions.h"
 #include "Titles/LandedTitles.h"
 #include "Titles/Titles.h"
-#include "../Mappers/LocalizationMapper/LocalizationMapper.h"
-#include "../Mappers/CultureMapper/CultureMapper.h"
 #include <Date.h>
 
 class Configuration;
