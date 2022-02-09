@@ -2,6 +2,7 @@
 #define CULTURE_MAPPER_H
 
 #include "../RegionMapper/RegionMapper.h"
+#include "../../CK3World/Cultures/Culture.h"
 #include "CultureMappingRule.h"
 #include "Parser.h"
 #include <optional>
@@ -12,10 +13,12 @@ namespace mappers
 class CultureMapper: commonItems::parser
 {
   public:
-	CultureMapper();
+	CultureMapper() = default;
 	explicit CultureMapper(std::istream& theStream);
+	void initializeMapper();
 
 	void loadRegionMapper(const std::shared_ptr<RegionMapper>& theRegionMapper);
+	void storeCultures(const std::map<long long, std::shared_ptr<CK3::Culture>>& incCultures);
 
 	[[nodiscard]] std::optional<std::string> cultureMatch(const std::string& ck3culture,
 		 const std::string& eu4religion,
@@ -35,10 +38,20 @@ class CultureMapper: commonItems::parser
 	[[nodiscard]] std::optional<std::string> getTechGroup(const std::string& incEU4Culture) const;
 	[[nodiscard]] std::optional<std::string> getGFX(const std::string& incEU4Culture) const;
 
+	[[nodiscard]] const auto& getTargetCultures() const { return targetCultures; }
+	[[nodiscard]] const auto& getSourceCultures() const { return sourceCultures; }
+
   private:
 	void registerKeys();
+	void buildCultureCaches();
 
 	std::vector<CultureMappingRule> cultureMapRules;
+
+	std::set<std::string> targetCultures;
+	std::set<std::string> sourceCultures;
+	std::map<long long, std::shared_ptr<CK3::Culture>> cultures;
+
+	std::set<std::string> eu4Overrides; // cultures from ck3 we don't map but return as is - either eu4 ready cultures or dynamic ones.
 };
 } // namespace mappers
 

@@ -137,6 +137,10 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
+	// Scraping localizations from CK3 so we may know proper names for our countries and people.
+	Log(LogLevel::Info) << "-> Reading Words";
+	localizationMapper.scrapeLocalizations(*theConfiguration, mods);
+	cultureMapper.initializeMapper();
 
 	Log(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
@@ -453,6 +457,9 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 
 void CK3::World::crosslinkDatabases()
 {
+	Log(LogLevel::Info) << "-> Concocting Cultures.";
+	cultures.concoctCultures(localizationMapper, cultureMapper);
+	cultureMapper.storeCultures(cultures.getCultures());
 	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
 	countyDetails.linkCultures(cultures);
 	Log(LogLevel::Info) << "-> Loading Cultures into Characters.";

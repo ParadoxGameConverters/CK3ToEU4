@@ -450,7 +450,8 @@ link = { eu4 = saurashtri ck3 = gujarati tech = indian gfx = indiangfx region = 
 link = { eu4 = gujarati ck3 = gujarati tech = indian gfx = indiangfx }
 link = { eu4 = kashmiri ck3 = kashmiri tech = indian gfx = indiangfx }
 link = { eu4 = panjabi ck3 = punjabi tech = indian gfx = indiangfx }
-link = { eu4 = malvi ck3 = rajput ck3 = malvi tech = indian gfx = indiangfx region = malwa_area region = khandesh_area }
+link = { eu4 = malvi ck3 = rajput tech = indian gfx = indiangfx region = malwa_area region = khandesh_area }
+link = { eu4 = malvi ck3 = malvi tech = indian gfx = indiangfx }
 link = { eu4 = rajput ck3 = rajput tech = indian gfx = indiangfx }
 link = { eu4 = sindhi ck3 = sindhi tech = indian gfx = indiangfx }
 link = { eu4 = marathi ck3 = marathi tech = indian gfx = indiangfx }
