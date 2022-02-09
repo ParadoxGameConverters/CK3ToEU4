@@ -1,8 +1,8 @@
 #ifndef CULTURE_MAPPER_H
 #define CULTURE_MAPPER_H
 
-#include "../RegionMapper/RegionMapper.h"
 #include "../../CK3World/Cultures/Culture.h"
+#include "../RegionMapper/RegionMapper.h"
 #include "CultureMappingRule.h"
 #include "Parser.h"
 #include <optional>

@@ -1,8 +1,8 @@
 #include "Culture.h"
+#include "../../Mappers/CultureMapper/CultureMapper.h"
 #include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
-#include "../../Mappers/CultureMapper/CultureMapper.h"
 
 CK3::Culture::Culture(std::istream& theStream, long long theID): ID(theID)
 {
@@ -36,7 +36,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 {
 	/* This function is responsible for determining what a culture is and where it's going. Base/vanilla cultures are known to us but
 	 * hybrids and divergences most certainly are not. We can try to normalize some of them like Swiss (hybrid) or Austrian (divergence) into
-	 * eu4 cultures (sidestepping cultural mapping altogether), and if that fails we can generate dynamic cultures and file them in culture 
+	 * eu4 cultures (sidestepping cultural mapping altogether), and if that fails we can generate dynamic cultures and file them in culture
 	 * groups according to their heritages. In this function we do exactly all of the above.
 	 */
 
@@ -58,7 +58,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 	 * 1. we allow for overrides using "ck3 = culture" mappings
 	 * 2. not all of them have eu4 definitions which we'll have to generate.
 	 * If a culture is not in "eu4 = " target block then 2) applies and we need to know this.
-	*/
+	 */
 
 	// Can we reverse map it via localization into some common base like "austrian"?
 	const auto& match = localizationMapper.reverseLookup(name);

@@ -1,8 +1,8 @@
 #include "CultureMapper.h"
-#include <ranges>
 #include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include <ranges>
 
 mappers::CultureMapper::CultureMapper(std::istream& theStream)
 {
@@ -31,6 +31,7 @@ void mappers::CultureMapper::storeCultures(const std::map<long long, std::shared
 		else if (culture->isDynamic())
 			eu4Overrides.insert(culture->getName());
 	}
+	cultures = incCultures;
 }
 
 
@@ -102,17 +103,51 @@ std::optional<std::string> mappers::CultureMapper::cultureNonRegionalNonReligiou
 
 std::optional<std::string> mappers::CultureMapper::getTechGroup(const std::string& incEU4Culture) const
 {
+	auto checkCulture = incEU4Culture;
+	if (eu4Overrides.contains(incEU4Culture))
+	{
+		// if this is dynamic (not eu4ready) then see if we can grab a nonregional nonreligious mapping and ping the results of that.
+		for (const auto& culture: cultures | std::views::values)
+		{
+			// Log(LogLevel::Debug) << "> vs: " << culture->getName() << " | " << culture->isDynamic() << " | " << culture->getNameList().empty();
+
+			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameList().empty())
+			{
+				const auto& origCulture = *culture->getNameList().begin();
+				const auto& match = cultureNonRegionalNonReligiousMatch(origCulture, "", 0, "");
+				if (match)
+					checkCulture = *match;
+			}
+		}
+	}
+
 	for (const auto& mapping: cultureMapRules)
-		if (mapping.getTechGroup(incEU4Culture))
-			return mapping.getTechGroup(incEU4Culture);
+		if (mapping.getTechGroup(checkCulture))
+			return mapping.getTechGroup(checkCulture);
 	return std::nullopt;
 }
 
 std::optional<std::string> mappers::CultureMapper::getGFX(const std::string& incEU4Culture) const
 {
+	auto checkCulture = incEU4Culture;
+	if (eu4Overrides.contains(incEU4Culture))
+	{
+		// if this is dynamic (not eu4ready) then see if we can grab a nonregional nonreligious mapping and ping the results of that.
+		for (const auto& culture: cultures | std::views::values)
+		{
+			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameList().empty())
+			{
+				const auto& origCulture = *culture->getNameList().begin();
+				const auto& match = cultureNonRegionalNonReligiousMatch(origCulture, "", 0, "");
+				if (match)
+					checkCulture = *match;
+			}
+		}
+	}
+
 	for (const auto& mapping: cultureMapRules)
-		if (mapping.getGFX(incEU4Culture))
-			return mapping.getGFX(incEU4Culture);
+		if (mapping.getGFX(checkCulture))
+			return mapping.getGFX(checkCulture);
 	return std::nullopt;
 }
 

@@ -21,8 +21,8 @@ class Culture: commonItems::parser
 	[[nodiscard]] auto isEU4Ready() const { return eu4Ready; }
 	[[nodiscard]] auto isDynamic() const { return dynamic; }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
-	[[nodiscard]] const auto& getBaseName() const { return baseName; }
 	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getNameList() const { return nameList; }
 
 	void concoctCultureName(const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::CultureMapper& cultureMapper,
@@ -33,11 +33,10 @@ class Culture: commonItems::parser
 
 	long long ID = 0;
 	bool eu4Ready = false; // this culture has eu4 match and needs zero processing
-	bool dynamic = false; // this culture is dynamic and will need generation of cultural data
+	bool dynamic = false;  // this culture is dynamic and will need generation of cultural data
 
 	std::optional<std::string> culture_template; // this has data only for base ck3 cultures, like czech or german
 	std::optional<std::string> localizedName;		// this can be anything - user input or localized name in a particular language game is running.
-	std::optional<std::string> baseName;			// if we manage to reverse-map a loc to base we can have "austrian" or "venetian".
 	std::string heritage;								// all cultures should have this.
 	std::set<std::string> nameList;					// We use these to generate dynamic culture code names, in lack of a better solution.
 

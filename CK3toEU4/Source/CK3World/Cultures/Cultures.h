@@ -1,8 +1,8 @@
 #ifndef CK3_CULTURES_H
 #define CK3_CULTURES_H
-#include "Parser.h"
-#include "../../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../../Mappers/CultureMapper/CultureMapper.h"
+#include "../../Mappers/LocalizationMapper/LocalizationMapper.h"
+#include "Parser.h"
 
 namespace CK3
 {
