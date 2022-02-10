@@ -3,6 +3,8 @@
 #include "../CK3toEU4/Source/Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 #include "gtest/gtest.h"
 #include <gmock/gmock-matchers.h>
+
+#include "../../../CK3toEU4/Source/CK3World/Cultures/Culture.h"
 using testing::ElementsAre;
 
 TEST(Mappers_CultureDefinitionMapperTests, cultureGroupsCanBeLoaded)
@@ -40,7 +42,7 @@ TEST(Mappers_CultureDefinitionMapperTests, groupMismatchReturnsNullptr)
 	EXPECT_EQ(nullptr, groupC);
 }
 
-TEST(Mappers_CultureDefinitionMapperTests, cultureGroupsCanBeOutput)
+TEST(Mappers_CultureDefinitionMapperTests, dynamicCultureGroupsCanBeOutput)
 {
 	std::stringstream input;
 	input << "someculturegroup = {\n";
@@ -52,17 +54,20 @@ TEST(Mappers_CultureDefinitionMapperTests, cultureGroupsCanBeOutput)
 	input << "}\n";
 	mappers::CultureDefinitionsMapper groups(input);
 
+	// before output, need to assign a ck3 culture to backend and mark it dynamic
+	const auto& someCulture = groups.getCulture("someculture");
+	auto ck3Culture = std::make_shared<CK3::Culture>();
+	ck3Culture->setDynamic();
+	someCulture->setSourceCulture(ck3Culture);
+
+
 	std::stringstream output;
 	output << "someculturegroup = {\n";
 	output << "\tsomeculture = {\n";
 	output << "\t\tmale_names = { \"Bob\" \"Jon\" }\n";
-	output << "\t\t\n";
 	output << "\t\tfemale_names = { \"Bobby\" \"Johnny\" }\n";
-	output << "\t\t\n";
 	output << "\t\tdynasty_names = { \"Bobby2\" \"Johnny2\" }\n";
-	output << "\t\t\n";
 	output << "\t}\n";
-	output << "\t\n";
 	output << "}\n\n";
 
 	std::stringstream actual;

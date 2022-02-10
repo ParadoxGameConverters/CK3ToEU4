@@ -22,8 +22,8 @@ TEST(CK3World_CulturesTests, UnbundledCulturesCanBeLoaded)
 	const auto& c2 = cultures.getCultures().find(15);
 
 	ASSERT_EQ(2, cultures.getCultures().size());
-	ASSERT_EQ("akan", c1->second->getName());
-	ASSERT_EQ("kru", c2->second->getName());
+	ASSERT_EQ("akan", c1->second->getTemplate());
+	ASSERT_EQ("kru", c2->second->getTemplate());
 }
 
 TEST(CK3World_CulturesTests, BundledCulturesCanBeLoaded)
@@ -39,6 +39,6 @@ TEST(CK3World_CulturesTests, BundledCulturesCanBeLoaded)
 	const auto& c2 = cultures.getCultures().find(15);
 
 	ASSERT_EQ(2, cultures.getCultures().size());
-	ASSERT_EQ("akan", c1->second->getName());
-	ASSERT_EQ("kru", c2->second->getName());
+	ASSERT_EQ("akan", c1->second->getTemplate());
+	ASSERT_EQ("kru", c2->second->getTemplate());
 }

@@ -45,7 +45,7 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	std::stringstream input;
 	input << "13={culture_template=\"akan\"}\n";
 	input << "15={culture_template=\"kru\"}\n";
-	const CK3::Cultures cultures(input);
+	CK3::Cultures cultures(input);
 
 	std::stringstream input2;
 	input2 << "1={culture = 15}\n";
@@ -57,8 +57,8 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
 
-	ASSERT_EQ("kru", c1->second->getCulture()->second->getName());
-	ASSERT_EQ("akan", c2->second->getCulture()->second->getName());
+	ASSERT_EQ("kru", *c1->second->getCulture()->second->getTemplate());
+	ASSERT_EQ("akan", *c2->second->getCulture()->second->getTemplate());
 }
 
 TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)

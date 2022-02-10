@@ -25,5 +25,5 @@ TEST(CK3World_CultureTests, culturePrimitivesCanBeLoaded)
 
 	const CK3::Culture culture(input, 42);
 
-	ASSERT_EQ("akan", culture.getName());
+	ASSERT_EQ("akan", culture.getTemplate());
 }
