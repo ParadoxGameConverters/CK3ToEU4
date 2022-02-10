@@ -23,6 +23,7 @@ class Culture: commonItems::parser
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getNameLists() const { return nameLists; }
+	[[nodiscard]] const auto& getHeritage() const { return heritage; }
 
 	void concoctCultureName(const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::CultureMapper& cultureMapper,

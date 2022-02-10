@@ -140,6 +140,8 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
@@ -225,6 +227,8 @@
     <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMapperTests.cpp" />
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMapperTests.cpp" />
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp" />

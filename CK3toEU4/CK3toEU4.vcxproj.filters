@@ -127,6 +127,9 @@
     <Filter Include="Mappers\CultureDefinitionsMapper">
       <UniqueIdentifier>{dc35a5ce-bef8-4f0e-bccc-54151036acbe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\HeritageMapper">
+      <UniqueIdentifier>{a4085544-e53f-4edd-9faf-e610347f66e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -447,6 +450,12 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Output\outCultureDefinitions.h">
       <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapper.h">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapping.h">
+      <Filter>Mappers\HeritageMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -769,6 +778,12 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outCultureDefinitions.cpp">
       <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapper.cpp">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapping.cpp">
+      <Filter>Mappers\HeritageMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

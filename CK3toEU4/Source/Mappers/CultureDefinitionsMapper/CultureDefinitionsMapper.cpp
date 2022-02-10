@@ -39,10 +39,13 @@ void mappers::CultureDefinitionsMapper::registerKeys()
 		{
 			for (const auto& [cultureName, culture]: newGroup->getCultures())
 				cultureGroupsMap[cultureGroupName]->mergeCulture(cultureName, culture);
+			cultureGroupsMap[cultureGroupName]->addMaleNames(newGroup->getMaleNames());
+			cultureGroupsMap[cultureGroupName]->addFemaleNames(newGroup->getFemaleNames());
+			cultureGroupsMap[cultureGroupName]->addDynastyNames(newGroup->getDynastyNames());
 		}
 		else
 		{
-			cultureGroupsMap.insert(std::make_pair(cultureGroupName, newGroup));
+			cultureGroupsMap.emplace(cultureGroupName, newGroup);
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -66,33 +69,70 @@ void mappers::CultureDefinitionsMapper::buildDefinitions(const CultureMapper& cu
 		if (culture->isDynamic() && !culture->isEU4Ready())
 		{
 			auto newDefinition = std::make_shared<CultureDefinition>();
+			newDefinition->setSourceCulture(culture);
 			for (const auto& nameList: culture->getNameLists())
 			{
 				// these are name lists from ck3. do they match cultures? I sure hope so.
-				const auto& match = cultureMapper.cultureNonRegionalNonReligiousMatch(nameList, "", 0, "");
-				if (match)
+				const auto& eu4CultureNameMatch = cultureMapper.cultureNonRegionalNonReligiousMatch(nameList, "", 0, "");
+				if (eu4CultureNameMatch)
 				{
 					// We now have an EU4 culture code we want to pick names from.
-					const auto& eu4Culture = getCulture(*match);
+					const auto& eu4Culture = getCulture(*eu4CultureNameMatch);
 					if (eu4Culture)
 					{
-						// we have actual culture, copy the names.
-						newDefinition->addMaleNames(eu4Culture->getMaleNames());
-						newDefinition->addFemaleNames(eu4Culture->getFemaleNames());
-						newDefinition->addDynastyNames(eu4Culture->getDynastyNames());
-						// Locate culture grup.
-						const auto& culgroup = getCultureGroup("new");
-						culgroup->mergeCulture(culture->getName(), newDefinition);
+						// Are there any names?
+						if (!eu4Culture->getMaleNames().empty())
+						{
+							// we have actual culture with names, copy the names.
+							newDefinition->addMaleNames(eu4Culture->getMaleNames());
+							newDefinition->addFemaleNames(eu4Culture->getFemaleNames());
+							newDefinition->addDynastyNames(eu4Culture->getDynastyNames());
+						}
+						else
+						{
+							// fallback - try and copy culture group names.
+							auto eu4CultureGroup = getCultureGroupForCultureName(*eu4CultureNameMatch);
+							if (eu4CultureGroup)
+							{
+								// If this is empty as well, it's beyond our control.
+								newDefinition->addMaleNames(eu4CultureGroup->getMaleNames());
+								newDefinition->addFemaleNames(eu4CultureGroup->getFemaleNames());
+								newDefinition->addDynastyNames(eu4CultureGroup->getDynastyNames());
+							}
+						}
 					}
 					else
 					{
-						Log(LogLevel::Warning) << "Cannot find EU4 culture definitions for culture " << *match;
+						Log(LogLevel::Warning) << "Cannot find EU4 culture definitions for culture " << *eu4CultureNameMatch;
 					}
 				}
 				else
 				{
 					Log(LogLevel::Warning) << "Cannot find EU4 culture match for namelist " << nameList;
 				}
+			}
+
+			// Locate culture grup.
+			if (!culture->getHeritage().empty())
+			{
+				const auto& cultureGroupMatch = herritageMapper.getCultureGroupForHeritage(culture->getHeritage());
+				if (cultureGroupMatch)
+				{
+					const auto& culgroup = getCultureGroup(*cultureGroupMatch);
+					culgroup->mergeCulture(culture->getName(), newDefinition);
+				}
+				else
+				{
+					Log(LogLevel::Warning) << "No culture group for culture " << culture->getName() << ", shoving into lost.";
+					const auto& culgroup = getCultureGroup("lost_cultures_group");
+					culgroup->mergeCulture(culture->getName(), newDefinition);
+				}
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "No heritage for culture " << culture->getName() << "?! Shoving into lost.";
+				const auto& culgroup = getCultureGroup("lost_cultures_group");
+				culgroup->mergeCulture(culture->getName(), newDefinition);
 			}
 		}
 	}
@@ -119,4 +159,12 @@ std::shared_ptr<mappers::CultureGroupDefinition> mappers::CultureDefinitionsMapp
 		cultureGroupsMap.emplace(cultureGroupName, newDefinition);
 		return cultureGroupsMap.at(cultureGroupName);
 	}
+}
+
+std::shared_ptr<mappers::CultureGroupDefinition> mappers::CultureDefinitionsMapper::getCultureGroupForCultureName(const std::string& cultureName) const
+{
+	for (const auto& cultureGroup: cultureGroupsMap | std::views::values)
+		if (cultureGroup->getCultures().contains(cultureName))
+			return cultureGroup;
+	return nullptr;
 }

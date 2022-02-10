@@ -164,6 +164,8 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
+    <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapper.h" />
+    <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapping.h" />
     <ClInclude Include="Source\Mappers\IAmHreMapper\IAmHreMapper.h" />
     <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.h" />
     <ClInclude Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.h" />
@@ -274,6 +276,8 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
+    <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
+    <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapping.cpp" />
     <ClCompile Include="Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
     <ClCompile Include="Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
