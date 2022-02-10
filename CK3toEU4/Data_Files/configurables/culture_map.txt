@@ -82,7 +82,7 @@ link = { eu4 = spoletan ck3 = lombard tech = western gfx = westerngfx region = c
 link = { eu4 = beneventine ck3 = lombard tech = western gfx = westerngfx region = apulia_area }
 link = { eu4 = salernian ck3 = lombard tech = western gfx = westerngfx region = naples_area region = calabria_area region = western_sicily_area region = sicily_area }
 link = { eu4 = veronese ck3 = lombard tech = western gfx = westerngfx region = venetia_area region = tirol_area region = carinthia_area }
-link = { eu4 = old_lombard ck3 = lombard tech = western gfx = westerngfx } # Fallback
+link = { eu4 = old_lombard ck3 = langobard ck3 = lombard tech = western gfx = westerngfx } # Fallback
 
 # West Germanic
 
@@ -156,20 +156,20 @@ link = { eu4 = hyperborean ck3 = roman tech = western gfx = inuitgfx region = sc
 link = { eu4 = roman ck3 = roman tech = western gfx = westerngfx } #Fallback
 
 # Italian: the split
-link = { eu4 = ligurian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = liguria_area }
-link = { eu4 = lombard ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = lombardy_area region = po_valley_area region = switzerland_area }
-link = { eu4 = maltese ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx province = 126 }
-link = { eu4 = umbrian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = central_italy_area region = lazio_area }
-link = { eu4 = neapolitan ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = naples_area region = apulia_area region = calabria_area }
-link = { eu4 = piedmontese ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = piedmont_area region = savoy_dauphine_area region = provence_area region = romandie_area }
-link = { eu4 = romagnan ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = emilia_romagna_area }
-link = { eu4 = sardinian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = corsica_sardinia_area }
-link = { eu4 = sicilian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = sicily_area region = western_sicily_area }
-link = { eu4 = tuscan ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = tuscany_area }
-link = { eu4 = venetian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = venetia_area region = carinthia_area region = tirol_area }
-link = { eu4 = dalmatian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = east_adriatic_coast_area region = croatia_area region = albania_area }
-link = { eu4 = sicilian ck3 = langobard ck3 = sicilian tech = western gfx = westerngfx } #Fallback
-link = { eu4 = italian ck3 = langobard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx } #Fallback
+link = { eu4 = ligurian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = liguria_area }
+link = { eu4 = lombard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = lombardy_area region = po_valley_area region = switzerland_area }
+link = { eu4 = maltese ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx province = 126 }
+link = { eu4 = umbrian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = central_italy_area region = lazio_area }
+link = { eu4 = neapolitan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = naples_area region = apulia_area region = calabria_area }
+link = { eu4 = piedmontese ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = piedmont_area region = savoy_dauphine_area region = provence_area region = romandie_area }
+link = { eu4 = romagnan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = emilia_romagna_area }
+link = { eu4 = sardinian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = corsica_sardinia_area }
+link = { eu4 = sicilian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = sicily_area region = western_sicily_area }
+link = { eu4 = tuscan ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = tuscany_area }
+link = { eu4 = venetian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = venetia_area region = carinthia_area region = tirol_area }
+link = { eu4 = dalmatian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = east_adriatic_coast_area region = croatia_area region = albania_area }
+link = { eu4 = sicilian ck3 = sicilian tech = western gfx = westerngfx } #Fallback
+link = { eu4 = italian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx } #Fallback
 
 # Old Italian
 link = { eu4 = sabellian ck3 = samnite ck3 = oscan ck3 = messapic tech = western gfx = westerngfx }

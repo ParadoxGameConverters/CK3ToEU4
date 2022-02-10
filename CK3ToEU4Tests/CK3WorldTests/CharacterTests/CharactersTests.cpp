@@ -45,7 +45,7 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	std::stringstream input;
 	input << "13={culture_template=\"akan\"}\n";
 	input << "15={culture_template=\"kru\"}\n";
-	CK3::Cultures cultures(input);
+	const CK3::Cultures cultures(input);
 
 	std::stringstream input2;
 	input2 << "1={culture = 15}\n";
