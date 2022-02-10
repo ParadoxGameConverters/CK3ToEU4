@@ -124,6 +124,9 @@
     <Filter Include="Mappers\AfricanPassesMapper">
       <UniqueIdentifier>{2ae84b2b-09b6-433a-a995-a799f51725ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\CultureDefinitionsMapper">
+      <UniqueIdentifier>{dc35a5ce-bef8-4f0e-bccc-54151036acbe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -432,6 +435,18 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.h">
       <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outCultureDefinitions.h">
+      <Filter>EU4World\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -742,6 +757,18 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
       <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outCultureDefinitions.cpp">
+      <Filter>EU4World\Output</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

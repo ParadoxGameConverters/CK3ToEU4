@@ -22,7 +22,7 @@ class Culture: commonItems::parser
 	[[nodiscard]] auto isDynamic() const { return dynamic; }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
 	[[nodiscard]] const auto& getName() const { return name; }
-	[[nodiscard]] const auto& getNameList() const { return nameList; }
+	[[nodiscard]] const auto& getNameLists() const { return nameLists; }
 
 	void concoctCultureName(const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::CultureMapper& cultureMapper,
@@ -38,7 +38,7 @@ class Culture: commonItems::parser
 	std::optional<std::string> culture_template; // this has data only for base ck3 cultures, like czech or german
 	std::optional<std::string> localizedName;		// this can be anything - user input or localized name in a particular language game is running.
 	std::string heritage;								// all cultures should have this.
-	std::set<std::string> nameList;					// We use these to generate dynamic culture code names, in lack of a better solution.
+	std::set<std::string> nameLists;					// We use these to generate dynamic culture code names, in lack of a better solution.
 
 	std::string name; // calculated value from all of the above - can be either *eu4* culture, ck3 vanilla, or anything in between.
 };

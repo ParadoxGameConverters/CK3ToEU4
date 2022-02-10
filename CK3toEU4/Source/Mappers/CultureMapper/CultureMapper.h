@@ -1,12 +1,16 @@
 #ifndef CULTURE_MAPPER_H
 #define CULTURE_MAPPER_H
 
-#include "../../CK3World/Cultures/Culture.h"
 #include "../RegionMapper/RegionMapper.h"
 #include "CultureMappingRule.h"
 #include "Parser.h"
 #include <optional>
 #include <string>
+
+namespace CK3
+{
+class Culture;
+}
 
 namespace mappers
 {
@@ -40,6 +44,7 @@ class CultureMapper: commonItems::parser
 
 	[[nodiscard]] const auto& getTargetCultures() const { return targetCultures; }
 	[[nodiscard]] const auto& getSourceCultures() const { return sourceCultures; }
+	[[nodiscard]] const auto& getCK3Cultures() const { return cultures; }
 
   private:
 	void registerKeys();

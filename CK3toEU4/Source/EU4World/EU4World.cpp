@@ -42,6 +42,10 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Scrape Primary Tags for nationalities
 	Log(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
+	Log(LogLevel::Info) << "-> Slurping EU4 Cultures";
+	cultureDefinitionsMapper.initForEU4(theConfiguration);
+	Log(LogLevel::Info) << "-> Building Dynamic EU4 Culture Definitions";
+	cultureDefinitionsMapper.buildDefinitions(cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
 	// This is our region mapper for eu4 regions, areas and superRegions. It's a pointer because we need

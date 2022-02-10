@@ -1,4 +1,5 @@
 #include "CultureMapper.h"
+#include "../../CK3World/Cultures/Culture.h"
 #include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -111,9 +112,9 @@ std::optional<std::string> mappers::CultureMapper::getTechGroup(const std::strin
 		{
 			// Log(LogLevel::Debug) << "> vs: " << culture->getName() << " | " << culture->isDynamic() << " | " << culture->getNameList().empty();
 
-			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameList().empty())
+			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameLists().empty())
 			{
-				const auto& origCulture = *culture->getNameList().begin();
+				const auto& origCulture = *culture->getNameLists().begin();
 				const auto& match = cultureNonRegionalNonReligiousMatch(origCulture, "", 0, "");
 				if (match)
 					checkCulture = *match;
@@ -135,9 +136,9 @@ std::optional<std::string> mappers::CultureMapper::getGFX(const std::string& inc
 		// if this is dynamic (not eu4ready) then see if we can grab a nonregional nonreligious mapping and ping the results of that.
 		for (const auto& culture: cultures | std::views::values)
 		{
-			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameList().empty())
+			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameLists().empty())
 			{
-				const auto& origCulture = *culture->getNameList().begin();
+				const auto& origCulture = *culture->getNameLists().begin();
 				const auto& match = cultureNonRegionalNonReligiousMatch(origCulture, "", 0, "");
 				if (match)
 					checkCulture = *match;

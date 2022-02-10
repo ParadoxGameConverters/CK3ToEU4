@@ -25,7 +25,7 @@ void CK3::Culture::registerKeys()
 	registerKeyword("name_list", [this](std::istream& theStream) {
 		auto temp = commonItems::getString(theStream);
 		temp = temp.substr(10, temp.size()); // drop "name_list_", leave "polish"
-		nameList.insert(temp);
+		nameLists.insert(temp);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -82,7 +82,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 
 	// Now everything else, we need to Concoct the culture name, finally.
 	name = "dynamic-";
-	for (const auto& entry: nameList)
+	for (const auto& entry: nameLists)
 		name += entry + "-";
 	name += "culture";
 
