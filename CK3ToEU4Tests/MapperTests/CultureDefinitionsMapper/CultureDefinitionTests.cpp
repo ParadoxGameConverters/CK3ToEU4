@@ -1,3 +1,4 @@
+#include "../CK3toEU4/Source/CK3World/Cultures/Culture.h"
 #include "../CK3toEU4/Source/Mappers/CultureDefinitionsMapper/CultureDefiniton.h"
 #include "gtest/gtest.h"
 #include <gmock/gmock-matchers.h>
@@ -73,13 +74,15 @@ TEST(Mappers_CultureDefinitionTests, cultureCanBeOutput)
 	input << "dynasty_names = { Bobby2 Johnny2 }\n";
 	mappers::CultureDefinition culture(input);
 
+	// before output, need to assign a ck3 culture to backend and mark it dynamic
+	auto ck3Culture = std::make_shared<CK3::Culture>();
+	ck3Culture->setDynamic();
+	culture.setSourceCulture(ck3Culture);
+
 	std::stringstream output;
 	output << "\t\tmale_names = { \"Bob\" \"Jon\" }\n";
-	output << "\t\t\n";
 	output << "\t\tfemale_names = { \"Bobby\" \"Johnny\" }\n";
-	output << "\t\t\n";
 	output << "\t\tdynasty_names = { \"Bobby2\" \"Johnny2\" }\n";
-	output << "\t\t\n";
 
 	std::stringstream actual;
 	actual << culture;

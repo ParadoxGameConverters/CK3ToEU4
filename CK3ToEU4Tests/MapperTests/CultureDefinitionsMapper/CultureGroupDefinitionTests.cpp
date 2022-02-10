@@ -1,3 +1,4 @@
+#include "../CK3toEU4/Source/CK3World/Cultures/Culture.h"
 #include "../CK3toEU4/Source/Mappers/CultureDefinitionsMapper/CultureDefiniton.h"
 #include "../CK3toEU4/Source/Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 #include "gtest/gtest.h"
@@ -106,16 +107,18 @@ TEST(Mappers_CultureGroupTests, cultureGroupCanBeOutput)
 	input << "}\n";
 	mappers::CultureGroupDefinition group("someculturegroup", input);
 
+	// before output, need to assign a ck3 culture to backend and mark it dynamic
+	const auto& someCulture = group.getCulture("someculture");
+	auto ck3Culture = std::make_shared<CK3::Culture>();
+	ck3Culture->setDynamic();
+	someCulture->setSourceCulture(ck3Culture);
+
 	std::stringstream output;
 	output << "\tsomeculture = {\n";
 	output << "\t\tmale_names = { \"Bob\" \"Jon\" }\n";
-	output << "\t\t\n";
 	output << "\t\tfemale_names = { \"Bobby\" \"Johnny\" }\n";
-	output << "\t\t\n";
 	output << "\t\tdynasty_names = { \"Bobby2\" \"Johnny2\" }\n";
-	output << "\t\t\n";
 	output << "\t}\n";
-	output << "\t\n";
 
 	std::stringstream actual;
 	actual << group;
