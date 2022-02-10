@@ -61,12 +61,11 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 	 */
 
 	// Can we reverse map it via localization into some common base like "austrian"?
-	const auto& match = localizationMapper.reverseLookup(*localizedName);
+	const auto& match = localizationMapper.reverseLookupCultureName(*localizedName);
 	if (match)
 	{
-		Log(LogLevel::Debug) << "reverse lookup match for " << *localizedName << " : " << *match;
 		auto strippedName = *match;
-		strippedName = strippedName.substr(0, name.size() - 5);
+		strippedName = strippedName.substr(0, strippedName.size() - 5);
 		if (cultureMapper.getTargetCultures().contains(strippedName))
 		{
 			// this is a full-flegded eu4 culture with predefined definitions.
@@ -77,7 +76,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 
 		if (cultureMapper.getSourceCultures().contains(strippedName))
 		{
-			// this is a culture we've mapped to something else. Proceed normally as if it were vanilla culture.
+			// this is a culture we've mapped to something else. Proceed normally as if it were vanilla ck3 culture.
 			name = strippedName;
 			return;
 		}

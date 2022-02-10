@@ -154,13 +154,16 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 	return keyItr->second;
 }
 
-std::optional<std::string> mappers::LocalizationMapper::reverseLookup(const std::string& localization) const
+std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName(const std::string& localization) const
 {
+	// This looks for specifically *_name keys cultures use.
+
 	for (const auto& [locName, locBlock]: localizations)
 	{
 		if (locBlock.english == localization || locBlock.french == localization || locBlock.german == localization || locBlock.korean == localization ||
 			 locBlock.russian == localization || locBlock.simp_chinese == localization || locBlock.spanish == localization)
-			return locName;
+			if (locName.find("_name") != std::string::npos)
+				return locName;
 	}
 	return std::nullopt;
 }
