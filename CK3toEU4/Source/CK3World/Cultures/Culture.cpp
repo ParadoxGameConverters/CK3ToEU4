@@ -24,8 +24,11 @@ void CK3::Culture::registerKeys()
 	});
 	registerKeyword("name_list", [this](std::istream& theStream) {
 		auto temp = commonItems::getString(theStream);
-		temp = temp.substr(10, temp.size()); // drop "name_list_", leave "polish"
-		nameLists.insert(temp);
+		if (temp.size() > 10)
+		{
+			temp = temp.substr(10, temp.size()); // drop "name_list_", leave "polish"
+			nameLists.insert(temp);
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

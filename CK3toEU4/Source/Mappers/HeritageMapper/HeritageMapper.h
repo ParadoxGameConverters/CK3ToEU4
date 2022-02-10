@@ -7,8 +7,10 @@ namespace mappers
 class HeritageMapper: commonItems::parser
 {
   public:
-	HeritageMapper();
+	HeritageMapper() = default;
 	explicit HeritageMapper(std::istream& theStream);
+
+	void initialize();
 
 	[[nodiscard]] std::optional<std::string> getCultureGroupForHeritage(const std::string& heritage) const;
 

@@ -17,6 +17,8 @@ class CultureDefinitionsMapper: commonItems::parser
 
 	void initForEU4(const Configuration& theConfiguration);
 	void buildDefinitions(const CultureMapper& cultureMapper);
+	void initializeHeritages() { herritageMapper.initialize(); }
+	void loadHeritages(const HeritageMapper& heritages) { herritageMapper = heritages; }
 
 	[[nodiscard]] std::shared_ptr<CultureGroupDefinition> getGroupForCulture(const std::string& cultureName) const;
 	[[nodiscard]] std::shared_ptr<CultureDefinition> getCulture(const std::string& cultureName) const;
@@ -29,7 +31,7 @@ class CultureDefinitionsMapper: commonItems::parser
   private:
 	void registerKeys();
 
-	mappers::HeritageMapper herritageMapper;
+	HeritageMapper herritageMapper;
 
 	std::map<std::string, std::shared_ptr<CultureGroupDefinition>> cultureGroupsMap;
 };

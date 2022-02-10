@@ -4,7 +4,7 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 
-mappers::HeritageMapper::HeritageMapper()
+void mappers::HeritageMapper::initialize()
 {
 	Log(LogLevel::Info) << "-> Parsing Heritages";
 	registerKeys();

@@ -44,6 +44,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
 	Log(LogLevel::Info) << "-> Slurping EU4 Cultures";
 	cultureDefinitionsMapper.initForEU4(theConfiguration);
+	cultureDefinitionsMapper.initializeHeritages();
 	Log(LogLevel::Info) << "-> Building Dynamic EU4 Culture Definitions";
 	cultureDefinitionsMapper.buildDefinitions(cultureMapper);
 	Log(LogLevel::Progress) << "51 %";

@@ -4,7 +4,6 @@
 #include <gmock/gmock-matchers.h>
 using testing::ElementsAre;
 
-
 TEST(Mappers_CultureDefinitionTests, primitivesDefaultToDefaults)
 {
 	std::stringstream input;
