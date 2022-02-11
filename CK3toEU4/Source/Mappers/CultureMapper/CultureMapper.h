@@ -19,10 +19,10 @@ class CultureMapper: commonItems::parser
   public:
 	CultureMapper() = default;
 	explicit CultureMapper(std::istream& theStream);
-	void initializeMapper();
+	void loadCulturesFromDisk();
 
 	void loadRegionMapper(const std::shared_ptr<RegionMapper>& theRegionMapper);
-	void storeCultures(const std::map<long long, std::shared_ptr<CK3::Culture>>& incCultures);
+	void storeCultures(const std::set<std::shared_ptr<CK3::Culture>>& incCultures);
 
 	[[nodiscard]] std::optional<std::string> cultureMatch(const std::string& ck3culture,
 		 const std::string& eu4religion,
@@ -54,7 +54,7 @@ class CultureMapper: commonItems::parser
 
 	std::set<std::string> targetCultures;
 	std::set<std::string> sourceCultures;
-	std::map<long long, std::shared_ptr<CK3::Culture>> cultures;
+	std::set<std::shared_ptr<CK3::Culture>> cultures;
 
 	std::set<std::string> eu4Overrides; // cultures from ck3 we don't map but return as is - either eu4 ready cultures or dynamic ones.
 };

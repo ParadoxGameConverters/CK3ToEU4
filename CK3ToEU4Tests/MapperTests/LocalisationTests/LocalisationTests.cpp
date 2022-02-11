@@ -56,7 +56,7 @@ TEST(Mappers_LocalisationTests, reverseLookupCultureNameWorks)
 	EXPECT_EQ("culture_name", locs.reverseLookupCultureName("The Name"));
 }
 
-TEST(Mappers_LocalisationTests, reverseLookupCultureNameDesNotWorkForNonCultures)
+TEST(Mappers_LocalisationTests, reverseLookupCultureNameDoesNotWorkForNonCultures)
 {
 	mappers::LocalizationMapper locs;
 	std::stringstream input;

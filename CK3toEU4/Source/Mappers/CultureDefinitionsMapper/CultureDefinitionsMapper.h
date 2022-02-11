@@ -2,6 +2,12 @@
 #define CULTURE_DEFINITIONS_MAPPER_H
 #include "../HeritageMapper/HeritageMapper.h"
 #include "Parser.h"
+
+namespace CK3
+{
+class Culture;
+}
+
 class Configuration;
 
 namespace mappers
@@ -15,9 +21,9 @@ class CultureDefinitionsMapper: commonItems::parser
 	CultureDefinitionsMapper() = default;
 	explicit CultureDefinitionsMapper(std::istream& theStream);
 
-	void initForEU4(const Configuration& theConfiguration);
+	void loadDefinitionsFromEU4Installation(const Configuration& theConfiguration);
 	void buildDefinitions(const CultureMapper& cultureMapper);
-	void initializeHeritages() { herritageMapper.initialize(); }
+	void loadHeritagesFromDisk() { herritageMapper.loadHeritagesFromDisk(); }
 	void loadHeritages(const HeritageMapper& heritages) { herritageMapper = heritages; }
 
 	[[nodiscard]] std::shared_ptr<CultureGroupDefinition> getGroupForCulture(const std::string& cultureName) const;
@@ -30,6 +36,10 @@ class CultureDefinitionsMapper: commonItems::parser
 
   private:
 	void registerKeys();
+	void assignNamesToCulture(const std::shared_ptr<CultureDefinition>& sourceCulture,
+		 const std::shared_ptr<CultureDefinition>& targetDefinition,
+		 const std::string& sourceCultureName) const;
+	void assignCultureToCultureGroup(const std::shared_ptr<CK3::Culture>& sourceCulture, const std::shared_ptr<CultureDefinition>& targetDefinition);
 
 	HeritageMapper herritageMapper;
 

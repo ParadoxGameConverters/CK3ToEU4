@@ -10,7 +10,7 @@ class HeritageMapper: commonItems::parser
 	HeritageMapper() = default;
 	explicit HeritageMapper(std::istream& theStream);
 
-	void initialize();
+	void loadHeritagesFromDisk();
 
 	[[nodiscard]] std::optional<std::string> getCultureGroupForHeritage(const std::string& heritage) const;
 

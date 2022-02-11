@@ -1,5 +1,6 @@
 #include "outCultureDefinitions.h"
 #include "../../CK3World/Cultures/Culture.h"
+#include "Log.h"
 #include <ostream>
 
 std::ostream& mappers::operator<<(std::ostream& output, const CultureDefinition& cultureDefinition)
@@ -56,15 +57,9 @@ std::ostream& mappers::operator<<(std::ostream& output, const CultureDefinitions
 
 	for (const auto& [cultureGroupName, cultureGroup]: cultureDefinitionsMapper.cultureGroupsMap)
 	{
-		bool interesting = false;
-		for (const auto& culture: cultureGroup->getCultures())
-		{
-			if (culture.second->getSourceCulture() && culture.second->getSourceCulture()->isDynamic())
-			{
-				interesting = true;
-				break;
-			}
-		}
+		bool interesting = std::any_of(cultureGroup->getCultures().begin(), cultureGroup->getCultures().end(), [](const auto& theCulture) {
+			return theCulture.second->getSourceCulture() && theCulture.second->getSourceCulture()->isDynamic();
+		});
 
 		if (interesting)
 		{

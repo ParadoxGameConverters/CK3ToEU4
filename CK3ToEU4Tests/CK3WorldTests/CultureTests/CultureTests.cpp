@@ -84,7 +84,7 @@ TEST(CK3World_CultureTests, concoctingBlanknessGeneratesNoname)
 	EXPECT_FALSE(culture.isEU4Ready());
 }
 
-TEST(CK3World_CultureTests, concoctingViaLocalizationIntoEU4REady)
+TEST(CK3World_CultureTests, concoctingViaLocalizationIntoEU4Ready)
 {
 	// MEAT 1: If a culture is reverse localized into something we have mapped already *into* - then keep it!
 
@@ -142,9 +142,9 @@ TEST(CK3World_CultureTests, concoctingViaLocalizationIntoMappable)
 	EXPECT_FALSE(culture.isEU4Ready());
 }
 
-TEST(CK3World_CultureTests, concoctingDefaults)
+TEST(CK3World_CultureTests, concoctingDefaultsToCK3NamesWithoutMappings)
 {
-	// MEAT 3: For anything unrecognizable, generate a name.
+	// MEAT 3: For anything unrecognizable, generate a name. with failed Mappings, use CK3 names.
 
 	const mappers::LocalizationMapper locs;
 	const mappers::CultureMapper culs;
@@ -160,6 +160,34 @@ TEST(CK3World_CultureTests, concoctingDefaults)
 	culture.concoctCultureName(locs, culs, cultureCounter);
 
 	EXPECT_EQ("dynamic-akan-blahakan-culture-num1", culture.getName());
+	EXPECT_EQ("Austrian", culture.getLocalizedName());
+	// dynamic and not eu4ready.
+	EXPECT_TRUE(culture.isDynamic());
+	EXPECT_FALSE(culture.isEU4Ready());
+}
+
+TEST(CK3World_CultureTests, concoctingUsesEU4NamesWithMappings)
+{
+	// MEAT 3: For anything unrecognizable, generate a name. With proper mappings, use EU4 names.
+
+	const mappers::LocalizationMapper locs;
+
+	std::stringstream culInput;
+	culInput << "link = { eu4 = test1 ck3 = akan }";
+	culInput << "link = { eu4 = test2 ck3 = blahakan }";
+	const mappers::CultureMapper culs(culInput);
+
+	std::map<std::string, int> cultureCounter;
+
+	std::stringstream input;
+	input << "name = \"Austrian\"";
+	input << "name_list = name_list_akan\n";
+	input << "name_list = name_list_blahakan\n";
+	CK3::Culture culture(input, 42);
+
+	culture.concoctCultureName(locs, culs, cultureCounter);
+
+	EXPECT_EQ("dynamic-test1-test2-culture-num1", culture.getName());
 	EXPECT_EQ("Austrian", culture.getLocalizedName());
 	// dynamic and not eu4ready.
 	EXPECT_TRUE(culture.isDynamic());

@@ -6,6 +6,7 @@
 #include "../CK3toEU4/Source/Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 #include "gtest/gtest.h"
 #include <gmock/gmock-matchers.h>
+#include <ranges>
 using testing::ElementsAre;
 
 TEST(Mappers_CultureDefinitionMapperTests, cultureGroupsCanBeLoaded)
@@ -77,7 +78,7 @@ TEST(Mappers_CultureDefinitionMapperTests, dynamicCultureGroupsCanBeOutput)
 	EXPECT_EQ(output.str(), actual.str());
 }
 
-TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureNameCanMeRetrieved)
+TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureNameCanBeRetrieved)
 {
 	std::stringstream input;
 	input << "groupA = { cultureA = {} }\n";
@@ -101,7 +102,7 @@ TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureNameMismatchRet
 	EXPECT_EQ(nullptr, target);
 }
 
-TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureGroupNameCanMeRetrieved)
+TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureGroupNameCanBeRetrieved)
 {
 	std::stringstream input;
 	input << "groupA = { cultureA = {} }\n";
@@ -125,7 +126,7 @@ TEST(Mappers_CultureDefinitionMapperTests, CultureGroupForCultureGroupNameMismat
 	EXPECT_EQ("cultureC", target->getName());
 }
 
-TEST(Mappers_CultureDefinitionMapperTests, CultureForCultureNameCanMeRetrieved)
+TEST(Mappers_CultureDefinitionMapperTests, CultureForCultureNameCanBeRetrieved)
 {
 	std::stringstream input;
 	input << "groupA = { cultureA = { male_names = { bob } }\n";
@@ -169,11 +170,14 @@ TEST(Mappers_CultureDefinitionMapperTests, BuildingDefsForDynamicCulturesWorks)
 	CK3::Cultures cultures(input);
 	cultures.concoctCultures(locs, culs);
 
-	culs.storeCultures(cultures.getCultures());
+	std::set<std::shared_ptr<CK3::Culture>> cultureSet;
+	for (const auto& culture: cultures.getCultures() | std::views::values)
+		cultureSet.insert(culture);
+	culs.storeCultures(cultureSet);
 
 	// We just generated the name from the culture defs through concoction.
 	const auto ck3culture = cultures.getCultures().at(13);
-	EXPECT_EQ("dynamic-akan-kru-culture-num1", ck3culture->getName());
+	EXPECT_EQ("dynamic-bakan-bakru-culture-num1", ck3culture->getName());
 	EXPECT_TRUE(ck3culture->isDynamic());
 
 	// we now need an operational heritage mapper that will shove the finished culture def into groupB.
@@ -193,12 +197,12 @@ TEST(Mappers_CultureDefinitionMapperTests, BuildingDefsForDynamicCulturesWorks)
 	mapper.buildDefinitions(culs);
 
 	auto groupB = mapper.getCultureGroup("groupB");
-	EXPECT_TRUE(groupB->containsCulture("dynamic-akan-kru-culture-num1"));
+	EXPECT_TRUE(groupB->containsCulture("dynamic-bakan-bakru-culture-num1"));
 
 	// and print it out - it will print out *only* dynamic cultures, ie, not akan or kru.
 	std::stringstream output;
 	output << "groupB = {\n";
-	output << "\tdynamic-akan-kru-culture-num1 = {\n";
+	output << "\tdynamic-bakan-bakru-culture-num1 = {\n";
 	output << "\t\tmale_names = { \"bob\" \"jon\" }\n";
 	output << "\t}\n";
 	output << "}\n\n";

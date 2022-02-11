@@ -13,7 +13,7 @@ mappers::CultureMapper::CultureMapper(std::istream& theStream)
 	buildCultureCaches();
 }
 
-void mappers::CultureMapper::initializeMapper()
+void mappers::CultureMapper::loadCulturesFromDisk()
 {
 	Log(LogLevel::Info) << "-> Parsing culture mappings.";
 	registerKeys();
@@ -23,9 +23,9 @@ void mappers::CultureMapper::initializeMapper()
 	Log(LogLevel::Info) << "<> Loaded " << cultureMapRules.size() << " cultural links.";
 }
 
-void mappers::CultureMapper::storeCultures(const std::map<long long, std::shared_ptr<CK3::Culture>>& incCultures)
+void mappers::CultureMapper::storeCultures(const std::set<std::shared_ptr<CK3::Culture>>& incCultures)
 {
-	for (const auto culture: incCultures | std::views::values)
+	for (const auto culture: incCultures)
 	{
 		if (culture->isEU4Ready())
 			eu4Overrides.insert(culture->getName());
@@ -108,7 +108,7 @@ std::optional<std::string> mappers::CultureMapper::getTechGroup(const std::strin
 	if (eu4Overrides.contains(incEU4Culture))
 	{
 		// if this is dynamic (not eu4ready) then see if we can grab a nonregional nonreligious mapping and ping the results of that.
-		for (const auto& culture: cultures | std::views::values)
+		for (const auto& culture: cultures)
 		{
 			// Log(LogLevel::Debug) << "> vs: " << culture->getName() << " | " << culture->isDynamic() << " | " << culture->getNameList().empty();
 
@@ -134,7 +134,7 @@ std::optional<std::string> mappers::CultureMapper::getGFX(const std::string& inc
 	if (eu4Overrides.contains(incEU4Culture))
 	{
 		// if this is dynamic (not eu4ready) then see if we can grab a nonregional nonreligious mapping and ping the results of that.
-		for (const auto& culture: cultures | std::views::values)
+		for (const auto& culture: cultures)
 		{
 			if (culture->getName() == incEU4Culture && culture->isDynamic() && !culture->getNameLists().empty())
 			{

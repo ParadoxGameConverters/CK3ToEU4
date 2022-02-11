@@ -40,7 +40,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 	/* This function is responsible for determining what a culture is and where it's going. Base/vanilla cultures are known to us but
 	 * hybrids and divergences most certainly are not. We can try to normalize some of them like Swiss (hybrid) or Austrian (divergence) into
 	 * eu4 cultures (sidestepping cultural mapping altogether), and if that fails we can generate dynamic cultures and file them in culture
-	 * groups according to their heritages. In this function we do exactly all of the above.
+	 * groups according to their heritages. In this function we do the first half.
 	 */
 
 	// Is this a base ck3 culture?
@@ -88,7 +88,19 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 	// Now everything else, we need to Concoct the culture name, finally.
 	name = "dynamic-";
 	for (const auto& entry: nameLists)
-		name += entry + "-";
+	{
+		// Enery name component must be mapped to some base eu4 culture, so that eu4tovic2 can decompose it.
+		const auto& cultureMatch = cultureMapper.cultureNonRegionalNonReligiousMatch(entry, "", 0, "");
+		if (cultureMatch)
+		{
+			name += *cultureMatch + "-";
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "Mapping " << entry << " to an EU4 culture failed! Check mappings!";
+			name += entry + "-";
+		}
+	}
 	name += "culture";
 
 	// did we see this culture before, elsewhere?

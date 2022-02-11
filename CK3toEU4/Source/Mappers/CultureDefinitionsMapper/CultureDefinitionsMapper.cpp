@@ -10,7 +10,7 @@
 #include "ParserHelpers.h"
 #include <ranges>
 
-void mappers::CultureDefinitionsMapper::initForEU4(const Configuration& theConfiguration)
+void mappers::CultureDefinitionsMapper::loadDefinitionsFromEU4Installation(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
@@ -64,76 +64,84 @@ void mappers::CultureDefinitionsMapper::buildDefinitions(const CultureMapper& cu
 	// We're generating new culture definitions for dynamic cultures from existing culture defs.
 	// We'll be filing them into culture groups according to heritages.
 
-	for (const auto& culture: cultureMapper.getCK3Cultures() | std::views::values)
+	for (const auto& culture: cultureMapper.getCK3Cultures())
 	{
-		if (culture->isDynamic() && !culture->isEU4Ready())
-		{
-			auto newDefinition = std::make_shared<CultureDefinition>();
-			newDefinition->setSourceCulture(culture);
-			for (const auto& nameList: culture->getNameLists())
-			{
-				// these are name lists from ck3. do they match cultures? I sure hope so.
-				const auto& eu4CultureNameMatch = cultureMapper.cultureNonRegionalNonReligiousMatch(nameList, "", 0, "");
-				if (eu4CultureNameMatch)
-				{
-					// We now have an EU4 culture code we want to pick names from.
-					const auto& eu4Culture = getCulture(*eu4CultureNameMatch);
-					if (eu4Culture)
-					{
-						// Are there any names?
-						if (!eu4Culture->getMaleNames().empty())
-						{
-							// we have actual culture with names, copy the names.
-							newDefinition->addMaleNames(eu4Culture->getMaleNames());
-							newDefinition->addFemaleNames(eu4Culture->getFemaleNames());
-							newDefinition->addDynastyNames(eu4Culture->getDynastyNames());
-						}
-						else
-						{
-							// fallback - try and copy culture group names.
-							auto eu4CultureGroup = getCultureGroupForCultureName(*eu4CultureNameMatch);
-							if (eu4CultureGroup)
-							{
-								// If this is empty as well, it's beyond our control.
-								newDefinition->addMaleNames(eu4CultureGroup->getMaleNames());
-								newDefinition->addFemaleNames(eu4CultureGroup->getFemaleNames());
-								newDefinition->addDynastyNames(eu4CultureGroup->getDynastyNames());
-							}
-						}
-					}
-					else
-					{
-						Log(LogLevel::Warning) << "Cannot find EU4 culture definitions for culture " << *eu4CultureNameMatch;
-					}
-				}
-				else
-				{
-					Log(LogLevel::Warning) << "Cannot find EU4 culture match for namelist " << nameList;
-				}
-			}
+		if (!culture->isDynamic() || culture->isEU4Ready())
+			continue;
 
-			// Locate culture grup.
-			if (!culture->getHeritage().empty())
+		auto newDefinition = std::make_shared<CultureDefinition>();
+		newDefinition->setSourceCulture(culture);
+		for (const auto& nameList: culture->getNameLists())
+		{
+			// these are name lists from ck3. do they match cultures? I sure hope so.
+			const auto& eu4CultureNameMatch = cultureMapper.cultureNonRegionalNonReligiousMatch(nameList, "", 0, "");
+			if (eu4CultureNameMatch)
 			{
-				const auto& cultureGroupMatch = herritageMapper.getCultureGroupForHeritage(culture->getHeritage());
-				if (cultureGroupMatch)
-				{
-					const auto& culgroup = getCultureGroup(*cultureGroupMatch);
-					culgroup->mergeCulture(culture->getName(), newDefinition);
-				}
+				// We now have an EU4 culture code we want to pick names from.
+				const auto& eu4Culture = getCulture(*eu4CultureNameMatch);
+				if (eu4Culture)
+					assignNamesToCulture(eu4Culture, newDefinition, *eu4CultureNameMatch);
 				else
-				{
-					Log(LogLevel::Warning) << "No culture group for culture " << culture->getName() << ", shoving into lost.";
-					const auto& culgroup = getCultureGroup("lost_cultures_group");
-					culgroup->mergeCulture(culture->getName(), newDefinition);
-				}
+					Log(LogLevel::Warning) << "Cannot find EU4 culture definitions for culture " << *eu4CultureNameMatch;
 			}
 			else
 			{
-				Log(LogLevel::Warning) << "No heritage for culture " << culture->getName() << "?! Shoving into lost.";
-				const auto& culgroup = getCultureGroup("lost_cultures_group");
-				culgroup->mergeCulture(culture->getName(), newDefinition);
+				Log(LogLevel::Warning) << "Cannot find EU4 culture match for namelist " << nameList;
 			}
+		}
+		assignCultureToCultureGroup(culture, newDefinition);
+	}
+}
+
+void mappers::CultureDefinitionsMapper::assignCultureToCultureGroup(const std::shared_ptr<CK3::Culture>& sourceCulture,
+	 const std::shared_ptr<CultureDefinition>& targetDefinition)
+{
+	// Locate culture grup.
+	if (!sourceCulture->getHeritage().empty())
+	{
+		const auto& cultureGroupMatch = herritageMapper.getCultureGroupForHeritage(sourceCulture->getHeritage());
+		if (cultureGroupMatch)
+		{
+			const auto& culgroup = getCultureGroup(*cultureGroupMatch);
+			culgroup->mergeCulture(sourceCulture->getName(), targetDefinition);
+		}
+		else
+		{
+			Log(LogLevel::Warning) << "No culture group for culture " << sourceCulture->getName() << ", shoving into lost.";
+			const auto& culgroup = getCultureGroup("lost_cultures_group");
+			culgroup->mergeCulture(sourceCulture->getName(), targetDefinition);
+		}
+	}
+	else
+	{
+		Log(LogLevel::Warning) << "No heritage for culture " << sourceCulture->getName() << "?! Shoving into lost.";
+		const auto& culgroup = getCultureGroup("lost_cultures_group");
+		culgroup->mergeCulture(sourceCulture->getName(), targetDefinition);
+	}
+}
+
+void mappers::CultureDefinitionsMapper::assignNamesToCulture(const std::shared_ptr<CultureDefinition>& sourceCulture,
+	 const std::shared_ptr<CultureDefinition>& targetDefinition,
+	 const std::string& sourceCultureName) const
+{
+	// Are there any names?
+	if (!sourceCulture->getMaleNames().empty())
+	{
+		// we have actual culture with names, copy the names.
+		targetDefinition->addMaleNames(sourceCulture->getMaleNames());
+		targetDefinition->addFemaleNames(sourceCulture->getFemaleNames());
+		targetDefinition->addDynastyNames(sourceCulture->getDynastyNames());
+	}
+	else
+	{
+		// fallback - try and copy culture group names.
+		auto eu4CultureGroup = getCultureGroupForCultureName(sourceCultureName);
+		if (eu4CultureGroup)
+		{
+			// If this is empty as well, it's beyond our control.
+			targetDefinition->addMaleNames(eu4CultureGroup->getMaleNames());
+			targetDefinition->addFemaleNames(eu4CultureGroup->getFemaleNames());
+			targetDefinition->addDynastyNames(eu4CultureGroup->getDynastyNames());
 		}
 	}
 }
