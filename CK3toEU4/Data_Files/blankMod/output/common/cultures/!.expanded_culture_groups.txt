@@ -31,6 +31,8 @@ germanic = {
 		}
 	}
 	
+	jerusalemer = { primary = KOJ }
+	kurlander = { primary = KUR }
 	lothringian = { primary = LOT }
 	new_english = { primary = GER }
 }
@@ -404,8 +406,11 @@ british = {
 			Æthelburh Seaxburh Wihtburh
 		}
 	}
+	arvorigeg = { primary = FRA }
+	dramor = { primary = KOJ }
 }
 gaelic = {
+	coigriche = { primary = KOJ }
 	pictish = {
 		primary = SCO
 		dynasty_names = { "map Artcois" "map Bargoit" "map Buthud" "map Enfret" "map Eru" "map Gyrom" "map Lutrin" "map Mailcon" "map Munait" "map Taixali" "map Uleo" "map Wthoil" Circin Deoardivois Diuberr Erilich "Gaed Brechach" Gurthinmoch Ini Loc Morbet Necton Olgudach Smertae Tina Uecla Uip Vepogenus Wurgest }
@@ -416,8 +421,10 @@ latin = {
 		primary = ITA
 		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
 	}
+	oltremare = { primary = KOJ }	
 }
 iberian	= {
+	ultramar = { primary = KOJ }
 }
 french = {
 	outremer = {
@@ -441,10 +448,12 @@ french = {
 	
 	angevin = { primary = ALE }
 	auvergnat = { primary = AUV }
-	arpitan = { primary = DAU }	
+	arpitan = { primary = DAU }
+	gallo = { primary = ENG }
 	lengadocian = { primary = TOU }
 	poitevin = { primary = ORL }
 	provancale = { primary = PRO }
+	siculo_norman = { primary = SIC }
 }
 finno_ugric = {
 	mordvin = {
@@ -599,6 +608,7 @@ west_slavic = {
 	}
 }
 carpathian = {
+	kulfoldi = { primary = KOJ }
 	szekely = { primary = TRA }
 }
 east_slavic = {
@@ -885,6 +895,8 @@ altaic = {
 		primary = LIO
 		dynasty_names = { Genden Amar Tserendorj Tomorbaatar Damdinbazar Bodoo Sukhbaatar Jamyan Choibalsan Chagdarjav }
 	}
+	turko_afghan = { primary = AFG }
+	turko_iranian = { primary = TRS }
 }
 central_american = {
 }
@@ -941,6 +953,10 @@ korean_g = {
 japanese_g = {
 }
 tibetan_group = {
+	gyalrong = {
+		primary = XIA
+		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
+	}
 	tangut = {
 		primary = TAU
 		dynasty_names = { Dzasa Wangyal Shatra Lungshar Rinpoche Chöphel Shakabpa Tashi }
@@ -967,6 +983,7 @@ pacific = {
 aboriginal_australian = {
 }
 eastern_aryan = {
+	hindustani_proper = { primary = HIN }
 	maithili = { primary = TRT } #Tirhuta script is what Maithili is written in
 }
 hindusthani = {
