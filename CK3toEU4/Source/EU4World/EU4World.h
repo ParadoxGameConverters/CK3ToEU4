@@ -2,6 +2,7 @@
 #define EU4_WORLD_H
 #include "../CK3World/World.h"
 #include "../Mappers/AfricanPassesMapper/AfricanPassesMapper.h"
+#include "../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
@@ -88,9 +89,10 @@ class World
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
-	void outputReligions(const Configuration& theConfiguration,
+	void outputReligions(const std::string& outputName,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;
+	void outputCultures(const std::string& outputName) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const;
 
 	std::map<int, std::shared_ptr<Province>> provinces;
@@ -112,6 +114,7 @@ class World
 	mappers::IslamOverrideMapper islamOverrideMapper;
 	mappers::LocDegraderMapper locDegrader;
 	mappers::AfricanPassesMapper africanPassesMapper;
+	mappers::CultureDefinitionsMapper cultureDefinitionsMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;

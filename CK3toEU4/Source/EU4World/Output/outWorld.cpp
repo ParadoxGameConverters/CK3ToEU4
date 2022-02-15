@@ -7,6 +7,11 @@
 #include "OSCompatibilityLayer.h"
 #include <filesystem>
 #include <fstream>
+#include <ranges>
+
+#include "../../CK3World/Cultures/Culture.h"
+#include "../../Mappers/CultureDefinitionsMapper/CultureDefiniton.h"
+#include "../../Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 namespace fs = std::filesystem;
 
 void EU4::World::output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
@@ -66,7 +71,10 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	Log(LogLevel::Progress) << "88 %";
 
 	Log(LogLevel::Info) << "<- Writing Religions";
-	outputReligions(theConfiguration, religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
+	outputReligions(theConfiguration.getOutputName(), religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
+
+	Log(LogLevel::Info) << "<- Writing Cultures";
+	outputCultures(theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "89 %";
 
 	if (invasion)
@@ -145,13 +153,19 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 	interFaceDump.close();
 }
 
+void EU4::World::outputCultures(const std::string& outputName) const
+{
+	std::ofstream cultureFile("output/" + outputName + "/common/cultures/!.ZZ-dynamic_cultures.txt");
+	cultureFile << cultureDefinitionsMapper;
+	cultureFile.close();
+}
 
-void EU4::World::outputReligions(const Configuration& theConfiguration,
+void EU4::World::outputReligions(const std::string& outputName,
 	 const std::vector<GeneratedReligion>& generatedReligions,
 	 const std::vector<std::string>& reformedReligions) const
 {
 	// Reformed Religion global flag output
-	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_replaced_on_startup.txt");
+	std::ofstream globalFlagFile("output/" + outputName + "/common/on_actions/ZZZ_replaced_on_startup.txt");
 	// Basegame stuff first
 	globalFlagFile << "on_startup = {\n\t"
 						<< "emperor = {\n\t\t"
@@ -190,17 +204,15 @@ void EU4::World::outputReligions(const Configuration& theConfiguration,
 	for (const auto& religion: generatedReligions)
 	{
 		// Main Religion File
-		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionFile("output/" + outputName + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
 		// Religious Rebels
-		std::ofstream religionRebelFile(
-			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionRebelFile("output/" + outputName + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
 		// Religion Sounds
-		std::ofstream religionSoundFile(
-			 "output/" + theConfiguration.getOutputName() + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
+		std::ofstream religionSoundFile("output/" + outputName + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
 		religion.outputSounds(religionSoundFile);
 		religionSoundFile.close();
 	}
@@ -417,6 +429,19 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 		spanish << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.spanish) << "\"\n";
 		german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
 	}
+
+	// localizations for dynamic cultures - don't have locblocks.
+
+	for (const auto& cultureGroup: cultureDefinitionsMapper.getCultureGroupsMap() | std::views::values)
+		for (const auto& [cultureName, culture]: cultureGroup->getCultures())
+			if (culture->getSourceCulture() && culture->getSourceCulture()->isDynamic() && !culture->getSourceCulture()->isEU4Ready() &&
+				 culture->getSourceCulture()->getLocalizedName())
+			{
+				english << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				french << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				spanish << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				german << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+			}
 
 	english.close();
 	french.close();
