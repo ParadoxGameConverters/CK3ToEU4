@@ -14,6 +14,7 @@ israelite = {
 		}
 	}
 	knaanic = { primary = ISR }
+	kuzarim = { primary = ISR }
 	magogic = { primary = ISR }
 	yevanic = { primary = ISR }
 	mizrahi = {
@@ -53,6 +54,7 @@ israelite = {
 		}
 	}
 	kaifeng = { primary = ISR }
+	beta_israeli = { primary = ISR }
 	#Names are shared throughout the entire group
 		male_names = {
 			Abraham Albert Benjamin Daniel David Franz Gustav Heinrich Hermann Isaak Ignatz Jakob Jeremias Josef Leonhard Michael Mose Salomon Saul Shmuel
