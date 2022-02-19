@@ -971,11 +971,11 @@ special_doctrine_is_jewish_faith  = {
 	}
 }
 
-is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just Taoist ones
+special_doctrine_is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just Taoist ones
 	
 }
 
-is_gnostic_faith = {
+special_doctrine_is_gnostic_faith = {
 	not_unique_modifiers = {
 		misguided_heretic = yes	
 		allowed_conversion = {
