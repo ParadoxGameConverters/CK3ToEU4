@@ -5,8 +5,8 @@
 # 	allowed_conversion = {
 #		sensible religions
 #	}
-#   	country = {
-#   		country modifier(s)
+#   country = {
+#   	country modifier(s)
 #	}
 #	province = {
 #		province modifier(s)
@@ -883,7 +883,113 @@ special_doctrine_is_islamic_faith = {
 }
 
 special_doctrine_is_jewish_faith  = {
+	unique_modifiers = {
+		uses_judaism_power = yes
+		aspects_name = JEWISH_ASPECTS
+			
+		aspects = {
+			judaism_rosh_hashanah_aspect
+			judaism_simchat_torah_aspect
+			judaism_sukkot_aspect
+			judaism_communities_aspect
+			jewish_abrahamic_aspect
+			judaism_diplomatic_rabbi_aspect
+			judaism_yom_kippur_aspect
+			judaism_remember_passover_aspect
+			judaism_purim_teachings_aspect
+		}
+		celebrate = {
+			cost = 200
+			potential = {
+			}
+			allow = {
+				custom_trigger_tooltip = {
+					tooltip = JUDAISM_HAS_ADM_ASPECT
+					OR = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+						has_church_aspect = judaism_simchat_torah_aspect
+						has_church_aspect = judaism_sukkot_aspect
+					}
+				}
+				if = {
+					limit = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+					}
+					NOT = { stability = 3 }
+				}
+			}
+			effect = {
+				if = {
+					limit = {
+						has_church_aspect = judaism_rosh_hashanah_aspect
+					}
+					add_stability = 1
+				}
+				if = {
+					limit = {
+						has_church_aspect = judaism_simchat_torah_aspect
+					}
+					change_government_reform_progress = 20
+					add_legitimacy_equivalent = {
+						amount = 5
+						republican_tradition = 5
+					}
+					if = {
+						limit = {
+							has_heir = yes
+						}
+						add_heir_claim = 5
+					}
+				}
+				if = {
+					limit = {
+						has_church_aspect = judaism_sukkot_aspect
+					}
+					add_years_of_income = 0.3
+					add_inflation = -1
+				}
+			}
+			ai_will_do = {
+				factor = 1
+				modifier = {
+					factor = 0
+					OR = {
+						AND = {
+							NOT = { has_church_aspect = judaism_communities_aspect }
+							NOT = { has_church_aspect = jewish_abrahamic_aspect }
+							NOT = { has_church_aspect = judaism_diplomatic_rabbi_aspect }
+						}
+						AND = {
+							NOT = { has_church_aspect = judaism_yom_kippur_aspect }
+							NOT = { has_church_aspect = judaism_remember_passover_aspect }
+							NOT = { has_church_aspect = judaism_purim_teachings_aspect }
+						}
+					}
+				}
+			}
+		}
+	}
 }
+
+is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just Taoist ones
+	
+}
+
+is_gnostic_faith = {
+	not_unique_modifiers = {
+		misguided_heretic = yes	
+		allowed_conversion = {
+			bogomilist
+			mandeaism
+			manichean
+			valentinianism
+			sethianism
+			priscillianism
+			cainitism
+		}
+	}
+}
+
 ##Special Tolerance
 special_doctrine_ecumenical_christian  = {
 	not_unique_modifiers = {
@@ -907,6 +1013,10 @@ unreformed_faith_doctrine = {
 }
 ##Divine Destiny
 divine_destiny_doctrine = {
+	not_unique_modifiers = {
+		allow_normal_conversion = yes
+		force_conversion_gives_global_holy_war_released_modifier = yes
+	}
 }
 ##Full Tolerance, Game Rule Only
 special_doctrine_full_tolerance  = {
