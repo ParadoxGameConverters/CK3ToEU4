@@ -7,7 +7,8 @@ namespace EU4
 {
 struct GeneratedReligion
 {
-	void outputRebels(std::ostream& output) const;
+	void outputGUI(std::ostream& output) const;
+	void outputRebels(std::ostream& output) const;	
 	void outputSounds(std::ostream& output) const;
 
 	std::string country;

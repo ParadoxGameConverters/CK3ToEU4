@@ -1,5 +1,109 @@
 #include "GeneratedReligion.h"
 
+void EU4::GeneratedReligion::outputGUI(std::ostream& output) const
+{
+	output << "guiTypes = {";
+	output << "\n\t################################################################################################";
+	output << "\n\t"
+			<< "################# Church aspect item (for selection) For " << name;
+	output << "\n\t"
+			<< "windowType = {";
+	output << "\n\t\t"
+			<< "name = \"countryreligionview_aspectitem_" << name << "\"";
+	output << "\n\t\t"
+			<< "backGround =\"\"";
+	output << "\n\t\t"
+			<< "position = { x=10 y=-20 }";
+	output << "\n\t\t"
+			<< "size = { x=50 y=46 }";
+	output << "\n\t\t"
+			<< "moveable = 0";
+	output << "\n\t\t"
+			<< "dontRender =\"\"";
+	output << "\n\t\t"
+			<< "horizontalBorder =\"\"";
+	output << "\n\t\t"
+			<< "Orientation = \"UPPER_LEFT\"";
+	output << "\n";
+	output << "\n\t\t"
+			<< "iconType = {";
+	output << "\n\t\t\t"
+			<< "name = \"aspect_icon\"";
+	output << "\n\t\t\t"
+			<< "spriteType = \"GFX_hindu_deities_strip\"";
+	output << "\n\t\t\t"
+			<< "position = { x= 45 y = -14 }";
+	output << "\n\t\t"
+			 << "}";
+	output << "\n";
+	output << "\n\t\t"
+			 << "instantTextBoxType = {";
+	output << "\n\t\t\t"
+			 << "name = \"aspect_name\"";
+	output << "\n\t\t\t"
+			 << "position = { x= -42 y = 6 }";
+	output << "\n\t\t\t"
+			 << "font = \"vic_18\"";
+	output << "\n\t\t\t"
+			 << "borderSize = {x = 0 y = 0}";
+	output << "\n\t\t\t"
+			 << "text = \"AspectName\"";
+	output << "\n\t\t\t"
+			 << "maxWidth = 102";
+	output << "\n\t\t\t"
+			 << "maxHeight = 24";
+	output << "\n\t\t\t"
+			 << "Orientation = \"UPPER_LEFT\"";
+	output << "\n\t\t\t"
+			 << "format = left";
+	output << "\n\t\t"
+			 << "}";
+	output << "\n";
+	output << "\n\t\t"
+			 << "instantTextBoxType = {";
+	output << "\n\t\t\t"
+			 << "name = \"aspect_effect\"";
+	output << "\n\t\t\t"
+			 << "position = { x= 98 y = -2 }";
+	output << "\n\t\t\t"
+			 << "font = \"vic_18\"";
+	output << "\n\t\t\t"
+			 << "borderSize = {x = 0 y = 0}";
+	output << "\n\t\t\t"
+			 << "text = \"AspectEffect\"";
+	output << "\n\t\t\t"
+			 << "maxWidth = 206";
+	output << "\n\t\t\t"
+			 << "maxHeight = 24";
+	output << "\n\t\t\t"
+			 << "Orientation = \"UPPER_LEFT\"";
+	output << "\n\t\t\t"
+			 << "format = left";
+	output << "\n\t\t"
+			 << "}";
+	output << "\n";
+	output << "\n\t\t"
+			 << "guiButtonType = {";
+	output << "\n\t\t\t"
+			 << "name = \"pick_aspect\"";
+	output << "\n\t\t\t"
+			 << "position = { x= 301 y = 1 }";
+	output << "\n\t\t\t"
+			 << "quadTextureSprite = \"GFX_standard_button_71\"";
+	output << "\n\t\t\t"
+			 << "buttonText = \"SELECT\"";
+	output << "\n\t\t\t"
+			 << "font = \"vic_18\"";
+	output << "\n\t\t\t"
+			 << "Orientation = \"LEFT\"";
+	output << "\n\t\t"
+			 << "}";
+	output << "\n\t"
+			 << "}";
+	output << "\n"
+			 << "}";
+}
+
 void EU4::GeneratedReligion::outputRebels(std::ostream& output) const
 {
 	output << name << "_rebels = {";
