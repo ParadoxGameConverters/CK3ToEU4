@@ -5,34 +5,34 @@ void EU4::GeneratedReligion::outputGUI(std::ostream& output) const
 	output << "guiTypes = {";
 	output << "\n\t################################################################################################";
 	output << "\n\t"
-			<< "################# Church aspect item (for selection) For " << name;
+			 << "################# Church aspect item (for selection) For " << name;
 	output << "\n\t"
-			<< "windowType = {";
+			 << "windowType = {";
 	output << "\n\t\t"
-			<< "name = \"countryreligionview_aspectitem_" << name << "\"";
+			 << "name = \"countryreligionview_aspectitem_" << name << "\"";
 	output << "\n\t\t"
-			<< "backGround =\"\"";
+			 << "backGround =\"\"";
 	output << "\n\t\t"
-			<< "position = { x=10 y=-20 }";
+			 << "position = { x=10 y=-20 }";
 	output << "\n\t\t"
-			<< "size = { x=50 y=46 }";
+			 << "size = { x=50 y=46 }";
 	output << "\n\t\t"
-			<< "moveable = 0";
+			 << "moveable = 0";
 	output << "\n\t\t"
-			<< "dontRender =\"\"";
+			 << "dontRender =\"\"";
 	output << "\n\t\t"
-			<< "horizontalBorder =\"\"";
+			 << "horizontalBorder =\"\"";
 	output << "\n\t\t"
-			<< "Orientation = \"UPPER_LEFT\"";
+			 << "Orientation = \"UPPER_LEFT\"";
 	output << "\n";
 	output << "\n\t\t"
-			<< "iconType = {";
+			 << "iconType = {";
 	output << "\n\t\t\t"
-			<< "name = \"aspect_icon\"";
+			 << "name = \"aspect_icon\"";
 	output << "\n\t\t\t"
-			<< "spriteType = \"GFX_hindu_deities_strip\"";
+			 << "spriteType = \"GFX_hindu_deities_strip\"";
 	output << "\n\t\t\t"
-			<< "position = { x= 45 y = -14 }";
+			 << "position = { x= 45 y = -14 }";
 	output << "\n\t\t"
 			 << "}";
 	output << "\n";
