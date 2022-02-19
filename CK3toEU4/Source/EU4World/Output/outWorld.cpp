@@ -215,6 +215,13 @@ void EU4::World::outputReligions(const std::string& outputName,
 		std::ofstream religionSoundFile("output/" + outputName + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
 		religion.outputSounds(religionSoundFile);
 		religionSoundFile.close();
+		// Religion GUI (Only if necessary)
+		if (religion.unique.contains("uses_judaism_power = yes"))
+		{
+			std::ofstream religionGUIFile("output/" + outputName + "/interface/ZZZ_" + religion.name + "-from-" + religion.parent + ".gui");
+			religion.outputGUI(religionGUIFile);
+			religionGUIFile.close();
+		}
 	}
 }
 
