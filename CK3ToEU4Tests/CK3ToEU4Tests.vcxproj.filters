@@ -226,6 +226,18 @@
     <Filter Include="MapperTests\AfricanPassesMapperTests">
       <UniqueIdentifier>{a2940191-13b6-4ef5-9973-8bb739bab84c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\CultureDefinitionsMapper">
+      <UniqueIdentifier>{eba0ee62-d8c7-4cb0-b9d9-c5fd13ccd66b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\CultureDefinitionsMapperTests">
+      <UniqueIdentifier>{7a78a165-2f1d-4fa1-83b4-0b588674bf90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\Mappers\HeritageMapper">
+      <UniqueIdentifier>{4a09f56a-13d2-42e8-ae5e-eebfacf13c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\HeritageMapperTests">
+      <UniqueIdentifier>{1ef34395-6621-4f49-8844-b4ae05acdd3e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -700,6 +712,39 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
       <Filter>CK3ToEU4\Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp">
+      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp">
+      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionsMapperTests.cpp">
+      <Filter>MapperTests\CultureDefinitionsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionTests.cpp">
+      <Filter>MapperTests\CultureDefinitionsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureGroupDefinitionTests.cpp">
+      <Filter>MapperTests\CultureDefinitionsMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp">
+      <Filter>CK3ToEU4\Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMapperTests.cpp">
+      <Filter>MapperTests\HeritageMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp">
+      <Filter>MapperTests\HeritageMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

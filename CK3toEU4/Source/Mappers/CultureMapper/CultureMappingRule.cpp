@@ -65,20 +65,20 @@ std::optional<std::string> mappers::CultureMappingRule::cultureMatch(const std::
 	if (ck3culture.empty())
 		return std::nullopt;
 
-	if (!cultures.count(ck3culture))
+	if (!cultures.contains(ck3culture))
 		return std::nullopt;
 
 	if (!owners.empty())
-		if (eu4ownerTag.empty() || !owners.count(eu4ownerTag))
+		if (eu4ownerTag.empty() || !owners.contains(eu4ownerTag))
 			return std::nullopt;
 
 	if (!religions.empty())
-		if (eu4religion.empty() || !religions.count(eu4religion))
+		if (eu4religion.empty() || !religions.contains(eu4religion))
 			return std::nullopt;
 
 	// This is a straight province check, not regions.
 	if (!provinces.empty() && regions.empty())
-		if (!eu4Province || !provinces.count(eu4Province))
+		if (!eu4Province || !provinces.contains(eu4Province))
 			return std::nullopt;
 
 	// Asking for a regions check without an incoming province is pointless.

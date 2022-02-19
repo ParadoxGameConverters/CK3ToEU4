@@ -35,14 +35,18 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 		provinceMapper = mappers::ProvinceMapper("configurables/province_mappings.txt");
 
 	Log(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
-	// Scraping localizations from CK3 so we may know proper names for our countries and people.
-	Log(LogLevel::Info) << "-> Reading Words";
-	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods());
+	localizationMapper = sourceWorld.getLocalizationMapper();
+	cultureMapper = sourceWorld.getCultureMapper();
 	Log(LogLevel::Progress) << "50 %";
 
 	// Scrape Primary Tags for nationalities
 	Log(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
+	Log(LogLevel::Info) << "-> Slurping EU4 Cultures";
+	cultureDefinitionsMapper.loadDefinitionsFromEU4Installation(theConfiguration);
+	cultureDefinitionsMapper.loadHeritagesFromDisk();
+	Log(LogLevel::Info) << "-> Building Dynamic EU4 Culture Definitions";
+	cultureDefinitionsMapper.buildDefinitions(cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
 	// This is our region mapper for eu4 regions, areas and superRegions. It's a pointer because we need
