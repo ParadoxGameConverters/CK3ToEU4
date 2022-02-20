@@ -385,7 +385,7 @@ new_world_i = {
 		}
 		is_in_capital_area = yes
 		owner = { 
-			has_idea = quest_for_the_new_world
+			has_any_exploration_idea = yes
 			#at least one province colonised or colonising, or have a subject colony
 			OR = {
 				any_owned_province = {

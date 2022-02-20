@@ -1,0 +1,51 @@
+# heritages determine into what eu4 culture group a particular dynamic culture goes
+# single eu4 per line, multiple ck3 per line.
+
+link = { eu4 = germanic ck3 = heritage_central_germanic }
+link = { eu4 = scandinavian ck3 = heritage_north_germanic }
+link = { eu4 = british ck3 = heritage_brythonic ck3 = heritage_west_germanic }
+link = { eu4 = gaelic ck3 = heritage_goidelic }
+link = { eu4 = latin ck3 = heritage_latin }
+link = { eu4 = iberian ck3 = heritage_iberian }
+link = { eu4 = french ck3 = heritage_frankish }
+link = { eu4 = finno_ugric ck3 = heritage_ugro_permian ck3 = heritage_volga_finnic }
+link = { eu4 = south_slavic ck3 = heritage_south_slavic }
+link = { eu4 = west_slavic ck3 = heritage_west_slavic }
+link = { eu4 = carpathian ck3 = heritage_magyar ck3 = heritage_vlach }
+link = { eu4 = east_slavic ck3 = heritage_east_slavic }
+link = { eu4 = baltic ck3 = heritage_baltic ck3 = heritage_balto_finnic }
+link = { eu4 = byzantine ck3 = heritage_byzantine }
+
+# no clear mapping as they shoved the cultures in byzantine 
+#link = { eu4 = caucasian }
+
+# this is levantine group, no actual turks.
+link = { eu4 = turko_semitic ck3 = heritage_arabic }
+
+link = { eu4 = maghrebi ck3 = heritage_berber }
+link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian }
+link = { eu4 = altaic ck3 = heritage_mongolic }
+
+# this is dubious. they put turkish in with tartars all in turkic, eu4 has them in levantine.
+link = { eu4 = tartar ck3 = heritage_turkic }
+link = { eu4 = israelite ck3 = heritage_israelite }
+
+link = { eu4 = east_asian ck3 = heritage_chinese }
+link = { eu4 = tibetan_group ck3 = heritage_tibetan ck3 = heritage_qiangic }
+link = { eu4 = burman ck3 = heritage_burman }
+
+# unclear
+#link = { eu4 = hindusthani ck3 =  }
+#link = { eu4 = central_indic ck3 =  }
+link = { eu4 = western_aryan ck3 = heritage_indo_aryan }
+link = { eu4 = dravidian ck3 = heritage_dravidian }
+
+# please fix if possible
+#link = { eu4 = mande ck3 =  }
+#link = { eu4 = great_lakes_group ck3 =  }
+#link = { eu4 = sudanese ck3 =  }
+link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian }
+link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_west_african ck3 = heritage_yoruba }
+link = { eu4 = kongo_group ck3 = heritage_central_african }
+link = { eu4 = african ck3 = heritage_east_african }
+link = { eu4 = cushitic ck3 = heritage_somalian }

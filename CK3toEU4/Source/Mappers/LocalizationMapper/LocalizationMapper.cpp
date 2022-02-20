@@ -10,6 +10,9 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 	scrapeLanguage("english", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("french", theConfiguration.getCK3Path() + "localization");
 	scrapeLanguage("german", theConfiguration.getCK3Path() + "localization");
+	scrapeLanguage("korean", theConfiguration.getCK3Path() + "/localization");
+	scrapeLanguage("russian", theConfiguration.getCK3Path() + "/localization");
+	scrapeLanguage("simp_chinese", theConfiguration.getCK3Path() + "/localization");
 	scrapeLanguage("spanish", theConfiguration.getCK3Path() + "localization");
 
 	for (const auto& mod: mods)
@@ -20,10 +23,16 @@ void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theCo
 			scrapeLanguage("english", mod.path + "/localization");
 			scrapeLanguage("french", mod.path + "/localization");
 			scrapeLanguage("german", mod.path + "/localization");
+			scrapeLanguage("korean", mod.path + "/localization");
+			scrapeLanguage("russian", mod.path + "/localization");
+			scrapeLanguage("simp_chinese", mod.path + "/localization");
 			scrapeLanguage("spanish", mod.path + "/localization");
 			scrapeLanguage("english", mod.path + "/localization/replace");
 			scrapeLanguage("french", mod.path + "/localization/replace");
 			scrapeLanguage("german", mod.path + "/localization/replace");
+			scrapeLanguage("korean", mod.path + "/localization/replace");
+			scrapeLanguage("russian", mod.path + "/localization/replace");
+			scrapeLanguage("simp_chinese", mod.path + "/localization/replace");
 			scrapeLanguage("spanish", mod.path + "/localization/replace");
 		}
 	}
@@ -35,7 +44,7 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 {
 	if (!commonItems::DoesFolderExist(path + "/" + language))
 		return;
-	auto fileNames = commonItems::GetAllFilesInFolderRecursive(path + "/" + language);
+	const auto fileNames = commonItems::GetAllFilesInFolderRecursive(path + "/" + language);
 	for (const auto& file: fileNames)
 	{
 		std::ifstream fileStream(path + "/" + language + "/" + file);
@@ -56,7 +65,7 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 		const auto [key, value] = determineKeyLocalizationPair(line);
 		if (!key.empty() && !value.empty())
 		{
-			if (localizations.count(key))
+			if (localizations.contains(key))
 			{
 				if (language == "english")
 					localizations[key].english = value;
@@ -64,6 +73,12 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 					localizations[key].french = value;
 				if (language == "german")
 					localizations[key].german = value;
+				if (language == "korean")
+					localizations[key].korean = value;
+				if (language == "russian")
+					localizations[key].russian = value;
+				if (language == "simp_chinese")
+					localizations[key].simp_chinese = value;
 				if (language == "spanish")
 					localizations[key].spanish = value;
 			}
@@ -76,6 +91,12 @@ void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const st
 					newBlock.french = value;
 				if (language == "german")
 					newBlock.german = value;
+				if (language == "korean")
+					newBlock.korean = value;
+				if (language == "russian")
+					newBlock.russian = value;
+				if (language == "simp_chinese")
+					newBlock.simp_chinese = value;
 				if (language == "spanish")
 					newBlock.spanish = value;
 				localizations.insert(std::pair(key, newBlock));
@@ -111,7 +132,8 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 	if (keyItr == localizations.end())
 		return std::nullopt;
 
-	if (!keyItr->second.english.empty() && (keyItr->second.spanish.empty() || keyItr->second.german.empty() || keyItr->second.french.empty()))
+	if (!keyItr->second.english.empty() && (keyItr->second.spanish.empty() || keyItr->second.german.empty() || keyItr->second.french.empty() ||
+															 keyItr->second.korean.empty() || keyItr->second.russian.empty() || keyItr->second.simp_chinese.empty()))
 	{
 		auto newBlock = keyItr->second;
 		if (newBlock.spanish.empty())
@@ -120,8 +142,28 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 			newBlock.german = newBlock.english;
 		if (newBlock.french.empty())
 			newBlock.french = newBlock.english;
+		if (newBlock.korean.empty())
+			newBlock.korean = newBlock.english;
+		if (newBlock.russian.empty())
+			newBlock.russian = newBlock.english;
+		if (newBlock.simp_chinese.empty())
+			newBlock.simp_chinese = newBlock.english;
 		return std::move(newBlock);
 	}
 	// either all is well, or we're missing english. Can't do anything about the latter.
 	return keyItr->second;
+}
+
+std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName(const std::string& localization) const
+{
+	// This looks for specifically *_name keys cultures use.
+
+	for (const auto& [locName, locBlock]: localizations)
+	{
+		if (locBlock.english == localization || locBlock.french == localization || locBlock.german == localization || locBlock.korean == localization ||
+			 locBlock.russian == localization || locBlock.simp_chinese == localization || locBlock.spanish == localization)
+			if (locName.find("_name") != std::string::npos)
+				return locName;
+	}
+	return std::nullopt;
 }

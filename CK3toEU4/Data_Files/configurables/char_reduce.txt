@@ -21,7 +21,9 @@ link = { utf8 = "ĩ" win1252 = "i" }
 link = { utf8 = "ő" win1252 = "õ" }
 link = { utf8 = "ů" win1252 = "u" }
 link = { utf8 = "č" win1252 = "ch" }
+link = { utf8 = "ć" win1252 = "c" }
 link = { utf8 = "ď" win1252 = "d'" }
+link = { utf8 = "đ" win1252 = "dj" }
 link = { utf8 = "ğ" win1252 = "g'" }
 link = { utf8 = "ł" win1252 = "l" }
 link = { utf8 = "ń" win1252 = "n" }
@@ -55,7 +57,9 @@ link = { utf8 = "Ĩ" win1252 = "I" }
 link = { utf8 = "Ő" win1252 = "Õ" }
 link = { utf8 = "Ů" win1252 = "U" }
 link = { utf8 = "Č" win1252 = "Ch" }
+link = { utf8 = "Ć" win1252 = "C" }
 link = { utf8 = "Ď" win1252 = "D'" }
+link = { utf8 = "Đ" win1252 = "Dj" }
 link = { utf8 = "Ğ" win1252 = "G'" }
 link = { utf8 = "Ł" win1252 = "L" }
 link = { utf8 = "Ń" win1252 = "N" }
