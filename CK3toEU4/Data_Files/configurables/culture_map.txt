@@ -717,10 +717,11 @@ link = { eu4 = anatolian ck3 = ionic ck3 = cappadocian tech = eastern gfx = east
 link = { eu4 = pontic_greek ck3 = pontic tech = eastern gfx = easterngfx }
 ## Germanic
 link = { eu4 = gothic ck3 = gothic tech = western gfx = westerngfx }
-link = { eu4 = ostrogothic ck3 = ostrogothic tech = western gfx = westerngfx }
+link = { eu4 = ostrogothic ck3=thracian_gothic ck3 = ostrogothic tech = western gfx = westerngfx }
 link = { eu4 = varangian ck3 = varangian ck3 = mikligardrish tech = eastern gfx = easterngfx }
 link = { eu4 = mena_german ck3 = aryan ck3 = gegenjiddisch ck3 = wostiyasite tech = eastern gfx = muslimgfx }
-link = { eu4 = vandal ck3 = vandal ck3 = vandale tech = western gfx = westerngfx }
+link = { eu4 = vandal ck3 = vandal ck3 = vandale ck3=vandilian tech = western gfx = westerngfx }
+link = { eu4 = anglo_saxon ck3=angle tech=western gfx=westerngfx } # ImperatorToCK3
 ## Near East
 link = { eu4 = aramaic ck3 = aramaic tech = eastern gfx = muslimgfx }
 link = { eu4 = babylonian ck3 = babylonian tech = eastern gfx = muslimgfx }
