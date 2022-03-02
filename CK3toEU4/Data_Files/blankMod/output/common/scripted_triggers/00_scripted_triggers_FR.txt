@@ -1,4 +1,4 @@
-##############################################
+##############################################œ
 ###   French localization custom strings   ###
 ###       Scripted by Nicolas Fouqué       ###
 ##############################################
@@ -1694,22 +1694,22 @@ frloc_ruler_fem_vow_0108_buddhist_monarchy_EMPRESS = { # "Impératrice"
 	AND = { government_rank = 3 government = monarchy NOT = { government = tribal } OR = { religion = buddhism religion = vajrayana religion = mahayana } }
 }
 frloc_ruler_masc_vow_0109_muslim_monarchy_EMIR = { # "Émir"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_masc_cons_0109_muslim_monarchy_SULTAN = { # "Sultan"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_masc_cons_0109_muslim_monarchy_GREAT_SULTAN = { # "Grand sultan"
-	AND = { government_rank = 3 government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 3 government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_fem_vow_0109_muslim_monarchy_EMIRA = { # "Émira"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_fem_cons_0109_muslim_monarchy_SULTANA = { # "Sultane"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_fem_cons_0109_muslim_monarchy_GREAT_SULTANA = { # "Grande sultane"
-	AND = { government_rank = 3 government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 3 government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_ruler_masc_cons_0110_german_free_city_BURGMEISTER = { # "Bürgermeister"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = free_city culture_group = germanic }
@@ -1961,40 +1961,40 @@ frloc_ruler_fem_cons_0126_march_eastern_christian_monarchy_PRINCESS = { # "Princ
 ### MIDDLE PRIORITY / PRIORITÉ INTERMÉDIAIRE = 01_government_names.txt ###
 
 frloc_ruler_masc_cons_1001_gov_steppe_horde_JINONG = { # "Jinong"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_masc_cons_1001_gov_steppe_horde_KHAN = { # "Khân"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_masc_cons_1001_gov_steppe_horde_KHAGAN = { # "Khagan"
-	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_fem_cons_1001_gov_steppe_horde_JINONG = { # "Jinong"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_fem_cons_1001_gov_steppe_horde_KHATUN = { # "Khatoun"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_fem_cons_1001_gov_steppe_horde_GREAT_KHATUN = { # "Grande khatoun"
-	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_ruler_masc_cons_1002_gov_native_council_CHIEF = { # "Chef"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_masc_cons_1002_gov_native_council_HIGH_CHIEF = { # "Grand chef"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_masc_cons_1002_gov_native_council_PARAMOUNT_CHIEF = { # "Chef suprême"
-	AND = { government_rank = 3 OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 3 OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_fem_cons_1002_gov_native_council_CHIEFTESS = { # "Cheffe"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_fem_cons_1002_gov_native_council_HIGH_CHIEFTESS = { # "Grande cheffe"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_fem_cons_1002_gov_native_council_PARAMOUNT_CHIEFTESS = { # "Cheffe suprême"
-	AND = { government_rank = 3 OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { government_rank = 3 OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_ruler_masc_cons_1003_gov_colonial_government_GOVERNOR = { # "Gouverneur"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { has_reform = colonial_government has_reform = crown_colony_government has_reform = private_enterprise_colony_government has_reform = self_governing_colony_government } }
@@ -2465,40 +2465,40 @@ frloc_ruler_fem_vow_1035_ibadi_theocracy_HIGH_IMAM_fem = { # "Imâmâ suprême"
 	AND = { government_rank = 3 religion = ibadi OR = { government = theocracy has_reform = feudal_theocracy } }
 }
 frloc_ruler_masc_vow_1036_yemenite_theocracy_IMAM = { # "Imâm"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_masc_cons_1036_yemenite_theocracy_GREAT_IMAM = { # "Grand imâm"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_masc_vow_1036_yemenite_theocracy_HIGH_IMAM = { # "Imâm suprême"
-	AND = { government_rank = 3 religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 3 religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_fem_vow_1036_yemenite_theocracy_IMAM_fem = { # "Imâmâ"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_fem_cons_1036_yemenite_theocracy_GREAT_IMAM_fem = { # "Grande Imâmâ"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_fem_vow_1036_yemenite_theocracy_HIGH_IMAM_fem = { # "Imâmâ suprême"
-	AND = { government_rank = 3 religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { government_rank = 3 religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_ruler_masc_cons_1037_shiite_theocracy_SHEIKH = { # "Cheikh"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite government = theocracy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_masc_vow_1037_shiite_theocracy_AYATOLLAH = { # "Ayatollah"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite government = theocracy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_masc_vow_1037_shiite_theocracy_IMAM = { # "Imâm"
-	AND = { government_rank = 3 religion = shiite government = theocracy }
+	AND = { government_rank = 3 religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_fem_cons_1037_shiite_theocracy_SHEIKHA = { # "Cheikha"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite government = theocracy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_fem_vow_1037_shiite_theocracy_AYATOLLAH = { # "Ayatollah"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite government = theocracy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_fem_vow_1037_shiite_theocracy_IMAM_fem = { # "Imâmâ"
-	AND = { government_rank = 3 religion = shiite government = theocracy }
+	AND = { government_rank = 3 religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_ruler_masc_cons_1038_uyghur_theocracy_SHEIKH = { # "Cheikh"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } religion = sunni government = theocracy OR = { primary_culture = uyghur has_country_flag = end_of_khojas } }
@@ -3340,16 +3340,16 @@ frloc_heir_fem_vow_0108_buddhist_monarchy_HEIR_fem = { # "Héritière"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } government = monarchy NOT = { government = tribal } OR = { religion = buddhism religion = vajrayana religion = mahayana } }
 }
 frloc_heir_masc_vow_0109_muslim_monarchy_HEIR = { # "Héritier"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_heir_masc_cons_0109_muslim_monarchy_SHAHZADE = { # "Shâhzâdeh"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_heir_fem_vow_0109_muslim_monarchy_HEIR_fem = { # "Héritière"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_heir_fem_cons_0109_muslim_monarchy_SHAHZADE = { # "Shâhzâdeh"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_heir_masc_vow_0126_march_eastern_christian_monarchy_HEIR = { # "Héritier"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = principality } OR = { religion = coptic religion = orthodox } is_march = yes }
@@ -3361,19 +3361,19 @@ frloc_heir_fem_vow_0126_march_eastern_christian_monarchy_HEIR_fem = { # "Héritiè
 ### MIDDLE PRIORITY / PRIORITÉ INTERMÉDIAIRE = 01_government_names.txt ###
 
 frloc_heir_masc_vow_1001_gov_steppe_horde_HEIR = { # "Héritier"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_heir_masc_cons_1001_gov_steppe_horde_KHANZADEH = { # "Khânzâdeh"
-	AND = { OR = { government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { OR = { government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_heir_fem_cons_1001_gov_steppe_horde_KHANUM = { # "Khanoum"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_heir_masc_vow_1002_gov_native_council_HEIR = { # "Héritier"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_heir_fem_vow_1002_gov_native_council_HEIR_fem = { # "Héritière"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_heir_masc_vow_1010_gov_papal_government_HEIR = { # "Héritier"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = papacy_reform }
@@ -3514,16 +3514,16 @@ frloc_heir_fem_vow_1035_ibadi_theocracy_HEIR_fem = { # "Héritière"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = ibadi OR = { government = theocracy has_reform = feudal_theocracy } }
 }
 frloc_heir_masc_vow_1036_yemenite_theocracy_HEIR = { # "Héritier"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_heir_fem_vow_1036_yemenite_theocracy_HEIR_fem = { # "Héritière"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_heir_masc_vow_1037_shiite_theocracy_HEIR = { # "Héritier"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite government = theocracy }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_heir_fem_vow_1037_shiite_theocracy_HEIR_fem = { # "Héritière"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite government = theocracy }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } NOT = { primary_culture = yemeni_culture } }
 }
 frloc_heir_masc_vow_1038_uyghur_theocracy_HEIR = { # "Héritier"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = sunni government = theocracy OR = { primary_culture = uyghur has_country_flag = end_of_khojas } }
@@ -4878,16 +4878,16 @@ frloc_consort_fem_vow_0108_buddhist_monarchy_EMPRESS = { # "Impératrice"
 	AND = { government_rank = 3 government = monarchy NOT = { government = tribal } OR = { religion = buddhism religion = vajrayana religion = mahayana } }
 }
 frloc_consort_masc_vow_0109_muslim_monarchy_EMIR_CONSORT = { # "Émir consort"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_consort_masc_cons_0109_muslim_monarchy_SULTAN_CONSORT = { # "Sultan consort"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_consort_fem_vow_0109_muslim_monarchy_EMIRA = { # "Émira"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_consort_fem_cons_0109_muslim_monarchy_SULTANA = { # "Sultane"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = monarchy NOT = { has_reform = steppe_horde } religion_group = muslim NOT = { has_reform = feudal_theocracy } }
 }
 frloc_consort_masc_cons_0126_march_eastern_christian_monarchy_PRINCE_CONSORT = { # "Prince consort"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = principality } OR = { religion = coptic religion = orthodox } is_march = yes }
@@ -4899,25 +4899,25 @@ frloc_consort_fem_cons_0126_march_eastern_christian_monarchy_PRINCESS = { # "Pri
 ### MIDDLE PRIORITY / PRIORITÉ INTERMÉDIAIRE = 01_government_names.txt ###
 
 frloc_consort_masc_cons_1001_gov_steppe_horde_BEILE = { # "Beile"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_consort_masc_cons_1001_gov_steppe_horde_KHAN = { # "Khân"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_consort_masc_cons_1001_gov_steppe_horde_KHAGAN = { # "Khagan"
-	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 3 has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_consort_fem_cons_1001_gov_steppe_horde_GEGE = { # "Gege"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_consort_fem_cons_1001_gov_steppe_horde_KHANUM = { # "Khanoum"
-	AND = { OR = { government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar } }
+	AND = { OR = { government_rank = 2 government_rank = 3 } has_reform = steppe_horde OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } }
 }
 frloc_consort_masc_cons_1002_gov_native_council_CONSORT = { # "Consort"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_consort_fem_cons_1002_gov_native_council_CONSORT = { # "Consort"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar } } } } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { government = native has_reform = siberian_tribe has_reform = native_basic_reform AND = { has_reform = steppe_horde NOT = { OR = { culture_group = altaic culture_group = tartar primary_culture = altaic_new } } } } }
 }
 frloc_consort_masc_cons_1011_gov_daimyo_LORD = { # "Seigneur"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = daimyo }
@@ -4980,10 +4980,10 @@ frloc_consort_fem_cons_1035_ibadi_theocracy_CONSORT = { # "Consort"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = ibadi OR = { government = theocracy has_reform = feudal_theocracy } }
 }
 frloc_consort_masc_cons_1036_yemenite_theocracy_CONSORT = { # "Consort"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_consort_fem_cons_1036_yemenite_theocracy_CONSORT = { # "Consort"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite primary_culture = yemeni_culture OR = { government = theocracy has_reform = feudal_theocracy } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = shiite OR = { government = theocracy has_reform = feudal_theocracy } primary_culture = yemeni_culture }
 }
 frloc_consort_masc_cons_1039_sunni_theocracy_CONSORT = { # "Consort"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = sunni OR = { has_reform = feudal_theocracy government = theocracy } }

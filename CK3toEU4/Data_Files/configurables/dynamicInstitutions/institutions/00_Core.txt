@@ -198,8 +198,57 @@ renaissance = {
 	historical_start_province = 116 # Florence
 
 	history = {
-		is_year = 1450
+		OR = {
+			AND = {
+				is_year = 1450
+				region = italy_region
+			}
+			
+			AND = {
+				is_year = 1450
+				continent = europe
+			}
+			AND = {
+				is_year = 1500
+				owner = {
+					NOT = { technology_group = north_american }
+					NOT = { technology_group = mesoamerican }
+					NOT = { technology_group = south_american }
+					NOT = { technology_group = andean }
+				}
+				superregion = south_america_superregion
+			}
+			AND = {
+				is_year = 1500
+				owner = {
+					NOT = { technology_group = north_american }
+					NOT = { technology_group = mesoamerican }
+					NOT = { technology_group = south_american }
+					NOT = { technology_group = andean }
+				}
+				superregion = north_america_superregion
+			}
+			AND = {
+				is_year = 1500
+				owner = {
+					NOT = { technology_group = north_american }
+					NOT = { technology_group = mesoamerican }
+					NOT = { technology_group = south_american }
+					NOT = { technology_group = andean }
+				}
+				superregion = central_america_superregion
+			}
+			AND = {
+				is_year = 1600
+				continent = asia
+				owner = {
+					NOT = { government = tribal }
+				}
+			}
+			is_year = 1780
+		}
 	}
+
 	
 	can_start = {
 		is_year = 1450
@@ -385,7 +434,7 @@ new_world_i = {
 		}
 		is_in_capital_area = yes
 		owner = { 
-			has_idea = quest_for_the_new_world
+			has_any_exploration_idea = yes
 			#at least one province colonised or colonising, or have a subject colony
 			OR = {
 				any_owned_province = {

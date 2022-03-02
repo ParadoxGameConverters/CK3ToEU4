@@ -57,8 +57,8 @@ TEST(CK3World_CharactersTests, culturesCanBeLinked)
 	const auto& c1 = characters.getCharacters().find(1);
 	const auto& c2 = characters.getCharacters().find(2);
 
-	ASSERT_EQ("kru", c1->second->getCulture()->second->getName());
-	ASSERT_EQ("akan", c2->second->getCulture()->second->getName());
+	ASSERT_EQ("kru", *c1->second->getCulture()->second->getTemplate());
+	ASSERT_EQ("akan", *c2->second->getCulture()->second->getTemplate());
 }
 
 TEST(CK3World_CharactersTests, linkingMissingCultureThrowsException)
