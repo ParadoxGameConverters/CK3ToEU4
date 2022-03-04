@@ -341,7 +341,7 @@
 	link = { ck3 = 1331 eu4 = 4504 eu4 = 2088 } # Sonda -> Nasirpur, Umarkot
 	link = { ck3 = 1207 eu4 = 4425 } # Nallamala -> Kondavidu
 	link = { ck3 = 1208 eu4 = 2037 eu4 = 4439 } # Mudigonda -> Warangal, Khamammet
-	link = { ck3 = 1120 ck3 = 7824 eu4 = 4414 } # Tagadur, Muluvagil -> Salem
+	link = { ck3 = 1120 ck3 = 7824 eu4 = 4414 eu4 = 1947 } # MANY-TO-MANY: Tagadur, Muluvagil -> Salem, Gingee
 	link = { ck3 = 7908 eu4 = 2050 } # Katukuru -> Chanda
 	link = { ck3 = 1252 eu4 = 547 } # Barasuru -> Bastar
 	link = { ck3 = 1198 ck3 = 1416 eu4 = 4431 } # Vatapi, Kolhapur -> Kolhapur
@@ -424,7 +424,6 @@
 	link = { ck3 = 1204 eu4 = 4418 eu4 = 539 } # Nellore -> Nellore, Tondainadu
 	link = { ck3 = 1122 eu4 = 4419 } # Kammanadu -> Adanki
 	link = { ck3 = 1119 eu4 = 4417 } # Kanchipuram -> Kanchipuram
-	link = { eu4 = 1947 } # NOTHING -> Gingee
 	link = { ck3 = 7830 eu4 = 540 } # Tiruvannamalai -> Cuddalore
 	link = { ck3 = 1115 eu4 = 4415 eu4 = 4416 } # Cholamandalam -> Negapatam, Tranqebar
 	link = { ck3 = 7806 eu4 = 2026 eu4 = 2085 } # Uraiyur -> Tanjore, Tiruchirappalli
