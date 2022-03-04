@@ -348,16 +348,20 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
 
 	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
+	auto endMeta = saveGame.gamestate.find("\ndate=");
 	auto endFile = saveGame.gamestate.size();
-	saveGame.gamestate = saveGame.gamestate.substr(startMeta, endFile - startMeta);
-	// TODO(#42): Leaving this debug in until all kinks are sorted.
+	// Again, strip the "meta_data={\n" and the "}\n"
+	saveGame.metadata = saveGame.gamestate.substr(startMeta + 13, endMeta - startMeta - 15);
+	// dump for sanity purposes.
+	std::ofstream metaDump("metaDumpOfIron.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	saveGame.gamestate = saveGame.gamestate.substr(endMeta + 1, endFile);
+	// dump for sanity purposes.
 	std::ofstream dump("dumpOfIron.txt");
 	dump << saveGame.gamestate;
 	dump.close();
-
-	auto endMeta = saveGame.gamestate.find("ironman=no");
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = saveGame.gamestate.substr(12, endMeta - 1);
 }
 
 void CK3::World::processIronManSave(const std::string& saveGamePath)
@@ -372,12 +376,16 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto endMeta = meta.find_last_of("}");
 	// Again, strip the "meta_data={\n" and the "}\n"
 	saveGame.metadata = meta.substr(startMeta + 12, endMeta - startMeta - 12);
+	// dump for sanity purposes.
+	std::ofstream metaDump("metaDumpOfIron.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
 
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	// TODO(#42): Leaving this debug in until all kinks are sorted.
+	// dump for sanity purposes.
 	std::ofstream dump("dumpOfIron.txt");
 	dump << saveGame.gamestate;
 	dump.close();
