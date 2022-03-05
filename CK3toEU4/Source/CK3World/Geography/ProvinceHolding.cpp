@@ -41,8 +41,26 @@ void CK3::ProvinceHolding::registerKeys()
 
 int CK3::ProvinceHolding::countBuildings() const
 {
+	int totalBuildings = 0;
+	for (const auto& building: buildings)
+	{
+		const auto pos = building.find_last_of("_");
+		if (pos == std::string::npos)
+			continue;
+		const auto buildingString = building.substr(pos + 1, building.size());
+		try
+		{
+			totalBuildings += std::stoi(buildingString);
+		}
+		catch (std::exception&)
+		{
+			Log(LogLevel::Warning) << "Province building stoi fail: " << buildingString << " from " << building;
+			totalBuildings++;
+		}
+	}
+
 	if (specialBuilding.empty())
-		return static_cast<int>(buildings.size());
+		return totalBuildings;
 	else
-		return static_cast<int>(buildings.size() + 1);
+		return totalBuildings + 1;
 }

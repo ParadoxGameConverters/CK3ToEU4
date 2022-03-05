@@ -79,7 +79,9 @@ TEST(CK3World_ProvinceHoldingTests, holdingBuildingsCanBeCounted)
 
 	const CK3::ProvinceHolding holding(input);
 
-	ASSERT_EQ(2, holding.countBuildings());
+	// 1 castle + 2 farms
+
+	ASSERT_EQ(3, holding.countBuildings());
 }
 
 TEST(CK3World_ProvinceHoldingTests, holdingAllBuildingsCanBeCounted)
@@ -94,5 +96,5 @@ TEST(CK3World_ProvinceHoldingTests, holdingAllBuildingsCanBeCounted)
 
 	const CK3::ProvinceHolding holding(input);
 
-	ASSERT_EQ(3, holding.countBuildings());
+	ASSERT_EQ(4, holding.countBuildings());
 }
