@@ -46,6 +46,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isElectorate() const { return electorate; }
 	[[nodiscard]] auto isHolderCapital() const { return holderCapital; }
 	[[nodiscard]] auto isHRECapital() const { return HRECapital; }
+	[[nodiscard]] auto isCustomTitle() const { return customTitle; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -109,6 +110,7 @@ class Title: commonItems::parser
 	void setInHRE() { inHRE = true; }
 	void dropTitleFromDFVassals(long long titleID);
 	void setThePope() { thePope = true; }
+	void setCustomTitle() { customTitle = true; }
 	void congregateDFCounties();
 	void congregateDJCounties();
 	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
@@ -155,6 +157,7 @@ class Title: commonItems::parser
 	bool HREEmperor = false;
 	bool inHRE = false;
 	bool thePope = false;
+	bool customTitle = false; // True if title was fromed via "Found a New Kingdom/Empire" decision.
 	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.

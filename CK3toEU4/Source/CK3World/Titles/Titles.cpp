@@ -86,9 +86,15 @@ void CK3::Titles::transcribeDynamicRanks()
 		if (rank == "duchy")
 			titles.at(key)->setDynamicLevel(LEVEL::DUCHY);
 		else if (rank == "kingdom")
+		{
 			titles.at(key)->setDynamicLevel(LEVEL::KINGDOM);
+			titles.at(key)->setCustomTitle();
+		}
 		else if (rank == "empire")
+		{
 			titles.at(key)->setDynamicLevel(LEVEL::EMPIRE);
+			titles.at(key)->setCustomTitle();
+		}
 		counter++;
 	}
 	Log(LogLevel::Info) << "<> Transcribed " << counter << " dynamics.";
