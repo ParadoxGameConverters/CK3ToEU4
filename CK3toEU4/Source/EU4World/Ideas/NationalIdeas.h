@@ -16,12 +16,17 @@ class NationalIdeas // Class wasn't nessecary, but might make it easier for futu
 	[[nodiscard]] const auto& getEthos() const { return ethos; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const std::vector<std::string> getTraditions() const { return traditions; }
+	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
+
+	friend std::ostream& operator<<(std::ostream& output, const NationalIdeas& country);
 
   private:
 
 	std::string ethos;						 // Becomes national traditions
 	std::string name;
 	std::vector<std::string> traditions;	 // Becomes national ideas/ambitions
+
+	const mappers::DynamicIdeasMapper& dynIdeasMapper;
 	
 };
 } // namespace EU4

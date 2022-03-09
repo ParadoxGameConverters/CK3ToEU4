@@ -102,7 +102,7 @@ class World
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;
 	std::set<std::string> specialCountryTags; // tags we loaded from own sources and must not output into 00_country_tags.txt
-	std::set<NationalIdeas> dynamicNationalIdeas;
+	std::set<std::shared_ptr<NationalIdeas&>> dynamicNationalIdeas;
 
 	mappers::LocalizationMapper localizationMapper;
 	mappers::PrimaryTagMapper primaryTagMapper;

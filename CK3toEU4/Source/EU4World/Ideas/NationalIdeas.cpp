@@ -2,7 +2,7 @@
 
 // Will be used to load in defaults
 
-EU4::NationalIdeas::NationalIdeas(CK3::Culture& culture, mappers::DynamicIdeasMapper& dynIdeasMapper)
+EU4::NationalIdeas::NationalIdeas(CK3::Culture& culture, mappers::DynamicIdeasMapper& dynIdeasMapper): dynIdeasMapper(dynIdeasMapper)
 {
 	ethos = culture.getEthos();
 	name = culture.getName();
