@@ -130,6 +130,9 @@
     <Filter Include="Mappers\HeritageMapper">
       <UniqueIdentifier>{a4085544-e53f-4edd-9faf-e610347f66e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\DynmaicIdeasMapper">
+      <UniqueIdentifier>{b1a7a379-b04b-4ceb-bbf2-0590c9db6fc7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -457,6 +460,7 @@
     <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapping.h">
       <Filter>Mappers\HeritageMapper</Filter>
     </ClInclude>
+    <ClInclude Include="DynamicIdeasMapper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -785,5 +789,6 @@
     <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapping.cpp">
       <Filter>Mappers\HeritageMapper</Filter>
     </ClCompile>
+    <ClCompile Include="DynamicIdeasMapper.cpp" />
   </ItemGroup>
 </Project>

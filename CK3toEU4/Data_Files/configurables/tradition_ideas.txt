@@ -1,0 +1,16 @@
+# Ethos lines must be in the format: ethos = { ethos_name effect1_name effect1_# effect2_name effect2# }
+# The convertor assumes exactly 5 strings in exactly that order inbetween the ethos brackets
+
+# Tradition lines must be in the format: ethos = { tradition_name effect1_name effect1_# effect2_name effect2# }
+# The convertor does NOT assume exactly 5 strings, each effect must be immediately followed by its number.
+
+# NOTE: All decimal values need a leading integer. .2 will cause an effect to fail to appear in game, 0.2 will work.
+
+
+ethos = { ethos_communal global_manpower_modifier 0.25 land_morale 0.15 }
+ethos = { ethos_bellicose global_manpower_modifier 0.2 land_morale 0.1 }
+
+
+tradition = { tradition_life_is_just_a_joke global_unrest -1 }
+tradition = { tradition_fishermen development_cost = -0.05 }
+tradition = { tradition_culinary_art prestige_decay -0.01 }

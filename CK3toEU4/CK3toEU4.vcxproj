@@ -102,6 +102,7 @@ call save_commit_id.bat
     <ClInclude Include="..\commonItems\Parser.h" />
     <ClInclude Include="..\commonItems\ParserHelpers.h" />
     <ClInclude Include="..\commonItems\StringUtils.h" />
+    <ClInclude Include="DynamicIdeasMapper.h" />
     <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\CK3World\Characters\Character.h" />
     <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h" />
@@ -214,6 +215,7 @@ call save_commit_id.bat
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
+    <ClCompile Include="DynamicIdeasMapper.cpp" />
     <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Character.cpp" />
     <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp" />
