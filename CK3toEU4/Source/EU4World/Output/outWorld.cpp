@@ -77,6 +77,9 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	outputCultures(theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "89 %";
 
+	Log(LogLevel::Info) << "<- Writing Dynamic Ideas";
+	outputDynamicIdeasFile(theConfiguration);
+
 	if (invasion)
 	{
 		Log(LogLevel::Info) << "<- Writing Sunset Invasion Files";
@@ -372,6 +375,27 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 		output << *country.second;
 		output.close();
 	}
+}
+
+void EU4::World::outputDynamicIdeasFile(const Configuration& theConfiguration) const
+{
+	auto& ethosMap = dynamicIdeasMapper.getEthosMap();
+	auto& traditionMap = dynamicIdeasMapper.getTraditionMap();
+
+	// VERY WIP
+
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/00_dynamic_ideas.txt");
+	if (!output.is_open())
+		throw std::runtime_error("Could not create dynamic ideas file!");
+	output << "### National idea groups generated via cultural traditions. (Only generated for custom k or e titles with dynamic cultures.)\n\n"; // opening with comments manually
+
+	for (const auto& culture: culturesForDynamicIdeas)
+	{
+		output << culture.getName() + "_cultural_ideas = {\n\tstart = {\n\t";
+		output << ethosMap[culture.getEthos()];
+	}
+	output << "\n";
+	output.close();
 }
 
 void EU4::World::outputAdvisers(const Configuration& theConfiguration) const

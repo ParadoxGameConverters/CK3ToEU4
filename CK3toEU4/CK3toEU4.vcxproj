@@ -102,7 +102,6 @@ call save_commit_id.bat
     <ClInclude Include="..\commonItems\Parser.h" />
     <ClInclude Include="..\commonItems\ParserHelpers.h" />
     <ClInclude Include="..\commonItems\StringUtils.h" />
-    <ClInclude Include="DynamicIdeasMapper.h" />
     <ClInclude Include="Source\CK3ToEU4Converter.h" />
     <ClInclude Include="Source\CK3World\Characters\Character.h" />
     <ClInclude Include="Source\CK3World\Characters\CharacterDomain.h" />
@@ -163,6 +162,7 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
     <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapper.h" />
@@ -215,7 +215,6 @@ call save_commit_id.bat
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
-    <ClCompile Include="DynamicIdeasMapper.cpp" />
     <ClCompile Include="Source\CK3ToEU4Converter.cpp" />
     <ClCompile Include="Source\CK3World\Characters\Character.cpp" />
     <ClCompile Include="Source\CK3World\Characters\CharacterDomain.cpp" />
@@ -276,6 +275,7 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapper.cpp" />

@@ -12,7 +12,7 @@ class DynamicIdeasMapper: commonItems::parser
 	explicit DynamicIdeasMapper(std::istream& theStream);
 
 	[[nodiscard]] const auto& getEthosMap() const { return ethosMap; }
-	[[nodiscard]] const auto& getEthosMap() const { return traditionMap; }
+	[[nodiscard]] const auto& getTraditionMap() const { return traditionMap; }
 																	  
   private:															  
 	void registerKeys();											  

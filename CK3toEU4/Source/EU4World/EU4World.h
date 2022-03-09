@@ -1,6 +1,7 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
 #include "../CK3World/World.h"
+#include "../CK3World/Cultures/Culture.h"
 #include "../Mappers/AfricanPassesMapper/AfricanPassesMapper.h"
 #include "../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
@@ -17,6 +18,7 @@
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
+#include "../Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "ConverterVersion.h"
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
@@ -80,6 +82,7 @@ class World
 	void outputCommonCountriesFile(const Configuration& theConfiguration) const;
 	void outputCommonCountries(const Configuration& theConfiguration) const;
 	void outputHistoryCountries(const Configuration& theConfiguration) const;
+	void outputDynamicIdeasFile(const Configuration& theConfiguration) const;
 	void outputAdvisers(const Configuration& theConfiguration) const;
 	void outputHistoryProvinces(const Configuration& theConfiguration) const;
 	void outputLocalization(const Configuration& theConfiguration, bool invasion) const;
@@ -98,6 +101,7 @@ class World
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;
 	std::set<std::string> specialCountryTags; // tags we loaded from own sources and must not output into 00_country_tags.txt
+	std::set<CK3::Culture> culturesForDynamicIdeas;
 
 	mappers::LocalizationMapper localizationMapper;
 	mappers::PrimaryTagMapper primaryTagMapper;
@@ -115,6 +119,7 @@ class World
 	mappers::LocDegraderMapper locDegrader;
 	mappers::AfricanPassesMapper africanPassesMapper;
 	mappers::CultureDefinitionsMapper cultureDefinitionsMapper;
+	mappers::DynamicIdeasMapper dynamicIdeasMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;

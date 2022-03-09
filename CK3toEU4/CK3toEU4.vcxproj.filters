@@ -460,7 +460,7 @@
     <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapping.h">
       <Filter>Mappers\HeritageMapper</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicIdeasMapper.h">
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClInclude>
   </ItemGroup>
@@ -791,7 +791,7 @@
     <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapping.cpp">
       <Filter>Mappers\HeritageMapper</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicIdeasMapper.cpp">
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClCompile>
   </ItemGroup>
