@@ -468,6 +468,20 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 				german << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
 			}
 
+	// localizations for dynamic national ideas - don't have locblocks.
+	std::vector<std::string> suffix{"_ideas", "_ideas_start", "_ideas_bonus"};
+	std::vector<std::string> ideaText{"Ideas", "Traditions", "Ambitions"};
+
+	for (const auto& idea: dynamicNationalIdeas)
+	{
+		for (auto i = 0; i < suffix.size(); i++)
+		{
+			english << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			french << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			spanish << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			german << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+		}
+	}
 	english.close();
 	french.close();
 	spanish.close();

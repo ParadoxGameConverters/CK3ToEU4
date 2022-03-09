@@ -9,8 +9,6 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 	auto& tags = idea.getTags();
 	std::vector<std::string> traditions = idea.getTraditions();
 
-	Log(LogLevel::Info) << "-> Ethos: " + ethosMap.at("ethos_communal")[1];
-
 	output << idea.getName() + "_ideas = {\n";
 
 	// National Traditions
@@ -29,8 +27,6 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 
 	output << "\tfree = yes\n\n";
 
-	Log(LogLevel::Info) << "-> Got here 0";
-
 	// First 7 traditions become ideas, last one becomes ambition
 	std::vector<std::string>::iterator iterTraditions = traditions.begin();
 
@@ -45,15 +41,12 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 				output << "\n\t\t" + effects[i];
 			else
 				output << " = " + effects[i];
-			Log(LogLevel::Info) << "-> Effect: " + effects[i];
 		}
 
 		output << "\n\t}\n";
 
 		iterTraditions++;
 	}
-
-	Log(LogLevel::Info) << "-> Got here 2";
 
 	output << "\tbonus = {\n\t\t" + traditionMap.at(traditions.back())[0] + " = " + traditionMap.at(traditions.back())[1] + "\n\t}\n";
 	output << "}\n\n";
