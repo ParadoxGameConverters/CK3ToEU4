@@ -14,3 +14,12 @@ ethos = { ethos_bellicose global_manpower_modifier 0.2 land_morale 0.1 }
 tradition = { tradition_life_is_just_a_joke global_unrest -1 }
 tradition = { tradition_fishermen development_cost = -0.05 }
 tradition = { tradition_culinary_art prestige_decay -0.01 }
+
+default = { increase_discipline discipline 0.025 }
+default = { increase_taxation global_tax_modifier 0.05 }
+default = { increased_trade_power global_trade_power 0.05 }
+default = { cheaper_mercenaries merc_maintenance_modifier -0.10 }
+default = { increased_manpower global_manpower_modifier 0.05 }
+default = { increased_trade_steering trade_steering 0.05 }
+default = { increased_production_income production_efficiency 0.05 }
+default = { placeholder global_tax_modifier 0.10 }

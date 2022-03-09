@@ -24,6 +24,7 @@
 #include "Diplomacy/Diplomacy.h"
 #include "FlagFoundry/FlagFoundry.h"
 #include "Output/outModFile.h"
+#include "Ideas/NationalIdeas.h"
 
 class Configuration;
 
@@ -101,7 +102,7 @@ class World
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;
 	std::set<std::string> specialCountryTags; // tags we loaded from own sources and must not output into 00_country_tags.txt
-	std::set<CK3::Culture> culturesForDynamicIdeas;
+	std::set<NationalIdeas> dynamicNationalIdeas;
 
 	mappers::LocalizationMapper localizationMapper;
 	mappers::PrimaryTagMapper primaryTagMapper;

@@ -24,7 +24,11 @@ void mappers::DynamicIdeasMapper::registerKeys()
 	});
 	registerKeyword("tradition", [this](const std::string& unused, std::istream& theStream) {
 		std::vector<std::string> traditionAndEffects = commonItems::getStrings(theStream);
-		ethosMap.emplace(traditionAndEffects.front(), std::vector<std::string>(traditionAndEffects.begin() + 1, traditionAndEffects.end()));
+		traditionMap.emplace(traditionAndEffects.front(), std::vector<std::string>(traditionAndEffects.begin() + 1, traditionAndEffects.end()));
+	});
+	registerKeyword("default", [this](const std::string& unused, std::istream& theStream) {
+		std::vector<std::string> defaultAndEffects = commonItems::getStrings(theStream);
+		defaultMap.emplace(defaultAndEffects.front(), std::vector<std::string>(defaultAndEffects.begin() + 1, defaultAndEffects.end()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -384,17 +384,16 @@ void EU4::World::outputDynamicIdeasFile(const Configuration& theConfiguration) c
 
 	// VERY WIP
 
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/00_dynamic_ideas.txt");
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/!_dynamic_ideas.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create dynamic ideas file!");
-	output << "### National idea groups generated via cultural traditions. (Only generated for custom k or e titles with dynamic cultures.)\n\n"; // opening with comments manually
+	output << "### National idea groups generated via cultural traditions. (Only generated for custom k or e titles with dynamic cultures.)\n\n";
 
-	for (const auto& culture: culturesForDynamicIdeas)
+	for (const NationalIdeas& idea: dynamicNationalIdeas)
 	{
-		output << culture.getName() + "_cultural_ideas = {\n\tstart = {\n\t";
-		output << ethosMap[culture.getEthos()];
+		output << idea;
+		output << "\n";
 	}
-	output << "\n";
 	output.close();
 }
 

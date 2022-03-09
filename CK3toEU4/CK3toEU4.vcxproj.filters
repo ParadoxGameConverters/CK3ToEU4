@@ -133,6 +133,9 @@
     <Filter Include="Mappers\DynmaicIdeasMapper">
       <UniqueIdentifier>{b1a7a379-b04b-4ceb-bbf2-0590c9db6fc7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4World\Ideas">
+      <UniqueIdentifier>{b3589733-8995-4500-9eef-6074f1d3167d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -462,6 +465,12 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Ideas\NationalIdeas.h">
+      <Filter>EU4World\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outNationalIdeas.h">
+      <Filter>EU4World\Output</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -793,6 +802,12 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Ideas\NationalIdeas.cpp">
+      <Filter>EU4World\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outNationalIdeas.cpp">
+      <Filter>EU4World\Output</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
