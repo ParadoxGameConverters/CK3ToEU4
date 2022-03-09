@@ -45,6 +45,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
 	[[nodiscard]] const auto& getLocalizationMapper() const { return localizationMapper; }
 	[[nodiscard]] const auto& getCultureMapper() const { return cultureMapper; }
+	[[nodiscard]] const auto& getCultures() const { return cultures; }
 
   private:
 	// savegame processing

@@ -29,6 +29,7 @@ void mappers::DynamicIdeasMapper::registerKeys()
 	registerKeyword("default", [this](const std::string& unused, std::istream& theStream) {
 		std::vector<std::string> defaultAndEffects = commonItems::getStrings(theStream);
 		defaultMap.emplace(defaultAndEffects.front(), std::vector<std::string>(defaultAndEffects.begin() + 1, defaultAndEffects.end()));
+		traditionMap.emplace(defaultAndEffects.front(), std::vector<std::string>(defaultAndEffects.begin() + 1, defaultAndEffects.end()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

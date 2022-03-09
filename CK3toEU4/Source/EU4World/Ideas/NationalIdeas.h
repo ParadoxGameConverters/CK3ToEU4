@@ -11,10 +11,11 @@ class NationalIdeas // Class wasn't nessecary, but might make it easier for futu
 {
   public:
 	NationalIdeas() = default;
-	NationalIdeas(CK3::Culture& culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
+	NationalIdeas(std::vector<std::string> tagsVector, CK3::Culture& culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
 
 	[[nodiscard]] const auto& getEthos() const { return ethos; }
 	[[nodiscard]] const auto& getName() const { return name; }
+	[[nodiscard]] const auto& getTags() const { return tags; }
 	[[nodiscard]] const std::vector<std::string> getTraditions() const { return traditions; }
 	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
 
@@ -25,6 +26,7 @@ class NationalIdeas // Class wasn't nessecary, but might make it easier for futu
 	std::string ethos;						 // Becomes national traditions
 	std::string name;
 	std::vector<std::string> traditions;	 // Becomes national ideas/ambitions
+	std::vector<std::string> tags;			// All tags that should have this idea group
 
 	const mappers::DynamicIdeasMapper& dynIdeasMapper;
 	

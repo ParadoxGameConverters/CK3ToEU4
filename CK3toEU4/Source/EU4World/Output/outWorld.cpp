@@ -386,7 +386,7 @@ void EU4::World::outputDynamicIdeasFile(const Configuration& theConfiguration) c
 
 	for (const auto& idea: dynamicNationalIdeas)
 	{
-		output << *idea;
+		output << idea;
 		output << "\n";
 	}
 	output.close();
