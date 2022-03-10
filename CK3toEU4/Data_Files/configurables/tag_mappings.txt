@@ -118,6 +118,7 @@ link = { ck3 = k_wales eu4 = WLS }
 
 # Eastern Europe
 
+link = { ck3 = e_west_slavia eu4 = WSF }
 link = { ck3 = d_chernigov eu4 = CHR }
 link = { ck3 = c_chernigov eu4 = CHR }
 link = { ck3 = c_danzig eu4 = DNZ }
@@ -201,6 +202,7 @@ link = { ck3 = d_angria eu4 = HAN }
 link = { ck3 = c_hannover eu4 = HAN }
 link = { ck3 = d_hesse eu4 = HES }
 link = { ck3 = e_hre eu4 = HLR }
+link = { ck3 = e_hre_roman eu4 = HLR }
 link = { ck3 = c_cleves eu4 = KLE }
 link = { ck3 = c_cologne eu4 = KOL }
 #link = { ck3 = ??? eu4 = LAU } #No space between Hamburg/Luneburg
@@ -224,6 +226,7 @@ link = { ck3 = k_pomerania eu4 = POM }
 link = { ck3 = d_pommerania eu4 = POM }
 link = { ck3 = c_ravensburg eu4 = RVA }
 link = { ck3 = k_saxony eu4 = SAX }
+link = { ck3 = k_saxon_electorate eu4 = SAX }
 link = { ck3 = d_upper_silesia eu4 = SIL }
 link = { ck3 = d_salzburg eu4 = SLZ }
 link = { ck3 = c_salzburg eu4 = SLZ }
@@ -836,6 +839,7 @@ link = { ck3 = c_spoleto eu4 = SPL }
 link = { ck3 = c_wolgast eu4 = WOL }
 link = { ck3 = c_stettin eu4 = STE }
 link = { ck3 = c_gottingen eu4 = GOS } #Has city of Goslar
+link = { ck3 = e_sorbia eu4 = SOR } # Lausitz => Lusatia
 link = { ck3 = d_lausitz eu4 = SOR } # Lausitz => Lusatia
 link = { ck3 = c_cottbus eu4 = SOR } #Political/Cultural Centre of Sorbia/Lusatia
 link = { ck3 = c_rugen eu4 = RUG }
