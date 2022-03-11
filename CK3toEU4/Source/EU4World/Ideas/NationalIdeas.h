@@ -7,27 +7,25 @@
 
 namespace EU4
 {
-class NationalIdeas // Class wasn't nessecary, but might make it easier for future tweaks
+class NationalIdeas
 {
   public:
 	NationalIdeas() = default;
 	NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
 
-	[[nodiscard]] const auto& getEthos() const { return ethos; }
-	[[nodiscard]] const auto& getCulturalName() const { return culturalName; }
-	[[nodiscard]] const std::vector<std::string> getTraditions() const { return traditions; }
-	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
+	[[nodiscard]] const auto& getEthos() const { return culture->getEthos(); }
+	[[nodiscard]] const auto& getDynamicName() const { return culture->getName(); }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
+	[[nodiscard]] const std::vector<std::string> getTraditionIdeas() const { return traditionIdeas; }
+	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
 
 	friend std::ostream& operator<<(std::ostream& output, const NationalIdeas& country);
 
   private:
+	std::string localizedName;						// Defined version of culture's optional value if undefined there
+	std::vector<std::string> traditionIdeas;		// Becomes national ideas/ambitions, filled up to 8 if culture had less
 
-	std::string ethos;							// Becomes national traditions
-	std::string culturalName;					// Culture identifier e.g. dynamic-irish-polish-culture-num3
-	std::string localizedName;					// For localizing idea/tradition/ambition
-	std::vector<std::string> traditions;		// Becomes national ideas/ambitions
-
+	std::shared_ptr<CK3::Culture> culture;
 	const mappers::DynamicIdeasMapper& dynIdeasMapper; // Parser for config file
 	
 };
