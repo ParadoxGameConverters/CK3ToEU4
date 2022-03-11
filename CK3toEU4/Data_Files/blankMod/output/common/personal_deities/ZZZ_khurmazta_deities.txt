@@ -47,74 +47,11 @@ ZZZ_enhanced_nanaiya =
 {
 	diplomatic_reputation = 1
 	devotion = 0.5
-
-	allow = {
-		religion = khurmazta
-		government = theocracy
-	}
-
-	sprite = 15
-
-	ai_will_do = {
-		factor = 1
-		modifier = {
-			factor = 2
-			personality = ai_balanced
-		}
-	}
-}
-ZZZ_enhanced_nanaiya =
-{
-	diplomatic_reputation = 1
 	heir_chance = 0.5
-
-	allow = {
-		religion = khurmazta
-		has_government_attribute = heir
-		NOT = { government = theocracy }
-	}
-
-	sprite = 15
-
-	ai_will_do = {
-		factor = 1
-		modifier = {
-			factor = 2
-			personality = ai_balanced
-		}
-	}
-}
-ZZZ_enhanced_nanaiya =
-{
-	diplomatic_reputation = 1
 	reelection_cost = -0.1
 
 	allow = {
 		religion = khurmazta
-		government = republic
-		NOT = { has_government_attribute = heir }
-	}
-
-	sprite = 15
-
-	ai_will_do = {
-		factor = 1
-		modifier = {
-			factor = 2
-			personality = ai_balanced
-		}
-	}
-}
-ZZZ_enhanced_nanaiya =
-{
-	diplomatic_reputation = 1
-	legitimacy = 0.5 #For States General/Netherlands
-
-	allow = {
-		religion = khurmazta
-		NOT = { government = theocracy }
-		NOT = { government = republic }
-		NOT = { has_government_attribute = heir }
 	}
 
 	sprite = 15

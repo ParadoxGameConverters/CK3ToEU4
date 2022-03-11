@@ -8,7 +8,6 @@ shiva =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 1
 
@@ -33,7 +32,6 @@ ganesha =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 2
 
@@ -58,7 +56,6 @@ surya =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 3
 
@@ -83,7 +80,6 @@ ganga =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 4
 
@@ -108,7 +104,6 @@ shakti =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 5
 
@@ -133,7 +128,6 @@ vishnu =
 
 	allow = {
 		religion_group = dharmic
-		NOT = { religion = hinduism }
 	}
 	sprite = 6
 
