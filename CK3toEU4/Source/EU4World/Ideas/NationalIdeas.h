@@ -11,11 +11,10 @@ class NationalIdeas // Class wasn't nessecary, but might make it easier for futu
 {
   public:
 	NationalIdeas() = default;
-	NationalIdeas(std::vector<std::string> tagsVector, CK3::Culture& culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
+	NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
 
 	[[nodiscard]] const auto& getEthos() const { return ethos; }
-	[[nodiscard]] const auto& getName() const { return name; }
-	[[nodiscard]] const auto& getTags() const { return tags; }
+	[[nodiscard]] const auto& getCulturalName() const { return culturalName; }
 	[[nodiscard]] const std::vector<std::string> getTraditions() const { return traditions; }
 	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
@@ -25,12 +24,11 @@ class NationalIdeas // Class wasn't nessecary, but might make it easier for futu
   private:
 
 	std::string ethos;							// Becomes national traditions
-	std::string name;
+	std::string culturalName;					// Culture identifier e.g. dynamic-irish-polish-culture-num3
 	std::string localizedName;					// For localizing idea/tradition/ambition
 	std::vector<std::string> traditions;		// Becomes national ideas/ambitions
-	std::vector<std::string> tags;				// All tags that should have this idea group
 
-	const mappers::DynamicIdeasMapper& dynIdeasMapper;
+	const mappers::DynamicIdeasMapper& dynIdeasMapper; // Parser for config file
 	
 };
 } // namespace EU4

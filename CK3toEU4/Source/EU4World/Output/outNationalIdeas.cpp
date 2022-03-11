@@ -3,52 +3,46 @@
 
 std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 {
-	auto& ethosMap = idea.getMapper().getEthosMap();
-	auto& traditionMap = idea.getMapper().getTraditionMap();
-	auto& ethos = idea.getEthos();
-	auto& tags = idea.getTags();
-	std::vector<std::string> traditions = idea.getTraditions();
+	auto& ethosMap = idea.getMapper().getEthosMap(); // Revisit after #4
+	auto& traditionMap = idea.getMapper().getTraditionMap(); // Revisit after #4
 
-	output << idea.getName() + "_ideas = {\n";
+	auto& ethos = idea.getEthos();
+
+	std::vector<std::string> traditions = idea.getTraditions(); // Revisit after #4
+
+	output << idea.getCulturalName() + "_ideas = {\n";
 
 	// National Traditions
-	output << "\tstart = {\n\t\t" + ethosMap.at(ethos)[0] + " = " + ethosMap.at(ethos)[1] + 
+	output << "\tstart = {\n\t\t" + ethosMap.at(ethos)[0] + " = " + ethosMap.at(ethos)[1] + // Revisit after #4
 		"\n\t\t" + ethosMap.at(ethos)[2] + " + " + ethosMap.at(ethos)[3] + "\n\t}\n";
+
 	// Trigger
-	if (tags.size() == 1)
-		output << "\n\ttrigger = {\n\t\ttag = " + tags.front() + "\n\t}\n";
-	else
-	{
-		output << "\n\ttrigger = {\n\t\tOR = {\n";
-		for (auto& tag: tags)
-			output << "\t\t\t tag = " + tag + "\n";
-		output << "\t\t}\n\t}\n";
-	}
+	output << "\n\ttrigger = {\n\t\tculture = " + idea.getCulturalName() + "\n\t}\n";
 
 	output << "\tfree = yes\n\n";
 
 	// First 7 traditions become ideas, last one becomes ambition
-	std::vector<std::string>::iterator iterTraditions = traditions.begin();
+	std::vector<std::string>::iterator iterTraditions = traditions.begin(); // Revisit after #4
 
-	while (iterTraditions != traditions.end() - 1)
-	{
-		output << "\t" + *iterTraditions + " = {";
-		std::vector<std::string> effects = traditionMap.at(*iterTraditions);
+	//while (iterTraditions != traditions.end() - 1)
+	//{
+	//	output << "\t" + *iterTraditions + " = {";
+	//	std::vector<std::string> effects = traditionMap.at(*iterTraditions);
 
-		for (int i = 0; i < effects.size(); i++)
-		{
-			if (i % 2 == 0)
-				output << "\n\t\t" + effects[i];
-			else
-				output << " = " + effects[i];
-		}
+	//	for (int i = 0; i < effects.size(); i++)
+	//	{
+	//		if (i % 2 == 0)
+	//			output << "\n\t\t" + effects[i];
+	//		else
+	//			output << " = " + effects[i];
+	//	}
 
-		output << "\n\t}\n";
+	//	output << "\n\t}\n";
 
-		iterTraditions++;
-	}
+	//	iterTraditions++;
+	//}
 
-	output << "\tbonus = {\n\t\t" + traditionMap.at(traditions.back())[0] + " = " + traditionMap.at(traditions.back())[1] + "\n\t}\n";
+	//output << "\tbonus = {\n\t\t" + traditionMap.at(traditions.back())[0] + " = " + traditionMap.at(traditions.back())[1] + "\n\t}\n";
 	output << "}\n\n";
 
 	return output;
