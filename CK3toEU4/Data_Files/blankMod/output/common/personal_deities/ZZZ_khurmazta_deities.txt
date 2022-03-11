@@ -47,10 +47,11 @@ ZZZ_enhanced_nanaiya =
 {
 	diplomatic_reputation = 1
 	devotion = 0.5
+	heir_chance = 0.5
+	reelection_cost = -0.1
 
 	allow = {
 		religion = khurmazta
-		government = theocracy
 	}
 
 	sprite = 15
