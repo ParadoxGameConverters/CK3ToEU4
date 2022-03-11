@@ -1,25 +1,32 @@
-# Ethos lines must be in the format: ethos = { ethos_name effect1_name effect1_# effect2_name effect2# }
-# The convertor assumes exactly 5 strings in exactly that order inbetween the ethos brackets
-
-# Tradition lines must be in the format: ethos = { tradition_name effect1_name effect1_# effect2_name effect2# }
-# The convertor does NOT assume exactly 5 strings, each effect must be immediately followed by its number.
+#  Tradition and ethos are the only mandatory CK3 values
+#  Other valid values are heritage,etc.
 
 # NOTE: All decimal values need a leading integer. .2 will cause an effect to fail to appear in game, 0.2 will work.
 
+link = { eu4 = { yearly_army_professionalism = 0.01 land_forcelimit = 4 } ethos = ethos_bellicose }
+link = { eu4 = { yearly_corruption = -0.1 state_maintenance_modifier = -0.1 } ethos = ethos_bureaucratic }
+link = { eu4 = {same_culture_advisor_cost = -0.25 global_heretic_missionary_strength = 0.03 } ethos = ethos_communal }
+link = { eu4 = { monthly_splendor = 1 power_projection_from_insults = 0.2 } ethos = ethos_courtly }
+link = { eu4 = { num_accepted_cultures = 1 advisor_pool = 1 } ethos = ethos_egalitarian }
+link = { eu4 = { missonaries = 1 religious_unity = 0.25 } ethos = ethos_spiritual }
+link = { eu4 = { monarch_lifespan = 0.1 all_estate_loyalty_equilibrium = 0.05 } ethos = ethos_stoic }
 
-ethos = { ethos_communal global_manpower_modifier 0.25 land_morale 0.15 }
-ethos = { ethos_bellicose global_manpower_modifier 0.2 land_morale 0.1 }
+link = { eu4 = { global_trade_goods_size_modifier = 0.1 } ck3 = { tradition = agrarian } }
+link = { eu4 = { gold_depletion_chance_modifier = -0.2 } ck3 = { tradition = tradition_ancient_miners } }
+link = { eu4 = { diplomats = 1 } ck3 = { tradition = tradition_astute_diplomats } }
+link = { eu4 = { global_prov_trade_power_modifier = 0.1 } ck3 = { tradition = tradition_artisans } }
+link = { eu4 = { available_province_loot = 0.10 loot_amount = 0.05 } ck3 = { tradition = tradition_battlefield_looters } }
+link = { eu4 = { warscore_cost_vs_other_religion = -0.25 } ck3 = { tradition = tradition_by_the_sword } }
+link = { eu4 = { legitimacy = 1 yearly_patriarch_authority = 0.2 } ck3 = { tradition = tradition_byzantine_succession } }
+link = { eu4 = { caravan_power = 0.2 } ck3 = { tradition = tradition_caravaneers } }
+link = { eu4 = { garrison_size = 0.10 } ck3 = { tradition = tradition_castle_keepers } }
+link = { eu4 = { vassal_income = 0.2 } ck3 = { tradition = tradition_charitable } }
+link = { eu4 = { heir_chance = 0.5 } ck3 = { tradition = tradition_concubines } }
+link = { eu4 = { adm_advisor_cost = -0.2 } ck3 = { tradition = tradition_court_eunuchs } }
+link = { eu4 = { defensiveness = 0.10 } ck3 = { tradition = tradition_hold_the_line } }
+link = { eu4 = { cav_to_inf_ratio = 0.10 } ck3 = { tradition = tradition_horse_breeder } }
+link = { eu4 = { mercantilism_cost = -0.2 } ck3 = { tradition = tradition_maritime_mercantilism } }
+link = { eu4 = { global_spy_defence = 0.1  } ck3 = { tradition = tradition_medicinal_plants } }
+link = { eu4 = { reinforce_cost_modifier = -0.10 } ck3 = { tradition = tradition_metal_craftsmanship } }
+link = { eu4 = { build_time = -0.2 } ck3 = { tradition = tradition_parochialism } }
 
-
-tradition = { tradition_life_is_just_a_joke global_unrest -1 }
-tradition = { tradition_fishermen development_cost -0.05 }
-tradition = { tradition_culinary_art prestige_decay -0.01 }
-
-default = { increase_discipline discipline 0.025 }
-default = { increase_taxation global_tax_modifier 0.05 }
-default = { increased_trade_power global_trade_power 0.05 }
-default = { cheaper_mercenaries merc_maintenance_modifier -0.10 }
-default = { increased_manpower global_manpower_modifier 0.05 }
-default = { increased_trade_steering trade_steering 0.05 }
-default = { increased_production_income production_efficiency 0.05 }
-default = { placeholder global_tax_modifier 0.10 }
