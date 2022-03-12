@@ -164,6 +164,7 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.h" />
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
@@ -279,6 +280,7 @@ call save_commit_id.bat
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp" />
     <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />

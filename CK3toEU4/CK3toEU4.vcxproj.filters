@@ -472,6 +472,9 @@
     <ClInclude Include="Source\EU4World\Output\outNationalIdeas.h">
       <Filter>EU4World\Output</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -808,6 +811,9 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outNationalIdeas.cpp">
       <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
