@@ -60,7 +60,7 @@ class World
 	void verifyCapitals();
 	void verifyReligionsAndCultures();
 	void assignAllCountryReforms();
-	void linkCustomTagsToCulturesForIdeas(const CK3::Cultures& cultures);
+	void generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures);
 	void importAdvisers();
 	void resolvePersonalUnions();
 	void distributeHRESubtitles(const Configuration& theConfiguration);

@@ -119,7 +119,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	verifyReligionsAndCultures();
 
 	Log(LogLevel::Info) << "-> Initializing Dynamic National Ideas";
-	linkCustomTagsToCulturesForIdeas(sourceWorld.getCultures());
+	generateNationalIdeasFromDynamicCultures(sourceWorld.getCultures());
 
 	Log(LogLevel::Progress) << "63 %";
 	// With all provinces and rulers religion/culture set, only now can we import advisers, which also need religion/culture set.
@@ -921,46 +921,19 @@ void EU4::World::assignAllCountryReforms()
 	}
 }
 
-void EU4::World::linkCustomTagsToCulturesForIdeas(const CK3::Cultures& culturesMapHolder)
+void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures)
 {
 	// I'm not happy with this function, but the Ck3 cultures map is what it is
 	Log(LogLevel::Info) << "-> Creating new National Ideas";
 	auto counter = 0;
 
-	std::map<std::string, std::shared_ptr<CK3::Culture>> cultureNameMap;
-	for (auto const& culturePair: culturesMapHolder.getCultures())
-		if (culturePair.second->isDynamic())
-			cultureNameMap.emplace(culturePair.second->getName(), culturePair.second);
-
-	Log(LogLevel::Info) << "-> Repacked CK3 Cultures into new name to culture map";
-
-	// Find dynamic tags with dynamic cultures
-	std::set<std::string> cultures;
-	std::set<std::shared_ptr<Country>> tags;
-	for (const auto& country: countries)
+	for (auto& pair: cultures.getCultures())
 	{
-		auto& cultureName = country.second->getPrimaryCulture();
-		if (country.second->getTitle() && country.second->getTitle()->second->isCustomTitle() && cultureName.find("dynamic-") != std::string::npos)
+		if (pair.second->isDynamic())
 		{
-			cultures.emplace(cultureName);
-			tags.emplace(country.second);
+			dynamicNationalIdeas.push_back(NationalIdeas(pair.second,dynamicIdeasMapper));
+			counter++;
 		}
-	}
-
-	// Initialize cultureToTags Map
-	std::map<std::string, std::vector<std::string>> cultureToTags;
-	for (const auto& culture: cultures)
-		cultureToTags.emplace(culture, std::vector<std::string>());
-
-	// Populate each culture with list of tags
-	for (const auto& country: tags)
-		cultureToTags.at(country->getPrimaryCulture()).push_back(country->getTag());
-
-	// Enques National Ideas for the output to generate
-	for (const auto& culTagPair: cultureToTags)
-	{
-		dynamicNationalIdeas.push_back(NationalIdeas(culTagPair.second, *cultureNameMap.at(culTagPair.first), dynamicIdeasMapper));
-		counter++;
 	}
 
 	Log(LogLevel::Info) << "<> Created " << counter << " National Ideas.";

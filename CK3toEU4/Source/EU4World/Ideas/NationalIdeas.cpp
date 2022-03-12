@@ -6,6 +6,8 @@
 EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers::DynamicIdeasMapper& dynIdeasMapper)
 	: culture(culture), dynIdeasMapper(dynIdeasMapper)
 {
+	traditionIdeas = culture->getTraditions();
+
 	// Culture localized name is an optional value, so just forcing it into a normal string and given defualt value.
 	if (culture->getLocalizedName())
 		localizedName = culture->getLocalizedName().value();
@@ -13,14 +15,14 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers
 		localizedName = getDynamicName();
 
 	// Defualt behavior for when cultures have less than 8 traditions. Good enough for now
-	std::map<std::string, std::vector<std::string>> defaults = dynIdeasMapper.getDefaultMap();
-	std::map<std::string, std::vector<std::string>>::iterator iterPair;
+	std::vector<std::string> defaults = dynIdeasMapper.getDefaults();
+	std::vector<std::string>::iterator iter;
 
-	iterPair = defaults.begin();
+	iter = defaults.begin();
 
-	while (traditionIdeas.size() < 8 && iterPair != defaults.end())
+	while (traditionIdeas.size() < 8 && iter != defaults.end())
 	{
-		traditionIdeas.push_back(iterPair->first);
-		iterPair++;
+		traditionIdeas.push_back(*iter);
+		iter++;
 	}
 }

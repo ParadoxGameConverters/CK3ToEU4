@@ -22,7 +22,10 @@ void mappers::DynamicIdeasMapper::registerKeys()
 			else if (scraper.getTradition())
 				traditionMap.emplace(scraper.getTradition().value(), scraper.getEffects());
 			else
-				defaultMap.emplace(scraper.getDefault().value(), scraper.getEffects());
+			{
+				traditionMap.emplace(scraper.getDefault().value(), scraper.getEffects());
+				defaults.push_back(scraper.getDefault().value());
+			}
 		}
 
 		// Rules logic to come
