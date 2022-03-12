@@ -15,7 +15,7 @@ void mappers::DynamicIdeasMapper::registerKeys()
 	registerKeyword("link", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
 
-		if (!scraper.getRules().empty())
+		if (scraper.getRules().empty())
 		{
 			if (scraper.getEthos())
 				ethosMap.emplace(scraper.getEthos().value(), scraper.getEffects());

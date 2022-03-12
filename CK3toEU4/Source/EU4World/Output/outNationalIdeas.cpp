@@ -16,7 +16,7 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 
 	// National Traditions
 	output << "\tstart = {\n\t\t" + ethosEffects[0].first + " = " + ethosEffects[0].second + "\n\t\t"
-		+ ethosEffects[1].first + " + " + ethosEffects[1].second + "\n\t}\n";
+		+ ethosEffects[1].first + " = " + ethosEffects[1].second + "\n\t}\n";
 
 	// Trigger
 	output << "\n\ttrigger = {\n\t\tculture = " + idea.getDynamicName() + "\n\t}\n";

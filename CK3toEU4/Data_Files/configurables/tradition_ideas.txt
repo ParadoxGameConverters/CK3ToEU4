@@ -52,6 +52,7 @@ link = { ck3 = { tradition = tradition_monastic_communities } eu4 = { church_loy
 link = { ck3 = { tradition = tradition_music_theory } eu4 = { prestige = 0.5 } } 
 link = { ck3 = { tradition = tradition_nubian_warrior_queens } eu4 = { monarch_military_power = 1 female_advisor_chance = 0.1 } } 
 link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = -0.15 } } 
+link = { ck3 = { tradition = tradition_life_is_just_a_joke } eu4 = { global_unrest = -2 } } 
 link = { ck3 = { tradition = tradition_pacifism } eu4 = { stability_cost_to_declare_war = 1 all_power_cost = -0.03 } }
 link = { ck3 = { tradition = tradition_parochialism } eu4 = { build_time = -0.2 } }
 link = { ck3 = { tradition = tradition_polders} eu4 = { development_cost = -0.1 } } # Same as vanilla Polders in Dutch Ideas

@@ -16,7 +16,7 @@ class DynamicIdeasLink: commonItems::parser
 	[[nodiscard]] const auto& getDefault() const { return defaultString; }
 	[[nodiscard]] const auto& getEffects() const { return effects; }
 	[[nodiscard]] const auto& getRules() const { return rules; }
-	[[nodiscard]] const auto& getPair() const { return ambiguosPair; }
+	[[nodiscard]] const auto& getPair() const { return ambiguosPairs; }
 
 																	  
   private:															  
