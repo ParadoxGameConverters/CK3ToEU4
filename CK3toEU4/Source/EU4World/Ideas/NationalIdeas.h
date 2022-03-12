@@ -26,7 +26,7 @@ class NationalIdeas
 	std::vector<std::string> traditionIdeas;		// Becomes national ideas/ambitions, filled up to 8 if culture had less
 
 	std::shared_ptr<CK3::Culture> culture;
-	const mappers::DynamicIdeasMapper& dynIdeasMapper; // Parser for config file
+	const mappers::DynamicIdeasMapper& dynIdeasMapper; // Parser for config file. Is this even needed here?
 	
 };
 } // namespace EU4

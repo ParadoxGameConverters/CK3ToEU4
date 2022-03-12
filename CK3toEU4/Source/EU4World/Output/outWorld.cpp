@@ -23,6 +23,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 
 	commonItems::TryCreateFolder("output");
 	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
+	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
 	{
 		Log(LogLevel::Info) << "<< Deleting existing mod folder.";
 		commonItems::DeleteFolder("output/" + theConfiguration.getOutputName());
@@ -379,10 +380,10 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 
 void EU4::World::outputDynamicIdeasFile(const Configuration& theConfiguration) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/!_dynamic_ideas.txt");
+	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
 	if (!output.is_open())
 		throw std::runtime_error("Could not create dynamic ideas file!");
-	output << "### National idea groups generated via cultural traditions. (Only generated for custom k or e titles with dynamic cultures.)\n\n";
+	output << "### National idea groups generated via cultural traditions. \n\n";
 
 	for (const auto& idea: dynamicNationalIdeas)
 	{
@@ -476,10 +477,10 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 	{
 		for (auto i = 0; i < suffix.size(); i++)
 		{
-			english << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
-			french << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
-			spanish << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
-			german << " " << idea.getName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			french << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
+			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ideaText[i] << "\"\n";
 		}
 	}
 	english.close();
