@@ -182,7 +182,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "74 %";
 
 	// Indian buddhisms
-	indianQuestion();
+	// Disabled for now as probably no longer necessary due to CK3's larger religious variance in later patches.
+	// indianQuestion();
+
 	// No-Islam worlds
 	religiousQuestion(sourceWorld.doesIslamExist());
 	Log(LogLevel::Progress) << "75 %";
