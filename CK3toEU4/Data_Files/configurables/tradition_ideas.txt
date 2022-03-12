@@ -48,6 +48,7 @@ link = { ck3 = { tradition = tradition_praticed_pirates } eu4 = { loot_amount = 
 link = { ck3 = { tradition = tradition_reverence_for_veterans } eu4 = { innovativeness_gain = 0.5 army_tradition_decay = -0.01 } } 
 link = { ck3 = { tradition = tradition_ruling_caste } eu4 = { global_rebel_suppression_efficiency = 0.2 improve_relation_modifier = -0.05 } } #
 link = { ck3 = { tradition = tradition_sacred_groves } eu4 = { monthly_splendor = 1.5 development_cost = 0.05 } }
+link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_swords_for_hire} eu4 = { possible_condottieri = 1 } } 
 link = { ck3 = { tradition = tradition_vegetarianism } eu4 = { monthly_karma = 0.1 } } 
 link = { ck3 = { tradition = tradition_warrior_culture } eu4 = { monarch_military_power = 2 monarch_diplomatic_power = -1 } }
@@ -55,15 +56,12 @@ link = { ck3 = { tradition = tradition_xenophilic } eu4 = { promote_culture_cost
 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_mendicant_mystics } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_zealous_people } }
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_priestly_caste } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sacred_hunts } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sacred_mountains } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_mystical_ancestors } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_religion_blending } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_religious_festivities } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_religious_patronage } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_ritual_scarrification } } 
-
 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_african_tolerance } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_alpine_supremacy } } 
@@ -119,7 +117,6 @@ link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_ro
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_runestones } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_saharan_nomads } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_scientific_curiosity } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_seafaring } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sorcerous_metallurgy } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_staunch_traditionalists } } 
 link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_steppe_tolerance} } 
@@ -194,6 +191,8 @@ link = { ck3 = { tradition = tradition_longbow_competitions } eu4 = { special_un
 ### Not Yet In Game
 link = { ck3 = { tradition = tradition_sacral_kingship } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_hold_the_line } eu4 = { defensiveness = 0.10 } }
+link = { ck3 = { tradition = tradition_priestly_caste } eu4 = { promote_culture_cost = -0.25 } } 
+link = { ck3 = { tradition = tradition_ritual_scarrification } eu4 = { promote_culture_cost = -0.25 } } 
 
 ### Defaults
 link = { ck3 = { default = increase_discipline } eu4 = { discipline = 0.025 } }
@@ -205,3 +204,5 @@ link = { ck3 = { default = increased_trade_steering } eu4 = { trade_steering = 0
 link = { ck3 = { default = increased_production_income } eu4 = { production_efficiency = 0.05 } }
 link = { ck3 = { default = placeholder_tradition } eu4 = { global_tax_modifier = 0.10 } }
 
+### Rule Overrides
+link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } modifier = { heritage = heritage_north_germanic } }
