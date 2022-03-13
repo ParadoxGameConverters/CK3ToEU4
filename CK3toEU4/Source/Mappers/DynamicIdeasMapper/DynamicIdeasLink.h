@@ -5,6 +5,13 @@
 
 namespace mappers
 {
+
+typedef struct AssignmentPair
+{
+	std::string type;
+	std::string value;
+} AssignmentPair;
+
 class DynamicIdeasLink: commonItems::parser
 {
   public:
@@ -18,18 +25,17 @@ class DynamicIdeasLink: commonItems::parser
 	[[nodiscard]] const auto& getRules() const { return rules; }
 	[[nodiscard]] const auto& getPair() const { return ambiguosPairs; }
 
-																	  
-  private:															  
-	void registerKeys();											  
+  private:
+	void registerKeys();
 
 	std::optional<std::string> ethos;
 	std::optional<std::string> tradition;
 	std::optional<std::string> defaultString;
-	std::vector<std::pair<std::string,std::string>> effects;
-	std::vector<std::pair<std::string, std::string>> rules;
+	std::vector<AssignmentPair> effects; // (type = "global_manpower_modifier", value = "0.10")
+	std::vector<AssignmentPair> rules;	 // (type = "heritage", value = "heritage_north_germanic")
 
 	// Turns into either rules or effects
-	std::vector<std::pair<std::string, std::string>> ambiguosPairs;
+	std::vector<AssignmentPair> ambiguosPairs; // assigned specifics based on calling scope
 };
 } // namespace mappers
 #endif // DYNAMIC_IDEAS_LINK

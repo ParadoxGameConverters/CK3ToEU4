@@ -206,4 +206,4 @@ link = { ck3 = { default = increased_production_income } eu4 = { production_effi
 link = { ck3 = { default = placeholder_tradition } eu4 = { global_tax_modifier = 0.10 } }
 
 ### Rule Overrides
-link = { ck3 = { tradition = tradition_seafaring } eu4 = { may_explore = yes } modifier = { heritage = heritage_north_germanic } }
+link = { ck3 = { tradition = tradition_seafaring } eu4 = { may_explore = yes } rule = { heritage = heritage_north_germanic } }

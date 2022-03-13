@@ -1,11 +1,12 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
-#include "../CK3World/World.h"
 #include "../CK3World/Cultures/Culture.h"
+#include "../CK3World/World.h"
 #include "../Mappers/AfricanPassesMapper/AfricanPassesMapper.h"
 #include "../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include "../Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/IslamOverrideMapper/IslamOverrideMapper.h"
 #include "../Mappers/LocDegraderMapper/LocDegraderMapper.h"
@@ -18,13 +19,12 @@
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
-#include "../Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "ConverterVersion.h"
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
 #include "FlagFoundry/FlagFoundry.h"
-#include "Output/outModFile.h"
 #include "Ideas/NationalIdeas.h"
+#include "Output/outModFile.h"
 
 class Configuration;
 
@@ -84,7 +84,6 @@ class World
 	void outputCommonCountriesFile(const Configuration& theConfiguration) const;
 	void outputCommonCountries(const Configuration& theConfiguration) const;
 	void outputHistoryCountries(const Configuration& theConfiguration) const;
-	void outputDynamicIdeasFile(const Configuration& theConfiguration) const;
 	void outputAdvisers(const Configuration& theConfiguration) const;
 	void outputHistoryProvinces(const Configuration& theConfiguration) const;
 	void outputLocalization(const Configuration& theConfiguration, bool invasion) const;
@@ -94,6 +93,7 @@ class World
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
+	void outputDynamicIdeasFile(const std::string& outputName) const;
 	void outputReligions(const std::string& outputName,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;

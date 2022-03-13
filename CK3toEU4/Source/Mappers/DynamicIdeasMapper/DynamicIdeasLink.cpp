@@ -1,7 +1,7 @@
 #include "DynamicIdeasLink.h"
 #include "CommonRegexes.h"
-#include "ParserHelpers.h"
 #include "Log.h"
+#include "ParserHelpers.h"
 
 mappers::DynamicIdeasLink::DynamicIdeasLink(std::istream& theStream)
 {
@@ -36,12 +36,13 @@ void mappers::DynamicIdeasLink::registerKeys()
 		const auto scraper = DynamicIdeasLink(theStream);
 		effects = scraper.getPair();
 	});
-	registerKeyword("modifier", [this](std::istream& theStream) {
+	registerKeyword("rule", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
 		rules = scraper.getPair();
 	});
 	registerRegex(R"(\w+)", [this](const std::string& ruleOrEffect, std::istream& theStream) {
-		ambiguosPairs.push_back(std::make_pair(ruleOrEffect, commonItems::getString(theStream)));
+		AssignmentPair pair = {ruleOrEffect, commonItems::getString(theStream)};
+		ambiguosPairs.push_back(pair);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

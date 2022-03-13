@@ -238,6 +238,18 @@
     <Filter Include="MapperTests\HeritageMapperTests">
       <UniqueIdentifier>{1ef34395-6621-4f49-8844-b4ae05acdd3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\DynamicIdeasMapper">
+      <UniqueIdentifier>{22c257af-faca-4dc2-b7c7-21453a42093b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\EU4World\Ideas">
+      <UniqueIdentifier>{60196a55-12fd-4b91-97af-1e37bde4e10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\IdeasTests">
+      <UniqueIdentifier>{3796707f-9f2a-4781-8e30-f17410a1961a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\DynamicIdeasMapperTests">
+      <UniqueIdentifier>{d2052e1b-e453-4faf-a2fd-d407a61d26f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -745,6 +757,24 @@
     </ClCompile>
     <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp">
       <Filter>MapperTests\HeritageMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp">
+      <Filter>CK3ToEU4\EU4World\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp">
+      <Filter>EU4WorldTests\IdeasTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

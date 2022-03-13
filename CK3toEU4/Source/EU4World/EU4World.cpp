@@ -925,7 +925,6 @@ void EU4::World::assignAllCountryReforms()
 
 void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures)
 {
-	// I'm not happy with this function, but the Ck3 cultures map is what it is
 	Log(LogLevel::Info) << "-> Creating new National Ideas";
 	auto counter = 0;
 

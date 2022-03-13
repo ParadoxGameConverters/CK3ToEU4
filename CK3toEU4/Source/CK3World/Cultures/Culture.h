@@ -26,7 +26,7 @@ class Culture: commonItems::parser
 	[[nodiscard]] const auto& getHeritage() const { return heritage; }
 	[[nodiscard]] const auto& getTemplate() const { return culture_template; }
 	[[nodiscard]] const auto& getEthos() const { return ethos; }
-	[[nodiscard]] const std::vector<std::string>& getTraditions() const { return traditions; }
+	[[nodiscard]] const auto& getTraditions() const { return traditions; }
 
 	void setDynamic() { dynamic = true; }
 	void concoctCultureName(const mappers::LocalizationMapper& localizationMapper,
@@ -44,8 +44,8 @@ class Culture: commonItems::parser
 	std::optional<std::string> localizedName;		// this can be anything - user input or localized name in a particular language game is running.
 	std::string heritage;								// all cultures should have this.
 	std::set<std::string> nameLists;					// We use these to generate dynamic culture code names, in lack of a better solution.
-	std::string ethos;								// used to generate custom ideas for custom tags with a custom culture 
-	std::vector<std::string> traditions;			// used to generate custom ideas for custom tags with a custom culture 
+	std::string ethos;									// used to generate custom ideas for custom tags with a custom culture
+	std::vector<std::string> traditions;			// used to generate custom ideas for custom tags with a custom culture
 
 	std::string name; // calculated value from all of the above - can be either *eu4* culture, ck3 vanilla, or anything in between.
 };

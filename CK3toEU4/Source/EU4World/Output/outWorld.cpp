@@ -23,7 +23,6 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 
 	commonItems::TryCreateFolder("output");
 	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
-	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
 	{
 		Log(LogLevel::Info) << "<< Deleting existing mod folder.";
 		commonItems::DeleteFolder("output/" + theConfiguration.getOutputName());
@@ -79,7 +78,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	Log(LogLevel::Progress) << "89 %";
 
 	Log(LogLevel::Info) << "<- Writing Dynamic Ideas";
-	outputDynamicIdeasFile(theConfiguration);
+	outputDynamicIdeasFile(theConfiguration.getOutputName());
 
 	if (invasion)
 	{
@@ -378,9 +377,9 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 	}
 }
 
-void EU4::World::outputDynamicIdeasFile(const Configuration& theConfiguration) const
+void EU4::World::outputDynamicIdeasFile(const std::string& outputName) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
+	std::ofstream output("output/" + outputName + "/common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
 	if (!output.is_open())
 		throw std::runtime_error("Could not create dynamic ideas file!");
 	output << "### National idea groups generated via cultural traditions. \n\n";

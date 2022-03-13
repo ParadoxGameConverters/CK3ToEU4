@@ -22,10 +22,12 @@ TEST(CK3World_CultureTests, loadValuesDefaultToDefaults)
 	EXPECT_FALSE(culture.isDynamic());
 	EXPECT_FALSE(culture.isEU4Ready());
 	EXPECT_TRUE(culture.getHeritage().empty());
+	EXPECT_TRUE(culture.getEthos().empty());
 	EXPECT_EQ(std::nullopt, culture.getLocalizedName());
 	EXPECT_TRUE(culture.getName().empty());
 	EXPECT_EQ(std::nullopt, culture.getTemplate());
 	EXPECT_TRUE(culture.getNameLists().empty());
+	EXPECT_TRUE(culture.getTraditions().empty());
 }
 
 TEST(CK3World_CultureTests, culturePrimitivesCanBeLoaded)
@@ -36,6 +38,8 @@ TEST(CK3World_CultureTests, culturePrimitivesCanBeLoaded)
 	input << "heritage = heritage_akan\n";
 	input << "name_list = name_list_akan\n";
 	input << "name_list = name_list_blahakan\n";
+	input << "ethos = ethos_egalitarian\n";
+	input << "traditions = { tradition_parochialism tradition_bush_hunting }\n";
 
 	const CK3::Culture culture(input, 42);
 
@@ -43,6 +47,8 @@ TEST(CK3World_CultureTests, culturePrimitivesCanBeLoaded)
 	EXPECT_EQ("Akan", culture.getLocalizedName());
 	EXPECT_EQ("heritage_akan", culture.getHeritage());
 	EXPECT_EQ("akan", culture.getTemplate());
+	EXPECT_EQ("ethos_egalitarian", culture.getEthos());
+	EXPECT_THAT(culture.getTraditions(), ElementsAre("tradition_parochialism", "tradition_bush_hunting"));
 	EXPECT_THAT(culture.getNameLists(), ElementsAre("akan", "blahakan"));
 	EXPECT_FALSE(culture.isDynamic());
 	EXPECT_FALSE(culture.isEU4Ready());

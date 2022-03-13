@@ -2,8 +2,8 @@
 #define EU4_NATIONAL_IDEAS_H
 #include "../../CK3World/Cultures/Culture.h"
 #include "../../Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
-#include <vector>
 #include <string>
+#include <vector>
 
 namespace EU4
 {
@@ -16,18 +16,19 @@ class NationalIdeas
 	[[nodiscard]] const auto& getEthos() const { return culture->getEthos(); }
 	[[nodiscard]] const auto& getDynamicName() const { return culture->getName(); }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
-	[[nodiscard]] const std::vector<std::string> getTraditionIdeas() const { return traditionIdeas; }
-	[[nodiscard]] const auto& getMapper() const { return dynIdeasMapper; }
+	[[nodiscard]] const auto& getTraditionIdeas() const { return traditionIdeas; }
+	[[nodiscard]] const auto& getEthosEffects() const { return ethosEffects; }
+	[[nodiscard]] const auto& getTraditionEffects() const { return traditionEffects; }
 
 	friend std::ostream& operator<<(std::ostream& output, const NationalIdeas& country);
 
   private:
-	std::string localizedName;						// Defined version of culture's optional value if undefined there
-	std::vector<std::string> traditionIdeas;		// Becomes national ideas/ambitions, filled up to 8 if culture had less
+	std::string localizedName;					  // Defined version of culture's optional value if undefined there
+	std::vector<std::string> traditionIdeas; // Becomes national ideas/ambitions, filled up to 8 if culture had less
+	std::vector<mappers::AssignmentPair> ethosEffects;
+	std::vector<std::vector<mappers::AssignmentPair>> traditionEffects;
 
 	std::shared_ptr<CK3::Culture> culture;
-	const mappers::DynamicIdeasMapper& dynIdeasMapper; // Parser for config file. Is this even needed here?
-	
 };
 } // namespace EU4
 

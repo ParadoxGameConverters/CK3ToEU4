@@ -1,5 +1,4 @@
 #include "DynamicIdeasMapper.h"
-#include "DynamicIdeasLink.h"
 #include "CommonRegexes.h"
 #include "ParserHelpers.h"
 
@@ -32,7 +31,7 @@ void mappers::DynamicIdeasMapper::registerKeys()
 		/*
 		else
 			rules = Rules(scraper.getRules())
-		
+
 		*/
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
