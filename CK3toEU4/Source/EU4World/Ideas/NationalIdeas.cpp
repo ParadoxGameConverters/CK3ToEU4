@@ -9,8 +9,8 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers
 	traditionIdeas = culture->getTraditions();
 
 	// Culture localized name is an optional value, so just forcing it into a normal string and given defualt value.
-	if (culture->getLocalizedName())
-		localizedName = culture->getLocalizedName().value();
+	if (auto possibleLocalizedName = culture->getLocalizedName(); possibleLocalizedName)
+		localizedName = possibleLocalizedName.value();
 	else
 		localizedName = getDynamicName();
 

@@ -17,10 +17,10 @@ void mappers::DynamicIdeasMapper::registerKeys()
 
 		if (scraper.getRules().empty())
 		{
-			if (scraper.getEthos())
-				ethosMap.emplace(scraper.getEthos().value(), scraper.getEffects());
-			else if (scraper.getTradition())
-				traditionMap.emplace(scraper.getTradition().value(), scraper.getEffects());
+			if (auto possibleEthos = scraper.getEthos(); possibleEthos)
+				ethosMap.emplace(possibleEthos.value(), scraper.getEffects());
+			else if (auto possibleTradition = scraper.getTradition(); possibleTradition)
+				traditionMap.emplace(possibleTradition.value(), scraper.getEffects());
 			else
 			{
 				traditionMap.emplace(scraper.getDefault().value(), scraper.getEffects());

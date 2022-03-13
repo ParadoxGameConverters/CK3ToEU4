@@ -929,11 +929,11 @@ void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& c
 	Log(LogLevel::Info) << "-> Creating new National Ideas";
 	auto counter = 0;
 
-	for (auto& pair: cultures.getCultures())
+	for (auto& culture: cultures.getCultures() | std::views::values)
 	{
-		if (pair.second->isDynamic())
+		if (culture->isDynamic())
 		{
-			dynamicNationalIdeas.push_back(NationalIdeas(pair.second,dynamicIdeasMapper));
+			dynamicNationalIdeas.push_back(NationalIdeas(culture, dynamicIdeasMapper));
 			counter++;
 		}
 	}

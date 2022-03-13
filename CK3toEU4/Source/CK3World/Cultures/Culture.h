@@ -26,7 +26,7 @@ class Culture: commonItems::parser
 	[[nodiscard]] const auto& getHeritage() const { return heritage; }
 	[[nodiscard]] const auto& getTemplate() const { return culture_template; }
 	[[nodiscard]] const auto& getEthos() const { return ethos; }
-	[[nodiscard]] const std::vector<std::string> getTraditions() const { return traditions; }
+	[[nodiscard]] const std::vector<std::string>& getTraditions() const { return traditions; }
 
 	void setDynamic() { dynamic = true; }
 	void concoctCultureName(const mappers::LocalizationMapper& localizationMapper,

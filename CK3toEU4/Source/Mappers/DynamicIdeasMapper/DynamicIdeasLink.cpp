@@ -23,12 +23,12 @@ void mappers::DynamicIdeasLink::registerKeys()
 	});
 	registerKeyword("ck3", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
-		if (scraper.getEthos())
-			ethos = scraper.getEthos();
-		else if (scraper.getTradition())
-			tradition = scraper.getTradition();
-		else if (scraper.getDefault())
-			defaultString = scraper.getDefault();
+		if (auto possibleEthos = scraper.getEthos(); possibleEthos)
+			ethos = possibleEthos;
+		else if (auto possibleTradition = scraper.getTradition(); possibleTradition)
+			tradition = possibleTradition;
+		else if (auto possibleDefault = scraper.getDefault(); possibleDefault)
+			defaultString = possibleDefault;
 		else
 			Log(LogLevel::Info) << "Missing value in tradition_ideas.txt";
 	});
