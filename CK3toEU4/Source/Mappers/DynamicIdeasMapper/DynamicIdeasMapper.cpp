@@ -8,6 +8,12 @@ mappers::DynamicIdeasMapper::DynamicIdeasMapper()
 	parseFile("configurables/tradition_ideas.txt");
 	clearRegisteredKeywords();
 }
+mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::istream& theStream)
+{
+	registerKeys();
+	parseStream(theStream);
+	clearRegisteredKeywords();
+}
 
 void mappers::DynamicIdeasMapper::registerKeys()
 {

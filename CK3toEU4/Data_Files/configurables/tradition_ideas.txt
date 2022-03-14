@@ -1,8 +1,10 @@
 #  Tradition and ethos are the only mandatory CK3 values
-#  Other valid values are heritage,etc.
+#  Other valid values are heritage, etc.
 
 # NOTE: All decimal values need a leading integer. .2 will cause an effect to fail to appear in game, 0.2 will work.
 
+
+### Base Ethos Mappings
 link = { ck3 = { ethos = ethos_bellicose } eu4 = { yearly_army_professionalism = 0.01 land_forcelimit = 4 } }
 link = { ck3 = { ethos = ethos_bureaucratic } eu4 = { yearly_corruption = -0.1 state_maintenance_modifier = -0.1 } }
 link = { ck3 = { ethos = ethos_communal } eu4 = { same_culture_advisor_cost = -0.25 global_heretic_missionary_strength = 0.03 } }
@@ -11,6 +13,8 @@ link = { ck3 = { ethos = ethos_egalitarian } eu4 = { num_accepted_cultures = 1 a
 link = { ck3 = { ethos = ethos_spiritual } eu4 = { missonaries = 1 religious_unity = 0.10 } }
 link = { ck3 = { ethos = ethos_stoic } eu4 = { monarch_lifespan = 0.1 all_estate_loyalty_equilibrium = 0.05 } }
 
+### Base Tradition Mappings 
+link = { ck3 = { tradition = tradition_african_tolerance } eu4 = { religious_unity = 0.5 } } 
 link = { ck3 = { tradition = tradition_agrarian } eu4 = { global_trade_goods_size_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_ancient_miners } eu4 = { gold_depletion_chance_modifier = -0.2 } }
 link = { ck3 = { tradition = tradition_astute_diplomats } eu4 = { diplomats = 1 } }
@@ -22,96 +26,92 @@ link = { ck3 = { tradition = tradition_caravaneers } eu4 = { caravan_power = 0.2
 link = { ck3 = { tradition = tradition_castle_keepers } eu4 = { garrison_size = 0.10 } }
 link = { ck3 = { tradition = tradition_chanson_de_geste } eu4 = { army_tradition_decay = -0.02 army_tradition_from_battle = 0.02 } }
 link = { ck3 = { tradition = tradition_charitable } eu4 = { monthly_favor_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_chivalry } eu4 = { leader_land_shock = 1 nobles_loyalty_modifier = 0.05 } } 
+link = { ck3 = { tradition = tradition_city_keepers } eu4 = { promote_culture_cost = -0.25 } } 
+link = { ck3 = { tradition = tradition_collective_lands } eu4 = { global_trade_goods_size_modifier = 0.1 nobility_influence_modifier -0.1 } } 
 link = { ck3 = { tradition = tradition_concubines } eu4 = { heir_chance = 0.5 } }
 link = { ck3 = { tradition = tradition_court_eunuchs } eu4 = { adm_advisor_cost = -0.2 } }
+link = { ck3 = { tradition = tradition_culinary_art } eu4 = { production_efficiency = 0.1 } }
 link = { ck3 = { tradition = tradition_culture_blending } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_desert_nomads } eu4 = { cavalry_shock = 1 } } 
 link = { ck3 = { tradition = tradition_diasporic } eu4 = { enemy_core_creation = 0.2 core_decay_on_your_own = -0.1 } }
 link = { ck3 = { tradition = tradition_equal_inheritance } eu4 = { female_advisor_chance = 0.5 } } 
+link = { ck3 = { tradition = tradition_equitable } eu4 = { accept_vassalization_reasons = 10 global_unrest = -1 } } 
 link = { ck3 = { tradition = tradition_esteemed_hospitality } eu4 = { diplomatic_annexation_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_eye_for_an_eye } eu4 = { spy_offence = 0.1 power_projection_from_insults = 0.2 } } 
 link = { ck3 = { tradition = tradition_faith_bound } eu4 = { global_missionary_strength = 0.05 tolerance_heathen = -3 } } 
 link = { ck3 = { tradition = tradition_family_entrepreneurship } eu4 = { idea_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_female_only_inheritance } eu4 = { female_advisor_chance = 1 } } 
+link = { ck3 = { tradition = tradition_female_only_inheritance } eu4 = { female_advisor_chance = 1 may_recruit_female_generals = yes } } 
 link = { ck3 = { tradition = tradition_fervent_temple_builders } eu4 = { global_tax_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_festivities } eu4 = { stability_cost_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_fishermen } eu4 = { center_of_trade_upgrade_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_forbearing } eu4 = { nobles_loyalty_modifier = 0.1} } 
 link = { ck3 = { tradition = tradition_fp1_northern_stories } eu4 = { possible_dip_policy = 1 prestige_decay = -0.01 } } 
 link = { ck3 = { tradition = tradition_fp1_performative_honour } eu4 = { prestige_from_land = 0.10 } } 
+link = { ck3 = { tradition = tradition_fp1_the_right_to_prove } eu4 = { mil_advisor_cost = -0.20 } } 
+link = { ck3 = { tradition = tradition_fp1_trials_by_combat } eu4 = { prestige_from_land = 0.10 stability_cost_modifier = -0.05 } }
+link = { ck3 = { tradition = tradition_frugal_armorsmiths } eu4 = { global_regiment_cost = -0.15 infantry_shock = -1 } } 
 link = { ck3 = { tradition = tradition_gardening } eu4 = { global_prosperity_growth = 0.1 } } 
 link = { ck3 = { tradition = tradition_hard_working } eu4 = { build_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_hereditary_hierarchy } eu4 = { free_adm_policy = 1 legitimacy = 1 } }
+link = { ck3 = { tradition = tradition_hereditary_hierarchy } eu4 = { free_adm_policy = 1 } }
 link = { ck3 = { tradition = tradition_hiden_cities } eu4 = { war_exhaustion = -0.10 } } 
+link = { ck3 = { tradition = tradition_hunters } eu4 = { trade_efficiency = 0.1 } } 
+link = { ck3 = { tradition = tradition_isolationist } eu4 = { stability_cost_modifier = -0.25 diplomatic_upkeep = -1 } }
 link = { ck3 = { tradition = tradition_language_scholars } eu4 = { monarch_diplomatic_power = 1 } } 
-link = { ck3 = { tradition = tradition_malleable_invaders } eu4 = { core_creation = -0.1 culture_conversion_cost = 0.05 } } 
+link = { ck3 = { tradition = tradition_malleable_invaders } eu4 = { core_creation = -0.1 years_of_nationalism = -5 } } 
 link = { ck3 = { tradition = tradition_maritime_mercantilism } eu4 = { mercantilism_cost = -0.2 } }
+link = { ck3 = { tradition = tradition_martial_admiration } eu4 = { army_tradition = 1 } } 
 link = { ck3 = { tradition = tradition_medicinal_plants } eu4 = { global_spy_defence = 0.1  } }
-link = { ck3 = { tradition = tradition_metal_craftsmanship } eu4 = { reinforce_cost_modifier = -0.10 } }
+link = { ck3 = { tradition = tradition_mendicant_mystics } eu4 = { merchant = 1 } } 
 link = { ck3 = { tradition = tradition_merciful_blinding } eu4 = { harsh_treatment_cost = -0.2 } } 
+link = { ck3 = { tradition = tradition_metal_craftsmanship } eu4 = { reinforce_cost_modifier = -0.10 } }
+link = { ck3 = { tradition = tradition_modest } eu4 = { administrative_efficiency = 0.1 } } 
 link = { ck3 = { tradition = tradition_monastic_communities } eu4 = { church_loyalty_modifier = 0.1 nobility_influence_modifier = -0.1 } } 
-link = { ck3 = { tradition = tradition_music_theory } eu4 = { prestige = 0.5 } } 
-link = { ck3 = { tradition = tradition_nubian_warrior_queens } eu4 = { monarch_military_power = 1 female_advisor_chance = 0.1 } } 
+link = { ck3 = { tradition = tradition_monogamous } eu4 = { monarch_admin_power = 1 } } 
+link = { ck3 = { tradition = tradition_music_theory } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_mystical_ancestors } eu4 = { monthly_heir_claim_increase = 0.05 idea_cost = -0.05 } } 
+link = { ck3 = { tradition = tradition_nubian_warrior_queens } eu4 = { monarch_military_power = 1 may_recruit_female_generals = yes } } 
 link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = -0.15 } } 
 link = { ck3 = { tradition = tradition_life_is_just_a_joke } eu4 = { global_unrest = -2 } } 
 link = { ck3 = { tradition = tradition_pacifism } eu4 = { stability_cost_to_declare_war = 1 all_power_cost = -0.03 } }
 link = { ck3 = { tradition = tradition_parochialism } eu4 = { build_time = -0.2 } }
+link = { ck3 = { tradition = tradition_pastoralists } eu4 = { global_trade_goods_size_modifier = 0.05 global_manpower_modifier = 0.05 } } 
+link = { ck3 = { tradition = tradition_philosopher_culture } eu4 = { adm_tech_cost_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_poetry } eu4 = { dip_tech_cost_modifier = -0.15 } } 
 link = { ck3 = { tradition = tradition_polders} eu4 = { development_cost = -0.1 } } # Same as vanilla Polders in Dutch Ideas
+link = { ck3 = { tradition = tradition_polygamous } eu4 = { diplomatic_reputation = 1 } }
 link = { ck3 = { tradition = tradition_praticed_pirates } eu4 = { loot_amount = 0.10 privateer_efficiency = 0.15 } }
 link = { ck3 = { tradition = tradition_republican_legacy } eu4 = { burghers_loyalty_modifier = 0.1 republican_tradition 0.5 } } 
+link = { ck3 = { tradition = tradition_religion_blending } eu4 = { tolerance_heathen = 1 tolerance_heretic = 1 } } 
+link = { ck3 = { tradition = tradition_religious_patronage } eu4 = { institution_spread_from_true_faith = 0.15 } } 
 link = { ck3 = { tradition = tradition_reverence_for_veterans } eu4 = { innovativeness_gain = 0.5 army_tradition_decay = -0.01 } } 
+link = { ck3 = { tradition = tradition_roman_legacy } eu4 = { land_maintenence_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_ruling_caste } eu4 = { global_rebel_suppression_efficiency = 0.2 improve_relation_modifier = -0.05 } } #
+link = { ck3 = { tradition = tradition_runestones } eu4 = { great_project_upgrade_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_sacred_groves } eu4 = { monthly_splendor = 1.5 development_cost = 0.05 } }
+link = { ck3 = { tradition = tradition_sacred_hunts } eu4 = { tolerance_own = 2 } } 
+link = { ck3 = { tradition = tradition_sacred_mountains } eu4 = { legitimacy = 1 devotion = 1 } } 
 link = { ck3 = { tradition = tradition_saharan_nomads } eu4 = { envoy_travel_time = -0.1 trade_steering = 0.1 } } 
-link = { ck3 = { tradition = tradition_storytellers } eu4 = { possible_dip_policy = 1 } } 
 link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_sorcerous_metallurgy } eu4 = { institution_spread = 0.1 } } 
+link = { ck3 = { tradition = tradition_staunch_traditionalists } eu4 = { culture_conversion_cost = -0.25 monthly_reform_progress_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_steppe_tolerance} eu4 = { religious_unity = 0.25 horde_unity = 1 } }
+link = { ck3 = { tradition = tradition_storytellers } eu4 = { possible_dip_policy = 1 } } 
+link = { ck3 = { tradition = tradition_strong_kinship } eu4 = { diplomatic_reputation = 2 } } 
 link = { ck3 = { tradition = tradition_swords_for_hire} eu4 = { possible_condottieri = 1 } } 
+link = { ck3 = { tradition = tradition_the_witenagemot } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier 0.05 } }
+link = { ck3 = { tradition = tradition_things } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier 0.05 } } 
+link = { ck3 = { tradition = tradition_tribe_unity } eu4 = { governing_cost = 0.8 } } 
 link = { ck3 = { tradition = tradition_vegetarianism } eu4 = { monthly_karma = 0.1 } } 
 link = { ck3 = { tradition = tradition_visigothic_codes } eu4 = { female_advisor_chance = 0.5 } }
 link = { ck3 = { tradition = tradition_warrior_culture } eu4 = { monarch_military_power = 2 monarch_diplomatic_power = -1 } }
-link = { ck3 = { tradition = tradition_welcoming } eu4 = { diplomatic_upkeep = 1 } } 
+link = { ck3 = { tradition = tradition_wedding_ceremonies } eu4 = { prestige = 0.5 legitimacy = 1 } } 
+link = { ck3 = { tradition = tradition_welcoming } eu4 = { diplomatic_upkeep = 1 } }
 link = { ck3 = { tradition = tradition_xenophilic } eu4 = { num_accepted_cultures = 1 } }
-
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_mendicant_mystics } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_zealous_people } }
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sacred_hunts } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sacred_mountains } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_mystical_ancestors } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_religion_blending } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_religious_patronage } } 
-
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_african_tolerance } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_charitable } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_chivalry } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_city_keepers } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_collective_lands } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_culinary_art } }
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_equitable } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_fishermen } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_fp1_the_right_to_prove } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_fp1_trials_by_combat } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_frugal_armorsmiths } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_hunters } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_isolationist } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_pastoralists } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_philosopher_culture } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_poetry } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_polygamous } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_martial_admiration } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_modest } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_monogamous } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_roman_legacy } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_runestones } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_sorcerous_metallurgy } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_staunch_traditionalists } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_steppe_tolerance} } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_strong_kinship } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_the_witenagemot } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_things } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_tribe_unity } } 
-link = { eu4 = { promote_culture_cost = -0.25 } ck3 = { tradition = tradition_wedding_ceremonies } } 
+link = { ck3 = { tradition = tradition_zealous_people } eu4 = { cb_on_religious_enemies = yes } }
 
 # Military Traditions (Have primarily Military based EU4 modifiers)
-link = { ck3 = { tradition = tradition_adaptive_skirmishing } eu4 = { discipline = 0.01 } } 
+link = { ck3 = { tradition = tradition_adaptive_skirmishing } eu4 = { discipline = 0.05 } } 
 link = { ck3 = { tradition = tradition_formation_fighting } eu4 = { reserves_organisation = -0.10 } } 
 link = { ck3 = { tradition = tradition_fp1_coastal_warriors } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
 link = { ck3 = { tradition = tradition_hit_and_run } eu4 = { movement_speed = 0.10 cav_to_inf_ratio = 0.05 } } 
@@ -138,7 +138,7 @@ link = { ck3 = { tradition = tradition_warriors_of_the_dry } eu4 = { global_supp
 link = { ck3 = { tradition = tradition_caucasian_wolves } eu4 = { { global_supply_limit_modifier = 0.10 special_unit_forcelimit= 0.05 } } 
 
 # Home Terrain Traditions
-link = { ck3 = { tradition = tradition_amharic_highlanders } eu4 = { development_cost = -0.1 placed_merchant_power = 1 } } 
+link = { ck3 = { tradition = tradition_amharic_highlanders } eu4 = { development_cost = -0.1 placed_merchant_power = 2 } } 
 link = { ck3 = { tradition = tradition_forest_folk } eu4 = { development_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_dryland_dwellers } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_hill_dwellers } eu4 = { development_cost = -0.1 } } 
@@ -195,7 +195,7 @@ link = { ck3 = { tradition = tradition_theocratic_autonomy } eu4 = { promote_cul
 link = { ck3 = { tradition = tradition_tea_ceremony } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_reavers } eu4 = { promote_culture_cost = -0.25 } } 
 
-### Defaults
+### Defaults (For when a CK3 culture has less than 8 traditions.)
 link = { ck3 = { default = increase_discipline } eu4 = { discipline = 0.025 } }
 link = { ck3 = { default = increase_taxation } eu4 = { global_tax_modifier = 0.05 } }
 link = { ck3 = { default = cheaper_mercenaries } eu4 = { merc_maintenance_modifier = -0.10 } }
@@ -206,4 +206,7 @@ link = { ck3 = { default = increased_production_income } eu4 = { production_effi
 link = { ck3 = { default = placeholder_tradition } eu4 = { global_tax_modifier = 0.10 } }
 
 ### Rule Overrides
-link = { ck3 = { tradition = tradition_seafaring } eu4 = { may_explore = yes } rule = { heritage = heritage_north_germanic } }
+link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_balto_finnic } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_ugro_permian } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }

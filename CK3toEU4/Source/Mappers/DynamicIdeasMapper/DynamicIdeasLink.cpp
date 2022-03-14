@@ -21,6 +21,9 @@ void mappers::DynamicIdeasLink::registerKeys()
 	registerKeyword("default", [this](std::istream& theStream) {
 		defaultString = commonItems::getString(theStream);
 	});
+	registerKeyword("idea_name", [this](std::istream& theStream) {
+		// idea_name = commonItems::getString(theStream);
+	});
 	registerKeyword("ck3", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
 		if (auto possibleEthos = scraper.getEthos(); possibleEthos)

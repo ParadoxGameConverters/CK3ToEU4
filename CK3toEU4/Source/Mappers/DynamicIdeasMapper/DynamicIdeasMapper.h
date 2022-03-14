@@ -10,6 +10,7 @@ class DynamicIdeasMapper: commonItems::parser
 {
   public:
 	DynamicIdeasMapper();
+	explicit DynamicIdeasMapper(std::istream& theStream); // for testing
 
 	[[nodiscard]] const auto& getEthosMap() const { return ethosMap; }
 	[[nodiscard]] const auto& getTraditionMap() const { return traditionMap; }
