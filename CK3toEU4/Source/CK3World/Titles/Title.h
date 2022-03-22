@@ -157,7 +157,7 @@ class Title: commonItems::parser
 	bool HREEmperor = false;
 	bool inHRE = false;
 	bool thePope = false;
-	bool customTitle = false; // True if title was fromed via "Found a New Kingdom/Empire" decision. Vestigal
+	bool customTitle = false;													// True if title was fromed via "Found a New Kingdom/Empire" decision. Vestigal
 	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.

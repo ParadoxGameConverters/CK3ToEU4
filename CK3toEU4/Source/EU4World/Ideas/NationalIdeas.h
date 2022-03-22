@@ -11,7 +11,7 @@ class NationalIdeas
 {
   public:
 	NationalIdeas() = default;
-	NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers::DynamicIdeasMapper& dynIdeasMapper);
+	NationalIdeas(std::shared_ptr<CK3::Culture> culture, const mappers::DynamicIdeasMapper& dynIdeasMapper);
 
 	[[nodiscard]] const auto& getEthos() const { return culture->getEthos(); }
 	[[nodiscard]] const auto& getDynamicName() const { return culture->getName(); }
@@ -19,6 +19,7 @@ class NationalIdeas
 	[[nodiscard]] const auto& getTraditionIdeas() const { return traditionIdeas; }
 	[[nodiscard]] const auto& getEthosEffects() const { return ethosEffects; }
 	[[nodiscard]] const auto& getTraditionEffects() const { return traditionEffects; }
+	[[nodiscard]] const auto& getCulture() const { return culture; }
 
 	friend std::ostream& operator<<(std::ostream& output, const NationalIdeas& country);
 

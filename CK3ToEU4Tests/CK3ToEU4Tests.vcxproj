@@ -142,6 +142,7 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
@@ -221,7 +222,6 @@
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
-    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMapperTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMappingTests.cpp" />
     <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionsMapperTests.cpp" />

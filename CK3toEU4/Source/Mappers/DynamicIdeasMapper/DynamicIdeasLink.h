@@ -10,6 +10,9 @@ typedef struct AssignmentPair
 {
 	std::string type;
 	std::string value;
+
+	bool operator<(const AssignmentPair& rhs) const { return value < rhs.value; }
+	bool operator==(const AssignmentPair& rhs) const { return type == rhs.type && value == rhs.value; }
 } AssignmentPair;
 
 class DynamicIdeasLink: commonItems::parser
@@ -22,6 +25,7 @@ class DynamicIdeasLink: commonItems::parser
 	[[nodiscard]] const auto& getTradition() const { return tradition; }
 	[[nodiscard]] const auto& getDefault() const { return defaultString; }
 	[[nodiscard]] const auto& getEffects() const { return effects; }
+	[[nodiscard]] const auto& getIdeaName() const { return ideaName; }
 	[[nodiscard]] const auto& getRules() const { return rules; }
 	[[nodiscard]] const auto& getPair() const { return ambiguosPairs; }
 
@@ -31,6 +35,7 @@ class DynamicIdeasLink: commonItems::parser
 	std::optional<std::string> ethos;
 	std::optional<std::string> tradition;
 	std::optional<std::string> defaultString;
+	std::optional<std::string> ideaName;
 	std::vector<AssignmentPair> effects; // (type = "global_manpower_modifier", value = "0.10")
 	std::vector<AssignmentPair> rules;	 // (type = "heritage", value = "heritage_north_germanic")
 

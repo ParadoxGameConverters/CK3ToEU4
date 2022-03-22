@@ -2,7 +2,7 @@
 
 // Will be used to load in defaults
 
-EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers::DynamicIdeasMapper& dynIdeasMapper):
+EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const mappers::DynamicIdeasMapper& dynIdeasMapper):
 	 culture(culture), traditionIdeas(culture->getTraditions()), ethosEffects(dynIdeasMapper.getEthosMap().at(culture->getEthos()))
 {
 	// Culture localized name is an optional value, so just forcing it into a normal string and given defualt value.
@@ -23,13 +23,25 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, mappers
 		++iter;
 	}
 
-	// Do the base mapping
-	for (auto& tradition: traditionIdeas)
+	// Prepare rules before base mapping
+	const auto& tiBegin = traditionIdeas.begin();
+	const auto& tiEnd = traditionIdeas.end();
+	const auto& rules = dynIdeasMapper.getRules();
+	bool changedEthos = false;
+
+	for (const auto& rule: rules)
+	{
+		const auto& replacee = rule.getReplacee();
+
+		if (!changedEthos && replacee.contains("ethos") && rule.testRule(culture))
+		{
+			changedEthos = true;
+			ethosEffects = rule.getNewEffect();
+		}
+		else if (const auto& it = std::find(tiBegin, tiEnd, replacee); it != tiEnd && rule.testRule(culture))
+			*it = rule.getReplacement();
+	}
+
+	for (const auto& tradition: traditionIdeas)
 		traditionEffects.push_back(dynIdeasMapper.getTraditionMap().at(tradition));
-
-	// Now apply rules.... somehow
-
-	// If rule applies to ethos, replace ethos effect
-	// If rule applies to tradition, replace tradition with new tradition_string, and replace corresponding traditionEffects
-	// Make sure localalization of original tradition gets copied to new rules base one... somehoww. Unless idea_name exists.
 }

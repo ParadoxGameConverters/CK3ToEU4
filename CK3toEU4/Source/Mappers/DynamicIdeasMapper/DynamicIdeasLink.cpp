@@ -22,7 +22,7 @@ void mappers::DynamicIdeasLink::registerKeys()
 		defaultString = commonItems::getString(theStream);
 	});
 	registerKeyword("idea_name", [this](std::istream& theStream) {
-		// idea_name = commonItems::getString(theStream);
+		ideaName = commonItems::getString(theStream);
 	});
 	registerKeyword("ck3", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
@@ -42,6 +42,8 @@ void mappers::DynamicIdeasLink::registerKeys()
 	registerKeyword("rule", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
 		rules = scraper.getPair();
+		if (auto possibleIdeaName = scraper.getIdeaName(); possibleIdeaName)
+			ideaName = possibleIdeaName;
 	});
 	registerRegex(R"(\w+)", [this](const std::string& ruleOrEffect, std::istream& theStream) {
 		AssignmentPair pair = {ruleOrEffect, commonItems::getString(theStream)};

@@ -16,18 +16,22 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 	output << "\tfree = yes\n\n";
 
 	// First 7 traditions become ideas, last one becomes ambition
-	for (int i = 0; i < idea.getTraditionIdeas().size() - 1; i++)
-	{
-		output << "\t" + idea.getTraditionIdeas()[i] + " = {";
+	const auto& traditionIdeas = idea.getTraditionIdeas();
+	const auto& traditionEffects = idea.getTraditionEffects();
 
-		for (auto& effect: idea.getTraditionEffects()[i])
+	for (int i = 0; i < traditionIdeas.size() - 1; i++)
+	{
+		output << "\t" + traditionIdeas[i] + " = {";
+
+		for (auto& effect: traditionEffects[i])
 			output << "\n\t\t" + effect.type + " = " + effect.value;
 
 		output << "\n\t}\n";
 	}
 
 	// National Ambition
-	output << "\tbonus = {\n\t\t" + idea.getTraditionEffects().back().front().type + " = " + idea.getTraditionEffects().back().front().value + "\n\t}\n";
+	const auto& ambitionEffect = traditionEffects.back().front(); // For multi effect ideas, the ambition is only the first effect, not all effects
+	output << "\tbonus = {\n\t\t" + ambitionEffect.type + " = " + ambitionEffect.value + "\n\t}\n";
 	output << "}\n\n";
 
 	return output;

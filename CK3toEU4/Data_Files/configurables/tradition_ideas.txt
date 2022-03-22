@@ -27,7 +27,7 @@ link = { ck3 = { tradition = tradition_castle_keepers } eu4 = { garrison_size = 
 link = { ck3 = { tradition = tradition_chanson_de_geste } eu4 = { army_tradition_decay = -0.02 army_tradition_from_battle = 0.02 } }
 link = { ck3 = { tradition = tradition_charitable } eu4 = { monthly_favor_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_chivalry } eu4 = { leader_land_shock = 1 nobles_loyalty_modifier = 0.05 } } 
-link = { ck3 = { tradition = tradition_city_keepers } eu4 = { promote_culture_cost = -0.25 } } 
+link = { ck3 = { tradition = tradition_city_keepers } eu4 = { global_own_trade_power = 0.15 } } 
 link = { ck3 = { tradition = tradition_collective_lands } eu4 = { global_trade_goods_size_modifier = 0.1 nobility_influence_modifier -0.1 } } 
 link = { ck3 = { tradition = tradition_concubines } eu4 = { heir_chance = 0.5 } }
 link = { ck3 = { tradition = tradition_court_eunuchs } eu4 = { adm_advisor_cost = -0.2 } }

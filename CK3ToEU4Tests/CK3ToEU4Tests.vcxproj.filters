@@ -244,9 +244,6 @@
     <Filter Include="CK3ToEU4\EU4World\Ideas">
       <UniqueIdentifier>{60196a55-12fd-4b91-97af-1e37bde4e10d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EU4WorldTests\IdeasTests">
-      <UniqueIdentifier>{3796707f-9f2a-4781-8e30-f17410a1961a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\DynamicIdeasMapperTests">
       <UniqueIdentifier>{d2052e1b-e453-4faf-a2fd-d407a61d26f1}</UniqueIdentifier>
     </Filter>
@@ -770,11 +767,11 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
     </ClCompile>
-    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp">
-      <Filter>EU4WorldTests\IdeasTests</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp">
       <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
