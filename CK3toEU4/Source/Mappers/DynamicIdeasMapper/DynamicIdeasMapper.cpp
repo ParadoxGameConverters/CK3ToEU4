@@ -22,6 +22,16 @@ mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::istream& theStream)
 		if (rule.getReplacee().contains("tradition"))
 			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
 }
+mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::string theStreamFile)
+{
+	registerKeys();
+	parseFile(theStreamFile);
+	clearRegisteredKeywords();
+
+	for (const auto& rule: rules)
+		if (rule.getReplacee().contains("tradition"))
+			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
+}
 
 void mappers::DynamicIdeasMapper::registerKeys()
 {

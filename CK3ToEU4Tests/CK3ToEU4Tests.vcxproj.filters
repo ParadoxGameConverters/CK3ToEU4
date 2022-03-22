@@ -247,6 +247,9 @@
     <Filter Include="MapperTests\DynamicIdeasMapperTests">
       <UniqueIdentifier>{d2052e1b-e453-4faf-a2fd-d407a61d26f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TestFiles\configurables">
+      <UniqueIdentifier>{3730adf2-562d-41ff-892e-7e5793d92760}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -946,5 +949,10 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest7.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TestFiles\configurables\tradition_ideas.txt">
+      <Filter>TestFiles\configurables</Filter>
+    </Text>
   </ItemGroup>
 </Project>
