@@ -1,9 +1,18 @@
 #include "DynamicIdeasRule.h"
 #include "OSCompatibilityLayer.h"
 
-mappers::DynamicIdeasRule::DynamicIdeasRule(std::vector<AssignmentPair> ruleInfo, std::string replacee, std::vector<AssignmentPair> newEffect):
-	 ruleInfo(ruleInfo), replacee(replacee), newEffect(newEffect), replacementIdentifier(replacee)
+mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<AssignmentPair>& ruleInfo,
+	 const std::vector<AssignmentPair>& newEffect,
+	 const std::string& replacee,
+	 const std::optional<std::string> ideaName):
+	 ruleInfo(ruleInfo),
+	 replacee(replacee), newEffect(newEffect), replacementIdentifier(replacee)
 {
+	if (ideaName)
+		replacementIdentifier = ideaName.value();
+	else
+		replacementIdentifier += '_'; // Need extra _ to know when non-base tradition name starts
+
 	for (const auto& rule: ruleInfo)
 	{
 		// Set precedance level
@@ -12,11 +21,14 @@ mappers::DynamicIdeasRule::DynamicIdeasRule(std::vector<AssignmentPair> ruleInfo
 
 		// Craft unique identfier name
 		// Support coastal = yes and heritage = heritage_north_germanic while keeping as much brevity as possible
-		const std::string& prefix = getLeadStr(rule.type);
-		if (rule.value.contains(prefix))
-			replacementIdentifier += ("_" + rule.value);
-		else
-			replacementIdentifier += ("_" + rule.type + "_" + rule.value);
+		if (!ideaName)
+		{
+			const std::string& prefix = getLeadStr(rule.type);
+			if (rule.value.contains(prefix))
+				replacementIdentifier += ("_" + rule.value);
+			else
+				replacementIdentifier += ("_" + rule.type + "_" + rule.value);
+		}
 	}
 }
 
@@ -113,12 +125,4 @@ std::ostream& mappers::operator<<(std::ostream& output, const DynamicIdeasRule& 
 	output << " } Precedence\n";
 
 	return output;
-}
-
-std::string getLeadStr(const std::string& str)
-{
-	if (const auto& i = str.find('_'); i != std::string::npos)
-		return str.substr(0, i);
-	else
-		return str;
 }

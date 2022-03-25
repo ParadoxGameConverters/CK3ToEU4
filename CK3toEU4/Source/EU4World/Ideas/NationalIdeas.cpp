@@ -1,4 +1,5 @@
 #include "NationalIdeas.h"
+#include "Log.h"
 
 // Will be used to load in defaults
 
@@ -42,6 +43,16 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const m
 			*it = rule.getReplacement();
 	}
 
+	const auto& traditionMap = dynIdeasMapper.getTraditionMap();
+
 	for (const auto& tradition: traditionIdeas)
-		traditionEffects.push_back(dynIdeasMapper.getTraditionMap().at(tradition));
+		if (const auto& effectItr = traditionMap.find(tradition); effectItr == traditionMap.end())
+		{
+			Log(LogLevel::Warning) << "Tradition: " + tradition + " has no mapping in configuration/tradition_ideas.txt. Ideas based on " + tradition +
+													" will have no effects. Consider adding a new link.";
+			const mappers::AssignmentPair& errorPair =  mappers::AssignmentPair();
+			traditionEffects.push_back(std::vector<mappers::AssignmentPair>{errorPair});
+		}
+		else
+			traditionEffects.push_back(traditionMap.at(tradition));
 }

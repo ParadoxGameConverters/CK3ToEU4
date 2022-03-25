@@ -1,36 +1,30 @@
 #include "DynamicIdeasMapper.h"
+#include "../../EU4World/EU4World.h"
 #include "CommonRegexes.h"
 #include "ParserHelpers.h"
+#include <Log.h>
+#include <ranges>
 
-mappers::DynamicIdeasMapper::DynamicIdeasMapper()
+mappers::DynamicIdeasMapper::DynamicIdeasMapper(const LocalizationMapper& localizationMapper): locs(localizationMapper)
 {
 	registerKeys();
 	parseFile("configurables/tradition_ideas.txt");
 	clearRegisteredKeywords();
-
-	for (const auto& rule: rules)
-		if (rule.getReplacee().contains("tradition"))
-			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
+	processRules();
 }
-mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::istream& theStream)
+mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::istream& theStream, const LocalizationMapper& localizationMapper): locs(localizationMapper)
 {
 	registerKeys();
 	parseStream(theStream);
 	clearRegisteredKeywords();
-
-	for (const auto& rule: rules)
-		if (rule.getReplacee().contains("tradition"))
-			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
+	processRules();
 }
-mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::string theStreamFile)
+mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::string theStreamFile, const LocalizationMapper& localizationMapper): locs(localizationMapper)
 {
 	registerKeys();
 	parseFile(theStreamFile);
 	clearRegisteredKeywords();
-
-	for (const auto& rule: rules)
-		if (rule.getReplacee().contains("tradition"))
-			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
+	processRules();
 }
 
 void mappers::DynamicIdeasMapper::registerKeys()
@@ -56,10 +50,38 @@ void mappers::DynamicIdeasMapper::registerKeys()
 		else // Is a rule based override mapping
 		{
 			if (auto possibleTradition = scraper.getTradition(); possibleTradition)
-				rules.emplace(DynamicIdeasRule(newRules, possibleTradition.value(), effects));
+				rules.emplace(DynamicIdeasRule(newRules, effects, possibleTradition.value(), scraper.getIdeaName()));
 			else if (auto possibleEthos = scraper.getEthos(); possibleEthos)
-				rules.emplace(DynamicIdeasRule(newRules, possibleEthos.value(), effects));
+				rules.emplace(DynamicIdeasRule(newRules, effects, possibleEthos.value(), scraper.getIdeaName()));
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void mappers::DynamicIdeasMapper::processRules()
+{
+	// Add rules to tradition map
+	for (const auto& rule: rules)
+		if (rule.getReplacee().contains("tradition"))
+			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
+
+	// NOTE: Nested localizationd DO NOT work for EU4.
+	// Add localizations for every tradition
+
+	for (auto& tradition: traditionMap | std::views::keys)
+	{
+		const auto& key = getLeadStr(tradition, 1, "__");
+		if (const auto& block = locs.getLocBlockForKey(key + "_name"); block)
+		{
+			LocBlock copyblock = block.value();
+			locs.unravelNestedLocs(copyblock);
+			traditionLocs.emplace(tradition, copyblock);
+		}
+		if (const auto& block = locs.getLocBlockForKey(key + "_desc"); block)
+		{
+			LocBlock copyblock = block.value();
+			locs.unravelNestedLocs(copyblock);
+			traditionLocs.emplace(tradition + "_desc", copyblock);
+		}
+	}
 }

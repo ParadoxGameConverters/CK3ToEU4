@@ -66,3 +66,19 @@ TEST(Mappers_LocalisationTests, reverseLookupCultureNameDoesNotWorkForNonCulture
 
 	EXPECT_EQ(std::nullopt, locs.reverseLookupCultureName("The Name"));
 }
+
+TEST(Mappers_DynamicIdeasMapperTests, unravelNestedLocsWorks)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " nested_key: \"This $n$ has nested $locs$\"\n";
+	input << " n: \"$noun$\"\n";
+	input << " locs: \"localizations\"\n";
+	input << " noun: \"string\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyblock = locs.getLocBlockForKey("nested_key");
+	locs.unravelNestedLocs(copyblock.value());
+	EXPECT_EQ("This string has nested localizations", copyblock->english);
+}

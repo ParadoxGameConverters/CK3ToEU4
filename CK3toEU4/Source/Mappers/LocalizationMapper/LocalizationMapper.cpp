@@ -4,6 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include <fstream>
 #include <set>
+#include "../DynamicIdeasMapper/DynamicIdeasMapper.h"
 
 void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods)
 {
@@ -52,6 +53,62 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 			scrapeStream(fileStream, language);
 		fileStream.close();
 	}
+}
+
+void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
+{
+	// TODO: Rewrite function so it accepts const &key and returns a LocBlock
+	for (const auto& lang: std::set<std::string>{"english", "french", "spanish", "german"})
+	{
+		const auto& loc = selectLanguage(lang, block);
+		if (loc.contains('$')) // TODO: handle escaped \$
+		{
+			const auto& keyStr = getLeadStr(loc, 2, "$"); // Chop off tail after nested key
+			const auto& nestedKey = getLeadStr(keyStr, 1, "$", true); // Chop off head before nested key
+			if (const auto& newblock = getLocBlockForKey(nestedKey); newblock)
+			{
+				const auto& fstr = getLeadStr(loc, 1, "$");
+				const auto& bstr = getLeadStr(loc, 2, "$", true);
+				assignSelectLanguage(fstr + selectLanguage(lang, newblock.value()) + bstr, lang, block);
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "Could not find locblock for nested loc: " + nestedKey;
+				return;
+			}
+			unravelNestedLocs(block);
+		}
+	}
+	return;
+}
+
+const std::string mappers::LocalizationMapper::selectLanguage(const std::string& language, const LocBlock& block) const
+{
+	if (language == "english")
+		return block.english;
+	else if (language == "french")
+		return block.french;
+	else if (language == "spanish")
+		return block.spanish;
+	else if (language == "german")
+		return block.german;
+	else
+		return ""; // TODO: Throw exception?
+}
+
+void mappers::LocalizationMapper::assignSelectLanguage(const std::string& str, const std::string& language, LocBlock& block) const
+{
+	if (language == "english")
+		block.english = str;
+	else if (language == "french")
+		block.french = str;
+	else if (language == "spanish")
+		block.spanish = str;
+	else if (language == "german")
+		block.german = str;
+	else
+		return; // TODO: Throw exception?
+	return;
 }
 
 void mappers::LocalizationMapper::scrapeStream(std::istream& theStream, const std::string& language)
@@ -166,4 +223,19 @@ std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName
 				return locName;
 	}
 	return std::nullopt;
+}
+
+std::string mappers::getLeadStr(const std::string& str, const int occurrence, const std::string& match, const bool tail)
+{
+	if (const auto& i = str.find(match); i != std::string::npos)
+		if (occurrence == 1 && tail)
+			return str.substr(i + match.length());
+		else if (occurrence == 1)
+			return str.substr(0, i);
+		else if (tail)
+			return getLeadStr(str.substr(i + match.length()), occurrence - 1, match, tail);
+		else
+			return str.substr(0, i) + match + getLeadStr(str.substr(i + match.length()), occurrence - 1, match);
+	else
+		return str;
 }

@@ -5,12 +5,9 @@
 #include "DynamicIdeasLink.h"
 #include <set>
 
-// Just a helper fxn. Does it get it's own namespace? Should it be in mappers:: ? Put it at the top of the cpp file?
-std::string getLeadStr(const std::string& str);
 
 namespace mappers
 {
-
 enum class RULE_TYPE
 {
 	HERITAGE,
@@ -24,7 +21,10 @@ class DynamicIdeasRule
 {
   public:
 	DynamicIdeasRule() = default;
-	DynamicIdeasRule(std::vector<AssignmentPair> ruleInfo, std::string replacee, std::vector<AssignmentPair> newEffect);
+	DynamicIdeasRule(const std::vector<AssignmentPair>& ruleInfo,
+		 const std::vector<AssignmentPair>& newEffect,
+		 const std::string& replacee,
+		 const std::optional<std::string> ideaName);
 
 	[[nodiscard]] const auto& getReplacee() const { return replacee; }
 	[[nodiscard]] const auto& getReplacement() const { return replacementIdentifier; }
@@ -40,7 +40,7 @@ class DynamicIdeasRule
 	friend std::ostream& operator<<(std::ostream&, const DynamicIdeasRule&); // For debug warnings
 
 	std::string replacee;				  // tradition_fisherman
-	std::string replacementIdentifier; // tradition_fisherman_heritage_north_germanic
+	std::string replacementIdentifier; // tradition_fisherman__heritage_north_germanic
 	std::vector<AssignmentPair> newEffect;
 	std::set<int> precedenceLevel;
 	std::vector<AssignmentPair> ruleInfo;

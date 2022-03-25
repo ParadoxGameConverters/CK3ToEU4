@@ -928,6 +928,8 @@ void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& c
 	Log(LogLevel::Info) << "-> Creating new National Ideas";
 	auto counter = 0;
 
+	dynamicIdeasMapper = mappers::DynamicIdeasMapper(localizationMapper);
+
 	for (auto& culture: cultures.getCultures() | std::views::values)
 	{
 		if (culture->isDynamic())
