@@ -4,7 +4,6 @@
 #include "OSCompatibilityLayer.h"
 #include <fstream>
 #include <set>
-#include "../DynamicIdeasMapper/DynamicIdeasMapper.h"
 
 void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods)
 {
@@ -57,13 +56,13 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 
 void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 {
-	// TODO: Rewrite function so it accepts const &key and returns a LocBlock
+	// Support Korean/Chinese/Russian?
 	for (const auto& lang: std::set<std::string>{"english", "french", "spanish", "german"})
 	{
 		const auto& loc = selectLanguage(lang, block);
 		if (loc.contains('$')) // TODO: handle escaped \$
 		{
-			const auto& keyStr = getLeadStr(loc, 2, "$"); // Chop off tail after nested key
+			const auto& keyStr = getLeadStr(loc, 2, "$");				 // Chop off tail after nested key
 			const auto& nestedKey = getLeadStr(keyStr, 1, "$", true); // Chop off head before nested key
 			if (const auto& newblock = getLocBlockForKey(nestedKey); newblock)
 			{

@@ -8,7 +8,7 @@
 
 TEST(Mappers_DynamicIdeasMapperTests, linksMakeMaps)
 {
-	// $(ExecutableDir) is CK3ToEU4Tests/Release. Should the test file be in or be copied to their?
+	// $(ExecutableDir) is CK3ToEU4Tests/Release. Should the test file be in or be copied to there?
 	const auto& theMapper = mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper());
 
 	EXPECT_EQ(theMapper.getEthosMap().size(), 3);

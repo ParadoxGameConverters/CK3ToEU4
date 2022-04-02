@@ -50,7 +50,7 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const m
 		{
 			Log(LogLevel::Warning) << "Tradition: " + tradition + " has no mapping in configuration/tradition_ideas.txt. Ideas based on " + tradition +
 													" will have no effects. Consider adding a new link.";
-			const mappers::AssignmentPair& errorPair =  mappers::AssignmentPair();
+			const mappers::AssignmentPair& errorPair = mappers::AssignmentPair();
 			traditionEffects.push_back(std::vector<mappers::AssignmentPair>{errorPair});
 		}
 		else

@@ -13,7 +13,7 @@ class DynamicIdeasMapper: commonItems::parser
   public:
 	DynamicIdeasMapper() = default;
 	DynamicIdeasMapper(const LocalizationMapper& localizationMapper);
-	explicit DynamicIdeasMapper(std::istream& theStream, const LocalizationMapper& localizationMapper); // for testing
+	explicit DynamicIdeasMapper(std::istream& theStream, const LocalizationMapper& localizationMapper);	// for testing
 	explicit DynamicIdeasMapper(std::string theStreamFile, const LocalizationMapper& localizationMapper); // for testing
 
 	[[nodiscard]] const auto& getEthosMap() const { return ethosMap; }
