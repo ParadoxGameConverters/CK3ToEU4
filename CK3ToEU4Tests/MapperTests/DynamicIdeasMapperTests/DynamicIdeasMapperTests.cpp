@@ -23,21 +23,17 @@ TEST(Mappers_DynamicIdeasMapperTests, linksMakeMaps)
 
 TEST(Mappers_DynamicIdeasMapperTests, defualtsFillIn)
 {
-	// Ethos rules work, base mappings apply when no rules are true, and defualts used as filler
+	// Base mappings apply when no rules are true, and defualts used as filler
 	std::stringstream Input;
 	Input << "culture_template = akan\n";
 	Input << "name = \"Akan\"\n";
-	Input << "heritage = heritage_blue\n";
+	Input << "heritage = heritage_orange\n";
 	Input << "ethos = ethos_bellicose\n";
 	Input << "traditions = {tradition_seafaring tradition_hussar tradition_concubines tradition_astute_diplomats tradition_welcoming tradition_xenophilic}\n";
 
 	auto culture = std::make_shared<CK3::Culture>(Input, 42);
 	const EU4::NationalIdeas idea(culture,
 		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
-	EXPECT_EQ(idea.getEthosEffects().front().type, "possible_condottieri");
-	EXPECT_EQ(idea.getEthosEffects().front().value, "1");
-	EXPECT_EQ(idea.getEthosEffects().back().type, "loot_amount");
-	EXPECT_EQ(idea.getEthosEffects().back().value, "0.10");
 
 	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring");
 	EXPECT_EQ(idea.getTraditionEffects().front().front().type, "naval_forcelimit_modifier");
@@ -48,9 +44,31 @@ TEST(Mappers_DynamicIdeasMapperTests, defualtsFillIn)
 	EXPECT_EQ(idea.getTraditionIdeas().size(), 8);
 }
 
+TEST(Mappers_DynamicIdeasMapperTests, ethosRulesApply)
+{
+	// Ethos rules work
+	std::stringstream Input;
+	Input << "culture_template = akan\n";
+	Input << "name = \"Akan\"\n";
+	Input << "heritage = heritage_blue\n";
+	Input << "ethos = ethos_bellicose\n";
+	Input << "traditions = { tradition_seafaring }\n";
+
+	auto culture = std::make_shared<CK3::Culture>(Input, 42);
+	const EU4::NationalIdeas idea(culture,
+		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
+
+	EXPECT_EQ(idea.getEthosEffects().front().type, "possible_condottieri");
+	EXPECT_EQ(idea.getEthosEffects().front().value, "1");
+	EXPECT_EQ(idea.getEthosEffects().back().type, "loot_amount");
+	EXPECT_EQ(idea.getEthosEffects().back().value, "0.10");
+}
+
+
+
 TEST(Mappers_DynamicIdeasMapperTests, moreSpecificOverLessSpecific)
 {
-	// More specific rules prefered over less & normal ethos mapping works
+	// More specific rules prefered over less & normal ethos mapping still works
 	std::stringstream Input;
 	Input << "culture_template = akan\n";
 	Input << "name = \"Akan\"\n";
