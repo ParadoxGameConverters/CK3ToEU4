@@ -33,7 +33,7 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const m
 	{
 		const auto& replacee = rule.getReplacee();
 
-		if (!changedEthos && replacee.contains("ethos") && rule.testRule(culture))
+		if (!changedEthos && replacee.find("ethos") != std::string::npos && rule.testRule(culture))
 		{
 			changedEthos = true;
 			ethosEffects = rule.getNewEffect();

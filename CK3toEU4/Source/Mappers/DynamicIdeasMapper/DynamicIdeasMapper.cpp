@@ -62,7 +62,7 @@ void mappers::DynamicIdeasMapper::processRules()
 {
 	// Add rules to tradition map
 	for (const auto& rule: rules)
-		if (rule.getReplacee().contains("tradition"))
+		if (rule.getReplacee().find("tradition") != std::string::npos)
 			traditionMap.emplace(rule.getReplacement(), rule.getNewEffect());
 
 	// NOTE: Nested localizationd DO NOT work for EU4.

@@ -24,7 +24,7 @@ mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<AssignmentPair>& r
 		if (!ideaName)
 		{
 			const std::string& prefix = getLeadStr(rule.type);
-			if (rule.value.contains(prefix))
+			if (rule.value.find(prefix) != std::string::npos)
 				replacementIdentifier += ("_" + rule.value);
 			else
 				replacementIdentifier += ("_" + rule.type + "_" + rule.value);

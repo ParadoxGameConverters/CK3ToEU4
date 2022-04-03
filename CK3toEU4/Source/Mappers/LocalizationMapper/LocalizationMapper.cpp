@@ -60,7 +60,7 @@ void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 	for (const auto& lang: std::vector<std::string>{"english", "french", "spanish", "german"})
 	{
 		const auto& loc = selectLanguage(lang, block);
-		if (loc.contains('$')) // TODO: handle escaped \$
+		if (loc.find('$') != std::string::npos) // TODO: handle escaped \$
 		{
 			const auto& keyStr = getLeadStr(loc, 2, "$");				 // Chop off tail after nested key
 			const auto& nestedKey = getLeadStr(keyStr, 1, "$", true); // Chop off head before nested key
