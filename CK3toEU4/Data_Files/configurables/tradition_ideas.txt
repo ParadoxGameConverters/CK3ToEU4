@@ -1,8 +1,42 @@
-#  Tradition and ethos are the only mandatory CK3 values
-#  Other valid values are heritage, etc.
+##### INSTRUCTIONS
+# CK3 Ethos and Traditions map to EU4 National Traditions and Ideas/Ambitions respectively.
+# There are three fields to a link, a ck3 = {} part, an eu4 = {} part and an optional rule = {} part.
+# The ck3 field determines whether an ethos or tradition is being mapped. ck3 = { ethos = ethos_name } or ck3 = {tradition = tradition_name }.
+# The eu4 field determines which EU4 modifer effects to use in the generated National Traditions/Ideas/Ambitions.
+# The rule field determines when a culture should have different EU4 ideas from the same base tradition, this is only for special cases.
+
+### Base Mappings
+# These are links without a rule = {} field. There should only be ONE per ethos/tradition.
+# Mods that add ethoses or traditions will need new base mappings defined in order to be handled properly.
+
+### Rule Mappings
+# These are links with the rule = {} field. There may be many per ethos/tradition.
+# If the rule given is true for the culture generating ideas, the base mapping will be overridden with the effects associated with that link.
+
+# Ex: 
+# link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } }
+# link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
+
+# In this case all cultures with the CK3 seafaring tradition will get an EU4 idea that boosts naval forcelimit. Unless that CK3 culture had heritage_north_germanic,
+# then the generated EU4 idea would grant Quest for the New World.
+
+# Other things to note about rules:
+# The order of rule mappings in a file is irrelavent to the order in which they are applied.
+# Multiple rules of different types can be combined to make more specific rules.
+# Ex: rule = { heritage = heritage_north_germanic ethos_trigger = ethos_bellicose }.
+# Rules have a precedence order shown at the bottom of instructions. This means if both rules are true, only the higher precedence rule applies.
+# More specific rules have higher precedence than less specific rules, when they start with the same precedence.
+# ALL links will use the CK3 localization to generate the EU4 Idea name and desctription localization, unless you specify an idea name.
+# Ex: link = { ck3 = { tradition = tradition_one } rule = { heritage = heritage_red idea_name = my_idea_name } eu4 = { puppies = yes } }
+# If idea_name is specified, the converter expects manual localizations for my_idea_name and my_idea_name_desc in the localisation/replace/tradition_ideas_l_language.yml file of blankMod.
+
+### Currently Supported Rules - (In order of precedence)
+# 0: heritage = heritage_north_germanic (Rule applies if the culture has the given heritage)
+# 1: ethos_trigger = ethos_bellicose (Rule applies if the culture has the given ethos)
+
+##### INSTRUCTIONS
 
 # NOTE: All decimal values need a leading integer. .2 will cause an effect to fail to appear in game, 0.2 will work.
-
 
 ### Base Ethos Mappings
 link = { ck3 = { ethos = ethos_bellicose } eu4 = { yearly_army_professionalism = 0.01 land_forcelimit = 4 } }
@@ -14,16 +48,21 @@ link = { ck3 = { ethos = ethos_spiritual } eu4 = { missonaries = 1 religious_uni
 link = { ck3 = { ethos = ethos_stoic } eu4 = { monarch_lifespan = 0.1 all_estate_loyalty_equilibrium = 0.05 } }
 
 ### Base Tradition Mappings 
+link = { ck3 = { tradition = tradition_adaptive_skirmishing } eu4 = { discipline = 0.05 } } 
 link = { ck3 = { tradition = tradition_african_tolerance } eu4 = { religious_unity = 0.5 } } 
 link = { ck3 = { tradition = tradition_agrarian } eu4 = { global_trade_goods_size_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_amharic_highlanders } eu4 = { development_cost = -0.1 placed_merchant_power = 2 } } 
 link = { ck3 = { tradition = tradition_ancient_miners } eu4 = { gold_depletion_chance_modifier = -0.2 } }
 link = { ck3 = { tradition = tradition_astute_diplomats } eu4 = { diplomats = 1 } }
 link = { ck3 = { tradition = tradition_artisans } eu4 = { global_prov_trade_power_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_battlefield_looters } eu4 = { available_province_loot = 0.10 loot_amount = 0.05 } }
 link = { ck3 = { tradition = tradition_by_the_sword } eu4 = { warscore_cost_vs_other_religion = -0.25 } }
 link = { ck3 = { tradition = tradition_byzantine_succession } eu4 = { legitimacy = 1 yearly_patriarch_authority = 0.2 } }
+link = { ck3 = { tradition = tradition_burman_royal_army } eu4 = { special_unit_forcelimit = 0.10 cavalry_power = 0.05 } } 
+link = { ck3 = { tradition = tradition_bush_hunting } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_caravaneers } eu4 = { caravan_power = 0.2 } }
 link = { ck3 = { tradition = tradition_castle_keepers } eu4 = { garrison_size = 0.10 } }
+link = { ck3 = { tradition = tradition_caucasian_wolves } eu4 = { { global_supply_limit_modifier = 0.10 special_unit_forcelimit= 0.05 } } 
 link = { ck3 = { tradition = tradition_chanson_de_geste } eu4 = { army_tradition_decay = -0.02 army_tradition_from_battle = 0.02 } }
 link = { ck3 = { tradition = tradition_charitable } eu4 = { monthly_favor_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_chivalry } eu4 = { leader_land_shock = 1 nobles_loyalty_modifier = 0.05 } } 
@@ -34,7 +73,11 @@ link = { ck3 = { tradition = tradition_court_eunuchs } eu4 = { adm_advisor_cost 
 link = { ck3 = { tradition = tradition_culinary_art } eu4 = { production_efficiency = 0.1 } }
 link = { ck3 = { tradition = tradition_culture_blending } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_desert_nomads } eu4 = { cavalry_shock = 1 } } 
+link = { ck3 = { tradition = tradition_desert_ribat } eu4 = { special_unit_forcelimit = 0.05 fort_maintenance_modifier = -0.05 } } 
+link = { ck3 = { tradition = tradition_determined_independance } eu4 = { liberty_desire = 15 } }
 link = { ck3 = { tradition = tradition_diasporic } eu4 = { enemy_core_creation = 0.2 core_decay_on_your_own = -0.1 } }
+link = { ck3 = { tradition = tradition_druzhina } eu4 = { special_unit_forcelimit = 0.05 infantry_shock = 1 } } 
+link = { ck3 = { tradition = tradition_dryland_dwellers } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_equal_inheritance } eu4 = { female_advisor_chance = 0.5 } } 
 link = { ck3 = { tradition = tradition_equitable } eu4 = { accept_vassalization_reasons = 10 global_unrest = -1 } } 
 link = { ck3 = { tradition = tradition_esteemed_hospitality } eu4 = { diplomatic_annexation_cost = -0.2 } } 
@@ -45,19 +88,43 @@ link = { ck3 = { tradition = tradition_female_only_inheritance } eu4 = { female_
 link = { ck3 = { tradition = tradition_fervent_temple_builders } eu4 = { global_tax_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_festivities } eu4 = { stability_cost_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_fishermen } eu4 = { center_of_trade_upgrade_cost = -0.1 } } 
+link = { ck3 = { tradition = tradition_forest_fighters } eu4 = { global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_forest_folk } eu4 = { development_cost = -0.1 } }
+link = { ck3 = { tradition = tradition_forest_wardens } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_forbearing } eu4 = { nobles_loyalty_modifier = 0.1} } 
+link = { ck3 = { tradition = tradition_formation_fighting } eu4 = { reserves_organisation = -0.10 } } 
+link = { ck3 = { tradition = tradition_fp1_coastal_warriors } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
 link = { ck3 = { tradition = tradition_fp1_northern_stories } eu4 = { possible_dip_policy = 1 prestige_decay = -0.01 } } 
 link = { ck3 = { tradition = tradition_fp1_performative_honour } eu4 = { prestige_from_land = 0.10 } } 
 link = { ck3 = { tradition = tradition_fp1_the_right_to_prove } eu4 = { mil_advisor_cost = -0.20 } } 
 link = { ck3 = { tradition = tradition_fp1_trials_by_combat } eu4 = { prestige_from_land = 0.10 stability_cost_modifier = -0.05 } }
 link = { ck3 = { tradition = tradition_frugal_armorsmiths } eu4 = { global_regiment_cost = -0.15 infantry_shock = -1 } } 
+link = { ck3 = { tradition = tradition_futuwaa} eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
 link = { ck3 = { tradition = tradition_gardening } eu4 = { global_prosperity_growth = 0.1 } } 
+link = { ck3 = { tradition = tradition_garuda_warriors } eu4 = { special_unit_forcelimit = 0.05 recover_army_morale_speed = 0.10 } } 
 link = { ck3 = { tradition = tradition_hard_working } eu4 = { build_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_hereditary_hierarchy } eu4 = { free_adm_policy = 1 } }
 link = { ck3 = { tradition = tradition_hiden_cities } eu4 = { war_exhaustion = -0.10 } } 
+link = { ck3 = { tradition = tradition_highland_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_hill_dwellers } eu4 = { development_cost = -0.1 } } 
+link = { ck3 = { tradition = tradition_himalayan_settlers } eu4 = { special_unit_forcelimit = 0.05 global_supply_limit_modifier = 0.10 } }
+link = { ck3 = { tradition = tradition_hit_and_run } eu4 = { movement_speed = 0.10 cav_to_inf_ratio = 0.05 } } 
+link = { ck3 = { tradition = tradition_hird } eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_horn_mountain_skirmishing } eu4 = { special_unit_forcelimit = 0.05 global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_horse_breeder } eu4 = { cav_to_inf_ratio = 0.10 } }
+link = { ck3 = { tradition = tradition_horse_lords } eu4 = { cavalry_power = 0.10 } } 
 link = { ck3 = { tradition = tradition_hunters } eu4 = { trade_efficiency = 0.1 } } 
+link = { ck3 = { tradition = tradition_hussar} eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
 link = { ck3 = { tradition = tradition_isolationist } eu4 = { stability_cost_modifier = -0.25 diplomatic_upkeep = -1 } }
+link = { ck3 = { tradition = tradition_jungle_dwellers } eu4 = { development_cost = -0.1 } } 
+link = { ck3 = { tradition = tradition_jungle_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_khadga_puja } eu4 = { special_unit_forcelimit = 0.05 infantry_shock = 1} } 
+link = { ck3 = { tradition = tradition_land_of_the_bow } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_language_scholars } eu4 = { monarch_diplomatic_power = 1 } } 
+link = { ck3 = { tradition = tradition_life_is_just_a_joke } eu4 = { global_unrest = -2 } } 
+link = { ck3 = { tradition = tradition_longbow_competitions } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
+link = { ck3 = { tradition = tradition_lords_of_the_elephant } eu4 = { cavalry_power = 0.15 } } 
+link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = -0.15 } } 
 link = { ck3 = { tradition = tradition_malleable_invaders } eu4 = { core_creation = -0.1 years_of_nationalism = -5 } } 
 link = { ck3 = { tradition = tradition_maritime_mercantilism } eu4 = { mercantilism_cost = -0.2 } }
 link = { ck3 = { tradition = tradition_martial_admiration } eu4 = { army_tradition = 1 } } 
@@ -65,14 +132,19 @@ link = { ck3 = { tradition = tradition_medicinal_plants } eu4 = { global_spy_def
 link = { ck3 = { tradition = tradition_mendicant_mystics } eu4 = { merchant = 1 } } 
 link = { ck3 = { tradition = tradition_merciful_blinding } eu4 = { harsh_treatment_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_metal_craftsmanship } eu4 = { reinforce_cost_modifier = -0.10 } }
+link = { ck3 = { tradition = tradition_mobile_guards } eu4 = { special_unit_forcelimit = 0.05 shock_damage_received = -0.10 } } 
 link = { ck3 = { tradition = tradition_modest } eu4 = { administrative_efficiency = 0.1 } } 
 link = { ck3 = { tradition = tradition_monastic_communities } eu4 = { church_loyalty_modifier = 0.1 nobility_influence_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_monogamous } eu4 = { monarch_admin_power = 1 } } 
+link = { ck3 = { tradition = tradition_mountain_herding } eu4 = { special_unit_forcelimit = 0.05 global_monthly_devastation = -0.1 } } 
+link = { ck3 = { tradition = tradition_mountain_homes } eu4 = { development_cost = -0.1 } } 
+link = { ck3 = { tradition = tradition_mountaineer_ruralism } eu4 = { development_cost = -0.1 shock_damage_received = -0.05 } } 
+link = { ck3 = { tradition = tradition_mountaineers } eu4 = { global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_mubarizuns } eu4 = { special_unit_forcelimit = 0.05 reserves_organisation = -0.05 } } 
 link = { ck3 = { tradition = tradition_music_theory } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_mystical_ancestors } eu4 = { monthly_heir_claim_increase = 0.05 idea_cost = -0.05 } } 
 link = { ck3 = { tradition = tradition_nubian_warrior_queens } eu4 = { monarch_military_power = 1 may_recruit_female_generals = yes } } 
-link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = -0.15 } } 
-link = { ck3 = { tradition = tradition_life_is_just_a_joke } eu4 = { global_unrest = -2 } } 
+link = { ck3 = { tradition = tradition_only_the_strong } eu4 = { infantry_power = 0.10 manpower_recovery_speed = -0.05 } } 
 link = { ck3 = { tradition = tradition_pacifism } eu4 = { stability_cost_to_declare_war = 1 all_power_cost = -0.03 } }
 link = { ck3 = { tradition = tradition_parochialism } eu4 = { build_time = -0.2 } }
 link = { ck3 = { tradition = tradition_pastoralists } eu4 = { global_trade_goods_size_modifier = 0.05 global_manpower_modifier = 0.05 } } 
@@ -80,7 +152,8 @@ link = { ck3 = { tradition = tradition_philosopher_culture } eu4 = { adm_tech_co
 link = { ck3 = { tradition = tradition_poetry } eu4 = { dip_tech_cost_modifier = -0.15 } } 
 link = { ck3 = { tradition = tradition_polders} eu4 = { development_cost = -0.1 } } # Same as vanilla Polders in Dutch Ideas
 link = { ck3 = { tradition = tradition_polygamous } eu4 = { diplomatic_reputation = 1 } }
-link = { ck3 = { tradition = tradition_praticed_pirates } eu4 = { loot_amount = 0.10 privateer_efficiency = 0.15 } }
+link = { ck3 = { tradition = tradition_praticed_pirates } eu4 = { may_perform_slave_raid = yes} }
+link = { ck3 = { tradition = tradition_quarrelsome } eu4 = { unjustified_demands = -0.2 }  } 
 link = { ck3 = { tradition = tradition_republican_legacy } eu4 = { burghers_loyalty_modifier = 0.1 republican_tradition 0.5 } } 
 link = { ck3 = { tradition = tradition_religion_blending } eu4 = { tolerance_heathen = 1 tolerance_heretic = 1 } } 
 link = { ck3 = { tradition = tradition_religious_patronage } eu4 = { institution_spread_from_true_faith = 0.15 } } 
@@ -94,87 +167,41 @@ link = { ck3 = { tradition = tradition_sacred_mountains } eu4 = { legitimacy = 1
 link = { ck3 = { tradition = tradition_saharan_nomads } eu4 = { envoy_travel_time = -0.1 trade_steering = 0.1 } } 
 link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_sorcerous_metallurgy } eu4 = { institution_spread = 0.1 } } 
+link = { ck3 = { tradition = tradition_spartan } eu4 = { fort_maintenance_modifier = -0.10 } } 
+link = { ck3 = { tradition = tradition_stalwart_defenders } eu4 = { defensiveness = 0.10 global_garrison_growth = 0.10 } } 
+link = { ck3 = { tradition = tradition_stand_and_fight } eu4 = { land_morale = 0.10 } } 
 link = { ck3 = { tradition = tradition_staunch_traditionalists } eu4 = { culture_conversion_cost = -0.25 monthly_reform_progress_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_steppe_tolerance} eu4 = { religious_unity = 0.25 horde_unity = 1 } }
 link = { ck3 = { tradition = tradition_storytellers } eu4 = { possible_dip_policy = 1 } } 
+link = { ck3 = { tradition = tradition_strength_in_numbers } eu4 = { land_forcelimit_modifier = 0.15 drill_gain_modifier = -0.05 } } 
 link = { ck3 = { tradition = tradition_strong_kinship } eu4 = { diplomatic_reputation = 2 } } 
 link = { ck3 = { tradition = tradition_swords_for_hire} eu4 = { possible_condottieri = 1 } } 
 link = { ck3 = { tradition = tradition_talent_acquisition } eu4 = { free_leader_pool = 1 general_cost = -0.10 } }
 link = { ck3 = { tradition = tradition_the_witenagemot } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier = 0.05 } }
 link = { ck3 = { tradition = tradition_things } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier = 0.05 } } 
 link = { ck3 = { tradition = tradition_tribe_unity } eu4 = { governing_cost = 0.8 } } 
+link = { ck3 = { tradition = tradition_upland_skirmishing } eu4 = { special_unit_forcelimit = 0.05 fire_damage_received = -0.10 } } 
 link = { ck3 = { tradition = tradition_vegetarianism } eu4 = { monthly_karma = 0.1 } } 
 link = { ck3 = { tradition = tradition_visigothic_codes } eu4 = { female_advisor_chance = 0.5 } }
 link = { ck3 = { tradition = tradition_warrior_culture } eu4 = { monarch_military_power = 2 monarch_diplomatic_power = -1 } }
+link = { ck3 = { tradition = tradition_warrior_monks } eu4 = { enforce_religion_cost = -0.4 manpower_in_true_faith_provinces= 0.10 } } 
+link = { ck3 = { tradition = tradition_warriors_by_merit } eu4 = { drill_gain_modifier = 0.1 general_cost = -0.10 } } 
+link = { ck3 = { tradition = tradition_warriors_of_the_dry } eu4 = { global_supply_limit_modifier = 0.10 } } 
 link = { ck3 = { tradition = tradition_wedding_ceremonies } eu4 = { prestige = 0.5 legitimacy = 1 } } 
+link = { ck3 = { tradition = tradition_winter_warriors } eu4 = { land_attrition = -0.10 } }
 link = { ck3 = { tradition = tradition_welcoming } eu4 = { diplomatic_upkeep = 1 } }
+link = { ck3 = { tradition = tradition_wetlanders } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_xenophilic } eu4 = { num_accepted_cultures = 1 } }
 link = { ck3 = { tradition = tradition_zealous_people } eu4 = { cb_on_religious_enemies = yes } }
 
-# Military Traditions (Have primarily Military based EU4 modifiers)
-link = { ck3 = { tradition = tradition_adaptive_skirmishing } eu4 = { discipline = 0.05 } } 
-link = { ck3 = { tradition = tradition_formation_fighting } eu4 = { reserves_organisation = -0.10 } } 
-link = { ck3 = { tradition = tradition_fp1_coastal_warriors } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
-link = { ck3 = { tradition = tradition_hit_and_run } eu4 = { movement_speed = 0.10 cav_to_inf_ratio = 0.05 } } 
-link = { ck3 = { tradition = tradition_horse_breeder } eu4 = { cav_to_inf_ratio = 0.10 } }
-link = { ck3 = { tradition = tradition_horse_lords } eu4 = { cavalry_power = 0.10 } } 
-link = { ck3 = { tradition = tradition_lords_of_the_elephant } eu4 = { cavalry_power = 0.15 } } 
-link = { ck3 = { tradition = tradition_only_the_strong } eu4 = { infantry_power = 0.10 manpower_recovery_speed = -0.05 } } 
-link = { ck3 = { tradition = tradition_quarrelsome } eu4 = { unjustified_demands = -0.2 }  } 
-link = { ck3 = { tradition = tradition_spartan } eu4 = { fort_maintenance_modifier = -0.10 } } 
-link = { ck3 = { tradition = tradition_stalwart_defenders } eu4 = { defensiveness = 0.10 global_garrison_growth = 0.10 } } 
-link = { ck3 = { tradition = tradition_stand_and_fight } eu4 = { land_morale = 0.10 } } 
-link = { ck3 = { tradition = tradition_strength_in_numbers } eu4 = { land_forcelimit_modifier = 0.15 drill_gain_modifier = -0.05 } } 
-link = { ck3 = { tradition = tradition_warrior_monks } eu4 = { enforce_religion_cost = -0.4 manpower_in_true_faith_provinces= 0.10 } } 
-link = { ck3 = { tradition = tradition_warriors_by_merit } eu4 = { drill_gain_modifier = 0.1 general_cost = -0.10 } } 
-link = { ck3 = { tradition = tradition_winter_warriors } eu4 = { land_attrition = -0.10 } }
+### Rule Overrides
+link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic idea_name = fin_siberian_frontier } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic idea_name = slav_siberian_frontier } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
+link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_ugro_permian idea_name = perm_siberian_frontier} eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
 
-# Military Terrain Traditions
-link = { ck3 = { tradition = tradition_forest_fighters } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_highland_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_jungle_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_mountaineers } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_warriors_of_the_dry } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_caucasian_wolves } eu4 = { { global_supply_limit_modifier = 0.10 special_unit_forcelimit= 0.05 } } 
-
-# Home Terrain Traditions
-link = { ck3 = { tradition = tradition_amharic_highlanders } eu4 = { development_cost = -0.1 placed_merchant_power = 2 } } 
-link = { ck3 = { tradition = tradition_forest_folk } eu4 = { development_cost = -0.1 } }
-link = { ck3 = { tradition = tradition_dryland_dwellers } eu4 = { development_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_hill_dwellers } eu4 = { development_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_jungle_dwellers } eu4 = { development_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_mountain_homes } eu4 = { development_cost = -0.1 } } 
-link = { ck3 = { tradition = tradition_mountaineer_ruralism } eu4 = { development_cost = -0.1 shock_damage_received = -0.05 } } 
-link = { ck3 = { tradition = tradition_wetlanders } eu4 = { development_cost = -0.1 } } 
-
-### Man-At-Arms Traditions
-
-#Inovation Based
-
-link = { ck3 = { tradition = tradition_bush_hunting } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
-link = { ck3 = { tradition = tradition_burman_royal_army } eu4 = { special_unit_forcelimit = 0.10 cavalry_power = 0.05 } } 
-link = { ck3 = { tradition = tradition_desert_ribat } eu4 = { special_unit_forcelimit = 0.05 fort_maintenance_modifier = -0.05 } } 
-link = { ck3 = { tradition = tradition_druzhina } eu4 = { special_unit_forcelimit = 0.05 infantry_shock = 1 } } 
-link = { ck3 = { tradition = tradition_forest_wardens } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
-link = { ck3 = { tradition = tradition_garuda_warriors } eu4 = { special_unit_forcelimit = 0.05 recover_army_morale_speed = 0.10 } } 
-link = { ck3 = { tradition = tradition_hird } eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_horn_mountain_skirmishing } eu4 = { special_unit_forcelimit = 0.05 global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_hussar} eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
-link = { ck3 = { tradition = tradition_khadga_puja } eu4 = { special_unit_forcelimit = 0.05 infantry_shock = 1} } 
-link = { ck3 = { tradition = tradition_land_of_the_bow } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
-link = { ck3 = { tradition = tradition_mobile_guards } eu4 = { special_unit_forcelimit = 0.05 shock_damage_received = -0.10 } } 
-link = { ck3 = { tradition = tradition_mountain_herding } eu4 = { special_unit_forcelimit = 0.05 global_monthly_devastation = -0.1 } } 
-link = { ck3 = { tradition = tradition_mubarizuns } eu4 = { special_unit_forcelimit = 0.05 reserves_organisation = -0.05 } } 
-link = { ck3 = { tradition = tradition_upland_skirmishing } eu4 = { special_unit_forcelimit = 0.05 fire_damage_received = -0.10 } } 
-link = { ck3 = { tradition = tradition_futuwaa} eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
-
-# Non-Inovation Based
-link = { ck3 = { tradition = tradition_longbow_competitions } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
-link = { ck3 = { tradition = tradition_himalayan_settlers } eu4 = { special_unit_forcelimit = 0.05 global_supply_limit_modifier = 0.10 } }
-
-### Not Yet In Game
-link = { ck3 = { tradition = tradition_alpine_supremacy } eu4 = { promote_culture_cost = -0.25 } } 
-link = { ck3 = { tradition = tradition_determined_independance } eu4 = { liberty_desire = 15 } }
+### Not Yet In Game (Fully localized by PDX but not implemented in Royal Court)
+link = { ck3 = { tradition = tradition_alpine_supremacy } eu4 = { promote_culture_cost = -0.25 } }
 link = { ck3 = { tradition = tradition_fractious } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_hereditary_bards } eu4 = { free_dip_policy = 1 } }
 link = { ck3 = { tradition = tradition_hold_the_line } eu4 = { defensiveness = 0.10 } }
@@ -193,7 +220,7 @@ link = { ck3 = { tradition = tradition_scientific_curiosity } eu4 = { promote_cu
 link = { ck3 = { tradition = tradition_strength_display } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_theocratic_autonomy } eu4 = { promote_culture_cost = -0.25 } } 
 link = { ck3 = { tradition = tradition_tea_ceremony } eu4 = { promote_culture_cost = -0.25 } } 
-link = { ck3 = { tradition = tradition_reavers } eu4 = { promote_culture_cost = -0.25 } } 
+link = { ck3 = { tradition = tradition_reavers } eu4 = { loot_amount = 0.10 privateer_efficiency = 0.05 } } 
 
 ### Defaults (For when a CK3 culture has less than 8 traditions.)
 link = { ck3 = { default = increase_discipline } eu4 = { discipline = 0.025 } }
@@ -204,9 +231,3 @@ link = { ck3 = { default = increased_manpower } eu4 = { global_manpower_modifier
 link = { ck3 = { default = increased_trade_steering } eu4 = { trade_steering = 0.05 } }
 link = { ck3 = { default = increased_production_income } eu4 = { production_efficiency = 0.05 } }
 link = { ck3 = { default = placeholder_tradition } eu4 = { global_tax_modifier = 0.10 } }
-
-### Rule Overrides
-link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
-link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_balto_finnic idea_name = fin_siberian_frontier } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
-link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
-link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_ugro_permian } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
