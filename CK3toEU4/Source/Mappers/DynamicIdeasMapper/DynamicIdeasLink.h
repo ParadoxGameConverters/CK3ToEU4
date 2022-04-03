@@ -40,7 +40,7 @@ class DynamicIdeasLink: commonItems::parser
 	std::vector<AssignmentPair> rules;	 // (type = "heritage", value = "heritage_north_germanic")
 
 	// Turns into either rules or effects
-	std::vector<AssignmentPair> ambiguosPairs; // assigned specifics based on calling scope
+	std::vector<AssignmentPair> ambiguousPairs; // assigned specifics based on calling scope
 };
 } // namespace mappers
 #endif // DYNAMIC_IDEAS_LINK
