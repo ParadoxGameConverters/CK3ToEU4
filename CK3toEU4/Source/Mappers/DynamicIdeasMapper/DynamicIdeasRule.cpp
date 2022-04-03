@@ -102,19 +102,21 @@ bool mappers::DynamicIdeasRule::operator<(const DynamicIdeasRule& rhs) const
 
 bool mappers::DynamicIdeasRule::operator==(const DynamicIdeasRule& rhs) const
 {
-	bool tracker = replacee == rhs.replacee && replacementIdentifier == rhs.replacementIdentifier && precedenceLevel == rhs.precedenceLevel;
-
-	if (!tracker)
-		return tracker;
-
-	tracker = tracker && newEffect == rhs.newEffect;
+	if (replacee != rhs.replacee)
+		return false;
+	if (replacementIdentifier != rhs.replacementIdentifier)
+		return false;
+	if (precedenceLevel != rhs.precedenceLevel)
+		return false;
+	if (newEffect != rhs.newEffect)
+		return false;
 
 	std::vector<mappers::AssignmentPair> lhsRuleSorted = ruleInfo;
 	std::sort(lhsRuleSorted.begin(), lhsRuleSorted.end());
 	std::vector<mappers::AssignmentPair> rhsRuleSorted = rhs.ruleInfo;
 	std::sort(rhsRuleSorted.begin(), rhsRuleSorted.end());
 
-	return tracker && lhsRuleSorted == rhsRuleSorted;
+	return lhsRuleSorted == rhsRuleSorted;
 }
 
 std::ostream& mappers::operator<<(std::ostream& output, const DynamicIdeasRule& rule)

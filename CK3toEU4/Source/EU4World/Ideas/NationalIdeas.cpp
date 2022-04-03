@@ -17,7 +17,6 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const m
 	std::vector<std::string>::iterator iter;
 
 	iter = defaults.begin();
-
 	while (traditionIdeas.size() < 8 && iter != defaults.end())
 	{
 		traditionIdeas.push_back(*iter);
