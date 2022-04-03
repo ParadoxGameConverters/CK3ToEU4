@@ -71,17 +71,17 @@ bool mappers::DynamicIdeasRule::testRule(const std::shared_ptr<CK3::Culture> cul
 bool mappers::DynamicIdeasRule::operator<(const DynamicIdeasRule& rhs) const
 {
 	// Allow a rule to be used more than once so long as it has a different target
-	if (this->precedenceLevel == rhs.precedenceLevel)
+	if (precedenceLevel == rhs.precedenceLevel)
 	{
-		if (this->ruleInfo == rhs.ruleInfo)
-			return this->replacee != rhs.replacee;
+		if (ruleInfo == rhs.ruleInfo)
+			return replacee != rhs.replacee;
 		else
 			return true;
 	}
 
 	// Acutal Strict weak ordering
-	const auto& lhsStart = this->precedenceLevel.begin();
-	const auto& lhsEnd = this->precedenceLevel.end();
+	const auto& lhsStart = precedenceLevel.begin();
+	const auto& lhsEnd = precedenceLevel.end();
 	const auto& rhsStart = rhs.precedenceLevel.begin();
 	const auto& rhsEnd = rhs.precedenceLevel.end();
 

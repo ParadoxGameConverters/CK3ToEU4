@@ -926,20 +926,16 @@ void EU4::World::assignAllCountryReforms()
 void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures)
 {
 	Log(LogLevel::Info) << "-> Creating new National Ideas";
-	auto counter = 0;
 
 	dynamicIdeasMapper = mappers::DynamicIdeasMapper(localizationMapper);
 
 	for (auto& culture: cultures.getCultures() | std::views::values)
 	{
 		if (culture->isDynamic())
-		{
 			dynamicNationalIdeas.push_back(NationalIdeas(culture, dynamicIdeasMapper));
-			counter++;
-		}
 	}
 
-	Log(LogLevel::Info) << "<> Created " << counter << " National Ideas.";
+	Log(LogLevel::Info) << "<> Created " << dynamicNationalIdeas.size() << " National Ideas.";
 }
 
 void EU4::World::importAdvisers()

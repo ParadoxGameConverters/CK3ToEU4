@@ -67,7 +67,7 @@ TEST(Mappers_LocalisationTests, reverseLookupCultureNameDoesNotWorkForNonCulture
 	EXPECT_EQ(std::nullopt, locs.reverseLookupCultureName("The Name"));
 }
 
-TEST(Mappers_DynamicIdeasMapperTests, unravelNestedLocsWorks)
+TEST(Mappers_LocalisationTests, nestedLocalisationsCanBeUnravelled)
 {
 	mappers::LocalizationMapper locs;
 	std::stringstream input;

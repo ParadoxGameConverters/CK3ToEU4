@@ -6,13 +6,13 @@
 EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const mappers::DynamicIdeasMapper& dynIdeasMapper):
 	 culture(culture), traditionIdeas(culture->getTraditions()), ethosEffects(dynIdeasMapper.getEthosMap().at(culture->getEthos()))
 {
-	// Culture localized name is an optional value, so just forcing it into a normal string and given defualt value.
+	// Culture localized name is an optional value, so just forcing it into a normal string and given default value.
 	if (auto possibleLocalizedName = culture->getLocalizedName(); possibleLocalizedName)
 		localizedName = possibleLocalizedName.value();
 	else
 		localizedName = getDynamicName();
 
-	// Defualt behavior for when cultures have less than 8 traditions. Good enough for now
+	// Default behavior for when cultures have less than 8 traditions. Good enough for now
 	std::vector<std::string> defaults = dynIdeasMapper.getDefaults();
 	std::vector<std::string>::iterator iter;
 

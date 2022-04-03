@@ -57,7 +57,7 @@ void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, co
 void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 {
 	// Support Korean/Chinese/Russian?
-	for (const auto& lang: std::set<std::string>{"english", "french", "spanish", "german"})
+	for (const auto& lang: std::vector<std::string>{"english", "french", "spanish", "german"})
 	{
 		const auto& loc = selectLanguage(lang, block);
 		if (loc.contains('$')) // TODO: handle escaped \$
@@ -92,7 +92,7 @@ const std::string mappers::LocalizationMapper::selectLanguage(const std::string&
 	else if (language == "german")
 		return block.german;
 	else
-		return ""; // TODO: Throw exception?
+		return block.english;
 }
 
 void mappers::LocalizationMapper::assignSelectLanguage(const std::string& str, const std::string& language, LocBlock& block) const
