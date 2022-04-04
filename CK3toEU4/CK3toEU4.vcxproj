@@ -164,9 +164,11 @@ call save_commit_id.bat
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMapper.h" />
     <ClInclude Include="Source\Mappers\CultureMapper\CultureMappingRule.h" />
     <ClInclude Include="Source\Mappers\DevWeightsMapper\DevWeightsMapper.h" />
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\AssignmentPairs.h" />
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.h" />
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h" />
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.h" />
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
     <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapper.h" />

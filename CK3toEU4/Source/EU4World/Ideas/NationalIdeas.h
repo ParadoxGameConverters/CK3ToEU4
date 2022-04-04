@@ -26,8 +26,8 @@ class NationalIdeas
   private:
 	std::string localizedName;					  // Defined version of culture's optional value if undefined there
 	std::vector<std::string> traditionIdeas; // Becomes national ideas/ambitions, filled up to 8 if culture had less
-	std::vector<mappers::AssignmentPair> ethosEffects;
-	std::vector<std::vector<mappers::AssignmentPair>> traditionEffects;
+	std::vector<mappers::EffectPair> ethosEffects;
+	std::vector<std::vector<mappers::EffectPair>> traditionEffects;
 
 	std::shared_ptr<CK3::Culture> culture;
 };

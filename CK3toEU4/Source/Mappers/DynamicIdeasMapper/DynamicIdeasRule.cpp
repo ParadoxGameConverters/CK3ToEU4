@@ -1,8 +1,9 @@
 #include "DynamicIdeasRule.h"
+#include "DynamicIdeasRuleEnum.h"
 #include "OSCompatibilityLayer.h"
 
-mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<AssignmentPair>& ruleInfo,
-	 const std::vector<AssignmentPair>& newEffect,
+mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<RulePair>& ruleInfo,
+	 const std::vector<EffectPair>& newEffect,
 	 const std::string& replacee,
 	 const std::optional<std::string> ideaName):
 	 ruleInfo(ruleInfo),
@@ -16,18 +17,18 @@ mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<AssignmentPair>& r
 	for (const auto& rule: ruleInfo)
 	{
 		// Set precedance level
-		const auto& precedence = StringToRuleType.at(rule.type);
-		precedenceLevel.emplace(RuleTypeToPrecedence.at(precedence));
+		precedenceLevel.emplace(RuleTypeToPrecedence.at(rule.rule_type));
 
 		// Craft unique identfier name
 		// Support coastal = yes and heritage = heritage_north_germanic while keeping as much brevity as possible
 		if (!ideaName)
 		{
-			const std::string& prefix = getLeadStr(rule.type);
+			const auto& ruleName = RuleTypeToString.at(rule.rule_type);
+			const std::string& prefix = getLeadStr(ruleName);
 			if (rule.value.find(prefix) != std::string::npos)
 				replacementIdentifier += ("_" + rule.value);
 			else
-				replacementIdentifier += ("_" + rule.type + "_" + rule.value);
+				replacementIdentifier += ("_" + ruleName + "_" + rule.value);
 		}
 	}
 }
@@ -37,7 +38,7 @@ bool mappers::DynamicIdeasRule::testRule(const std::shared_ptr<CK3::Culture> cul
 	// Generate rule
 	for (const auto& rule: ruleInfo)
 	{
-		const auto& ruleType = StringToRuleType.at(rule.type);
+		const auto& ruleType = rule.rule_type;
 
 		// Shortcut return false if any rule doesn't pass, otherwise return true
 		switch (ruleType)
@@ -111,9 +112,9 @@ bool mappers::DynamicIdeasRule::operator==(const DynamicIdeasRule& rhs) const
 	if (newEffect != rhs.newEffect)
 		return false;
 
-	std::vector<mappers::AssignmentPair> lhsRuleSorted = ruleInfo;
+	std::vector<mappers::RulePair> lhsRuleSorted = ruleInfo;
 	std::sort(lhsRuleSorted.begin(), lhsRuleSorted.end());
-	std::vector<mappers::AssignmentPair> rhsRuleSorted = rhs.ruleInfo;
+	std::vector<mappers::RulePair> rhsRuleSorted = rhs.ruleInfo;
 	std::sort(rhsRuleSorted.begin(), rhsRuleSorted.end());
 
 	return lhsRuleSorted == rhsRuleSorted;

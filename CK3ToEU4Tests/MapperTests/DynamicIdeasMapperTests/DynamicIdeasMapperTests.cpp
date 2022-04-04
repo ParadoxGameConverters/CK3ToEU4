@@ -36,7 +36,7 @@ TEST(Mappers_DynamicIdeasMapperTests, defualtsFillIn)
 		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
 
 	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring");
-	EXPECT_EQ(idea.getTraditionEffects().front().front().type, "naval_forcelimit_modifier");
+	EXPECT_EQ(idea.getTraditionEffects().front().front().modifier, "naval_forcelimit_modifier");
 	EXPECT_EQ(idea.getTraditionEffects().front().front().value, "0.1");
 
 	EXPECT_NE(std::find(idea.getTraditionIdeas().begin(), idea.getTraditionIdeas().end(), "increased_manpower"), idea.getTraditionIdeas().end());
@@ -58,13 +58,11 @@ TEST(Mappers_DynamicIdeasMapperTests, ethosRulesApply)
 	const EU4::NationalIdeas idea(culture,
 		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
 
-	EXPECT_EQ(idea.getEthosEffects().front().type, "possible_condottieri");
+	EXPECT_EQ(idea.getEthosEffects().front().modifier, "possible_condottieri");
 	EXPECT_EQ(idea.getEthosEffects().front().value, "1");
-	EXPECT_EQ(idea.getEthosEffects().back().type, "loot_amount");
+	EXPECT_EQ(idea.getEthosEffects().back().modifier, "loot_amount");
 	EXPECT_EQ(idea.getEthosEffects().back().value, "0.10");
 }
-
-
 
 TEST(Mappers_DynamicIdeasMapperTests, moreSpecificOverLessSpecific)
 {
@@ -80,13 +78,13 @@ TEST(Mappers_DynamicIdeasMapperTests, moreSpecificOverLessSpecific)
 	const EU4::NationalIdeas idea(culture,
 		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
 
-	EXPECT_EQ(idea.getEthosEffects().front().type, "same_culture_advisor_cost");
+	EXPECT_EQ(idea.getEthosEffects().front().modifier, "same_culture_advisor_cost");
 	EXPECT_EQ(idea.getEthosEffects().front().value, "-0.25");
-	EXPECT_EQ(idea.getEthosEffects().back().type, "global_heretic_missionary_strength");
+	EXPECT_EQ(idea.getEthosEffects().back().modifier, "global_heretic_missionary_strength");
 	EXPECT_EQ(idea.getEthosEffects().back().value, "0.03");
 
-	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring__heritage_red_ethos_communal");
-	EXPECT_EQ(idea.getTraditionEffects().front().front().type, "prestige");
+	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring__ethos_communal_heritage_red");
+	EXPECT_EQ(idea.getTraditionEffects().front().front().modifier, "prestige");
 	EXPECT_EQ(idea.getTraditionEffects().front().front().value, "1");
 }
 
@@ -105,6 +103,6 @@ TEST(Mappers_DynamicIdeasMapperTests, precedenceCheck)
 		 mappers::DynamicIdeasMapper("../TestFiles/configurables/tradition_ideas.txt", mappers::LocalizationMapper::LocalizationMapper()));
 
 	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring__heritage_red");
-	EXPECT_EQ(idea.getTraditionEffects().front().front().type, "may_explore");
+	EXPECT_EQ(idea.getTraditionEffects().front().front().modifier, "may_explore");
 	EXPECT_EQ(idea.getTraditionEffects().front().front().value, "yes");
 }

@@ -62,12 +62,12 @@ void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 		const auto& loc = selectLanguage(lang, block);
 		if (loc.find('$') != std::string::npos) // TODO: handle escaped \$
 		{
-			const auto& keyStr = getLeadStr(loc, 2, "$");				 // Chop off tail after nested key
-			const auto& nestedKey = getLeadStr(keyStr, 1, "$", true); // Chop off head before nested key
+			const auto& keyStr = getLeadStr(loc, 2, "$");		 // Chop off tail after nested key
+			const auto& nestedKey = getTailStr(keyStr, 1, "$"); // Chop off head before nested key
 			if (const auto& newblock = getLocBlockForKey(nestedKey); newblock)
 			{
 				const auto& fstr = getLeadStr(loc, 1, "$");
-				const auto& bstr = getLeadStr(loc, 2, "$", true);
+				const auto& bstr = getTailStr(loc, 2, "$");
 				assignSelectLanguage(fstr + selectLanguage(lang, newblock.value()) + bstr, lang, block);
 			}
 			else
@@ -91,6 +91,12 @@ const std::string mappers::LocalizationMapper::selectLanguage(const std::string&
 		return block.spanish;
 	else if (language == "german")
 		return block.german;
+	else if (language == "korean")
+		return block.korean;
+	else if (language == "russian")
+		return block.russian;
+	else if (language == "simp_chinese")
+		return block.simp_chinese;
 	else
 		return block.english;
 }
@@ -105,8 +111,14 @@ void mappers::LocalizationMapper::assignSelectLanguage(const std::string& str, c
 		block.spanish = str;
 	else if (language == "german")
 		block.german = str;
+	else if (language == "korean")
+		block.korean = str;
+	else if (language == "russian")
+		block.russian = str;
+	else if (language == "simp_chinese")
+		block.simp_chinese = str;
 	else
-		return; // TODO: Throw exception?
+		throw std::invalid_argument(language + " is not currently supported or has a typo.");
 	return;
 }
 
@@ -224,17 +236,23 @@ std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName
 	return std::nullopt;
 }
 
-std::string mappers::getLeadStr(const std::string& str, const int occurrence, const std::string& match, const bool tail)
+std::string mappers::getLeadStr(const std::string& str, const int occurrence, const std::string& match)
 {
 	if (const auto& i = str.find(match); i != std::string::npos)
-		if (occurrence == 1 && tail)
-			return str.substr(i + match.length());
-		else if (occurrence == 1)
+		if (occurrence == 1)
 			return str.substr(0, i);
-		else if (tail)
-			return getLeadStr(str.substr(i + match.length()), occurrence - 1, match, tail);
 		else
 			return str.substr(0, i) + match + getLeadStr(str.substr(i + match.length()), occurrence - 1, match);
+	else
+		return str;
+}
+std::string mappers::getTailStr(const std::string& str, const int occurrence, const std::string& match)
+{
+	if (const auto& i = str.find(match); i != std::string::npos)
+		if (occurrence == 1)
+			return str.substr(i + match.length());
+		else
+			return getTailStr(str.substr(i + match.length()), occurrence - 1, match);
 	else
 		return str;
 }

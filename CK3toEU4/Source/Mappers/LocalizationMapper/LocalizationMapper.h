@@ -18,9 +18,11 @@ typedef struct
 	std::string simp_chinese;
 	std::string spanish;
 } LocBlock;
+
 // Returns substring of str before nth occurrence of match string.
-// If tail is true, returns substring of string after nth occurrence of match string.
-std::string getLeadStr(const std::string& str, const int occurrence = 1, const std::string& match = "_", const bool tail = false);
+std::string getLeadStr(const std::string& str, const int occurrence = 1, const std::string& match = "_");
+// Returns substring of string after nth occurrence of match string.
+std::string getTailStr(const std::string& str, const int occurrence = 1, const std::string& match = "_");
 
 class LocalizationMapper
 {

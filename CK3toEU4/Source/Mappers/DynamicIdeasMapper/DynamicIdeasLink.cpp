@@ -1,5 +1,6 @@
 #include "DynamicIdeasLink.h"
 #include "CommonRegexes.h"
+#include "DynamicIdeasRuleEnum.h"
 #include "Log.h"
 #include "ParserHelpers.h"
 
@@ -33,21 +34,25 @@ void mappers::DynamicIdeasLink::registerKeys()
 		else if (auto possibleDefault = scraper.getDefault(); possibleDefault)
 			defaultString = possibleDefault;
 		else
-			Log(LogLevel::Info) << "Missing value in tradition_ideas.txt";
+			Log(LogLevel::Info) << "Missing ck3 value in link in tradition_ideas.txt";
 	});
 	registerKeyword("eu4", [this](std::istream& theStream) {
 		const auto scraper = DynamicIdeasLink(theStream);
-		effects = scraper.getPair();
+		effects = scraper.getEffects();
 	});
 	registerKeyword("rule", [this](std::istream& theStream) {
-		const auto scraper = DynamicIdeasLink(theStream);
-		rules = scraper.getPair();
-		if (auto possibleIdeaName = scraper.getIdeaName(); possibleIdeaName)
-			ideaName = possibleIdeaName;
+		const auto scraper = commonItems::assignments(theStream).getAssignments();
+		for (const auto& [type, value]: scraper)
+		{
+			if (type == "idea_name")
+				ideaName = value;
+			else
+				rules.push_back({StringToRuleType.at(type), value}); // Convert std::pair to RulePair
+		}
 	});
-	registerRegex(R"(\w+)", [this](const std::string& ruleOrEffect, std::istream& theStream) {
-		AssignmentPair pair = {ruleOrEffect, commonItems::getString(theStream)};
-		ambiguosPairs.push_back(pair);
+	registerRegex(R"(\w+)", [this](const std::string& effect, std::istream& theStream) {
+		EffectPair pair = {effect, commonItems::getString(theStream)};
+		effects.push_back(pair);
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

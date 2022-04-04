@@ -478,6 +478,12 @@
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.h">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\AssignmentPairs.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">

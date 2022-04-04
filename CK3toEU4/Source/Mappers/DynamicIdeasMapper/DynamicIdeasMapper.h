@@ -26,8 +26,8 @@ class DynamicIdeasMapper: commonItems::parser
 	void registerKeys();
 	void processRules();
 
-	std::map<std::string, std::vector<AssignmentPair>> ethosMap;
-	std::map<std::string, std::vector<AssignmentPair>> traditionMap;
+	std::map<std::string, std::vector<EffectPair>> ethosMap;
+	std::map<std::string, std::vector<EffectPair>> traditionMap;
 	std::vector<std::string> defaults; // Used to fill in cultures with less than 8 traditions
 	std::set<DynamicIdeasRule> rules;
 	std::map<std::string, LocBlock> traditionLocs;
