@@ -23,13 +23,15 @@ class DynamicIdeasRule
 	[[nodiscard]] const auto& getNewEffect() const { return newEffect; }
 	[[nodiscard]] const auto& getPrecedence() const { return precedenceLevel; }
 
-	bool testRule(const std::shared_ptr<CK3::Culture> culture) const;
+	bool testRules(const std::shared_ptr<CK3::Culture> culture) const;
 
 	bool operator<(const DynamicIdeasRule& rhs) const;
 	bool operator==(const DynamicIdeasRule& rhs) const;
 
   private:
 	friend std::ostream& operator<<(std::ostream&, const DynamicIdeasRule&); // For debug warnings
+
+	bool testRule(const RULE_TYPE ruleType, const std::string& ruleValue, const std::shared_ptr<CK3::Culture> culture) const;
 
 	std::string replacee;				  // tradition_fisherman
 	std::string replacementIdentifier; // tradition_fisherman__heritage_north_germanic

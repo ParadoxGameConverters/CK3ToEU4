@@ -33,38 +33,14 @@ mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<RulePair>& ruleInf
 	}
 }
 
-bool mappers::DynamicIdeasRule::testRule(const std::shared_ptr<CK3::Culture> culture) const
+bool mappers::DynamicIdeasRule::testRules(const std::shared_ptr<CK3::Culture> culture) const
 {
 	// Generate rule
 	for (const auto& rule: ruleInfo)
 	{
-		const auto& ruleType = rule.rule_type;
-
 		// Shortcut return false if any rule doesn't pass, otherwise return true
-		switch (ruleType)
-		{
-			case RULE_TYPE::HERITAGE:
-				if (culture->getHeritage() != rule.value)
-					return false;
-				break;
-			case RULE_TYPE::ETHOS_TRIGGER:
-				if (culture->getEthos() != rule.value)
-					return false;
-				break;
-				// Possible extensions of the rules
-				/*case RULE_TYPE::COASTAL:
-					if (!coastalRule(rule.value, idea)) // For more complex rules, pass sourceWorld down chain? Use friend fxns?
-						return false;
-					break;
-				case RULE_TYPE::REGION:
-					if (!regionRule(rule.value, idea)) // Future complexity could complicate scopes. Not sure how to deal with.
-						return false;
-					break;
-				case RULE_TYPE::RELIGION:
-					if (!religionRule(rule.value, idea))
-						return false;
-					break;*/
-		}
+		if (!testRule(rule.rule_type, rule.value, culture))
+			return false;
 	}
 	return true;
 }
@@ -80,18 +56,25 @@ bool mappers::DynamicIdeasRule::operator<(const DynamicIdeasRule& rhs) const
 			return true;
 	}
 
-	// Acutal Strict weak ordering
+	// Actual Strict weak ordering
+	// Desired ordering is that more specific rules are < (a.k.a higer precedence) less specifc rules when all else is equal.
+	// In alpha terms this would equate to paradoxical coming before paradox.
 	const auto& lhsStart = precedenceLevel.begin();
 	const auto& lhsEnd = precedenceLevel.end();
 	const auto& rhsStart = rhs.precedenceLevel.begin();
 	const auto& rhsEnd = rhs.precedenceLevel.end();
 
+	// Am I >= to the rhs rule? If so my set difference would be empty.
 	std::set<int> lComparator;
 	std::set_difference(lhsStart, lhsEnd, rhsStart, rhsEnd, std::inserter(lComparator, lComparator.begin()));
 
 	if (lComparator.empty())
 		return false;
 
+	// Am I < the rhs rule? If the rhs set difference is empty. And we already know that my set difference isn't empty, then I must be <.
+	// If both of our set differences are non-empty, then both of our set differnces have elements completely unique from each other.
+	// Since the first of each set difference is the lowest element of each respective set, and they are guarenteed to be different from each other,
+	// a comparison of the two will also be a direct comparison of the rule's precedences.
 	std::set<int> rComparator;
 	std::set_difference(rhsStart, rhsEnd, lhsStart, lhsEnd, std::inserter(rComparator, rComparator.begin()));
 
@@ -118,6 +101,25 @@ bool mappers::DynamicIdeasRule::operator==(const DynamicIdeasRule& rhs) const
 	std::sort(rhsRuleSorted.begin(), rhsRuleSorted.end());
 
 	return lhsRuleSorted == rhsRuleSorted;
+}
+
+bool mappers::DynamicIdeasRule::testRule(const RULE_TYPE ruleType, const std::string& ruleValue, const std::shared_ptr<CK3::Culture> culture) const
+{
+	switch (ruleType)
+	{
+		case RULE_TYPE::HERITAGE:
+			return culture->getHeritage() != ruleValue;
+		case RULE_TYPE::ETHOS_TRIGGER:
+			return culture->getEthos() != ruleValue;
+			break;
+			// Possible extensions of the rules
+			/*case RULE_TYPE::COASTAL:
+				return coastalRule(ruleValue, culture) // For more complex rules, pass sourceWorld down chain? Use friend fxns?
+			case RULE_TYPE::REGION:
+				return regionRule(ruleValue, culture) // Future complexity could complicate scopes. Not sure how to deal with.
+			case RULE_TYPE::RELIGION:
+				return religionRule(ruleValue, culture)*/
+	}
 }
 
 std::ostream& mappers::operator<<(std::ostream& output, const DynamicIdeasRule& rule)

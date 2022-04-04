@@ -46,12 +46,12 @@ EU4::NationalIdeas::NationalIdeas(std::shared_ptr<CK3::Culture> culture, const m
 	{
 		const auto& replacee = rule.getReplacee();
 
-		if (!changedEthos && replacee.find("ethos") != std::string::npos && rule.testRule(culture))
+		if (!changedEthos && replacee.find("ethos") != std::string::npos && rule.testRules(culture))
 		{
 			changedEthos = true;
 			ethosEffects = rule.getNewEffect();
 		}
-		else if (const auto& it = std::find(tiBegin, tiEnd, replacee); it != tiEnd && rule.testRule(culture))
+		else if (const auto& it = std::find(tiBegin, tiEnd, replacee); it != tiEnd && rule.testRules(culture))
 			*it = rule.getReplacement();
 	}
 
