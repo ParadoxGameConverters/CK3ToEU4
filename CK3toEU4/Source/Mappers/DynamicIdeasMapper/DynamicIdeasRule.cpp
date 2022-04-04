@@ -108,10 +108,9 @@ bool mappers::DynamicIdeasRule::testRule(const RULE_TYPE ruleType, const std::st
 	switch (ruleType)
 	{
 		case RULE_TYPE::HERITAGE:
-			return culture->getHeritage() != ruleValue;
+			return culture->getHeritage() == ruleValue;
 		case RULE_TYPE::ETHOS_TRIGGER:
-			return culture->getEthos() != ruleValue;
-			break;
+			return culture->getEthos() == ruleValue;
 			// Possible extensions of the rules
 			/*case RULE_TYPE::COASTAL:
 				return coastalRule(ruleValue, culture) // For more complex rules, pass sourceWorld down chain? Use friend fxns?
