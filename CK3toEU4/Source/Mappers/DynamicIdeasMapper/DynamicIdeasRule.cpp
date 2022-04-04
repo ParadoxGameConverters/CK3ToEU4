@@ -64,24 +64,24 @@ bool mappers::DynamicIdeasRule::operator<(const DynamicIdeasRule& rhs) const
 	const auto& rhsStart = rhs.precedenceLevel.begin();
 	const auto& rhsEnd = rhs.precedenceLevel.end();
 
-	// Am I >= to the rhs rule? If so my set difference would be empty.
+	// Am I >= to the rhs rule? If so, my set difference would be empty.
 	std::set<int> lComparator;
 	std::set_difference(lhsStart, lhsEnd, rhsStart, rhsEnd, std::inserter(lComparator, lComparator.begin()));
 
+	// If I'm empty, I'm either equal to, or a shorter version of rhs, either way I don't have precedence.
 	if (lComparator.empty())
 		return false;
 
-	// Am I < the rhs rule? If the rhs set difference is empty. And we already know that my set difference isn't empty, then I must be <.
-	// If both of our set differences are non-empty, then both of our set differnces have elements completely unique from each other.
-	// Since the first of each set difference is the lowest element of each respective set, and they are guarenteed to be different from each other,
-	// a comparison of the two will also be a direct comparison of the rule's precedences.
+	// Is rhs >= me? If so, its set difference would be empty.
 	std::set<int> rComparator;
 	std::set_difference(rhsStart, rhsEnd, lhsStart, lhsEnd, std::inserter(rComparator, rComparator.begin()));
 
+	// We know I'm not empty, so rhs must be a shorter version of me and therefore I have precedence.
 	if (rComparator.empty())
 		return true;
-	else
-		return *lComparator.begin() < *rComparator.begin();
+
+	// Our set differences are not empty, must have unique values and are already sorted, so only need to compare the first element
+	return *lComparator.begin() < *rComparator.begin();
 }
 
 bool mappers::DynamicIdeasRule::operator==(const DynamicIdeasRule& rhs) const
