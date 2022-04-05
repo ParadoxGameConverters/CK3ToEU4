@@ -1,8 +1,8 @@
 #include "DynamicIdeasMapper.h"
 #include "../../EU4World/EU4World.h"
 #include "CommonRegexes.h"
+#include "Log.h"
 #include "ParserHelpers.h"
-#include <Log.h>
 #include <ranges>
 
 mappers::DynamicIdeasMapper::DynamicIdeasMapper(const LocalizationMapper& localizationMapper): locs(localizationMapper)
@@ -34,11 +34,13 @@ void mappers::DynamicIdeasMapper::registerKeys()
 				traditionMap.emplace(possibleTradition.value(), effects);
 			else if (auto possibleEthos = scraper.getEthos(); possibleEthos)
 				ethosMap.emplace(possibleEthos.value(), effects);
-			else
+			else if (auto possibleDefault = scraper.getDefault())
 			{
 				traditionMap.emplace(scraper.getDefault().value(), effects);
 				defaults.push_back(scraper.getDefault().value());
 			}
+			else
+				Log(LogLevel::Warning) << "A link was skipped due to invalid input.";
 		}
 		else // Is a rule based override mapping
 		{

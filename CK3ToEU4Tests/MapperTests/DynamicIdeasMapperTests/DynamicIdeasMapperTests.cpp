@@ -2,7 +2,7 @@
 #include "include/gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 
-TEST(Mappers_DynamicIdeasMapperTests, defualtsLoadIn)
+TEST(Mappers_DynamicIdeasMapperTests, defaultsLoadIn)
 {
 	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
 

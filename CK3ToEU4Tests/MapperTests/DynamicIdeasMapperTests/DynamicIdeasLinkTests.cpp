@@ -74,7 +74,7 @@ TEST(Mappers_DynamicIdeasLinkTests, ruleIsReadIn)
 	std::stringstream input;
 	input << "ck3 = { tradition = x }";
 	input << "eu4 = { mod2 = -0.1 }";
-	input << "rule = { heritage = val0 ethos_trigger = val1 }";
+	input << "rule = { heritage = val0 ethos_rule = val1 }";
 
 	const auto& rules = std::vector<mappers::RulePair>{{mappers::RULE_TYPE::ETHOS_TRIGGER, "val1"}, {mappers::RULE_TYPE::HERITAGE, "val0"}};
 	const auto& mods = std::vector<mappers::EffectPair>{{"mod2", "-0.1"}};

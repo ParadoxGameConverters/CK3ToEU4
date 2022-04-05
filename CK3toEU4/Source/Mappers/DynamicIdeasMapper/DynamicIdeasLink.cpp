@@ -2,6 +2,7 @@
 #include "CommonRegexes.h"
 #include "DynamicIdeasRuleEnum.h"
 #include "Log.h"
+//#include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
 mappers::DynamicIdeasLink::DynamicIdeasLink(std::istream& theStream)
@@ -47,7 +48,18 @@ void mappers::DynamicIdeasLink::registerKeys()
 			if (type == "idea_name")
 				ideaName = value;
 			else
-				rules.push_back({StringToRuleType.at(type), value}); // Convert std::pair to RulePair
+			{
+				if (const auto& keyIter = StringToRuleType.find(type); keyIter != StringToRuleType.end())
+					rules.push_back({StringToRuleType.at(type), value}); // Convert std::pair to RulePair
+				else
+				{
+					Log(LogLevel::Warning) << type +
+															"is not a valid rule. Skipping link. Consult list of valid rule names at the bottom of "
+															"configuration/tradition_ideas.txt instructions to fix.";
+					rules.clear();
+					return;
+				}
+			}
 		}
 	});
 	registerRegex(R"(\w+)", [this](const std::string& effect, std::istream& theStream) {
