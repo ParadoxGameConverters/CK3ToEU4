@@ -118,6 +118,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Info) << "-> Verifying Religions and Cultures";
 	verifyReligionsAndCultures();
 
+	Log(LogLevel::Info) << "-> Initializing Dynamic National Ideas";
+	generateNationalIdeasFromDynamicCultures(sourceWorld.getCultures());
+
 	Log(LogLevel::Progress) << "63 %";
 	// With all provinces and rulers religion/culture set, only now can we import advisers, which also need religion/culture set.
 	// Those advisers coming without such data use the monarch's religion/culture.
@@ -918,6 +921,21 @@ void EU4::World::assignAllCountryReforms()
 			continue;
 		country.second->assignReforms(regionMapper);
 	}
+}
+
+void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures)
+{
+	Log(LogLevel::Info) << "-> Creating new National Ideas";
+
+	dynamicIdeasMapper = mappers::DynamicIdeasMapper(localizationMapper);
+
+	for (auto& culture: cultures.getCultures() | std::views::values)
+	{
+		if (culture->isDynamic())
+			dynamicNationalIdeas.push_back(NationalIdeas(culture, dynamicIdeasMapper));
+	}
+
+	Log(LogLevel::Info) << "<> Created " << dynamicNationalIdeas.size() << " National Ideas.";
 }
 
 void EU4::World::importAdvisers()

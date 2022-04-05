@@ -22,6 +22,12 @@ void CK3::Culture::registerKeys()
 	registerKeyword("heritage", [this](std::istream& theStream) {
 		heritage = commonItems::getString(theStream);
 	});
+	registerKeyword("ethos", [this](std::istream& theStream) {
+		ethos = commonItems::singleString(theStream).getString();
+	});
+	registerKeyword("traditions", [this](std::istream& theStream) {
+		traditions = commonItems::getStrings(theStream);
+	});
 	registerKeyword("name_list", [this](std::istream& theStream) {
 		auto temp = commonItems::getString(theStream);
 		if (temp.size() > 10)

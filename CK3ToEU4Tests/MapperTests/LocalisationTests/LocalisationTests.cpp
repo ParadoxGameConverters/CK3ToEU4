@@ -66,3 +66,48 @@ TEST(Mappers_LocalisationTests, reverseLookupCultureNameDoesNotWorkForNonCulture
 
 	EXPECT_EQ(std::nullopt, locs.reverseLookupCultureName("The Name"));
 }
+
+TEST(Mappers_LocalisationTests, nestedLocalisationsCanBeUnravelled)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " nested_key: \"This $n$ has nested $locs$\"\n";
+	input << " n: \"$noun$\"\n";
+	input << " locs: \"localizations\"\n";
+	input << " noun: \"string\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyblock = locs.getLocBlockForKey("nested_key");
+	locs.unravelNestedLocs(copyblock.value());
+	EXPECT_EQ("This string has nested localizations", copyblock->english);
+}
+
+TEST(Mappers_LocalisationTests, stringsCanBeSelectedFor)
+{
+	std::string a = "I_do_not_fear_the_big_blue_blob.";
+	std::string b = "Ich fürchte den großen  blauen Klecks nicht.";
+	std::string c = "Je$n'ai$pas$peur$du$gros$blob$bleu.";
+	std::string d = "No__le__temo__a__la__gran__mancha__azul.";
+
+	EXPECT_EQ(mappers::getLeadStr(a), "I");
+	EXPECT_EQ(mappers::getLeadStr(d), "No");
+	EXPECT_EQ(mappers::getTailStr(a), "do_not_fear_the_big_blue_blob.");
+	EXPECT_EQ(mappers::getTailStr(d), "_le__temo__a__la__gran__mancha__azul.");
+
+	EXPECT_EQ(mappers::getLeadStr(d, 1, "__"), "No");
+	EXPECT_EQ(mappers::getTailStr(d, 1, "__"), "le__temo__a__la__gran__mancha__azul.");
+
+	EXPECT_EQ(mappers::getLeadStr(b, 1, " "), "Ich");
+	EXPECT_EQ(mappers::getLeadStr(b, 1, "  "), "Ich fürchte den großen");
+	EXPECT_EQ(mappers::getTailStr(b, 1, " "), "fürchte den großen  blauen Klecks nicht.");
+	EXPECT_EQ(mappers::getTailStr(b, 1, "  "), "blauen Klecks nicht.");
+	EXPECT_EQ(mappers::getTailStr(b, 4, " "), " blauen Klecks nicht.");
+
+	EXPECT_EQ(mappers::getLeadStr(c, 5, "$"), "Je$n'ai$pas$peur$du");
+	EXPECT_EQ(mappers::getTailStr(c, 5, "$"), "gros$blob$bleu.");
+	EXPECT_EQ(mappers::getLeadStr(d, 6), "No__le__temo_");
+	EXPECT_EQ(mappers::getLeadStr(d, 6, "__"), "No__le__temo__a__la__gran");
+	EXPECT_EQ(mappers::getTailStr(d, 6), "a__la__gran__mancha__azul.");
+	EXPECT_EQ(mappers::getTailStr(d, 6, "__"), "mancha__azul.");
+}

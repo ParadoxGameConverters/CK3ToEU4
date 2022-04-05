@@ -238,6 +238,21 @@
     <Filter Include="MapperTests\HeritageMapperTests">
       <UniqueIdentifier>{1ef34395-6621-4f49-8844-b4ae05acdd3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\DynamicIdeasMapper">
+      <UniqueIdentifier>{22c257af-faca-4dc2-b7c7-21453a42093b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3ToEU4\EU4World\Ideas">
+      <UniqueIdentifier>{60196a55-12fd-4b91-97af-1e37bde4e10d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MapperTests\DynamicIdeasMapperTests">
+      <UniqueIdentifier>{d2052e1b-e453-4faf-a2fd-d407a61d26f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestFiles\configurables">
+      <UniqueIdentifier>{3730adf2-562d-41ff-892e-7e5793d92760}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4WorldTests\IdeaTests">
+      <UniqueIdentifier>{9027090e-4c4c-4594-8a9d-415d5c51072f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -746,6 +761,33 @@
     <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp">
       <Filter>MapperTests\HeritageMapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp">
+      <Filter>CK3ToEU4\EU4World\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp">
+      <Filter>CK3ToEU4\EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
+      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp">
+      <Filter>EU4WorldTests\IdeaTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasLinkTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasRuleTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
@@ -918,6 +960,9 @@
     </CopyFileToFolders>
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest7.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="TestFiles\configurables\tradition_ideas.txt">
+      <Filter>TestFiles\configurables</Filter>
     </CopyFileToFolders>
   </ItemGroup>
 </Project>

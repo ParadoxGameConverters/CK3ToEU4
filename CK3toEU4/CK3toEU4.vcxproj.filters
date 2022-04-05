@@ -130,6 +130,12 @@
     <Filter Include="Mappers\HeritageMapper">
       <UniqueIdentifier>{a4085544-e53f-4edd-9faf-e610347f66e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\DynmaicIdeasMapper">
+      <UniqueIdentifier>{b1a7a379-b04b-4ceb-bbf2-0590c9db6fc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Ideas">
+      <UniqueIdentifier>{b3589733-8995-4500-9eef-6074f1d3167d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -456,6 +462,27 @@
     </ClInclude>
     <ClInclude Include="Source\Mappers\HeritageMapper\HeritageMapping.h">
       <Filter>Mappers\HeritageMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Ideas\NationalIdeas.h">
+      <Filter>EU4World\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\EU4World\Output\outNationalIdeas.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\AssignmentPairs.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -784,6 +811,21 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\HeritageMapper\HeritageMapping.cpp">
       <Filter>Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Ideas\NationalIdeas.cpp">
+      <Filter>EU4World\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\EU4World\Output\outNationalIdeas.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

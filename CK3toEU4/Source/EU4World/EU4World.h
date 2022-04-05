@@ -1,10 +1,12 @@
 #ifndef EU4_WORLD_H
 #define EU4_WORLD_H
+#include "../CK3World/Cultures/Culture.h"
 #include "../CK3World/World.h"
 #include "../Mappers/AfricanPassesMapper/AfricanPassesMapper.h"
 #include "../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include "../Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../Mappers/IslamOverrideMapper/IslamOverrideMapper.h"
 #include "../Mappers/LocDegraderMapper/LocDegraderMapper.h"
@@ -21,6 +23,7 @@
 #include "Country/Country.h"
 #include "Diplomacy/Diplomacy.h"
 #include "FlagFoundry/FlagFoundry.h"
+#include "Ideas/NationalIdeas.h"
 #include "Output/outModFile.h"
 
 class Configuration;
@@ -57,6 +60,7 @@ class World
 	void verifyCapitals();
 	void verifyReligionsAndCultures();
 	void assignAllCountryReforms();
+	void generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures);
 	void importAdvisers();
 	void resolvePersonalUnions();
 	void distributeHRESubtitles(const Configuration& theConfiguration);
@@ -89,6 +93,7 @@ class World
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
+	void outputDynamicIdeasFile(const std::string& outputName) const;
 	void outputReligions(const std::string& outputName,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;
@@ -98,6 +103,7 @@ class World
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;
 	std::set<std::string> specialCountryTags; // tags we loaded from own sources and must not output into 00_country_tags.txt
+	std::vector<NationalIdeas> dynamicNationalIdeas;
 
 	mappers::LocalizationMapper localizationMapper;
 	mappers::PrimaryTagMapper primaryTagMapper;
@@ -115,6 +121,7 @@ class World
 	mappers::LocDegraderMapper locDegrader;
 	mappers::AfricanPassesMapper africanPassesMapper;
 	mappers::CultureDefinitionsMapper cultureDefinitionsMapper;
+	mappers::DynamicIdeasMapper dynamicIdeasMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;
