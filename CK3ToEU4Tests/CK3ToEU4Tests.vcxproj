@@ -222,6 +222,7 @@
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
+    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMapperTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMappingTests.cpp" />
     <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionsMapperTests.cpp" />
@@ -230,7 +231,9 @@
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
     <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasLinkTests.cpp" />
     <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp" />
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasRuleTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
     <ClCompile Include="MapperTests\HeritageMapper\HeritageMapperTests.cpp" />
@@ -531,7 +534,9 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="TestFiles\configurables\tradition_ideas.txt" />
+    <CopyFileToFolders Include="TestFiles\configurables\tradition_ideas.txt">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/configurables</DestinationFolders>
+    </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

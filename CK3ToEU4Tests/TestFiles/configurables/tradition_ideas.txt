@@ -1,7 +1,7 @@
-link = { ck3 = { ethos = ethos_communal } eu4 = { same_culture_advisor_cost = -0.25 global_heretic_missionary_strength = 0.03 } }
-link = { ck3 = { ethos = ethos_courtly } eu4 = { monthly_splendor = 1 power_projection_from_insults = 0.2 } }
-link = { ck3 = { ethos = ethos_bellicose } eu4 = { yearly_army_professionalism = 0.01 land_forcelimit = 4 } }
-link = { ck3 = { ethos = ethos_bellicose } rule = { heritage = heritage_blue } eu4 = { possible_condottieri = 1 loot_amount = 0.10 } }
+link = { ck3 = { ethos = ethos_communal } eu4 = { modifier_0 = -0.25 modifier_1 = 0.03 } }
+link = { ck3 = { ethos = ethos_courtly } eu4 = { modifier_2 = 1 modifier_3 = 0.2 } }
+link = { ck3 = { ethos = ethos_bellicose } eu4 = { modifier_4 = 0.01 modifier_5 = 4 } }
+link = { ck3 = { ethos = ethos_bellicose } rule = { heritage = heritage_blue } eu4 = { modifier_6 = 0.7 } }
 link = { ck3 = { tradition = tradition_african_tolerance } eu4 = { religious_unity = 0.5 } } 
 link = { ck3 = { tradition = tradition_concubines } eu4 = { heir_chance = 0.5 } } 
 link = { ck3 = { tradition = tradition_astute_diplomats } eu4 = { diplomats = 1 } }
@@ -9,7 +9,7 @@ link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modi
 link = { ck3 = { tradition = tradition_welcoming } eu4 = { diplomatic_upkeep = 1 } }
 link = { ck3 = { tradition = tradition_xenophilic } eu4 = { num_accepted_cultures = 1 } }
 link = { ck3 = { tradition = tradition_hereditary_bards } eu4 = { free_dip_policy = 1 } }
-link = { ck3 = { tradition = tradition_hussar } eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
+link = { ck3 = { tradition = tradition_hussar } eu4 = { modifier_8 = 0.05 modifier_9 = 0.20 } } 
 link = { ck3 = { default = increase_discipline } eu4 = { discipline = 0.025 } }
 link = { ck3 = { default = increased_manpower } eu4 = { global_manpower_modifier = 0.05 } }
 link = { ck3 = { default = increase_taxation } eu4 = { global_tax_modifier = 0.05 } }

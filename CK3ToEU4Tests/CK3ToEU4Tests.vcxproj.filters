@@ -250,6 +250,9 @@
     <Filter Include="TestFiles\configurables">
       <UniqueIdentifier>{3730adf2-562d-41ff-892e-7e5793d92760}</UniqueIdentifier>
     </Filter>
+    <Filter Include="EU4WorldTests\IdeaTests">
+      <UniqueIdentifier>{9027090e-4c4c-4594-8a9d-415d5c51072f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -776,6 +779,15 @@
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
       <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
     </ClCompile>
+    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp">
+      <Filter>EU4WorldTests\IdeaTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasLinkTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasRuleTests.cpp">
+      <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
@@ -949,10 +961,8 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest7.dds">
       <Filter>TestFiles\FlagFoundry</Filter>
     </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="TestFiles\configurables\tradition_ideas.txt">
+    <CopyFileToFolders Include="TestFiles\configurables\tradition_ideas.txt">
       <Filter>TestFiles\configurables</Filter>
-    </Text>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

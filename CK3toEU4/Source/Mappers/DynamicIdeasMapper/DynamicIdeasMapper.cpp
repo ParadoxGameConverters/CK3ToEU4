@@ -19,13 +19,6 @@ mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::istream& theStream, const L
 	clearRegisteredKeywords();
 	processRules();
 }
-mappers::DynamicIdeasMapper::DynamicIdeasMapper(std::string theStreamFile, const LocalizationMapper& localizationMapper): locs(localizationMapper)
-{
-	registerKeys();
-	parseFile(theStreamFile);
-	clearRegisteredKeywords();
-	processRules();
-}
 
 void mappers::DynamicIdeasMapper::registerKeys()
 {

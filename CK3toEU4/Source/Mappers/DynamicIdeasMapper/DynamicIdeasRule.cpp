@@ -119,6 +119,7 @@ bool mappers::DynamicIdeasRule::testRule(const RULE_TYPE ruleType, const std::st
 			case RULE_TYPE::RELIGION:
 				return religionRule(ruleValue, culture)*/
 	}
+	return false;
 }
 
 std::ostream& mappers::operator<<(std::ostream& output, const DynamicIdeasRule& rule)
