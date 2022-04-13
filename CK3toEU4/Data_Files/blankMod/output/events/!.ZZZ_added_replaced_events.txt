@@ -52,6 +52,235 @@ country_event = {
 	}
 
 	##MODDED###
+	
+	country_event = {
+	id = religious_events.16
+	title = "religious_events.16.t"
+	desc = "religious_events.16.d"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		religion = hinduism
+		is_revolutionary = no
+		NOT = { has_country_flag = had_religious_coup }
+		is_force_converted = no
+		OR = {
+			is_free_or_tributary_trigger = yes
+			overlord = { religion_group = muslim }
+		}
+		OR = {
+			
+			tag = MUG #Mughals
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = had_religious_coup
+			if = {
+				limit = {
+					OR  = {
+						
+						
+						
+						tag = MUG #Mughals
+					}
+				}
+				set_country_flag = sunni_coup
+			}
+			if = {
+				limit = {
+					OR  = {
+						tag = BIJ #Bijapur
+						tag = BAH #Bahmani
+						tag = GOC #Golconda
+						tag = GUJ #Gujarat
+						tag = KSH #Kashmir
+						tag = ODH #Oudh
+						tag = DEC # Deccan
+					}
+				}
+				set_country_flag = shia_coup
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 90
+		}
+		name = "religious_events.16.a"
+		if = {
+			limit = { has_country_flag = sunni_coup }
+			change_religion = sunni
+			clr_country_flag = sunni_coup
+		}
+		if = {
+			limit = { has_country_flag = shia_coup }
+			change_religion = shiite
+			clr_country_flag = shia_coup
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_heir = no
+			}
+			define_ruler = {
+				dynasty = ROOT
+			}
+			if = {
+				limit = {
+					has_states_general_mechanic = yes
+				}
+				change_statists_vs_orangists = 1
+			}
+		}
+		add_stability = 2 #One is for placating the aristocrats and clergy the other to counteract the -1 stab on monarch death
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = {
+				has_idea_group = dravidian_ideas
+			}
+			swap_free_idea_group = yes		#keep progress
+		}
+		if = {
+			limit = { NOT = { government = monarchy } }
+			change_government_to_monarchy = yes
+		}
+		add_government_reform = indian_sultanate_reform
+		hidden_effect = {
+			every_neighbor_country = {
+				country_event = { id = religious_events.17 }
+			}
+		}
+	}
+	option = {
+		name = "religious_events.16.b"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { num_of_cities = 2 }
+			}
+			modifier = {
+				factor = 0
+				has_estate = estate_nobles
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 40
+					}
+				}
+			}
+		}
+		add_stability = -1
+		add_country_modifier = {
+			name = "indian_religious_tensions" 
+			duration = 1825
+		}
+		if = {
+			limit = {
+				has_estate = estate_nobles
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = -10
+			}
+		}
+		if = {
+			limit = {
+				has_estate = estate_church #These will be Hindu clerics if not switching.
+			}
+			add_estate_loyalty = {
+				estate = estate_church
+				loyalty = 10
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = sunni_coup
+			}
+			clr_country_flag = sunni_coup
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+					owner = {
+						fort_15th = 1
+					}
+					has_building = fort_15th
+				}
+				spawn_rebels = {
+					type = sunni_rebels	
+					size = 2	
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+					owner = {
+						NOT = { fort_15th = 1 }
+					}
+				}
+				spawn_rebels = {
+					type = sunni_rebels	
+					size = 2	
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = shia_coup
+			}
+			clr_country_flag = shia_coup
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+					owner = {
+						fort_15th = 1
+					}
+					has_building = fort_15th
+				}
+				spawn_rebels = {
+					type = shiite_rebels	
+					size = 2	
+					win = yes
+				}
+			}
+			random_owned_province = {
+				limit = {
+					NOT = { is_capital = yes }
+					owner = {
+						NOT = { fort_15th = 1 }
+					}
+				}
+				spawn_rebels = {
+					type = shiite_rebels	
+					size = 2	
+				}
+			}
+		}
+	}
+}
+	
+	
 	option = {
 		name = "religious_events.18.z1" #
 		ai_chance = { factor = 100 }
