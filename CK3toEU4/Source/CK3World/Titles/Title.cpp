@@ -80,6 +80,10 @@ void CK3::Title::registerKeys()
 	registerKeyword("holder", [this](const std::string& unused, std::istream& theStream) {
 		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
+	registerKeyword("renamed", [this](std::istream& theStream) {
+		const auto& isRenamed = commonItems::getString(theStream);
+		renamed = isRenamed == "yes";
+	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
 		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});

@@ -47,6 +47,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isHolderCapital() const { return holderCapital; }
 	[[nodiscard]] auto isHRECapital() const { return HRECapital; }
 	[[nodiscard]] auto isCustomTitle() const { return customTitle; }
+	[[nodiscard]] auto isRenamed() const { return renamed; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -158,6 +159,7 @@ class Title: commonItems::parser
 	bool inHRE = false;
 	bool thePope = false;
 	bool customTitle = false;													// True if title was fromed via "Found a New Kingdom/Empire" decision. Vestigal
+	bool renamed = false;														// True if title was manully named
 	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.
