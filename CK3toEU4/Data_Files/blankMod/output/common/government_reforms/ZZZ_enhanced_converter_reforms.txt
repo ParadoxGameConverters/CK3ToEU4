@@ -25,10 +25,11 @@ english_monarchy = {
 	conditional = {
 		allow = { has_dlc = "Common Sense" }
 		has_parliament = yes
-	}
 
-	custom_attributes = {
-		blocked_call_diet = yes
+		custom_attributes = {
+			blocked_call_diet = yes
+			disables_nobility = yes
+		}
 	}
 }
 

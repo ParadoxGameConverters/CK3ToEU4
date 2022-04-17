@@ -49,8 +49,8 @@ TEST(CK3World_CountyDetailsTests, culturesCanBeLinked)
 	const auto& c1 = details.getCountyDetails().find("c_county1");
 	const auto& c2 = details.getCountyDetails().find("c_county2");
 
-	ASSERT_EQ("kru", c1->second->getCulture().second->getName());
-	ASSERT_EQ("akan", c2->second->getCulture().second->getName());
+	ASSERT_EQ("kru", c1->second->getCulture().second->getTemplate());
+	ASSERT_EQ("akan", c2->second->getCulture().second->getTemplate());
 }
 
 TEST(CK3World_CountyDetailsTests, linkingMissingCultureThrowsException)

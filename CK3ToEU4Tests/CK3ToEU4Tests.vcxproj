@@ -121,21 +121,32 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
@@ -211,13 +222,22 @@
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp" />
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp" />
+    <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMapperTests.cpp" />
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMappingTests.cpp" />
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionTests.cpp" />
+    <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureGroupDefinitionTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp" />
     <ClCompile Include="MapperTests\CultureMapper\CultureMappingRuleTests.cpp" />
     <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp" />
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasLinkTests.cpp" />
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp" />
+    <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasRuleTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp" />
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMappingTests.cpp" />
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMapperTests.cpp" />
+    <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp" />
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp" />
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMapperTests.cpp" />
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp" />
@@ -511,6 +531,11 @@
     <CopyFileToFolders Include="TestFiles\FlagFoundry\flagtest7.dds">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)/FlagFoundry</DestinationFolders>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="TestFiles\configurables\tradition_ideas.txt">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)/configurables</DestinationFolders>
     </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

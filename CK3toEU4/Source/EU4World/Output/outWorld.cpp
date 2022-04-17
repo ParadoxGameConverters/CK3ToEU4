@@ -7,6 +7,11 @@
 #include "OSCompatibilityLayer.h"
 #include <filesystem>
 #include <fstream>
+#include <ranges>
+
+#include "../../CK3World/Cultures/Culture.h"
+#include "../../Mappers/CultureDefinitionsMapper/CultureDefiniton.h"
+#include "../../Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 namespace fs = std::filesystem;
 
 void EU4::World::output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
@@ -66,8 +71,14 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion, c
 	Log(LogLevel::Progress) << "88 %";
 
 	Log(LogLevel::Info) << "<- Writing Religions";
-	outputReligions(theConfiguration, religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
+	outputReligions(theConfiguration.getOutputName(), religionMapper.getGeneratedReligions(), religionMapper.getReformedReligions());
+
+	Log(LogLevel::Info) << "<- Writing Cultures";
+	outputCultures(theConfiguration.getOutputName());
 	Log(LogLevel::Progress) << "89 %";
+
+	Log(LogLevel::Info) << "<- Writing Dynamic Ideas";
+	outputDynamicIdeasFile(theConfiguration.getOutputName());
 
 	if (invasion)
 	{
@@ -145,13 +156,19 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 	interFaceDump.close();
 }
 
+void EU4::World::outputCultures(const std::string& outputName) const
+{
+	std::ofstream cultureFile("output/" + outputName + "/common/cultures/!.ZZ-dynamic_cultures.txt");
+	cultureFile << cultureDefinitionsMapper;
+	cultureFile.close();
+}
 
-void EU4::World::outputReligions(const Configuration& theConfiguration,
+void EU4::World::outputReligions(const std::string& outputName,
 	 const std::vector<GeneratedReligion>& generatedReligions,
 	 const std::vector<std::string>& reformedReligions) const
 {
 	// Reformed Religion global flag output
-	std::ofstream globalFlagFile("output/" + theConfiguration.getOutputName() + "/common/on_actions/ZZZ_replaced_on_startup.txt");
+	std::ofstream globalFlagFile("output/" + outputName + "/common/on_actions/ZZZ_replaced_on_startup.txt");
 	// Basegame stuff first
 	globalFlagFile << "on_startup = {\n\t"
 						<< "emperor = {\n\t\t"
@@ -190,19 +207,24 @@ void EU4::World::outputReligions(const Configuration& theConfiguration,
 	for (const auto& religion: generatedReligions)
 	{
 		// Main Religion File
-		std::ofstream religionFile("output/" + theConfiguration.getOutputName() + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionFile("output/" + outputName + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
 		religionFile << religion;
 		religionFile.close();
 		// Religious Rebels
-		std::ofstream religionRebelFile(
-			 "output/" + theConfiguration.getOutputName() + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionRebelFile("output/" + outputName + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
 		// Religion Sounds
-		std::ofstream religionSoundFile(
-			 "output/" + theConfiguration.getOutputName() + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
+		std::ofstream religionSoundFile("output/" + outputName + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
 		religion.outputSounds(religionSoundFile);
 		religionSoundFile.close();
+		// Religion GUI (Only if necessary)
+		if (religion.unique.find("uses_judaism_power = yes") != std::string::npos)
+		{
+			std::ofstream religionGUIFile("output/" + outputName + "/interface/ZZZ_" + religion.name + "-from-" + religion.parent + ".gui");
+			religion.outputGUI(religionGUIFile);
+			religionGUIFile.close();
+		}
 	}
 }
 
@@ -355,6 +377,21 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 	}
 }
 
+void EU4::World::outputDynamicIdeasFile(const std::string& outputName) const
+{
+	std::ofstream output("output/" + outputName + "/common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
+	if (!output.is_open())
+		throw std::runtime_error("Could not create dynamic ideas file!");
+	output << "### National idea groups generated via cultural traditions. \n\n";
+
+	for (const auto& idea: dynamicNationalIdeas)
+	{
+		output << idea;
+		output << "\n";
+	}
+	output.close();
+}
+
 void EU4::World::outputAdvisers(const Configuration& theConfiguration) const
 {
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/advisors/00_converter_advisors.txt");
@@ -418,6 +455,44 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 		german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
 	}
 
+	// localizations for dynamic cultures - don't have locblocks.
+
+	for (const auto& cultureGroup: cultureDefinitionsMapper.getCultureGroupsMap() | std::views::values)
+		for (const auto& [cultureName, culture]: cultureGroup->getCultures())
+			if (culture->getSourceCulture() && culture->getSourceCulture()->isDynamic() && !culture->getSourceCulture()->isEU4Ready() &&
+				 culture->getSourceCulture()->getLocalizedName())
+			{
+				english << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				french << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				spanish << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				german << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+			}
+
+	// localizations for dynamic nation ideas
+	for (const auto& [idea, locBlock]: dynamicIdeasMapper.getTraditionLocs())
+	{
+		english << " " << idea << ":0 \"" << locBlock.english << "\"\n";
+		french << " " << idea << ":0 \"" << locBlock.french << "\"\n";
+		spanish << " " << idea << ":0 \"" << locBlock.spanish << "\"\n";
+		german << " " << idea << ":0 \"" << locBlock.german << "\"\n";
+	}
+	// more localizations for dynamic national ideas - don't have locblocks.
+	std::vector<std::string> suffix{"_ideas", "_ideas_start", "_ideas_bonus"};
+	std::vector<std::string> eng_ideaText{"Ideas", "Traditions", "Ambitions"};
+	std::vector<std::string> fra_ideaText{"Idées", "Traditions", "Ambitions"};
+	std::vector<std::string> spa_ideaText{"Ideas", "tradiciones", "Ambiciones"};
+	std::vector<std::string> ger_ideaText{"Ideen", "Traditionen", "Ambitionen"};
+
+	for (const auto& idea: dynamicNationalIdeas)
+	{
+		for (auto i = 0; i < suffix.size(); i++)
+		{
+			english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + eng_ideaText[i] << "\"\n";
+			french << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + fra_ideaText[i] << "\"\n";
+			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + spa_ideaText[i] << "\"\n";
+			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ger_ideaText[i] << "\"\n";
+		}
+	}
 	english.close();
 	french.close();
 	spanish.close();

@@ -35,14 +35,18 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 		provinceMapper = mappers::ProvinceMapper("configurables/province_mappings.txt");
 
 	Log(LogLevel::Info) << "*** Hello EU4, let's get painting. ***";
-	// Scraping localizations from CK3 so we may know proper names for our countries and people.
-	Log(LogLevel::Info) << "-> Reading Words";
-	localizationMapper.scrapeLocalizations(theConfiguration, sourceWorld.getMods());
+	localizationMapper = sourceWorld.getLocalizationMapper();
+	cultureMapper = sourceWorld.getCultureMapper();
 	Log(LogLevel::Progress) << "50 %";
 
 	// Scrape Primary Tags for nationalities
 	Log(LogLevel::Info) << "-> Sifting Through EU4 Cultures";
 	primaryTagMapper.loadPrimaryTags(theConfiguration);
+	Log(LogLevel::Info) << "-> Slurping EU4 Cultures";
+	cultureDefinitionsMapper.loadDefinitionsFromEU4Installation(theConfiguration);
+	cultureDefinitionsMapper.loadHeritagesFromDisk();
+	Log(LogLevel::Info) << "-> Building Dynamic EU4 Culture Definitions";
+	cultureDefinitionsMapper.buildDefinitions(cultureMapper);
 	Log(LogLevel::Progress) << "51 %";
 
 	// This is our region mapper for eu4 regions, areas and superRegions. It's a pointer because we need
@@ -114,6 +118,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Info) << "-> Verifying Religions and Cultures";
 	verifyReligionsAndCultures();
 
+	Log(LogLevel::Info) << "-> Initializing Dynamic National Ideas";
+	generateNationalIdeasFromDynamicCultures(sourceWorld.getCultures());
+
 	Log(LogLevel::Progress) << "63 %";
 	// With all provinces and rulers religion/culture set, only now can we import advisers, which also need religion/culture set.
 	// Those advisers coming without such data use the monarch's religion/culture.
@@ -175,7 +182,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "74 %";
 
 	// Indian buddhisms
-	indianQuestion();
+	// Disabled for now as probably no longer necessary due to CK3's larger religious variance in later patches.
+	// indianQuestion();
+
 	// No-Islam worlds
 	religiousQuestion(sourceWorld.doesIslamExist());
 	Log(LogLevel::Progress) << "75 %";
@@ -912,6 +921,21 @@ void EU4::World::assignAllCountryReforms()
 			continue;
 		country.second->assignReforms(regionMapper);
 	}
+}
+
+void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& cultures)
+{
+	Log(LogLevel::Info) << "-> Creating new National Ideas";
+
+	dynamicIdeasMapper = mappers::DynamicIdeasMapper(localizationMapper);
+
+	for (auto& culture: cultures.getCultures() | std::views::values)
+	{
+		if (culture->isDynamic())
+			dynamicNationalIdeas.push_back(NationalIdeas(culture, dynamicIdeasMapper));
+	}
+
+	Log(LogLevel::Info) << "<> Created " << dynamicNationalIdeas.size() << " National Ideas.";
 }
 
 void EU4::World::importAdvisers()

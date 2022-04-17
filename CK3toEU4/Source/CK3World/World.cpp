@@ -137,6 +137,10 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
+	// Scraping localizations from CK3 so we may know proper names for our countries and people.
+	Log(LogLevel::Info) << "-> Reading Words";
+	localizationMapper.scrapeLocalizations(*theConfiguration, mods);
+	cultureMapper.loadCulturesFromDisk();
 
 	Log(LogLevel::Info) << "* Parsing Gamestate *";
 	auto gameState = std::istringstream(saveGame.gamestate);
@@ -344,16 +348,20 @@ void CK3::World::processAutoSave(const std::string& saveGamePath)
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
 
 	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
+	auto endMeta = saveGame.gamestate.find("\ndate=");
 	auto endFile = saveGame.gamestate.size();
-	saveGame.gamestate = saveGame.gamestate.substr(startMeta, endFile - startMeta);
-	// TODO(#42): Leaving this debug in until all kinks are sorted.
+	// Again, strip the "meta_data={\n" and the "}\n"
+	saveGame.metadata = saveGame.gamestate.substr(startMeta + 13, endMeta - startMeta - 15);
+	// dump for sanity purposes.
+	std::ofstream metaDump("metaDumpOfIron.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	saveGame.gamestate = saveGame.gamestate.substr(endMeta + 1, endFile);
+	// dump for sanity purposes.
 	std::ofstream dump("dumpOfIron.txt");
 	dump << saveGame.gamestate;
 	dump.close();
-
-	auto endMeta = saveGame.gamestate.find("ironman=no");
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = saveGame.gamestate.substr(12, endMeta - 1);
 }
 
 void CK3::World::processIronManSave(const std::string& saveGamePath)
@@ -368,12 +376,16 @@ void CK3::World::processIronManSave(const std::string& saveGamePath)
 	auto endMeta = meta.find_last_of("}");
 	// Again, strip the "meta_data={\n" and the "}\n"
 	saveGame.metadata = meta.substr(startMeta + 12, endMeta - startMeta - 12);
+	// dump for sanity purposes.
+	std::ofstream metaDump("metaDumpOfIron.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
 
 	saveGame.gamestate = rakaly::meltCK3(inBinary);
 	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
 	auto endFile = saveGame.gamestate.size();
 	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	// TODO(#42): Leaving this debug in until all kinks are sorted.
+	// dump for sanity purposes.
 	std::ofstream dump("dumpOfIron.txt");
 	dump << saveGame.gamestate;
 	dump.close();
@@ -453,6 +465,13 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 
 void CK3::World::crosslinkDatabases()
 {
+	Log(LogLevel::Info) << "-> Concocting Cultures.";
+	cultures.concoctCultures(localizationMapper, cultureMapper);
+
+	std::set<std::shared_ptr<Culture>> cultureSet;
+	for (const auto& culture: cultures.getCultures() | std::views::values)
+		cultureSet.insert(culture);
+	cultureMapper.storeCultures(cultureSet);
 	Log(LogLevel::Info) << "-> Loading Cultures into Counties.";
 	countyDetails.linkCultures(cultures);
 	Log(LogLevel::Info) << "-> Loading Cultures into Characters.";

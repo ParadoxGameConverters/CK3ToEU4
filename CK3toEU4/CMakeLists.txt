@@ -62,3 +62,5 @@ target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs MagickWand-7.Q
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
+
+set_target_properties(CK3toEU4 PROPERTIES OUTPUT_NAME "CK3ToEU4Converter")

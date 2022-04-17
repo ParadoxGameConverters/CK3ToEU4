@@ -202,7 +202,7 @@ TEST(CK3World_TitleTests, buildingWeightIsCalculated)
 	provinceHolding2Stream << "holding={type=\"city_holding\"\n}\n";
 	auto pb2 = std::pair(13, std::make_shared<CK3::ProvinceHolding>(provinceHolding2Stream));
 	std::stringstream provinceHolding3Stream;
-	provinceHolding3Stream << "holding={type=\"castle_holding\"\nbuildings={ {type=\"hunting_grounds_01\"} {} {} {type=\"hill_farms_02\"} {} {}}\n";
+	provinceHolding3Stream << "holding={type=\"castle_holding\"\nbuildings={ {type=\"hunting_grounds_01\"} {} {} {type=\"hill_farms_01\"} {} {}}\n";
 	auto pb3 = std::pair(14, std::make_shared<CK3::ProvinceHolding>(provinceHolding3Stream));
 
 	std::stringstream titleB1Stream;

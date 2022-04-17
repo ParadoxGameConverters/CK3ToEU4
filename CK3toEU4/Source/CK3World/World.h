@@ -1,6 +1,8 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
+#include "../Mappers/CultureMapper/CultureMapper.h"
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
+#include "../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "../Mappers/NamedColors/NamedColors.h"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
 #include "../Mappers/TraitScraper/TraitScraper.h"
@@ -41,6 +43,9 @@ class World: commonItems::parser
 	[[nodiscard]] auto doesIslamExist() const { return islamExists; }
 	[[nodiscard]] auto isCoADesignerEnabled() const { return coaDesigner; }
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
+	[[nodiscard]] const auto& getLocalizationMapper() const { return localizationMapper; }
+	[[nodiscard]] const auto& getCultureMapper() const { return cultureMapper; }
+	[[nodiscard]] const auto& getCultures() const { return cultures; }
 
   private:
 	// savegame processing
@@ -97,6 +102,8 @@ class World: commonItems::parser
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;
 	mappers::TraitScraper traitScraper;
 	mappers::VassalSplitoffMapper vassalSplitoffMapper;
+	mappers::LocalizationMapper localizationMapper;
+	mappers::CultureMapper cultureMapper;
 
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> hreTitle; // loaded by configuration option.
 	std::map<std::string, std::shared_ptr<Title>> independentTitles;

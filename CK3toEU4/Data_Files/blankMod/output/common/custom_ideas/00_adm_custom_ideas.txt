@@ -339,6 +339,9 @@ adm_idea_modifiers = {
 	}
 	custom_idea_prestige_decay = {
 		prestige_decay = -0.005
+		chance = {		
+			factor = 1
+		}
 	}
 	custom_idea_legitimacy = {
 		legitimacy = 0.5
@@ -528,6 +531,9 @@ adm_idea_modifiers = {
 	}
 	custom_idea_enemy_core_creation = {
 		enemy_core_creation = 0.15
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
 		chance = {
 			factor = 0
 		}
