@@ -37,6 +37,8 @@ class Province
 	[[nodiscard]] const auto& getCulture() const { return details.culture; }
 	[[nodiscard]] const auto& getSourceProvince() const { return srcProvince; }
 	[[nodiscard]] const auto& getCenterOfTradeLevel() const { return details.centerOfTrade; }
+	[[nodiscard]] const auto& getCustomName() const { return details.customName.value(); }
+	[[nodiscard]] const bool isRenamed() const { return details.customName.has_value(); }
 	[[nodiscard]] auto getDev() const { return details.baseTax + details.baseProduction + details.baseManpower; }
 	[[nodiscard]] auto getAdm() const { return details.baseTax; }
 	[[nodiscard]] auto getMil() const { return details.baseManpower; }

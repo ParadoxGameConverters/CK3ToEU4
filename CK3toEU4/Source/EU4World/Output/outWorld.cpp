@@ -406,13 +406,13 @@ void EU4::World::outputAdvisers(const Configuration& theConfiguration) const
 
 void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) const
 {
-	for (const auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/" + province.second->getHistoryCountryFile());
+		std::ofstream output("output/" + theConfiguration.getOutputName() + "/" + province->getHistoryCountryFile());
 		if (!output.is_open())
 			throw std::runtime_error(
-				 "Could not create country history file: output/" + theConfiguration.getOutputName() + "/" + province.second->getHistoryCountryFile());
-		output << *province.second;
+				 "Could not create country history file: output/" + theConfiguration.getOutputName() + "/" + province->getHistoryCountryFile());
+		output << *province;
 		output.close();
 	}
 }
@@ -492,6 +492,24 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + spa_ideaText[i] << "\"\n";
 			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ger_ideaText[i] << "\"\n";
 		}
+	}
+
+	// port manually named provinces over from CK3
+	auto userRenamedOnly = [](std::shared_ptr<EU4::Province> p) {
+		return bool(p->isRenamed());
+	};
+
+	for (const auto& province: provinces | std::views::values | std::views::filter(userRenamedOnly))
+	{
+		english << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		french << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		spanish << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		german << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+
+		english << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		french << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		spanish << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		german << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
 	}
 	english.close();
 	french.close();
