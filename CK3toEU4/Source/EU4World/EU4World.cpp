@@ -557,7 +557,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		else
 		{
 			// And finally, initialize it.
-			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper);
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader);
 			counter++;
 		}
 	}
@@ -666,6 +666,18 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 		{
 			toReturn = title;
 			maxDev = provinceWeight;
+		}
+	}
+
+	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
+	if (toReturn.second->isRenamed())
+	{
+		// ... if they belong to the same owner, Constantinople also has a custom name and they are in the same mapping
+		const auto& myDuchyCapital = toReturn.second->getDJLiege()->second->getCapital().second;
+		if (myDuchyCapital->isRenamed() && ck3Titles.contains(myDuchyCapital->getName()) &&
+			 myDuchyCapital->getDFLiege()->first == toReturn.second->getDFLiege()->first)
+		{
+			toReturn.second->overrideDisplayName(myDuchyCapital->getDisplayName());
 		}
 	}
 	if (toReturn.first.empty() || !toReturn.second)

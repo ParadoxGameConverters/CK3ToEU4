@@ -26,7 +26,8 @@ void EU4::Province::updateWith(const std::string& filePath)
 
 void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 	 const mappers::CultureMapper& cultureMapper,
-	 const mappers::ReligionMapper& religionMapper)
+	 const mappers::ReligionMapper& religionMapper,
+	 const mappers::LocDegraderMapper& locDegrader)
 {
 	srcProvince = origProvince;
 
@@ -41,6 +42,16 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
+
+	// check for manual CK3 province name
+	if (srcProvince->isRenamed() && !srcProvince->isManualNameClaimed())
+	{
+		auto name = locDegrader.degradeString(srcProvince->getDisplayName());
+		details.customName = name;
+		// srcProvince seems to be an instance of "const shared_ptr<T>" and not "const shared_ptr<const T>, so we're using that"
+		srcProvince->setManualNameClaim();
+	}
+	mappers::LocDegraderMapper;
 
 	// History section
 	// Not touching Capital, that's hardcoded English name.

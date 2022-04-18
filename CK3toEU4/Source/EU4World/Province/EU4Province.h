@@ -1,6 +1,7 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
 
+#include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "ProvinceDetails.h"
 #include <memory>
 #include <string>
@@ -28,7 +29,8 @@ class Province
 	void updateWith(const std::string& filePath);
 	void initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 		 const mappers::CultureMapper& cultureMapper,
-		 const mappers::ReligionMapper& religionMapper);
+		 const mappers::ReligionMapper& religionMapper,
+		 const mappers::LocDegraderMapper& locDegrader);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }
 	[[nodiscard]] const auto& getTagCountry() const { return tagCountry; }
