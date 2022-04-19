@@ -788,6 +788,9 @@
     <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasRuleTests.cpp">
       <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
     </ClCompile>
+    <ClCompile Include="MapperTests\ProvinceMapper\NameTransferMappingTests.cpp">
+      <Filter>MapperTests\ProvinceMapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
