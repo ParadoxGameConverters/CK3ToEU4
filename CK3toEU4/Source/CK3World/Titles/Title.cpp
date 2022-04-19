@@ -280,11 +280,13 @@ std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDJCountie
 void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& mappings)
 {
 	// Guard clause all used pointers
-	if (!isRenamed() || !getDJLiege() || !getDJLiege()->second || !getDJLiege()->second->getCapital().second)
+	if (!isRenamed())
 		return;
 
-	const auto& myDuchyCapital = getDJLiege()->second->getCapital().second;
-	if (!myDuchyCapital->getDFLiege() || !getDFLiege())
+	// Duchy capital ptrs are all null_ptr, outsource fixing and validation
+	const auto myDuchyCapital = findDuchyCapital();
+
+	if (!myDuchyCapital || myDuchyCapital->getID() == getID() || !myDuchyCapital->getDFLiege() || !getDFLiege())
 		return;
 
 	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
@@ -294,6 +296,20 @@ void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Tit
 	{
 		displayName = myDuchyCapital->getDisplayName();
 	}
+}
+
+std::shared_ptr<CK3::Title> CK3::Title::findDuchyCapital()
+{
+	if (name[0] != 'c' || !getDJLiege() || !getDJLiege()->second)
+		return nullptr;
+	
+	const auto myDuchy = getDJLiege()->second;
+	const auto& capID = myDuchy->getCapital().first;
+
+	if (myDuchy->getDJVassals().empty() || !myDuchy->getDJVassals().contains(capID) || !myDuchy->getDJVassals().at(capID))
+		return nullptr;
+
+	return myDuchy->getDJVassals().at(capID);
 }
 
 void CK3::Title::congregateDFCounties()
