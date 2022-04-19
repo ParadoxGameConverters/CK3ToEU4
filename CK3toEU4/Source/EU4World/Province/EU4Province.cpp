@@ -1,4 +1,5 @@
 #include "EU4Province.h"
+#include "../../../../Fronter/commonItems/OSCompatibilityLayer.h"
 #include "../../CK3World/Characters/Character.h"
 #include "../../CK3World/Cultures/Culture.h"
 #include "../../CK3World/Geography/CountyDetail.h"
@@ -47,11 +48,15 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	if (srcProvince->isRenamed() && !srcProvince->isManualNameClaimed())
 	{
 		auto name = locDegrader.degradeString(srcProvince->getDisplayName());
-		details.customName = name;
-		// srcProvince seems to be an instance of "const shared_ptr<T>" and not "const shared_ptr<const T>, so we're using that"
-		srcProvince->setManualNameClaim();
+		auto win1252name = commonItems::convertUTF8ToWin1252(name);
+		if (!std::any_of(win1252name.begin(), win1252name.end(), [](char c) { // All not latin chars will be squised to 0, lets not transfer those
+				 return c == '0';
+			 }))
+		{
+			details.customName = name;
+			srcProvince->setManualNameClaim(); // For 1:M (or N:M) cases only the first province with a given srcProvince gets the name
+		}
 	}
-	mappers::LocDegraderMapper;
 
 	// History section
 	// Not touching Capital, that's hardcoded English name.

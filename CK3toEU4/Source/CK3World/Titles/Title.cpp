@@ -81,8 +81,7 @@ void CK3::Title::registerKeys()
 		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("renamed", [this](std::istream& theStream) {
-		const auto& isRenamed = commonItems::getString(theStream);
-		renamed = isRenamed == "yes";
+		renamed = commonItems::getString(theStream) == "yes";
 	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
 		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
@@ -276,6 +275,25 @@ std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDJCountie
 	}
 	toReturn.insert(ownedDJCounties.begin(), ownedDJCounties.end());
 	return toReturn;
+}
+
+void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& mappings)
+{
+	// Guard clause all used pointers
+	if (!isRenamed() || !getDJLiege() || !getDJLiege()->second || !getDJLiege()->second->getCapital().second)
+		return;
+
+	const auto& myDuchyCapital = getDJLiege()->second->getCapital().second;
+	if (!myDuchyCapital->getDFLiege() || !getDFLiege())
+		return;
+
+	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
+	// ... if they belong to the same owner, Constantinople also has a custom name and they are in the same mapping
+	if (myDuchyCapital->isRenamed() && mappings.contains(myDuchyCapital->getName()) &&
+		myDuchyCapital->getDFLiege()->first == getDFLiege()->first)
+	{
+		displayName = myDuchyCapital->getDisplayName();
+	}
 }
 
 void CK3::Title::congregateDFCounties()
