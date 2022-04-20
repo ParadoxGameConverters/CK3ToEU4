@@ -1,0 +1,137 @@
+evenks = {
+	yeniseian = {
+		primary = YEN
+		male_names = {
+			Alba Aqtasi Balma Belegin Bey Beye Bissimdes Bok Bokkok Bukrek
+			Chip Chis Deles Es Gwang Haksem Hig Hoksi Hols Kamara
+			Kar Khum Kisla Kit Konnong Koumi Krang Kruglais Olgit Onkhoi
+			Pacham Pikhe Qahi Qang Qiyijia Qrah Rek Sening Ses Soga
+			Sulams Syoksa Tig Tis Togeta Tolget Tor Tuki Tums Yeyiyu
+		}
+		female_names = {
+			Alaga Alit Aspul Chik Dotetam Fena Gid Hagsi Hana Haspur
+			Hosedam Ilqoy Kaken Kemela Khur Mimpil Peng Pymel Qim Qip
+			Qoqa Qosedam Senougbu Sui Sur Tagim Takam Tokhala Tomam Tulsi Tura Tygilam Ules Urur Yiktu
+		}
+		dynasty_names = { Angara Turukhan Yugh Dynda Kott Assan Arin Ara Buklin Baikot Yarin Yastin Sulomay Imbak Jugun Surgut Siloma Kureika Zemchak Bogden }
+	}
+}
+dravidian = {
+	brahui = {
+		primary = BRA
+		male_names = {
+			Amarapuyankan Arulmolivarman Atitta Avraaham Cadayan Cankili Cataiyavarman Cayantavarman Celiyancentan Cevakattevan
+			Chaacko Chaandy Cimmavisnu Cuntara Eappen Eisow Irattapadikonda Iyob Kadarangkonda Karunandadakkan
+			Karunandan Katunkon Kossy Kotukulapattan Kurian Kutameratiruvatikal Lukose Markose Nantivarman Naracimmavarman
+			Nirupatunkavarman Parakesaripanmar Paranirupacinkam Pathrose Paulose Periyapillai Piyliypaos Ranatitta Utaiya Uttama
+			Varakunan Varakunavarman Varughese Yohannaan Yosef Zacharria
+		}
+		female_names = {
+			Aaleyaamma Accamma Annamma Ariyapillai Aruvanki Cenkulam Eccumantai Eluvanai Kalacci Kalicci
+			Kanavati Mariamma Nantirinankai Netuntukkai Nilammai Nimmatikal Pavitram Peranankai Perrappai Raahelamma
+			Saramma Sosamma Thresiamma Tiruvaranki Varakuni Venankai Vicciyakkan Vitari
+		}
+		dynasty_names = { Achmadzai Gurguari Iltazai Kalandari Kambrani Mirwari Rodeni Sumalari Bizanjar Haruni Muhammad-Hasni Mengal Nichari Pandrani Sajdi Zahri Bangulzai Kurd Lahri Langav Muhammad-Shahi Raisani Rustamzai Sarpora Satakzai Shahwani Zagar-Mengal }
+	}
+}
+western_aryan = {
+	peristani = {
+		primary = NUR
+		male_names = {
+			Aaditya Abhimanyu Abhinanda Aditya Amit Anandhavardana Ananta Anil Arun Avantivarman
+			Bansi Bharat Bhaskar Bhimagupta Birbal Braj Brij Chakravarman Chandrakanta
+			Chandrapida Charanpal Damodara Dinanath Dipak Durlabhaka Durlabhvardhana Eshin Ganga
+			Gangaram Gautam Giridhari Kisan Kishan Krishan Ksemagupta Kshemendra Kuldip Kuvalayapida
+			SLakshman Laksmandadeva Lalit Lalitaditya Madan Manohar Maruti Mohan Moti Motilal
+			Muktapida Mustafa Nanda Nandigupta Narain Naraindas Nidhi Niraj Omprakash Pamposh
+			Paramanuka Pawan Phalunga Pran Pratapaditya Purushottam Pushkar Radda Rahim Rahul
+			Rajadeva Rajinder Rajiv Ramadeva Ramchandra Rameshwar Ratnakara Ravinder Rohit Salhana
+			Samgramadeva Samgramaraja Sandip Sankaravarman Satish Satyen Shakti Shambhu Shuhul Siddharth
+			Sidhesh Simhadeva Simharaja Somnath Srivar Subhash Sudhir Suhadeva Sussala Suresh
+			Swaroop Tejbahadur Tribhuvanagupta Triloki Trilokanath Trilokinath Tunga Uccala Udayaraja Upendra
+			Utkarsa Utpal Vajraditya Vamana Vantideva Vasudev Vasudeva Vigraharaja Vijayapal Vir Vuppadeva
+		}
+		female_names = {
+			Aarati Aarti Aasa Aasha Abha Ambikaputrika Amritlekha Anangalekha Anjana Asamati
+			Asha Bappika Bappatadevi Bhinna Bhuvanamati Bijala Bijja Bimba Candala Candri
+			Chakramardika Chandravati Chandri Chither Devalekha Didda Durga Ganga Girija Girja
+			Gunadevi Gunalekha Hamsi Hiposh Indra Indradevi Iravati Ishika Ishnadevi Jaishri
+			Jaya Jayadevi Jayalakshmi Jayamati Kalhanika Kalphana Kalyana Kamala Kamaladevi Kamalavati
+			Kamalesh Kamla Kamlesh Kanjarika Kapila Kashi Kavita Kavya Kaya Kishori
+			Kongposh Kota Kshma Kumudalekha Lalita Lothita Maghavati Mala Manjarika Manju
+			Meghavali Menila Mrigavati Nagalata Nagalekha Nanda Narendraprabha Nirupama Nonika Omadevi
+			Padmalekha Padmasri Padmavati Parakasa Priti Punim Radha Rajalakshmi Rajyasri Ramamya
+			Rameshwari Ranarambha Ratna Ratnaprabha Ratnavali Sahja Sambavati Samma Sarada Saraswati
+			Sharadaa Sharda Shashi Shin Shirin Shradha Shweta Smriti Somala Sonia
+			Sonth Srilekha Subhata Sugala Sugandha Sulla Surendravati Suryamati Susala Sushma
+			Suyya Sweta Syamala Tilaka Udda Vallabha Vasu Vimala Vina Yasomati Zoon Zoongash
+		}
+		dynasty_names = { Karkota Utpala Lohara Maqpon Vuppadeva Dhar Gul Shaikh Kichlu Sopuri Mala Poot Mirakhur Kadlabaju Kokru Bangru Bakaya Khashu Kichlu Misri Lone Mattoo Mir Sapru Vani Kesarwani Talwani Puiwani Baandwani Baswani Tarangarwani Kakarwani Parwani }
+	}
+	burusho = {
+		primary = BUR
+		male_names = {
+			Ayash Baaz Bayoo Bayu Bepat Beyenom Bilchon Bras Bula Chaghurum
+			Chindar Chumo Czolom Daltas Dan Dast Dohom Donesh Fooh Gachir
+			Gaganom Garmun Gert Ghaan Ghamo Ghosanom Giye Glinom Gochachom Gonoolanas
+			Guuro Haghur Halden Hasto Heyom Hirqarqaamuc Huk Jee Katar Larokores
+			Matum Meenis Moltan Niyo Os Oulus Oveljiyeshom Parish Partaawuus Qhulpi
+			Sa Samandar Sar Sawo Shadi Shapik Sher Shoqom Showa Sorqon Ta Tal Tambalichom Thakthak Thas Tish Toll Tootaan Uyum
+		}
+		female_names = {
+			Asomoon Axo Baardum Batbat Belis Bilas Bilchon Bulbul Burum Buseiko
+			Bush Buwa Cel Chin Czan Czapayom Daltas Diyaarchom Donesh Du
+			Echoghon Fooh Gaganom Galgi Garom Gashoskin Ghashep Ghasichom Ghughundil Girkis
+			Gusparish Hal Halanz Haralt Heyom Jee Khorong Larokores Malthash Odel
+			Oveljiyeshom Partaawuus Sheghesom Shekark Shoqom Showa Tik Toll Tsil Ut Yatal
+		}
+		dynasty_names = { Yasin Nagar Werchikwar Baltit Worshigum Selgaan Thoi Darkut Karur Katoor Rakaposhi Dumani Gojal Shimshal Misgar Chipursan Yishkuk Avgarch Gircha Sost Shishkat Gulmit Passu Diran Miachar Ishkoman Pakkora Ghizer Kunjut Spantik Buroong Baratilang Khurukut Thamos Uyongko Akabirting Bar Bare Bare Sis Baldakuyo Tsilgalasho Bericho Ganish Rosh Shalanga Ghulapee Bhuthe Shamir Faratu Matham Shahthurai Ghauin Dhathu Laghan Jerovf Noormuhammed }
+	}
+}
+turko_semitic = {
+	himyarite = {
+		primary = ADE
+		male_names = {
+			Mani Rabi'a Musa Ibrahim Markhan Watban Nasir Idris "'Abd-Allah" Sa'ud Zayid Abdullah Muhammad
+			'Abdullah Turki Faisal Al-Rahman Khalid Fahd Aziz Abu-Bakr Abu-Bakr Aarif Abdul-Gafur Abdul-Jaleel Abdul-Qadir 
+			Abdul-Wahab Abdul Abdul Abdullah Abdullah Aghlab Akin Ali Ali Alim Aram Azam Bahir Burhanaddin
+			Fadil Fadl Faruk Ghalib Hafiz Halil Hasan Hasan Husam Hussayn Hussayn Ibrahim Abraham Idris 
+			Is'mail Ismail Isa Jabir Jalil Jibril Khaireddin Khalil Mahdi Mahmud Mahmud
+			Mansur Mirza Mubarak Muhammad Muhammad Mukhtar Murad Musa Moses Muslihiddin Muzaffaraddin Najib 
+			Nasr Nizam Qawurd Ramadan Sa'daddin Sadiq Sami Samir Shaiban
+			Shamir Shujah Sulayman Solomon Talib Ubayd Uways Yahya Yahya Ya'qub Jacob Youkhanna John Yusuf 
+			Joseph Zeyd 
+		}
+		female_names = {
+			Nadiyya Adila Amsha Asiya Faghira Habiba Hanifa Jahaira Kamala Layla Maryam Nafisa Nyawela Parand 
+			Parween Paymaneh Paywand Qamara Rafiqa Rasa Rashida Reshawna
+			Saaman Sabba Saghar Sahba Sajida Samira Semeah Setara Shahrbano Shahzadah Shameem Shararah 
+			Sheeftah Sheeva Shogofa Shokouh Shola Sholah Simin Souzan
+			Taliba Tanaz Taneen Yagana Yakta Yasmin Zaynab
+		}
+		dynasty_names = { Rasulid Tahiride Jabrid al-Qasimi Nabhani Yaruba Usfurid Jarwanid Dhu-Asbah Dhu'l-Kala Yu'firid Mahdid Quda'a Azd }
+	}
+}
+maghrebi = {
+	guanche = {
+		primary = GUN
+		male_names = {
+		Aythami Hirguan Acaymo Adjona Adxona Atxona Anaterve Bencomo Inmobach Chincanayro Gumidafe Rayco Zebenzui Benytomo Bentorey Bentor Ruiman Cocanaymo
+		Aguahuco Betzenuriya Cocanaymo Teguaco Gerian Gueton Ichasagua Atbitocazpe Rumen Rosalva Chachinama Tinate Tinguaro Belicar Atanausu Chimechi Achimenchia
+		Pelicar Pelinor Romen Tegueste Tinerfe Sunta Adejare Bentinerfe Tanausu Maninidra Adargoma Aberbequeye Abian Acaime Afche Armiche Ayoze Ayose
+		Beneharo Derque Doramas Echedey Bentejui
+		}
+		female_names = {
+		Aythami Hirguan Aniagua Fayna Felgeda Gara Cathaysa Ramagua Nauzet Hiurma Mati Huertaya Iballa Imobach Itahisa Ithaysa Janequa Madaya Nisamar Orchena Sibissay Tagayacte
+		Tamonante Tanau Cayetana Tara Tazaguisa Tazirga Teneriste Tenesoya Tentagays Tibiabin Tinabuna Tindara Tinguafaya Tinizara Xantena Yaiza Andamana Ico
+		Yurena Iraya Haridian Guayanfanta Guayarmina Hanagua Chabuta Chanona Chayuga Gazmira Collarampa Dacil Grimanesa Guacimara Cobura Daida Azemeyeguegua Abenchara
+		Atenai Attagares Arminda Attanatda Atteneri Attidamana Aridian Aregoma Adisoda Guajara Adassa Guaxara Abenchara
+		}
+		dynasty_names = { Bimbache Auaritas Gomera Maxo Benahoare Chenet Tegueste Tacoronte Taoro Icod Daute Adeje Abona Guimar Anaga Acero Jandia Majo Esero Hero }
+	}
+}
+iranian = {
+	hephthalite = {
+		primary = KAS
+	}
+}
