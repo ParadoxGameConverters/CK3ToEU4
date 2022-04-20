@@ -1,0 +1,19 @@
+pagan = {
+	harranism = {
+		color = { 19 10 20 }
+		icon = 58
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country = {
+			tolerance_own = 1
+			global_tax_modifier = 0.05
+		}
+		country_as_secondary = {
+			advisor_pool = 1
+			global_tax_modifier = 0.05
+		}
+		heretic = { SERAPIS }
+		declare_war_in_regency = yes
+	}
+}
