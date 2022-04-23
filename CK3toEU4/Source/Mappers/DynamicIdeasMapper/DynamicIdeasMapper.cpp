@@ -76,6 +76,7 @@ void mappers::DynamicIdeasMapper::processRules()
 		{
 			LocBlock copyblock = block.value();
 			locs.unravelNestedLocs(copyblock);
+			locs.removeEmphasis(copyblock);
 			traditionLocs.emplace(tradition + "_desc", copyblock);
 		}
 	}
