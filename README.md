@@ -8,7 +8,7 @@ To help with development, please visit the official [development thread](https:/
 
 ---
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5bf7df627e734711a3e00059ec0ccc68)](https://app.codacy.com/gh/ParadoxGameConverters/CK...)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5bf7df627e734711a3e00059ec0ccc68)](https://app.codacy.com/gh/ParadoxGameConverters/CK3toEU4/dashboard)
 [![Build status](https://ci.appveyor.com/api/projects/status/h8b09dkaycxot3mw?svg=true)](https://ci.appveyor.com/project/Idhrendur/ck3toeu4)
 
 ---

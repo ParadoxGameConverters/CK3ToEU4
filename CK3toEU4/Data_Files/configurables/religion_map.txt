@@ -144,3 +144,15 @@ link = { eu4 = protestant ck3 = protestant }
 link = { eu4 = reformed ck3 = reformed }
 link = { eu4 = confucianism ck3 = tianrenganying ck3 = sanjiaoheliu ck3 = lixue ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 link = { eu4 = shinto ck3 = shinto ck3 = ainuism }
+
+# Mod: RICE
+link = { eu4 = shamanism ck3 = guanche_pagan }
+link = { eu4 = shamanism ck3 = tuareg_pagan }
+link = { eu4 = shamanism ck3 = amazigh_pagan }
+link = { eu4 = shamanism ck3 = malagasy_pagan }
+link = { eu4 = shamanism ck3 = shona_pagan }
+link = { eu4 = harranism ck3 = harranian_pagan }
+link = { eu4 = arab_pagan ck3 = nabataean_pagan }
+link = { eu4 = arab_pagan ck3 = aksumite_pagan }
+link = { eu4 = arab_pagan ck3 = south_arabian_pagan }
+link = { eu4 = animism ck3 = nuristani_pagan }
