@@ -23,6 +23,8 @@ typedef struct
 std::string getLeadStr(const std::string& str, const int occurrence = 1, const std::string& match = "_");
 // Returns substring of string after nth occurrence of match string.
 std::string getTailStr(const std::string& str, const int occurrence = 1, const std::string& match = "_");
+// Returns loc without pesky CK3 #EMP STRING#
+std::string cleanLocMarkups(const std::string& loc);
 
 class LocalizationMapper
 {
@@ -31,6 +33,7 @@ class LocalizationMapper
 	void scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods);
 	void scrapeStream(std::istream& theStream, const std::string& language);
 	void unravelNestedLocs(LocBlock& block) const;
+	void removeEmphasis(LocBlock& block) const;
 
 	[[nodiscard]] std::optional<LocBlock> getLocBlockForKey(const std::string& key) const;
 	[[nodiscard]] std::optional<std::string> reverseLookupCultureName(const std::string& localization) const;
