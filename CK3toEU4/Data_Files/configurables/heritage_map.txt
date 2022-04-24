@@ -49,3 +49,7 @@ link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_west_african ck3 
 link = { eu4 = kongo_group ck3 = heritage_central_african }
 link = { eu4 = african ck3 = heritage_east_african }
 link = { eu4 = cushitic ck3 = heritage_somalian }
+
+# Mod: RICE
+link = { eu4 = african ck3 = heritage_east_bantu }
+link = { eu4 = evenks ck3 = heritage_siberian }
