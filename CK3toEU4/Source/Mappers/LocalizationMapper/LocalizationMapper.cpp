@@ -83,10 +83,10 @@ void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 
 void mappers::LocalizationMapper::removeEmphasis(LocBlock& block) const
 {
-for (const auto& lang: std::vector<std::string>{"english", "french", "spanish", "german"})
+	for (const auto& lang: std::vector<std::string>{"english", "french", "spanish", "german"})
 	{
 		const auto& loc = selectLanguage(lang, block);
-		assignSelectLanguage(cleanLocMarkups(loc),lang,block)
+		assignSelectLanguage(cleanLocMarkups(loc), lang, block);
 	}
 }
 
@@ -267,9 +267,9 @@ std::string mappers::getTailStr(const std::string& str, const int occurrence, co
 }
 std::string mappers::cleanLocMarkups(const std::string& loc)
 {
-  const auto& head = getLeadStr(loc,1,"#");
-  const auto& mid = getLeadStr(getTailStr(loc,1,"#"),1,"#");
-  const auto& tail = getTailStr(loc,2,"#");
-  
-  return head + mid.substr(4) + tail;
+	const auto& head = getLeadStr(loc, 1, "#");
+	const auto& mid = getLeadStr(getTailStr(loc, 1, "#"), 1, "#");
+	const auto& tail = getTailStr(loc, 2, "#");
+
+	return head + mid.substr(4) + tail;
 }

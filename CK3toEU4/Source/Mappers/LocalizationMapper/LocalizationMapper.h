@@ -31,6 +31,7 @@ class LocalizationMapper
   public:
 	LocalizationMapper() = default;
 	void scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods);
+	void scrapeStream(std::istream& theStream, const std::string& language);
 	void unravelNestedLocs(LocBlock& block) const;
 	void removeEmphasis(LocBlock& block) const;
 
