@@ -232,3 +232,14 @@ link = { ck3 = { default = increased_manpower } eu4 = { global_manpower_modifier
 link = { ck3 = { default = increased_trade_steering } eu4 = { trade_steering = 0.05 } }
 link = { ck3 = { default = increased_production_income } eu4 = { production_efficiency = 0.05 } }
 link = { ck3 = { default = placeholder_tradition } eu4 = { global_tax_modifier = 0.10 } }
+
+### Mod: RICE
+link = { ck3 = { tradition = tradition_guanche_warrior } eu4 = { global_supply_limit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_hfc_bedouin_honor_codes } eu4 = { army_tradition = 1 } } 
+link = { ck3 = { tradition = tradition_hfc_bedouin_oral_poetry } eu4 = { dip_tech_cost_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_RICE_siberian_survivalists } eu4 = { land_attrition = -0.10 } }
+link = { ck3 = { tradition = tradition_RICE_swahili_contacts } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
+link = { ck3 = { tradition = tradition_RICE_ubiquity_of_poetry } eu4 = { dip_tech_cost_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_RICE_xianbei_scions } eu4 = { monarch_diplomatic_power = 1 } } 
+link = { ck3 = { tradition = tradition_RICE_white_huns } eu4 = { may_perform_slave_raid = yes} }
+link = { ck3 = { tradition = tradition_RICE_children_of_the_nile } eu4 = { global_trade_goods_size_modifier = 0.1 } }

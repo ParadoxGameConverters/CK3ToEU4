@@ -780,3 +780,21 @@ link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 
 ## Extra
 link = { eu4 = oldspain ck3 = iberian tech = western gfx = westerngfx }
+
+# Mod: RICE
+link = { eu4 = evenk ck3 = evenk tech = eastern gfx = inuitgfx }
+link = { eu4 = nivkh ck3 = nivkh tech = eastern gfx = inuitgfx }
+link = { eu4 = yakut ck3 = yakut tech = eastern gfx = inuitgfx }
+link = { eu4 = yeniseian ck3 = yeniseian tech = eastern gfx = inuitgfx }
+link = { eu4 = yukaghir ck3 = yukaghir tech = eastern gfx = inuitgfx }
+link = { eu4 = brahui ck3 = brahui tech = indian gfx = indiangfx }
+link = { eu4 = peristani ck3 = nuristani tech = indian gfx = indiangfx }
+link = { eu4 = burusho ck3 = burusho tech = indian gfx = indiangfx }
+link = { eu4 = soqotri ck3 = south_arabian tech = muslim gfx = muslimgfx }
+link = { eu4 = himyarite ck3 = himyarite tech = muslim gfx = muslimgfx }
+link = { eu4 = swahili ck3 = swahili tech = east_african gfx = africangfx }
+link = { eu4 = malagasy ck3 = malagasy tech = east_african gfx = africangfx }
+link = { eu4 = shona ck3 = shona tech = central_african gfx = africangfx }
+link = { eu4 = guanche ck3 = guanche tech = sub_saharan gfx = muslimgfx }
+link = { eu4 = mizrahi ck3 = mizrahi tech = muslim gfx = muslimgfx }
+link = { eu4 = hephthalite ck3 = hephthalite tech = muslim gfx = muslimgfx }

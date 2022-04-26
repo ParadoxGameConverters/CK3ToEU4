@@ -487,10 +487,10 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 	{
 		for (auto i = 0; i < suffix.size(); i++)
 		{
-			english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + eng_ideaText[i] << "\"\n";
-			french << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + fra_ideaText[i] << "\"\n";
-			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + spa_ideaText[i] << "\"\n";
-			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << idea.getLocalizedName() + " " + ger_ideaText[i] << "\"\n";
+			english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + eng_ideaText[i] << "\"\n";
+			french << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + fra_ideaText[i] << "\"\n";
+			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + spa_ideaText[i] << "\"\n";
+			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + ger_ideaText[i] << "\"\n";
 		}
 	}
 
