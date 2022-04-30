@@ -1373,7 +1373,7 @@ defined_text = {
 	}
 }
 
-#Definite Article before name? (ie for country names in plural form)
+#Definite Article before name? (i.e. for country names in plural form)
 defined_text = {
     name = GetDefiniteArticleBeforePluralCountry
 	random = no

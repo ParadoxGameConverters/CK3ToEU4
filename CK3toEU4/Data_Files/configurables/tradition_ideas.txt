@@ -2,7 +2,7 @@
 # CK3 Ethos and Traditions map to EU4 National Traditions and Ideas/Ambitions respectively.
 # There are three fields to a link, a ck3 = {} part, an eu4 = {} part and an optional rule = {} part.
 # The ck3 field determines whether an ethos or tradition is being mapped. ck3 = { ethos = ethos_name } or ck3 = {tradition = tradition_name }.
-# The eu4 field determines which EU4 modifer effects to use in the generated National Traditions/Ideas/Ambitions.
+# The eu4 field determines which EU4 modifier effects to use in the generated National Traditions/Ideas/Ambitions.
 # The rule field determines when a culture should have different EU4 ideas from the same base tradition, this is only for special cases.
 
 ### Base Mappings
@@ -21,12 +21,12 @@
 # then the generated EU4 idea would grant Quest for the New World.
 
 # Other things to note about rules:
-# The order of rule mappings in a file is irrelavent to the order in which they are applied.
+# The order of rule mappings in a file is irrelevant to the order in which they are applied.
 # Multiple rules of different types can be combined to make more specific rules.
 # Ex: rule = { heritage = heritage_north_germanic ethos_trigger = ethos_bellicose }.
 # Rules have a precedence order shown at the bottom of instructions. This means if both rules are true, only the higher precedence rule applies.
 # More specific rules have higher precedence than less specific rules, when they start with the same precedence.
-# ALL links will use the CK3 localization to generate the EU4 Idea name and desctription localization, unless you specify an idea name.
+# ALL links will use the CK3 localization to generate the EU4 Idea name and description localization, unless you specify an idea name.
 # Ex: link = { ck3 = { tradition = tradition_one } rule = { heritage = heritage_red idea_name = my_idea_name } eu4 = { puppies = yes } }
 # If idea_name is specified, the converter expects manual localizations for my_idea_name and my_idea_name_desc in the localisation/replace/tradition_ideas_l_language.yml file of blankMod.
 
@@ -44,7 +44,7 @@ link = { ck3 = { ethos = ethos_bureaucratic } eu4 = { yearly_corruption = -0.1 s
 link = { ck3 = { ethos = ethos_communal } eu4 = { same_culture_advisor_cost = -0.25 global_heretic_missionary_strength = 0.03 } }
 link = { ck3 = { ethos = ethos_courtly } eu4 = { monthly_splendor = 1 power_projection_from_insults = 0.2 } }
 link = { ck3 = { ethos = ethos_egalitarian } eu4 = { num_accepted_cultures = 1 advisor_pool = 1 } }
-link = { ck3 = { ethos = ethos_spiritual } eu4 = { missonaries = 1 religious_unity = 0.10 } }
+link = { ck3 = { ethos = ethos_spiritual } eu4 = { missionaries = 1 religious_unity = 0.10 } }
 link = { ck3 = { ethos = ethos_stoic } eu4 = { monarch_lifespan = 0.1 all_estate_loyalty_equilibrium = 0.05 } }
 
 ### Base Tradition Mappings 

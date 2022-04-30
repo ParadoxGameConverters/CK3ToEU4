@@ -15,7 +15,7 @@ country_event = {
 
 	trigger = {
 		NOT = {
-			has_country_modifier = plati_first_event_timer				#Timer, so that event doesnt fire too often
+			has_country_modifier = plati_first_event_timer				#Timer, so that event doesn't fire too often
 		}
 		AND = {
 			religion_group = pagan

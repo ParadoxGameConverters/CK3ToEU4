@@ -1,8 +1,8 @@
 # Usage:
 # link = { eu4 = eu4culture ck3 = ck3culture region = eu4region province = eu4provinceID owner = eu4tag tech = techgroup gfx = somethinggfx }
 # multiples of all except eu4, tech and gfx are allowed.
-# Note: regions can be anything that makes sense, ie. south_america_superregion, north_german_region, laponia_area
-# You can mix and match, ie. north_american_superregion + province = 1240 will catch all of north america + hawaii.
+# Note: regions can be anything that makes sense, i.e. south_america_superregion, north_german_region, laponia_area
+# You can mix and match, i.e. north_american_superregion + province = 1240 will catch all of north america + hawaii.
 # every culture should have a gfx set.
 
 #Unmapped (These are PURPOSEFULLY not mapped and left to the dynamic culture converter

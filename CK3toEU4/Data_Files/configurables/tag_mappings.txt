@@ -3,7 +3,7 @@
 # single optional: ck3 = x_title
 # single optional: capitals = { range of EU4provinceIDs }
 # made up example: ck3 = c_vestisland eu4 = VST capitals = { 1 2 }
-# Having a capital defined takes presedence over title. e_mongols would turn into VST if they had a capital in EU4 province 1 or 2.
+# Having a capital defined takes precedence over title. e_mongols would turn into VST if they had a capital in EU4 province 1 or 2.
 
 # Scandinavia
 
