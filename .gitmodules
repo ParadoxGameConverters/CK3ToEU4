@@ -7,6 +7,3 @@
 [submodule "googletest"]
 	path = googletest
 	url = https://github.com/google/googletest.git
-[submodule "imageMagick"]
-	path = imageMagick
-	url = https://github.com/ParadoxGameConverters/imageMagick.git
