@@ -631,6 +631,24 @@ hittite_group = {
 			Nereis Phegea Philomela Aristomache Clymene Xenodice Deinome Metioche Peisis Cleodice
 		}
 	}
+	cilician = {
+		male_names = {
+			Acamas Adrestus Aeneas Amphimachus Amphius Antiphus Archilochus Ascanius Asius Chromius Ennomus Epistrophus
+			Euphemus Eurypylus Glaucus Hector Hippothous Memnon Mesthles Nastes Odius Pandarus Peirous Phorcys
+			Pylaemenes Pylaeus Pyraechmes Rhesus Sarpedon Antenor Aesyetes Deiphobus Helenus Polydorus Troilus
+			Polites Kebriones Gorgythion Agathon Mestor Doryclus Democoon Lycaon Pammon Dius Isus Antiphonus
+			Echemmon Archemachus Aretus Deiopites Dryops Evagoras Evander Polymedon Aegeoneus Aesacus Astygonus
+			Atas Bias Chersidamas Clonius Echephron Hippodamas Hipponous Hyperion Hyperochus Idomeneus Laodocus
+			Lysithous Melanippus Mylius Philaemon Telestas Antinous Astynomus Axion Biantes Brissonius Cheirodamas
+			Chrysolaus Dolon Eresus Heron Hippasus Hipposidus Ilagus Lysides Palaemon Polymelus Proneos Protodamas
+			Chaon Idaeus Chryses
+		}
+		female_names = {
+			Cassandra Laodice Theano Penthesilea Cleomestra Hecuba Medesicaste Creusa Medusa
+			Aristodeme Lysimache Polyxena Demnosia Demosthea Ethionome Henicea Iliona Lysianassa
+			Nereis Phegea Philomela Aristomache Clymene Xenodice Deinome Metioche Peisis Cleodice
+		}
+	}
 	lydian = { }
 	hittite = { }
 	phrygian = {
