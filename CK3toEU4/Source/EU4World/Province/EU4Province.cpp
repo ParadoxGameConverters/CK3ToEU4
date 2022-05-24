@@ -49,7 +49,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	{
 		auto name = locDegrader.degradeString(srcProvince->getDisplayName());
 		auto win1252name = commonItems::convertUTF8ToWin1252(name);
-		if (!std::any_of(win1252name.begin(), win1252name.end(), [](char c) { // All not latin chars will be squised to 0, lets not transfer those
+		if (!std::any_of(win1252name.begin(), win1252name.end(), [](char c) { // All not latin chars will be squished to 0, lets not transfer those
 				 return c == '0';
 			 }))
 		{
@@ -170,6 +170,10 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.rajputsNobles = false;	 // nono.
 	details.brahminsChurch = false;	 // Still no.
 	details.vaisyasBurghers = false;	 // No.
+}
+
+void EU4::Province::cul(const mappers::CultureMapper& cultureMapper)
+{
 }
 
 void EU4::Province::sterilize()

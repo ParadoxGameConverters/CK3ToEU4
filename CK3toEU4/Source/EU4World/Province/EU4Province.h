@@ -31,6 +31,7 @@ class Province
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::LocDegraderMapper& locDegrader);
+	void cul(const mappers::CultureMapper& cultureMapper);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }
 	[[nodiscard]] const auto& getTagCountry() const { return tagCountry; }
