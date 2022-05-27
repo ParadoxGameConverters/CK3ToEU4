@@ -11,9 +11,8 @@
 #include "../Country/Country.h"
 #include "Log.h"
 
-EU4::Province::Province(const std::shared_ptr<CK3::Title>& origProvince)
+EU4::Province::Province(const std::shared_ptr<CK3::Title>& origProvince): srcProvince(origProvince)
 {
-	srcProvince = origProvince;
 }
 
 EU4::Province::Province(int id, const std::string& filePath): provID(id)

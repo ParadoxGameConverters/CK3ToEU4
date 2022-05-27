@@ -136,7 +136,7 @@ TEST(Mappers_NameTransferTests, oneToManyTransfersName)
 
 	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
 	EXPECT_EQ(outProvince.getCustomName(), "County1"); // EU4 province should have the new manual displayName
-	EXPECT_EQ(outProvince2.isRenamed(), false); //second EU4 province should NOT have the renamed flag
+	EXPECT_EQ(outProvince2.isRenamed(), false);			// second EU4 province should NOT have the renamed flag
 }
 TEST(Mappers_NameTransferTests, nondegradeableNamesDefualtsToVanilla)
 {
