@@ -23,6 +23,7 @@ class Province
 {
   public:
 	Province() = default;
+	Province(const std::shared_ptr<CK3::Title>& origProvince); // For tests
 
 	Province(int id, const std::string& filePath);
 
@@ -31,7 +32,7 @@ class Province
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::LocDegraderMapper& locDegrader);
-	void cul(const mappers::CultureMapper& cultureMapper);
+	void registerManualName(const mappers::LocDegraderMapper& locDegrader);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }
 	[[nodiscard]] const auto& getTagCountry() const { return tagCountry; }

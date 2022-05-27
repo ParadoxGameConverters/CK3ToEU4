@@ -19,15 +19,15 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	mappers::ProvinceMapper provinceMapper(provinceMapperStream);
 
 	std::stringstream landedTitlesStream;
-	landedTitlesStream << "b_barony1 = { province = 1 }\n";
-	landedTitlesStream << "c_county1 = { }\n";
+	landedTitlesStream << "c_county1 = {\n";
+	landedTitlesStream << "\tb_barony1 = { province = 1 }\n";
+	landedTitlesStream << "}\n";
 	CK3::LandedTitles landedTitles;
 	landedTitles.loadTitles(landedTitlesStream);
-	// landedTitles.linkCountyDetails(countyDetails); May need Development values in order to work.
 
 	std::stringstream titlesStream;
-	titlesStream << "1={key=b_barony1 name=Barony1 de_jure_liege=2}\n";
-	titlesStream << "2={key=c_county1 name=County1 renamed=yes}\n";
+	titlesStream << "1={key=c_county1 name=County1 renamed=yes de_jure_vassals={2}}\n";
+	titlesStream << "2={key=b_barony1 name=Barony1 de_facto_liege=1 de_jure_liege=1}\n";
 	CK3::Titles titles(titlesStream);
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
@@ -38,28 +38,146 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	const auto& srcProvince = titles.getTitles().at("c_county1");
 	srcProvince->pickDisplayName(titles.getTitles());
 
-	// initialize an EU4 province with initializeFromCK3Title
-	EU4::Province outProvince = EU4::Province();
+	// initialize an EU4 province
+	EU4::Province outProvince = EU4::Province(srcProvince);
 	std::stringstream dummy;
-	dummy << "link = { eu4 = culture ck3 = culture }";
-	const mappers::CultureMapper culMap(dummy);
-	const mappers::ReligionMapper religMap(dummy);
 	const mappers::LocDegraderMapper locDegrader(dummy);
 
-	// Fatal error LNK2019: unresolved external symbol 
-	outProvince.initializeFromCK3Title(srcProvince, culMap, religMap, locDegrader); // gives error LNK2019
-	outProvince.setAdm(5); // works
-	outProvince.cul(culMap); // gives error LNK2019
+	outProvince.registerManualName(locDegrader);
 
-	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 srcProvince should have the renamed flag
+	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
 	EXPECT_EQ(outProvince.getCustomName(), "County1"); // EU4 province should have the new manual displayName
 }
-// Things to test
-// 1:1
+/*TEST(Mappers_NameTransferTests, manyToOneTransfersName)
+{
+	// Requires a call to EU4::World::determineProvinceSource which needs a whole lot more info set up
+	std::stringstream provinceMapperStream;
+	provinceMapperStream << "0.0.0.0 = {\n";
+	provinceMapperStream << " link = { eu4 = 1 ck3 = 1 ck3 = 2 }\n";
+	provinceMapperStream << "}";
+	mappers::ProvinceMapper provinceMapper(provinceMapperStream);
+
+	std::stringstream landedTitlesStream;
+	landedTitlesStream << "c_county1 = {\n";
+	landedTitlesStream << "\tb_barony1 = { province = 1 }\n";
+	landedTitlesStream << "}\n";
+	landedTitlesStream << "c_county2 = {\n";
+	landedTitlesStream << "\tb_barony2 = { province = 2 }\n";
+	landedTitlesStream << "}\n";
+	CK3::LandedTitles landedTitles;
+	landedTitles.loadTitles(landedTitlesStream);
+
+	std::stringstream titlesStream;
+	titlesStream << "1={key=c_county1 name=County1 renamed=yes de_jure_vassals={2}}\n";
+	titlesStream << "2={key=b_barony1 name=Barony1 de_facto_liege=1 de_jure_liege=1}\n";
+	titlesStream << "3={key=c_county2 name=County2 renamed=yes de_jure_vassals={4}}\n";
+	titlesStream << "4={key=b_barony2 name=Barony2 de_facto_liege=3 de_jure_liege=3}\n";
+	CK3::Titles titles(titlesStream);
+	titles.linkTitles();
+	titles.linkLandedTitles(landedTitles);
+
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	std::stringstream countyDetailsStream;
+	countyDetailsStream << "c_county1 = { development = 1 }\n";
+	countyDetailsStream << "c_county2 = { development = 2 }\n";
+	CK3::CountyDetails countyDetails(countyDetailsStream);
+	landedTitles.linkCountyDetails(countyDetails);
+
+	// A call to determineProvinceSource
+
+	// initialize an EU4 province
+	EU4::Province outProvince = EU4::Province(srcProvince);
+	std::stringstream dummy;
+	const mappers::LocDegraderMapper locDegrader(dummy);
+
+	outProvince.registerManualName(locDegrader);
+
+	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
+	EXPECT_EQ(outProvince.getCustomName(), "County2"); // EU4 province should have name from the province specified in determineProvinceSource
+}*/
+TEST(Mappers_NameTransferTests, oneToManyTransfersName)
+{
+	std::stringstream provinceMapperStream;
+	provinceMapperStream << "0.0.0.0 = {\n";
+	provinceMapperStream << " link = { eu4 = 1 eu4 = 2 ck3 = 1 }\n";
+	provinceMapperStream << "}";
+	mappers::ProvinceMapper provinceMapper(provinceMapperStream);
+
+	std::stringstream landedTitlesStream;
+	landedTitlesStream << "c_county1 = {\n";
+	landedTitlesStream << "\tb_barony1 = { province = 1 }\n";
+	landedTitlesStream << "}\n";
+	CK3::LandedTitles landedTitles;
+	landedTitles.loadTitles(landedTitlesStream);
+
+	std::stringstream titlesStream;
+	titlesStream << "1={key=c_county1 name=County1 renamed=yes de_jure_vassals={2}}\n";
+	titlesStream << "2={key=b_barony1 name=Barony1 de_facto_liege=1 de_jure_liege=1}\n";
+	CK3::Titles titles(titlesStream);
+	titles.linkTitles();
+	titles.linkLandedTitles(landedTitles);
+
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+
+	// Bypassing determineProvinceSource, which does not have a test
+	const auto& srcProvince = titles.getTitles().at("c_county1");
+	srcProvince->pickDisplayName(titles.getTitles());
+
+	// initialize an EU4 province
+	EU4::Province outProvince = EU4::Province(srcProvince);
+	EU4::Province outProvince2 = EU4::Province(srcProvince);
+	std::stringstream dummy;
+	const mappers::LocDegraderMapper locDegrader(dummy);
+
+	outProvince.registerManualName(locDegrader);
+	outProvince2.registerManualName(locDegrader);
+
+	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
+	EXPECT_EQ(outProvince.getCustomName(), "County1"); // EU4 province should have the new manual displayName
+	EXPECT_EQ(outProvince2.isRenamed(), false); //second EU4 province should NOT have the renamed flag
+}
+TEST(Mappers_NameTransferTests, nondegradeableNamesDefualtsToVanilla)
+{
+	std::stringstream provinceMapperStream;
+	provinceMapperStream << "0.0.0.0 = {\n";
+	provinceMapperStream << " link = { eu4 = 1 ck3 = 1 }\n";
+	provinceMapperStream << "}";
+	mappers::ProvinceMapper provinceMapper(provinceMapperStream);
+
+	std::stringstream landedTitlesStream;
+	landedTitlesStream << "c_county1 = {\n";
+	landedTitlesStream << "\tb_barony1 = { province = 1 }\n";
+	landedTitlesStream << "}\n";
+	CK3::LandedTitles landedTitles;
+	landedTitles.loadTitles(landedTitlesStream);
+
+	std::stringstream titlesStream;
+	titlesStream << "1={key=c_county1 name=Cøunty1 renamed=yes de_jure_vassals={2}}\n"; // Notice the ø
+	titlesStream << "2={key=b_barony1 name=Barony1 de_facto_liege=1 de_jure_liege=1}\n";
+	CK3::Titles titles(titlesStream);
+	titles.linkTitles();
+	titles.linkLandedTitles(landedTitles);
+
+	provinceMapper.transliterateMappings(titles.getTitles());
+
+	// Bypassing determineProvinceSource, which does not have a test
+	const auto& srcProvince = titles.getTitles().at("c_county1");
+	srcProvince->pickDisplayName(titles.getTitles());
+
+	// initialize an EU4 province
+	EU4::Province outProvince = EU4::Province(srcProvince);
+	std::stringstream dummy;
+	const mappers::LocDegraderMapper locDegrader(dummy);
+
+	outProvince.registerManualName(locDegrader);
+
+	EXPECT_EQ(outProvince.isRenamed(), false); // EU4 province should NOT have the renamed flag
+}
+
+// Can't test without creating a skeleton EU4::World
 // N:1
-// 1:M
-// N:M
-// non-latin base not carried forward
 // duchy capital priority observed
 // duchy capital priority not observed when duchy owner split
 // duchy capital priority not observed when in separate mapping
