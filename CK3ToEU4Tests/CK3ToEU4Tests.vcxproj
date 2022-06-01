@@ -131,6 +131,9 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\EU4Province.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceDetails.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
@@ -248,6 +251,7 @@
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureTests.cpp" />
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp" />
+    <ClCompile Include="MapperTests\ProvinceMapper\NameTransferMappingTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingsVersionTests.cpp" />
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp" />

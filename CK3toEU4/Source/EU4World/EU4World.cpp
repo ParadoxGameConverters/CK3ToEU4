@@ -557,7 +557,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		else
 		{
 			// And finally, initialize it.
-			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper);
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader);
 			counter++;
 		}
 	}
@@ -668,6 +668,8 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 			maxDev = provinceWeight;
 		}
 	}
+
+	toReturn.second->pickDisplayName(ck3Titles);
 	if (toReturn.first.empty() || !toReturn.second)
 	{
 		return std::nullopt;

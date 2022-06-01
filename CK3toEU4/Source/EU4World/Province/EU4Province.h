@@ -1,6 +1,7 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
 
+#include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "ProvinceDetails.h"
 #include <memory>
 #include <string>
@@ -22,13 +23,16 @@ class Province
 {
   public:
 	Province() = default;
+	Province(const std::shared_ptr<CK3::Title>& origProvince); // For tests
 
 	Province(int id, const std::string& filePath);
 
 	void updateWith(const std::string& filePath);
 	void initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 		 const mappers::CultureMapper& cultureMapper,
-		 const mappers::ReligionMapper& religionMapper);
+		 const mappers::ReligionMapper& religionMapper,
+		 const mappers::LocDegraderMapper& locDegrader);
+	void registerManualName(const mappers::LocDegraderMapper& locDegrader);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }
 	[[nodiscard]] const auto& getTagCountry() const { return tagCountry; }
@@ -37,6 +41,8 @@ class Province
 	[[nodiscard]] const auto& getCulture() const { return details.culture; }
 	[[nodiscard]] const auto& getSourceProvince() const { return srcProvince; }
 	[[nodiscard]] const auto& getCenterOfTradeLevel() const { return details.centerOfTrade; }
+	[[nodiscard]] const auto& getCustomName() const { return details.customName.value(); }
+	[[nodiscard]] const bool isRenamed() const { return details.customName.has_value(); }
 	[[nodiscard]] auto getDev() const { return details.baseTax + details.baseProduction + details.baseManpower; }
 	[[nodiscard]] auto getAdm() const { return details.baseTax; }
 	[[nodiscard]] auto getMil() const { return details.baseManpower; }

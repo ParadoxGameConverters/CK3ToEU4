@@ -80,6 +80,9 @@ void CK3::Title::registerKeys()
 	registerKeyword("holder", [this](const std::string& unused, std::istream& theStream) {
 		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
+	registerKeyword("renamed", [this](std::istream& theStream) {
+		renamed = commonItems::getString(theStream) == "yes";
+	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
 		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
@@ -272,6 +275,40 @@ std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDJCountie
 	}
 	toReturn.insert(ownedDJCounties.begin(), ownedDJCounties.end());
 	return toReturn;
+}
+
+void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& possibleTitles)
+{
+	// Guard clause all used pointers
+	if (!isRenamed())
+		return;
+
+	// Duchy capital ptrs are all null_ptr, outsource fixing and validation
+	const auto myDuchyCapital = findDuchyCapital();
+
+	if (!myDuchyCapital || myDuchyCapital->getID() == getID() || !myDuchyCapital->getDFLiege())
+		return;
+
+	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
+	// ... if they belong to the same owner, Constantinople also has a custom name and they are in the same mapping
+	if (myDuchyCapital->isRenamed() && possibleTitles.contains(myDuchyCapital->getName()) && myDuchyCapital->getDFLiege()->first == getDFLiege()->first)
+	{
+		displayName = myDuchyCapital->getDisplayName();
+	}
+}
+
+std::shared_ptr<CK3::Title> CK3::Title::findDuchyCapital()
+{
+	if (name[0] != 'c' || !getDJLiege() || !getDJLiege()->second)
+		return nullptr;
+
+	const auto myDuchy = getDJLiege()->second;
+	const auto& capID = myDuchy->getCapital().first;
+
+	if (myDuchy->getDJVassals().empty() || !myDuchy->getDJVassals().contains(capID) || !myDuchy->getDJVassals().at(capID))
+		return nullptr;
+
+	return myDuchy->getDJVassals().at(capID);
 }
 
 void CK3::Title::congregateDFCounties()
