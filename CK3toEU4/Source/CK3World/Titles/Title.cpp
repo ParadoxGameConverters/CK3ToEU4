@@ -277,7 +277,7 @@ std::map<std::string, std::shared_ptr<CK3::Title>> CK3::Title::coalesceDJCountie
 	return toReturn;
 }
 
-void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& mappings)
+void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& possibleTitles)
 {
 	// Guard clause all used pointers
 	if (!isRenamed())
@@ -291,7 +291,7 @@ void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Tit
 
 	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
 	// ... if they belong to the same owner, Constantinople also has a custom name and they are in the same mapping
-	if (myDuchyCapital->isRenamed() && mappings.contains(myDuchyCapital->getName()) && myDuchyCapital->getDFLiege()->first == getDFLiege()->first)
+	if (myDuchyCapital->isRenamed() && possibleTitles.contains(myDuchyCapital->getName()) && myDuchyCapital->getDFLiege()->first == getDFLiege()->first)
 	{
 		displayName = myDuchyCapital->getDisplayName();
 	}

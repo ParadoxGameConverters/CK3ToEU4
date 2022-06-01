@@ -1,5 +1,4 @@
 #include "EU4Province.h"
-#include "../../../../Fronter/commonItems/OSCompatibilityLayer.h"
 #include "../../CK3World/Characters/Character.h"
 #include "../../CK3World/Cultures/Culture.h"
 #include "../../CK3World/Geography/CountyDetail.h"
@@ -10,6 +9,7 @@
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Country/Country.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
 
 EU4::Province::Province(const std::shared_ptr<CK3::Title>& origProvince): srcProvince(origProvince)
 {
@@ -47,9 +47,6 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
-
-	// check for manual CK3 province name
-
 
 	// History section
 	// Not touching Capital, that's hardcoded English name.

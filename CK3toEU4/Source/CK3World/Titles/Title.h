@@ -114,8 +114,8 @@ class Title: commonItems::parser
 	void setThePope() { thePope = true; }
 	void setCustomTitle() { customTitle = true; }
 	void setManualNameClaim() { nameClaimed = true; }
-	void pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& mappings); // Grants one counties name to another during N:1 (or N:M) mappings
-	std::shared_ptr<Title> findDuchyCapital();														 // Only for c_, for now
+	void pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& possibleTitles); // Grants one county's name to another during N:1/N:M mappings
+	std::shared_ptr<Title> findDuchyCapital();																 // Only for c_, for now
 	void congregateDFCounties();
 	void congregateDJCounties();
 	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
