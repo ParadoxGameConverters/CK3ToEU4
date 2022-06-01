@@ -87,8 +87,8 @@ TEST(Mappers_NameTransferTests, manyToOneTransfersName)
 
 	// DF lieges are squashed by not having a valid holder, bypass that
 	const auto& duchy = titles.getTitles().at("d_duchy1");
-	titles.getTitles().at("c_county1")->loadDFLiege(std::make_pair(duchy->getID(),duchy));
-	titles.getTitles().at("c_county2")->loadDFLiege(std::make_pair(duchy->getID(),duchy));
+	titles.getTitles().at("c_county1")->loadDFLiege(std::make_pair(duchy->getID(), duchy));
+	titles.getTitles().at("c_county2")->loadDFLiege(std::make_pair(duchy->getID(), duchy));
 
 	// Bypassing determineProvinceSource, which does not have a test
 	const auto& srcProvince = titles.getTitles().at("c_county2");
