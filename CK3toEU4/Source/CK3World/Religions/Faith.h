@@ -40,6 +40,7 @@ class Faith: commonItems::parser
 	std::string customName;
 	std::string customAdjective;
 	std::string description;
+	std::string religiousHead;
 	std::optional<commonItems::Color> color;
 	std::vector<std::string>
 		 doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS

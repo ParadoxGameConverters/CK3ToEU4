@@ -416,7 +416,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		 {"k_rum", "k_israel", "e_india", "e_ilkhanate", "e_persia", "e_mali", "k_mali", "k_ghana", "k_songhay", "e_hre", "e_roman_empire", "e_byzantium"};
 
 	if (details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
-		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
+		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() && title->second->getClay()->mayBeNamedAfterDynasty() &&
 		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
 	{
 		const auto& houseName = details.holder->getHouse().second->getName();

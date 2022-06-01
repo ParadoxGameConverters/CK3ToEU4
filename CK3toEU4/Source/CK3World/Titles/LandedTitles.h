@@ -20,6 +20,7 @@ class LandedTitles: commonItems::parser
 
 	[[nodiscard]] auto isDefiniteForm() const { return definiteForm; }
 	[[nodiscard]] auto isLandless() const { return landless; }
+	[[nodiscard]] auto mayBeNamedAfterDynasty() const { return canBeNamedAfterDynasty; }
 	[[nodiscard]] const auto& getColor() const { return color; }
 	[[nodiscard]] const auto& getCapital() const { return capital; }
 	[[nodiscard]] const auto& getProvince() const { return province; }
@@ -39,6 +40,7 @@ class LandedTitles: commonItems::parser
 
 	bool definiteForm = false;
 	bool landless = false;
+	bool canBeNamedAfterDynasty = true;
 	std::optional<commonItems::Color> color;
 
 	// This is of questionable use as savegame already defines defacto capitals. Not always present, and if present then a COUNTY.

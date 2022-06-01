@@ -29,6 +29,7 @@ class ReligionMapper: commonItems::parser
 		 const ReligionGroupScraper& religionGroupScraper,
 		 const LocalizationMapper& localizationMapper);
 
+	[[nodiscard]] std::optional<std::string> getEU4ReligionForCK3ReligiousHead(const std::string& ck3ReligiousHead) const;
 	[[nodiscard]] std::optional<std::string> getEU4ReligionForCK3Religion(const std::string& ck3Religion) const;
 	[[nodiscard]] std::optional<std::string> getEU4SchoolForCK3Religion(const std::string& ck3Religion) const;
 	[[nodiscard]] const auto& getLocalizations() const { return localizations; }
@@ -42,7 +43,7 @@ class ReligionMapper: commonItems::parser
 		 const ReligionGroupScraper& religionGroupScraper,
 		 const LocalizationMapper& localizationMapper);
 
-	std::map<std::string, std::pair<std::string, std::optional<std::string>>> CK3toEU4ReligionMap; // ck3 faith -> <eu4religion, eu4school>
+	std::map<std::string, std::pair<std::string, std::optional<std::string>>, std::pair<std::string, std::optional<std::string>>> CK3toEU4ReligionMap; // ck3 faith -> <eu4religion, eu4school>
 	std::map<std::string, LocBlock> localizations;
 
 	std::vector<EU4::GeneratedReligion> generatedReligions;

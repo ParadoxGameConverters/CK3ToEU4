@@ -1,8 +1,9 @@
 # Usage:
 # link = { eu4 = eu4religion ck3 = ck3faith }
 # multiple ck3 entries are allowed (and encouraged), multiple eu4 are not.
-# A special entry "school" can be used when mapping to Muslim religions, specifying
-# the Muslim school of law for EU4
+#Special Entries:
+## religious_head: Will map to EU4 religion if it has specified religious head
+## school: Specifies the Muslim school of law for EU4
 
 # Akom
 link = { eu4 = shamanism ck3 = akom_pagan }
@@ -16,7 +17,7 @@ link = { eu4 = buddhism ck3 = theravada ck3 = ari }
 link = { eu4 = mahayana ck3 = mahayana }
 link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity
-link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic ck3 = mozarabic_church ck3 = adoptionist }
+link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic ck3 = mozarabic_church }
 link = { eu4 = orthodox ck3 = orthodox }
 link = { eu4 = coptic ck3 = coptic ck3 = armenian_apostolic }
 link = { eu4 = cathar ck3 = cathar }

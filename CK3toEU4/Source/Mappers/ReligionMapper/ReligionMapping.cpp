@@ -20,5 +20,8 @@ void mappers::ReligionMapping::registerKeys()
 	registerKeyword("school", [this](std::istream& theStream) {
 		eu4School = commonItems::getString(theStream);
 	});
+	registerKeyword("religious_head", [this](std::istream& theStream) {
+		religiousHead = commonItems::getString(theStream);
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

@@ -56,6 +56,9 @@ void CK3::LandedTitles::registerKeys()
 	registerKeyword("province", [this](const std::string& unused, std::istream& theStream) {
 		province = std::make_pair(commonItems::singleInt(theStream).getInt(), nullptr);
 	});
+	registerKeyword("can_be_named_after_dynasty", [this](const std::string& unused, std::istream& theStream) {
+		canBeNamedAfterDynasty = commonItems::singleString(theStream).getString() == "yes";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

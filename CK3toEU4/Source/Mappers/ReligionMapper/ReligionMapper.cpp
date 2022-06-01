@@ -28,9 +28,16 @@ void mappers::ReligionMapper::registerKeys()
 {
 	registerKeyword("link", [this](std::istream& theStream) {
 		for (const ReligionMapping theMapping(theStream); const auto& ck3Religion: theMapping.getCK3Religions())
-			CK3toEU4ReligionMap.emplace(ck3Religion, std::make_pair(theMapping.getEU4Religion(), theMapping.getEU4School()));
+			CK3toEU4ReligionMap.emplace(ck3Religion, std::make_pair(theMapping.getEU4Religion(), theMapping.getEU4School()), std::make_pair(theMapping.getEU4Religion(), theMapping.getReligiousHead()));
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3ReligiousHead(const std::string& ck3ReligiousHead) const
+{
+	if (CK3toEU4ReligionMap.find(ck3ReligiousHead)->second.second == "k_papal_state")
+		return "catholic";
+	return std::nullopt;
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion(const std::string& ck3Religion) const
