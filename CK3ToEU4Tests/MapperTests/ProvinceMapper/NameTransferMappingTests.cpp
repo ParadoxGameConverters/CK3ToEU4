@@ -48,7 +48,7 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
 	EXPECT_EQ(outProvince.getCustomName(), "County1"); // EU4 province should have the new manual displayName
 }
-/*TEST(Mappers_NameTransferTests, manyToOneTransfersName)
+TEST(Mappers_NameTransferTests, manyToOneTransfersName)
 {
 	// Requires a call to EU4::World::determineProvinceSource which needs a whole lot more info set up
 	std::stringstream provinceMapperStream;
@@ -68,10 +68,11 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	landedTitles.loadTitles(landedTitlesStream);
 
 	std::stringstream titlesStream;
-	titlesStream << "1={key=c_county1 name=County1 renamed=yes de_jure_vassals={2}}\n";
+	titlesStream << "1={key=c_county1 name=County1 renamed=yes de_jure_vassals={2} de_facto_liege=5 de_jure_liege=5}\n";
 	titlesStream << "2={key=b_barony1 name=Barony1 de_facto_liege=1 de_jure_liege=1}\n";
-	titlesStream << "3={key=c_county2 name=County2 renamed=yes de_jure_vassals={4}}\n";
+	titlesStream << "3={key=c_county2 name=County2 renamed=yes de_jure_vassals={4} de_facto_liege=5 de_jure_liege=5}\n";
 	titlesStream << "4={key=b_barony2 name=Barony2 de_facto_liege=3 de_jure_liege=3}\n";
+	titlesStream << "5={key=d_duchy1 name=Duchy1 de_jure_vassals={ 1 3 } capital=1}\n";
 	CK3::Titles titles(titlesStream);
 	titles.linkTitles();
 	titles.linkLandedTitles(landedTitles);
@@ -84,7 +85,14 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	CK3::CountyDetails countyDetails(countyDetailsStream);
 	landedTitles.linkCountyDetails(countyDetails);
 
-	// A call to determineProvinceSource
+	// DF lieges are squashed by not having a valid holder, bypass that
+	const auto& duchy = titles.getTitles().at("d_duchy1");
+	titles.getTitles().at("c_county1")->loadDFLiege(std::make_pair(duchy->getID(),duchy));
+	titles.getTitles().at("c_county2")->loadDFLiege(std::make_pair(duchy->getID(),duchy));
+
+	// Bypassing determineProvinceSource, which does not have a test
+	const auto& srcProvince = titles.getTitles().at("c_county2");
+	srcProvince->pickDisplayName(titles.getTitles());
 
 	// initialize an EU4 province
 	EU4::Province outProvince = EU4::Province(srcProvince);
@@ -94,8 +102,8 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 	outProvince.registerManualName(locDegrader);
 
 	EXPECT_EQ(outProvince.isRenamed(), true);				// EU4 province should have the renamed flag
-	EXPECT_EQ(outProvince.getCustomName(), "County2"); // EU4 province should have name from the province specified in determineProvinceSource
-}*/
+	EXPECT_EQ(outProvince.getCustomName(), "County1"); // EU4 province should have name of duchy capital
+}
 TEST(Mappers_NameTransferTests, oneToManyTransfersName)
 {
 	std::stringstream provinceMapperStream;
@@ -175,9 +183,3 @@ TEST(Mappers_NameTransferTests, nondegradeableNamesDefualtsToVanilla)
 
 	EXPECT_EQ(outProvince.isRenamed(), false); // EU4 province should NOT have the renamed flag
 }
-
-// Can't test without creating a skeleton EU4::World
-// N:1
-// duchy capital priority observed
-// duchy capital priority not observed when duchy owner split
-// duchy capital priority not observed when in separate mapping
