@@ -1,10 +1,10 @@
 # Version info
 
-version = "0.10J"
-name = "Jain"
+version = "0.10K"
+name = "Kushite"
 source = "CK3"
-minSource = "1.5"
-maxSource = "1.5"
+minSource = "1.6"
+maxSource = "1.6"
 target = "EU4"
 minTarget = "1.33"
 maxTarget = "1.33"

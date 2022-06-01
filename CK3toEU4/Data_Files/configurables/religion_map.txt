@@ -16,7 +16,7 @@ link = { eu4 = buddhism ck3 = theravada ck3 = ari }
 link = { eu4 = mahayana ck3 = mahayana }
 link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity
-link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic }
+link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic ck3 = mozarabic_church ck3 = adoptionist }
 link = { eu4 = orthodox ck3 = orthodox }
 link = { eu4 = coptic ck3 = coptic ck3 = armenian_apostolic }
 link = { eu4 = cathar ck3 = cathar }
@@ -54,7 +54,7 @@ link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = s
 link = { eu4 = sunni ck3 = ashari school = hanbali_school }
 link = { eu4 = sunni ck3 = muwalladi ck3 = masmudi school = maliki_school }
 link = { eu4 = sunni ck3 = maturidi school = hanafi_school }
-link = { eu4 = shiite ck3 = ismaili school = ismaili_school }
+link = { eu4 = shiite ck3 = ismaili school = ismaili_school ck3 = hafizi }
 link = { eu4 = shiite ck3 = zayidi school = zaidi_school }
 link = { eu4 = shiite ck3 = nizari ck3 = imami ck3 = ghulat ck3 = alevi }
 link = { eu4 = ibadi ck3 = ibadi }
@@ -77,7 +77,7 @@ link = { eu4 = magyar_pagan ck3 = magyar_pagan }
 # Mundhum
 link = { eu4 = animism ck3 = kiratism ck3 = yumaism }
 # Paganism
-link = { eu4 = pagan_religion ck3 = pagan }
+link = { eu4 = pagan_religion ck3 = pagan ck3 = basque_pagan }
 # Qiangic
 link = { eu4 = confucianism ck3 = rrmeaism }
 link = { eu4 = animism ck3 = melieism }
