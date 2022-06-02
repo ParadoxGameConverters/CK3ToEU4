@@ -19,6 +19,7 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getColor() const { return color; }
 	[[nodiscard]] const auto& getDoctrines() const { return doctrines; }
 	[[nodiscard]] const auto& getReligion() const { return religion; }
+	[[nodiscard]] const auto& getReligiousHead() const { return religiousHead; }
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] const auto& getCustomName() const { return customName; }
 	[[nodiscard]] const auto& getCustomAdj() const { return customAdjective; }

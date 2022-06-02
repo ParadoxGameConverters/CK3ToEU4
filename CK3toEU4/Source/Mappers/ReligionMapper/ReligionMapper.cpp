@@ -28,29 +28,37 @@ void mappers::ReligionMapper::registerKeys()
 {
 	registerKeyword("link", [this](std::istream& theStream) {
 		for (const ReligionMapping theMapping(theStream); const auto& ck3Religion: theMapping.getCK3Religions())
-			CK3toEU4ReligionMap.emplace(ck3Religion, std::make_pair(theMapping.getEU4Religion(), theMapping.getEU4School()), std::make_pair(theMapping.getEU4Religion(), theMapping.getReligiousHead()));
+		{
+			eu4ReligionStruct tempStruct;
+			tempStruct.eu4religion = theMapping.getEU4Religion();
+			tempStruct.eu4religion = theMapping.getEU4School();
+			tempStruct.eu4religion = theMapping.getReligiousHead();
+			CK3toEU4ReligionMap.emplace(ck3Religion, tempStruct);
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3ReligiousHead(const std::string& ck3ReligiousHead) const
 {
-	if (CK3toEU4ReligionMap.find(ck3ReligiousHead)->second.second == "k_papal_state")
+	if (CK3toEU4ReligionMap.find(ck3ReligiousHead)->second.religiousHead == "k_papal_state")
 		return "catholic";
 	return std::nullopt;
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion(const std::string& ck3Religion) const
 {
+	if (getEU4ReligionForCK3ReligiousHead(*CK3toEU4ReligionMap.find(ck3Religion)->second.religiousHead) != std::nullopt)
+		return getEU4ReligionForCK3ReligiousHead(*CK3toEU4ReligionMap.find(ck3Religion)->second.religiousHead);
 	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
-		return mapping->second.first;
+		return mapping->second.eu4religion;
 	return std::nullopt;
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4SchoolForCK3Religion(const std::string& ck3Religion) const
 {
 	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
-		return mapping->second.second;
+		return mapping->second.eu4school;
 	return std::nullopt;
 }
 
@@ -266,5 +274,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	generatedReligions.emplace_back(newReligion);
 
 	// and register it.
-	CK3toEU4ReligionMap.emplace(origName, std::make_pair(faithName, std::nullopt));
+	eu4ReligionStruct CK3Faith;
+	CK3Faith.eu4religion = faithName;
+	CK3Faith.religiousHead = faith.getReligiousHead();
+	CK3toEU4ReligionMap.emplace(origName, CK3Faith);
 }

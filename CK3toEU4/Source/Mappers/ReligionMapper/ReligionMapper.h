@@ -43,7 +43,13 @@ class ReligionMapper: commonItems::parser
 		 const ReligionGroupScraper& religionGroupScraper,
 		 const LocalizationMapper& localizationMapper);
 
-	std::map<std::string, std::pair<std::string, std::optional<std::string>>, std::pair<std::string, std::optional<std::string>>> CK3toEU4ReligionMap; // ck3 faith -> <eu4religion, eu4school>
+	typedef struct eu4ReligionStruct
+	{
+		std::optional<std::string> eu4religion;
+		std::optional<std::string> eu4school;
+		std::optional<std::string> religiousHead;
+	} eu4ReligionStruct;
+	std::map<std::string, eu4ReligionStruct> CK3toEU4ReligionMap; // ck3 faith -> <[0]eu4religion, [1]eu4school, [2]religiousHead>
 	std::map<std::string, LocBlock> localizations;
 
 	std::vector<EU4::GeneratedReligion> generatedReligions;
