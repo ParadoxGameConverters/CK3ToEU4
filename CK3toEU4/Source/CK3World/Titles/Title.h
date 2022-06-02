@@ -47,6 +47,8 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isHolderCapital() const { return holderCapital; }
 	[[nodiscard]] auto isHRECapital() const { return HRECapital; }
 	[[nodiscard]] auto isCustomTitle() const { return customTitle; }
+	[[nodiscard]] auto isRenamed() const { return renamed; }
+	[[nodiscard]] auto isManualNameClaimed() const { return nameClaimed; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
@@ -111,6 +113,9 @@ class Title: commonItems::parser
 	void dropTitleFromDFVassals(long long titleID);
 	void setThePope() { thePope = true; }
 	void setCustomTitle() { customTitle = true; }
+	void setManualNameClaim() { nameClaimed = true; }
+	void pickDisplayName(const std::map<std::string, std::shared_ptr<Title>>& possibleTitles); // Grants one county's name to another during N:1/N:M mappings
+	std::shared_ptr<Title> findDuchyCapital();																 // Only for c_, for now
 	void congregateDFCounties();
 	void congregateDJCounties();
 	void loadGeneratedLiege(const std::pair<std::string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
@@ -158,6 +163,8 @@ class Title: commonItems::parser
 	bool inHRE = false;
 	bool thePope = false;
 	bool customTitle = false;													// True if title was fromed via "Found a New Kingdom/Empire" decision. Vestigal
+	bool renamed = false;														// True if title was manually named
+	bool nameClaimed = false;													// Flag for 1:M (or N:M) province mappings to decide who gets the manual name
 	std::map<std::string, std::shared_ptr<Title>> ownedDFCounties; // used to map higher-lvl titles directly to clay. Includes self! Every c_+ title has this.
 	std::map<std::string, std::shared_ptr<Title>> ownedDJCounties; // ditto
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> generatedLiege; // Liege we set manually while splitting vassals.

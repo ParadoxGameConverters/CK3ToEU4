@@ -9,6 +9,11 @@
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Country/Country.h"
 #include "Log.h"
+#include "OSCompatibilityLayer.h"
+
+EU4::Province::Province(const std::shared_ptr<CK3::Title>& origProvince): srcProvince(origProvince)
+{
+}
 
 EU4::Province::Province(int id, const std::string& filePath): provID(id)
 {
@@ -26,7 +31,8 @@ void EU4::Province::updateWith(const std::string& filePath)
 
 void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 	 const mappers::CultureMapper& cultureMapper,
-	 const mappers::ReligionMapper& religionMapper)
+	 const mappers::ReligionMapper& religionMapper,
+	 const mappers::LocDegraderMapper& locDegrader)
 {
 	srcProvince = origProvince;
 
@@ -154,6 +160,22 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.rajputsNobles = false;	 // nono.
 	details.brahminsChurch = false;	 // Still no.
 	details.vaisyasBurghers = false;	 // No.
+}
+
+void EU4::Province::registerManualName(const mappers::LocDegraderMapper& locDegrader)
+{
+	if (srcProvince->isRenamed() && !srcProvince->isManualNameClaimed())
+	{
+		auto name = locDegrader.degradeString(srcProvince->getDisplayName());
+		auto win1252name = commonItems::convertUTF8ToWin1252(name);
+		if (!std::any_of(win1252name.begin(), win1252name.end(), [](char c) { // All not latin chars will be squished to 0, lets not transfer those
+				 return c == '0';
+			 }))
+		{
+			details.customName = name;
+			srcProvince->setManualNameClaim(); // For 1:M (or N:M) cases only the first province with a given srcProvince gets the name
+		}
+	}
 }
 
 void EU4::Province::sterilize()
