@@ -1,6 +1,9 @@
 #ifndef CK3_FAITHS_H
 #define CK3_FAITHS_H
 #include "Parser.h"
+#include "../Titles/LandedTitles.h"
+#include "../Titles/Title.h"
+#include "../Titles/Titles.h"
 
 namespace CK3
 {
@@ -14,7 +17,7 @@ class Faiths: commonItems::parser
 
 	[[nodiscard]] const auto& getFaiths() const { return faiths; }
 
-	void linkReligions(const Religions& religions);
+	void linkReligions(const Religions& religions, const Titles& titles);
 
   private:
 	void registerKeys();

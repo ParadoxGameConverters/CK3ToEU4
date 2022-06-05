@@ -70,7 +70,6 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Import CK3 dynamic faiths and register them in religionMapper
 	Log(LogLevel::Info) << "-> Importing Dynamic Faiths";
-	setCK3ReligiousHeads(sourceWorld);
 	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper, localizationMapper);
 	Log(LogLevel::Progress) << "54 %";
 
@@ -204,20 +203,6 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld);
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
-}
-
-void EU4::World::setCK3ReligiousHeads(const CK3::World& sourceWorld)
-{	
-	for (const auto& faith: sourceWorld.getFaiths().getFaiths())
-	{
-		for (const auto& title: sourceWorld.getTitles().getTitles())
-		{
-			std::string intermediary = std::to_string(title.second->getID());
-			LOG(LogLevel::Debug) << "INTER: " << intermediary;
-			if (intermediary == faith.second->getReligiousHead())
-				faith.second->setReligiousHead(title.first);
-		}
-	}
 }
 
 void EU4::World::religiousQuestion(bool doesIslamExist)
@@ -501,6 +486,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 rulerPersonalitiesMapper,
 			 sourceWorld.getConversionDate(),
 			 startDateOption);
+		newCountry->setGeneratedNation();
 		title.second->loadEU4Tag(std::pair(*tag, newCountry));
 		countries.insert(std::pair(*tag, newCountry));
 	}

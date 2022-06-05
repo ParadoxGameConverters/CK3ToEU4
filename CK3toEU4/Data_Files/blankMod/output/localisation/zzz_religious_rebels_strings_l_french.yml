@@ -3,6 +3,7 @@
 
 # Rebels' demand
  adamites_rebels_demand: "Convertir $COUNTRYNAME$"
+ adoptianist_rebels_demand: "Convertir $COUNTRYNAME$"
  alawite_rebels_demand: "Convertir $COUNTRYNAME$"
  anglo_pagan_rebels_demand: "Convertir $COUNTRYNAME$"
  arab_pagan_rebels_demand: "Convertir $COUNTRYNAME$"
@@ -51,6 +52,7 @@
  mandeaism_rebels_demand: "Convertir $COUNTRYNAME$"
  manichean_rebels_demand: "Convertir $COUNTRYNAME$"
  mardukism_rebels_demand: "Convertir $COUNTRYNAME$"
+ masmudi_rebels_demand: "Convertir $COUNTRYNAME$"
  mazdaki_rebels_demand: "Convertir $COUNTRYNAME$"
  meshefaresism_rebels_demand: "Convertir $COUNTRYNAME$"
  messalian_rebels_demand: "Convertir $COUNTRYNAME$"
@@ -87,6 +89,7 @@
  zurvanism_rebels_demand: "Convertir $COUNTRYNAME$"
 # Rebels' demand desc
  adamites_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
+ adoptianist_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  alawite_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  anglo_pagan_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  arab_pagan_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
@@ -135,6 +138,7 @@
  mandeaism_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  manichean_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  mardukism_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
+ masmudi_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  mazdaki_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  meshefaresism_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
  messalian_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
@@ -171,6 +175,7 @@
  zurvanism_rebels_demand_desc: "Ces rebelles combattent au nom de la foi $RELIGION$. Ils exigent que nous reconnaissions sa suprématie, ou à tout le moins que nous cessions toute tentative de conversion à leur encontre et les laissions pratiquer leur religion en paix."
 # Rebels' title
  adamites_rebels_title: "Dévots"
+ adoptianist_rebels_title: "Dévots"
  alawite_rebels_title: "Dévots"
  anglo_pagan_rebels_title: "Dévots"
  arab_pagan_rebels_title: "Dévots"
@@ -219,6 +224,7 @@
  mandeaism_rebels_title: "Dévots"
  manichean_rebels_title: "Dévots"
  mardukism_rebels_title: "Dévots"
+ masmudi_rebels_title: "Dévots"
  mazdaki_rebels_title: "Dévots"
  meshefaresism_rebels_title: "Dévots"
  messalian_rebels_title: "Dévots"
@@ -255,6 +261,7 @@
  zurvanism_rebels_title: "Dévots"
 # Rebels' name
  adamites_rebels_name: "Fanatiques $RELIGION$s"
+ adoptianist_rebels_name: "Fanatiques $RELIGION$s"
  alawite_rebels_name: "Fanatiques $RELIGION$s"
  anglo_pagan_rebels_name: "Fanatiques $RELIGION$s"
  arab_pagan_rebels_name: "Fanatiques $RELIGION$s"
@@ -303,6 +310,7 @@
  mandeaism_rebels_name: "Fanatiques $RELIGION$s"
  manichean_rebels_name: "Fanatiques $RELIGION$s"
  mardukism_rebels_name: "Fanatiques $RELIGION$s"
+ masmudi_rebels_name: "Fanatiques $RELIGION$s"
  mazdaki_rebels_name: "Fanatiques $RELIGION$s"
  meshefaresism_rebels_name: "Fanatiques $RELIGION$s"
  messalian_rebels_name: "Fanatiques $RELIGION$s"
@@ -339,6 +347,7 @@
  zurvanism_rebels_name: "Fanatiques $RELIGION$s"
 # Rebels' desc
  adamites_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
+ adoptianist_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  alawite_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  anglo_pagan_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  arab_pagan_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
@@ -387,6 +396,7 @@
  mandeaism_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  manichean_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  mardukism_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
+ masmudi_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  mazdaki_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  meshefaresism_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
  messalian_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
@@ -423,6 +433,7 @@
  zurvanism_rebels_desc: "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre leur foi et s'en prennent à tous les infidèles."
 # Rebels' army
  adamites_rebels_army: "Armée $RELIGION$"
+ adoptianist_rebels_army: "Armée $RELIGION$"
  alawite_rebels_army: "Armée $RELIGION$"
  anglo_pagan_rebels_army: "Armée $RELIGION$"
  arab_pagan_rebels_army: "Armée $RELIGION$"
@@ -471,6 +482,7 @@
  mandeaism_rebels_army: "Armée $RELIGION$"
  manichean_rebels_army: "Armée $RELIGION$"
  mardukism_rebels_army: "Armée $RELIGION$"
+ masmudi_rebels_army: "Armée $RELIGION$"
  mazdaki_rebels_army: "Armée $RELIGION$"
  meshefaresism_rebels_army: "Armée $RELIGION$"
  messalian_rebels_army: "Armée $RELIGION$"

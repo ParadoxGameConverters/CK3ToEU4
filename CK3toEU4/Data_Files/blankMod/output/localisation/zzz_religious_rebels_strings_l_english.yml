@@ -3,6 +3,7 @@
 
 # Rebels' demand
  adamites_rebels_demand: "Convert $COUNTRYNAME$"
+ adoptianist_rebels_demand: "Convert $COUNTRYNAME$"
  alawite_rebels_demand: "Convert $COUNTRYNAME$"
  anglo_pagan_rebels_demand: "Convert $COUNTRYNAME$"
  arab_pagan_rebels_demand: "Convert $COUNTRYNAME$"
@@ -51,6 +52,7 @@
  mandeaism_rebels_demand: "Convert $COUNTRYNAME$"
  manichean_rebels_demand: "Convert $COUNTRYNAME$"
  mardukism_rebels_demand: "Convert $COUNTRYNAME$"
+ masmudi_rebels_demand: "Convert $COUNTRYNAME$"
  mazdaki_rebels_demand: "Convert $COUNTRYNAME$"
  meshefaresism_rebels_demand: "Convert $COUNTRYNAME$"
  messalian_rebels_demand: "Convert $COUNTRYNAME$"
@@ -87,6 +89,7 @@
  zurvanism_rebels_demand: "Convert $COUNTRYNAME$"
 # Rebels' demand desc
  adamites_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
+ adoptianist_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  alawite_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  anglo_pagan_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  arab_pagan_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
@@ -135,6 +138,7 @@
  mandeaism_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  manichean_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  mardukism_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
+ masmudi_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  mazdaki_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  meshefaresism_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
  messalian_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
@@ -171,6 +175,7 @@
  zurvanism_rebels_demand_desc: "The religious rebels fight for the $RELIGION$ religion. They demand that we recognize its supremacy or at the very least cease our efforts to convert them and let them worship in peace."
 # Rebels' title
  adamites_rebels_title: "Religious"
+ adoptianist_rebels_title: "Religious"
  alawite_rebels_title: "Religious"
  anglo_pagan_rebels_title: "Religious"
  arab_pagan_rebels_title: "Religious"
@@ -219,6 +224,7 @@
  mandeaism_rebels_title: "Religious"
  manichean_rebels_title: "Religious"
  mardukism_rebels_title: "Religious"
+ masmudi_rebels_title: "Religious"
  mazdaki_rebels_title: "Religious"
  meshefaresism_rebels_title: "Religious"
  messalian_rebels_title: "Religious"
@@ -255,6 +261,7 @@
  zurvanism_rebels_title: "Religious"
 # Rebels' name
  adamites_rebels_name: "$RELIGION$ Zealots"
+ adoptianist_rebels_name: "$RELIGION$ Zealots"
  alawite_rebels_name: "$RELIGION$ Zealots"
  anglo_pagan_rebels_name: "$RELIGION$ Zealots"
  arab_pagan_rebels_name: "$RELIGION$ Zealots"
@@ -303,6 +310,7 @@
  mandeaism_rebels_name: "$RELIGION$ Zealots"
  manichean_rebels_name: "$RELIGION$ Zealots"
  mardukism_rebels_name: "$RELIGION$ Zealots"
+ masmudi_rebels_name: "$RELIGION$ Zealots"
  mazdaki_rebels_name: "$RELIGION$ Zealots"
  meshefaresism_rebels_name: "$RELIGION$ Zealots"
  messalian_rebels_name: "$RELIGION$ Zealots"
@@ -339,6 +347,7 @@
  zurvanism_rebels_name: "$RELIGION$ Zealots"
 # Rebels' desc
  adamites_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
+ adoptianist_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  alawite_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  anglo_pagan_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  arab_pagan_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
@@ -387,6 +396,7 @@
  mandeaism_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  manichean_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  mardukism_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
+ masmudi_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  mazdaki_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  meshefaresism_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
  messalian_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
@@ -423,6 +433,7 @@
  zurvanism_rebels_desc: "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers."
 # Rebels' army
  adamites_rebels_army: "$RELIGION$ Army"
+ adoptianist_rebels_army: "$RELIGION$ Army"
  alawite_rebels_army: "$RELIGION$ Army"
  anglo_pagan_rebels_army: "$RELIGION$ Army"
  arab_pagan_rebels_army: "$RELIGION$ Army"
@@ -471,6 +482,7 @@
  mandeaism_rebels_army: "$RELIGION$ Army"
  manichean_rebels_army: "$RELIGION$ Army"
  mardukism_rebels_army: "$RELIGION$ Army"
+ masmudi_rebels_army: "$RELIGION$ Army"
  mazdaki_rebels_army: "$RELIGION$ Army"
  meshefaresism_rebels_army: "$RELIGION$ Army"
  messalian_rebels_army: "$RELIGION$ Army"

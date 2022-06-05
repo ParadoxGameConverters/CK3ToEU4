@@ -1,6 +1,6 @@
 fertile_personality = { fornicator = 5 lustful = 3 strong = 1 eunuch = -99 celibate = -99 chaste = -99 }
 just_personality = { pensive = 1 just = 3 generous = 2 content = 1 arbitrary = -99 }
-righteous_personality = { honest = 3 humble = 2 just = 1 deceitful = -99 }
+righteous_personality = { honest = 3 humble = 2 just = 1 education_republican_knowledge_1 = 1 education_republican_knowledge_2 = 3 education_republican_knowledge_3 = 9 education_republican_knowledge_4 = 18 deceitful = -99 }
 tolerant_personality = { temperate = 3 trusting = 1 patient = 1 zealous = -99 }
 free_thinker_personality = { mystic_1 = 5 mystic_2 = 5 mystic_3 = 5 cynical = 3 intellect_good_3 = 3 intellect_good_1 = 2 shrewd = 2 }
 calm_personality = { pensive = 1 patient = 3 shy = 2 content = 1 impatient = -99 }

@@ -147,4 +147,23 @@ muslim = {
 		
 		fervor = yes			# Uses fervor mechanics
 	}
+	masmudi = {
+		color = { 0 0.6 0.2 } 
+		icon = 172
+		country = {
+			shock_damage = 0.1
+			tolerance_heathen = -1 #Did not believe in Jizya/Dhimmi
+			heir_chance = 1.0
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country_as_secondary = {
+			shock_damage = 0.1
+			heir_chance = 1.0
+		}
+		heretic = { DRUZE ZAIDI HURUFI }
+		
+		uses_piety = yes			# Uses fervor mechanics
+	}
 }

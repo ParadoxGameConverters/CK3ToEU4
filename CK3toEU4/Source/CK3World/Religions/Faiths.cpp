@@ -21,7 +21,7 @@ void CK3::Faiths::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-void CK3::Faiths::linkReligions(const Religions& religions)
+void CK3::Faiths::linkReligions(const Religions& religions, const Titles& titles)
 {
 	auto counter = 0;
 	const auto& religionData = religions.getReligions();
@@ -31,6 +31,14 @@ void CK3::Faiths::linkReligions(const Religions& religions)
 		if (religionDataItr != religionData.end())
 		{
 			faith.second->loadReligion(*religionDataItr);
+			for (const auto& title: titles.getTitles())
+			{
+				if (std::to_string(title.second->getID()) == faith.second->getReligiousHead())
+				{
+					faith.second->setReligiousHead(title.first);
+					break;
+				}
+			}
 			++counter;
 		}
 		else

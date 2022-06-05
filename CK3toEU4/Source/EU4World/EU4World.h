@@ -70,7 +70,6 @@ class World
 	void distributeClaims(const Configuration& theConfiguration);
 	void distributeDeadCores();
 	void distributeForts();
-	void setCK3ReligiousHeads(const CK3::World& sourceWorld);
 	void fixTengri();
 	void fixDuplicateNames();
 	void siberianQuestion(const Configuration& theConfiguration);
