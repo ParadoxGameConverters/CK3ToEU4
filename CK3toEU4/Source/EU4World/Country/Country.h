@@ -118,7 +118,7 @@ class Country
 	[[nodiscard]] date normalizeDate(const date& incomingDate,
 		 Configuration::STARTDATE startDateOption,
 		 const date& theConversionDate) const; // Uses bookmark date to shift dates if required.
-	
+
 	std::string tag;
 	std::string commonCountryFile;
 	std::string historyCountryFile;

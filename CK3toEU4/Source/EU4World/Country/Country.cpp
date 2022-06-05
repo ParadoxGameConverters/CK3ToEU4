@@ -705,7 +705,8 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		details.queen.female = spouse->isFemale();
 		if (spouse->getFaith())
 		{
-			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
+			const auto& religionMatch =
+				 religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
 			if (religionMatch)
 			{
 				details.queen.religion = *religionMatch;
@@ -806,7 +807,8 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			}
 			else
 			{
-				const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName(), heir.second->getFaith()->second->getReligiousHead());
+				const auto& religionMatch =
+					 religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName(), heir.second->getFaith()->second->getReligiousHead());
 				if (religionMatch)
 				{
 					details.heir.religion = *religionMatch;
@@ -1489,7 +1491,8 @@ void EU4::Country::initializeAdvisers(const mappers::LocalizationMapper& localiz
 		}
 		else
 		{
-			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(adviser.second->getFaith()->second->getName(), adviser.second->getFaith()->second->getReligiousHead());
+			const auto& religionMatch =
+				 religionMapper.getEU4ReligionForCK3Religion(adviser.second->getFaith()->second->getName(), adviser.second->getFaith()->second->getReligiousHead());
 			if (religionMatch)
 				newAdviser.religion = *religionMatch;
 			else

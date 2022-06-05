@@ -87,7 +87,8 @@ std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 		}
 	}
 	if (country.details.generatedNation)
-		output << "set_country_flag = ZZZ_generated_converter_nation" << "\n";
+		output << "set_country_flag = ZZZ_generated_converter_nation"
+				 << "\n";
 	if (country.details.monarch.isSet)
 	{
 		output << country.conversionDate << "= {\n";

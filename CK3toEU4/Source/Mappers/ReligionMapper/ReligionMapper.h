@@ -48,7 +48,7 @@ class ReligionMapper: commonItems::parser
 		std::optional<std::string> eu4school;
 		std::optional<std::string> religiousHead;
 	} eu4ReligionStruct;
-	std::map<std::string, eu4ReligionStruct> CK3toEU4ReligionMap; // ck3 faith, EU4 Religoin
+	std::map<std::string, eu4ReligionStruct> CK3toEU4ReligionMap;			  // ck3 faith, EU4 Religion
 	std::map<std::string, eu4ReligionStruct> ReligionHeadToEU4ReligionMap; // ck3 Religious Head Title, EU4 Religion
 	std::map<std::string, LocBlock> localizations;
 
