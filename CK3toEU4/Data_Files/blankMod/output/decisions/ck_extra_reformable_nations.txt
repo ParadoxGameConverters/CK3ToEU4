@@ -5,12 +5,8 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_sweden_flag }
-			NOT = {
-				exists = SWE
-				tag = DAN
-				tag = FIN
-				tag = SCA
-			}
+			NOT = { exists = SWE }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = swedish
 			was_never_end_game_tag_trigger = yes
 		}
@@ -62,6 +58,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -74,19 +73,9 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_finland_flag }
-			NOT = {
-				exists = FIN
-				tag = SWE
-				tag = SCA
-				tag = DAN
-			}
-			OR = {
-				primary_culture = finnish
-				primary_culture = komi
-				primary_culture = mordvin
-				primary_culture = khanty
-				primary_culture = meshchera
-			}
+			NOT = {exists = FIN }
+			has_country_flag = ZZZ_generated_converter_nation
+			primary_culture = finnish
 			
 			was_never_end_game_tag_trigger = yes
 		}
@@ -138,6 +127,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -150,12 +142,8 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_danmark_flag }
-			NOT = {
-				exists = DAN
-				tag = FIN
-				tag = SCA
-				tag = SWE
-			}
+			NOT = { exists = DAN }
+			has_country_flag = ZZZ_generated_converter_nation
 			OR = {
 				primary_culture = norse
 				primary_culture = danish
@@ -210,6 +198,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -221,12 +212,8 @@ country_decisions = {
 		major = yes
 		potential = {
 			NOT = { has_country_flag = formed_portugal_flag }
-			NOT = {
-				exists = POR
-				tag = ADU
-				tag = CAS
-				tag = SPA
-			}
+			NOT = { exists = POR }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = portugese
 			was_never_end_game_tag_trigger = yes
 		}
@@ -278,6 +265,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -289,12 +279,8 @@ country_decisions = {
 		major = yes
 		potential = {
 			NOT = { has_country_flag = formed_aragon_flag }
-			NOT = {
-				exists = ARA
-				tag = POR
-				tag = CAS
-				tag = SPA
-			}
+			NOT = { exists = ARA }
+			has_country_flag = ZZZ_generated_converter_nation
 			OR = {
 				primary_culture = aragonese
 				primary_culture = catalan
@@ -349,6 +335,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -360,11 +349,8 @@ country_decisions = {
 		major = yes
 		potential = {
 			NOT = { has_country_flag = formed_lihuania_flag }
-			NOT = {
-				exists = LIT
-				tag = POL
-				tag = PLC
-			}
+			NOT = { exists = LIT }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = lithuanian
 			was_never_end_game_tag_trigger = yes
 		}
@@ -408,6 +394,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -419,17 +408,9 @@ country_decisions = {
 		major = yes
 		potential = {
 			NOT = { has_country_flag = formed_venice_flag }
-			NOT = {
-				exists = VEN
-				tag = ITA
-				tag = HAB
-				tag = MLO
-			}
-			OR = {
-				primary_culture = venetian
-				primary_culture = lombard
-				primary_culture = umbrian
-			}
+			NOT = { exists = VEN }
+			has_country_flag = ZZZ_generated_converter_nation
+			primary_culture = venetian
 			was_never_end_game_tag_trigger = yes
 		}
 		provinces_to_highlight = {
@@ -479,6 +460,9 @@ country_decisions = {
 				change_government = republic
 				add_government_reform = venice_merchants_reform
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -491,11 +475,8 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_naples_flag }
-			NOT = {
-				exists = NAP
-				tag = SIC
-				tag = PAP
-			}
+			NOT = { exists = NAP }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = neapolitan
 			was_never_end_game_tag_trigger = yes
 		}
@@ -547,6 +528,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -558,11 +542,8 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_novgorod_flag }
-			NOT = {
-				exists = NOV
-				tag = RUS
-				tag = MOS
-			}
+			NOT = { exists = NOV }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = novgorodian
 			was_never_end_game_tag_trigger = yes
 		}
@@ -623,6 +604,9 @@ country_decisions = {
 				change_government = republic
 				add_government_reform = veche_republic
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 1
@@ -635,13 +619,8 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_hungary_flag }
-			NOT = {
-				exists = HUN
-				tag = HAB
-				tag = BOH
-				tag = SER
-				tag = POL
-			}
+			NOT = { exists = HUN }
+			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = hungarian
 			was_never_end_game_tag_trigger = yes
 		}
@@ -693,6 +672,9 @@ country_decisions = {
 				name = "centralization_modifier"
 				duration = 7300
 			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
+			}
 		}
 		ai_will_do = {
 			factor = 0
@@ -704,14 +686,12 @@ country_decisions = {
 		
 		potential = {
 			NOT = { has_country_flag = formed_burgundy_flag }
-			NOT = {
-				exists = BUR
-				tag = FRA
-				tag = NRM
-				tag = HAB
-				tag = PRO
+			NOT = { exists = BUR }
+			has_country_flag = ZZZ_generated_converter_nation
+			OR = {
+				primary_culture = burgundian
+				primary_culture = wallonian
 			}
-			culture_group = french
 			NOT = { government_rank = 2 }
 			was_never_end_game_tag_trigger = yes
 		}
@@ -767,6 +747,9 @@ country_decisions = {
 			add_country_modifier = {
 				name = "centralization_modifier"
 				duration = 7300
+			}
+			hidden_effect = {
+				clr_country_flag = ZZZ_generated_converter_nation
 			}
 		}
 		ai_will_do = {

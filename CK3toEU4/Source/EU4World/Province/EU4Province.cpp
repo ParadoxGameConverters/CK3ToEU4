@@ -55,7 +55,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// Religion first.
 	auto religionSet = false;
 	auto baseReligion = srcProvince->getClay()->getCounty()->second->getFaith().second->getName();
-	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+	auto baseReligiousHead = srcProvince->getClay()->getCounty()->second->getFaith().second->getReligiousHead();
+	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion, baseReligiousHead);
 	if (religionMatch)
 	{
 		details.religion = *religionMatch;
@@ -72,7 +73,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		if (srcProvince->getHolder()->second->getFaith())
 		{
 			baseReligion = srcProvince->getHolder()->second->getFaith()->second->getName();
-			religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+			baseReligiousHead = srcProvince->getHolder()->second->getFaith()->second->getReligiousHead();
+			religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion, baseReligiousHead);
 			if (religionMatch)
 			{
 				details.religion = *religionMatch;

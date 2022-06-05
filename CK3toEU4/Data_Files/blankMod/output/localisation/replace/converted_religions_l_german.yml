@@ -85,14 +85,18 @@
 
 # From CK3
  #Christian
- adamites: "Adamit"
- adamites_religion_desc: "Ursprünglich eine frühchristliche Sekte der spätrömischen Ära in Nordafrika, sind die Adamiten bekannt dafür, dass sie versuchen, den Himmel auf Erden wiederherzustellen, indem sie nackt herumlaufen und nicht für gut oder schlecht zur Rechenschaft gezogen werden."
- insular_celtic: "Inselchristentum"
- insular_celtic_religion_desc: "Das keltische Inselchristentum unterscheidet sich geringfügig vom Katholizismus, reicht jedoch nicht aus, um es neben einem ausgefallenen Namen durch die Spielmechanik darzustellen."
+ adamites:0 "Adamit"
+ adamites_religion_desc:0 "Ursprünglich eine frühchristliche Sekte der spätrömischen Ära in Nordafrika, sind die Adamiten bekannt dafür, dass sie versuchen, den Himmel auf Erden wiederherzustellen, indem sie nackt herumlaufen und nicht für gut oder schlecht zur Rechenschaft gezogen werden."
+ adoptianist:0 "Adoptianistisch"
+ adoptianist_religion_desc:0 "Der iberische Zweig des Adoptianismus führt seine Wurzeln auf das unabhängige Denken des Erzbischofs von Toledo und der umgebenden Bischofssitze, auf den nordafrikanischen Puritanismus vergangener Jahrhunderte sowie auf mehrere äußerst charismatische Häresiarchen des frühen neunten Jahrhunderts zurück.\n\nObgleich er viele Formen annimmt, die von außerordentlich unauffällig bis vollkommen platt reichen, haben sie doch alle gemein, dass die Beziehung zur ewigen Göttlichkeit des Sohns infrage gestellt wird."
+ insular_celtic:0 "Inselchristentum"
+ insular_celtic_religion_desc:0 "Das keltische Inselchristentum unterscheidet sich geringfügig vom Katholizismus, reicht jedoch nicht aus, um es neben einem ausgefallenen Namen durch die Spielmechanik darzustellen."
  bosnian_church:0 "Krstjani"
  bosnian_church_religion_desc:0 "Die Krstjani aus den bosnischen Hochlanden waren von der katholischen wie der orthodoxen Kirche lange vergessen und daher auch wesentlich offener als ihre bekannteren Glaubensgeschwister. Es fehlte ihnen allerdings an formeller Struktur. Wenn sich andere Gläubige überhaupt an sie erinnern, werden sie und die vielen archaischen Elemente, die sie bewahrt haben, nur mit Hohn bedacht."
 
  #Islamic
+ masmudi:0 "Masmudi"
+ masmudi_religion_desc:0 "Ein reformistischer Zweig des sunnitischen Islam, dessen Ursprünge bei den Berberstämmen Nordafrikas liegen. Die almohadische Bewegung wollte ihre Religion einen und predigte eine Doktrin des strengen, reinen Monotheismus."
  mutazila:0 "Qadariyah"
  mutazila_religion_desc:0 "Eine rationalistische theologische Schule, die die Meinung verficht, dass der Koran nicht ewig mit Gott koexistiert, da Gott seinem eigenen Wort vorangegangen sein muss."
  quranist:0 "Koranismus"

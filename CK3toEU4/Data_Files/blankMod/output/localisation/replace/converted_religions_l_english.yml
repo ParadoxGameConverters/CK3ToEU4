@@ -87,14 +87,18 @@
 
 ## From CK3
  #Christian
- adamites: "Adamite"
- adamites_religion_desc: "Originally an early Christian sect of the Late Roman Era in North Africa, the Adamites are notoriously famous for trying to reestablish Heaven on Earth by walking around naked and not being held accountable for good or bad."
- insular_celtic: "Insular"
- insular_celtic_religion_desc: "Insular Celtic Christianity is slightly different from Catholicism, but not enough for it to be represented by game mechanics besides a fancy name."
+ adamites:0 "Adamite"
+ adamites_religion_desc:0 "Originally an early Christian sect of the Late Roman Era in North Africa, the Adamites are notoriously famous for trying to reestablish Heaven on Earth by walking around naked and not being held accountable for good or bad."
+ adoptianist:0 "Adoptianist" #Spelled with 'a' to distinguish from another group known as adoptionist
+ adoptianist_religion_desc:0 "The Iberian strand of Adoptionism (Adoptianism) traces its roots to a combination of independent thinking in the Archbishopric of Toledo and its surrounding sees, the North African puritanism of centuries past, and several extremely charismatic early ninth century heresiarchs. Though it takes many forms, ranging from the supremely subtle to the utterly blunt, the uniting doctrinal point is a questioning attitude towards the eternal divinity of the Son."
+ insular_celtic:0 "Insular"
+ insular_celtic_religion_desc:0 "Insular Celtic Christianity is slightly different from Catholicism, but not enough for it to be represented by game mechanics besides a fancy name."
  bosnian_church:0 "Krstjani"
  bosnian_church_religion_desc:0 "Long forgotten by Catholic and Orthodox alike, the Krstjani of the Bosnian highlands are more permissive than their better-known compatriots, but lack formal structure. Retaining many archaic elements of Christianity, they are often treated scornfully by coreligionists, if remembered at all."
 
  #Islamic
+ masmudi:0 "Masmudi"
+ masmudi_religion_desc:0 "A reformist branch of Islam that originated with the Berber tribes in northern Africa, the Almohadi movement saw themselves as unitarians and preached a doctrine of purified monotheism."
  mutazila:0 "Qadariyah"
  mutazila_religion_desc:0 "A rationalist school of theology that asserts that the Quran is not eternally co-existing with God, as God must have preceded his own word."
  quranist:0 "Quranism"

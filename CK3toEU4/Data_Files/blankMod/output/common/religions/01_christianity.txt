@@ -792,4 +792,24 @@ christian = {
 			
 		}
 	}
+	adoptianist = {
+		color = { 255 51 51 }
+		icon = 171
+		country = {
+			heir_chance = 1
+			monthly_fervor_increase = 1
+		}
+		province = {
+			local_missionary_strength = -0.02
+		}
+		country_as_secondary = {
+			heir_chance = 1
+			tolerance_own = 1
+		}
+		
+		heretic = { ZAMIKAELITES STEPHANITES EUSTATHIANS MOLOKAN }
+		
+		fervor = yes		# Uses fervor
+		misguided_heretic = yes		# Other christians hate them less
+	}
 }

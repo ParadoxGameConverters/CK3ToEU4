@@ -1,13 +1,16 @@
 # Usage:
 # link = { eu4 = eu4religion ck3 = ck3faith }
 # multiple ck3 entries are allowed (and encouraged), multiple eu4 are not.
-# A special entry "school" can be used when mapping to Muslim religions, specifying
-# the Muslim school of law for EU4
+#Special Entries:
+## religious_head: Will map to EU4 religion if it has specified religious head
+## school: Specifies the Muslim school of law for EU4
 
 # Akom
 link = { eu4 = shamanism ck3 = akom_pagan }
 # Baltic
 link = { eu4 = baltic_pagan ck3 = baltic_pagan  }
+# Basque
+link = { eu4 = iberian_pagan ck3 = basque_pagan  } #Temp
 # Bön
 link = { eu4 = bon_reformed ck3 = bon  }
 link = { eu4 = bon ck3 = old_bon }
@@ -16,19 +19,21 @@ link = { eu4 = buddhism ck3 = theravada ck3 = ari }
 link = { eu4 = mahayana ck3 = mahayana }
 link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity
-link = { eu4 = catholic ck3 = catholic ck3 = conversos ck3 = insular_celtic ck3 = mozarabic_church ck3 = adoptionist }
-link = { eu4 = orthodox ck3 = orthodox }
-link = { eu4 = coptic ck3 = coptic ck3 = armenian_apostolic }
+link = { eu4 = catholic religious_head = k_papal_state }
+link = { eu4 = orthodox religious_head = k_orthodox }
+link = { eu4 = coptic religious_head = d_coptic_papacy }
+link = { eu4 = coptic religious_head = d_apostolic_church }
+link = { eu4 = iconoclast religious_head = d_iconoclast }
+link = { eu4 = nestorian religious_head = d_patriarchate_in_the_east }
 link = { eu4 = cathar ck3 = cathar }
 link = { eu4 = waldensian ck3 = waldensian }
 link = { eu4 = lollard ck3 = lollard }
-link = { eu4 = iconoclast ck3 = iconoclast }
 link = { eu4 = bogomilist ck3 = bogomilist }
 link = { eu4 = paulician ck3 = paulician }
-link = { eu4 = nestorian ck3 = nestorian }
 link = { eu4 = messalian ck3 = messalian }
 link = { eu4 = adamites ck3 = adamites }
 link = { eu4 = bosnian_church ck3 = bosnian_church }
+link = { eu4 = adoptianist ck3 = adoptionist }
 # Tani
 link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism
@@ -52,12 +57,13 @@ link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = eleusinian_mysteries }
 link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
 # Islam
 link = { eu4 = sunni ck3 = ashari school = hanbali_school }
-link = { eu4 = sunni ck3 = muwalladi ck3 = masmudi school = maliki_school }
+link = { eu4 = sunni ck3 = muwalladi school = maliki_school }
 link = { eu4 = sunni ck3 = maturidi school = hanafi_school }
-link = { eu4 = shiite ck3 = ismaili school = ismaili_school ck3 = hafizi }
+link = { eu4 = shiite ck3 = ismaili ck3 = hafizi school = ismaili_school } #Seveners
 link = { eu4 = shiite ck3 = zayidi school = zaidi_school }
 link = { eu4 = shiite ck3 = nizari ck3 = imami ck3 = ghulat ck3 = alevi }
 link = { eu4 = ibadi ck3 = ibadi }
+link = { eu4 = masmudi ck3 = masmudi school = shafii_school }
 link = { eu4 = mutazila ck3 = mutazila }
 link = { eu4 = quranist ck3 = quranist }
 link = { eu4 = qarmatian ck3 = qarmatian }
@@ -77,7 +83,7 @@ link = { eu4 = magyar_pagan ck3 = magyar_pagan }
 # Mundhum
 link = { eu4 = animism ck3 = kiratism ck3 = yumaism }
 # Paganism
-link = { eu4 = pagan_religion ck3 = pagan ck3 = basque_pagan }
+link = { eu4 = pagan_religion ck3 = pagan }
 # Qiangic
 link = { eu4 = confucianism ck3 = rrmeaism }
 link = { eu4 = animism ck3 = melieism }

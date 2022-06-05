@@ -84,14 +84,18 @@
 
 # From CK3
  #Christian
- adamites: "Adanita"
- adamites_religion_desc: "Originalmente una secta cristiana primitiva de la era romana tardía en el norte de África, los adanitas son notoriamente famosos por tratar de restablecer el Paraíso en Tierra caminando desnudos y no responsabilizándose por el bien o el mal."
- insular_celtic: "Insular"
- insular_celtic_religion_desc: "El cristianismo celta insular es ligeramente diferente del catolicismo, pero no lo suficiente como para que esté representado por las mecánicas del juego además de un nombre elegante."
+ adamites:0 "Adanita"
+ adamites_religion_desc:0 "Originalmente una secta cristiana primitiva de la era romana tardía en el norte de África, los adanitas son notoriamente famosos por tratar de restablecer el Paraíso en Tierra caminando desnudos y no responsabilizándose por el bien o el mal."
+ adoptianist:0 "Adopcionista"
+ adoptianist_religion_desc:0 "La vertiente ibérica del adopcionismo hunde sus raíces en una combinación de pensamiento independiente en el arzobispado de Toledo y sus sedes circundantes, el puritanismo norteafricano de siglos pasados y varios heresiarcas extremadamente carismáticos de principios del siglo IX.\n\nAunque adopta muchas formas, desde las más sutiles a las más contundentes, el punto doctrinal que las une es el cuestionamiento de la divinidad eterna del Hijo."
+ insular_celtic:0 "Insular"
+ insular_celtic_religion_desc:0 "El cristianismo celta insular es ligeramente diferente del catolicismo, pero no lo suficiente como para que esté representado por las mecánicas del juego además de un nombre elegante."
  bosnian_church:0 "Krstjani"
  bosnian_church_religion_desc:0 "Olvidados durante mucho tiempo tanto por católicos como por ortodoxos, los krstjani de las tierras altas de Bosnia son más permisivos que sus compatriotas más conocidos, pero carecen de estructura formal. Al conservar muchos elementos arcaicos del cristianismo, son tratados a menudo con desdén por sus correligionarios, si es que se les recuerda."
 
  #Islamic
+ masmudi:0 "Masmudi"
+ masmudi_religion_desc:0 "Una rama reformista del islam suní surgido entre las tribus bereberes del Norte de África. El movimiento almohade se veía a sí mismo como unitario y predicaba una doctrina de monoteísmo purificado."
  mutazila:0 "Qadariyah"
  mutazila_religion_desc:0 "Una escuela racionalista de teología que afirma que el Corán no coexiste eternamente con Dios, ya que Él habrá precedido a Su palabra."
  quranist:0 "Coranismo"

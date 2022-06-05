@@ -85,14 +85,18 @@
 
 # From CK3
  #Christian
- adamites: "Adamite"
- adamites_religion_desc: "À l'origine une secte chrétienne primitive de la fin de l'ère romaine en Afrique du Nord, les Adamites sont notoirement célèbres pour avoir tenté de rétablir le paradis sur Terre en se promenant nus et en n'étant pas tenus responsables du bien ou du mal."
- insular_celtic: "Insulaire"
- insular_celtic_religion_desc: "Le christianisme celtique insulaire est légèrement différent du catholicisme, mais pas assez pour qu'il soit représenté par des mécanismes de jeu en plus d'un nom sophistiqué."
+ adamites:0 "Adamite"
+ adamites_religion_desc:0 "À l'origine une secte chrétienne primitive de la fin de l'ère romaine en Afrique du Nord, les Adamites sont notoirement célèbres pour avoir tenté de rétablir le paradis sur Terre en se promenant nus et en n'étant pas tenus responsables du bien ou du mal."
+ adoptianist:0 "Adoptianiste"
+ adoptianist_religion_desc:0 "La branche ibère de l'adoptianisme tire ses origines d'une combinaison de la pensée indépendante de l'archevêché de Tolède et des évêchés environnants, du puritanisme nord-africain des siècles passés et de plusieurs hérésiarques extrêmement charismatiques du début du IXe siècle.\n\nBien qu'elle prenne de nombreuses formes, allant de la plus subtile à la plus brutale, le point doctrinal commun est une attitude de remise en question de la divinité éternelle du Fils."
+ insular_celtic:0 "Insulaire"
+ insular_celtic_religion_desc:0 "Le christianisme celtique insulaire est légèrement différent du catholicisme, mais pas assez pour qu'il soit représenté par des mécanismes de jeu en plus d'un nom sophistiqué."
  bosnian_church:0 "Église bosnienne"
  bosnian_church_religion_desc:0 "Longtemps oubliés par les catholiques et les orthodoxes, les bosniens des hauts plateaux bosniaques sont plus permissifs que leurs compatriotes plus connus, mais manquent de structure officielle. Conservant de nombreux éléments archaïques du christianisme, ils sont souvent traités avec mépris par leurs coreligionnaires, si tant est qu'on se souvienne de leur existence."
 
  #Islamic
+ masmudi:0 "Masmudi"
+ masmudi_religion_desc:0 "Branche réformiste de l’islam sunnite issue des tribus berbères d’Afrique du Nord, le mouvement almohade se considérait comme unitaire et prêchait une doctrine de monothéisme purifié."
  mutazila:0 "Qadariyah"
  mutazila_religion_desc:0 "Une école de théologie rationaliste qui affirme que le Coran n'a pas toujours coexisté avec Dieu, puisque Dieu doit avoir précédé sa propre parole."
  quranist:0 "Coranisme"

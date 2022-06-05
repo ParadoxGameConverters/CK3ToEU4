@@ -58,6 +58,7 @@ class CountryDetails: commonItems::parser
 	// This is a storage container for EU4::Country.
 	// Some of these values are loaded from files, others are adjusted on the fly.
 	bool inHRE = false;
+	bool generatedNation = false; // Is this a converted nation with a generated tag such as Z01?
 	bool holyRomanEmperor = false;
 	bool celestialEmperor = false;
 	bool fixedCapital = false;
