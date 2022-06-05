@@ -111,14 +111,18 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 	// Reforms will be set later to ensure that all other aspects of a country have been correctly set first.
 
 	std::string baseReligion;
+	std::string baseReligiousHead;
 	if (details.holder->getFaith())
+	{
 		baseReligion = details.holder->getFaith()->second->getName();
+		baseReligiousHead = details.holder->getFaith()->second->getReligiousHead();
+	}
 	if (baseReligion.empty())
 		Log(LogLevel::Warning) << tag << " base faith has no name!";
 
 	// religious_school we imported needs to be cleared before we try setting it along with religion.
 	details.religiousSchool.clear();
-	if (const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion); religionMatch)
+	if (const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion, baseReligiousHead); religionMatch)
 	{
 		details.religion = *religionMatch;
 		if (const auto& schoolMatch = religionMapper.getEU4SchoolForCK3Religion(baseReligion); schoolMatch)
@@ -701,7 +705,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		details.queen.female = spouse->isFemale();
 		if (spouse->getFaith())
 		{
-			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName());
+			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
 			if (religionMatch)
 			{
 				details.queen.religion = *religionMatch;
@@ -802,7 +806,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			}
 			else
 			{
-				const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName());
+				const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName(), heir.second->getFaith()->second->getReligiousHead());
 				if (religionMatch)
 				{
 					details.heir.religion = *religionMatch;
@@ -1485,7 +1489,7 @@ void EU4::Country::initializeAdvisers(const mappers::LocalizationMapper& localiz
 		}
 		else
 		{
-			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(adviser.second->getFaith()->second->getName());
+			const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(adviser.second->getFaith()->second->getName(), adviser.second->getFaith()->second->getReligiousHead());
 			if (religionMatch)
 				newAdviser.religion = *religionMatch;
 			else

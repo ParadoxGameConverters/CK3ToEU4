@@ -49,7 +49,7 @@ link = { eu4 = noculture ck3 = aaa_noculture tech = western gfx = inuitgfx } # I
 # North Germanic
 
 ## Splitting Norse accordingly
-link = { eu4 = icelandic ck3 = norse tech = western gfx = westerngfx region = subarctic_islands_area }
+link = { eu4 = icelandic ck3 = norse tech = western gfx = westerngfx region = subarctic_islands_area province = 369 }
 link = { eu4 = icelandic ck3 = norse tech = western gfx = westerngfx owner = ICE }
 link = { eu4 = elsinorian ck3 = norse tech = western gfx = westerngfx owner = DNL } # Owned by Daneland
 link = { eu4 = swedish ck3 = norse tech = western gfx = westerngfx region = svealand_area region = norrland_area region = gotaland_area region = skaneland_area region = bothnia_area province = 4151 region = vastra_gotaland_area region = ostra_svealand_area }

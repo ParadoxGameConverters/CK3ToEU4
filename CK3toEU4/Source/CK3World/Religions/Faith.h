@@ -28,6 +28,7 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getIconPath() const { return iconPath; }
 	[[nodiscard]] const auto& getReformedFlag() const { return reformedFlag; }
 
+	void setReligiousHead(const auto& newHead) { religiousHead = newHead; }
 	void loadReligion(const std::pair<long long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
 
   private:
