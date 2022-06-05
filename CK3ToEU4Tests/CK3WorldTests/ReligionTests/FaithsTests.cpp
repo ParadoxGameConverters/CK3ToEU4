@@ -1,3 +1,4 @@
+#include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
 #include "../../CK3toEU4/Source/CK3World/Religions/Religion.h"
@@ -38,7 +39,8 @@ TEST(CK3World_FaithsTests, religionCanBeLinked)
 	input2 << "1 = { tag=\"bon_religion\"}\n";
 	input2 << "2 = { tag=\"buddhism_religion\"}\n";
 	const CK3::Religions religions(input2);
-	faiths.linkReligions(religions);
+	const CK3::Titles titles;
+	faiths.linkReligions(religions, titles);
 
 	const auto& f13 = faiths.getFaiths().find(13);
 	const auto& f15 = faiths.getFaiths().find(15);
@@ -57,6 +59,7 @@ TEST(CK3World_FaithsTests, linkingMissingReligionThrowsException)
 	std::stringstream input2;
 	input2 << "1 = { tag=\"bon_religion\"}\n";
 	const CK3::Religions religions(input2);
+	const CK3::Titles titles;
 
-	ASSERT_THROW(faiths.linkReligions(religions), std::runtime_error);
+	ASSERT_THROW(faiths.linkReligions(religions, titles), std::runtime_error);
 }
