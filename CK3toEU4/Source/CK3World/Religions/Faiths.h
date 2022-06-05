@@ -1,9 +1,9 @@
 #ifndef CK3_FAITHS_H
 #define CK3_FAITHS_H
-#include "Parser.h"
 #include "../Titles/LandedTitles.h"
 #include "../Titles/Title.h"
 #include "../Titles/Titles.h"
+#include "Parser.h"
 
 namespace CK3
 {

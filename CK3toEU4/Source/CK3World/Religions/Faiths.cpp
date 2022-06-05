@@ -25,20 +25,18 @@ void CK3::Faiths::linkReligions(const Religions& religions, const Titles& titles
 {
 	auto counter = 0;
 	const auto& religionData = religions.getReligions();
+	std::map<std::string, std::string> religiousHeadList; // ID, Title
+	for (const auto& title: titles.getTitles())
+		if (title.second)
+			religiousHeadList.emplace(std::to_string(title.second->getID()), title.first);
 	for (const auto& faith: faiths)
 	{
 		const auto& religionDataItr = religionData.find(faith.second->getReligion().first);
 		if (religionDataItr != religionData.end())
 		{
 			faith.second->loadReligion(*religionDataItr);
-			for (const auto& title: titles.getTitles())
-			{
-				if (std::to_string(title.second->getID()) == faith.second->getReligiousHead())
-				{
-					faith.second->setReligiousHead(title.first);
-					break;
-				}
-			}
+			if (religiousHeadList.contains(faith.second->getReligiousHead()))
+				faith.second->setReligiousHead(religiousHeadList.at(faith.second->getReligiousHead()));
 			++counter;
 		}
 		else

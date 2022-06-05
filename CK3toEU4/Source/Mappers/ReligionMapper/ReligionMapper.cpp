@@ -27,14 +27,15 @@ mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
 void mappers::ReligionMapper::registerKeys()
 {
 	registerKeyword("link", [this](std::istream& theStream) {
+		LOG(LogLevel::Debug) << "KEY LINK, START!";
 		const ReligionMapping theMapping(theStream);
-		std::optional<std::string> tempHead = theMapping.getReligiousHead();
+		auto& tempHead = theMapping.getReligiousHead();
 		if (tempHead != std::nullopt)
 		{
 			eu4ReligionStruct tempStruct;
 			tempStruct.eu4religion = theMapping.getEU4Religion();
 			tempStruct.eu4school = theMapping.getEU4School();
-			tempStruct.religiousHead = tempHead;
+			tempStruct.religiousHead = *tempHead;
 			ReligionHeadToEU4ReligionMap.emplace(*tempHead, tempStruct);
 		}
 		for (const auto& ck3Religion: theMapping.getCK3Religions())
@@ -76,6 +77,7 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 		if (!getEU4ReligionForCK3Religion(faith.second->getName(), faith.second->getReligiousHead()))
 		{
 			// This is a new faith.
+			LOG(LogLevel::Debug) << "Will Be Importing CK3 Faiths Soon TM";
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
 		else if (getEU4ReligionForCK3Religion(faith.second->getName(), faith.second->getReligiousHead()) == "west_african_pagan" &&
@@ -105,6 +107,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	 const ReligionGroupScraper& religionGroupScraper,
 	 const LocalizationMapper& localizationMapper)
 {
+	LOG(LogLevel::Debug) << "Importing CK3 Faiths";
 	// Hello, imported CK3 dynamic faith.
 	const auto& origName = faith.getName();
 	const auto faithName = "converted_" + origName; // makes them easier to notice
