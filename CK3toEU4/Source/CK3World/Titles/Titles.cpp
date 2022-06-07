@@ -1,6 +1,7 @@
 #include "Titles.h"
 #include "../Characters/Character.h"
 #include "../Characters/Characters.h"
+#include "../CoatsOfArms/CoatOfArms.h"
 #include "../CoatsOfArms/CoatsOfArms.h"
 #include "CommonRegexes.h"
 #include "DynamicTemplate.h"
@@ -116,7 +117,10 @@ void CK3::Titles::linkCoats(const CoatsOfArms& coats)
 		}
 		else
 		{
-			throw std::runtime_error("Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) + " which has no definition!");
+			Log(LogLevel::Warning) << "Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) +
+													" which has no definition. Using Default.";
+			auto defaultCoat = std::make_pair(title.second->getCoA()->first, std::make_shared<CoatOfArms>());
+			title.second->loadCoat(defaultCoat);
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
