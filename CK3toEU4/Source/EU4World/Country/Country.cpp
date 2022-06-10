@@ -1290,12 +1290,6 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms.clear();
 			details.reforms = {"matrilineal_system"};
 		}
-		// Stateless Society
-		else if (provinces.size() == 1 && paganReligions.contains(details.religion) && !isReformed)
-		{
-			details.reforms.clear();
-			details.reforms = {"stateless_society"};
-		}
 		else
 		{
 			bool wasKing = false;
@@ -1329,11 +1323,21 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 					wasKing = true;
 					break;
 				}
-			// Tribal Confederacy, also the fallback
+			
 			if (!wasKing)
 			{
-				details.reforms.clear();
-				details.reforms = {"tribal_confederacy"};
+				// Stateless Society
+				if (provinces.size() == 1 && paganReligions.contains(details.religion) && !isReformed)
+				{
+					details.reforms.clear();
+					details.reforms = {"stateless_society"};
+				}
+				// Tribal Confederacy, also the fallback
+				else
+				{
+					details.reforms.clear();
+					details.reforms = {"tribal_confederacy"};
+				}
 			}
 		}
 	}
