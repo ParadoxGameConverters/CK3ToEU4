@@ -1033,7 +1033,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// Orthodox
 	std::set<std::string> orthodoxReligions = {"orthodox", "monothelite", "iconoclast", "paulician", "bogomilist"};
 	for (const auto& religion: religionMapper.getGeneratedReligions())
-		if (religion.religionGroup == "christian" && religion.country.contains("has_patriarchs"))
+		if (religion.religionGroup == "christian" && religion.country.find("has_patriarchs") != std::string::npos)
 			orthodoxReligions.insert(religion.name);
 	// Pagan
 	std::set<std::string> paganReligions = {"pagan_religion",
