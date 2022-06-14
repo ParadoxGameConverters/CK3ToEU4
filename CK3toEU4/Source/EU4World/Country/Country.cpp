@@ -1026,8 +1026,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// Protestants
 	std::set<std::string> protestantReligions = {"protestant", "reformed", "hussite", "cathar", "waldensian", "lollard", "adamites"};
 	for (const auto& religion: religionMapper.getGeneratedReligions())
-		if (religion.religionGroup == "christian" && (religion.country.contains("uses_church_power") || religion.country.contains("fervor") ||
-																		 religion.country.contains("uses_anglican_power") || religion.country.contains("uses_hussite_power")))
+		if (religion.religionGroup == "christian" &&
+			 (religion.country.find("uses_church_power") != std::string::npos || religion.country.find("fervor") != std::string::npos ||
+				  religion.country.find("uses_anglican_power") != std::string::npos || religion.country.find("uses_hussite_power") != std::string::npos))
 			protestantReligions.insert(religion.name);
 	// Orthodox
 	std::set<std::string> orthodoxReligions = {"orthodox", "monothelite", "iconoclast", "paulician", "bogomilist"};
@@ -1323,7 +1324,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 					wasKing = true;
 					break;
 				}
-			
+
 			if (!wasKing)
 			{
 				// Stateless Society
