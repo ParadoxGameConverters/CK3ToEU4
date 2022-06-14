@@ -1,0 +1,17 @@
+government = native
+government_rank = 1
+primary_culture = huarpe
+religion = animism
+technology_group = south_american
+capital = 2846	# Quisquisacate
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

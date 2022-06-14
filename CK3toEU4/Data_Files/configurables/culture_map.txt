@@ -170,7 +170,7 @@ link = { eu4 = wessexian ck3 = anglo_saxon tech = western gfx = westerngfx regio
 link = { eu4 = essexian ck3 = anglo_saxon tech = western gfx = westerngfx region = home_counties_area }
 link = { eu4 = east_anglian ck3 = anglo_saxon tech = western gfx = westerngfx region = east_anglia_area }
 link = { eu4 = ecgfrithian ck3 = anglo_saxon tech = western gfx = westerngfx region = munster_area region = connacht_area region = leinster_area region = ulster_area }
-link = { eu4 = anglo_saxon ck3 = anglo_saxon tech = western gfx = westerngfx } # Fallback
+link = { eu4 = anglosaxon ck3 = anglo_saxon tech = western gfx = westerngfx } # Fallback
 
 ##Splitting the Dutch
 link = { eu4 = frisian ck3 = dutch ck3 = frisian tech = western gfx = westerngfx region = weser_area region = frisia_area }
@@ -300,7 +300,8 @@ link = { eu4 = gaulish_greek ck3 = velgese ck3 = metalpesian ck3 = prinalpesian 
 link = { eu4 = spanish_greek ck3 = varquelonic ck3 = vaskician ck3 = vaitic ck3 = lousitanian tech = eastern gfx = westerngfx }
 link = { eu4 = german_greek ck3 = prinelbite ck3 = metalbite tech = eastern gfx = easterngfx }
 link = { eu4 = mena_greek ck3 = susite ck3 = azotite ck3 = carchidonian tech = eastern gfx = muslimgfx }
-link = { eu4 = alexandrine ck3 = bactrian ck3 = indogreek tech = eastern gfx = easterngfx }
+link = { eu4 = bactrian ck3 = bactrian tech = eastern gfx = easterngfx }
+link = { eu4 = alexandrine ck3 = indogreek tech = eastern gfx = easterngfx }
 
 # Celtic
 link = { eu4 = pictish ck3 = pictish tech = western gfx = westerngfx }
@@ -487,7 +488,8 @@ link = { eu4 = luri ck3 = luri tech = muslim gfx = muslimgfx }
 link = { eu4 = luri ck3 = persian tech = muslim gfx = muslimgfx region = luristan_area region = khuzestan_area }
 link = { eu4 = tajik ck3 = persian tech = muslim gfx = muslimgfx region = central_asia_region region = merv_area }
 link = { eu4 = tajik ck3 = khwarezmian ck3 = tajik tech = muslim gfx = muslimgfx }
-link = { eu4 = persian ck3 = persian ck3 = parthian tech = muslim gfx = muslimgfx }
+link = { eu4 = persian ck3 = persian tech = muslim gfx = muslimgfx }
+link = { eu4 = parthian ck3 = parthian tech = muslim gfx = muslimgfx }
 link = { eu4 = gorani ck3 = gorani tech = muslim gfx = muslimgfx }
 link = { eu4 = kurdish ck3 = kurdish tech = muslim gfx = muslimgfx }
 link = { eu4 = baluchi ck3 = baloch tech = muslim gfx = muslimgfx }
@@ -722,7 +724,7 @@ link = { eu4 = ostrogothic ck3=thracian_gothic ck3 = ostrogothic tech = western 
 link = { eu4 = varangian ck3 = varangian ck3 = mikligardrish tech = eastern gfx = easterngfx }
 link = { eu4 = mena_german ck3 = aryan ck3 = gegenjiddisch ck3 = wostiyasite tech = eastern gfx = muslimgfx }
 link = { eu4 = vandal ck3 = vandal ck3 = vandale ck3=vandilian tech = western gfx = westerngfx }
-link = { eu4 = anglo_saxon ck3=angle tech=western gfx=westerngfx } # ImperatorToCK3
+link = { eu4 = anglosaxon ck3=angle tech=western gfx=westerngfx } # ImperatorToCK3
 ## Near East
 link = { eu4 = aramaic ck3 = aramaic tech = eastern gfx = muslimgfx }
 link = { eu4 = babylonian ck3 = babylonian tech = eastern gfx = muslimgfx }

@@ -1,0 +1,20 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = sawabantu
+religion = shamanism
+technology_group = central_african
+capital = 1163 #Calabar
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		mil = 3
+		dip = 3
+		regent = yes
+	}
+}

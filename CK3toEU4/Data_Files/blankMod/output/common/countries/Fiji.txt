@@ -1,0 +1,28 @@
+#Fiji
+
+graphical_culture = asiangfx
+
+color = { 0 90 90 }
+revolutionary_colors = { 0 16 14 }
+
+historical_idea_groups = {
+	quality_ideas
+	trade_ideas
+	naval_ideas
+	exploration_ideas
+	economic_ideas
+	maritime_ideas
+	innovativeness_ideas
+	offensive_ideas
+}
+
+historical_units = {
+	east_asian_spearmen
+	eastern_bow
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}

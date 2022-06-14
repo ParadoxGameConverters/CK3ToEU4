@@ -352,12 +352,15 @@ cat_group = {
 }
 bear_group = {
 	bear = {
-		primary = TRL
+		primary = JMN
 		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams }
 		female_names = { Winona Wilhelmina Edwina Maggie Samantha Maddie Ellie Audrey Precious
 		Abby Bitsy Coco Millie Hannah Princess Polly Taffy Candy Penelope Bella Wilma Betty Betsy }
 		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
 		}
+	}
+	jan_mayenese = {
+		primary = JMN #Already in the game
 	}
 }
 hedgehog_group = {
@@ -521,7 +524,7 @@ old_mashriqi = {
 		}
 	}
 	phoenician = { #EU Rome
-		primary = LEB
+		primary = PHN
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
 		Milkiramid Philosirid
@@ -536,7 +539,7 @@ old_mashriqi = {
 		}
 	}
 	aramaic = { #EU Rome
-		primary = ISR
+		primary = OSR
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
 			Milkiramid Philosirid
@@ -560,7 +563,7 @@ chaldean = {
 		Tayma
 	}
 	babylonian = {
-		primary = IRQ
+		primary = BBY
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
 			Abu-Waqar Belteshazzar Duzi Ea Gaga Igigi Kurigalzu Lakhmu Merodach blaadan
@@ -733,7 +736,7 @@ tyrrhenian = {
 		Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
 		Venala Ventese Veru Zalle
 	}
-	etrurian = { primary = ETR }
+	etrurian = { primary = ETL }
 	rhaetian = { primary = ETR }
 	lemnian = { primary = ETR }
 }

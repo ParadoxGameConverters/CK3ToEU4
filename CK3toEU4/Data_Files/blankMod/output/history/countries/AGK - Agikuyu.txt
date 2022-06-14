@@ -1,0 +1,21 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = bantu #Thagiicu
+religion = shamanism
+technology_group = central_african
+unit_type = sub_saharan
+capital = 4060 #Kikuyu
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3		
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

@@ -1,0 +1,18 @@
+#Phoenicia
+
+graphical_culture = muslimgfx
+
+color = { 200 0 255 }
+revolutionary_colors = { 16 14 14 }
+
+
+historical_idea_groups = {
+	innovativeness_ideas
+	exploration_ideas	
+	naval_ideas	
+	expansion_ideas
+	plutocracy_ideas
+	maritime_ideas
+	economic_ideas
+	trade_ideas
+}

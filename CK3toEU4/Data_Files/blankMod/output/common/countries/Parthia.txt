@@ -1,0 +1,18 @@
+#Parthian Empire
+
+graphical_culture = muslimgfx
+
+color = { 210 200 155 }
+revolutionary_colors = { 6 6 8 }
+
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	offensive_ideas
+	trade_ideas
+	quantity_ideas
+	economic_ideas
+	diplomatic_ideas
+	quality_ideas
+}

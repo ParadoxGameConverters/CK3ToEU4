@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = siberian_tribe
+government_rank = 1
+primary_culture = yakut
+religion = tengri_pagan_reformed
+technology_group = chinese
+capital = 1042 #Sakha
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

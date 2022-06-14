@@ -66,7 +66,7 @@ scandinavian = {
 	}
 	geatish = { primary = SWE }
 	gutish = { primary = GOT }
-	scanian = { primary = SCA }
+	scanian = { primary = SCN }
 }
 british = {
 	hibernic = {
@@ -339,8 +339,8 @@ british = {
 			Æthelburh Seaxburh Wihtburh
 		}
 	}
-	anglo_saxon = {
-		primary = GBR
+	anglosaxon = {
+		primary = EGL
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -478,6 +478,15 @@ finno_ugric = {
 			Uviy Shymay Evika
 		}
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
+	}
+	samoyed = {
+		primary = NEN
+	}
+	ostyaki = {
+		primary = YUG
+	}
+	ingrian = {
+		primary = IGR
 	}
 }
 south_slavic = {
@@ -661,7 +670,7 @@ east_slavic = {
 	red_ruthenian = { primary = VOL }
 }
 baltic = {
-	old_prussian = {
+	pruthenian = { #Moves it from Lost Cultures to here
 		primary = PRT
 		male_names = {
 			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas
@@ -889,6 +898,7 @@ iranian = {
 	gorani = { primary = BHT }
 	mervi = { primary = KHO }
 	shirvani = { primary = SRV }
+	parthian = { primary = PRA }
 }
 altaic = {
 	khitan = {
@@ -913,20 +923,53 @@ je_tupi = {
 je = {
 }
 maranon = {
+	jivaro = {
+		primary = JIV
+	}
 }
 chibchan = {
 }
 mataco = {
+	chacoan = {
+		primary = GYU
+	}
 }
 araucanian = {
+	patagonian = {
+		primary = AOK
+	}
+	het = {
+		primary = QRI
+	}
+	huarpe = {
+		primary = HRP
+	}
 }
 carribean = {
+	arawak = { #Taino
+		primary = QQA
+	}
+	maipurean = {
+		primary = MOX
+	}
 }
 eskaleut = {
+	aleutian = {
+		primary = SGP
+	}
+	inuit = {
+		primary = KLL
+	}
 }
 central_algonquian = {
+	algonquin = {
+		primary = AGQ #This is Algonquin the country, it does have Algonquin as its primary culture, so why is it not the primary nation?
+	}
 }
 plains_algonquian = {
+	bungi = {
+		primary = NAK #This is Nakawe, only country with Bungi as its Primary culture
+	}
 }
 eastern_algonquian = {
 }
@@ -943,6 +986,12 @@ sonoran = {
 apachean = {
 }
 na_dene = {
+	chipewyan = {
+		primary = SYD
+	}
+	athabascan = {
+		primary = DNT
+	}
 }
 penutian = {
 }
@@ -971,14 +1020,35 @@ tibetan_group = {
 	}
 }
 malay = {
+	madagascan = {
+		primary = BUS #This culture is back when Madagascar was part of the Malay group
+	}
 }
 thai_group = {
 }
 southeastasian_group = {
 }
 burman = {
+	karen = {
+		primary = KNY
+	}
+	kachin = {
+		primary = WPG
+	}
 }
 pacific = {
+	papuan = {
+		primary = MOT
+	}
+	maori = {
+		primary = AOT #This is Aoteroa, it does have Maori as its primary culture, so why is it not the primary nation?
+	}
+	melanesian = {
+		primary = VIL #This is Viti Levu, used since Viti itself has Polynesian as its Primary Culture
+	}
+	polynesian = {
+		primary = HAW
+	}
 }
 aboriginal_australian = {
 }
@@ -994,6 +1064,7 @@ western_aryan = {
 	marwari = { primary = MAW }
 	mewari = { primary = DHU }
 	nimadi = { primary = KHD }
+	parsi = { primary = BMY }
 }
 dravidian = {
 }
@@ -1011,22 +1082,58 @@ sahelian = {
 west_african = {
 }
 southern_african = {
+	nguni = {
+		primary = ZUL #Why did they not make this a primary nation in the cultures file?
+	}
+	bemba = {
+		primary = BMB
+	}
+	khoisan = {
+		primary = ULK
+	}
 }
 kongo_group = {
+	jukun = {
+		primary = KWF
+	}
+	sawabantu = {
+		primary = DLA
+	}
 }
 great_lakes_group = {
+	masaba = {
+		primary = WGA
+	}
 }
 african = {
+	takama = {
+		primary = UBO
+	}
+	bena = {
+		primary = UHE
+	}
+	bantu = { #Thagiicu, old tag kept to not break older saves.
+		primary = AGK
+	}
 }
 cushitic = {
 }
 sudanese = {
+	acholi = {
+		primary = PAY
+	}
 	daju = {
 		primary = DAR
 		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
 	}
 }
 evenks = {
+	yakut = {
+		primary = SKH
+	}
+	tungus = {
+		primary = MKT
+	}
 }
 kamchatkan_g = {
 }
@@ -1041,5 +1148,11 @@ tartar = {
 		Yakovlev Volkov Husankaj Yut Youne Markov Yegorov Pavlov Aygi }
 	}
 }
-lost_cultures_group = { # Emptied
+lost_cultures_group = {
+	atlantean = {
+		primary = ATL
+	}
+	old_egyptian = {
+		primary = KEM
+	}
 }

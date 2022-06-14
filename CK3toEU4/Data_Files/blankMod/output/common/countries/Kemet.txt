@@ -1,0 +1,18 @@
+#Kemet, Old Egyptian for Egypt
+
+graphical_culture = muslimgfx
+
+color = { 230 205 145 }
+revolutionary_colors = { 14 0 14 }
+
+
+historical_idea_groups = {
+	maritime_ideas
+	defensive_ideas
+	religious_ideas
+	trade_ideas
+	offensive_ideas
+	administrative_ideas
+	economic_ideas
+	expansion_ideas
+}

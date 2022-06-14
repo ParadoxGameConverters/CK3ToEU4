@@ -1,0 +1,17 @@
+#Etruscan League
+
+graphical_culture = westerngfx
+
+color = { 60 60 255 }
+revolutionary_colors = { 16 0 16 }
+
+historical_idea_groups = {
+	offensive_ideas
+	defensive_ideas
+	trade_ideas
+	administrative_ideas
+	spy_ideas
+	economic_ideas
+	innovativeness_ideas
+	diplomatic_ideas
+}
