@@ -94,6 +94,7 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 			locBlock.german = displayName;
 			locBlock.spanish = displayName;
 			localizations.insert(std::pair(faith.second->getName(), locBlock));
+			CK3Doctrines.emplace(faith.second->getTemplate(), faith.second->getDoctrines());
 
 			reformedReligions.emplace_back(faith.second->getTemplate());
 		}
@@ -137,6 +138,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	}
 	// rather have it empty than display raw key ingame.
 	localizations.insert(std::pair(faithName + "_religion_desc", descBlock));
+	// Doctrines Stored
+	CK3Doctrines.emplace(faithName, faith.getDoctrines());
 
 	// Rebels
 	LocBlock rebelBlock;

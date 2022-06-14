@@ -1,0 +1,84 @@
+#These reforms will replace their vanilla counterparts
+
+leading_clergy_reform = {
+	potential = {
+		NOT = { tag = PAP }
+		NOT = { tag = FAP }
+	}
+	allow_normal_conversion = yes
+	legacy_equivalent = theocratic_government
+	icon = "religious_leader"
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_tax_modifier = 0.05
+	}
+}
+monastic_order_reform = {
+	potential = {
+		NOT = { tag = PAP }
+		NOT = { tag = FAP }
+	}
+	modifiers = {
+		fort_maintenance_modifier = -0.2
+	}
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	icon = "monks"
+	allow_normal_conversion = yes
+	legacy_equivalent = monastic_order_government
+	monastic = yes
+	fixed_rank = 1
+
+	conditional = {
+		allow = {
+			has_dlc = "Cradle of Civilization"
+			religion = sunni
+		}
+		has_pashas = yes
+	}
+}
+papacy_reform = {
+	potential = {
+		OR = {
+			tag = PAP
+			tag = FAP
+		}
+	}
+
+	modifiers = {
+		prestige_per_development_from_conversion = 0.33
+		tolerance_own = 1
+		church_influence_modifier = 0.2
+	}
+	valid_for_nation_designer = no
+	icon = "papacy"
+	allow_normal_conversion = yes
+	legacy_equivalent = papal_government
+	papacy = yes
+	allow_convert = no
+	lock_level_when_selected = yes
+	fixed_rank = 2
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+}
+conciliarism_reform = {
+	icon = "conciliarism_reform"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			tag = PAP
+			tag = FAP
+		}
+	}
+	modifiers = {
+		appoint_cardinal_cost = -0.5
+	}
+	ai = {
+		factor = 3
+	}
+}

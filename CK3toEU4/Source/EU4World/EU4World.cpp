@@ -557,7 +557,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		else
 		{
 			// And finally, initialize it.
-			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader);
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader, regionMapper);
 			counter++;
 		}
 	}
@@ -921,7 +921,7 @@ void EU4::World::assignAllCountryReforms()
 	{
 		if (!country.second->getTitle() || !country.second->getGovernmentReforms().empty())
 			continue;
-		country.second->assignReforms(regionMapper);
+		country.second->assignReforms(regionMapper, religionMapper, cultureDefinitionsMapper);
 	}
 }
 

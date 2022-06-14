@@ -51,14 +51,6 @@ void mappers::CultureDefinitionsMapper::registerKeys()
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
-std::shared_ptr<mappers::CultureGroupDefinition> mappers::CultureDefinitionsMapper::getGroupForCulture(const std::string& cultureName) const
-{
-	for (const auto& cultureGroupItr: cultureGroupsMap)
-		if (cultureGroupItr.second->containsCulture(cultureName))
-			return cultureGroupItr.second;
-	return nullptr;
-}
-
 void mappers::CultureDefinitionsMapper::buildDefinitions(const CultureMapper& cultureMapper)
 {
 	// We're generating new culture definitions for dynamic cultures from existing culture defs.
