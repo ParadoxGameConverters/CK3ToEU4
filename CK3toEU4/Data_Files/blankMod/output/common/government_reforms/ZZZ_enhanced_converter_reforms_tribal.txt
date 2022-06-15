@@ -1,0 +1,28 @@
+#These reforms will replace their vanilla counterparts
+
+matrilineal_system = {
+	icon = "british_queen"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 30
+	legacy_equivalent = matrilineal_system_legacy
+	potential = {
+		OR = {
+			culture_group = sudanese
+			has_reform = matrilineal_system
+			have_had_reform = matrilineal_system
+		}
+	}
+	trigger = {
+		OR = {
+			culture_group = sudanese
+			has_reform = matrilineal_system
+			have_had_reform = matrilineal_system
+		}
+	}
+	modifiers = {
+		heir_chance = -0.5
+		female_advisor_chance = 0.5
+		legitimacy = 1
+	}
+}

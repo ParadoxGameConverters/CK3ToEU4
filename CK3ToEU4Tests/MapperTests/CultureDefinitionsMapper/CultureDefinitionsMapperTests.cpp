@@ -28,7 +28,7 @@ TEST(Mappers_CultureDefinitionMapperTests, groupCanBeRetrieved)
 	input << "groupB = { cultureB = {} }\n";
 	const mappers::CultureDefinitionsMapper groups(input);
 
-	const auto& groupA = groups.getGroupForCulture("cultureA");
+	const auto& groupA = groups.getCultureGroupForCultureName("cultureA");
 
 	EXPECT_EQ("groupA", groupA->getName());
 	EXPECT_TRUE(groupA->containsCulture("cultureA"));
@@ -39,7 +39,7 @@ TEST(Mappers_CultureDefinitionMapperTests, groupMismatchReturnsNullptr)
 	std::stringstream input;
 	const mappers::CultureDefinitionsMapper groups(input);
 
-	const auto& groupC = groups.getGroupForCulture("cultureC");
+	const auto& groupC = groups.getCultureGroupForCultureName("cultureC");
 
 	EXPECT_EQ(nullptr, groupC);
 }

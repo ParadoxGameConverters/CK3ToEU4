@@ -32,11 +32,16 @@ void EU4::Province::updateWith(const std::string& filePath)
 void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 	 const mappers::CultureMapper& cultureMapper,
 	 const mappers::ReligionMapper& religionMapper,
-	 const mappers::LocDegraderMapper& locDegrader)
+	 const mappers::LocDegraderMapper& locDegrader,
+	 const std::shared_ptr<mappers::RegionMapper>& regionMapper)
 {
 	srcProvince = origProvince;
 
-	details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
+	details.discoveredBy = {"western", "eastern", "ottoman", "muslim", "indian", "east_african", "nomad_group", "sub_saharan"}; // hardcoding for now.
+	if (regionMapper->provinceIsInRegion(provID, "india_superregion") || regionMapper->provinceIsInRegion(provID, "east_indies_superregion") ||
+		 regionMapper->provinceIsInRegion(provID, "east_siberia_region") || regionMapper->provinceIsInRegion(provID, "mongolia_region") ||
+		 regionMapper->provinceIsInRegion(provID, "tibet_region"))
+		details.discoveredBy.insert("chinese");
 
 	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
 	// There are no uncolonized provinces in CK3.

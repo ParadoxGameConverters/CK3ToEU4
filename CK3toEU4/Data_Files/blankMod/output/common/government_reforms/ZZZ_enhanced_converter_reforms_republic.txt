@@ -1,0 +1,172 @@
+#These reforms will replace their vanilla counterparts
+
+veche_republic = {
+	icon = "merchant"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_reform = tsardom }
+		NOT = { have_had_reform = tsardom }
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
+		}
+		culture_group = east_slavic
+		OR = {
+			has_reform = veche_republic
+			have_had_reform = veche_republic
+		}
+	}
+	legacy_equivalent = veche_republic_legacy
+	nation_designer_trigger = {
+		culture_group = east_slavic
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
+		}
+	}
+	modifiers = {
+		merchants = 1
+		governing_capacity = 50
+		max_absolutism = -50
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	factions = {
+		mr_aristocrats
+		mr_traders
+		mr_guilds
+	}
+	boost_income = yes
+	fixed_rank = 1
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			NOT = { has_dlc = "Mare Nostrum" }
+			NOT = { has_dlc = "Third Rome" }
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+			NOT = { has_dlc = "Third Rome" }
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Res Publica"
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Third Rome" }
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Third Rome"
+			NOT = { has_dlc = "Mare Nostrum" }
+			NOT = { has_dlc = "Res Publica" }
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Third Rome"
+			has_dlc = "Mare Nostrum"
+			NOT = { has_dlc = "Res Publica" }
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Third Rome"
+			NOT = { has_dlc = "Mare Nostrum" }
+			has_dlc = "Res Publica"
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+		can_use_trade_post = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Third Rome"
+			has_dlc = "Mare Nostrum"
+			has_dlc = "Res Publica"
+		}
+		government_abilities = {
+			russian_mechanic
+		}
+		can_use_trade_post = yes
+		can_form_trade_league = yes
+		trade_city_reform = trading_city
+	}
+	duration = 4
+}
+federal_republic = {
+	icon = "constitution"
+	allow_normal_conversion = yes
+	potential = {
+		has_dlc = "American Dream"
+		OR = {
+			AND = {
+				tag = USA
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = federal_republic
+			have_had_reform = federal_republic
+		}
+	}
+	legacy_equivalent = federal_republic_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	nation_designer_trigger = {
+		has_dlc = "American Dream"
+	}
+	modifiers = {
+		diplomatic_reputation = 1
+		global_spy_defence = 0.1
+		max_absolutism = -30
+	}
+
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Common Sense"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			blocked_call_diet = yes
+		}
+	}
+	duration = 4
+}
