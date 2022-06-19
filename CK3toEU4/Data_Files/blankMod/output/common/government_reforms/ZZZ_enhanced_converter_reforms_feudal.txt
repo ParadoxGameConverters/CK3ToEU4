@@ -157,7 +157,7 @@ principality = {
 			religion_group = pagan
 			AND = {
 				religion_group = christian
-				has_patriarchs = yes
+				uses_patriarch_authority = yes
 			}
 		}
 		culture_group = east_slavic
@@ -181,7 +181,7 @@ principality = {
 			religion_group = pagan
 			AND = {
 				religion_group = christian
-				has_patriarchs = yes
+				uses_patriarch_authority = yes
 			}
 		}
 	}
@@ -212,7 +212,7 @@ tsardom = {
 			religion_group = pagan
 			AND = {
 				religion_group = christian
-				has_patriarchs = yes
+				uses_patriarch_authority = yes
 			}
 			tag = UKR
 			tag = RUS
@@ -246,7 +246,7 @@ tsardom = {
 			religion_group = pagan
 			AND = {
 				religion_group = christian
-				has_patriarchs = yes
+				uses_patriarch_authority = yes
 			}
 		}
 	}
@@ -470,9 +470,6 @@ mughal_government = {
 		israelite = {
 			interest = -1
 		}
-		oghuz = {
-			cavalry_fire = 1
-		}
 		gothic_group = {
 			infantry_power = 0.1
 		}
@@ -522,7 +519,7 @@ mughal_government = {
 			province_warscore_cost = -0.2
 		}
 		scythian_group = {
-			cav_to_inf_ratio = 0.1
+			cavalry_fire = 1
 		}
 		dacian_group = {
 			garrison_size = 0.1

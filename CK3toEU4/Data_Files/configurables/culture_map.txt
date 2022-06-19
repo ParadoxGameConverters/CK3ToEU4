@@ -314,21 +314,23 @@ link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
 # Finno-Ugric
 
-link = { eu4 = finnish ck3 = finnish tech = eastern gfx = westerngfx }
-link = { eu4 = sapmi ck3 = sami tech = eastern gfx = inuitgfx }
+link = { eu4 = bjarmian ck3 = samoyed tech = eastern gfx = inuitgfx } #Samoyed is Bjarmian in CK3
 link = { eu4 = estonian ck3 = estonian tech = eastern gfx = inuitgfx }
-link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
-link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
-link = { eu4 = ingrian ck3 = mari ck3 = merya ck3 = komi ck3 = mordvin tech = eastern gfx = inuitgfx region = karelia_area region = estonia_ingria_area province = 35 province = 274 province = 37 }
-link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = komi tech = eastern gfx = inuitgfx }
-link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
+link = { eu4 = finnish ck3 = finnish tech = eastern gfx = westerngfx }
+link = { eu4 = ingrian ck3 = mari ck3 = merya ck3 = komi ck3 = mordvin ck3 = vepsian tech = eastern gfx = inuitgfx region = karelia_area region = estonia_ingria_area province = 35 province = 274 province = 37 }
+link = { eu4 = karelian ck3 = karelian tech = eastern gfx = inuitgfx }
 link = { eu4 = meshchera ck3 = meshchera ck3 = muroma tech = eastern gfx = inuitgfx }
+link = { eu4 = mordvin ck3 = mordvin tech = eastern gfx = inuitgfx }
+link = { eu4 = ostyaki ck3 = khanty tech = eastern gfx = inuitgfx }
+link = { eu4 = sapmi ck3 = sami tech = eastern gfx = inuitgfx }
+link = { eu4 = uralic ck3 = mari ck3 = merya ck3 = komi tech = eastern gfx = inuitgfx }
+link = { eu4 = vepsian ck3 = vepsian tech = eastern gfx = inuitgfx }
 
 # Baltic
 
 link = { eu4 = latvian ck3 = latgalian tech = eastern gfx = easterngfx }
 link = { eu4 = lithuanian ck3 = lithuanian tech = eastern gfx = easterngfx }
-link = { eu4 = old_prussian ck3 = prussian tech = eastern gfx = easterngfx }
+link = { eu4 = pruthenian ck3 = prussian tech = eastern gfx = easterngfx }
 
 # Tatar
 link = { eu4 = astrakhani ck3 = tatar ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = astrakhan_area region = lower_don_area region = lower_yik_area region = saratov_area }
@@ -341,13 +343,14 @@ link = { eu4 = mishary ck3 = mongol ck3 = bolghar tech = nomad_group gfx = musli
 link = { eu4 = nogaybak ck3 = kimek tech = nomad_group gfx = muslimgfx }
 link = { eu4 = siberian ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = west_siberia_region }
 link = { eu4 = buryat ck3 = buryat tech = nomad_group gfx = inuitgfx }
-link = { eu4 = yakut ck3 = uriankhai tech = nomad_group gfx = inuitgfx }
+link = { eu4 = tuvan ck3 = uriankhai tech = nomad_group gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = ostyak ck3 = laktan tech = nomad_group gfx = inuitgfx }
 link = { eu4 = bulgarian ck3 = bolghar tech = eastern gfx = easterngfx region = balkan_region } # Bolghars assimilated into Bulgarians
 
 # Altaic
 
-link = { eu4 = turkmeni ck3 = turkish ck3 = anatolian_turkish tech = nomad_group gfx = muslimgfx region = central_asia_region }
+link = { eu4 = turkmeni ck3 = anatolian_turkish tech = nomad_group gfx = muslimgfx region = central_asia_region }
+link = { eu4 = oghuz ck3 = turkish tech = nomad_group gfx = muslimgfx } #CK3 Turkish is Oghuz
 link = { eu4 = shirvani ck3 = shirvani tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = azeri tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = turkish ck3 = anatolian_turkish tech = muslim gfx = muslimgfx region = caucasia_region region = persia_region }
@@ -421,10 +424,8 @@ link = { eu4 = yemeni_culture ck3 = yemeni ck3 = qahtanite tech = muslim gfx = m
 
 link = { eu4 = byelorussian ck3 = belarusian tech = eastern gfx = easterngfx }
 link = { eu4 = byelorussian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = baltic_region region = minsk_area region = white_ruthenia_area }
-link = { eu4 = karelian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = karelia_area }
-link = { eu4 = karelian ck3 = karelian ck3 = vepsian tech = eastern gfx = inuitgfx }
 link = { eu4 = novgorodian ck3 = novgorodian tech = eastern gfx = easterngfx }
-link = { eu4 = novgorodian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = novgorod_area region = pskov_area region = beloozero_area }
+link = { eu4 = novgorodian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = novgorod_area region = pskov_area region = beloozero_area region = karelia_area }
 link = { eu4 = ryazanian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = smolensk_area region = ryazan_area region = oka_area }
 link = { eu4 = ruthenian ck3 = ruthenian tech = eastern gfx = easterngfx }
 link = { eu4 = ruthenian ck3 = russian ck3 = urslavic tech = eastern gfx = easterngfx region = ruthenia_region region = crimea_region }
@@ -500,7 +501,7 @@ link = { eu4 = saka ck3 = saka tech = muslim gfx = muslimgfx }
 link = { eu4 = kanuri ck3 = kanuri ck3 = sao tech = sub_saharan gfx = africangfx }
 link = { eu4 = hausa ck3 = hausa tech = sub_saharan gfx = africangfx }
 link = { eu4 = bilala ck3 = zaghawa tech = sub_saharan gfx = africangfx region = kanem_area }
-link = { eu4 = tunjur ck2 = zaghawa ck3 = daju tech = sub_saharan gfx = africangfx region = darfur_central_sahara_area }
+link = { eu4 = tunjur ck3 = zaghawa tech = sub_saharan gfx = africangfx region = darfur_central_sahara_area }
 link = { eu4 = zaghawa ck3 = zaghawa tech = sub_saharan gfx = africangfx }
 
 # East African

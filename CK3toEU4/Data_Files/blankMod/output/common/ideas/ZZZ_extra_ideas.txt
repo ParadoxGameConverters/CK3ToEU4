@@ -14,7 +14,7 @@ ENG_ideas = {
 				}
 				is_subject = no
 				OR = {
-					primary_culture = anglo_saxon
+					primary_culture = anglosaxon
 					primary_culture = english
 				}
 			}

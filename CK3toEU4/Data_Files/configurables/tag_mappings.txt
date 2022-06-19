@@ -22,6 +22,8 @@ link = { ck3 = c_livs eu4 = LVA }
 link = { ck3 = d_latgalians eu4 = LVA }
 link = { ck3 = k_norway eu4 = NOR }
 link = { ck3 = e_scandinavia eu4 = SCA }
+link = { ck3 = d_skane eu4 = SCN }
+link = { ck3 = c_skane eu4 = SCN }
 link = { ck3 = d_holstein eu4 = SHL }
 link = { ck3 = k_sapmi eu4 = SMI }
 link = { ck3 = d_giemajohka eu4 = SMI }
@@ -90,6 +92,8 @@ link = { ck3 = d_cornwall eu4 = CRN }
 link = { ck3 = c_cornwall eu4 = CRN }
 link = { ck3 = c_desmond eu4 = DMS }
 link = { ck3 = k_england eu4 = ENG }
+link = { ck3 = d_bedford eu4 = ESX }
+link = { ck3 = c_essex eu4 = ESX }
 link = { ck3 = e_britannia eu4 = GBR }
 link = { ck3 = d_moray eu4 = HSC }
 link = { ck3 = k_ireland eu4 = IRE }
@@ -103,6 +107,7 @@ link = { ck3 = c_leinster eu4 = LEI }
 link = { ck3 = d_western_isles eu4 = LOI }
 link = { ck3 = d_munster eu4 = MCM } #Currently no county Munster
 link = { ck3 = c_thomond eu4 = MNS } #The EU4 file is still named Munster even if the country name itself has changed
+link = { ck3 = d_hereford eu4 = MRC } #Mercia
 link = { ck3 = d_meath eu4 = MTH }
 link = { ck3 = c_dublin eu4 = MTH }
 link = { ck3 = d_northumberland eu4 = NOL }
@@ -115,6 +120,7 @@ link = { ck3 = c_oriel eu4 = TYR }
 link = { ck3 = d_ulster eu4 = ULS }
 link = { ck3 = c_ulster eu4 = ULS }
 link = { ck3 = k_wales eu4 = WLS }
+link = { ck3 = d_somerset eu4 = WSX }
 
 # Eastern Europe
 
@@ -345,6 +351,9 @@ link = { ck3 = k_old_armenia eu4 = ARM }
 link = { ck3 = d_greater_armenia eu4 = ARM }
 link = { ck3 = c_astrakhan eu4 = AST }
 link = { capitals = { 5311 } eu4 = AST } # Kuma -> Astrakhan
+link = { ck3 = k_bjarmaland eu4 = BJA }
+link = { ck3 = d_biarmia eu4 = BJA }
+link = { ck3 = c_onega_BJA eu4 = BJA }
 link = { ck3 = c_beloozero eu4 = BLO }
 link = { ck3 = k_bashkiria eu4 = BSH }
 link = { ck3 = d_bashkiria eu4 = BSH }
@@ -353,6 +362,7 @@ link = { ck3 = c_kerch eu4 = FEO } # Kerch => Theodoro
 link = { ck3 = k_georgia eu4 = GEO }
 link = { ck3 = d_georgia eu4 = GEO }
 link = { ck3 = e_golden_horde eu4 = GLH }
+link = { ck3 = c_vodi eu4 = IGR } # Vodi -> Ingria
 link = { ck3 = d_kazan eu4 = KAZ }
 link = { ck3 = c_kazan eu4 = KAZ }
 link = { ck3 = c_moskva eu4 = MOS }
@@ -375,6 +385,7 @@ link = { ck3 = c_ryazan eu4 = RYA }
 link = { ck3 = c_tver eu4 = TVE }
 link = { ck3 = k_ruthenia eu4 = UKR }
 link = { ck3 = k_white_rus eu4 = UKR }
+link = { ck3 = d_vepsia eu4 = VPS }
 link = { ck3 = c_yaroslavl eu4 = YAR }
 link = { ck3 = k_pontic_steppe eu4 = ZAZ }
 
@@ -496,6 +507,7 @@ link = { ck3 = d_daylam eu4 = KRY }
 link = { ck3 = c_gilan eu4 = KRY }
 link = { ck3 = c_luristan eu4 = LRI }
 link = { ck3 = c_maragha eu4 = MGR }
+link = { ck3 = k_oghuz_il eu4 = OGZ }
 link = { ck3 = d_hormuz eu4 = ORM }
 link = { ck3 = c_hormuz eu4 = ORM }
 link = { ck3 = e_persia eu4 = PER }
@@ -651,6 +663,7 @@ link = { ck3 = c_racakonda eu4 = GOC }
 link = { ck3 = c_khinjali_mandala eu4 = GRJ } #Location of the Garjat Hills
 link = { ck3 = c_kaski eu4 = GRK } #Has city of Gorkha
 link = { ck3 = k_gujarat eu4 = GUJ }
+link = { ck3 = c_surparaka eu4 = BMY } #Aproximate location of Mumbai/Bombay
 link = { ck3 = c_gwalior eu4 = GWA }
 link = { ck3 = c_kota eu4 = HAD }
 #link = { ck3 = ??? eu4 = HIN } #Hindustan is Islamic, you can only form e_india as a dharmist
@@ -808,11 +821,18 @@ link = { ck3 = c_sriksetra eu4 = BPR } #Glory to Prome!
 
 #Siberia
 
+link = { ck3 = k_buryatia eu4 = BRT }
 link = { ck3 = e_siberia eu4 = SIB }
 link = { ck3 = k_sibir eu4 = SIB }
 link = { ck3 = d_sibir eu4 = SIB }
 link = { ck3 = c_sibir eu4 = SIB }
-link = { ck3 = k_buryatia eu4 = BRT }
+link = { ck3 = k_tuva eu4 = TUV }
+link = { ck3 = d_tannu_ola eu4 = TUV }
+link = { ck3 = c_eastern_tannu eu4 = TUV }
+link = { ck3 = c_western_tannu eu4 = TUV }
+link = { ck3 = k_yugra eu4 = YUG }
+link = { ck3 = d_ostyaki eu4 = YUG }
+
 
 #Indonesia
 

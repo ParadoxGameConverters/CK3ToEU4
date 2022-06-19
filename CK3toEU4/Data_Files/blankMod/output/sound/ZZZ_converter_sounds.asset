@@ -529,31 +529,6 @@
 		name = start_convert_bon_reformed
 		file = "start_conversion_eastern_buddhism.wav"
 	}
-	#Nahuatl/Inti/Mayan (Why the heck are these not in the basegame!?
-	sound = {
-		name = religion_nahuatl
-		file = "tab_religion_america.wav"
-	}
-	sound = {
-		name = start_convert_nahuatl
-		file = "tab_religion_america.wav"
-	}
-	sound = {
-		name = religion_inti
-		file = "start_conversion_pagan_animism.wav"
-	}
-	sound = {
-		name = start_convert_inti
-		file = "start_conversion_eastern_confucianism.wav"
-	}
-	sound = {
-		name = religion_mesoamerican_religion
-		file = "start_conversion_pagan_animism.wav"
-	}
-	sound = {
-		name = start_convert_mesoamerican_religion
-		file = "tab_religion_america.wav"
-	}
 	#Kushite
 	sound = {
 		name = religion_kushitism_pagan

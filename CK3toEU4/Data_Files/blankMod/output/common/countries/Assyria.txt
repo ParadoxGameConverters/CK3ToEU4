@@ -1,0 +1,126 @@
+graphical_culture = easterngfx
+color = { 165 76 153 }
+monarch_names = {
+	"Abazu #1" = 10
+	"Adamu #1" = 10
+	"Akiya #1" = 10
+	"Ashur-nirari #5" = 10
+	"Ashur-uballit #2" = 10
+	"Azarah #1" = 10
+	"Batia #10" = 10
+	"Belu #1" = 10
+	"Didanu #1" = 10
+	"Erishum #3" = 10
+	"Hana #1" = 10
+	"Harharu #1" = 10
+	"Harsu #1" = 10
+	"Ilu-shuma #1" = 10
+	"Imsu #1" = 10
+	"Kikkia #1" = 10
+	"Liat #10" = 10
+	"Malka #10" = 10
+	"Mandaru #1" = 10
+	"Nuabu #1" = 10
+	"Puzur-Ashur #3" = 10
+	"Rahel #10" = 10
+	"Rebekkaa #10" = 10
+	"Shalim-ahum #1" = 10
+	"Shalmaneser #5" = 10
+	"Suhlamu #1" = 10
+	"Sulili #1" = 10
+	"Tiglath-Pileser #3" = 10
+	"Tudiya #1" = 10
+	"Ushpia #1" = 10
+	"Yangi #1" = 10
+	"Ziva #10" = 10
+	"Zuabu #1" = 10
+}
+leader_names = {
+	"Abragam"
+	"Avrachan"
+	"Avraham"
+	"Cheriyan"
+	"Eapen"
+	"Easo"
+	"Idichandi"
+	"Ipe"
+	"Ittak"
+	"Iyob"
+	"Iyoben"
+	"Koshy"
+	"Kuriakos"
+	"Kurien"
+	"Kuruvilla"
+	"Lonan"
+	"Lukos"
+	"Mamman"
+	"Mathai"
+	"Mathan"
+	"Mathu"
+	"Mathulla"
+	"Ninan"
+	"Oommen"
+	"Ouseph"
+	"Outha"
+	"Pathappan"
+	"Pathe"
+	"Pathros"
+	"Paulos"
+	"Philipos"
+	"Pothan"
+	"Qako"
+	"Thoman"
+	"Thomma"
+	"Vargisa"
+	"Yakob"
+	"Yesoph"
+	"Yohannan"
+}
+ship_names = {
+	"Akkad"
+	"Amanus"
+	"Amraphel"
+	"Ashur"
+	"Assurbanipal"
+	"Babel"
+	"Chaldea"
+	"Cuneiform"
+	"Dilmun"
+	"Enheduanna"
+	"Ensi"
+	"Esarhaddon"
+	"Gilgamesh"
+	"Great Ziggurat of Ur"
+	"Hammurabi"
+	"Ishtar"
+	"Kish"
+	"Larsa"
+	"Magan"
+	"Marduk"
+	"Nabonidus"
+	"Nanna"
+	"Nebuchadnezzar"
+	"Nimrod"
+	"Nineveh"
+	"Rimush"
+	"Samsu-iluna"
+	"Sargon of Akkad"
+	"Shinar"
+	"Tashlultum"
+	"Taurus"
+	"The Bull of Heaven"
+	"The Code of Laws"
+	"The Euphrates"
+	"The First Dynasty"
+	"The Hanging Garden"
+	"The Lion"
+	"The Tigris"
+	"The Tower"
+	"The Whore"
+	"The Ziggurat"
+	"Ur"
+	"Uruk"
+}
+army_names = {
+	"Army of $PROVINCE$"
+}

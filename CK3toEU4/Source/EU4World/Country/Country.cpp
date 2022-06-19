@@ -1378,7 +1378,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		details.reforms = {"great_mongol_state_reform"};
 	}
 	// Shaka Regime (Renamed in converter)
-	else if ((details.primaryCulture == "prussian" || details.primaryCulture == "old_prussian") && details.government == "tribal" &&
+	else if ((details.primaryCulture == "prussian" || details.primaryCulture == "pruthenian") && details.government == "tribal" &&
 				!details.reforms.contains("tribal_confederacy"))
 	{
 		details.reforms.clear();
