@@ -1,0 +1,33 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 2
+primary_culture = bemba
+religion = shamanism
+technology_group = central_african
+unit_type = sub_saharan
+capital = 4102	#Bemba
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		mil = 3
+		dip = 3
+		regent = yes
+	}
+}
+
+1650.1.1 = {
+	monarch = {
+		name = "Nkole"
+		dynasty = "Bena-Ng’andu"
+		birth_date = 1625.1.1
+		death_date = 1700.1.1
+		adm = 3
+		dip = 4
+		mil = 5
+	}
+}

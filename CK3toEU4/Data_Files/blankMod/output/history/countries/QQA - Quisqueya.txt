@@ -1,0 +1,49 @@
+government = native
+government_rank = 2
+primary_culture = arawak
+religion = animism
+technology_group = south_american
+capital = 2658	# Maguana
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}
+1462.11.11 = {
+	monarch = {
+		name = "Caonabo"
+		dynasty = "Maguana"
+		birth_date = 1456.1.1
+		death_date = 1496.6.6
+		adm = 5
+		dip = 5
+		mil = 6
+	}
+}
+1490.1.1 = {
+	queen = {
+		name = "Anacaona"
+		dynasty = "Jaragua"
+		birth_date = 1474.1.1
+		death_date = 1504.6.6
+		female = yes
+		adm = 5
+		dip = 5
+		mil = 3
+	}
+	heir = {
+		name = "Higuemota"
+		dynasty = "Jaragua"
+		birth_date = 1490.1.1
+		death_date = 1504.6.6
+		female = yes
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

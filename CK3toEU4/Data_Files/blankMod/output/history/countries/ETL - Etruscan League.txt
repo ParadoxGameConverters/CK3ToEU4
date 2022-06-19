@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = noble_elite_reform
+government_rank = 1
+primary_culture = etrurian
+religion = animism
+technology_group = western
+capital = 117	#Siena
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

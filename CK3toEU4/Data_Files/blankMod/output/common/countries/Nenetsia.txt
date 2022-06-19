@@ -1,0 +1,84 @@
+#Nenets Peoples, Also known as the Samoyed
+
+graphical_culture = easterngfx
+
+color = { 128 255 128 }
+revolutionary_colors = { 15 0 5 }
+
+historical_idea_groups = {
+	religious_ideas
+	trade_ideas
+	defensive_ideas
+	administrative_ideas
+	offensive_ideas
+	expansion_ideas
+	quantity_ideas
+	economic_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Mikhail #0" = 20
+	"Yermolay #0" = 20
+	"Matvey #0" = 20
+	"Vasiley #0" = 20
+	"Pitirim #0" = 10
+	"Gerasim #0" = 10
+	"Isaak #0" = 10
+	"Iona #0" = 10
+	"Volod #0" = 10
+	"Gavril #0" = 10
+	"Yegor #0" = 10
+	"Ivan #0" = 10
+	"Mikulay #0" = 10
+	"Petyr #0" = 10
+	"Semö #0" = 10
+	"Pedör #0" = 10
+	"Kos'ta #0" = 10
+	"Öndrey #0" = 10
+	"Stepan #0" = 10
+	"Ölyöksey #0" = 0
+	"Boris #0" = 0
+	"Danil #0" = 0
+	"Dmitry #0" = 0
+	"Pedot #0" = 0
+	"Illya #0" = 0
+	"Segö #0" = 0
+	"Nasta #0" = -15
+	"Katyö #0" = -15
+	"Ölga #0" = -15
+}
+
+leader_names = { 
+	Burmatov Vilesov Volegov Dozmorov Zerov Ichetkin 
+	Kanev Kachesov Koinov Kolegov Kochev Kykin 
+	Kynev Kynkurogov Kyrnyshev Kyrov Kysov Kychanov 
+	Lyurov Michkin Moshev Oshev Oshkokov Porsin Purtov
+	Rakin Rochev Ruchev Syuzev Cheskidov Yusev
+	Kudymov Zyrianov 
+}
+
+ship_names = {
+	Cherdyn Pelym Kudym-Osha Shudeg
+	Voleg Rateg Koleg Uzheg
+	Baseg Yus Pokcha Vychegda Sysola
+	Iskor Kama Vishera Kolva Yazva Uros Vilgort
+}

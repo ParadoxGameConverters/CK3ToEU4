@@ -1,0 +1,118 @@
+#Ingria
+
+graphical_culture = easterngfx
+
+color = { 255 246 37 }
+revolutionary_colors = { 8 16 6 }
+
+historical_idea_groups = {
+	religious_ideas
+	trade_ideas
+	defensive_ideas
+	administrative_ideas
+	offensive_ideas
+	expansion_ideas
+	quantity_ideas
+	economic_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Svyatoslav #7" = 20
+	"Yaroslav #6" = 20
+	"Rotislav #4" = 20
+	"Dmitriy #3" = 20
+	"Vsevolod #3" = 20
+	"Vasiliy #2" = 20
+	"Yuriy #2" = 20
+	"Aleksandr #1" = 20
+	"Andrei #1" = 20
+	"Fyodor #1" = 20
+	"Mikhail #1" = 20
+	"Mstislav #6" = 15
+	"Yaropolk #3" = 15
+	"Roman #2" = 15
+	"Rurik #2" = 15
+	"Konstantin #1" = 15
+	"David #2" = 10
+	"Afanasiy #0" = 0
+	"Akim #0" = 0
+	"Alexei #0" = 0
+	"Anatoliy #0" = 0
+	"Arkadiy #0" = 0
+	"Boris #0" = 0
+	"Daniil #0" = 0
+	"Dorofey #0" = 0
+	"Feodosiy #0" = 0
+	"Gavriil #0" = 0
+	"Iosif #0" = 0
+	"Ivan #0" = 0
+	"Matveiy #0" = 0
+	"Nazariy #0" = 0
+	"Nikifor #0" = 0
+	"Oleg #0" = 0
+	"Prokopiy #0" = 0
+	"Radomir #0" = 0
+	"Saveliy #0" = 0
+	"Semen #0" = 0
+	"Sergei #0" = 0
+	"Valeriy #0" = 0
+	"Yevgeniy #0" = 0
+	
+	"Anastasiya #0" = -1
+	"Zlata #0" = -1
+	"Marfa #0" = -1
+}
+
+leader_names = { 
+	Zhiznomir Mikula Posenya Baryatinsky Belevsky Volkonsky 
+	Vorotynsky Gorensky Gorchakov Dolgorukov Yeletsky Ryumin 
+	Barashev Spyachy Shestov Zventsov Tokmakov Nozdrevaty 
+	Kashin Massalski Kozelsky Koninsky Kurlyatev Lykov Obolensky
+	Strigin Nagiye Spashsky Torussky Trostensky Turenin
+	Tufyakin Khotetovsky 
+}
+
+ship_names = {
+	"Archistratig Michail" "Arkhangel Gavriil" "Arkhangel Mikhail" "Arkhangel Rafail" "Arkhangel Uriil" "Bogoiavlenie Gospodne" "Boris i Gleb" "Bozhiye Predvideniye"
+	"Cvet Vojny" "Dimitrii Donskoi" "Dvenadtsat Apostolov" "Evva Elenora" "Evva Katerina" "Generalissimus Rossiiskaia" "Gorod Arkhangelsk" "Goto Predestinatsia"
+	"Graf Orlov" "Imperatritsa Anna" "Ioann Zlatoust Pervyi" "Isaak Viktoriia" "Ivan Gorod" "Kavaler Sviatoi Aleksandr" "Kavaler Sviatoi Andrei" "Kazanskaya Bogoroditsa"
+	"Kir Ioann" "Kiriil Belozerskiy" "Mariia Magdalina Pervaia" "Mariia Magdalina Vtoraja" "Mariia Magdalina" "Matvei Evangelist" "Nadezhda Blagopoluchiia" "Ne Tron Menia"
+	"Nord Adler" "Novaia Nadezhada" "Osnovanie Blagopoluchiia" "Out Adler" "Out Eketbom" "Pamiat Evstafii" "Panagiia Aporogrilli" "Panagiia Apotumengano" "Panagiia Kaligati"
+	"Panagiia Popandi" "Panteleimon Viktoriia" "Piotr I i II" "Pravitelnitsa Rossiiskaia" "Prints Evgenii" "Prints Gustav" "Printsessa Anna" "Razzhyonnoe Zhelezo"
+	"Rozhdestrvo Khristovo" "Sankt Michail" "Sant Iakim" "Severnyj Oryol" "Slava Ekateriny" "Slava Rossii" "Spiashchii Lev" "Staryi Dub" "Staryi Oryol" "Sviataia Anna"
+	"Sviataia Velikomuchenitsa Varvara" "Sviatogo Dukha" "Sviatoi Aleksandr Nevskij" "Sviatoi Aleksandr" "Sviatoi Andrei Pervozvannii" "Sviatoi Andrei" "Sviatoi Antonii"
+	"Sviatoi Dmitrii Rostovskii" "Sviatoi Evstafii Plakida" "Sviatoi Fyodor" "Sviatoi Georgii Pobedonosets" "Sviatoi Georgii" "Sviatoi Iakov" "Sviatoi Ieronim"
+	"Sviatoi Ilia" "Sviatoi Isakii" "Sviatoi Januarii" "Sviatoi Kliment Papa Rimskii" "Sviatoi Nikolai" "Sviatoi Panteleimon" "Sviatoi Pavel" "Sviatoi Piotr"
+	"Sviatoi Sergii" "Sviatoi Velikomuchenik Isidor" "Svietaia Ekaterina" "Svietaia Mariia" "Sysoi Velikii" "Tolskaya Bogoroditsa" "Trekh Ierarkhov" "Trekh Sviatitelei"
+	"Tsar Konstantin" "Tsvet Voiny" "Vinogradnaia Vetv" "Voznesenie Gospodne" "Zakharii i Elisavet" "Zhuravl Steregushchii" "Zolotaia Zvezda" "Zolotoe Iaboloko" Afrika
+	Aist Amur Apollo Arkhipelag Armont Arondel Astrakhan Aziia Azov Blagodat Blagopoluchie Britanniia Bulinbrok Bystraia Cherepakha Chesma Chestnaia Degas Dekrondelivde
+	Delfin Delos Derbent Derpt Devonshir Diana Dobraia Donder Drumkrakht Dumkrat Eingorn Elena Emgeiten Emmanuil Endrakht Esperans Etna Evropa Falk Favoritka Feniks Flag
+	Fortuna Fredrikhshtadt Fridemaker Fyodor Gamburg Gangut Gektor Gremiashchii Grigorii Grom Iagudiil Iamburg Iaroslav Iassy Iezekiil Ingermanland Ioann Iupiter Kamen
+	Khobot Khotin Khvalnaia Kit Konstantin Kopore Korona Kreiser Krepost Kronshlot Kronshtadt Kruis Krym Landsdou Laskovaia Lastka Leferm Legkii Lesnoye Lev Liliia Lizet
+	London Luks Marlburg Merkurii Miach Milo Minerva Mittau Modon Molniia Monbekend Monplezir Moreia Moris Moskva Munker Nadezhda Naktsiia Narva Natalia Nazaret
+	Nepobedimaia Neptunus Nishtadt Novopavlovsk Oksford Olga Olifant Orfei Oryol Palyulos Parizh Paros Patriklii Perl Pernov Pervyi Peterburg Piotr Piotr II Plato Pobeda
+	Pochtalon Poltava Poluks Pomoshchnyi Portsmut Pospeshnyi Prevoskhoditeinaia Printsessa Priyatelnaya Prokhor Provornyi Rafail Rak Randolf Razumnaia Revel Riga Rossia
+	Rostislav Roza Rys Salamandra Samson Saratov Schastie Schastlivyi Selafail Shkhelpol Shlisselburg Shpaga Shtandart Shval Siiatelnaia Sion Sklonnaia Skorpion Snuk
+	Sobaka Sokol Starn Stein Straford Strakh Strela Strus Sulitsa Sviatoslav Svirepaia Taganrog Taimalar Telemakus Terpelivaia Tino Tver Tvyordyi Ubornaia Uchtivaia
+	Uliss Ulriksdal Upovanie Uriil Vakhmeister Varakhail Vedraia Venera Venker Venus Vestovoi Vesuvii Viacheslav Viktoriia Vinkelgak Voin Voronez Vsevolod Vtoroi Vyborg
+	Vydra Yanos Zabavnaia Zadornaia Zhemchug Zhurzha Zmeia Zvezda
+}

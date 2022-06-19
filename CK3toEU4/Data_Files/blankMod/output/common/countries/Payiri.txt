@@ -1,0 +1,32 @@
+#The Payiri Chiefdom, one of the most prominent Acholi Chiefdoms
+
+graphical_culture = africangfx
+
+color = { 240 100 220 }
+revolutionary_colors = { 1 1 0 }
+
+
+historical_idea_groups = {
+	offensive_ideas
+	innovativeness_ideas
+	defensive_ideas	
+	trade_ideas
+	economic_ideas
+	diplomatic_ideas	
+	quality_ideas
+	religious_ideas
+}
+
+historical_units = {
+	african_spearmen
+	niger_kongolese_tribal_warfare
+	niger_kongolese_forest_warfare
+	niger_kongolese_gunpowder_warfare
+	westernized_niger_kongolese
+	niger_kongolese_guerilla_warfare
+	african_mandelaku
+	african_tuareg_cavalry
+	african_mossi_horsemen
+	african_hussar
+	african_dragoon	
+}

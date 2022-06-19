@@ -66,7 +66,7 @@ scandinavian = {
 	}
 	geatish = { primary = SWE }
 	gutish = { primary = GOT }
-	scanian = { primary = SCA }
+	scanian = { primary = SCN }
 }
 british = {
 	hibernic = {
@@ -175,7 +175,7 @@ british = {
 		}
 	}
 	mercian = {
-		primary = ENG
+		primary = MRC
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -208,7 +208,7 @@ british = {
 		}
 	}
 	wessexian = {
-		primary = CRN
+		primary = WSX
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -241,7 +241,7 @@ british = {
 		}
 	}
 	essexian = {
-		primary = ENG
+		primary = ESX
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -339,8 +339,8 @@ british = {
 			Æthelburh Seaxburh Wihtburh
 		}
 	}
-	anglo_saxon = {
-		primary = GBR
+	anglosaxon = {
+		primary = ENG
 		dynasty_names = {
 			Godhelming Beorming Eorling Æbbing Hæsting Ælling Eadricing Eadwulfing Leodwalding
 			Æthelfrithing Yffing Ingving Offing Oswalding Cerdicing Wiglafing Coenwalhing
@@ -456,6 +456,24 @@ french = {
 	siculo_norman = { primary = SIC }
 }
 finno_ugric = {
+	karelian = { #Moved from East Slavic
+		primary = KRL
+		male_names = {
+			Mohkku Mokci Náhkol Náinnas Njulgu Oaván Orddot Rástos Riibma Ruigi Sárra Speaidna Viggu Kaarel Kaaren Kahus Kaido 
+			Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel Kaupo Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev 
+			Sutepelg Tambet Tarva Tarvet Dobrinya Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey 
+			Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka Tuhan Tyueykezhut Tyutyuk Tugan Kezhevat Kichay Koksha 
+			Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas 
+			Viryay Vokan Yirkap Ylvan Zarny Tugan Parush Pivtsay Pokshayka Putyayka Setyamka Shindyay Shoksha Syrka Tikshayka 
+			Tyueykezhut Tylmache Tylze Tyushten Tyushtya Uzhara Varmanpaz
+		}
+		female_names = {
+			Nyayka Olota Ordava Oshama Parava Pekshayka Pemka Pokshava Poshayka Potekay Potyava Putyayka Ravzhava Ruzava 
+			Sanal'ka Sangasa Sernyava Serzhay Setyamka Seyamka Shonzhava Shukshtoroyka Sinyava Siyamka Slyugan'ka Sochava Styaka 
+			Syryava Tatka Tekay Tetyava Tikshayka Toyaksha Tundava Tundya Unzhutka Upurga Utyayka Valdava Vergava Vezhav Vidyava 
+			Virtyava Yalgava Litova Mastorava Noroava
+		}
+	}
 	mordvin = {
 		primary = MDV
 		male_names = {
@@ -478,6 +496,21 @@ finno_ugric = {
 			Uviy Shymay Evika
 		}
 		dynasty_names = { Kokko Likhachev Mamin Minin Sibiriak  Tikhanov Zubov }
+	}
+	samoyed = {
+		primary = NEN
+	}
+	ostyaki = {
+		primary = YUG
+	}
+	ingrian = {
+		primary = IGR
+	}
+	bjarmian = {
+		primary = BJA
+	}
+	vepsian = {
+		primary = VPS
 	}
 }
 south_slavic = {
@@ -661,7 +694,7 @@ east_slavic = {
 	red_ruthenian = { primary = VOL }
 }
 baltic = {
-	old_prussian = {
+	pruthenian = { #Moves it from Lost Cultures to here
 		primary = PRT
 		male_names = {
 			Algirdas Antanas Antavas Aras Arunas Azuolas Budrys Bukantas Butavas Butigeidis Butvydas
@@ -742,7 +775,7 @@ byzantine = {
 }
 caucasian = {
 	alan = {
-		primary = GEO
+		primary = CIR
 		male_names = {
 			Afako Akhsar Akhsarbek Akhsartag Alan Alibek Alimbeg Alyksandr Aslænbeg Aslanbeg
 			Asmat Atsamaz Bakhva Barysbi Batradz Batyradz Baxva Bega Bekyzæ Dauyt Dimitr
@@ -832,6 +865,7 @@ iranian = {
 		primary = KOK
 	}
 	tocharian = {
+		primary = KAS
 		male_names = {
 			Airawanta Ajatasatru Ajite Alp Ambare Ampratasarme Amrataraksite Amratodane Anande
 			Anathapindike Aniruddhe Andhave Anktsas Arjune Aranemi Arnyartate Arslam Arthadarsi
@@ -868,8 +902,7 @@ iranian = {
 		dynasty_names = {
 			Arkwi Erkent Karweñe Kaum Lykaške Meñe Samudtar Šana Šaumo Šcirye Totka
 			Aršiññe Gushi Asmires Garinei Thagures Kušiññe Oichardes Piades Rabanes Siziges
-		}
-		primary = KAS
+		}		
 	}
 	saka = {
 		primary = KAS
@@ -889,6 +922,7 @@ iranian = {
 	gorani = { primary = BHT }
 	mervi = { primary = KHO }
 	shirvani = { primary = SRV }
+	parthian = { primary = PRA }
 }
 altaic = {
 	khitan = {
@@ -913,20 +947,53 @@ je_tupi = {
 je = {
 }
 maranon = {
+	jivaro = {
+		primary = JIV
+	}
 }
 chibchan = {
 }
 mataco = {
+	chacoan = {
+		primary = GYU
+	}
 }
 araucanian = {
+	patagonian = {
+		primary = AOK
+	}
+	het = {
+		primary = QRI
+	}
+	huarpe = {
+		primary = HRP
+	}
 }
 carribean = {
+	arawak = { #Taino
+		primary = QQA
+	}
+	maipurean = {
+		primary = MOX
+	}
 }
 eskaleut = {
+	aleutian = {
+		primary = SGP
+	}
+	inuit = {
+		primary = KLL
+	}
 }
 central_algonquian = {
+	algonquin = {
+		primary = AGQ #This is Algonquin the country, it does have Algonquin as its primary culture, so why is it not the primary nation?
+	}
 }
 plains_algonquian = {
+	bungi = {
+		primary = NAK #This is Nakawe, only country with Bungi as its Primary culture
+	}
 }
 eastern_algonquian = {
 }
@@ -943,6 +1010,12 @@ sonoran = {
 apachean = {
 }
 na_dene = {
+	chipewyan = {
+		primary = SYD
+	}
+	athabascan = {
+		primary = DNT
+	}
 }
 penutian = {
 }
@@ -971,14 +1044,35 @@ tibetan_group = {
 	}
 }
 malay = {
+	madagascan = {
+		primary = BUS #This culture is back when Madagascar was part of the Malay group
+	}
 }
 thai_group = {
 }
 southeastasian_group = {
 }
 burman = {
+	karen = {
+		primary = KNY
+	}
+	kachin = {
+		primary = WPG
+	}
 }
 pacific = {
+	papuan = {
+		primary = MOT
+	}
+	maori = {
+		primary = AOT #This is Aoteroa, it does have Maori as its primary culture, so why is it not the primary nation?
+	}
+	melanesian = {
+		primary = VIL #This is Viti Levu, used since Viti itself has Polynesian as its Primary Culture
+	}
+	polynesian = {
+		primary = HAW
+	}
 }
 aboriginal_australian = {
 }
@@ -994,6 +1088,7 @@ western_aryan = {
 	marwari = { primary = MAW }
 	mewari = { primary = DHU }
 	nimadi = { primary = KHD }
+	parsi = { primary = BMY }
 }
 dravidian = {
 }
@@ -1011,22 +1106,61 @@ sahelian = {
 west_african = {
 }
 southern_african = {
+	nguni = {
+		primary = ZUL #Why did they not make this a primary nation in the cultures file?
+	}
+	bemba = {
+		primary = BMB
+	}
+	khoisan = {
+		primary = ULK
+	}
 }
 kongo_group = {
+	jukun = {
+		primary = KWF
+	}
+	sawabantu = {
+		primary = DLA
+	}
 }
 great_lakes_group = {
+	masaba = {
+		primary = WGA
+	}
 }
 african = {
+	takama = {
+		primary = UBO
+	}
+	bena = {
+		primary = UHE
+	}
+	bantu = { #Thagiicu, old tag kept to not break older saves.
+		primary = AGK
+	}
 }
 cushitic = {
 }
 sudanese = {
+	acholi = {
+		primary = PAY
+	}
 	daju = {
 		primary = DAR
 		dynasty_names = { Wattara Toure Salim-Suwari Drame Saghanughu }
 	}
 }
 evenks = {
+	yakut = {
+		primary = SKH
+	}
+	tungus = {
+		primary = MKT
+	}
+	tuvan = {
+		primary = TUV
+	}
 }
 kamchatkan_g = {
 }
@@ -1040,6 +1174,65 @@ tartar = {
 		dynasty_names = { Abash Agish Baran Karach Karam Kashkar Kolu Kurak Mishaik "Mis Si" Mosol Temir Tenish Vanyut Yaku Cavash Elmen Fyodorov Pajtule Chapayev Husa Celepi Bichurin
 		Yakovlev Volkov Husankaj Yut Youne Markov Yegorov Pavlov Aygi }
 	}
+	pecheneg = {
+		primary = PTZ
+	}
+	cuman = {
+		primary = CMN
+	}
+	bolghar = {
+		primary = BUL
+		male_names = {
+			Almish Alzek Anzi Apskhih Araslan Asparukh Balamber Bars Bataul Batbayan Batoya Batulia Bayan Belkermak Bezmer Boyan Bulger Buzan Chepa Chinialush Dengizikh
+			Dizeng Dometa Dristar Drong Dukum Ellak Elemag Ernakh Eskhakh Goleda Gostun Guar Hudbad Iani Irnek Isbul Islivan Isperikh Ispor Kälaç Kano Karan Karaton
+			Kardam Kharaton Khinialon Khudbard Kordil Kormesiy Kormisosh Kotrag Krovat Krum Kuber Kubrat Kurt Kutrigur Kuvrat Labertam Magotin Malamir Mugel Odolgan Okhsi
+			Okhsun Okors Omurtag Onegavon Organ Organa Ornag Oshi Ostro Pagan Pakhtiyar Paväl Praksa Rassate Rugila Sabin Sandil Sandilkh Sarkhan Sartäç Savin Sevar Shilki
+			Sondoke Tähtaman Tarasiy Taridin Tatra Telec Telerig Tervel Timër Timëreç
+			Timërpälat Tingiz Tiradin Tokhtaman Toktu Tsog Tsul Tuk Umor Uturgur Vakrim Venda
+			Vetam Vinekh Yani
+			Yavantey Yençepi Yerneslu Yeçtirek Zabergan Zenti Tukiy Aydar Irkhan Batir
+		}
+		dynasty_names = {
+			Vokil Altsikur Kashu Barskhan Barsil Balanjar Vokil Erdevulu Silkid Bilar Sabir Esegel Izgil Askil
+			Bersula Urazgilid Kalmagorid Klyuch Ureñ Mayna Yasach Utka Bezd Kurnal Mesha Kaban
+			Oshnya Tolkish Izgar Sulcha Karmal
+		}
+	}
+	avar = {
+		primary = AVR
+		male_names = {
+			Ahmad Ali Magomed Magomedkhan Magomet Muhamad Muhamadkhan
+			Muhammad Murad Nurmagomed Nurmuhamad Ramazan Rasul Ruslan Shamil Sultan
+		}
+		dynasty_names = {
+			Sabir Akhasir Kazarig Kidar Ghidatli Gumbekh Kharoda Ghunib Yandalal Tsumadal
+			Tsuntab
+		}
+	}
+	khazar = {
+		primary = KHZ
+		male_names = {
+			Kozar Karadach Ziebel "Böri Shad" Irbis Khalga Kaban Busir Barjik Bihar Prisbit
+			Baghatur Dyggvi Tarkhan Zachariah "Yazir Bulash" Chorpan Tarkhan "Alp Tarkhan"
+			Tar'mach Hazer Bulan Sabriel Obadiah Hezekiah Manasseh Chanukkah Isaac Zebulun
+			Manasseh Nisi Aaron Menahem Benjamin Joseph David Georgius Tzul Tzitzak
+		}
+	}
+	oghuz = {
+		primary = OGZ
+		male_names = {
+			Kozar Karadach Ziebel "Böri Shad" Irbis Khalga Kaban Busir Barjik Bihar Prisbit
+			Baghatur Dyggvi Tarkhan Zachariah "Yazir Bulash" Chorpan Tarkhan "Alp Tarkhan"
+			Tar'mach Hazer Bulan Sabriel Obadiah Hezekiah Manasseh Chanukkah Isaac Zebulun
+			Manasseh Nisi Aaron Menahem Benjamin Joseph David Georgius Tzul Tzitzak
+		}
+	}
 }
-lost_cultures_group = { # Emptied
+lost_cultures_group = {
+	atlantean = {
+		primary = ATL
+	}
+	old_egyptian = {
+		primary = KEM
+	}
 }

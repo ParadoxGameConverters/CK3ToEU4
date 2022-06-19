@@ -1,0 +1,39 @@
+#Kingdom of Osroene, sometimes known as Edessa
+
+graphical_culture = muslimgfx
+
+color = { 255 175 100 }
+revolutionary_colors = { 16 14 14 }
+
+
+historical_idea_groups = {
+	humanist_ideas
+	trade_ideas
+	offensive_ideas
+	administrative_ideas
+	quantity_ideas
+	influence_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+
+historical_units = {
+	ottoman_yaya
+	ottoman_musellem
+	ottoman_azab
+	ottoman_timariot
+	ottoman_janissary
+	ottoman_spahi
+	ottoman_sekban
+	ottoman_reformed_spahi
+	ottoman_reformed_janissary
+	ottoman_toprakli_hit_and_run
+	ottoman_nizami_cedid
+	ottoman_toprakli_dragoon
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	ottoman_new_model
+	ottoman_lancer
+}

@@ -1,0 +1,32 @@
+#The Agĩkũyũ People, also known as the Kikuyu
+
+graphical_culture = africangfx
+
+color = { 90 120 150 }
+revolutionary_colors = { 6 1 6 }
+
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	offensive_ideas
+	spy_ideas
+	diplomatic_ideas
+	economic_ideas
+	innovativeness_ideas
+	religious_ideas
+}
+
+historical_units = {
+	african_spearmen
+	niger_kongolese_tribal_warfare
+	niger_kongolese_forest_warfare
+	niger_kongolese_gunpowder_warfare
+	westernized_niger_kongolese
+	niger_kongolese_guerilla_warfare
+	african_mandelaku
+	african_tuareg_cavalry
+	african_mossi_horsemen
+	african_hussar
+	african_dragoon	
+}

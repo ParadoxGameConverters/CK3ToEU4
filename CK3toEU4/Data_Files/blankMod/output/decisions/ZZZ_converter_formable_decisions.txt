@@ -1,6 +1,6 @@
 country_decisions = {
 
-	armenia_nation_EXTRA = { ##Monophysite Option
+	armenia_nation_EXTRA = {
 		major = yes
 		potential = {
 			normal_or_historical_nations = yes
@@ -55,7 +55,10 @@ country_decisions = {
 			NOT = { exists = ARM }
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
-			religion = monophysite
+			OR = {
+				religion_group = christian
+				religion_group = gnostic
+			}
 			is_nomad = no
 			owns_core_province = 327	# Cilicia
 			owns_core_province = 419	# Yerevan
@@ -151,35 +154,11 @@ country_decisions = {
 			NOT = { tag = HLR }
 			NOT = { tag = ROM }
 			NOT = { tag = TUR }
+			culture_group = byzantine
 			OR = {
-				AND = { #New Cultures
-					culture_group = byzantine
-					NOT = { primary_culture = greek }
-					NOT = { primary_culture = pontic_greek }
-					OR = {
-						religion = orthodox
-						religion = iconoclast
-						religion = bogomilist
-						religion = monothelite
-						religion = paulician
-						religion = hellenic_pagan
-						religion = hellenic_pagan_reformed
-					}
-				}
-				AND = { #New Religions
-					OR = {
-						primary_culture = greek
-						primary_culture = pontic_greek
-					}
-					OR = {
-						religion = iconoclast
-						religion = bogomilist
-						religion = monothelite
-						religion = paulician
-						religion = hellenic_pagan
-						religion = hellenic_pagan_reformed
-					}
-				}
+				religion_group = christian
+				religion_group = gnostic
+				religion_group = pagan
 			}
 		}
 		provinces_to_highlight = {
@@ -324,6 +303,9 @@ country_decisions = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
+				#For Generated Religions
+				uses_fervor = yes
+				uses_church_aspects = yes
 			}
 		}
 
@@ -379,6 +361,9 @@ country_decisions = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
+				#For Generated Religions
+				uses_fervor = yes
+				uses_church_aspects = yes
 			}
 			owns_core_province = 41			# Königsberg
 			OR = {
@@ -401,7 +386,7 @@ country_decisions = {
 				limit = {
 					OR = {
 						culture_group = germanic
-						culture = old_prussian
+						culture = pruthenian
 					}
 				}
 				add_base_tax = 1
@@ -426,7 +411,7 @@ country_decisions = {
 						is_capital = no
 						OR = {
 							culture_group = germanic
-							culture = old_prussian
+							culture = pruthenian
 						}
 					}
 					change_culture = prussian
@@ -506,6 +491,9 @@ country_decisions = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
+				#For Generated Religions
+				uses_fervor = yes
+				uses_church_aspects = yes
 			}
 			owns_core_province = 41 # Königsberg
 		}
@@ -581,7 +569,7 @@ country_decisions = {
 			}
 			OR = {
 				culture_group = germanic
-				primary_culture = old_prussian
+				primary_culture = pruthenian
 			}
 			NOT = { tag = PRU }
 			OR = {
@@ -618,13 +606,9 @@ country_decisions = {
 				religion = cathar
 				religion = waldensian
 				religion = lollard
-				AND = {
-					culture = old_prussian
-					OR = {
-						religion = protestant
-						religion = reformed
-					}
-				}
+				#For Generated Religions
+				uses_fervor = yes
+				uses_church_aspects = yes
 			}
 			owns_core_province = 41			# Königsberg
 			owns_core_province = 42			# Warmia
@@ -677,7 +661,7 @@ country_decisions = {
 					is_capital = no
 					OR = {
 						culture_group = germanic
-						culture = old_prussian
+						culture = pruthenian
 					}
 				}
 				change_culture = prussian
@@ -714,13 +698,15 @@ country_decisions = {
 			NOT = { tag = HLR }
 			NOT = { tag = RUS }
 			NOT = { exists = UKR }
-			OR = {
-				primary_culture = volhynian
-				primary_culture = severian
-				primary_culture = kishinyov
-				AND = {
-					tag = KIE
-					culture_group = east_slavic
+			culture_group = east_slavic
+			capital_scope = { 
+				OR = {
+					superregion = europe_superregion
+					region = ruthenia_region
+					region = crimea_region
+					region = poland_region
+					region = carpathia_region
+					region = balkan_region
 				}
 			}
 			OR = {
@@ -847,11 +833,18 @@ country_decisions = {
 			NOT = { tag = PAP }
 			NOT = { tag = HLR }
 			culture_group = east_slavic
-			NOT = { primary_culture = byelorussian }
-			NOT = { primary_culture = ruthenian }
-			NOT = { primary_culture = russian }
-			NOT = { primary_culture = novgorodian }
-			NOT = { primary_culture = ryazanian }
+			NOT = { #Ruthenia instead of Russia
+				capital_scope = { 
+					OR = {
+						superregion = europe_superregion
+						region = ruthenia_region
+						region = crimea_region
+						region = poland_region
+						region = carpathia_region
+						region = balkan_region
+					}
+				}
+			}
 			OR = {
 				ai = no
 				AND = {
@@ -987,5 +980,51 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
+	
+	restore_assyrian_empire = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = ASY }
+			NOT = { exists = ASY }
+			primary_culture = assyrian
+		}
 
+		allow = {
+			owns = 410
+			owns = 411
+			owns = 2313
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+		}
+		effect = {
+			411 = {
+				move_capital_effect = yes
+			}
+			change_tag = ASY
+			restore_country_name_effect = yes
+			set_government_rank = 2
+			add_prestige = 10
+			add_core = 411 # Nineveh
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }

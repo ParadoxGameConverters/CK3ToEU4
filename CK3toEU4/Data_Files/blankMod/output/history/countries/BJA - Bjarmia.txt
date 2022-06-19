@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = feudal_tribe
+government_rank = 2
+primary_culture = bjarmian
+religion = finnish_pagan
+technology_group = eastern
+capital = 4258	#Onega
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

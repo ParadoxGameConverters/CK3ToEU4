@@ -1,0 +1,17 @@
+government = native
+government_rank = 1
+primary_culture = athabascan
+religion = totemism
+technology_group = north_american
+capital = 2601	#Danezaa
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

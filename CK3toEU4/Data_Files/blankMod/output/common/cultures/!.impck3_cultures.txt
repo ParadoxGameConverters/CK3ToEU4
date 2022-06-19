@@ -43,7 +43,7 @@ lost_cultures_group = {
 		}
 	}
 }
-byzantine = {
+byzantine = {	
 	alexandrine = { primary = BYZ }
 	prettanian = { primary = BYZ }
 	hyperborean_greek = { primary = BYZ }
@@ -51,4 +51,7 @@ byzantine = {
 	spanish_greek = { primary = BYZ }
 	german_greek = { primary = BYZ }
 	mena_greek = { primary = BYZ }
+	
+	athenian = { primary = ATH }
+	spartan = { primary = SPR }
 }

@@ -1,0 +1,28 @@
+#Motu, one of the largest Papua New Guinean Tribes
+
+graphical_culture = africangfx
+
+color = { 0 75 0 }
+revolutionary_colors = { 0 1 0 }
+
+historical_idea_groups = {
+	defensive_ideas
+	offensive_ideas
+	trade_ideas
+	diplomatic_ideas
+	religious_ideas
+	economic_ideas
+	administrative_ideas
+	spy_ideas
+}
+
+historical_units = {
+	east_asian_spearmen
+	eastern_bow
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}

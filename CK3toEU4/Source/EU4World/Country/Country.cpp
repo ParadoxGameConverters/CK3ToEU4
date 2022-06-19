@@ -576,7 +576,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		localizations.insert(std::pair(tag + "_ideas_start", newblock));
 
 		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Ambition"; // Roman Ambition
-		newblock.spanish = "Ambición de " + localizations.find(tag + "_ADJ")->second.spanish;
+		newblock.spanish = "Ambiciï¿½n de " + localizations.find(tag + "_ADJ")->second.spanish;
 		newblock.french = "ambitions " + localizations.find(tag + "_ADJ")->second.french;
 		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ambitionen";
 		localizations.insert(std::pair(tag + "_ideas_bonus", newblock));

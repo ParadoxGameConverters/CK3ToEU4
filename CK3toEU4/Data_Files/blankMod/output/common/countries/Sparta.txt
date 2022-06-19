@@ -1,0 +1,18 @@
+#THIS IS SPARTA!
+
+graphical_culture = westerngfx
+
+color = { 115 0 0 }
+revolutionary_colors = { 16 8 16 }
+
+
+historical_idea_groups = {
+	quality_ideas
+	administrative_ideas
+	aristocracy_ideas
+	influence_ideas
+	offensive_ideas
+	defensive_ideas
+	quantity_ideas
+	naval_ideas
+}

@@ -1,0 +1,73 @@
+graphical_culture = westerngfx
+
+color = { 200 30 0 }
+revolutionary_colors = { 13 8 13 }
+
+historical_idea_groups = {
+	exploration_ideas
+	quality_ideas	
+	expansion_ideas
+	offensive_ideas
+	maritime_ideas
+	naval_ideas
+	trade_ideas
+	economic_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	swedish_gallop
+	swedish_gustavian
+	swedish_caroline
+	swedish_arme_blanche
+	prussian_frederickian
+	prussian_uhlan
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Icel #0" = 20
+	"Cnebba #0" = 20
+	"Cynweld #0" = 20
+	"Creoda #0" = 20
+	"Pybba #0" = 20
+	"Cearl #0" = 20
+	"Penda #0" = 20
+	"Shypicha #0" = 20
+	"Eowa #0" = 20
+	"Peada #0" = 20
+	"Oswia #0" = 20
+	"Wulfhere #0" = 20
+	"Æthelred #1" = 20
+	"Cœnred #0" = 20
+	"Ceolred #0" = 5
+	"Ceolwald #0" = 20
+	"Beornred #0" = 20
+	"Offa #0" = 20
+	"Ecgfrith #0" = 20
+	"Cœnwulf #0" = 20
+	"Cynehelm #0" = 20
+	"Ceolwulf #1" = 20
+	"Beornwulf #0" = 20
+	"Ludeca #0" = 20
+	"Wiglaf #0" = 20
+	"Ecgberht #0" = 20
+	"Wigmund #0" = 20
+	"Wigstan #0" = 20
+	"Beorhtwulf #0" = 20
+	"Burgred #0" = 20
+	"Ceolwulf #2" = 20
+	"Æthelred #2" = 20
+	"Ælfwynn #0" = 20
+	"Æthelstan #0" = 20
+	
+	"Ælfflæd #0" = -20
+	"Æthelflæd #0" = -20
+}

@@ -1,3 +1,31 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new dieties, make sure they are uniquely named.
+
+##MUST REPLACE VANILLA OR ELSE CAUSES ISSUES, PER ERROR LOG
+ # Edited custom CK3 Hindu religions
+buddha = {
+	sprite = 6
+	allow = { 
+		religion_group = dharmic
+		OR = {
+			mission_completed = mnd_maj_candi_shrines
+			mission_completed = sun_candi_temples
+			mission_completed = mnd_khm_religion
+		}
+	}
+	tolerance_heathen = 2
+	advisor_cost = -0.1
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			any_owned_province = {
+				religion_group = eastern
+			}
+		}
+	}
+}
+
 #For custom CK3 Hindu religions
 
 shiva =

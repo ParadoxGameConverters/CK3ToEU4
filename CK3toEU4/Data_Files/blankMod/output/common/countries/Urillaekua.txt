@@ -1,0 +1,32 @@
+#The ǃUriǁʼaekua, who famously defeated the Portugues in 1510 at the Battle of Salt River
+
+graphical_culture = africangfx
+
+color = { 250 150 150 }
+revolutionary_colors = { 13 6 9 }
+
+
+historical_idea_groups = {
+	offensive_ideas
+	economic_ideas
+	quantity_ideas
+	exploration_ideas
+	quality_ideas
+	maritime_ideas
+	trade_ideas
+	naval_ideas	
+}
+
+historical_units = {
+	african_spearmen
+	niger_kongolese_tribal_warfare
+	niger_kongolese_forest_warfare
+	niger_kongolese_gunpowder_warfare
+	westernized_niger_kongolese
+	niger_kongolese_guerilla_warfare
+	african_mandelaku
+	african_tuareg_cavalry
+	african_mossi_horsemen
+	african_hussar
+	african_dragoon	
+}
