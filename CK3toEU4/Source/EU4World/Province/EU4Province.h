@@ -3,6 +3,7 @@
 
 #include "../../Mappers/RegionMapper/RegionMapper.h"
 #include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
+#include "../../Mappers/RegionMapper/RegionMapper.h"
 #include "ProvinceDetails.h"
 #include <memory>
 #include <string>

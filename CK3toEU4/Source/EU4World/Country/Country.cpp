@@ -576,7 +576,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		localizations.insert(std::pair(tag + "_ideas_start", newblock));
 
 		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Ambition"; // Roman Ambition
-		newblock.spanish = "Ambición de " + localizations.find(tag + "_ADJ")->second.spanish;
+		newblock.spanish = "Ambiciï¿½n de " + localizations.find(tag + "_ADJ")->second.spanish;
 		newblock.french = "ambitions " + localizations.find(tag + "_ADJ")->second.french;
 		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ambitionen";
 		localizations.insert(std::pair(tag + "_ideas_bonus", newblock));
@@ -1026,13 +1026,14 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 	// Protestants
 	std::set<std::string> protestantReligions = {"protestant", "reformed", "hussite", "cathar", "waldensian", "lollard", "adamites"};
 	for (const auto& religion: religionMapper.getGeneratedReligions())
-		if (religion.religionGroup == "christian" && (religion.country.contains("uses_church_power") || religion.country.contains("fervor") ||
-																		 religion.country.contains("uses_anglican_power") || religion.country.contains("uses_hussite_power")))
+		if (religion.religionGroup == "christian" &&
+			 (religion.country.find("uses_church_power") != std::string::npos || religion.country.find("fervor") != std::string::npos ||
+				  religion.country.find("uses_anglican_power") != std::string::npos || religion.country.find("uses_hussite_power") != std::string::npos))
 			protestantReligions.insert(religion.name);
 	// Orthodox
 	std::set<std::string> orthodoxReligions = {"orthodox", "monothelite", "iconoclast", "paulician", "bogomilist"};
 	for (const auto& religion: religionMapper.getGeneratedReligions())
-		if (religion.religionGroup == "christian" && religion.country.contains("has_patriarchs"))
+		if (religion.religionGroup == "christian" && religion.country.find("has_patriarchs") != std::string::npos)
 			orthodoxReligions.insert(religion.name);
 	// Pagan
 	std::set<std::string> paganReligions = {"pagan_religion",
@@ -1323,7 +1324,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 					wasKing = true;
 					break;
 				}
-			
+
 			if (!wasKing)
 			{
 				// Stateless Society
@@ -1378,7 +1379,7 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 		details.reforms = {"great_mongol_state_reform"};
 	}
 	// Shaka Regime (Renamed in converter)
-	else if ((details.primaryCulture == "prussian" || details.primaryCulture == "pruthenian") && details.government == "tribal" &&
+	else if ((details.primaryCulture == "prussian" || details.primaryCulture == "old_prussian") && details.government == "tribal" &&
 				!details.reforms.contains("tribal_confederacy"))
 	{
 		details.reforms.clear();
