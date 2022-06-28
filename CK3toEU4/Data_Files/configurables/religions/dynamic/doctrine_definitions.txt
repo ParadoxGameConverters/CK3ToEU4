@@ -641,9 +641,35 @@ tenet_inner_journey = {
 		stability_cost_modifier = -0.1
 	}
 	country_as_secondary = {
-		stability_cost_modifier -0.1
+		stability_cost_modifier = -0.1
 	}
 }
+
+tenet_sacrificial_ceremonies = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		republican_tradition = 0.5
+	}
+	country_as_secondary = {
+		global_unrest = -1
+	}
+}
+
+tenet_megaliths = {
+	country = {
+		build_cost = -0.05
+	}
+	country_as_secondary = {
+		build_cost = -0.05
+	}
+	province = {
+		local_great_project_upgrade_cost = -0.1
+	}
+}
+
 #Empty
 tenets = {
 
