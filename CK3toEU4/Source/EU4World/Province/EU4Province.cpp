@@ -53,6 +53,9 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
 
+	// Check srcProvince for manual name
+	registerManualName(locDegrader);
+
 	// History section
 	// Not touching Capital, that's hardcoded English name.
 	details.isCity = true; // This must be true for all incoming provinces.
