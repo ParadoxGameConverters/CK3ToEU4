@@ -286,7 +286,7 @@ void CK3::Title::pickDisplayName(const std::map<std::string, std::shared_ptr<Tit
 	// Duchy capital ptrs are all null_ptr, outsource fixing and validation
 	const auto myDuchyCapital = findDuchyCapital();
 
-	if (!myDuchyCapital || myDuchyCapital->getID() == getID() || !myDuchyCapital->getDFLiege() || getDFLiege())
+	if (!myDuchyCapital || myDuchyCapital->getID() == getID() || !myDuchyCapital->getDFLiege() || !getDFLiege())
 		return;
 
 	// If the title's name is transfering to EU4, make sure it makes sense. Thrace should use Constantinople's name...
