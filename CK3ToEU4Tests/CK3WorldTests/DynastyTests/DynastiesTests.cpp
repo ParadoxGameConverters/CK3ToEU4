@@ -82,7 +82,7 @@ TEST(CK3World_DynastiesTests, coatsCanBeLinked)
 	ASSERT_EQ("lumpy", d2->second->getCoA()->second->getPattern());
 }
 
-TEST(CK3World_DynastiesTests, linkingMissingCoatsThrowsException)
+TEST(CK3World_DynastiesTests, linkingMissingCoatsDoesntLinkAnything)
 {
 	std::stringstream input;
 	input << "13={coat_of_arms_id = 1}\n";
@@ -93,5 +93,11 @@ TEST(CK3World_DynastiesTests, linkingMissingCoatsThrowsException)
 	input2 << "1 = { pattern=\"smooth\"}\n";
 	CK3::CoatsOfArms coats(input2);
 
-	ASSERT_THROW(dynasties.linkCoats(coats), std::runtime_error);
+	dynasties.linkCoats(coats);
+
+	const auto& d1 = dynasties.getDynasties().find(13);
+	const auto& d2 = dynasties.getDynasties().find(15);
+
+	EXPECT_EQ("smooth", d1->second->getCoA()->second->getPattern());
+	EXPECT_FALSE(d2->second->getCoA()->second);
 }
