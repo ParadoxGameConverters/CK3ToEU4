@@ -251,14 +251,14 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		// compressed or not?
 		saveFile.seekg(0, std::ios::end);
 		const auto length = saveFile.tellg();
-		if (length < 2097152)
+		if (length < 65536)
 		{
 			throw std::runtime_error("Savegame seems a bit too small.");
 		}
 		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[2097152];
-		saveFile.read(bigBuf, 2097152);
-		if (saveFile.gcount() < 2097152)
+		char* bigBuf = new char[length];
+		saveFile.read(bigBuf, length);
+		if (saveFile.gcount() < length)
 			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		const std::string bufStr(bigBuf);
 		const auto pos = bufStr.find("}\nPK");
@@ -280,9 +280,9 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 			throw std::runtime_error("Savegame seems a bit too small.");
 		}
 		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[65536];
-		saveFile.read(bigBuf, 65536);
-		if (saveFile.gcount() < 65536)
+		char* bigBuf = new char[length];
+		saveFile.read(bigBuf, length);
+		if (saveFile.gcount() < length)
 			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		for (int i = 0; i < 65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
