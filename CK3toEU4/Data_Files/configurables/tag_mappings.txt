@@ -17,13 +17,11 @@ link = { ck3 = d_gotland eu4 = GOT }
 link = { ck3 = c_gutland eu4 = GOT }
 link = { ck3 = d_iceland eu4 = ICE }
 link = { ck3 = d_karelia eu4 = KRL }
-link = { ck3 = d_livonia eu4 = LVA }
+link = { ck3 = k_livonia eu4 = LVA }
 link = { ck3 = c_livs eu4 = LVA }
 link = { ck3 = d_latgalians eu4 = LVA }
 link = { ck3 = k_norway eu4 = NOR }
 link = { ck3 = e_scandinavia eu4 = SCA }
-link = { ck3 = d_skane eu4 = SCN }
-link = { ck3 = c_skane eu4 = SCN }
 link = { ck3 = d_holstein eu4 = SHL }
 link = { ck3 = k_sapmi eu4 = SMI }
 link = { ck3 = d_giemajohka eu4 = SMI }
@@ -42,6 +40,7 @@ link = { ck3 = k_bosnia eu4 = BOS }
 link = { ck3 = d_bosna eu4 = BOS }
 #link = { ck3 = d_bosnia eu4 = BOS } This appears in the loc, but doesn't appear in 00_landed_titles?
 link = { ck3 = e_bulgaria eu4 = BUL }
+link = { ck3 = e_bulgarian_empire eu4 = BUL }
 link = { ck3 = k_bulgaria eu4 = BUL }
 link = { ck3 = d_bulgaria eu4 = BUL }
 link = { ck3 = e_byzantium eu4 = BYZ }
@@ -92,8 +91,6 @@ link = { ck3 = d_cornwall eu4 = CRN }
 link = { ck3 = c_cornwall eu4 = CRN }
 link = { ck3 = c_desmond eu4 = DMS }
 link = { ck3 = k_england eu4 = ENG }
-link = { ck3 = d_bedford eu4 = ESX }
-link = { ck3 = c_essex eu4 = ESX }
 link = { ck3 = e_britannia eu4 = GBR }
 link = { ck3 = d_moray eu4 = HSC }
 link = { ck3 = k_ireland eu4 = IRE }
@@ -107,7 +104,6 @@ link = { ck3 = c_leinster eu4 = LEI }
 link = { ck3 = d_western_isles eu4 = LOI }
 link = { ck3 = d_munster eu4 = MCM } #Currently no county Munster
 link = { ck3 = c_thomond eu4 = MNS } #The EU4 file is still named Munster even if the country name itself has changed
-link = { ck3 = d_hereford eu4 = MRC } #Mercia
 link = { ck3 = d_meath eu4 = MTH }
 link = { ck3 = c_dublin eu4 = MTH }
 link = { ck3 = d_northumberland eu4 = NOL }
@@ -120,17 +116,19 @@ link = { ck3 = c_oriel eu4 = TYR }
 link = { ck3 = d_ulster eu4 = ULS }
 link = { ck3 = c_ulster eu4 = ULS }
 link = { ck3 = k_wales eu4 = WLS }
-link = { ck3 = d_somerset eu4 = WSX }
 
 # Eastern Europe
 
-link = { ck3 = e_west_slavia eu4 = WSF }
+link = { ck3 = e_west_slavia eu4 = PLC }
 link = { ck3 = d_chernigov eu4 = CHR }
 link = { ck3 = c_chernigov eu4 = CHR }
 link = { ck3 = c_danzig eu4 = DNZ }
+link = { ck3 = d_pomerelia eu4 = DNZ }
+link = { ck3 = k_ruthenia eu4 = KIE }
 link = { ck3 = d_kiev eu4 = KIE }
 link = { ck3 = c_kiev eu4 = KIE }
 link = { ck3 = c_krakowska eu4 = KRA }
+link = { ck3 = d_lesser_poland eu4 = KRA }
 link = { ck3 = d_courland eu4 = KUR }
 link = { ck3 = k_lithuania eu4 = LIT }
 link = { ck3 = d_lithuanians eu4 = LIT }
@@ -140,7 +138,10 @@ link = { ck3 = c_odoyev eu4 = OKA }
 link = { ck3 = k_poland eu4 = POL }
 link = { ck3 = d_prussia eu4 = PRU }
 link = { ck3 = c_zemigalians eu4 = RIG }
+link = { ck3 = c_vidzeme eu4 = RIG }
 link = { ck3 = d_teutonic_order eu4 = TEU }
+link = { ck3 = d_livonian_order eu4 = LIV }
+link = { ck3 = k_teutonic_state eu4 = TEU }
 link = { ck3 = k_galicia-volhynia eu4 = VOL }
 link = { ck3 = d_volhynia eu4 = VOL }
 
@@ -168,6 +169,7 @@ link = { ck3 = d_dauphine eu4 = DAU }
 link = { ck3 = c_foix eu4 = FOI }
 link = { ck3 = e_france eu4 = FRA }
 link = { ck3 = k_france eu4 = FRA }
+link = { ck3 = k_aquitaine eu4 = GUY }
 link = { ck3 = d_gascogne eu4 = GUY }
 link = { ck3 = c_nevers eu4 = NEV }
 link = { ck3 = d_normandy eu4 = NRM }
@@ -196,6 +198,7 @@ link = { ck3 = d_ostmark eu4 = BRA }
 link = { ck3 = c_brandenburg eu4 = BRA }
 link = { ck3 = c_bremen eu4 = BRE }
 link = { ck3 = c_brunswick eu4 = BRU }
+link = { ck3 = d_ostfalen eu4 = BRU }
 link = { ck3 = c_ditmarschen eu4 = DTT }
 link = { ck3 = c_ostfriesland eu4 = EFR }
 link = { ck3 = c_frankfurt eu4 = FRN }
@@ -228,12 +231,14 @@ link = { ck3 = c_nurnberg eu4 = NUM }
 link = { ck3 = c_nassau eu4 = NSA }
 link = { ck3 = c_oldenburg eu4 = OLD }
 link = { ck3 = d_west_franconia eu4 = PAL }
+link = { ck3 = d_rhine eu4 = PAL }
 link = { ck3 = k_pomerania eu4 = POM }
 link = { ck3 = d_pommerania eu4 = POM }
 link = { ck3 = c_ravensburg eu4 = RVA }
 link = { ck3 = k_saxony eu4 = SAX }
+link = { ck3 = k_grand_saxony eu4 = SAX }
 link = { ck3 = k_saxon_electorate eu4 = SAX }
-link = { ck3 = d_upper_silesia eu4 = SIL }
+link = { ck3 = d_lower_silesia eu4 = SIL }
 link = { ck3 = d_salzburg eu4 = SLZ }
 link = { ck3 = c_salzburg eu4 = SLZ }
 link = { ck3 = d_steyermark eu4 = STY }
@@ -351,25 +356,28 @@ link = { ck3 = k_old_armenia eu4 = ARM }
 link = { ck3 = d_greater_armenia eu4 = ARM }
 link = { ck3 = c_astrakhan eu4 = AST }
 link = { capitals = { 5311 } eu4 = AST } # Kuma -> Astrakhan
-link = { ck3 = k_bjarmaland eu4 = BJA }
-link = { ck3 = d_biarmia eu4 = BJA }
-link = { ck3 = c_onega_BJA eu4 = BJA }
 link = { ck3 = c_beloozero eu4 = BLO }
+link = { ck3 = d_vepsia eu4 = BLO }
 link = { ck3 = k_bashkiria eu4 = BSH }
 link = { ck3 = d_bashkiria eu4 = BSH }
+link = { ck3 = k_crimea eu4 = CRI }
 link = { ck3 = d_crimea eu4 = CRI }
 link = { ck3 = c_kerch eu4 = FEO } # Kerch => Theodoro
 link = { ck3 = k_georgia eu4 = GEO }
 link = { ck3 = d_georgia eu4 = GEO }
 link = { ck3 = e_golden_horde eu4 = GLH }
-link = { ck3 = c_vodi eu4 = IGR } # Vodi -> Ingria
+link = { ck3 = k_kazan eu4 = KAZ }
 link = { ck3 = d_kazan eu4 = KAZ }
 link = { ck3 = c_kazan eu4 = KAZ }
 link = { ck3 = c_moskva eu4 = MOS }
+link = { ck3 = k_muscovy eu4 = MOS }
+link = { capitals = { 575 } eu4 = MOS } 	
 link = { capitals = { 622 } eu4 = NOG } # Ak-Dzulpas -> Nogai
+link = { ck3 = k_nogai eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
 link = { ck3 = d_novgorod eu4 = NOV }
 link = { ck3 = c_novgorod eu4 = NOV }
+link = { ck3 = k_white_rus eu4 = PLT } 
 link = { ck3 = d_polotsk eu4 = PLT }
 link = { ck3 = c_polotsk eu4 = PLT }
 link = { ck3 = k_permia eu4 = PRM }
@@ -378,15 +386,16 @@ link = { ck3 = c_perm eu4 = PRM }
 link = { ck3 = c_pskov eu4 = PSK }
 link = { ck3 = d_pronsk eu4 = QAS }
 link = { ck3 = c_tula eu4 = QAS }
-#link = { ck3 = ??? eu4 = RSO }
-link = { ck3 = e_russia eu4 = RUS }
+link = { capitals = { 574 } eu4 = RSO }
+link = { ck3 = e_russia eu4 = UKR }
+link = { ck3 = e_russian_empire eu4 = RUS }	   
 link = { ck3 = d_ryazan eu4 = RYA }
 link = { ck3 = c_ryazan eu4 = RYA }
 link = { ck3 = c_tver eu4 = TVE }
-link = { ck3 = k_ruthenia eu4 = UKR }
-link = { ck3 = k_white_rus eu4 = UKR }
-link = { ck3 = d_vepsia eu4 = VPS }
+link = { ck3 = k_opolye eu4 = RUS }
+link = { ck3 = k_uzbek eu4 = SHY }
 link = { ck3 = c_yaroslavl eu4 = YAR }
+link = { ck3 = d_yedisan eu4 = ZAZ }
 link = { ck3 = k_pontic_steppe eu4 = ZAZ }
 
 # Arabia
@@ -419,6 +428,7 @@ link = { ck3 = c_mahra eu4 = MHR }
 link = { ck3 = d_najd eu4 = NAJ }
 link = { ck3 = c_najran eu4 = NJR }
 link = { ck3 = d_oman eu4 = OMA }
+link = { ck3 = k_oman eu4 = OMA }
 link = { ck3 = d_shammar eu4 = SHM }
 link = { ck3 = c_julfar eu4 = SHR }
 link = { ck3 = d_shirvan eu4 = SRV }
@@ -428,8 +438,10 @@ link = { ck3 = k_yemen eu4 = YEM }
 # Asia Minor
 
 link = { ck3 = d_azerbaijan eu4 = ARL }
+link = { ck3 = d_ciscaucasia eu4 = GAZ }
 link = { ck3 = c_ardabil eu4 = ARL }
-#link = { ck3 = ??? eu4 = AVR }
+link = { ck3 = c_samander eu4 = AVR }
+link = { ck3 = e_avar_khaganate eu4 = AVR }
 link = { ck3 = k_aydin eu4 = AYD }
 link = { ck3 = k_candar eu4 = CND }
 link = { ck3 = k_mesopotamia eu4 = IRQ }
@@ -479,6 +491,7 @@ link = { ck3 = c_tunis eu4 = TUN }
 # Central Asia
 
 link = { ck3 = c_bukhara eu4 = BUK }
+link = { ck3 = d_soghd eu4 = BUK }
 link = { ck3 = d_khorezm eu4 = KHI }
 link = { ck3 = c_khiva eu4 = KHI }
 link = { ck3 = d_ferghana eu4 = KOK }
@@ -494,6 +507,7 @@ link = { ck3 = c_talish eu4 = BPI }
 link = { ck3 = d_basra eu4 = BSR }
 link = { ck3 = c_basra eu4 = BSR }
 link = { ck3 = d_alania eu4 = CIR }
+link = { ck3 = d_zichia eu4 = CIR }
 link = { ck3 = d_fars eu4 = FRS }
 link = { ck3 = c_shiraz eu4 = FRS }
 link = { ck3 = d_abkhazia eu4 = IME }
@@ -501,13 +515,13 @@ link = { ck3 = c_abkhazia eu4 = IME }
 link = { ck3 = d_isfahan eu4 = ISF }
 link = { ck3 = c_isfahan eu4 = ISF }
 link = { ck3 = k_khorasan eu4 = KHO }
-link = { ck3 = d_kermanshah eu4 = KRM }
-link = { ck3 = c_kermanshah eu4 = KRM }
+link = { ck3 = d_kirman eu4 = KRM }
+link = { ck3 = c_kirman eu4 = KRM }
+link = { ck3 = k_daylam eu4 = KRY }
 link = { ck3 = d_daylam eu4 = KRY }
 link = { ck3 = c_gilan eu4 = KRY }
 link = { ck3 = c_luristan eu4 = LRI }
 link = { ck3 = c_maragha eu4 = MGR }
-link = { ck3 = k_oghuz_il eu4 = OGZ }
 link = { ck3 = d_hormuz eu4 = ORM }
 link = { ck3 = c_hormuz eu4 = ORM }
 link = { ck3 = e_persia eu4 = PER }
@@ -528,7 +542,7 @@ link = { ck3 = k_adal eu4 = ADA }
 link = { ck3 = d_adal eu4 = ADA }
 link = { ck3 = e_ajuraan eu4 = AJU }
 link = { ck3 = k_ajuraan eu4 = AJU }
-link = { ck3 = k_outer_ajuraan eu4 = AJU }
+
 link = { ck3 = d_west_ajuraan eu4 = AJU }
 link = { ck3 = d_ashanti eu4 = ASH }
 link = { ck3 = d_benin  eu4 = BEN }
@@ -552,6 +566,7 @@ link = { ck3 = d_mogadishu eu4 = MDI }
 link = { ck3 = c_mogadishu eu4 = MDI }
 link = { ck3 = d_kordofan eu4 = NUB } #Nub is Funj
 link = { ck3 = c_kordofan eu4 = NUB }
+link = { ck3 = k_yorubaland eu4 = OYO }									   
 link = { ck3 = d_oyo eu4 = OYO }
 link = { ck3 = c_oyo eu4 = OYO }
 link = { ck3 = c_soso eu4 = SOF }
@@ -603,8 +618,10 @@ link = { ck3 = e_chagatai eu4 = CHG }
 link = { ck3 = c_chamil eu4 = HMI } #Has Hami, the capital of the Kara Del Kingdom, as a holding
 link = { ck3 = e_ilkhanate eu4 = ILK }
 link = { ck3 = c_yarkand eu4 = KAS }
+link = { ck3 = k_khotan eu4 = KAS }								   
 link = { ck3 = k_mongolia eu4 = KHA }
-link = { ck3 = e_mongolia eu4 = MGE }
+link = { ck3 = e_mongolia eu4 = KHA }
+link = { ck3 = e_mongol_empire eu4 = MGE }  
 link = { ck3 = d_ramannadesa eu4 = PEG }
 link = { ck3 = c_pegu eu4 = PEG }
 link = { ck3 = c_toungoo eu4 = TAU }
@@ -663,7 +680,6 @@ link = { ck3 = c_racakonda eu4 = GOC }
 link = { ck3 = c_khinjali_mandala eu4 = GRJ } #Location of the Garjat Hills
 link = { ck3 = c_kaski eu4 = GRK } #Has city of Gorkha
 link = { ck3 = k_gujarat eu4 = GUJ }
-link = { ck3 = c_surparaka eu4 = BMY } #Aproximate location of Mumbai/Bombay
 link = { ck3 = c_gwalior eu4 = GWA }
 link = { ck3 = c_kota eu4 = HAD }
 #link = { ck3 = ??? eu4 = HIN } #Hindustan is Islamic, you can only form e_india as a dharmist
@@ -686,7 +702,7 @@ link = { ck3 = c_khijjingakota eu4 = KJH }
 link = { ck3 = c_cakrakuta eu4 = KLH }
 link = { ck3 = c_mahishaka eu4 = KLN } #There is another county with a Keladi barony, but I THINK that this county is actually the right place based on comparison with other locations
 link = { ck3 = c_kalpi eu4 = KLP }
-#link = { ck3 = ??? eu4 = KLT } #Should be in c_alupa, but MAB had first dibs
+#link = { ck3 = c_alupa eu4 = KLT } #Should be in c_alupa, but MAB had first dibs
 link = { ck3 = c_kumaon eu4 = KMN }
 link = { ck3 = c_kali_kumaon eu4 = KMN }
 link = { ck3 = d_kamarupanagara eu4 = KMT }
@@ -700,7 +716,7 @@ link = { ck3 = c_kasmira eu4 = KSH }
 link = { ck3 = c_kathmandu eu4 = KTU }
 link = { ck3 = d_ladakh eu4 = LDK }
 link = { ck3 = d_limbuwan eu4 = LWA }
-link = { ck3 = c_alupa eu4 = MAB } #Has barony of Calicut (Calicut is the actual EU4 name)
+link = { ck3 = c_eranad eu4 = MAB } #Has barony of Calicut (Calicut is the actual EU4 name)
 link = { ck3 = c_madurai eu4 = MAD }
 link = { ck3 = d_devagiri eu4 = MAR }
 link = { ck3 = c_devagiri eu4 = MAR }
@@ -710,7 +726,7 @@ link = { ck3 = c_mallabhum eu4 = MBL } #Has barony of Bisnupur
 link = { ck3 = d_medapata eu4 = MER } #Old name of Mewar
 link = { ck3 = c_medapata eu4 = MER }
 link = { ck3 = d_mathura eu4 = MEW } #Corresponds largely with the area of Mewat
-#link = { ck3 = ??? eu4 = MKP } #Should be in c_kathmandu, but KTU has dibs
+#link = { ck3 = c_bhaktapur eu4 = MKP } #Should be in c_kathmandu, but KTU has dibs
 link = { ck3 = c_manipur eu4 = MLB }
 link = { ck3 = k_malwa eu4 = MLW }
 link = { ck3 = d_multan eu4 = MUL }
@@ -821,18 +837,11 @@ link = { ck3 = c_sriksetra eu4 = BPR } #Glory to Prome!
 
 #Siberia
 
-link = { ck3 = k_buryatia eu4 = BRT }
 link = { ck3 = e_siberia eu4 = SIB }
 link = { ck3 = k_sibir eu4 = SIB }
 link = { ck3 = d_sibir eu4 = SIB }
 link = { ck3 = c_sibir eu4 = SIB }
-link = { ck3 = k_tuva eu4 = TUV }
-link = { ck3 = d_tannu_ola eu4 = TUV }
-link = { ck3 = c_eastern_tannu eu4 = TUV }
-link = { ck3 = c_western_tannu eu4 = TUV }
-link = { ck3 = k_yugra eu4 = YUG }
-link = { ck3 = d_ostyaki eu4 = YUG }
-
+link = { ck3 = k_buryatia eu4 = BRT }
 
 #Indonesia
 
@@ -843,7 +852,7 @@ link = { ck3 = c_ingolstadt eu4 = ING } # Ingolstadt
 link = { ck3 = c_passau eu4 = PSS } # Passau
 #link = { ck3 = ??? eu4 = MBZ } # Should be in c_ravensburg, but RVA had first dibs
 link = { ck3 = c_sankt_gallen eu4 = KNZ } #Has barony Konstanz
-#link = { ck3 = ????c_rothenburg eu4 = ROT } #PDX put it in the wrong spot? (It's not next to Ansbach?)
+#link = { ck3 = c_rothenburg eu4 = ROT } #PDX put it in the wrong spot? (It's not next to Ansbach?)
 link = { ck3 = c_leuchtenburg eu4 = BYT } #Has city of Bayreuth
 link = { ck3 = c_regensburg eu4 = REG } # Regensburg
 link = { ck3 = c_geneva eu4 = GNV } # Geneva
@@ -859,7 +868,7 @@ link = { ck3 = c_spoleto eu4 = SPL }
 link = { ck3 = c_wolgast eu4 = WOL }
 link = { ck3 = c_stettin eu4 = STE }
 link = { ck3 = c_gottingen eu4 = GOS } #Has city of Goslar
-link = { ck3 = e_sorbia eu4 = SOR } # Lausitz => Lusatia
+link = { ck3 = k_sorbia eu4 = SOR } # Lausitz => Lusatia
 link = { ck3 = d_lausitz eu4 = SOR } # Lausitz => Lusatia
 link = { ck3 = c_cottbus eu4 = SOR } #Political/Cultural Centre of Sorbia/Lusatia
 link = { ck3 = c_rugen eu4 = RUG }
@@ -883,6 +892,15 @@ link = { ck3 = c_orvieto eu4 = PGA } #Has temple-city Perugia
 link = { ck3 = k_sicily eu4 = TTS }
 link = { ck3 = d_east_franconia eu4 = FKN }
 link = { ck3 = d_swabia eu4 = SWA }
+link = { ck3 = k_swabia eu4 = SWA }
+link = { ck3 = k_franconia eu4 = FKN }
+link = { ck3 = k_saxon eu4 = SAX }
+link = { ck3 = k_swabia_otto eu4 = SWA }
+link = { ck3 = k_grand_swabia eu4 = SWA }
+link = { ck3 = k_alemania eu4 = SWA }
+link = { ck3 = k_franconia_otto eu4 = FKN }
+link = { ck3 = k_grand_franconia eu4 = FKN }
+link = { ck3 = k_franconia_otto eu4 = THU }	   
 
 #???
 link = { ck3 = e_roman_empire eu4 = ROM }
@@ -934,6 +952,7 @@ link = { ck3 = d_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = c_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = k_cuman eu4 = CMN } # Cuman
 link = { ck3 = d_khazaria eu4 = KHZ } # Khazaria
+link = { ck3 = e_caspian-pontic_steppe eu4 = KHZ } # Khazaria		 
 link = { ck3 = d_thrace eu4 = THR } # Thrace
 link = { ck3 = c_phrygia eu4 = PHR } # Phrygia
 link = { ck3 = k_africa eu4 = AFR } # Africa
@@ -1013,13 +1032,16 @@ link = { ck3 = k_wurttemberg eu4 = WUR }
 link = { ck3 = k_westfalia eu4 = WES }
 link = { ck3 = k_hanover eu4 = HAN }
 link = { ck3 = e_maratha eu4 = MAR }
+link = { ck3 = k_maharastra eu4 = MAR }
 link = { ck3 = k_oudh eu4 = ODH }
+link = { ck3 = k_kosala eu4 = ODH }
 link = { ck3 = k_jaisalmer eu4 = JSL }
 link = { ck3 = d_maldives eu4 = DGL }
 link = { ck3 = k_romania eu4 = RMN }
 link = { ck3 = k_sikkim eu4 = SKK }
 link = { ck3 = d_sikkim eu4 = SKK }
 link = { ck3 = k_tts eu4 = TTS }
+link = { ck3 = k_two_sicilies eu4 = TTS }	 
 link = { ck3 = e_tang eu4 = TNG }
 link = { ck3 = e_jurchen_china eu4 = JIN }
 link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
