@@ -1,7 +1,7 @@
 # heritages determine into what eu4 culture group a particular dynamic culture goes
 # single eu4 per line, multiple ck3 per line.
 
-link = { eu4 = germanic ck3 = heritage_central_germanic }
+link = { eu4 = germanic ck3 = heritage_central_germanic ck3 = heritage_east_germanic}
 link = { eu4 = scandinavian ck3 = heritage_north_germanic }
 link = { eu4 = british ck3 = heritage_brythonic ck3 = heritage_west_germanic }
 link = { eu4 = gaelic ck3 = heritage_goidelic }
@@ -14,15 +14,15 @@ link = { eu4 = west_slavic ck3 = heritage_west_slavic }
 link = { eu4 = carpathian ck3 = heritage_magyar ck3 = heritage_vlach }
 link = { eu4 = east_slavic ck3 = heritage_east_slavic }
 link = { eu4 = baltic ck3 = heritage_baltic ck3 = heritage_balto_finnic }
-link = { eu4 = byzantine ck3 = heritage_byzantine }
+link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_aramaic ck3 = heritage_egyptian }
 
 # no clear mapping as they shoved the cultures in byzantine 
-#link = { eu4 = caucasian }
+link = { eu4 = caucasian ck3 = heritage_caucasian }
 
 # this is levantine group, no actual turks.
-link = { eu4 = turko_semitic ck3 = heritage_arabic }
+link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian }
 
-link = { eu4 = maghrebi ck3 = heritage_berber }
+link = { eu4 = maghrebi ck3 = heritage_berber ck3 = heritage_guanche }
 link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian }
 link = { eu4 = altaic ck3 = heritage_mongolic }
 
@@ -44,7 +44,7 @@ link = { eu4 = dravidian ck3 = heritage_dravidian }
 link = { eu4 = mande ck3 = heritage_west_african } #CK3's West African =/= EU4's
 #link = { eu4 = great_lakes_group ck3 =  }
 #link = { eu4 = sudanese ck3 =  }
-link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian ck3 = heritage_central_african }
+link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian ck3 = heritage_central_african ck3 = heritage_gur }
 link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 #link = { eu4 = kongo_group ck3 =  } Central African is the pass between west and east africa, not the Kongo
 link = { eu4 = african ck3 = heritage_east_african }

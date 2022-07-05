@@ -263,7 +263,7 @@ link = { eu4 = basque ck3 = basque tech = western gfx = westerngfx }
 link = { eu4 = galician ck3 = galician tech = western gfx = westerngfx }
 link = { eu4 = leonese ck3 = asturleonese tech = western gfx = westerngfx }
 link = { eu4 = castillian ck3 = castilian tech = western gfx = westerngfx }
-link = { eu4 = aragonese ck3 = aragonese tech = western gfx = westerngfx }
+link = { eu4 = aragonese ck3 = aragonese ck3 = navarro_aragonese tech = western gfx = westerngfx }
 link = { eu4 = catalan ck3 = catalan tech = western gfx = westerngfx }
 link = { eu4 = portugese ck3 = portuguese tech = western gfx = westerngfx }
 link = { eu4 = ultramar ck3 = ultramar tech = western gfx = westerngfx }
@@ -290,10 +290,11 @@ link = { eu4 = seleucian ck3 = greek tech = eastern gfx = westerngfx region = ma
 link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
 link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian tech = eastern gfx = easterngfx }
-link = { eu4 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
+link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
+link = { eu4 = dagestani ck3 = dagestani tech = eastern gfx = easterngfx }
 link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
-link = { eu4 = georgian ck3 = georgian tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = georgian ck3 = syriac ck3 = udi tech = eastern gfx = easterngfx }
 link = { eu4 = assyrian ck3 = assyrian tech = eastern gfx = easterngfx }
 link = { eu4 = goths ck3 = crimean_gothic tech = eastern gfx = easterngfx }
 link = { eu4 = coptic ck3 = coptic ck3 = old_egyptian tech = eastern gfx = easterngfx }
@@ -531,7 +532,7 @@ link = { eu4 = bozo ck3 = bozo ck3 = sorko tech = sub_saharan gfx = africangfx }
 link = { eu4 = dyola ck3 = mande tech = sub_saharan gfx = africangfx region = kong_area region = lower_volta_area region = upper_volta_area }
 link = { eu4 = dyola ck3 = kru tech = sub_saharan gfx = africangfx }
 link = { eu4 = senegambian ck3 = soninke ck3 = manden tech = sub_saharan gfx = africangfx region = baghena_area region = tekrur_area region = jolof_area }
-link = { eu4 = mali ck3 = mande ck3 = senufo ck3 = malinke ck3 = bobo ck3 = gur ck3 = marka ck3 = kurumba ck3 = konkomba ck3 = kulango ck3 = kibsi tech = sub_saharan gfx = africangfx }
+link = { eu4 = mali ck3 = mande ck3 = senufo ck3 = malinke ck3 = bobo ck3 = gur ck3 = marka ck3 = kurumba ck3 = konkomba ck3 = kulango ck3 = kibsi ck3 = lilse tech = sub_saharan gfx = africangfx }
 link = { eu4 = soninke ck3 = soninke tech = sub_saharan gfx = africangfx }
 link = { eu4 = songhai ck3 = songhai ck3 = gaw ck3 = zarma tech = sub_saharan gfx = africangfx }
 link = { eu4 = jukun ck3 = jukun tech = sub_saharan gfx = africangfx }
@@ -810,4 +811,4 @@ link = { eu4 = malagasy ck3 = malagasy tech = east_african gfx = africangfx }
 link = { eu4 = shona ck3 = shona tech = central_african gfx = africangfx }
 link = { eu4 = guanche ck3 = guanche ck3 = guanches tech = sub_saharan gfx = muslimgfx }
 link = { eu4 = mizrahi ck3 = mizrahi tech = muslim gfx = muslimgfx }
-link = { eu4 = hephthalite ck3 = hephthalite ck3 = huna tech = muslim gfx = muslimgfx }
+link = { eu4 = hephthalite ck3 = hephthalite ck3 = huna ck3 = turco_hephthalite tech = muslim gfx = muslimgfx }
