@@ -810,5 +810,10 @@ link = { eu4 = swahili ck3 = swahili tech = east_african gfx = africangfx }
 link = { eu4 = malagasy ck3 = malagasy tech = east_african gfx = africangfx }
 link = { eu4 = shona ck3 = shona tech = central_african gfx = africangfx }
 link = { eu4 = guanche ck3 = guanche ck3 = guanches tech = sub_saharan gfx = muslimgfx }
-link = { eu4 = mizrahi ck3 = mizrahi tech = muslim gfx = muslimgfx }
+link = { eu4 = mizrahi ck3 = mustaarabi tech = muslim gfx = muslimgfx }
 link = { eu4 = hephthalite ck3 = hephthalite ck3 = huna ck3 = turco_hephthalite tech = muslim gfx = muslimgfx }
+link = { eu4 = xibei ck3 = wenmo tech = chinese gfx = asiangfx }
+link = { eu4 = teimani ck3 = teimani tech = muslim gfx = muslimgfx }
+link = { eu4 = parsim ck3 = persian_jewish tech = muslim gfx = muslimgfx }
+link = { eu4 = israeli ck3 = teimani ck3 = persian_jewish tech = eastern gfx = easterngfx region = mashriq_region }
+

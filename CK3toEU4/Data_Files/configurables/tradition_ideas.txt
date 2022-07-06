@@ -249,3 +249,5 @@ link = { ck3 = { tradition = tradition_RICE_ubiquity_of_poetry } eu4 = { dip_tec
 link = { ck3 = { tradition = tradition_RICE_xianbei_scions } eu4 = { monarch_diplomatic_power = 1 } } 
 link = { ck3 = { tradition = tradition_RICE_white_huns } eu4 = { may_perform_slave_raid = yes} }
 link = { ck3 = { tradition = tradition_RICE_children_of_the_nile } eu4 = { global_trade_goods_size_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_RICE_silk_road } eu4 = { envoy_travel_time = -0.1 trade_steering = 0.2 } } 
+link = { ck3 = { tradition = tradition_RICE_galician_portuguese_poetry } eu4 = { prestige = 1 } } 

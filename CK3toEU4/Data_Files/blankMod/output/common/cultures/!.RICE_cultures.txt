@@ -135,3 +135,35 @@ iranian = {
 		primary = KAS
 	}
 }
+israelite = {
+	teimani = {
+		primary = ISR
+		male_names = {
+			Chaikeh Eli Jonah Asher Aron Abel Abraham Avraam Gabriel Gershon Gideon Isaac
+			Israel Issachar Jacob Joel Joseph Mordecai Manasseh Moses Naftali Nathan Reuven Samson Samuel
+			Simeon Simon Solomon Yohanan Zachariah Chaim Moshe Malachi Jaffe Maimon Melamed Nathan
+			Amiel Benjamin Lazarus Matai Meshach Noah Shulamith Shylock Seraphim Seth Shafir Shailen
+			Saul Tivon Yechezkel Yehudi Yan Yanis Ronas Yosef Tobias Tov Dov Zakai Zakur Zamir Zabulon
+		}
+		dynasty_names = {
+			Alsheikh Sha'er Baghdalan Shemmen Ba'adani Buri Dahbash Irji Jizfan Keshet Korah Libi
+			Maatuf Nahari Ozayri Sahar Saeed Sharabi Yemini Yekutiel Hozeh Haza Hamdi Habani
+		}
+	}
+}
+israelite = {
+	parsim = {
+		primary = ISR
+		male_names = {
+			Chaikeh Eli Jonah Asher Aron Abel Abraham Avraam Gabriel Gershon Gideon Isaac
+			Israel Issachar Jacob Joel Joseph Mordecai Manasseh Moses Naftali Nathan Reuven Samson Samuel
+			Simeon Simon Solomon Yohanan Zachariah Chaim Moshe Malachi Jaffe Maimon Melamed Nathan
+			Amiel Benjamin Lazarus Matai Meshach Noah Shulamith Shylock Seraphim Seth Shafir Shailen
+			Saul Tivon Yechezkel Yehudi Yan Yanis Ronas Yosef Tobias Tov Dov Zakai Zakur Zamir Zabulon
+		}
+		dynasty_names = {
+			Yashayaei Nazarian Akhavan Kohan Tahari Hamadani Davidi Shofet Binafard Kohan-Sedq Kashani Mashian
+			Shaltiel Mossanen Khavarani Karbasi Rahbar Netzer Haim Salimpour Avtabi Shkalim Zar Eliasi
+		}
+	}
+}
