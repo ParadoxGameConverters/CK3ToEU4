@@ -291,11 +291,12 @@ link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabi
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
 link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian tech = eastern gfx = easterngfx }
 link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
+link = { eu4 = circassian ck3 = circassian tech = eastern gfx = easterngfx } #It has to be this way or the Circassian outside of Circassia will disappear
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
 link = { eu4 = dagestani ck3 = dagestani tech = eastern gfx = easterngfx }
 link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
-link = { eu4 = georgian ck3 = georgian ck3 = syriac ck3 = udi tech = eastern gfx = easterngfx }
-link = { eu4 = assyrian ck3 = assyrian tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = georgian ck3 = udi tech = eastern gfx = easterngfx }
+link = { eu4 = assyrian ck3 = assyrian ck3 = syriac tech = eastern gfx = easterngfx }
 link = { eu4 = goths ck3 = crimean_gothic tech = eastern gfx = easterngfx }
 link = { eu4 = coptic ck3 = coptic ck3 = old_egyptian tech = eastern gfx = easterngfx }
 
@@ -443,9 +444,11 @@ link = { eu4 = russian_culture ck3 = russian tech = eastern gfx = easterngfx } #
 link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx }
 # East Slavic
 
-link = { eu4 = ilmenian ck3 = ilmenian tech = eastern gfx = easterngfx }
-link = { eu4 = volhynian ck3 = volhynian ck3 = belocroat ck3 = polyan ck3 = krivich ck3 = vyatichi ck3 = poloch ck3 = dregovich ck3 = drevlian ck3 = tiverian tech = eastern gfx = easterngfx }
+link = { eu4 = ilmenian ck3 = ilmenian ck3 = krivich ck3 = vyatichi ck3 = poloch tech = eastern gfx = easterngfx }
+link = { eu4 = volhynian ck3 = volhynian ck3 = polyan  ck3 = dregovich ck3 = drevlian tech = eastern gfx = easterngfx }
 link = { eu4 = severian ck3 = severian tech = eastern gfx = easterngfx }
+link = { eu4 = chrobatian ck3 = belocroat tech = eastern gfx = easterngfx }
+link = { eu4 = kishinyov ck3 = tiverian tech = eastern gfx = easterngfx }
 
 # West Slavic
 
@@ -816,4 +819,3 @@ link = { eu4 = xibei ck3 = wenmo tech = chinese gfx = asiangfx }
 link = { eu4 = israeli ck3 = teimani ck3 = persian_jewish tech = eastern gfx = easterngfx region = mashriq_region }
 link = { eu4 = teimani ck3 = teimani tech = muslim gfx = muslimgfx }
 link = { eu4 = parsim ck3 = persian_jewish tech = muslim gfx = muslimgfx }
-
