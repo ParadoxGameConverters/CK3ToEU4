@@ -159,7 +159,7 @@ link = { ck3 = { tradition = tradition_republican_legacy } eu4 = { burghers_loya
 link = { ck3 = { tradition = tradition_religion_blending } eu4 = { tolerance_heathen = 1 tolerance_heretic = 1 } } 
 link = { ck3 = { tradition = tradition_religious_patronage } eu4 = { institution_spread_from_true_faith = 0.15 } } 
 link = { ck3 = { tradition = tradition_reverence_for_veterans } eu4 = { innovativeness_gain = 0.5 army_tradition_decay = -0.01 } } 
-link = { ck3 = { tradition = tradition_roman_legacy } eu4 = { land_maintenence_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_roman_legacy } eu4 = { land_maintenance_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_ruling_caste } eu4 = { global_rebel_suppression_efficiency = 0.2 improve_relation_modifier = -0.05 } } #
 link = { ck3 = { tradition = tradition_runestones } eu4 = { great_project_upgrade_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_sacred_groves } eu4 = { monthly_splendor = 1.5 development_cost = 0.05 } }
