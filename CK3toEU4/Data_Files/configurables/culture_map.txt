@@ -425,7 +425,7 @@ link = { eu4 = tunisian ck3 = butr ck3 = baranis ck3 = zaghawa ck3 = maghrebi te
 link = { eu4 = berber ck3 = butr ck3 = baranis ck3 = maghrebi ck3 = numidian ck3 = haratin tech = muslim gfx = muslimgfx }
 link = { eu4 = al_suryah_arabic ck3 = syrian ck3 = levantine ck3 = adnanite tech = muslim gfx = muslimgfx }
 link = { eu4 = al_misr_arabic ck3 = egyptian tech = muslim gfx = muslimgfx }
-link = { eu4 = andalucian ck3 = andalusian ck3 = mozarabic ck3 = mozarab tech = muslim gfx = muslimgfx }
+link = { eu4 = andalucian ck3 = andalusian ck3 = mozarabic ck3 = mozarab ck3 = iqritis tech = muslim gfx = muslimgfx }
 link = { eu4 = yemeni_culture ck3 = yemeni ck3 = qahtanite tech = muslim gfx = muslimgfx }
 
 # Russian: the split
@@ -630,7 +630,7 @@ link = { eu4 = chimin ck3 = han ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = 
 link = { eu4 = wu ck3 = han ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx province = 2146 province = 2147 province = 1822 region = zhejiang_area }
 link = { eu4 = jin ck3 = han ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx province = 2136 province = 692 province = 2179 region = shanxi_area }
 link = { eu4 = cantonese ck3 = han ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx province = 667 province = 668 province = 2162 province = 665 province = 2161 }
-link = { eu4 = chihan ck3 = han ck3 = wenmo ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx }
+link = { eu4 = chihan ck3 = han ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx }
 link = { eu4 = zhuang ck3 = viet tech = chinese gfx = asiangfx province = 616 }
 link = { eu4 = vietnamese ck3 = viet tech = chinese gfx = asiangfx }
 link = { eu4 = yi ck3 = bai tech = chinese gfx = asiangfx province = 674 region = chuannan_area }
