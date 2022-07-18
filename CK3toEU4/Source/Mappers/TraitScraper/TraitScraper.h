@@ -18,7 +18,7 @@ class TraitScraper: commonItems::parser
   private:
 	void registerKeys();
 
-	int index = 0;
+	int index = 1;
 	std::map<int, std::string> traits;
 };
 } // namespace mappers
