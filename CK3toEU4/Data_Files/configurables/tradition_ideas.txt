@@ -114,7 +114,7 @@ link = { ck3 = { tradition = tradition_horn_mountain_skirmishing } eu4 = { speci
 link = { ck3 = { tradition = tradition_horse_breeder } eu4 = { cav_to_inf_ratio = 0.10 } }
 link = { ck3 = { tradition = tradition_horse_lords } eu4 = { cavalry_power = 0.10 } } 
 link = { ck3 = { tradition = tradition_hunters } eu4 = { trade_efficiency = 0.1 } } 
-link = { ck3 = { tradition = tradition_hussar} eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
+link = { ck3 = { tradition = tradition_hussar } eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
 link = { ck3 = { tradition = tradition_isolationist } eu4 = { stability_cost_modifier = -0.25 diplomatic_upkeep = -1 } }
 link = { ck3 = { tradition = tradition_jungle_dwellers } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_jungle_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
@@ -257,9 +257,9 @@ link = { ck3 = { tradition = tradition_veche } eu4 = { burghers_loyalty_modifier
 link = { ck3 = { tradition = tradition_rashidun_army } eu4 = { land_attrition = -0.15 } } 
 link = { ck3 = { tradition = tradition_pagan_protectors } eu4 = { cb_on_religious_enemies = yes land_morale = 0.05 } } 
 link = { ck3 = { tradition = tradition_sasanian_army } eu4 = { prestige = 0.5 land_forcelimit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_teulu } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_teulu } eu4 = { cavalry_flanking = 0.15 } } 
 link = { ck3 = { tradition = tradition_barbary_corsairs } eu4 = { may_perform_slave_raid = yes } } 
-link = { ck3 = { tradition = tradition_almogavars } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_almogavars } eu4 = { movement_speed = 0.15 } } 
 link = { ck3 = { tradition = tradition_mamluk_military } eu4 = { num_accepted_cultures = 1 land_morale = 0.15 } } 
 link = { ck3 = { tradition = tradition_irish_cliathairi } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_damascus_steel } eu4 = { infantry_power = 0.05 prestige = 0.5 } } 
@@ -267,17 +267,17 @@ link = { ck3 = { tradition = tradition_toledo_steel } eu4 = { infantry_power = 0
 link = { ck3 = { tradition = tradition_barb_horses } eu4 = { cavalry_shock = 1 } } 
 link = { ck3 = { tradition = tradition_nile_agriculture } eu4 = { development_cost = -0.15 } } 
 link = { ck3 = { tradition = tradition_dzukijan_horsemen } eu4 = { cavalry_power = 0.10 } } 
-link = { ck3 = { tradition = tradition_akritai } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_akritai } eu4 = { garrison_size = 0.15 } } 
 link = { ck3 = { tradition = tradition_portage } eu4 = { global_supply_limit_modifier = 0.16 } } 
 link = { ck3 = { tradition = tradition_eyres } eu4 = { global_tax_modifier = 0.10 } } 
 link = { ck3 = { tradition = tradition_assizes_ariano } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_pravda_russkaya } eu4 = { state_maintenance_modifier = -0.15 } } 
-link = { ck3 = { tradition = tradition_outremer_armies } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_outremer_armies } eu4 = { land_morale = 0.10 } } 
 link = { ck3 = { tradition = tradition_mudejar_art } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_exechequer } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_fatimid_royal_guard } eu4 = { prestige = 0.5 yearly_army_professionalism = 0.05 } } 
 link = { ck3 = { tradition = tradition_islamic_furusiyya } eu4 = { cavalry_power = 0.10 } } 
-link = { ck3 = { tradition = tradition_kulgrinda } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_kulgrinda } eu4 = { fort_maintenance_modifier = -0.10 } } 
 link = { ck3 = { tradition = tradition_professional_army } eu4 = { yearly_army_professionalism = 0.02 } } 
 link = { ck3 = { tradition = tradition_military_engineering } eu4 = { infantry_shock = 1 } } 
 link = { ck3 = { tradition = tradition_fierce_independence } eu4 = { enemy_core_creation = 0.25 core_decay_on_your_own = -0.2 } } 
@@ -288,3 +288,4 @@ link = { ck3 = { tradition = tradition_laawol_pulaaku } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_griots } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_savanna_raiders } eu4 = { available_province_loot = 0.10 loot_amount = 0.05 } } 
 link = { ck3 = { tradition = tradition_eldership } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_african_agriculture } eu4 = { development_cost = -0.15 } } 
