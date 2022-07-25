@@ -289,3 +289,4 @@ link = { ck3 = { tradition = tradition_griots } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_savanna_raiders } eu4 = { available_province_loot = 0.10 loot_amount = 0.05 } } 
 link = { ck3 = { tradition = tradition_eldership } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_african_agriculture } eu4 = { development_cost = -0.15 } } 
+link = { ck3 = { tradition = tradition_karabisianoi } eu4 = { infantry_power = 0.15 } } 
