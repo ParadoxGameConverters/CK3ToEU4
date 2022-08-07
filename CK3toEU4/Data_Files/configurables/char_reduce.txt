@@ -41,6 +41,7 @@ link = { utf8 = "ĥ" win1252 = "hx" }
 link = { utf8 = "ĵ" win1252 = "jx" }
 link = { utf8 = "ŝ" win1252 = "sx" }
 link = { utf8 = "ŭ" win1252 = "û" }
+link = { utf8 = "ġ" win1252 = "gh" } # Fate of Iberia added Burġus as a name
 
 ## LATIN - UPPERCASE
 link = { utf8 = "Ā" win1252 = "Â" }
