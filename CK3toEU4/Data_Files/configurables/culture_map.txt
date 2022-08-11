@@ -499,7 +499,7 @@ link = { eu4 = luri ck3 = luri tech = muslim gfx = muslimgfx }
 link = { eu4 = luri ck3 = persian tech = muslim gfx = muslimgfx region = luristan_area region = khuzestan_area }
 link = { eu4 = tajik ck3 = persian tech = muslim gfx = muslimgfx region = central_asia_region region = merv_area }
 link = { eu4 = tajik ck3 = khwarezmian ck3 = tajik tech = muslim gfx = muslimgfx }
-link = { eu4 = persian ck3 = persian ck3 = semnani ck3 = adhari tech = muslim gfx = muslimgfx }
+link = { eu4 = persian ck3 = persian ck3 = semnani ck3 = adhari ck3 = elamite tech = muslim gfx = muslimgfx }
 link = { eu4 = parthian ck3 = parthian tech = muslim gfx = muslimgfx }
 link = { eu4 = gorani ck3 = gorani tech = muslim gfx = muslimgfx }
 link = { eu4 = kurdish ck3 = kurdish tech = muslim gfx = muslimgfx }
