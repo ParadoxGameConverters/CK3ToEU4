@@ -321,7 +321,8 @@ link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
 # Finno-Ugric
 
-link = { eu4 = bjarmian ck3 = samoyed tech = eastern gfx = inuitgfx } #Samoyed is Bjarmian in CK3
+link = { eu4 = bjarmian ck3 = samoyed tech = eastern gfx = inuitgfx region = russia_region region = ural_region } #Samoyed is Bjarmian in CK3, but not with culture expanded
+link = { eu4 = samoyed ck3 = samoyed tech = eastern gfx = inuitgfx }
 link = { eu4 = estonian ck3 = estonian ck3 = livonian tech = eastern gfx = inuitgfx }
 link = { eu4 = finnish ck3 = finnish tech = eastern gfx = westerngfx }
 link = { eu4 = ingrian ck3 = mari ck3 = merya ck3 = komi ck3 = mordvin ck3 = vepsian tech = eastern gfx = inuitgfx region = karelia_area region = estonia_ingria_area province = 35 province = 274 province = 37 }
@@ -504,7 +505,7 @@ link = { eu4 = parthian ck3 = parthian tech = muslim gfx = muslimgfx }
 link = { eu4 = gorani ck3 = gorani tech = muslim gfx = muslimgfx }
 link = { eu4 = kurdish ck3 = kurdish tech = muslim gfx = muslimgfx }
 link = { eu4 = baluchi ck3 = baloch tech = muslim gfx = muslimgfx }
-link = { eu4 = afghani ck3 = afghan ck3 = pamiri tech = muslim gfx = muslimgfx }
+link = { eu4 = afghani ck3 = afghan ck3 = pamiri ck3 = pashtun tech = muslim gfx = muslimgfx }
 link = { eu4 = saka ck3 = saka tech = muslim gfx = muslimgfx }
 
 # Central African
