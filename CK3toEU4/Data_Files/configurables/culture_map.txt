@@ -295,7 +295,7 @@ link = { eu4 = circassian ck3 = circassian tech = eastern gfx = easterngfx } #It
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
 link = { eu4 = dagestani ck3 = dagestani tech = eastern gfx = easterngfx }
 link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
-link = { eu4 = georgian ck3 = georgian ck3 = udi tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = georgian ck3 = georgian1 ck3 = udi tech = eastern gfx = easterngfx }
 link = { eu4 = assyrian ck3 = assyrian ck3 = syriac tech = eastern gfx = easterngfx }
 link = { eu4 = goths ck3 = crimean_gothic tech = eastern gfx = easterngfx }
 link = { eu4 = coptic ck3 = coptic ck3 = old_egyptian tech = eastern gfx = easterngfx }
