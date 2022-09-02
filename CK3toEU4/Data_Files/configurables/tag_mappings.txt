@@ -369,11 +369,13 @@ link = { ck3 = e_golden_horde eu4 = GLH }
 link = { ck3 = k_kazan eu4 = KAZ }
 link = { ck3 = d_kazan eu4 = KAZ }
 link = { ck3 = c_kazan eu4 = KAZ }
+link = { ck3 = k_volga_bulgaria eu4 = KAZ }
 link = { ck3 = c_moskva eu4 = MOS }
 link = { ck3 = k_muscovy eu4 = MOS }
 link = { capitals = { 575 } eu4 = MOS } 	
 link = { capitals = { 622 } eu4 = NOG } # Ak-Dzulpas -> Nogai
 link = { ck3 = k_nogai eu4 = NOG }
+link = { ck3 = d_jemba eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
 link = { ck3 = d_novgorod eu4 = NOV }
 link = { ck3 = c_novgorod eu4 = NOV }
@@ -627,17 +629,18 @@ link = { ck3 = c_pegu eu4 = PEG }
 link = { ck3 = c_toungoo eu4 = TAU }
 link = { ck3 = e_tibet eu4 = TIB }
 link = { ck3 = k_dzungaria eu4 = ZUN }
+link = { ck3 = k_caspian_steppe eu4 = GOL }
 
 #Tibet
 
 link = { ck3 = k_guge eu4 = GUG }
 link = { ck3 = d_ngari eu4 = GUG }
 link = { ck3 = k_kham eu4 = KAM }
-link = { ck3 = k_u eu4 = PHA }
+link = { ck3 = k_u eu4 = UTS }
 link = { ck3 = d_ganzhou eu4 = SYG } #Duchy of the Yughurs, the Yellow Ughyurs (Read Sarig Yogirs)
 link = { ck3 = d_qilin eu4 = SYG }
 link = { ck3 = c_lenghu eu4 = SYG }
-link = { ck3 = k_tsang eu4 = UTS }
+link = { ck3 = k_tsang eu4 = PHA }
 
 # India
 
@@ -717,6 +720,7 @@ link = { ck3 = c_kathmandu eu4 = KTU }
 link = { ck3 = d_ladakh eu4 = LDK }
 link = { ck3 = d_limbuwan eu4 = LWA }
 link = { ck3 = c_eranad eu4 = MAB } #Has barony of Calicut (Calicut is the actual EU4 name)
+link = { ck3 = k_tamilakam eu4 = MAD }
 link = { ck3 = c_madurai eu4 = MAD }
 link = { ck3 = d_devagiri eu4 = MAR }
 link = { ck3 = c_devagiri eu4 = MAR }
@@ -765,6 +769,7 @@ link = { ck3 = c_sthanisvara eu4 = SRH }
 link = { ck3 = k_telingana eu4 = TLG }
 link = { ck3 = c_cholamandalam eu4 = TNJ } #Has city of Tanjavur
 link = { ck3 = c_karmanta eu4 = TPR } #Has temple-city of Tripura
+link = { ck3 = k_bihar eu4 = TRT }
 link = { ck3 = d_tirabhukti eu4 = TRT } #Another name for Tirhut (1)
 link = { ck3 = c_mithila eu4 = TRT } #Another name for Tirhut (2)
 link = { ck3 = c_uchangidurga eu4 = VIJ }
@@ -1073,3 +1078,15 @@ link = { ck3 = c_ganale eu4 = OGD } # Ogaaden
 #link = { ck3 = d_gobir eu4 = GOB } # Gobir
 #link = { ck3 = c_gobir eu4 = GOB } # Gobir
 #link = { ck3 = c_daura eu4 = DAU } # Daura
+
+
+link = { ck3 = k_bjarmaland eu4 = BJA }
+link = { ck3 = d_biarmia eu4 = BJA }
+link = { ck3 = d_chuvashia eu4 = CVS }
+link = { ck3 = c_essex eu4 = ESX }
+link = { ck3 = k_oghuz_il eu4 = OGZ }
+link = { ck3 = d_skane eu4 = SCN }
+link = { ck3 = c_skane eu4 = SCN }
+link = { ck3 = k_tuva eu4 = TUV }
+link = { ck3 = d_vepsia eu4 = VPS }
+link = { ck3 = k_yugra eu4 = YUG }
