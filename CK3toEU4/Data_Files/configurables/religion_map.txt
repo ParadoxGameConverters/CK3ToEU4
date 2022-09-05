@@ -55,7 +55,7 @@ link = { eu4 = anglo_pagan ck3 = anglo_pagan }
 # Hellenism
 link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = eleusinian_mysteries }
 # Hinduism
-link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism }
+link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism ck3 = munda_pagan }
 # Islam
 link = { eu4 = sunni ck3 = ashari school = hanbali_school }
 link = { eu4 = sunni ck3 = muwalladi school = maliki_school }
@@ -111,7 +111,7 @@ link = { eu4 = yazidi ck3 = yazidi }
 link = { eu4 = meshefaresism ck3 = meshefaresism }
 link = { eu4 = kitebacilweism ck3 = kitebacilweism }
 # Zoroastrianism
-link = { eu4 = zoroastrian ck3 = mazdayasna }
+link = { eu4 = zoroastrian ck3 = mazdayasna ck3 = hepthalitism }
 link = { eu4 = zurvanism ck3 = zurvanism ck3 = urartuism }
 link = { eu4 = gayomarthianism ck3 = gayomarthianism }
 link = { eu4 = khurmazta ck3 = khurmazta }
@@ -128,21 +128,21 @@ link = { eu4 = gallic_pagan ck3 = gallic_celtic }
 link = { eu4 = gaelic_pagan ck3 = gaelic_paganism }
 link = { eu4 = celtiberian_pagan ck3 = celtiberian_paganism }
 ## Semitic
-link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old }
-link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old }
-link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old }
+link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old ck3 = bosporan_faith }
+link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = semitic_pagan }
+link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old ck3 = assyrian_pagan }
 ## Perso-Caucasian
 link = { eu4 = mithraism ck3 = mithraic_mysteries }
 link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old }
-link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old }
+link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old ck3 = georgian_pagan }
 link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 ## Egyptian
 link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
 link = { eu4 = atenism ck3 = atenist_pagan }
 ## Others
 link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
-link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old }
-link = { eu4 = shamanism ck3 = berber_pagan ck3 = berber_pagan_old }
+link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old ck3 = dacian_pagan ck3 = thracian_pagan }
+link = { eu4 = shamanism ck3 = berber_pagan ck3 = berber_pagan_old ck3 = gurzil ck3 = berber_pagan ck3 = african_solar ck3 = msoura ck3 = mastimani ck3 = north_african_acham_pagan ck3 = illyrian_pagan }
 link = { eu4 = iberian_pagan ck3 = iberian_pagan ck3 = iberian_pagan_old }
 
 # Mod: Sunset Invasion
