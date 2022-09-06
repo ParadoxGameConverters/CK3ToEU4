@@ -865,11 +865,12 @@
 	link = { ck3 = 5388 eu4 = 304 } # Durovka -> Penza
 	link = { ck3 = 5377 eu4 = 2415 } # Balachev -> Etkara
 	link = { ck3 = 5410 ck3 = 5390 ck3 = 592 eu4 = 303 } # Atkara, Medveditsa, Sar Atau -> Saratov
+	link = { ck3 = 566 eu4 = 2408 } # Oskol -> Yelets
 	link = { ck3 = 5350 ck3 = 5371 eu4 = 299 } # Voronezh, Karatayak -> Voronezh
 	link = { ck3 = 5353 eu4 = 302 } # Tambov -> Tambov
 	link = { ck3 = 573 eu4 = 1956 eu4 = 4253 eu4 = 4147 } # Suzdal -> Suzdal, Yuriev, Rostov
 	link = { ck3 = 582 eu4 = 307 } # Vladimir -> Vladimir
-	link = { ck3 = 586 eu4 = 1957 } # Manturovo -> Galich
+	link = { ck3 = 586 ck3 = 5832 eu4 = 1957 } # Manturovo, Onsthia -> Galich
 	link = { ck3 = 5829 eu4 = 4263 } # Lyubim -> Sol Galitskaya
 	link = { ck3 = 5824 eu4 = 1753 eu4 = 314 } # Vologda -> Kostroma, Vologda
 	link = { ck3 = 5247 eu4 = 4254 } # Plyos -> Starodub
@@ -891,46 +892,47 @@
 	link = { ck3 = 5137 eu4 = 310 eu4 = 1961 } # Novgorod -> Novgorod, Ladoga
 	link = { ck3 = 571 eu4 = 308 eu4 = 4250 } # Yaroslavl -> Yaroslavl, Mologa
 	link = { ck3 = 5835 eu4 = 4129 } # Choklema -> Ust-Vym
-	link = { ck3 = 5838 eu4 = 4256 } # Ustyug -> Solvychegodsk
-	link = { ck3 = 5832 eu4 = 1755 } # Onsthia -> Ustyug
-	link = { ck3 = 5164 eu4 = 4260 eu4 = 1959 } # Valdai -> Vyshny Volochyok, Torzhok
+	link = { ck3 = 5838 eu4 = 1755 eu4 = 4256 } # Ustyug -> Ustyug, Solvychegodsk
+	link = { ck3 = 5164 eu4 = 4260 eu4 = 1959 eu4 = 1752 } # Valdai -> Vyshny Volochyok, Torzhok, Rzhev
 	link = { ck3 = 5173 eu4 = 294 eu4 = 4249 eu4 = 4248 } # Tver -> Tver, Zubtsov, Kashin
 	link = { ck3 = 5168 eu4 = 4117 } # Bezichi -> Bezhetsk
-	link = { ck3 = 5156 ck3 = 5159 eu4 = 312 } # Beloozero, Vyangi -> Beloozero
+	link = { ck3 = 5159 eu4 = 4261 } # Vyangi -> Ustyuzhna
+	link = { ck3 = 5156 eu4 = 312 } # Beloozero -> Beloozero
 	link = { ck3 = 5820 eu4 = 4262 } # Totma -> Totma
-	link = { ck3 = 5845 ck3 = 5842 eu4 = 4122 } # Velsk, Shenkursk -> Shenkursk
-	link = { ck3 = 5817 eu4 = 4259 } # Kirillov -> Velsk
-	link = { ck3 = 5811 ck3 = 5814 eu4 = 1958 } # Pudozh, Kargopol -> Kargopol
+	link = { ck3 = 5842 eu4 = 4122 } # Shenkursk -> Shenkursk
+	link = { ck3 = 5845 ck3 = 5817 eu4 = 4259 } # Velsk, Kirillov -> Velsk
+	link = { ck3 = 5814 ck3 = 5811 eu4 = 1958 } # Kargopol, Pudozh -> Kargopol
 	link = { ck3 = 194 ck3 = 193 ck3 = 192 eu4 = 309 } # Kontupohja, Onega, Salinis -> Olonets
 	link = { ck3 = 5849 eu4 = 4257 } # Kevrola -> Mezen
 	link = { ck3 = 5798 eu4 = 1955 } # Kholmogory -> Kholmogory
 	link = { ck3 = 5803 eu4 = 4258 } # Onega -> Onega
 	link = { ck3 = 5807 eu4 = 313 } # Povenets -> Soroka
-	link = { ck3 = 5153 eu4 = 2749 eu4 = 4261 } # Tikhvin -> Tikhvin, Ustyuzhna
-	link = { ck3 = 5161 ck3 = 5170 ck3 = 587 eu4 = 1752 } # Luki, Toropets, Mozhaysk -> Rzhev
-	link = { ck3 = 5221 eu4 = 4243 } # Gnezdovo -> Toropets
+	link = { ck3 = 5153 eu4 = 2749 } # Tikhvin -> Tikhvin
+	link = { ck3 = 5170 ck3 = 5221 eu4 = 4243 } # Toropets, Gnezdovo -> Toropets
 	link = { ck3 = 5134 eu4 = 771 } # Vitebsk -> Vitebsk
 	link = { ck3 = 5127 eu4 = 4242 } # Orsha -> Ula
-	link = { ck3 = 5150 eu4 = 1960 eu4 = 4148 } # Sebezh -> Ostrov, Luki
+	link = { ck3 = 5161 eu4 = 4148 } # Luki -> Luki
+	link = { ck3 = 5150 eu4 = 1960 } # Sebezh -> Ostrov
 	link = { ck3 = 5129 ck3 = 934 eu4 = 275 } # Polotsk, Lukoml -> Polotsk
 	link = { ck3 = 5146 eu4 = 274 } # Pskov -> Pskov
 	link = { ck3 = 167 eu4 = 33 eu4 = 34 } # Vodi -> Neva, Ingermanland
 	link = { ck3 = 933 eu4 = 4246 eu4 = 292 } # Roslavl -> Mstislav, Mogilev
-	link = { ck3 = 551 eu4 = 4245 eu4 = 293 } # Smolensk -> Vyazma, Smolensk
-	link = { ck3 = 5217 eu4 = 4251 eu4 = 296 } # Odoyev -> Mozhaisk, Kaluga
+	link = { ck3 = 5212 eu4 = 4245 } # Kozelsk -> Vyazma
+	link = { ck3 = 551 eu4 = 293 } # Smolensk -> Smolensk
+	link = { ck3 = 587 eu4 = 4251 eu4 = 296 } # Mozhaysk -> Mozhaisk, Kaluga
+	link = { ck3 = 5217 ck3 = 5215 eu4 = 4116 } # Odoyev, Novosil -> Oka
 	link = { ck3 = 570 eu4 = 295 eu4 = 4252 } # Moskva -> Moskva, Kolomna
 	link = { comment = "# Crimea, Ruthenia, Causases" }
 	link = { ck3 = 553 eu4 = 289 eu4 = 4115 } # Chernigov -> Chernigov, Mazyr
 	link = { ck3 = 555 eu4 = 2407 } # Pereyaslavl -> Pereyaslav
 	link = { ck3 = 5189 eu4 = 4542 } # Voin' -> Lubnie
-	link = { ck3 = 5181 ck3 = 556 eu4 = 290 } # Hradyzk, Samar -> Poltava
+	link = { ck3 = 5181 eu4 = 290 } # Hradyzk -> Poltava
 	link = { ck3 = 5185 ck3 = 5193 eu4 = 4543 } # Romen, Putyvl -> Rylsk
 	link = { ck3 = 567 eu4 = 1945 } # Novgorod Seversky -> Severia
 	link = { ck3 = 576 eu4 = 4244 } # Starodub -> Trubchevsk
-	link = { ck3 = 577 eu4 = 300 eu4 = 2408 eu4 = 4255 } # Tula -> Tula, Yelets, Pronsk
+	link = { ck3 = 577 eu4 = 300 eu4 = 4255 } # Tula -> Tula, Pronsk
 	link = { ck3 = 580 eu4 = 301 eu4 = 1778 } # Ryazan -> Ryazan, Kasimov
-	link = { ck3 = 5209 ck3 = 5212 ck3 = 5206 eu4 = 297 } # Karachev, Kozelsk, Sevsk -> Bryansk
-	link = { ck3 = 5215 eu4 = 4116 } # Novosil -> Oka
+	link = { ck3 = 5209 ck3 = 5206 eu4 = 297 } # Karachev, Sevsk -> Bryansk
 	link = { ck3 = 5196 eu4 = 298 } # Kursk -> Kursk
 	link = { ck3 = 677 eu4 = 2196 } # Guria -> Guria
 	link = { ck3 = 671 ck3 = 672 eu4 = 2205 } # Suenik, Dvin -> Nakhchivan
@@ -980,7 +982,7 @@
 	link = { ck3 = 598 eu4 = 2447 } # Tmutarakan -> Matrega
 	link = { ck3 = 599 eu4 = 287 } # Khumar -> Kuban
 	link = { ck3 = 597 eu4 = 286 eu4 = 2414 } # Azov -> Azov, Azaraba
-	link = { ck3 = 566 eu4 = 291 } # Oskol -> Kharkov
+	link = { ck3 = 556 eu4 = 291 } # Samar -> Kharkov
 	link = { ck3 = 593 ck3 = 5374 eu4 = 467 } # Khopyor, Tuluchezeva -> Borisoglebsk
 	link = { ck3 = 5287 eu4 = 2409 } # Kazanskaya -> Bahmut
 	link = { ck3 = 563 eu4 = 2413 } # Tana -> Tyn
@@ -988,8 +990,8 @@
 	link = { ck3 = 535 ck3 = 5109 eu4 = 279 } # Volodymyr, Dubrovytsia -> Volhynia
 	link = { ck3 = 5051 eu4 = 2962 } # Peresopnytsia -> Rowne
 	link = { ck3 = 5070 eu4 = 4539 } # Zaslavl -> Kremenets
-	link = { ck3 = 5087 ck3 = 544 eu4 = 1942 } # Zhytomyr, Korsun -> Zhytomyr
-	link = { ck3 = 5260 eu4 = 4540 } # Uman -> Winnica
+	link = { ck3 = 5087 eu4 = 1942 } # Zhytomyr -> Zhytomyr
+	link = { ck3 = 544 ck3 = 5260 eu4 = 4540 } # Korsun, Uman -> Winnica
 	link = { ck3 = 541 ck3 = 5038 ck3 = 5040 eu4 = 4529 } # Ia0i, Dorohoi, Hotin -> Iasi
 	link = { ck3 = 534 eu4 = 2424 } # Peremyshl -> Peremyshl
 	link = { ck3 = 536 eu4 = 261 eu4 = 4541 } # Halych -> Halicz, Drohobycz
