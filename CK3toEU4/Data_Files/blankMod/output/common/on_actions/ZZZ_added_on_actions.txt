@@ -17,53 +17,7 @@ on_province_owner_change = {
 		japan.1
 	}
 
-	if = {
-		limit = {
-			OR = {
-				has_province_modifier = wine_bonus_prod
-				has_province_modifier = grain_bonus_prod
-			}
-			FROM = { has_reform = monastic_breweries_reform }
-			NOT = { owner = { has_reform = monastic_breweries_reform } }
-		}
-		remove_province_modifier = wine_bonus_prod
-		remove_province_modifier = grain_bonus_prod
-	}
-
-	if = {
-		limit = {
-			NOT = {
-				OR = {
-					has_province_modifier = wine_bonus_prod
-					has_province_modifier = grain_bonus_prod
-				}
-			}
-			owner = { has_reform = monastic_breweries_reform }
-			NOT = { FROM = { has_reform = monastic_breweries_reform } }
-		}
-		hidden_effect = {
-			if = {
-				limit = {
-					trade_goods = wine
-				}
-				add_province_modifier = {
-					name = wine_bonus_prod
-					duration = -1
-					hidden = yes
-				}
-			}
-			if = {
-				limit = {
-					trade_goods = grain
-				}
-				add_province_modifier = {
-					name = grain_bonus_prod
-					duration = -1
-					hidden = yes
-				}
-			}
-		}
-	}
+	on_province_owner_change_government_effect = yes
 
 	if = {
 		limit = {
@@ -83,7 +37,7 @@ on_province_owner_change = {
 	}
 	on_province_owner_change_estate_privileges_effect = yes
 	judaism_on_province_change_religion_or_change_owner_effect = yes
-	kongo_on_province_change_culture_or_change_owner_effect = yes
+	imperial_modifiers_on_province_change_culture_or_change_owner_effect = yes
 
 	if = {
 		limit = {

@@ -1796,17 +1796,14 @@ defined_text = {
 	text = {
 		localisation_key = string_ruler_adj_and_title
 		trigger = {
-			NOT = { tag = PAP tag = FAP }
+			NOT = { tag = PAP }
 			has_regency = no
 		}
 	}
 	text = {
 		localisation_key = string_ruler_title
 		trigger = {
-			OR = {
-				tag = PAP
-				tag = FAP
-			}
+			tag = PAP
 		}
 	}
 	text = {
@@ -3941,6 +3938,20 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetLockedMissionTitle
+	text = {
+		localisation_key = LOCKED_MISSION_TITLE
+	}
+}
+
+defined_text = {
+	name = GetLockedMissionDescription
+	text = {
+		localisation_key = LOCKED_MISSION_DESCRIPTION
+	}
+}
+
+defined_text = {
     name = GetNumConvertedProvinces
 
     text = {
@@ -3960,6 +3971,58 @@ defined_text = {
         trigger = {
             check_variable = {
                 which = num_converted_religion
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumWonBattles
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_won_battles
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_WON_BATTLES
+        trigger = {
+            check_variable = {
+                which = num_won_battles
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumRaids
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_raided_coasts
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_COMMITTED_RAIDS_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_of_raided_coasts
                 value = 1
             }
         }
@@ -4052,13 +4115,13 @@ defined_text = {
 }
 
 defined_text = {
-	name = CountConversionsDone
+	name = SwedenCountWarsWon
 
 	text = {
-		localisation_key = conversion_variable
+		localisation_key = swe_won_wars_variable
 		trigger = {
 			check_variable = {
-				which = num_converted_religion
+				which = swe_won_wars_against_christians
 				value = 1
 			}
 		}
@@ -4068,10 +4131,291 @@ defined_text = {
 		trigger = {
 			NOT = {
 				check_variable = {
-					which = num_converted_religion
+					which = swe_won_wars_against_christians
 					value = 1
 				}
 			}
 		}
 	}
 }
+
+defined_text = {
+	name = EngelbrektEventDescription
+
+	text = {
+		localisation_key = flavor_swe.EVTDESC3217
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetVasaDescription
+
+	text = {
+		localisation_key = flavor_swe.104.desc.a
+		trigger = {
+			NOT = { is_year = 1490 }
+			NOT = { has_country_flag = dan_had_stockholm_bloodbath }
+		}
+	}
+
+	text = {
+		localisation_key = flavor_swe.104.desc.b
+		trigger = {
+			is_year = 1490
+			NOT = { is_year = 1520 }
+			NOT = { has_country_flag = dan_had_stockholm_bloodbath }
+		}
+	}
+
+	text = {
+		localisation_key = flavor_swe.104.desc.c
+		trigger = {
+			is_year = 1520
+			NOT = { has_country_flag = dan_had_stockholm_bloodbath }
+		}
+	}
+
+	text = {
+		localisation_key = flavor_swe.104.desc.d
+		trigger = {
+			NOT = { is_year = 1490 }
+			has_country_flag = dan_had_stockholm_bloodbath
+		}
+	}
+
+	text = {
+		localisation_key = flavor_swe.104.desc.e
+		trigger = {
+			is_year = 1490
+			NOT = { is_year = 1520 }
+			has_country_flag = dan_had_stockholm_bloodbath
+		}
+	}
+
+	text = {
+		localisation_key = flavor_swe.104.desc.f
+		trigger = {
+			is_year = 1520
+			has_country_flag = dan_had_stockholm_bloodbath
+		}
+	}
+}
+
+defined_text = {
+	name = GetHelpingVasa
+
+	text = {
+		localisation_key = swe_Johan_vasa_tt
+		trigger = {
+			has_country_flag = swe_support_from_Johan_vasa
+		}
+	}
+
+	text = {
+		localisation_key = swe_Erik_vasa_tt
+		trigger = {
+			has_country_flag = swe_support_from_Erik_vasa
+		}
+	}
+
+	text = {
+		localisation_key = swe_Gustav_vasa_tt
+		trigger = {
+			has_country_flag = swe_support_from_Gustav_vasa
+		}
+	}
+}
+
+defined_text = {
+	name = GetPolandPLC
+
+	text = {
+		localisation_key = PLC
+		trigger = {
+			exists = PLC
+		}
+	}
+	text = {
+		localisation_key = POL
+		trigger = {
+			NOT = { exists = PLC }
+		}
+	}
+}
+
+defined_text = {
+	name = GetDanNoblesDemand
+
+	text = {
+		localisation_key = PLC
+		trigger = {
+			exists = PLC
+		}
+	}
+	text = {
+		localisation_key = dan_nobles_demand_crownland
+		trigger = { has_country_flag = dan_nobles_demand_crownland }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_soldiers
+		trigger = { has_country_flag = dan_nobles_demand_soldiers }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_cash
+		trigger = { has_country_flag = dan_nobles_demand_cash }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_privileges
+		trigger = { has_country_flag = dan_nobles_demand_privileges }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_go_hunting
+		trigger = { has_country_flag = dan_nobles_demand_go_hunting }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_peasant_suppression
+		trigger = { has_country_flag = dan_nobles_demand_peasant_suppression }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_kill_some_rebels
+		trigger = { has_country_flag = dan_nobles_demand_kill_some_rebels }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_forget_corruption
+		trigger = { has_country_flag = dan_nobles_demand_forget_corruption }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_administrative_support
+		trigger = { has_country_flag = dan_nobles_demand_administrative_support }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_diplomatic_support
+		trigger = { has_country_flag = dan_nobles_demand_diplomatic_support }
+	}
+	text = {
+		localisation_key = dan_nobles_demand_military_support
+		trigger = { has_country_flag = dan_nobles_demand_military_support }
+	}
+	text = {
+		localisation_key = string_empty
+		trigger = {
+			NOT = { has_country_flag = dan_nobles_demand_crownland }
+			NOT = { has_country_flag = dan_nobles_demand_soldiers }
+			NOT = { has_country_flag = dan_nobles_demand_cash }
+			NOT = { has_country_flag = dan_nobles_demand_privileges }
+			NOT = { has_country_flag = dan_nobles_demand_go_hunting }
+			NOT = { has_country_flag = dan_nobles_demand_peasant_suppression }
+			NOT = { has_country_flag = dan_nobles_demand_kill_some_rebels }
+			NOT = { has_country_flag = dan_nobles_demand_forget_corruption }
+			NOT = { has_country_flag = dan_nobles_demand_administrative_support }
+			NOT = { has_country_flag = dan_nobles_demand_diplomatic_support }
+			NOT = { has_country_flag = dan_nobles_demand_military_support }
+		}
+	}
+}
+
+defined_text = {
+    name = GetNumOfSoldIndulgences
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = sold_indulgences
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_SOLD_INDULGENCES
+        trigger = {
+            check_variable = {
+                which = sold_indulgences
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumOfRaidedChurches
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_converted_religion
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_RAIDED_CHURCHES
+        trigger = {
+            check_variable = {
+                which = raided_churches
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumOfIssuesPassed
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = issues_passed
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_ISSUES_PASSED_TT
+        trigger = {
+            check_variable = {
+                which = issues_passed
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetLivonianGovernmentEventsFired
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = liv_event_counter
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_LIVONIAN_GOVERNMENT_EVENTS_TT
+        trigger = {
+            check_variable = {
+                which = liv_event_counter
+                value = 1
+            }
+        }
+    }
