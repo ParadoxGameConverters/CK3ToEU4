@@ -188,7 +188,7 @@ estate_church_clerical_ministers = {
 	conditional_modifier = {
 		trigger = {
 			has_dlc = "Mandate of Heaven"
-			uses_harmony = yes
+			religion = confucianism
 		}
 		modifier = {
 			yearly_harmony = 0.25
