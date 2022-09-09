@@ -134,12 +134,10 @@ newer_newer_idea_dip_modifiers = {
 		}
 	}
 	custom_coastal_combat = {
-		own_coast_naval_combat_bonus = 0.5
-		max_level = 4
-		level_cost_1 = 5
-		level_cost_2 = 10
-		level_cost_3 = 20
-		level_cost_4 = 40
+		own_coast_naval_combat_bonus = 1
+		max_level = 2
+		level_cost_1 = 10
+		level_cost_2 = 40
 		chance = {
 			factor = 1
 			modifier = {
