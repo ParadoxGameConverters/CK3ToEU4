@@ -96,6 +96,8 @@ call save_commit_id.bat
     <ClInclude Include="..\commonItems\GameVersion.h" />
     <ClInclude Include="..\commonItems\iconvlite.h" />
     <ClInclude Include="..\commonItems\Log.h" />
+    <ClInclude Include="..\commonItems\ModLoader\Mod.h" />
+    <ClInclude Include="..\commonItems\ModLoader\ModFilesystem.h" />
     <ClInclude Include="..\commonItems\ModLoader\ModLoader.h" />
     <ClInclude Include="..\commonItems\ModLoader\ModParser.h" />
     <ClInclude Include="..\commonItems\OSCompatibilityLayer.h" />
@@ -214,6 +216,7 @@ call save_commit_id.bat
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
     <ClCompile Include="..\commonItems\Log.cpp" />
+    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp" />
     <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp" />
     <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp" />
     <ClCompile Include="..\commonItems\OSCommonLayer.cpp" />

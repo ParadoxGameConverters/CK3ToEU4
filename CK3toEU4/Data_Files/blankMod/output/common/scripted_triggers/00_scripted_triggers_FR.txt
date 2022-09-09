@@ -158,40 +158,40 @@ frloc_ruler_fem_cons_0015_savonarola_unique_SISTER = { # "Sœur"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_ruler_flag = savonarola_flag }
 }
 frloc_ruler_masc_cons_0016_military_dictatorship_CAPTAIN_GENERAL = { # "Capitaine général"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = military_dictatorship_reform }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { has_reform = military_dictatorship_reform has_reform = military_rulership_reform } }
 }
 frloc_ruler_fem_cons_0016_military_dictatorship_CAPTAIN_GENERAL_fem = { # "Capitaine générale"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = military_dictatorship_reform }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { has_reform = military_dictatorship_reform has_reform = military_rulership_reform } }
 }
 frloc_ruler_masc_vow_0017_greek_pirate_government_ARCHPIRATE = { # "Archipirate"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } primary_culture = greek }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } primary_culture = greek }
 }
 frloc_ruler_fem_vow_0017_greek_pirate_government_ARCHPIRATE = { # "Archipirate"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } primary_culture = greek }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } primary_culture = greek }
 }
 frloc_ruler_masc_cons_0018_pirate_daimyo_government_LORD = { # "Seigneur"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = SOO OR = { has_reform = pirate_republic_reform has_reform = pirate_king_reform has_reform = war_against_the_world_doctrine_reform has_reform = black_market_consortium_reform } is_subject_of_type = daimyo_vassal }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = SOO has_government_attribute = is_pirate_republic_reform is_subject_of_type = daimyo_vassal }
 }
 frloc_ruler_fem_cons_0018_pirate_daimyo_government_LADY = { # "Dame"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = SOO OR = { has_reform = pirate_republic_reform has_reform = pirate_king_reform has_reform = war_against_the_world_doctrine_reform has_reform = black_market_consortium_reform } is_subject_of_type = daimyo_vassal }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = SOO has_government_attribute = is_pirate_republic_reform is_subject_of_type = daimyo_vassal }
 }
 frloc_ruler_masc_cons_0019_pirate_government_CAPTAIN = { # "Capitaine"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_masc_cons_0019_pirate_government_GRAND_CAPTAIN = { # "Grand capitaine"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_masc_cons_0019_pirate_government_GRAND_ADMIRAL = { # "Grand amiral"
-	AND = { government_rank = 3 has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 3 has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_fem_cons_0019_pirate_government_CAPTAIN_fem = { # "Capitaine"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_fem_cons_0019_pirate_government_GRAND_CAPTAIN_fem = { # "Grande capitaine"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_fem_cons_0019_pirate_government_ADMIRAL_fem = { # "Grande amirale"
-	AND = { government_rank = 3 has_reform = pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
+	AND = { government_rank = 3 has_government_attribute = is_pirate_republic_reform NOT = { has_reform = pirate_king_reform } NOT = { primary_culture = greek } }
 }
 frloc_ruler_masc_cons_0020_pirate_kingdom_PIRATE_PRINCE = { # "Prince pirate"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = pirate_king_reform }
@@ -211,29 +211,29 @@ frloc_ruler_fem_cons_0020_pirate_kingdom_PIRATE_QUEEN = { # "Reine pirate"
 frloc_ruler_fem_vow_0020_pirate_kingdom_PIRATE_EMPRESS = { # "Impératrice pirate"
 	AND = { government_rank = 3 has_reform = pirate_king_reform }
 }
-frloc_ruler_masc_vow_0021_synthetic_nation_SYNTH_RULER = { # "Exécuteur"
+frloc_ruler_masc_cons_0021_synthetic_nation_SYNTH_RULER_MAIN_CONDUIT = { # "Processeur central"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = SYN }
 }
-frloc_ruler_fem_vow_0021_synthetic_nation_SYNTH_RULER_fem = { # "Exécutrice"
+frloc_ruler_fem_cons_0021_synthetic_nation_SYNTH_RULER_MAIN_CONDUIT_fem = { # "Conduite principale"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = SYN }
 }
 frloc_ruler_masc_cons_0022_yuan_empire_JINONG = { # "Jinong"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = YUA government = monarchy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_masc_cons_0022_yuan_empire_KHAN = { # "Khân"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = YUA government = monarchy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_masc_cons_0022_yuan_empire_KHAGAN = { # "Khagan"
-	AND = { government_rank = 3 tag = YUA government = monarchy }
+	AND = { government_rank = 3 OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_fem_cons_0022_yuan_empire_JINONG = { # "Jinong"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = YUA government = monarchy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_fem_cons_0022_yuan_empire_KHATUN = { # "Khatoun"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = YUA government = monarchy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_fem_cons_0022_yuan_empire_GREAT_KHATUN = { # "Grande khatoun"
-	AND = { government_rank = 3 tag = YUA government = monarchy }
+	AND = { government_rank = 3 OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_ruler_masc_vow_0023_ilkhanate_march_ILKHAN = { # "Îlkhân"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = ILK is_march = yes }
@@ -650,22 +650,22 @@ frloc_ruler_fem_vow_0049_lithuanian_monarchy_EMPRESS = { # "Impératrice"
 	AND = { government_rank = 3 tag = LIT government = monarchy }
 }
 frloc_ruler_masc_vow_0050_cristopher_of_bavaria_monarchy_ARCHDUKE = { # "Archiduc"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_ruler_masc_vow_0050_cristopher_of_bavaria_monarchy_ARCHKING = { # "Archi-roi"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_ruler_masc_vow_0050_cristopher_of_bavaria_monarchy_EMPEROR = { # "Empereur"
-	AND = { government_rank = 3 tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 3 OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_ruler_fem_vow_0050_cristopher_of_bavaria_monarchy_ARCHDUCHESS = { # "Archiduchesse"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
-frloc_ruler_fem_cons_0050_cristopher_of_bavaria_monarchy_QUEEN = { # "Reine"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+frloc_ruler_fem_vow_0050_cristopher_of_bavaria_monarchy_ARCHQUEEN = { # "Archi-reine"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_ruler_fem_vow_0050_cristopher_of_bavaria_monarchy_EMPRESS = { # "Impératrice"
-	AND = { government_rank = 3 tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 3 OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_ruler_masc_cons_0051_hunyadi_regent_monarchy_DUKE = { # "Duc"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = HUN government = monarchy has_heir = "Ladislaus Postumus" }
@@ -1957,6 +1957,19 @@ frloc_ruler_masc_cons_0126_march_eastern_christian_monarchy_PRINCE = { # "Prince
 frloc_ruler_fem_cons_0126_march_eastern_christian_monarchy_PRINCESS = { # "Princesse"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = principality } OR = { religion = coptic religion = orthodox } is_march = yes }
 }
+frloc_ruler_masc_cons_0127_gov_holy_horde_CRUSADER = { # "Chef de la croisade"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+frloc_ruler_masc_cons_0127_gov_holy_horde_GRAND_CRUSADER = { # "Dirigeant de la croisade"
+	AND = { OR = { government_rank = 2 government_rank = 3 } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+frloc_ruler_fem_cons_0127_gov_holy_horde_CRUSADER_fem = { # "Cheffe de la croisade"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+frloc_ruler_fem_cons_0127_gov_holy_horde_GRAND_CRUSADER_fem = { # "Dirigeante de la croisade"
+	AND = { OR = { government_rank = 2 government_rank = 3 } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+
 
 ### MIDDLE PRIORITY / PRIORITÉ INTERMÉDIAIRE = 01_government_names.txt ###
 
@@ -2038,12 +2051,12 @@ frloc_ruler_fem_cons_1005_federal_monarchy_monarchists_QUEEN = { # "Reine"
 frloc_ruler_fem_vow_1005_federal_monarchy_monarchists_EMPRESS = { # "Impératrice"
 	AND = { government_rank = 3 has_reform = states_general_reform is_monarchists_in_power = yes NOT = { has_reform = parliamentary_reform } NOT = { has_reform = presidential_reform } NOT = { is_revolutionary_republic_trigger = yes } NOT = { has_reform = constitutional_republic } NOT = { has_reform = presidential_despot_reform } }
 }
-frloc_ruler_masc_cons_1006_gov_revolutionary_republic_CONSUL = { # "Consul"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } is_revolutionary_republic_trigger = yes }
-}
-frloc_ruler_fem_cons_1006_gov_revolutionary_republic_CONSULESS = { # "Consule"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } is_revolutionary_republic_trigger = yes }
-}
+#frloc_ruler_masc_cons_1006_gov_revolutionary_republic_CONSUL = { # "Consul"
+#	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } is_revolutionary_republic_trigger = yes }
+#}
+#frloc_ruler_fem_cons_1006_gov_revolutionary_republic_CONSULESS = { # "Consule"
+#	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } is_revolutionary_republic_trigger = yes }
+#}
 frloc_ruler_masc_cons_1007_noble_republic_LORD = { # "Seigneur"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { has_reform = noble_elite_reform has_reform = noble_republic } }
 }
@@ -2177,16 +2190,16 @@ frloc_ruler_fem_vow_1016_gov_tribal_democracy_PARAMOUNT_ELDER_fem = { # "Ancienn
 	AND = { government_rank = 3 has_reform = tribal_democracy_legacy }
 }
 frloc_ruler_masc_cons_1017_gov_constitutional_republic_CHANCELOR = { # "Chancelier"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = republic OR = { has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = republic OR = { tag = USA has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
 }
 frloc_ruler_masc_cons_1017_gov_constitutional_republic_PRESIDENT = { # "Président"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = republic OR = { has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = republic OR = { tag = USA has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
 }
 frloc_ruler_fem_cons_1017_gov_constitutional_republic_CHANCELOR_fem = { # "Chancelière"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = republic OR = { has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = republic OR = { tag = USA has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
 }
 frloc_ruler_fem_cons_1017_gov_constitutional_republic_PRESIDENT_fem = { # "Présidente"
-	AND = { OR = { government_rank = 2 government_rank = 3 } government = republic OR = { has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
+	AND = { OR = { government_rank = 2 government_rank = 3 } government = republic OR = { tag = USA has_reform = constitutional_republic has_reform = presidential_reform has_reform = parliamentary_reform } NOT = { has_reform = presidential_despot_reform } }
 }
 frloc_ruler_masc_cons_1018_hre_county_COUNT = { # "Comte"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } has_reform = monarchy_mechanic is_part_of_hre = yes NOT = { total_development = 50 } }
@@ -2617,6 +2630,25 @@ frloc_ruler_fem_cons_1044_sisters_crusader_state_MOTHER_SUPERIOR = { # "Mère sup
 frloc_ruler_fem_cons_1044_sisters_crusader_state_GRAND_MISTRESS = { # "Grande maîtresse"
 	AND = { government_rank = 3 religion = catholic has_reform = holy_state_reform has_country_modifier = sisters_takeover }
 }
+frloc_ruler_masc_cons_1045_gov_jarldom_JARL = { # "Jarl"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_ruler_masc_cons_1045_gov_jarldom_KING = { # "Roi"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_ruler_masc_vow_1045_gov_jarldom_EMPEROR = { # "Empereur"
+	AND = { government_rank = 3 government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_ruler_fem_cons_1045_gov_jarldom_JARL = { # "Jarl"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_ruler_fem_cons_1045_gov_jarldom_QUEEN = { # "Reine"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_ruler_fem_vow_1045_gov_jarldom_EMPRESS = { # "Impératrice"
+	AND = { government_rank = 3 government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+
 
 ### LOWER PRIORITY / PRIORITÉ BASSE = zz_default_government_names.txt ###
 
@@ -2737,13 +2769,13 @@ frloc_heir_fem_cons_0011_gov_german_empire_KRONPRINZEN = { # "Kronprinzessin"
 	AND = { government_rank = 3 culture_group = germanic OR = { tag = HLR tag = GER } government = monarchy }
 }
 frloc_heir_masc_vow_0022_yuan_empire_HEIR = { # "Héritier"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = YUA government = monarchy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_heir_masc_cons_0022_yuan_empire_KHANZADEH = { # "Khânzâdeh"
-	AND = { OR = { government_rank = 2 government_rank = 3 } tag = YUA government = monarchy }
+	AND = { OR = { government_rank = 2 government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_heir_fem_cons_0022_yuan_empire_KHANUM = { # "Khanoum"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = YUA government = monarchy }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_heir_fem_cons_0023_ilkhanate_march_KHANZADEH = { # "Khânzâdeh"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = ILK is_march = yes }
@@ -2938,10 +2970,10 @@ frloc_heir_fem_vow_0049_lithuanian_monarchy_HEIR_fem = { # "Héritière"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = LIT government = monarchy }
 }
 frloc_heir_masc_vow_0050_cristopher_of_bavaria_monarchy_HEIR = { # "Héritier"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_heir_fem_vow_0050_cristopher_of_bavaria_monarchy_HEIR_fem = { # "Héritière"
-	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_heir_masc_vow_0051_hunyadi_regent_monarchy_HEIR = { # "Héritier"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = HUN government = monarchy has_heir = "Ladislaus Postumus" }
@@ -3357,6 +3389,13 @@ frloc_heir_masc_vow_0126_march_eastern_christian_monarchy_HEIR = { # "Héritier"
 frloc_heir_fem_vow_0126_march_eastern_christian_monarchy_HEIR_fem = { # "Héritière"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy NOT = { has_reform = principality } OR = { religion = coptic religion = orthodox } is_march = yes }
 }
+frloc_heir_masc_vow_0127_gov_holy_horde_HEIR = { # "Héritier"
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+frloc_heir_fem_vow_0127_gov_holy_horde_HEIR_fem = { # "Héritière"
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } OR = { has_reform = holy_horde_reform has_reform = crusading_kingdom_reform has_reform = militarized_crusader_order_reform } }
+}
+
 
 ### MIDDLE PRIORITY / PRIORITÉ INTERMÉDIAIRE = 01_government_names.txt ###
 
@@ -3567,6 +3606,13 @@ frloc_heir_masc_vow_1044_sisters_crusader_state_HEIR = { # "Héritier"
 frloc_heir_fem_vow_1044_sisters_crusader_state_HEIR_fem = { # "Héritière"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = catholic has_reform = holy_state_reform has_country_modifier = sisters_takeover }
 }
+frloc_heir_masc_vow_1045_gov_jarldom_HEIR = { # "Héritier"
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_heir_fem_vow_1045_gov_jarldom_HEIR_fem = { # "Héritière"
+	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+
 
 ### LOWER PRIORITY / PRIORITÉ BASSE = zz_default_government_names.txt ###
 
@@ -3645,22 +3691,22 @@ frloc_consort_fem_cons_0011_gov_german_empire_KAISERIN = { # "Kaiserin"
 	AND = { government_rank = 3 culture_group = germanic OR = { tag = HLR tag = GER } government = monarchy }
 }
 frloc_consort_masc_cons_0022_yuan_empire_BEILE = { # "Beile"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = YUA government = monarchy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_masc_cons_0022_yuan_empire_KHAN = { # "Khân"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = YUA government = monarchy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_masc_cons_0022_yuan_empire_YEKHE_KHAGAN = { # "Yekhe khagan"
-	AND = { government_rank = 3 tag = YUA government = monarchy }
+	AND = { government_rank = 3 OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_fem_cons_0022_yuan_empire_GEGE = { # "Gege"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = YUA government = monarchy }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_fem_cons_0022_yuan_empire_KHANUM = { # "Khanoum"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = YUA government = monarchy }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_fem_cons_0022_yuan_empire_YEKHE_KHANUM = { # "Yekhe khanoum"
-	AND = { government_rank = 3 tag = YUA government = monarchy }
+	AND = { government_rank = 3 OR = { tag = YUA AND = { tag = OIR has_reform = celestial_empire } } government = monarchy }
 }
 frloc_consort_masc_cons_0023_ilkhanate_march_KHANZADEH = { # "Khânzâdeh"
 	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = ILK is_march = yes }
@@ -3936,22 +3982,22 @@ frloc_consort_fem_vow_0049_lithuanian_monarchy_EMPRESS = { # "Impératrice"
 	AND = { government_rank = 3 tag = LIT government = monarchy }
 }
 frloc_consort_masc_vow_0050_cristopher_of_bavaria_monarchy_ARCHDUKE_CONSORT = { # "Archiduc consort"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_consort_masc_cons_0050_cristopher_of_bavaria_monarchy_KING_CONSORT = { # "Roi consort"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_consort_masc_vow_0050_cristopher_of_bavaria_monarchy_EMPEROR_CONSORT = { # "Empereur consort"
-	AND = { government_rank = 3 tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 3 OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_consort_fem_vow_0050_cristopher_of_bavaria_monarchy_ARCHDUCHESS = { # "Archiduchesse"
-	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
-frloc_consort_fem_cons_0050_cristopher_of_bavaria_monarchy_QUEEN = { # "Reine"
-	AND = { government_rank = 2 NOT = { government_rank = 3 } tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+frloc_consort_fem_vow_0050_cristopher_of_bavaria_monarchy_ARCHQUEEN = { # "Archi-reine"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_consort_fem_vow_0050_cristopher_of_bavaria_monarchy_EMPRESS = { # "Impératrice"
-	AND = { government_rank = 3 tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } }
+	AND = { government_rank = 3 OR = { AND = { tag = DAN government = monarchy OR = { has_ruler = "Christoffer III" has_ruler = "Christopher III" } } has_ruler_flag = has_proclaimed_archking_title } }
 }
 frloc_consort_masc_cons_0051_hunyadi_regent_monarchy_PRINCE_CONSORT = { # "Prince consort"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } tag = HUN government = monarchy has_heir = "Ladislaus Postumus" }
@@ -4991,6 +5037,25 @@ frloc_consort_masc_cons_1039_sunni_theocracy_CONSORT = { # "Consort"
 frloc_consort_fem_cons_1039_sunni_theocracy_CONSORT = { # "Consort"
 	AND = { OR = { government_rank = 1 government_rank = 2 government_rank = 3 } religion = sunni OR = { has_reform = feudal_theocracy government = theocracy } }
 }
+frloc_consort_masc_cons_1045_gov_jarldom_CONSORT = { # "Consort"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_consort_masc_cons_1045_gov_jarldom_KING = { # "Roi"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_consort_masc_vow_1045_gov_jarldom_EMPEROR = { # "Empereur"
+	AND = { government_rank = 3 government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_consort_fem_cons_1045_gov_jarldom_CONSORT = { # "Consort"
+	AND = { government_rank = 1 NOT = { OR = { government_rank = 2 government_rank = 3 } } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_consort_fem_cons_1045_gov_jarldom_QUEEN = { # "Reine"
+	AND = { government_rank = 2 NOT = { government_rank = 3 } government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+frloc_consort_fem_vow_1045_gov_jarldom_EMPRESS = { # "Impératrice"
+	AND = { government_rank = 3 government = monarchy OR = { religion = norse_pagan_reformed culture = norse } }
+}
+
 
 ### LOWER PRIORITY / PRIORITÉ BASSE = zz_default_government_names.txt ###
 
@@ -5032,9 +5097,14 @@ frloc_tags_art_sg_masc_cons_au_01a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5104,9 +5174,14 @@ frloc_tags_art_sg_masc_cons_dansle_01b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
 	NOT = { has_country_flag = is_burma }
@@ -5136,9 +5211,14 @@ frloc_tags_art_sg_masc_cons_en_01c = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5166,9 +5246,14 @@ frloc_tags_art_sg_masc_vow_en_02a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5237,7 +5322,9 @@ frloc_tags_art_sg_masc_vow_dansl_02b = {
 	# override_country_name
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5253,8 +5340,11 @@ frloc_tags_art_sg_masc_vow_dansl_02b = {
 	NOT = { has_country_flag = is_pue_flag }
 	OR = {
 		has_country_flag = is_gurkani_flag
+		has_country_flag = renamed_to_north_sea_empire
 		has_country_flag = is_revolutionary_gurkani_flag
 		has_country_flag = is_majapahit_empire_flag
+		has_country_flag = is_LAE_flag
+		has_country_flag = is_FBE_flag
 		### USUAL PRIORITY ###
 		# Colonies
 		tag = ILI
@@ -5278,9 +5368,14 @@ frloc_tags_art_sg_fem_cons_de_en_03a = {
 	### HIGHER PRIORITY ###
 	# override_country_name
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = unified_islam }
 	NOT = { has_country_flag = is_ramannadesa }
@@ -5299,7 +5394,7 @@ frloc_tags_art_sg_fem_cons_de_en_03a = {
 		has_country_flag = is_burma
 		### USUAL PRIORITY ###
 		# Scandinavia / Scandinavie
-		tag = FIN tag = KRL tag = LVA tag = NOR tag = SCA tag = SWE
+		tag = FIN tag = KRL tag = LTG tag = LVA tag = NOR tag = SCA tag = SWE
 		# Balkans
 		tag = BOS tag = BUL tag = CRO tag = CRT tag = DAL tag = GRE tag = HUN tag = MOE tag = MOL tag = RMN tag = SER tag = TRA tag = WAL
 		# British Isles / îles Britanniques
@@ -5352,8 +5447,11 @@ frloc_tags_art_sg_fem_cons_dela_auseindela_03b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5368,7 +5466,9 @@ frloc_tags_art_sg_fem_cons_dela_auseindela_03b = {
 	NOT = {	has_country_flag = is_srijivaya_flag }
 	NOT = { has_country_flag = is_pue_flag }
 	OR = {
-		has_country_flag = is_hanseatic_league_flag
+		OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag }
+		has_country_flag = is_RPR_flag
+		has_country_flag = is_LPC_flag
 		### USUAL PRIORITY ###
 		# Eastern Europe / Europe orientale
 		tag = PLC
@@ -5396,9 +5496,14 @@ frloc_tags_art_sg_fem_vow_d_en_04a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5454,9 +5559,14 @@ frloc_tags_art_pl_masc_cons_chezles_05a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5557,9 +5667,14 @@ frloc_tags_art_pl_masc_cons_aux_05b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5610,9 +5725,14 @@ frloc_tags_art_pl_masc_cons_dansles_05c = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5642,9 +5762,14 @@ frloc_tags_art_pl_fem_cons_aux_07a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5678,9 +5803,14 @@ frloc_tags_art_pl_fem_cons_dansles_07b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5718,9 +5848,14 @@ frloc_tags_noart_sg_masc_cons_en_a_09a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5764,9 +5899,14 @@ frloc_tags_noart_sg_masc_cons_a_a_09b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5798,9 +5938,14 @@ frloc_tags_noart_sg_masc_vow_en_a_10a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5836,9 +5981,14 @@ frloc_tags_noart_sg_masc_vow_a_a_10b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5866,9 +6016,14 @@ frloc_tags_noart_sg_fem_cons_de_en_11a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5937,9 +6092,14 @@ frloc_tags_noart_sg_fem_cons_de_a_11b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -5993,9 +6153,14 @@ frloc_tags_noart_sg_fem_cons_dela_en_11c = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -6025,9 +6190,14 @@ frloc_tags_noart_sg_fem_vow_d_en_12a = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
@@ -6075,9 +6245,14 @@ frloc_tags_noart_sg_fem_vow_d_a_12b = {
 	NOT = { has_country_flag = is_china_flag }
 	NOT = { has_country_flag = is_revolutionary_china_flag }
 	NOT = { has_country_flag = is_gurkani_flag }
+	NOT = { has_country_flag = renamed_to_north_sea_empire }
 	NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 	NOT = { has_country_flag = is_majapahit_empire_flag }
-	NOT = { has_country_flag = is_hanseatic_league_flag }
+	NOT = { has_country_flag = is_LAE_flag }
+	NOT = { has_country_flag = is_FBE_flag }
+	NOT = { OR = { has_country_flag = is_hanseatic_league_flag has_country_flag = is_FU2_flag } }
+	NOT = { has_country_flag = is_RPR_flag }
+	NOT = { has_country_flag = is_LPC_flag }
 	NOT = { has_country_flag = is_kingdom_of_god_flag }
 	NOT = { has_country_flag = is_turkey_flag }
 	NOT = { has_country_flag = is_revolutionary_turkey_flag }
