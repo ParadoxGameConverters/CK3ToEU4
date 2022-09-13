@@ -101,18 +101,10 @@ prussian_monarchy = {
 				tag = PRU
 				NOT = { map_setup = map_setup_random }
 			}
-			AND = {
-				tag = GER
-				have_had_reform = prussian_monarchy
-				have_had_reform = prussian_republic_reform
-				have_had_reform = prussian_theocratic_reform
-			}
-			AND = {
-				is_playing_custom_nation = yes
-				have_had_reform = prussian_monarchy
-				have_had_reform = prussian_republic_reform
-				have_had_reform = prussian_theocratic_reform
-			}
+			has_reform = prussian_monarchy
+			have_had_reform = prussian_monarchy
+			have_had_reform = prussian_republic_reform
+			have_had_reform = prussian_theocratic_reform			
 			has_unlocked_government_reform = {
 				government_reform = prussian_monarchy
 			}
@@ -158,78 +150,6 @@ prussian_monarchy = {
 		allow = { has_dlc = "Rights of Man" }
 		militarised_society = yes
 	}
-}
-
-prussian_republic_reform = {
-	icon = "prussian_monarchy"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			AND = {
-				tag = PRU
-				NOT = { map_setup = map_setup_random }
-			}
-			AND = {
-				tag = GER
-				OR = {
-					have_had_reform = prussian_monarchy
-					have_had_reform = prussian_republic_reform
-					have_had_reform = prussian_theocratic_reform
-				}
-			}
-			AND = {
-				is_playing_custom_nation = yes
-				OR = {
-					have_had_reform = prussian_monarchy
-					have_had_reform = prussian_republic_reform
-					have_had_reform = prussian_theocratic_reform
-				}
-			}
-			has_unlocked_government_reform = {
-				government_reform = prussian_republic_reform
-			}
-		}
-	}
-	trigger = {
-		OR = {
-			is_playing_custom_nation = yes
-			religion = protestant
-			religion = reformed
-			religion = cathar
-			religion = waldensian
-			religion = anglican
-			religion = lollard
-			religion = adamites
-			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_republic_reform
-			}
-		}
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 100
-	legacy_equivalent = prussian_republic
-	
-	modifiers = {
-		war_exhaustion = -0.02
-		monthly_militarized_society = 0.05
-		global_autonomy = -0.075
-		republican_tradition = -0.5
-		max_absolutism = 30
-		governing_capacity_modifier = -0.5
-	}
-	
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
-	
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
-		generals_become_rulers = yes
-	}
-	
-	has_term_election = no
 }
 
 principality = {
