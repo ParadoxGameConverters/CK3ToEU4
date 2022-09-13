@@ -29,14 +29,12 @@ feudalism = {
 			NOT = {
 				government = tribal
 				government = native
-					primary_culture = bedouin_arabic
-					primary_culture = uyghur
-					technology_group = andean
-					technology_group = mesoamerican
-					technology_group = north_american
-					technology_group = south_american
-					technology_group = sub_saharan
-					technology_group = aboriginal_tech
+				technology_group = andean
+				technology_group = mesoamerican
+				technology_group = north_american
+				technology_group = south_american
+				technology_group = sub_saharan
+				technology_group = aboriginal_tech
 				}
 			}
 			AND = {
