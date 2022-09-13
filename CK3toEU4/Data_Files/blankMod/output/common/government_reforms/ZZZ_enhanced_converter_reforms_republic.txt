@@ -192,13 +192,9 @@ prussian_republic_reform = {
 	trigger = {
 		OR = {
 			is_playing_custom_nation = yes
-			religion = protestant
-			religion = reformed
-			religion = cathar
-			religion = waldensian
-			religion = anglican
-			religion = lollard
-			religion = adamites
+			uses_church_aspects = yes
+			uses_fervor = yes
+			religion = anglican #Check to see if "uses_anglican_power = yes" works
 			has_unlocked_government_reform_tooltip = {
 				government_reform = prussian_republic_reform
 			}
