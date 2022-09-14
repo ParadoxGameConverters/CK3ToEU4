@@ -25,27 +25,28 @@ feudalism = {
 
 	history = {
 		is_year = 1000
-		owner = {
-			NOT = {
-				government = tribal
-				government = native
-				technology_group = andean
-				technology_group = mesoamerican
-				technology_group = north_american
-				technology_group = south_american
-				technology_group = sub_saharan
-				technology_group = aboriginal_tech
-				}
-			}
-			AND = {
-				is_year = 1600
-				owner = {
-					NOT = { has_reform = siberian_tribe }
-					NOT = { has_reform = steppe_horde }
-				}
-			}
-			is_year = 1700
-		}
+		OR = {
+            owner = {
+                NOT = {
+                    government = tribal
+                    government = native
+                    technology_group = andean
+                    technology_group = mesoamerican
+                    technology_group = north_american
+                    technology_group = south_american
+                    technology_group = sub_saharan
+                    technology_group = aboriginal_tech
+                }
+            }
+            AND = {
+                is_year = 1600
+                owner = {
+                    NOT = { has_reform = siberian_tribe }
+                    NOT = { has_reform = steppe_horde }
+                }
+            }
+            is_year = 1700
+        }
 	}
 	
 	# no need for events, as its there from the start.
