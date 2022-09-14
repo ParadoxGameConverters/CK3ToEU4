@@ -21,12 +21,15 @@ grand_duchy_reform = {
 		governing_capacity = 200
 	}
 }
+
 english_monarchy = {
 	icon = "british_queen"
 	allow_normal_conversion = no
 	potential = {
-		has_reform = english_monarchy
-		have_had_reform = english_monarchy
+		OR = {
+			has_reform = english_monarchy
+			have_had_reform = english_monarchy
+		}
 	}
 	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
@@ -41,16 +44,12 @@ english_monarchy = {
 		legitimacy = 0.5
 		global_unrest = -1
 		max_absolutism = -30
+		nobles_influence_modifier = -0.1
 	}
 
 	conditional = {
 		allow = { has_dlc = "Common Sense" }
 		has_parliament = yes
-
-		custom_attributes = {
-			blocked_call_diet = yes
-			disables_nobility = yes
-		}
 	}
 }
 
@@ -102,6 +101,7 @@ prussian_monarchy = {
 				NOT = { map_setup = map_setup_random }
 			}
 			has_reform = prussian_monarchy
+			have_had_reform = shaka_regime
 			have_had_reform = prussian_monarchy
 			have_had_reform = prussian_republic_reform
 			have_had_reform = prussian_theocratic_reform			
@@ -118,7 +118,7 @@ prussian_monarchy = {
 			religion = anglican #Check to see if "uses_anglican_power = yes" works
 			AND = {
 				religion_group = christian
-				OR= {
+				OR = {
 					uses_church_aspects = yes
 					uses_fervor = yes
 				}

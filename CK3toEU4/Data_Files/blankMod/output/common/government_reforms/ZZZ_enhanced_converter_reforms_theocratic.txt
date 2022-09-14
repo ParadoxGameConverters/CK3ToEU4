@@ -31,15 +31,77 @@ monastic_order_reform = {
 	legacy_equivalent = monastic_order_government
 	monastic = yes
 	fixed_rank = 1
-
-	conditional = {
-		allow = {
-			has_dlc = "Cradle of Civilization"
-			religion = sunni
-		}
-		has_pashas = yes
+	custom_attributes = {
+		monastic_order = yes
 	}
 }
+prussian_theocratic_reform = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			AND = {
+				tag = PRU
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				tag = GER
+				OR = {
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+				}
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				OR = {
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+				}
+			}
+			has_unlocked_government_reform = {
+				government_reform = prussian_theocratic_reform
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			AND = {
+				tag = PRU
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = prussian_monarchy
+			have_had_reform = shaka_regime
+			have_had_reform = prussian_monarchy
+			have_had_reform = prussian_republic_reform
+			have_had_reform = prussian_theocratic_reform			
+			has_unlocked_government_reform = {
+				government_reform = prussian_theocratic_reform
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 100
+	
+	modifiers = {
+		war_exhaustion = -0.02
+		monthly_militarized_society = 0.05
+		global_autonomy = -0.075
+		devotion = -0.5
+		max_absolutism = 10
+		manpower_in_true_faith_provinces = 0.15
+		governing_capacity_modifier = -0.5
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+	rulers_can_be_generals = yes
+	heirs_can_be_generals = yes
+}
+
 papacy_reform = {
 	potential = {
 		OR = {
