@@ -256,7 +256,8 @@ great_veche_republic = {
 				tag = UKR
 				NOT = { map_setup = map_setup_random }
 			}
-			has_reform = tsardom
+			has_reform = great_veche_republic
+			have_had_reform = great_veche_republic
 			have_had_reform = tsardom
 		}
 		OR = {
@@ -270,7 +271,10 @@ great_veche_republic = {
 			}
 			AND = {
 				is_playing_custom_nation = yes
-				have_had_reform = tsardom
+				OR = {
+					have_had_reform = great_veche_republic
+					have_had_reform = tsardom
+				}
 			}
 		}
 	}
