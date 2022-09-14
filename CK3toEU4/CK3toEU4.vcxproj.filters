@@ -484,6 +484,12 @@
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\ModFilesystem.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\ModLoader\Mod.h">
+      <Filter>CommonItems\ModLoader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\commonItems\Log.cpp">
@@ -826,6 +832,9 @@
     </ClCompile>
     <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
+      <Filter>CommonItems\ModLoader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

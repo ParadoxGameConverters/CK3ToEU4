@@ -118,6 +118,13 @@ estate_church_clerical_ministers = {
 				}
 				uses_patriarch_authority = no #Orthodox/Monothelite/Iconoclast/Paulician/Yazidi
 			}
+			if = {
+				limit = {
+					has_dlc = "Origins"
+				}
+				NOT = { religion = jewish }
+			}
+			NOT = { religion = anglican }
 		}
 		modifier = {
 			missionary_maintenance_cost = -0.2
@@ -181,7 +188,7 @@ estate_church_clerical_ministers = {
 	conditional_modifier = {
 		trigger = {
 			has_dlc = "Mandate of Heaven"
-			uses_harmony = yes
+			religion = confucianism
 		}
 		modifier = {
 			yearly_harmony = 0.25
@@ -194,6 +201,22 @@ estate_church_clerical_ministers = {
 		}
 		modifier = {
 			yearly_patriarch_authority = 0.005
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			religion = anglican
+		}
+		modifier = {
+			church_power_modifier = 0.1
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			has_government_attribute = clerical_ministers_tech_buff
+		}
+		modifier = {
+			technology_cost = -0.05
 		}
 	}
 	penalties = {

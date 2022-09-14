@@ -36,6 +36,6 @@ sons_of_kaleva_ideas = {
 		colonists = 1
 	}
 	ZZZ_take_down_the_walls = {
-		artillery_bonus_vs_fort = 2
+		artillery_levels_available_vs_fort = 2
 	}
 }

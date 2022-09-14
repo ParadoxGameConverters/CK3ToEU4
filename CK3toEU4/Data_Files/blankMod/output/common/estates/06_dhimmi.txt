@@ -18,24 +18,28 @@ estate_dhimmi = {
 	trigger = {
 		has_dlc = "The Cossacks"
 		OR = {
-			NOT = { has_estate = estate_brahmins }
-			has_country_flag = gained_dhimmi_estate
+			has_government_attribute = enables_dhimmi
+			AND = {
+				OR = {
+					NOT = { has_estate = estate_brahmins }
+					has_country_flag = gained_dhimmi_estate
+				}
+				NOT = { is_revolutionary_republic_trigger = yes }
+				NOT = { government = native }
+				NOT = { has_reform = siberian_tribe }
+				NOT = { has_reform = cossacks_reform }
+				NOT = { has_government_attribute = is_pirate_republic_reform }
+				is_nomad = no
+				is_colonial_nation = no
+				NOT = { has_reform = celestial_empire }
+				religion_group = muslim
+				NOT = { has_reform = revolutionary_empire_reform }
+				NOT = { religion = masmudi }
+			}
 		}
-		NOT = { has_government_attribute = is_merchant_republic }
-		NOT = { has_reform = trading_city }
-		NOT = { is_revolutionary_republic_trigger = yes }
-		NOT = { government = native }
-		NOT = { has_reform = siberian_tribe }
-		NOT = { has_reform = cossacks_reform }
-		NOT = { has_reform = veche_republic }
-		NOT = { has_reform = pirate_republic_reform }
-		is_nomad = no
-		is_colonial_nation = no
-		NOT = { has_reform = celestial_empire }
-		religion_group = muslim
-		NOT = { has_reform = revolutionary_empire_reform }
-		
-		NOT = { religion = masmudi }
+		#NOT = { has_government_attribute = is_merchant_republic }
+		#NOT = { has_reform = trading_city }
+		#NOT = { has_reform = veche_republic }
 	}
 
 	# These scale with loyalty & power

@@ -914,7 +914,7 @@ dip_idea_modifiers = {
 		}
 	}
 	custom_idea_yearly_karma_decay = {
-		yearly_karma_decay = 0.005
+		yearly_karma_decay = 0.05
 		level_cost_2 = 3
 		level_cost_3 = 9
 		level_cost_4 = 18

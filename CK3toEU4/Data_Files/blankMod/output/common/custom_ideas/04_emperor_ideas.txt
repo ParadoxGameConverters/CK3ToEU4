@@ -135,6 +135,7 @@ emperor_idea_dip_modifiers = {
 			OR = {
 				has_dlc = "Rule Britannia"
 				has_dlc = "Golden Century"
+				has_dlc = "Lions of the North"
 			}
 		}
 	}

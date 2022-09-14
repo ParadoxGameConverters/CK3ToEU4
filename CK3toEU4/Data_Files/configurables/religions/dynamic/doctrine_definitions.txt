@@ -1056,6 +1056,14 @@ unreformed_faith_doctrine = {
 		local_missionary_strength = 0.02
 	}
 }
+west_african_unreformed_faith_doctrine = {
+	country = {
+		global_missionary_strength = -0.005
+	}
+	province = {
+		local_missionary_strength = 0.02
+	}
+}
 ##Divine Destiny
 divine_destiny_doctrine = {
 	not_unique_modifiers = {
