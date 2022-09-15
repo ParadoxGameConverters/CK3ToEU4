@@ -1,6 +1,7 @@
 #ifndef CK3_HOUSES_H
 #define CK3_HOUSES_H
 #include "Parser.h"
+#include "HouseNameScraper.h"
 
 namespace CK3
 {
@@ -17,6 +18,7 @@ class Houses: commonItems::parser
 
 	void linkDynasties(const Dynasties& dynasties);
 	void linkCharacters(const Characters& characters);
+	void importNames(const HouseNameScraper& houseNameScraper);
 
   private:
 	void registerKeys();

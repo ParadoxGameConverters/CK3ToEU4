@@ -15,6 +15,7 @@ TEST(CK3World_HouseTests, loadValuesDefaultToBlank)
 	std::stringstream input;
 	const CK3::House house(input, 1);
 
+	ASSERT_TRUE(house.getKey().empty());
 	ASSERT_TRUE(house.getName().empty());
 	ASSERT_TRUE(house.getLocalizedName().empty());
 	ASSERT_TRUE(house.getPrefix().empty());
@@ -24,6 +25,7 @@ TEST(CK3World_HouseTests, loadValuesDefaultToBlank)
 TEST(CK3World_HouseTests, housePrimitivesCanBeLoaded)
 {
 	std::stringstream input;
+	input << "key = \"house_vimaranes\"\n";
 	input << "name = \"dynn_Villeneuve\"\n";
 	input << "localized_name = \"Gaye\"\n";
 	input << "prefix = \"dynnp_de\"\n";
@@ -31,6 +33,7 @@ TEST(CK3World_HouseTests, housePrimitivesCanBeLoaded)
 
 	const CK3::House house(input, 42);
 
+	EXPECT_EQ("house_vimaranes", house.getKey());
 	ASSERT_EQ("dynn_Villeneuve", house.getName());
 	ASSERT_EQ("Gaye", house.getLocalizedName());
 	ASSERT_EQ("dynnp_de", house.getPrefix());

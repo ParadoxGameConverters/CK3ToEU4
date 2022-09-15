@@ -815,6 +815,18 @@
     <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
       <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
     </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScraperTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScrapingTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

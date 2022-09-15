@@ -3,6 +3,7 @@
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/HouseNameScraper.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
 #include "gtest/gtest.h"
 #include <sstream>
@@ -104,4 +105,27 @@ TEST(CK3World_HousesTests, linkingMissingDynastyDoesNothing)
 
 	ASSERT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
 	ASSERT_EQ(nullptr, h2->second->getDynasty().second);
+}
+
+TEST(CK3World_HousesTests, namesCanBeImportedFromScraper)
+{
+	std::stringstream input;
+	input << "23={key=\"house_vimaranes\"\n}\n";
+	input << "25={key=\"house_cantabria\"\n}\n";
+	CK3::Houses houses(input);
+
+	std::stringstream input2;
+	input2 << "house_vimaranes = { name = \"dynn_Vimaranes\" }\n";
+	input2 << "house_cantabria = { prefix = \"dynnp_de\" name = \"dynn_Cantabria\" }\n";
+	CK3::HouseNameScraper scraper;
+	scraper.loadHouseDetails(input2);
+
+	houses.importNames(scraper);
+
+	const auto& h1 = houses.getHouses().find(23);
+	const auto& h2 = houses.getHouses().find(25);
+
+	EXPECT_EQ("dynn_Vimaranes", h1->second->getName());
+	EXPECT_EQ("dynnp_de", h2->second->getPrefix());
+	EXPECT_EQ("dynn_Cantabria", h2->second->getName());
 }

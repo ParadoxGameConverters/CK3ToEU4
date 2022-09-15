@@ -11,6 +11,7 @@ class House: commonItems::parser
   public:
 	House() = default;
 	House(std::istream& theStream, long long housID);
+	[[nodiscard]] const auto& getKey() const { return key; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getLocalizedName() const { return localizedName; }
 	[[nodiscard]] const auto& getPrefix() const { return prefix; }
@@ -22,10 +23,14 @@ class House: commonItems::parser
 	void loadHouseHead(const std::pair<long long, std::shared_ptr<Character>>& theHead) { houseHead = theHead; }
 	void resetHouseHead() { houseHead.reset(); }
 
+	void setName(const std::string& theName) { name = theName; }
+	void setPrefix(const std::string& thePrefix) { prefix = thePrefix; }
+
   private:
 	void registerKeys();
 
 	long long houseID = 0;
+	std::string key;
 	std::string name;
 	std::string localizedName;
 	std::pair<long long, std::shared_ptr<Dynasty>> dynasty;
