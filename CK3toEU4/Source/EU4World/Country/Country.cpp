@@ -1351,6 +1351,25 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms.clear();
 			details.reforms = {"papacy_reform"};
 		}
+		// Prussian Theocracy (Not named as such in loc)
+		else if (tag == "PRU" && protestantReligions.count(details.religion))
+		{
+			details.reforms.clear();
+			details.reforms = {"prussian_theocratic_reform"};
+		}
+		// Holy Horde
+		else if ((details.religion == "catholic") && details.holder->getCharacterDomain()->getLaws().count("holy_order_succession_law") &&
+					details.holder->getCharacterDomain()->getLaws().count("holy_order_succession_law") &&
+					(regionMapper->provinceIsInRegion(details.capital, "tambov_area") || regionMapper->provinceIsInRegion(details.capital, "ryazan_area") ||
+						 regionMapper->provinceIsInRegion(details.capital, "suzdal_area") ||
+						 regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
+						 regionMapper->provinceIsInRegion(details.capital, "ural_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
+						 regionMapper->provinceIsInRegion(details.capital, "central_asia_region") ||
+						 regionMapper->provinceIsInRegion(details.capital, "mongolia_region")))
+		{
+			details.reforms.clear();
+			details.reforms = {"holy_horde_reform"};
+		}
 		// Holy Orders
 		else if (details.holder->getCharacterDomain()->getLaws().count("holy_order_succession_law"))
 		{

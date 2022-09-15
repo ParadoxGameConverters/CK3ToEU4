@@ -107,7 +107,7 @@ jewish_group = {
 	}
 	karaite_faith = { #
 		icon = 51
-		color = { 255 83 255 }
+		color = { 250 80 250 }
 		country = {
 			governing_capacity = 250
 			idea_cost = -0.1
