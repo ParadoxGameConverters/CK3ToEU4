@@ -12,6 +12,9 @@ CK3::House::House(std::istream& theStream, long long housID): houseID(housID)
 
 void CK3::House::registerKeys()
 {
+	registerKeyword("key", [this](std::istream& theStream) {
+		key = commonItems::getString(theStream);
+	});
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		name = commonItems::singleString(theStream).getString();
 	});

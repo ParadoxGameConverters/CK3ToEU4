@@ -4,6 +4,7 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
 #include "Characters/CharacterDomain.h"
+#include "CommonFunctions.h"
 #include "CommonRegexes.h"
 #include "Geography/CountyDetail.h"
 #include "Log.h"
@@ -136,6 +137,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
+	loadHouseNames(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	Log(LogLevel::Info) << "-> Reading Words";
@@ -463,8 +465,35 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 	Log(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
 }
 
+void CK3::World::loadHouseNames(const Configuration& theConfiguration)
+{
+	Log(LogLevel::Info) << "-> Loading House Names";
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/dynasty_houses"))
+	{
+		if (getExtension(file) != "txt")
+			continue;
+		houseNameScraper.loadHouseDetails(theConfiguration.getCK3Path() + "common/dynasty_houses/" + file);
+	}
+	for (const auto& mod: mods)
+	{
+		if (!commonItems::DoesFolderExist(mod.path + "common/dynasty_houses"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading house names from [" << mod.name << "]";
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/dynasty_houses"))
+		{
+			if (getExtension(file) != "txt")
+				continue;
+			houseNameScraper.loadHouseDetails(mod.path + "common/dynasty_houses/" + file);
+		}
+	}
+	Log(LogLevel::Info) << ">> " << houseNameScraper.getHouseNames().size() << " house names read.";
+}
+
 void CK3::World::crosslinkDatabases()
 {
+	Log(LogLevel::Info) << "-> Injecting Names into Houses.";
+	houses.importNames(houseNameScraper);
+
 	Log(LogLevel::Info) << "-> Concocting Cultures.";
 	cultures.concoctCultures(localizationMapper, cultureMapper);
 

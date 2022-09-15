@@ -12,6 +12,7 @@
 #include "ConverterVersion.h"
 #include "Cultures/Cultures.h"
 #include "Dynasties/Dynasties.h"
+#include "Dynasties/HouseNameScraper.h"
 #include "Dynasties/Houses.h"
 #include "Flags/Flags.h"
 #include "GameVersion.h"
@@ -60,6 +61,7 @@ class World: commonItems::parser
 	void primeLaFabricaDeColor(const Configuration& theConfiguration);
 	void loadLandedTitles(const Configuration& theConfiguration);
 	void loadCharacterTraits(const Configuration& theConfiguration);
+	void loadHouseNames(const Configuration& theConfiguration);
 
 	// postparsing weave
 	void crosslinkDatabases();
@@ -97,6 +99,7 @@ class World: commonItems::parser
 	Flags flags;
 	CountyDetails countyDetails;
 	Cultures cultures;
+	HouseNameScraper houseNameScraper;
 	mappers::NamedColors namedColors;
 	mappers::IAmHreMapper iAmHreMapper;
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;

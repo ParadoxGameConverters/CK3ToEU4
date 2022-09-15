@@ -5,6 +5,7 @@
 #include "House.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include <ranges>
 
 CK3::Houses::Houses(std::istream& theStream)
 {
@@ -74,4 +75,24 @@ void CK3::Houses::linkDynasties(const Dynasties& dynasties)
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " houses updated.";
+}
+
+void CK3::Houses::importNames(const HouseNameScraper& houseNameScraper)
+{
+	auto nameCounter = 0;
+	auto prefixCounter = 0;
+	for (const auto& house: houses | std::views::values)
+	{
+		if (house->getName().empty() && houseNameScraper.getNameForKey(house->getKey()) && !houseNameScraper.getNameForKey(house->getKey())->empty())
+		{
+			house->setName(*houseNameScraper.getNameForKey(house->getKey()));
+			++nameCounter;
+		}
+		if (house->getPrefix().empty() && houseNameScraper.getPrefixForKey(house->getKey()) && !houseNameScraper.getPrefixForKey(house->getKey())->empty())
+		{
+			house->setPrefix(*houseNameScraper.getPrefixForKey(house->getKey()));
+			++prefixCounter;
+		}
+	}
+	Log(LogLevel::Info) << "<> " << nameCounter << " house names and " << prefixCounter << " house prefixes updated.";
 }

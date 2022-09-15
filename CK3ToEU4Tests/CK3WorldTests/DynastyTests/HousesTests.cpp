@@ -3,6 +3,7 @@
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
+#include "../../CK3toEU4/Source/CK3World/Dynasties/HouseNameScraper.h"
 #include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
 #include "gtest/gtest.h"
 #include <sstream>
@@ -12,7 +13,7 @@ TEST(CK3World_HousesTests, HousesDefaultToEmpty)
 	std::stringstream input;
 	const CK3::Houses houses(input);
 
-	ASSERT_TRUE(houses.getHouses().empty());
+	EXPECT_TRUE(houses.getHouses().empty());
 }
 
 TEST(CK3World_HousesTests, HousesCanBeLoaded)
@@ -25,8 +26,8 @@ TEST(CK3World_HousesTests, HousesCanBeLoaded)
 	const auto& h1 = houses.getHouses().find(13);
 	const auto& h2 = houses.getHouses().find(15);
 
-	ASSERT_EQ("dynn_Villeneuve", h1->second->getName());
-	ASSERT_EQ("dynn_Fournier", h2->second->getName());
+	EXPECT_EQ("dynn_Villeneuve", h1->second->getName());
+	EXPECT_EQ("dynn_Fournier", h2->second->getName());
 }
 
 
@@ -40,9 +41,9 @@ TEST(CK3World_HousesTests, NonsenseHousesAreIgnored)
 	const auto& h1 = houses.getHouses().find(13);
 	const auto& h2 = houses.getHouses().find(15);
 
-	ASSERT_EQ(1, houses.getHouses().size());
-	ASSERT_EQ(houses.getHouses().end(), h1);
-	ASSERT_EQ("dynn_Fournier", h2->second->getName());
+	EXPECT_EQ(1, houses.getHouses().size());
+	EXPECT_EQ(houses.getHouses().end(), h1);
+	EXPECT_EQ("dynn_Fournier", h2->second->getName());
 }
 
 TEST(CK3World_HousesTests, charactersCanBeLinkedIgnoringMissing)
@@ -63,8 +64,8 @@ TEST(CK3World_HousesTests, charactersCanBeLinkedIgnoringMissing)
 	const auto& h1 = houses.getHouses().find(13);
 	const auto& h2 = houses.getHouses().find(15);
 
-	ASSERT_EQ("bob", h1->second->getHouseHead()->second->getName());
-	ASSERT_FALSE(h2->second->getHouseHead());
+	EXPECT_EQ("bob", h1->second->getHouseHead()->second->getName());
+	EXPECT_FALSE(h2->second->getHouseHead());
 }
 
 TEST(CK3World_HousesTests, dynastiesCanBeLinked)
@@ -83,8 +84,8 @@ TEST(CK3World_HousesTests, dynastiesCanBeLinked)
 	const auto& h1 = houses.getHouses().find(23);
 	const auto& h2 = houses.getHouses().find(25);
 
-	ASSERT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
-	ASSERT_EQ(1, h2->second->getDynasty().second->getCoA()->first);
+	EXPECT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
+	EXPECT_EQ(1, h2->second->getDynasty().second->getCoA()->first);
 }
 
 TEST(CK3World_HousesTests, linkingMissingDynastyDoesNothing)
@@ -102,6 +103,29 @@ TEST(CK3World_HousesTests, linkingMissingDynastyDoesNothing)
 	const auto& h1 = houses.getHouses().find(23);
 	const auto& h2 = houses.getHouses().find(25);
 
-	ASSERT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
-	ASSERT_EQ(nullptr, h2->second->getDynasty().second);
+	EXPECT_EQ(2, h1->second->getDynasty().second->getCoA()->first);
+	EXPECT_EQ(nullptr, h2->second->getDynasty().second);
+}
+
+TEST(CK3World_HousesTests, namesCanBeImportedFromScraper)
+{
+	std::stringstream input;
+	input << "23={key=\"house_vimaranes\"\n}\n";
+	input << "25={key=\"house_cantabria\"\n}\n";
+	CK3::Houses houses(input);
+
+	std::stringstream input2;
+	input2 << "house_vimaranes = { name = \"dynn_Vimaranes\" }\n";
+	input2 << "house_cantabria = { prefix = \"dynnp_de\" name = \"dynn_Cantabria\" }\n";
+	CK3::HouseNameScraper scraper;
+	scraper.loadHouseDetails(input2);
+
+	houses.importNames(scraper);
+
+	const auto& h1 = houses.getHouses().find(23);
+	const auto& h2 = houses.getHouses().find(25);
+
+	EXPECT_EQ("dynn_Vimaranes", h1->second->getName());
+	EXPECT_EQ("dynnp_de", h2->second->getPrefix());
+	EXPECT_EQ("dynn_Cantabria", h2->second->getName());
 }
