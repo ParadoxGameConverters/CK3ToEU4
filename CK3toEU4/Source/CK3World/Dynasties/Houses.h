@@ -1,7 +1,7 @@
 #ifndef CK3_HOUSES_H
 #define CK3_HOUSES_H
-#include "Parser.h"
 #include "HouseNameScraper.h"
+#include "Parser.h"
 
 namespace CK3
 {

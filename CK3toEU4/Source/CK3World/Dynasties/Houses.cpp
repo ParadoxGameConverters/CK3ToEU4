@@ -83,14 +83,6 @@ void CK3::Houses::importNames(const HouseNameScraper& houseNameScraper)
 	auto prefixCounter = 0;
 	for (const auto& house: houses | std::views::values)
 	{
-		if (house->getName().empty())
-		{
-			Log(LogLevel::Debug) << "house " << house->getID() << " empty, key " << house->getKey();
-			if (houseNameScraper.getNameForKey(house->getKey()))
-			{
-				Log(LogLevel::Debug) << "key ping: " << *houseNameScraper.getNameForKey(house->getKey());
-			}
-		}
 		if (house->getName().empty() && houseNameScraper.getNameForKey(house->getKey()) && !houseNameScraper.getNameForKey(house->getKey())->empty())
 		{
 			house->setName(*houseNameScraper.getNameForKey(house->getKey()));

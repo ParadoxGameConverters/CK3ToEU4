@@ -7,7 +7,7 @@ TEST(CK3World_HouseTests, houseIDLoads)
 	std::stringstream input;
 	const CK3::House house(input, 42);
 
-	ASSERT_EQ(42, house.getID());
+	EXPECT_EQ(42, house.getID());
 }
 
 TEST(CK3World_HouseTests, loadValuesDefaultToBlank)
@@ -15,11 +15,11 @@ TEST(CK3World_HouseTests, loadValuesDefaultToBlank)
 	std::stringstream input;
 	const CK3::House house(input, 1);
 
-	ASSERT_TRUE(house.getKey().empty());
-	ASSERT_TRUE(house.getName().empty());
-	ASSERT_TRUE(house.getLocalizedName().empty());
-	ASSERT_TRUE(house.getPrefix().empty());
-	ASSERT_FALSE(house.getDynasty().first);
+	EXPECT_TRUE(house.getKey().empty());
+	EXPECT_TRUE(house.getName().empty());
+	EXPECT_TRUE(house.getLocalizedName().empty());
+	EXPECT_TRUE(house.getPrefix().empty());
+	EXPECT_TRUE(house.getDynasty().first);
 }
 
 TEST(CK3World_HouseTests, housePrimitivesCanBeLoaded)
@@ -34,8 +34,8 @@ TEST(CK3World_HouseTests, housePrimitivesCanBeLoaded)
 	const CK3::House house(input, 42);
 
 	EXPECT_EQ("house_vimaranes", house.getKey());
-	ASSERT_EQ("dynn_Villeneuve", house.getName());
-	ASSERT_EQ("Gaye", house.getLocalizedName());
-	ASSERT_EQ("dynnp_de", house.getPrefix());
-	ASSERT_EQ(19, house.getDynasty().first);
+	EXPECT_EQ("dynn_Villeneuve", house.getName());
+	EXPECT_EQ("Gaye", house.getLocalizedName());
+	EXPECT_EQ("dynnp_de", house.getPrefix());
+	EXPECT_EQ(19, house.getDynasty().first);
 }
