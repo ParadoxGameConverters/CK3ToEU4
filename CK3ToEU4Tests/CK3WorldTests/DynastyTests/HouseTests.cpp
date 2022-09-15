@@ -19,7 +19,7 @@ TEST(CK3World_HouseTests, loadValuesDefaultToBlank)
 	EXPECT_TRUE(house.getName().empty());
 	EXPECT_TRUE(house.getLocalizedName().empty());
 	EXPECT_TRUE(house.getPrefix().empty());
-	EXPECT_TRUE(house.getDynasty().first);
+	EXPECT_FALSE(house.getDynasty().first);
 }
 
 TEST(CK3World_HouseTests, housePrimitivesCanBeLoaded)
