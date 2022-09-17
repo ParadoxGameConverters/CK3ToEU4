@@ -290,3 +290,5 @@ link = { ck3 = { tradition = tradition_savanna_raiders } eu4 = { available_provi
 link = { ck3 = { tradition = tradition_eldership } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_african_agriculture } eu4 = { development_cost = -0.15 } } 
 link = { ck3 = { tradition = tradition_karabisianoi } eu4 = { infantry_power = 0.15 } } 
+link = { ck3 = { tradition = tradition_justinian_code } eu4 = { stability_cost_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_merc_armies } eu4 = { merc_maintenance_modifier = -0.10 } } 

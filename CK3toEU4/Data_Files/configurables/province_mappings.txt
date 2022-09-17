@@ -236,9 +236,9 @@
 	link = { ck3 = 4497 eu4 = 576 } # Sibi -> Kalat
 	link = { ck3 = 1339 eu4 = 2079 eu4 = 2068 } # Rajanpur -> Derajat, Siwi
 	link = { ck3 = 904 eu4 = 2094 } # Sravasti -> Bahreich
-	link = { ck3 = 9550 ck3 = 9568 eu4 = 2399 } # Pagan, Sagaing -> Pagan
+	link = { ck3 = 9550 eu4 = 2399 } # Pagan -> Pagan
 	link = { ck3 = 826 eu4 = 2041 } # Manipur -> Manipur
-	link = { ck3 = 9640 ck3 = 9556 eu4 = 581 } # Madaya, Ava -> Sagaing
+	link = { ck3 = 9568 eu4 = 581 } # Sagaing -> Sagaing
 	link = { ck3 = 9622 ck3 = 9643 eu4 = 4393 } # Hanlan, Takon -> Tabayin
 	link = { ck3 = 812 ck3 = 9154 eu4 = 571 } # Haruppeswara, Tawang -> Darrang
 	link = { ck3 = 9160 ck3 = 9163 ck3 = 9157 ck3 = 9169 eu4 = 4440 } # Along, Pemako, Itanagar, Mainling -> Narayanpur
@@ -247,11 +247,14 @@
 	link = { ck3 = 810 eu4 = 570 } # Charaideo -> Naga
 	link = { ck3 = 821 eu4 = 573 } # Dimapur -> Cachar
 	link = { ck3 = 9624 eu4 = 580 eu4 = 2398 } # Kale -> Kale, Thaungdut
-	link = { ck3 = 9559 eu4 = 584 } # Kyaukse -> Ava
+	link = { ck3 = 9559 eu4 = 4397 } # Kyaukse -> Yawnghwe
+	link = { ck3 = 9640 eu4 = 2400 } # Madaya -> Hsipaw
+	link = { ck3 = 9556 eu4 = 584 } # Ava -> Ava
 	link = { ck3 = 9572 ck3 = 9571 eu4 = 4395 } # Magwe, Yamethin -> Yamethin
 	link = { ck3 = 9562 eu4 = 4394 } # Minbu -> Salin
 	link = { ck3 = 9588 eu4 = 4396 } # Sriksetra -> Prome
-	link = { ck3 = 9637 ck3 = 9627 eu4 = 590 } # Sittaung, Thaton -> Martaban
+	link = { ck3 = 9637 eu4 = 590 } # Sittaung -> Martaban
+	link = { ck3 = 9627 eu4 = 2403 } # Thaton -> Moulmein
 	link = { ck3 = 9593 eu4 = 585 } # Toungoo -> Taungoo
 	link = { ck3 = 9596 eu4 = 586 } # Pegu -> Pegu
 	link = { ck3 = 9597 eu4 = 4399 } # Dagon -> Dagon
