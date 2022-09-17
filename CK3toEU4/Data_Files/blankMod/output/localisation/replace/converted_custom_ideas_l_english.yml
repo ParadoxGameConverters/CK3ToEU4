@@ -539,6 +539,27 @@
  ZZZ_spread_the_word:3 "Spread the Good News"
  ZZZ_spread_the_word_desc:3 "It is our sacred duty to spread the word of the Lord to the world. We can never rest until the whole world knows of His glory and compassion. All who can be saved, must be saved!"
 
+#Assyrian Empire
+
+ ASY_ideas:0 "Assyrian Ideas"
+ ASY_ideas_start:0 "Assyrian Traditions"
+ ASY_ideas_bonus:0 "Assyrian Ambitions"
+ ZZZ_assyrian_bowmen:0 "Assyrian Bowmen"
+ ZZZ_assyrian_bowmen_desc:0 "Assyrian Bowmen, famous since antiquity and long used in the legions of foreign occupiers, now fight for their homeland"
+ ZZZ_forced_resttlement:0 "Forced Resettlement"
+ ZZZ_forced_resttlement_desc:0 "To prevents revolts against our rule, we should take inspiration from our ancestors and force our conquered foes to resettle across our Kingdom"
+ ZZZ_banks_of_tigris:0 "The Land Of The Two Rivers"
+ ZZZ_banks_of_tigris_desc:0 "The great rivers that define our land - the Tigris and Euphrates - have long been neglected. Let us rebuild the grand irrigation systems our ancestors pioneered, and bring wealth to all"
+ ZZZ_learn_from_babylon:0 "Learn From Babylon"
+ ZZZ_learn_from_babylon_desc:0 "While having subject states is a diplomatic necessity, the fall of Nineveh at the hands of our nominal subjects must never be forgotten"
+ ZZZ_rebuild_the_cities:0 "Rebuild The Cities"
+ ZZZ_rebuild_the_cities_desc:0 "To prove we are no relic of the past, it is of vital importance that our ancient cities are modernized and restored - Ninevh, Babylon, and Ashur must all rise from the ashes once more"
+ ZZZ_restore_the_library_of_nineveh:0 "Restore The Library Of Nineveh"
+ ZZZ_restore_the_library_of_nineveh_desc:0 "Our heritage is one not only of war, but also of literature and high art. Let us reclaim this all, and restore all that was pillaged and stolen"
+ ZZZ_nineveh_falls_no_more:0 "The Four Corners Restored"
+ ZZZ_nineveh_falls_no_more_desc:0 "In ancient times, Mesopotamia was held to be bounded by four corners, within which was the entire civilized world. While the world outside has developed in our absence, what we have rebuilt here is precious, and we will never fall again."
+
+
 # In English, we use Anatolian as a Greek culture, but in the game, Anatolian Ideas are for generic Turkish culture countries.
  anatolian_beyliks_ideas:3 "Turkish Ideas"
  anatolian_beyliks_ideas_start:3 "Turkish Traditions"

@@ -1,0 +1,38 @@
+ASY_ideas = {
+	start = {
+		tolerance_own = 2
+		global_missionary_strength = 0.01
+	}
+
+	bonus = {
+		leader_siege = 1
+	}
+
+	trigger = {
+		tag = ASY
+	}
+	free = yes
+
+ 	ZZZ_assyrian_bowmen = {
+		infantry_power = 0.1
+	}
+	ZZZ_forced_resttlement = {
+		culture_conversion_cost = -0.15
+	}
+	ZZZ_banks_of_tigris = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	ZZZ_learn_from_babylon = {
+		diplomatic_annexation_cost = -0.10
+		diplomatic_upkeep = 1
+	}
+	ZZZ_rebuild_the_cities = {
+		development_cost = -0.1
+	}
+	ZZZ_restore_the_library_of_nineveh = {
+		technology_cost = -0.05
+	}
+	ZZZ_nineveh_falls_no_more = {
+		discipline = 0.05
+	}
+}

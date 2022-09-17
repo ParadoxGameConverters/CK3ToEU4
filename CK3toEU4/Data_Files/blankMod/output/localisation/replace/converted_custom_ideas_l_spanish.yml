@@ -502,6 +502,24 @@ ZZZ_a_loving_hand_desc:3 "Tratamos a nuestros súbditos lo mejor que podemos, ha
 ZZZ_spread_the_word:3 "Difunde las buenas noticias"
 ZZZ_spread_the_word_desc:3 "Es nuestro deber sagrado difundir la palabra del Señor al mundo. Nunca podremos descansar hasta que el mundo entero sepa de Su gloria y compasión. ¡Todos los que pueden ser salvos, deben ser salvos!"
 
+#Assyrian Empire
+ASY_ideas:0 "Ideas Asirias"
+ ASY_ideas_start:0 "Tradiciones Asirias"
+ ASY_ideas_bonus:0 "Ambiciones Asirias"
+ ZZZ_assyrian_bowmen:0 "Arqueros Asirios"
+ ZZZ_assyrian_bowmen_desc:0 "Los arqueros asirios, famosos desde la antigüedad y utilizados durante mucho tiempo en las legiones de ocupantes extranjeros, ahora luchan por su patria."
+ ZZZ_forced_resttlement:0 "Reasentamiento Forzoso"
+ ZZZ_forced_resttlement_desc:0 "Para evitar revueltas contra nuestro gobierno, debemos inspirarnos en nuestros antepasados ​​y obligar a nuestros enemigos conquistados a reasentarse en todo nuestro Reino."
+ ZZZ_banks_of_tigris:0 "La Tierra de os Dos Ríos"
+ ZZZ_banks_of_tigris_desc:0 "Los grandes ríos que definen nuestra tierra, el Tigris y el Éufrates, se han descuidado durante mucho tiempo. Reconstruyamos los grandes sistemas de riego en los que nuestros antepasados ​​fueron pioneros y llevemos riqueza a todos"
+ ZZZ_learn_from_babylon:0 "Aprende de Babilonia"
+ ZZZ_learn_from_babylon_desc:0 "Si bien tener estados sujetos es una necesidad diplomática, la caída de Nínive a manos de nuestros sujetos nominales nunca debe olvidarse."
+ ZZZ_rebuild_the_cities:0 "Reconstruir las Ciudades"
+ ZZZ_rebuild_the_cities_desc:0 "Para demostrar que no somos una reliquia del pasado, es de vital importancia que nuestras ciudades antiguas sean modernizadas y restauradas: Nínive, Babilonia y Ashur deben resurgir de las cenizas una vez más."
+ ZZZ_restore_the_library_of_nineveh:0 "Restaurar la Biblioteca de Nínive"
+ ZZZ_restore_the_library_of_nineveh_desc:0 "Nuestra herencia no es solo de guerra, sino también de literatura y arte elevado. Recuperemos todo esto y restauremos todo lo que fue saqueado y robado"
+ ZZZ_nineveh_falls_no_more:0 "Las Cuatro Esquinas Restauradas"
+ ZZZ_nineveh_falls_no_more_desc:0 "En la antigüedad, se sostenía que Mespotamia estaba delimitada por cuatro esquinas, dentro de las cuales estaba todo el mundo civilizado. Si bien el mundo exterior se ha desarrollado en nuestra ausencia, lo que hemos reconstruido aquí es precioso y nunca volveremos a caer"
 
 
 
