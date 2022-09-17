@@ -43,11 +43,11 @@ link = { eu4 = dravidian ck3 = heritage_dravidian }
 # please fix if possible
 link = { eu4 = mande ck3 = heritage_west_african } #CK3's West African =/= EU4's
 #link = { eu4 = great_lakes_group ck3 =  }
-#link = { eu4 = sudanese ck3 =  }
+link = { eu4 = sudanese ck3 = heritage_east_african  }
 link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian ck3 = heritage_central_african ck3 = heritage_gur }
 link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 #link = { eu4 = kongo_group ck3 =  } Central African is the pass between west and east africa, not the Kongo
-link = { eu4 = african ck3 = heritage_east_african }
+#link = { eu4 = african ck3 =  }
 link = { eu4 = cushitic ck3 = heritage_somalian }
 
 # Mod: RICE
