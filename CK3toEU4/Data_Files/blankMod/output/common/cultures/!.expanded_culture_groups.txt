@@ -37,10 +37,25 @@ germanic = {
 	new_english = { primary = GER }
 }
 scandinavian = {
-	norse = {
-		primary = SCA
-		dynasty_names = { Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
-		Hermannsson Johánesson Jónsson Magnússon Stefánsson Steinthosson Thórdarson Thórhallson Thorláksson Thurs }
+	norse = { #Moves it from Lost Cultures to here, added in "Lions of the North" to vanilla
+		male_names = {
+			Adhalsteinn Aghi Agmundr Agnarr Áki Áleifr Alfarr Alfvin Algautr Ari Arnfinnr Árni Arnórr Arnthórr Arnvidhr Ásbjorn Ásgeirr Ásketill Ásmundr Ásvaldr Audhr Baggi Bárdhr Birgir Bjarni Bjartr Bjorn Brandr Bródhir 
+			Brynjarr Búi Dagfinnr Dagr Danr Egill Eileifr Einarr Eindridhi Eiríkr Erlendr Erlingr Eysteinn Eyvindr Félagi Finnr Flæmingr Fólki Fridhthjófr Fródhi Gauti Gautstafr Geirr Gormr Gudhbrandr Gudhfridhr Gudhini 
+			Gudhleifr Gudhmundr Gulbrandr Gunnarr Gunni Gunnvaldr Hákon Hálfdan Hallbjorn Halli Hallr Hallsteinn Hallthórr Hallvardhr Haraldr Hávardhr Helgi Hemingr Herleifr Hildingr Hjálmarr Hólmgeirr Hrafn Hreidharr Hróaldr 
+			Hróarr Hródhgeirr Hródhólfr Hródhvaldr Hrólfr Hrœrekr Hugleikr Ingi Ingimárr Ingólfr Ívarr Jarl Jósteinn Kálfr Kári Ketill Knútr Kóri Leifr Magni Mundi Njáll Oddbjorn Oddr Oddvarr Olvir Rádhúlfr Ragnarr Ragnvaldr 
+			Randúlfr Rúni Sigfrødhr Sigmundr Sigsteinn Sigurdhr Sindri Snorri Stáli Steinarr Steingrímr Steinn Stígandr Stigr Sumarlidhi Sundri Suni Svantepolk Sveinn Sverrir Thórarinn Thórbjorn Thórfastr Thórfredhr Thórgeirr 
+			Thórgísl Thórgnýr Thórir Thórketill Thórleifr Thórleikr Thórmódhr Thórsteinn Thórvaldr Thróndr Tófi Tóki Tryggvi Úlfr Uni Valdimárr Végardhr Vetrlidhi Vígi Víkingr Vragi Yngvarr
+		}
+		female_names = {
+			Alfhildr Álof Arnbjorg Ása Ásdís Áshildr Áslaug Ásta Ástrídhr Audhr Audhrhildr Bergljót Bjorg Borghildr Bóthildr Brynhildr Brynja Dagmær Dagný Dagrún Edda Eydís Frídha Grímhildr Gudhlaug Gudhleif Gudhrídhr Gudhrún Gulla 
+			Gunna Gunnbjorg Gunnhildr Gunnvor Gydha Hallthóra Helga Hildr Hjordís Hlíf Hrafnhildr Hreidhunn Idhunn Inga Ingibjorg Ingigerdhr Ingrídhr Ingunn Ingvildr Jórunnr Katla Ketilridhr Magnhildr Myrgjol Ólaug Ragna Ragnbjorg 
+			Ragnfrídhr Ragnheidhr Ragnhildr Rúna Saldís Signý Sigrídhr Sigrún Sólveig Steinunn Svanhildr Thone Thóra Thórbjorg Thórdís Thórfrídhr Thórhildr Thórný Thórunn Thórveig Thórví Thrud Thrúdhr Thýri Tófa Unnr Valdís Vígdís 
+			Yngvildr
+		}
+		dynasty_names = {
+			Áslaugsson Ástridharson Ásvaldsson Eindridhesson Eiríksson Gormsson Hákonarson Haraldsson Lothbrok Munsö Ragnarsson Sigurdharson Skjöldung Snorrason Thórgilsson Thórsteinsson Thórvaldsson Tryggvason Völsung 
+			Waegmunding Ylfing Yngling
+		}
 	}
 	elsinorian = {
 		primary = DNL
@@ -726,6 +741,18 @@ baltic = {
 			Kurpjuhn Kurpjuweit Kurschat Kushner Leissmann Lenkeit Lickert Littman Lohmeyer
 			Netzke Pinewell Preüss Prusseit Puschat Pust Redlinger Ribbeck Rudat Schmoeckel
 			Strasser Strauser Tadeus Teitloff Tessmer Turnbo Welk Wowereit Zipplies Zoransky
+		}
+	}
+	livonian = {  #Moves it from Lost Cultures to here, added in "Lions of the North" to vanilla
+		male_names = {
+			Alo Asso Caupo Dabrel Gerweder Ilmedous Ilo Imme Kike Kovals Layanus Lembewalde Musts Paimis Peite Piške Sula Uldenago Usis Valke Vesiki Vietso Waldeko Ylo Ymaut
+		}
+		female_names = {
+			Elmede Use Valata Vasara
+		}
+		dynasty_names = {
+			"Karasi" "Ingrija" "Saaremaa" "Revala" "Virumaa" "Läänemaa" "Vaiga" "Ingeri" "Ingeri" "Livo" "Harjumaa" "Virumaa" 
+			"Ridala" "Saaremaa" "Vaiga" "Turaida"
 		}
 	}
 }
