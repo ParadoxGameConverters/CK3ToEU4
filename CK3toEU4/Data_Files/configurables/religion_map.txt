@@ -20,7 +20,7 @@ link = { eu4 = mahayana ck3 = mahayana }
 link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity
 link = { eu4 = catholic religious_head = k_papal_state }
-link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = insular_celtic } # Fallback for old saves (pre 1.6.1.2)
+link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = insular_celtic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
 link = { eu4 = orthodox religious_head = k_orthodox }
 link = { eu4 = coptic religious_head = d_coptic_papacy }
 link = { eu4 = coptic religious_head = d_apostolic_church }
