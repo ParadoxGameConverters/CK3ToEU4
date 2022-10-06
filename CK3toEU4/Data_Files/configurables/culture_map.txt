@@ -223,7 +223,7 @@ link = { eu4 = gaulic ck3 = roman tech = western gfx = westerngfx region = franc
 link = { eu4 = theodisc ck3 = roman tech = western gfx = westerngfx region = north_german_region region = south_german_region }
 link = { eu4 = theodisc ck3 = laessin tech = western gfx = westerngfx }
 link = { eu4 = pannonian ck3 = roman tech = western gfx = easterngfx region = carpathia_region }
-link = { eu4 = pannonian ck3 = pannonian ck3 = romano_pannonian gfx = easterngfx tech = western }
+link = { eu4 = pannonian ck3 = romano_pannonian gfx = easterngfx tech = western }
 link = { eu4 = wenedyk ck3 = roman tech = western gfx = easterngfx region = russia_region region = ural_region region = baltic_region region = poland_region region = ruthenia_region region = crimea_region }
 link = { eu4 = wenedyk ck3 = wenedyk tech = western gfx = easterngfx }
 link = { eu4 = britannian ck3 = roman tech = western gfx = westerngfx region = british_isles_region }
@@ -487,7 +487,7 @@ link = { eu4 = sorbian ck3 = serbian tech = western gfx = westerngfx region = no
 link = { eu4 = serbian ck3 = serbian ck3 = abotrite ck3 = branichian ck3 = doclean ck3 = travunian ck3 = zachlumian tech = eastern gfx = easterngfx }
 link = { eu4 = romanian ck3 = vlach ck3 = romano_dacian tech = eastern gfx = easterngfx }
 link = { eu4 = bulgarian ck3 = bulgarian ck3 = berzite ck3 = tracki tech = eastern gfx = easterngfx }
-link = { eu4 = slovene ck3 = carantanian ck3 = blatno_slavic ck3 = dudlebian tech = eastern gfx = easterngfx }
+link = { eu4 = slovene ck3 = carantanian ck3 = blatno_slavic ck3 = pannonian  ck3 = dudlebian tech = eastern gfx = easterngfx }
 link = { eu4 = bosnian ck3 = bosnian tech = eastern gfx = easterngfx }
 
 # Proto-Slavic / Balkan split

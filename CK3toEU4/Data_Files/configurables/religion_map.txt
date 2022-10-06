@@ -20,7 +20,7 @@ link = { eu4 = mahayana ck3 = mahayana }
 link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 # Christianity
 link = { eu4 = catholic religious_head = k_papal_state }
-link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = insular_celtic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
+link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
 link = { eu4 = orthodox religious_head = k_orthodox }
 link = { eu4 = coptic religious_head = d_coptic_papacy }
 link = { eu4 = coptic religious_head = d_apostolic_church }
@@ -35,6 +35,7 @@ link = { eu4 = messalian ck3 = messalian }
 link = { eu4 = adamites ck3 = adamites }
 link = { eu4 = bosnian_church ck3 = bosnian_church }
 link = { eu4 = adoptianist ck3 = adoptionist }
+link = { eu4 = insular_celtic ck3 = insular_celtic } # Fallback, it is already defined so let use it 
 # Tani
 link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism
