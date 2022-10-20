@@ -1,0 +1,18 @@
+#Babylon
+
+graphical_culture = muslimgfx
+
+color = { 200 155 55 }
+revolutionary_colors = { 13 8 13 }
+
+
+historical_idea_groups = {
+	innovativeness_ideas
+	quality_ideas	
+	economic_ideas	
+	aristocracy_ideas
+	trade_ideas
+	offensive_ideas
+	influence_ideas
+	quantity_ideas
+}

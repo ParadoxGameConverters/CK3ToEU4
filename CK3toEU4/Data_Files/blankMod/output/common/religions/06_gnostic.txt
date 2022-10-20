@@ -19,6 +19,7 @@ gnostic = {
 		country = {
 			tolerance_heathen = 2
 			legitimacy = 1
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		country_as_secondary = {
@@ -59,6 +60,7 @@ gnostic = {
 		country = {
 			tolerance_own = 2
 			religious_unity = 0.5
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		province = {
@@ -104,6 +106,7 @@ gnostic = {
 		country = {
 			yearly_corruption = -0.1
 			tolerance_heathen = 2
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		country_as_secondary = {
@@ -144,6 +147,7 @@ gnostic = {
 		country = {
 			land_morale = 0.1
 			state_maintenance_modifier = -0.25
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		country_as_secondary = {
@@ -185,6 +189,7 @@ gnostic = {
 		country = {
 			tolerance_heathen = 2
 			spy_offence = 0.2
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		country_as_secondary = {
@@ -227,6 +232,7 @@ gnostic = {
 			core_creation = -0.1
 			fabricate_claims_cost = -0.25
 			ae_impact = 0.1
+			tolerance_heretic = 2
 			relation_with_heretics = 10
 		}
 		country_as_secondary = {

@@ -537,6 +537,24 @@ ZZZ_a_loving_hand_desc:3 "Wir behandeln unsere Untertanen so gut wir können, in
 ZZZ_spread_the_word:3 "Verbreite die gute Nachricht"
 ZZZ_spread_the_word_desc:3 "Es ist unsere heilige Pflicht, das Wort des Herrn in der Welt zu verbreiten. Wir können niemals ruhen, bis die ganze Welt von seiner Herrlichkeit und seinem Mitgefühl weiß. Alle, die gerettet werden können, müssen gerettet werden!"
 
+#Assyrian Empire
+ ASY_ideas:0 "Assyrer Ideas"
+ ASY_ideas_start:0 "Assyrer Traditions"
+ ASY_ideas_bonus:0 "Assyrer Ambitionen"
+ ZZZ_assyrian_bowmen:0 "Assyrische Bogenschützen"
+ ZZZ_assyrian_bowmen_desc:0 "Assyrische Bogenschützen, die seit der Antike berühmt sind und seit langem in den Legionen ausländischer Besatzer eingesetzt werden, kämpfen jetzt um ihre Heimat"
+ ZZZ_forced_resttlement:0 "Zwangsumsiedlung"
+ ZZZ_forced_resttlement_desc:0 "Um Aufstände gegen unsere Herrschaft zu verhindern, sollten wir uns von unseren Vorfahren inspirieren lassen und unsere eroberten Feinde zwingen, sich in unserem Königreich niederzulassen"
+ ZZZ_banks_of_tigris:0 "Das Land der zwei Flüsse"
+ ZZZ_banks_of_tigris_desc:0 "Die großen Flüsse, die unser Land definieren - der Tigris und der Euphrat - wurden lange vernachlässigt. Lassen Sie uns die großen Bewässerungssysteme, für die unsere Vorfahren Pionierarbeit geleistet haben, wieder aufbauen und allen Wohlstand bringen"
+ ZZZ_learn_from_babylon:0 "Lerne von Babylon"
+ ZZZ_learn_from_babylon_desc:0 "Während es eine diplomatische Notwendigkeit ist, Subjektstaaten zu haben, darf der Fall von Ninive durch unsere nominalen Subjekte niemals vergessen werden."
+ ZZZ_rebuild_the_cities:0 "Baue die Städte Wieder Auf"
+ ZZZ_rebuild_the_cities_desc:0 "Um zu beweisen, dass wir kein Relikt der Vergangenheit sind, ist es von entscheidender Bedeutung, dass unsere alten Städte modernisiert und restauriert werden - Ninive, Babylon und Ashur müssen alle wieder aus der Asche auferstehen"
+ ZZZ_restore_the_library_of_nineveh:0 "Stellen Sie die Bibliothek von Ninive wieder her"
+ ZZZ_restore_the_library_of_nineveh_desc:0 "Unser Erbe ist nicht nur ein Erbe des Krieges, sondern auch der Literatur und der hohen Kunst. Lassen Sie uns dies alles zurückfordern und alles wiederherstellen, was geplündert und gestohlen wurde"
+ ZZZ_nineveh_falls_no_more:0 "Die vier Ecken restauriert"
+ ZZZ_nineveh_falls_no_more_desc:0 "In der Antike galt Mespotamia als von vier Ecken begrenzt, in denen sich die gesamte zivilisierte Welt befand. Während sich die Außenwelt in unserer Abwesenheit entwickelt hat, ist das, was wir hier wieder aufgebaut haben, kostbar und wir werden nie wieder fallen. "
 
 
 

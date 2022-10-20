@@ -1,0 +1,82 @@
+#Huarpes People
+
+graphical_culture = southamericagfx
+
+color = { 30 215 255 }
+revolutionary_colors = { 16 0 2 }
+
+historical_idea_groups = {
+	economic_ideas
+	defensive_ideas	
+	innovativeness_ideas	
+	quality_ideas
+	trade_ideas
+	quantity_ideas
+	diplomatic_ideas
+	offensive_ideas	
+}
+
+historical_units = {
+	south_american_spearmen
+	south_american_horsemen
+	south_american_warfare
+	inca_mountain_warfare
+	incan_slingshots
+	incan_axemen
+	south_american_gunpowder_warfare
+	south_american_reformed_gunpowder_warfare
+	south_american_arquebusier
+	westernized_incan
+	reformed_westernized_incan
+	incan_guerilla_warfare
+}
+
+leader_names = {
+	Abajino
+	Araucanía
+	Choll-Choll 
+	Lonko
+	Picunche
+	Promaucae
+	Toqui
+	Nguluche
+	Huilliche
+	Lafquenche
+}
+
+monarch_names = {
+	"Ancamilla #0" = 10 
+	"Nampai #0" = 10
+	"Pichiñán #0" = 10
+	"Coñoepán #0" = 10
+	"Nahueltripai #0" = 10
+	"Millarapue #0" = 10
+	"Millalelmo #0" = 10
+	"Lautaro #0" = 30
+	"Paillamachu #0" = 30
+	"Huenecura #0" = 30
+	"Aillavilu #0" = 30
+	"Catrileo #0" = 10
+	"Ñanco #0" = 10
+	"Melín #0" = 10
+	"Caupolicán #0" = 35
+	"Illangulién #0" = 10
+	"Colipí #0" = 10
+	"Pinolevi #0" = 10
+	"Purrán #0" = 10
+	"Mañil #0" = 10
+	"Quilapán #0" = 10
+	"Pelantaro #0" = 10
+	
+	"Suyai #0" = -1
+	"Yaima #0" = -1
+	"Ailén #0" = -1
+}
+
+
+
+
+
+ship_names = {
+	Purén Biobío  Curalaba  Loncoche Tucapel Marihueñu Mataquito Chonos Poya Caupolicán
+} 

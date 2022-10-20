@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = siberian_tribe
+government_rank = 1
+primary_culture = samoyed
+religion = tengri_pagan
+technology_group = nomad_group
+capital = 2445	# Mangazea
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

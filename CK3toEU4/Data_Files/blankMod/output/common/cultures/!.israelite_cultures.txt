@@ -31,6 +31,7 @@ israelite = {
 			Nazarian Naqqash Sabag Sassoon Shamy Sharabani Sheriki Shirazi Soliman Yarkoni Zangi Zeitouni
 		}
 	}
+	hebrew = { primary = ISR }
 	israeli = { primary = ISR }
 	misrayim = { primary = ISR }
 	zarphatic = { primary = ISR }

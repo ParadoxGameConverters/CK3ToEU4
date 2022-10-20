@@ -48,8 +48,8 @@ void CK3::Dynasties::linkCoats(const CoatsOfArms& coats)
 		}
 		else
 		{
-			throw std::runtime_error(
-				 "Dynasty " + std::to_string(dynasty.first) + " has CoA " + std::to_string(dynasty.second->getCoA()->first) + " which has no definition!");
+			Log(LogLevel::Warning) << "Dynasty " + std::to_string(dynasty.first) + " has CoA " + std::to_string(dynasty.second->getCoA()->first) +
+													" which has no definition!";
 		}
 	}
 	Log(LogLevel::Info) << "<> " << counter << " dynasties updated.";

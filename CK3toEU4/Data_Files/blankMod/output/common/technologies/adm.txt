@@ -256,7 +256,7 @@ technology = { #University
 	governing_capacity = 250
 
 	administrative_efficiency = 0.1
-	development_efficiency = 0.1
+	development_cost_modifier = -0.1
 }
 
 technology = { #National Sovereignty
@@ -352,7 +352,7 @@ technology = { #Measuring the World
 	}
 
 	administrative_efficiency = 0.1
-	development_efficiency = 0.1
+	development_cost_modifier = -0.1
 }
 
 technology = { #Bonds and Tontines
@@ -419,7 +419,7 @@ technology = { #Modern Bureaucracy
 	}
 
 	administrative_efficiency = 0.1
-	development_efficiency = 0.1
+	development_cost_modifier = -0.1
 	governing_capacity = 250
 }
 

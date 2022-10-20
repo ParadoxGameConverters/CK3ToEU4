@@ -1,0 +1,18 @@
+#Bombay
+
+graphical_culture = muslimgfx
+
+color = { 225 77 92 }
+revolutionary_colors = { 16 8 13 }
+
+
+historical_idea_groups = {
+	religious_ideas
+	quality_ideas	
+	economic_ideas	
+	quantity_ideas
+	trade_ideas
+	offensive_ideas
+	maritime_ideas
+	theocracy_gov_ideas
+}

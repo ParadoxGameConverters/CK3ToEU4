@@ -354,8 +354,8 @@ newer_idea_mil_modifiers = {
 			}
 		}
 	}
-	custom_artillery_bonus_vs_fort = {
-		artillery_bonus_vs_fort = 1
+	custom_artillery_levels_available_vs_fort = {
+		artillery_levels_available_vs_fort = 1
 		max_level = 2
 		level_cost_1 = 3
 		level_cost_2 = 10

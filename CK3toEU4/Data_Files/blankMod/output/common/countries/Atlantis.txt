@@ -1,0 +1,18 @@
+#It's Atlantis!
+
+graphical_culture = westerngfx
+
+color = { 90 210 255 }
+revolutionary_colors = { 14 0 16 }
+
+
+historical_idea_groups = {
+	maritime_ideas
+	naval_ideas
+	trade_ideas
+	administrative_ideas
+	quality_ideas
+	exploration_ideas
+	religious_ideas
+	influence_ideas
+}

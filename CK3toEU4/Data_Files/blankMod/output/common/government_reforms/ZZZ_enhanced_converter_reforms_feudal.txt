@@ -1,0 +1,729 @@
+#These reforms will replace their vanilla counterparts
+
+grand_duchy_reform = {
+	icon = "peasants"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			AND = {
+				tag = LIT
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = grand_duchy_reform
+			have_had_reform = grand_duchy_reform
+		}
+	}
+	legacy_equivalent = despotic_monarchy
+	fixed_rank = 1
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		governing_capacity = 200
+	}
+}
+
+english_monarchy = {
+	icon = "british_queen"
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = english_monarchy
+			have_had_reform = english_monarchy
+		}
+	}
+	lock_level_when_selected = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 15
+	nation_designer_trigger = {
+		has_dlc = "Common Sense"
+	}
+	legacy_equivalent = english_monarchy_legacy
+	start_territory_to_estates = 0.3
+	modifiers = {
+		governing_capacity = 50
+		legitimacy = 0.5
+		global_unrest = -1
+		max_absolutism = -30
+		nobles_influence_modifier = -0.1
+	}
+
+	conditional = {
+		allow = { has_dlc = "Common Sense" }
+		has_parliament = yes
+	}
+}
+
+ottoman_government = {
+	lock_level_when_selected = yes
+	allow_normal_conversion = yes
+	icon = "ottoman_government"
+	potential = {
+		religion_group = muslim
+		OR = {
+			has_reform = ottoman_government
+			have_had_reform = ottoman_government
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		religion_group = muslim
+	}
+	legacy_equivalent = ottoman_government_legacy
+	maintain_dynasty = yes
+	modifiers = {
+		unjustified_demands = -0.1
+		legitimacy = 0.5
+		max_absolutism = 5
+		governing_capacity = 150
+	}
+
+	custom_attributes = {
+		locked_government_type = yes
+	}
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		has_pashas = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		has_harem = yes
+	}
+}
+prussian_monarchy = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			AND = {
+				tag = PRU
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = prussian_monarchy
+			have_had_reform = shaka_regime
+			have_had_reform = prussian_monarchy
+			have_had_reform = prussian_republic_reform
+			have_had_reform = prussian_theocratic_reform			
+			has_unlocked_government_reform = {
+				government_reform = prussian_monarchy
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			is_playing_custom_nation = yes
+			uses_church_aspects = yes
+			uses_fervor = yes
+			religion = anglican #Check to see if "uses_anglican_power = yes" works
+			AND = {
+				religion_group = christian
+				OR = {
+					uses_church_aspects = yes
+					uses_fervor = yes
+				}
+			}
+			has_unlocked_government_reform_tooltip = {
+				government_reform = prussian_monarchy
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 100
+	legacy_equivalent = prussian_monarchy_legacy
+
+	modifiers = {
+		war_exhaustion = -0.02
+		global_unrest = -2
+		global_autonomy = -0.075
+		max_absolutism = 10
+		monarch_military_power = 3
+		nobles_loyalty_modifier = 0.1
+		governing_capacity_modifier = -0.5
+	}
+
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		militarised_society = yes
+	}
+}
+
+principality = {
+	icon = "russian_principality"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_reform = tsardom }
+		NOT = { have_had_reform = tsardom }
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion_group = pagan
+			AND = {
+				religion_group = christian
+				uses_patriarch_authority = yes
+			}
+		}
+		culture_group = east_slavic
+		OR = {
+			has_reform = principality
+			have_had_reform = principality
+		}
+	}
+	fixed_rank = 1
+	legacy_equivalent = principality_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 5
+	nation_designer_trigger = {
+		culture_group = east_slavic
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion_group = pagan
+			AND = {
+				religion_group = christian
+				uses_patriarch_authority = yes
+			}
+		}
+	}
+	modifiers = {
+		global_unrest = -1
+		global_tax_modifier = 0.05
+		governing_capacity = 100
+	}
+
+	conditional = {
+		allow = { has_dlc = "Third Rome" }
+		government_abilities = {
+			russian_mechanic
+		}
+	}
+}
+tsardom = {
+	icon = "king"
+	allow_normal_conversion = yes
+	potential = {
+		culture_group = east_slavic
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion_group = pagan
+			AND = {
+				religion_group = christian
+				uses_patriarch_authority = yes
+			}
+			tag = UKR
+			tag = RUS
+		}
+		OR = {
+			AND = {
+				tag = RUS
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				tag = UKR
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = tsardom
+			have_had_reform = tsardom
+		}
+	}
+	fixed_rank = 3
+	legacy_equivalent = tsardom_legacy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 40
+
+	nation_designer_trigger = {
+		culture_group = east_slavic
+		OR = {
+			religion = orthodox
+			religion = monothelite
+			religion = iconoclast
+			religion = paulician
+			religion = bogomilist
+			religion_group = pagan
+			AND = {
+				religion_group = christian
+				uses_patriarch_authority = yes
+			}
+		}
+	}
+
+	modifiers = {
+		global_manpower_modifier = 0.20
+		yearly_absolutism = 0.5
+		global_autonomy = -0.05
+		governing_capacity = 350
+	}
+
+	conditional = {
+		allow = { has_dlc = "Third Rome" }
+		government_abilities = {
+			russian_mechanic
+		}
+		claim_states = yes
+	}
+}
+mamluk_government = {
+	icon = "mamluk_government"
+	allow_normal_conversion = yes
+	potential = {
+		religion_group = muslim
+		OR = {
+			AND = {
+				tag = MAM
+				NOT = { map_setup = map_setup_random }
+			}
+			has_reform = mamluk_government
+			have_had_reform = mamluk_government
+		}
+	}
+	legacy_equivalent = mamluk_government_legacy
+	queen = no
+
+	valid_for_nation_designer = yes
+	nation_designer_cost = 60
+
+	nation_designer_trigger = {
+		religion_group = muslim
+	}
+
+	modifiers = {
+		num_accepted_cultures = 3
+		#-50% cost to promote cultures
+		global_autonomy = -0.025
+		monarch_admin_power = 2
+		same_culture_advisor_cost = -0.25
+		promote_culture_cost = -0.5
+		governing_capacity = 50
+		nobles_influence_modifier = 0.1
+	}
+
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		government_abilities = {
+			mamluk_mechanic
+		}
+		heir = no
+		foreign_slave_rulers = yes
+	}
+}
+mughal_government = {
+	icon = "peacock_throne"
+	allow_normal_conversion = yes
+	potential = {
+		AND = {
+			tag = MUG
+			NOT = { map_setup = map_setup_random }
+		}
+	}
+	lock_level_when_selected = yes
+	legacy_equivalent = feudal_monarchy
+
+	modifiers = {
+		tolerance_own = 1
+		governing_capacity = 150
+	}
+
+	assimilation_cultures = {
+		altaic = {
+			artillery_cost = -0.1
+		}
+		baltic = {
+			naval_forcelimit_modifier = 0.05
+		}
+		british = {
+			ship_durability = 0.05
+		}
+		burman = {
+			free_leader_pool = 1
+		}
+		byzantine = {
+			legitimacy = 0.25
+		}
+		carpathian = {
+			mercenary_cost = -0.1
+		}
+		caucasian = {
+			mercenary_discipline = 0.05
+		}
+		gaelic = {
+			shock_damage = 0.05
+		}
+		central_indic = {
+			land_attrition = -0.1
+		}
+		east_asian = {
+			state_maintenance_modifier = -0.2
+		}
+		kongo_group = {
+			heir_chance = 0.5
+		}
+		cushitic = {
+			missionaries = 1
+		}
+		dravidian = {
+			global_trade_goods_size_modifier = 0.05
+		}
+		african = {
+			global_tax_income = 10
+		}
+		east_slavic = {
+			land_forcelimit_modifier = 0.1
+		}
+		eastern_aryan = {
+			production_efficiency = 0.05
+		}
+		evenks = {
+			cavalry_flanking = 0.2
+		}
+		french = {
+			diplomats = 1
+		}
+		germanic = {
+			global_institution_spread = 0.15
+		}
+		great_lakes_group = {
+			loot_amount = 0.5
+		}
+		hindusthani = {
+			core_creation = -0.1
+		}
+		iberian = {
+			global_colonial_growth = 10
+		}
+		iranian = {
+			advisor_cost = -0.1
+		}
+		japanese_g = {
+			land_morale = 0.1
+		}
+		kamchatkan_g = {
+			hostile_attrition = 1
+		}
+		korean_g = {
+			idea_cost = -0.05
+		}
+		latin = {
+			embracement_cost = -0.1
+		}
+		lost_cultures_group = {
+			discipline = 0.05
+		}
+		turko_semitic = {
+			cavalry_power = 0.1
+		}
+		maghrebi = {
+			privateer_efficiency = 0.25
+		}
+		malay = {
+			merchants = 1
+		}
+		mande = {
+			tolerance_heretic = 1
+		}
+		pacific = {
+			global_sailors_modifier = 0.1
+		}
+		sahelian = {
+			movement_speed = 0.1
+		}
+		scandinavian = {
+			mil_advisor_cost = -0.1
+		}
+		southeastasian_group = {
+			development_cost = -0.05
+		}
+		south_slavic = {
+			warscore_cost_vs_other_religion = -0.1
+		}
+		southern_african = {
+			inflation_reduction = 0.05
+		}
+		sudanese = {
+			caravan_power = 0.1
+		}
+		tartar = {
+			cavalry_cost = -0.15
+		}
+		thai_group = {
+			build_cost = -0.05
+		}
+		tibetan_group = {
+			prestige_per_development_from_conversion = 0.5
+		}
+		finno_ugric = {
+			prestige_decay = -0.01
+		}
+		west_african = {
+			global_autonomy = -0.01
+		}
+		west_slavic = {
+			leader_land_fire = 1
+		}
+		western_aryan = {
+			trade_efficiency = 0.05
+		}
+		#Modded Cultures
+		israelite = {
+			interest = -1
+		}
+		gothic_group = {
+			infantry_power = 0.1
+		}
+		barbaro_germanic = {
+			infantry_cost = -0.15
+		}
+		roman_group = {
+			infantry_shock = 1
+		}
+		equine_group = {
+			cavalry_shock = 1
+		}
+		cat_group = {
+			spy_offence = 0.1
+		}
+		bear_group = {
+			shock_damage_received = -0.05
+		}
+		hedgehog_group = {
+			defensiveness = 0.1
+		}
+		duck_group = {
+			siege_ability = 0.2
+		}
+		dog_group = {
+			monarch_diplomatic_power = 1
+		}
+		elephant_group = {
+			monarch_admin_power = 1
+		}
+		dragon_group = {
+			monarch_military_power = 1
+		}
+		red_panda_group = {
+			technology_cost = -0.05
+		}
+		punic_group = {
+			galley_power = 0.1
+		}
+		old_mashriqi = {
+			stability_cost_modifier = -0.1
+		}
+		chaldean = {
+			free_mil_policy = 1
+		}
+		hittite_group = {
+			province_warscore_cost = -0.2
+		}
+		scythian_group = {
+			cavalry_fire = 1
+		}
+		dacian_group = {
+			garrison_size = 0.1
+		}
+		tyrrhenian = {
+			global_tax_modifier = 0.1
+		}
+		albanian_g = {
+			leader_land_shock = 1
+		}
+		old_lombard_g = {
+			leader_land_manuever = 1
+		}
+		frankish_g = {
+			diplomatic_upkeep = 1
+		}
+		celtiberian_g = {
+			global_own_trade_power = 0.1
+		}
+		celts = {
+			leader_siege = 1
+		}
+		scordiscian_g = {
+			global_monthly_devastation = -0.12
+		}
+	}
+}
+mansabdari_reform = {
+	icon = "noble_muslim"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = mughal_government
+	}
+	modifiers = {
+		army_tradition_decay = -0.003
+		governing_capacity = 150
+	}
+}
+zabt_reform = {
+	icon = "general_eastern_administrative"
+	allow_normal_conversion = yes
+	potential = {
+		has_reform = mughal_government
+	}
+	modifiers = {
+		governing_capacity = 150
+	}
+}
+uparaja_reform = {
+	icon = "uparaja_reform"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	nation_designer_trigger = {
+		religion_group = eastern
+		NOT = { religion = confucianism }
+		NOT = { religion = shinto }
+		technology_group = chinese
+	}
+	potential = {
+		religion_group = eastern
+		NOT = { religion = confucianism }
+		NOT = { religion = shinto }
+		technology_group = chinese
+	}
+	valid_for_nation_designer = no
+	modifiers = {
+		monthly_heir_claim_increase = 0.05
+		legitimacy = 0.5
+		prestige = 0.5
+	}
+	ai = {
+		factor = 1.5
+		modifier = {
+			factor = 2
+			legitimacy = 75
+		}
+		modifier = {
+			factor = 3
+			tag = SIA
+		}
+	}
+}
+solomonic_empire = {
+	icon = "solomonic_empire"
+	allow_normal_conversion = yes
+	lock_level_when_selected = yes
+	potential = {
+		OR = {			
+			has_reform = solomonic_empire
+			have_had_reform = solomonic_empire
+			has_country_flag = unlocked_solomid_empire_reform
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = solomonic_empire
+			have_had_reform = solomonic_empire
+			has_country_flag = unlocked_solomid_empire_reform
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 50
+	legacy_equivalent = solomonic_empire_legacy
+	fixed_rank = 3
+
+	modifiers = {
+		tolerance_own = 2
+		max_absolutism = 20
+		global_unrest = -2
+		amount_of_cawa = 1
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "Origins"
+		}
+		allow_cawa = yes
+	}
+}
+mossi_federal_kingdom = {
+	icon = "native_war_band_reform"
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 30
+	legacy_equivalent = tribal_confederacy_legacy
+
+	potential = {
+		OR = {
+			has_reform = mossi_federal_kingdom
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = mossi_federal_kingdom
+			}
+			AND = {
+				has_country_flag = msi_mossi_kingdom_event
+				tag = MSI
+			}
+		}
+	}
+
+	modifiers = {
+		nobles_influence_modifier = 0.15
+		nobles_loyalty_modifier = 0.1
+		global_unrest = -1
+		max_absolutism = -20
+	}
+
+	effect = {
+		if = {
+			limit = {
+				has_country_flag = msi_unlocked_perma_reward
+			}
+			remove_country_modifier = msi_centralization_focus
+			add_country_modifier = {
+				name = msi_federal_kingdom_focus
+				duration = -1
+				desc = msi_federal_kingdom_focus_desc
+			}
+		}
+	}
+
+	removed_effect = {
+		if = {
+			limit = {
+				has_country_flag = msi_unlocked_perma_reward
+			}
+			remove_country_modifier = msi_federal_kingdom_focus
+			add_country_modifier = {
+				name = msi_centralization_focus
+				duration = -1
+				desc = msi_centralization_focus_desc
+			}
+		}
+	}
+
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Origins"
+				has_dlc = "Cradle of Civilization"
+			}
+		}
+		custom_attributes = {
+			has_federal_kingdoms = yes
+		}
+	}
+
+	conditional = {
+		allow = {
+			has_dlc = "Cradle of Civilization"
+		}
+		government_abilities = {
+			tribal_federation_mechanic
+		}
+	}
+
+	ai = {
+		factor = 1
+	}
+}

@@ -1,0 +1,17 @@
+government = native
+government_rank = 1
+primary_culture = chipewyan
+religion = totemism
+technology_group = north_american
+capital = 1006	#Chipewyan
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

@@ -1,63 +1,3 @@
-oghuz = {
-	# Pecheneg name pool used as default one
-	male_names = {
-		Çelgil Aba Baitzas Balgor Batan Batas Bator Bayça Biçkili Bizel Boru Bula Giazis Ildey
-		Ipa Ipaos Kabuksin Karaca Kaydum Kegen Konel Korkutan Kortan Kostas Kourkoutai
-		Kuchug Kuerçi Kugel Kure Kürä Metiga Sol Suru Tatus Teber Temir Tyrach Yavdi Yazi Yeke
-	}
-	female_names = {
-		Çiçek Çilen Çiltanesi Özgul Özlem Akgul Asli Ayasun Ayten Bozçin Dilek Esin Gulçiçek Gulay Gunduz Gundes Gunes Ilkay Ipek Ipekel Irge
-		Karacik Mala Mutlu Peksen Samur Sarica Sati Sevilay Sevindik Sibel Sirin Sirma Songul Tekçe Tura Umay Usunbike Yasar Yeldem Yildiz
-	}
-	dynasty_names = {
-		Kankali Tzopon Paguman Belermen Thonuzoba Yüregir Beçenek Bügdüz Üçok Çavuldur
-		Bayandur Irtim Talmat Batas Alayuntlu Çepni Eymür Salgurlu Kankali
-	}
-	pecheneg = {
-		primary = PTZ
-	}
-	cuman = {
-		primary = CMN
-	}
-	bolghar = {
-		primary = BUL
-		male_names = {
-			Almish Alzek Anzi Apskhih Araslan Asparukh Balamber Bars Bataul Batbayan Batoya Batulia Bayan Belkermak Bezmer Boyan Bulger Buzan Chepa Chinialush Dengizikh
-			Dizeng Dometa Dristar Drong Dukum Ellak Elemag Ernakh Eskhakh Goleda Gostun Guar Hudbad Iani Irnek Isbul Islivan Isperikh Ispor Kälaç Kano Karan Karaton
-			Kardam Kharaton Khinialon Khudbard Kordil Kormesiy Kormisosh Kotrag Krovat Krum Kuber Kubrat Kurt Kutrigur Kuvrat Labertam Magotin Malamir Mugel Odolgan Okhsi
-			Okhsun Okors Omurtag Onegavon Organ Organa Ornag Oshi Ostro Pagan Pakhtiyar Paväl Praksa Rassate Rugila Sabin Sandil Sandilkh Sarkhan Sartäç Savin Sevar Shilki
-			Sondoke Tähtaman Tarasiy Taridin Tatra Telec Telerig Tervel Timër Timëreç
-			Timërpälat Tingiz Tiradin Tokhtaman Toktu Tsog Tsul Tuk Umor Uturgur Vakrim Venda
-			Vetam Vinekh Yani
-			Yavantey Yençepi Yerneslu Yeçtirek Zabergan Zenti Tukiy Aydar Irkhan Batir
-		}
-		dynasty_names = {
-			Vokil Altsikur Kashu Barskhan Barsil Balanjar Vokil Erdevulu Silkid Bilar Sabir Esegel Izgil Askil
-			Bersula Urazgilid Kalmagorid Klyuch Ureñ Mayna Yasach Utka Bezd Kurnal Mesha Kaban
-			Oshnya Tolkish Izgar Sulcha Karmal
-		}
-	}
-	avar = {
-		primary = AVR
-		male_names = {
-			Ahmad Ali Magomed Magomedkhan Magomet Muhamad Muhamadkhan
-			Muhammad Murad Nurmagomed Nurmuhamad Ramazan Rasul Ruslan Shamil Sultan
-		}
-		dynasty_names = {
-			Sabir Akhasir Kazarig Kidar Ghidatli Gumbekh Kharoda Ghunib Yandalal Tsumadal
-			Tsuntab
-		}
-	}
-	khazar = {
-		primary = KHZ
-		male_names = {
-			Kozar Karadach Ziebel "Böri Shad" Irbis Khalga Kaban Busir Barjik Bihar Prisbit
-			Baghatur Dyggvi Tarkhan Zachariah "Yazir Bulash" Chorpan Tarkhan "Alp Tarkhan"
-			Tar'mach Hazer Bulan Sabriel Obadiah Hezekiah Manasseh Chanukkah Isaac Zebulun
-			Manasseh Nisi Aaron Menahem Benjamin Joseph David Georgius Tzul Tzitzak
-		}
-	}
-}
 gothic_group = {
 	graphical_culture = westerngfx
 	male_names = {
@@ -77,19 +17,20 @@ gothic_group = {
 		Walhild Waloburg Waluburg
 	}
 	visigothic = { primary = CAS }
-	ostrogothic = { }
-	getian = { }
-	gothic = { }
+	ostrogothic = { primary = ITA }
+	getian = { primary = RMN }
+	gothic = { primary = FEO }
 }
 barbaro_germanic = {
 	graphical_culture = westerngfx
-	vandal = { }
+	vandal = { primary = AFR }
 	suebi = {
 		primary = POR
 		male_names = { Adoric Agriulfum Anila Argiovit Ariamir Audeca Becilla Chararici Commund Eboric Ermaric Framta Frumari Garding Gomedei Heremigari Hermeric Hildemir Ilderic Malaric Maldras Massila Miro Neufila Nitigisi Pantard Rechiari Rechila Rechimund Remismund Remisol Rodomiro Sunila Theudomir Uittimer Veremund }
 		dynasty_names = { Adler Adrabaecampi Baemoi Batin Daimler Dengler Eberle Elser Ensselin Groner Hegelin Heinkelin Holderelin Idanha Kepler Kiesinger Laemmle Lugo Marcomanni Naristi Ourense Racatria Rommelin Sudini Suiones Tui Viseu Wekerle }
 	}
 	varangian = {
+		primary = BYZ
 		male_names = {
 			Acthram Acthrauc Actmund Actobald Actogais Actogast Actoleik Actomar
 			Actrand Actric Actwald Agenaric Aginaric Aktumer Arbogais Arbogan
@@ -142,6 +83,7 @@ barbaro_germanic = {
 		}
 	}
 	mena_german = {
+		primary = BHA
 		male_names = {
 			Acthram Acthrauc Actmund Actobald Actogais Actogast Actoleik Actomar
 			Actrand Actric Actwald Agenaric Aginaric Aktumer Arbogais Arbogan
@@ -352,12 +294,15 @@ cat_group = {
 }
 bear_group = {
 	bear = {
-		primary = TRL
+		primary = JMN
 		male_names = { Nanuk Ursus Isbjorn Grrrowr Bjorn Grrgrrr Rawr Bams }
 		female_names = { Winona Wilhelmina Edwina Maggie Samantha Maddie Ellie Audrey Precious
 		Abby Bitsy Coco Millie Hannah Princess Polly Taffy Candy Penelope Bella Wilma Betty Betsy }
 		dynasty_names = { Beliy Medved Bjorn Rawrrorr Rrrrr Grrr Gyp Qoi Styrbjorn Blomstfjellet "Dancer" "Arctoidea" "Carnivora" "Shaggy" "Teddy" "Bera" "Baconi" "Cave" "Bär" "Den" "Teddy" "Fur" "Muncher" "Björnsson" "Threebear" "Sun" "Ursidae" "Carnivora" "Ide" "Brown" "Snout" "Cave" "Claw" "Ursidae" "Baconi" "Helarctos" "Threebear" "Growler" "Bär" "Sun" "Muncher" "Brown"
 		}
+	}
+	jan_mayenese = {
+		primary = JMN #Already in the game
 	}
 }
 hedgehog_group = {
@@ -521,7 +466,7 @@ old_mashriqi = {
 		}
 	}
 	phoenician = { #EU Rome
-		primary = LEB
+		primary = PHN
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
 		Milkiramid Philosirid
@@ -536,7 +481,7 @@ old_mashriqi = {
 		}
 	}
 	aramaic = { #EU Rome
-		primary = ISR
+		primary = OSR
 		dynasty_names = {
 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
 			Milkiramid Philosirid
@@ -560,7 +505,7 @@ chaldean = {
 		Tayma
 	}
 	babylonian = {
-		primary = IRQ
+		primary = BBY
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
 			Abu-Waqar Belteshazzar Duzi Ea Gaga Igigi Kurigalzu Lakhmu Merodach blaadan
@@ -572,7 +517,7 @@ chaldean = {
 		}
 	}
 	assyrian = {
-		primary = SYR
+		primary = ASY
 		male_names = {
 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
 			Addai Betheil Bilgamish Daweska Dawis Diklat Febo Gewargis Jira Narsai Nona Rameel
@@ -632,6 +577,7 @@ hittite_group = {
 		}
 	}
 	cilician = {
+		primary = KAR
 		male_names = {
 			Acamas Adrestus Aeneas Amphimachus Amphius Antiphus Archilochus Ascanius Asius Chromius Ennomus Epistrophus
 			Euphemus Eurypylus Glaucus Hector Hippothous Memnon Mesthles Nastes Odius Pandarus Peirous Phorcys
@@ -649,8 +595,8 @@ hittite_group = {
 			Nereis Phegea Philomela Aristomache Clymene Xenodice Deinome Metioche Peisis Cleodice
 		}
 	}
-	lydian = { }
-	hittite = { }
+	lydian = { primary = RUM }
+	hittite = { primary = RUM }
 	phrygian = {
 		primary = PHR
 		male_names = {
@@ -670,7 +616,7 @@ hittite_group = {
 }
 scythian_group = {
 	scythian = { primary = SCY }
-	sarmatian = { }
+	sarmatian = { primary = SCY }
 	scolotian = { primary = ZAZ }
 	male_names = {
 		Airawanta Ajatasatru Ajite Alp Ambare Ampratasarme Amrataraksite Amratodane Anande Anathapindike Aniruddhe Andhave Anktsas Arjune Aranemi Arnyartate Arslam Arthadarsi Aryamarg Aryaske Aryatewe Aryawarme Aryottame Asokamitre Asokaraksite Asoke Asarte Astawi Atakke Atidivakare Atyuccagami Atraikatte Bimbasare Caitike Caiytiska Cakravar Cakule Candramukhe Candravasu Candre Caracate Cina Cinatyuti Citre Cittaraksite Cowaske Dandakamal Devarakste Dhanike Dipankar Dirghanakhe Dravyasvare Durmukhe Ekasrinke Erkatsole Esmine Etrise Gayakasyape Gayasirs Gaye Gunacamdre Gunasampade Hariscandre Hastake Hetubalike Indradhvaje Indratewe Indre Indriske Issapake Jatisrone Jetavam Jñanacamndre Jñanaghose Jñanakame Jñanakupte Jñanamokse Jñanasene Jñanasome Jñanasthite Jñanawirye Kadike Kalodaye Kalyanamokse Kalyanavraddhi Kalyanawartane Kanake Kanaske Kanthake Kapilavarne Kapilavastu Kas Kasyap Katakarni Kaundinye
@@ -733,7 +679,7 @@ tyrrhenian = {
 		Latini Nufre Nuste Palpe Papa Prezu Purce Senate Sepu Sinu Trepuni Trepu Tumu Tursikina
 		Venala Ventese Veru Zalle
 	}
-	etrurian = { primary = ETR }
+	etrurian = { primary = ETL }
 	rhaetian = { primary = ETR }
 	lemnian = { primary = ETR }
 }
@@ -757,7 +703,7 @@ albanian_g = {
 		"Pashë Përmeti" "Pashë Tepelena" "Pashë Toptani" Poga "Qemal Bej" Shahini Skiroi Thaçi Troja Xoxe
 	}
 	albanian = { primary = ALB }
-	arbereshe = { }
+	arbereshe = { primary = ITA }
 	illyrian = {
 		primary = ILR
 		male_names = {
@@ -814,7 +760,7 @@ old_lombard_g = {
 	old_lombard = { primary = MLO }
 	tuscian = { primary = TUS }
 	spoletan = { primary = SPL }
-	beneventine = { } # No suitable primary found
+	beneventine = { primary = NAP } # No suitable primary found
 	salernian = { primary = NAP }
 	veronese = { primary = VEN }
 }

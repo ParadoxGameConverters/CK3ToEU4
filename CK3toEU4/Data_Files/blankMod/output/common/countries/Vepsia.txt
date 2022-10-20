@@ -1,0 +1,18 @@
+#Vepsia
+
+graphical_culture = inuitgfx
+
+color = { 147 214 90 }
+revolutionary_colors = { 11 8 15 }
+
+
+historical_idea_groups = {
+	trade_ideas
+	economic_ideas
+	quality_ideas
+	spy_ideas
+	defensive_ideas
+	administrative_ideas
+	diplomatic_ideas
+	quantity_ideas
+}

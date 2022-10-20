@@ -4,6 +4,7 @@
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
 #include "Characters/CharacterDomain.h"
+#include "CommonFunctions.h"
 #include "CommonRegexes.h"
 #include "Geography/CountyDetail.h"
 #include "Log.h"
@@ -136,6 +137,7 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	primeLaFabricaDeColor(*theConfiguration);
 	loadLandedTitles(*theConfiguration);
 	loadCharacterTraits(*theConfiguration);
+	loadHouseNames(*theConfiguration);
 	Log(LogLevel::Progress) << "15 %";
 	// Scraping localizations from CK3 so we may know proper names for our countries and people.
 	Log(LogLevel::Info) << "-> Reading Words";
@@ -251,14 +253,14 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 		// compressed or not?
 		saveFile.seekg(0, std::ios::end);
 		const auto length = saveFile.tellg();
-		if (length < 2097152)
+		if (length < 65536)
 		{
 			throw std::runtime_error("Savegame seems a bit too small.");
 		}
 		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[2097152];
-		saveFile.read(bigBuf, 2097152);
-		if (saveFile.gcount() < 2097152)
+		char* bigBuf = new char[length];
+		saveFile.read(bigBuf, length);
+		if (saveFile.gcount() < length)
 			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		const std::string bufStr(bigBuf);
 		const auto pos = bufStr.find("}\nPK");
@@ -280,9 +282,9 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 			throw std::runtime_error("Savegame seems a bit too small.");
 		}
 		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[65536];
-		saveFile.read(bigBuf, 65536);
-		if (saveFile.gcount() < 65536)
+		char* bigBuf = new char[length];
+		saveFile.read(bigBuf, length);
+		if (saveFile.gcount() < length)
 			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
 		for (int i = 0; i < 65533; ++i)
 			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
@@ -463,8 +465,35 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 	Log(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
 }
 
+void CK3::World::loadHouseNames(const Configuration& theConfiguration)
+{
+	Log(LogLevel::Info) << "-> Loading House Names";
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/dynasty_houses"))
+	{
+		if (getExtension(file) != "txt")
+			continue;
+		houseNameScraper.loadHouseDetails(theConfiguration.getCK3Path() + "common/dynasty_houses/" + file);
+	}
+	for (const auto& mod: mods)
+	{
+		if (!commonItems::DoesFolderExist(mod.path + "common/dynasty_houses"))
+			continue;
+		Log(LogLevel::Info) << "<> Loading house names from [" << mod.name << "]";
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/dynasty_houses"))
+		{
+			if (getExtension(file) != "txt")
+				continue;
+			houseNameScraper.loadHouseDetails(mod.path + "common/dynasty_houses/" + file);
+		}
+	}
+	Log(LogLevel::Info) << ">> " << houseNameScraper.getHouseNames().size() << " house names read.";
+}
+
 void CK3::World::crosslinkDatabases()
 {
+	Log(LogLevel::Info) << "-> Injecting Names into Houses.";
+	houses.importNames(houseNameScraper);
+
 	Log(LogLevel::Info) << "-> Concocting Cultures.";
 	cultures.concoctCultures(localizationMapper, cultureMapper);
 
@@ -483,7 +512,7 @@ void CK3::World::crosslinkDatabases()
 	Log(LogLevel::Info) << "-> Loading Faiths into Religions.";
 	religions.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
-	faiths.linkReligions(religions);
+	faiths.linkReligions(religions, titles);
 	Log(LogLevel::Info) << "-> Loading Coats into Coats.";
 	coats.linkParents(titles);
 	Log(LogLevel::Info) << "-> Loading Coats into Dynasties.";

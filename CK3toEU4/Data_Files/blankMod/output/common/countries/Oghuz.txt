@@ -1,0 +1,32 @@
+#The Oghuz people
+
+graphical_culture = muslimgfx
+
+color = { 235 35 35 }
+
+revolutionary_colors = { 10 0 8 }
+
+historical_idea_groups = {
+	horde_ideas
+	economic_ideas
+	quantity_ideas
+	spy_ideas
+	offensive_ideas
+	administrative_ideas	
+	quality_ideas
+	trade_ideas
+}
+
+historical_units = {
+	steppe_riders
+	steppe_lancers
+	steppe_mounted_raiders
+	steppe_cavalry
+	steppe_uhlans
+	steppe_raiders
+	steppe_footmen
+	steppe_musketeers
+	steppe_infantry
+	steppe_rifles
+	reformed_steppe_rifles
+}

@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = feudal_tribe
+government_rank = 1
+primary_culture = vepsian
+religion = finnish_pagan
+technology_group = eastern
+capital = 312	#Beloozero
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

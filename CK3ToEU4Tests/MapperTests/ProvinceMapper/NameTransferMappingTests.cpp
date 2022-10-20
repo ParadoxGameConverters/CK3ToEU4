@@ -50,7 +50,6 @@ TEST(Mappers_NameTransferTests, oneToOneTransfersName)
 }
 TEST(Mappers_NameTransferTests, manyToOneTransfersName)
 {
-	// Requires a call to EU4::World::determineProvinceSource which needs a whole lot more info set up
 	std::stringstream provinceMapperStream;
 	provinceMapperStream << "0.0.0.0 = {\n";
 	provinceMapperStream << " link = { eu4 = 1 ck3 = 1 ck3 = 2 }\n";

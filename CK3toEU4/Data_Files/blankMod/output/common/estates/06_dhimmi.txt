@@ -1,0 +1,153 @@
+estate_dhimmi = {
+	icon = 6
+	other_religion_group_only = yes
+
+	province_independence_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			religion_group = muslim
+		}
+		modifier = {
+			factor = 1.5
+			has_province_modifier = repression_of_influential_dhimmi
+		}
+	}
+
+	# If true, country will get estate
+	trigger = {
+		has_dlc = "The Cossacks"
+		OR = {
+			has_government_attribute = enables_dhimmi
+			AND = {
+				OR = {
+					NOT = { has_estate = estate_brahmins }
+					has_country_flag = gained_dhimmi_estate
+				}
+				NOT = { is_revolutionary_republic_trigger = yes }
+				NOT = { government = native }
+				NOT = { has_reform = siberian_tribe }
+				NOT = { has_reform = cossacks_reform }
+				NOT = { has_government_attribute = is_pirate_republic_reform }
+				is_nomad = no
+				is_colonial_nation = no
+				NOT = { has_reform = celestial_empire }
+				religion_group = muslim
+				NOT = { has_reform = revolutionary_empire_reform }
+				NOT = { religion = masmudi }
+			}
+		}
+		#NOT = { has_government_attribute = is_merchant_republic }
+		#NOT = { has_reform = trading_city }
+		#NOT = { has_reform = veche_republic }
+	}
+
+	# These scale with loyalty & power
+	country_modifier_happy = {
+		technology_cost = -0.1
+		tolerance_heathen = 2
+	}
+	country_modifier_neutral = {
+		tolerance_heathen = 2
+	}	
+	country_modifier_angry = {
+		technology_cost = 0.1
+		tolerance_heathen = -1
+		global_unrest = 2
+	}
+	land_ownership_modifier = {
+		dhimmi_loyalty_modifier = 0.2
+	}
+
+
+	# Influence modifiers
+	base_influence = 0
+	influence_modifier = {
+		desc = EST_VAL_RELIGIOUS_MINORITY
+		trigger = {
+			any_owned_province = {
+				NOT = { religion_group = muslim }
+			}
+		}
+		influence = 10		
+	}
+	influence_modifier = {
+		desc = EST_VAL_RULED_BY_RELIGIOUS_MINORITY
+		trigger = {
+			NOT = { dominant_religion = ROOT }
+			any_owned_province = {
+				NOT = { religion_group = muslim }
+			}
+		}
+		influence = 20
+	}
+	influence_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+			}
+		}
+		influence = -40
+	}
+
+	influence_from_dev_modifier = 0.5
+	
+	#Loyalty Modifiers
+	loyalty_modifier = {
+		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
+		trigger = {
+			OR = {
+				has_disaster = estate_nobility_disaster
+				has_disaster = estate_church_disaster
+				has_disaster = estate_burghers_disaster
+				has_disaster = estate_brahmins_disaster
+				has_disaster = estate_vaisyas_disaster
+				has_disaster = estate_jains_disaster
+			}
+		}
+		loyalty = -20
+	}
+	loyalty_modifier = {
+		desc = EST_VAL_HEATHEN_PEACE_LOYALTY
+		trigger = {
+			NOT = {
+				any_known_country = {
+					war_with = ROOT
+					NOT = { religion_group = ROOT }
+				}
+			}
+		}
+		loyalty = 10
+	}
+	
+	privileges = {
+		estate_dhimmi_land_rights
+		estate_dhimmi_lighter_dhimmi_taxes
+		estate_dhimmi_guaranteed_autonomy
+		estate_dhimmi_dhimmi_nobles
+		estate_dhimmi_manpower
+		estate_dhimmi_tolerance
+		estate_dhimmi_guarantee_of_traditions
+		estate_dhimmi_grant_liberties
+	}
+
+	agendas = {
+		estate_dhimmi_develop_x
+		estate_dhimmi_build_temple_in_y
+		estate_dhimmi_build_university_in_y
+		estate_dhimmi_stop_converting_province_x
+		estate_dhimmi_increase_autonomy_in_province_x
+		estate_dhimmi_three_privileges
+		estate_dhimmi_relations_with_X
+		estate_dhimmi_hire_advisor
+		estate_dhimmi_fire_advisor
+	}
+
+	color = { 100 125 150 }
+}

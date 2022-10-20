@@ -1,0 +1,28 @@
+#Kalaallit Peoples
+
+graphical_culture = southamericagfx
+
+color = { 60 70 70 }
+revolutionary_colors = { 0 5 0 }
+
+historical_idea_groups = {
+	quality_ideas	
+	innovativeness_ideas
+	maritime_ideas
+	naval_ideas
+	influence_ideas
+	humanist_ideas	
+	trade_ideas
+	offensive_ideas
+}
+
+historical_units = {
+	native_indian_archer
+	native_indian_tribal_warfare
+	algonkin_tomahawk_charge
+	native_indian_horsemen
+	commanche_swarm
+	native_indian_mountain_warfare
+	sioux_dragoon
+	american_western_franchise_warfare
+}

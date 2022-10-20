@@ -19,6 +19,7 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getColor() const { return color; }
 	[[nodiscard]] const auto& getDoctrines() const { return doctrines; }
 	[[nodiscard]] const auto& getReligion() const { return religion; }
+	[[nodiscard]] const auto& getReligiousHead() const { return religiousHead; }
 	[[nodiscard]] auto getID() const { return ID; }
 	[[nodiscard]] const auto& getCustomName() const { return customName; }
 	[[nodiscard]] const auto& getCustomAdj() const { return customAdjective; }
@@ -27,6 +28,7 @@ class Faith: commonItems::parser
 	[[nodiscard]] const auto& getIconPath() const { return iconPath; }
 	[[nodiscard]] const auto& getReformedFlag() const { return reformedFlag; }
 
+	void setReligiousHead(const auto& newHead) { religiousHead = newHead; }
 	void loadReligion(const std::pair<long long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
 
   private:
@@ -40,6 +42,7 @@ class Faith: commonItems::parser
 	std::string customName;
 	std::string customAdjective;
 	std::string description;
+	std::string religiousHead;
 	std::optional<commonItems::Color> color;
 	std::vector<std::string>
 		 doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS

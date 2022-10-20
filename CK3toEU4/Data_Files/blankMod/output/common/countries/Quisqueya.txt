@@ -1,0 +1,59 @@
+#Quisqueya, Taino for Hispaniola, which at the time of Columbus was divided into 5 tribes nominally ruled(?) by Maguana
+
+graphical_culture = southamericagfx
+
+color = { 255 120 30 }
+revolutionary_colors = { 5 8 10 }
+
+historical_idea_groups = {
+	quality_ideas
+	innovativeness_ideas
+	maritime_ideas
+	naval_ideas
+	trade_ideas
+	defensive_ideas	
+	economic_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	south_american_spearmen
+	south_american_horsemen
+	south_american_warfare
+	inca_mountain_warfare
+	incan_slingshots
+	incan_axemen
+	south_american_gunpowder_warfare
+	south_american_reformed_gunpowder_warfare
+	south_american_arquebusier
+	westernized_incan
+	reformed_westernized_incan
+	incan_guerilla_warfare
+}
+
+leader_names = {
+	Kapongong Makushi Korobahado Panapi Muritaro Fararinno Kafotay Mudaukaho Waia Madinina
+}
+
+monarch_names = {
+	"Wiwakaleme #0" = 10
+	"Haubariria #0" = 10
+	"Toratora #0" = 10
+	"Amorotahe Haubariria #0" = 10
+	"Kaigouchi #0" = 10
+	"Shoko Laliwa #0" = 10
+	
+	"Arah #0" = 10
+	"Pirijá #0" = 10
+	"Arata #0" = 10
+	"Toruí #0" = 10
+	"Mbicy #0" = 10
+	
+	"Takuiba #0" = -1
+	"Twengga #0" = -1
+	"Neyawa #0" = -1
+}
+
+ship_names = {
+	Adaiahuli Aiyunbana Waia Demerara "Koyaha Maka" Hairoun Camerhogne Kayryouacou Hiwanarau Kairi Madinina
+}

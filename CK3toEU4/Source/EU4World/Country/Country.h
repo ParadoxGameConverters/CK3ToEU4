@@ -2,6 +2,7 @@
 #define EU4_COUNTRY_H
 
 #include "../../Configuration/Configuration.h"
+#include "../../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../../Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "CountryDetails.h"
 #include <memory>
@@ -51,10 +52,13 @@ class Country
 	void setPrimaryCulture(const std::string& culture);
 	void setMajorityReligion(const std::string& religion);
 	void setAcceptedCultures();
+	void setGeneratedNation() { details.generatedNation = true; }
 	void setReligion(const std::string& religion);
 	void setTechGroup(const std::string& tech) { details.technologyGroup = tech; }
 	void setGFX(const std::string& gfx) { details.graphicalCulture = gfx; }
-	void assignReforms(const std::shared_ptr<mappers::RegionMapper>& regionMapper);
+	void assignReforms(const std::shared_ptr<mappers::RegionMapper>& regionMapper,
+		 const mappers::ReligionMapper& religionMapper,
+		 const mappers::CultureDefinitionsMapper& cultureDefinitionMapper);
 	void initializeAdvisers(const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper);
@@ -83,6 +87,7 @@ class Country
 	[[nodiscard]] const auto& getAdvisers() const { return details.advisers; }
 	[[nodiscard]] auto getConversionDate() const { return conversionDate; }
 	[[nodiscard]] auto isExcommunicated() const { return details.excommunicated; }
+	[[nodiscard]] auto isGeneratedNation() const { return details.generatedNation; }
 	[[nodiscard]] auto isHREEmperor() const { return details.holyRomanEmperor; }
 	[[nodiscard]] auto isHREElector() const { return details.elector; }
 	[[nodiscard]] auto isinHRE() const { return details.inHRE; }

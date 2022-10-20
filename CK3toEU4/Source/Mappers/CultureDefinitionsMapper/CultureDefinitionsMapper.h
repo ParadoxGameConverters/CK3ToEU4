@@ -26,7 +26,6 @@ class CultureDefinitionsMapper: commonItems::parser
 	void loadHeritagesFromDisk() { herritageMapper.loadHeritagesFromDisk(); }
 	void loadHeritages(const HeritageMapper& heritages) { herritageMapper = heritages; }
 
-	[[nodiscard]] std::shared_ptr<CultureGroupDefinition> getGroupForCulture(const std::string& cultureName) const;
 	[[nodiscard]] std::shared_ptr<CultureDefinition> getCulture(const std::string& cultureName) const;
 	[[nodiscard]] std::shared_ptr<CultureGroupDefinition> getCultureGroup(const std::string& cultureGroupName);
 	[[nodiscard]] std::shared_ptr<CultureGroupDefinition> getCultureGroupForCultureName(const std::string& cultureName) const;

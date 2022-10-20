@@ -1,0 +1,111 @@
+#Jivaro peoples, largest group known as the Shuar
+
+graphical_culture = southamericagfx
+
+color = { 28 0 255 }
+revolutionary_colors = { 15 0 15 }
+
+historical_idea_groups = {
+	defensive_ideas
+	economic_ideas
+	spy_ideas
+	offensive_ideas	
+	religious_ideas
+	quality_ideas
+	diplomatic_ideas	
+	quantity_ideas
+}
+
+historical_units = {
+	south_american_spearmen
+	south_american_horsemen
+	south_american_warfare
+	inca_mountain_warfare
+	incan_slingshots
+	incan_axemen
+	south_american_gunpowder_warfare
+	south_american_reformed_gunpowder_warfare
+	south_american_arquebusier
+	westernized_incan
+	reformed_westernized_incan
+	incan_guerilla_warfare
+}
+
+leader_names = {
+	Anquimarca Apo Atahualpa Atoc Atoc-Suqui Auqui-Huaman
+	Canchari Chalcuchima Challco Chiaquitinta Chilche Colla-Topa Curiatao Cusi 
+	Guacra Guaritito Guaritopa
+	Huachuri Huaman Huascar Huaypalcon
+	Illaquita Inquill
+	Llicllic
+	Maila Maras Marcavilca Mayta 
+	Ninancoro
+	Ozcoc
+	Parinango Paucar Paullu Pomacapi Puma Pusca Puyu-Vilca
+	Quilaco Quingallumbo Quintiraura Quisquis Quizo
+	Rimac Ronpa
+	Sahuaraura Sotaurco
+	Tanqui Tucuycuyche
+	Yupanqui
+}
+
+monarch_names = {
+	"Anquimarca #0" = 10
+	"Atoc Sopa #0" = 10
+	"Cayo Topa #0" = 10
+	"Coyllas #0" = 10
+	"Cusichaca #0" = 10
+	"Guaritopa #0" = 10
+	"Huachuri #0" = 10
+	"Huaypalcon #0" = 10
+	"Luyes #0" = 10
+	"Marcavilca #0" = 10
+	"Ninan Cuyuchi #0" = 0
+	"Orco Varanca #0" = 0
+	"Pascac #0" = 0
+	"Pomaguala #0" = 0
+	"Pumi Sopa #0" = 0
+	"Quispe Titu #0" = 0
+	"Ruminavi #0" = 0
+	"Sahuaraura #0" = 0
+	"Surandaman #0" = 0
+	"Taraque #0" = 0
+	"Tucuycuyche #0" = 0
+	"Usca Curiatao #0" = 0
+	"Villac Umu #0" = 0
+	"Yamqui Mayta #0" = 0
+	"Yupanqui #0" = 0
+	"Zambiza #0" = 0
+	"Zopahua #0" = 0
+	
+	"Axomamma #0" = -1
+	"Cavillaca #0" = -1
+	"Cora Ocllo #0" = -1
+	"Cuca #0" = -1
+	"Qorihillpay #0" = -1
+	"Chimbo #0" = -1
+	"Michay #0" = -1
+	"Chiklla  #0" = -1
+	"Runu  #0" = -1
+	"Ocllo  #0" = -1
+	"Sisa  #0" = -1
+	"Cusirimay  #0" = -1
+	"Huipa  #0" = -1
+}
+
+ship_names = {
+	Apo Apocatequil Ataguchu
+	"Ayar Anca" "Ayar Cachi" "Ayar Uchu"
+	Catequil Cavillace Chasca "Chasca Coyllur" Coniraya Copacati Cusco
+	Ekkeko
+	"Hanan Pacha"
+	Inti Illapa
+	Kon 
+	"Manco Capac" "Mama Ocllo" "Mama Huaco" "Mama Raua" "Mama Cura"
+	"Mama Coca" "Mama Allpa" "Mama Pacha" "Mama Quilla" "Mama Zara"
+	"Pacha Camac" Pachacuti Pariacaca Paricia
+	Supay
+	Titicaca
+	Urcaguary "Uku Pacha"
+	Viracocha
+}

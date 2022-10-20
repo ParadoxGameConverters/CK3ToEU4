@@ -31,16 +31,28 @@ link = { utf8 = "ň" win1252 = "n" }
 link = { utf8 = "ř" win1252 = "r" }
 link = { utf8 = "ṛ" win1252 = "ri" } # See Rigveda
 link = { utf8 = "ș" win1252 = "š" }
-link = { utf8 = "ś" win1252 = "sh" }
+link = { utf8 = "ś" win1252 = "s" }
 link = { utf8 = "ț" win1252 = "t" }
 link = { utf8 = "ź" win1252 = "z" }
-link = { utf8 = "ż" win1252 = "ž" }
+link = { utf8 = "ż" win1252 = "z" } # Mostly used in Polish and simplified to "z"
 link = { utf8 = "ĉ" win1252 = "cx" } # Esperanto support because people are mad
 link = { utf8 = "ĝ" win1252 = "gx" }
 link = { utf8 = "ĥ" win1252 = "hx" }
 link = { utf8 = "ĵ" win1252 = "jx" }
 link = { utf8 = "ŝ" win1252 = "sx" }
 link = { utf8 = "ŭ" win1252 = "û" }
+link = { utf8 = "ġ" win1252 = "gh" } # Fate of Iberia added Burġus as a name
+
+link = { utf8 = "ǝ" win1252 = "ä" }
+
+link = { utf8 = "ṗ" win1252 = "p" }
+
+
+
+link = { utf8 = "ṣ" win1252 = "s" }
+link = { utf8 = "ẹ" win1252 = "e" }
+link = { utf8 = "ọ" win1252 = "o" }
+link = { utf8 = "ḥ" win1252 = "h" }
 
 ## LATIN - UPPERCASE
 link = { utf8 = "Ā" win1252 = "Â" }
@@ -67,13 +79,18 @@ link = { utf8 = "Ň" win1252 = "N" }
 link = { utf8 = "Ř" win1252 = "R" }
 link = { utf8 = "Ṛ" win1252 = "Ri" } # See Rigveda
 link = { utf8 = "Ș" win1252 = "Š" }
-link = { utf8 = "Ś" win1252 = "Sh" }
+link = { utf8 = "Ś" win1252 = "S" }
 link = { utf8 = "Ț" win1252 = "T" }
 link = { utf8 = "Ź" win1252 = "Z" }
-link = { utf8 = "Ż" win1252 = "Ž" }
+link = { utf8 = "Ż" win1252 = "Z" } # Mostly used in Polish and simplified to "Z"
 link = { utf8 = "Ĉ" win1252 = "Cx" } # Esperanto support because people are insane
 link = { utf8 = "Ĝ" win1252 = "Gx" }
 link = { utf8 = "Ĥ" win1252 = "Hx" }
 link = { utf8 = "Ĵ" win1252 = "Jx" }
 link = { utf8 = "Ŝ" win1252 = "Sx" }
 link = { utf8 = "Ŭ" win1252 = "Û" }
+
+link = { utf8 = "Ġ" win1252 = "Gh" }
+link = { utf8 = "Ə" win1252 = "Ä" }
+link = { utf8 = "Ẹ" win1252 = "E" }
+link = { utf8 = "Ṭ" win1252 = "T" }

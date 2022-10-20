@@ -379,7 +379,6 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption)
 {
 	Log(LogLevel::Info) << "-> Importing CK3 Countries";
-
 	// countries holds all tags imported from EU4. We'll now overwrite some and
 	// add new ones from ck3 titles.
 	for (const auto& title: sourceWorld.getIndeps())
@@ -487,6 +486,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 rulerPersonalitiesMapper,
 			 sourceWorld.getConversionDate(),
 			 startDateOption);
+		newCountry->setGeneratedNation();
 		title.second->loadEU4Tag(std::pair(*tag, newCountry));
 		countries.insert(std::pair(*tag, newCountry));
 	}
@@ -557,7 +557,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		else
 		{
 			// And finally, initialize it.
-			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader);
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader, regionMapper);
 			counter++;
 		}
 	}
@@ -921,7 +921,7 @@ void EU4::World::assignAllCountryReforms()
 	{
 		if (!country.second->getTitle() || !country.second->getGovernmentReforms().empty())
 			continue;
-		country.second->assignReforms(regionMapper);
+		country.second->assignReforms(regionMapper, religionMapper, cultureDefinitionsMapper);
 	}
 }
 
@@ -934,7 +934,7 @@ void EU4::World::generateNationalIdeasFromDynamicCultures(const CK3::Cultures& c
 	for (auto& culture: cultures.getCultures() | std::views::values)
 	{
 		if (culture->isDynamic())
-			dynamicNationalIdeas.push_back(NationalIdeas(culture, dynamicIdeasMapper));
+			dynamicNationalIdeas.emplace_back(NationalIdeas(culture, dynamicIdeasMapper));
 	}
 
 	Log(LogLevel::Info) << "<> Created " << dynamicNationalIdeas.size() << " National Ideas.";

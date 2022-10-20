@@ -1,0 +1,75 @@
+#Guaycuru Peoples
+
+graphical_culture = southamericagfx
+
+color = { 245 10 80 }
+revolutionary_colors = { 5 16 5 }
+
+historical_idea_groups = {
+	offensive_ideas	
+	administrative_ideas
+	quantity_ideas
+	economic_ideas
+	spy_ideas
+	aristocracy_ideas	
+	innovativeness_ideas
+	quality_ideas
+}
+
+historical_units = {
+	south_american_spearmen
+	south_american_horsemen
+	south_american_warfare
+	inca_mountain_warfare
+	incan_slingshots
+	incan_axemen
+	south_american_gunpowder_warfare
+	south_american_reformed_gunpowder_warfare
+	south_american_arquebusier
+	westernized_incan
+	reformed_westernized_incan
+	incan_guerilla_warfare
+}
+
+leader_names = {
+	Mbigua Caracara Timbu Tucague Calchagui Quiloazaz Cario Itatine Tarci Bomboi Curupaiti Curumai Caaigua Tape Ciriguana
+}
+
+monarch_names = {
+	"Angatupyry #0" = 10
+	"Apytere #0" = 10
+	"Arandu #0" = 10
+	"Araresa #0" = 10
+	"Amaru #0" = 10
+	"Amapytu #0" = 10
+	"Amangy #0" = 10
+	"Aravera #0" = 10
+	"Arasunu #0" = 10
+	"Aratiri #0" = 10
+	"Chavuku #0" = 10
+	"Jakaira #0" = 10
+	"Karai #0" = 10
+	"Katupyry #0" = 10
+	"Kuarahy #0" = 10
+	"Kuarahyrese #0" = 10
+	"Maitei #0" = 10
+	"Mba'ehory #0" = 10
+	"Mbarakapu #0" = 10
+	"Namandu #0" = 10
+	"Tajy #0" = 10
+	"Tatarendy #0" = 10
+	"Tatajyva #0" = 10
+	"Tatapytu #0" = 10
+	"Tekokatu #0" = 10
+	"Tuvicha #0" = 10
+	"Ygary #0" = 10
+	
+	"Porasy #0" = -1
+	"Ka'a Jarýi #0" = -1
+	"Irupé #0" = -1
+}
+
+ 
+ship_names = {
+	"Teju Jagua" "Mboi Tui" Monai "Jasy Jatere" Kurupi "Ao Ao" Luison Angatupry Pytajovai Pombero Abaangiu Jurupari Yande Yari "Mala Vision" "Plata Yvyguy" Tupã Jacy Pinon Raini Jaguar Marangatú "Tume Arandu" Kerana
+}

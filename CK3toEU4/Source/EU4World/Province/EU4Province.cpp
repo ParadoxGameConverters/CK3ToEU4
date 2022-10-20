@@ -32,11 +32,16 @@ void EU4::Province::updateWith(const std::string& filePath)
 void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 	 const mappers::CultureMapper& cultureMapper,
 	 const mappers::ReligionMapper& religionMapper,
-	 const mappers::LocDegraderMapper& locDegrader)
+	 const mappers::LocDegraderMapper& locDegrader,
+	 const std::shared_ptr<mappers::RegionMapper>& regionMapper)
 {
 	srcProvince = origProvince;
 
-	details.discoveredBy = {"eastern", "western", "muslim", "ottoman", "indian", "nomad_group"}; // hardcoding for now.
+	details.discoveredBy = {"western", "eastern", "ottoman", "muslim", "indian", "east_african", "nomad_group", "sub_saharan"}; // hardcoding for now.
+	if (regionMapper->provinceIsInRegion(provID, "india_superregion") || regionMapper->provinceIsInRegion(provID, "east_indies_superregion") ||
+		 regionMapper->provinceIsInRegion(provID, "east_siberia_region") || regionMapper->provinceIsInRegion(provID, "mongolia_region") ||
+		 regionMapper->provinceIsInRegion(provID, "tibet_region"))
+		details.discoveredBy.insert("chinese");
 
 	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
 	// There are no uncolonized provinces in CK3.
@@ -48,6 +53,9 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
 
+	// Check srcProvince for manual name
+	registerManualName(locDegrader);
+
 	// History section
 	// Not touching Capital, that's hardcoded English name.
 	details.isCity = true; // This must be true for all incoming provinces.
@@ -55,7 +63,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	// Religion first.
 	auto religionSet = false;
 	auto baseReligion = srcProvince->getClay()->getCounty()->second->getFaith().second->getName();
-	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+	auto baseReligiousHead = srcProvince->getClay()->getCounty()->second->getFaith().second->getReligiousHead();
+	auto religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion, baseReligiousHead);
 	if (religionMatch)
 	{
 		details.religion = *religionMatch;
@@ -72,7 +81,8 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		if (srcProvince->getHolder()->second->getFaith())
 		{
 			baseReligion = srcProvince->getHolder()->second->getFaith()->second->getName();
-			religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion);
+			baseReligiousHead = srcProvince->getHolder()->second->getFaith()->second->getReligiousHead();
+			religionMatch = religionMapper.getEU4ReligionForCK3Religion(baseReligion, baseReligiousHead);
 			if (religionMatch)
 			{
 				details.religion = *religionMatch;

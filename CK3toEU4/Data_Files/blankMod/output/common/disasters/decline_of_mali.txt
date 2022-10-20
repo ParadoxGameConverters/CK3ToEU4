@@ -1,0 +1,37 @@
+##Makes no sense to have in an alternate history scenario
+decline_of_mali = {
+	ended_by_country_breaking_to_rebels = yes
+	potential = {
+		always = no
+	}
+	
+	can_start = {
+		always = no
+	}
+	
+	can_stop = { 
+		always = yes
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 100
+			tag = MAL
+		}
+	}
+	
+	can_end = {
+		always = yes
+	}
+	
+
+	modifier = {
+	}
+	
+	on_start = flavor_mal.9 # Mali is on the path of breaking apart
+	on_end = flavor_mal.10 # Mali managed to retain authority
+	
+	on_monthly = {
+	}
+}

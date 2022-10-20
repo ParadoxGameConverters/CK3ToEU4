@@ -125,7 +125,7 @@ age_of_discovery = {
 
 		ab_transfer_vassal_wargoal =
 		{
-			rule = {
+			modifier = {
 				can_transfer_vassal_wargoal = yes
 				can_chain_claim = yes
 			}
@@ -153,7 +153,7 @@ age_of_discovery = {
 			}
 		}
 		ab_colony_boost_development = {
-			rule = {
+			modifier = {
 				can_colony_boost_development = yes
 			}
 			ai_will_do = {
@@ -166,7 +166,7 @@ age_of_discovery = {
 		}
 
 		ab_attack_bonus_in_capital_terrain = {
-			rule = {
+			modifier = {
 				attack_bonus_in_capital_terrain = yes
 			}
 			ai_will_do = {
@@ -723,6 +723,16 @@ age_of_absolutism = {
 					num_of_banners = 10
 				}
 			}
+			effect = {
+				if = {
+					limit = {
+						NOT = { primary_culture = manchu }
+						NOT = { primary_culture = manchu_new }
+						NOT = { has_government_attribute = allow_banners }
+					}
+					custom_tooltip = ab_manchu_banner_tt
+				}
+			}
 			modifier = {
 				amount_of_banners = 0.5
 			}
@@ -814,17 +824,17 @@ age_of_revolutions = {
 
 		ab_napoleonic_warfare = {
 			modifier = {
-				artillery_bonus_vs_fort = 3
+				artillery_levels_available_vs_fort = 3
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 15
 			}
 		}
 
 
 
 		ab_force_march = {
-			rule = {
+			modifier = {
 				force_march_free = yes
 			}
 			ai_will_do = {
@@ -840,11 +850,21 @@ age_of_revolutions = {
 			}
 		}
 		ab_no_distance_for_core = {
-			rule = {
+			modifier = {
 				ignore_coring_distance = yes
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 15
+				modifier = {
+					# AI peace code relies on being limited by coring range, or it will create crazy border gore where it can't reach its new lands
+					factor = 0
+					OR = {
+						is_subject = no
+						overlord = {
+							ai = yes
+						}
+					}
+				}
 			}
 		}
 
@@ -853,7 +873,7 @@ age_of_revolutions = {
 				backrow_artillery_damage = 0.20
 			}
 			ai_will_do = {
-				factor = 10
+				factor = 15
 			}
 		}
 		ab_same_contine_lib_desire = {

@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+primary_culture = tuvan
+religion = tengri_pagan
+technology_group = nomad_group
+capital = 1066 #Altai Uriankhai
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

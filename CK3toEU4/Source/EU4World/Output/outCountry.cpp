@@ -86,7 +86,9 @@ std::ostream& EU4::operator<<(std::ostream& output, const Country& country)
 			output << "add_harmonized_religion = " << religion << "\n";
 		}
 	}
-
+	if (country.details.generatedNation)
+		output << "set_country_flag = ZZZ_generated_converter_nation"
+				 << "\n";
 	if (country.details.monarch.isSet)
 	{
 		output << country.conversionDate << "= {\n";

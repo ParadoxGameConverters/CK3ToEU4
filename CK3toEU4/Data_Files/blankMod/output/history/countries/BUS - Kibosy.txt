@@ -1,0 +1,22 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = madagascan
+religion = shamanism
+technology_group = east_african
+unit_type = sub_saharan
+capital = 4020	#Comoros
+unlock_cult = enkai_cult
+unlock_cult = waaq_cult
+unlock_cult = zanahary_cult
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		mil = 3
+		dip = 3
+		regent = yes
+	}
+}

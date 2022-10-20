@@ -1,0 +1,42 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = parsi
+religion = zoroastrian
+technology_group = indian
+unit_type = muslim
+capital = 529	#Thana, site of Bombay
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		mil = 3
+		dip = 3
+		regent = yes
+	}
+}
+
+#Recorded Davars of the Bombay Parsi Punchayet
+1800.1.1 = {
+	monarch = {
+		name = "Hormusji Bomanji"
+		dynasty = "Wadia"
+		birth_date = 1746.1.1
+		death_date = 1826.1.1
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}
+1808.1.1 = {
+	heir = {
+		name = "Bomanji Hormusji"
+		dynasty = "Wadia"
+		birth_date = 1808.1.1
+		death_date = 1862.6.6
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}

@@ -1,0 +1,29 @@
+#Kanyan, Ancient Civilization who's descendants are theorized by some to be the modern day Karen people
+
+graphical_culture = asiangfx
+special_unit_culture = south_east_asian_special
+
+color = { 0 200 180 }
+revolutionary_colors = { 16 0 13 }
+
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	innovativeness_ideas	
+	influence_ideas
+	religious_ideas
+	offensive_ideas
+	economic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	east_asian_spearmen
+	eastern_bow
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}

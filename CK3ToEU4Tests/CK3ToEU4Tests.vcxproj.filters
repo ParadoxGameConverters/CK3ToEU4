@@ -256,6 +256,9 @@
     <Filter Include="CK3ToEU4\EU4World\Province">
       <UniqueIdentifier>{e56b76f3-f744-495c-a67c-ec9693f4d76a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\commonItems\ModLoader">
+      <UniqueIdentifier>{e16da930-efb0-4438-8489-fa38b31af251}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -802,6 +805,27 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp">
       <Filter>CK3ToEU4\EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
+      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
+      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
+      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.cpp">
+      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScraperTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScrapingTests.cpp">
+      <Filter>Ck3WorldTests\DynastyTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

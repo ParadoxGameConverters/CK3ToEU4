@@ -3,6 +3,7 @@
 
 # Rebels' demand
  adamites_rebels_demand: "$COUNTRYNAME$ konvertieren"
+ adoptianist_rebels_demand: "$COUNTRYNAME$ konvertieren"
  alawite_rebels_demand: "$COUNTRYNAME$ konvertieren"
  anglo_pagan_rebels_demand: "$COUNTRYNAME$ konvertieren"
  arab_pagan_rebels_demand: "$COUNTRYNAME$ konvertieren"
@@ -51,6 +52,7 @@
  mandeaism_rebels_demand: "$COUNTRYNAME$ konvertieren"
  manichean_rebels_demand: "$COUNTRYNAME$ konvertieren"
  mardukism_rebels_demand: "$COUNTRYNAME$ konvertieren"
+ masmudi_rebels_demand: "$COUNTRYNAME$ konvertieren"
  mazdaki_rebels_demand: "$COUNTRYNAME$ konvertieren"
  meshefaresism_rebels_demand: "$COUNTRYNAME$ konvertieren"
  messalian_rebels_demand: "$COUNTRYNAME$ konvertieren"
@@ -87,6 +89,7 @@
  zurvanism_rebels_demand: "$COUNTRYNAME$ konvertieren"
 # Rebels' demand desc
  adamites_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
+ adoptianist_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  alawite_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  anglo_pagan_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  arab_pagan_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
@@ -135,6 +138,7 @@
  mandeaism_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  manichean_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  mardukism_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
+ masmudi_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  mazdaki_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  meshefaresism_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
  messalian_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
@@ -171,6 +175,7 @@
  zurvanism_rebels_demand_desc: "Die religiösen Rebellen kämpfen für den $RELIGION$en Glauben. Sie verlangen, dass wir ihre Vormachtstellung anerkennen oder wenigstens unsere Konvertierungsversuche einstellen, so dass sie ihren Glauben in Frieden ausüben können."
 # Rebels' title
  adamites_rebels_title: "Religiöse"
+ adoptianist_rebels_title: "Religiöse"
  alawite_rebels_title: "Religiöse"
  anglo_pagan_rebels_title: "Religiöse"
  arab_pagan_rebels_title: "Religiöse"
@@ -219,6 +224,7 @@
  mandeaism_rebels_title: "Religiöse"
  manichean_rebels_title: "Religiöse"
  mardukism_rebels_title: "Religiöse"
+ masmudi_rebels_title: "Religiöse"
  mazdaki_rebels_title: "Religiöse"
  meshefaresism_rebels_title: "Religiöse"
  messalian_rebels_title: "Religiöse"
@@ -255,6 +261,7 @@
  zurvanism_rebels_title: "Religiöse"
 # Rebels' name
  adamites_rebels_name: "$RELIGION$e-Fanatiker"
+ adoptianist_rebels_name: "$RELIGION$e-Fanatiker"
  alawite_rebels_name: "$RELIGION$e-Fanatiker"
  anglo_pagan_rebels_name: "$RELIGION$e-Fanatiker"
  arab_pagan_rebels_name: "$RELIGION$e-Fanatiker"
@@ -303,6 +310,7 @@
  mandeaism_rebels_name: "$RELIGION$e-Fanatiker"
  manichean_rebels_name: "$RELIGION$e-Fanatiker"
  mardukism_rebels_name: "$RELIGION$e-Fanatiker"
+ masmudi_rebels_name: "$RELIGION$e-Fanatiker"
  mazdaki_rebels_name: "$RELIGION$e-Fanatiker"
  meshefaresism_rebels_name: "$RELIGION$e-Fanatiker"
  messalian_rebels_name: "$RELIGION$e-Fanatiker"
@@ -339,6 +347,7 @@
  zurvanism_rebels_name: "$RELIGION$e-Fanatiker"
 # Rebels' desc
  adamites_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
+ adoptianist_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  alawite_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  anglo_pagan_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  arab_pagan_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
@@ -387,6 +396,7 @@
  mandeaism_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  manichean_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  mardukism_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
+ masmudi_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  mazdaki_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  meshefaresism_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
  messalian_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
@@ -423,6 +433,7 @@
  zurvanism_rebels_desc: "Religiöse Fanatiker erheben sich vor allem in Provinzen, die von andersgläubigen Ländern kontrolliert werden. Sie wollen ihren Glauben verbreiten und alle Ungläubigen vernichten."
 # Rebels' army
  adamites_rebels_army: "$RELIGION$e-Armee"
+ adoptianist_rebels_army: "$RELIGION$e-Armee"
  alawite_rebels_army: "$RELIGION$e-Armee"
  anglo_pagan_rebels_army: "$RELIGION$e-Armee"
  arab_pagan_rebels_army: "$RELIGION$e-Armee"
@@ -471,6 +482,7 @@
  mandeaism_rebels_army: "$RELIGION$e-Armee"
  manichean_rebels_army: "$RELIGION$e-Armee"
  mardukism_rebels_army: "$RELIGION$e-Armee"
+ masmudi_rebels_army: "$RELIGION$e-Armee"
  mazdaki_rebels_army: "$RELIGION$e-Armee"
  meshefaresism_rebels_army: "$RELIGION$e-Armee"
  messalian_rebels_army: "$RELIGION$e-Armee"

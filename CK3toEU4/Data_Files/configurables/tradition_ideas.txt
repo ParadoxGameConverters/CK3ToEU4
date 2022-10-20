@@ -62,12 +62,12 @@ link = { ck3 = { tradition = tradition_burman_royal_army } eu4 = { special_unit_
 link = { ck3 = { tradition = tradition_bush_hunting } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_caravaneers } eu4 = { caravan_power = 0.2 } }
 link = { ck3 = { tradition = tradition_castle_keepers } eu4 = { garrison_size = 0.10 } }
-link = { ck3 = { tradition = tradition_caucasian_wolves } eu4 = { { global_supply_limit_modifier = 0.10 special_unit_forcelimit= 0.05 } } 
+link = { ck3 = { tradition = tradition_caucasian_wolves } eu4 = { { global_supply_limit_modifier = 0.10 special_unit_forcelimit= 0.05 } } }
 link = { ck3 = { tradition = tradition_chanson_de_geste } eu4 = { army_tradition_decay = -0.02 army_tradition_from_battle = 0.02 } }
 link = { ck3 = { tradition = tradition_charitable } eu4 = { monthly_favor_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_chivalry } eu4 = { leader_land_shock = 1 nobles_loyalty_modifier = 0.05 } } 
 link = { ck3 = { tradition = tradition_city_keepers } eu4 = { global_own_trade_power = 0.15 } } 
-link = { ck3 = { tradition = tradition_collective_lands } eu4 = { global_trade_goods_size_modifier = 0.1 nobility_influence_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_collective_lands } eu4 = { global_trade_goods_size_modifier = 0.15 } } 
 link = { ck3 = { tradition = tradition_concubines } eu4 = { heir_chance = 0.5 } }
 link = { ck3 = { tradition = tradition_court_eunuchs } eu4 = { adm_advisor_cost = -0.2 } }
 link = { ck3 = { tradition = tradition_culinary_art } eu4 = { production_efficiency = 0.1 } }
@@ -99,7 +99,7 @@ link = { ck3 = { tradition = tradition_fp1_performative_honour } eu4 = { prestig
 link = { ck3 = { tradition = tradition_fp1_the_right_to_prove } eu4 = { mil_advisor_cost = -0.20 } } 
 link = { ck3 = { tradition = tradition_fp1_trials_by_combat } eu4 = { prestige_from_land = 0.10 stability_cost_modifier = -0.05 } }
 link = { ck3 = { tradition = tradition_frugal_armorsmiths } eu4 = { global_regiment_cost = -0.15 infantry_shock = -1 } } 
-link = { ck3 = { tradition = tradition_futuwaa} eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_futuwaa } eu4 = { special_unit_forcelimit = 0.05 global_manpower_modifier = 0.10 } } 
 link = { ck3 = { tradition = tradition_gardening } eu4 = { global_prosperity_growth = 0.1 } } 
 link = { ck3 = { tradition = tradition_garuda_warriors } eu4 = { special_unit_forcelimit = 0.05 recover_army_morale_speed = 0.10 } } 
 link = { ck3 = { tradition = tradition_hard_working } eu4 = { build_cost = -0.1 } } 
@@ -114,7 +114,7 @@ link = { ck3 = { tradition = tradition_horn_mountain_skirmishing } eu4 = { speci
 link = { ck3 = { tradition = tradition_horse_breeder } eu4 = { cav_to_inf_ratio = 0.10 } }
 link = { ck3 = { tradition = tradition_horse_lords } eu4 = { cavalry_power = 0.10 } } 
 link = { ck3 = { tradition = tradition_hunters } eu4 = { trade_efficiency = 0.1 } } 
-link = { ck3 = { tradition = tradition_hussar} eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
+link = { ck3 = { tradition = tradition_hussar } eu4 = { special_unit_forcelimit = 0.05 cavalry_flanking = 0.20 } } 
 link = { ck3 = { tradition = tradition_isolationist } eu4 = { stability_cost_modifier = -0.25 diplomatic_upkeep = -1 } }
 link = { ck3 = { tradition = tradition_jungle_dwellers } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_jungle_warriors } eu4 = { global_supply_limit_modifier = 0.10 } } 
@@ -130,12 +130,12 @@ link = { ck3 = { tradition = tradition_malleable_invaders } eu4 = { core_creatio
 link = { ck3 = { tradition = tradition_maritime_mercantilism } eu4 = { mercantilism_cost = -0.2 } }
 link = { ck3 = { tradition = tradition_martial_admiration } eu4 = { army_tradition = 1 } } 
 link = { ck3 = { tradition = tradition_medicinal_plants } eu4 = { global_spy_defence = 0.1  } }
-link = { ck3 = { tradition = tradition_mendicant_mystics } eu4 = { merchant = 1 } } 
+link = { ck3 = { tradition = tradition_mendicant_mystics } eu4 = { merchants = 1 } } 
 link = { ck3 = { tradition = tradition_merciful_blindings } eu4 = { harsh_treatment_cost = -0.2 } }
 link = { ck3 = { tradition = tradition_metal_craftsmanship } eu4 = { reinforce_cost_modifier = -0.10 } }
 link = { ck3 = { tradition = tradition_mobile_guards } eu4 = { special_unit_forcelimit = 0.05 shock_damage_received = -0.10 } } 
 link = { ck3 = { tradition = tradition_modest } eu4 = { administrative_efficiency = 0.1 } } 
-link = { ck3 = { tradition = tradition_monastic_communities } eu4 = { church_loyalty_modifier = 0.1 nobility_influence_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_monastic_communities } eu4 = { church_loyalty_modifier = 0.15 } } 
 link = { ck3 = { tradition = tradition_monogamous } eu4 = { monarch_admin_power = 1 } } 
 link = { ck3 = { tradition = tradition_mountain_herding } eu4 = { special_unit_forcelimit = 0.05 global_monthly_devastation = -0.1 } } 
 link = { ck3 = { tradition = tradition_mountain_homes } eu4 = { development_cost = -0.1 } } 
@@ -159,7 +159,7 @@ link = { ck3 = { tradition = tradition_republican_legacy } eu4 = { burghers_loya
 link = { ck3 = { tradition = tradition_religion_blending } eu4 = { tolerance_heathen = 1 tolerance_heretic = 1 } } 
 link = { ck3 = { tradition = tradition_religious_patronage } eu4 = { institution_spread_from_true_faith = 0.15 } } 
 link = { ck3 = { tradition = tradition_reverence_for_veterans } eu4 = { innovativeness_gain = 0.5 army_tradition_decay = -0.01 } } 
-link = { ck3 = { tradition = tradition_roman_legacy } eu4 = { land_maintenence_modifier = -0.1 } } 
+link = { ck3 = { tradition = tradition_roman_legacy } eu4 = { land_maintenance_modifier = -0.1 } } 
 link = { ck3 = { tradition = tradition_ruling_caste } eu4 = { global_rebel_suppression_efficiency = 0.2 improve_relation_modifier = -0.05 } } #
 link = { ck3 = { tradition = tradition_runestones } eu4 = { great_project_upgrade_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_sacred_groves } eu4 = { monthly_splendor = 1.5 development_cost = 0.05 } }
@@ -167,7 +167,7 @@ link = { ck3 = { tradition = tradition_sacred_hunts } eu4 = { tolerance_own = 2 
 link = { ck3 = { tradition = tradition_sacred_mountains } eu4 = { legitimacy = 1 devotion = 1 } } 
 link = { ck3 = { tradition = tradition_saharan_nomads } eu4 = { envoy_travel_time = -0.1 trade_steering = 0.1 } } 
 link = { ck3 = { tradition = tradition_seafaring } eu4 = { naval_forcelimit_modifier = 0.1 } }
-link = { ck3 = { tradition = tradition_sorcerous_metallurgy } eu4 = { institution_spread = 0.1 } } 
+link = { ck3 = { tradition = tradition_sorcerous_metallurgy } eu4 = { institution_spread_from_true_faith = 0.1 } } 
 link = { ck3 = { tradition = tradition_spartan } eu4 = { fort_maintenance_modifier = -0.10 } } 
 link = { ck3 = { tradition = tradition_stalwart_defenders } eu4 = { defensiveness = 0.10 global_garrison_growth = 0.10 } } 
 link = { ck3 = { tradition = tradition_stand_and_fight } eu4 = { land_morale = 0.10 } } 
@@ -247,5 +247,48 @@ link = { ck3 = { tradition = tradition_RICE_siberian_survivalists } eu4 = { land
 link = { ck3 = { tradition = tradition_RICE_swahili_contacts } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
 link = { ck3 = { tradition = tradition_RICE_ubiquity_of_poetry } eu4 = { dip_tech_cost_modifier = -0.15 } } 
 link = { ck3 = { tradition = tradition_RICE_xianbei_scions } eu4 = { monarch_diplomatic_power = 1 } } 
-link = { ck3 = { tradition = tradition_RICE_white_huns } eu4 = { may_perform_slave_raid = yes} }
+link = { ck3 = { tradition = tradition_RICE_white_huns } eu4 = { may_perform_slave_raid = yes } }
 link = { ck3 = { tradition = tradition_RICE_children_of_the_nile } eu4 = { global_trade_goods_size_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_RICE_silk_road } eu4 = { envoy_travel_time = -0.1 trade_steering = 0.2 } } 
+link = { ck3 = { tradition = tradition_RICE_galician_portuguese_poetry } eu4 = { prestige = 1 } } 
+	
+### Culture Expanded
+link = { ck3 = { tradition = tradition_veche } eu4 = { burghers_loyalty_modifier = 0.15 republican_tradition = 0.25 } } 
+link = { ck3 = { tradition = tradition_rashidun_army } eu4 = { land_attrition = -0.15 } } 
+link = { ck3 = { tradition = tradition_pagan_protectors } eu4 = { cb_on_religious_enemies = yes land_morale = 0.05 } } 
+link = { ck3 = { tradition = tradition_sasanian_army } eu4 = { prestige = 0.5 land_forcelimit_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_teulu } eu4 = { cavalry_flanking = 0.15 } } 
+link = { ck3 = { tradition = tradition_barbary_corsairs } eu4 = { may_perform_slave_raid = yes } } 
+link = { ck3 = { tradition = tradition_almogavars } eu4 = { movement_speed = 0.15 } } 
+link = { ck3 = { tradition = tradition_mamluk_military } eu4 = { num_accepted_cultures = 1 land_morale = 0.15 } } 
+link = { ck3 = { tradition = tradition_irish_cliathairi } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_damascus_steel } eu4 = { infantry_power = 0.05 prestige = 0.5 } } 
+link = { ck3 = { tradition = tradition_toledo_steel } eu4 = { infantry_power = 0.15 } } 
+link = { ck3 = { tradition = tradition_barb_horses } eu4 = { cavalry_shock = 1 } } 
+link = { ck3 = { tradition = tradition_nile_agriculture } eu4 = { development_cost = -0.15 } } 
+link = { ck3 = { tradition = tradition_dzukijan_horsemen } eu4 = { cavalry_power = 0.10 } } 
+link = { ck3 = { tradition = tradition_akritai } eu4 = { garrison_size = 0.15 } } 
+link = { ck3 = { tradition = tradition_portage } eu4 = { global_supply_limit_modifier = 0.16 } } 
+link = { ck3 = { tradition = tradition_eyres } eu4 = { global_tax_modifier = 0.10 } } 
+link = { ck3 = { tradition = tradition_assizes_ariano } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_pravda_russkaya } eu4 = { state_maintenance_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_outremer_armies } eu4 = { land_morale = 0.10 } } 
+link = { ck3 = { tradition = tradition_mudejar_art } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_exechequer } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_fatimid_royal_guard } eu4 = { prestige = 0.5 yearly_army_professionalism = 0.05 } } 
+link = { ck3 = { tradition = tradition_islamic_furusiyya } eu4 = { cavalry_power = 0.10 } } 
+link = { ck3 = { tradition = tradition_kulgrinda } eu4 = { fort_maintenance_modifier = -0.10 } } 
+link = { ck3 = { tradition = tradition_professional_army } eu4 = { yearly_army_professionalism = 0.02 } } 
+link = { ck3 = { tradition = tradition_military_engineering } eu4 = { infantry_shock = 1 } } 
+link = { ck3 = { tradition = tradition_fierce_independence } eu4 = { enemy_core_creation = 0.25 core_decay_on_your_own = -0.2 } } 
+link = { ck3 = { tradition = tradition_sacred_rulership } eu4 = { legitimacy = 1 } } 
+link = { ck3 = { tradition = tradition_way_of_the_thiedo } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_bush_schools } eu4 = { adm_tech_cost_modifier = -0.10 } } 
+link = { ck3 = { tradition = tradition_laawol_pulaaku } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_griots } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_savanna_raiders } eu4 = { available_province_loot = 0.10 loot_amount = 0.05 } } 
+link = { ck3 = { tradition = tradition_eldership } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_african_agriculture } eu4 = { development_cost = -0.15 } } 
+link = { ck3 = { tradition = tradition_karabisianoi } eu4 = { infantry_power = 0.15 } } 
+link = { ck3 = { tradition = tradition_justinian_code } eu4 = { stability_cost_modifier = -0.15 } } 
+link = { ck3 = { tradition = tradition_merc_armies } eu4 = { merc_maintenance_modifier = -0.10 } } 

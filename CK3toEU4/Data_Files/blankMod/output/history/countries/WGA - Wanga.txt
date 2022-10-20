@@ -1,0 +1,111 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 2
+primary_culture = masaba
+religion = shamanism
+technology_group = central_african
+unit_type = sub_saharan
+capital = 4054 #Kuria
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+1100.1.1 = {
+	monarch = {
+		name = "Wanga"
+		dynasty = "Nabongo"
+		birth_date = 1080.1.1
+		death_date = 1140.1.1
+		adm = 6
+		mil = 6
+		dip = 6
+	}
+}
+1140.1.1 = {
+	monarch = {
+		name = "Wabala"
+		dynasty = "Nabongo"
+		birth_date = 1120.1.1
+		death_date = 1200.1.1
+		adm = 1
+		mil = 5
+		dip = 2
+	}
+}
+1200.1.1 = {
+	monarch = {
+		name = "Musuwi"
+		dynasty = "Nabongo"
+		birth_date = 1185.1.1
+		death_date = 1300.1.1
+		adm = 2
+		mil = 1
+		dip = 4
+	}
+}
+1300.1.1 = {
+	monarch = {
+		name = "Chibwire"
+		dynasty = "Nabongo"
+		birth_date = 1285.1.1
+		death_date = 1400.1.1
+		adm = 1
+		mil = 1
+		dip = 1
+	}
+}
+1400.1.1 = {
+	monarch = {
+		name = "Musindalo"
+		dynasty = "Nabongo"
+		birth_date = 1385.1.1
+		death_date = 1500.1.1
+		adm = 3
+		mil = 3
+		dip = 3
+	}
+}
+1500.1.1 = {
+	monarch = {
+		name = "Chitechi"
+		dynasty = "Nabongo"
+		birth_date = 1485.1.1
+		death_date = 1600.1.1
+		adm = 4
+		mil = 5
+		dip = 3
+	}
+}
+1600.1.1 = {
+	monarch = {
+		name = "Chiaba"
+		dynasty = "Nabongo"
+		birth_date = 1585.1.1
+		death_date = 1710.1.1
+		adm = 2
+		mil = 2
+		dip = 6
+	}
+}
+1710.1.1 = {
+	monarch = {
+		name = "Netia"
+		dynasty = "Wamukoya"
+		birth_date = 1695.1.1
+		death_date = 1795.1.1
+		adm = 2
+		mil = 3
+		dip = 2
+	}
+}
+1795.1.1 = {
+	monarch = {
+		name = "Washisino"
+		dynasty = "Shundu"
+		birth_date = 1780.1.1
+		death_date = 1880.1.1
+		adm = 3
+		mil = 3
+		dip = 3
+	}
+}

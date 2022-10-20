@@ -95,7 +95,7 @@ TEST(CK3World_TitlesTests, coatsCanBeLinked)
 	ASSERT_EQ("lumpy", t2->second->getCoA()->second->getPattern());
 }
 
-TEST(CK3World_TitlesTests, linkingMissingCoatsThrowsException)
+TEST(CK3World_TitlesTests, linkingMissingCoatsLoadsBlankCoat)
 {
 	std::stringstream input;
 	input << "13={key=\"c_county\"\n coat_of_arms_id = 1}\n";
@@ -106,7 +106,13 @@ TEST(CK3World_TitlesTests, linkingMissingCoatsThrowsException)
 	input2 << "1 = { pattern=\"smooth\"}\n";
 	CK3::CoatsOfArms coats(input2);
 
-	ASSERT_THROW(titles.linkCoats(coats), std::runtime_error);
+	titles.linkCoats(coats);
+
+	const auto& blankCoat = titles.getTitles().at("d_duchy")->getCoA()->second;
+
+	EXPECT_FALSE(blankCoat->getColor1());
+	EXPECT_TRUE(blankCoat->getTexturedEmblems().empty());
+	EXPECT_TRUE(blankCoat->getColoredEmblems().empty());
 }
 
 TEST(CK3World_TitlesTests, titlesCanBeLinked)

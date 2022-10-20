@@ -259,7 +259,12 @@ std::string mappers::getTailStr(const std::string& str, const int occurrence, co
 {
 	if (const auto& i = str.find(match); i != std::string::npos)
 		if (occurrence == 1)
-			return str.substr(i + match.length());
+		{
+			auto tail = str.substr(i + match.length());
+			if (tail.starts_with("!"))
+				tail = tail.substr(1, tail.length());
+			return tail;
+		}
 		else
 			return getTailStr(str.substr(i + match.length()), occurrence - 1, match);
 	else
@@ -267,6 +272,8 @@ std::string mappers::getTailStr(const std::string& str, const int occurrence, co
 }
 std::string mappers::cleanLocMarkups(const std::string& loc)
 {
+	if (loc.find("#") == std::string::npos)
+		return loc;
 	const auto& head = getLeadStr(loc, 1, "#");
 	const auto& mid = getLeadStr(getTailStr(loc, 1, "#"), 1, "#");
 	const auto& tail = getTailStr(loc, 2, "#");

@@ -12,28 +12,34 @@ TEST(Mappers_TraitScraperTests, traitsDefaultToBlank)
 	ASSERT_TRUE(traitScraper.getTraits().empty());
 }
 
-TEST(Mappers_TraitScraperTests, traitsWithoutIndexAreIgnored)
+TEST(Mappers_TraitScraperTests, traitsWithoutIndexAreSelfEnumerated)
 {
 	std::stringstream input;
 	input << "trait1 = {}\n";
-	input << "trait2 = {}\n";
+	input << "trait2 = { index = 4 }\n";
 	input << "trait3 = {}\n";
 
 	mappers::TraitScraper traitScraper;
 	traitScraper.loadTraits(input);
 
-	ASSERT_TRUE(traitScraper.getTraits().empty());
+	EXPECT_EQ(3, traitScraper.getTraits().size());
+	EXPECT_EQ("trait1", traitScraper.getTraits().find(1)->second);
+	EXPECT_EQ("trait2", traitScraper.getTraits().find(4)->second);
+	EXPECT_EQ("trait3", traitScraper.getTraits().find(2)->second);
 }
 
-TEST(Mappers_TraitScraperTests, traitsWithIndexZeroAreIgnored)
+TEST(Mappers_TraitScraperTests, traitsWithIndexZeroAreSelfEnumerated)
 {
 	std::stringstream input;
 	input << "trait1 = { index = 0 }\n";
+	input << "trait2 = { index = 0 }\n";
 
 	mappers::TraitScraper traitScraper;
 	traitScraper.loadTraits(input);
 
-	ASSERT_TRUE(traitScraper.getTraits().empty());
+	EXPECT_EQ(2, traitScraper.getTraits().size());
+	EXPECT_EQ("trait1", traitScraper.getTraits().find(1)->second);
+	EXPECT_EQ("trait2", traitScraper.getTraits().find(2)->second);
 }
 
 TEST(Mappers_TraitScraperTests, traitsWithIndexAreLoaded)
