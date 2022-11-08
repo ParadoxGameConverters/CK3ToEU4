@@ -3,12 +3,14 @@ controller = PUE
 add_core = PUE
 add_core = OHK
 
+culture = pueblo
+religion = totemism
+
 base_tax = 7
 base_production = 6
 base_manpower = 10
 capital = "Ohkay Owingeh"
-trade_goods = salt 
-religion = totemism
+trade_goods = salt
 discovered_by = high_american
 discovered_by = north_american
 discovered_by = mesoamerican
