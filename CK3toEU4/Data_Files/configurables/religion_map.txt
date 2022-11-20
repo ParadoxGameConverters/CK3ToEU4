@@ -72,6 +72,8 @@ link = { eu4 = qarmatian ck3 = qarmatian }
 link = { eu4 = alawite ck3 = alawite }
 link = { eu4 = druze ck3 = druze }
 link = { eu4 = kharijite ck3 = azariqa ck3 = najdat ck3 = sufri }
+link = { eu4 = sunni ck3 = united_islam } # TFE mod
+link = { eu4 = ibadi ck3 = khawariji } # TFE mod
 # Jainism
 link = { eu4 = jain ck3 = digambara ck3 = svetambara ck3 = yapaniya }
 # Judaism
