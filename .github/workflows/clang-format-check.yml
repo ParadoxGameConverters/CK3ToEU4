@@ -8,7 +8,7 @@ jobs:
       matrix:
         path:
           - 'CK3toEU4/Source'
-          - 'CK3toEU4Tests'
+          - 'CK3ToEU4Tests'
     steps:
     - uses: actions/checkout@v2
     - name: Run clang-format style check for C/C++ programs.
