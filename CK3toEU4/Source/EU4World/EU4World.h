@@ -57,6 +57,7 @@ class World
 	// processing
 	void alterProvinceDevelopment(bool absoluteSwitch);
 	[[nodiscard]] std::tuple<double, double, double> sumBaroniesForDevelopment(const std::map<long long, std::shared_ptr<CK3::Title>>& baronies) const;
+	[[nodiscard]] double calculateProvinceDevFactor(const std::shared_ptr<Province>& province) const;
 
 	void linkProvincesToCountries();
 	void verifyCapitals();

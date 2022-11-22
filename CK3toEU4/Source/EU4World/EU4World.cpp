@@ -726,15 +726,7 @@ void EU4::World::alterProvinceDevelopment(bool absoluteSwitch)
 
 		double modFactor = 1; // used to alter the results based on source province's target province's number.
 		if (absoluteSwitch)
-		{
-			const auto targetProvinces = static_cast<int>(provinceMapper.getEU4ProvinceNumbers(province->getSourceProvince()->getName()).size());
-			if (targetProvinces == 2)
-				modFactor = 0.8;
-			else if (targetProvinces == 3)
-				modFactor = 0.68;
-			else if (targetProvinces > 3)
-				modFactor = 0.6;
-		}
+			modFactor = calculateProvinceDevFactor(province);
 
 		generalDevelopment *= modFactor;
 		totalAdm *= modFactor;
@@ -750,6 +742,56 @@ void EU4::World::alterProvinceDevelopment(bool absoluteSwitch)
 	}
 
 	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK3Dev << " development imported (vanilla had " << totalVanillaDev << ").";
+}
+
+double EU4::World::calculateProvinceDevFactor(const std::shared_ptr<Province>& province) const
+{
+	// algorithm provided by @Clonefusion
+	const auto targetProvinces = static_cast<int>(provinceMapper.getEU4ProvinceNumbers(province->getSourceProvince()->getName()).size());
+	const auto targetDouble = static_cast<double>(targetProvinces);
+	const auto sourceProvinces = static_cast<int>(provinceMapper.getCK3Titles(province->getProvinceID()).size());
+	const auto sourceDouble = static_cast<double>(sourceProvinces);
+
+	double modFactor = 1;
+
+	if (targetDouble > 1 && sourceDouble > 1)
+	{
+		modFactor = 1 / targetDouble;
+		if (targetDouble > sourceDouble)
+		{
+			modFactor *= 1.1;
+			if (targetDouble > sourceDouble * 1.5)
+			{
+				modFactor *= 1.1;
+				if (targetDouble > sourceDouble * 2)
+					modFactor *= 1.1;
+			}
+		}
+		else if (sourceDouble > targetDouble)
+		{
+			modFactor *= 0.9;
+			if (sourceDouble > targetDouble * 1.5)
+			{
+				modFactor *= 0.9;
+				if (sourceDouble > targetDouble * 2)
+					modFactor *= 0.9;
+			}
+		}
+	}
+	else if (targetProvinces == 2)
+		modFactor = 0.8;
+	else if (targetProvinces == 3)
+		modFactor = 0.68;
+	else if (targetProvinces > 3)
+		modFactor = 0.6;
+	else if (sourceProvinces == 2)
+		modFactor = 0.9;
+	else if (sourceProvinces == 3)
+		modFactor = 0.81;
+	else if (sourceProvinces > 3)
+		modFactor = 0.72;
+
+	return modFactor;
 }
 
 std::tuple<double, double, double> EU4::World::sumBaroniesForDevelopment(const std::map<long long, std::shared_ptr<CK3::Title>>& baronies) const
