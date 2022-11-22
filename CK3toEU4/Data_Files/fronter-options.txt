@@ -176,6 +176,27 @@ option = {
 		}
 	}
 }
+
+option = {
+	name = multiprovdevtransfer
+	displayName = MULTIPROV
+	tooltip = MULTIPROVTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = MULTIPROV1
+			tooltip = MULTIPROV1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = MULTIPROV2
+			tooltip = MULTIPROV2TIP
+			default = false
+		}
+	}
+}
+
 option = {
 	name = siberia
 	displayName = GULAG
