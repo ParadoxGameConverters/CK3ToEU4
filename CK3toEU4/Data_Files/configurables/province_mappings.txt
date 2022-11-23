@@ -189,7 +189,7 @@
 	link = { ck3 = 9199 ck3 = 9201 ck3 = 9207 ck3 = 9066 ck3 = 9081 eu4 = 4515 } # Kagar, Cazê, Tongmoin, Coqên, Kyakyaru -> Gyirong
 	link = { ck3 = 9166 ck3 = 9173 ck3 = 9176 ck3 = 9282 ck3 = 9164 eu4 = 2132 } # Tezu, Rima, Golag, Zogang, Roing -> Markam
 	link = { ck3 = 9511 ck3 = 9490 eu4 = 4204 } # Qilin, Yalong -> Anding
-	link = { ck3 = 9272 ck3 = 9268 ck3 = 9271 ck3 = 9277 ck3 = 9287 ck3 = 9290 ck3 = 9235 ck3 = 9169 eu4 = 2130 } # Gongbo, Lhari, Nyingchi, Bomê, Banbar, Dêngqên, Nang, Mainling -> Nyingchi
+	link = { ck3 = 9272 ck3 = 9268 ck3 = 9271 ck3 = 9277 ck3 = 9287 ck3 = 9290 ck3 = 9235 eu4 = 2130 } # Gongbo, Lhari, Nyingchi, Bomê, Banbar, Dêngqên, Nang -> Nyingchi
 	link = { ck3 = 9226 ck3 = 9223 ck3 = 9224 ck3 = 9233 ck3 = 9150 ck3 = 9152 eu4 = 4517 } # Zêtang, Nagarzê, Comai, Gyaca, Cona, Lhünzê -> Nedong
 	link = { ck3 = 9228 ck3 = 9248 ck3 = 9239 ck3 = 9242 eu4 = 677 } # Lhasa, Damxung, Gyama, Lhünzhub -> Lhasa
 	link = { ck3 = 9255 ck3 = 9296 ck3 = 9292 eu4 = 4205 } # Nagqu, Baqên, Sog -> Nagchu
@@ -240,10 +240,10 @@
 	link = { ck3 = 826 eu4 = 2041 } # Manipur -> Manipur
 	link = { ck3 = 9568 eu4 = 581 } # Sagaing -> Sagaing
 	link = { ck3 = 9622 ck3 = 9643 eu4 = 4393 } # Hanlan, Takon -> Tabayin
-	link = { ck3 = 812 eu4 = 571 } # Haruppeswara -> Darrang
-	link = { ck3 = 9160 ck3 = 9157 ck3 = 9154 eu4 = 4440 } # Along, Itanagar, Tawang -> Narayanpur
+	link = { ck3 = 812 ck3 = 9154 eu4 = 571 } # Haruppeswara, Tawang -> Darrang
+	link = { ck3 = 9160 ck3 = 9163 ck3 = 9157 ck3 = 9169 eu4 = 4440 } # Along, Pemako, Itanagar, Mainling -> Narayanpur
 	link = { ck3 = 9091 ck3 = 9092 eu4 = 2069 } # Kumaon, Kali Kumaon -> Kumaon
-	link = { ck3 = 808 ck3 = 9163 eu4 = 2040 eu4 = 566 } # MANY-TO-MANY: Kundina, Pemako -> Sadiya, Assam
+	link = { ck3 = 808 eu4 = 2040 eu4 = 566 } # Kundina -> Sadiya, Assam
 	link = { ck3 = 810 eu4 = 570 } # Charaideo -> Naga
 	link = { ck3 = 821 eu4 = 573 } # Dimapur -> Cachar
 	link = { ck3 = 9624 eu4 = 580 eu4 = 2398 } # Kale -> Kale, Thaungdut
@@ -262,7 +262,7 @@
 	link = { ck3 = 9585 eu4 = 2402 } # Sandoway -> Sandoway
 	link = { ck3 = 9576 eu4 = 579 } # Vaisali -> Mrauk U
 	link = { ck3 = 9581 ck3 = 9583 eu4 = 568 } # Ramu, Thabeik Taung -> Chittagong
-	link = { ck3 = 859 eu4 = 4477 } # Vijayapura -> Satgaon
+	link = { ck3 = 859 ck3 = 866 eu4 = 4477 } # Vijayapura, Mallabhum -> Satgaon
 	link = { ck3 = 857 ck3 = 842 eu4 = 4476 } # Saptagrama, Gauda -> Nadia
 	link = { ck3 = 855 eu4 = 4475 } # Nabadwipa -> Fathabad
 	link = { ck3 = 837 ck3 = 848 eu4 = 4479 } # Laksmanavati, Madhupur -> Goraghat
@@ -281,16 +281,15 @@
 	link = { ck3 = 906 eu4 = 2098 } # Jharkand -> Surguja
 	link = { ck3 = 911 eu4 = 4470 eu4 = 560 } # Munda -> Soumelpur, Jharkhand
 	link = { ck3 = 1249 eu4 = 553 } # Sambalpur -> Sambalpur
-	link = { ck3 = 866 eu4 = 4471 } # Mallabhum -> Bishnupur
-	link = { ck3 = 1247 eu4 = 4450 } # Khijjingakota -> Mayurbhanj
+	link = { ck3 = 1156 eu4 = 4450 } # Kodalaka Mandala -> Mayurbhanj
+	link = { ck3 = 1247 eu4 = 4471 } # Khijjingakota -> Bishnupur
 	link = { ck3 = 844 ck3 = 910 eu4 = 2081 } # Radha, Rajrappa -> Lakhnor
 	link = { ck3 = 912 eu4 = 2096 } # Damin-i-Koh -> Damin
 	link = { ck3 = 1302 eu4 = 4462 } # Chitrakut -> Vagad
-	link = { ck3 = 1148 ck3 = 1345 eu4 = 4480 } # Dasapura, Medapata -> Mahikantha
+	link = { ck3 = 1345 ck3 = 1148 eu4 = 4480 } # Medapata, Dasapura -> Mahikantha
 	link = { ck3 = 1354 eu4 = 514 } # Nagauda -> Marwar
 	link = { ck3 = 1130 ck3 = 1176 eu4 = 2067 } # Mandavyapura, Medantaka -> Gorwar
-	link = { ck3 = 1353 eu4 = 519 } # Vairata -> Dhundar
-	link = { ck3 = 1346 eu4 = 2087 } # Ajayameru -> Ajmer
+	link = { ck3 = 1346 ck3 = 1353 eu4 = 2087 } # Ajayameru, Vairata -> Ajmer
 	link = { ck3 = 7947 eu4 = 2077 } # Allai -> Margalla
 	link = { ck3 = 1180 eu4 = 578 } # Udabhanda -> Roh
 	link = { ck3 = 3342 eu4 = 2058 } # Naddula -> Mewar
@@ -302,8 +301,8 @@
 	link = { ck3 = 1172 eu4 = 559 eu4 = 525 } # Gwalior -> Jhansi, Gird
 	link = { ck3 = 875 eu4 = 558 } # Sasaram -> Pataliputra
 	link = { ck3 = 1282 eu4 = 555 } # Manikpur -> Jaunpur
-	link = { ck3 = 1167 eu4 = 523 } # Lakhnau -> Lucknow
-	link = { ck3 = 1422 eu4 = 4494 eu4 = 4495 } # Naimisa -> Khairabad, Feyzabad
+	link = { ck3 = 1167 eu4 = 4495 eu4 = 523 } # Lakhnau -> Feyzabad, Lucknow
+	link = { ck3 = 1422 eu4 = 4494 } # Naimisa -> Khairabad
 	link = { ck3 = 9087 eu4 = 511 eu4 = 4493 } # Garwhal -> Garhwal, Sirmur
 	link = { ck3 = 9115 eu4 = 557 eu4 = 4484 } # Kathmandu -> Katmandu, Makwanpur
 	link = { ck3 = 9140 ck3 = 9145 ck3 = 9143 ck3 = 9147 eu4 = 4481 } # Punakha, Bumthang, Trongsa, Kurmaed -> Punakha
@@ -324,19 +323,17 @@
 	link = { ck3 = 840 ck3 = 846 eu4 = 2045 } # Kotivarsa, Pundravardhana -> Rangpur
 	link = { ck3 = 9124 ck3 = 9654 eu4 = 4486 } # Ilam, Bangaon -> Purnia
 	link = { ck3 = 877 eu4 = 2047 } # Mithila -> Tirhut
-	link = { ck3 = 881 eu4 = 4487 } # Kusinagara -> Saran
-	link = { ck3 = 880 eu4 = 4488 } # Simaramapura -> Champaran
+	link = { ck3 = 880 ck3 = 881 eu4 = 4488 } # Simaramapura, Kusinagara -> Champaran
 	link = { ck3 = 9107 eu4 = 4491 } # Dang -> Dang
 	link = { ck3 = 1250 eu4 = 2055 } # Ayodhya -> Gorakhpur
-	link = { ck3 = 883 eu4 = 4490 } # Jaunpur -> Ghazipur
+	link = { ck3 = 883 eu4 = 4490 eu4 = 4487 } # Jaunpur -> Ghazipur, Saran
 	link = { ck3 = 885 eu4 = 2095 } # Varanasi -> Varanasi
 	link = { ck3 = 1113 eu4 = 4467 } # Prayaga -> Kalinjar
 	link = { ck3 = 905 eu4 = 2097 } # Chunar -> Baghelkhand
 	link = { ck3 = 1278 eu4 = 4468 } # Gurgi -> Bandogarh
 	link = { ck3 = 925 ck3 = 1171 eu4 = 550 } # Bandhugadha, Kalanjara -> Mahakoshal
 	link = { ck3 = 1301 eu4 = 4466 } # Mahoba -> Mahoba
-	link = { ck3 = 1189 eu4 = 4453 eu4 = 4434 } # Thalner -> Thalner, Dharangaon
-	link = { ck3 = 1289 ck3 = 1149 eu4 = 2056 } # Dadhipadra, Dhara -> Rewakantha
+	link = { ck3 = 1147 ck3 = 1289 ck3 = 1149 eu4 = 2056 } # Mandapika, Dadhipadra, Dhara -> Rewakantha
 	link = { ck3 = 1184 eu4 = 526 } # Asirgarh -> Mandu
 	link = { ck3 = 917 eu4 = 2057 } # Chauragarh -> Bhilsa
 	link = { ck3 = 1170 eu4 = 4461 } # Vidisa -> Ujjain
@@ -346,57 +343,53 @@
 	link = { ck3 = 1137 eu4 = 4503 } # Mansura -> Mansura
 	link = { ck3 = 1331 eu4 = 4504 eu4 = 2088 } # Sonda -> Nasirpur, Umarkot
 	link = { ck3 = 1207 eu4 = 4425 } # Nallamala -> Kondavidu
-	link = { ck3 = 1144 eu4 = 2037 } # Orangallu -> Warangal
-	link = { ck3 = 1208 eu4 = 4439 } # Mudigonda -> Khamammet
-	link = { ck3 = 7824 eu4 = 2027 } # Muluvagil -> Arcot
-	link = { ck3 = 1120 eu4 = 4414 eu4 = 1947 } # Tagadur -> Salem, Gingee
+	link = { ck3 = 1208 eu4 = 2037 eu4 = 4439 } # Mudigonda -> Warangal, Khamammet
+	link = { ck3 = 1120 ck3 = 7824 eu4 = 4414 eu4 = 1947 } # MANY-TO-MANY: Tagadur, Muluvagil -> Salem, Gingee
 	link = { ck3 = 7908 eu4 = 2050 } # Katukuru -> Chanda
 	link = { ck3 = 1252 eu4 = 547 } # Barasuru -> Bastar
 	link = { ck3 = 1198 ck3 = 1416 eu4 = 4431 } # Vatapi, Kolhapur -> Kolhapur
 	link = { ck3 = 1140 ck3 = 7874 eu4 = 2033 } # Vaijayanti, Koppam -> Savanur
-	link = { ck3 = 7855 eu4 = 541 eu4 = 4424 } # Kampili -> Vijayanagar, Adavani
+	link = { ck3 = 7855 eu4 = 541 } # Kampili -> Vijayanagar
 	link = { ck3 = 1121 eu4 = 4426 } # Uchangidurga -> Chitradurg
 	link = { ck3 = 7850 eu4 = 2032 } # Banavasi -> Malenadu
+	link = { ck3 = 1118 ck3 = 7860 eu4 = 4422 } # Manyapura, Parivi -> Sira
 	link = { ck3 = 1197 eu4 = 4421 } # Mahishaka -> Seringapatam
-	link = { ck3 = 1118 eu4 = 2031 } # Manyapura -> Morasanadu
-	link = { ck3 = 7860 eu4 = 4422 } # Parivi -> Sira
 	link = { ck3 = 1216 eu4 = 533 } # Talakad -> Mysore
 	link = { ck3 = 1116 eu4 = 538 eu4 = 4412 } # Kongu -> Kongu, Dindigul
-	link = { ck3 = 1199 ck3 = 7815 eu4 = 1949 } # Penugonda, Renandu -> Penukonda
-	link = { ck3 = 1203 eu4 = 4428 } # Idatarainadu -> Mudgal
+	link = { ck3 = 7815 eu4 = 1949 } # Renandu -> Penukonda
+	link = { ck3 = 1203 eu4 = 4424 } # Idatarainadu -> Adavani
 	link = { ck3 = 7854 eu4 = 4423 } # Gutti -> Gutti
-	link = { ck3 = 7820 eu4 = 4420 } # Candragiri -> Chandragiri
+	link = { ck3 = 1199 eu4 = 2031 eu4 = 4420 } # Penugonda -> Morasanadu, Chandragiri
+	link = { ck3 = 7820 eu4 = 2027 } # Candragiri -> Arcot
 	link = { ck3 = 7840 eu4 = 2090 eu4 = 2083 } # Cumbum -> Kurnool, Udayagiri
-	link = { ck3 = 1211 eu4 = 532 } # Pannagallu -> Raichur
+	link = { ck3 = 1211 eu4 = 532 eu4 = 4428 } # Pannagallu -> Raichur, Mudgal
 	link = { ck3 = 1265 eu4 = 569 } # Sagar -> Bijapur
 	link = { ck3 = 7879 eu4 = 2034 } # Karahataka -> Pune
 	link = { ck3 = 1206 eu4 = 1946 } # Taradavadi -> Satara
 	link = { ck3 = 1213 eu4 = 4433 eu4 = 4432 } # Kondana -> Nasik, Junir
 	link = { ck3 = 1142 eu4 = 4437 eu4 = 4438 } # Mulaka -> Paithre, Nander
-	link = { ck3 = 1145 eu4 = 545 } # Devagiri -> Daulatabad
-	link = { ck3 = 1259 eu4 = 548 eu4 = 4442 eu4 = 4443 } # Vatsagulma -> Illichpur, Washim, Karanja
-	link = { ck3 = 1187 eu4 = 527 } # Burhanpur -> Burhanpur
-	link = { ck3 = 1147 eu4 = 2036 } # Mandapika -> Baglana
+	link = { ck3 = 1145 eu4 = 545 eu4 = 4442 } # Devagiri -> Daulatabad, Washim
+	link = { ck3 = 1259 eu4 = 527 eu4 = 548 } # Vatsagulma -> Burhanpur, Illichpur
+	link = { ck3 = 1187 eu4 = 4453 eu4 = 4434 } # Burhanpur -> Thalner, Dharangaon
+	link = { ck3 = 1189 ck3 = 1260 eu4 = 2036 } # Thalner, Trikuta -> Baglana
 	link = { ck3 = 1146 eu4 = 4435 } # Naldurg -> Sholhapur
-	link = { ck3 = 1260 eu4 = 544 } # Trikuta -> Ahmadnagar
-	link = { ck3 = 1212 eu4 = 1948 } # Ashmaka -> Bidar
+	link = { ck3 = 1212 eu4 = 1948 eu4 = 544 } # Ashmaka -> Bidar, Ahmadnagar
 	link = { ck3 = 1143 eu4 = 2035 } # Kalyani -> Gulbarga
-	link = { ck3 = 1157 eu4 = 542 } # Vemulavada -> Golconda
+	link = { ck3 = 1144 ck3 = 1157 eu4 = 542 } # Orangallu, Vemulavada -> Golconda
 	link = { ck3 = 1209 eu4 = 4436 } # Racakonda -> Devarakonda
 	link = { ck3 = 1297 eu4 = 504 } # Debul -> Thatta
 	link = { ck3 = 1340 ck3 = 1375 ck3 = 4517 eu4 = 4509 } # Karor, Kafirkot, Kalat -> Karor
-	link = { ck3 = 1179 eu4 = 2076 } # Sakala -> Sialkot
-	link = { ck3 = 1161 ck3 = 9024 eu4 = 508 eu4 = 4449 } # MANY-TO-MANY: Kasmira, Astore -> Kashmir, Jammu
-	link = { ck3 = 3434 ck3 = 9044 ck3 = 9045 eu4 = 509 } # Kangra, Kamru, Dhankar -> Kangra
-	link = { ck3 = 1193 eu4 = 2075 } # Trigarta -> Doaba
+	link = { ck3 = 1179 ck3 = 9045 eu4 = 4449 } # Sakala, Dhankar -> Jammu
+	link = { ck3 = 1161 ck3 = 9024 eu4 = 508 } # Kasmira, Astore -> Kashmir
+	link = { ck3 = 9044 eu4 = 509 } # Kamru -> Kangra
+	link = { ck3 = 1193 ck3 = 3434 eu4 = 2075 } # Trigarta, Kangra -> Doaba
 	link = { ck3 = 1173 eu4 = 4498 eu4 = 4499 } # Sambhal -> Sambhal, Bareily
 	link = { ck3 = 1366 eu4 = 2065 } # Hisar -> Bhattiana
-	link = { ck3 = 3968 eu4 = 520 } # Sakarai -> Mewat
-	link = { ck3 = 1368 eu4 = 2060 } # Hastinapura -> Upper Doab
-	link = { ck3 = 1365 eu4 = 522 } # Delhi -> Delhi
+	link = { ck3 = 3968 eu4 = 519 eu4 = 520 } # Sakarai -> Dhundar, Mewat
+	link = { ck3 = 1365 ck3 = 1368 eu4 = 522 } # Delhi, Hastinapura -> Delhi
 	link = { ck3 = 1359 eu4 = 4500 } # Mathura -> Bharatpur
 	link = { ck3 = 1141 eu4 = 524 } # Kol -> Central Doab
-	link = { ck3 = 1168 eu4 = 2061 } # Katehar -> Katehar
+	link = { ck3 = 1168 eu4 = 2060 eu4 = 2061 } # Katehar -> Upper Doab, Katehar
 	link = { ck3 = 1350 eu4 = 2066 eu4 = 4502 eu4 = 2064 } # Reni -> Nagaur, Merta, Shekhawati
 	link = { ck3 = 1352 eu4 = 4507 } # Sarasvati -> Churu
 	link = { ck3 = 1364 eu4 = 4463 } # Tribandapura -> Bhatnair
@@ -406,7 +399,7 @@
 	link = { ck3 = 1337 eu4 = 2086 } # Uch -> Cholistan
 	link = { ck3 = 1338 eu4 = 506 } # Multan -> Multan
 	link = { ck3 = 1361 eu4 = 4510 } # Shorkot -> Shorkot
-	link = { ck3 = 1362 eu4 = 507 } # Lahur -> Lahore
+	link = { ck3 = 1362 eu4 = 507 eu4 = 2076 } # Lahur -> Lahore, Sialkot
 	link = { ck3 = 1192 ck3 = 1190 eu4 = 4511 } # Bhera, Gurjaratra -> Bhera
 	link = { ck3 = 1191 ck3 = 1341 ck3 = 4521 eu4 = 2078 } # Bannu, Nandana, Urgun -> Bannu
 	link = { ck3 = 4473 ck3 = 4478 eu4 = 2231 } # Khawr, Turan -> Bela
@@ -418,12 +411,12 @@
 	link = { ck3 = 927 eu4 = 552 } # Kataka -> Cuttack
 	link = { ck3 = 1225 eu4 = 4441 } # Puri -> Ganjam
 	link = { ck3 = 1159 eu4 = 4460 } # Ramagiri -> Handia
-	link = { ck3 = 1229 ck3 = 1156 eu4 = 2049 } # Khinjali Mandala, Kodalaka Mandala -> Khurda
+	link = { ck3 = 1229 eu4 = 2049 } # Khinjali Mandala -> Khurda
 	link = { ck3 = 1230 eu4 = 4451 } # Suvarnapura -> Sonpur
 	link = { ck3 = 1155 eu4 = 4447 } # Sripuri -> Patna
 	link = { ck3 = 1160 ck3 = 1270 eu4 = 2082 } # Rayapura, Kiranapura -> Raipur
 	link = { ck3 = 1269 ck3 = 1254 eu4 = 546 } # Canda, Vairagara -> East Berar
-	link = { ck3 = 920 eu4 = 2092 } # Acalapura -> Mahadeo
+	link = { ck3 = 920 eu4 = 2092 eu4 = 4443 } # Acalapura -> Mahadeo, Karanja
 	link = { ck3 = 7920 eu4 = 4444 eu4 = 2028 } # Sirpur -> Manidurg, Mahur
 	link = { ck3 = 1227 eu4 = 4446 eu4 = 2048 eu4 = 4445 } # Cakrakuta -> Kalahandi, Jeypore, Kanker
 	link = { ck3 = 1228 eu4 = 4448 } # Swetaka Mandala -> Parlakhimedi
@@ -444,11 +437,10 @@
 	link = { ck3 = 1125 eu4 = 529 eu4 = 2089 } # Surparaka -> Thana, Chaul
 	link = { ck3 = 1126 eu4 = 4430 } # Daman -> Daman
 	link = { ck3 = 1127 eu4 = 4512 eu4 = 517 } # Navasarika -> Bharuch, Surat
-	link = { ck3 = 1290 eu4 = 4457 } # Khetaka -> Khambhat
-	link = { ck3 = 1291 eu4 = 2054 } # Mohadavasaka -> Ahmadabad
+	link = { ck3 = 1290 ck3 = 1291 eu4 = 2054 } # Khetaka, Mohadavasaka -> Ahmadabad
 	link = { ck3 = 1292 eu4 = 4456 } # Sarasvata Mandala -> Jhalavad
 	link = { ck3 = 1267 eu4 = 521 eu4 = 515 } # Vardhamana -> Rajkot, Girnar
-	link = { ck3 = 1135 eu4 = 2051 } # Valabhi -> Gohilvad
+	link = { ck3 = 1135 eu4 = 2051 eu4 = 4457 } # Valabhi -> Gohilvad, Khambhat
 	link = { ck3 = 1136 ck3 = 1268 eu4 = 2052 } # Dvaraka, Dhamalpur -> Halar
 	link = { ck3 = 1134 eu4 = 4454 } # Bhumilka -> Porbandar
 	link = { ck3 = 1266 eu4 = 4455 } # Somnath -> Diu
@@ -462,28 +454,28 @@
 	link = { ck3 = 3278 ck3 = 3282 eu4 = 2099 } # Malaya, Pihiti -> Kandy
 	link = { ck3 = 3271 eu4 = 572 } # Dakhina Desa -> Kotte
 	link = { ck3 = 1360 eu4 = 1248 } # Maldives -> Maldives
-	link = { comment = "# Andalusia" }
-	link = { ck3 = 753 ck3 = 5654 eu4 = 326 } # Galatia, Galatia Salutaris -> Ankara
+	link = { comment = "# Anatolia" }
+	link = { ck3 = 753 eu4 = 326 } # Galatia -> Ankara
 	link = { ck3 = 5657 ck3 = 5651 eu4 = 4311 } # Philomelion, Pacatiana -> Karahisar
 	link = { ck3 = 749 ck3 = 742 eu4 = 4312 } # Phrygia, Prusa -> Sultanönü
 	link = { ck3 = 707 ck3 = 4892 eu4 = 2303 } # Melitene, Samosata -> Malatya
-	link = { ck3 = 4890 ck3 = 735 eu4 = 332 } # Marash, Ablastha -> Marash
-	link = { ck3 = 5616 ck3 = 736 eu4 = 2301 } # Kyzistra, Lycandus -> Kayseri
+	link = { ck3 = 4890 eu4 = 332 } # Marash -> Marash
+	link = { ck3 = 5616 eu4 = 2301 } # Kyzistra -> Kayseri
 	link = { ck3 = 760 ck3 = 5632 eu4 = 4307 } # Cappadocia, Lower Galatia -> Aksaray
-	link = { ck3 = 5663 ck3 = 759 eu4 = 323 } # Selge, Lycaonia -> Konya
+	link = { ck3 = 759 ck3 = 5654 eu4 = 323 } # Lycaonia, Galatia Salutaris -> Konya
 	link = { ck3 = 5672 eu4 = 324 } # Isauria -> Karaman
-	link = { ck3 = 754 eu4 = 1848 } # Pisidia -> Hamid
+	link = { ck3 = 5663 ck3 = 754 eu4 = 1848 } # Selge, Pisidia -> Hamid
 	link = { ck3 = 748 eu4 = 4308 } # Chonae -> Denizli
 	link = { ck3 = 5542 eu4 = 4309 } # Lydia -> Aydin
-	link = { ck3 = 761 ck3 = 4895 eu4 = 327 } # Cilicia, Tall Hamid -> Adana
-	link = { ck3 = 758 ck3 = 5637 eu4 = 2302 } # Seleucia, Pamphylia -> Içel
-	link = { ck3 = 755 eu4 = 2298 } # Lycia -> Tekke
+	link = { ck3 = 761 ck3 = 4895 ck3 = 736 eu4 = 327 } # Cilicia, Tall Hamid, Lycandus -> Adana
+	link = { ck3 = 758 eu4 = 2302 } # Seleucia -> Içel
+	link = { ck3 = 755 ck3 = 5637 eu4 = 2298 } # Lycia, Pamphylia -> Tekke
 	link = { ck3 = 5647 eu4 = 319 } # Caria -> Mentese
 	link = { ck3 = 745 eu4 = 318 } # Ionia -> Sugla
-	link = { ck3 = 5551 ck3 = 5536 eu4 = 322 } # Mysia, Hadrianeia -> Kütahya
-	link = { ck3 = 5529 ck3 = 5535 eu4 = 2297 } # Aeolis, Thyatira -> Saruhan
+	link = { ck3 = 5536 ck3 = 5535 eu4 = 322 } # Hadrianeia, Thyatira -> Kütahya
+	link = { ck3 = 5529 eu4 = 2297 } # Aeolis -> Saruhan
 	link = { ck3 = 744 eu4 = 2296 } # Abydos -> Karasi
-	link = { ck3 = 743 eu4 = 317 } # Nikaea -> Hüdavendigar
+	link = { ck3 = 5551 ck3 = 743 eu4 = 317 } # Mysia, Nikaea -> Hüdavendigar
 	link = { ck3 = 5720 eu4 = 4302 } # Bagrewand -> Bayazid
 	link = { ck3 = 4861 eu4 = 2306 } # Bakriya -> Mush
 	link = { ck3 = 702 eu4 = 2305 } # Mesopotamia -> Erzincan
@@ -497,15 +489,15 @@
 	link = { ck3 = 705 eu4 = 2304 } # Cerasus -> Canik
 	link = { ck3 = 739 ck3 = 738 eu4 = 328 } # Sinope, Helenopontus -> Sinop
 	link = { ck3 = 5599 ck3 = 5702 eu4 = 329 } # Sebasteia, Satala -> Sivas
-	link = { ck3 = 5604 eu4 = 4310 } # Azysia -> Divrigi
+	link = { ck3 = 5604 ck3 = 735 eu4 = 4310 } # Azysia, Ablastha -> Divrigi
 	link = { ck3 = 706 eu4 = 4315 } # Colonea -> Tokat
 	link = { ck3 = 752 eu4 = 4314 } # Charsianon -> Kirshehir
 	link = { ck3 = 737 eu4 = 2300 } # Kaisereia -> Bozok
 	link = { ck3 = 5593 ck3 = 5597 eu4 = 1846 } # Euchaita, Zela -> Amasya
 	link = { ck3 = 5584 eu4 = 4313 } # Pompeiopolis -> Kangiri
 	link = { ck3 = 751 eu4 = 325 } # Paphlagonia -> Kastamonu
-	link = { ck3 = 740 ck3 = 5567 ck3 = 5574 eu4 = 2299 } # Honorias, Tarsos, Hadrianopolis -> Bolu
-	link = { ck3 = 741 eu4 = 316 } # Bithynia -> Kocaeli
+	link = { ck3 = 740 ck3 = 5574 eu4 = 2299 } # Honorias, Hadrianopolis -> Bolu
+	link = { ck3 = 741 ck3 = 5567 eu4 = 316 } # Bithynia, Tarsos -> Kocaeli
 	link = { ck3 = 756 ck3 = 757 eu4 = 321 } # Nicosia, Famagusta -> Cyprus
 	link = { comment = "# Arabia, Levant" }
 	link = { ck3 = 4328 eu4 = 414 } # Hamadan -> Hamadan
@@ -516,7 +508,8 @@
 	link = { ck3 = 5921 ck3 = 5922 eu4 = 1855 } # Acre, Tiberias -> Sidon
 	link = { ck3 = 5909 ck3 = 5903 eu4 = 2313 } # Antiocheia, Alexandretta -> Antioch
 	link = { ck3 = 5916 ck3 = 5919 eu4 = 378 } # Tripoli, Beirut -> Tarabulus
-	link = { ck3 = 5961 eu4 = 1854 } # Jaffa -> Jaffa
+	link = { ck3 = 5961 ck3 = 5967 eu4 = 1854 } # Jaffa, Ghazza -> Jaffa
+	link = { ck3 = 5963 eu4 = 379 } # Jerusalem -> Jerusalem
 	link = { ck3 = 5923 ck3 = 5925 eu4 = 382 } # Damascus, Baalbek -> Damascus
 	link = { ck3 = 5906 ck3 = 5941 eu4 = 377 } # Aleppo, Suriya -> Aleppo
 	link = { ck3 = 5917 ck3 = 5914 eu4 = 4297 } # Homs, Shayzar -> Homs
@@ -560,12 +553,11 @@
 	link = { ck3 = 4114 eu4 = 2210 } # Nihawand -> Kirmanshah
 	link = { ck3 = 6272 eu4 = 390 eu4 = 4282 } # San'a' -> Sana'a, Sahda
 	link = { ck3 = 6232 eu4 = 2335 } # Asir -> Dawasir
-	link = { ck3 = 5963 eu4 = 379 } # Jerusalem -> Jerusalem
 	link = { ck3 = 6257 eu4 = 4274 } # Surrah -> Sudayr
 	link = { ck3 = 6261 ck3 = 6171 eu4 = 2338 } # Qasim, Shaqiq -> Hafar
 	link = { ck3 = 6206 eu4 = 2337 } # Sharaf -> Buraydah
 	link = { ck3 = 6172 eu4 = 393 } # Ha'il -> Jabal Shammar
-	link = { ck3 = 6176 ck3 = 6168 ck3 = 5989 eu4 = 4272 } # Al-Jawf, Tha'labiya, Sirhan -> Al Jawf
+	link = { ck3 = 5989 ck3 = 6176 ck3 = 6168 eu4 = 4272 } # Sirhan, Al-Jawf, Tha'labiya -> Al Jawf
 	link = { ck3 = 5978 ck3 = 5981 eu4 = 380 } # Kerak, Ma'ab -> Al Karak
 	link = { ck3 = 6254 eu4 = 392 } # Al-'Arid -> Al-Arid
 	link = { ck3 = 6228 eu4 = 4273 } # Subay -> Al-Kariatan
@@ -623,8 +615,7 @@
 	link = { ck3 = 8363 eu4 = 2762 } # Damot -> Damot
 	link = { ck3 = 8377 eu4 = 2759 } # Wellega -> Gambela
 	link = { ck3 = 8362 eu4 = 2758 } # Innarya -> Illubabor
-	link = { ck3 = 8379 eu4 = 2756 } # Burji -> Welayta
-	link = { ck3 = 8359 eu4 = 4158 } # Dara -> Janjiro
+	link = { ck3 = 8359 ck3 = 8379 eu4 = 4158 eu4 = 2756 } # MANY-TO-MANY: Dara, Burji -> Janjiro, Welayta
 	link = { ck3 = 8435 ck3 = 8358 ck3 = 8360 eu4 = 2757 } # Kaffa, Welamo, Gamo -> Kaffa
 	link = { ck3 = 6429 ck3 = 6390 eu4 = 1216 eu4 = 2800 } # MANY-TO-MANY: Tagali, Ushara -> Tegali, Waylula
 	link = { ck3 = 6400 eu4 = 2799 } # Sennar -> Sennar
@@ -768,21 +759,21 @@
 	link = { ck3 = 6797 ck3 = 6782 ck3 = 6480 eu4 = 1112 } # Dhraina, Takrur, Amatlus -> Trarza
 	link = { comment = "# Northern Africa" }
 	link = { ck3 = 4727 ck3 = 6473 ck3 = 6471 eu4 = 347 } # Ifni, Tiris, Zammour -> Ifni
-	link = { ck3 = 4674 eu4 = 2465 } # Wajda -> Oujda
 	link = { ck3 = 4655 eu4 = 2462 } # Yalala -> Ouarsenis
 	link = { ck3 = 4658 eu4 = 2463 } # Tahert -> Kasdir
+	link = { ck3 = 4645 eu4 = 2459 } # Ashir -> Titteri
 	link = { ck3 = 6469 ck3 = 4737 ck3 = 4612 eu4 = 2460 } # Saoura, Sijilmasa, Touat -> Saoura
-	link = { ck3 = 4749 eu4 = 346 } # Figuig -> Tafilalt
+	link = { ck3 = 4739 eu4 = 346 } # Ziz -> Tafilalt
 	link = { ck3 = 4611 eu4 = 2472 } # Wargla -> Ouargla
 	link = { ck3 = 4608 eu4 = 2456 } # Arigh -> Touggourt
 	link = { ck3 = 4616 eu4 = 2457 } # Ghardaia -> Mzab
 	link = { ck3 = 4618 eu4 = 350 } # Laghwat -> Laghouat
-	link = { ck3 = 4645 eu4 = 2459 } # Ashir -> Titteri
 	link = { ck3 = 4641 eu4 = 2458 } # Hodna -> Hodna
-	link = { ck3 = 4621 eu4 = 351 } # Biskra -> Biskra
-	link = { ck3 = 4598 ck3 = 4589 ck3 = 4607 eu4 = 2454 } # West Qamuda, Medjerda, Tabassa -> Kef
-	link = { ck3 = 4739 ck3 = 4743 ck3 = 4707 eu4 = 349 } # Ziz, Muluya, Tadla -> Figuig
-	link = { ck3 = 4620 ck3 = 4627 eu4 = 340 } # Constantine, Bilizma -> Constantine
+	link = { ck3 = 4621 ck3 = 4627 eu4 = 351 } # Biskra, Bilizma -> Biskra
+	link = { ck3 = 4598 ck3 = 4607 eu4 = 2454 } # West Qamuda, Tabassa -> Kef
+	link = { ck3 = 4749 eu4 = 349 } # Figuig -> Figuig
+	link = { ck3 = 4620 eu4 = 340 } # Constantine -> Constantine
+	link = { ck3 = 4588 eu4 = 1882 } # Annaba -> Annaba
 	link = { ck3 = 6089 eu4 = 2318 } # Bahriya -> Bahiriya
 	link = { ck3 = 6088 ck3 = 6085 eu4 = 4323 } # Farafra, Dakhla -> Farafreh
 	link = { ck3 = 6083 eu4 = 1233 } # Kharga -> Kharga
@@ -803,7 +794,7 @@
 	link = { ck3 = 6059 eu4 = 359 } # Fayyum -> Fayyum
 	link = { ck3 = 6056 eu4 = 4317 } # Giza -> Buhaira
 	link = { ck3 = 6039 eu4 = 361 eu4 = 2315 } # Cairo -> Cairo, Suez
-	link = { ck3 = 5970 ck3 = 5967 eu4 = 364 } # Farama, Ghazza -> Gaza
+	link = { ck3 = 5970 eu4 = 364 } # Farama -> Gaza
 	link = { ck3 = 6032 ck3 = 6030 eu4 = 365 } # Sinai, Firaun -> Sinai
 	link = { ck3 = 6040 eu4 = 4316 } # Sharkiya -> Sharqiya
 	link = { ck3 = 6043 eu4 = 363 } # Damietta -> Damietta
@@ -845,22 +836,22 @@
 	link = { ck3 = 4575 ck3 = 4573 eu4 = 2453 } # Sfax, Gabes -> Sfax
 	link = { ck3 = 4592 eu4 = 4566 } # Kairwan -> Kairwan
 	link = { ck3 = 4578 eu4 = 2473 } # Mahdiya -> Sousse
-	link = { ck3 = 4663 eu4 = 336 } # Tlemcen -> Tlemcen
 	link = { ck3 = 4735 ck3 = 4733 ck3 = 6470 eu4 = 2466 } # Draa, Tudgha, Tindouf -> Draa
 	link = { ck3 = 4724 eu4 = 348 eu4 = 2464 } # Sous -> Sus, Ouarzazate
 	link = { ck3 = 4713 ck3 = 4715 eu4 = 344 eu4 = 4568 } # MANY-TO-MANY: Marrakesh, Tinmallal -> Marrakech, Demnate
-	link = { ck3 = 4706 eu4 = 2468 } # Fazaz -> Tadla
-	link = { ck3 = 4693 eu4 = 2467 } # Meknes -> Meknes
+	link = { ck3 = 4706 ck3 = 4707 eu4 = 2468 } # Fazaz, Tadla -> Tadla
+	link = { ck3 = 4693 ck3 = 4743 eu4 = 2467 } # Meknes, Muluya -> Meknes
 	link = { ck3 = 4723 eu4 = 1110 } # Agadir -> Agadir
 	link = { ck3 = 4720 eu4 = 345 eu4 = 2470 } # Asfi -> Abda, Haha
 	link = { ck3 = 4702 eu4 = 4564 eu4 = 2469 } # Tamasna -> Anfa, Dukkala
 	link = { ck3 = 4687 eu4 = 4563 eu4 = 342 } # Gharb -> Salé, Gharb
 	link = { ck3 = 4648 eu4 = 338 } # Algier -> Mitidja
 	link = { ck3 = 4636 ck3 = 4635 eu4 = 339 } # Bejaia, Satif -> Kabylia
-	link = { ck3 = 4588 eu4 = 1882 } # Annaba -> Annaba
-	link = { ck3 = 4585 eu4 = 2455 } # Satfura -> Bizerte
+	link = { ck3 = 4585 ck3 = 4589 eu4 = 2455 } # Satfura, Medjerda -> Bizerte
 	link = { ck3 = 4581 eu4 = 341 } # Tunis -> Tunis
 	link = { ck3 = 4652 eu4 = 2461 } # Tanas -> Dahra
+	link = { ck3 = 4663 eu4 = 336 } # Tlemcen -> Tlemcen
+	link = { ck3 = 4674 eu4 = 2465 } # Wajda -> Oujda
 	link = { ck3 = 4664 eu4 = 337 } # Orania -> Oran
 	link = { ck3 = 4668 eu4 = 4562 } # Hunyan -> Mers el Kebir
 	link = { ck3 = 4678 eu4 = 335 } # Melilla -> Melilla
@@ -873,11 +864,10 @@
 	link = { comment = "# # Europe" }
 	link = { comment = "# Mother Russia" }
 	link = { ck3 = 616 eu4 = 473 } # Pecheneg -> Samara
-	link = { ck3 = 5383 eu4 = 2423 } # Saran -> Alatyr
+	link = { ck3 = 5383 ck3 = 5357 eu4 = 2423 } # Saran, Kozlov -> Alatyr
 	link = { ck3 = 5388 eu4 = 304 } # Durovka -> Penza
 	link = { ck3 = 5377 eu4 = 2415 } # Balachev -> Etkara
 	link = { ck3 = 5410 ck3 = 5390 ck3 = 592 eu4 = 303 } # Atkara, Medveditsa, Sar Atau -> Saratov
-	link = { ck3 = 5357 eu4 = 1778 } # Kozlov -> Kasimov
 	link = { ck3 = 566 eu4 = 2408 } # Oskol -> Yelets
 	link = { ck3 = 5350 ck3 = 5371 eu4 = 299 } # Voronezh, Karatayak -> Voronezh
 	link = { ck3 = 5353 eu4 = 302 } # Tambov -> Tambov
@@ -903,14 +893,19 @@
 	link = { ck3 = 584 eu4 = 306 } # Obran Osh -> Nizhny Novgorod
 	link = { ck3 = 5143 eu4 = 311 } # Rusa -> Kholm
 	link = { ck3 = 5137 eu4 = 310 eu4 = 1961 } # Novgorod -> Novgorod, Ladoga
+	link = { ck3 = 5146 eu4 = 274 } # Pskov -> Pskov
+	link = { ck3 = 167 eu4 = 33 eu4 = 34 } # Vodi -> Neva, Ingermanland
+	link = { ck3 = 5150 eu4 = 1960 } # Sebezh -> Ostrov
 	link = { ck3 = 571 eu4 = 308 eu4 = 4250 } # Yaroslavl -> Yaroslavl, Mologa
+	link = { ck3 = 5173 eu4 = 294 eu4 = 4249 eu4 = 4248 } # Tver -> Tver, Zubtsov, Kashin
 	link = { ck3 = 5835 eu4 = 4129 } # Choklema -> Ust-Vym
 	link = { ck3 = 5838 eu4 = 1755 eu4 = 4256 } # Ustyug -> Ustyug, Solvychegodsk
-	link = { ck3 = 5164 eu4 = 4260 eu4 = 1959 eu4 = 1752 } # Valdai -> Vyshny Volochyok, Torzhok, Rzhev
-	link = { ck3 = 5173 eu4 = 294 eu4 = 4249 eu4 = 4248 } # Tver -> Tver, Zubtsov, Kashin
+	link = { ck3 = 5164 eu4 = 4260 eu4 = 1959 } # Valdai -> Vyshny Volochyok, Torzhok
+	link = { ck3 = 5161 eu4 = 4148 } # Luki -> Luki
 	link = { ck3 = 5168 eu4 = 4117 } # Bezichi -> Bezhetsk
 	link = { ck3 = 5159 eu4 = 4261 } # Vyangi -> Ustyuzhna
 	link = { ck3 = 5156 eu4 = 312 } # Beloozero -> Beloozero
+	link = { ck3 = 5153 eu4 = 2749 } # Tikhvin -> Tikhvin
 	link = { ck3 = 5820 eu4 = 4262 } # Totma -> Totma
 	link = { ck3 = 5842 eu4 = 4122 } # Shenkursk -> Shenkursk
 	link = { ck3 = 5845 ck3 = 5817 eu4 = 4259 } # Velsk, Kirillov -> Velsk
@@ -920,19 +915,15 @@
 	link = { ck3 = 5798 eu4 = 1955 } # Kholmogory -> Kholmogory
 	link = { ck3 = 5803 eu4 = 4258 } # Onega -> Onega
 	link = { ck3 = 5807 eu4 = 313 } # Povenets -> Soroka
-	link = { ck3 = 5153 eu4 = 2749 } # Tikhvin -> Tikhvin
-	link = { ck3 = 5170 ck3 = 5221 eu4 = 4243 } # Toropets, Gnezdovo -> Toropets
-	link = { ck3 = 5134 ck3 = 5127 eu4 = 771 } # Vitebsk, Orsha -> Vitebsk
-	link = { ck3 = 934 eu4 = 4242 } # Lukoml -> Ula
-	link = { ck3 = 5161 eu4 = 4148 } # Luki -> Luki
-	link = { ck3 = 5150 eu4 = 1960 } # Sebezh -> Ostrov
-	link = { ck3 = 5129 eu4 = 275 } # Polotsk -> Polotsk
-	link = { ck3 = 5146 eu4 = 274 } # Pskov -> Pskov
-	link = { ck3 = 167 eu4 = 33 eu4 = 34 } # Vodi -> Neva, Ingermanland
+	link = { ck3 = 5127 eu4 = 4242 } # Orsha -> Ula
+	link = { ck3 = 5134 eu4 = 771 } # Vitebsk -> Vitebsk
+	link = { ck3 = 5129 ck3 = 934 eu4 = 275 } # Polotsk, Lukoml -> Polotsk
 	link = { ck3 = 933 eu4 = 4246 eu4 = 292 } # Roslavl -> Mstislav, Mogilev
-	link = { ck3 = 5212 eu4 = 4245 } # Kozelsk -> Vyazma
 	link = { ck3 = 551 eu4 = 293 } # Smolensk -> Smolensk
+	link = { ck3 = 5170 eu4 = 1752 } # Toropets -> Rzhev
+	link = { ck3 = 5221 eu4 = 4243 } # Gnezdovo -> Toropets
 	link = { ck3 = 587 eu4 = 4251 eu4 = 296 } # Mozhaysk -> Mozhaisk, Kaluga
+	link = { ck3 = 5212 eu4 = 4245 } # Kozelsk -> Vyazma
 	link = { ck3 = 5217 ck3 = 5215 eu4 = 4116 } # Odoyev, Novosil -> Oka
 	link = { ck3 = 570 eu4 = 295 eu4 = 4252 } # Moskva -> Moskva, Kolomna
 	link = { comment = "# Crimea, Ruthenia, Causases" }
@@ -940,11 +931,11 @@
 	link = { ck3 = 555 eu4 = 2407 } # Pereyaslavl -> Pereyaslav
 	link = { ck3 = 5189 eu4 = 4542 } # Voin' -> Lubnie
 	link = { ck3 = 5181 eu4 = 290 } # Hradyzk -> Poltava
-	link = { ck3 = 5185 ck3 = 5193 eu4 = 4543 } # Romen, Putyvl -> Rylsk
-	link = { ck3 = 567 eu4 = 1945 } # Novgorod Seversky -> Severia
+	link = { ck3 = 5185 eu4 = 4543 } # Romen -> Rylsk
+	link = { ck3 = 567 ck3 = 5193 eu4 = 1945 } # Novgorod Seversky, Putyvl -> Severia
 	link = { ck3 = 576 eu4 = 4244 } # Starodub -> Trubchevsk
 	link = { ck3 = 577 eu4 = 300 eu4 = 4255 } # Tula -> Tula, Pronsk
-	link = { ck3 = 580 eu4 = 301 } # Ryazan -> Ryazan
+	link = { ck3 = 580 eu4 = 301 eu4 = 1778 } # Ryazan -> Ryazan, Kasimov
 	link = { ck3 = 5209 ck3 = 5206 eu4 = 297 } # Karachev, Sevsk -> Bryansk
 	link = { ck3 = 5196 eu4 = 298 } # Kursk -> Kursk
 	link = { ck3 = 677 eu4 = 2196 } # Guria -> Guria
@@ -965,18 +956,19 @@
 	link = { ck3 = 5751 eu4 = 422 } # Svaneti -> Imereti
 	link = { ck3 = 601 eu4 = 462 } # Odishi -> Odishi
 	link = { ck3 = 5263 eu4 = 1944 } # Cherkassy -> Cherkasy
-	link = { ck3 = 547 eu4 = 280 } # Kyiv -> Kiev
-	link = { ck3 = 5098 ck3 = 546 eu4 = 281 } # Ushytsia, Terebovl -> Podolia
+	link = { ck3 = 547 ck3 = 5095 eu4 = 280 } # Kyiv, Chornobyl -> Kiev
+	link = { ck3 = 5087 ck3 = 5091 eu4 = 1942 } # Zhytomyr, Zvyahel -> Zhytomyr
+	link = { ck3 = 546 eu4 = 281 } # Terebovl -> Podolia
 	link = { ck3 = 5077 eu4 = 1940 } # Belz -> Belz
 	link = { ck3 = 5063 eu4 = 2961 } # Lviv -> Lwow
 	link = { ck3 = 5119 eu4 = 4544 } # Babruysk -> Bobrujsk
-	link = { ck3 = 5091 ck3 = 5095 eu4 = 4247 } # Zvyahel, Chornobyl -> Owrucz
-	link = { ck3 = 552 ck3 = 5104 eu4 = 1941 } # Turov, Korosten -> Turov
+	link = { ck3 = 5104 eu4 = 4247 } #  Korosten -> Owrucz
+	link = { ck3 = 552 ck3 = 5109 eu4 = 1941 } # Turov, Dubrovytsia -> Turov
 	link = { ck3 = 549 eu4 = 277 } # Berestye -> Brest
-	link = { ck3 = 548 eu4 = 278 } # Pinsk -> Pinsk
+	link = { ck3 = 548 ck3 = 5117 eu4 = 278 } # Pinsk, Kletsk -> Pinsk
 	link = { ck3 = 5043 eu4 = 1937 } # Volkovysk -> Grodno
 	link = { ck3 = 161 eu4 = 4536 } # Grodno -> Lida
-	link = { ck3 = 5045 ck3 = 5117 eu4 = 4537 } # Novogrudok, Kletsk -> Nowogrodek
+	link = { ck3 = 5045 eu4 = 4537 } # Novogrudok -> Nowogrodek
 	link = { ck3 = 5114 eu4 = 4545 } # Slutsk -> Sluck
 	link = { ck3 = 550 eu4 = 276 } # Minsk -> Minsk
 	link = { ck3 = 5073 eu4 = 4538 } # Cherven -> Chelm
@@ -1000,16 +992,15 @@
 	link = { ck3 = 5287 eu4 = 2409 } # Kazanskaya -> Bahmut
 	link = { ck3 = 563 eu4 = 2413 } # Tana -> Tyn
 	link = { ck3 = 564 eu4 = 2411 } # Bakhmut -> Mansur
-	link = { ck3 = 535 ck3 = 5109 eu4 = 279 } # Volodymyr, Dubrovytsia -> Volhynia
+	link = { ck3 = 535 eu4 = 279 } # Volodymyr -> Volhynia
 	link = { ck3 = 5051 eu4 = 2962 } # Peresopnytsia -> Rowne
 	link = { ck3 = 5070 eu4 = 4539 } # Zaslavl -> Kremenets
-	link = { ck3 = 5087 eu4 = 1942 } # Zhytomyr -> Zhytomyr
-	link = { ck3 = 544 ck3 = 5260 eu4 = 4540 } # Korsun, Uman -> Winnica
+	link = { ck3 = 5098 ck3 = 544 eu4 = 4540 } # Ushytsia, Korsun -> Winnica
 	link = { ck3 = 541 ck3 = 5038 ck3 = 5040 eu4 = 4529 } # Ia0i, Dorohoi, Hotin -> Iasi
 	link = { ck3 = 534 eu4 = 2424 } # Peremyshl -> Peremyshl
 	link = { ck3 = 536 eu4 = 261 eu4 = 4541 } # Halych -> Halicz, Drohobycz
 	link = { ck3 = 5031 ck3 = 545 eu4 = 268 } # Neam0, Suceava -> Suceava
-	link = { ck3 = 5257 eu4 = 1943 } # Ladyzyn -> Bratslav
+	link = { ck3 = 5257 ck3 = 5260 eu4 = 1943 } # Ladyzyn, Uman -> Bratslav
 	link = { ck3 = 511 ck3 = 513 ck3 = 5029 eu4 = 4530 } # Gala0i, Bârlad, Stoene0ti -> Birlad
 	link = { ck3 = 5021 ck3 = 5019 ck3 = 5017 eu4 = 2405 } # Soroca, Orhei, Lapu0na -> Bender
 	link = { ck3 = 5012 ck3 = 512 ck3 = 5015 eu4 = 1756 } # Chilia, Cetatea Alba, Tigheci -> Bessarabia
@@ -1066,13 +1057,13 @@
 	link = { ck3 = 2971 eu4 = 4760 } # Schaumberg -> Innbaiern
 	link = { ck3 = 2960 eu4 = 4709 } # Passau -> Passau
 	link = { ck3 = 3072 eu4 = 133 } # Linz -> Ob der Enns
-	link = { ck3 = 3095 eu4 = 4751 } # Leibach -> Cilli
-	link = { ck3 = 3100 eu4 = 129 } # Kranj -> Krain
+	link = { ck3 = 3103 eu4 = 4751 } # Leibnitz -> Cilli
+	link = { ck3 = 3095 ck3 = 3100 eu4 = 129 } # Leibach, Kranj -> Krain
 	link = { ck3 = 3105 eu4 = 128 } # Kärnten -> Unterkärnten
 	link = { ck3 = 3089 ck3 = 3093 eu4 = 4762 } # Sankt Pölten, Amstetten -> Wienerwald
-	link = { ck3 = 3079 ck3 = 3075 ck3 = 3073 eu4 = 1770 } # Hohenau, Krems, Freistadt -> Manhartsberg
-	link = { ck3 = 3110 ck3 = 3119 ck3 = 3103 eu4 = 1863 } # Graz, Mürzzuschlag, Leibnitz -> Graz
-	link = { ck3 = 3084 ck3 = 3092 eu4 = 134 } # Wien, Pitten -> Wien
+	link = { ck3 = 3075 ck3 = 3073 eu4 = 1770 } # Krems, Freistadt -> Manhartsberg
+	link = { ck3 = 3110 ck3 = 3119 ck3 = 3092 eu4 = 1863 } # Graz, Mürzzuschlag, Pitten -> Graz
+	link = { ck3 = 3079 ck3 = 3084 eu4 = 134 } # Hohenau, Wien -> Wien
 	link = { ck3 = 2873 eu4 = 66 eu4 = 4717 } # Bamberg -> Bamberg, Bayreuth
 	link = { ck3 = 2869 ck3 = 2862 eu4 = 79 } # Würzburg, Klingenberg -> Würzburg
 	link = { ck3 = 2731 ck3 = 2735 ck3 = 2738 eu4 = 4718 } # Worms, Erbach, Dürn -> Aschaffenburg
@@ -1083,7 +1074,7 @@
 	link = { ck3 = 2867 eu4 = 4774 } # Fulda -> Fulda
 	link = { ck3 = 2857 eu4 = 81 } # Marburg -> Oberhessen
 	link = { ck3 = 2999 ck3 = 3000 eu4 = 4743 } # Orlamünde, Lobdaburg -> Weimar
-	link = { ck3 = 2440 eu4 = 56 } # Osnabrück -> Osnabrück
+	link = { ck3 = 2440 ck3 = 2430 eu4 = 56 } # Osnabrück, Tecklenburg -> Osnabrück
 	link = { ck3 = 2793 eu4 = 1874 } # Bremen -> Bremen
 	link = { ck3 = 2814 eu4 = 4786 } # Havelberg -> Prignitz
 	link = { ck3 = 3167 eu4 = 51 } # Ruppin -> Ruppin
@@ -1092,14 +1083,15 @@
 	link = { ck3 = 2845 eu4 = 4771 } # Wölpe -> Verden
 	link = { ck3 = 2935 ck3 = 2934 eu4 = 62 } # Merseburg, Mansfeld -> Leipzig
 	link = { ck3 = 2918 eu4 = 4773 } # Göttingen -> Göttingen
-	link = { ck3 = 2901 eu4 = 57 eu4 = 4772 } # Braunschweig -> Brunswick, Celle
-	link = { ck3 = 2896 ck3 = 2911 eu4 = 1758 } # Hannover, Hildesheim -> Hanover
-	link = { ck3 = 2092 eu4 = 1878 eu4 = 4768 } # Aachen -> Aachen, Jülich
+	link = { ck3 = 2911 eu4 = 57 } # Hildesheim -> Brunswick
+	link = { ck3 = 2896 eu4 = 1758 } # Hannover -> Hanover
+	link = { ck3 = 2901 eu4 = 4772 } # Braunschweig -> Celle
+	link = { ck3 = 2092 eu4 = 1878 } # Aachen -> Aachen
+	link = { ck3 = 2087 eu4 = 4768 } # Cologne -> Jülich
 	link = { ck3 = 2083 eu4 = 80 } # Trier -> Trier
 	link = { ck3 = 2893 eu4 = 53 } # Lüneburg -> Lüneburg
 	link = { ck3 = 2837 eu4 = 2971 } # Minden -> Hoya
-	link = { ck3 = 2436 eu4 = 55 } # Oldenburg -> Oldenburg
-	link = { ck3 = 2430 eu4 = 2973 } # Tecklenburg -> Meppen
+	link = { ck3 = 2436 eu4 = 2973 } # Oldenburg -> Meppen
 	link = { ck3 = 2741 eu4 = 1876 } # Frankfurt -> Frankfurt
 	link = { ck3 = 2721 eu4 = 75 } # Strassburg -> Straßburg
 	link = { ck3 = 2746 eu4 = 74 eu4 = 4714 } # Baden -> Baden, Durlach
@@ -1111,12 +1103,12 @@
 	link = { ck3 = 3012 ck3 = 3015 ck3 = 3014 eu4 = 4744 } # Wolkenstein, Osterland, Naumburg -> Zwickau
 	link = { ck3 = 3027 ck3 = 3028 eu4 = 61 } # Meissen, Dresden -> Dresden
 	link = { ck3 = 3024 eu4 = 59 } # Brene -> Wittenberg
-	link = { ck3 = 3178 eu4 = 1759 } # Jüterbog -> Potsdam
+	link = { ck3 = 3178 ck3 = 3173 eu4 = 1759 } # Jüterbog, Wittenberg -> Potsdam
 	link = { ck3 = 3023 eu4 = 58 } # Dessau -> Anhalt
-	link = { ck3 = 3157 ck3 = 3173 eu4 = 4748 } # Brandenburg, Wittenberg -> Brandenburg
+	link = { ck3 = 3157 eu4 = 4748 } # Brandenburg -> Brandenburg
 	link = { ck3 = 3158 eu4 = 50 } # Berlin -> Berlin
-	link = { ck3 = 2899 ck3 = 2906 eu4 = 52 } # Stendal, Magdeburg -> Magdeburg
-	link = { ck3 = 2894 eu4 = 2964 } # Dannenberg -> Altmark
+	link = { ck3 = 2906 eu4 = 52 } # Magdeburg -> Magdeburg
+	link = { ck3 = 2899 ck3 = 2894 eu4 = 2964 } # Stendal, Dannenberg -> Altmark
 	link = { ck3 = 2791 eu4 = 54 } # Stade -> Stade
 	link = { ck3 = 2802 eu4 = 44 eu4 = 1857 } # Hamburg -> Hamburg, Lauenburg
 	link = { ck3 = 2797 eu4 = 4141 } # Dithmarschen -> Dithmarschen
@@ -1181,8 +1173,8 @@
 	link = { ck3 = 2851 ck3 = 2689 eu4 = 83 } # Nassau, Sayn -> Nassau
 	link = { ck3 = 2084 eu4 = 1760 } # Koblenz -> Koblenz
 	link = { ck3 = 2680 ck3 = 2843 eu4 = 82 } # Arnsberg, Waldeck -> Westfalen
-	link = { ck3 = 2087 eu4 = 85 } # Cologne -> Köln
-	link = { ck3 = 2433 ck3 = 2676 eu4 = 84 } # Berg, Mark -> Berg
+	link = { ck3 = 2433 eu4 = 85 } # Berg -> Köln
+	link = { ck3 = 2676 eu4 = 84 } # Mark -> Berg
 	link = { ck3 = 2673 eu4 = 69 } # Dortmund -> Dortmund
 	link = { ck3 = 2670 ck3 = 2429 eu4 = 86 } # Münster, Zutphen -> Münster
 	link = { ck3 = 2844 eu4 = 4775 } # Lippe -> Ravensberg
@@ -1220,11 +1212,10 @@
 	link = { ck3 = 516 ck3 = 5005 ck3 = 4978 eu4 = 4532 } # Severin, Polovragi, Târgu Jiu -> Severin
 	link = { ck3 = 3652 ck3 = 3614 eu4 = 4703 } # Pirin, Rhodopes -> Kostendil
 	link = { ck3 = 501 ck3 = 3654 eu4 = 1765 } # Naissos, Velbazhd -> Sofia
-	link = { ck3 = 3564 ck3 = 3509 eu4 = 4755 } # Vrhbosna, Soli -> Podrinje
 	link = { ck3 = 3593 eu4 = 1766 } # Hvosno -> Kosovo
-	link = { ck3 = 3598 ck3 = 3657 eu4 = 3000 } # Šumadija, Pomoravlje -> Nis
-	link = { ck3 = 502 ck3 = 3589 eu4 = 1827 } # Raška, Zlatibor -> Raska
-	link = { ck3 = 3557 ck3 = 3581 eu4 = 3002 } # Zelengora, Podrinje -> Visoki
+	link = { ck3 = 3657 eu4 = 3000 } # Pomoravlje -> Nis
+	link = { ck3 = 502 ck3 = 3589 ck3 = 3581 eu4 = 1827 } # Raška, Zlatibor, Podrinje -> Raska
+	link = { ck3 = 3557 eu4 = 3002 } # Zelengora -> Visoki
 	link = { ck3 = 3642 ck3 = 3648 eu4 = 3001 } # Skopje, Strumica -> Skopje
 	link = { ck3 = 471 eu4 = 4780 } # Ohrid -> Ohrid
 	link = { ck3 = 3628 eu4 = 1764 } # Burgas -> Burgas
@@ -1235,8 +1226,10 @@
 	link = { ck3 = 506 eu4 = 2746 } # Vidin -> Vidin
 	link = { ck3 = 3664 eu4 = 4176 } # Branicevo -> Branicevo
 	link = { ck3 = 3604 eu4 = 4757 } # Macva -> Kolubara
-	link = { ck3 = 505 eu4 = 141 eu4 = 4239 } # Beograd -> Smederevo, Belgrade
-	link = { ck3 = 504 ck3 = 463 eu4 = 140 } # Rama, Usora -> Bosnia
+	link = { ck3 = 505 eu4 = 4239 } # Beograd -> Belgrade
+	link = { ck3 = 3598 eu4 = 141 } # Šumadija -> Smederevo
+	link = { ck3 = 3564 ck3 = 504 eu4 = 140 } # Vrhbosna, Rama -> Bosnia
+	link = { ck3 = 3509 ck3 = 463 eu4 = 4755 } # Soli, Usora -> Podrinje
 	link = { ck3 = 3504 ck3 = 3521 ck3 = 3515 eu4 = 1828 } # Donji Kraji, Pset, Vrbas -> Donji Kraji
 	link = { ck3 = 3611 eu4 = 4173 } # Szerém -> Syrmia
 	link = { ck3 = 461 ck3 = 3518 eu4 = 131 } # Zagreb, Krajina -> Zagreb
@@ -1255,13 +1248,13 @@
 	link = { ck3 = 470 eu4 = 4174 } # Dyrrachion -> Durrës
 	link = { ck3 = 3574 eu4 = 4754 } # Pomorje -> Kotor
 	link = { ck3 = 468 eu4 = 137 } # Ragusa -> Ragusa
-	link = { ck3 = 467 ck3 = 3553 eu4 = 136 } # Cetina, Paganija -> Split
-	link = { ck3 = 465 ck3 = 3548 eu4 = 4753 } # Zadar, Knin -> Zadar
+	link = { ck3 = 467 eu4 = 136 } # Cetina -> Split
+	link = { ck3 = 465 ck3 = 3548 ck3 = 3553 eu4 = 4753 } # Zadar, Knin, Paganija -> Zadar
 	link = { ck3 = 2518 ck3 = 459 eu4 = 130 } # Pula, Charso -> Istria
 	link = { comment = "# Greece" }
 	link = { ck3 = 3570 ck3 = 3702 ck3 = 489 eu4 = 1853 } # Thessaliotis, Metzovo, Thessalia -> Kastoria
-	link = { ck3 = 3770 ck3 = 490 ck3 = 3781 eu4 = 4702 } # Serres, Thessalonika, Veria -> Siroz
-	link = { ck3 = 492 eu4 = 4705 } # Mosynopolis -> Gumulcine
+	link = { ck3 = 490 ck3 = 3781 eu4 = 4702 } # Thessalonika, Veria -> Siroz
+	link = { ck3 = 3770 ck3 = 492 eu4 = 4705 } # Serres, Mosynopolis -> Gumulcine
 	link = { ck3 = 493 ck3 = 3632 ck3 = 3631 eu4 = 2750 } # Philippopolis, Beroë, Kran -> Plovdiv
 	link = { ck3 = 494 ck3 = 3618 eu4 = 149 } # Adrianopolis, Zherkovo -> Edirne
 	link = { ck3 = 495 eu4 = 4779 } # Kallipolis -> Gallipoli
@@ -1299,7 +1292,7 @@
 	link = { ck3 = 2526 eu4 = 113 } # Ferrara -> Ferrara
 	link = { ck3 = 2467 eu4 = 2981 } # Monferrato -> Montferrat
 	link = { ck3 = 2043 eu4 = 4727 eu4 = 1875 } # Cuneo -> Saluzzo, Cuneo
-	link = { ck3 = 2041 ck3 = 2040 eu4 = 103 } # Turin, Canavese -> Turin
+	link = { ck3 = 2041 eu4 = 103 } # Turin -> Turin
 	link = { ck3 = 2470 eu4 = 2979 } # Novara -> Novara
 	link = { ck3 = 2474 ck3 = 2483 eu4 = 4728 } # Pavia, Tortona -> Pavia
 	link = { ck3 = 2497 eu4 = 109 } # Mantua -> Mantua
@@ -1322,14 +1315,14 @@
 	link = { ck3 = 2543 eu4 = 116 } # Firenze -> Firenze
 	link = { ck3 = 2544 ck3 = 2551 eu4 = 2978 } # Arezzo, Casentino -> Arezzo
 	link = { ck3 = 2560 ck3 = 2562 eu4 = 117 } # Siena, Orbetello -> Siena
-	link = { ck3 = 2574 ck3 = 2589 ck3 = 2571 eu4 = 118 } # Roma, Tivoli, Viterbo -> Roma
+	link = { ck3 = 2574 ck3 = 2571 eu4 = 118 } # Roma, Viterbo -> Roma
 	link = { ck3 = 2582 ck3 = 2597 eu4 = 119 } # Ancona, Fermo -> Ancona
 	link = { ck3 = 2566 eu4 = 2976 } # Orvieto -> Perugia
 	link = { ck3 = 2581 eu4 = 4731 } # Spoleto -> Spoleto
 	link = { ck3 = 2595 ck3 = 2588 eu4 = 120 } # Teramo, Abruzzi -> Abruzzi
 	link = { ck3 = 2603 eu4 = 4733 } # Lanciano -> Molise
-	link = { ck3 = 2593 eu4 = 4732 } # Capua -> Terracina
-	link = { ck3 = 2608 eu4 = 121 } # Napoli -> Napoli
+	link = { ck3 = 2589 eu4 = 4732 } # Tivoli -> Terracina
+	link = { ck3 = 2593 ck3 = 2608 eu4 = 121 } # Capua, Napoli -> Napoli
 	link = { ck3 = 2607 eu4 = 4734 } # Benevento -> Avellino
 	link = { ck3 = 2605 eu4 = 2985 } # Foggia -> Capitanata
 	link = { ck3 = 2612 eu4 = 2983 } # Salerno -> Salerno
@@ -1357,7 +1350,7 @@
 	link = { ck3 = 2426 ck3 = 2103 eu4 = 99 } # Arnheim, Guelders -> Gelre
 	link = { ck3 = 2424 eu4 = 98 eu4 = 4770 } # Nedersticht -> Utrecht, Den Bosch
 	link = { ck3 = 2416 ck3 = 2417 eu4 = 4381 } # Oversticht, Groningen -> Oversticht
-	link = { ck3 = 2418 eu4 = 1931 } # Ostfriesland -> East Frisia
+	link = { ck3 = 2418 eu4 = 1931 eu4 = 55 } # Ostfriesland -> East Frisia, Oldenburg
 	link = { ck3 = 2414 eu4 = 4382 } # Dokkum -> Groningen
 	link = { ck3 = 2410 eu4 = 100 } # Frisia -> Friesland
 	link = { ck3 = 2405 eu4 = 97 } # Westfriesland -> Amsterdam
@@ -1418,14 +1411,14 @@
 	link = { ck3 = 74 eu4 = 26 } # Halland -> Halland
 	link = { ck3 = 77 eu4 = 1981 } # Bornholm -> Bornholm
 	link = { ck3 = 70 eu4 = 6 eu4 = 4165 } # Skåne -> Lund, Göinge
-	link = { ck3 = 61 ck3 = 59 eu4 = 13 } # Slesvig, Vorbasse -> Slesvig
+	link = { ck3 = 61 ck3 = 60 eu4 = 13 } # Slesvig, Ribe -> Slesvig
 	link = { ck3 = 63 eu4 = 12 } # Sjælland -> Sjælland
 	link = { ck3 = 67 eu4 = 1983 } # Lolland-Falster -> Lolland
 	link = { ck3 = 65 eu4 = 14 } # Fyn -> Fyn
-	link = { ck3 = 82 ck3 = 60 eu4 = 15 } # Ringkøbing, Ribe -> Vestjylland
-	link = { ck3 = 56 eu4 = 4149 } # Viborg -> Kolding
+	link = { ck3 = 82 eu4 = 15 } # Ringkøbing -> Vestjylland
+	link = { ck3 = 59 eu4 = 4149 } # Vorbasse -> Kolding
 	link = { ck3 = 57 eu4 = 4142 } # Aarhus -> Østjylland
-	link = { ck3 = 55 eu4 = 1984 } # Aalborg -> Nordjylland
+	link = { ck3 = 56  ck3 = 55 eu4 = 1984 } # Viborg, Aalborg -> Nordjylland
 	link = { comment = "# Britain" }
 	link = { ck3 = 1551 ck3 = 1558 ck3 = 1555 eu4 = 237 } # Buckinghamshire, Oxfordshire, Berkshire -> Oxford
 	link = { ck3 = 1659 ck3 = 1661 ck3 = 1663 eu4 = 4366 } # Brycheiniog, Ferlix, Penllyn -> Montgomery
@@ -1470,17 +1463,15 @@
 	link = { ck3 = 8 eu4 = 369 } # Orkney -> Orkney
 	link = { ck3 = 1698 eu4 = 4365 } # Isle of Man -> Mann
 	link = { ck3 = 20 ck3 = 21 eu4 = 376 } # Hy Many, Mayo -> Connaught
-	link = { ck3 = 41 eu4 = 4120 } # Ossory -> Kildare
+	link = { ck3 = 41 eu4 = 4377 } # Ossory -> Ormond
 	link = { ck3 = 37 eu4 = 374 } # Leinster -> Leinster
 	link = { ck3 = 33 eu4 = 4379 } # Athlone -> Midlands
-	link = { ck3 = 17 eu4 = 372 } # Oriel -> Tyrone
-	link = { ck3 = 28 eu4 = 373 } # Dublin -> Pale
+	link = { ck3 = 17 ck3 = 28 eu4 = 373 eu4 = 4120 } # MANY-TO-MANY: Oriel, Dublin -> Pale, Kildare
 	link = { ck3 = 24 eu4 = 4119 } # Breifne -> Sligo
-	link = { ck3 = 46 eu4 = 375 } # Ennis -> Limerick
-	link = { ck3 = 45 eu4 = 4118 } # Thomond -> Cork
-	link = { ck3 = 49 eu4 = 4377 } # Ormond -> Ormond
+	link = { ck3 = 45 ck3 = 46 eu4 = 375 } # Thomond, Ennis -> Limerick
+	link = { ck3 = 49 eu4 = 4118 } # Ormond -> Cork
 	link = { ck3 = 16 eu4 = 4378 } # Desmond -> Desmond
-	link = { ck3 = 9 eu4 = 4380 } # Ailech -> Donegal
+	link = { ck3 = 9 eu4 = 4380 eu4 = 372 } # Ailech -> Donegal, Tyrone
 	link = { ck3 = 13 eu4 = 4121 } # Ulster -> Ulster
 	link = { comment = "# Hispania" }
 	link = { ck3 = 1839 ck3 = 1837 eu4 = 4548 } # Niebla, Moura -> Huelva
@@ -1553,14 +1544,13 @@
 	link = { ck3 = 2117 eu4 = 91 } # Hainaut -> Hainaut
 	link = { ck3 = 2184 ck3 = 2187 ck3 = 2358 eu4 = 88 } # Amiens, Clermont, Valois -> Artois
 	link = { ck3 = 2123 eu4 = 4769 } # Lille -> Lille
-	link = { ck3 = 2297 ck3 = 2299 eu4 = 4777 } # Forez, Thiers -> Forez
 	link = { ck3 = 2367 ck3 = 2361 ck3 = 2397 eu4 = 186 } # Chalons, Reims, Vermandois -> Reims
 	link = { ck3 = 2056 eu4 = 1880 } # Sundgau -> Sundgau
 	link = { ck3 = 2717 eu4 = 4765 } # Colmar -> Mulhouse
 	link = { ck3 = 2710 ck3 = 2704 eu4 = 4767 } # Puttlingen, Saarbrücken -> Zweibrücken
 	link = { ck3 = 2080 ck3 = 2698 eu4 = 188 } # Briey, Metz -> Metz
-	link = { ck3 = 2192 ck3 = 2078 eu4 = 189 } # Neufchâteau, Nancy -> Lothringen
-	link = { ck3 = 2079 ck3 = 2081 eu4 = 4766 } # Vaucouleurs, Bar -> Verdun
+	link = { ck3 = 2192 ck3 = 2374 ck3 = 2079 ck3 = 2078 eu4 = 189 } # Neufchâteau, Langres, Vaucouleurs, Nancy -> Lothringen
+	link = { ck3 = 2081 eu4 = 4766 } # Bar -> Verdun
 	link = { ck3 = 2371 ck3 = 2352 ck3 = 2363 eu4 = 4390 } # Troyes, Sens, Provins -> Troyes
 	link = { ck3 = 2339 ck3 = 2313 eu4 = 185 } # Montargis, Sancerre -> Nemours
 	link = { ck3 = 2072 ck3 = 2075 eu4 = 193 } # Dole, Besancon -> Franche-Comté
@@ -1568,8 +1558,8 @@
 	link = { ck3 = 2306 ck3 = 2302 eu4 = 1877 } # Jaligny, Mâcon -> Charolais
 	link = { ck3 = 2347 ck3 = 2380 eu4 = 192 } # Chalon, Dijon -> Dijonnais
 	link = { ck3 = 2307 eu4 = 191 } # Nevers -> Nivernais
-	link = { ck3 = 2374 eu4 = 187 } # Langres -> Barrois
-	link = { ck3 = 2345 ck3 = 2349 ck3 = 2351 eu4 = 4392 } # Auxerre, Avalois, Tonnerrois -> Auxerrois
+	link = { ck3 = 2351 eu4 = 187 } # Tonnerrois -> Barrois
+	link = { ck3 = 2345 ck3 = 2349 eu4 = 4392 } # Auxerre, Avalois -> Auxerrois
 	link = { ck3 = 2333 ck3 = 2337 ck3 = 2355 eu4 = 183 } # Isle de France, Brie Française, Meaux -> Paris
 	link = { ck3 = 2322 ck3 = 2283 eu4 = 4388 } # Chartres, Vendôme -> Chartres
 	link = { ck3 = 2315 eu4 = 184 } # Orléans -> Orleanais
@@ -1581,20 +1571,22 @@
 	link = { ck3 = 2065 eu4 = 203 } # Lyon -> Lyonnais
 	link = { ck3 = 2030 ck3 = 2064 eu4 = 204 } # Viennois, Valentinois -> Dauphiné
 	link = { ck3 = 2281 eu4 = 190 } # Bourbon -> Bourbonnais
-	link = { ck3 = 2292 ck3 = 2288 eu4 = 199 } # Auvergne, Clermont-sur-Allier -> Auvergne
-	link = { ck3 = 2220 ck3 = 2221 eu4 = 198 } # Millau, Gévaudan -> Rouergue
-	link = { ck3 = 2063 ck3 = 2216 ck3 = 2225 eu4 = 4391 } # Viviers, Uzès, Velay -> Vivarais
+	link = { ck3 = 2292 ck3 = 2288 ck3 = 2221 eu4 = 199 } # Auvergne, Clermont-sur-Allier, Gévaudan -> Auvergne
+	link = { ck3 = 2220 eu4 = 198 } # Millau -> Rouergue
+	link = { ck3 = 2299 ck3 = 2225 eu4 = 4777 } # Thiers, Velay -> Forez
+	link = { ck3 = 2297 ck3 = 2063 eu4 = 4391 } # Forez, Viviers -> Vivarais
 	link = { ck3 = 2240 eu4 = 195 } # Limousin -> Limousin
 	link = { ck3 = 2236 eu4 = 194 } # Périgord -> Périgord
 	link = { ck3 = 2230 ck3 = 2226 eu4 = 4112 } # Quercy, Rouergue -> Quercy
 	link = { ck3 = 2208 eu4 = 196 } # Toulouse -> Toulouse
 	link = { ck3 = 2212 eu4 = 4695 } # Albi -> Carcassonne
 	link = { ck3 = 2198 ck3 = 2201 ck3 = 2232 eu4 = 175 } # Marsan, Armagnac, Agen -> Armagnac
-	link = { ck3 = 2029 eu4 = 205 eu4 = 4719 } # Savoie -> Chambery, Bresse
+	link = { ck3 = 2029 eu4 = 4719 } # Savoie -> Bresse
+	link = { ck3 = 2040 eu4 = 205 } # Canavese -> Chambery
 	link = { ck3 = 2027 eu4 = 2991 } # Forcalquier -> Forcalquier
 	link = { ck3 = 2017 eu4 = 201 eu4 = 202 } # Venaissin -> Aix, Avignon
 	link = { ck3 = 2018 eu4 = 4696 } # Provence -> Toulon
-	link = { ck3 = 2015 eu4 = 200 } # Montpellier -> Montpellier
+	link = { ck3 = 2015 ck3 = 2216 eu4 = 200 } # Montpellier, Uzès -> Montpellier
 	link = { ck3 = 2013 eu4 = 2753 } # Béziers -> Narbonne
 	link = { ck3 = 2005 eu4 = 197 } # Carcassonne -> Roussillon
 	link = { ck3 = 2007 ck3 = 2008 eu4 = 4694 } # Foix, Comminges -> Foix
