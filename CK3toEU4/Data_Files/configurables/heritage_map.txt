@@ -51,5 +51,7 @@ link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 link = { eu4 = cushitic ck3 = heritage_somalian }
 
 # Mod: RICE
-link = { eu4 = african ck3 = heritage_east_bantu }
-link = { eu4 = evenks ck3 = heritage_siberian }
+link = { eu4 = central_algonquian ck3 = heritage_algonquian }
+link = { eu4 = iroquoian ck3 = heritage_iroquoian }
+link = { eu4 = eskaleut ck3 = heritage_paleo_inuit }
+link = { eu4 = eskaleut ck3 = heritage_inuit }
