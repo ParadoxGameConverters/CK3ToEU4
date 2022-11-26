@@ -31,7 +31,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         # We must fetch at least the immediate parents so that if this is
         # a pull request then we can checkout the head.
@@ -61,7 +61,7 @@ jobs:
       
     - name: Cleanup
       uses: colpal/actions-clean@v1
-      if: ${{ true }} # To ensure this step runs even when earlier steps fail      
+      if: always() # To ensure this step runs even when earlier steps fail      
 
   analyze:
     name: Analyze Foreign
@@ -79,7 +79,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         # We must fetch at least the immediate parents so that if this is
         # a pull request then we can checkout the head.
