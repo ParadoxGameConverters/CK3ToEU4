@@ -72,8 +72,6 @@ link = { eu4 = qarmatian ck3 = qarmatian }
 link = { eu4 = alawite ck3 = alawite }
 link = { eu4 = druze ck3 = druze }
 link = { eu4 = kharijite ck3 = azariqa ck3 = najdat ck3 = sufri }
-link = { eu4 = sunni ck3 = united_islam } # TFE mod
-link = { eu4 = ibadi ck3 = khawariji } # TFE mod
 # Jainism
 link = { eu4 = jain ck3 = digambara ck3 = svetambara ck3 = yapaniya }
 # Judaism
@@ -169,3 +167,8 @@ link = { eu4 = arab_pagan ck3 = nabataean_pagan }
 link = { eu4 = arab_pagan ck3 = aksumite_pagan }
 link = { eu4 = arab_pagan ck3 = south_arabian_pagan }
 link = { eu4 = animism ck3 = nuristani_pagan }
+
+# Mod: The Fallen Eagle
+link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
+link = { eu4 = shiite ck3 = shia }
+link = { eu4 = ibadi ck3 = khawariji }
