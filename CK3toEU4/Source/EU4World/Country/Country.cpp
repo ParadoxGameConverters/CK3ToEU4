@@ -671,20 +671,19 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	details.monarch.personalities = rulerPersonalitiesMapper.evaluatePersonalities(details.holder);
 	details.monarch.isSet = true;
 
-	if (details.holder->getSpouse() && !details.holder->isDead()) // making sure she's alive.
+	if (details.holder->getSpouse() && details.holder->getSpouse()->second && details.holder->getSpouse()->second->getHouse().second &&
+		 !details.holder->isDead()) // making sure she's alive.
 	{
 		const auto spouse = details.holder->getSpouse()->second;
 
 		actualName = spouse->getName();
-		const auto& queenNameLoc = localizationMapper.getLocBlockForKey(actualName);
-		if (queenNameLoc)
+		if (const auto& queenNameLoc = localizationMapper.getLocBlockForKey(actualName); queenNameLoc)
 			actualName = queenNameLoc->english;
 		details.queen.name = actualName;
 
 		std::string dynastyName;
 		const auto& prefix = spouse->getHouse().second->getPrefix();
-		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
-		if (prefixLoc)
+		if (const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix); prefixLoc)
 			dynastyName = prefixLoc->english;
 		if (!spouse->getHouse().second->getLocalizedName().empty())
 		{
@@ -693,8 +692,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		else
 		{
 			const auto& dynasty = spouse->getHouse().second->getName();
-			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-			if (dynastyLoc)
+			if (const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty); dynastyLoc)
 				dynastyName += dynastyLoc->english;
 			else
 				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
@@ -706,11 +704,11 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		details.queen.mil = std::min((spouse->getSkills().martial + spouse->getSkills().learning) / 3, 6);
 		details.queen.birthDate = normalizeDate(spouse->getBirthDate(), startDateOption, theConversionDate);
 		details.queen.female = spouse->isFemale();
-		if (spouse->getFaith())
+		if (spouse->getFaith() && spouse->getFaith()->second)
 		{
-			const auto& religionMatch =
-				 religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
-			if (religionMatch)
+			if (const auto& religionMatch =
+					  religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
+				 religionMatch)
 			{
 				details.queen.religion = *religionMatch;
 			}
@@ -724,10 +722,9 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		{
 			details.queen.religion = details.monarch.religion; // taking a shortcut.
 		}
-		if (spouse->getCulture())
+		if (spouse->getCulture() && spouse->getCulture()->second)
 		{
-			const auto& cultureMatch = cultureMapper.cultureMatch(spouse->getCulture()->second->getName(), details.queen.religion, 0, tag);
-			if (cultureMatch)
+			if (const auto& cultureMatch = cultureMapper.cultureMatch(spouse->getCulture()->second->getName(), details.queen.religion, 0, tag); cultureMatch)
 			{
 				details.queen.culture = *cultureMatch;
 			}
@@ -752,12 +749,13 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	{
 		for (const auto& heir: title->second->getHeirs())
 		{
+			if (!heir.second || !heir.second->getHouse().second)
+				continue;
 			if (heir.second->isDead())
 				continue; // This one is dead. Next, please.
 
 			actualName = heir.second->getName();
-			const auto& heirNameLoc = localizationMapper.getLocBlockForKey(actualName);
-			if (heirNameLoc)
+			if (const auto& heirNameLoc = localizationMapper.getLocBlockForKey(actualName); heirNameLoc)
 				actualName = heirNameLoc->english;
 			details.heir.name = actualName;
 
@@ -766,14 +764,12 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			{
 				auto const& theName = heir.second->getName();
 				std::string roman;
-				const auto& nameItr = details.monarchNames.find(theName);
-				if (nameItr != details.monarchNames.end())
+				if (details.monarchNames.contains(theName))
 				{
-					const auto regnal = nameItr->second.first;
+					auto regnal = details.monarchNames.at(theName).first;
 					if (regnal >= 1)
 					{
-						roman = cardinalToRoman(regnal + 1);
-						roman = " " + roman;
+						roman = " " + cardinalToRoman(regnal + 1);
 					}
 				}
 				details.heir.monarchName = details.heir.name + roman;
@@ -781,8 +777,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 
 			std::string dynastyName;
 			const auto& prefix = heir.second->getHouse().second->getPrefix();
-			const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
-			if (prefixLoc)
+			if (const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix); prefixLoc)
 				dynastyName = prefixLoc->english;
 			if (!heir.second->getHouse().second->getLocalizedName().empty())
 			{
@@ -791,8 +786,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			else
 			{
 				const auto& dynasty = heir.second->getHouse().second->getName();
-				const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-				if (dynastyLoc)
+				if (const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty); dynastyLoc)
 					dynastyName += dynastyLoc->english;
 				else
 					dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
@@ -804,15 +798,15 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			details.heir.mil = std::min((heir.second->getSkills().martial + heir.second->getSkills().learning) / 2, 6);
 			details.heir.birthDate = normalizeDate(heir.second->getBirthDate(), startDateOption, theConversionDate);
 			details.heir.female = heir.second->isFemale();
-			if (!heir.second->getFaith())
+			if (!heir.second->getFaith() || !heir.second->getFaith()->second)
 			{
 				details.heir.religion = details.monarch.religion; // taking a shortcut.
 			}
 			else
 			{
-				const auto& religionMatch =
-					 religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName(), heir.second->getFaith()->second->getReligiousHead());
-				if (religionMatch)
+				if (const auto& religionMatch = religionMapper.getEU4ReligionForCK3Religion(heir.second->getFaith()->second->getName(),
+						  heir.second->getFaith()->second->getReligiousHead());
+					 religionMatch)
 				{
 					details.heir.religion = *religionMatch;
 				}
@@ -822,14 +816,14 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 					details.heir.religion = details.monarch.religion; // taking a shortcut.
 				}
 			}
-			if (!heir.second->getCulture())
+			if (!heir.second->getCulture() || !heir.second->getCulture()->second)
 			{
 				details.heir.culture = details.monarch.culture; // taking a shortcut.
 			}
 			else
 			{
-				const auto& cultureMatch = cultureMapper.cultureMatch(heir.second->getCulture()->second->getName(), details.heir.religion, 0, tag);
-				if (cultureMatch)
+				if (const auto& cultureMatch = cultureMapper.cultureMatch(heir.second->getCulture()->second->getName(), details.heir.religion, 0, tag);
+					 cultureMatch)
 				{
 					details.heir.culture = *cultureMatch;
 				}
