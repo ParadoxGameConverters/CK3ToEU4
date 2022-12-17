@@ -785,11 +785,17 @@ double EU4::World::calculateProvinceDevFactor(const std::shared_ptr<Province>& p
 	else if (targetProvinces > 3)
 		modFactor = 0.6;
 	else if (sourceProvinces == 2)
-		modFactor = 0.9;
+		modFactor = 0.91;
 	else if (sourceProvinces == 3)
-		modFactor = 0.81;
-	else if (sourceProvinces > 3)
-		modFactor = 0.72;
+		modFactor = 0.83;
+	else if (sourceProvinces == 4)
+		modFactor = 0.76;
+	else if (sourceProvinces == 5)
+		modFactor = 0.7;
+	else if (sourceProvinces == 6)
+		modFactor = 0.65;
+	else if (sourceProvinces > 6)
+		modFactor = 0.61;
 
 	return modFactor;
 }
