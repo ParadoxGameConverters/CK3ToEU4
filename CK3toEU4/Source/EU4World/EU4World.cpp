@@ -418,7 +418,6 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 		Log(LogLevel::Error) << "We're converting " << title.first << " which doesnt even exist! This save is corrupted.";
 		return;
 	}
-
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
 	if (title.second->getHolder()->second)

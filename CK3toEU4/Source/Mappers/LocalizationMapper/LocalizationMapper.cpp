@@ -205,6 +205,8 @@ std::pair<std::string, std::string> mappers::LocalizationMapper::determineKeyLoc
 
 std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(const std::string& key) const
 {
+	if (key.empty())
+		return std::nullopt;
 	const auto& keyItr = localizations.find(key);
 	if (keyItr == localizations.end())
 		return std::nullopt;
@@ -225,7 +227,7 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 			newBlock.russian = newBlock.english;
 		if (newBlock.simp_chinese.empty())
 			newBlock.simp_chinese = newBlock.english;
-		return std::move(newBlock);
+		return newBlock;
 	}
 	// either all is well, or we're missing english. Can't do anything about the latter.
 	return keyItr->second;

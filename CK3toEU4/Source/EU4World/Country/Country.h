@@ -117,6 +117,22 @@ class Country
 		 const mappers::LocalizationMapper& localizationMapper,
 		 Configuration::STARTDATE startDateOption,
 		 const date& theConversionDate);
+	void convertHolder(const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+		 const mappers::LocalizationMapper& localizationMapper,
+		 Configuration::STARTDATE startDateOption,
+		 const date& theConversionDate);
+	void convertSpouse(const mappers::ReligionMapper& religionMapper,
+		 const mappers::CultureMapper& cultureMapper,
+		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+		 const mappers::LocalizationMapper& localizationMapper,
+		 Configuration::STARTDATE startDateOption,
+		 const date& theConversionDate);
+	void convertHeirs(const mappers::ReligionMapper& religionMapper,
+		 const mappers::CultureMapper& cultureMapper,
+		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+		 const mappers::LocalizationMapper& localizationMapper,
+		 Configuration::STARTDATE startDateOption,
+		 const date& theConversionDate);
 
 	[[nodiscard]] date normalizeDate(const date& incomingDate,
 		 Configuration::STARTDATE startDateOption,
