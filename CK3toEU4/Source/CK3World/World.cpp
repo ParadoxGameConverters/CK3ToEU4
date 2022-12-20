@@ -420,23 +420,12 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/landed_titles"))
+	commonItems::ModFilesystem modFS(theConfiguration.getCK3Path(), mods);
+	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles/"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (getExtension(file) != "txt")
 			continue;
-		landedTitles.loadTitles(theConfiguration.getCK3Path() + "common/landed_titles/" + file);
-	}
-	for (const auto& mod: mods)
-	{
-		if (!commonItems::DoesFolderExist(mod.path + "common/landed_titles"))
-			continue;
-		Log(LogLevel::Info) << "<> Loading some landed titles from [" << mod.name << "]";
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/landed_titles"))
-		{
-			if (file.find(".txt") == std::string::npos)
-				continue;
-			landedTitles.loadTitles(mod.path + "common/landed_titles/" + file);
-		}
+		landedTitles.loadTitles(file);
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
 }

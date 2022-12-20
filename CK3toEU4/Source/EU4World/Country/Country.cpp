@@ -19,6 +19,9 @@
 #include "CommonFunctions.h"
 #include "Log.h"
 #include <cmath>
+#include <cstdlib>
+#include <chrono>
+#include <thread>
 
 EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std::move(theTag))
 {
@@ -54,6 +57,7 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	 date theConversionDate,
 	 Configuration::STARTDATE startDateOption)
 {
+	Log(LogLevel::Debug) << "--1 " << tag;
 	tag = theTag;
 	if (startDateOption == Configuration::STARTDATE::CK)
 		conversionDate = theConversionDate;
@@ -69,11 +73,17 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	if (details.holder->getHouse().first)
 		details.house = details.holder->getHouse().second;
 
+	Log(LogLevel::Debug) << "--2 " << tag;
 	populateHistory(governmentsMapper, religionMapper, provinceMapper, cultureMapper);
+	Log(LogLevel::Debug) << "--3 " << tag;
 	populateCommons(cultureMapper, localizationMapper);
+	Log(LogLevel::Debug) << "--4 " << tag;
 	populateMisc();
+	Log(LogLevel::Debug) << "--5 " << tag;
 	populateLocs(localizationMapper);
+	Log(LogLevel::Debug) << "--6 " << tag;
 	populateRulers(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+	Log(LogLevel::Debug) << "--out " << tag;
 }
 
 void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governmentsMapper,
@@ -590,161 +600,48 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
-	// do we HAVE a ruler? Broken saves come to mind.
-	if (!details.holder)
+
+	Log(LogLevel::Debug) << "-----aaa " << tag;
+	convertHolder(rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+	Log(LogLevel::Debug) << "-----bbb " << tag;
+	convertSpouse(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+	Log(LogLevel::Debug) << "-----ccc " << tag;
+	convertHeirs(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+
+	Log(LogLevel::Debug) << "-----8 " << tag;
+	// this transformation is always true, heir or not.
+	if (conversionDate.diffInYears(details.monarch.birthDate) < 16)
 	{
-		Log(LogLevel::Warning) << tag << " has no holder. Congratulations.";
-		return;
+		details.heir = details.monarch;
+		details.heir.monarchName.clear();
+		details.heir.deathDate = details.heir.birthDate;
+		details.heir.deathDate.subtractYears(-65);
+		details.heir.claim = 89; // good enough?
+		details.heir.adm = std::min(details.heir.adm + 2, 6);
+		details.heir.mil = std::min(details.heir.mil + 2, 6);
+		details.heir.dip = std::min(details.heir.dip + 2, 6);
+		details.heir.personalities.clear();
+
+		details.monarch.name = "(Regency Council)";
+		details.monarch.regency = true;
+		details.monarch.birthDate = date("1.1.1");
+		details.monarch.female = false;
+		details.monarch.dynasty.clear();
+		details.monarch.personalities.clear();
 	}
 
-	// Does the supposed ruler have a domain at all? Hello broken saves.
-	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
-	{
-		Log(LogLevel::Warning) << tag << "' holder has an empty domain. We can't work with this fellow, skipping ruler init.";
-		return;
-	}
 
-	// Are we the ruler's primary title? (if he has any)
-	// Potential PU's don't get monarchs. (and those apply for monarchies only)
-	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
-		return; // corruption
-	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
-		return;
+	Log(LogLevel::Debug) << "-----ooo " << tag;
+}
 
-	// Determine regnalness.
-	auto actualName = details.holder->getName();
-	const auto& nameLoc = localizationMapper.getLocBlockForKey(actualName);
-	if (nameLoc)
-		actualName = nameLoc->english;
-	if (details.government != "republic" && !details.monarchNames.empty())
-	{
-		std::string roman;
-		const auto& nameItr = details.monarchNames.find(actualName);
-		if (nameItr != details.monarchNames.end())
-		{
-			const auto regnal = nameItr->second.first;
-			if (regnal > 1)
-			{
-				roman = cardinalToRoman(regnal);
-				roman = " " + roman;
-			}
-		}
-		details.monarch.name = actualName + roman;
-	}
-	else
-	{
-		details.monarch.name = actualName;
-	}
-	if (details.holder->getHouse().first)
-	{
-		std::string dynastyName;
-		const auto& prefix = details.holder->getHouse().second->getPrefix();
-		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
-		if (prefixLoc)
-			dynastyName = prefixLoc->english;
-		if (!details.holder->getHouse().second->getLocalizedName().empty())
-		{
-			dynastyName += details.holder->getHouse().second->getLocalizedName();
-		}
-		else
-		{
-			const auto& dynasty = details.holder->getHouse().second->getName();
-			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
-			if (dynastyLoc)
-				dynastyName += dynastyLoc->english;
-			else
-				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
-		}
-		details.monarch.dynasty = dynastyName;
-	}
-
-	details.monarch.adm = std::min((details.holder->getSkills().stewardship + details.holder->getSkills().learning) / 3, 6);
-	details.monarch.dip = std::min((details.holder->getSkills().diplomacy + details.holder->getSkills().intrigue) / 3, 6);
-	details.monarch.mil = std::min((details.holder->getSkills().martial + details.holder->getSkills().learning) / 3, 6);
-	details.monarch.birthDate = normalizeDate(details.holder->getBirthDate(), startDateOption, theConversionDate);
-	details.monarch.female = details.holder->isFemale();
-	// religion and culture were already determining our country's primary culture and religion. If we set there, we'll copy here.
-	if (!details.primaryCulture.empty())
-		details.monarch.culture = details.primaryCulture;
-	if (!details.religion.empty())
-		details.monarch.religion = details.religion;
-	details.monarch.personalities = rulerPersonalitiesMapper.evaluatePersonalities(details.holder);
-	details.monarch.isSet = true;
-
-	if (details.holder->getSpouse() && details.holder->getSpouse()->second && details.holder->getSpouse()->second->getHouse().second &&
-		 !details.holder->isDead()) // making sure she's alive.
-	{
-		const auto spouse = details.holder->getSpouse()->second;
-
-		actualName = spouse->getName();
-		if (const auto& queenNameLoc = localizationMapper.getLocBlockForKey(actualName); queenNameLoc)
-			actualName = queenNameLoc->english;
-		details.queen.name = actualName;
-
-		std::string dynastyName;
-		const auto& prefix = spouse->getHouse().second->getPrefix();
-		if (const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix); prefixLoc)
-			dynastyName = prefixLoc->english;
-		if (!spouse->getHouse().second->getLocalizedName().empty())
-		{
-			dynastyName += spouse->getHouse().second->getLocalizedName();
-		}
-		else
-		{
-			const auto& dynasty = spouse->getHouse().second->getName();
-			if (const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty); dynastyLoc)
-				dynastyName += dynastyLoc->english;
-			else
-				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
-		}
-		details.queen.dynasty = dynastyName;
-
-		details.queen.adm = std::min((spouse->getSkills().stewardship + spouse->getSkills().learning) / 3, 6);
-		details.queen.dip = std::min((spouse->getSkills().diplomacy + spouse->getSkills().intrigue) / 3, 6);
-		details.queen.mil = std::min((spouse->getSkills().martial + spouse->getSkills().learning) / 3, 6);
-		details.queen.birthDate = normalizeDate(spouse->getBirthDate(), startDateOption, theConversionDate);
-		details.queen.female = spouse->isFemale();
-		if (spouse->getFaith() && spouse->getFaith()->second)
-		{
-			if (const auto& religionMatch =
-					  religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
-				 religionMatch)
-			{
-				details.queen.religion = *religionMatch;
-			}
-			else
-			{
-				Log(LogLevel::Warning) << "No religion match for queen " << details.queen.name << ": " << spouse->getFaith()->second->getName();
-				details.queen.religion = details.monarch.religion; // taking a shortcut.
-			}
-		}
-		else
-		{
-			details.queen.religion = details.monarch.religion; // taking a shortcut.
-		}
-		if (spouse->getCulture() && spouse->getCulture()->second)
-		{
-			if (const auto& cultureMatch = cultureMapper.cultureMatch(spouse->getCulture()->second->getName(), details.queen.religion, 0, tag); cultureMatch)
-			{
-				details.queen.culture = *cultureMatch;
-			}
-			else
-			{
-				Log(LogLevel::Warning) << "No culture match for queen " << details.queen.name << ": " << spouse->getCulture()->second->getName();
-				details.queen.culture = details.monarch.culture; // taking a shortcut.
-			}
-		}
-		else
-		{
-			details.queen.culture = details.monarch.culture; // taking a shortcut.
-		}
-		details.queen.originCountry = tag;
-		details.queen.deathDate = details.queen.birthDate;
-		details.queen.deathDate.subtractYears(-60);
-		details.queen.personalities = rulerPersonalitiesMapper.evaluatePersonalities(spouse);
-		details.queen.isSet = true;
-	}
-
+void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
+	 const mappers::CultureMapper& cultureMapper,
+	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+	 const mappers::LocalizationMapper& localizationMapper,
+	 Configuration::STARTDATE startDateOption,
+	 const date& theConversionDate)
+{
+	Log(LogLevel::Debug) << "-----7 " << tag;
 	if (!title->second->getHeirs().empty())
 	{
 		for (const auto& heir: title->second->getHeirs())
@@ -754,7 +651,7 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 			if (heir.second->isDead())
 				continue; // This one is dead. Next, please.
 
-			actualName = heir.second->getName();
+			auto actualName = heir.second->getName();
 			if (const auto& heirNameLoc = localizationMapper.getLocBlockForKey(actualName); heirNameLoc)
 				actualName = heirNameLoc->english;
 			details.heir.name = actualName;
@@ -842,26 +739,191 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		}
 	}
 
-	// this transformation is always true, heir or not.
-	if (conversionDate.diffInYears(details.monarch.birthDate) < 16)
-	{
-		details.heir = details.monarch;
-		details.heir.monarchName.clear();
-		details.heir.deathDate = details.heir.birthDate;
-		details.heir.deathDate.subtractYears(-65);
-		details.heir.claim = 89; // good enough?
-		details.heir.adm = std::min(details.heir.adm + 2, 6);
-		details.heir.mil = std::min(details.heir.mil + 2, 6);
-		details.heir.dip = std::min(details.heir.dip + 2, 6);
-		details.heir.personalities.clear();
+}
 
-		details.monarch.name = "(Regency Council)";
-		details.monarch.regency = true;
-		details.monarch.birthDate = date("1.1.1");
-		details.monarch.female = false;
-		details.monarch.dynasty.clear();
-		details.monarch.personalities.clear();
+void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
+	 const mappers::CultureMapper& cultureMapper,
+	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+	 const mappers::LocalizationMapper& localizationMapper,
+	 Configuration::STARTDATE startDateOption,
+	 const date& theConversionDate)
+{
+	Log(LogLevel::Debug) << "-----6 " << tag;
+	if (details.holder->getSpouse() && details.holder->getSpouse()->second && details.holder->getSpouse()->second->getHouse().second &&
+		 !details.holder->isDead()) // making sure she's alive.
+	{
+		const auto spouse = details.holder->getSpouse()->second;
+
+		auto actualName = spouse->getName();
+		if (const auto& queenNameLoc = localizationMapper.getLocBlockForKey(actualName); queenNameLoc)
+			actualName = queenNameLoc->english;
+		details.queen.name = actualName;
+
+		std::string dynastyName;
+		const auto& prefix = spouse->getHouse().second->getPrefix();
+		if (const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix); prefixLoc)
+			dynastyName = prefixLoc->english;
+		if (!spouse->getHouse().second->getLocalizedName().empty())
+		{
+			dynastyName += spouse->getHouse().second->getLocalizedName();
+		}
+		else
+		{
+			const auto& dynasty = spouse->getHouse().second->getName();
+			if (const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty); dynastyLoc)
+				dynastyName += dynastyLoc->english;
+			else
+				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+		}
+		details.queen.dynasty = dynastyName;
+
+		details.queen.adm = std::min((spouse->getSkills().stewardship + spouse->getSkills().learning) / 3, 6);
+		details.queen.dip = std::min((spouse->getSkills().diplomacy + spouse->getSkills().intrigue) / 3, 6);
+		details.queen.mil = std::min((spouse->getSkills().martial + spouse->getSkills().learning) / 3, 6);
+		details.queen.birthDate = normalizeDate(spouse->getBirthDate(), startDateOption, theConversionDate);
+		details.queen.female = spouse->isFemale();
+		if (spouse->getFaith() && spouse->getFaith()->second)
+		{
+			if (const auto& religionMatch =
+					  religionMapper.getEU4ReligionForCK3Religion(spouse->getFaith()->second->getName(), spouse->getFaith()->second->getReligiousHead());
+				 religionMatch)
+			{
+				details.queen.religion = *religionMatch;
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "No religion match for queen " << details.queen.name << ": " << spouse->getFaith()->second->getName();
+				details.queen.religion = details.monarch.religion; // taking a shortcut.
+			}
+		}
+		else
+		{
+			details.queen.religion = details.monarch.religion; // taking a shortcut.
+		}
+		if (spouse->getCulture() && spouse->getCulture()->second)
+		{
+			if (const auto& cultureMatch = cultureMapper.cultureMatch(spouse->getCulture()->second->getName(), details.queen.religion, 0, tag); cultureMatch)
+			{
+				details.queen.culture = *cultureMatch;
+			}
+			else
+			{
+				Log(LogLevel::Warning) << "No culture match for queen " << details.queen.name << ": " << spouse->getCulture()->second->getName();
+				details.queen.culture = details.monarch.culture; // taking a shortcut.
+			}
+		}
+		else
+		{
+			details.queen.culture = details.monarch.culture; // taking a shortcut.
+		}
+		details.queen.originCountry = tag;
+		details.queen.deathDate = details.queen.birthDate;
+		details.queen.deathDate.subtractYears(-60);
+		details.queen.personalities = rulerPersonalitiesMapper.evaluatePersonalities(spouse);
+		details.queen.isSet = true;
 	}
+}
+
+void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
+	 const mappers::LocalizationMapper& localizationMapper,
+	 Configuration::STARTDATE startDateOption,
+	 const date& theConversionDate)
+{
+	Log(LogLevel::Debug) << "-----1 " << tag;
+	// do we HAVE a ruler? Broken saves come to mind.
+	if (!details.holder || details.holder->isDead())
+	{
+		Log(LogLevel::Warning) << tag << " has no holder. Congratulations.";
+		return;
+	}
+
+	Log(LogLevel::Debug) << "-----2 " << tag;
+	// Does the supposed ruler have a domain at all? Hello broken saves.
+	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
+	{
+		Log(LogLevel::Warning) << tag << "' holder has an empty domain. We can't work with this fellow, skipping ruler init.";
+		return;
+	}
+
+	// Are we the ruler's primary title? (if he has any)
+	// Potential PU's don't get monarchs. (and those apply for monarchies only)
+	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
+		return; // corruption
+	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
+		return;
+	Log(LogLevel::Debug) << "-----3 " << tag << " " << details.holder->getCharacterDomain()->getDomain()[0].second->getName();
+	std::this_thread::sleep_for(std::chrono::milliseconds(2));
+
+	// Determine regnalness.
+	std::string actualName = details.holder->getName();
+	//Log(LogLevel::Debug) << "actual : " << actualName;
+	std::this_thread::sleep_for(std::chrono::milliseconds(2));
+	if (const auto nameLoc = localizationMapper.getLocBlockForKey(actualName); nameLoc)
+		actualName = nameLoc->english;
+	Log(LogLevel::Debug) << "actual : " << actualName;
+	std::this_thread::sleep_for(std::chrono::milliseconds(2));
+	if (details.government != "republic" && !details.monarchNames.empty())
+	{
+		std::string roman;
+		const auto& nameItr = details.monarchNames.find(actualName);
+		if (nameItr != details.monarchNames.end())
+		{
+			const auto regnal = nameItr->second.first;
+			if (regnal > 1)
+			{
+				roman = cardinalToRoman(regnal);
+				roman = " " + roman;
+			}
+		}
+		details.monarch.name = actualName + roman;
+	}
+	else
+	{
+		details.monarch.name = actualName;
+	}
+	std::this_thread::sleep_for(std::chrono::milliseconds(2));
+	Log(LogLevel::Debug) << "-----4 " << tag << " " << details.monarch.name;
+	if (details.holder->getHouse().second)
+	{
+		std::string dynastyName;
+		const auto& prefix = details.holder->getHouse().second->getPrefix();
+		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
+		if (prefixLoc)
+			dynastyName = prefixLoc->english;
+		Log(LogLevel::Debug) << "-----4a " << tag << " " << dynastyName;
+		if (!details.holder->getHouse().second->getLocalizedName().empty())
+		{
+			dynastyName += details.holder->getHouse().second->getLocalizedName();
+			Log(LogLevel::Debug) << "-----4b " << tag << " " << dynastyName;
+		}
+		else
+		{
+			const auto& dynasty = details.holder->getHouse().second->getName();
+			const auto& dynastyLoc = localizationMapper.getLocBlockForKey(dynasty);
+			if (dynastyLoc)
+				dynastyName += dynastyLoc->english;
+			else
+				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
+			Log(LogLevel::Debug) << "-----4c " << tag << " " << dynastyName;
+		}
+		details.monarch.dynasty = dynastyName;
+		Log(LogLevel::Debug) << "-----4d " << tag << " " << dynastyName;
+	}
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(2));
+	Log(LogLevel::Debug) << "-----5 " << tag;
+	details.monarch.adm = std::min((details.holder->getSkills().stewardship + details.holder->getSkills().learning) / 3, 6);
+	details.monarch.dip = std::min((details.holder->getSkills().diplomacy + details.holder->getSkills().intrigue) / 3, 6);
+	details.monarch.mil = std::min((details.holder->getSkills().martial + details.holder->getSkills().learning) / 3, 6);
+	details.monarch.birthDate = normalizeDate(details.holder->getBirthDate(), startDateOption, theConversionDate);
+	details.monarch.female = details.holder->isFemale();
+	// religion and culture were already determining our country's primary culture and religion. If we set there, we'll copy here.
+	if (!details.primaryCulture.empty())
+		details.monarch.culture = details.primaryCulture;
+	if (!details.religion.empty())
+		details.monarch.religion = details.religion;
+	details.monarch.personalities = rulerPersonalitiesMapper.evaluatePersonalities(details.holder);
+	details.monarch.isSet = true;
 }
 
 int EU4::Country::getDevelopment() const
