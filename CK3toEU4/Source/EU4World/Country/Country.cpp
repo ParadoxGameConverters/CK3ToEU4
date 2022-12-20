@@ -54,7 +54,6 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	 date theConversionDate,
 	 Configuration::STARTDATE startDateOption)
 {
-	Log(LogLevel::Debug) << "--1 " << tag;
 	tag = theTag;
 	if (startDateOption == Configuration::STARTDATE::CK)
 		conversionDate = theConversionDate;
@@ -70,17 +69,11 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	if (details.holder->getHouse().first)
 		details.house = details.holder->getHouse().second;
 
-	Log(LogLevel::Debug) << "--2 " << tag;
 	populateHistory(governmentsMapper, religionMapper, provinceMapper, cultureMapper);
-	Log(LogLevel::Debug) << "--3 " << tag;
 	populateCommons(cultureMapper, localizationMapper);
-	Log(LogLevel::Debug) << "--4 " << tag;
 	populateMisc();
-	Log(LogLevel::Debug) << "--5 " << tag;
 	populateLocs(localizationMapper);
-	Log(LogLevel::Debug) << "--6 " << tag;
 	populateRulers(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
-	Log(LogLevel::Debug) << "--out " << tag;
 }
 
 void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governmentsMapper,

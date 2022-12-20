@@ -418,7 +418,6 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 		Log(LogLevel::Error) << "We're converting " << title.first << " which doesnt even exist! This save is corrupted.";
 		return;
 	}
-	Log(LogLevel::Debug) << "pocetak " << title.first;
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
 	if (title.second->getHolder()->second)
@@ -455,13 +454,11 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	}
 	if (!tag)
 		throw std::runtime_error("Title " + title.first + " could not be mapped!");
-	Log(LogLevel::Debug) << "into cra " << title.first;
 
 	// Locating appropriate existing country
 	const auto& countryItr = countries.find(*tag);
 	if (countryItr != countries.end())
 	{
-		Log(LogLevel::Debug) << "naso " << title.first;
 		countryItr->second->initializeFromTitle(*tag,
 			 title,
 			 governmentsMapper,
@@ -473,13 +470,11 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 sourceWorld.getConversionDate(),
 			 startDateOption);
 		title.second->loadEU4Tag(std::pair(*tag, countryItr->second));
-		Log(LogLevel::Debug) << "d1 " << title.first;
 	}
 	else
 	{
 		// Otherwise create the country
 		auto newCountry = std::make_shared<Country>();
-		Log(LogLevel::Debug) << "novo " << title.first;
 		newCountry->initializeFromTitle(*tag,
 			 title,
 			 governmentsMapper,
@@ -492,10 +487,8 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 startDateOption);
 		newCountry->setGeneratedNation();
 		title.second->loadEU4Tag(std::pair(*tag, newCountry));
-		Log(LogLevel::Debug) << "d2 " << title.first;
 		countries.insert(std::pair(*tag, newCountry));
 	}
-	Log(LogLevel::Debug) << "kraj " << title.first;
 }
 
 void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasion)
