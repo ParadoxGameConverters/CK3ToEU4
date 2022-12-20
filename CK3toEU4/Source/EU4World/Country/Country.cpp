@@ -19,9 +19,6 @@
 #include "CommonFunctions.h"
 #include "Log.h"
 #include <cmath>
-#include <cstdlib>
-#include <chrono>
-#include <thread>
 
 EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std::move(theTag))
 {
@@ -600,15 +597,31 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
+	// do we HAVE a ruler? Broken saves come to mind.
+	if (!details.holder || details.holder->isDead())
+	{
+		Log(LogLevel::Warning) << tag << " has no holder. Congratulations.";
+		return;
+	}
 
-	Log(LogLevel::Debug) << "-----aaa " << tag;
+	// Does the supposed ruler have a domain at all? Hello broken saves.
+	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
+	{
+		Log(LogLevel::Warning) << tag << "' holder has an empty domain. We can't work with this fellow, skipping ruler init.";
+		return;
+	}
+
+	// Are we the ruler's primary title? (if he has any)
+	// Potential PU's don't get monarchs. (and those apply for monarchies only)
+	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
+		return; // corruption
+	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
+		return;
+
 	convertHolder(rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
-	Log(LogLevel::Debug) << "-----bbb " << tag;
 	convertSpouse(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
-	Log(LogLevel::Debug) << "-----ccc " << tag;
 	convertHeirs(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
 
-	Log(LogLevel::Debug) << "-----8 " << tag;
 	// this transformation is always true, heir or not.
 	if (conversionDate.diffInYears(details.monarch.birthDate) < 16)
 	{
@@ -629,9 +642,6 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 		details.monarch.dynasty.clear();
 		details.monarch.personalities.clear();
 	}
-
-
-	Log(LogLevel::Debug) << "-----ooo " << tag;
 }
 
 void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
@@ -641,7 +651,6 @@ void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
-	Log(LogLevel::Debug) << "-----7 " << tag;
 	if (!title->second->getHeirs().empty())
 	{
 		for (const auto& heir: title->second->getHeirs())
@@ -738,7 +747,6 @@ void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
 			break;
 		}
 	}
-
 }
 
 void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
@@ -748,7 +756,6 @@ void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
-	Log(LogLevel::Debug) << "-----6 " << tag;
 	if (details.holder->getSpouse() && details.holder->getSpouse()->second && details.holder->getSpouse()->second->getHouse().second &&
 		 !details.holder->isDead()) // making sure she's alive.
 	{
@@ -829,46 +836,17 @@ void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerP
 	 Configuration::STARTDATE startDateOption,
 	 const date& theConversionDate)
 {
-	Log(LogLevel::Debug) << "-----1 " << tag;
-	// do we HAVE a ruler? Broken saves come to mind.
-	if (!details.holder || details.holder->isDead())
-	{
-		Log(LogLevel::Warning) << tag << " has no holder. Congratulations.";
-		return;
-	}
-
-	Log(LogLevel::Debug) << "-----2 " << tag;
-	// Does the supposed ruler have a domain at all? Hello broken saves.
-	if (!details.holder->getCharacterDomain() || details.holder->getCharacterDomain()->getDomain().empty())
-	{
-		Log(LogLevel::Warning) << tag << "' holder has an empty domain. We can't work with this fellow, skipping ruler init.";
-		return;
-	}
-
-	// Are we the ruler's primary title? (if he has any)
-	// Potential PU's don't get monarchs. (and those apply for monarchies only)
-	if (!details.holder->getCharacterDomain()->getDomain()[0].second)
-		return; // corruption
-	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
-		return;
-	Log(LogLevel::Debug) << "-----3 " << tag << " " << details.holder->getCharacterDomain()->getDomain()[0].second->getName();
-	std::this_thread::sleep_for(std::chrono::milliseconds(2));
-
 	// Determine regnalness.
 	std::string actualName = details.holder->getName();
-	//Log(LogLevel::Debug) << "actual : " << actualName;
-	std::this_thread::sleep_for(std::chrono::milliseconds(2));
 	if (const auto nameLoc = localizationMapper.getLocBlockForKey(actualName); nameLoc)
 		actualName = nameLoc->english;
-	Log(LogLevel::Debug) << "actual : " << actualName;
-	std::this_thread::sleep_for(std::chrono::milliseconds(2));
 	if (details.government != "republic" && !details.monarchNames.empty())
 	{
 		std::string roman;
 		const auto& nameItr = details.monarchNames.find(actualName);
 		if (nameItr != details.monarchNames.end())
 		{
-			const auto regnal = nameItr->second.first;
+			const int regnal = nameItr->second.first;
 			if (regnal > 1)
 			{
 				roman = cardinalToRoman(regnal);
@@ -881,8 +859,7 @@ void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerP
 	{
 		details.monarch.name = actualName;
 	}
-	std::this_thread::sleep_for(std::chrono::milliseconds(2));
-	Log(LogLevel::Debug) << "-----4 " << tag << " " << details.monarch.name;
+
 	if (details.holder->getHouse().second)
 	{
 		std::string dynastyName;
@@ -890,11 +867,9 @@ void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerP
 		const auto& prefixLoc = localizationMapper.getLocBlockForKey(prefix);
 		if (prefixLoc)
 			dynastyName = prefixLoc->english;
-		Log(LogLevel::Debug) << "-----4a " << tag << " " << dynastyName;
 		if (!details.holder->getHouse().second->getLocalizedName().empty())
 		{
 			dynastyName += details.holder->getHouse().second->getLocalizedName();
-			Log(LogLevel::Debug) << "-----4b " << tag << " " << dynastyName;
 		}
 		else
 		{
@@ -904,14 +879,10 @@ void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerP
 				dynastyName += dynastyLoc->english;
 			else
 				dynastyName += dynasty; // There may be errors here with unresolved keys but it's not our fault.
-			Log(LogLevel::Debug) << "-----4c " << tag << " " << dynastyName;
 		}
 		details.monarch.dynasty = dynastyName;
-		Log(LogLevel::Debug) << "-----4d " << tag << " " << dynastyName;
 	}
 
-	std::this_thread::sleep_for(std::chrono::milliseconds(2));
-	Log(LogLevel::Debug) << "-----5 " << tag;
 	details.monarch.adm = std::min((details.holder->getSkills().stewardship + details.holder->getSkills().learning) / 3, 6);
 	details.monarch.dip = std::min((details.holder->getSkills().diplomacy + details.holder->getSkills().intrigue) / 3, 6);
 	details.monarch.mil = std::min((details.holder->getSkills().martial + details.holder->getSkills().learning) / 3, 6);
