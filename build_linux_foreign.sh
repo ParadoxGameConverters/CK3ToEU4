@@ -11,6 +11,7 @@ cd ImageMagick-7.0.10 &&
 sudo make install &&
 cd ../../ &&
 rm -rf Release/ &&
+mkdir Release &&
 cd CK3toEU4 &&
 rm -rf build &&
 rm -rf Release-Linux &&
