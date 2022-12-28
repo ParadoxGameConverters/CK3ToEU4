@@ -595,7 +595,8 @@ link = { eu4 = sindhi ck3 = sindhi tech = indian gfx = indiangfx }
 link = { eu4 = marathi ck3 = marathi ck3 = southern_indo_aryan tech = indian gfx = indiangfx }
 link = { eu4 = sinhala ck3 = sinhala tech = indian gfx = indiangfx }
 
-link = { eu4 = arakanese ck3 = burmese tech = indian gfx = indiangfx region = arakan_area }
+link = { eu4 = arakanese ck3 = arakanese tech = indian gfx = indiangfx }  # ImperatorToCK3
+link = { eu4 = arakanese ck3 = burmese tech = indian gfx = indiangfx region = arakan_area }  # TODO: disable when IRToCK3 save detected
 link = { eu4 = burmese ck3 = burmese tech = indian gfx = indiangfx }
 link = { eu4 = mon ck3 = mon tech = indian gfx = indiangfx }
 
@@ -657,10 +658,11 @@ link = { eu4 = northern_thai ck3 = thai tech = chinese gfx = asiangfx region = n
 link = { eu4 = central_thai ck3 = thai tech = chinese gfx = asiangfx }
 link = { eu4 = lao ck3 = lao tech = chinese gfx = asiangfx }
 link = { eu4 = karen ck3 = shan tech = chinese gfx = asiangfx province = 2401 }
-link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 province = 2396 province = 4404 }
+link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 province = 2396 province = 4404 }  # TODO: disable when IRToCK3 save detected
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
+link = { eu4 = kachin ck3 = kachin tech = chinese gfx = asiangfx }  # ImperatorToCK3
 
 # Japanese
 link = { eu4 = korean ck3 = korean tech = chinese gfx = asiangfx }
