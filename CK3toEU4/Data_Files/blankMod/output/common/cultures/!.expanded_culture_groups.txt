@@ -1078,6 +1078,20 @@ malay = {
 thai_group = {
 }
 southeastasian_group = {
+	palaungic = {
+		# The Palaung (Burmese: ?????? ??????? [p?là??? lùmjó]; Thai: ???????, also written as Benglong Palong) or Ta'ang are a Mon–Khmer ethnic minority found in Shan State of Burma, Yunnan Province of China and Northern Thailand
+		primary = SST  # Shan
+		dynasty_names = {
+			Pegu Dagon Thaton Martaban
+		}
+		male_names = {
+			"Razadarit" "Binnya Dhammaraza" "Binnya Ran" "Binnya Waru" "Binnya Kyan" "Leik Mawdaw" "Mawdaw" 
+			"Dhammazedi" "Takayutpi" "Smim Sawhtut" "Smim Htaw" "Binnya Dala"
+		}
+		female_names = {
+			"Mya" "Shin Sawbu"
+		}
+	}
 }
 burman = {
 	karen = {
