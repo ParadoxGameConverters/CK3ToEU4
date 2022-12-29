@@ -658,11 +658,11 @@ link = { eu4 = northern_thai ck3 = thai tech = chinese gfx = asiangfx region = n
 link = { eu4 = central_thai ck3 = thai tech = chinese gfx = asiangfx }
 link = { eu4 = lao ck3 = lao tech = chinese gfx = asiangfx }
 link = { eu4 = karen ck3 = shan tech = chinese gfx = asiangfx province = 2401 }
-link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 province = 2396 province = 4404 }  # TODO: disable when IRToCK3 save detected
+link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 province = 2396 province = 4404 }
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
-link = { eu4 = kachin ck3 = kachin tech = chinese gfx = asiangfx }  # ImperatorToCK3
+link = { eu4 = palaungic ck3 = palaungic tech = chinese gfx = asiangfx }  # ImperatorToCK3
 
 # Japanese
 link = { eu4 = korean ck3 = korean tech = chinese gfx = asiangfx }
