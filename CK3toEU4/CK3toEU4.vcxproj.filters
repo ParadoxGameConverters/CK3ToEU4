@@ -136,6 +136,9 @@
     <Filter Include="EU4World\Ideas">
       <UniqueIdentifier>{b3589733-8995-4500-9eef-6074f1d3167d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CommonItems\zip">
+      <UniqueIdentifier>{52676d3e-5f66-48c7-8973-ad762e726202}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -224,9 +227,6 @@
       <Filter>Mappers\NamedColors</Filter>
     </ClInclude>
     <ClInclude Include="Source\Helpers\rakaly.h">
-      <Filter>Helpers</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Helpers\rakaly_wrapper.h">
       <Filter>Helpers</Filter>
     </ClInclude>
     <ClInclude Include="Source\CK3World\Titles\LandedTitles.h">
@@ -495,6 +495,12 @@
     </ClInclude>
     <ClInclude Include="Source\CK3World\Dynasties\HouseNameScraping.h">
       <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\external\zip\src\miniz.h">
+      <Filter>CommonItems\zip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\commonItems\external\zip\src\zip.h">
+      <Filter>CommonItems\zip</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -847,6 +853,9 @@
     </ClCompile>
     <ClCompile Include="Source\CK3World\Dynasties\HouseNameScraping.cpp">
       <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
+      <Filter>CommonItems\zip</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

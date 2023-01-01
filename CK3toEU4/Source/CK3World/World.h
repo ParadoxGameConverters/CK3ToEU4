@@ -49,6 +49,8 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
 
   private:
+	void registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);
+
 	// savegame processing
 	void verifySave(const std::string& saveGamePath);
 	void processRegularSave(const std::string& saveGamePath);
