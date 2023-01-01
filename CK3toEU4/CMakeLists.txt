@@ -17,11 +17,9 @@ add_compile_options("-pthread")
 add_link_options(-no-pie)
 
 include_directories("../commonItems")
-include_directories("../commonItems/ZipLib")
 include_directories("/usr/local/include/ImageMagick-7/")
 include_directories("${PROJECT_SOURCE_DIR}")
 link_directories(${CMAKE_SOURCE_DIR}/Resources /usr/local/lib)
-add_subdirectory(../commonItems/ZipLib [binary_dir])
 
 file(GLOB MAIN_SOURCES "${PROJECT_SOURCE_DIR}/*.cpp")
 file(GLOB CONFIGURATION_SOURCES "${PROJECT_SOURCE_DIR}/Configuration/*.cpp")
@@ -48,7 +46,7 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/StringUtils.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ModLoader/ModFilesystem.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ModLoader/ModLoader.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ModLoader/ModParser.cpp")
-
+set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/external/zip/src/zip.c")
 
 add_executable(CK3toEU4 
 	${MAIN_SOURCES}
@@ -61,7 +59,7 @@ add_executable(CK3toEU4
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly ZIPLIB stdc++fs MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
+target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly stdc++fs MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
 
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
 add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
