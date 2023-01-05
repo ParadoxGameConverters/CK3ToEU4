@@ -89,9 +89,15 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
 	Log(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
-	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
+	metaPreParser.registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
 	});
-	registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
+	metaPreParser.registerKeyword("meta_data", [this](std::istream& theStream) {
+		metaParser.parseStream(theStream);
+		saveGame.parsedMeta = true;
+	});
+	metaPreParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	metaParser.registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		for (const auto& path: commonItems::getStrings(theStream))
 			mods.emplace_back(Mod("", path));
@@ -105,6 +111,21 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 				Log(LogLevel::Notice) << "CoA Designer mod enabed; player CoA will be generated.";
 				coaDesigner = true;
 			}
+	});
+	metaParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
+	});
+	registerKeyword("meta_data", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
+		{
+			commonItems::ignoreItem("unused", theStream);
+		}
+		else
+		{
+			metaParser.parseStream(theStream);
+			saveGame.parsedMeta = true;
+		}
 	});
 	registerKeyword("currently_played_characters", [this](std::istream& theStream) {
 		auto playedCharacters = commonItems::getLlongs(theStream);
@@ -210,31 +231,50 @@ void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConf
 
 void CK3::World::processSave(const std::string& saveGamePath)
 {
-	switch (saveGame.saveType)
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	const auto tempSave = inStream.str();
+
+	const auto save = rakaly::parseCk3(tempSave);
+	if (const auto& melt = save.meltMeta(); melt)
 	{
-		case SaveType::REGULAR:
-			Log(LogLevel::Info) << "-> Importing regular uncompressed CK3 save.";
-			processRegularSave(saveGamePath);
-			break;
-		case SaveType::ZIPFILE:
-			Log(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
-			processCompressedSave(saveGamePath);
-			break;
-		case SaveType::AUTOSAVE:
-			Log(LogLevel::Info) << "-> Importing ironman CK3 autosave.";
-			processAutoSave(saveGamePath);
-			break;
-		case SaveType::IRONMAN:
-			Log(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
-			processIronManSave(saveGamePath);
-			break;
-		case SaveType::INVALID:
-			throw std::runtime_error("Unknown save type.");
+		Log(LogLevel::Info) << "Meta extracted successfully.";
+		melt->writeData(saveGame.metadata);
+	}
+	else if (save.is_binary())
+	{
+		Log(LogLevel::Error) << "Binary Save and NO META!";
+	}
+
+	if (save.is_binary())
+	{
+		Log(LogLevel::Info) << "Gamestate is binary, melting.";
+		const auto& melt = save.melt();
+		if (melt.has_unknown_tokens())
+		{
+			Log(LogLevel::Error) << "Rakaly reports errors while melting ironman save!";
+		}
+
+		melt.writeData(saveGame.gamestate);
+
+		std::ofstream metaDump("metaDump.txt");
+		metaDump << saveGame.metadata;
+		metaDump.close();
+
+		std::ofstream saveDump("saveDump.txt");
+		saveDump << saveGame.gamestate;
+		saveDump.close();
+	}
+	else
+	{
+		Log(LogLevel::Info) << "Gamestate is textual.";
+		const auto& melt = save.melt();
+		melt.writeData(saveGame.gamestate);
 	}
 }
 
-
-void CK3::World::verifySave(const std::string& saveGamePath)
+void CK3::World::verifySave(const std::string& saveGamePath) const
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	if (!saveFile.is_open())
@@ -245,158 +285,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 	if (buffer[0] != 'S' || buffer[1] != 'A' || buffer[2] != 'V')
 		throw std::runtime_error("Savefile of unknown type.");
 
-	char ch;
-	do
-	{ // skip until newline
-		ch = static_cast<char>(saveFile.get());
-	} while (ch != '\n' && ch != '\r');
-
-	saveFile.get(buffer, 10);
-	if (std::string(buffer) == "meta_data")
-	{
-		// compressed or not?
-		saveFile.seekg(0, std::ios::end);
-		const auto length = saveFile.tellg();
-		if (length < 65536)
-		{
-			throw std::runtime_error("Savegame seems a bit too small.");
-		}
-		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[length];
-		saveFile.read(bigBuf, length);
-		if (saveFile.gcount() < length)
-			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
-		const std::string bufStr(bigBuf);
-		const auto pos = bufStr.find("}\nPK");
-		if (pos != std::string::npos)
-		{
-			saveGame.saveType = SaveType::ZIPFILE;
-		}
-		else
-		{
-			saveGame.saveType = SaveType::REGULAR;
-		}
-	}
-	else
-	{
-		saveFile.seekg(0, std::ios::end);
-		const auto length = saveFile.tellg();
-		if (length < 65536)
-		{
-			throw std::runtime_error("Savegame seems a bit too small.");
-		}
-		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[length];
-		saveFile.read(bigBuf, length);
-		if (saveFile.gcount() < length)
-			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
-		for (int i = 0; i < 65533; ++i)
-			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
-			{
-				saveGame.zipStart = i;
-				saveGame.saveType = SaveType::IRONMAN;
-				break;
-			}
-		if (saveGame.saveType != SaveType::IRONMAN)
-			saveGame.saveType = SaveType::AUTOSAVE;
-
-		delete[] bigBuf;
-	}
 	saveFile.close();
-}
-
-void CK3::World::processRegularSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	saveGame.gamestate = inStream.str();
-
-	const auto startMeta = saveGame.gamestate.find_first_of("\r\n") + 1;
-	const auto endMeta = saveGame.gamestate.find("ironman_manager={");
-
-	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
-	saveGame.metadata = saveGame.gamestate.substr(startMeta + 12, endMeta - startMeta - 14);
-}
-
-void CK3::World::processCompressedSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inString = inStream.str();
-
-	auto startMeta = inString.find_first_of("\r\n") + 1;
-	auto startZipped = inString.find("PK\03\04");
-
-	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
-	saveGame.metadata = inString.substr(startMeta + 12, startZipped - startMeta - 14);
-
-	const auto game_state = rakaly::meltCk3(inString);
-	game_state.writeData(saveGame.gamestate);
-	if (game_state.has_unknown_tokens())
-		Log(LogLevel::Error) << "Rakaly melting had errors!";
-}
-
-void CK3::World::processAutoSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
-	const auto game_state = rakaly::meltCk3(inBinary);
-	game_state.writeData(saveGame.gamestate);
-
-	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
-	auto endMeta = saveGame.gamestate.find("\ndate=");
-	auto endFile = saveGame.gamestate.size();
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = saveGame.gamestate.substr(startMeta + 13, endMeta - startMeta - 15);
-	// dump for sanity purposes.
-	std::ofstream metaDump("metaDumpOfIron.txt");
-	metaDump << saveGame.metadata;
-	metaDump.close();
-
-	saveGame.gamestate = saveGame.gamestate.substr(endMeta + 1, endFile);
-	// dump for sanity purposes.
-	std::ofstream dump("dumpOfIron.txt");
-	dump << saveGame.gamestate;
-	dump.close();
-}
-
-void CK3::World::processIronManSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
-
-	std::string tempMeta = inBinary.substr(0, saveGame.zipStart);
-	const auto meta_state = rakaly::meltCk3(tempMeta);
-	meta_state.writeData(tempMeta);
-	if (meta_state.has_unknown_tokens())
-		Log(LogLevel::Error) << "Rakaly meta melting had errors!";
-
-	auto startMeta = tempMeta.find_first_of("\r\n");
-	auto endMeta = tempMeta.find_last_of("}");
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = tempMeta.substr(startMeta + 12, endMeta - startMeta - 12);
-	// dump for sanity purposes.
-	std::ofstream metaDump("metaDumpOfIron.txt");
-	metaDump << saveGame.metadata;
-	metaDump.close();
-
-	const auto game_state = rakaly::meltCk3(inBinary);
-	game_state.writeData(saveGame.gamestate);
-	if (game_state.has_unknown_tokens())
-		Log(LogLevel::Error) << "Rakaly melting had errors!";
-	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
-	auto endFile = saveGame.gamestate.size();
-	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	// dump for sanity purposes.
-	std::ofstream dump("dumpOfIron.txt");
-	dump << saveGame.gamestate;
-	dump.close();
 }
 
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)

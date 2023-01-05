@@ -5,57 +5,20 @@
  */
 typedef struct MeltedBuffer MeltedBuffer;
 
+typedef struct MeltedBufferResult MeltedBufferResult;
+
+typedef struct PdsError PdsError;
+
+typedef struct PdsFile PdsFile;
+
+typedef struct PdsFileResult PdsFileResult;
+
+typedef struct PdsMeta PdsMeta;
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif // __cplusplus
-
-	/**
-	 * A non-zero return value indicates an error with the melted buffer
-	 *
-	 * A non-zero status code can occur from the following:
-	 *
-	 *  - An early EOF
-	 *  - Invalid format encountered
-	 *  - Too many close delimiters
-	 *
-	 * # Safety
-	 *
-	 * Must pass in a valid pointer to a `MeltedBuffer`
-	 */
-	int rakaly_melt_error_code(const struct MeltedBuffer* res);
-
-	/**
-	 * Calculate the number of bytes in the for the melted output's error message.
-	 * The length excludes null termination
-	 *
-	 * # Safety
-	 *
-	 * Must pass in a valid pointer to a `MeltedBuffer`
-	 */
-	int rakaly_melt_error_length(const struct MeltedBuffer* res);
-
-	/**
-	 * Write the most recent error message into a caller-provided buffer as a UTF-8
-	 * string, returning the number of bytes written.
-	 *
-	 * # Note
-	 *
-	 * This writes a **UTF-8** string into the buffer. Windows users may need to
-	 * convert it to a UTF-16 "unicode" afterwards.
-	 *
-	 * If there are no recent errors then this returns `0` (because we wrote 0
-	 * bytes). `-1` is returned if there are any errors, for example when passed a
-	 * null pointer or a buffer of insufficient size.
-	 *
-	 * The buffer will not be null terminated.
-	 *
-	 * # Safety
-	 *
-	 * - Must pass in a valid pointer to a `MeltedBuffer`
-	 * - Given buffer must be at least the given length in size
-	 */
-	int rakaly_melt_error_write_data(const struct MeltedBuffer* res, char* buffer, int length);
 
 	/**
 	 * Destroys a `MeltedBuffer` once you are done with it.
@@ -83,15 +46,6 @@ extern "C"
 	 * Must pass in a valid pointer to a `MeltedBuffer`
 	 */
 	bool rakaly_melt_is_verbatim(const struct MeltedBuffer* res);
-
-	/**
-	 * Returns true if the melter needed to convert the binary input
-	 *
-	 * # Safety
-	 *
-	 * Must pass in a valid pointer to a `MeltedBuffer`
-	 */
-	bool rakaly_melt_binary_translated(const struct MeltedBuffer* res);
 
 	/**
 	 * Returns true if the melter encountered unknown tokens in the binary input
@@ -124,44 +78,185 @@ extern "C"
 	size_t rakaly_melt_write_data(const struct MeltedBuffer* res, char* buffer, size_t length);
 
 	/**
-	 * Converts a save into uncompressed plaintext data.
+	 * Consume a result and return the underyling error. If the result does not
+	 * encompass an error, the result is not consumed.
 	 *
-	 * Parameters:
+	 * # Safety
 	 *
-	 *  - data: Pointer to the save data to convert. It is valid for this data to
-	 *    be uncompressed plaintext data, compressed plaintext data, or binary data
-	 *  - data_len: Length of the data indicated by the data pointer. It is
-	 *    undefined behavior if the given length does not match the actual length
-	 *    of the data
-	 *
-	 * If an unknown binary token is encountered there are two possible outcomes:
-	 *
-	 *  - If the token is part of an object's key, then key and value will not
-	 *    appear in the plaintext output
-	 *  - Else the object value (or array value) will be string of "__unknown_x0$z"
-	 *    where z is the hexadecimal representation of the unknown token.
+	 * - Must pass in a valid pointer to a `PdsFileResult`
 	 */
-	struct MeltedBuffer* rakaly_eu4_melt(const char* data_ptr, size_t data_len);
+	struct PdsError* rakaly_file_error(struct PdsFileResult* ptr);
 
 	/**
-	 * See `rakaly_eu4_melt` for more information
+	 * Calculate the number of bytes in the for the melted output's error message.
+	 * The length excludes null termination
+	 *
+	 * # Safety
+	 *
+	 * Must pass in a valid pointer to a `PdsError`
 	 */
-	struct MeltedBuffer* rakaly_ck3_melt(const char* data_ptr, size_t data_len);
+	int rakaly_error_length(const struct PdsError* res);
 
 	/**
-	 * See `rakaly_eu4_melt` for more information
+	 * Write the most recent error message into a caller-provided buffer as a UTF-8
+	 * string, returning the number of bytes written.
+	 *
+	 * # Note
+	 *
+	 * This writes a **UTF-8** string into the buffer. Windows users may need to
+	 * convert it to a UTF-16 "unicode" afterwards.
+	 *
+	 * `-1` is returned if there are any errors, for example when passed a
+	 * null pointer or a buffer of insufficient size.
+	 *
+	 * The buffer will not be null terminated.
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `PdsError`
+	 * - Given buffer must be at least the given length in size
 	 */
-	struct MeltedBuffer* rakaly_imperator_melt(const char* data_ptr, size_t data_len);
+	int rakaly_error_write_data(const struct PdsError* res, char* buffer, int length);
 
 	/**
-	 * See `rakaly_eu4_melt` for more information
+	 * Destroys a `PdsError`
+	 *
+	 * # Safety
+	 *
+	 * Must pass in a valid pointer to a `MeltedBuffer`
 	 */
-	struct MeltedBuffer* rakaly_hoi4_melt(const char* data_ptr, size_t data_len);
+	void rakaly_free_error(struct PdsError* res);
 
 	/**
-	 * See `rakaly_eu4_melt` for more information
+	 * Destroys a `PdsFile`
+	 *
+	 * # Safety
+	 *
+	 * Must pass in a valid pointer to a `PdsFile`
 	 */
-	struct MeltedBuffer* rakaly_vic3_melt(const char* data_ptr, size_t data_len);
+	void rakaly_free_file(struct PdsFile* res);
+
+	/**
+	 * Consume a result and return the underyling value. If the result does not
+	 * encompass a value, the result is not consumed.
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `PdsFileResult`
+	 */
+	struct PdsFile* rakaly_file_value(struct PdsFileResult* ptr);
+
+	/**
+	 * Returns a pointer to data that can decode a save's metadata. If a save does
+	 * not have easily extractable metadata, then a null pointer is returned.
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `PdsFile`
+	 */
+	struct PdsMeta* rakaly_file_meta(const struct PdsFile* ptr);
+
+	/**
+	 * Return the result of converting the metadata of a save to plaintext
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `PdsMeta`
+	 */
+	struct MeltedBufferResult* rakaly_file_meta_melt(const struct PdsMeta* ptr);
+
+	/**
+	 * Return the result of converting the save to plaintext
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `PdsFile`
+	 */
+	struct MeltedBufferResult* rakaly_file_melt(const struct PdsFile* ptr);
+
+	/**
+	 * Returns true if the melter needed to convert the binary input
+	 *
+	 * # Safety
+	 *
+	 * Must pass in a valid pointer to a `MeltedBuffer`
+	 */
+	bool rakaly_file_is_binary(const struct PdsFile* res);
+
+	/**
+	 * Consume a result and return the underyling error. If the result does not
+	 * encompass an error, the result is not consumed.
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `MeltedBufferResult`
+	 */
+	struct PdsError* rakaly_melt_error(struct MeltedBufferResult* ptr);
+
+	/**
+	 * Consume a result and return the underyling value. If the result does not
+	 * encompass a value, the result is not consumed.
+	 *
+	 * # Safety
+	 *
+	 * - Must pass in a valid pointer to a `MeltedBufferResult`
+	 */
+	struct MeltedBuffer* rakaly_melt_value(struct MeltedBufferResult* ptr);
+
+	/**
+	 * Initializes an EU4 save from a pointer the save data bytes and a number of
+	 * those bytes.
+	 *
+	 * # Safety
+	 *
+	 * The data is assumed to exist for the duration while the result of this
+	 * function lives.
+	 */
+	struct PdsFileResult* rakaly_eu4_file(const char* data_ptr, size_t data_len);
+
+	/**
+	 * Initializes an CK3 save from a pointer the save data bytes and a number of
+	 * those bytes.
+	 *
+	 * # Safety
+	 *
+	 * The data is assumed to exist for the duration while the result of this
+	 * function lives.
+	 */
+	struct PdsFileResult* rakaly_ck3_file(const char* data_ptr, size_t data_len);
+
+	/**
+	 * Initializes an Imperator save from a pointer the save data bytes and a number of
+	 * those bytes.
+	 *
+	 * # Safety
+	 *
+	 * The data is assumed to exist for the duration while the result of this
+	 * function lives.
+	 */
+	struct PdsFileResult* rakaly_imperator_file(const char* data_ptr, size_t data_len);
+
+	/**
+	 * Initializes an HOI4 save from a pointer the save data bytes and a number of
+	 * those bytes.
+	 *
+	 * # Safety
+	 *
+	 * The data is assumed to exist for the duration while the result of this
+	 * function lives.
+	 */
+	struct PdsFileResult* rakaly_hoi4_file(const char* data_ptr, size_t data_len);
+
+	/**
+	 * Initializes a Vic3 save from a pointer the save data bytes and a number of
+	 * those bytes.
+	 *
+	 * # Safety
+	 *
+	 * The data is assumed to exist for the duration while the result of this
+	 * function lives.
+	 */
+	struct PdsFileResult* rakaly_vic3_file(const char* data_ptr, size_t data_len);
 
 #ifdef __cplusplus
 } // extern "C"
@@ -171,15 +266,31 @@ extern "C"
 #ifndef RAKALY_WRAPPER_H
 #define RAKALY_WRAPPER_H
 
+#include <optional>
 #include <stdexcept>
 #include <string>
 
 namespace rakaly
 {
 
+void unwrapError(PdsError* err)
+{
+	if (err != nullptr)
+	{
+		int error_len = rakaly_error_length(err);
+		std::string error(error_len, ' ');
+		rakaly_error_write_data(err, error.data(), error_len);
+		rakaly_free_error(err);
+		auto msg = std::string("librakaly returned an error ") + error;
+		throw std::runtime_error(msg);
+	}
+}
+
 class MeltedOutput
 {
 	MeltedBuffer* melt;
+
+	MeltedOutput(const MeltedOutput&) = delete;
 
   public:
 	MeltedOutput(MeltedBuffer* melt) { this->melt = melt; }
@@ -191,16 +302,6 @@ class MeltedOutput
 	 */
 	void writeData(std::string& data) const
 	{
-		int result = rakaly_melt_error_code(melt);
-		if (result)
-		{
-			int error_len = rakaly_melt_error_length(melt);
-			std::string error(error_len, ' ');
-			rakaly_melt_error_write_data(melt, error.data(), error_len);
-			auto msg = std::string("librakaly returned an error ") + error;
-			throw std::runtime_error(msg);
-		}
-
 		// The passed in data is already uncompressed plaintext
 		if (rakaly_melt_is_verbatim(melt))
 		{
@@ -215,35 +316,83 @@ class MeltedOutput
 		}
 	}
 
-	bool was_binary() const { return rakaly_melt_binary_translated(melt); }
 	bool has_unknown_tokens() const { return rakaly_melt_binary_unknown_tokens(melt); }
 
 	virtual ~MeltedOutput() { rakaly_free_melt(melt); }
 };
 
-MeltedOutput meltEu4(const std::string& data)
+class GameFile
 {
-	return MeltedOutput(rakaly_eu4_melt(data.c_str(), data.length()));
+	PdsFile* file;
+
+	GameFile(const GameFile&) = delete;
+
+  public:
+	GameFile(PdsFile* file) { this->file = file; }
+
+	bool is_binary() const { return rakaly_file_is_binary(file); }
+
+	std::optional<MeltedOutput> meltMeta() const
+	{
+		PdsMeta* meta = rakaly_file_meta(file);
+		if (meta == nullptr)
+		{
+			return std::nullopt;
+		}
+
+		MeltedBufferResult* melt_result = rakaly_file_meta_melt(meta);
+		unwrapError(rakaly_melt_error(melt_result));
+		return std::make_optional(rakaly_melt_value(melt_result));
+	}
+
+	MeltedOutput melt() const
+	{
+		MeltedBufferResult* melt_result = rakaly_file_melt(file);
+		unwrapError(rakaly_melt_error(melt_result));
+		return MeltedOutput(rakaly_melt_value(melt_result));
+	}
+
+	virtual ~GameFile() { rakaly_free_file(file); }
+};
+
+GameFile parseEu4(const std::string& data)
+{
+	PdsFileResult* file_result = rakaly_eu4_file(data.c_str(), data.length());
+	unwrapError(rakaly_file_error(file_result));
+	PdsFile* file = rakaly_file_value(file_result);
+	return GameFile(file);
 }
 
-MeltedOutput meltCk3(const std::string& data)
+GameFile parseCk3(const std::string& data)
 {
-	return MeltedOutput(rakaly_ck3_melt(data.c_str(), data.length()));
+	PdsFileResult* file_result = rakaly_ck3_file(data.c_str(), data.length());
+	unwrapError(rakaly_file_error(file_result));
+	PdsFile* file = rakaly_file_value(file_result);
+	return GameFile(file);
 }
 
-MeltedOutput meltImperator(const std::string& data)
+GameFile parseImperator(const std::string& data)
 {
-	return MeltedOutput(rakaly_imperator_melt(data.c_str(), data.length()));
+	PdsFileResult* file_result = rakaly_imperator_file(data.c_str(), data.length());
+	unwrapError(rakaly_file_error(file_result));
+	PdsFile* file = rakaly_file_value(file_result);
+	return GameFile(file);
 }
 
-MeltedOutput meltHoi4(const std::string& data)
+GameFile parseHoi4(const std::string& data)
 {
-	return MeltedOutput(rakaly_hoi4_melt(data.c_str(), data.length()));
+	PdsFileResult* file_result = rakaly_hoi4_file(data.c_str(), data.length());
+	unwrapError(rakaly_file_error(file_result));
+	PdsFile* file = rakaly_file_value(file_result);
+	return GameFile(file);
 }
 
-MeltedOutput meltVic3(const std::string& data)
+GameFile parseVic3(const std::string& data)
 {
-	return MeltedOutput(rakaly_vic3_melt(data.c_str(), data.length()));
+	PdsFileResult* file_result = rakaly_vic3_file(data.c_str(), data.length());
+	unwrapError(rakaly_file_error(file_result));
+	PdsFile* file = rakaly_file_value(file_result);
+	return GameFile(file);
 }
 
 } // namespace rakaly
