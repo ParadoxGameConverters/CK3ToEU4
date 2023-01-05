@@ -257,23 +257,22 @@ void CK3::World::processSave(const std::string& saveGamePath)
 		}
 
 		melt.writeData(saveGame.gamestate);
-
-		std::ofstream metaDump("metaDump.txt");
-		metaDump << saveGame.metadata;
-		metaDump.close();
-
-		std::ofstream saveDump("saveDump.txt");
-		saveDump << saveGame.gamestate;
-		saveDump.close();
 	}
 	else
 	{
-
 		Log(LogLevel::Info) << "Gamestate is textual.";
 		const auto& melt = save.melt();
 		melt.writeData(saveGame.gamestate);
-		Log(LogLevel::Debug) << "melt returned " << saveGame.gamestate.size() << " bytes.";
 	}
+
+	// Always dump to disk for easier debug.
+	std::ofstream metaDump("metaDump.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	std::ofstream saveDump("saveDump.txt");
+	saveDump << saveGame.gamestate;
+	saveDump.close();
 }
 
 void CK3::World::verifySave(const std::string& saveGamePath) const
