@@ -51,12 +51,11 @@ class World: commonItems::parser
   private:
 	void registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);
 
+	parser metaParser;
+	parser metaPreParser;
+
 	// savegame processing
-	void verifySave(const std::string& saveGamePath);
-	void processRegularSave(const std::string& saveGamePath);
-	void processCompressedSave(const std::string& saveGamePath);
-	void processAutoSave(const std::string& saveGamePath);
-	void processIronManSave(const std::string& saveGamePath);
+	void verifySave(const std::string& saveGamePath) const;
 	void processSave(const std::string& saveGamePath);
 
 	// pre-parsing prep
@@ -115,20 +114,11 @@ class World: commonItems::parser
 
 	bool islamExists = false;
 
-	enum class SaveType
-	{
-		INVALID = 0,
-		ZIPFILE = 1,
-		AUTOSAVE = 2,
-		IRONMAN = 3,
-		REGULAR = 4
-	};
 	struct saveData
 	{
-		SaveType saveType = SaveType::INVALID;
-		int zipStart = 0;
 		std::string gamestate;
 		std::string metadata; // we use this to set up mods before main processing.
+		bool parsedMeta = false;
 	};
 	saveData saveGame;
 };
