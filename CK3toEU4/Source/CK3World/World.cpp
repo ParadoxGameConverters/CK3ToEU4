@@ -234,9 +234,9 @@ void CK3::World::processSave(const std::string& saveGamePath)
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	std::stringstream inStream;
 	inStream << saveFile.rdbuf();
-	const auto tempSave = inStream.str();
+	saveGame.gamestate = inStream.str();
 
-	const auto save = rakaly::parseCk3(tempSave);
+	const auto save = rakaly::parseCk3(saveGame.gamestate);
 	if (const auto& melt = save.meltMeta(); melt)
 	{
 		Log(LogLevel::Info) << "Meta extracted successfully.";
@@ -268,9 +268,11 @@ void CK3::World::processSave(const std::string& saveGamePath)
 	}
 	else
 	{
+
 		Log(LogLevel::Info) << "Gamestate is textual.";
 		const auto& melt = save.melt();
 		melt.writeData(saveGame.gamestate);
+		Log(LogLevel::Debug) << "melt returned " << saveGame.gamestate.size() << " bytes.";
 	}
 }
 
