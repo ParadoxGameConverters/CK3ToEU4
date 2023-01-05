@@ -303,3 +303,6 @@ link = { ck3 = { tradition = bao_tradition_free_range } eu4 = { cavalry_flanking
 link = { ck3 = { tradition = tradition_RICE_beyond_the_reach_of_eagles } eu4 = { global_supply_limit_modifier = 0.15 } } 
 link = { ck3 = { tradition = tradition_RICE_volga_apiculture } eu4 = { development_cost = -0.15 } } 
 link = { ck3 = { tradition = tradition_RICE_finnic_sorcerers } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_RICE_kinship_based_craft_guilds } eu4 = { prestige = 1 } } 
+link = { ck3 = { tradition = tradition_RICE_igwebuike } eu4 = { diplomats = 1 } } 
+link = { ck3 = { tradition = tradition_RICE_ritual_hegemony } eu4 = { monthly_heir_claim_increase = 0.05 idea_cost = -0.05 } } 

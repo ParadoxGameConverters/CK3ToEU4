@@ -818,7 +818,7 @@ link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 ## Extra
 link = { eu4 = oldspain ck3 = iberian tech = western gfx = westerngfx }
 
-# Mod: RICE
+# Mod: RICE 
 link = { eu4 = evenk ck3 = evenk ck3 = tungusic tech = eastern gfx = inuitgfx }
 link = { eu4 = nivkh ck3 = nivkh tech = eastern gfx = inuitgfx }
 link = { eu4 = yakut ck3 = yakut tech = eastern gfx = inuitgfx }
@@ -839,6 +839,12 @@ link = { eu4 = xibei ck3 = wenmo tech = chinese gfx = asiangfx }
 link = { eu4 = israeli ck3 = teimani ck3 = persian_jewish tech = eastern gfx = easterngfx region = mashriq_region }
 link = { eu4 = teimani ck3 = teimani tech = muslim gfx = muslimgfx }
 link = { eu4 = parsim ck3 = persian_jewish tech = muslim gfx = muslimgfx }
+link = { eu4 = iroquois ck3 = laurentian tech = north_american gfx = northamericagfx }
+link = { eu4 = inuit ck3 = dorset tech = north_american gfx = northamericagfx }
+link = { eu4 = maliseet ck3 = maliseet tech = north_american gfx = northamericagfx }
+link = { eu4 = maliseet ck3 = passamaquoddy tech = north_american gfx = northamericagfx }
+link = { eu4 = abenaki ck3 = penobscot tech = north_american gfx = northamericagfx }
+link = { eu4 = cree ck3 = east_cree tech = north_american gfx = northamericagfx }
 
 ## WTWSMS
 link = { eu4 = ligurian ck3 = romano_gallic ck3 = gallo_romance tech = western gfx = westerngfx region = liguria_area }
