@@ -71,6 +71,11 @@ jobs:
         fetch-depth: 0
         submodules: recursive
 
+    - name: "Setup Dotnet for use with actions"
+      uses: actions/setup-dotnet@v3
+      with:
+        global-json-file: Fronter.NET/global.json
+        
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
