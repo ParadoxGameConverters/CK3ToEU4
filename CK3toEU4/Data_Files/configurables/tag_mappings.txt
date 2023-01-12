@@ -67,7 +67,6 @@ link = { ck3 = k_cyprus eu4 = CYP }
 link = { ck3 = d_cyprus eu4 = CYP }
 link = { ck3 = d_dalmatia eu4 = DAL }
 link = { ck3 = k_dalmatia eu4 = DAL }
-#link = { ck3 = x_x_980 eu4 = DAL }
 link = { ck3 = k_epirus eu4 = EPI }
 link = { ck3 = d_epirus eu4 = EPI }
 link = { ck3 = c_epeiros eu4 = EPI }
@@ -1322,3 +1321,10 @@ link = { ck3 = e_ottomans eu4 = TUR }
 link = { ck3 = e_keitas eu4 = MAL }
 link = { ck3 = e_maurya eu4 = BHA }
 link = { ck3 = e_song eu4 = SNG }
+
+link = { ck3 = k_sabbah eu4 = HAH }
+link = { ck3 = k_jabalid eu4 = HAH }
+link = { ck3 = e_gediminid eu4 = LIT }
+link = { ck3 = e_knytling eu4 = ENS } # Empire of the North Sea
+link = { ck3 = k_normandie eu4 = NRM }
+link = { ck3 = k_piast eu4 = POL }
