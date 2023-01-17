@@ -306,3 +306,9 @@ link = { ck3 = { tradition = tradition_RICE_finnic_sorcerers } eu4 = { prestige 
 link = { ck3 = { tradition = tradition_RICE_kinship_based_craft_guilds } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_RICE_igwebuike } eu4 = { diplomats = 1 } } 
 link = { ck3 = { tradition = tradition_RICE_ritual_hegemony } eu4 = { monthly_heir_claim_increase = 0.05 idea_cost = -0.05 } } 
+link = { ck3 = { tradition = tradition_RICE_khuzi_elevated_traders } eu4 = { caravan_power = 0.2 } }
+link = { ck3 = { tradition = tradition_RICE_khuzi_elevated_community } eu4 = { diplomatic_reputation = 1 } } 
+link = { ck3 = { tradition = tradition_RICE_khuzi_elevated_elymaean } eu4 = { land_morale = 0.12 } }
+link = { ck3 = { tradition = tradition_RICE_khuzi } eu4 = { spy_offence = 0.2 } }
+link = { ck3 = { tradition = tradition_RICE_akhtarvenik } eu4 = { adm_tech_cost_modifier = -0.12 } }
+link = { ck3 = { tradition = tradition_RICE_kala_settlements } eu4 = { build_time = -0.1 build_cost = -0.1 } }
