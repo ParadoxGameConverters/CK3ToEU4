@@ -1100,3 +1100,74 @@ special_doctrine_full_tolerance  = {
 		tolerance_heretic = 5
 	}
 }
+##RICE
+rice_mahayana_canon_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_theravada_canon_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_vajrayana_canon_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_pudgalavada_canon_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_baptism_purification_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_food_purification_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_prayer_purification_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zoroastrian_sassanian_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zoroastrian_armenian_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zoroastrian_georgian_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zoroastrian_eastern_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zoroastrian_no_yazatas_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_zun_hephthalite_warriors  = {
+	country = {
+		land_morale = 0.1
+	}
+}
+rice_zun_hephthalite_culture  = {
+	country = {
+		prestige = 0.25
+	}
+}
