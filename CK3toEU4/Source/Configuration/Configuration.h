@@ -30,6 +30,11 @@ class Configuration: commonItems::parser
 		IMPORT = 1,
 		VANILLA = 2
 	};
+	enum class MULTIPROVDEVTRANSFER
+	{
+		DEFAULT = 1,
+		MP = 2
+	};
 	enum class SUNSET
 	{
 		DEFAULT = 1,
@@ -87,6 +92,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getSunset() const { return sunset; }
 	[[nodiscard]] const auto& getDynamicInstitutions() const { return dynamicInstitutions; }
 	[[nodiscard]] const auto& getDevelopment() const { return development; }
+	[[nodiscard]] const auto& getMultiProvDevTransfer() const { return multiProvinceDevelopmentTransfer; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
 
@@ -115,6 +121,7 @@ class Configuration: commonItems::parser
 	SUNSET sunset = SUNSET::DEFAULT;
 	INSTITUTIONS dynamicInstitutions = INSTITUTIONS::HISTORIC;
 	DEVELOPMENT development = DEVELOPMENT::IMPORT;
+	MULTIPROVDEVTRANSFER multiProvinceDevelopmentTransfer = MULTIPROVDEVTRANSFER::DEFAULT;
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
 

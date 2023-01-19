@@ -259,6 +259,9 @@
     <Filter Include="CK3ToEU4\commonItems\ModLoader">
       <UniqueIdentifier>{e16da930-efb0-4438-8489-fa38b31af251}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\commonItems\zip">
+      <UniqueIdentifier>{9b64e54c-9d51-4159-9388-04b1327c891b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
@@ -826,6 +829,9 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScrapingTests.cpp">
       <Filter>Ck3WorldTests\DynastyTests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
+      <Filter>CK3ToEU4\commonItems\zip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

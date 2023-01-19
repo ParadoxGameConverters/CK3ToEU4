@@ -22,10 +22,15 @@ link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
 link = { eu4 = catholic religious_head = k_papal_state }
 link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
 link = { eu4 = orthodox religious_head = k_orthodox }
+link = { eu4 = orthodox ck3 = orthodox }
 link = { eu4 = coptic religious_head = d_coptic_papacy }
 link = { eu4 = coptic religious_head = d_apostolic_church }
+link = { eu4 = coptic ck3 = armenian_apostolic }
+link = { eu4 = coptic ck3 = coptic }
 link = { eu4 = iconoclast religious_head = d_iconoclast }
+link = { eu4 = iconoclast ck3 = iconoclast }
 link = { eu4 = nestorian religious_head = d_patriarchate_in_the_east }
+link = { eu4 = nestorian ck3 = nestorian }
 link = { eu4 = cathar ck3 = cathar }
 link = { eu4 = waldensian ck3 = waldensian }
 link = { eu4 = lollard ck3 = lollard }
@@ -46,7 +51,7 @@ link = { eu4 = sethianism ck3 = sethianism }
 link = { eu4 = priscillianism ck3 = priscillianism }
 link = { eu4 = cainitism ck3 = cainitism }
 # Finno-Ugric
-link = { eu4 = finnish_pagan ck3 = finnish_pagan }
+link = { eu4 = finnish_pagan ck3 = finnish_pagan ck3 = erzya_pagan ck3 = moksha_pagan ck3 = mari_pagan ck3 = udmurt_pagan ck3 = sami_pagan ck3 = komi_pagan }
 # Siberian
 link = { eu4 = siberian_pagan ck3 = siberian_pagan }
 # Germanic
@@ -167,3 +172,11 @@ link = { eu4 = arab_pagan ck3 = nabataean_pagan }
 link = { eu4 = arab_pagan ck3 = aksumite_pagan }
 link = { eu4 = arab_pagan ck3 = south_arabian_pagan }
 link = { eu4 = animism ck3 = nuristani_pagan }
+link = { eu4 = totemism ck3 = algonquian_pagan }
+link = { eu4 = totemism ck3 = inuit_pagan }
+link = { eu4 = totemism ck3 = iroquoian_pagan }
+
+# Mod: The Fallen Eagle
+link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
+link = { eu4 = shiite ck3 = shia }
+link = { eu4 = ibadi ck3 = khawariji }

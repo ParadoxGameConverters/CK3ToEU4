@@ -1,6 +1,6 @@
 #include "World.h"
 #include "../Configuration/Configuration.h"
-#include "../Helpers/rakaly_wrapper.h"
+#include "../Helpers/rakaly.h"
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
 #include "Characters/CharacterDomain.h"
@@ -12,7 +12,6 @@
 #include "Religions/Faith.h"
 #include "Religions/Religion.h"
 #include "Titles/Title.h"
-#include <ZipFile.h>
 #include <filesystem>
 #include <fstream>
 #include <ranges>
@@ -20,10 +19,85 @@ namespace fs = std::filesystem;
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
+	registerKeys(theConfiguration, converterVersion);
+	Log(LogLevel::Progress) << "4 %";
+
+	Log(LogLevel::Info) << "-> Verifying CK3 save.";
+	verifySave(theConfiguration->getSaveGamePath());
+	processSave(theConfiguration->getSaveGamePath());
+	Log(LogLevel::Progress) << "5 %";
+
+	auto metaData = std::istringstream(saveGame.metadata);
+	parseStream(metaData);
+	Log(LogLevel::Progress) << "10 %";
+
+	Log(LogLevel::Info) << "* Priming Converter Components *";
+	primeLaFabricaDeColor(*theConfiguration);
+	loadLandedTitles(*theConfiguration);
+	loadCharacterTraits(*theConfiguration);
+	loadHouseNames(*theConfiguration);
+	Log(LogLevel::Progress) << "15 %";
+	// Scraping localizations from CK3 so we may know proper names for our countries and people.
+	Log(LogLevel::Info) << "-> Reading Words";
+	localizationMapper.scrapeLocalizations(*theConfiguration, mods);
+	cultureMapper.loadCulturesFromDisk();
+
+	Log(LogLevel::Info) << "* Parsing Gamestate *";
+	auto gameState = std::istringstream(saveGame.gamestate);
+	parseStream(gameState);
+	Log(LogLevel::Progress) << "20 %";
+	clearRegisteredKeywords();
+
+	Log(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
+	crosslinkDatabases();
+	Log(LogLevel::Progress) << "30 %";
+
+	// processing
+	Log(LogLevel::Info) << "-- Checking For Religions";
+	checkForIslam();
+	Log(LogLevel::Info) << "-- Flagging HRE Provinces";
+	flagHREProvinces(*theConfiguration);
+	Log(LogLevel::Info) << "-- Shattering HRE";
+	shatterHRE(*theConfiguration);
+	Log(LogLevel::Info) << "-- Shattering Empires";
+	shatterEmpires(*theConfiguration);
+	Log(LogLevel::Info) << "-- Filtering Independent Titles";
+	filterIndependentTitles();
+	Log(LogLevel::Info) << "-- Splitting Off Vassals";
+	splitVassals(*theConfiguration);
+	Log(LogLevel::Info) << "-- Rounding Up Some People";
+	gatherCourtierNames();
+	Log(LogLevel::Info) << "-- Congregating DeFacto Counties for Independent Titles";
+	congregateDFCounties();
+	Log(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
+	congregateDJCounties();
+	Log(LogLevel::Info) << "-- Filtering Landless Titles";
+	filterLandlessTitles();
+	Log(LogLevel::Info) << "-- Distributing Electorates";
+	setElectors();
+
+	if (coaDesigner && playerID)
+	{
+		Log(LogLevel::Info) << "-- Locating Player Title.";
+		locatePlayerTitle(theConfiguration);
+	}
+
+	Log(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
+	Log(LogLevel::Progress) << "47 %";
+}
+
+void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
+{
 	Log(LogLevel::Info) << "*** Hello CK3, Deus Vult! ***";
-	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
+	metaPreParser.registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
 	});
-	registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
+	metaPreParser.registerKeyword("meta_data", [this](std::istream& theStream) {
+		metaParser.parseStream(theStream);
+		saveGame.parsedMeta = true;
+	});
+	metaPreParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	metaParser.registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
 		for (const auto& path: commonItems::getStrings(theStream))
 			mods.emplace_back(Mod("", path));
@@ -37,6 +111,21 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 				Log(LogLevel::Notice) << "CoA Designer mod enabed; player CoA will be generated.";
 				coaDesigner = true;
 			}
+	});
+	metaParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	registerRegex("SAV.*", [](const std::string& unused, std::istream& theStream) {
+	});
+	registerKeyword("meta_data", [this](std::istream& theStream) {
+		if (saveGame.parsedMeta)
+		{
+			commonItems::ignoreItem("unused", theStream);
+		}
+		else
+		{
+			metaParser.parseStream(theStream);
+			saveGame.parsedMeta = true;
+		}
 	});
 	registerKeyword("currently_played_characters", [this](std::istream& theStream) {
 		auto playedCharacters = commonItems::getLlongs(theStream);
@@ -122,70 +211,6 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 		Log(LogLevel::Info) << "<> Loaded " << cultures.getCultures().size() << " cultures.";
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-	Log(LogLevel::Progress) << "4 %";
-
-	Log(LogLevel::Info) << "-> Verifying CK3 save.";
-	verifySave(theConfiguration->getSaveGamePath());
-	processSave(theConfiguration->getSaveGamePath());
-	Log(LogLevel::Progress) << "5 %";
-
-	auto metaData = std::istringstream(saveGame.metadata);
-	parseStream(metaData);
-	Log(LogLevel::Progress) << "10 %";
-
-	Log(LogLevel::Info) << "* Priming Converter Components *";
-	primeLaFabricaDeColor(*theConfiguration);
-	loadLandedTitles(*theConfiguration);
-	loadCharacterTraits(*theConfiguration);
-	loadHouseNames(*theConfiguration);
-	Log(LogLevel::Progress) << "15 %";
-	// Scraping localizations from CK3 so we may know proper names for our countries and people.
-	Log(LogLevel::Info) << "-> Reading Words";
-	localizationMapper.scrapeLocalizations(*theConfiguration, mods);
-	cultureMapper.loadCulturesFromDisk();
-
-	Log(LogLevel::Info) << "* Parsing Gamestate *";
-	auto gameState = std::istringstream(saveGame.gamestate);
-	parseStream(gameState);
-	Log(LogLevel::Progress) << "20 %";
-	clearRegisteredKeywords();
-
-	Log(LogLevel::Info) << "* Gamestate Parsing Complete, Weaving Internals *";
-	crosslinkDatabases();
-	Log(LogLevel::Progress) << "30 %";
-
-	// processing
-	Log(LogLevel::Info) << "-- Checking For Religions";
-	checkForIslam();
-	Log(LogLevel::Info) << "-- Flagging HRE Provinces";
-	flagHREProvinces(*theConfiguration);
-	Log(LogLevel::Info) << "-- Shattering HRE";
-	shatterHRE(*theConfiguration);
-	Log(LogLevel::Info) << "-- Shattering Empires";
-	shatterEmpires(*theConfiguration);
-	Log(LogLevel::Info) << "-- Filtering Independent Titles";
-	filterIndependentTitles();
-	Log(LogLevel::Info) << "-- Splitting Off Vassals";
-	splitVassals(*theConfiguration);
-	Log(LogLevel::Info) << "-- Rounding Up Some People";
-	gatherCourtierNames();
-	Log(LogLevel::Info) << "-- Congregating DeFacto Counties for Independent Titles";
-	congregateDFCounties();
-	Log(LogLevel::Info) << "-- Congregating DeJure Counties for Independent Titles";
-	congregateDJCounties();
-	Log(LogLevel::Info) << "-- Filtering Landless Titles";
-	filterLandlessTitles();
-	Log(LogLevel::Info) << "-- Distributing Electorates";
-	setElectors();
-
-	if (coaDesigner && playerID)
-	{
-		Log(LogLevel::Info) << "-- Locating Player Title.";
-		locatePlayerTitle(theConfiguration);
-	}
-
-	Log(LogLevel::Info) << "*** Good-bye CK3, rest in peace. ***";
-	Log(LogLevel::Progress) << "47 %";
 }
 
 void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConfiguration)
@@ -206,31 +231,51 @@ void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConf
 
 void CK3::World::processSave(const std::string& saveGamePath)
 {
-	switch (saveGame.saveType)
+	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::stringstream inStream;
+	inStream << saveFile.rdbuf();
+	saveGame.gamestate = inStream.str();
+
+	const auto save = rakaly::parseCk3(saveGame.gamestate);
+	if (const auto& melt = save.meltMeta(); melt)
 	{
-		case SaveType::REGULAR:
-			Log(LogLevel::Info) << "-> Importing regular uncompressed CK3 save.";
-			processRegularSave(saveGamePath);
-			break;
-		case SaveType::ZIPFILE:
-			Log(LogLevel::Info) << "-> Importing regular compressed CK3 save.";
-			processCompressedSave(saveGamePath);
-			break;
-		case SaveType::AUTOSAVE:
-			Log(LogLevel::Info) << "-> Importing ironman CK3 autosave.";
-			processAutoSave(saveGamePath);
-			break;
-		case SaveType::IRONMAN:
-			Log(LogLevel::Info) << "-> Importing ironman compressed CK3 save.";
-			processIronManSave(saveGamePath);
-			break;
-		case SaveType::INVALID:
-			throw std::runtime_error("Unknown save type.");
+		Log(LogLevel::Info) << "Meta extracted successfully.";
+		melt->writeData(saveGame.metadata);
 	}
+	else if (save.is_binary())
+	{
+		Log(LogLevel::Error) << "Binary Save and NO META!";
+	}
+
+	if (save.is_binary())
+	{
+		Log(LogLevel::Info) << "Gamestate is binary, melting.";
+		const auto& melt = save.melt();
+		if (melt.has_unknown_tokens())
+		{
+			Log(LogLevel::Error) << "Rakaly reports errors while melting ironman save!";
+		}
+
+		melt.writeData(saveGame.gamestate);
+	}
+	else
+	{
+		Log(LogLevel::Info) << "Gamestate is textual.";
+		const auto& melt = save.melt();
+		melt.writeData(saveGame.gamestate);
+	}
+
+	// Always dump to disk for easier debug.
+	std::ofstream metaDump("metaDump.txt");
+	metaDump << saveGame.metadata;
+	metaDump.close();
+
+	std::ofstream saveDump("saveDump.txt");
+	saveDump << saveGame.gamestate;
+	saveDump.close();
 }
 
-
-void CK3::World::verifySave(const std::string& saveGamePath)
+void CK3::World::verifySave(const std::string& saveGamePath) const
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	if (!saveFile.is_open())
@@ -241,156 +286,7 @@ void CK3::World::verifySave(const std::string& saveGamePath)
 	if (buffer[0] != 'S' || buffer[1] != 'A' || buffer[2] != 'V')
 		throw std::runtime_error("Savefile of unknown type.");
 
-	char ch;
-	do
-	{ // skip until newline
-		ch = static_cast<char>(saveFile.get());
-	} while (ch != '\n' && ch != '\r');
-
-	saveFile.get(buffer, 10);
-	if (std::string(buffer) == "meta_data")
-	{
-		// compressed or not?
-		saveFile.seekg(0, std::ios::end);
-		const auto length = saveFile.tellg();
-		if (length < 65536)
-		{
-			throw std::runtime_error("Savegame seems a bit too small.");
-		}
-		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[length];
-		saveFile.read(bigBuf, length);
-		if (saveFile.gcount() < length)
-			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
-		const std::string bufStr(bigBuf);
-		const auto pos = bufStr.find("}\nPK");
-		if (pos != std::string::npos)
-		{
-			saveGame.saveType = SaveType::ZIPFILE;
-		}
-		else
-		{
-			saveGame.saveType = SaveType::REGULAR;
-		}
-	}
-	else
-	{
-		saveFile.seekg(0, std::ios::end);
-		const auto length = saveFile.tellg();
-		if (length < 65536)
-		{
-			throw std::runtime_error("Savegame seems a bit too small.");
-		}
-		saveFile.seekg(0, std::ios::beg);
-		char* bigBuf = new char[length];
-		saveFile.read(bigBuf, length);
-		if (saveFile.gcount() < length)
-			throw std::runtime_error("Read only: " + std::to_string(saveFile.gcount()));
-		for (int i = 0; i < 65533; ++i)
-			if (*reinterpret_cast<uint32_t*>(bigBuf + i) == 0x04034B50 && *reinterpret_cast<uint16_t*>(bigBuf + i - 2) == 4)
-			{
-				saveGame.zipStart = i;
-				saveGame.saveType = SaveType::IRONMAN;
-				break;
-			}
-		if (saveGame.saveType != SaveType::IRONMAN)
-			saveGame.saveType = SaveType::AUTOSAVE;
-
-		delete[] bigBuf;
-	}
 	saveFile.close();
-}
-
-void CK3::World::processRegularSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	saveGame.gamestate = inStream.str();
-
-	const auto startMeta = saveGame.gamestate.find_first_of("\r\n") + 1;
-	const auto endMeta = saveGame.gamestate.find("ironman_manager={");
-
-	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
-	saveGame.metadata = saveGame.gamestate.substr(startMeta + 12, endMeta - startMeta - 14);
-}
-
-void CK3::World::processCompressedSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inString = inStream.str();
-
-	auto startMeta = inString.find_first_of("\r\n") + 1;
-	auto startZipped = inString.find("PK\03\04");
-
-	// Stripping the "meta_data={\n" and "}\n" from the block. Let's hope they don't alter the format further.
-	saveGame.metadata = inString.substr(startMeta + 12, startZipped - startMeta - 14);
-
-	std::stringstream zipStream;
-	zipStream << inString.substr(startZipped);
-
-	auto zipArchive = ZipArchive::Create(zipStream);
-	if (zipArchive->GetEntriesCount() != 1)
-		throw std::runtime_error("Unexpected number of zipped files in the savegame.");
-
-	if (zipArchive->GetEntry(0)->GetName() != "gamestate")
-		throw std::runtime_error("Gamestate file not found in zipped savegame.");
-
-	saveGame.gamestate = std::string(std::istreambuf_iterator<char>(*zipArchive->GetEntry(0)->GetDecompressionStream()), {});
-}
-
-void CK3::World::processAutoSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
-	saveGame.gamestate = rakaly::meltCK3(inBinary);
-
-	auto startMeta = saveGame.gamestate.find_first_of("\r\n");
-	auto endMeta = saveGame.gamestate.find("\ndate=");
-	auto endFile = saveGame.gamestate.size();
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = saveGame.gamestate.substr(startMeta + 13, endMeta - startMeta - 15);
-	// dump for sanity purposes.
-	std::ofstream metaDump("metaDumpOfIron.txt");
-	metaDump << saveGame.metadata;
-	metaDump.close();
-
-	saveGame.gamestate = saveGame.gamestate.substr(endMeta + 1, endFile);
-	// dump for sanity purposes.
-	std::ofstream dump("dumpOfIron.txt");
-	dump << saveGame.gamestate;
-	dump.close();
-}
-
-void CK3::World::processIronManSave(const std::string& saveGamePath)
-{
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
-	inStream << saveFile.rdbuf();
-	std::string inBinary(std::istreambuf_iterator<char>(inStream), {});
-
-	std::string meta = rakaly::meltCK3(inBinary.substr(0, saveGame.zipStart));
-	auto startMeta = meta.find_first_of("\r\n");
-	auto endMeta = meta.find_last_of("}");
-	// Again, strip the "meta_data={\n" and the "}\n"
-	saveGame.metadata = meta.substr(startMeta + 12, endMeta - startMeta - 12);
-	// dump for sanity purposes.
-	std::ofstream metaDump("metaDumpOfIron.txt");
-	metaDump << saveGame.metadata;
-	metaDump.close();
-
-	saveGame.gamestate = rakaly::meltCK3(inBinary);
-	auto skipLine = saveGame.gamestate.find_first_of("\r\n");
-	auto endFile = saveGame.gamestate.size();
-	saveGame.gamestate = saveGame.gamestate.substr(skipLine, endFile - skipLine);
-	// dump for sanity purposes.
-	std::ofstream dump("dumpOfIron.txt");
-	dump << saveGame.gamestate;
-	dump.close();
 }
 
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
@@ -420,23 +316,12 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/landed_titles"))
+	commonItems::ModFilesystem modFS(theConfiguration.getCK3Path(), mods);
+	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles/"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (getExtension(file) != "txt")
 			continue;
-		landedTitles.loadTitles(theConfiguration.getCK3Path() + "common/landed_titles/" + file);
-	}
-	for (const auto& mod: mods)
-	{
-		if (!commonItems::DoesFolderExist(mod.path + "common/landed_titles"))
-			continue;
-		Log(LogLevel::Info) << "<> Loading some landed titles from [" << mod.name << "]";
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/landed_titles"))
-		{
-			if (file.find(".txt") == std::string::npos)
-				continue;
-			landedTitles.loadTitles(mod.path + "common/landed_titles/" + file);
-		}
+		landedTitles.loadTitles(file);
 	}
 	Log(LogLevel::Info) << "<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.";
 }

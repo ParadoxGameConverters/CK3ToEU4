@@ -23,7 +23,7 @@ link = { eu4 = caucasian ck3 = heritage_caucasian }
 link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic }
 
 link = { eu4 = maghrebi ck3 = heritage_berber ck3 = heritage_guanche }
-link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian }
+link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite }
 link = { eu4 = altaic ck3 = heritage_mongolic }
 
 # this is dubious. they put turkish in with tartars all in turkic, eu4 has them in levantine.
@@ -51,5 +51,9 @@ link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 link = { eu4 = cushitic ck3 = heritage_somalian }
 
 # Mod: RICE
+link = { eu4 = central_algonquian ck3 = heritage_algonquian }
+link = { eu4 = iroquoian ck3 = heritage_iroquoian }
+link = { eu4 = eskaleut ck3 = heritage_paleo_inuit }
+link = { eu4 = eskaleut ck3 = heritage_inuit }
 link = { eu4 = african ck3 = heritage_east_bantu }
 link = { eu4 = evenks ck3 = heritage_siberian }

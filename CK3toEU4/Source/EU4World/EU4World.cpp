@@ -98,7 +98,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// With Ck provinces linked to those eu4 provinces they affect, we can adjust eu4 province dev values.
 	if (theConfiguration.getDevelopment() == Configuration::DEVELOPMENT::IMPORT)
-		alterProvinceDevelopment();
+		alterProvinceDevelopment(theConfiguration.getMultiProvDevTransfer() == Configuration::MULTIPROVDEVTRANSFER::MP);
 	Log(LogLevel::Progress) << "60 %";
 
 	// We then link them to their respective countries. Those countries that end up with 0 provinces are defacto dead.
@@ -418,7 +418,6 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 		Log(LogLevel::Error) << "We're converting " << title.first << " which doesnt even exist! This save is corrupted.";
 		return;
 	}
-
 	// Grabbing the capital, if possible
 	int eu4CapitalID = 0;
 	if (title.second->getHolder()->second)
@@ -677,7 +676,7 @@ std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> EU4::World::d
 	return std::move(toReturn);
 }
 
-void EU4::World::alterProvinceDevelopment()
+void EU4::World::alterProvinceDevelopment(bool absoluteSwitch)
 {
 	Log(LogLevel::Info) << "-- Scaling Imported provinces";
 
@@ -685,60 +684,162 @@ void EU4::World::alterProvinceDevelopment()
 	auto totalCK3Dev = 0;
 	auto counter = 0;
 
-	for (const auto& province: provinces)
+	for (const auto& province: provinces | std::views::values)
 	{
-		if (!province.second->getSourceProvince())
+		if (!province->getSourceProvince())
 			continue;
-		totalVanillaDev += province.second->getDev();
-		auto adm = 0.0;
-		auto dip = 0.0;
-		auto mil = 0.0;
-		const auto& baronies = province.second->getSourceProvince()->getDFVassals();
-		for (const auto& barony: baronies)
+		totalVanillaDev += province->getDev();
+		double totalAdm = 0;
+		double totalDip = 0;
+		double totalMil = 0;
+		double generalDevelopment = 0;
+
+		if (!absoluteSwitch)
 		{
-			if (!barony.second)
-				continue;
-			if (!barony.second->getClay())
-				continue;
-			if (!barony.second->getClay()->getProvince())
-				continue;
-			if (!barony.second->getClay()->getProvince()->second)
-				continue;
-			const auto& provinceData = barony.second->getClay()->getProvince()->second;
-			if (provinceData->getHoldingType().empty())
-				continue;
-			const auto buildingNumber = static_cast<double>(provinceData->countBuildings());
-			const auto baronyDev = devWeightsMapper.getDevFromHolding() + devWeightsMapper.getDevFromBuilding() * buildingNumber;
-			if (provinceData->getHoldingType() == "tribal_holding")
+			// grab only the baronies of the source province, excess dev be damned.
+			const auto& baronies = province->getSourceProvince()->getDFVassals();
+			auto [adm, dip, mil] = sumBaroniesForDevelopment(baronies);
+			totalAdm = adm;
+			totalDip = dip;
+			totalMil = mil;
+			const auto development = province->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
+			generalDevelopment = std::max(0.0, development - devWeightsMapper.getDevTreshold());
+		}
+		else
+		{
+			// sum every source mapping province's development.
+			const auto& sourceTitles = provinceMapper.getCK3Titles(province->getProvinceID());
+			for (const auto& sourceTitle: sourceTitles | std::views::values)
 			{
-				mil += baronyDev;
-			}
-			else if (provinceData->getHoldingType() == "city_holding")
-			{
-				dip += baronyDev;
-			}
-			else if (provinceData->getHoldingType() == "church_holding")
-			{
-				adm += baronyDev;
-			}
-			else if (provinceData->getHoldingType() == "castle_holding")
-			{
-				adm += baronyDev * 1 / 3; // third to adm
-				mil += baronyDev * 2 / 3; // two thirds to mil
+				if (!sourceTitle)
+					continue;
+				const auto& baronies = sourceTitle->getDFVassals();
+				auto [adm, dip, mil] = sumBaroniesForDevelopment(baronies);
+				totalAdm += adm;
+				totalDip += dip;
+				totalMil += mil;
+				const auto development = sourceTitle->getClay()->getCounty()->second->getDevelopment();
+				generalDevelopment += std::max(0.0, development - devWeightsMapper.getDevTreshold());
 			}
 		}
-		const auto development = province.second->getSourceProvince()->getClay()->getCounty()->second->getDevelopment();
-		double generalDevelopment = std::max(0.0, development - devWeightsMapper.getDevTreshold());
+
+		double modFactor = 1; // used to alter the results based on source province's target province's number.
+		if (absoluteSwitch)
+			modFactor = calculateProvinceDevFactor(province);
+
+		generalDevelopment *= modFactor;
+		totalAdm *= modFactor;
+		totalDip *= modFactor;
+		totalMil *= modFactor;
+
 		generalDevelopment *= devWeightsMapper.getDevFromDev() / 3;
-		province.second->setAdm(std::max(static_cast<int>(std::lround(adm + generalDevelopment)), 1));
-		province.second->setDip(std::max(static_cast<int>(std::lround(dip + generalDevelopment)), 1));
-		province.second->setMil(std::max(static_cast<int>(std::lround(mil + generalDevelopment)), 1));
+		province->setAdm(std::max(static_cast<int>(std::lround(totalAdm + generalDevelopment)), 1));
+		province->setDip(std::max(static_cast<int>(std::lround(totalDip + generalDevelopment)), 1));
+		province->setMil(std::max(static_cast<int>(std::lround(totalMil + generalDevelopment)), 1));
 		counter++;
-		totalCK3Dev += province.second->getDev();
+		totalCK3Dev += province->getDev();
 	}
 
 	Log(LogLevel::Info) << "<> " << counter << " provinces scaled: " << totalCK3Dev << " development imported (vanilla had " << totalVanillaDev << ").";
 }
+
+double EU4::World::calculateProvinceDevFactor(const std::shared_ptr<Province>& province) const
+{
+	// algorithm provided by @Clonefusion
+	const auto targetProvinces = static_cast<int>(provinceMapper.getEU4ProvinceNumbers(province->getSourceProvince()->getName()).size());
+	const auto targetDouble = static_cast<double>(targetProvinces);
+	const auto sourceProvinces = static_cast<int>(provinceMapper.getCK3Titles(province->getProvinceID()).size());
+	const auto sourceDouble = static_cast<double>(sourceProvinces);
+
+	double modFactor = 1;
+
+	if (targetDouble > 1 && sourceDouble > 1)
+	{
+		modFactor = 1 / targetDouble;
+		if (targetDouble > sourceDouble)
+		{
+			modFactor *= 1.1;
+			if (targetDouble > sourceDouble * 1.5)
+			{
+				modFactor *= 1.1;
+				if (targetDouble > sourceDouble * 2)
+					modFactor *= 1.1;
+			}
+		}
+		else if (sourceDouble > targetDouble)
+		{
+			modFactor *= 0.9;
+			if (sourceDouble > targetDouble * 1.5)
+			{
+				modFactor *= 0.9;
+				if (sourceDouble > targetDouble * 2)
+					modFactor *= 0.9;
+			}
+		}
+	}
+	else if (targetProvinces == 2)
+		modFactor = 0.8;
+	else if (targetProvinces == 3)
+		modFactor = 0.68;
+	else if (targetProvinces > 3)
+		modFactor = 0.6;
+	else if (sourceProvinces == 2)
+		modFactor = 0.91;
+	else if (sourceProvinces == 3)
+		modFactor = 0.83;
+	else if (sourceProvinces == 4)
+		modFactor = 0.76;
+	else if (sourceProvinces == 5)
+		modFactor = 0.7;
+	else if (sourceProvinces == 6)
+		modFactor = 0.65;
+	else if (sourceProvinces > 6)
+		modFactor = 0.61;
+
+	return modFactor;
+}
+
+std::tuple<double, double, double> EU4::World::sumBaroniesForDevelopment(const std::map<long long, std::shared_ptr<CK3::Title>>& baronies) const
+{
+	auto adm = 0.0;
+	auto dip = 0.0;
+	auto mil = 0.0;
+	for (const auto& barony: baronies | std::views::values)
+	{
+		if (!barony)
+			continue;
+		if (!barony->getClay())
+			continue;
+		if (!barony->getClay()->getProvince())
+			continue;
+		if (!barony->getClay()->getProvince()->second)
+			continue;
+		const auto& provinceData = barony->getClay()->getProvince()->second;
+		if (provinceData->getHoldingType().empty())
+			continue;
+		const auto buildingNumber = static_cast<double>(provinceData->countBuildings());
+		const auto baronyDev = devWeightsMapper.getDevFromHolding() + devWeightsMapper.getDevFromBuilding() * buildingNumber;
+		if (provinceData->getHoldingType() == "tribal_holding")
+		{
+			mil += baronyDev;
+		}
+		else if (provinceData->getHoldingType() == "city_holding")
+		{
+			dip += baronyDev;
+		}
+		else if (provinceData->getHoldingType() == "church_holding")
+		{
+			adm += baronyDev;
+		}
+		else if (provinceData->getHoldingType() == "castle_holding")
+		{
+			adm += baronyDev * 1 / 3; // third to adm
+			mil += baronyDev * 2 / 3; // two thirds to mil
+		}
+	}
+	return {adm, dip, mil};
+}
+
 
 void EU4::World::linkProvincesToCountries()
 {

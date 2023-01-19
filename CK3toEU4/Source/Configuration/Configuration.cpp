@@ -110,6 +110,11 @@ void Configuration::registerKeys()
 		development = DEVELOPMENT(std::stoi(developmentString.getString()));
 		Log(LogLevel::Info) << "Development set to: " << developmentString.getString();
 	});
+	registerKeyword("multiprovdevtransfer", [this](std::istream& theStream) {
+		const commonItems::singleString multiprovdevtransferString(theStream);
+		multiProvinceDevelopmentTransfer = MULTIPROVDEVTRANSFER(std::stoi(multiprovdevtransferString.getString()));
+		Log(LogLevel::Info) << "Multiple Province Dev Transfer set to: " << multiprovdevtransferString.getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
