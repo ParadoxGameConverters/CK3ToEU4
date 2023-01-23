@@ -5,6 +5,7 @@ copy "Data_Files\configuration-example.txt" "..\Debug\CK3toEU4\"
 copy "Resources\msvcp140_codecvt_ids.dll" "..\Debug\CK3toEU4\"
 copy "Resources\vcruntime140_1.dll" "..\Debug\CK3toEU4\"
 copy "Resources\rakaly.dll" "..\Debug\CK3toEU4\"
+copy "Data_Files\GeneralFAQ-READ.ME.FIRST.txt" "..\Debug\"
 
 mkdir "..\Debug\Configuration"
 copy "Data_Files\fronter-configuration.txt" "..\Debug\Configuration\"

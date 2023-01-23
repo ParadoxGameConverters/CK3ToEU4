@@ -48,9 +48,10 @@ jobs:
     - name: "Prepare release"
       if: ${{ github.event_name == 'push' }}
       run: |
-       cd "C:\Program Files\7-Zip\"
-       .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.12Lollard-win-x64.zip $Env:GITHUB_WORKSPACE\Release\*
-       cp $Env:GITHUB_WORKSPACE\CK3toEU4-0.12Lollard-win-x64.zip $Env:GITHUB_WORKSPACE\CK3toEU4-latest-win-x64.zip
+        Get-ChildItem -Path $Env:GITHUB_WORKSPACE\Release\win-x64 -Recurse -Force | Remove-Item -force -recurse
+        cd "C:\Program Files\7-Zip\"
+        .\7z.exe a $Env:GITHUB_WORKSPACE\CK3toEU4-0.12Lollard-win-x64.zip $Env:GITHUB_WORKSPACE\Release\*
+        cp $Env:GITHUB_WORKSPACE\CK3toEU4-0.12Lollard-win-x64.zip $Env:GITHUB_WORKSPACE\CK3toEU4-latest-win-x64.zip
        
     - name: "Upload binaries to release"
       if: ${{ github.event_name == 'push' }}
