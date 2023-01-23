@@ -59,7 +59,7 @@ option = {
 			name = 3
 			displayName = WHOHRE3
 			tooltip = WHOHRE3TIP
-			default = false		
+			default = false
 		}
 		radioOption = {
 			name = 4
@@ -67,7 +67,7 @@ option = {
 			tooltip = WHOHRE4TIP
 			default = false
 		}
-		radioOption = {		
+		radioOption = {
 			name = 5
 			displayName = WHOHRE5
 			tooltip = WHOHRE5TIP
@@ -264,7 +264,7 @@ option = {
 	name = output_name
 	displayName = MODNAME
 	tooltip = MODNAMETIP
-	textSelector = {	
+	textSelector = {
 		value = ""
 		editable = true
 		tooltip = MODNAMETIP2

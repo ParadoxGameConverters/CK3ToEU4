@@ -3,11 +3,11 @@
 owner = AZT
 controller = AZT
 add_core = AZT
-culture = aztek 
+culture = aztek
 religion = nahuatl
-capital = "Texcoco" 
+capital = "Texcoco"
 trade_goods = gold
-hre = no 
+hre = no
 base_tax = 10
 base_production = 10
 base_manpower = 4

@@ -931,7 +931,7 @@ special_doctrine_is_jewish_faith  = {
 	unique_modifiers = {
 		uses_judaism_power = yes
 		aspects_name = JEWISH_ASPECTS
-			
+
 		aspects = {
 			judaism_rosh_hashanah_aspect
 			judaism_simchat_torah_aspect
@@ -1017,12 +1017,12 @@ special_doctrine_is_jewish_faith  = {
 }
 
 special_doctrine_is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just Taoist ones
-	
+
 }
 
 special_doctrine_is_gnostic_faith = {
 	not_unique_modifiers = {
-		misguided_heretic = yes	
+		misguided_heretic = yes
 		allowed_conversion = {
 			bogomilist
 			mandeaism

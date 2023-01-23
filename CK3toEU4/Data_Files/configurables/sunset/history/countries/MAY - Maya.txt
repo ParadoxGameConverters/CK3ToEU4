@@ -21,8 +21,8 @@ capital = 488	# Petén
 
 1443.1.1 = {
 	leader = {
-		name = "Zotz Yumcaax"	
-		type = explorer	
+		name = "Zotz Yumcaax"
+		type = explorer
 		fire = 6
 		shock = 6
 		manuever = 2

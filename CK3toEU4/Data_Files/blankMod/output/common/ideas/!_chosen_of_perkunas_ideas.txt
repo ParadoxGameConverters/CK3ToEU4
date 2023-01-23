@@ -10,19 +10,19 @@ chosen_of_perkunas_ideas = {
 		tag = COP
 		OR = {
 			religion = baltic_pagan
-			religion = baltic_pagan_reformed			
+			religion = baltic_pagan_reformed
 		}
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_defenders_of_the_old_ways = {
 		fire_damage_received = -0.10
 		shock_damage_received = -0.10
 	}
 	ZZZ_guard_the_coasts = {
 		galley_power = 0.1
-		own_coast_naval_combat_bonus = 1		
+		own_coast_naval_combat_bonus = 1
 	}
 	ZZZ_builders_of_perkunas = {
 		build_cost = -0.25
@@ -38,7 +38,7 @@ chosen_of_perkunas_ideas = {
 		devotion = 1
 		horde_unity = 1
 		meritocracy = 0.5
-		republican_tradition = 0.5	
+		republican_tradition = 0.5
 	}
 	ZZZ_keep_out_the_invaders = {
 		leader_land_fire = 2

@@ -19,9 +19,9 @@ historical_rival = AZT
 #serfdom_freesubjects = -5
 
 1443.1.1 = {
-	leader = {	
-		name = "Yamqui Mayta"	
-		type = explorer	
+	leader = {
+		name = "Yamqui Mayta"
+		type = explorer
 		fire = 4
 		shock = 4
 		manuever = 6
@@ -64,10 +64,10 @@ historical_rival = AZT
 	}
 }
 
-1443.1.1 = { 
-	leader = {	
-		name = "Yamqui Mayta Apo"	
-		type = explorer	
+1443.1.1 = {
+	leader = {
+		name = "Yamqui Mayta Apo"
+		type = explorer
 		fire = 3
 		shock = 3
 		manuever = 6

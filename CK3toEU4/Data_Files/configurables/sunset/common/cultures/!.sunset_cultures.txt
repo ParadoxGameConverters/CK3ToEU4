@@ -2,7 +2,7 @@
 # These have been changed to add a Primary culture country, making the Aztecs/Incas less continuously monolithic
 andean_group = {
 	graphical_culture = southamericagfx
-	
+
 	inca = { # Quechua
 		primary = INC #No Cusco (CSU) in this timeline
 	}

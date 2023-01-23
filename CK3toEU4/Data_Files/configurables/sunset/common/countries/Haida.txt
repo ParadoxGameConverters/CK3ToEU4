@@ -2,7 +2,7 @@
 
 graphical_culture = northamericagfx
 
-color = { 20  191  20 } 
+color = { 20  191  20 }
 
 historical_idea_groups = {
 	religious_ideas
@@ -33,7 +33,7 @@ monarch_names = {
 	"Cuneah #0" = 20
 	"Masset #0" = 20
 	"Tahaygen #0" = 20
-	
+
 	"Kwoiyang #0" = -1
 	"Qawkúna #0" = -1
 	"Nasnan #0" = -1

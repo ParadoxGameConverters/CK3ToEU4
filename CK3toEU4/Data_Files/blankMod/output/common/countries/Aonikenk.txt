@@ -6,12 +6,12 @@ color = { 250 155 65 }
 revolutionary_colors = { 13 0 8 }
 
 historical_idea_groups = {
-	defensive_ideas	
+	defensive_ideas
 	administrative_ideas
 	quantity_ideas
 	economic_ideas
 	trade_ideas
-	aristocracy_ideas	
+	aristocracy_ideas
 	innovativeness_ideas
 	quality_ideas
 }
@@ -34,7 +34,7 @@ historical_units = {
 leader_names = {
 	Abajino
 	Araucanía
-	Choll-Choll 
+	Choll-Choll
 	Lonko
 	Picunche
 	Promaucae
@@ -45,7 +45,7 @@ leader_names = {
 }
 
 monarch_names = {
-	"Ancamilla #0" = 10 
+	"Ancamilla #0" = 10
 	"Nampai #0" = 10
 	"Pichiñán #0" = 10
 	"Coñoepán #0" = 10
@@ -67,7 +67,7 @@ monarch_names = {
 	"Mañil #0" = 10
 	"Quilapán #0" = 10
 	"Pelantaro #0" = 10
-	
+
 	"Suyai #0" = -1
 	"Yaima #0" = -1
 	"Ailén #0" = -1
@@ -79,4 +79,4 @@ monarch_names = {
 
 ship_names = {
 	Purén Biobío  Curalaba  Loncoche Tucapel Marihueñu Mataquito Chonos Poya Caupolicán
-} 
+}

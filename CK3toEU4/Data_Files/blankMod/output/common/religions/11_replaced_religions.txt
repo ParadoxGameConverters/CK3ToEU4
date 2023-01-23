@@ -26,12 +26,12 @@ eastern = {
 		country_as_secondary = {
 			adm_tech_cost_modifier = -0.1
 			stability_cost_modifier = -0.1
-		}		
-		
+		}
+
 		heretic = { TAOIST }
-		
+
 		uses_harmony = yes
-		
+
 		harmonized_modifier = harmonized_confucian
 	}
 }

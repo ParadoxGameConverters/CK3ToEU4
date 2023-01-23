@@ -16,7 +16,7 @@ grand_duchy_monarchy = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	trigger = {
 		has_reform = grand_duchy_reform
 		NOT = { government_rank = 2 }
@@ -125,7 +125,7 @@ dauphin = {
 		2 = KINGDOM
 		3 = EMPIRE
 	}
-	
+
 	ruler_male = {
 		1 = PRINCE
 		2 = KING
@@ -136,7 +136,7 @@ dauphin = {
 		2 = QUEEN
 		3 = EMPRESS
 	}
-	
+
 	heir_male = {
 		1 = DAUPHIN
 		2 = DAUPHIN

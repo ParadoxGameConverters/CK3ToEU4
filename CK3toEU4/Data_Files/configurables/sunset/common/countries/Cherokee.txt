@@ -2,7 +2,7 @@
 
 graphical_culture = northamericagfx
 
-color = { 205  145  40 } 
+color = { 205  145  40 }
 
 historical_idea_groups = {
 	religious_ideas
@@ -34,7 +34,7 @@ monarch_names = {
 	"Dragging Canoe #0" = 20
 	"Agi It #0" = 20
 	"Boudinot #0" = 20
-	
+
 	"Asmita #0" = -1
 }
 
@@ -52,11 +52,11 @@ leader_names = {
 }
 
 ship_names = {
-	"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi" 
-	"Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya" 
+	"Ani-kutani" "Ah-ni-ga-to-ge-wi" "Ah-ni-gi-lo-hi" "Ah-ni-ka-wi"
+	"Ah-ni-tsi-sk-wa" "Ah-ni-sa-ho-ni" "Ah-ni-wo-di" "Ah-ni-wa-ya"
 	Kana'ti
 	Selu
-	"Tsul Kalu" "Oonawieh Unggi" "Ani Yuntikwalaski" "Asgaya Gigagei" 
+	"Tsul Kalu" "Oonawieh Unggi" "Ani Yuntikwalaski" "Asgaya Gigagei"
 	"I'nage-utasvhi" "Anisga'ya Tsunsdi" "Nv-da u-no-le" "Nv-da ko-la"
 	"Nv-da ka-na-wo-ga" "Nv-da gu-ti-ha"
 }

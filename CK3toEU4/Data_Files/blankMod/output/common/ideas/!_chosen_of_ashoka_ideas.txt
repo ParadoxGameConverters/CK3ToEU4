@@ -16,7 +16,7 @@ chosen_of_ashoka_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_major_edict_1 = {
 		global_unrest = -0.2
 	}

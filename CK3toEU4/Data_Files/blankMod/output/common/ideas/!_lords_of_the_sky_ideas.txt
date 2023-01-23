@@ -1,5 +1,5 @@
 lords_of_the_sky_ideas = {
-	start = {		
+	start = {
 		cavalry_cost = -0.2
 		movement_speed = 0.2
 	}
@@ -15,10 +15,10 @@ lords_of_the_sky_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_shock_and_awe = {
 		leader_land_shock = 1
-		shock_damage = 0.15		
+		shock_damage = 0.15
 	}
 	ZZZ_lords_of_the_caravan = {
 		caravan_power = 0.25

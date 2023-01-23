@@ -6,18 +6,18 @@ country_event = {
 	title = ZZZ_enhanced_misc.4.t
 	desc = ZZZ_enhanced_misc.4.t
 	picture = POPE_PREACHING_eventPicture
-	
+
 	trigger = {
 		has_idea = ZZZ_guardians_of_all
 		NOT = { has_country_modifier = the_abolish_slavery_act }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 1
 	}
-	
+
 	fire_only_once = yes
-	
+
 	immediate = {
 		hidden_effect = {
 			add_country_modifier = {
@@ -37,10 +37,10 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = ZZZ_enhanced_misc.4.a
-		
+
 		add_prestige = 5
 		add_country_modifier = {
 			name = innovative_modifier

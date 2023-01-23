@@ -22,7 +22,7 @@ historical_units = {
 	tipu_sultan_rocket
 }
 
-monarch_names = {	
+monarch_names = {
 	"Taj ud-Din Firuz #0"= 1
 	"Ala ud-Din Ahmad #0"= 1
 	"Mahmud #0"= 1
@@ -40,7 +40,7 @@ monarch_names = {
 	"Akbar #0"= 1
 	"Muhammad Shâh #0"= 1
 	"Nîkû-siyar #0"= 1
-	"Râfi' #0"= 1	
+	"Râfi' #0"= 1
 	"Shîr Shâh #0"= 1
 	"Ibrâhim #0 Shâh" = 1
 	"'Azim-ash Sha'n #0" = 1
@@ -147,8 +147,8 @@ monarch_names = {
 	"Dandanayaka #0"= 1
 	"Kanaka #0"= 1
 	"Kumara #0"= 1
-	
-	
+
+
 	"Samiya #0" = -1
 	"Nasiha #0" = -1
 	"Padmavati Devi #0" = -1
@@ -196,5 +196,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

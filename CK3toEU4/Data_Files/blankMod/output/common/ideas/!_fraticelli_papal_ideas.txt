@@ -7,12 +7,12 @@ FAP_ideas = {
 	bonus = {
 		free_policy = 1
 	}
-	
+
 	trigger = {
 		tag = FAP
 	}
 	free = yes		#will be added at load.
-	
+
 	ZZZ_little_brethren = {
 		improve_relation_modifier = 0.25
 	}

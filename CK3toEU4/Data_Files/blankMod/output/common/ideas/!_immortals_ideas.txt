@@ -12,7 +12,7 @@ immortals_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_era_of_conversion = {
 		global_missionary_strength = 0.02
 	}

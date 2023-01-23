@@ -3,17 +3,17 @@ jewish_ideas = {
 		tolerance_own = 1
 		legitimacy = 1
 	}
-	
+
 	bonus = {
 		diplomatic_reputation = 1
 	}
-	
+
 	trigger = {
 		tag = ISR
 		religion_group = jewish_group
 	}
 	free = yes
-	
+
 	end_of_diaspora = {
 		global_unrest = -1
 	}

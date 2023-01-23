@@ -34,7 +34,7 @@ fixed_capital = 850 # Cannot move capital away from this province & no power cos
 		dip = 3
 		mil = 2
 	}
-} 
+}
 
 1470.1.1 = {
 	monarch = {
@@ -58,7 +58,7 @@ fixed_capital = 850 # Cannot move capital away from this province & no power cos
 		dip = 5
 		mil = 3
 	}
-} 
+}
 
 1490.1.1 = {
 	monarch = {
@@ -83,4 +83,4 @@ fixed_capital = 850 # Cannot move capital away from this province & no power cos
 		dip = 5
 		mil = 3
 	}
-} 
+}

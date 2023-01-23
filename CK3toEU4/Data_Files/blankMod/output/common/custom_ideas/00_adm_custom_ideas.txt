@@ -339,7 +339,7 @@ adm_idea_modifiers = {
 	}
 	custom_idea_prestige_decay = {
 		prestige_decay = -0.005
-		chance = {		
+		chance = {
 			factor = 1
 		}
 	}

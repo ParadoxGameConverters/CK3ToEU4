@@ -28,7 +28,7 @@ country_decisions = {
 			}
 		}
 	}
-	
+
 	nahuatl_conversion_ceremonies = {
 		potential = {
 			NOT = { has_country_modifier = nahuatl_sacrificial_stones }
@@ -57,7 +57,7 @@ country_decisions = {
 			}
 		}
 	}
-	
+
 	inti_obligatory_religious_festivals = {
 		potential = {
 			NOT = { has_country_modifier = great_inti_festivals }

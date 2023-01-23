@@ -14,10 +14,10 @@ ZZZ_enhanced_mighty_temple = {
 	prestige = 0.5
 	missionaries = 1
 	tolerance_own = 1
-	
+
 	on_activation = {
 	}
-	
+
 	on_deactivation = {
 	}
 }
@@ -26,33 +26,33 @@ ZZZ_enhanced_zoro_mecca = {
 	potential = {
 		NOT = { has_global_flag = ZZZ_enhanced_random_world }
 	}
-	
+
 	trigger = {
 		owner = {
 			religion_group = zoroastrian_group
 		}
 	}
-	
+
 	prestige = 0.5
 	missionaries = 1
 	tolerance_own = 1
-	
+
 	#Province scope
 	on_activation = {
-	
+
 	}
-	
+
 	on_deactivation = {
-	
+
 	}
-	
+
 }
 
 ZZZ_enhanced_hellenic_rome = {
 	potential = {
 		NOT = { has_global_flag = ZZZ_enhanced_random_world }
 	}
-	
+
 	trigger = {
 		owner = {
 			OR = {
@@ -61,18 +61,18 @@ ZZZ_enhanced_hellenic_rome = {
 			}
 		}
 	}
-	
+
 	prestige = 0.5
 	missionaries = 1
 	tolerance_own = 1
-	
+
 	#Province scope
 	on_activation = {
-	
+
 	}
-	
+
 	on_deactivation = {
-	
+
 	}
-	
+
 }

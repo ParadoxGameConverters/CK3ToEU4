@@ -342,7 +342,7 @@ spy_ideas = {
 		rebel_support_efficiency = 1
 		discovered_relations_impact = -1
 	}
-	
+
 	claim_fabrication = {
 		fabricate_claims_cost = -0.25
 		can_fabricate_for_vassals = yes
@@ -355,8 +355,8 @@ spy_ideas = {
 	efficient_spies = {
 		spy_offence = 0.5
 		siege_ability = 0.1
-	}	
-	
+	}
+
 	agent_training = {
 		diplomats = 1
 		advisor_cost = -0.15
@@ -366,12 +366,12 @@ spy_ideas = {
 		global_spy_defence = 0.33
 		yearly_corruption = -0.2
 	}
-	
+
 	privateers = {
 		capture_ship_chance = 0.25
 		privateer_efficiency = 0.33
 	}
-	
+
 	blackmailing = {
 		monthly_favor_modifier = 0.33
 		accept_vassalization_reasons = 15
@@ -467,7 +467,7 @@ defensive_ideas = {
 
 	bonus = {
 		hostile_attrition = 1
-		max_hostile_attrition = 1 
+		max_hostile_attrition = 1
 	}
 
 	battlefield_commisions = {
@@ -619,7 +619,7 @@ exploration_ideas = {
 	colonial_ventures = {
 		colonists = 1
 	}
-	
+
 	overseas_exploration = {
 		range = 0.5
 	}
@@ -878,7 +878,7 @@ maritime_ideas = {
 
 	bonus = {
 		sea_repair = yes
-		movement_speed_in_fleet_modifier = 1 
+		movement_speed_in_fleet_modifier = 1
 	}
 
 	merchant_traditions = {

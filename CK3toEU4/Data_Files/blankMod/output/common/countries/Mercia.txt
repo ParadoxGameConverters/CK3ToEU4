@@ -5,7 +5,7 @@ revolutionary_colors = { 13 8 13 }
 
 historical_idea_groups = {
 	exploration_ideas
-	quality_ideas	
+	quality_ideas
 	expansion_ideas
 	offensive_ideas
 	maritime_ideas
@@ -67,7 +67,7 @@ monarch_names = {
 	"Æthelred #2" = 20
 	"Ælfwynn #0" = 20
 	"Æthelstan #0" = 20
-	
+
 	"Ælfflæd #0" = -20
 	"Æthelflæd #0" = -20
 }

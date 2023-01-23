@@ -12,7 +12,7 @@ jomsvikings_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	jomsviking_code = {
 		land_morale = 0.1
 	}

@@ -1,6 +1,6 @@
 gnostic = {
 	can_form_personal_unions = yes
-	
+
 	flags_with_emblem_percentage = 33
 	flag_emblem_index_range = { 1 110 }
 
@@ -26,27 +26,27 @@ gnostic = {
 			tolerance_heathen = 2
 			global_missionary_strength = 0.01
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		can_have_secondary_religion = yes
-		
+
 		heretic = { SOCINIAN MAZDAKI EUSTATHIANS }
-		
+
 		on_convert = {
 			change_religion = manichean
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
-	}	
+	}
 	mandeaism = {
 		icon = 140
 		color = { 212 171 56 }
@@ -70,25 +70,25 @@ gnostic = {
 			tolerance_own = 1
 			religious_unity = 0.25
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		can_have_secondary_religion = yes
-		
+
 		heretic = { SOCINIAN EUSTATHIANS }
-		
+
 		on_convert = {
 			change_religion = mandeaism
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
 	}
 	valentinianism = {
@@ -113,25 +113,25 @@ gnostic = {
 			yearly_corruption = -0.1
 			tolerance_heathen = 2
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		fervor = yes
-		
+
 		heretic = { SOCINIAN EUSTATHIANS }
-		
+
 		on_convert = {
 			change_religion = valentinianism
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
 	}
 	sethianism = {
@@ -154,25 +154,25 @@ gnostic = {
 			land_morale = 0.1
 			state_maintenance_modifier = -0.25
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		heretic = { SOCINIAN EUSTATHIANS }
-		
+
 		fervor = yes
-		
+
 		on_convert = {
 			change_religion = sethianism
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
 	}
 	priscillianism = {
@@ -196,25 +196,25 @@ gnostic = {
 			tolerance_heathen = 1
 			spy_offence = 0.15
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		heretic = { SOCINIAN EUSTATHIANS }
-		
+
 		has_patriarchs = yes
-		
+
 		on_convert = {
 			change_religion = priscillianism
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
 	}
 	cainitism = {
@@ -239,28 +239,28 @@ gnostic = {
 			shock_damage = 0.1
 			fabricate_claims_cost = -0.2
 		}
-		
+
 		misguided_heretic = yes
-		
+
 		heretic = { SOCINIAN EUSTATHIANS }
-		
+
 		fervor = yes
-		
+
 		on_convert = {
 			change_religion = cainitism
 			add_prestige = -100
-			
+
 			remove_country_modifier = the_test_act
 			remove_country_modifier = superintendent_office
 			remove_country_modifier = the_popery_act
-			
+
 			add_country_modifier = {
 				name = "conversion_zeal"
 				duration = 3650
-			}			
+			}
 		}
 	}
-	
+
 	harmonized_modifier = harmonized_gnostic
 	crusade_name = CRUSADE
 }

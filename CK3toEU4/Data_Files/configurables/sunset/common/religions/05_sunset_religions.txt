@@ -15,8 +15,8 @@ pagan = {
 		province = {
 			local_missionary_strength = 0.01
 		}
-		
-		heretic = { BEAR_SPIRIT }	
+
+		heretic = { BEAR_SPIRIT }
 	}
 	inti = {
 		color = { 64 115 115 }
@@ -33,13 +33,13 @@ pagan = {
 		province = {
 			local_missionary_strength = 0
 		}
-		
+
 		authority = no
 		religious_reforms = no
-		
-		heretic = { INTI_HERETIC }	
+
+		heretic = { INTI_HERETIC }
 	}
-	
+
 	nahuatl = {
 		color = { 64 115 64 }
 		icon = 17
@@ -54,14 +54,14 @@ pagan = {
 		province = {
 			local_missionary_strength = 0
 		}
-		
+
 		doom = no
-		declare_war_in_regency = yes		
+		declare_war_in_regency = yes
 		religious_reforms = no
-		
-		heretic = { NAHUATL_HERETIC }	
+
+		heretic = { NAHUATL_HERETIC }
 	}
-	
+
 	mesoamerican_religion = {
 		#color = { 76 25 178 }
 		color = { 127 25 178 }
@@ -78,9 +78,9 @@ pagan = {
 		province = {
 			local_missionary_strength = 0
 		}
-		
+
 		religious_reforms = no
-		
-		heretic = { MESOAMERICAN_HERETIC }	
+
+		heretic = { MESOAMERICAN_HERETIC }
 	}
 }

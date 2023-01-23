@@ -14,10 +14,10 @@ muslim = {
 			heir_chance = 1.0
 		}
 		heretic = { HARURI SUFRI NAJADAT AZRAQI }
-		
+
 		uses_piety = yes				# Uses piety mechanics
 	}
-	quranist = { 
+	quranist = {
 		color = { 0.2 0.7 0.1 } #51 178.5 25.5
 		icon = 133
 		country = {
@@ -32,7 +32,7 @@ muslim = {
 			heir_chance = 1.0
 		}
 		heretic = { BEKTASHI AHMADI YAZIDI }
-		
+
 		fervor = yes			# Uses fervor mechanics
 	}
 	alawite = {
@@ -51,7 +51,7 @@ muslim = {
 			tolerance_heathen = 3
 		}
 		heretic = { DRUZE ZAIDI QARMATIAN }
-		
+
 		can_have_secondary_religion = yes
 	}
 	zikri = {
@@ -69,7 +69,7 @@ muslim = {
 			heir_chance = 1.0
 		}
 		heretic = { BEKTASHI AHMADI YAZIDI }
-		
+
 		uses_piety = yes				# Uses piety mechanics
 	}
 	kharijite = {
@@ -87,7 +87,7 @@ muslim = {
 			improve_relation_modifier = 0.1
 		}
 		heretic = { HARURI SUFRI NAJADAT AZRAQI }
-		
+
 		uses_piety = yes				# Uses piety mechanics
 	}
 	druze = {
@@ -106,7 +106,7 @@ muslim = {
 			dip_tech_cost_modifier = -0.05
 		}
 		heretic = { HURUFI ZAIDI }
-		
+
 		uses_piety = yes				# Uses piety mechanics
 	}
 	hurufi = {
@@ -124,7 +124,7 @@ muslim = {
 			stability_cost_modifier = -0.1
 		}
 		heretic = { DRUZE ZAIDI QARMATIAN }
-		
+
 		uses_piety = yes				# Uses piety mechanics
 	}
 	qarmatian = {
@@ -144,11 +144,11 @@ muslim = {
 			may_perform_slave_raid = yes
 		}
 		heretic = { DRUZE ZAIDI HURUFI }
-		
+
 		fervor = yes			# Uses fervor mechanics
 	}
 	masmudi = {
-		color = { 0 0.6 0.2 } 
+		color = { 0 0.6 0.2 }
 		icon = 172
 		country = {
 			shock_damage = 0.1
@@ -163,7 +163,7 @@ muslim = {
 			heir_chance = 1.0
 		}
 		heretic = { DRUZE ZAIDI HURUFI }
-		
+
 		uses_piety = yes			# Uses fervor mechanics
 	}
 }

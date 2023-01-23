@@ -11,7 +11,7 @@ aztec_ideas = {
 		technology_group = high_american
 	}
 	free = yes
-	
+
 	build_telpochcalli = {
 		technology_cost = -0.05
 	}
@@ -49,7 +49,7 @@ incan_ideas = {
 		technology_group = high_american
 	}
 	free = yes
-	
+
 	census_record_quipo = {
 		global_manpower_modifier = 0.25
 	}

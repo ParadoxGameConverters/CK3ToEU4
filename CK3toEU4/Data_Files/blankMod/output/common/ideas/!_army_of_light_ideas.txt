@@ -12,7 +12,7 @@ army_of_light_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_ride_of_the_light_brigade = {
 		cavalry_power = 0.25
 		cavalry_cost = -0.1

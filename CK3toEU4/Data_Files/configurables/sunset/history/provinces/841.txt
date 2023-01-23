@@ -12,7 +12,7 @@ base_tax = 6
 base_production = 6
 base_manpower = 2
 
-trade_goods = cocoa 
+trade_goods = cocoa
 
 discovered_by = high_american
 discovered_by = north_american

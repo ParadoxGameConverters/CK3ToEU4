@@ -12,7 +12,7 @@ bulls_of_rishabha_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_jain_varna = {
 		religious_unity = 0.5
 		global_unrest = -1
@@ -35,5 +35,5 @@ bulls_of_rishabha_ideas = {
 	}
 	ZZZ_jain_shilp = {
 		global_trade_goods_size_modifier = 0.15
-	}	
+	}
 }

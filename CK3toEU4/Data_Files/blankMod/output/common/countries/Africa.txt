@@ -10,7 +10,7 @@ historical_idea_groups = {
 	trade_ideas
 	defensive_ideas
 	religious_ideas
-	maritime_ideas	
+	maritime_ideas
 	administrative_ideas
 	offensive_ideas
 	economic_ideas
@@ -37,7 +37,7 @@ monarch_names = {
 	"Hannibal #1" = 50
 	"Gisco #1" = 10
 	"Bomilcar #1" = 10
-	
+
 	"Dido #1" = -1
 }
 

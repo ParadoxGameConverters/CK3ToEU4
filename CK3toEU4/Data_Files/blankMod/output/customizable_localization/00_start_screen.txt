@@ -15,9 +15,9 @@
 defined_text = {
     name = StartScreenTitle
 	random = no
-	
+
 	text = {
-		
+
         localisation_key = string_screen_title_plural
         trigger = {
 			tag_with_plural_name_trigger = yes
@@ -44,11 +44,11 @@ defined_text = {
 	random = no #Pick first that fits
 
 	#Country Specific:
-	
+
 	#Africa
-	
+
 	#India
-	
+
 	#East Asia:
 	text = {
         localisation_key = string_start_title_great_ming
@@ -80,9 +80,9 @@ defined_text = {
 			tag = KOR
 		}
     }
-	
+
 	#Americas:
-	
+
 	#Europe:
 	text = {
         localisation_key = string_start_title_aragon
@@ -223,28 +223,28 @@ defined_text = {
 			}
 		}
     }
-	
+
 	text = {
 		localisation_key = string_start_title_byzantium
 		trigger = {
 			tag = BYZ
 		}
 	}
-	
+
 	text = {
 		localisation_key = string_start_title_naples
 		trigger = {
 			tag = NAP
 		}
 	}
-	
+
 	text = {
 		localisation_key = string_start_title_genoa
 		trigger = {
 			tag = GEN
 		}
 	}
-	
+
 	#Middle & Near East
 	text = {
         localisation_key = string_start_title_hisn_kayfa
@@ -270,7 +270,7 @@ defined_text = {
 			NOT = { is_year = 1490 }
 		}
 	}
-	
+
 	#Generic:
 	text = {
         localisation_key = string_start_title_horde
@@ -376,7 +376,7 @@ defined_text = {
     name = StartScreenDownRightTitle
 	random = no
 
-   
+
 	text = {
         localisation_key = string_start_east_asia_moh_title #Japan, Eoc and Tributaries
         trigger = {
@@ -422,7 +422,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = string_start_no_special_region_title
         trigger = {
@@ -435,7 +435,7 @@ defined_text = {
     name = capital_continent_title
 	random = no
 
-   
+
 	text = {
         localisation_key = asia #Asia
 		trigger = {
@@ -452,7 +452,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = africa
         trigger = {
@@ -461,7 +461,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = north_america
         trigger = {
@@ -470,7 +470,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = south_america
         trigger = {
@@ -479,7 +479,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = oceania
         trigger = {
@@ -488,7 +488,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = new_world
         trigger = {
@@ -518,7 +518,7 @@ defined_text = {
 defined_text = {
     name = StartScreenUpRightDesc
 	random = no
-	
+
 	#Religion Mechanics - Base Text, these refer to custom loc keys below to insert DLC specific information.
 	#Christians:
 	#Orthodox (Patriarch Authority)
@@ -1151,7 +1151,7 @@ defined_text = {
 defined_text  = {
     name = startup_government_explanation
 	random = no
-	
+
     text = {
         localisation_key = string_start_government_monarchy_regency
         trigger = {
@@ -1207,7 +1207,7 @@ defined_text  = {
 defined_text = {
 	name = startup_government_heirs
 	random = no
-	
+
 	text = {
 		localisation_key = string_start_government_heirs
 		trigger = {
@@ -1242,11 +1242,11 @@ defined_text  = {
 			OR = {
 				has_government_attribute = is_merchant_republic
 				has_reform = veche_republic
-				AND = { 
+				AND = {
 					has_reform = celestial_empire
 					NOT = { has_dlc = "Mandate of Heaven" }
 				}
-				AND = { 
+				AND = {
 					is_revolutionary_republic_trigger = yes
 					has_dlc = "Rights of Man"
 				}
@@ -1271,7 +1271,7 @@ defined_text  = {
 			has_estate = estate_cossacks
         }
     }
-    
+
 	text = {
         localisation_key = string_startup_estates_explanation
         trigger = {
@@ -1593,7 +1593,7 @@ defined_text  = {
 defined_text  = {
     name = startup_government_elective
 	random = no
-	
+
     text = {
         localisation_key = string_start_elective_monarchy
         trigger = {
@@ -1640,7 +1640,7 @@ defined_text  = {
 defined_text  = {
     name = startup_government_native_council
 	random = no
-	
+
 	text = {
         localisation_key = string_start_native_council_opm
         trigger = {
@@ -1668,7 +1668,7 @@ defined_text  = {
 defined_text  = {
     name = startup_government_siberian_native_council
 	random = no
-	
+
 	text = {
         localisation_key = string_start_siberian_native_council_opm
         trigger = {
@@ -1689,7 +1689,7 @@ defined_text  = {
 defined_text  = {
     name = startup_government_meritocracy
 	random = no
-	
+
 	text = {
         localisation_key = string_start_meritocracy
         trigger = {
@@ -1709,7 +1709,7 @@ defined_text  = {
 defined_text  = {
     name = startup_government_shogunate
 	random = no
-	
+
 	text = {
         localisation_key = string_start_shogunate_moh
         trigger = {
@@ -1774,7 +1774,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = string_start_africa_americas_description
         trigger = {
@@ -1792,7 +1792,7 @@ defined_text = {
 			}
         }
     }
-	
+
 	text = {
         localisation_key = string_start_no_special_region_description
         trigger = {
@@ -1918,7 +1918,7 @@ defined_text = {
 defined_text = {
 	name = start_dharma_gov_reforms
 	random = no
-	
+
     text = {
         localisation_key = string_dharma_government_reforms
     }
@@ -1927,7 +1927,7 @@ defined_text = {
 defined_text = {
 	name = start_cossacks_steppe_nomads
 	random = no
-	
+
 	text = {
 		localisation_key = string_cossacks_steppe_nomads
         trigger = {

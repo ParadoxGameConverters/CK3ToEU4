@@ -14,7 +14,7 @@ jewish_group = {
 		country_as_secondary = {
 			advisor_cost = -0.3
 		}
-		
+
 		uses_judaism_power = yes
 		aspects_name = JEWISH_ASPECTS
 
@@ -102,7 +102,7 @@ jewish_group = {
 				}
 			}
 		}
-		
+
 		heretic = { KARAITE }
 	}
 	karaite_faith = { #
@@ -121,7 +121,7 @@ jewish_group = {
 			land_morale = 0.05
 			global_unrest = -1
 		}
-		
+
 		uses_judaism_power = yes
 		aspects_name = JEWISH_ASPECTS
 
@@ -209,7 +209,7 @@ jewish_group = {
 				}
 			}
 		}
-		
+
 		heretic = { SAMARITAN }
 	}
 }

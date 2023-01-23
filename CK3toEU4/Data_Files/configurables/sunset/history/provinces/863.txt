@@ -11,7 +11,7 @@ religion = nahuatl
 
 discovered_by = mesoamerican
 
-trade_goods = wool 
+trade_goods = wool
 
 base_tax = 3
 base_production = 2
@@ -26,6 +26,6 @@ discovered_by = andean
 citysize = 1000
 
 
-base_tax = 1 
+base_tax = 1
 base_production = 1
 base_manpower = 1

@@ -104,7 +104,7 @@ prussian_monarchy = {
 			have_had_reform = shaka_regime
 			have_had_reform = prussian_monarchy
 			have_had_reform = prussian_republic_reform
-			have_had_reform = prussian_theocratic_reform			
+			have_had_reform = prussian_theocratic_reform
 			has_unlocked_government_reform = {
 				government_reform = prussian_monarchy
 			}
@@ -614,7 +614,7 @@ solomonic_empire = {
 	allow_normal_conversion = yes
 	lock_level_when_selected = yes
 	potential = {
-		OR = {			
+		OR = {
 			has_reform = solomonic_empire
 			have_had_reform = solomonic_empire
 			has_country_flag = unlocked_solomid_empire_reform

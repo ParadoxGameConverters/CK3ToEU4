@@ -563,7 +563,7 @@ country_decisions = {
 				}
 				change_government_to_monarchy = yes
 				if = {
-					limit = { 
+					limit = {
 						has_dlc = "Lions of the North"
 						has_country_flag = teu_prussian_path
 					}
@@ -579,7 +579,7 @@ country_decisions = {
 					is_revolutionary = no
 				}
 				if = {
-					limit = { 
+					limit = {
 						has_dlc = "Lions of the North"
 						has_country_flag = teu_prussian_path
 					}
@@ -813,7 +813,7 @@ country_decisions = {
 			NOT = { tag = RUS }
 			NOT = { exists = UKR }
 			culture_group = east_slavic
-			capital_scope = { 
+			capital_scope = {
 				OR = {
 					superregion = europe_superregion
 					region = ruthenia_region
@@ -958,7 +958,7 @@ country_decisions = {
 			NOT = { tag = HLR }
 			culture_group = east_slavic
 			NOT = { #Ruthenia instead of Russia
-				capital_scope = { 
+				capital_scope = {
 					OR = {
 						superregion = europe_superregion
 						region = ruthenia_region
@@ -1112,7 +1112,7 @@ country_decisions = {
 		}
 		ai_importance = 400
 	}
-	
+
 	restore_assyrian_empire = {
 		major = yes
 		potential = {

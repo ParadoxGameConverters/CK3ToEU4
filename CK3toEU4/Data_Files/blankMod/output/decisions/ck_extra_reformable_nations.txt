@@ -2,7 +2,7 @@ country_decisions = {
 
 	swedish_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_sweden_flag }
 			NOT = { exists = SWE }
@@ -10,7 +10,7 @@ country_decisions = {
 			primary_culture = swedish
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 1
@@ -24,12 +24,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 1
 				owns_core_province = 2
@@ -38,7 +38,7 @@ country_decisions = {
 				owns_core_province = 9
 			}
 		}
-		
+
 		effect = {
 			change_tag = SWE
 			set_country_flag = formed_sweden_flag
@@ -70,16 +70,16 @@ country_decisions = {
 	############################################################################################################################################################
 	finnish_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_finland_flag }
 			NOT = {exists = FIN }
 			has_country_flag = ZZZ_generated_converter_nation
 			primary_culture = finnish
-			
+
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 19
@@ -93,12 +93,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 19
 				owns_core_province = 27
@@ -107,7 +107,7 @@ country_decisions = {
 				owns_core_province = 31
 			}
 		}
-		
+
 		effect = {
 			change_tag = FIN
 			set_country_flag = formed_finland_flag
@@ -139,7 +139,7 @@ country_decisions = {
 	############################################################################################################################################################
 	denmark_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_danmark_flag }
 			NOT = { exists = DAN }
@@ -150,7 +150,7 @@ country_decisions = {
 			}
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 6
@@ -164,12 +164,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 6
 				owns_core_province = 12
@@ -178,7 +178,7 @@ country_decisions = {
 				owns_core_province = 1983
 			}
 		}
-		
+
 		effect = {
 			change_tag = DAN
 			set_country_flag = formed_danmark_flag
@@ -472,7 +472,7 @@ country_decisions = {
 	###############################################
 	naples_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_naples_flag }
 			NOT = { exists = NAP }
@@ -480,7 +480,7 @@ country_decisions = {
 			primary_culture = neapolitan
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 121
@@ -494,12 +494,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 121
 				owns_core_province = 122
@@ -508,7 +508,7 @@ country_decisions = {
 				owns_core_province = 2985
 			}
 		}
-		
+
 		effect = {
 			change_tag = NAP
 			set_country_flag = formed_naples_flag
@@ -539,7 +539,7 @@ country_decisions = {
 	##########################################################
 	novgorod_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_novgorod_flag }
 			NOT = { exists = NOV }
@@ -547,7 +547,7 @@ country_decisions = {
 			primary_culture = novgorodian
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 310
@@ -561,12 +561,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 310
 				owns_core_province = 33
@@ -575,7 +575,7 @@ country_decisions = {
 				owns_core_province = 4260
 			}
 		}
-		
+
 		effect = {
 			change_tag = NOV
 			set_country_flag = formed_novgorod_flag
@@ -616,7 +616,7 @@ country_decisions = {
 	###########################################
 	hungary_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_hungary_flag }
 			NOT = { exists = HUN }
@@ -624,7 +624,7 @@ country_decisions = {
 			primary_culture = hungarian
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 153
@@ -638,12 +638,12 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
-			
+
 			AND = {
 				owns_core_province = 153
 				owns_core_province = 155
@@ -652,7 +652,7 @@ country_decisions = {
 				owns_core_province = 1951
 			}
 		}
-		
+
 		effect = {
 			change_tag = HUN
 			set_country_flag = formed_hungary_flag
@@ -683,7 +683,7 @@ country_decisions = {
 	###########################################
 	burgundy_nation = {
 		major = yes
-		
+
 		potential = {
 			NOT = { has_country_flag = formed_burgundy_flag }
 			NOT = { exists = BUR }
@@ -695,7 +695,7 @@ country_decisions = {
 			NOT = { government_rank = 2 }
 			was_never_end_game_tag_trigger = yes
 		}
-		
+
 		provinces_to_highlight = {
 			OR = {
 				province_id = 191
@@ -711,13 +711,13 @@ country_decisions = {
 				NOT = { is_core = ROOT }
 			}
 		}
-		
+
 		allow = {
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
 			is_at_war = no
 			primary_culture = burgundian
-			
+
 			AND = {
 				owns_core_province = 4719
 				owns_core_province = 4392
@@ -728,7 +728,7 @@ country_decisions = {
 				owns_core_province = 191
 			}
 		}
-		
+
 		effect = {
 			change_tag = BUR
 			set_country_flag = formed_burgundy_flag

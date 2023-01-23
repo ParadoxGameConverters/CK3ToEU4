@@ -463,7 +463,7 @@ link = { ck3 = k_volga_bulgaria eu4 = KAZ }
 link = { ck3 = d_bulgars eu4 = KAZ }
 link = { ck3 = c_moskva eu4 = MOS }
 link = { ck3 = k_muscovy eu4 = MOS }
-link = { capitals = { 575 } eu4 = MOS } 	
+link = { capitals = { 575 } eu4 = MOS }
 link = { ck3 = k_nogai eu4 = NOG }
 link = { ck3 = k_kimek eu4 = NOG }
 link = { ck3 = k_zhetysu eu4 = SHY }
@@ -471,7 +471,7 @@ link = { ck3 = d_jemba eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
 link = { ck3 = d_novgorod eu4 = NOV }
 link = { ck3 = c_novgorod eu4 = NOV }
-link = { ck3 = k_white_rus eu4 = PLT } 
+link = { ck3 = k_white_rus eu4 = PLT }
 link = { ck3 = d_polotsk eu4 = PLT }
 link = { ck3 = c_polotsk eu4 = PLT }
 link = { ck3 = k_permia eu4 = PRM }
@@ -482,7 +482,7 @@ link = { ck3 = c_pskov eu4 = PSK }
 link = { ck3 = c_kozlov eu4 = QAS }
 link = { capitals = { 574 } eu4 = RSO }
 link = { ck3 = e_russia eu4 = UKR }
-link = { ck3 = e_russian_empire eu4 = RUS }	   
+link = { ck3 = e_russian_empire eu4 = RUS }
 link = { ck3 = d_ryazan eu4 = RYA }
 link = { ck3 = c_ryazan eu4 = RYA }
 link = { ck3 = c_tver eu4 = TVE }
@@ -695,7 +695,7 @@ link = { ck3 = d_mogadishu eu4 = MDI }
 link = { ck3 = c_mogadishu eu4 = MDI }
 link = { ck3 = d_kordofan eu4 = NUB } #Nub is Funj
 link = { ck3 = c_kordofan eu4 = NUB }
-link = { ck3 = k_yorubaland eu4 = OYO }									   
+link = { ck3 = k_yorubaland eu4 = OYO }
 link = { ck3 = d_oyo eu4 = OYO }
 link = { ck3 = c_oyo eu4 = OYO }
 link = { ck3 = c_ilorin eu4 = OYO }
@@ -767,10 +767,10 @@ link = { ck3 = c_barkul eu4 = HMI }
 link = { ck3 = e_ilkhanate eu4 = ILK }
 link = { ck3 = c_yarkand eu4 = KAS }
 link = { ck3 = c_karghalik eu4 = KAS }
-link = { ck3 = k_khotan eu4 = KAS }								   
+link = { ck3 = k_khotan eu4 = KAS }
 link = { ck3 = k_mongolia eu4 = KHA }
 link = { ck3 = e_mongolia eu4 = KHA }
-link = { ck3 = e_mongol_empire eu4 = MGE }  
+link = { ck3 = e_mongol_empire eu4 = MGE }
 link = { ck3 = d_ramannadesa eu4 = PEG }
 link = { ck3 = c_pegu eu4 = PEG }
 link = { ck3 = c_toungoo eu4 = TAU }
@@ -1084,7 +1084,7 @@ link = { ck3 = k_grand_swabia eu4 = SWA }
 link = { ck3 = k_alemania eu4 = SWA }
 link = { ck3 = k_franconia_otto eu4 = FKN }
 link = { ck3 = k_grand_franconia eu4 = FKN }
-link = { ck3 = k_franconia_otto eu4 = THU }	   
+link = { ck3 = k_franconia_otto eu4 = THU }
 
 #???
 link = { ck3 = e_roman_empire eu4 = ROM }
@@ -1133,7 +1133,7 @@ link = { ck3 = d_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = c_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = k_cuman eu4 = CMN } # Cuman
 link = { ck3 = d_khazaria eu4 = KHZ } # Khazaria
-link = { ck3 = e_caspian-pontic_steppe eu4 = KHZ } # Khazaria		 
+link = { ck3 = e_caspian-pontic_steppe eu4 = KHZ } # Khazaria
 link = { ck3 = k_khazaria eu4 = KHZ }
 link = { ck3 = d_thrace eu4 = THR } # Thrace
 link = { ck3 = k_thrace eu4 = THR }
@@ -1231,7 +1231,7 @@ link = { ck3 = e_dacia eu4 = RMN }
 link = { ck3 = k_sikkim eu4 = SKK }
 link = { ck3 = d_sikkim eu4 = SKK }
 link = { ck3 = k_tts eu4 = TTS }
-link = { ck3 = k_two_sicilies eu4 = TTS }	 
+link = { ck3 = k_two_sicilies eu4 = TTS }
 link = { ck3 = e_tang eu4 = TNG }
 link = { ck3 = e_jurchen_china eu4 = JIN }
 link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
@@ -1242,8 +1242,8 @@ link = { ck3 = d_wagadugu eu4 = WGD } # Wagadugu
 link = { ck3 = c_wagadugu eu4 = WGD } # Wagadugu
 link = { ck3 = c_kurumba eu4 = ZND } # Zandoma, county maps to Liptako, the one province with a Zandoma core
 link = { ck3 = c_po eu4 = TEN } # Tenkodogo
-link = { ck3 = c_mamprusi eu4 = TEN } 
-link = { ck3 = c_daboya eu4 = TEN } 
+link = { ck3 = c_mamprusi eu4 = TEN }
+link = { ck3 = c_daboya eu4 = TEN }
 link = { ck3 = k_gurma eu4 = GUR } # Gurma
 link = { ck3 = d_lower_gurma eu4 = GUR } # Gurma
 link = { ck3 = d_upper_gurma eu4 = GUR } # Gurma

@@ -16,7 +16,7 @@ brotherhood_of_the_holy_sepulchre_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_the_brotherhood_long_game = {
 		manpower_recovery_speed = 0.2
 		recover_army_morale_speed = 0.1

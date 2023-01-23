@@ -19,6 +19,6 @@ ZZZ_enhanced_unreformed_religion = {
 	trigger = {
 		always = yes
 	}
-	
+
 	global_missionary_strength = -0.005
 }

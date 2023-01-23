@@ -1,5 +1,5 @@
 spirit_guardians_ideas = {
-	start = {		
+	start = {
 		global_manpower_modifier = 0.25
 		global_unrest = -2
 	}
@@ -16,7 +16,7 @@ spirit_guardians_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_guardians_of_the_people = {
 		shock_damage_received = -0.2
 	}
@@ -37,7 +37,7 @@ spirit_guardians_ideas = {
 	ZZZ_guardians_of_the_seas = {
 		heavy_ship_power = 0.15
 	}
-	ZZZ_guardians_of_all = {		
+	ZZZ_guardians_of_all = {
 		num_accepted_cultures = 3
 	}
 }

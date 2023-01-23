@@ -49,7 +49,7 @@ estate_dhimmi = {
 	}
 	country_modifier_neutral = {
 		tolerance_heathen = 2
-	}	
+	}
 	country_modifier_angry = {
 		technology_cost = 0.1
 		tolerance_heathen = -1
@@ -69,7 +69,7 @@ estate_dhimmi = {
 				NOT = { religion_group = muslim }
 			}
 		}
-		influence = 10		
+		influence = 10
 	}
 	influence_modifier = {
 		desc = EST_VAL_RULED_BY_RELIGIOUS_MINORITY
@@ -97,7 +97,7 @@ estate_dhimmi = {
 	}
 
 	influence_from_dev_modifier = 0.5
-	
+
 	#Loyalty Modifiers
 	loyalty_modifier = {
 		desc = EST_VAL_OTHER_ESTATE_IN_POWER_LOY
@@ -125,7 +125,7 @@ estate_dhimmi = {
 		}
 		loyalty = 10
 	}
-	
+
 	privileges = {
 		estate_dhimmi_land_rights
 		estate_dhimmi_lighter_dhimmi_taxes

@@ -35,11 +35,11 @@ country_event = {
 	mean_time_to_happen = {
 		months = 2000
 	}
-	
+
 	immediate = {
 		set_country_flag = PER_had_event_3560
 	}
-	
+
 	option ={ # Support the Turkish Shiites
 		name = "flavor_per.EVTOPTA3560"
 		add_stability_or_adm_power = yes
@@ -136,7 +136,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 1000
 	}
-	
+
 	immediate = {
 		set_country_flag = PER_had_event_3563
 	}
@@ -171,9 +171,9 @@ country_event = {
 	title = "flavor_per.EVTNAME1"
 	desc = "flavor_per.EVTDESC1"
 	picture = REFORM_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Reform
 		name = "flavor_per.EVTOPTA1"
 		if = {
@@ -235,9 +235,9 @@ country_event = {
 	title = "flavor_per.EVTNAME2"
 	desc = "flavor_per.EVTDESC2"
 	picture = REFORM_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		is_year = 1580
@@ -250,7 +250,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 150
 	}
-	
+
 	option = { #Reform
 		name = "flavor_per.EVTOPTA1"
 		if = {
@@ -272,9 +272,9 @@ country_event = {
 	title = "flavor_per.EVTNAME3"
 	desc = "flavor_per.EVTDESC3"
 	picture = ADVISOR_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		is_year = 1590
@@ -287,7 +287,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 150
 	}
-	
+
 	option = { # Hire the English advisors
 		name = "flavor_per.EVTOPTA3"
 		if = {
@@ -311,7 +311,7 @@ country_event = {
 	title = "flavor_per.EVTNAME4"
 	desc = "flavor_per.EVTDESC4"
 	picture = LIBERUM_VETO_eventPicture
-	
+
 	trigger = {
 		tag = PER
 		is_year = 1580
@@ -329,11 +329,11 @@ country_event = {
 		}
 		has_regency = no
 	}
-	
+
 	mean_time_to_happen = {
 		months = 500
 	}
-	
+
 	option = { #Let the Clans fight
 		name = "flavor_per.EVTOPTA4"
 		hidden_effect = {
@@ -364,9 +364,9 @@ country_event = {
 	title = "flavor_per.EVTNAME5"
 	desc = "flavor_per.EVTDESC5"
 	picture = LIBERUM_VETO_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		is_year = 1635
@@ -378,7 +378,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 500
 	}
-	
+
 	option = { # Let the factions conspire
 		name = "flavor_per.EVTOPTA5"
 		hidden_effect = {
@@ -416,9 +416,9 @@ country_event = {
 	title = "flavor_per.EVTNAME6"
 	desc = "flavor_per.EVTDESC6"
 	picture = ANGRY_MOB_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		NOT = { primary_culture = afghani }
@@ -429,7 +429,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 2000
 	}
-	
+
 	option = { #Curses!
 		name = "flavor_per.EVTOPTA6"
 		random_owned_province = {
@@ -459,9 +459,9 @@ country_event = {
 	title = flavor_per.7.t
 	desc = flavor_per.7.d
 	picture = BIG_BOOK_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		NOT = { is_year = 1600 }
@@ -470,7 +470,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 300
 	}
-	
+
 	option = { #Ok
 		name = flavor_per.7.a
 		add_prestige = 10
@@ -487,9 +487,9 @@ country_event = {
 	title = flavor_per.8.t
 	desc = flavor_per.8.d
 	picture = BIG_BOOK_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		is_year = 1620
@@ -499,7 +499,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 45
 	}
-	
+
 	option = { #
 		name = flavor_per.8.a
 		add_legitimacy = 10
@@ -513,10 +513,10 @@ country_event = {
 	title = flavor_per.9.t
 	desc = flavor_per.9.d
 	picture = PRAYING_eventPicture
-	
+
 	is_triggered_only = yes
 
-	
+
 	option = { #Whatever is needed we must provide.
 		name = flavor_per.9.a
 		ai_chance = {
@@ -530,7 +530,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = { #We must practice restraint.
 		name = flavor_per.9.b
 		ai_chance = {
@@ -551,9 +551,9 @@ country_event = {
 	title = flavor_per.10.t
 	desc = flavor_per.10.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		NOT = { tag = MSY }
 		is_year = 1445
@@ -566,7 +566,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	option = { #
 		name = flavor_per.10.a
 		every_province = {
@@ -580,7 +580,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 }
 
 #Rise of the Safawiya
@@ -589,9 +589,9 @@ country_event = {
 	title = flavor_per.11.t
 	desc = flavor_per.11.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		NOT = { tag = ARL }
 		is_year = 1455
@@ -609,7 +609,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	option = { #
 		name = flavor_per.11.a
 		every_province = {
@@ -639,9 +639,9 @@ country_event = {
 	title = flavor_per.12.t
 	desc = flavor_per.12.d
 	picture = RELIGIOUS_TURMOIL_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		exists = PER
 		NOT = { tag = PER }
@@ -655,7 +655,7 @@ country_event = {
 
 	mean_time_to_happen = {
 		months = 390
-		
+
 		modifier = {
 			factor = 0.75
 			any_owned_province = {
@@ -676,7 +676,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			random_owned_province = {
@@ -713,7 +713,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = { #Ok.
 		name = flavor_per.12.a
 		random_owned_province = {
@@ -747,9 +747,9 @@ country_event = {
 	title = flavor_per.13.t
 	desc = flavor_per.13.d
 	picture = RELIGIOUS_CONVERSION_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		is_free_or_tributary_trigger = yes
@@ -766,7 +766,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	option = { #
 		name = flavor_per.13.a
 		ai_chance = { factor = 1 }
@@ -782,7 +782,7 @@ country_event = {
 		}
 		set_country_flag = per_shiite_policies
 	}
-	
+
 	option = { #
 		name = flavor_per.13.b
 		ai_chance = { factor = 0 }
@@ -796,9 +796,9 @@ country_event = {
 	title = flavor_per.14.t
 	desc = flavor_per.14.d
 	picture = ADVISOR_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		religion = shiite
@@ -808,7 +808,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	option = { # Carrot
 		name = flavor_per.14.a
 		ai_chance = { factor = 1 }
@@ -817,7 +817,7 @@ country_event = {
 			duration = 3650
 		}
 	}
-	
+
 	option = { # Whip
 		name = flavor_per.14.b
 		ai_chance = { factor = 0 }
@@ -835,9 +835,9 @@ country_event = {
 	title = flavor_per.15.t
 	desc = flavor_per.15.d
 	picture = ADVISOR_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		religion = shiite
@@ -847,7 +847,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 30
 	}
-	
+
 	option = { # Welcome them with open arms
 		name = flavor_per.15.a
 		ai_chance = { factor = 1 }
@@ -868,7 +868,7 @@ country_event = {
 			duration = 7300
 		}
 	}
-	
+
 	#option = { # Turn them away
 	#	name = flavor_per.15.b
 	#	ai_chance = { factor = 0 }
@@ -883,9 +883,9 @@ country_event = {
 	title = flavor_per.16.t
 	desc = flavor_per.16.d
 	picture = CITY_VIEW_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		religion = shiite
@@ -899,7 +899,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 150
 	}
-	
+
 	option = { #Let us build a new, truly Persian capital.
 		name = flavor_per.16.a
 		ai_chance = {
@@ -915,7 +915,7 @@ country_event = {
 			}
 		}
 	}
-	
+
 	option = { #Our current capital fit our current needs
 		name = flavor_per.16.b
 		ai_chance = {
@@ -931,9 +931,9 @@ country_event = {
 	title = flavor_per.17.t
 	desc = flavor_per.17.d
 	picture = CITY_VIEW_eventPicture
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
 		tag = PER
 		had_country_flag = { flag = per_isfahan_construction days = 3650 }
@@ -946,7 +946,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 168
 	}
-	
+
 	option = { #Great!
 		name = flavor_per.17.a
 		add_prestige = 20
@@ -958,5 +958,5 @@ country_event = {
 			}
 		}
 	}
-	
+
 }

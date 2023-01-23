@@ -15,7 +15,7 @@ knights_of_santiago_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_cross_of_st_james = {
 		prestige_from_land = 1
 		prestige_decay = -0.005

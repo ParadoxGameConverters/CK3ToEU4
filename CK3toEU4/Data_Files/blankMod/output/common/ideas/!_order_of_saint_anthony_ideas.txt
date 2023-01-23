@@ -12,7 +12,7 @@ order_of_saint_anthony_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_coptic_defenders = {
 		shock_damage_received = -0.2
 	}

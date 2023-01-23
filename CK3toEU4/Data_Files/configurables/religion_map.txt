@@ -40,7 +40,7 @@ link = { eu4 = messalian ck3 = messalian }
 link = { eu4 = adamites ck3 = adamites }
 link = { eu4 = bosnian_church ck3 = bosnian_church }
 link = { eu4 = adoptianist ck3 = adoptionist }
-link = { eu4 = insular_celtic ck3 = insular_celtic } # Fallback, it is already defined so let use it 
+link = { eu4 = insular_celtic ck3 = insular_celtic } # Fallback, it is already defined so let use it
 # Tani
 link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism

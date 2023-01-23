@@ -20,7 +20,7 @@ knights_of_the_sun_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_all_shall_praise_the_sun = {
 		missionaries = 1
 		global_missionary_strength = 0.02

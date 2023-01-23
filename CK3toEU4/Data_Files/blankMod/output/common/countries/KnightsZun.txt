@@ -24,7 +24,7 @@ historical_units = {
 	durrani_dragoon
 }
 
-monarch_names = {	
+monarch_names = {
 	"Mir Ways #0" = 20
 	"Humayun #0" = 20
 	"Ahmad #0" = 30
@@ -41,7 +41,7 @@ monarch_names = {
 	"Parwaiz #0" = 20
 	"Anoushiravan #0" = 20
 	"Isfandiyar #0" = 20
-	
+
 	"Nawal #0" = -1
 	"Munya #0" = -1
 	"Haniyya #0" = -1
@@ -69,5 +69,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

@@ -19,9 +19,9 @@ historical_rival = INC
 #innovative_narrowminded = 5
 
 1443.1.1 = {
-	leader = {	
-		name = "Tlotzin Xocoyol"	
-		type = explorer	
+	leader = {
+		name = "Tlotzin Xocoyol"
+		type = explorer
 		fire = 2
 		shock = 2
 		manuever = 4
@@ -182,7 +182,7 @@ historical_rival = INC
 		leader = {	name = "Ahuitzotl"             	type = general	fire = 3	shock = 5	manuever = 3	siege = 0}
 	}
 }
-		
+
 1486.4.14 = {
 	monarch = {
 		name = "Ahuitzotl"
@@ -208,7 +208,7 @@ historical_rival = INC
 		leader = {	name = "Moctezuma II"          	type = general	fire = 2	shock = 3	manuever = 2	siege = 0}
 	}
 }
-		
+
 1502.9.16 = {
 	monarch = {
 		name = "Moctezuma II Xocoytzin"

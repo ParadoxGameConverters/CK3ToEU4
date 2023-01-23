@@ -15,7 +15,7 @@ sons_of_kaleva_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_large_order = {
 		governing_capacity = 250
 		state_maintenance_modifier = -0.25

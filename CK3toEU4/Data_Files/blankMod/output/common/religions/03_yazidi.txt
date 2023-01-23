@@ -23,7 +23,7 @@ yazidism = {
 			advisor_pool = 1
 		}
 		heretic = { BEKTASHI AHMADI ZIKRI }
-		
+
 		has_patriarchs = yes		# Uses patriarch authority
 	}
 	meshefaresism = {
@@ -41,7 +41,7 @@ yazidism = {
 			advisor_pool = 1
 		}
 		heretic = { BEKTASHI AHMADI ZIKRI }
-		
+
 		has_patriarchs = yes		# Uses patriarch authority
 	}
 	kitebacilweism = {
@@ -49,7 +49,7 @@ yazidism = {
 		icon = 136
 		country = {
 			global_missionary_strength = 0.01
-			advisor_pool = 1 # Caste system		
+			advisor_pool = 1 # Caste system
 		}
 		province = {
 			local_missionary_strength = -0.02
@@ -59,10 +59,10 @@ yazidism = {
 			advisor_pool = 1
 		}
 		heretic = { BEKTASHI AHMADI ZIKRI }
-		
+
 		holy_sites = { 411 385 379 4326 430 }
 		#Mosul - Mecca - Jerusalem - Nishapur - Dashtistan
-		
+
 		blessings = {
 			legitimize_government
 			encourage_warriors_of_the_faith
@@ -71,8 +71,8 @@ yazidism = {
 			will_of_the_martyrs
 		}
 	}
-	
+
 	harmonized_modifier = harmonized_yazidi
-	
+
 	crusade_name = JIHAD
 }

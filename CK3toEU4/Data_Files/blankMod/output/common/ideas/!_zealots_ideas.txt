@@ -12,7 +12,7 @@ zealots_ideas = {
 		government = theocracy
 	}
 	free = yes
-	
+
 	ZZZ_free_from_invaders = {
 		core_decay_on_your_own = -1
 		hostile_attrition = 1

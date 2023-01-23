@@ -12,9 +12,9 @@ historical_idea_groups = {
 	spy_ideas
 	religious_ideas
 	aristocracy_ideas
-	quality_ideas	
-	influence_ideas	
-	defensive_ideas	
+	quality_ideas
+	influence_ideas
+	defensive_ideas
 }
 
 historical_units = {
@@ -28,5 +28,5 @@ historical_units = {
 	african_tuareg_cavalry
 	african_mossi_horsemen
 	african_hussar
-	african_dragoon	
+	african_dragoon
 }

@@ -27,7 +27,7 @@ historical_units = {
 	ottoman_lancer
 }
 
-monarch_names = {	
+monarch_names = {
 	"James #1" = 1
 	"Simeon #1" = 1
 	"Justus #1" = 1
@@ -170,7 +170,7 @@ monarch_names = {
 	"Diodoros #0" = 1
 	"Irenaios #1" = 1
 	"Theophilus #3" = 1
-	
+
 	"Eirene #0" = -20
 	"Theodora #0" = -20
 	"Zoe #0" = -10

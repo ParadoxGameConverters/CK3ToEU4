@@ -204,7 +204,7 @@ prussian_republic_reform = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 100
 	legacy_equivalent = prussian_republic
-	
+
 	modifiers = {
 		war_exhaustion = -0.02
 		monthly_militarized_society = 0.05
@@ -213,18 +213,18 @@ prussian_republic_reform = {
 		max_absolutism = 30
 		governing_capacity_modifier = -0.5
 	}
-	
+
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
 		militarised_society = yes
 	}
-	
+
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
 		generals_become_rulers = yes
 	}
-	
+
 	has_term_election = no
 }
 

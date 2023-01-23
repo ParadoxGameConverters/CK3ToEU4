@@ -9,11 +9,11 @@ culture = yucatec
 
 religion = nahuatl
 
-base_tax = 4 
-base_production = 4 
-base_manpower = 1 
+base_tax = 4
+base_production = 4
+base_manpower = 1
 
-trade_goods = sugar 
+trade_goods = sugar
 
 discovered_by = mesoamerican
 discovered_by = high_american

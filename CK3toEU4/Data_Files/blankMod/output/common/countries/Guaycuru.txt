@@ -6,12 +6,12 @@ color = { 245 10 80 }
 revolutionary_colors = { 5 16 5 }
 
 historical_idea_groups = {
-	offensive_ideas	
+	offensive_ideas
 	administrative_ideas
 	quantity_ideas
 	economic_ideas
 	spy_ideas
-	aristocracy_ideas	
+	aristocracy_ideas
 	innovativeness_ideas
 	quality_ideas
 }
@@ -63,13 +63,13 @@ monarch_names = {
 	"Tekokatu #0" = 10
 	"Tuvicha #0" = 10
 	"Ygary #0" = 10
-	
+
 	"Porasy #0" = -1
 	"Ka'a Jarýi #0" = -1
 	"Irupé #0" = -1
 }
 
- 
+
 ship_names = {
 	"Teju Jagua" "Mboi Tui" Monai "Jasy Jatere" Kurupi "Ao Ao" Luison Angatupry Pytajovai Pombero Abaangiu Jurupari Yande Yari "Mala Vision" "Plata Yvyguy" Tupã Jacy Pinon Raini Jaguar Marangatú "Tume Arandu" Kerana
 }

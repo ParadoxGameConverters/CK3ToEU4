@@ -9,10 +9,10 @@ historical_idea_groups = {
 	defensive_ideas
 	economic_ideas
 	spy_ideas
-	offensive_ideas	
+	offensive_ideas
 	religious_ideas
 	quality_ideas
-	diplomatic_ideas	
+	diplomatic_ideas
 	quantity_ideas
 }
 
@@ -33,12 +33,12 @@ historical_units = {
 
 leader_names = {
 	Anquimarca Apo Atahualpa Atoc Atoc-Suqui Auqui-Huaman
-	Canchari Chalcuchima Challco Chiaquitinta Chilche Colla-Topa Curiatao Cusi 
+	Canchari Chalcuchima Challco Chiaquitinta Chilche Colla-Topa Curiatao Cusi
 	Guacra Guaritito Guaritopa
 	Huachuri Huaman Huascar Huaypalcon
 	Illaquita Inquill
 	Llicllic
-	Maila Maras Marcavilca Mayta 
+	Maila Maras Marcavilca Mayta
 	Ninancoro
 	Ozcoc
 	Parinango Paucar Paullu Pomacapi Puma Pusca Puyu-Vilca
@@ -77,7 +77,7 @@ monarch_names = {
 	"Yupanqui #0" = 0
 	"Zambiza #0" = 0
 	"Zopahua #0" = 0
-	
+
 	"Axomamma #0" = -1
 	"Cavillaca #0" = -1
 	"Cora Ocllo #0" = -1
@@ -100,7 +100,7 @@ ship_names = {
 	Ekkeko
 	"Hanan Pacha"
 	Inti Illapa
-	Kon 
+	Kon
 	"Manco Capac" "Mama Ocllo" "Mama Huaco" "Mama Raua" "Mama Cura"
 	"Mama Coca" "Mama Allpa" "Mama Pacha" "Mama Quilla" "Mama Zara"
 	"Pacha Camac" Pachacuti Pariacaca Paricia

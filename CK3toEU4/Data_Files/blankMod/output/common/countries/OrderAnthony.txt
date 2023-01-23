@@ -20,10 +20,10 @@ historical_units = {
 	african_abyssinian_cavalry
 	african_mossi_horsemen
 	african_hussar
-	african_dragoon	
+	african_dragoon
 }
 
-monarch_names = {	
+monarch_names = {
 	"Iyâsû #0" = 60
 	"Taqla Hâymânôt #0" = 60
 	"Salômôn #2" = 40
@@ -67,7 +67,7 @@ monarch_names = {
 	"Wand Bewossen #0" = 0
 	"Haile #0" = 0
 	"Wolda Gabrael #0" = 0
-	
+
 	"Abeba #0" = -1
 	"Hagos #0" = -1
 	"Tenagne #0" = -1

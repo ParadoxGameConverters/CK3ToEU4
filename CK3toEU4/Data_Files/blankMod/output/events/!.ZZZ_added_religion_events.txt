@@ -6,16 +6,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.1.desc
 	picture = STREET_SPEECH_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.1.a
 		trigger = {
 			religion = norse_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = norse_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -47,7 +47,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.1.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.1.b
@@ -59,7 +59,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.1.c
@@ -76,16 +76,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.2.desc
 	picture = STREET_SPEECH_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.2.a
 		trigger = {
 			religion = baltic_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = baltic_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -117,7 +117,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.2.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.2.b
@@ -129,7 +129,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.2.c
@@ -146,16 +146,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.3.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.3.a
 		trigger = {
 			religion = finnish_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = finnish_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -187,7 +187,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.3.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.3.b
@@ -199,7 +199,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.3.c
@@ -216,16 +216,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.4.desc
 	picture = MONGOL_BANNERS_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.4.a
 		trigger = {
 			religion = tengri_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = tengri_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -257,7 +257,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.4.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.4.b
@@ -269,7 +269,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.4.c
@@ -286,16 +286,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.5.desc
 	picture = STREET_SPEECH_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.5.a
 		trigger = {
 			religion = slavic_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = slavic_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -327,7 +327,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.5.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.5.b
@@ -339,7 +339,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.5.c
@@ -356,16 +356,16 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.6.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.6.a
 		trigger = {
 			religion = zun_pagan
 			NOT = { tag = FROM }
 		}
-		
+
 		change_religion = zun_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -397,7 +397,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.6.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.6.b
@@ -409,7 +409,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.6.c
@@ -426,9 +426,9 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.7.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.7.a
 		trigger = {
@@ -436,7 +436,7 @@ country_event = {
 			NOT = { tag = FROM }
 		}
 		ai_chance = { factor = 75 }
-		
+
 		change_religion = bon_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -468,7 +468,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.7.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.7.b
@@ -481,7 +481,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.7.c
@@ -498,9 +498,9 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.8.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.8.a
 		trigger = {
@@ -508,7 +508,7 @@ country_event = {
 			NOT = { tag = FROM }
 		}
 		ai_chance = { factor = 75 }
-		
+
 		change_religion = hellenic_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -540,7 +540,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.8.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.8.b
@@ -553,7 +553,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.8.c
@@ -570,9 +570,9 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.9.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.9.a
 		trigger = {
@@ -580,7 +580,7 @@ country_event = {
 			NOT = { tag = FROM }
 		}
 		ai_chance = { factor = 75 }
-		
+
 		change_religion = kushitism_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -612,7 +612,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.9.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.9.b
@@ -625,7 +625,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.9.c
@@ -642,9 +642,9 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.10.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.10.a
 		trigger = {
@@ -652,7 +652,7 @@ country_event = {
 			NOT = { tag = FROM }
 		}
 		ai_chance = { factor = 75 }
-		
+
 		change_religion = magyar_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -684,7 +684,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.10.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.10.b
@@ -697,7 +697,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.10.c
@@ -714,9 +714,9 @@ country_event = {
 	title = ZZZ_enhanced_religion.1.t
 	desc = ZZZ_enhanced_religion.11.desc
 	picture = BIG_BOOK_eventPicture
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = ZZZ_enhanced_religion.11.a
 		trigger = {
@@ -724,7 +724,7 @@ country_event = {
 			NOT = { tag = FROM }
 		}
 		ai_chance = { factor = 75 }
-		
+
 		change_religion = siberian_pagan_reformed
 		add_country_modifier = {
 			name = "conversion_zeal"
@@ -756,7 +756,7 @@ country_event = {
 		name = ZZZ_enhanced_religion.10.aa
 		trigger = {
 			tag = FROM
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.10.b
@@ -769,7 +769,7 @@ country_event = {
 		add_country_modifier = {
 			name = "the_proper_old_ways"
 			duration = 3650
-		}		
+		}
 	}
 	option = {
 		name = ZZZ_enhanced_religion.10.c

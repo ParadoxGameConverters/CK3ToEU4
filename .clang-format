@@ -16,7 +16,7 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: true
 BinPackArguments: false
 BinPackParameters: false
-BraceWrapping:                         
+BraceWrapping:
   BeforeLambdaBody: false
 BreakBeforeBraces: Custom
 BreakConstructorInitializers: AfterColon

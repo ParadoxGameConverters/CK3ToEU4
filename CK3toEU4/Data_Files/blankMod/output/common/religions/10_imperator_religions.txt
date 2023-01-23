@@ -15,7 +15,7 @@ pagan = {
 		}
 
 		personal_deity = yes
-		
+
 		heretic = { GOAT_SKULL }
 	}
 	anglo_pagan = {
@@ -34,11 +34,11 @@ pagan = {
 		}
 		fervor = yes
 		heretic = { GOAT_SKULL }
-	}	
+	}
 	scythian_pagan = {
 		color = { 0.5 0.19 0.2 }
 		icon = 165
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -89,7 +89,7 @@ pagan = {
 	iberian_pagan = {
 		color = { 0.91 0.71 0.82 }
 		icon = 164
-		
+
 		country = {
 			tolerance_heathen = 2
 			diplomatic_reputation = 1
@@ -128,7 +128,7 @@ pagan = {
 			}
 		}
 	}
-	
+
 	kemetism = {
 		color = { 179 45 0 }
 		icon = 152
@@ -146,7 +146,7 @@ pagan = {
 		personal_deity = yes
 		heretic = { KUSHITE SPHYNX }
 	}
-	
+
 	mardukism = {
 		icon = 153
 		color = { 128 11 0 }
@@ -180,7 +180,7 @@ pagan = {
 
 		uses_piety = yes
 		declare_war_in_regency = yes
-		
+
 		heretic = { BEAR_SPIRIT SNAKE_CLAN }
 	}
 	cybelene = {
@@ -234,7 +234,7 @@ pagan = {
 	atenism = {
 		color = { 0.9 0.8 0.4 }
 		icon = 170
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -249,7 +249,7 @@ pagan = {
 		uses_piety = yes
 		heretic = { SPHYNX }
 	}
-	
+
 	druidism = {
 		color = { 102 66 31 }
 		icon = 105
@@ -264,14 +264,14 @@ pagan = {
 			tolerance_own = 2
 			tolerance_heretic = 2
 		}
-		
+
 		heretic = { ELUVEITIE ASTERIX }
 		uses_karma = yes
 	}
 	briton_pagan = {
 		color = { 0.1 0.1 0.6 }
 		icon = 166
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -289,7 +289,7 @@ pagan = {
 	gallic_pagan = {
 		color = { 0.1 0.6 0.1 }
 		icon = 167
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -307,7 +307,7 @@ pagan = {
 	gaelic_pagan = {
 		color = { 0.1 0.4 0.1 }
 		icon = 168
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -326,7 +326,7 @@ pagan = {
 	celtiberian_pagan = {
 		color = { 0.2 0.7 0.2 }
 		icon = 169
-		
+
 		province = {
 			local_missionary_strength = 0.02
 		}
@@ -338,7 +338,7 @@ pagan = {
 			hostile_attrition = 1
 			defensiveness = 0.1
 		}
-		
+
 		heretic = { ELUVEITIE ASTERIX }
 		uses_karma = yes
 	}

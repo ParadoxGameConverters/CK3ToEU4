@@ -1,12 +1,12 @@
 # No previous file for Qumarkaj
 
-owner = KIC 
+owner = KIC
 controller = KIC
-culture = highland_mayan 
+culture = highland_mayan
 religion = mesoamerican_religion
-capital = "Qumarkaj" 
-trade_goods = cocoa 
-hre = no 
+capital = "Qumarkaj"
+trade_goods = cocoa
+hre = no
 base_tax = 6
 base_production = 6
 base_manpower = 6

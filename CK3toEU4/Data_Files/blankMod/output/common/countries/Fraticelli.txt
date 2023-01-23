@@ -11,8 +11,8 @@ historical_score = 50
 historical_idea_groups = {
 	religious_ideas
 	diplomatic_ideas
-	administrative_ideas	
-	defensive_ideas	
+	administrative_ideas
+	defensive_ideas
 	trade_ideas
 	quality_ideas
 	innovativeness_ideas
@@ -76,7 +76,7 @@ monarch_names = {
 	"Scipione #0" = 0
 	"Teodosio #0" = 0
 	"Vittorio #0" = 0
-	
+
 	"Magdalena #0" = -1
 	"Maria #0" = -1
 	"Eva #0" = -1

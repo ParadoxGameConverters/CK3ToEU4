@@ -5,7 +5,7 @@ revolutionary_colors = { 5 8 5 }
 
 historical_idea_groups = {
 	exploration_ideas
-	defensive_ideas	
+	defensive_ideas
 	expansion_ideas
 	offensive_ideas
 	maritime_ideas
@@ -42,7 +42,7 @@ monarch_names = {
 	"Cynegils #0" = 20
 	"Cwichelm #0" = 20
 	"Cenwalh #0" = 20
-	"Penda #0" = 20	
+	"Penda #0" = 20
 	"Cenfus #0" = 20
 	"Æscwine #0" = 20
 	"Centwine #0" = 5
@@ -60,6 +60,6 @@ monarch_names = {
 	"Æthelberht #0" = 20
 	"Æthelred #0" = 20
 	"Alfred #0" = 20
-	
+
 	"Seaxburh #0" = -20
 }

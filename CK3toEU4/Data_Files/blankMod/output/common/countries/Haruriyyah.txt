@@ -22,7 +22,7 @@ historical_units = {
 	persian_rifle
 }
 
-monarch_names = {	
+monarch_names = {
 	"Sulaymân #0" = 10
 	"'Umar #0" = 10
 	"Abu'l-Hasan #0" = 10
@@ -38,7 +38,7 @@ monarch_names = {
 	"Muhammad #0" = 10
 	"Ya'rub #0" = 10
 	"Ahmad #0" = 10
-	
+
 	"Lujayn #0" = -1
 	"Ghanneyeh #0" = -3
 	"Ghaliya #0" = -3
@@ -84,5 +84,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

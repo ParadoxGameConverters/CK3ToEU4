@@ -28,7 +28,7 @@ historical_units = {
 	ottoman_lancer
 }
 
-monarch_names = {	
+monarch_names = {
 	"Haji Bektash #1" = 0
 	"Mondi #0" = 1
 	"Ali #0" = 1
@@ -56,7 +56,7 @@ monarch_names = {
 	"Abbas #0" = 1
 	"Akbar #0" = 1
 	"Mohammed #0" = 1
-	
+
 	"Hadice #0" = -1
 	"Safiye #0" = -1
 	"Zeynep #0" = -1
@@ -78,13 +78,13 @@ monarch_names = {
 leader_names = {
 	Haji Mondi Ali Nesimi Balim Gül Otman Arabati Teke Demir Alians Rexheb Ali Pasha Naim
 	Reshat Tahir Emini Bektash Haydar Ercan Mumin Lama Ak-Yazili Mustafa Eke Al-Fatiha
-	
+
 	Abbas Abdul Abdullah Abolhassan Abu-Bakr Ahmad Akbar Allahyar Ali Ali-Fay Ali-Kolon
 	Ali-Zalil Hasan Hossein Hussayn Ismail Mahmud Mohammed Muammar Muhammad
 }
 
 ship_names = {
-	
+
 }
 
 army_names = {
@@ -92,5 +92,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

@@ -4,34 +4,34 @@ decline_of_mali = {
 	potential = {
 		always = no
 	}
-	
+
 	can_start = {
 		always = no
 	}
-	
-	can_stop = { 
+
+	can_stop = {
 		always = yes
 	}
-	
-	
+
+
 	progress = {
 		modifier = {
 			factor = 100
 			tag = MAL
 		}
 	}
-	
+
 	can_end = {
 		always = yes
 	}
-	
+
 
 	modifier = {
 	}
-	
+
 	on_start = flavor_mal.9 # Mali is on the path of breaking apart
 	on_end = flavor_mal.10 # Mali managed to retain authority
-	
+
 	on_monthly = {
 	}
 }

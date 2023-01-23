@@ -46,11 +46,11 @@
 	}
 	#Monothelite
 	sound = {
-		name = religion_monothelite 
+		name = religion_monothelite
 		file = "tab_religion_christian.wav"
 	}
 	sound = {
-		name = start_convert_monothelite 
+		name = start_convert_monothelite
 		file = "start_conversion_christian_orthodox.wav"
 	}
 	#Iconoclast
@@ -125,7 +125,7 @@
 		name = start_convert_insular_celtic
 		file = "start_conversion_christian_catholic.wav"
 	}
-	
+
 ##Islam
 	#Zikri
 	sound = {
@@ -199,7 +199,7 @@
 		name = start_convert_alawite
 		file = "start_conversion_muslim_shiite.wav"
 	}
-	
+
 ##Yazidi
 	#Yazidi
 	sound = {
@@ -221,14 +221,14 @@
 	}
 	#Kitebacilweism
 	sound = {
-		name = religion_kitebacilweism 
+		name = religion_kitebacilweism
 		file = "tab_religion_muslim.wav"
 	}
 	sound = {
-		name = start_convert_kitebacilweism 
+		name = start_convert_kitebacilweism
 		file = "start_conversion_zoroastrian.wav"
 	}
-	
+
 ##Mazdan
 	#Mazdaki
 	sound = {
@@ -266,7 +266,7 @@
 		name = start_convert_gayomarthianism
 		file = "start_conversion_zoroastrian.wav"
 	}
-	#Khurramism 
+	#Khurramism
 	sound = {
 		name = religion_khurramism
 		file = "start_conversion_zoroastrian.wav"
@@ -295,7 +295,7 @@
 		name = start_convert_karaite
 		file = "start_conversion_jewish.wav"
 	}
-	
+
 ##Gnostic
 	#Manichean
 	sound = {
@@ -351,7 +351,7 @@
 		name = start_convert_cainitism
 		file = "start_conversion_pagan_animism.wav"
 	}
-	
+
 ##Dharmic
 	#Jain
 	sound = {
@@ -362,9 +362,9 @@
 		name = start_convert_jain
 		file = "start_conversion_eastern_hinduism.wav"
 	}
-	
+
 ##Eastern
-	
+
 ##Pagan
 	#Pagan
 	sound = {
@@ -391,7 +391,7 @@
 	sound = {
 		name = start_convert_norse_pagan
 		file = "start_conversion_norse.wav"
-	}	
+	}
 	#Tengri
 	sound = {
 		name = religion_tengri_pagan

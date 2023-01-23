@@ -11,7 +11,7 @@ historical_idea_groups = {
 	trade_ideas
 	humanist_ideas
 	quality_ideas
-	diplomatic_ideas	
+	diplomatic_ideas
 	quantity_ideas
 	spy_ideas
 }
@@ -42,13 +42,13 @@ monarch_names = {
 	"Amorotahe Haubariria #0" = 10
 	"Kaigouchi #0" = 10
 	"Shoko Laliwa #0" = 10
-	
+
 	"Arah #0" = 10
 	"Pirijá #0" = 10
 	"Arata #0" = 10
 	"Toruí #0" = 10
 	"Mbicy #0" = 10
-	
+
 	"Takuiba #0" = -1
 	"Twengga #0" = -1
 	"Neyawa #0" = -1

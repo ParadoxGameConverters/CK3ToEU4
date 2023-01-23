@@ -9,10 +9,10 @@ revolutionary_colors = { 1 1 0 }
 historical_idea_groups = {
 	offensive_ideas
 	innovativeness_ideas
-	defensive_ideas	
+	defensive_ideas
 	trade_ideas
 	economic_ideas
-	diplomatic_ideas	
+	diplomatic_ideas
 	quality_ideas
 	religious_ideas
 }
@@ -28,5 +28,5 @@ historical_units = {
 	african_tuareg_cavalry
 	african_mossi_horsemen
 	african_hussar
-	african_dragoon	
+	african_dragoon
 }

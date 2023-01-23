@@ -40,7 +40,7 @@ monarch_names = {
 	"Cikkoku #0" = 20
 	"Sora #0" = 20
 	"Tugule #0" = 20
-	
+
 	"Amna #0" = -1
 	"Ghadir #0" = -1
 	"Sogolon #0" = -1
@@ -56,7 +56,7 @@ monarch_names = {
 
 leader_names = {
 	Konare Deo Keita Traoré Toure Diarra Moussa Modibo Amadou Toumani
-	
+
 	Takoi Solomon Zakoi Sylla Ouankoy Ikoi Gana Kanemi Bawo Cikkoku Sora Tugule Tor
 }
 
@@ -72,5 +72,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

@@ -19,7 +19,7 @@ historical_units = {
 	reformed_asian_cavalry
 }
 
-monarch_names = {	
+monarch_names = {
 	"Aglen #0" = 1
 	"Balpo #0" = 1
 	"Drogön #0" = 1
@@ -37,7 +37,7 @@ monarch_names = {
 	"Zijid #0" = 1
 	"Shenrab #0" = 1
 	"Trideiöpo #0" = 1
-	
+
 	"Amala #0" = -1
 	"Dongkar #0" = -1
 	"Gyimsheng #0" = -1
@@ -70,7 +70,7 @@ leader_names = {
 	Tritog Tritsen Tritsuk Tromo Trongzhi Tsangma Tsemo Tsen Tsendro Tsenpo Tsensong Tsentsän Tsenye Tsugru
 	Tsuktsen Udumtsen Wangchuk Wangdu Yongten Yontan Yülsung Yumtän Zanam Zangtsa Zhangtsun Zhonnu Zimun
 	Zindé Zungtsen
-	
+
 	Atimuwer Berkya Bonchung Chimetsukphü Chirum Chunmardang Dakhor Damitheke Damshe Dangwa Demdruk Denpar
 	Dokchen Donla Draktsen Draktsubkye Drenpa Dud Duddul Durshen Dzomar Gawagye Gekhö Gön Göwar Gurser Guwer
 	Gyalwa Gyer Gyerme Gyerpung Gyung Gyungyar Harachipar Hrido Hripa Hrista Jönwa Kalarasa Khyabpa Kuchi
@@ -94,5 +94,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

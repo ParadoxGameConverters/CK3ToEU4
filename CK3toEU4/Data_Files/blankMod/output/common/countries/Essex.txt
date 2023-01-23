@@ -5,7 +5,7 @@ revolutionary_colors = { 5 0 8 }
 
 historical_idea_groups = {
 	exploration_ideas
-	defensive_ideas	
+	defensive_ideas
 	expansion_ideas
 	offensive_ideas
 	maritime_ideas
@@ -42,7 +42,7 @@ monarch_names = {
 	"Sigeberht #2" = 20
 	"Cwichelm #0" = 20
 	"Swithhelm #0" = 20
-	"Sighere #0" = 20	
+	"Sighere #0" = 20
 	"Sæbbi #0" = 20
 	"Sigeheard #0" = 20
 	"Swæfred #0" = 5

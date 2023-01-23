@@ -3,17 +3,17 @@ knights_templar_ideas = {
 		tolerance_heathen = 1
 		diplomatic_reputation = 1
 	}
-	
+
 	bonus = {
 		global_manpower_modifier = 0.25
 	}
-	
+
 	trigger = {
 		tag = TEM
 		religion_group = christian
 	}
 	free = yes
-	
+
 	latin_rule = {
 		discipline = 0.1
 	}

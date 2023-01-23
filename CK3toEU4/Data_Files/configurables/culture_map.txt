@@ -46,7 +46,7 @@
 # From WTWSMS: bedouin_dravidian (Gheyr-Alatesalat)
 
 
-link = { eu4 = noculture ck3 = aaa_noculture tech = western gfx = inuitgfx } # I:R-CK3 visualization of "No culture"																													
+link = { eu4 = noculture ck3 = aaa_noculture tech = western gfx = inuitgfx } # I:R-CK3 visualization of "No culture"
 # North Germanic
 
 ## Splitting Norse accordingly
@@ -233,7 +233,7 @@ link = { eu4 = roman ck3 = roman tech = western gfx = westerngfx } #Fallback
 
 # Italian: the split
 link = { eu4 = ligurian ck3 = ligurian tech = western gfx = westerngfx }
-link = { eu4 = lombard ck3 = lombard ck3 = romano_raetian ck3 = romano_noric ck3 = romansh tech = western gfx = westerngfx }																	  
+link = { eu4 = lombard ck3 = lombard ck3 = romano_raetian ck3 = romano_noric ck3 = romansh tech = western gfx = westerngfx }
 link = { eu4 = ligurian ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = liguria_area }
 link = { eu4 = lombard ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx region = lombardy_area region = po_valley_area region = switzerland_area }
 link = { eu4 = maltese ck3 = italian ck3 = cisalpine ck3 = sicilian tech = western gfx = westerngfx province = 126 }
@@ -818,7 +818,7 @@ link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 ## Extra
 link = { eu4 = oldspain ck3 = iberian tech = western gfx = westerngfx }
 
-# Mod: RICE 
+# Mod: RICE
 link = { eu4 = evenk ck3 = evenk ck3 = tungusic tech = eastern gfx = inuitgfx }
 link = { eu4 = nivkh ck3 = nivkh tech = eastern gfx = inuitgfx }
 link = { eu4 = yakut ck3 = yakut tech = eastern gfx = inuitgfx }

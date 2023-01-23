@@ -18,7 +18,7 @@ historical_units = {
 	ali_bey_reformed_infantry
 }
 
-monarch_names = {	
+monarch_names = {
 	"Thaddeus #0" = 1
 	"Mar Aggai #0" = 1
 	"Palut #0" = 1
@@ -48,7 +48,7 @@ monarch_names = {
 	"Narsai #0" = 1
 	"Paul #0" = 1
 	"Aba #1" = 1
-	
+
 	"Adva #0" = -1
 	"Alya #0" = -1
 	"Anena #0" = -1
@@ -71,7 +71,7 @@ leader_names = {
 }
 
 ship_names = {
-	
+
 }
 
 army_names = {
@@ -79,5 +79,5 @@ army_names = {
 }
 
 fleet_names = {
-	
+
 }

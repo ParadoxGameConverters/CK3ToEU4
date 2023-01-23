@@ -76,19 +76,19 @@ monarch_names = {
 	"Sergei #0" = 0
 	"Valeriy #0" = 0
 	"Yevgeniy #0" = 0
-	
+
 	"Anastasiya #0" = -1
 	"Zlata #0" = -1
 	"Marfa #0" = -1
 }
 
-leader_names = { 
-	Zhiznomir Mikula Posenya Baryatinsky Belevsky Volkonsky 
-	Vorotynsky Gorensky Gorchakov Dolgorukov Yeletsky Ryumin 
-	Barashev Spyachy Shestov Zventsov Tokmakov Nozdrevaty 
+leader_names = {
+	Zhiznomir Mikula Posenya Baryatinsky Belevsky Volkonsky
+	Vorotynsky Gorensky Gorchakov Dolgorukov Yeletsky Ryumin
+	Barashev Spyachy Shestov Zventsov Tokmakov Nozdrevaty
 	Kashin Massalski Kozelsky Koninsky Kurlyatev Lykov Obolensky
 	Strigin Nagiye Spashsky Torussky Trostensky Turenin
-	Tufyakin Khotetovsky 
+	Tufyakin Khotetovsky
 }
 
 ship_names = {

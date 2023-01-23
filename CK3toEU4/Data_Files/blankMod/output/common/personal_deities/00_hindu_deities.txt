@@ -1,11 +1,11 @@
 # Do not change tags in here without changing every other reference to them.
-# If adding new dieties, make sure they are uniquely named.
+# If adding new deities, make sure they are uniquely named.
 
 ##MUST REPLACE VANILLA OR ELSE CAUSES ISSUES, PER ERROR LOG
  # Edited custom CK3 Hindu religions
 buddha = {
 	sprite = 6
-	allow = { 
+	allow = {
 		religion_group = dharmic
 		OR = {
 			mission_completed = mnd_maj_candi_shrines

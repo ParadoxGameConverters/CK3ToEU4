@@ -2,16 +2,16 @@
 
 graphical_culture = southamericagfx
 
-color = { 48  149  21 } 
+color = { 48  149  21 }
 
-historical_idea_groups = {	
+historical_idea_groups = {
 	religious_ideas
-	expansion_ideas	
+	expansion_ideas
 	offensive_ideas
 	maritime_ideas
-	naval_ideas		
+	naval_ideas
 	influence_ideas
-	quality_ideas	
+	quality_ideas
 	defensive_ideas
 }
 
@@ -65,7 +65,7 @@ monarch_names = {
 	"Xocoyol #0" = 0
 	"Yaztachimal #0" = 0
 	"Zolton #0" = 0
-	
+
 	"Centehua #0" = -1
 	"Moyolehuani #0" = -1
 	"Yaotl #0" = -1
@@ -84,7 +84,7 @@ ship_names = {
 	Acolmiztli Acolnahuacat "Ah Hoya" "Ah Tzenul" Amimitl Apanecatl Atl Atlau Axoloa
 	Camaxtli Centeot Centzonuiznaua Chalchiuhtlatonal Chalchiuhtlicue Chalchiutotolin Chalmecalt Chalmecaucihuilt
 	Chantico Chichomexochtli Chicomecoatl Chiconahuai Chihalma Chualchihuitlcue Cihuacaotyl Cinteotl
-	Citlalatonac Citlalicue Ciucoatl Coatlicue Cochimetl Coyolxauhqui Cuauhcoatl 
+	Citlalatonac Citlalicue Ciucoatl Coatlicue Cochimetl Coyolxauhqui Cuauhcoatl
 	Ehehcatl Eueucoyotl
 	"Hopop Can" Huehueteotl Huitzilopochtli Huixtocihuatl
 	Itzcoliuhqui Itzli Itzpapalotl Itzpzpalotl Ixtlilton Iztamixcoatzin

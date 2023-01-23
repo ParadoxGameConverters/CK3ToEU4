@@ -15,7 +15,7 @@ karling_ideas = {
 		government = monarchy
 	}
 	free = yes
-	
+
 	kings_of_europe = {
 		global_unrest = -2
 	}

@@ -50,7 +50,7 @@ country_event = {
 		change_religion = anglican
 		add_stability = -4
 	}
-	
+
 	option = {
 		name = "religious_events.18.z1" #
 		ai_chance = { factor = 100 }
@@ -153,13 +153,13 @@ country_event = {
 }
 
 	##MODDED###
-	
+
 country_event = {
 	id = religious_events.16
 	title = "religious_events.16.t"
 	desc = "religious_events.16.d"
 	picture = COURT_eventPicture
-	
+
 	trigger = {
 		religion = hinduism
 		is_revolutionary = no
@@ -170,20 +170,20 @@ country_event = {
 			overlord = { religion_group = muslim }
 		}
 		OR = {
-			
+
 			tag = MUG #Mughals
 		}
 	}
-	
+
 	immediate = {
 		hidden_effect = {
 			set_country_flag = had_religious_coup
 			if = {
 				limit = {
 					OR  = {
-						
-						
-						
+
+
+
 						tag = MUG #Mughals
 					}
 				}
@@ -205,11 +205,11 @@ country_event = {
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
 		months = 6
 	}
-	
+
 	option = {
 		ai_chance = {
 			factor = 90
@@ -293,7 +293,7 @@ country_event = {
 		}
 		add_stability = -1
 		add_country_modifier = {
-			name = "indian_religious_tensions" 
+			name = "indian_religious_tensions"
 			duration = 1825
 		}
 		if = {
@@ -328,8 +328,8 @@ country_event = {
 					has_building = fort_15th
 				}
 				spawn_rebels = {
-					type = sunni_rebels	
-					size = 2	
+					type = sunni_rebels
+					size = 2
 					win = yes
 				}
 			}
@@ -341,8 +341,8 @@ country_event = {
 					}
 				}
 				spawn_rebels = {
-					type = sunni_rebels	
-					size = 2	
+					type = sunni_rebels
+					size = 2
 				}
 			}
 		}
@@ -360,8 +360,8 @@ country_event = {
 					has_building = fort_15th
 				}
 				spawn_rebels = {
-					type = shiite_rebels	
-					size = 2	
+					type = shiite_rebels
+					size = 2
 					win = yes
 				}
 			}
@@ -373,8 +373,8 @@ country_event = {
 					}
 				}
 				spawn_rebels = {
-					type = shiite_rebels	
-					size = 2	
+					type = shiite_rebels
+					size = 2
 				}
 			}
 		}

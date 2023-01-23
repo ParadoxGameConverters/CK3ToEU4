@@ -67,8 +67,8 @@ iberian_muslim_cultural_ideas = {
 	}
 	iberian_bastion_of_thought = {
 		idea_cost = -0.1				#Andalusian scholars, Ibn Arabi
-		monthly_piety = -0.001				
-	}	
+		monthly_piety = -0.001
+	}
 	iberian_andalusian_architecture = {
 		prestige = 1					#Alcazar, Alhambra
 	}
@@ -115,7 +115,7 @@ latgalian_cultural_ideas = {
 	latgalian_religious_pragmatism = {
 		religious_unity = 0.25
 	}
-	latgalian_atmoda = {							#latvian word for national awakening
+	latgalian_atmoda = {							#Latvian word for national awakening
 		same_culture_advisor_cost = -0.2
 	}
 	latgalian_riflemen = {						#wiki
@@ -145,7 +145,7 @@ slavic_cultural_ideas = {
 		global_institution_spread = 0.1
 	}
 	slavic_river_settlements = {						#viking route and settlements
-		global_own_trade_power = 0.15				
+		global_own_trade_power = 0.15
 	}
 	slavic_crush_the_nomads = {
 		shock_damage_received = -0.1
@@ -163,7 +163,7 @@ slavic_cultural_ideas = {
 ###################################################################
 albion_cultural_ideas = {
 	start = {
-		infantry_power = 0.10						#same as england
+		infantry_power = 0.10						#same as England
 		culture_conversion_cost = -0.15				#normans
 	}
 
@@ -224,7 +224,7 @@ celtic_culture_ideas = {
 		autonomy_change_time = -0.25
 	}
 	celtic_growth_of_agriculture = {				#potatoes
-		production_efficiency = 0.1				
+		production_efficiency = 0.1
 	}
 	celtic_english_laws = {
 		global_tax_modifier = 0.1
@@ -517,7 +517,7 @@ african_christian_ideas = {
 
 	bonus = { colonists = 1 }					#Iberian influence
 
-	trigger = {	
+	trigger = {
 		religion_group = christian										#in case crusaders are successful
 		OR = {
 			capital_scope = { region = maghreb_region }

@@ -30,7 +30,7 @@ germanic = {
 			Solna "von Neusohl" "von Eperies" Fragopolis "von Kaschau"
 		}
 	}
-	
+
 	jerusalemer = { primary = KOJ }
 	kurlander = { primary = KUR }
 	lothringian = { primary = LOT }
@@ -39,21 +39,21 @@ germanic = {
 scandinavian = {
 	norse = { #Moves it from Lost Cultures to here, added in "Lions of the North" to vanilla
 		male_names = {
-			Adhalsteinn Aghi Agmundr Agnarr Áki Áleifr Alfarr Alfvin Algautr Ari Arnfinnr Árni Arnórr Arnthórr Arnvidhr Ásbjorn Ásgeirr Ásketill Ásmundr Ásvaldr Audhr Baggi Bárdhr Birgir Bjarni Bjartr Bjorn Brandr Bródhir 
-			Brynjarr Búi Dagfinnr Dagr Danr Egill Eileifr Einarr Eindridhi Eiríkr Erlendr Erlingr Eysteinn Eyvindr Félagi Finnr Flæmingr Fólki Fridhthjófr Fródhi Gauti Gautstafr Geirr Gormr Gudhbrandr Gudhfridhr Gudhini 
-			Gudhleifr Gudhmundr Gulbrandr Gunnarr Gunni Gunnvaldr Hákon Hálfdan Hallbjorn Halli Hallr Hallsteinn Hallthórr Hallvardhr Haraldr Hávardhr Helgi Hemingr Herleifr Hildingr Hjálmarr Hólmgeirr Hrafn Hreidharr Hróaldr 
-			Hróarr Hródhgeirr Hródhólfr Hródhvaldr Hrólfr Hrœrekr Hugleikr Ingi Ingimárr Ingólfr Ívarr Jarl Jósteinn Kálfr Kári Ketill Knútr Kóri Leifr Magni Mundi Njáll Oddbjorn Oddr Oddvarr Olvir Rádhúlfr Ragnarr Ragnvaldr 
-			Randúlfr Rúni Sigfrødhr Sigmundr Sigsteinn Sigurdhr Sindri Snorri Stáli Steinarr Steingrímr Steinn Stígandr Stigr Sumarlidhi Sundri Suni Svantepolk Sveinn Sverrir Thórarinn Thórbjorn Thórfastr Thórfredhr Thórgeirr 
+			Adhalsteinn Aghi Agmundr Agnarr Áki Áleifr Alfarr Alfvin Algautr Ari Arnfinnr Árni Arnórr Arnthórr Arnvidhr Ásbjorn Ásgeirr Ásketill Ásmundr Ásvaldr Audhr Baggi Bárdhr Birgir Bjarni Bjartr Bjorn Brandr Bródhir
+			Brynjarr Búi Dagfinnr Dagr Danr Egill Eileifr Einarr Eindridhi Eiríkr Erlendr Erlingr Eysteinn Eyvindr Félagi Finnr Flæmingr Fólki Fridhthjófr Fródhi Gauti Gautstafr Geirr Gormr Gudhbrandr Gudhfridhr Gudhini
+			Gudhleifr Gudhmundr Gulbrandr Gunnarr Gunni Gunnvaldr Hákon Hálfdan Hallbjorn Halli Hallr Hallsteinn Hallthórr Hallvardhr Haraldr Hávardhr Helgi Hemingr Herleifr Hildingr Hjálmarr Hólmgeirr Hrafn Hreidharr Hróaldr
+			Hróarr Hródhgeirr Hródhólfr Hródhvaldr Hrólfr Hrœrekr Hugleikr Ingi Ingimárr Ingólfr Ívarr Jarl Jósteinn Kálfr Kári Ketill Knútr Kóri Leifr Magni Mundi Njáll Oddbjorn Oddr Oddvarr Olvir Rádhúlfr Ragnarr Ragnvaldr
+			Randúlfr Rúni Sigfrødhr Sigmundr Sigsteinn Sigurdhr Sindri Snorri Stáli Steinarr Steingrímr Steinn Stígandr Stigr Sumarlidhi Sundri Suni Svantepolk Sveinn Sverrir Thórarinn Thórbjorn Thórfastr Thórfredhr Thórgeirr
 			Thórgísl Thórgnýr Thórir Thórketill Thórleifr Thórleikr Thórmódhr Thórsteinn Thórvaldr Thróndr Tófi Tóki Tryggvi Úlfr Uni Valdimárr Végardhr Vetrlidhi Vígi Víkingr Vragi Yngvarr
 		}
 		female_names = {
-			Alfhildr Álof Arnbjorg Ása Ásdís Áshildr Áslaug Ásta Ástrídhr Audhr Audhrhildr Bergljót Bjorg Borghildr Bóthildr Brynhildr Brynja Dagmær Dagný Dagrún Edda Eydís Frídha Grímhildr Gudhlaug Gudhleif Gudhrídhr Gudhrún Gulla 
-			Gunna Gunnbjorg Gunnhildr Gunnvor Gydha Hallthóra Helga Hildr Hjordís Hlíf Hrafnhildr Hreidhunn Idhunn Inga Ingibjorg Ingigerdhr Ingrídhr Ingunn Ingvildr Jórunnr Katla Ketilridhr Magnhildr Myrgjol Ólaug Ragna Ragnbjorg 
-			Ragnfrídhr Ragnheidhr Ragnhildr Rúna Saldís Signý Sigrídhr Sigrún Sólveig Steinunn Svanhildr Thone Thóra Thórbjorg Thórdís Thórfrídhr Thórhildr Thórný Thórunn Thórveig Thórví Thrud Thrúdhr Thýri Tófa Unnr Valdís Vígdís 
+			Alfhildr Álof Arnbjorg Ása Ásdís Áshildr Áslaug Ásta Ástrídhr Audhr Audhrhildr Bergljót Bjorg Borghildr Bóthildr Brynhildr Brynja Dagmær Dagný Dagrún Edda Eydís Frídha Grímhildr Gudhlaug Gudhleif Gudhrídhr Gudhrún Gulla
+			Gunna Gunnbjorg Gunnhildr Gunnvor Gydha Hallthóra Helga Hildr Hjordís Hlíf Hrafnhildr Hreidhunn Idhunn Inga Ingibjorg Ingigerdhr Ingrídhr Ingunn Ingvildr Jórunnr Katla Ketilridhr Magnhildr Myrgjol Ólaug Ragna Ragnbjorg
+			Ragnfrídhr Ragnheidhr Ragnhildr Rúna Saldís Signý Sigrídhr Sigrún Sólveig Steinunn Svanhildr Thone Thóra Thórbjorg Thórdís Thórfrídhr Thórhildr Thórný Thórunn Thórveig Thórví Thrud Thrúdhr Thýri Tófa Unnr Valdís Vígdís
 			Yngvildr
 		}
 		dynasty_names = {
-			Áslaugsson Ástridharson Ásvaldsson Eindridhesson Eiríksson Gormsson Hákonarson Haraldsson Lothbrok Munsö Ragnarsson Sigurdharson Skjöldung Snorrason Thórgilsson Thórsteinsson Thórvaldsson Tryggvason Völsung 
+			Áslaugsson Ástridharson Ásvaldsson Eindridhesson Eiríksson Gormsson Hákonarson Haraldsson Lothbrok Munsö Ragnarsson Sigurdharson Skjöldung Snorrason Thórgilsson Thórsteinsson Thórvaldsson Tryggvason Völsung
 			Waegmunding Ylfing Yngling
 		}
 	}
@@ -73,7 +73,7 @@ scandinavian = {
 	miklagardrian = { primary = BYZ }
 	serklandic = { } # No primary because it's truly a joke
 	romsborgian = { primary = ITA }
-	
+
 	#Royal Court Additions
 	cooler_norwegian = {
 		primary = NOR
@@ -387,7 +387,7 @@ british = {
 			Æthelburh Seaxburh Wihtburh
 		}
 	} # Fallback
-	
+
 	northerner = {
 		primary = NOL
 		dynasty_names = {
@@ -436,7 +436,7 @@ latin = {
 		primary = ITA
 		dynasty_names = { "de Liguori" "della Rovere" "di Borbone di Parma" "di Robilant" "di Savoia" "di Savoia-Aosta" "La Màrmora" "Pacoret de Saint Bon" "Thaon di Revel" Albricci Anfora Baratieri Bava-Beccaris Bonaccorsi Cadorna Cagni Canevaro Caraga Caviglia Ceccherini Clary Colonna d'Absburgo-Toscana Dezza Diaz Filomarino Giardino Gironda Govone Gravina Lanza Lombardo Lunardi Molinelli Orengo Orsini Pecori-Giraldi Perruchetti Pianelli Pironti Porro Ramorino Ricotti-Magnani Sanna Scammacca Solari Torlonia Turrisi Vaccari Zunica }
 	}
-	oltremare = { primary = KOJ }	
+	oltremare = { primary = KOJ }
 }
 iberian	= {
 	ultramar = { primary = KOJ }
@@ -460,7 +460,7 @@ french = {
 		"de Provence" Lemarquis "de Flandre" "de Bretagne" "de Normandie" "de La Trémoille"
 		Gênes Lotharingie Tarente Arménie Croisé Fatimide Danichmendide "de Roum" Arslan }
 	}
-	
+
 	angevin = { primary = ALE }
 	auvergnat = { primary = AUV }
 	arpitan = { primary = DAU }
@@ -474,18 +474,18 @@ finno_ugric = {
 	karelian = { #Moved from East Slavic
 		primary = KRL
 		male_names = {
-			Mohkku Mokci Náhkol Náinnas Njulgu Oaván Orddot Rástos Riibma Ruigi Sárra Speaidna Viggu Kaarel Kaaren Kahus Kaido 
-			Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel Kaupo Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev 
-			Sutepelg Tambet Tarva Tarvet Dobrinya Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey 
-			Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka Tuhan Tyueykezhut Tyutyuk Tugan Kezhevat Kichay Koksha 
-			Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas 
-			Viryay Vokan Yirkap Ylvan Zarny Tugan Parush Pivtsay Pokshayka Putyayka Setyamka Shindyay Shoksha Syrka Tikshayka 
+			Mohkku Mokci Náhkol Náinnas Njulgu Oaván Orddot Rástos Riibma Ruigi Sárra Speaidna Viggu Kaarel Kaaren Kahus Kaido
+			Kalev Kalju Kaljuvald Kalle Kaomeel Karuvald Kaugemeel Kaupo Pihl Piho Pikne Päevalemb Pärt Raak Raho Rahuleid Sulev
+			Sutepelg Tambet Tarva Tarvet Dobrinya Dokya Dondy Gazheg Hulyen Inzhay Irter Lyneg Lysko Kezhapa Kezhay Kezhedey
+			Setyamka Shindyay Shypicha Shyrpuzh Spira Syrka Tikshayka Tuhan Tyueykezhut Tyutyuk Tugan Kezhevat Kichay Koksha
+			Kuaz Kudym-Osh Kya Kyldysin Malyaka Malyy Meltsayka Mosheg Nalka Turush Uchva Varaka Vechkas Velmayka Virdyan Viryas
+			Viryay Vokan Yirkap Ylvan Zarny Tugan Parush Pivtsay Pokshayka Putyayka Setyamka Shindyay Shoksha Syrka Tikshayka
 			Tyueykezhut Tylmache Tylze Tyushten Tyushtya Uzhara Varmanpaz
 		}
 		female_names = {
-			Nyayka Olota Ordava Oshama Parava Pekshayka Pemka Pokshava Poshayka Potekay Potyava Putyayka Ravzhava Ruzava 
-			Sanal'ka Sangasa Sernyava Serzhay Setyamka Seyamka Shonzhava Shukshtoroyka Sinyava Siyamka Slyugan'ka Sochava Styaka 
-			Syryava Tatka Tekay Tetyava Tikshayka Toyaksha Tundava Tundya Unzhutka Upurga Utyayka Valdava Vergava Vezhav Vidyava 
+			Nyayka Olota Ordava Oshama Parava Pekshayka Pemka Pokshava Poshayka Potekay Potyava Putyayka Ravzhava Ruzava
+			Sanal'ka Sangasa Sernyava Serzhay Setyamka Seyamka Shonzhava Shukshtoroyka Sinyava Siyamka Slyugan'ka Sochava Styaka
+			Syryava Tatka Tekay Tetyava Tikshayka Toyaksha Tundava Tundya Unzhutka Upurga Utyayka Valdava Vergava Vezhav Vidyava
 			Virtyava Yalgava Litova Mastorava Noroava
 		}
 	}
@@ -705,7 +705,7 @@ east_slavic = {
 				Nikolayevich Ostrovskiy Pavlov Putyatin Romanov Rozhestvenskiy Skobelev
 				Shuvalov Surkov Tukhachevskiy Yegorov Yudenich Vorontsov Voroshilov Zavoyko }
 	}
-	
+
 	red_ruthenian = { primary = VOL }
 }
 baltic = {
@@ -751,7 +751,7 @@ baltic = {
 			Elmede Use Valata Vasara
 		}
 		dynasty_names = {
-			"Karasi" "Ingrija" "Saaremaa" "Revala" "Virumaa" "Läänemaa" "Vaiga" "Ingeri" "Ingeri" "Livo" "Harjumaa" "Virumaa" 
+			"Karasi" "Ingrija" "Saaremaa" "Revala" "Virumaa" "Läänemaa" "Vaiga" "Ingeri" "Ingeri" "Livo" "Harjumaa" "Virumaa"
 			"Ridala" "Saaremaa" "Vaiga" "Turaida"
 		}
 	}
@@ -879,7 +879,7 @@ turko_semitic = {
 			Handan Alime Kösem Hüma
 		}
 	}
-	
+
 	lebanese = { primary = LEB }
 	soqotri = { primary = MHR }
 	palestinian = { primary = KOJ }
@@ -929,7 +929,7 @@ iranian = {
 		dynasty_names = {
 			Arkwi Erkent Karweñe Kaum Lykaške Meñe Samudtar Šana Šaumo Šcirye Totka
 			Aršiññe Gushi Asmires Garinei Thagures Kušiññe Oichardes Piades Rabanes Siziges
-		}		
+		}
 	}
 	saka = {
 		primary = KAS
@@ -945,7 +945,7 @@ iranian = {
 		}
 		primary = TRS
 	}
-	
+
 	gorani = { primary = BHT }
 	mervi = { primary = KHO }
 	shirvani = { primary = SRV }
@@ -1085,7 +1085,7 @@ southeastasian_group = {
 			Pegu Dagon Thaton Martaban
 		}
 		male_names = {
-			"Razadarit" "Binnya Dhammaraza" "Binnya Ran" "Binnya Waru" "Binnya Kyan" "Leik Mawdaw" "Mawdaw" 
+			"Razadarit" "Binnya Dhammaraza" "Binnya Ran" "Binnya Waru" "Binnya Kyan" "Leik Mawdaw" "Mawdaw"
 			"Dhammazedi" "Takayutpi" "Smim Sawhtut" "Smim Htaw" "Binnya Dala"
 		}
 		female_names = {
