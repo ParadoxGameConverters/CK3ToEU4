@@ -1,0 +1,39 @@
+###link = {
+#faith = a              ### Was this religion one of these faiths in CK3, or did it have one of them as a parent?   ##OR
+#doctrine = b           ### What doctrines did this religion have in CK3?                                           ##OR
+#tenet = c              ### What tenets did this religion have in CK3?                                              ##OR
+#eu4religiongroup = d   ### What religion group did this religion belong to in EU4?                                 ##OR
+#traits = x             ### What religion traits will this religion have in Victoria 3?                             ##AND
+#taboos = y             ### What taboos will pops of this religion have in Victoria 3?                              ##AND
+#}
+
+link = { eu4religiongroup = christian traits = christian }
+link = { eu4religiongroup = muslim traits = muslim taboos = liquor taboos = wine }
+link = { eu4religiongroup = jewish_group traits = jewish }
+link = { eu4religiongroup = zoroastrian_group traits = eastern traits = mazdan }
+link = { eu4religiongroup = dharmic eu4religiongroup = eastern traits = eastern }
+link = { eu4religiongroup = pagan traits = animist }
+link = { tenet = tenet_christian_syncretism traits = christian }
+link = { tenet = tenet_islamic_syncretism traits = muslim taboos = liquor taboos = wine }
+link = { tenet = tenet_jewish_syncretism traits = jewish }
+link = { tenet = tenet_eastern_syncretism traits = eastern }
+link = { tenet = tenet_unreformed_syncretism traits = animist }
+link = { faith = orthodox faith = iconoclast faith = bogomilist faith = paulician faith = bosnian_church traits = orthodoxy }
+link = { faith = coptic faith = armenian_apostolic traits = coptic }
+link = { faith = vaishnavism faith = advaitism faith = shaivism faith = srikula_shaktism faith = kalikula_shaktism faith = smartism faith = krishnaism faith = munda_pagan traits = hindu taboos = meat }
+link = { faith = theravada faith = ari faith = mahayana faith = vajrayana faith = lamaism traits = buddhist }
+link = { doctrine = special_doctrine_is_gnostic_faith traits = gnostic }
+link = { doctrine = doctrine_gender_equal traits = feminist }
+link = { doctrine = doctrine_pluralism_pluralistic traits = tolerant }
+link = { doctrine = doctrine_consanguinity_unrestricted traits = incestuous }
+link = { tenet = tenet_aniconism traits = iconoclast taboos = fine_art }
+link = { tenet = tenet_vows_of_poverty traits = egalitarian }
+link = { tenet = tenet_pacifism tenet = tenet_dharmic_pacifism traits = pacifist taboos = fish taboos = meat }
+link = { tenet = tenet_natural_primitivism traits = nudist taboos = clothes taboos = luxury_clothes }
+link = { doctrine = special_doctrine_naked_priests traits = nudist taboos = luxury_clothes }
+link = { tenet = tenet_pursuit_of_power traits = meritocratic }
+link = { tenet = tenet_pastoral_isolation traits = pastoralist }
+link = { tenet = tenet_legalism tenet = tenet_religious_legal_pronouncements traits = legalist }
+link = { tenet = tenet_warmonger traits = warmonger }
+link = { tenet = tenet_ritual_cannibalism traits = cannibalistic }
+link = { tenet = tenet_human_sacrifice tenet = tenet_sacrificial_ceremonies tenet = tenet_gruesome_festivals traits = sacrificer }
