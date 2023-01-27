@@ -10,18 +10,17 @@ cd ImageMagick-7.0.10 &&
 ./configure --with-quantum-depth=8 --enable-hdri=no --with-x=no --with-utilities=no &&
 sudo make install &&
 cd ../../ &&
+
 rm -rf Release/ &&
-mkdir Release &&
-cd CK3toEU4 &&
+cd Fronter &&
+./build_linux.sh &&
+mv Release ../ &&
+cd ../CK3toEU4 &&
 rm -rf build &&
 rm -rf Release-Linux &&
 cmake -H. -Bbuild &&
 cmake --build build -- -j3 &&
 mv Release-Linux ../Release/CK3toEU4 &&
-cd .. &&
-
-cd Fronter.NET &&
-dotnet publish -p:PublishProfile=linux-x64 --output:"../Release" &&
 cd .. &&
 
 cp CK3toEU4/Data_Files/*yml Release/Configuration/ &&

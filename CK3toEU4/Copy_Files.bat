@@ -2,10 +2,7 @@ echo on
 rem Copy converter data files
 copy "Data_Files\log.txt" "..\Release\CK3toEU4\"
 copy "Data_Files\configuration-example.txt" "..\Release\CK3toEU4\"
-copy "Resources\msvcp140_codecvt_ids.dll" "..\Release\CK3toEU4\"
-copy "Resources\vcruntime140_1.dll" "..\Release\CK3toEU4\"
 copy "Resources\rakaly.dll" "..\Release\CK3toEU4\"
-copy "Data_Files\GeneralFAQ-READ.ME.FIRST.txt" "..\Release\"
 
 mkdir "..\Release\Configuration"
 copy "Data_Files\fronter-configuration.txt" "..\Release\Configuration\"

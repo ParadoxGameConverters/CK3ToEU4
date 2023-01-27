@@ -7,10 +7,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [master]
   pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [master]
   schedule:
     - cron: '0 16 * * 6'
 
@@ -37,11 +34,6 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         
-    - name: Clean Release folder
-      run: |
-       rm -rf Release/
-       mkdir Release
-   
     - name: Build solution
       run: |
        chmod u+x build_linux.sh
@@ -71,37 +63,26 @@ jobs:
         fetch-depth: 0
         submodules: recursive
 
-    - name: "Setup Dotnet for use with actions"
-      uses: actions/setup-dotnet@v3
-      with:
-        global-json-file: Fronter.NET/global.json
-        
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
        
-    - name: Build solution
+    - name: Install Prerequisites
       run: |
-       sudo apt-get update
-       sudo apt-get install libcurl4-openssl-dev
-       mkdir $HOME/usr
-       export PATH="$HOME/usr/bin:$PATH"
-       wget https://cmake.org/files/v3.17/cmake-3.17.2-Linux-x86_64.sh
-       chmod +x cmake-3.17.2-Linux-x86_64.sh
-       ./cmake-3.17.2-Linux-x86_64.sh --prefix=$HOME/usr --exclude-subdir --skip-license
+       sudo apt-key adv --fetch-keys https://repos.codelite.org/CodeLite.asc
+       sudo apt-add-repository 'deb https://repos.codelite.org/wx3.2/ubuntu/ jammy universe'
        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
        sudo apt-get update
-       sudo apt-get install gcc-11 g++-11
+       sudo apt-get install libcurl4-openssl-dev libwxbase3.2-0-unofficial \
+                libwxbase3.2unofficial-dev libwxgtk3.2-0-unofficial libwxgtk3.2unofficial-dev \
+                wx3.2-headers wx-common libnotify-dev libnotify4 libcurl4-openssl-dev
+      
+    - name: Build solution
+      run: |
        # Link gcc-11 and g++-11 to their standard commands
        sudo ln -s /usr/bin/gcc-11 /usr/local/bin/gcc
        sudo ln -s /usr/bin/g++-11 /usr/local/bin/g++
-       # Export CC and CXX to tell cmake which compiler to use
-       export CC=/usr/bin/gcc-11
-       export CXX=/usr/bin/g++-11
-       # Check versions of gcc, g++ and cmake
-       gcc -v && g++ -v && cmake --version
-       # Run your build commands next       
        chmod u+x build_linux_foreign.sh
        ./build_linux_foreign.sh
 

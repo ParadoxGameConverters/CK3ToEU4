@@ -7,7 +7,7 @@ targetGame = EU4GAME
 
 enableUpdateChecker = true
 checkForUpdatesOnStartup = true
-latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/CK3toEU4/releases/download/windows_development_build/CK3toEU4-latest-win-x64.zip"
+latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/CK3toEU4/releases/"
 converterReleaseForumThread = "https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/"
 pagesCommitIdUrl = "https://paradoxgameconverters.com/commit_ids/CK3toEU4.txt"
 

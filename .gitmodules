@@ -7,6 +7,6 @@
 [submodule "imageMagick"]
 	path = imageMagick
 	url = https://github.com/ParadoxGameConverters/imageMagick
-[submodule "Fronter.NET"]
-	path = Fronter.NET
-	url = https://github.com/ParadoxGameConverters/Fronter.NET
+[submodule "Fronter"]
+	path = Fronter
+	url = https://github.com/ParadoxGameConverters/Fronter
