@@ -29,7 +29,7 @@ jobs:
        
     - name: "Run tests"
       run: |
-       cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release\
+       cd $Env:GITHUB_WORKSPACE\Release-Tests\
        .\CK3ToEU4Tests.exe
 
     - name: "Prepare release"
@@ -84,5 +84,5 @@ jobs:
        
     - name: "Run tests"
       run: |
-       cd $Env:GITHUB_WORKSPACE\CK3ToEU4Tests\Release
+       cd $Env:GITHUB_WORKSPACE\Release-Tests\
        .\CK3ToEU4Tests.exe

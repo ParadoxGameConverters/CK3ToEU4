@@ -33,6 +33,7 @@ bld/
 [Ll]ogs/
 /build
 /Release-Linux
+/Debug-Tests/
 /Release-Tests
 
 # Visual Studio 2015/2017 cache/options directory
