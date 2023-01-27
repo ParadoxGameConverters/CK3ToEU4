@@ -2,7 +2,7 @@ name: Build, test and publish
 on: [push, pull_request]
 
 concurrency:
-  group: ci-build-${{ github.ref }}-1
+  group: ${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
