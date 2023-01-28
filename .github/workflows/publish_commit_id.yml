@@ -6,6 +6,7 @@ on:
 
 jobs:
   publish_id:
+    if: github.repository_owner == 'ParadoxGameConverters'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
