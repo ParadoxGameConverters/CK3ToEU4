@@ -43,8 +43,8 @@ Source: "Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs creat
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\converter.ico"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\converter.ico"; Tasks: desktopicon
+Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\ConverterFrontend.exe"; IconFilename: "{app}\converter.ico"
+Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\ConverterFrontend.exe"; IconFilename: "{app}\converter.ico"; Tasks: desktopicon
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
