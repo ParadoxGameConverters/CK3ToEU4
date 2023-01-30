@@ -21,11 +21,16 @@ jobs:
         language: ['cpp']
 
     steps:
-    - name: Checkout repository
+    - name: "Cloning repo"
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        submodules: recursive
+
+    - name: "Cloning selective submodules"
+      run: |
+       git submodule update --init --recursive commonItems       
+       git -c submodule."googletest".update=none \
+           -c submodule."external/googletest".update=none \
+           -c submodule."external/zip".update=none \
+           submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
@@ -55,11 +60,16 @@ jobs:
         language: ['cpp']
 
     steps:
-    - name: Checkout repository
+    - name: "Cloning repo"
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        submodules: recursive
+
+    - name: "Cloning selective submodules"
+      run: |
+       git submodule update --init --recursive commonItems       
+       git -c submodule."googletest".update=none \
+           -c submodule."external/googletest".update=none \
+           -c submodule."external/zip".update=none \
+           submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
