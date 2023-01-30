@@ -8,6 +8,7 @@
 #include "CommonRegexes.h"
 #include "Geography/CountyDetail.h"
 #include "Log.h"
+#include "ModLoader/ModFilesystem.h"
 #include "OSCompatibilityLayer.h"
 #include "Religions/Faith.h"
 #include "Religions/Religion.h"

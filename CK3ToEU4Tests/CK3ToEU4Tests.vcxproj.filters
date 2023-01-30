@@ -264,8 +264,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
-    <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\commonItems\Parser.cpp">
       <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
@@ -833,6 +831,8 @@
     <ClCompile Include="..\commonItems\external\zip\src\zip.c">
       <Filter>CK3ToEU4\commonItems\zip</Filter>
     </ClCompile>
+    <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
+    <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

@@ -51,7 +51,7 @@
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CONSOLE;_SILENCE_CXX20_U8PATH_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>../commonItems;../imageMagick/include-windows;../googletest/googletest;../googletest/googletest/include;../googletest/googlemock;../googletest/googlemock/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../commonItems;../imageMagick/include-windows;../commonItems/external/googletest/googletest;../commonItems/external/googletest/googletest/include;../commonItems/external/googletest/googlemock;../commonItems/external/googletest/googlemock/include</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -189,6 +189,8 @@
     <ClCompile Include="..\commonItems\ConvenientParser.cpp" />
     <ClCompile Include="..\commonItems\ConverterVersion.cpp" />
     <ClCompile Include="..\commonItems\Date.cpp" />
+    <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\commonItems\external\zip\src\zip.c" />
     <ClCompile Include="..\commonItems\GameVersion.cpp" />
     <ClCompile Include="..\commonItems\iconvlite.cpp" />
@@ -201,8 +203,6 @@
     <ClCompile Include="..\commonItems\ParserHelpers.cpp" />
     <ClCompile Include="..\commonItems\StringUtils.cpp" />
     <ClCompile Include="..\commonItems\WinUtils.cpp" />
-    <ClCompile Include="..\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="..\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharactersTests.cpp" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp" />

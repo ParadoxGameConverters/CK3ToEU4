@@ -12,10 +12,19 @@ jobs:
     runs-on: [self-hosted, windows] 
     
     steps:
-    - uses: actions/checkout@v3
+    - name: "Cloning repo"
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        submodules: recursive
+        submodules: true
+
+    - name: "Cloning selective submodules"
+      run: |
+       git submodule update --init --recursive commonItems
+       git -c submodule."googletest".update=none `
+           -c submodule."external/googletest".update=none `
+           -c submodule."external/zip".update=none `
+           submodule update --init --recursive Fronter
 
     - name: "Get previous tag"
       if: ${{ github.event_name == 'push' }}
@@ -76,10 +85,18 @@ jobs:
     runs-on: windows-2022
     
     steps:
-    - uses: actions/checkout@v3
+    - name: "Cloning repo"
+      uses: actions/checkout@v3
       with:
-        fetch-depth: 0
-        submodules: recursive
+        submodules: true
+
+    - name: "Cloning selective submodules"
+      run: |
+       git submodule update --init --recursive commonItems       
+       git -c submodule."googletest".update=none `
+           -c submodule."external/googletest".update=none `
+           -c submodule."external/zip".update=none `
+           submodule update --init --recursive Fronter
         
     - name: "Build solution"
       run: |
