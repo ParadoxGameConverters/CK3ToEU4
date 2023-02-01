@@ -299,7 +299,7 @@ link = { eu4 = seleucian ck3 = greek tech = eastern gfx = westerngfx region = ma
 link = { eu4 = seleucian ck3 = greek_persian tech = eastern gfx = muslimgfx }
 link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
-link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian tech = eastern gfx = easterngfx }
+link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek tech = eastern gfx = easterngfx }
 link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
 link = { eu4 = circassian ck3 = circassian ck3 = abaza ck3 = adyghes tech = eastern gfx = easterngfx } #It has to be this way or the Circassian outside of Circassia will disappear
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
@@ -792,7 +792,7 @@ link = { eu4 = lepontic ck3 = gallic ck3 = belgae tech = western gfx = westerngf
 link = { eu4 = belgian ck3 = belgae tech = western gfx = westerngfx } # Fallback
 link = { eu4 = gaulish ck3 = gallic tech = western gfx = westerngfx } # Fallback
 
-link = { eu4 = gaulish ck3 = galatian tech = eastern gfx = easterngfx } # To fix
+link = { eu4 = gaulish ck3 = galatian ck3 = gaulish tech = eastern gfx = easterngfx } # To fix
 
 ### Celto-Pannonian
 link = { eu4 = noric ck3 = celtic_pannonian tech = eastern gfx = westerngfx region = tirol_area region = austria_proper_area region = inner_austria_area region = carinthia_area region = switzerland_area region = romandie_area }
