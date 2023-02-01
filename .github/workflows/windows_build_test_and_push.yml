@@ -1,5 +1,9 @@
 name: Build, test and publish 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -21,7 +25,8 @@ jobs:
     - name: "Cloning selective submodules"
       run: |
        git submodule update --init --recursive commonItems
-       git -c submodule."googletest".update=none `
+       git -c submodule."external/commonItems".update=none `
+           -c submodule."googletest".update=none `
            -c submodule."external/googletest".update=none `
            -c submodule."external/zip".update=none `
            submodule update --init --recursive Fronter
@@ -93,7 +98,8 @@ jobs:
     - name: "Cloning selective submodules"
       run: |
        git submodule update --init --recursive commonItems       
-       git -c submodule."googletest".update=none `
+       git -c submodule."external/commonItems".update=none `
+           -c submodule."googletest".update=none `
            -c submodule."external/googletest".update=none `
            -c submodule."external/zip".update=none `
            submodule update --init --recursive Fronter

@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="CommonItems">
-      <UniqueIdentifier>{ef433627-91e1-4369-839e-aa0419b527c0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="CK3World">
       <UniqueIdentifier>{05182a49-13e7-4cee-b17a-53ee550a12c2}</UniqueIdentifier>
     </Filter>
@@ -109,9 +106,6 @@
     <Filter Include="EU4World\Religion">
       <UniqueIdentifier>{d10185d1-0fad-4d18-8a4c-249ea6deb425}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CommonItems\ModLoader">
-      <UniqueIdentifier>{55ecf61d-6900-4f6d-95e7-715012a9d5cb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Mappers\VassalSplitoffMapper">
       <UniqueIdentifier>{806bdf7c-db4b-425d-9908-5938cc59f48f}</UniqueIdentifier>
     </Filter>
@@ -136,9 +130,6 @@
     <Filter Include="EU4World\Ideas">
       <UniqueIdentifier>{b3589733-8995-4500-9eef-6074f1d3167d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CommonItems\zip">
-      <UniqueIdentifier>{52676d3e-5f66-48c7-8973-ad762e726202}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CK3World\World.h">
@@ -153,36 +144,6 @@
     </ClInclude>
     <ClInclude Include="Source\EU4World\Output\outModFile.h">
       <Filter>EU4World\Output</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Date.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Log.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Parser.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ParserHelpers.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\StringUtils.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\OSCompatibilityLayer.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\Color.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\CommonFunctions.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\GameVersion.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\iconvlite.h">
-      <Filter>CommonItems</Filter>
     </ClInclude>
     <ClInclude Include="Source\CK3World\Titles\Title.h">
       <Filter>CK3World\Titles</Filter>
@@ -412,18 +373,6 @@
     <ClInclude Include="Source\CK3World\Titles\DynamicTemplate.h">
       <Filter>CK3World\Titles</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\CommonRegexes.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ConverterVersion.h">
-      <Filter>CommonItems</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModLoader.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModParser.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.h">
       <Filter>Mappers\VassalSplitoffMapper</Filter>
     </ClInclude>
@@ -484,38 +433,14 @@
     <ClInclude Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\ModFilesystem.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\ModLoader\Mod.h">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CK3World\Dynasties\HouseNameScraper.h">
       <Filter>CK3World\Dynasties</Filter>
     </ClInclude>
     <ClInclude Include="Source\CK3World\Dynasties\HouseNameScraping.h">
       <Filter>CK3World\Dynasties</Filter>
     </ClInclude>
-    <ClInclude Include="..\commonItems\external\zip\src\miniz.h">
-      <Filter>CommonItems\zip</Filter>
-    </ClInclude>
-    <ClInclude Include="..\commonItems\external\zip\src\zip.h">
-      <Filter>CommonItems\zip</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\commonItems\Log.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Parser.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\StringUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\CK3World\World.cpp">
       <Filter>CK3World</Filter>
@@ -532,27 +457,6 @@
     </ClCompile>
     <ClCompile Include="Source\EU4World\Output\outWorld.cpp">
       <Filter>EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Date.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\WinUtils.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\GameVersion.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\iconvlite.cpp">
-      <Filter>CommonItems</Filter>
     </ClCompile>
     <ClCompile Include="Source\CK3World\Titles\Title.cpp">
       <Filter>CK3World\Titles</Filter>
@@ -779,18 +683,6 @@
     <ClCompile Include="Source\CK3World\Titles\DynamicTemplate.cpp">
       <Filter>CK3World\Titles</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
-      <Filter>CommonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
       <Filter>Mappers\VassalSplitoffMapper</Filter>
     </ClCompile>
@@ -845,17 +737,11 @@
     <ClCompile Include="Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
       <Filter>Mappers\DynmaicIdeasMapper</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
-      <Filter>CommonItems\ModLoader</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CK3World\Dynasties\HouseNameScraper.cpp">
       <Filter>CK3World\Dynasties</Filter>
     </ClCompile>
     <ClCompile Include="Source\CK3World\Dynasties\HouseNameScraping.cpp">
       <Filter>CK3World\Dynasties</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
-      <Filter>CommonItems\zip</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
