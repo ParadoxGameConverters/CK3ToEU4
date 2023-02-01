@@ -4,9 +4,6 @@
     <Filter Include="CK3ToEU4">
       <UniqueIdentifier>{63542c5b-0224-4922-b74a-a0d87d5b3c54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\commonItems">
-      <UniqueIdentifier>{2cbb46a8-76ce-4e12-9d18-a70f465f3e81}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests">
       <UniqueIdentifier>{0be6794b-7d73-46ca-8d6f-af8d92d700b2}</UniqueIdentifier>
     </Filter>
@@ -256,26 +253,8 @@
     <Filter Include="CK3ToEU4\EU4World\Province">
       <UniqueIdentifier>{e56b76f3-f744-495c-a67c-ec9693f4d76a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\commonItems\ModLoader">
-      <UniqueIdentifier>{e16da930-efb0-4438-8489-fa38b31af251}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\commonItems\zip">
-      <UniqueIdentifier>{9b64e54c-9d51-4159-9388-04b1327c891b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\commonItems\Parser.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ParserHelpers.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Log.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\StringUtils.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
       <Filter>CK3ToEU4\Configuration</Filter>
     </ClCompile>
@@ -287,27 +266,6 @@
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp">
       <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Date.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\OSCommonLayer.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\WinUtils.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\Color.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\CommonFunctions.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\GameVersion.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\iconvlite.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
     </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp">
       <Filter>CK3ToEU4\CK3World\Titles</Filter>
@@ -687,12 +645,6 @@
     <ClCompile Include="CK3WorldTests\TitleTests\DynamicTemplateTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ConvenientParser.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ConverterVersion.cpp">
-      <Filter>CK3ToEU4\commonItems</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
       <Filter>CK3ToEU4\Mappers\VassalSplitoffMapper</Filter>
     </ClCompile>
@@ -807,15 +759,6 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp">
       <Filter>CK3ToEU4\EU4World\Province</Filter>
     </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModFilesystem.cpp">
-      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModLoader.cpp">
-      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\ModLoader\ModParser.cpp">
-      <Filter>CK3ToEU4\commonItems\ModLoader</Filter>
-    </ClCompile>
     <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp">
       <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
     </ClCompile>
@@ -827,9 +770,6 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScrapingTests.cpp">
       <Filter>Ck3WorldTests\DynastyTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\commonItems\external\zip\src\zip.c">
-      <Filter>CK3ToEU4\commonItems\zip</Filter>
     </ClCompile>
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
