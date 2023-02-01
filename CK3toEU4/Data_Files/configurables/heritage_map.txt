@@ -4,7 +4,7 @@
 link = { eu4 = germanic ck3 = heritage_central_germanic ck3 = heritage_east_germanic}
 link = { eu4 = scandinavian ck3 = heritage_north_germanic }
 link = { eu4 = british ck3 = heritage_brythonic ck3 = heritage_west_germanic }
-link = { eu4 = gaelic ck3 = heritage_goidelic ck3 = heritage_celtic }
+link = { eu4 = gaelic ck3 = heritage_goidelic ck3 = heritage_celtic ck3 = heritage_gaulish }
 link = { eu4 = latin ck3 = heritage_latin }
 link = { eu4 = iberian ck3 = heritage_iberian ck3 = heritage_vasconic ck3 = heritage_paleo_iberian }
 link = { eu4 = french ck3 = heritage_frankish ck3 = heritage_continental_celtic }
@@ -20,10 +20,10 @@ link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_aramaic ck3 = h
 link = { eu4 = caucasian ck3 = heritage_caucasian }
 
 # this is levantine group, no actual turks.
-link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic }
+link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic ck3 = heritage_punic }
 
 link = { eu4 = maghrebi ck3 = heritage_berber ck3 = heritage_guanche }
-link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite }
+link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite ck3 = heritage_chaldean }
 link = { eu4 = altaic ck3 = heritage_mongolic }
 
 # this is dubious. they put turkish in with tartars all in turkic, eu4 has them in levantine.
