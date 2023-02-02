@@ -1,7 +1,7 @@
 #ifndef RELIGION_MAPPER_H
 #define RELIGION_MAPPER_H
-
 #include "../../EU4World/Religion/GeneratedReligion.h"
+#include "../CK3ReligionScraper/CK3ReligionScraper.h"
 #include "../LocalizationMapper/LocalizationMapper.h"
 #include "Parser.h"
 #include <map>
@@ -24,6 +24,7 @@ class ReligionMapper: commonItems::parser
   public:
 	ReligionMapper();
 	explicit ReligionMapper(std::istream& theStream);
+	void scrapeCK3Religions(const commonItems::ModFilesystem& modFS) { ck3ReligionScraper.scrapeCK3Religions(modFS); }
 	void importCK3Faiths(const CK3::Faiths& faiths,
 		 ReligionDefinitionMapper& religionDefinitionMapper,
 		 const ReligionGroupScraper& religionGroupScraper,
@@ -57,6 +58,8 @@ class ReligionMapper: commonItems::parser
 	std::vector<std::string> reformedReligions;
 
 	std::map<std::string, std::vector<std::string>> CK3Doctrines; // Used for certain government reforms
+
+	CK3ReligionScraper ck3ReligionScraper;
 };
 } // namespace mappers
 

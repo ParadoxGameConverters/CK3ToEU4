@@ -18,6 +18,7 @@ namespace fs = std::filesystem;
 EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
 	auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
+	auto CK3FS = commonItems::ModFilesystem(theConfiguration.getCK3Path(), sourceWorld.getMods());
 
 	// Load correct province mappings.
 	bool initProvinceMapper = false;
@@ -70,6 +71,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Import CK3 dynamic faiths and register them in religionMapper
 	Log(LogLevel::Info) << "-> Importing Dynamic Faiths";
+	religionMapper.scrapeCK3Religions(CK3FS);
 	religionMapper.importCK3Faiths(sourceWorld.getFaiths(), religionDefinitionMapper, religionGroupScraper, localizationMapper);
 	Log(LogLevel::Progress) << "54 %";
 

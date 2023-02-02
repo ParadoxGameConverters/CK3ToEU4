@@ -116,6 +116,8 @@ call save_commit_id.bat
     <ClInclude Include="Source\Helpers\rakaly.h" />
     <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.h" />
     <ClInclude Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.h" />
+    <ClInclude Include="Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.h" />
+    <ClInclude Include="Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.h" />
     <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.h" />
     <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.h" />
     <ClInclude Include="Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.h" />
@@ -222,6 +224,8 @@ call save_commit_id.bat
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
     <ClCompile Include="Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
+    <ClCompile Include="Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp" />
+    <ClCompile Include="Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp" />
     <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp" />
     <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp" />
     <ClCompile Include="Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp" />
