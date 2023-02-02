@@ -107,10 +107,10 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	 const LocalizationMapper& localizationMapper)
 {
 	// Hello, imported CK3 dynamic faith.
-	const auto& origName = faith.getName();
-	const auto faithName = "converted_" + origName; // makes them easier to notice
+	auto origName = faith.getName();
+	auto faithName = "converted_" + origName;			// makes them easier to notice
 	const auto& displayName = faith.getCustomAdj(); // Catholic, not catholicism
-	const auto description = faith.getDescription();
+	const auto& description = faith.getDescription();
 	LocBlock locBlock;
 	locBlock.english = displayName;
 	locBlock.french = displayName;
@@ -208,7 +208,21 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	}
 	else
 	{
-		Log(LogLevel::Warning) << "CK3 Religion Template for " << origName << " does not exist! We will be scraping defaults.";
+		// Try with a self-similar religion. *Any* self-similar religion. At this point we don't care.
+		for (const auto& similarFaith: ck3ReligionScraper.getSimilarFaiths(origName))
+		{
+			if (const auto& dstReligion = getEU4ReligionForCK3Religion(similarFaith, faith.getReligiousHead()); dstReligion)
+			{
+				eu4ParentReligion = *dstReligion;
+				Log(LogLevel::Warning) << origName << " is unknown to the converter. We found a \"suitable\" replacement with: " << similarFaith << "->"
+											  << eu4ParentReligion << ". Overriding.";
+				if (const auto& match = religionDefinitionMapper.getStaticBlob(*dstReligion); match)
+					staticBlob = *match;
+				break;
+			}
+		}
+		if (eu4ParentReligion.empty())
+			Log(LogLevel::Warning) << "CK3 Religion Template for " << origName << " does not exist! We will be scraping defaults.";
 	}
 
 	short secondaryCount = 0;

@@ -253,6 +253,9 @@
     <Filter Include="CK3ToEU4\EU4World\Province">
       <UniqueIdentifier>{e56b76f3-f744-495c-a67c-ec9693f4d76a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3ToEU4\Mappers\CK3ReligionScraper">
+      <UniqueIdentifier>{154f659f-fa82-4fe1-8dff-64e9c214da15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
@@ -773,6 +776,12 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp">
+      <Filter>CK3ToEU4\Mappers\CK3ReligionScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp">
+      <Filter>CK3ToEU4\Mappers\CK3ReligionScraper</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

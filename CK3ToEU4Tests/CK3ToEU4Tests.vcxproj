@@ -109,6 +109,8 @@
     <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp" />
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp" />
     <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp" />
