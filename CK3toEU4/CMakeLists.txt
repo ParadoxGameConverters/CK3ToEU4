@@ -30,6 +30,7 @@ file(GLOB EU4WORLD_SUBDIR_SOURCES "${PROJECT_SOURCE_DIR}/EU4World/*/*.cpp")
 file(GLOB MAPPERS_SOURCES "${PROJECT_SOURCE_DIR}/Mappers/*/*.cpp")
 
 set(COMMON_SOURCES "../commonItems/CommonFunctions.cpp")
+set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/BulkParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/Color.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ConvenientParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ConverterVersion.cpp")
