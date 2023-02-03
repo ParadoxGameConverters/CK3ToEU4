@@ -1,4 +1,4 @@
-#include "../CK3ToEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
+#include "../../CK3toEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "include/gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 #include <sstream>
@@ -23,7 +23,7 @@ TEST(Mappers_DynamicIdeasRuleTests, uniqueIdentfiersAreCrafted)
 	input << "tradition_seafaring__ethos_communal with { 1 } Precedence\n";
 	input << "tradition_seafaring__ethos_courtly with { 1 } Precedence\n";
 
-	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
+	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper());
 	std::stringstream result;
 	for (const auto& rule: theMapper.getRules())
 	{

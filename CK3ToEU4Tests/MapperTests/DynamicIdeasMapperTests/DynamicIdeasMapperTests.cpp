@@ -1,10 +1,14 @@
-#include "../CK3ToEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
-#include "include/gmock/gmock-matchers.h"
+#include "../../CK3toEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
+#include "gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
+
+namespace {
+	auto locs = mappers::LocalizationMapper();
+}
 
 TEST(Mappers_DynamicIdeasMapperTests, defaultsLoadIn)
 {
-	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
+	const auto& theMapper = mappers::DynamicIdeasMapper(locs);
 
 	EXPECT_THAT(theMapper.getDefaults(),
 		 testing::ElementsAre("increase_discipline",
@@ -18,7 +22,7 @@ TEST(Mappers_DynamicIdeasMapperTests, defaultsLoadIn)
 
 TEST(Mappers_DynamicIdeasMapperTests, ethosLinksMakeMaps)
 {
-	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
+	const auto& theMapper = mappers::DynamicIdeasMapper(locs);
 
 	std::vector<std::pair<std::string, std::vector<mappers::EffectPair>>> elements;
 	elements.push_back(std::make_pair("ethos_bellicose", std::vector<mappers::EffectPair>{{"modifier_4", "0.01"}, {"modifier_5", "4"}}));
@@ -30,7 +34,7 @@ TEST(Mappers_DynamicIdeasMapperTests, ethosLinksMakeMaps)
 
 TEST(Mappers_DynamicIdeasMapperTests, traditionLinksMakeMaps)
 {
-	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
+	const auto& theMapper = mappers::DynamicIdeasMapper(locs);
 
 	std::vector<std::pair<std::string, std::vector<mappers::EffectPair>>> elements;
 	elements.push_back(std::make_pair("cheaper_mercenaries", std::vector<mappers::EffectPair>{{"merc_maintenance_modifier", "-0.10"}}));
@@ -58,7 +62,7 @@ TEST(Mappers_DynamicIdeasMapperTests, traditionLinksMakeMaps)
 
 TEST(Mappers_DynamicIdeasMapperTests, ruleLinksMakeRules)
 {
-	const auto& theMapper = mappers::DynamicIdeasMapper(mappers::LocalizationMapper::LocalizationMapper());
+	const auto& theMapper = mappers::DynamicIdeasMapper(locs);
 
 	std::set<mappers::DynamicIdeasRule> elements;
 
