@@ -12,21 +12,21 @@ set(CMAKE_CXX_STANDARD 20)
 set(UNICODE_DEFAULT OFF)
 set(IMLIBDIR /usr/local/lib)
 
-#set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Source)
-#set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Source)
-#set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
-#set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
-#set(LD_LIBRARY_PATH ${LD_LIBRARY_PATH} LIBDIR)
-#set(LD_RUN_PATH ${LD_RUN_PATH} LIBDIR)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -DMAGICKCORE_HDRI_ENABLE=0 -DMAGICKCORE_QUANTUM_DEPTH=8")
-#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath -Wl,LIBDIR")
-#set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-rpath=/usr/local/lib -L//usr/local/lib -llibMagickWand-7.Q8.so.7")
 
 set(CURL_LIBRARY "-lcurl")
 find_package(CURL REQUIRED) 
 
-#add_compile_options("-Wl,-rpath=/usr/local/lib -L/usr/local/lib -lMagick++-7.Q8")
+find_package(ImageMagick COMPONENTS Magick++)
+# Deduce directories, where ImageMagick libraries are located
+set(ImageMagick_LIBRARIES_DIRS)
+foreach(lib ${ImageMagick_LIBRARIES})
+    get_filename_component(dir ${lib} DIRECTORY)
+    list(APPEND ImageMagick_LIBRARIES_DIRS ${dir})
+    list(REMOVE_DUPLICATES ImageMagick_LIBRARIES_DIRS)
+endforeach()
+set(CMAKE_INSTALL_RPATH ${ImageMagick_LIBRARIES_DIRS})
+
 add_compile_options("-O2")
 add_compile_options("-DWXUSINGDLL")
 add_compile_options("-D__WXGTK__")
@@ -124,7 +124,7 @@ set_target_properties(CK3toEU4Converter
     RUNTIME_OUTPUT_DIRECTORY ${CONVERTER_OUTPUT_DIRECTORY}
 )
 target_precompile_headers(CK3toEU4Converter REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3toEU4Converter LINK_PUBLIC CommonItems CK3toEU4lib rakaly libMagick++-7.Q8.a libMagickCore-7.Q8.a libMagickWand-7.Q8.a)
+target_link_libraries(CK3toEU4Converter LINK_PUBLIC CommonItems CK3toEU4lib rakaly ${ImageMagick_LIBRARIES})
 
 ### FRONTER ###
 
@@ -194,7 +194,7 @@ set_target_properties(CK3toEU4Tests
 )
 
 target_precompile_headers(CK3toEU4Tests REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3toEU4Tests LINK_PUBLIC CommonItems CK3toEU4lib Magick++-7.Q8)
+target_link_libraries(CK3toEU4Tests LINK_PUBLIC CommonItems CK3toEU4lib ${ImageMagick_LIBRARIES})
 
 file(COPY "CK3ToEU4Tests/TestFiles/configurables" DESTINATION "${TEST_OUTPUT_DIRECTORY}")
 file(COPY "CK3ToEU4Tests/TestFiles/FlagFoundry" DESTINATION "${TEST_OUTPUT_DIRECTORY}")
