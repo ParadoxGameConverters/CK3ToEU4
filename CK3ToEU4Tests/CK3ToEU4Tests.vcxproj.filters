@@ -1,32 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="CK3ToEU4">
-      <UniqueIdentifier>{63542c5b-0224-4922-b74a-a0d87d5b3c54}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests">
       <UniqueIdentifier>{0be6794b-7d73-46ca-8d6f-af8d92d700b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers">
-      <UniqueIdentifier>{51d5cc9a-2852-4185-879c-ed1d57fb42a5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Configuration">
-      <UniqueIdentifier>{d5abe392-461d-445d-88ee-e8e1af6aa287}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ConfigurationTests">
       <UniqueIdentifier>{620e9391-7ce2-483e-977e-90f212d303ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\EU4World">
-      <UniqueIdentifier>{3ce5ba8c-124c-4cb0-b02e-0850d15aef4e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\EU4World\Output">
-      <UniqueIdentifier>{78b4283a-4bd8-46a9-b515-adb4c9cd2eb4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\CK3World">
-      <UniqueIdentifier>{e7109f06-9b38-4507-95a8-17d6ffbc1612}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Titles">
-      <UniqueIdentifier>{4999d001-cad9-4981-862d-d9d52ba26b30}</UniqueIdentifier>
     </Filter>
     <Filter Include="Ck3WorldTests">
       <UniqueIdentifier>{b4bd0865-ec1f-4741-9d49-d77dd3cfa3c7}</UniqueIdentifier>
@@ -37,53 +16,26 @@
     <Filter Include="Ck3WorldTests\GeographyTests">
       <UniqueIdentifier>{131bfa5e-527a-44a0-83fc-6d307f0896db}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Geography">
-      <UniqueIdentifier>{22cfd728-ace5-4c76-9396-882918250064}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Characters">
-      <UniqueIdentifier>{3afc144b-520e-46be-8deb-b32b25b7a3dc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Ck3WorldTests\CharacterTests">
       <UniqueIdentifier>{4c321d7f-0de0-4e3f-812d-9205877115a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Dynasties">
-      <UniqueIdentifier>{7812c155-4350-4ee0-a2d0-a06102b33e37}</UniqueIdentifier>
     </Filter>
     <Filter Include="Ck3WorldTests\DynastyTests">
       <UniqueIdentifier>{c8676b5a-1f32-4514-93cf-59118bdb070d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Religions">
-      <UniqueIdentifier>{b894b82d-bd45-4bc6-9ace-e099b11c5740}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Ck3WorldTests\ReligionTests">
       <UniqueIdentifier>{3e1d93cb-03de-416e-b009-f6a653311a57}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\NamedColors">
-      <UniqueIdentifier>{4e2395bd-d902-4167-87b2-23e203af1a0d}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\NamedColorTests">
       <UniqueIdentifier>{24120642-8856-45e4-994a-e3a7df540799}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\CK3World\CoatsOfArms">
-      <UniqueIdentifier>{0337eba5-b35c-4f72-8158-ce7fee95a0f0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Ck3WorldTests\CoatOfArmsTests">
       <UniqueIdentifier>{711708b5-4128-47a8-8865-597d92856f44}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Flags">
-      <UniqueIdentifier>{edc18f60-c2d6-4723-b3a6-da2a0dc25cee}</UniqueIdentifier>
     </Filter>
     <Filter Include="Ck3WorldTests\FlagTests">
       <UniqueIdentifier>{2b4882a3-de6e-4455-8a74-abe0fd45ec25}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\CK3World\Cultures">
-      <UniqueIdentifier>{2ea6677b-f429-4185-8ffd-5ded1537ac94}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Ck3WorldTests\CultureTests">
       <UniqueIdentifier>{eec43a4f-1ec6-4cf3-9c7e-5c9b8ceea34c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\IAmHreMapper">
-      <UniqueIdentifier>{0d187933-071f-4629-8e24-b29999dab2d4}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\IAmHreMapperTests">
       <UniqueIdentifier>{d83da73a-bac0-40a8-ba30-4600f6bcc66a}</UniqueIdentifier>
@@ -91,44 +43,20 @@
     <Filter Include="MapperTests\ShatterEmpiresMapperTests">
       <UniqueIdentifier>{d719a269-e116-43db-8fd2-6d4b1f3df1f0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ShatterEmpiresMapper">
-      <UniqueIdentifier>{bdb6ab91-7b6b-4a06-8a0c-b0bbe0bc3178}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\TraitScraper">
-      <UniqueIdentifier>{87cbe4ec-368f-43b4-adc0-7b37dc7c16c5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\TraitScraperTests">
       <UniqueIdentifier>{64db79a3-2ac7-4342-b4d7-aa74a95adbbc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\PrimaryTagMapper">
-      <UniqueIdentifier>{dd4a8cdb-a968-47ca-9921-e31a7a2dd270}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\LocalizationMapper">
-      <UniqueIdentifier>{5b6c5175-a127-4e82-be17-ca4340484337}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\PrimaryTagMapperTests">
       <UniqueIdentifier>{a7421cb5-027d-4efe-be77-14cb576696a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\RegionMapper">
-      <UniqueIdentifier>{4e4c5917-718e-4d7b-ad96-96af611ff5d0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\RegionMapperTests">
       <UniqueIdentifier>{153f3607-065b-43cb-8436-3d3bce216090}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\CultureMapper">
-      <UniqueIdentifier>{ff3d7822-4baa-47ec-bfa3-ea99b0d99022}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\CultureMapperTests">
       <UniqueIdentifier>{536d0f56-35da-4b2c-9e25-e6dbec153571}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ProvinceMapper">
-      <UniqueIdentifier>{aea30287-e248-4ed0-982c-c4ddbca81a5a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\ProvinceMapperTests">
       <UniqueIdentifier>{7e457b44-e823-41da-aba6-a75666ae00f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\GovernmentsMapper">
-      <UniqueIdentifier>{6870d6b9-ecad-4899-ab67-bb6087fb5fe6}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\GovernmentsMapperTests">
       <UniqueIdentifier>{e66a1a2b-94d2-4589-9c8b-0fe37e06eaa0}</UniqueIdentifier>
@@ -136,29 +64,14 @@
     <Filter Include="MapperTests\ReligionMapperTests">
       <UniqueIdentifier>{2af8ba5f-6b6a-46e1-b68e-8ecdefd0ba92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ReligionMapper">
-      <UniqueIdentifier>{755d5486-f3d2-448c-b27b-2f4b69c6bcca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\TitleTagMapper">
-      <UniqueIdentifier>{d94c484a-d3b5-4466-846d-f2c5c62446cd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\TitleTagMapperTests">
       <UniqueIdentifier>{a4a29331-ff75-4732-8df2-8cc9d3ba4ccf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\RulerPersonalitiesMapper">
-      <UniqueIdentifier>{27da1194-d94e-4977-9ce2-01087fab2086}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\RulerPersonalitiesMapperTests">
       <UniqueIdentifier>{941dea37-479d-4fcb-b29b-cf58b584456f}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\DevWeightsMapperTests">
       <UniqueIdentifier>{72c05f50-5bee-4ab2-9bd6-72f6c6ac55a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\DevWeightsMapper">
-      <UniqueIdentifier>{cdc068db-c919-484c-a2a4-efd642f68824}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\EU4World\FlagFoundry">
-      <UniqueIdentifier>{0d96a100-8c78-4869-9b48-4fdb35428343}</UniqueIdentifier>
     </Filter>
     <Filter Include="EU4WorldTests">
       <UniqueIdentifier>{2000fce1-d585-4c3e-a367-d30821c26bf1}</UniqueIdentifier>
@@ -181,65 +94,32 @@
     <Filter Include="EU4WorldTests\FlagFoundryTests">
       <UniqueIdentifier>{3d1f2de1-68ed-4aab-be6a-df1c0b17d31c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ReligionDefinitionMapper">
-      <UniqueIdentifier>{f51b231f-e161-4e86-bd83-08d6d494b63e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\ReligionGroupScraper">
-      <UniqueIdentifier>{b240cf4d-2a84-406c-b529-341f1888d7b3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\ReligionDefinitionMapperTests">
       <UniqueIdentifier>{0e12882d-5ebf-428d-8255-42392d82fe50}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\ReligionGroupScraper">
       <UniqueIdentifier>{dd33bb3a-2beb-4b71-94c5-f9702757a034}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\EU4World\Religion">
-      <UniqueIdentifier>{dc7c04c4-71a9-4f48-a52a-3251ab5e7deb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\LocalizationTests">
       <UniqueIdentifier>{5ff4266a-ed17-4041-8283-e5cde1a877ca}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\VassalSplitoffMapper">
-      <UniqueIdentifier>{36b66b88-a2e1-4e49-91bb-72af68d65b33}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\VassalSplitoffMapperTests">
       <UniqueIdentifier>{13ee96cc-14f3-4e84-b28f-35f548c5efee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\IslamOverrideMapper">
-      <UniqueIdentifier>{a5e620c1-9913-4278-8cc2-25967adbc89b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\IslamOverrideMapperTests">
       <UniqueIdentifier>{6d99ed23-0fcb-4b92-aaca-a939da0752e1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\LocDegraderMapper">
-      <UniqueIdentifier>{e63ab097-631a-473c-80f7-eb2a828261ee}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\LocDegraderMapperTests">
       <UniqueIdentifier>{74a70cc4-b6a5-4d14-987c-74b7e23a8d15}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\AfricanPassesMapper">
-      <UniqueIdentifier>{c694a361-7087-426b-8dea-7a44aee9cd67}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\AfricanPassesMapperTests">
       <UniqueIdentifier>{a2940191-13b6-4ef5-9973-8bb739bab84c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\CultureDefinitionsMapper">
-      <UniqueIdentifier>{eba0ee62-d8c7-4cb0-b9d9-c5fd13ccd66b}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\CultureDefinitionsMapperTests">
       <UniqueIdentifier>{7a78a165-2f1d-4fa1-83b4-0b588674bf90}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\Mappers\HeritageMapper">
-      <UniqueIdentifier>{4a09f56a-13d2-42e8-ae5e-eebfacf13c46}</UniqueIdentifier>
-    </Filter>
     <Filter Include="MapperTests\HeritageMapperTests">
       <UniqueIdentifier>{1ef34395-6621-4f49-8844-b4ae05acdd3e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\DynamicIdeasMapper">
-      <UniqueIdentifier>{22c257af-faca-4dc2-b7c7-21453a42093b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\EU4World\Ideas">
-      <UniqueIdentifier>{60196a55-12fd-4b91-97af-1e37bde4e10d}</UniqueIdentifier>
     </Filter>
     <Filter Include="MapperTests\DynamicIdeasMapperTests">
       <UniqueIdentifier>{d2052e1b-e453-4faf-a2fd-d407a61d26f1}</UniqueIdentifier>
@@ -250,46 +130,16 @@
     <Filter Include="EU4WorldTests\IdeaTests">
       <UniqueIdentifier>{9027090e-4c4c-4594-8a9d-415d5c51072f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="CK3ToEU4\EU4World\Province">
-      <UniqueIdentifier>{e56b76f3-f744-495c-a67c-ec9693f4d76a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CK3ToEU4\Mappers\CK3ReligionScraper">
-      <UniqueIdentifier>{154f659f-fa82-4fe1-8dff-64e9c214da15}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
-      <Filter>CK3ToEU4\Configuration</Filter>
-    </ClCompile>
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp">
       <Filter>ConfigurationTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp">
-      <Filter>CK3ToEU4\CK3World\Titles</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp">
-      <Filter>CK3ToEU4\CK3World\Titles</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\TitlesTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\TitleTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp">
-      <Filter>CK3ToEU4\CK3World\Characters</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp">
-      <Filter>CK3ToEU4\CK3World\Characters</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp">
-      <Filter>CK3ToEU4\CK3World\Characters</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp">
       <Filter>Ck3WorldTests\CharacterTests</Filter>
@@ -299,18 +149,6 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterTests.cpp">
       <Filter>Ck3WorldTests\CharacterTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp">
       <Filter>Ck3WorldTests\DynastyTests</Filter>
@@ -324,18 +162,6 @@
     <ClCompile Include="CK3WorldTests\DynastyTests\HouseTests.cpp">
       <Filter>Ck3WorldTests\DynastyTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp">
-      <Filter>CK3ToEU4\CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.cpp">
-      <Filter>CK3ToEU4\CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religion.cpp">
-      <Filter>CK3ToEU4\CK3World\Religions</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religions.cpp">
-      <Filter>CK3ToEU4\CK3World\Religions</Filter>
-    </ClCompile>
     <ClCompile Include="CK3WorldTests\ReligionTests\FaithsTests.cpp">
       <Filter>Ck3WorldTests\ReligionTests</Filter>
     </ClCompile>
@@ -347,21 +173,6 @@
     </ClCompile>
     <ClCompile Include="CK3WorldTests\ReligionTests\ReligionTests.cpp">
       <Filter>Ck3WorldTests\ReligionTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp">
-      <Filter>CK3ToEU4\Mappers\NamedColors</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.cpp">
-      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp">
-      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.cpp">
-      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp">
-      <Filter>CK3ToEU4\CK3World\CoatsOfArms</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\CoatOfArmsTests.cpp">
       <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
@@ -375,35 +186,17 @@
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemTests.cpp">
       <Filter>Ck3WorldTests\CoatOfArmsTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\LandedTitles.cpp">
-      <Filter>CK3ToEU4\CK3World\Titles</Filter>
-    </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\LandedTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp">
-      <Filter>CK3ToEU4\CK3World\Flags</Filter>
-    </ClCompile>
     <ClCompile Include="CK3WorldTests\FlagTests\FlagTests.cpp">
       <Filter>Ck3WorldTests\FlagTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailsTests.cpp">
       <Filter>Ck3WorldTests\GeographyTests</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\GeographyTests\CountyDetailTests.cpp">
       <Filter>Ck3WorldTests\GeographyTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp">
-      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp">
-      <Filter>CK3ToEU4\CK3World\Cultures</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\CultureTests\CulturesTests.cpp">
       <Filter>Ck3WorldTests\CultureTests</Filter>
@@ -417,47 +210,17 @@
     <ClCompile Include="CK3WorldTests\GeographyTests\ProvinceHoldingTests.cpp">
       <Filter>Ck3WorldTests\GeographyTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHolding.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.cpp">
-      <Filter>CK3ToEU4\CK3World\Geography</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\IAmHreMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\IAmHreMapper\IAmHreMapperTests.cpp">
       <Filter>MapperTests\IAmHreMapperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp">
       <Filter>MapperTests\ShatterEmpiresMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\ShatterEmpiresMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp">
-      <Filter>CK3ToEU4\Mappers\TraitScraper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp">
-      <Filter>CK3ToEU4\Mappers\TraitScraper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp">
       <Filter>MapperTests\TraitScraperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\TraitScraper\TraitScrapingTests.cpp">
       <Filter>MapperTests\TraitScraperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp">
-      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp">
-      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\PrimaryTagMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\LocalizationMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagCultureGroupTests.cpp">
       <Filter>MapperTests\PrimaryTagMapperTests</Filter>
@@ -467,18 +230,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\PrimaryTagMapper\PrimaryTagMapperTests.cpp">
       <Filter>MapperTests\PrimaryTagMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Area.cpp">
-      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.cpp">
-      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp">
-      <Filter>CK3ToEU4\Mappers\RegionMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\RegionMapper\AreaTests.cpp">
       <Filter>MapperTests\RegionMapperTests</Filter>
@@ -492,23 +243,8 @@
     <ClCompile Include="MapperTests\RegionMapper\SuperRegionTests.cpp">
       <Filter>MapperTests\RegionMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\CultureMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
-      <Filter>CK3ToEU4\Mappers\CultureMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\CultureMapper\CultureMapperTests.cpp">
       <Filter>MapperTests\CultureMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.cpp">
-      <Filter>CK3ToEU4\Mappers\ProvinceMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMapperTests.cpp">
       <Filter>MapperTests\ProvinceMapperTests</Filter>
@@ -518,12 +254,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\ProvinceMapper\ProvinceMappingTests.cpp">
       <Filter>MapperTests\ProvinceMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\GovernmentsMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\GovernmentsMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\GovernmentsMapper\GovernmentsMapperTests.cpp">
       <Filter>MapperTests\GovernmentsMapperTests</Filter>
@@ -537,18 +267,6 @@
     <ClCompile Include="MapperTests\ReligionMapper\ReligionMappingTests.cpp">
       <Filter>MapperTests\ReligionMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\TitleTagMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\TitleTagMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMapperTests.cpp">
       <Filter>MapperTests\TitleTagMapperTests</Filter>
     </ClCompile>
@@ -557,12 +275,6 @@
     </ClCompile>
     <ClCompile Include="MapperTests\NamedColor\NamedColorTests.cpp">
       <Filter>MapperTests\NamedColorTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\RulerPersonalitiesMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\RulerPersonalitiesMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalitiesMappingTests.cpp">
       <Filter>MapperTests\RulerPersonalitiesMapperTests</Filter>
@@ -576,50 +288,11 @@
     <ClCompile Include="MapperTests\DevWeightsMapper\DevWeightsMapperTests.cpp">
       <Filter>MapperTests\DevWeightsMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\DevWeightsMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.cpp">
-      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp">
-      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp">
-      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp">
-      <Filter>CK3ToEU4\EU4World\FlagFoundry</Filter>
-    </ClCompile>
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\RecolorerTests.cpp">
       <Filter>EU4WorldTests\FlagFoundryTests</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\FlagFoundryTests\FlagCrafterTests.cpp">
       <Filter>EU4WorldTests\FlagFoundryTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionDefinitionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionDefinitionMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionGroupScraper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp">
-      <Filter>CK3ToEU4\Mappers\ReligionGroupScraper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\ReligionDefinitionMapper\ReligionDefinitionMapperTests.cpp">
       <Filter>MapperTests\ReligionDefinitionMapperTests</Filter>
@@ -633,44 +306,20 @@
     <ClCompile Include="MapperTests\ReligionGroupScraper\ReligionGroupScrapingTests.cpp">
       <Filter>MapperTests\ReligionGroupScraper</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp">
-      <Filter>CK3ToEU4\EU4World\Religion</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\LocalisationTests\LocalisationTests.cpp">
       <Filter>MapperTests\LocalizationTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\DynamicTemplate.cpp">
-      <Filter>CK3ToEU4\CK3World\Titles</Filter>
     </ClCompile>
     <ClCompile Include="CK3WorldTests\TitleTests\DynamicTemplateTests.cpp">
       <Filter>Ck3WorldTests\TitleTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\VassalSplitoffMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\VassalSplitoffMapper\VassalSplitoffMapperTests.cpp">
       <Filter>MapperTests\VassalSplitoffMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\IslamOverrideMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\IslamOverrideMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMapperTests.cpp">
       <Filter>MapperTests\IslamOverrideMapperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\IslamOverrideMapper\IslamOverrideMappingTests.cpp">
       <Filter>MapperTests\IslamOverrideMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\LocDegraderMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\LocDegraderMapper</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\LocDegraderMapper\LocDegraderMapperTests.cpp">
       <Filter>MapperTests\LocDegraderMapperTests</Filter>
@@ -684,21 +333,6 @@
     <ClCompile Include="MapperTests\AfricanPassesMapper\AfricanPassesMappingTests.cpp">
       <Filter>MapperTests\AfricanPassesMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\AfricanPassesMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\AfricanPassesMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp">
-      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp">
-      <Filter>CK3ToEU4\Mappers\CultureDefinitionsMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureDefinitionsMapperTests.cpp">
       <Filter>MapperTests\CultureDefinitionsMapperTests</Filter>
     </ClCompile>
@@ -708,38 +342,14 @@
     <ClCompile Include="MapperTests\CultureDefinitionsMapper\CultureGroupDefinitionTests.cpp">
       <Filter>MapperTests\CultureDefinitionsMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\HeritageMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp">
-      <Filter>CK3ToEU4\Mappers\HeritageMapper</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\HeritageMapper\HeritageMapperTests.cpp">
       <Filter>MapperTests\HeritageMapperTests</Filter>
     </ClCompile>
     <ClCompile Include="MapperTests\HeritageMapper\HeritageMappingTests.cpp">
       <Filter>MapperTests\HeritageMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
-      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
-      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp">
-      <Filter>CK3ToEU4\EU4World\Ideas</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp">
-      <Filter>CK3ToEU4\EU4World\Output</Filter>
-    </ClCompile>
     <ClCompile Include="MapperTests\DynamicIdeasMapperTests\DynamicIdeasMapperTests.cpp">
       <Filter>MapperTests\DynamicIdeasMapperTests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
-      <Filter>CK3ToEU4\Mappers\DynamicIdeasMapper</Filter>
     </ClCompile>
     <ClCompile Include="EU4WorldTests\IdeaTests\NationalIdeasTests.cpp">
       <Filter>EU4WorldTests\IdeaTests</Filter>
@@ -753,21 +363,6 @@
     <ClCompile Include="MapperTests\ProvinceMapper\NameTransferMappingTests.cpp">
       <Filter>MapperTests\ProvinceMapperTests</Filter>
     </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\EU4Province.cpp">
-      <Filter>CK3ToEU4\EU4World\Province</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceDetails.cpp">
-      <Filter>CK3ToEU4\EU4World\Province</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp">
-      <Filter>CK3ToEU4\EU4World\Province</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.cpp">
-      <Filter>CK3ToEU4\CK3World\Dynasties</Filter>
-    </ClCompile>
     <ClCompile Include="CK3WorldTests\DynastyTests\HouseNameScraperTests.cpp">
       <Filter>Ck3WorldTests\DynastyTests</Filter>
     </ClCompile>
@@ -776,12 +371,6 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp">
-      <Filter>CK3ToEU4\Mappers\CK3ReligionScraper</Filter>
-    </ClCompile>
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp">
-      <Filter>CK3ToEU4\Mappers\CK3ReligionScraper</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">
