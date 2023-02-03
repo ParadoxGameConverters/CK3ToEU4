@@ -252,6 +252,7 @@
       <PrecompiledHeaderOutputFile>$(SolutionDir)lib\pch.pch</PrecompiledHeaderOutputFile>
       <ProgramDataBaseFileName>$(SolutionDir)lib\common.pdb</ProgramDataBaseFileName>
       <ForcedIncludeFiles>pch.h</ForcedIncludeFiles>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>
