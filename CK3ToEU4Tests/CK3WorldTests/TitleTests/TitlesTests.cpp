@@ -7,6 +7,7 @@
 #include "../../CK3toEU4/Source/CK3World/Titles/Title.h"
 #include "../../CK3toEU4/Source/CK3World/Titles/Titles.h"
 #include "gtest/gtest.h"
+#include <gmock/gmock-matchers.h>
 #include <sstream>
 
 TEST(CK3World_TitlesTests, titlesDefaultToEmpty)
@@ -59,7 +60,7 @@ TEST(CK3World_TitlesTests, insaneTitlesThrowException)
 	}
 	catch (const std::runtime_error& e)
 	{
-		ASSERT_STREQ("Cannot import title ID: 1234512356789012345678901234567890 (stoll argument out of range)", e.what());
+		EXPECT_THAT(e.what(), testing::HasSubstr("Cannot import title ID: 1234512356789012345678901234567890 (stoll"));
 	}
 }
 

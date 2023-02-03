@@ -1,4 +1,4 @@
-#include "../CK3ToEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasLink.h"
+#include "../../CK3toEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasLink.h"
 #include "include/gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 #include <sstream>
