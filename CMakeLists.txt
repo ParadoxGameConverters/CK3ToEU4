@@ -17,16 +17,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20 -DMAGICKCORE_HDRI_ENABLE=0 -D
 set(CURL_LIBRARY "-lcurl")
 find_package(CURL REQUIRED) 
 
-find_package(ImageMagick COMPONENTS Magick++)
-# Deduce directories, where ImageMagick libraries are located
-set(ImageMagick_LIBRARIES_DIRS)
-foreach(lib ${ImageMagick_LIBRARIES})
-    get_filename_component(dir ${lib} DIRECTORY)
-    list(APPEND ImageMagick_LIBRARIES_DIRS ${dir})
-    list(REMOVE_DUPLICATES ImageMagick_LIBRARIES_DIRS)
-endforeach()
-set(CMAKE_INSTALL_RPATH ${ImageMagick_LIBRARIES_DIRS})
-
 add_compile_options("-O2")
 add_compile_options("-DWXUSINGDLL")
 add_compile_options("-D__WXGTK__")
@@ -116,15 +106,15 @@ add_library(CK3toEU4lib
 target_precompile_headers(CK3toEU4lib PUBLIC ${PCH_SOURCES})
 target_link_libraries(CK3toEU4lib LINK_PUBLIC CommonItems)
 
-add_executable(CK3toEU4Converter 
+add_executable(CK3ToEU4Converter 
 	${MAIN_SOURCES}
 )
-set_target_properties(CK3toEU4Converter
+set_target_properties(CK3ToEU4Converter
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CONVERTER_OUTPUT_DIRECTORY}
 )
-target_precompile_headers(CK3toEU4Converter REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3toEU4Converter LINK_PUBLIC CommonItems CK3toEU4lib rakaly ${ImageMagick_LIBRARIES})
+target_precompile_headers(CK3ToEU4Converter REUSE_FROM CK3toEU4lib)
+target_link_libraries(CK3ToEU4Converter LINK_PUBLIC CommonItems CK3toEU4lib rakaly MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
 
 ### FRONTER ###
 
@@ -167,9 +157,9 @@ set_target_properties(ConverterFrontend
 )
 target_link_libraries(ConverterFrontend LINK_PUBLIC ${wxWidgets_LIBRARIES} ${CURL_LIBRARIES} CommonItems)
 
-add_custom_command(TARGET CK3toEU4Converter POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
-add_custom_command(TARGET CK3toEU4Converter POST_BUILD WORKING_DIRECTORY ${CONVERTER_DIR} COMMAND chmod u+x Copy_Files.sh)
-add_custom_command(TARGET CK3toEU4Converter POST_BUILD WORKING_DIRECTORY ${CONVERTER_DIR} COMMAND ./Copy_Files.sh)
+add_custom_command(TARGET CK3ToEU4Converter POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
+add_custom_command(TARGET CK3ToEU4Converter POST_BUILD WORKING_DIRECTORY ${CONVERTER_DIR} COMMAND chmod u+x Copy_Files.sh)
+add_custom_command(TARGET CK3ToEU4Converter POST_BUILD WORKING_DIRECTORY ${CONVERTER_DIR} COMMAND ./Copy_Files.sh)
 
 ### TESTS ###
 
@@ -194,7 +184,7 @@ set_target_properties(CK3toEU4Tests
 )
 
 target_precompile_headers(CK3toEU4Tests REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3toEU4Tests LINK_PUBLIC CommonItems CK3toEU4lib ${ImageMagick_LIBRARIES})
+target_link_libraries(CK3toEU4Tests LINK_PUBLIC CommonItems CK3toEU4lib MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
 
 file(COPY "CK3ToEU4Tests/TestFiles/configurables" DESTINATION "${TEST_OUTPUT_DIRECTORY}")
 file(COPY "CK3ToEU4Tests/TestFiles/FlagFoundry" DESTINATION "${TEST_OUTPUT_DIRECTORY}")
