@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CK3World">
+      <UniqueIdentifier>{da341cfa-075c-4d9e-8708-a39515a4b8dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Titles">
+      <UniqueIdentifier>{2773eb01-9f13-4f50-8ffa-47fe1485eacc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Characters">
+      <UniqueIdentifier>{8b07ce4b-7a3b-4292-8ff7-57f3c13dbac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\CoatsOfArms">
+      <UniqueIdentifier>{0b2fc0cd-b118-4081-a901-8065e99251cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Geography">
+      <UniqueIdentifier>{e9624ffc-7d24-4aeb-8e72-78c57072405d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Dynasties">
+      <UniqueIdentifier>{6cfe0883-1e08-442e-9c12-462cba4e3c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Flags">
+      <UniqueIdentifier>{fde5d9f0-db0e-4aec-82e6-21c3d75ddc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Religions">
+      <UniqueIdentifier>{ea9a8256-a2a9-4adf-bc36-fb10798adccf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CK3World\Cultures">
+      <UniqueIdentifier>{487dcc76-cbab-4656-acc1-33f723d421d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Configuration">
+      <UniqueIdentifier>{0657f1b9-f05b-4e23-bb39-984c24c08c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World">
+      <UniqueIdentifier>{b46a3dba-34f9-4507-974d-eafc2ef0da82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Output">
+      <UniqueIdentifier>{83791d8c-a4cc-4cb8-a4f1-31b2d7f6eb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Country">
+      <UniqueIdentifier>{a093b73e-bfea-488c-9f93-33e532d4853a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Province">
+      <UniqueIdentifier>{f173dabc-7a07-4fc1-8a61-c3af20dc63ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Diplomacy">
+      <UniqueIdentifier>{e861483a-df77-4566-a858-65695880bcf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\FlagFoundry">
+      <UniqueIdentifier>{6c399d72-b799-45df-986b-022d661ca8a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Religion">
+      <UniqueIdentifier>{fcf36f5f-2c9c-4ca7-b1aa-37972318e825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EU4World\Ideas">
+      <UniqueIdentifier>{ae42f997-c025-4866-a9f7-ebbe91469905}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{5c3567c3-b393-47d2-be5b-943a5f798947}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers">
+      <UniqueIdentifier>{98acf32d-cc9d-43c9-b682-ca1e23a530e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\NamedColors">
+      <UniqueIdentifier>{540da0dd-e7da-4646-91d0-17fc7701a786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\IAmHreMapper">
+      <UniqueIdentifier>{1eff7452-57a3-42e2-b8e6-9e80e09f751c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ShatterEmpiresMapper">
+      <UniqueIdentifier>{be3a1768-d661-4682-bcc3-6b144f4944e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\TraitScraper">
+      <UniqueIdentifier>{98c4108e-ea0e-4c1c-bdc2-db5727e90f56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\LocalizationMapper">
+      <UniqueIdentifier>{62239106-4789-43af-bf16-ba94fc39a021}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\PrimaryTagMapper">
+      <UniqueIdentifier>{e04e1b97-f50f-4e3e-89da-b9fa6d465e75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RegionMapper">
+      <UniqueIdentifier>{01e0855e-bd2c-43e8-ba2d-233825740176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureMapper">
+      <UniqueIdentifier>{b1b04f8b-a108-47bb-b28d-d81470cee901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ProvinceMapper">
+      <UniqueIdentifier>{5dffc888-5148-4de4-ba97-a7531d945655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\GovernmentsMapper">
+      <UniqueIdentifier>{e554953d-7ed0-46d9-aeed-72131103bee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligionMapper">
+      <UniqueIdentifier>{3bb9900b-df2d-4221-b527-e551cf7962c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\TitleTagMapper">
+      <UniqueIdentifier>{66e20e5e-8ce1-4a2b-b1a1-7e0afeeb24d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\RulerPersonalitiesMapper">
+      <UniqueIdentifier>{34ae5b95-70a4-4ed5-899f-7022d557295a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\DevWeightsMapper">
+      <UniqueIdentifier>{afcdc6e5-c6e2-4723-8f43-85150c4351b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligionDefinitionMapper">
+      <UniqueIdentifier>{a83841be-3881-4c4e-bd61-78614e382a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\ReligionGroupScraper">
+      <UniqueIdentifier>{0ab90a19-6cca-4040-bef4-8920e6953435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\VassalSplitoffMapper">
+      <UniqueIdentifier>{bc568b22-61f5-4d8a-ab01-7949f3a71351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\IslamOverrideMapper">
+      <UniqueIdentifier>{59294a60-35ab-4717-a860-ee2d47d2a39e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\LocDegraderMapper">
+      <UniqueIdentifier>{db67b8ea-bece-4c0f-8667-c5b80ec1f54d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\AfricanPassesMapper">
+      <UniqueIdentifier>{992a00ff-c777-4638-9dd4-7699e413b73c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CultureDefinitionsMapper">
+      <UniqueIdentifier>{e02c3eec-9ece-44b7-9c39-7a6b4fb481b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\HeritageMapper">
+      <UniqueIdentifier>{3fc612ae-4176-4228-b3ce-5b2a4c631ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\DynmaicIdeasMapper">
+      <UniqueIdentifier>{032a06a4-7813-45dc-ab3d-2af4091acc82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mappers\CK3ReligionScraper">
+      <UniqueIdentifier>{be032354-e8ff-4e18-a6f4-222fee0360fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\World.cpp">
+      <Filter>CK3World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\DynamicTemplate.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\LandedTitles.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp">
+      <Filter>CK3World\Titles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp">
+      <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp">
+      <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp">
+      <Filter>CK3World\Characters</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHolding.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.cpp">
+      <Filter>CK3World\Geography</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp">
+      <Filter>CK3World\Flags</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religion.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religions.cpp">
+      <Filter>CK3World\Religions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp">
+      <Filter>CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp">
+      <Filter>CK3World\Cultures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp">
+      <Filter>Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\EU4World.cpp">
+      <Filter>EU4World</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp">
+      <Filter>EU4World\Output</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Country\Country.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Country\CountryDetails.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Country\MonarchNames.cpp">
+      <Filter>EU4World\Country</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\EU4Province.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceDetails.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp">
+      <Filter>EU4World\Province</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Diplomacy\Agreement.cpp">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Diplomacy\Diplomacy.cpp">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp">
+      <Filter>EU4World\Religion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp">
+      <Filter>EU4World\Ideas</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp">
+      <Filter>Mappers\NamedColors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp">
+      <Filter>Mappers\IAmHreMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp">
+      <Filter>Mappers\ShatterEmpiresMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp">
+      <Filter>Mappers\TraitScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp">
+      <Filter>Mappers\TraitScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp">
+      <Filter>Mappers\LocalizationMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Area.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapping.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.cpp">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp">
+      <Filter>Mappers\DevWeightsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp">
+      <Filter>Mappers\ReligionDefinitionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp">
+      <Filter>Mappers\ReligionDefinitionMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp">
+      <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp">
+      <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp">
+      <Filter>Mappers\VassalSplitoffMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp">
+      <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp">
+      <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\World.h">
+      <Filter>CK3World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Titles\DynamicTemplate.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Titles\LandedTitles.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Titles\Title.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Titles\Titles.h">
+      <Filter>CK3World\Titles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Characters\Character.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Characters\Characters.h">
+      <Filter>CK3World\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.h">
+      <Filter>CK3World\CoatsOfArms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHolding.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.h">
+      <Filter>CK3World\Geography</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\House.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.h">
+      <Filter>CK3World\Dynasties</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Flags\Flags.h">
+      <Filter>CK3World\Flags</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Religions\Faith.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Religions\Religion.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Religions\Religions.h">
+      <Filter>CK3World\Religions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.h">
+      <Filter>CK3World\Cultures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.h">
+      <Filter>CK3World\Cultures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Configuration\Configuration.h">
+      <Filter>Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\EU4World.h">
+      <Filter>EU4World</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outCountry.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outModFile.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outProvince.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Output\outReligion.h">
+      <Filter>EU4World\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Country\Country.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Country\CountryDetails.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Country\MonarchNames.h">
+      <Filter>EU4World\Country</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Province\EU4Province.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Province\ProvinceDetails.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.h">
+      <Filter>EU4World\Province</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Diplomacy\Agreement.h">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Diplomacy\Diplomacy.h">
+      <Filter>EU4World\Diplomacy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.h">
+      <Filter>EU4World\FlagFoundry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.h">
+      <Filter>EU4World\Religion</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.h">
+      <Filter>EU4World\Ideas</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Helpers\rakaly.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.h">
+      <Filter>Mappers\NamedColors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.h">
+      <Filter>Mappers\IAmHreMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.h">
+      <Filter>Mappers\ShatterEmpiresMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.h">
+      <Filter>Mappers\TraitScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.h">
+      <Filter>Mappers\TraitScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.h">
+      <Filter>Mappers\LocalizationMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.h">
+      <Filter>Mappers\PrimaryTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RegionMapper\Area.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.h">
+      <Filter>Mappers\RegionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.h">
+      <Filter>Mappers\CultureMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapping.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.h">
+      <Filter>Mappers\ProvinceMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.h">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.h">
+      <Filter>Mappers\GovernmentsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.h">
+      <Filter>Mappers\ReligionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.h">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.h">
+      <Filter>Mappers\TitleTagMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.h">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.h">
+      <Filter>Mappers\RulerPersonalitiesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.h">
+      <Filter>Mappers\DevWeightsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.h">
+      <Filter>Mappers\ReligionDefinitionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.h">
+      <Filter>Mappers\ReligionDefinitionMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.h">
+      <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.h">
+      <Filter>Mappers\ReligionGroupScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.h">
+      <Filter>Mappers\VassalSplitoffMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.h">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.h">
+      <Filter>Mappers\IslamOverrideMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.h">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.h">
+      <Filter>Mappers\LocDegraderMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.h">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.h">
+      <Filter>Mappers\AfricanPassesMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.h">
+      <Filter>Mappers\CultureDefinitionsMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.h">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.h">
+      <Filter>Mappers\HeritageMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\AssignmentPairs.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h">
+      <Filter>Mappers\DynmaicIdeasMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.h">
+      <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.h">
+      <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
