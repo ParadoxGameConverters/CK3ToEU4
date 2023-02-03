@@ -30,6 +30,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Configuration)-Tests\</OutDir>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -48,6 +49,7 @@
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>..\imageMagick\lib-windows;$(SolutionDir)lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>CK3toEU4lib.lib;pch.lib;CommonItems.lib;CORE_RL_aom_.lib;CORE_RL_bzlib_.lib;CORE_RL_cairo_.lib;CORE_RL_croco_.lib;CORE_RL_exr_.lib;CORE_RL_ffi_.lib;CORE_RL_flif_.lib;CORE_RL_freetype_.lib;CORE_RL_fribidi_.lib;CORE_RL_glib_.lib;CORE_RL_harfbuzz_.lib;CORE_RL_jbig_.lib;CORE_RL_jp2_.lib;CORE_RL_jpeg_.lib;CORE_RL_lcms_.lib;CORE_RL_libde265_.lib;CORE_RL_libheif_.lib;CORE_RL_liblzma_.lib;CORE_RL_libraw_.lib;CORE_RL_librsvg_.lib;CORE_RL_libxml_.lib;CORE_RL_libzip_.lib;CORE_RL_lqr_.lib;CORE_RL_Magick++_.lib;CORE_RL_MagickCore_.lib;CORE_RL_MagickWand_.lib;CORE_RL_openjpeg_.lib;CORE_RL_pango_.lib;CORE_RL_pixman_.lib;CORE_RL_png_.lib;CORE_RL_tiff_.lib;CORE_RL_webp_.lib;CORE_RL_zlib_.lib;FILTER_analyze_.lib;ImageMagickObject.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IncrementalLinkDatabaseFile>$(SolutionDir)lib\$(TargetName).ilk</IncrementalLinkDatabaseFile>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -59,101 +61,6 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Character.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\CharacterDomain.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Characters\Characters.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatOfArms.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\Emblem.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Culture.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Cultures\Cultures.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasties.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Dynasty.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\House.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\HouseNameScraping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Dynasties\Houses.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Flags\Flags.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetail.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\CountyDetails.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHolding.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Geography\ProvinceHoldings.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faith.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Faiths.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Religions\Religions.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\DynamicTemplate.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\LandedTitles.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Title.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\CK3World\Titles\Titles.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Configuration\Configuration.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagCrafter.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\FlagFoundry.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Recolorer.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\FlagFoundry\Warehouse.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Ideas\NationalIdeas.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outAgreement.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCharacter.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCountry.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outCultureDefinitions.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outModFile.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outNationalIdeas.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outProvince.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outReligion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Output\outWorld.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\EU4Province.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceDetails.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Province\ProvinceModifier.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\EU4World\Religion\GeneratedReligion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\AfricanPassesMapper\AfricanPassesMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefinitionsMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureDefiniton.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureDefinitionsMapper\CultureGroupDefinition.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\CultureMapper\CultureMappingRule.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DevWeightsMapper\DevWeightsMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\HeritageMapper\HeritageMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IAmHreMapper\IAmHreMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\IslamOverrideMapper\IslamOverrideMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocalizationMapper\LocalizationMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\LocDegraderMapper\LocDegraderMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\NamedColors\NamedColors.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCulture.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagCultureGroup.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\PrimaryTagMapper\PrimaryTagMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ProvinceMapper\ProvinceMappingsVersion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Area.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\Region.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\RegionMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RegionMapper\SuperRegion.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionDefinitionMapper\ReligionDefinitionMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionGroupScraper\ReligionGroupScraping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ReligionMapper\ReligionMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraper.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\TraitScraper\TraitScraping.cpp" />
-    <ClCompile Include="..\CK3toEU4\Source\Mappers\VassalSplitoffMapper\VassalSplitoffMapper.cpp" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="CK3WorldTests\CharacterTests\CharacterDomainTests.cpp" />
