@@ -1,12 +1,7 @@
 #include "../../CK3toEU4/Source/EU4World/Ideas/NationalIdeas.h"
 #include "include/gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
-#include <CommonFunctions.h>
 #include <sstream>
-
-namespace {
-	auto locs = mappers::LocalizationMapper();
-}
 
 TEST(EU4World_NationalIdeasTests, defualtsFillIn)
 {
@@ -18,6 +13,7 @@ TEST(EU4World_NationalIdeasTests, defualtsFillIn)
 	Input << "traditions = {tradition_seafaring tradition_hussar tradition_concubines tradition_astute_diplomats tradition_welcoming tradition_xenophilic}\n";
 
 	auto culture = std::make_shared<CK3::Culture>(Input, 42);
+	auto locs = mappers::LocalizationMapper();
 	const EU4::NationalIdeas idea(culture, mappers::DynamicIdeasMapper(locs));
 
 	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring");
@@ -39,6 +35,7 @@ TEST(EU4World_NationalIdeasTests, ethosChangedByRules)
 	Input << "traditions = { tradition_seafaring }\n";
 
 	auto culture = std::make_shared<CK3::Culture>(Input, 42);
+	auto locs = mappers::LocalizationMapper();
 	const EU4::NationalIdeas idea(culture, mappers::DynamicIdeasMapper(locs));
 
 	EXPECT_EQ(idea.getEthosEffects().front().modifier, "modifier_6");
@@ -55,6 +52,7 @@ TEST(EU4World_NationalIdeasTests, moreSpecificRulesPreferred)
 	Input << "traditions = { tradition_seafaring }\n";
 
 	auto culture = std::make_shared<CK3::Culture>(Input, 42);
+	auto locs = mappers::LocalizationMapper();
 	const EU4::NationalIdeas idea(culture, mappers::DynamicIdeasMapper(locs));
 
 	EXPECT_EQ(idea.getEthosEffects().front().modifier, "modifier_0");
@@ -77,6 +75,7 @@ TEST(EU4World_NationalIdeasTests, lowerPrecedenceDoesNotReplaceHigher)
 	Input << "traditions = { tradition_seafaring }\n";
 
 	auto culture = std::make_shared<CK3::Culture>(Input, 42);
+	auto locs = mappers::LocalizationMapper();
 	const EU4::NationalIdeas idea(culture, mappers::DynamicIdeasMapper(locs));
 
 	EXPECT_EQ(idea.getTraditionIdeas().front(), "tradition_seafaring__heritage_red");

@@ -2,8 +2,9 @@
 #include "gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 
-namespace {
-	auto locs = mappers::LocalizationMapper();
+namespace
+{
+auto locs = mappers::LocalizationMapper();
 }
 
 TEST(Mappers_DynamicIdeasMapperTests, defaultsLoadIn)
