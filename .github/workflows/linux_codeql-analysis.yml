@@ -105,5 +105,5 @@ jobs:
        cd test/Release-Linux
        ./CK3toEU4Tests
 
-- name: Perform CodeQL Analysis
+    - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
