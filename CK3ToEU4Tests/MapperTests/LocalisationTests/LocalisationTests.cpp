@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
 #include "CommonFunctions.h"
 #include "gtest/gtest.h"
 

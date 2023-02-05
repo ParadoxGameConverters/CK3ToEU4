@@ -1,4 +1,4 @@
-#include "../CK3toEU4/Source/Mappers/DevWeightsMapper/DevWeightsMapper.h"
+#include "../CK3ToEU4/Source/Mappers/DevWeightsMapper/DevWeightsMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

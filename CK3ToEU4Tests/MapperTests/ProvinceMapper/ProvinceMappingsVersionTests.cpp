@@ -1,4 +1,4 @@
-#include "../CK3toEU4/Source/Mappers/ProvinceMapper/ProvinceMappingsVersion.h"
+#include "../CK3ToEU4/Source/Mappers/ProvinceMapper/ProvinceMappingsVersion.h"
 #include "gtest/gtest.h"
 #include <sstream>
 #include <string>

@@ -1,4 +1,4 @@
-#include "../CK3toEU4/Source/CK3World/Religions/Religion.h"
+#include "../CK3ToEU4/Source/CK3World/Religions/Religion.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

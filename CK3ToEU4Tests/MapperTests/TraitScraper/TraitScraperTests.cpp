@@ -1,4 +1,4 @@
-#include "../CK3toEU4/Source/Mappers/TraitScraper/TraitScraper.h"
+#include "../CK3ToEU4/Source/Mappers/TraitScraper/TraitScraper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

@@ -1,5 +1,5 @@
-#include "../CK3toEU4/Source/EU4World/FlagFoundry/Recolorer.h"
-#include "../CK3toEU4/Source/EU4World/FlagFoundry/Warehouse.h"
+#include "../CK3ToEU4/Source/EU4World/FlagFoundry/Recolorer.h"
+#include "../CK3ToEU4/Source/EU4World/FlagFoundry/Warehouse.h"
 #include "Magick++.h"
 #include "gtest/gtest.h"
 #include <sstream>

@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
-#include "../../CK3toEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapping.h"
+#include "../../CK3ToEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapping.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

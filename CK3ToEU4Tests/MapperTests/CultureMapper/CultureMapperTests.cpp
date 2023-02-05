@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/Source/Mappers/CultureMapper/CultureMapper.h"
-#include "../../CK3toEU4/Source/Mappers/RegionMapper/RegionMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/CultureMapper/CultureMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/RegionMapper/RegionMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

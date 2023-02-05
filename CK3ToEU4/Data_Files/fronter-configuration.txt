@@ -1,5 +1,5 @@
-﻿name = CK3toEU4
-converterFolder = CK3toEU4
+﻿name = CK3ToEU4
+converterFolder = CK3ToEU4
 backendExePath = CK3ToEU4Converter
 displayName = CK3DISPLAYNAME
 sourceGame = CK3GAME
@@ -7,9 +7,9 @@ targetGame = EU4GAME
 
 enableUpdateChecker = true
 checkForUpdatesOnStartup = true
-latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/CK3toEU4/releases/"
+latestGitHubConverterReleaseUrl = "https://github.com/ParadoxGameConverters/CK3ToEU4/releases/"
 converterReleaseForumThread = "https://forum.paradoxplaza.com/forum/threads/ck3-to-eu4-converter-release-thread.1415137/"
-pagesCommitIdUrl = "https://paradoxgameconverters.com/commit_ids/CK3toEU4.txt"
+pagesCommitIdUrl = "https://paradoxgameconverters.com/commit_ids/CK3ToEU4.txt"
 overwritePlayset = true
 
 requiredFolder = {

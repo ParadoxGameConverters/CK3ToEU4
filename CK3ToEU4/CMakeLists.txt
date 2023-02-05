@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(CK3toEU4)
+project(CK3ToEU4)
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(PROJECT_SOURCE_DIR ${CMAKE_SOURCE_DIR}/Source)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/Release-Linux)
@@ -49,7 +49,7 @@ set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ModLoader/ModLoader.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/ModLoader/ModParser.cpp")
 set(COMMON_SOURCES ${COMMON_SOURCES} "../commonItems/external/zip/src/zip.c")
 
-add_executable(CK3toEU4 
+add_executable(CK3ToEU4 
 	${MAIN_SOURCES}
 	${CONFIGURATION_SOURCES}
 	${CK3WORLD_SOURCES}
@@ -60,10 +60,10 @@ add_executable(CK3toEU4
 	${COMMON_SOURCES}
 )
 
-target_link_libraries(CK3toEU4 LINK_PUBLIC rakaly stdc++fs MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
+target_link_libraries(CK3ToEU4 LINK_PUBLIC rakaly stdc++fs MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
 
-add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
-add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
-add_custom_command(TARGET CK3toEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
+add_custom_command(TARGET CK3ToEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND git rev-parse HEAD > Release-Linux/commit_id.txt)
+add_custom_command(TARGET CK3ToEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND chmod u+x Copy_Files.sh)
+add_custom_command(TARGET CK3ToEU4 POST_BUILD WORKING_DIRECTORY ${CMAKE_SOURCE_DIR} COMMAND ./Copy_Files.sh)
 
-set_target_properties(CK3toEU4 PROPERTIES OUTPUT_NAME "CK3ToEU4Converter")
+set_target_properties(CK3ToEU4 PROPERTIES OUTPUT_NAME "CK3ToEU4Converter")

@@ -1,10 +1,10 @@
-#include "../../CK3toEU4/Source/CK3World/Characters/Character.h"
-#include "../../CK3toEU4/Source/CK3World/Characters/Characters.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasties.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Dynasty.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/House.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/HouseNameScraper.h"
-#include "../../CK3toEU4/Source/CK3World/Dynasties/Houses.h"
+#include "../../CK3ToEU4/Source/CK3World/Characters/Character.h"
+#include "../../CK3ToEU4/Source/CK3World/Characters/Characters.h"
+#include "../../CK3ToEU4/Source/CK3World/Dynasties/Dynasties.h"
+#include "../../CK3ToEU4/Source/CK3World/Dynasties/Dynasty.h"
+#include "../../CK3ToEU4/Source/CK3World/Dynasties/House.h"
+#include "../../CK3ToEU4/Source/CK3World/Dynasties/HouseNameScraper.h"
+#include "../../CK3ToEU4/Source/CK3World/Dynasties/Houses.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

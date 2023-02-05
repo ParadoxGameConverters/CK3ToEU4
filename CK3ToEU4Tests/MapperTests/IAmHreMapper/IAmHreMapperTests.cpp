@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/Mappers/IAmHreMapper/IAmHreMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/IAmHreMapper/IAmHreMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

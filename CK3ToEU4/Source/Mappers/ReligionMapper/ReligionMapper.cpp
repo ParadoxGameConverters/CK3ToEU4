@@ -14,7 +14,7 @@ mappers::ReligionMapper::ReligionMapper()
 	registerKeys();
 	parseFile("configurables/religion_map.txt");
 	clearRegisteredKeywords();
-	Log(LogLevel::Info) << "<> Loaded " << CK3toEU4ReligionMap.size() << " religious links.";
+	Log(LogLevel::Info) << "<> Loaded " << CK3ToEU4ReligionMap.size() << " religious links.";
 }
 
 mappers::ReligionMapper::ReligionMapper(std::istream& theStream)
@@ -43,7 +43,7 @@ void mappers::ReligionMapper::registerKeys()
 			tempStruct.eu4religion = theMapping.getEU4Religion();
 			tempStruct.eu4school = theMapping.getEU4School();
 			tempStruct.religiousHead = tempHead;
-			CK3toEU4ReligionMap.emplace(ck3Religion, tempStruct);
+			CK3ToEU4ReligionMap.emplace(ck3Religion, tempStruct);
 		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
@@ -53,14 +53,14 @@ std::optional<std::string> mappers::ReligionMapper::getEU4ReligionForCK3Religion
 {
 	if (const auto& mapping = ReligionHeadToEU4ReligionMap.find(ck3ReligiousHead); mapping != ReligionHeadToEU4ReligionMap.end())
 		return ReligionHeadToEU4ReligionMap.find(ck3ReligiousHead)->second.eu4religion;
-	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
+	if (const auto& mapping = CK3ToEU4ReligionMap.find(ck3Religion); mapping != CK3ToEU4ReligionMap.end())
 		return mapping->second.eu4religion;
 	return std::nullopt;
 }
 
 std::optional<std::string> mappers::ReligionMapper::getEU4SchoolForCK3Religion(const std::string& ck3Religion) const
 {
-	if (const auto& mapping = CK3toEU4ReligionMap.find(ck3Religion); mapping != CK3toEU4ReligionMap.end())
+	if (const auto& mapping = CK3ToEU4ReligionMap.find(ck3Religion); mapping != CK3ToEU4ReligionMap.end())
 		return mapping->second.eu4school;
 	return std::nullopt;
 }
@@ -297,5 +297,5 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	eu4ReligionStruct CK3Faith;
 	CK3Faith.eu4religion = faithName;
 	CK3Faith.religiousHead = faith.getReligiousHead();
-	CK3toEU4ReligionMap.emplace(origName, CK3Faith);
+	CK3ToEU4ReligionMap.emplace(origName, CK3Faith);
 }

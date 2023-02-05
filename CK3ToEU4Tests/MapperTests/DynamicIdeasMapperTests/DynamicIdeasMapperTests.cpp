@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/DynamicIdeasMapper/DynamicIdeasMapper.h"
 #include "gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 

@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/CK3World/Titles/DynamicTemplate.h"
+#include "../../CK3ToEU4/Source/CK3World/Titles/DynamicTemplate.h"
 #include "gtest/gtest.h"
 
 TEST(CK3World_DynamicTemplateTests, primitivesDefaultToBlank)

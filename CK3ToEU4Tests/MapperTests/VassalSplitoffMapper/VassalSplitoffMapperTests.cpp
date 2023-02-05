@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/Mappers/VassalSplitoffMapper/VassalSplitoffMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/VassalSplitoffMapper/VassalSplitoffMapper.h"
 #include "gtest/gtest.h"
 
 TEST(Mappers_VassalSplitoffMapperTests, factorDefaultsTo1)

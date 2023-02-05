@@ -1,5 +1,5 @@
-#include "../../CK3toEU4/Source/EU4World/Province/EU4Province.h"
-#include "../../CK3toEU4/Source/Mappers/RegionMapper/Area.h"
+#include "../../CK3ToEU4/Source/EU4World/Province/EU4Province.h"
+#include "../../CK3ToEU4/Source/Mappers/RegionMapper/Area.h"
 #include "gtest/gtest.h"
 #include <sstream>
 
