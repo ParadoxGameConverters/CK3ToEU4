@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(CK3toEU4)
+project(CK3ToEU4)
 set(CONVERTER_SOURCE_DIR ${CMAKE_SOURCE_DIR}/${PROJECT_NAME}/Source)
 set(CONVERTER_DIR ${CMAKE_SOURCE_DIR}/${PROJECT_NAME})
 set(FRONTER_DIR ${CMAKE_SOURCE_DIR}/Fronter/)
@@ -95,7 +95,7 @@ file(GLOB EU4WORLD_SOURCES "${CONVERTER_SOURCE_DIR}/EU4World/*.cpp")
 file(GLOB EU4WORLD_SUBDIR_SOURCES "${CONVERTER_SOURCE_DIR}/EU4World/*/*.cpp")
 file(GLOB MAPPERS_SOURCES "${CONVERTER_SOURCE_DIR}/Mappers/*/*.cpp")
 
-add_library(CK3toEU4lib
+add_library(CK3ToEU4lib
 	${CONFIGURATION_SOURCES}
 	${CK3WORLD_SOURCES}
 	${CK3WORLD_SUBDIR_SOURCES}
@@ -103,8 +103,8 @@ add_library(CK3toEU4lib
 	${EU4WORLD_SUBDIR_SOURCES}
 	${MAPPERS_SOURCES}
 )
-target_precompile_headers(CK3toEU4lib PUBLIC ${PCH_SOURCES})
-target_link_libraries(CK3toEU4lib LINK_PUBLIC CommonItems rakaly MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
+target_precompile_headers(CK3ToEU4lib PUBLIC ${PCH_SOURCES})
+target_link_libraries(CK3ToEU4lib LINK_PUBLIC CommonItems rakaly MagickWand-7.Q8 MagickCore-7.Q8 Magick++-7.Q8)
 
 add_executable(CK3ToEU4Converter 
 	${MAIN_SOURCES}
@@ -113,8 +113,8 @@ set_target_properties(CK3ToEU4Converter
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CONVERTER_OUTPUT_DIRECTORY}
 )
-target_precompile_headers(CK3ToEU4Converter REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3ToEU4Converter LINK_PUBLIC CK3toEU4lib)
+target_precompile_headers(CK3ToEU4Converter REUSE_FROM CK3ToEU4lib)
+target_link_libraries(CK3ToEU4Converter LINK_PUBLIC CK3ToEU4lib)
 
 ### FRONTER ###
 
@@ -171,20 +171,20 @@ set(GTEST_SOURCES ${GTEST_SOURCES} "commonItems/external/googletest/googletest/s
 set(GTEST_SOURCES ${GTEST_SOURCES} "commonItems/external/googletest/googlemock/src/gmock-all.cc")
 
 add_executable(
-	CK3toEU4Tests
+	CK3ToEU4Tests
 	${TEST_SOURCES}
 	${TEST_SUB_SOURCES}
 	${TEST_SUB_SUB_SOURCES}
 	${GTEST_SOURCES}
 )
 
-set_target_properties(CK3toEU4Tests
+set_target_properties(CK3ToEU4Tests
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${TEST_OUTPUT_DIRECTORY}
 )
 
-target_precompile_headers(CK3toEU4Tests REUSE_FROM CK3toEU4lib)
-target_link_libraries(CK3toEU4Tests LINK_PUBLIC CK3toEU4lib)
+target_precompile_headers(CK3ToEU4Tests REUSE_FROM CK3ToEU4lib)
+target_link_libraries(CK3ToEU4Tests LINK_PUBLIC CK3ToEU4lib)
 
 file(COPY "CK3ToEU4Tests/TestFiles/configurables" DESTINATION "${TEST_OUTPUT_DIRECTORY}")
 file(COPY "CK3ToEU4Tests/TestFiles/FlagFoundry" DESTINATION "${TEST_OUTPUT_DIRECTORY}")

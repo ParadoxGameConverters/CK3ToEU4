@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/Mappers/HeritageMapper/HeritageMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/HeritageMapper/HeritageMapper.h"
 #include "gtest/gtest.h"
 
 TEST(Mappers_HeritageMapperTests, heritageCanBePinged)

@@ -1,9 +1,9 @@
-#include "../../CK3toEU4/Source/CK3World/Cultures/Culture.h"
-#include "../../CK3toEU4/Source/CK3World/Cultures/Cultures.h"
-#include "../../CK3toEU4/Source/CK3World/Geography/CountyDetail.h"
-#include "../../CK3toEU4/Source/CK3World/Geography/CountyDetails.h"
-#include "../../CK3toEU4/Source/CK3World/Religions/Faith.h"
-#include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
+#include "../../CK3ToEU4/Source/CK3World/Cultures/Culture.h"
+#include "../../CK3ToEU4/Source/CK3World/Cultures/Cultures.h"
+#include "../../CK3ToEU4/Source/CK3World/Geography/CountyDetail.h"
+#include "../../CK3ToEU4/Source/CK3World/Geography/CountyDetails.h"
+#include "../../CK3ToEU4/Source/CK3World/Religions/Faith.h"
+#include "../../CK3ToEU4/Source/CK3World/Religions/Faiths.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

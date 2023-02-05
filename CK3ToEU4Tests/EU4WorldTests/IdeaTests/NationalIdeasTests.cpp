@@ -1,4 +1,4 @@
-#include "../../CK3toEU4/Source/EU4World/Ideas/NationalIdeas.h"
+#include "../../CK3ToEU4/Source/EU4World/Ideas/NationalIdeas.h"
 #include "include/gmock/gmock-matchers.h"
 #include "gtest/gtest.h"
 #include <sstream>

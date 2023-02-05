@@ -1,8 +1,8 @@
-#include "../../CK3toEU4/Source/CK3World/Religions/Faiths.h"
-#include "../../CK3toEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
-#include "../../CK3toEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
-#include "../../CK3toEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
-#include "../../CK3toEU4/Source/Mappers/ReligionMapper/ReligionMapper.h"
+#include "../../CK3ToEU4/Source/CK3World/Religions/Faiths.h"
+#include "../../CK3ToEU4/Source/Mappers/LocalizationMapper/LocalizationMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/ReligionDefinitionMapper/ReligionDefinitionMapper.h"
+#include "../../CK3ToEU4/Source/Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
+#include "../../CK3ToEU4/Source/Mappers/ReligionMapper/ReligionMapper.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

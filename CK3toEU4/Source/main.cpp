@@ -13,7 +13,7 @@ int main(const int argc, const char* argv[])
 		Log(LogLevel::Info) << converterVersion;
 		if (argc >= 2)
 		{
-			Log(LogLevel::Info) << "CK3toEU4 takes no parameters.";
+			Log(LogLevel::Info) << "CK3ToEU4 takes no parameters.";
 			Log(LogLevel::Info) << "It uses configuration.txt, configured manually or by the frontend.";
 		}
 		convertCK3ToEU4(converterVersion);

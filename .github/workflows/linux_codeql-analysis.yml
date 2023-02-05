@@ -48,7 +48,7 @@ jobs:
     - name: Run Tests
       run: |
        cd test/Release-Linux
-       ./CK3toEU4Tests
+       ./CK3ToEU4Tests
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
@@ -103,7 +103,7 @@ jobs:
     - name: Run Tests
       run: |
        cd test/Release-Linux
-       ./CK3toEU4Tests
+       ./CK3ToEU4Tests
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2

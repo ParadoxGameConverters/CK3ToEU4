@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         path:
-          - 'CK3toEU4/Source'
+          - 'CK3ToEU4/Source'
           - 'CK3ToEU4Tests'
     steps:
     - uses: actions/checkout@v3

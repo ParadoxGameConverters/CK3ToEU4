@@ -18,12 +18,12 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={autopf}\CK3toEU4
+DefaultDirName={autopf}\CK3ToEU4
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=commandline
-OutputBaseFilename=CK3toEU4-latest-win-x64
+OutputBaseFilename=CK3ToEU4-latest-win-x64
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -35,8 +35,8 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [InstallDelete]
-Type: filesandordirs; Name: "{app}\CK3toEU4\blankMod"
-Type: filesandordirs; Name: "{app}\CK3toEU4\configurables"
+Type: filesandordirs; Name: "{app}\CK3ToEU4\blankMod"
+Type: filesandordirs; Name: "{app}\CK3ToEU4\configurables"
 
 [Files]
 Source: "Release\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs

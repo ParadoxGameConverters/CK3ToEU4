@@ -1,8 +1,8 @@
 echo on
 rem Copy converter data files
-copy "Data_Files\log.txt" "..\Debug\CK3toEU4\"
-copy "Data_Files\configuration-example.txt" "..\Debug\CK3toEU4\"
-copy "Resources\rakaly.dll" "..\Debug\CK3toEU4\"
+copy "Data_Files\log.txt" "..\Debug\CK3ToEU4\"
+copy "Data_Files\configuration-example.txt" "..\Debug\CK3ToEU4\"
+copy "Resources\rakaly.dll" "..\Debug\CK3ToEU4\"
 
 mkdir "..\Debug\Configuration"
 copy "Data_Files\fronter-configuration.txt" "..\Debug\Configuration\"
@@ -16,14 +16,14 @@ copy "Data_Files\license.txt" "..\Debug\Docs\"
 copy "Data_Files\after_converting.txt" "..\Debug\Docs\"
 
 rem Imagemagick dlls
-xcopy "..\imageMagick\dll-windows-required" "..\Debug\CK3toEU4" /Y /E /I
+xcopy "..\imageMagick\dll-windows-required" "..\Debug\CK3ToEU4" /Y /E /I
 
 rem Create Configurables
-del "..\Debug\CK3toEU4\configurables" /Q
-rmdir "..\Debug\CK3toEU4\configurables" /S /Q
-xcopy "Data_Files\configurables" "..\Debug\CK3toEU4\configurables" /Y /E /I
+del "..\Debug\CK3ToEU4\configurables" /Q
+rmdir "..\Debug\CK3ToEU4\configurables" /S /Q
+xcopy "Data_Files\configurables" "..\Debug\CK3ToEU4\configurables" /Y /E /I
 
 rem Create Blank Mod
-del "..\Debug\CK3toEU4\blankMod" /Q
-rmdir "..\Debug\CK3toEU4\blankMod" /S /Q
-xcopy "Data_Files\blankMod" "..\Debug\CK3toEU4\blankMod" /Y /E /I
+del "..\Debug\CK3ToEU4\blankMod" /Q
+rmdir "..\Debug\CK3ToEU4\blankMod" /S /Q
+xcopy "Data_Files\blankMod" "..\Debug\CK3ToEU4\blankMod" /Y /E /I

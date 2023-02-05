@@ -1,4 +1,4 @@
-#include "../CK3toEU4/Source/Configuration/Configuration.h"
+#include "../CK3ToEU4/Source/Configuration/Configuration.h"
 #include "gtest/gtest.h"
 #include <sstream>
 

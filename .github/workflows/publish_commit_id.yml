@@ -17,8 +17,8 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        destination_file: 'CK3toEU4.txt'
+        destination_file: 'CK3ToEU4.txt'
         user_email: 'idhrendur@hotmail.com'
         user_name: 'idhrendur'
         destination_branch: 'main'
-        commit_message: "Publish CK3toEU4's commit id"
+        commit_message: "Publish CK3ToEU4's commit id"
