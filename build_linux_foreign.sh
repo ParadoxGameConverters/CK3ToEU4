@@ -9,8 +9,5 @@ sudo make install &&
 sudo ldconfig /usr/local/lib &&
 cd ../../ &&
 
-rm -rf build &&
-rm -rf Release-Linux &&
-rm -rf test &&
 cmake -H. -Bbuild &&
-cmake --build build -- -j3
+cmake --build build -- -j5
