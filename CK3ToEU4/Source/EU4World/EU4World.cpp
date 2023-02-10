@@ -141,7 +141,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	if (sourceWorld.getHRETitle())
 	{
 		Log(LogLevel::Info) << "-> Marking HRE Title";
-		markHRETag(theConfiguration, sourceWorld.getHRETitle()->first);
+		markHRETag(theConfiguration, *sourceWorld.getHRETitle(), sourceWorld.getConversionDate(), theConfiguration.getStartDate());
 	}
 	Log(LogLevel::Progress) << "66 %";
 
@@ -1210,21 +1210,42 @@ void EU4::World::resolvePersonalUnions()
 	Log(LogLevel::Info) << "<> Annexed " << annexCounter << " and PUed " << puCounter << " countries.";
 }
 
-void EU4::World::markHRETag(const Configuration& theConfiguration, const std::string& hreTitleName)
+void EU4::World::markHRETag(const Configuration& theConfiguration,
+	 const std::pair<std::string, std::shared_ptr<CK3::Title>>& hreTitle,
+	 const date& conversionDate,
+	 Configuration::STARTDATE startDateOption)
 {
 	if (theConfiguration.getHRE() == Configuration::I_AM_HRE::NONE)
 		return;
-	if (hreTitleName.empty())
+	if (hreTitle.first.empty())
 		return;
-	const auto hreTag = titleTagMapper.getTagForTitle(hreTitleName);
+	const auto hreTag = titleTagMapper.getTagForTitle(hreTitle.first);
 	if (!hreTag)
 	{
-		Log(LogLevel::Warning) << "No known tag for CK3's HRE Title: " << hreTitleName << "! Add it to tag_mappings.txt!";
+		Log(LogLevel::Warning) << "No known tag for CK3's HRE Title: " << hreTitle.first << "! Add it to tag_mappings.txt!";
 		return;
 	}
 	actualHRETag = *hreTag;
 	if (actualHRETag == "HLR")
 		actualHRETag = "HRE";
+
+	Log(LogLevel::Debug) << hreTitle.first << " into " << actualHRETag;
+	if (!countries.contains(actualHRETag))
+	{
+		const auto newCountry = std::make_shared<Country>();
+		newCountry->initializeFromTitle(actualHRETag,
+			 hreTitle,
+			 governmentsMapper,
+			 religionMapper,
+			 cultureMapper,
+			 provinceMapper,
+			 localizationMapper,
+			 rulerPersonalitiesMapper,
+			 conversionDate,
+			 startDateOption);
+		countries.emplace(actualHRETag, newCountry);
+	}
+
 	Log(LogLevel::Info) << "<> Marked " << actualHRETag << " as HRE tag.";
 }
 
