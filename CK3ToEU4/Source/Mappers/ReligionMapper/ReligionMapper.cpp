@@ -247,7 +247,20 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 			if (!match->getProvince().empty())
 				province += match->getProvince() + "\n";
 			if (!match->getUnique().empty())
-				unique = match->getUnique(); // overriding uniques, always.
+			{
+				if (match->getUnique().find("personal_deity = yes") != std::string::npos)
+				{
+					if (eu4ParentReligion.find("germanic_pagan") != std::string::npos || eu4ParentReligion.find("norse_pagan") != std::string::npos)
+					{
+						deityCount++;
+						createPersonalDeities(eu4ParentReligion, deityCount);
+						unique = match->getUnique(); // overriding uniques, always.
+					}
+					// Do nothing, not even override, if the faith is based on neither of the above faiths
+				}
+				else
+					unique = match->getUnique(); // overriding uniques, always.
+			}
 			if (!match->getNonUnique().empty())
 				nonUnique += match->getNonUnique() + "\n";
 		}
@@ -267,6 +280,8 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	newReligion.unique = unique;
 	newReligion.nonUnique = nonUnique;
 	newReligion.icon = religionDefinitionMapper.getNextIcon();
+	if (unique.find("personal_deity = yes") != std::string::npos)
+		newReligion.personalDeityNumber = deityCount;
 	newReligion.staticBlob = staticBlob;
 	newReligion.iconPath = faith.getIconPath();
 	newReligion.parent = eu4ParentReligion;
@@ -298,4 +313,78 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	CK3Faith.eu4religion = faithName;
 	CK3Faith.religiousHead = faith.getReligiousHead();
 	CK3ToEU4ReligionMap.emplace(origName, CK3Faith);
+}
+
+void mappers::ReligionMapper::createPersonalDeities(const std::string parentReligion, const short deityCount)
+{
+	// Personal Deities
+	LocBlock deityBlock;
+	if (parentReligion.find("germanic_pagan") != std::string::npos)
+	{
+		// Names
+		deityBlock.english = "Tiwaz";
+		deityBlock.french = "Tiwaz";
+		deityBlock.german = "Tiwaz";
+		deityBlock.spanish = "Tiwaz";
+		localizations.insert(std::pair("tiwaz_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Wodan";
+		deityBlock.french = "Wodan";
+		deityBlock.german = "Wodan";
+		deityBlock.spanish = "Wodan";
+		localizations.insert(std::pair("wodan_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Dunar";
+		deityBlock.french = "Dunar";
+		deityBlock.german = "Dunar";
+		deityBlock.spanish = "Dunar";
+		localizations.insert(std::pair("dunar_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Frijjo";
+		deityBlock.french = "Frijjo";
+		deityBlock.german = "Frijjo";
+		deityBlock.spanish = "Frijjo";
+		localizations.insert(std::pair("frijjo_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Austro";
+		deityBlock.french = "Austro";
+		deityBlock.german = "Austro";
+		deityBlock.spanish = "Austro";
+		localizations.insert(std::pair("austro_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Fraujaz";
+		deityBlock.french = "Fraujaz";
+		deityBlock.german = "Fraujaz";
+		deityBlock.spanish = "Fraujaz";
+		localizations.insert(std::pair("fraujaz_" + std::to_string(deityCount), deityBlock));
+	}
+	else if (parentReligion.find("norse_pagan") != std::string::npos)
+	{
+		// Names
+		deityBlock.english = "Odin";
+		deityBlock.french = "Odin";
+		deityBlock.german = "Odin";
+		deityBlock.spanish = "Odin";
+		localizations.insert(std::pair("odin_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Freya";
+		deityBlock.french = "Freya";
+		deityBlock.german = "Freya";
+		deityBlock.spanish = "Freya";
+		localizations.insert(std::pair("freya_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Tor";
+		deityBlock.french = "Tor";
+		deityBlock.german = "Tor";
+		deityBlock.spanish = "Tor";
+		localizations.insert(std::pair("tor_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Tyr";
+		deityBlock.french = "Tyr";
+		deityBlock.german = "Tyr";
+		deityBlock.spanish = "Tyr";
+		localizations.insert(std::pair("tyr_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Njord";
+		deityBlock.french = "Njord";
+		deityBlock.german = "Njord";
+		deityBlock.spanish = "Njord";
+		localizations.insert(std::pair("njord_" + std::to_string(deityCount), deityBlock));
+		deityBlock.english = "Snotra";
+		deityBlock.french = "Snotra";
+		deityBlock.german = "Snotra";
+		deityBlock.spanish = "Snotra";
+		localizations.insert(std::pair("snotra_" + std::to_string(deityCount), deityBlock));
+	}
 }
