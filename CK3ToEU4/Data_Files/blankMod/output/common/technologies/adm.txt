@@ -4,6 +4,7 @@ monarch_power = ADM
 ahead_of_time = {
 	production_efficiency = 0.2
 	yearly_corruption = -0.05
+	monthly_russian_modernization = 0.05
 }
 
 # Pre-era techs
