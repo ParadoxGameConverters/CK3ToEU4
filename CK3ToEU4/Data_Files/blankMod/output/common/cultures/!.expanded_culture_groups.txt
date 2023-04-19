@@ -38,6 +38,7 @@ germanic = {
 }
 scandinavian = {
 	norse = { #Moves it from Lost Cultures to here, added in "Lions of the North" to vanilla
+		province = { local_has_carolean = yes }
 		male_names = {
 			Adhalsteinn Aghi Agmundr Agnarr Áki Áleifr Alfarr Alfvin Algautr Ari Arnfinnr Árni Arnórr Arnthórr Arnvidhr Ásbjorn Ásgeirr Ásketill Ásmundr Ásvaldr Audhr Baggi Bárdhr Birgir Bjarni Bjartr Bjorn Brandr Bródhir 
 			Brynjarr Búi Dagfinnr Dagr Danr Egill Eileifr Einarr Eindridhi Eiríkr Erlendr Erlingr Eysteinn Eyvindr Félagi Finnr Flæmingr Fólki Fridhthjófr Fródhi Gauti Gautstafr Geirr Gormr Gudhbrandr Gudhfridhr Gudhini 
@@ -58,6 +59,7 @@ scandinavian = {
 		}
 	}
 	elsinorian = {
+		province = { local_has_carolean = yes }
 		primary = DNL
 		dynasty_names = {
 			Arnórsson Ásgeirsson Benediktsson Bjarnasen Björnsson Eggers Eldjárn Hafstein Hansen
@@ -79,9 +81,18 @@ scandinavian = {
 		primary = NOR
 		dynasty_names = { Skjaeran }
 	}
-	geatish = { primary = SWE }
-	gutish = { primary = GOT }
-	scanian = { primary = SCN }
+	geatish = { 
+		province = { local_has_carolean = yes }
+		primary = SWE 
+	}
+	gutish = { 
+		province = { local_has_carolean = yes }
+		primary = GOT 
+	}
+	scanian = { 
+		province = { local_has_carolean = yes }
+		primary = SCN 
+	}
 }
 british = {
 	hibernic = {
@@ -439,6 +450,7 @@ latin = {
 	oltremare = { primary = KOJ }	
 }
 iberian	= {
+	province = { local_has_tercio = yes }
 	ultramar = { primary = KOJ }
 }
 french = {
@@ -532,28 +544,6 @@ south_slavic = {
 }
 west_slavic = {
 	graphical_culture = easterngfx
-	slovak = {
-		primary = SLO
-		male_names = {
-			Albín Alexander András Andrej Augustín Basil Cyprián Dalibor Dezider Dominik
-			Eugen Fedor Ferdinand František Frico Gabriel Gustáv Imrich Jáchym Ján
-			Janko Jozef Juraj Karol Ladislav Levoslav Marián Marko Martin Matej
-			Michal Mikuláš Milan Miloš Miloslav Miroslav Pavel Pavol Peter Ratislav
-			Rudolf Samuel Sergej Štefan Svetozár Tibor Tomáš Viliam Vladimír Vojtech
-		}
-		female_names = {
-			Maria Anna Alzbeta Ludmila Eva Jaroslava Jarmila Amalia Margareta Hana
-		}
-		dynasty_names = {
-			Stibor Bel Kollar Podmanický Hatnanský Pongrac Bosniak Veseléni Zichy Turzo Andráši
-			Zapolský Palfi Cáki Balaša Báthory
-			Áchim Bázlic Bella Beneš Blaho Catloš Cikker Clementis Daxner Dubcek
-			Figuš-Bystrý Frešo Gojdic Golian Hlinka Hodža Hopko Hurban Hurban-Vajanský Husák
-			Ivanka Kafenda Kardoš Kocak Kupkovic Mach Macudzinski Malár Malovec Markovic
-			Masaryk Móry Moyses Rázus Rohácek Rudnay Selepcéni Sidor Škultéty-Gábriš Šmik
-			Sokol Štefánik Suchon Šverma Tiso Trcka Tuka Turanec Viest Zoch
-		}
-	}
 	old_pommeranian = {
 		primary = POM
 		male_names = {
