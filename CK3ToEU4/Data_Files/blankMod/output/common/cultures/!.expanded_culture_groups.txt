@@ -1041,6 +1041,8 @@ east_asian = {
 korean_g = {
 }
 japanese_g = {
+	country = { has_samurai = yes }
+	province = { local_has_samurai = yes }
 }
 tibetan_group = {
 	gyalrong = {
