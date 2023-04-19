@@ -1,7 +1,7 @@
 #These reforms will replace their vanilla counterparts
 
 veche_republic = {
-	icon = "merchant"
+	icon = "russian_principality"
 	allow_normal_conversion = yes
 	potential = {
 		NOT = { has_reform = tsardom }
@@ -15,15 +15,21 @@ veche_republic = {
 			religion = slavic_pagan
 			religion = slavic_pagan_reformed
 		}
-		culture_group = east_slavic
 		OR = {
-			has_reform = veche_republic
-			have_had_reform = veche_republic
+			culture_group = east_slavic
+			culture_group = slavic
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = veche_republic
+			}
 		}
 	}
 	legacy_equivalent = veche_republic_legacy
 	nation_designer_trigger = {
-		culture_group = east_slavic
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
 		OR = {
 			religion = orthodox
 			religion = monothelite
@@ -36,8 +42,10 @@ veche_republic = {
 	}
 	modifiers = {
 		merchants = 1
-		governing_capacity = 50
-		max_absolutism = -50
+		governing_capacity = 100
+		max_absolutism = 10
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.1
 	}
 	valid_for_nation_designer = yes
 	nation_designer_cost = 40
@@ -53,6 +61,7 @@ veche_republic = {
 	custom_attributes = {
 		enables_plutocratic_idea_group = yes
 		enables_aristocratic_idea_group = no
+		elections_increase_factions_influence = yes
 	}
 	conditional = {
 		allow = {
@@ -75,7 +84,6 @@ veche_republic = {
 		allow = {
 			has_dlc = "Res Publica"
 			has_dlc = "Mare Nostrum"
-			NOT = { has_dlc = "Third Rome" }
 		}
 		can_use_trade_post = yes
 		can_form_trade_league = yes
@@ -83,170 +91,49 @@ veche_republic = {
 	}
 	conditional = {
 		allow = {
-			has_dlc = "Third Rome"
-			NOT = { has_dlc = "Mare Nostrum" }
-			NOT = { has_dlc = "Res Publica" }
-		}
-		government_abilities = {
-			russian_mechanic
-		}
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Third Rome"
 			has_dlc = "Mare Nostrum"
 			NOT = { has_dlc = "Res Publica" }
 		}
-		government_abilities = {
-			russian_mechanic
-		}
 		can_form_trade_league = yes
 		trade_city_reform = trading_city
 	}
 	conditional = {
 		allow = {
-			has_dlc = "Third Rome"
 			NOT = { has_dlc = "Mare Nostrum" }
 			has_dlc = "Res Publica"
 		}
-		government_abilities = {
-			russian_mechanic
-		}
 		can_use_trade_post = yes
 	}
 	conditional = {
-		allow = {
-			has_dlc = "Third Rome"
-			has_dlc = "Mare Nostrum"
-			has_dlc = "Res Publica"
-		}
-		government_abilities = {
-			russian_mechanic
-		}
-		can_use_trade_post = yes
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
-	}
-	duration = 4
-}
-federal_republic = {
-	icon = "constitution"
-	allow_normal_conversion = yes
-	potential = {
-		has_dlc = "American Dream"
-		OR = {
-			AND = {
-				tag = USA
-				NOT = { map_setup = map_setup_random }
+		allow = { 
+			OR = {
+				has_dlc = "Third Rome" 
+				has_dlc = "Domination"
 			}
-			has_reform = federal_republic
-			have_had_reform = federal_republic
 		}
-	}
-	legacy_equivalent = federal_republic_legacy
-	valid_for_nation_designer = yes
-	nation_designer_cost = 15
-	nation_designer_trigger = {
-		has_dlc = "American Dream"
-	}
-	modifiers = {
-		diplomatic_reputation = 1
-		global_spy_defence = 0.1
-		max_absolutism = -30
-	}
-
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
-	}
-	conditional = {
-		allow = {
-			has_dlc = "Common Sense"
+		government_abilities = {
+			russian_mechanic
 		}
-		has_parliament = yes
 		custom_attributes = {
-			blocked_call_diet = yes
+			weaker_russian_ability = yes
 		}
 	}
-	duration = 4
+	duration = 6
 }
-
-prussian_republic_reform = {
-	icon = "prussian_monarchy"
-	allow_normal_conversion = yes
-	potential = {
-		OR = {
-			AND = {
-				tag = PRU
-				NOT = { map_setup = map_setup_random }
-			}
-			has_reform = prussian_monarchy
-			have_had_reform = shaka_regime
-			have_had_reform = prussian_monarchy
-			have_had_reform = prussian_republic_reform
-			have_had_reform = prussian_theocratic_reform
-			has_unlocked_government_reform = {
-				government_reform = prussian_republic_reform
-			}
-		}
-	}
-	trigger = {
-		OR = {
-			is_playing_custom_nation = yes
-			uses_church_aspects = yes
-			uses_fervor = yes
-			religion = anglican #Check to see if "uses_anglican_power = yes" works
-			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_republic_reform
-			}
-		}
-	}
-	valid_for_nation_designer = yes
-	nation_designer_cost = 100
-	legacy_equivalent = prussian_republic
-	
-	modifiers = {
-		war_exhaustion = -0.02
-		monthly_militarized_society = 0.05
-		global_autonomy = -0.075
-		republican_tradition = -0.5
-		max_absolutism = 30
-		governing_capacity_modifier = -0.5
-	}
-	
-	conditional = {
-		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
-	}
-	
-	custom_attributes = {
-		enables_plutocratic_idea_group = yes
-		enables_aristocratic_idea_group = no
-		generals_become_rulers = yes
-	}
-	
-	has_term_election = no
-}
-
 great_veche_republic = {
 	icon = "merchant"
 	allow_normal_conversion = yes
 	potential = {
-		culture_group = east_slavic
 		OR = {
 			religion = orthodox
 			religion = monothelite
 			religion = iconoclast
 			religion = paulician
 			religion = bogomilist
-			religion_group = pagan
-			AND = {
-				religion_group = christian
-				uses_patriarch_authority = yes
-			}
-			tag = UKR
-			tag = RUS
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
 		}
+		culture_group = east_slavic
 		OR = {
 			AND = {
 				tag = RUS
@@ -373,4 +260,93 @@ great_veche_republic = {
 		trade_city_reform = trading_city
 	}
 	duration = 4
+}
+
+prussian_republic_reform = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			AND = {
+				tag = PRU
+				NOT = { map_setup = map_setup_random }
+			}
+			AND = {
+				tag = GER
+				NOT = { map_setup = map_setup_random }
+				OR = {
+					has_reform = prussian_monarchy
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+					is_hegemon_of_type = military_hegemon
+					development_in_provinces = {
+						value = 500
+						culture = prussian
+					}
+				}
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				OR = {
+					has_reform = prussian_republic_reform
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_monarchy_base
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+				}
+			}
+			has_unlocked_government_reform = {
+				government_reform = prussian_republic_reform
+			}
+		}
+	}
+	trigger = {
+		OR = {
+			uses_church_aspects = yes
+			uses_fervor = yes
+			AND = {
+				is_playing_custom_nation = yes
+				OR = {
+					hidden_trigger = {
+						has_reform = prussian_republic_reform
+					}
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_monarchy_base
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+				}
+			}
+			has_unlocked_government_reform_tooltip = {
+				government_reform = prussian_republic_reform
+			}
+		}
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 100
+	legacy_equivalent = prussian_republic
+	
+	modifiers = {
+		war_exhaustion = -0.02
+		monthly_militarized_society = 0.05
+		global_autonomy = -0.075
+		republican_tradition = -0.5
+		max_absolutism = 30
+		governing_capacity_modifier = -0.5
+	}
+	
+	conditional = {
+		allow = { has_dlc = "Rights of Man" }
+		government_abilities = {
+			militarization_mechanic
+		}
+	}
+	
+	custom_attributes = {
+		enables_plutocratic_idea_group = yes
+		enables_aristocratic_idea_group = no
+		generals_become_rulers = yes
+	}
+	
+	has_term_election = no
 }

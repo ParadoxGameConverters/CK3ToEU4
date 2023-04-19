@@ -26,16 +26,17 @@ english_monarchy = {
 	icon = "british_queen"
 	allow_normal_conversion = no
 	potential = {
-		OR = {
-			has_reform = english_monarchy
-			have_had_reform = english_monarchy
-		}
+		has_reform = english_monarchy
+		have_had_reform = english_monarchy
 	}
 	lock_level_when_selected = yes
 	valid_for_nation_designer = yes
 	nation_designer_cost = 15
 	nation_designer_trigger = {
-		has_dlc = "Common Sense"
+		OR = {
+			has_dlc = "Common Sense"
+			has_dlc = "Domination"
+		}
 	}
 	legacy_equivalent = english_monarchy_legacy
 	start_territory_to_estates = 0.3
@@ -48,8 +49,20 @@ english_monarchy = {
 	}
 
 	conditional = {
-		allow = { has_dlc = "Common Sense" }
+		allow = {
+			has_dlc = "Common Sense"
+			NOT = { has_dlc = "Domination" }
+		}
 		has_parliament = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Domination"
+		}
+		has_parliament = yes
+		custom_attributes = {
+			english_parliament = yes
+		}
 	}
 }
 
@@ -78,53 +91,173 @@ ottoman_government = {
 		governing_capacity = 150
 	}
 
+	removed_effect = {
+		remove_country_modifier = tur_weakened_the_harem
+	}
+
 	custom_attributes = {
 		locked_government_type = yes
 	}
-
 	conditional = {
-		allow = { has_dlc = "Cradle of Civilization" }
+		allow = { has_dlc = "Domination" }
 		has_pashas = yes
+		has_janissaries = yes
+		has_harem = yes
+		custom_attributes = {
+			has_harem_events = yes
+			enables_estate_janissaries = yes
+			has_eyalets = yes
+		}
+		government_abilities = {
+			ottoman_decadence_mechanic
+		}
 	}
 	conditional = {
-		allow = { has_dlc = "Rights of Man" }
+		allow = { 
+			has_dlc = "Cradle of Civilization"
+			NOT = { has_dlc = "Domination" }
+		}
+		has_pashas = yes
+		has_janissaries = yes
+	}
+	conditional = {
+		allow = {
+			has_dlc = "Rights of Man" 
+			NOT = { has_dlc = "Domination" }
+		}
 		has_harem = yes
+		custom_attributes = {
+			has_harem_events = yes
+		}
 	}
 }
+
 prussian_monarchy = {
 	icon = "prussian_monarchy"
 	allow_normal_conversion = yes
 	potential = {
+		has_dlc = "Domination"
+		NOT = { has_reform = prussian_monarchy_base }
+		OR = {
+			AND = {
+				tag = PRU
+				OR = {
+					has_mission = emp_brapru_army_reforms_2
+					has_mission = emp_brapru_army_reforms_3
+				}
+				NOT = { map_setup = map_setup_random }
+			}
+			has_unlocked_government_reform = {
+				government_reform = prussian_monarchy
+			}
+			has_reform = prussian_monarchy
+			have_had_reform = prussian_monarchy
+		}
+	}
+	trigger = {
+		OR = {
+			uses_church_aspects = yes
+			uses_fervor = yes
+			has_unlocked_government_reform_tooltip = {
+				government_reform = prussian_monarchy
+			}
+		}
+	}
+	legacy_equivalent = prussian_monarchy_legacy
+
+	modifiers = {
+		war_exhaustion = -0.02
+		global_unrest = -2
+		global_autonomy = -0.075
+		max_absolutism = 10
+		monarch_military_power = 3
+		nobles_loyalty_modifier = 0.1
+		governing_capacity_modifier = -0.5
+	}
+
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			prussian_militarization_mechanic_1
+		}
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			prussian_militarization_mechanic_2
+		}
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			prussian_militarization_mechanic_3
+		}
+	}
+}
+
+prussian_monarchy_base = {
+	icon = "prussian_monarchy"
+	allow_normal_conversion = yes
+	potential = {
+		NOT = { has_reform = prussian_monarchy }
+		NOT = { have_had_reform = prussian_monarchy }
+		OR = {
+			NOT = { has_dlc = "Domination" }
+			NOT = { has_mission = emp_brapru_army_reforms_2 }
+			NOT = { has_mission = emp_brapru_army_reforms_3 }
+		}
 		OR = {
 			AND = {
 				tag = PRU
 				NOT = { map_setup = map_setup_random }
 			}
-			has_reform = prussian_monarchy
-			have_had_reform = shaka_regime
-			have_had_reform = prussian_monarchy
-			have_had_reform = prussian_republic_reform
-			have_had_reform = prussian_theocratic_reform			
+			AND = {
+				tag = GER
+				NOT = { map_setup = map_setup_random }
+				OR = {
+					has_reform = prussian_monarchy_base
+					have_had_reform = prussian_monarchy_base
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+					is_hegemon_of_type = military_hegemon
+					development_in_provinces = {
+						value = 500
+						culture = prussian
+					}
+				}
+			}
+			AND = {
+				is_playing_custom_nation = yes
+				OR = {
+					has_reform = prussian_monarchy_base
+					have_had_reform = prussian_monarchy
+					have_had_reform = prussian_monarchy_base
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
+				}
+			}
 			has_unlocked_government_reform = {
-				government_reform = prussian_monarchy
+				government_reform = prussian_monarchy_base
 			}
 		}
 	}
 	trigger = {
 		OR = {
-			is_playing_custom_nation = yes
 			uses_church_aspects = yes
 			uses_fervor = yes
-			religion = anglican #Check to see if "uses_anglican_power = yes" works
 			AND = {
-				religion_group = christian
+				is_playing_custom_nation = yes
 				OR = {
-					uses_church_aspects = yes
-					uses_fervor = yes
+					hidden_trigger = {
+						has_reform = prussian_monarchy_base
+					}
+					have_had_reform = prussian_monarchy_base
+					have_had_reform = prussian_republic_reform
+					have_had_reform = prussian_theocratic_reform
 				}
 			}
 			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_monarchy
+				government_reform = prussian_monarchy_base
 			}
 		}
 	}
@@ -144,7 +277,9 @@ prussian_monarchy = {
 
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
+		government_abilities = {
+			militarization_mechanic
+		}
 	}
 }
 
@@ -160,16 +295,16 @@ principality = {
 			religion = iconoclast
 			religion = paulician
 			religion = bogomilist
-			religion_group = pagan
-			AND = {
-				religion_group = christian
-				uses_patriarch_authority = yes
-			}
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
 		}
-		culture_group = east_slavic
 		OR = {
-			has_reform = principality
-			have_had_reform = principality
+			culture_group = east_slavic
+			culture_group = slavic
+			AND = {
+				is_playing_custom_nation = yes
+				have_had_reform = principality
+			}
 		}
 	}
 	fixed_rank = 1
@@ -177,51 +312,60 @@ principality = {
 	valid_for_nation_designer = yes
 	nation_designer_cost = 5
 	nation_designer_trigger = {
-		culture_group = east_slavic
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
 		OR = {
 			religion = orthodox
 			religion = monothelite
 			religion = iconoclast
 			religion = paulician
 			religion = bogomilist
-			religion_group = pagan
-			AND = {
-				religion_group = christian
-				uses_patriarch_authority = yes
-			}
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
 		}
 	}
 	modifiers = {
 		global_unrest = -1
-		global_tax_modifier = 0.05
-		governing_capacity = 100
+		global_regiment_cost = -0.05
+		governing_capacity = 200
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.1
 	}
-
 	conditional = {
-		allow = { has_dlc = "Third Rome" }
+		allow = { 
+			OR = {
+				has_dlc = "Third Rome" 
+				has_dlc = "Domination"
+			}
+		}
 		government_abilities = {
 			russian_mechanic
 		}
+		custom_attributes = {
+			weaker_russian_ability = yes
+		}
 	}
 }
+
 tsardom = {
 	icon = "king"
 	allow_normal_conversion = yes
 	potential = {
-		culture_group = east_slavic
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
 		OR = {
 			religion = orthodox
 			religion = monothelite
 			religion = iconoclast
 			religion = paulician
 			religion = bogomilist
-			religion_group = pagan
-			AND = {
-				religion_group = christian
-				uses_patriarch_authority = yes
-			}
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
 			tag = UKR
-			tag = RUS
 		}
 		OR = {
 			AND = {
@@ -242,18 +386,18 @@ tsardom = {
 	nation_designer_cost = 40
 
 	nation_designer_trigger = {
-		culture_group = east_slavic
+		OR = {
+			culture_group = east_slavic
+			culture_group = slavic
+		}
 		OR = {
 			religion = orthodox
 			religion = monothelite
 			religion = iconoclast
 			religion = paulician
 			religion = bogomilist
-			religion_group = pagan
-			AND = {
-				religion_group = christian
-				uses_patriarch_authority = yes
-			}
+			religion = slavic_pagan
+			religion = slavic_pagan_reformed
 		}
 	}
 
@@ -262,16 +406,32 @@ tsardom = {
 		yearly_absolutism = 0.5
 		global_autonomy = -0.05
 		governing_capacity = 350
+		has_streltsy = yes
+		allowed_streltsy_fraction = 0.2
 	}
 
 	conditional = {
 		allow = { has_dlc = "Third Rome" }
+		claim_states = yes
+	}
+	conditional = {
+		allow = { 
+			has_dlc = "Third Rome" 
+			NOT = { has_dlc = "Domination" }
+		}
 		government_abilities = {
 			russian_mechanic
 		}
-		claim_states = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		government_abilities = {
+			russian_mechanic
+			russian_modernization_mechanic
+		}
 	}
 }
+
 mamluk_government = {
 	icon = "mamluk_government"
 	allow_normal_conversion = yes
@@ -316,10 +476,12 @@ mamluk_government = {
 		foreign_slave_rulers = yes
 	}
 }
+
 mughal_government = {
 	icon = "peacock_throne"
 	allow_normal_conversion = yes
 	potential = {
+		has_dlc = "Dharma"
 		AND = {
 			tag = MUG
 			NOT = { map_setup = map_setup_random }
@@ -472,27 +634,18 @@ mughal_government = {
 		western_aryan = {
 			trade_efficiency = 0.05
 		}
+		slavic = {
+			province_warscore_cost = -0.15
+		}
 		#Modded Cultures
 		israelite = {
 			interest = -1
-		}
-		gothic_group = {
-			infantry_power = 0.1
-		}
-		barbaro_germanic = {
-			infantry_cost = -0.15
-		}
-		roman_group = {
-			infantry_shock = 1
 		}
 		equine_group = {
 			cavalry_shock = 1
 		}
 		cat_group = {
 			spy_offence = 0.1
-		}
-		bear_group = {
-			shock_damage_received = -0.05
 		}
 		hedgehog_group = {
 			defensiveness = 0.1
@@ -506,11 +659,23 @@ mughal_government = {
 		elephant_group = {
 			monarch_admin_power = 1
 		}
+		red_panda_group = {
+			technology_cost = -0.05
+		}
 		dragon_group = {
 			monarch_military_power = 1
 		}
-		red_panda_group = {
-			technology_cost = -0.05
+		gothic_group = {
+			infantry_power = 0.1
+		}
+		barbaro_germanic = {
+			infantry_cost = -0.15
+		}
+		roman_group = {
+			infantry_shock = 1
+		}
+		bear_group = {
+			shock_damage_received = -0.05
 		}
 		punic_group = {
 			galley_power = 0.1
@@ -553,27 +718,55 @@ mughal_government = {
 		}
 	}
 }
+
 mansabdari_reform = {
 	icon = "noble_muslim"
 	allow_normal_conversion = yes
 	potential = {
+		OR = {
+			has_dlc = "Dharma"
+			has_dlc = "Domination"
+		}
 		has_reform = mughal_government
 	}
+	trigger = {
+		if = {
+			limit = { has_modifier_locking_military_tier = yes }
+			OR = {
+				has_reform = mansabdari_reform
+				has_not_modifier_locking_military_tier = yes
+			}
+		}
+	}
 	modifiers = {
-		army_tradition_decay = -0.003
-		governing_capacity = 150
+		war_taxes_cost_modifier = -0.5
+		nobles_loyalty_modifier = 0.1
+		nobles_influence_modifier = -0.1
+		nobles_privilege_slots = 1
+	}
+	custom_attributes = {
+		enables_estate_nobles = yes	#This one is active because of the trait below
+		enable_mansabdar_privileges = yes
+	}
+	ai = {
+		factor = 1000
 	}
 }
 zabt_reform = {
 	icon = "general_eastern_administrative"
 	allow_normal_conversion = yes
 	potential = {
+		has_dlc = "Dharma"
 		has_reform = mughal_government
 	}
 	modifiers = {
 		governing_capacity = 150
 	}
+	ai = {
+		factor = 5
+	}
 }
+
 uparaja_reform = {
 	icon = "uparaja_reform"
 	allow_normal_conversion = yes
