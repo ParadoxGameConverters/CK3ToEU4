@@ -1,10 +1,10 @@
 # Version info
 
-version = "0.12L"
-name = "Lollard"
+version = "0.13M"
+name = "Melian"
 source = "CK3"
-minSource = "1.6"
+minSource = "1.8"
 maxSource = "1.8"
 target = "EU4"
-minTarget = "1.34"
-maxTarget = "1.34"
+minTarget = "1.35"
+maxTarget = "1.35"

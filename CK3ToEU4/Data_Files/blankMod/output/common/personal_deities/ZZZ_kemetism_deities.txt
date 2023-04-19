@@ -1,125 +1,143 @@
 amun =
 {
-         global_tax_modifier = 0.1
-         navy_tradition = 1
+	global_tax_modifier = 0.1
+	navy_tradition = 1
 
-         allow = { religion = kemetism }
-         sprite = 55
+	potential = { religion = kemetism }
+	sprite = 55
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-         ai_will_do = {
-                   factor = 1
-                   modifier = {
-                           factor = 2
-                           personality = ai_capitalist
-                   }
-                   modifier = {
-                           factor = 2
-                           personality = ai_militarist
-                   }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}
+	}
 }
 
 maat =
 {
-        stability_cost_modifier = -0.15
-        global_unrest = -1
+	stability_cost_modifier = -0.15
+	global_unrest = -1
 
-        allow = { religion = kemetism }
-        sprite = 56
+	potential = { religion = kemetism }
+	sprite = 56
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-        ai_will_do = {
-                  factor = 1
-                  modifier = {
-                          factor = 3
-                          personality = ai_capitalist
-                  }
-                  modifier = {
-                          factor = 2
-                          personality = ai_diplomat
-                  }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+	}
 }
 
 ra =
 {
-        hostile_attrition = 1.0
-        development_cost = -0.1
+	hostile_attrition = 1.0
+	development_cost = -0.1
 
-        allow = { religion = kemetism }
-        sprite = 57
+	potential = { religion = kemetism }
+	sprite = 57
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-        ai_will_do = {
-                  factor = 1
-                  modifier = {
-                          factor = 2
-                          personality = ai_militarist
-                  }
-                  modifier = {
-                          factor = 0.5
-                          personality = ai_capitalist
-                  }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}
+	}
 }
 
 seth =
 {
-         ae_impact = -0.05
-         global_ship_trade_power = 0.2
+	ae_impact = -0.05
+	global_ship_trade_power = 0.2
 
-         allow = { religion = kemetism }
-         sprite = 58
+	potential = { religion = kemetism }
+	sprite = 58
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-         ai_will_do = {
-                   factor = 1
-                   modifier = {
-                           factor = 3
-                           personality = ai_militarist
-                   }
-                   modifier = {
-                          factor = 0.5
-                          personality = ai_capitalist
-                   }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_capitalist
+		}
+	}
 }
 
 isis =
 {
-        heir_chance = 0.50
-        manpower_recovery_speed = 0.20
+	heir_chance = 0.50
+	manpower_recovery_speed = 0.20
 
-        allow = { religion = kemetism }
-        sprite = 59
+	potential = { religion = kemetism }
+	sprite = 59
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-        ai_will_do = {
-                  factor = 1
-                  modifier = {
-                          factor = 3
-                          personality = ai_diplomat
-                  }
-                  modifier = {
-                          factor = 0.5
-                          personality = ai_militarist
-                  }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}
+	}
 }
 
 anubis =
 {
-        culture_conversion_cost = -0.15
-        discipline = 0.05
+	culture_conversion_cost = -0.15
+	discipline = 0.05
 
-        allow = { religion = kemetism }
-        sprite = 60
+	potential = { religion = kemetism }
+	sprite = 60
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
-        ai_will_do = {
-                  factor = 1
-                  modifier = {
-                          factor = 2
-                          personality = ai_militarist
-                  }
-                  modifier = {
-                          factor = 2
-                          personality = ai_capitalist
-                  }
-        }
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}
+		modifier = {
+			factor = 2
+			personality = ai_capitalist
+		}
+	}
 }

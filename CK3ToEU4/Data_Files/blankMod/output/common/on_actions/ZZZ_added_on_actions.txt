@@ -2,7 +2,7 @@
 
 on_battle_lost_country = {
 	##VANILLA
-	battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
+	#battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
 	random_events = {
 		90 = 0
 		10 = friendship_events.1 #Historical Friendship Broken
@@ -14,7 +14,8 @@ on_battle_lost_country = {
 on_province_owner_change = {
 	##VANILLA
 	events = {
-		japan.1
+		japan.1			#Fall of the current Shogun
+		flavor_tur.207	#Victory over the Knights
 	}
 
 	on_province_owner_change_government_effect = yes
@@ -36,7 +37,6 @@ on_province_owner_change = {
 		remove_province_modifier = sufi_shrine
 	}
 	on_province_owner_change_estate_privileges_effect = yes
-	judaism_on_province_change_religion_or_change_owner_effect = yes
 	imperial_modifiers_on_province_change_culture_or_change_owner_effect = yes
 
 	if = {
@@ -116,5 +116,11 @@ on_province_owner_change = {
 			has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
 		}
 		country_event = { id = ZZZ_enhanced_fetishist.83 }
+	}
+	if = { 
+		limit = { 
+			owner = { NOT = { has_reform = jap_gokaido_reform } }
+		}
+		remove_province_modifier = jap_gokaido_modifier
 	}
 }
