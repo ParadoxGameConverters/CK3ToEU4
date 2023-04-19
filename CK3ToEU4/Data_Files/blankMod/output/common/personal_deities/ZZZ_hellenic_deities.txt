@@ -301,12 +301,15 @@ apollo =
 	tolerance_own = 2
 	prestige = 0.5
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 28
 
@@ -328,12 +331,15 @@ mercury =
 	global_trade_power = 0.1
 	privateer_efficiency = 0.2
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 29
 
@@ -355,12 +361,15 @@ vesta =
 	global_unrest = -1
 	advisor_cost = -0.2
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 30
 
