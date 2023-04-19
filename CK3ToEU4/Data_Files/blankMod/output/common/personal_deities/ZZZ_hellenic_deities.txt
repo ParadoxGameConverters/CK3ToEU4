@@ -6,12 +6,15 @@ jupiter =
 	religious_unity = 0.10
 	legitimacy = 0.1
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 19
 
@@ -37,12 +40,15 @@ luno =
 	yearly_corruption = -0.1
 	core_creation = -0.10
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 20
 
@@ -64,12 +70,15 @@ neptunus =
 	naval_morale = 0.10
 	global_sailors_modifier = 0.10
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 21
 
@@ -103,12 +112,15 @@ venus =
 	heir_chance = 0.5
 	manpower_recovery_speed = 0.1
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 22
 
@@ -130,12 +142,15 @@ mars =
 	leader_land_fire = 1
 	discipline = 0.05
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 23
 
@@ -162,12 +177,15 @@ ceres =
 	global_tax_modifier = 0.1
 	development_cost = -0.1
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 24
 
@@ -189,12 +207,15 @@ vulcan =
 	production_efficiency = 0.1
 	land_maintenance_modifier = -0.1
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 25
 
@@ -216,12 +237,15 @@ minerva =
 	innovativeness_gain = 0.5
 	idea_cost = -0.15
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 26
 
@@ -243,12 +267,15 @@ diana =
 	fire_damage = 0.1
 	province_warscore_cost = -0.10
 
-	allow = {
+	potential = {
 		OR = {
 			religion = hellenic_pagan
 			religion = hellenic_pagan_reformed
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 27
 

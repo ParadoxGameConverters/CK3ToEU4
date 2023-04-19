@@ -3,8 +3,11 @@ tiwaz =
 	discipline = 0.05
 	infantry_power = 0.10
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 49
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -24,8 +27,11 @@ wodan =
 	land_morale = 0.1
 	core_creation = -0.10
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 50
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -45,8 +51,11 @@ dunar =
 	defensiveness = 0.2
 	leader_land_shock = 1
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 51
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -66,8 +75,11 @@ frijjo =
 	diplomatic_upkeep = 1
 	improve_relation_modifier = 0.10
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 52
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -83,8 +95,11 @@ austro =
 	production_efficiency = 0.1
 	manpower_recovery_speed = 0.20
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 53
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -104,8 +119,11 @@ fraujaz =
 	global_trade_goods_size_modifier = 0.1
 	land_attrition = -0.10
 
-	allow = { religion = german_pagan }
+	potential = { religion = german_pagan }
 	sprite = 54
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1

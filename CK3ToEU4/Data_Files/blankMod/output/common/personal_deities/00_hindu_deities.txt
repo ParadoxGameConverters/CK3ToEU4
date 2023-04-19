@@ -5,7 +5,7 @@
  # Edited custom CK3 Hindu religions
 buddha = {
 	sprite = 6
-	allow = { 
+	potential = { 
 		religion_group = dharmic
 		OR = {
 			mission_completed = mnd_maj_candi_shrines
@@ -13,6 +13,9 @@ buddha = {
 			mission_completed = mnd_khm_religion
 		}
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	tolerance_heathen = 2
 	advisor_cost = -0.1
 	ai_will_do = {
@@ -34,10 +37,13 @@ shiva =
 	ae_impact = -0.05
 	core_creation = -0.10
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 1
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -58,10 +64,13 @@ ganesha =
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.20
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 2
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -82,10 +91,13 @@ surya =
 	global_tax_modifier = 0.10
 	trade_efficiency = 0.10
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 3
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -106,10 +118,13 @@ ganga =
 	interest = -0.25
 	build_cost = -0.10
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 4
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -130,10 +145,13 @@ shakti =
 	siege_ability = 0.05
 	discipline = 0.05
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 5
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -154,10 +172,13 @@ vishnu =
 	defensiveness = 0.2
 	global_missionary_strength = 0.02
 
-	allow = {
+	potential = {
 		religion_group = dharmic
 	}
 	sprite = 6
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1

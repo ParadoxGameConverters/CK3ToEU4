@@ -6,8 +6,11 @@ ZZZ_enhanced_desi =
 	build_cost = -0.1
 	development_cost = -0.1
 
-	allow = { religion = khurmazta }
+	potential = { religion = khurmazta }
 	sprite = 13
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -27,8 +30,11 @@ ZZZ_enhanced_parn =
 	spy_offence = 0.1
 	prestige = 0.5
 
-	allow = { religion = khurmazta }
+	potential = { religion = khurmazta }
 	sprite = 14
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -47,12 +53,14 @@ ZZZ_enhanced_nanaiya =
 {
 	diplomatic_reputation = 1
 	devotion = 0.5
-	heir_chance = 0.5
-	reelection_cost = -0.1
 
-	allow = {
+	potential = {
 		religion = khurmazta
+		government = theocracy
 	}
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	sprite = 15
 
@@ -70,8 +78,11 @@ ZZZ_enhanced_weshparkar =
 	global_ship_trade_power = 0.2
 	global_naval_engagement_modifier = 0.1
 
-	allow = { religion = khurmazta }
+	potential = { religion = khurmazta }
 	sprite = 16
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -91,8 +102,11 @@ ZZZ_enhanced_wishaghn =
 	discipline = 0.05
 	army_tradition = 0.5
 
-	allow = { religion = khurmazta }
+	potential = { religion = khurmazta }
 	sprite = 17
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
@@ -113,8 +127,11 @@ ZZZ_enhanced_zurvan =
 	technology_cost = -0.05
 	global_institution_spread = 0.1
 
-	allow = { religion = khurmazta }
+	potential = { religion = khurmazta }
 	sprite = 18
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 
 	ai_will_do = {
 		factor = 1
