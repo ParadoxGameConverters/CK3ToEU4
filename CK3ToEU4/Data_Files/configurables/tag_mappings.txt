@@ -100,6 +100,7 @@ link = { ck3 = k_dacia eu4 = WAL }
 link = { ck3 = d_muntenia eu4 = WAL } # Oltenia => Wallachia
 link = { ck3 = d_oltenia eu4 = WAL } # Muntenia => Wallachia
 link = { ck3 = k_albania eu4 = ALB }
+link = { ck3 = e_latin_empire eu4 = LAE }
 
 # British Isles
 

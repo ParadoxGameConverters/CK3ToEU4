@@ -3,8 +3,11 @@ perkunas =
 	discipline = 0.05
 	leader_land_shock = 1
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 43
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1
@@ -24,8 +27,11 @@ ausrine =
 	diplomatic_upkeep = 1
 	improve_relation_modifier = 0.10
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 44
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1
@@ -41,8 +47,11 @@ saule =
 	production_efficiency = 0.1
 	global_trade_goods_size_modifier = 0.1
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 45
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1
@@ -58,8 +67,11 @@ laima =
 	global_unrest = -1
 	global_tax_modifier = 0.1
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 46
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1
@@ -75,8 +87,11 @@ gabija =
 	hostile_attrition = 1.0
 	defensiveness = 0.2
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 47
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1
@@ -96,8 +111,11 @@ dievas =
 	land_morale = 0.1
 	core_creation = -0.10
 	
-	allow = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
+	potential = { OR = { religion = baltic_pagan religion = baltic_pagan_reformed } }
 	sprite = 48
+	trigger = {}
+	effect = {}
+	removed_effect = {}
 	
 	ai_will_do = {
 		factor = 1

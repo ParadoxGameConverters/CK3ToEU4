@@ -2729,18 +2729,14 @@ defined_text = {
 	text = {
 		localisation_key = meritocracy
 		trigger = {
-			has_reform = celestial_empire
-			has_dlc = "Mandate of Heaven"
+			uses_meritocracy = yes
 		}
 	}
-
+	
 	text = {
 		localisation_key = legitimacy
 		trigger = {
-			OR = {
-				NOT = { has_reform = celestial_empire }
-				NOT = { has_dlc = "Mandate of Heaven" }
-			}
+			uses_meritocracy = no
 		}
 	}
 }
@@ -3550,6 +3546,7 @@ defined_text = {
 	text = {
 		localisation_key = this_parliament
 		trigger = {
+			has_parliament = yes
 			NOT = {
 				OR = {
 					tag = AYD
@@ -3587,6 +3584,7 @@ defined_text = {
 					tag = ICE
 					culture_group = iberian
 					culture_group = east_slavic
+					culture_group = slavic
 					tag = LIT
 					tag = BYZ
 					tag = ROM
@@ -3599,6 +3597,7 @@ defined_text = {
 	text = {
 		localisation_key = this_the_parliament
 		trigger = {
+			has_parliament = yes
 			OR = {
 				tag = AYD
 				tag = CND
@@ -3635,12 +3634,19 @@ defined_text = {
 				tag = ICE
 				culture_group = iberian
 				culture_group = east_slavic
+				culture_group = slavic
 				tag = LIT
 				tag = BYZ
 				tag = ROM
 				culture_group = turko_semitic
 				culture_group = maghrebi
 			}
+		}
+	}
+	text = {
+		localisation_key = obj_parliament
+		trigger = {
+			has_parliament = no
 		}
 	}
 }
@@ -3689,6 +3695,7 @@ defined_text = {
 					tag = ICE
 					culture_group = iberian
 					culture_group = east_slavic
+					culture_group = slavic
 					tag = LIT
 					tag = BYZ
 					tag = ROM
@@ -3737,6 +3744,7 @@ defined_text = {
 				tag = ICE
 				culture_group = iberian
 				culture_group = east_slavic
+				culture_group = slavic
 				tag = LIT
 				tag = BYZ
 				tag = ROM
@@ -3744,6 +3752,37 @@ defined_text = {
 				culture_group = maghrebi
 			}
 		}
+	}
+	text = {
+		localisation_key = obj_parliament
+		trigger = {
+			has_parliament = no
+		}
+	}
+}
+
+defined_text = {
+	name = GetParliamentOrFallbackName
+	random = no
+	text = {
+		localisation_key = this_parliament
+		trigger = {
+			has_parliament = yes
+		}
+	}
+	text = {
+		localisation_key = obj_parliament
+		trigger = {
+			has_parliament = no
+		}
+	}
+}
+
+defined_text = {
+	name = GetParliamentDecisionDescription
+	random = no
+	text = {
+		localisation_key = parliament_decision_description
 	}
 }
 
@@ -3978,6 +4017,58 @@ defined_text = {
 }
 
 defined_text = {
+    name = GetNumForceConvertedCountries
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_forced_conversions
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_FORCE_CONVERTED_COUNTRIES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_of_forced_conversions
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumOfJanissaryDecisions
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = tur_num_of_janissary_decisions
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_JANISSARIES_SLAUGHTERED
+        trigger = {
+            check_variable = {
+                which = tur_num_of_janissary_decisions
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
     name = GetNumWonBattles
 
     text = {
@@ -4098,14 +4189,13 @@ defined_text = {
 	text = {
 		localisation_key = meritocracy
 		trigger = {
-			has_dlc = "Mandate of Heaven"
-			has_reform = celestial_empire
+			uses_meritocracy = yes
 		}
 	}
 	text = {
 		localisation_key = horde_unity
 		trigger = {
-			is_nomad = yes
+			uses_horde_unity = yes
 		}
 	}
 	text = {
@@ -4419,3 +4509,973 @@ defined_text = {
             }
         }
     }
+}
+
+defined_text = {
+	name = GetFoundRussiaMissionTitle
+	text = {
+		localisation_key = mos_rus_found_the_russian_tsardom_title_monarchy
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = mos_rus_found_the_russian_tsardom_title_republic
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+defined_text = {
+	name = GetFoundRussiaMissionDescription
+	text = {
+		localisation_key = mos_rus_found_the_russian_tsardom_description_monarchy
+		trigger = {
+			NOT = { government = republic }
+		}
+	}
+	text = {
+		localisation_key = mos_rus_found_the_russian_tsardom_description_republic
+		trigger = {
+			government = republic
+		}
+	}
+}
+
+defined_text = {
+	name = GetEmpressEmperor
+	text = {
+		localisation_key = EMPRESS
+		trigger = {
+			is_female = yes
+		}
+	}
+	text = {
+		localisation_key = EMPEROR
+		trigger = {
+			is_female = no
+		}
+	}
+}
+
+defined_text = {
+	name = EnableEstateDecisionText
+	text = {
+		localisation_key = ENABLE_ESTATE_DECISION
+	}
+}
+
+defined_text = {
+	name = DisableEstateDecisionText
+	text = {
+		localisation_key = DISABLE_ESTATE_DECISION
+	}
+}
+
+defined_text = {
+	name = HasEstateDecisionText
+	text = {
+		localisation_key = HAS_ESTATE_DECISION
+	}
+}
+
+defined_text = {
+	name = EstateDecisionDescription
+	text = {
+		localisation_key = ESTATE_ACTION_DESCRIPTION
+	}
+}
+
+defined_text = {
+	name = EstateDecisionSharedCooldownTooltip
+	text = {
+		localisation_key = ESTATE_ACTION_SHARED_COOLDOWN
+	}
+}
+
+#Estate focused
+defined_text = {
+	name = GetBrahminsLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_brahmins
+			estate_loyalty = { estate = estate_brahmins loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_brahmins
+			NOT = { estate_loyalty = { estate = estate_brahmins loyalty = 60 } }
+			estate_loyalty = { estate = estate_brahmins loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_brahmins
+			NOT = { estate_loyalty = { estate = estate_brahmins loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetClergyLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_church
+			estate_loyalty = { estate = estate_church loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_church
+			NOT = { estate_loyalty = { estate = estate_church loyalty = 60 } }
+			estate_loyalty = { estate = estate_church loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_church
+			NOT = { estate_loyalty = { estate = estate_church loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetMarathaLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_maratha
+			estate_loyalty = { estate = estate_maratha loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_maratha
+			NOT = { estate_loyalty = { estate = estate_maratha loyalty = 60 } }
+			estate_loyalty = { estate = estate_maratha loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_maratha
+			NOT = { estate_loyalty = { estate = estate_maratha loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetNobilityLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_nobles
+			estate_loyalty = { estate = estate_nobles loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_nobles
+			NOT = { estate_loyalty = { estate = estate_nobles loyalty = 60 } }
+			estate_loyalty = { estate = estate_nobles loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_nobles
+			NOT = { estate_loyalty = { estate = estate_nobles loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetBurghersLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_burghers
+			estate_loyalty = { estate = estate_burghers loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_burghers
+			NOT = { estate_loyalty = { estate = estate_burghers loyalty = 60 } }
+			estate_loyalty = { estate = estate_burghers loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_burghers
+			NOT = { estate_loyalty = { estate = estate_burghers loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetVaisyasLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_vaisyas
+			estate_loyalty = { estate = estate_vaisyas loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_vaisyas
+			NOT = { estate_loyalty = { estate = estate_vaisyas loyalty = 60 } }
+			estate_loyalty = { estate = estate_vaisyas loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_vaisyas
+			NOT = { estate_loyalty = { estate = estate_vaisyas loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetCossacksLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_cossacks
+			estate_loyalty = { estate = estate_cossacks loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_cossacks
+			NOT = { estate_loyalty = { estate = estate_cossacks loyalty = 60 } }
+			estate_loyalty = { estate = estate_cossacks loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_cossacks
+			NOT = { estate_loyalty = { estate = estate_cossacks loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetTribesLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_nomadic_tribes
+			estate_loyalty = { estate = estate_nomadic_tribes loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_nomadic_tribes
+			NOT = { estate_loyalty = { estate = estate_nomadic_tribes loyalty = 60 } }
+			estate_loyalty = { estate = estate_nomadic_tribes loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_nomadic_tribes
+			NOT = { estate_loyalty = { estate = estate_nomadic_tribes loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetDhimmiLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_dhimmi
+			estate_loyalty = { estate = estate_dhimmi loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_dhimmi
+			NOT = { estate_loyalty = { estate = estate_dhimmi loyalty = 60 } }
+			estate_loyalty = { estate = estate_dhimmi loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_dhimmi
+			NOT = { estate_loyalty = { estate = estate_dhimmi loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetJainsLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_jains
+			estate_loyalty = { estate = estate_jains loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_jains
+			NOT = { estate_loyalty = { estate = estate_jains loyalty = 60 } }
+			estate_loyalty = { estate = estate_jains loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_jains
+			NOT = { estate_loyalty = { estate = estate_jains loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetRajputsLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_rajput
+			estate_loyalty = { estate = estate_rajput loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_rajput
+			NOT = { estate_loyalty = { estate = estate_rajput loyalty = 60 } }
+			estate_loyalty = { estate = estate_rajput loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_rajput
+			NOT = { estate_loyalty = { estate = estate_rajput loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetJanissariesLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_janissaries
+			estate_loyalty = { estate = estate_janissaries loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_janissaries
+			NOT = { estate_loyalty = { estate = estate_janissaries loyalty = 60 } }
+			estate_loyalty = { estate = estate_janissaries loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_janissaries
+			NOT = { estate_loyalty = { estate = estate_janissaries loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetEunuchsLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_eunuchs
+			estate_loyalty = { estate = estate_eunuchs loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_eunuchs
+			NOT = { estate_loyalty = { estate = estate_eunuchs loyalty = 60 } }
+			estate_loyalty = { estate = estate_eunuchs loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_eunuchs
+			NOT = { estate_loyalty = { estate = estate_eunuchs loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetGranadaOrAndalusia
+	random = no
+	text = {
+		localisation_key = ADU
+		trigger = {
+			exists = ADU
+		}
+	}
+	text = {
+		localisation_key = GRA
+		trigger = {
+			NOT = { exists = ADU }
+		}
+	}
+}
+
+defined_text = {
+	name = GetPaxBritannica
+	random = no
+	text = {
+		localisation_key = flavor_gbr.199.t
+		trigger = {
+			tag = GBR
+		}
+	}
+	text = {
+		localisation_key = flavor_gbr.199.t.a
+		trigger = {
+			NOT = { tag = GBR }
+		}
+	}
+}
+
+#Added in order to save words for localization
+defined_text = {
+	name = GetActsOfUnionDecisionTitle
+	text = {
+		localisation_key = acts_of_union_debate_title
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = GetActsOfUnionDecisionDesc
+	text = {
+		localisation_key = acts_of_union_debate_desc
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = GetModernizationGain
+	text = {
+		localisation_key = "5.0"
+		trigger = {
+			FROM = { tech_difference = 6 }
+		}
+	}
+	text = {
+		localisation_key = "4.5"
+		trigger = {
+			FROM = { tech_difference = 5 }
+		}
+	}
+	text = {
+		localisation_key = "4.0"
+		trigger = {
+			FROM = { tech_difference = 4 }
+		}
+	}
+	text = {
+		localisation_key = "3.5"
+		trigger = {
+			FROM = { tech_difference = 3 }
+		}
+	}
+	text = {
+		localisation_key = "3.0"
+		trigger = {
+			FROM = { tech_difference = 2 }
+		}
+	}
+	text = {
+		localisation_key = "2.5"
+		trigger = {
+			FROM = { tech_difference = 1 }
+		}
+	}
+	text = {
+		localisation_key = "2.0"
+	}
+}
+defined_text = {
+	name = GetModernizationGiven
+	text = {
+		localisation_key = "5.0"
+		trigger = {
+			ROOT = { tech_difference = 6 }
+		}
+	}
+	text = {
+		localisation_key = "4.5"
+		trigger = {
+			ROOT = { tech_difference = 5 }
+		}
+	}
+	text = {
+		localisation_key = "4.0"
+		trigger = {
+			ROOT = { tech_difference = 4 }
+		}
+	}
+	text = {
+		localisation_key = "3.5"
+		trigger = {
+			ROOT = { tech_difference = 3 }
+		}
+	}
+	text = {
+		localisation_key = "3.0"
+		trigger = {
+			ROOT = { tech_difference = 2 }
+		}
+	}
+	text = {
+		localisation_key = "2.5"
+		trigger = {
+			ROOT = { tech_difference = 1 }
+		}
+	}
+	text = {
+		localisation_key = "2.0"
+	}
+}
+
+defined_text = {
+	name = GetStabilityOrPrestigeLoss
+	random = no
+	text = {
+		localisation_key = stability
+		trigger = {
+			has_stab_reduction_from_dip_action_modifier = no
+		}
+	}
+	text = {
+		localisation_key = prestige
+		trigger = {
+			has_stab_reduction_from_dip_action_modifier = yes
+		}
+	}
+}
+defined_text = {
+	name = GetTradeProtectorateDesc
+	text = {
+		localisation_key = trade_protectorate_desc
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = GetEstateAgendaAutoCompletionFirstString
+	text = {
+		localisation_key = auto_complete_first_string
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = GetEstateAgendaAutoCompletionSecondString
+	text = {
+		localisation_key = auto_complete_second_string
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = TradeGoodsSelectionFirstString
+	text = {
+		localisation_key = trade_goods_selection_string
+		trigger = {
+			always = yes
+		}
+	}
+}
+defined_text = {
+	name = GetCrownPrincePrincess
+	text = {
+		localisation_key = CROWN_PRINCE
+		trigger = {
+			has_female_heir = no
+		}
+	}
+	text = {
+		localisation_key = CROWN_PRINCEESS
+		trigger = {
+			has_female_heir = yes
+		}
+	}
+}
+defined_text = {
+	name = GetPermanentOrEmpty
+	text = {
+		localisation_key = PERMANENT
+		trigger = {
+			has_country_modifier = rus_expanded_administrative_offices
+		}
+	}
+	text = {
+		localisation_key = empty_text
+		trigger = {
+			NOT = { has_country_modifier = rus_expanded_administrative_offices }
+		}
+	}
+}
+defined_text = {
+	name = GetActiveDisaster
+	text = { localisation_key = disaster								trigger = { has_any_disaster = no } }
+	text = { localisation_key = ambrosian_republic_disaster				trigger = { has_disaster = ambrosian_republic_disaster } }
+	text = { localisation_key = bonfire_of_the_vanities_disaster		trigger = { has_disaster = bonfire_of_the_vanities_disaster } }
+	text = { localisation_key = castilian_civil_war						trigger = { has_disaster = castilian_civil_war } }
+	text = { localisation_key = civil_war								trigger = { has_disaster = civil_war } }
+	text = { localisation_key = court_and_country						trigger = { has_disaster = court_and_country } }
+	text = { localisation_key = coup_attempt_disaster					trigger = { has_disaster = coup_attempt_disaster } }
+	text = { localisation_key = dark_age_of_cambodia					trigger = { has_disaster = dark_age_of_cambodia } }
+	text = { localisation_key = decline_of_mali							trigger = { has_disaster = decline_of_mali } }
+	text = { localisation_key = dutch_revolt_disaster					trigger = { has_disaster = dutch_revolt_disaster } }
+	text = { localisation_key = empire_of_china_in_name					trigger = { has_disaster = empire_of_china_in_name } }
+	text = { localisation_key = empire_of_china_nomadic_border			trigger = { has_disaster = empire_of_china_nomadic_border } }
+	text = { localisation_key = english_civil_war						trigger = { has_disaster = english_civil_war } }
+	text = { localisation_key = estate_brahmins_disaster				trigger = { has_disaster = estate_brahmins_disaster } }
+	text = { localisation_key = estate_burghers_disaster				trigger = { has_disaster = estate_burghers_disaster } }
+	text = { localisation_key = estate_church_disaster					trigger = { has_disaster = estate_church_disaster } }
+	text = { localisation_key = estate_cossacks_disaster				trigger = { has_disaster = estate_cossacks_disaster } }
+	text = { localisation_key = estate_dhimmi_disaster					trigger = { has_disaster = estate_dhimmi_disaster } }
+	text = { localisation_key = estate_eunuchs_disaster					trigger = { has_disaster = estate_eunuchs_disaster } }
+	text = { localisation_key = estate_jains_disaster					trigger = { has_disaster = estate_jains_disaster } }
+	text = { localisation_key = estate_janissary_disaster				trigger = { has_disaster = estate_janissary_disaster } }
+	text = { localisation_key = estate_maratha_disaster					trigger = { has_disaster = estate_maratha_disaster } }
+	text = { localisation_key = estate_nobility_disaster				trigger = { has_disaster = estate_nobility_disaster } }
+	text = { localisation_key = estate_nomadic_tribes_disaster			trigger = { has_disaster = estate_nomadic_tribes_disaster } }
+	text = { localisation_key = estate_rajput_disaster					trigger = { has_disaster = estate_rajput_disaster } }
+	text = { localisation_key = estate_vaisyas_disaster					trigger = { has_disaster = estate_vaisyas_disaster } }
+	text = { localisation_key = fall_of_majapahit						trigger = { has_disaster = fall_of_majapahit } }
+	text = { localisation_key = french_revolution						trigger = { has_disaster = french_revolution } }
+	text = { localisation_key = french_wars_of_religion					trigger = { has_disaster = french_wars_of_religion } }
+	text = { localisation_key = granada_succession_war					trigger = { has_disaster = granada_succession_war } }
+	text = { localisation_key = infantes_of_aragon						trigger = { has_disaster = infantes_of_aragon } }
+	text = { localisation_key = internal_conflicts						trigger = { has_disaster = internal_conflicts } }
+	text = { localisation_key = janissary_decadence						trigger = { has_disaster = janissary_decadence } }
+	text = { localisation_key = aspiration_for_liberty					trigger = { has_disaster = aspiration_for_liberty } }
+	text = { localisation_key = ming_crisis								trigger = { has_disaster = ming_crisis } }
+	text = { localisation_key = northern_and_southern_dynasties			trigger = { has_disaster = northern_and_southern_dynasties } }
+	text = { localisation_key = tur_disaster_ottoman_power_struggle		trigger = { has_disaster = tur_disaster_ottoman_power_struggle } }
+	text = { localisation_key = peasant_war								trigger = { has_disaster = peasant_war } }
+	text = { localisation_key = pol_struggle_for_royal_power_disaster	trigger = { has_disaster = pol_struggle_for_royal_power_disaster } }
+	text = { localisation_key = prussian_confederation_disaster			trigger = { has_disaster = prussian_confederation_disaster } }
+	text = { localisation_key = religious_turmoil						trigger = { has_disaster = religious_turmoil } }
+	text = { localisation_key = revolution								trigger = { has_disaster = revolution } }
+	text = { localisation_key = siamese_revolution						trigger = { has_disaster = siamese_revolution } }
+	text = { localisation_key = the_dacke_feud							trigger = { has_disaster = the_dacke_feud } }
+	text = { localisation_key = time_of_troubles						trigger = { has_disaster = time_of_troubles } }
+	text = { localisation_key = war_of_the_roses						trigger = { has_disaster = war_of_the_roses } }
+}
+
+defined_text = {
+	name = GetSpyCostHardCoded
+	random = no
+	text = {
+		localisation_key = "30.00"
+		trigger = {
+			NOT = { full_idea_group = spy_ideas }
+		}
+	}
+	text = {
+		localisation_key = "24.00"
+		trigger = {
+			full_idea_group = spy_ideas
+		}
+	}
+}
+
+defined_text = {
+	name = GetSpyCostHardCodedTributary
+	random = no
+	text = {
+		localisation_key = "100.00"
+		trigger = {
+			NOT = { full_idea_group = spy_ideas }
+		}
+	}
+	text = {
+		localisation_key = "80.00"
+		trigger = {
+			full_idea_group = spy_ideas
+		}
+	}
+}
+
+defined_text = {
+	name = GetJanissaries
+	random = no
+	text = {
+		localisation_key = estate_janissaries
+	}
+}
+
+defined_text = {
+	name = GetEunuchs
+	random = no
+	text = {
+		localisation_key = estate_eunuchs
+	}
+}
+
+# Ex: "[Burghers] have 80% of influence and less than 30 in loyalty"
+defined_text = {
+	name = GetEstate80i30l
+	random = no
+	text = {
+		localisation_key = string_church_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_church
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_brahmins_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_brahmins
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_nobles_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_maratha_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_maratha
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_maratha
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_rajput_estate_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_rajput
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_rajput
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_burghers_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_vaisyas_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_vaisyas
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_cossacks_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_cossacks
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_nomadic_tribes_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_nomadic_tribes
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_nomadic_tribes
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_dhimmi_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_dhimmi
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = string_jains_this
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_jains
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_jains
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_eunuchs
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_eunuchs
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_eunuchs
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = estate_janissaries
+		trigger = {
+			AND = {
+				estate_influence = {
+					estate = estate_janissaries
+					influence = 80
+				}
+				NOT = {
+					estate_loyalty = {
+						estate = estate_janissaries
+						loyalty = 30
+					}
+				}
+			}
+		}
+	}
+}

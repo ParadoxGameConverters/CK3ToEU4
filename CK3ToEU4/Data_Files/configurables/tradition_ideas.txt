@@ -125,7 +125,7 @@ link = { ck3 = { tradition = tradition_legalistic } eu4 = { governing_capacity_m
 link = { ck3 = { tradition = tradition_life_is_just_a_joke } eu4 = { global_unrest = -2 } } 
 link = { ck3 = { tradition = tradition_longbow_competitions } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_lords_of_the_elephant } eu4 = { cavalry_power = 0.15 } } 
-link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = -0.15 } } 
+link = { ck3 = { tradition = tradition_loyal_soldiers } eu4 = { reduced_liberty_desire = 0.15 } } 
 link = { ck3 = { tradition = tradition_malleable_invaders } eu4 = { core_creation = -0.1 years_of_nationalism = -5 } } 
 link = { ck3 = { tradition = tradition_maritime_mercantilism } eu4 = { mercantilism_cost = -0.2 } }
 link = { ck3 = { tradition = tradition_martial_admiration } eu4 = { army_tradition = 1 } } 
