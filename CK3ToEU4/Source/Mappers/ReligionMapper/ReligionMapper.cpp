@@ -315,7 +315,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	CK3ToEU4ReligionMap.emplace(origName, CK3Faith);
 }
 
-void mappers::ReligionMapper::createPersonalDeities(const std::string parentReligion, const short deityCount)
+void mappers::ReligionMapper::createPersonalDeities(const std::string& parentReligion, const short deityCount)
 {
 	// Personal Deities
 	LocBlock deityBlock;

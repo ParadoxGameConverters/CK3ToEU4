@@ -43,7 +43,7 @@ class ReligionMapper: commonItems::parser
 		 ReligionDefinitionMapper& religionDefinitionMapper,
 		 const ReligionGroupScraper& religionGroupScraper,
 		 const LocalizationMapper& localizationMapper);
-	void createPersonalDeities(const std::string parentReligion, const short deityCount);
+	void createPersonalDeities(const std::string& parentReligion, const short deityCount);
 
 	typedef struct eu4ReligionStruct
 	{
