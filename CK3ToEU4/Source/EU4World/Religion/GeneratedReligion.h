@@ -8,6 +8,7 @@ namespace EU4
 struct GeneratedReligion
 {
 	void outputGUI(std::ostream& output) const;
+	void outputPersonalDeities(std::ostream& output) const;
 	void outputRebels(std::ostream& output) const;
 	void outputSounds(std::ostream& output) const;
 
@@ -24,6 +25,7 @@ struct GeneratedReligion
 	std::string parent;
 	std::optional<commonItems::Color> color;
 	int icon = 0;
+	short personalDeityNumber = 0;
 	friend std::ostream& operator<<(std::ostream& output, const GeneratedReligion& religion);
 };
 } // namespace EU4

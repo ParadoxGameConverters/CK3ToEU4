@@ -214,6 +214,11 @@ void EU4::World::outputReligions(const std::string& outputName,
 		std::ofstream religionRebelFile("output/" + outputName + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
+		// Religious Personal Deities
+		std::ofstream religionPersonalDeityFile(
+			 "output/" + outputName + "/common/personal_deities/" + religion.name + "-from-" + religion.parent + "_deities.txt");
+		religion.outputPersonalDeities(religionPersonalDeityFile);
+		religionPersonalDeityFile.close();
 		// Religion Sounds
 		std::ofstream religionSoundFile("output/" + outputName + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
 		religion.outputSounds(religionSoundFile);
