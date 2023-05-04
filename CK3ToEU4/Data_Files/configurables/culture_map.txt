@@ -278,6 +278,7 @@ link = { eu4 = visigothic ck3 = visigothic tech = western gfx = westerngfx }
 
 link = { eu4 = armenian ck3 = armenian ck3 = corduenian tech = eastern gfx = easterngfx }
 link = { eu4 = goths ck3 = greek tech = eastern gfx = easterngfx region = crimea_region region = ruthenia_region region = lower_yik_area }
+link = { eu4 = goths ck3 = crimean_gothic ck3 = greek_gothic ck3 = bosporan ck3 = romano_gothic tech = eastern gfx = easterngfx }
 link = { eu4 = bactrian ck3 = greek tech = eastern gfx = easterngfx region = khorasan_region region = central_asia_region }
 link = { eu4 = pontic_greek ck3 = greek tech = eastern gfx = easterngfx region = caucasia_region region = erzurum_area province = 2304 province = 4315 province = 329 }
 link = { eu4 = pontic_greek ck3 = pontic tech = eastern gfx = easterngfx }
@@ -300,15 +301,18 @@ link = { eu4 = seleucian ck3 = greek_persian tech = eastern gfx = muslimgfx }
 link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
 link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek tech = eastern gfx = easterngfx }
+
+#Caucasian
 link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
 link = { eu4 = circassian ck3 = circassian ck3 = abaza ck3 = adyghes tech = eastern gfx = easterngfx } #It has to be this way or the Circassian outside of Circassia will disappear
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
 link = { eu4 = dagestani ck3 = dagestani ck3 = nakh ck3 = durdzuk tech = eastern gfx = easterngfx }
 link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
 link = { eu4 = georgian ck3 = georgian ck3 = georgian1 ck3 = udi ck3 = caucasian_albanian ck3 = macronian ck3 = colchiscan tech = eastern gfx = easterngfx }
+
+#Chaldean
 link = { eu4 = assyrian ck3 = assyrian ck3 = syriac tech = eastern gfx = easterngfx }
-link = { eu4 = goths ck3 = crimean_gothic ck3 = greek_gothic ck3 = bosporan ck3 = romano_gothic tech = eastern gfx = easterngfx }
-link = { eu4 = coptic ck3 = coptic ck3 = old_egyptian ck3 = coptic_egyptian tech = eastern gfx = easterngfx }
+link = { eu4 = babylonian ck3 = babylonian ck3 = akkadian tech = eastern gfx = muslimgfx }
 
 # I:R Greek
 link = { eu4 = prettanian ck3 = eblanic ck3 = scotinous ck3 = prettanian tech = eastern gfx = easterngfx }
@@ -757,10 +761,12 @@ link = { eu4 = varangian ck3 = varangian ck3 = mikligardrish tech = eastern gfx 
 link = { eu4 = mena_german ck3 = aryan ck3 = gegenjiddisch ck3 = wostiyasite tech = eastern gfx = muslimgfx }
 link = { eu4 = vandal ck3 = vandal ck3 = vandalic ck3 = vandale ck3=vandilian ck3 = romano_vandalic tech = western gfx = westerngfx }
 link = { eu4 = anglosaxon ck3=angle tech=western gfx=westerngfx } # ImperatorToCK3
-## Near East
+
+##Old Mashriqi
 link = { eu4 = aramaic ck3 = aramaic ck3 = helleno_aramaean ck3 = romano_aramaean ck3 = aramaean tech = eastern gfx = muslimgfx }
-link = { eu4 = babylonian ck3 = babylonian ck3 = akkadian tech = eastern gfx = muslimgfx }
+link = { eu4 = coptic ck3 = coptic ck3 = old_egyptian ck3 = coptic_egyptian tech = eastern gfx = easterngfx }
 link = { eu4 = phoenician ck3 = phoenician ck3 = nabatean tech = eastern gfx = muslimgfx }
+
 ## Steppes
 link = { eu4 = scolotian ck3 = scythian tech = nomad_group gfx = muslimgfx region = baltic_region region = poland_region region = ruthenia_region region = crimea_region region = carpathia_region region = balkan_region }
 link = { eu4 = scythian ck3 = scythian ck3 = sakan ck3 = indo_scythian ck3 = bactrian ck3 = dahi_scythian ck3 = amardian tech = nomad_group gfx = muslimgfx }

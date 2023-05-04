@@ -43,6 +43,7 @@ class ReligionMapper: commonItems::parser
 		 ReligionDefinitionMapper& religionDefinitionMapper,
 		 const ReligionGroupScraper& religionGroupScraper,
 		 const LocalizationMapper& localizationMapper);
+	void createPersonalDeities(const std::string& parentReligion, const short deityCount);
 
 	typedef struct eu4ReligionStruct
 	{
@@ -50,6 +51,9 @@ class ReligionMapper: commonItems::parser
 		std::optional<std::string> eu4school;
 		std::optional<std::string> religiousHead;
 	} eu4ReligionStruct;
+
+	short deityCount = 0; // Keeps track of how many personal deity files are created.
+
 	std::map<std::string, eu4ReligionStruct> CK3ToEU4ReligionMap;			  // ck3 faith, EU4 Religion
 	std::map<std::string, eu4ReligionStruct> ReligionHeadToEU4ReligionMap; // ck3 Religious Head Title, EU4 Religion
 	std::map<std::string, LocBlock> localizations;

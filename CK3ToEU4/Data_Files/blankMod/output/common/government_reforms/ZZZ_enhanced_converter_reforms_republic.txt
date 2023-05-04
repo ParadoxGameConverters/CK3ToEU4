@@ -73,15 +73,6 @@ veche_republic = {
 	}
 	conditional = {
 		allow = {
-			has_dlc = "Mare Nostrum"
-			NOT = { has_dlc = "Res Publica" }
-			NOT = { has_dlc = "Third Rome" }
-		}
-		can_form_trade_league = yes
-		trade_city_reform = trading_city
-	}
-	conditional = {
-		allow = {
 			has_dlc = "Res Publica"
 			has_dlc = "Mare Nostrum"
 		}

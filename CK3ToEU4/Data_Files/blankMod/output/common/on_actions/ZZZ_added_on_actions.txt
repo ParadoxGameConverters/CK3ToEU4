@@ -1,6 +1,7 @@
 #Scripted effect for Extra Fetishist cult mechanics.
 
 on_battle_lost_country = {
+	on_battle_ended_effect = yes
 	##VANILLA
 	#battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
 	random_events = {
