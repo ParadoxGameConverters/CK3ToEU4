@@ -151,8 +151,10 @@ link = { ck3 = c_danzig eu4 = DNZ }
 link = { ck3 = k_ruthenia eu4 = KIE }
 link = { ck3 = d_kiev eu4 = KIE }
 link = { ck3 = c_kiev eu4 = KIE }
+link = { capitals = { 547 } eu4 = KIE }
 link = { ck3 = c_krakowska eu4 = KRA }
 link = { ck3 = d_courland eu4 = KUR }
+link = { ck3 = e_lithuania eu4 = LIT }
 link = { ck3 = k_lithuania eu4 = LIT }
 link = { ck3 = d_lithuanians eu4 = LIT }
 link = { ck3 = d_livonia eu4 = LVA }
@@ -165,6 +167,8 @@ link = { ck3 = d_lesser_poland eu4 = POL }
 link = { ck3 = d_prussia eu4 = PRU }
 link = { ck3 = d_prus eu4 = PRU }
 link = { ck3 = c_vidzeme eu4 = RIG }
+link = { ck3 = k_teutonic_order eu4 = TEU }
+link = { ck3 = k_livonian_order eu4 = LIV }
 link = { ck3 = d_teutonic_order eu4 = TEU }
 link = { ck3 = d_livonian_order eu4 = LIV }
 link = { ck3 = k_teutonic_state eu4 = TEU }
@@ -452,6 +456,8 @@ link = { ck3 = c_yoshkar-ola eu4 = KAZ } #Maps to same province as c_kazan
 link = { ck3 = k_muscovy eu4 = MOS }
 link = { ck3 = c_moskva eu4 = MOS }
 link = { capitals = { 575 } eu4 = MOS }
+link = { capitals = { 572 } eu4 = YAR }
+link = { ck3 = k_opolye eu4 = MOS }
 link = { ck3 = k_nogai eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
 link = { ck3 = d_novgorod eu4 = NOV }
@@ -475,6 +481,7 @@ link = { ck3 = d_vepsia eu4 = VPS }
 link = { ck3 = c_yaroslavl eu4 = YAR }
 link = { ck3 = k_pontic_steppe eu4 = ZAZ }
 link = { ck3 = d_yedisan eu4 = ZAZ }
+link = { ck3 = e_rurikid eu4 = RUS }
 
 # Arabia
 
@@ -631,6 +638,7 @@ link = { ck3 = c_mazandaran eu4 = TAB }
 link = { ck3 = c_baduspan eu4 = TAB } #Maps to same province as c_mazandaran
 link = { ck3 = c_tabriz eu4 = TBR }
 link = { ck3 = e_timurids eu4 = TIM }
+link = { ck3 = e_timurid eu4 = TIM }
 link = { ck3 = k_transoxiana eu4 = TRS }
 link = { ck3 = d_yazd eu4 = YZD }
 link = { ck3 = c_yazd eu4 = YZD }
