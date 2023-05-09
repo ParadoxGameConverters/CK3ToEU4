@@ -11,35 +11,38 @@ link = { gov = tribal ck3gov = tribal_government ck3gov = subroman_government ck
 
 
 # Targeted
-# link = { title = k_papal_state gov = theocracy reform = papacy_reform } # Special case handled by the converter internally.
+# link = { ck3title = k_papal_state gov = theocracy reform = papacy_reform } # Special case handled by the converter internally.
 
-link = { title = k_orthodox gov = theocracy reform = leading_clergy_reform }
-link = { title = d_iconoclast gov = theocracy reform = leading_clergy_reform }
+link = { ck3title = k_orthodox gov = theocracy reform = leading_clergy_reform }
+link = { ck3title = d_iconoclast gov = theocracy reform = leading_clergy_reform }
 
-link = { title = d_knights_templar gov = theocracy reform = monastic_order_reform }
-link = { title = d_teutonic_order gov = theocracy reform = monastic_order_reform }
-link = { title = d_knights_hospitaler gov = theocracy reform = monastic_order_reform }
-link = { title = d_hashshashin gov = monarchy reform = feudal_theocracy }
-link = { title = d_bektashi gov = monarchy reform = feudal_theocracy }
-link = { title = d_haruriyyah gov = monarchy reform = feudal_theocracy }
-link = { title = d_jomsvikings gov = theocracy reform = monastic_order_reform }
-link = { title = d_immortals gov = theocracy reform = monastic_order_reform }
-link = { title = d_zealots gov = theocracy reform = monastic_order_reform }
-link = { title = d_holy_sepulchre gov = theocracy reform = monastic_order_reform }
-link = { title = d_saint_anthony gov = theocracy reform = monastic_order_reform }
-link = { title = d_saint_addai gov = theocracy reform = monastic_order_reform }
-link = { title = d_sky_lords gov = theocracy reform = monastic_order_reform }
-link = { title = d_spirit_guardians gov = theocracy reform = monastic_order_reform }
-link = { title = d_warriors_perun gov = theocracy reform = monastic_order_reform }
-link = { title = d_chosen_perkunas gov = theocracy reform = monastic_order_reform }
-link = { title = d_sons_kaleva gov = theocracy reform = monastic_order_reform }
-link = { title = d_huitzilopochtli gov = theocracy reform = monastic_order_reform }
-link = { title = d_knights_santiago gov = theocracy reform = monastic_order_reform }
-link = { title = d_knights_calatrava gov = theocracy reform = monastic_order_reform }
-link = { title = d_followers_arjuna gov = theocracy reform = monastic_order_reform }
-link = { title = d_ashokas_chosen gov = theocracy reform = monastic_order_reform }
-link = { title = d_bulls_rishabha gov = theocracy reform = monastic_order_reform }
-link = { title = d_zun_warriors gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_knights_templar gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_teutonic_order gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_knights_hospitaler gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_hashshashin gov = monarchy reform = feudal_theocracy }
+link = { ck3title = d_bektashi gov = monarchy reform = feudal_theocracy }
+link = { ck3title = d_haruriyyah gov = monarchy reform = feudal_theocracy }
+link = { ck3title = d_jomsvikings gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_immortals gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_zealots gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_holy_sepulchre gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_saint_anthony gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_saint_addai gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_sky_lords gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_spirit_guardians gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_warriors_perun gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_chosen_perkunas gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_sons_kaleva gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_huitzilopochtli gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_knights_santiago gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_knights_calatrava gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_followers_arjuna gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_ashokas_chosen gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_bulls_rishabha gov = theocracy reform = monastic_order_reform }
+link = { ck3title = d_zun_warriors gov = theocracy reform = monastic_order_reform }
+link = { ck3title = k_livonian_order gov = theocracy reform = monastic_order_reform }
+link = { ck3title = k_teutonic_order gov = theocracy reform = monastic_order_reform }
 
-link = { title = d_sunni gov = theocracy reform = leading_clergy_reform }
-link = { title = d_shiite gov = theocracy reform = leading_clergy_reform }
+
+link = { ck3title = d_sunni gov = theocracy reform = leading_clergy_reform }
+link = { ck3title = d_shiite gov = theocracy reform = leading_clergy_reform }
