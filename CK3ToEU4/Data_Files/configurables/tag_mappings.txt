@@ -968,7 +968,7 @@ link = { ck3 = d_yatenga eu4 = YAT }
 link = { ck3 = c_yatenga eu4 = YAT }
 link = { ck3 = c_sena eu4 = YAT } #Maps to the same province as c_yatenga
 link = { ck3 = d_diafunu eu4 = ZAF }
-link = { ck3 = c_guidimaka eu4 = ZAF 
+link = { ck3 = c_guidimaka eu4 = ZAF }
 link = { ck3 = c_yelimane eu4 = ZAF } #Maps to the same province as c_guidimaka
 link = { ck3 = c_kingui eu4 = ZAF } #Maps to the same province as c_guidimaka
 link = { ck3 = c_kingui eu4 = ZAF }
