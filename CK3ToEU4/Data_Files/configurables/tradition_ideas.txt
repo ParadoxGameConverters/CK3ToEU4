@@ -201,6 +201,9 @@ link = { ck3 = { tradition = tradition_fp2_ritualised_friendship } eu4 = { impro
 link = { ck3 = { tradition = tradition_fp2_strategy_gamers } eu4 = { movement_speed = 0.1 } }
 link = { ck3 = { tradition = tradition_fp2_malleable_subjects } eu4 = { liberty_desire_from_subject_development = -0.1 } }
 
+### 1.9.0 - New Tradition
+link = { ck3 = { tradition = tradition_ep2_avid_falconers } eu4 = { prestige = 0.5 } }
+
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
 link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic idea_name = fin_siberian_frontier } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }
