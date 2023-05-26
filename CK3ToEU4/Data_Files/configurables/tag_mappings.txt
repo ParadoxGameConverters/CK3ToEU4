@@ -286,7 +286,7 @@ link = { ck3 = c_oldenburg eu4 = OLD }
 link = { ck3 = d_rhine eu4 = PAL }
 link = { ck3 = k_pomerania eu4 = POM }
 link = { ck3 = d_pommerania eu4 = POM }
-link = { ck3 = d_pomerelia eu4 = POM } #Polish Pommerania
+link = { ck3 = d_pomerelia eu4 = DNZ } #Polish Pommerania
 link = { ck3 = c_ravensburg eu4 = RVA }
 link = { ck3 = k_saxony eu4 = SAX }
 link = { ck3 = k_grand_saxony eu4 = SAX }
@@ -1293,6 +1293,8 @@ link = { ck3 = e_ottomans eu4 = TUR }
 link = { ck3 = e_keitas eu4 = MAL }
 link = { ck3 = e_maurya eu4 = BHA }
 link = { ck3 = e_song eu4 = SNG }
+link = { ck3 = e_balgarsko eu4 = BUL }
+link = { ck3 = k_balgarsko eu4 = BUL }
 
 link = { ck3 = k_sabbah eu4 = HAH }
 link = { ck3 = k_jabalid eu4 = HAH }
@@ -1300,4 +1302,9 @@ link = { ck3 = e_gediminid eu4 = LIT }
 link = { ck3 = e_knytling eu4 = ENS } # Empire of the North Sea
 link = { ck3 = k_normandie eu4 = NRM }
 link = { ck3 = k_piast eu4 = POL }
+link = { ck3 = k_ludolfinger eu4 = SAX }
+link = { ck3 = k_bassenheim eu4 = TEU }
+link = { ck3 = k_balk eu4 = LIV }
+link = { ck3 = e_sangama eu4 = VIJ }
+link = { ck3 = e_borjigin eu4 = MGE }
 
