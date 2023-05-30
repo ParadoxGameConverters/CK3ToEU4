@@ -679,7 +679,7 @@ link = { eu4 = ainu ck3 = ainu tech = chinese gfx = inuitgfx }
 # Israelite
 link = { eu4 = knaanic ck3 = ashkenazi ck3 = sephardi ck3 = hebrew tech = eastern gfx = easterngfx region = poland_region region = baltic_region region = russia_region region = ruthenia_region region = crimea_region }
 link = { eu4 = magogic ck3 = ashkenazi ck3 = sephardi ck3 = hebrew tech = nomad_group gfx = easterngfx region = ural_region region = west_siberia_region region = central_asia_region region = caucasia_region }
-link = { eu4 = magogic ck3 = juhuro ck3 = gruzinim tech = eastern gfx = easterngfx }
+link = { eu4 = magogic ck3 = juhuro ck3 = gruzinim ck3 = bavlim tech = eastern gfx = easterngfx }
 link = { eu4 = yevanic ck3 = ashkenazi ck3 = sephardi ck3 = hebrew tech = eastern gfx = easterngfx region = carpathia_region region = balkan_region region = anatolia_region }
 link = { eu4 = mizrahi ck3 = ashkenazi ck3 = sephardi ck3 = hebrew tech = muslim gfx = muslimgfx region = persia_superregion region = arabia_region region = india_superregion }
 link = { eu4 = israeli ck3 = ashkenazi ck3 = sephardi ck3 = hebrew tech = eastern gfx = easterngfx region = mashriq_region }
