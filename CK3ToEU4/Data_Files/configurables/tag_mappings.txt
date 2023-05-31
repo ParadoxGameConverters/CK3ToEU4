@@ -151,7 +151,6 @@ link = { ck3 = c_danzig eu4 = DNZ }
 link = { ck3 = k_ruthenia eu4 = KIE }
 link = { ck3 = d_kiev eu4 = KIE }
 link = { ck3 = c_kiev eu4 = KIE }
-link = { capitals = { 547 } eu4 = KIE }
 link = { ck3 = c_krakowska eu4 = KRA }
 link = { ck3 = d_courland eu4 = KUR }
 link = { ck3 = e_lithuania eu4 = LIT }
@@ -163,7 +162,8 @@ link = { ck3 = c_odoyev eu4 = OKA }
 link = { ck3 = c_novosil eu4 = OKA } #Maps to same province as c_odoyev
 link = { ck3 = k_poland eu4 = POL }
 link = { ck3 = d_poloniae eu4 = POL }
-link = { ck3 = d_lesser_poland eu4 = POL }
+link = { ck3 = d_wielkopolska eu4 = POL }
+link = { ck3 = d_lesser_poland eu4 = KRA }
 link = { ck3 = d_prussia eu4 = PRU }
 link = { ck3 = d_prus eu4 = PRU }
 link = { ck3 = c_vidzeme eu4 = RIG }
@@ -436,7 +436,7 @@ link = { ck3 = k_armenian_principality eu4 = ARM }
 link = { ck3 = k_old_armenia eu4 = ARM }
 link = { ck3 = d_greater_armenia eu4 = ARM }
 link = { ck3 = c_astrakhan eu4 = AST }
-link = { capitals = { 5311 } eu4 = AST } # Kuma -> Astrakhan
+link = { capitals = { 464 } eu4 = AST } # Kuma -> Astrakhan
 link = { ck3 = c_beloozero eu4 = BLO }
 link = { ck3 = k_bashkiria eu4 = BSH }
 link = { ck3 = d_bashkiria eu4 = BSH }
@@ -455,8 +455,8 @@ link = { ck3 = c_kazan eu4 = KAZ }
 link = { ck3 = c_yoshkar-ola eu4 = KAZ } #Maps to same province as c_kazan
 link = { ck3 = k_muscovy eu4 = MOS }
 link = { ck3 = c_moskva eu4 = MOS }
-link = { capitals = { 575 } eu4 = MOS }
-link = { capitals = { 572 } eu4 = YAR }
+link = { capitals = { 295 } eu4 = MOS }
+link = { capitals = { 309 } eu4 = YAR }
 link = { ck3 = k_opolye eu4 = MOS }
 link = { ck3 = k_nogai eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
@@ -470,7 +470,7 @@ link = { ck3 = d_perm eu4 = PRM }
 link = { ck3 = c_perm eu4 = PRM }
 link = { ck3 = c_sebur eu4 = PRM } #Maps to same province as c_perm
 link = { ck3 = c_pskov eu4 = PSK }
-link = { capitals = { 574 } eu4 = RSO }
+link = { capitals = { 4147 } eu4 = RSO }
 link = { ck3 = e_russia eu4 = UKR }
 link = { ck3 = e_russian_empire eu4 = RUS }	   
 link = { ck3 = d_ryazan eu4 = RYA }
@@ -481,7 +481,7 @@ link = { ck3 = d_vepsia eu4 = VPS }
 link = { ck3 = c_yaroslavl eu4 = YAR }
 link = { ck3 = k_pontic_steppe eu4 = ZAZ }
 link = { ck3 = d_yedisan eu4 = ZAZ }
-link = { ck3 = e_rurikid eu4 = RUS }
+link = { ck3 = e_rurikid eu4 = UKR }
 
 # Arabia
 
