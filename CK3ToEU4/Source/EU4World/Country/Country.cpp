@@ -1226,14 +1226,12 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms.clear();
 			details.reforms = {"english_monarchy"};
 		}
-		/*
-		// Ottoman Government (Renamed in converter) - currently disabled due to decadence being tied to TUR alone.
+		// Berylik government. Ottoman Government (Renamed in converter) is currently disabled due to decadence being tied to TUR alone.
 		else if (muslimReligions.count(details.religion) && governmentType == "absolute")
 		{
 			details.reforms.clear();
-			details.reforms = {"ottoman_government"};
+			details.reforms = {"beylik_government"};
 		}
-		*/
 		// Autocracy, also the fallback
 		else // if (governmentType == "absolute")
 		{
