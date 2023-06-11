@@ -778,6 +778,9 @@ doctrine_witchcraft_shunned  = {
 
 doctrine_witchcraft_accepted  = {
 }
+
+doctrine_witchcraft_virtuous  = {
+}
 ##Gender
 doctrine_gender_male_dominated = {
 }
@@ -859,6 +862,8 @@ doctrine_clerical_function_alms_and_pacification = {
 doctrine_clerical_function_recruitment = {
 }
 doctrine_pilgrimage_encouraged = {
+}
+doctrine_pilgrimage_mandatory = {
 }
 doctrine_temple_authority = {
 }
@@ -1050,6 +1055,9 @@ heresy_hostility_doctrine = {
 }
 ##Nudity
 special_doctrine_naked_priests = {
+}
+## ?
+special_doctrine_not_allowed_to_hof = {
 }
 ##Unreformed
 unreformed_faith_doctrine = {
