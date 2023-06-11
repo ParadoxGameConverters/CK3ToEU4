@@ -343,3 +343,23 @@ pagan = {
 		uses_karma = yes
 	}
 }
+
+dharmic = {
+	ajivika = {
+		icon = 173
+		color = { 26 153 0 }
+		country = {  # copied from jain
+			tolerance_heathen = 2
+			tolerance_heretic = 2
+			religious_unity = 0.5
+		}
+		province = {  # copied from jain
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {  # copied from jain
+			religious_unity = 0.5
+		}
+		
+		heretic = { MISGUIDED }
+	}
+}
