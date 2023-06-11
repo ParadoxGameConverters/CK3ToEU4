@@ -126,7 +126,7 @@ link = { eu4 = khurramism ck3 = khurramism }
 # Zunism
 link = { eu4 = zun_pagan ck3 = zun_pagan }
 
-# IMP:CK3 addition
+# IR:CK3 addition
 ## Celtic
 link = { eu4 = druidism ck3 = celtic_pagan ck3 = celtic_pagan_old }
 link = { eu4 = briton_pagan ck3 = briton_paganism }
@@ -145,6 +145,13 @@ link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 ## Egyptian
 link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
 link = { eu4 = atenism ck3 = atenist_pagan }
+## Ajivika
+link = {
+	eu4 = ajivika
+	ck3 = makkhalist
+	ck3 = nandanist
+	ck3 = puranist
+}
 ## Others
 link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
 link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old ck3 = dacian_pagan ck3 = thracian_pagan }
