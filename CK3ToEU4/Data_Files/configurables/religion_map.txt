@@ -53,7 +53,7 @@ link = { eu4 = cainitism ck3 = cainitism }
 # Finno-Ugric
 link = { eu4 = finnish_pagan ck3 = finnish_pagan ck3 = erzya_pagan ck3 = moksha_pagan ck3 = mari_pagan ck3 = udmurt_pagan ck3 = sami_pagan ck3 = komi_pagan }
 # Siberian
-link = { eu4 = siberian_pagan ck3 = siberian_pagan }
+link = { eu4 = siberian_pagan ck3 = siberian_pagan ck3 = yzng ck3 = bugaism ck3 = abkaism ck3 = muism }
 # Germanic
 link = { eu4 = norse_pagan ck3 = norse_pagan }
 link = { eu4 = germanic_pagan ck3 = germanic_pagan }
@@ -146,12 +146,7 @@ link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 link = { eu4 = kemetism ck3 = egyptian_pagan ck3 = egyptian_pagan_old }
 link = { eu4 = atenism ck3 = atenist_pagan }
 ## Ajivika
-link = {
-	eu4 = ajivika
-	ck3 = makkhalist
-	ck3 = nandanist
-	ck3 = puranist
-}
+link = { eu4 = ajivika ck3 = makkhalist ck3 = nandanist ck3 = puranist }
 ## Others
 link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
 link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old ck3 = dacian_pagan ck3 = thracian_pagan }
@@ -165,7 +160,7 @@ link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cul
 link = { eu4 = protestant ck3 = protestant }
 link = { eu4 = reformed ck3 = reformed }
 link = { eu4 = confucianism ck3 = tianrenganying ck3 = sanjiaoheliu ck3 = lixue ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
-link = { eu4 = shinto ck3 = shinto ck3 = ainuism }
+link = { eu4 = shinto ck3 = shinto ck3 = ainuism ck3 = ainu_paganism }
 
 # Mod: RICE
 link = { eu4 = shamanism ck3 = guanche_pagan }
