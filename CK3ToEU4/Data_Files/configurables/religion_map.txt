@@ -126,7 +126,7 @@ link = { eu4 = khurramism ck3 = khurramism }
 # Zunism
 link = { eu4 = zun_pagan ck3 = zun_pagan }
 
-# IR:CK3 addition
+# IRToCK3 addition
 ## Celtic
 link = { eu4 = druidism ck3 = celtic_pagan ck3 = celtic_pagan_old }
 link = { eu4 = briton_pagan ck3 = briton_paganism }
@@ -152,6 +152,7 @@ link = { eu4 = cybelene ck3 = anatolian_pagan ck3 = anatolian_pagan_old }
 link = { eu4 = zamolxism ck3 = dacian_pagan ck3 = dacian_pagan_old ck3 = dacian_pagan ck3 = thracian_pagan }
 link = { eu4 = shamanism ck3 = berber_pagan ck3 = berber_pagan_old ck3 = gurzil ck3 = berber_pagan ck3 = african_solar ck3 = msoura ck3 = mastimani ck3 = north_african_acham_pagan ck3 = illyrian_pagan }
 link = { eu4 = iberian_pagan ck3 = iberian_pagan ck3 = iberian_pagan_old }
+link = { eu4 = animism ck3 = burmic } # Natkokwe, animistic and polytheistic worship of nats and other spirits or ancestors
 
 # Mod: Sunset Invasion
 link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }

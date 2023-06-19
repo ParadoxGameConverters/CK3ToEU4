@@ -7,6 +7,8 @@ link = { gov = monarchy ck3gov = feudal_government ck3gov = clan_government ck3g
 link = { gov = theocracy ck3gov = theocracy_government ck3gov = holy_order_government ck3gov = holy_order_government_2 }
 link = { gov = republic ck3gov = republic_government ck3gov = mercenary_government ck3gov = city_state_government }
 link = { gov = tribal ck3gov = tribal_government ck3gov = subroman_government ck3gov = high_tribal_government ck3gov = nomad_government ck3gov = nomadic_government }
+# from IRToCK3
+link = { gov = theocracy ck3gov = eremitic_government }
 
 
 
