@@ -465,7 +465,7 @@ link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx
 link = { eu4 = ilmenian ck3 = ilmenian ck3 = krivich ck3 = vyatichi ck3 = poloch tech = eastern gfx = easterngfx }
 link = { eu4 = volhynian ck3 = volhynian ck3 = polyan  ck3 = dregovich ck3 = drevlian ck3 = drevlyan tech = eastern gfx = easterngfx }
 link = { eu4 = severian ck3 = severian tech = eastern gfx = easterngfx }
-link = { eu4 = chrobatian ck3 = belocroat ck3 = white_croatian tech = eastern gfx = easterngfx }
+link = { eu4 = chrobatian ck3 = belocroat ck3 = white_croatian ck3 = chrobatian tech = eastern gfx = easterngfx }
 link = { eu4 = kishinyov ck3 = tiverian tech = eastern gfx = easterngfx }
 
 # West Slavic

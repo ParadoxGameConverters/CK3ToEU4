@@ -319,6 +319,7 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 {
 	// Personal Deities
 	LocBlock deityBlock;
+	LocBlock descBlock;
 	if (parentReligion.find("germanic_pagan") != std::string::npos)
 	{
 		// Names
@@ -327,31 +328,37 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Tiwaz";
 		deityBlock.spanish = "Tiwaz";
 		localizations.insert(std::pair("tiwaz_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("tiwaz_" + std::to_string(deityCount) + "_desc", deityBlock));
 		deityBlock.english = "Wodan";
 		deityBlock.french = "Wodan";
 		deityBlock.german = "Wodan";
 		deityBlock.spanish = "Wodan";
 		localizations.insert(std::pair("wodan_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("wodan_" + std::to_string(deityCount) + "_desc", deityBlock));
 		deityBlock.english = "Dunar";
 		deityBlock.french = "Dunar";
 		deityBlock.german = "Dunar";
 		deityBlock.spanish = "Dunar";
 		localizations.insert(std::pair("dunar_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("dunar_" + std::to_string(deityCount) + "_desc", deityBlock));
 		deityBlock.english = "Frijjo";
 		deityBlock.french = "Frijjo";
 		deityBlock.german = "Frijjo";
 		deityBlock.spanish = "Frijjo";
 		localizations.insert(std::pair("frijjo_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("frijjo_" + std::to_string(deityCount) + "_desc", deityBlock));
 		deityBlock.english = "Austro";
 		deityBlock.french = "Austro";
 		deityBlock.german = "Austro";
 		deityBlock.spanish = "Austro";
 		localizations.insert(std::pair("austro_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("austro_" + std::to_string(deityCount) + "_desc", deityBlock));
 		deityBlock.english = "Fraujaz";
 		deityBlock.french = "Fraujaz";
 		deityBlock.german = "Fraujaz";
 		deityBlock.spanish = "Fraujaz";
 		localizations.insert(std::pair("fraujaz_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("fraujaz_" + std::to_string(deityCount) + "_desc", deityBlock));
 	}
 	else if (parentReligion.find("norse_pagan") != std::string::npos)
 	{
@@ -360,31 +367,61 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.french = "Odin";
 		deityBlock.german = "Odin";
 		deityBlock.spanish = "Odin";
+		descBlock.english = "Odin is the major god of the Norse pantheon, commonly associated with war, victory and death.";
+		descBlock.french = "Odin est le dieu principal du panthéon norrois, et est souvent associé à la guerre, la victoire et la mort.";
+		descBlock.german = "Odin ist der Hauptgott der nordischen Ruhmeshalle und wird allgemein mit Krieg, Sieg und Tod assoziiert.";
+		descBlock.spanish = "Odín es el dios principal del Panteón nórdico, generalmente asociado con la guerra, la victoria y la muerte.";
 		localizations.insert(std::pair("odin_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("odin_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Freya";
 		deityBlock.french = "Freya";
 		deityBlock.german = "Freya";
 		deityBlock.spanish = "Freya";
+		descBlock.english = "Freyja is the goddess commonly worshipped for her love, beauty, fertility and her promises of wealth.";
+		descBlock.french = "Freya est une déesse souvent vénérée pour l'amour, la beauté, la fertilité et ses promesses de richesse.";
+		descBlock.german = "Freya ist die allgemein für ihre Liebe, Schönheit, Fruchtbarkeit und ihre Versprechen des Wohlstands verehrte Göttin.";
+		descBlock.spanish = "Freya es la diosa a la que se suele adorar por su amor, belleza, fertilidad y sus promesas de la riqueza.";
 		localizations.insert(std::pair("freya_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("freya_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Tor";
 		deityBlock.french = "Tor";
 		deityBlock.german = "Tor";
 		deityBlock.spanish = "Tor";
+		descBlock.english = "Tor is the son of Odin and is the god protecting humankind against the terrors trying to enter Midgard.";
+		descBlock.french = "Thor est le fils d'Odin ; il protège l'humanité contre les démons tentant de pénétrer Midgard.";
+		descBlock.german = "Thor ist der Sohn von Odin und der Gott, der die Menschheit vor den Schrecken beschützt, die versuchen, in Midgard einzufallen.";
+		descBlock.spanish = "Thor es hijo de Odín y y es el dios que protege la especie humana contra los terrores que tratan de entrar en Midgard.";
 		localizations.insert(std::pair("tor_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("tor_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Tyr";
 		deityBlock.french = "Tyr";
 		deityBlock.german = "Tyr";
 		deityBlock.spanish = "Tyr";
+		descBlock.english = "Tyr is the one-handed god of justice and one of the most courageous gods.";
+		descBlock.french = "Le manchot Tyr est le dieu de la justice, et l'un des dieux les plus courageux.";
+		descBlock.german = "Tyr ist der einhändige Gott der Gerechtigkeit und einer der mutigsten Götter.";
+		descBlock.spanish = "Tyr es el dios manco de la justicia, y uno de los dioses más valientes.";
 		localizations.insert(std::pair("tyr_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("tyr_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Njord";
 		deityBlock.french = "Njord";
 		deityBlock.german = "Njord";
 		deityBlock.spanish = "Njord";
+		descBlock.english = "The father of Freya, god of the sea and wealth will bring food to the table for his worshippers.";
+		descBlock.french = "Père de Freya, le dieu de la mer et des richesses amène de la nourriture à la table de ceux qui le vénèrent.";
+		descBlock.german = "Der Vater von Freya, Gott des Meeres und des Wohlstands, deckt den Tisch seiner Verehrer mit Nahrung ein.";
+		descBlock.spanish = "Padre de Freya, dios del mar y de la riqueza, lleva comida a la mesa de sus fieles.";
 		localizations.insert(std::pair("njord_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("njord_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Snotra";
 		deityBlock.french = "Snotra";
 		deityBlock.german = "Snotra";
 		deityBlock.spanish = "Snotra";
+		descBlock.english = "Snotra is the clever goddess. A wise man or woman can be called snotr in her honor.";
+		descBlock.french = "Snotra est une déesse avisée ; en son honneur, un homme ou une femme sage peut être qualifié de « snotr ».";
+		descBlock.german = "Snotra ist die Göttin der Klugheit. Ein weiser Mann oder eine weise Frau kann ihr zu Ehren als snotr bezeichnet werden.";
+		descBlock.spanish = "Snotra es la diosa de la inteligencia. Un hombre o una mujer sabia puede ser llamada snotr en su honor.";
 		localizations.insert(std::pair("snotra_" + std::to_string(deityCount), deityBlock));
+		localizations.insert(std::pair("snotra_" + std::to_string(deityCount) + "_desc", descBlock));
 	}
 }
