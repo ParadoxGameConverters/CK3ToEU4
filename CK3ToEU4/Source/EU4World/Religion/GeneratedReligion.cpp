@@ -109,13 +109,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 	if (parent == "germanic_pagan")
 	{
 		// Tiwaz
-		output << "tiwaz_" << personalDeityNumber << "{";
+		output << "tiwaz_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "discipline = 0.05";
 		output << "\n\t"
 				 << "infantry_power = 0.10";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 49";
 		output << "\n\n\t"
@@ -144,13 +150,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Wodan
-		output << "wodan_" << personalDeityNumber << "{";
+		output << "wodan_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "land_morale = 0.1";
 		output << "\n\t"
 				 << "core_creation = -0.10";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 50";
 		output << "\n\n\t"
@@ -179,13 +191,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Dunar
-		output << "dunar_" << personalDeityNumber << "{";
+		output << "dunar_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "defensiveness = 0.2";
 		output << "\n\t"
 				 << "leader_land_shock = 1";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 51";
 		output << "\n\n\t"
@@ -214,13 +232,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Frijjo
-		output << "frijjo_" << personalDeityNumber << "{";
+		output << "frijjo_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "diplomatic_upkeep = 1";
 		output << "\n\t"
 				 << "improve_relation_modifier = 0.10";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 52";
 		output << "\n\n\t"
@@ -241,13 +265,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Austro
-		output << "austro_" << personalDeityNumber << "{";
+		output << "austro_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "production_efficiency = 0.1";
 		output << "\n\t"
 				 << "manpower_recovery_speed = 0.20";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 53";
 		output << "\n\n\t"
@@ -276,13 +306,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Fraujaz
-		output << "fraujaz_" << personalDeityNumber << "{";
+		output << "fraujaz_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "global_trade_goods_size_modifier = 0.1";
 		output << "\n\t"
 				 << "land_attrition = -0.10";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 54";
 		output << "\n\n\t"
@@ -305,7 +341,7 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 	else if (parent == "norse_pagan")
 	{
 		// Odin
-		output << "odin_" << personalDeityNumber << "{";
+		output << "odin_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "legitimacy = 0.1";
 		output << "\n\t"
@@ -313,7 +349,13 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 		output << "\n\t"
 				 << "core_creation = -0.10";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 7";
 		output << "\n\n\t"
@@ -342,13 +384,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Freya
-		output << "freya_" << personalDeityNumber << "{";
+		output << "freya_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "global_manpower_modifier = 0.1";
 		output << "\n\t"
 				 << "global_tax_modifier = 0.1";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 8";
 		output << "\n\n\t"
@@ -377,13 +425,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Tor
-		output << "tor_" << personalDeityNumber << "{";
+		output << "tor_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "leader_land_shock = 1";
 		output << "\n\t"
 				 << "defensiveness = 0.1";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 9";
 		output << "\n\n\t"
@@ -436,13 +490,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Tyr
-		output << "tyr_" << personalDeityNumber << "{";
+		output << "tyr_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "global_sailors_modifier = 0.10";
 		output << "\n\t"
 				 << "discipline = 0.05";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 10";
 		output << "\n\n\t"
@@ -471,13 +531,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Njord
-		output << "njord_" << personalDeityNumber << "{";
+		output << "njord_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "trade_efficiency = 0.1";
 		output << "\n\t"
 				 << "global_trade_goods_size_modifier = 0.1";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 11";
 		output << "\n\n\t"
@@ -500,6 +566,8 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "personality = ai_colonialist";
 		output << "\n\t\t"
 				 << "}";
+		output << "\n\t\t"
+				 << "modifier = {";
 		output << "\n\t\t\t"
 				 << "factor = 0.5";
 		output << "\n\t\t\t"
@@ -512,13 +580,19 @@ void EU4::GeneratedReligion::outputPersonalDeities(std::ostream& output) const
 				 << "}";
 		output << "\n\n";
 		// Snotra
-		output << "snotra_" << personalDeityNumber << "{";
+		output << "snotra_" << personalDeityNumber << " = {";
 		output << "\n\n\t"
 				 << "technology_cost = -0.05";
 		output << "\n\t"
 				 << "build_cost = -0.1";
 		output << "\n\n\t"
-				 << "allow = { religion = " << name << " }";
+				 << "potential = { religion = " << name << " }";
+		output << "\n\n\t"
+				 << "trigger = {}";
+		output << "\n\n\t"
+				 << "effect = {}";
+		output << "\n\n\t"
+				 << "removed_effect = {}";
 		output << "\n\t"
 				 << "sprite = 12";
 		output << "\n\n\t"
