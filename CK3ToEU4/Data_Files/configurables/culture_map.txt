@@ -667,7 +667,11 @@ link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 p
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
-link = { eu4 = palaungic ck3 = palaungic tech = chinese gfx = asiangfx }  # ImperatorToCK3
+link = {  # ImperatorToCK3
+	eu4 = palaungic tech = chinese gfx = asiangfx
+	ck3 = palaungic # https://en.wikipedia.org/wiki/Palaung_people
+	ck3 = khasi # https://en.wikipedia.org/wiki/Khasi_people, could be converted to its own culture
+}
 
 # Japanese
 link = { eu4 = korean ck3 = korean tech = chinese gfx = asiangfx }
