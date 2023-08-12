@@ -92,7 +92,7 @@ link = { ck3 = { tradition = tradition_forest_fighters } eu4 = { global_supply_l
 link = { ck3 = { tradition = tradition_forest_folk } eu4 = { development_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_forest_wardens } eu4 = { special_unit_forcelimit = 0.05 infantry_fire = 1 } } 
 link = { ck3 = { tradition = tradition_forbearing } eu4 = { nobles_loyalty_modifier = 0.1} } 
-link = { ck3 = { tradition = tradition_formation_fighting } eu4 = { reserves_organisation = -0.10 } } 
+link = { ck3 = { tradition = tradition_formation_fighting } eu4 = { reserves_organisation = 0.10 } } 
 link = { ck3 = { tradition = tradition_fp1_coastal_warriors } eu4 = { global_sailors_modifier = 0.1 sailors_recovery_speed = 0.1 } } 
 link = { ck3 = { tradition = tradition_fp1_northern_stories } eu4 = { possible_dip_policy = 1 prestige_decay = -0.01 } } 
 link = { ck3 = { tradition = tradition_fp1_performative_honour } eu4 = { prestige_from_land = 0.10 } } 
@@ -141,7 +141,7 @@ link = { ck3 = { tradition = tradition_mountain_herding } eu4 = { special_unit_f
 link = { ck3 = { tradition = tradition_mountain_homes } eu4 = { development_cost = -0.1 } } 
 link = { ck3 = { tradition = tradition_mountaineer_ruralism } eu4 = { development_cost = -0.1 shock_damage_received = -0.05 } } 
 link = { ck3 = { tradition = tradition_mountaineers } eu4 = { global_supply_limit_modifier = 0.10 } } 
-link = { ck3 = { tradition = tradition_mubarizuns } eu4 = { special_unit_forcelimit = 0.05 reserves_organisation = -0.05 } } 
+link = { ck3 = { tradition = tradition_mubarizuns } eu4 = { special_unit_forcelimit = 0.05 reserves_organisation = 0.05 } } 
 link = { ck3 = { tradition = tradition_music_theory } eu4 = { prestige = 1 } } 
 link = { ck3 = { tradition = tradition_mystical_ancestors } eu4 = { monthly_heir_claim_increase = 0.05 idea_cost = -0.05 } } 
 link = { ck3 = { tradition = tradition_nubian_warrior_queens } eu4 = { monarch_military_power = 1 may_recruit_female_generals = yes } } 
