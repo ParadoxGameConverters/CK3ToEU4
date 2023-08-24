@@ -61,7 +61,7 @@ link = { eu4 = anglo_pagan ck3 = anglo_pagan }
 # Hellenism
 link = { eu4 = hellenic_pagan ck3 = hellenic_pagan ck3 = eleusinian_mysteries }
 # Hinduism
-link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism ck3 = munda_pagan }
+link = { eu4 = hinduism ck3 = vaishnavism ck3 = advaitism ck3 = shaivism ck3 = srikula_shaktism ck3 = kalikula_shaktism ck3 = smartism ck3 = krishnaism ck3 = munda_pagan ck3 = saura }
 # Islam
 link = { eu4 = sunni ck3 = ashari school = hanbali_school }
 link = { eu4 = sunni ck3 = muwalladi school = maliki_school }
