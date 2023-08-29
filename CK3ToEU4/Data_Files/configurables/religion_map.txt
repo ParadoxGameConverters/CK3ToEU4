@@ -53,7 +53,7 @@ link = { eu4 = cainitism ck3 = cainitism }
 # Finno-Ugric
 link = { eu4 = finnish_pagan ck3 = finnish_pagan ck3 = erzya_pagan ck3 = moksha_pagan ck3 = mari_pagan ck3 = udmurt_pagan ck3 = sami_pagan ck3 = komi_pagan }
 # Siberian
-link = { eu4 = siberian_pagan ck3 = siberian_pagan ck3 = yzng ck3 = bugaism ck3 = abkaism ck3 = muism }
+link = { eu4 = siberian_pagan ck3 = siberian_pagan }
 # Germanic
 link = { eu4 = norse_pagan ck3 = norse_pagan }
 link = { eu4 = germanic_pagan ck3 = germanic_pagan }

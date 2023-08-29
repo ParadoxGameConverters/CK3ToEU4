@@ -598,7 +598,7 @@ link = { eu4 = malvi ck3 = malvi ck3 = malavas tech = indian gfx = indiangfx }
 link = { eu4 = rajput ck3 = rajput ck3 = western_indo_aryan tech = indian gfx = indiangfx }
 link = { eu4 = sindhi ck3 = sindhi tech = indian gfx = indiangfx }
 link = { eu4 = marathi ck3 = marathi ck3 = southern_indo_aryan tech = indian gfx = indiangfx }
-link = { eu4 = sinhala ck3 = sinhala tech = indian gfx = indiangfx }
+link = { eu4 = sinhala ck3 = sinhala ck3 = vedda tech = indian gfx = indiangfx }
 
 link = { eu4 = arakanese ck3 = arakanese tech = indian gfx = indiangfx }  # ImperatorToCK3
 link = { eu4 = arakanese ck3 = burmese tech = indian gfx = indiangfx region = arakan_area }  # TODO: disable when IRToCK3 save detected
@@ -652,21 +652,29 @@ link = { eu4 = jin ck3 = han ck3 = chinese ck3 = tuyuhun ck3 = shatuo tech = chi
 link = { eu4 = cantonese ck3 = han ck3 = chinese ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx province = 667 province = 668 province = 2162 province = 665 province = 2161 }
 link = { eu4 = chihan ck3 = han ck3 = chinese ck3 = tuyuhun ck3 = shatuo tech = chinese gfx = asiangfx }
 link = { eu4 = zhuang ck3 = viet ck3 = vietnamese tech = chinese gfx = asiangfx province = 616 }
-link = { eu4 = vietnamese ck3 = viet ck3 = vietnamese tech = chinese gfx = asiangfx }
+link = { eu4 = vietnamese ck3 = viet ck3 = old_viet ck3 = vietnamese tech = chinese gfx = asiangfx }
+link = { eu4 = vietnamese_new ck3 = kinh tech = chinese gfx = asiangfx }
 link = { eu4 = yi ck3 = bai tech = chinese gfx = asiangfx province = 674 region = chuannan_area }
 link = { eu4 = miao ck3 = bai tech = chinese gfx = asiangfx province = 673 province = 4199 province = 2173 }
-link = { eu4 = bai ck3 = bai tech = chinese gfx = asiangfx }
+link = { eu4 = bai ck3 = bai ck3 = yi tech = chinese gfx = asiangfx }
 
 # Indochina
 
 link = { eu4 = northern_thai ck3 = thai tech = chinese gfx = asiangfx region = northern_thai_area }
-link = { eu4 = central_thai ck3 = thai tech = chinese gfx = asiangfx }
+link = { eu4 = central_thai ck3 = thai ck3 = tai tech = chinese gfx = asiangfx }
 link = { eu4 = lao ck3 = lao tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = tawo ck3 = sinauna ck3 = tagalog tech = chinese gfx = asiangfx }
 link = { eu4 = karen ck3 = shan tech = chinese gfx = asiangfx province = 2401 }
 link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 province = 2396 province = 4404 }
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
+link = { eu4 = sulawesi ck3 = makassar ck3 = bugis tech = chinese gfx = asiangfx }
+link = { eu4 = malayan ck3 = malay tech = chinese gfx = asiangfx }
+link = { eu4 = sumatran ck3 = batak tech = chinese gfx = asiangfx }
+link = { eu4 = javanese ck3 = java tech = chinese gfx = asiangfx }
+link = { eu4 = sundanese ck3 = sunda tech = chinese gfx = asiangfx }
+link = { eu4 = acehnese ck3 = seletar ck3 = aceh tech = chinese gfx = asiangfx }
 link = {  # ImperatorToCK3
 	eu4 = palaungic tech = chinese gfx = asiangfx
 	ck3 = palaungic # https://en.wikipedia.org/wiki/Palaung_people
@@ -674,11 +682,11 @@ link = {  # ImperatorToCK3
 }
 
 # Japanese
-link = { eu4 = korean ck3 = korean tech = chinese gfx = asiangfx }
+link = { eu4 = korean ck3 = korean ck3 = samhan tech = chinese gfx = asiangfx }
 link = { eu4 = togoku ck3 = japanese tech = chinese gfx = asiangfx region = eastern_chubu_area region = eastern_kanto_area province = 4193 province = 1024 province = 1837 region = thohoku_area province = 1030 province = 1835 region = kanto_area }
 link = { eu4 = kyushuan ck3 = japanese tech = chinese gfx = asiangfx region = northern_kyushu region = kyushu_area }
 link = { eu4 = kyushuan ck3 = ryukyuan tech = chinese gfx = asiangfx }
-link = { eu4 = japanese ck3 = japanese tech = chinese gfx = asiangfx }
+link = { eu4 = japanese ck3 = japanese ck3 = yamato tech = chinese gfx = asiangfx }
 link = { eu4 = ainu ck3 = ainu tech = chinese gfx = inuitgfx }
 
 # Israelite
@@ -840,9 +848,11 @@ link = { eu4 = peristani ck3 = nuristani ck3 = kalash tech = indian gfx = indian
 link = { eu4 = burusho ck3 = burusho tech = indian gfx = indiangfx }
 link = { eu4 = soqotri ck3 = south_arabian tech = muslim gfx = muslimgfx }
 link = { eu4 = himyarite ck3 = himyarite tech = muslim gfx = muslimgfx }
-link = { eu4 = swahili ck3 = swahili tech = east_african gfx = africangfx }
+link = { eu4 = swahili ck3 = swahili ck3 = dahalo ck3 = makonde ck3 = mijikenda ck3 = pokomo ck3 = seuta ck3 = sabaki ck3 = ruvu ck3 = aweer tech = east_african gfx = africangfx }
 link = { eu4 = malagasy ck3 = malagasy tech = east_african gfx = africangfx }
 link = { eu4 = shona ck3 = shona tech = central_african gfx = africangfx }
+link = { eu4 = makua ck3 = makua tech = central_african gfx = africangfx }
+link = { eu4 = tsonga ck3 = tsonga ck3 = nguni ck3 = sotho_tswana tech = central_african gfx = africangfx }
 link = { eu4 = guanche ck3 = guanche ck3 = guanches tech = sub_saharan gfx = muslimgfx }
 link = { eu4 = mizrahi ck3 = mustaarabi tech = muslim gfx = muslimgfx }
 link = { eu4 = hephthalite ck3 = hephthalite ck3 = huna ck3 = turco_hephthalite tech = muslim gfx = muslimgfx }
