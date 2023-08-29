@@ -328,3 +328,13 @@ link = { ck3 = { tradition = tradition_RICE_tuareg } eu4 = { heir_chance = 0.25 
 link = { ck3 = { tradition = tradition_RICE_gold_dust_traders } eu4 = { movement_speed = 0.15 } }
 link = { ck3 = { tradition = tradition_RICE_african_mud_masons } eu4 = { build_time = -0.1 build_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_RICE_masters_of_the_river } eu4 = { development_cost =  -0.15 } }
+link = { ck3 = { tradition = tradition_angkorian_architecture } eu4 = { development_cost =  -0.10 } }
+link = { ck3 = { tradition = tradition_warrior_caste } eu4 = { land_morale = 0.10 } }
+link = { ck3 = { tradition = tradition_tiger_sons } eu4 = { prestige = 1 } }
+link = { ck3 = { tradition = tradition_RICE_cave_dwellers } eu4 = { global_supply_limit_modifier = 0.10 } }
+link = { ck3 = { tradition = tradition_RICE_wewas } eu4 = { build_cost = -0.1 } }
+link = { ck3 = { tradition = tradition_RICE_stepwells } eu4 = { global_tax_modifier = 0.1 } }
+link = { ck3 = { tradition = tradition_RICE_zimbabwe } eu4 = { build_time = -0.1 } }
+link = { ck3 = { tradition = tradition_RICE_bantu_migrators } eu4 = { movement_speed = 0.10 } }
+link = { ck3 = { tradition = tradition_RICE_cattle_kraals } eu4 = { prestige = 1 } }
+link = { ck3 = { tradition = tradition_RICE_forest_suppliers } eu4 = { global_tax_modifier = 0.1 } }
