@@ -1,0 +1,60 @@
+country_decisions = {
+
+	plati_ck_byzantine_coalition = {
+		major = yes
+		
+		potential = {
+			NOT = { has_country_flag = plati_ck_called_byzantine_coalition_flag }									#once per campaign
+			has_country_modifier = plati_ck_flavor_DEBUG_byzantium_coalition_trickle_down
+			ai = no
+			any_known_country = {																					#so there actually is someone to invite to war
+				NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_eht }
+				NOT = { tag = BYZ }
+				NOT = { alliance_with = BYZ }
+				is_great_power = yes
+				OR = {
+					capital_scope = { continent = europe }
+					capital_scope = { region = egypt_region }
+					capital_scope = { region = maghreb_region }
+					capital_scope = { region = mashriq_region }
+					capital_scope = { region = anatolia_region }
+					capital_scope = { region = persia_region }
+					capital_scope = { region = khorasan_region }
+					capital_scope = { region = caucasia_region }
+					capital_scope = { region = arabia_region }
+					tag = KHZ
+				}
+			}
+		}
+		
+		allow = {
+			offensive_war_with = BYZ
+		}
+		
+		effect = {
+			set_country_flag = plati_ck_called_byzantine_coalition_flag
+			every_country = {
+				limit = {
+					NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_eht }
+					NOT = { tag = BYZ }
+					NOT = { alliance_with = BYZ }
+					is_great_power = yes
+					OR = {
+						capital_scope = { continent = europe }
+						capital_scope = { region = egypt_region }
+						capital_scope = { region = maghreb_region }
+						capital_scope = { region = mashriq_region }
+						capital_scope = { region = anatolia_region }
+						capital_scope = { region = persia_region }
+						capital_scope = { region = khorasan_region }
+						capital_scope = { region = caucasia_region }
+						capital_scope = { region = arabia_region }
+						tag = KHZ
+					}
+				}
+				country_event = { id = plati_ck_new_flavor.18 }
+			}
+		}
+	}
+	
+}

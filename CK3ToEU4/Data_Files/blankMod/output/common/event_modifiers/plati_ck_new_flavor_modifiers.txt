@@ -1,0 +1,138 @@
+#
+# Scripted by Plati 
+#
+# 2023
+#
+#
+plati_ck_flavor_DEBUG_cooldown_one = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_two = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thr = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_for = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_fiv = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_six = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_sev = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_egh = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_nin = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_ten = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_elv = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twe = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thi = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_frt = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_fvt = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_sxt = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_svt = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_eht = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_nit = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twt = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtone = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twttwo = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtthr = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtfor = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtfiv = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtsix = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtsev = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twteig = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_twtnin = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_tht = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtone = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thttwo = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtthr = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtfor = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtfiv = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtsix = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtsev = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thteig = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_thtnin = { }					#Invisible timer modifier; prevents the event running too often
+plati_ck_flavor_DEBUG_cooldown_fht = { }					#Invisible timer modifier; prevents the event running too often
+#
+plati_ck_flavor_DEBUG_byzantium_coalition_trickle_down = { }					#Invisible timer modifier; prevents the event running too often
+#
+#
+#
+#
+plati_ck_new_flavor_modifier_popular_priest = {
+	missionaries = 1
+	global_missionary_strength = 0.02
+}
+plati_ck_new_flavor_modifier_tarkhan = {
+	horde_unity = 1
+	republican_tradition = 0.2
+	nomadic_tribes_loyalty_modifier = 0.10
+	nobles_loyalty_modifier = 0.10
+	nomadic_tribes_privilege_slots = 1
+	nobles_privilege_slots = 1
+	max_absolutism = -20
+	global_autonomy = 0.05
+}
+plati_ck_new_flavor_modifier_eldership = {
+	same_culture_advisor_cost = -0.25
+	republican_tradition = 0.2
+	relation_with_same_culture_group = 10
+	max_absolutism = -10
+	loyalty_change_on_revoked = -0.05
+}
+plati_ck_new_flavor_modifier_exchange_of_faiths_ideas = {
+	idea_cost = -0.1
+	tolerance_heathen = 2
+	relation_with_heathens = 20
+}
+plati_ck_new_flavor_modifier_reforms_for_dhimmis = {
+	dhimmi_loyalty_modifier = 0.10
+	dhimmi_influence_modifier = 0.20
+	possible_policy = 1
+	global_institution_spread = 0.15
+	max_absolutism = -15
+}
+plati_ck_new_flavor_modifier_colonialism_instituion = {
+	improve_relation_modifier = 0.2
+	relation_with_heathens = 10
+}
+plati_ck_new_flavor_modifier_province_capital_of_europe_generic = {
+	allowed_num_of_buildings = 1
+	local_development_cost = -0.1
+	institution_growth = 1
+}
+plati_ck_new_flavor_modifier_province_capital_of_europe_economic = {
+	allowed_num_of_buildings = 1
+	allowed_num_of_manufactories = 1
+	trade_goods_size = 2.0
+}
+plati_ck_new_flavor_modifier_province_capital_of_europe_trade = {
+	allowed_num_of_buildings = 1
+	province_trade_power_modifier = 0.5
+	global_trade_power = 0.10
+}
+plati_ck_new_flavor_modifier_province_idolmaker_province = {
+	local_development_cost = -0.05
+	local_production_efficiency = 0.15
+}
+plati_ck_new_flavor_modifier_henotheism = {
+	no_religion_penalty = yes									#not as rare and exclusive in latest patches, theres a gov reform that gives it
+	global_unrest = -1
+	church_influence_modifier = -0.10
+	global_missionary_strength = -0.02
+	relation_with_heathens = 25
+	papal_influence = -10
+	monthly_fervor_increase = -0.25
+	church_power_modifier = -0.15
+}
+plati_ck_new_flavor_modifier_crusade_target_pagan = {
+	shock_damage_received = -0.10
+	warscore_cost_vs_other_religion = -0.05
+}
+plati_ck_new_flavor_modifier_war_clergy_support_troops_pagan = {
+	land_morale = 0.05
+	recover_army_morale_speed = 0.05
+}
+plati_ck_new_flavor_modifier_war_clergy_support_people_pagan = {
+	global_unrest = -1
+	war_exhaustion = -0.05
+}
+plati_ck_new_flavor_modifier_closed_temples_pagan = {
+	same_religion_advisor_cost = -0.2
+	church_influence_modifier = 0.10
+}
+plati_ck_new_flavor_modifier_open_temples_pagan = {
+	global_unrest = -2
+	church_influence_modifier = -0.1
+}

@@ -1,0 +1,72 @@
+#
+# Scripted by Plati 
+#
+# 2023
+#
+#
+spriteTypes = {	
+	spriteType = {
+		name = "PLATI_KHAZARS_PICTURE"
+		texturefile = "gfx//event_pictures//PLATI_KHAZARS_PICTURE.dds"
+	}
+	spriteType = {
+		name = "PLATI_RELIGIOUS_EXCHANGE_PICTURE"
+		texturefile = "gfx//event_pictures//PLATI_RELIGIOUS_EXCHANGE_PICTURE.dds"
+	}
+	spriteType = {
+		name = "PLATI_ODD_SHAMAN"
+		texturefile = "gfx//event_pictures//PLATI_ODD_SHAMAN.dds"
+	}
+	spriteType = {
+		name = "PLATI_NOMADIC_SHAMAN"
+		texturefile = "gfx//event_pictures//PLATI_NOMADIC_SHAMAN.dds"
+	}
+	spriteType = {
+		name = "PLATI_NOMADIC_SWORD"
+		texturefile = "gfx//event_pictures//PLATI_NOMADIC_SWORD.dds"
+	}
+	spriteType = {
+		name = "PLATI_BYZANTIUM"
+		texturefile = "gfx//event_pictures//PLATI_BYZANTIUM.dds"
+	}
+	spriteType = {
+		name = "PLATI_AL_ANDALUSIAN"
+		texturefile = "gfx//event_pictures//PLATI_AL_ANDALUSIAN.dds"
+	}
+	spriteType = {
+		name = "PLATI_CK_MAIN"
+		texturefile = "gfx//event_pictures//PLATI_CK_MAIN.dds"
+	}
+	spriteType = {
+		name = "PLATI_TURKIC_PERSIAN_RIDER"
+		texturefile = "gfx//event_pictures//PLATI_TURKIC_PERSIAN_RIDER.dds"
+	}
+	spriteType = {
+		name = "PLATI_COSMOPOLITAN_COURT"
+		texturefile = "gfx//event_pictures//PLATI_COSMOPOLITAN_COURT.dds"
+	}
+	spriteType = {
+		name = "PLATI_PAGAN_FIRE"
+		texturefile = "gfx//event_pictures//PLATI_PAGAN_FIRE.dds"
+	}
+	spriteType = {
+		name = "PLATI_ROME"
+		texturefile = "gfx//event_pictures//PLATI_ROME.dds"
+	}
+	spriteType = {
+		name = "PLATI_IDOLS"
+		texturefile = "gfx//event_pictures//PLATI_IDOLS.dds"
+	}
+	spriteType = {
+		name = "PLATI_HENOTHEISM"
+		texturefile = "gfx//event_pictures//PLATI_HENOTHEISM.dds"
+	}
+	spriteType = {
+		name = "PLATI_PAGAN_FURY"
+		texturefile = "gfx//event_pictures//PLATI_PAGAN_FURY.dds"
+	}
+	spriteType = {
+		name = "PLATI_ZOROASTRIAN_CLERGY"
+		texturefile = "gfx//event_pictures//PLATI_ZOROASTRIAN_CLERGY.dds"
+	}
+}
