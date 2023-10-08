@@ -1,0 +1,70 @@
+on_startup = {
+	if = {
+		limit = {
+			NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_egh }
+			ai = no																		#just for players
+			OR = {
+				capital_scope = { continent = europe }
+				tag = ARB
+				tag = PER
+				tag = EGY
+			}
+			NOT = { tag = BYZ }
+			BYZ = {
+				exists = yes
+				is_great_power = yes
+			}
+			current_age = age_of_discovery
+		}
+		country_event = { id = plati_ck_new_flavor.8 }
+	}
+	if = {
+		limit = {
+			NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_nin }
+			any_known_country = {
+				is_nomad = yes
+				num_of_owned_provinces_with = {
+					value = 2
+					continent = europe
+				}
+				is_great_power = yes
+			}
+			capital_scope = { continent = europe }										#Europeans worrisome of Hordes
+			current_age = age_of_discovery
+			ai = no	
+		}
+		country_event = { id = plati_ck_new_flavor.9 }
+	}
+	if = {
+		limit = {
+			NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thi }
+			ai = no																		#just for players
+			OR = {
+				capital_scope = { continent = asia }
+				capital_scope = { region = anatolia_region }
+				capital_scope = { region = caucasia_region }
+				capital_scope = { region = egypt_region }
+				tag = BYZ
+			}
+			NOT = { tag = PER }
+			PER = {
+				exists = yes
+				is_great_power = yes
+			}
+			current_age = age_of_discovery
+		}
+		country_event = { id = plati_ck_new_flavor.13 }
+	}
+	if = {
+		limit = {
+			NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_ten }
+			always = yes																					#left this option to be quickly adjusted to 'no' (or ai = no) in case you disagree with implementing such event
+			has_reform = english_monarchy																	#The infamous Chartered Monarchy; https://discord.com/channels/612683871112396800/741848366077444191/756669557841854474
+			current_age = age_of_discovery
+			NOT = { tag = GBR }
+			NOT = { tag = ENG }
+			NOT = { tag = AVE }			#angevins
+		}
+		country_event = { id = plati_ck_new_flavor.10 }
+	}
+}

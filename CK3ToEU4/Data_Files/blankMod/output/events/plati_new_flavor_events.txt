@@ -1,0 +1,2897 @@
+#
+# Scripted by Plati 
+#
+# 2023
+#
+#
+namespace = plati_ck_new_flavor
+country_event = {
+	id = plati_ck_new_flavor.1
+	
+	title = "plati_ck_new_flavor.EVTNAME1"				#The Clergy of Khazaria
+	desc = "plati_ck_new_flavor.EVTDESC1"				#Event provides a unique opporunity to have a horde with Church estate enabled
+	
+	picture = PLATI_KHAZARS_PICTURE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_one }
+		NOT = { has_estate = estate_church }
+		tag = KHZ															#Khazaria
+		is_nomad = yes
+		religion_group = jewish_group										#
+	}
+	
+	mean_time_to_happen = {
+		days = 600
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_one
+				duration = -1											#Once per Campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA1"							#Enables Rabbi (church) estate
+		custom_tooltip = "plati_ck_new_flavor_enables_rabbis_tooltip"
+		set_country_flag = enables_estate_church_flag
+		add_reform_progress_small_effect = yes
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB1"							#Business as usual
+		custom_tooltip = "plati_ck_new_flavor_ignores_rabbis_tooltip"
+		add_horde_unity = 5
+		add_estate_loyalty = {
+			estate = estate_nomadic_tribes
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.2
+	
+	title = "plati_ck_new_flavor.EVTNAME2"				#Popular shaman
+	desc = "plati_ck_new_flavor.EVTDESC2"				#
+	
+	picture = PLATI_ODD_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_two }
+		NOT = { has_country_modifier = plati_twentwo_event_timer }									#There is another event like this, only positive
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		num_of_owned_provinces_with = {
+			value = 3
+			
+			continent = europe
+			religion = ROOT
+		}
+		has_estate = estate_church
+		NOT = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 40
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_two
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_owned_province = {
+				limit = {
+					religion = ROOT
+				}
+				save_event_target_as = plati_ck_flavor_new_popular_priest_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA2"							#
+		add_years_of_income = -0.25
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB2"							#
+		random = { 
+			chance = 50 
+
+			event_target:plati_ck_flavor_new_popular_priest_province = {
+				anti_tax_rebels = 1
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC2"							#
+		event_target:plati_ck_flavor_new_popular_priest_province = {
+			add_base_tax = 1
+			add_local_autonomy = 25
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.3
+	
+	title = "plati_ck_new_flavor.EVTNAME3"				#Tarkhan System
+	desc = "plati_ck_new_flavor.EVTDESC3"				#
+	
+	picture = PLATI_KHAZARS_PICTURE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thr }
+		NOT = { has_country_modifier = plati_ck_new_flavor_modifier_tarkhan }
+		OR = {
+			tag = KHZ																	#Khazaria
+			AND = {
+				is_nomad = yes
+				religion_group = jewish_group											#In case there are some 'leftover' Khazar independents
+			}
+		}
+		stability = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thr
+				duration = -1												#Once per Campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA3"							#Tarkhan System
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_tarkhan
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB3"							#Revoke it
+		add_adm_power = 50
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.4
+	
+	title = "plati_ck_new_flavor.EVTNAME4"				#Eldership
+	desc = "plati_ck_new_flavor.EVTDESC4"				#
+	
+	picture = PLATI_ODD_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_for }
+		NOT = { has_country_modifier = plati_ck_new_flavor_modifier_eldership }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		OR = {
+			culture_group = baltic
+			AND = {
+				capital_scope = { region = baltic_region }
+				OR = {
+					accepted_culture = lithuanian
+					accepted_culture = latvian
+				}
+			}
+		}
+		stability = 1
+		government = tribal																		#For tribals
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_for
+				duration = -1												#Once per campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA4"							#
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_eldership
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB4"							#
+		add_adm_power = 50
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.5
+	
+	title = "plati_ck_new_flavor.EVTNAME5"				#Two humanists get closer
+	desc = "plati_ck_new_flavor.EVTDESC5"				#
+	
+	picture = PLATI_RELIGIOUS_EXCHANGE_PICTURE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_fiv }
+		NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		has_idea_group = humanist_ideas
+		any_known_country = {
+			NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+			has_idea_group = humanist_ideas
+			religion_group = christian
+			capital_scope = { continent = europe }
+			NOT = { war_with = ROOT }
+			NOT = { is_rival = ROOT }
+			ai = yes
+		}
+		stability = 1
+		dip = 4																	#requires a capable Diplomat ruler
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_fiv
+				duration = 9000												#A unique opportunity, so doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+					has_idea_group = humanist_ideas
+					religion_group = christian
+					capital_scope = { continent = europe }
+					NOT = { war_with = ROOT }
+					NOT = { is_rival = ROOT }
+					ai = yes
+				}
+				save_event_target_as = plati_ck_flavor_new_humanist_christian_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA5"							#curious
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_christian_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_christian_country
+			modifier = opinion_friendliness
+		}
+		event_target:plati_ck_flavor_new_humanist_christian_country = {
+			add_country_modifier = {
+				name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB5"							#we must distance ourselves from them
+		add_dip_power = 50
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC5"							#We must develop this relationship
+		highlight = yes
+		trigger = {
+			ruler_has_personality = silver_tongue_personality
+		}
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_christian_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_christian_country
+			modifier = opinion_friendliness
+		}
+		event_target:plati_ck_flavor_new_humanist_christian_country = {
+			add_country_modifier = {
+				name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+				duration = 3650
+			}
+			add_historical_friend = ROOT
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+			duration = 3650
+		}
+		add_historical_friend = event_target:plati_ck_flavor_new_humanist_christian_country
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.6
+	
+	title = "plati_ck_new_flavor.EVTNAME6"				#Same as event 5 but for christians
+	desc = "plati_ck_new_flavor.EVTDESC6"				#
+	
+	picture = PLATI_RELIGIOUS_EXCHANGE_PICTURE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_six }
+		NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+		has_idea_group = humanist_ideas
+		AND = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		any_known_country = {
+			NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+			has_idea_group = humanist_ideas
+			religion_group = pagan
+			capital_scope = { continent = europe }
+			NOT = { war_with = ROOT }
+			NOT = { is_rival = ROOT }
+			ai = yes
+		}
+		stability = 1
+		dip = 4																	#requires a capable Diplomat ruler
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_six
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					NOT = { has_country_modifier = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas }
+					has_idea_group = humanist_ideas
+					religion_group = pagan
+					capital_scope = { continent = europe }
+					NOT = { war_with = ROOT }
+					NOT = { is_rival = ROOT }
+					ai = yes
+				}
+				save_event_target_as = plati_ck_flavor_new_humanist_pagan_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA6"							#
+		ai_chance = { factor = 50 }
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_pagan_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_pagan_country
+			modifier = opinion_friendliness
+		}
+		event_target:plati_ck_flavor_new_humanist_pagan_country = {
+			add_country_modifier = {
+				name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+				duration = 3650
+			}
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB6"							#
+		ai_chance = { factor = 50 }
+		add_dip_power = 50
+		if = {
+			limit = {
+				religion = catholic
+			}
+			add_papal_influence = 10
+		}
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			add_patriarch_authority = 0.1
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC6"							#
+		ai_chance = { factor = 90 }
+		highlight = yes
+		trigger = {
+			ruler_has_personality = silver_tongue_personality
+		}
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_pagan_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_humanist_pagan_country
+			modifier = opinion_friendliness
+		}
+		event_target:plati_ck_flavor_new_humanist_pagan_country = {
+			add_country_modifier = {
+				name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+				duration = 3650
+			}
+			add_historical_friend = ROOT
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_exchange_of_faiths_ideas
+			duration = 3650
+		}
+		add_historical_friend = event_target:plati_ck_flavor_new_humanist_pagan_country
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.7
+	
+	title = "plati_ck_new_flavor.EVTNAME7"				#European pagans curious about Tengri faith
+	desc = "plati_ck_new_flavor.EVTDESC7"				#
+	
+	picture = PLATI_NOMADIC_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_sev }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe
+			}
+			NOT = { religion = tengri_pagan }
+			NOT = { religion = tengri_pagan_reformed }
+		}
+		any_known_country = {
+			government_rank = 2
+			OR = {
+				religion = tengri_pagan
+				religion = tengri_pagan_reformed
+			}
+			is_nomad = yes
+			num_of_owned_provinces_with = {
+				value = 3
+			
+				continent = europe
+			}
+			NOT = { war_with = ROOT }
+			NOT = { is_rival = ROOT }
+			ai = yes
+		}
+		stability = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_sev
+				duration = 20000												#So doesn't fire too often; might change to once per campaign
+				hidden = yes													#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					government_rank = 2
+					religion = tengri_pagan
+					is_nomad = yes
+					num_of_owned_provinces_with = {
+						value = 3
+			
+						continent = europe
+					}
+					NOT = { war_with = ROOT }
+					NOT = { is_rival = ROOT }
+					ai = yes
+				}
+				save_event_target_as = plati_ck_flavor_new_tengri_nomad_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB7"													#Purchase a tengri priest from them
+		ai_chance = { factor = 30 }
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_tengri_nomad_country
+			modifier = opinion_friendliness
+		}
+		add_years_of_income = -0.33
+		define_advisor = {
+			type = theologian
+			skill = 3
+			discount = yes
+			culture = event_target:plati_ck_flavor_new_tengri_nomad_country
+			religion = event_target:plati_ck_flavor_new_tengri_nomad_country
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA7"													#Send a priest to Horde as delegation
+		ai_chance = { factor = 40 }
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_tengri_nomad_country
+			modifier = opinion_friendliness
+		}
+		add_dip_power = 50
+		event_target:plati_ck_flavor_new_tengri_nomad_country = {
+			define_advisor = {
+				type = theologian
+				skill = 3
+				discount = yes
+				culture = ROOT
+				religion = ROOT
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTD7"							#nothing
+		ai_chance = { factor = 30 }
+		add_prestige = 5
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC7"
+		ai_chance = { factor = 0 }																#Quite ridiculous, player only
+		highlight = yes
+		trigger = {
+			ruler_has_personality = free_thinker_personality
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_tengri_nomad_country
+			modifier = opinion_friendliness
+		}
+		change_religion = tengri_pagan_reformed														#
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.8
+	
+	title = "plati_ck_new_flavor.EVTNAME8"				#Byzantium
+	desc = "plati_ck_new_flavor.EVTDESC8"				#
+	
+	picture = PLATI_BYZANTIUM
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_egh
+				duration = -1											#once per campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {											#bizzare way to do it, but if it works, it works
+				limit = {
+					tag = BYZ
+				}
+				save_event_target_as = plati_ck_flavor_new_byzantium_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA8"							#interesting, just FYI
+		if = {
+			limit = {
+				BYZ = {
+					NOT = { has_reform = byzantine_autocracy_reform }
+					government = monarchy
+					ai = yes																		#players probably won't appreciate their government changing without permission
+				}
+			}
+			BYZ = { add_government_reform = byzantine_autocracy_reform }
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.9
+	
+	title = "plati_ck_new_flavor.EVTNAME9"				#Horde, informative flavor event
+	desc = "plati_ck_new_flavor.EVTDESC9"				#
+	
+	picture = PLATI_NOMADIC_SWORD
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_nin
+				duration = -1												#Once per campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					is_nomad = yes
+					num_of_owned_provinces_with = {
+						value = 2
+						continent = europe
+					}
+					is_great_power = yes
+				}
+				save_event_target_as = plati_ck_flavor_new_great_power_nomadic_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA9"							#Interesting, just FYI
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.10
+	
+	title = "plati_ck_new_flavor.EVTNAME10"				#The Government of NAME
+	desc = "plati_ck_new_flavor.EVTDESC10"				#It has been reported on several occasions by users that upon converted save, the entirety of Europe has Chartered (English) Monarch, with parliament and no nobility; If we don't readjust convertor, then I am of the belief that there at least must be an option at the beginning of the campaign to reconsider starting tier of the government - including the nuansed culture specific governments (provided by dlc, included the latest ones in Domination), such as Tanistry
+	
+	picture = PLATI_CK_MAIN
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_ten
+				duration = -1											#Once per campaign, no second chances
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA10"							#always available
+		ai_chance = { factor = 1 }
+		add_government_reform = feudalism_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB10"							#always available
+		ai_chance = { factor = 1 }
+		add_government_reform = autocracy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			OR = {
+				tag = HAB
+				tag = STY
+				was_tag = HAB
+				has_reform = austrian_archduchy_reform
+				have_had_reform = austrian_archduchy_reform
+				primary_culture = austrian
+			}
+		}
+		add_government_reform = austrian_archduchy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTD10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			has_dlc = "Domination" 
+			tag = FRA
+		}
+		add_government_reform = feudal_france_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTE10"							#
+		ai_chance = { factor = 100 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			tag = BYZ
+		}
+		add_government_reform = byzantine_autocracy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTF10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			primary_culture = irish
+		}
+		add_government_reform = tanistry_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTG10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			primary_culture = portugese
+		}
+		add_government_reform = portuguese_monarchy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTH10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			has_dlc = "Domination"
+			tag = HRE
+		}
+		add_government_reform = holy_imperial_monarchy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTI10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			OR = {
+				primary_culture = dutch
+				primary_culture = frisian
+				primary_culture = flemish
+			}
+		}
+		add_government_reform = stadthalter_monarchy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTU10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			OR = {
+				tag = POL
+				culture_group = west_slavic
+			}
+		}
+		add_government_reform = polish_great_sejm
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTV10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			OR = {
+				tag = NOR
+				primary_culture = norse
+				primary_culture = cooler_norwegian
+				primary_culture = holmgardrian
+				primary_culture = marisbaltician
+				primary_culture = miklagardrian
+				primary_culture = serklandic
+				primary_culture = romsborgian
+			}
+		}
+		add_government_reform = norwegian_parliamentary_monarchy						#scandinavian ting, essentially
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTP10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			OR = {
+				tag = NOR
+				primary_culture = norse
+				primary_culture = cooler_norwegian
+				primary_culture = holmgardrian
+				primary_culture = marisbaltician
+				primary_culture = miklagardrian
+				primary_culture = serklandic
+				primary_culture = romsborgian
+			}
+		}
+		add_government_reform = danish_archkingdom										#more variety for norsemen	
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTR10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			has_dlc = "Lions of the North"
+			tag = SCA
+		}
+		add_government_reform = kalmar_union
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTN10"							#not the polish elective monarchy, this one was added in domination
+		ai_chance = { factor = 0 }											#a ruler wouldn't give up power so easily
+		trigger = {
+			has_dlc = "Domination"
+		}
+		add_government_reform = elective_monarchy_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTM10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			religion_group = muslim												#bizzare, but can happen
+		}
+		add_government_reform = iqta
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTQ10"							#
+		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
+		trigger = {
+			tag = IRE
+			has_dlc = "Domination"
+		}
+		add_government_reform = irish_highkingdom_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTL10"									#Pirates
+		ai_chance = { factor = 100 }											#from tests I've made, this creates roughly 3-5 pirate micro-nations on tiny islands in the mediterranean or British isles
+		trigger = {
+			OR = {
+				has_dlc = "Golden Century"
+				has_dlc = "Lions of the North"
+			}
+			NOT = { tag = PAP } # just no
+			is_emperor = no
+			NOT = { num_of_cities = 10 }
+			NOT = { government_rank = 2 }
+			NOT = {
+				any_owned_province = {
+					NOT = {
+						AND = {
+							has_port = yes
+							province_is_on_an_island = yes
+						}
+					}
+				}
+			}
+		}
+		change_government = republic
+		add_government_reform = pirate_republic_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTX10"							#leave as is, thanks
+		ai_chance = { factor = 0 }											#the purpose of this event in the first place is to let the world have some diversity and color
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.11
+	
+	title = "plati_ck_new_flavor.EVTNAME11"				#Andalusian Government
+	desc = "plati_ck_new_flavor.EVTDESC11"				#
+	
+	picture = PLATI_AL_ANDALUSIAN
+	
+	trigger = {
+		OR = {
+			has_country_modifier = plati_ck_flavor_DEBUG_cooldown_ten
+			NOT = { has_reform = english_monarchy }											#so the event fires AFTER the first one that offers government change
+		}
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_elv }
+		NOT = { has_reform = al_andalusia_government }
+		religion_group = muslim
+		government = monarchy
+		OR = {
+			capital_scope = { region = france_region }
+			capital_scope = { region = italy_region }							#For West European muslims only
+			capital_scope = { region = iberia_region }
+			tag = ADU
+		}
+		NOT = {
+			tag = TUR
+			tag = RUM
+			tag = BYZ
+			tag = HRE
+			tag = ROM
+		}
+		stability = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 50
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_elv
+				duration = -1												#once per campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA11"							#enact
+		ai_chance = { factor = 90 }
+		if = {
+			limit = {
+				NOT = { primary_culture = andalucian }									#necessary for government reform to work; also gives access to sweet Sufi Holy Orders
+			}
+			change_primary_culture = andalucian
+		}
+		add_government_reform = al_andalusia_government
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB11"							#no thanks
+		ai_chance = { factor = 10 }
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.12
+	
+	title = "plati_ck_new_flavor.EVTNAME12"				#West / East Francia Namechange option
+	desc = "plati_ck_new_flavor.EVTDESC12"				#a simple optional name change event, disguised as reform and policy making one
+	
+	picture = PLATI_CK_MAIN
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twe }
+		OR = {
+			tag = FRA
+			tag = GER
+		}
+		dynasty = "Karling"																	#Completely possible that even ai Karlings last this long, resulting in archaic naming of France and Germany - East Francia and West Francia
+		government = monarchy
+		current_age = age_of_discovery
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twe
+				duration = -1												#Once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA12"							#placeholder, scrapped Italy
+		trigger = {
+			always = no
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB12"							#West Francia to France
+		ai_chance = { factor = 99 }
+		trigger = {
+			tag = FRA
+		}
+		if = {
+			limit = {
+				NOT = { culture_group = french }
+			}
+			change_primary_culture = cosmopolitan_french
+		}
+		add_reform_progress_small_effect = yes
+		override_country_name = PLATI_DEFAULT_FRANCE_NAME
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC12"							#East Francia to Germany
+		ai_chance = { factor = 99 }
+		trigger = {
+			tag = GER
+		}
+		if = {
+			limit = {
+				NOT = { culture_group = germanic }
+			}
+			change_primary_culture = german
+		}
+		add_reform_progress_small_effect = yes
+		override_country_name = PLATI_DEFAULT_GERMANY_NAME
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTD12"							#no, our name is awesome
+		ai_chance = { factor = 1 }
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.13
+	
+	title = "plati_ck_new_flavor.EVTNAME13"				#Persia Flavor informative event
+	desc = "plati_ck_new_flavor.EVTDESC13"				#
+	
+	picture = PLATI_TURKIC_PERSIAN_RIDER
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thi
+				duration = -1												#once per game
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {											#bizzare way to do it, but if it works, it works
+				limit = {
+					tag = PER
+				}
+				save_event_target_as = plati_ck_flavor_new_persia_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA13"							#informative, just FYI
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.14
+	
+	title = "plati_ck_new_flavor.EVTNAME14"				#Al Andalus - informative event
+	desc = "plati_ck_new_flavor.EVTDESC14"				#
+	
+	picture = PLATI_AL_ANDALUSIAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_frt }
+		ai = no																		#just for players
+		capital_scope = { continent = europe }
+		NOT = { tag = ADU }
+		ADU = {
+			exists = yes
+			is_great_power = yes
+		}
+		current_age = age_of_discovery
+	}
+	
+	mean_time_to_happen = {
+		days = 90
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_frt
+				duration = -1												#Informative, once per campaign
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {											#bizzare way to do it, but if it works, it works
+				limit = {
+					tag = ADU
+				}
+				save_event_target_as = plati_ck_flavor_new_andalusia_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA14"							#
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.15
+	
+	title = "plati_ck_new_flavor.EVTNAME15"				#EuroMuslim flavor - reform - tolerance
+	desc = "plati_ck_new_flavor.EVTDESC15"				#
+	
+	picture = PLATI_AL_ANDALUSIAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_fvt }
+		NOT = {
+			tag = TUR
+			tag = RUM
+			tag = PER
+		}
+		AND = {
+			religion_group = muslim
+			capital_scope = {
+				continent = europe																#For euromuslims
+			}
+		}
+		adm_tech = 10
+		innovativeness = 20
+		adm = 5
+	}
+	
+	mean_time_to_happen = {
+		days = 50
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_fvt
+				duration = -1												#once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA15"							#
+		ai_chance = { factor = 100 }
+		add_adm_power = -50
+		reduce_estate_church_loyalty_effect = yes
+		add_piety = -0.5
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_reforms_for_dhimmis
+			duration = -1
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB15"							#theres no need for such reforms
+		ai_chance = { factor = 0 }
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.16
+	
+	title = "plati_ck_new_flavor.EVTNAME16"				#EuroMuslim flavor - reform - Western Techgroup
+	desc = "plati_ck_new_flavor.EVTDESC16"				#
+	
+	picture = PLATI_AL_ANDALUSIAN
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_sxt }
+		NOT = { technology_group = western }
+		NOT = { has_idea_group = religious_ideas }
+		NOT = {
+			tag = TUR
+			tag = RUM
+			tag = PER
+		}
+		AND = {
+			religion_group = muslim
+			capital_scope = {
+				continent = europe																#For euromuslims
+			}
+		}
+		adm_tech = 18
+		innovativeness = 50
+		adm = 5
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_sxt
+				duration = -1												#once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA16"							#
+		ai_chance = { factor = 70 }
+		trigger = { NOT = { technology_group = western } }
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_stability = -2
+		change_technology_group = western
+		change_unit_type = western
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB16"							#
+		ai_chance = { factor = 20 }
+		trigger = { NOT = { technology_group = ottoman } }					#anatolian
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_stability = -1
+		change_technology_group = ottoman
+		change_unit_type = ottoman
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC16"							#
+		ai_chance = { factor = 10 }
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.17
+	
+	title = "plati_ck_new_flavor.EVTNAME17"				#Anti-Byzantine coalition;
+	desc = "plati_ck_new_flavor.EVTDESC17"				#Converted CK Byzantium always remains among the strongest powers in the world and in EU4 - ends up eating half the world and unlike Ottomans, have no 'decadence mechanic. I added a 'safeguard mechanism' event to give one chance to halt their insane blobbing;
+	
+	picture = PLATI_BYZANTIUM
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_svt }
+		NOT = { tag = BYZ }
+		NOT = { alliance_with = BYZ }
+		is_year = 1468													#arbitrary year, just so it doesnt fire right away
+		is_great_power = yes
+		ai = no															#for players only
+		OR = {
+			capital_scope = { continent = europe }
+			capital_scope = { region = egypt_region }
+			capital_scope = { region = maghreb_region }
+			capital_scope = { region = mashriq_region }
+			capital_scope = { region = anatolia_region }
+			capital_scope = { region = persia_region }
+			capital_scope = { region = khorasan_region }
+			capital_scope = { region = caucasia_region }
+			capital_scope = { region = arabia_region }
+		}
+		BYZ = {
+			exists = yes
+			is_great_power = yes
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+		NOT = {
+			any_country = { religion = germanic_pagan }
+			any_country = { religion = anglo_pagan }
+			any_country = { religion = scythian_pagan }
+			any_country = { religion = zamolxism }
+			any_country = { religion = mithraism }
+			any_country = { religion = iberian_pagan }
+			any_country = { religion = canaanite }
+			any_country = { religion = kemetism }							#this way we can keep this event exclusive to CK3-EU4 save by excluding Imperator religions
+			any_country = { religion = mardukism }							#See: https://discord.com/channels/612683871112396800/741848366077444191/1135216438228029441 ; https://discord.com/channels/612683871112396800/741848366077444191/1135298049124618340
+			any_country = { religion = arab_pagan }
+			any_country = { religion = armenian_pagan }
+			any_country = { religion = caucasian_pagan }
+			any_country = { religion = atenism }
+			any_country = { religion = druidism }
+			any_country = { religion = briton_pagan }
+			any_country = { religion = gallic_pagan }
+			any_country = { religion = gaelic_pagan }
+			any_country = { religion = celtiberian_pagan }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_svt
+				duration = -1												#you only got one shot, one opportunity
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					tag = BYZ
+				}
+				save_event_target_as = plati_ck_flavor_new_the_again_byzantines
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA17"							#yes
+		add_dip_power = -50
+		add_historical_rival = BYZ
+		BYZ = { add_historical_rival = ROOT }
+		add_casus_belli = {
+			target = BYZ
+			type = cb_annex
+			months = 240
+		}
+		custom_tooltip = "plati_ck_new_flavor_byzantium_accepted_coalition_tooltip"
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_byzantium_coalition_trickle_down
+				duration = 18250														#50 years
+				hidden = yes															#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB17"							#no
+		BYZ = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+		custom_tooltip = "plati_ck_new_flavor_byzantium_refused_coalition_tooltip"
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.18
+	
+	title = "plati_ck_new_flavor.EVTNAME18"				#
+	desc = "plati_ck_new_flavor.EVTDESC18"				#
+	
+	picture = PLATI_BYZANTIUM
+	
+	major = yes
+	
+	is_triggered_only = yes								#by decision
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_eht
+				duration = 9000												#So doesn't fire too often
+				hidden = yes												#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					has_country_modifier = plati_ck_flavor_DEBUG_byzantium_coalition_trickle_down
+					offensive_war_with = BYZ
+				}
+				save_event_target_as = plati_ck_flavor_new_country_fighting_byzantines
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA18"							#les go (ai auotaccepts)
+		join_all_offensive_wars_of = event_target:plati_ck_flavor_new_country_fighting_byzantines
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB18"							#not interested
+		trigger = {
+			ai = no
+		}
+		add_prestige = -20
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.19
+	
+	title = "plati_ck_new_flavor.EVTNAME19"				#Muslim and Zoroastrian Relations
+	desc = "plati_ck_new_flavor.EVTDESC19"				#
+	
+	picture = PLATI_COSMOPOLITAN_COURT
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_nit }
+		is_great_power = yes
+		religion_group = zoroastrian_group
+		any_known_country = {
+			is_great_power = yes
+			religion_group = muslim
+			NOT = { war_with = ROOT }
+			ai = yes
+			NOT = { capital_scope = { continent = europe } }							#so it doesnt ally with faraway andalusians etc
+		}
+		dip = 5
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_nit
+				duration = -1												#once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					is_great_power = yes
+					religion_group = muslim
+					NOT = { war_with = ROOT }
+					ai = yes
+				}
+				save_event_target_as = plati_ck_flavor_new_muslim_zoroastrian_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA19"							#
+		ai_chance = { factor = 60 }
+		add_historical_rival = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+		event_target:plati_ck_flavor_new_muslim_zoroastrian_country = { add_historical_rival = ROOT }
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB19"							#
+		ai_chance = { factor = 30 }
+		add_dip_power = -25
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+			modifier = opinion_friendliness
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTD19"							#
+		ai_chance = { factor = 90 }
+		highlight = yes
+		trigger = {
+			OR = {
+				ruler_has_personality = free_thinker_personality
+				ruler_has_personality = tolerant_personality
+				ruler_has_personality = righteous_personality
+			}
+		}
+		add_dip_power = -100
+		add_historical_friend = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+		event_target:plati_ck_flavor_new_muslim_zoroastrian_country = { add_historical_friend = ROOT }
+		add_opinion = {
+			who = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+			modifier = opinion_friendliness
+		}
+		reverse_add_opinion = {
+			who = event_target:plati_ck_flavor_new_muslim_zoroastrian_country
+			modifier = opinion_friendliness
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC19"							#
+		ai_chance = { factor = 10 }
+		add_stability_or_adm_power = yes
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.20
+	
+	title = "plati_ck_new_flavor.EVTNAME20"				#Ruler Personality Pagan
+	desc = "plati_ck_new_flavor.EVTDESC20"				#Ancestor Worship
+	
+	picture = PLATI_ODD_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twt }
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtfor }
+		has_government_attribute = heir
+		is_lesser_in_union = no
+		OR = {
+			government = monarchy
+			government = tribal	
+		}
+		has_heir = yes
+		heir_age = 12
+		OR = {																					#so its somewhat promising heir
+			heir_adm = 5
+			heir_dip = 5
+			heir_mil = 5
+		}
+		NOT = { heir_age = 15 }																	#the first personality trait unlocked at age 15
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		stability = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 60
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twt
+				duration = 7300												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA20"							#My lineage had great sovereigns!
+		ai_chance = { factor = 33 }
+		random_list = {
+			15 = {
+				add_heir_personality = just_personality
+			}
+			15 = {
+				add_heir_personality = righteous_personality
+			}
+			15 = {
+				add_heir_personality = lawgiver_personality
+			}
+			15 = {
+				add_heir_personality = free_thinker_personality
+			}
+			15 = {
+				add_heir_personality = midas_touched_personality
+			}
+			5 = {
+				add_heir_personality = embezzler_personality
+			}
+			5 = {
+				add_heir_personality = greedy_personality
+			}
+			5 = {
+				add_heir_personality = obsessive_perfectionist_personality
+			}
+			5 = {
+				add_heir_personality = drunkard_personality
+			}
+			5 = {
+				add_heir_personality = great_engineer_personality										#Special
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB20"							#My bloodline harbored many charismatic leaders!
+		ai_chance = { factor = 33 }
+		random_list = {
+			15 = {
+				add_heir_personality = intricate_web_weaver_personality
+			}
+			15 = {
+				add_heir_personality = secretive_personality
+			}
+			15 = {
+				add_heir_personality = benevolent_personality
+			}
+			15 = {
+				add_heir_personality = silver_tongue_personality
+			}
+			15 = {
+				add_heir_personality = charismatic_negotiator_personality
+			}
+			5 = {
+				add_heir_personality = babbling_buffoon_personality
+			}
+			5 = {
+				add_heir_personality = naive_personality
+			}
+			5 = {
+				add_heir_personality = loose_lips_personality
+			}
+			5 = {
+				add_heir_personality = drunkard_personality
+			}
+			5 = {
+				add_heir_personality = iron_crowned_personality													#Special
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC20"							#My ancestors were mighty warrios!
+		ai_chance = { factor = 33 }
+		random_list = {
+			15 = {
+				add_heir_personality = conqueror_personality
+			}
+			15 = {
+				add_heir_personality = tactical_genius_personality
+			}
+			15 = {
+				add_heir_personality = bold_fighter_personality
+			}
+			15 = {
+				add_heir_personality = strict_personality
+			}
+			15 = {
+				add_heir_personality = inspiring_leader_personality
+			}
+			5 = {
+				add_heir_personality = craven_personality
+			}
+			5 = {
+				add_heir_personality = malevolent_personality
+			}
+			5 = {
+				add_heir_personality = cruel_personality
+			}
+			5 = {
+				add_heir_personality = drunkard_personality
+			}
+			5 = {
+				add_heir_personality = legendary_conqueror_personality											#Special
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTD20"							#I am the master of my own fate!
+		ai_chance = { factor = 0 }
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.21
+	
+	title = "plati_ck_new_flavor.EVTNAME21"				#Latin Empire?
+	desc = "plati_ck_new_flavor.EVTDESC21"				#Unfortunately, no missions 
+	
+	picture = PLATI_BYZANTIUM
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtone }
+		religion = catholic
+		government = monarchy
+		NOT = {
+			tag = TUR
+			tag = RUM
+			tag = PAP
+			tag = MUG
+		}
+		OR = {
+			capital_scope = { continent = europe }
+			capital_scope = { region = anatolia_region }
+		}
+		ai = no																			#its quite bizzare, lets keep it a player-only event
+		ROM = { exists = no }
+		LAE = { exists = no }
+		is_great_power = yes
+		owns_core_province = 151
+		owns_core_province = 149
+		owns_core_province = 148
+		owns_core_province = 316
+		owns_core_province = 318
+		owns_core_province = 147
+		stability = 1
+		current_age = age_of_discovery
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtone
+				duration = -1												#once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA21"							#
+		change_tag = LAE
+		on_change_tag_effect = yes
+		restore_country_name_effect = yes
+		country_event = { id = ideagroups.1 } #Swap Ideas
+		151 = {
+			move_capital_effect = yes
+			change_religion = catholic
+		}
+		add_papal_influence = 25
+		add_reform_desire = -0.015
+		add_government_reform = holy_state_reform
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB21"							#
+		add_prestige = 5
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.22
+	
+	title = "plati_ck_new_flavor.EVTNAME22"				#Colonialism
+	desc = "plati_ck_new_flavor.EVTDESC22"				#
+	
+	picture = PLATI_PAGAN_FIRE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twttwo }
+		any_known_country = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+		}
+		is_institution_enabled = new_world_i
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twttwo
+				duration = -1												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA22"							#informative, just FYI
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_colonialism_instituion
+			duration = 7300
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.23
+	
+	title = "plati_ck_new_flavor.EVTNAME23"				#
+	desc = "plati_ck_new_flavor.EVTDESC23"				#
+	
+	picture = PLATI_NOMADIC_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtthr }
+		any_known_country = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+		}
+		is_institution_enabled = enlightenment
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtthr
+				duration = -1											#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA23"							#informative, just FYI
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.24
+	
+	title = "plati_ck_new_flavor.EVTNAME24"				#Global Trade
+	desc = "plati_ck_new_flavor.EVTDESC24"				#
+	
+	picture = SHIP_SAILING_eventPicture
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtfor }
+		any_known_country = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		AND = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+		}
+		is_institution_enabled = global_trade
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtfor
+				duration = -1												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA24"							#informative, just FYI
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.25
+	
+	title = "plati_ck_new_flavor.EVTNAME25"				#The Biggest City in Europe
+	desc = "plati_ck_new_flavor.EVTDESC25"				#Reward for playing tall and having biggest city post CK
+	
+	picture = CITY_VIEW_eventPicture
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtfiv }
+		NOT = { any_country = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtfiv } }				#considering how dev map looks after conversion, its probably easy to cheese it at the start of the game by adding 1-2 dev points, but oh well!
+		current_age = age_of_discovery
+		capital_scope = {
+			continent = europe
+			AND = {																	##The most likely candidates to have highest development
+				OR = {
+					province_id = 112
+					higher_development_than = 112									#Venice
+				}
+				OR = {
+					province_id = 101
+					higher_development_than = 101									#Genoa
+				}
+				OR = {
+					province_id = 118
+					higher_development_than = 118									#Rome
+				}
+				OR = {
+					province_id = 225
+					higher_development_than = 225									#Cordoba
+				}
+				OR = {
+					province_id = 97
+					higher_development_than = 97									#Amsterdam
+				}
+				OR = {
+					province_id = 183
+					higher_development_than = 183									#Paris
+				}
+				OR = {
+					province_id = 121
+					higher_development_than = 121									#Naples
+				}
+				OR = {
+					province_id = 266
+					higher_development_than = 266									#Prague
+				}
+				OR = {
+					province_id = 104
+					higher_development_than = 104									#Milan
+				}
+				OR = {
+					province_id = 151
+					higher_development_than = 151									#Constantinople
+				}
+				OR = {
+					province_id = 236
+					higher_development_than = 236									#London
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtfiv
+				duration = -1												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA25"							#always enabled
+		ai_chance = { factor = 20 }
+		capital_scope = {
+			add_permanent_province_modifier = { 
+				name = plati_ck_new_flavor_modifier_province_capital_of_europe_generic
+				duration = -1  
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB25"							#
+		ai_chance = { factor = 40 }
+		trigger = {
+			capital_scope = {
+				NOT = {
+					trade_goods = glass
+					trade_goods = paper
+					trade_goods = silk
+				}
+			}
+		}
+		capital_scope = {
+			add_permanent_province_modifier = {
+				name = plati_ck_new_flavor_modifier_province_capital_of_europe_economic
+				duration = -1  
+			}
+		}
+		random_list = {
+			40 = { capital_scope = { change_trade_goods = glass } }
+			40 = { capital_scope = { change_trade_goods = paper } }
+			20 = { capital_scope = { change_trade_goods = silk } }
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC25"							#
+		ai_chance = { factor = 40 }
+		trigger = {
+			capital_scope = {
+				NOT = {
+					trade_goods = spices
+					trade_goods = dyes
+					trade_goods = incense
+					trade_goods = chinaware
+				}
+			}
+		}
+		capital_scope = {
+			add_permanent_province_modifier = {
+				name = plati_ck_new_flavor_modifier_province_capital_of_europe_trade
+				duration = -1  
+			}
+		}
+		random_list = {
+			30 = { capital_scope = { change_trade_goods = spices } }
+			30 = { capital_scope = { change_trade_goods = dyes } }
+			30 = { capital_scope = { change_trade_goods = incense } }
+			10 = { capital_scope = { change_trade_goods = chinaware } }
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.26
+	
+	title = "plati_ck_new_flavor.EVTNAME26"				#ROME
+	desc = "plati_ck_new_flavor.EVTDESC26"				#
+	
+	picture = PLATI_ROME
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtsix }
+		NOT = { is_year = 1500 }																#so this event doesnt fire later on when player becomes Rome through formation
+		is_great_power = yes
+		tag = ROM
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtsix
+				duration = -1												#once
+				hidden = yes												#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA26"							#
+		ai_chance = { factor = 90 }
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 100
+		}
+		if = {
+			limit = {
+				has_dlc = "Domination"
+				NOT = { has_reform = roman_empire_reform }
+				government = monarchy
+				primary_culture = roman
+			}
+			add_government_reform = roman_empire_reform
+		}
+		if = {
+			limit = {
+				has_dlc = "Domination"
+				NOT = { has_reform = roman_republic_government }
+				government = republic
+				primary_culture = roman
+			}
+			add_government_reform = roman_republic_government
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB26"							#in case player doesnt want to have cool unique government
+		ai_chance = { factor = 10 }
+		add_power_projection = {
+			type = mission_rewards_power_projection
+			amount = 100
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.27
+	
+	title = "plati_ck_new_flavor.EVTNAME27"				#Master Idolmaker
+	desc = "plati_ck_new_flavor.EVTDESC27"				#
+	
+	picture = PLATI_IDOLS
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtsev }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		stability = 2
+		adm = 4
+		NOT = {
+			religion = hellenic_pagan
+			religion = hellenic_pagan_reformed
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+			NOT = { has_province_modifier = plati_ck_new_flavor_modifier_province_idolmaker_province }
+			OR = {
+				has_building = temple
+				has_building = cathedral
+			}
+			is_overseas = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtsev
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					has_owner_religion = yes
+					NOT = { has_province_modifier = plati_ck_new_flavor_modifier_province_idolmaker_province }
+					OR = {
+						has_building = temple
+						has_building = cathedral
+					}
+					is_overseas = no
+				}
+				save_event_target_as = plati_ck_flavor_new_idolmaker_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA27"							#capital needs his work
+		ai_chance = { factor = 40 }
+		add_years_of_income = -0.33
+		define_advisor = {
+			type = artist
+			skill = 3
+			discount = yes
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = plati_ck_new_flavor_modifier_province_idolmaker_province
+				duration = 7300
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB27"							#let him stay home
+		ai_chance = { factor = 40 }
+		event_target:plati_ck_flavor_new_idolmaker_province = {
+			add_province_modifier = {
+				name = plati_ck_new_flavor_modifier_province_idolmaker_province
+				duration = 7300
+			}
+		}
+		random_list = {
+			33 = {
+				event_target:plati_ck_flavor_new_idolmaker_province = { add_base_production = 1 }
+			}
+			33 = {
+				event_target:plati_ck_flavor_new_idolmaker_province = { add_base_tax = 1 }
+			}
+			33 = {
+				event_target:plati_ck_flavor_new_idolmaker_province = { add_base_manpower = 1 }
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC27"							#
+		ai_chance = { factor = 20 }
+		highlight = yes
+		trigger = {
+			OR = {
+				ruler_has_personality = greedy_personality
+				ruler_has_personality = embezzler_personality
+			}
+		}
+		add_years_of_income = 0.5
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.28
+	
+	title = "plati_ck_new_flavor.EVTNAME28"				#Plurality of Gods
+	desc = "plati_ck_new_flavor.EVTDESC28"				#
+	
+	picture = PLATI_IDOLS
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twteig }
+		uses_personal_deities = yes
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		OR = {
+			NOT = { legitimacy_equivalent = 90 }
+			NOT = { religious_unity = 1 }
+			advisor = theologian
+		}
+		any_neighbor_country = {
+			NOT = { religion = ROOT }
+		}
+		any_owned_province = {
+			is_state = yes
+			is_capital = no
+			has_owner_religion = yes
+			is_overseas = no
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twteig
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_neighbor_country = {
+				limit = {
+					NOT = { religion = ROOT }
+				}
+				save_event_target_as = plati_ck_flavor_new_polytheist_influences_country
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					is_capital = no
+					has_owner_religion = yes
+					is_overseas = no
+				}
+				save_event_target_as = plati_ck_flavor_new_polytheist_influences_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA28"							#So
+		ai_chance = { factor = 80 }
+		event_target:plati_ck_flavor_new_polytheist_influences_province = {
+			change_religion = event_target:plati_ck_flavor_new_polytheist_influences_country
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB28"							#bad
+		ai_chance = { factor = 20 }
+		add_mil_power = -50
+		event_target:plati_ck_flavor_new_polytheist_influences_province = {
+			add_unrest = 5
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC28"							#conversion; since pagans have less freedom to convert than christians (Catholic - Prot - Ref), this can be an opportunity for spicing up the game
+		ai_chance = { factor = 0 }										#disabled for ai
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				religion = event_target:plati_ck_flavor_new_polytheist_influences_country
+				is_overseas = no
+			}
+		}
+		event_target:plati_ck_flavor_new_polytheist_influences_province = {
+			change_religion = event_target:plati_ck_flavor_new_polytheist_influences_country
+		}
+		change_religion = event_target:plati_ck_flavor_new_polytheist_influences_country
+		add_country_modifier = {
+			name = "conversion_zeal"
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.29
+	
+	title = "plati_ck_new_flavor.EVTNAME29"				#
+	desc = "plati_ck_new_flavor.EVTDESC29"				#
+	
+	picture = PLATI_HENOTHEISM
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twtnin }
+		OR = {
+			full_idea_group = humanist_ideas
+			full_idea_group = innovativeness_ideas
+			full_idea_group = plutocracy_ideas
+			is_institution_enabled = enlightenment
+		}
+		AND = {
+			religion_group = christian
+			capital_scope = { continent = europe }
+		}
+		any_known_country = {
+			religion_group = pagan
+			capital_scope = { continent = europe }
+		}
+		innovativeness = 60
+		stability = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_twtnin
+				duration = -1												#once
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA29"							#
+		ai_chance = { factor = 20 }
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_henotheism
+			duration = -1
+		}
+		if = {
+			limit = {
+				religion = catholic
+			}
+			add_papal_influence = -200
+		}
+		if = {
+			limit = {
+				exists = PAP
+				religion = catholic
+			}
+			PAP = {
+				add_opinion = {
+				who = ROOT
+				modifier = opinion_angry
+				}
+			}
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB29"							#
+		ai_chance = { factor = 80 }
+		add_stability_or_adm_power = yes
+		add_country_modifier = {
+			name = narrowminded_modifier
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.30
+	
+	title = "plati_ck_new_flavor.EVTNAME30"				#Pagan Fury
+	desc = "plati_ck_new_flavor.EVTDESC30"				#
+	
+	picture = PLATI_PAGAN_FURY
+	
+	major = yes
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_tht }
+		is_crusade_target = yes
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 20
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_tht
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA30"							#Gods watch over us!
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_crusade_target_pagan
+			duration = 3650
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.32
+	
+	title = "plati_ck_new_flavor.EVTNAME32"				#Fertility rites in province
+	desc = "plati_ck_new_flavor.EVTDESC32"				#Taken from Imperator:Rome
+	
+	picture = PLATI_PAGAN_FIRE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thttwo }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		any_owned_province = {
+			is_state = yes
+			has_owner_religion = yes
+			is_overseas = no
+		}
+		stability = 1
+		manpower_percentage = 0.50
+		NOT = { war_exhaustion = 1 }
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thttwo
+				duration = 8500												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_owned_province = {
+				limit = {
+					is_state = yes
+					has_owner_religion = yes
+					is_overseas = no
+				}
+				save_event_target_as = plati_ck_flavor_new_fertility_rites_province
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA32"														#
+		ai_chance = { factor = 50 }
+		random_list = {
+			33 = {
+				event_target:plati_ck_flavor_new_fertility_rites_province = { add_base_tax = 1 }
+				add_unrest = -2
+			}
+			33 = {
+				event_target:plati_ck_flavor_new_fertility_rites_province = { add_base_production = 1 }
+				add_unrest = -2
+			}
+			33 = {
+				event_target:plati_ck_flavor_new_fertility_rites_province = { add_base_manpower = 1 }
+				add_unrest = -2
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -15
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB32"														#
+		ai_chance = { factor = 50 }
+		event_target:plati_ck_flavor_new_fertility_rites_province = { add_unrest = 10 }
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.33
+	
+	title = "plati_ck_new_flavor.EVTNAME33"				#Ancestor Guidance
+	desc = "plati_ck_new_flavor.EVTDESC33"				#Taken from Imperator:Rome
+	
+	picture = PLATI_ODD_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtthr }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		OR = {
+			NOT = { adm = 6 }
+			NOT = { ruler_has_personality = zealot_personality }
+		}
+		OR = {
+			NOT = { legitimacy_equivalent = 95 }
+			advisor = theologian
+			advisor = inquisitor
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thtthr
+				duration = 11000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA33"							#
+		ai_chance = { factor = 50 }
+		add_stability_or_adm_power = yes
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_ANCESTRAL_PLATI
+			influence = 20
+			duration = 7300
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB33"							#
+		ai_chance = { factor = 50 }
+		add_stability = -1
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -20
+		}
+		if = {
+			limit = { advisor = theologian }
+			kill_advisor = theologian
+		}
+		if = {
+			limit = { advisor = inquisitor }
+			kill_advisor = inquisitor
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.34
+	
+	title = "plati_ck_new_flavor.EVTNAME34"				#Bad Heir
+	desc = "plati_ck_new_flavor.EVTDESC34"				#Taken from Imperator:Rome
+	
+	picture = PLATI_PAGAN_FIRE
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtfor }
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_twt }
+		has_country_modifier = godly_inspiration											#divination, part of base game modifiers
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		OR = {
+			NOT = { heir_adm = 2 }
+			NOT = { heir_dip = 2 }																#Ridiculous if it would happen to 6 6 6 heir
+			NOT = { heir_mil = 2 }
+		}
+		has_government_attribute = heir
+		is_lesser_in_union = no
+		OR = {
+			government = monarchy
+			government = tribal	
+		}
+		has_heir = yes
+		legitimacy_equivalent = 80
+	}
+	
+	mean_time_to_happen = {
+		months = 100
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thtfor
+				duration = 9000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA34"							#
+		ai_chance = { factor = 50 }
+		random_list = {
+			30 = {
+				change_heir_adm = 1
+			}
+			30 = {
+				change_heir_dip = 1
+			}
+			30 = {
+				change_heir_mil = 1
+			}
+			10 = {
+				change_heir_adm = -1
+				change_heir_dip = -1
+				change_heir_mil = -1
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -15
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB34"							#
+		ai_chance = { factor = 50 }
+		add_stability = -1
+		define_heir = {														#a dice roll - can be worse, can be a better ruler
+			dynasty = ROOT
+		}
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.35
+	
+	title = "plati_ck_new_flavor.EVTNAME35"				#Priests of War
+	desc = "plati_ck_new_flavor.EVTDESC35"				#Taken from Imperator:Rome
+	
+	picture = PLATI_ODD_SHAMAN
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_tht }
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtfiv }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		is_at_war = yes
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 60
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 100
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thtfiv
+				duration = 16000												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+			random_known_country = {
+				limit = {
+					war_with = ROOT
+				}
+				save_event_target_as = plati_ck_flavor_new_warring_with_paganss_country
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA35"							#
+		ai_chance = { factor = 40 }
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_PRIESTS_OF_WAR
+			influence = 10
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_war_clergy_support_troops_pagan
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB35"							#
+		ai_chance = { factor = 40 }
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_PRIESTS_OF_WAR
+			influence = 10
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_war_clergy_support_people_pagan
+			duration = 3650
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC35"							#
+		ai_chance = { factor = 20 }
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.36
+	
+	title = "plati_ck_new_flavor.EVTNAME36"				#Religious Procession
+	desc = "plati_ck_new_flavor.EVTDESC36"				#Taken from Imperator:Rome
+	
+	picture = SPY_eventPicture
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtsix }
+		AND = {
+			religion_group = pagan
+			capital_scope = {
+				continent = europe																#For europagans, they really need more flavor
+			}
+		}
+		estate_influence = {
+			estate = estate_church
+			influence = 70
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 140
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thtsix
+				duration = 9620												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA36"							#
+		ai_chance = { factor = 40 }
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+		add_stability = -1
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_closed_temples_pagan
+			duration = 7300
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB36"							#
+		ai_chance = { factor = 40 }
+		highlight = yes
+		trigger = {
+			OR = {
+				ruler_has_personality = just_personality
+				ruler_has_personality = righteous_personality
+				ruler_has_personality = free_thinker_personality
+				ruler_has_personality = lawgiver_personality
+			}
+		}
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC36"							#
+		ai_chance = { factor = 20 }
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -20
+		}
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_open_temples_pagan
+			duration = 7300
+		}
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.37
+	
+	title = "plati_ck_new_flavor.EVTNAME37"				#Zoroastrian
+	desc = "plati_ck_new_flavor.EVTDESC37"				#Taken from Imperator:Rome
+	
+	picture = PLATI_ZOROASTRIAN_CLERGY
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thtsev }
+		religion_group = zoroastrian_group
+		OR = {
+			NOT = { adm = 5 }
+			NOT = { dip = 5 }
+			NOT = { mil = 5 }
+		}
+		stability = 1
+		government = monarchy
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thtsev
+				duration = 9500												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA37"							#
+		ai_chance = { factor = 80 }
+		random_list = {
+			30 = {
+				change_adm = 1
+			}
+			30 = {
+				change_dip = 1
+			}
+			30 = {
+				change_mil = 1
+			}
+			10 = {
+				change_adm = 1
+				change_dip = 1
+				change_mil = 1
+			}
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_ZOROASTRIAN_PLATI
+			influence = 20
+			duration = 7300
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB37"							#
+		ai_chance = { factor = 20 }
+		add_legitimacy = 10
+	}
+}
+country_event = {
+	id = plati_ck_new_flavor.38
+	
+	title = "plati_ck_new_flavor.EVTNAME38"				#Guided by Ahuramazda
+	desc = "plati_ck_new_flavor.EVTDESC38"				#Taken from Imperator:Rome
+	
+	picture = PLATI_ZOROASTRIAN_CLERGY
+	
+	trigger = {
+		NOT = { has_country_modifier = plati_ck_flavor_DEBUG_cooldown_thteig }
+		OR = {
+			advisor = theologian
+			advisor = inquisitor
+		}
+		religion_group = zoroastrian_group
+		adm = 4
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		hidden_effect = {
+			add_country_modifier = {
+				name = plati_ck_flavor_DEBUG_cooldown_thteig
+				duration = 9050												#So doesn't fire too often
+				hidden = yes											#Debug timer modifier, stays hidden
+			}
+		}
+	}
+	
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTA38"							#
+		ai_chance = { factor = 33 }
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_war_clergy_support_troops_pagan
+			duration = 3650
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_MAGI_PLATI
+			influence = 15
+			duration = 7300
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTB38"							#
+		ai_chance = { factor = 33 }
+		add_country_modifier = {
+			name = plati_ck_new_flavor_modifier_war_clergy_support_people_pagan
+			duration = 3650
+		}
+		add_estate_influence_modifier = {
+			estate = estate_church
+			desc = EST_INFLUENCE_MAGI_PLATI
+			influence = 15
+			duration = 7300
+		}
+	}
+	option = {
+		name = "plati_ck_new_flavor.EVTOPTC38"							#
+		ai_chance = { factor = 33 }
+		add_adm_power = 20
+	}
+}
