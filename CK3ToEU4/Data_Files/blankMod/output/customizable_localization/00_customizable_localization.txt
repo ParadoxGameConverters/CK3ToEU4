@@ -4934,6 +4934,58 @@ defined_text = {
 	}
 }
 defined_text = {
+	name = GetQizilbashLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_qizilbash
+			estate_loyalty = { estate = estate_qizilbash loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_qizilbash
+			NOT = { estate_loyalty = { estate = estate_qizilbash loyalty = 60 } }
+			estate_loyalty = { estate = estate_qizilbash loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_qizilbash
+			NOT = { estate_loyalty = { estate = estate_qizilbash loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
+	name = GetGhulamsLoyaltyStatus
+	random = no
+	text = {
+		localisation_key = ESTATE_LOYAL
+		trigger = {
+			has_estate = estate_ghulams
+			estate_loyalty = { estate = estate_ghulams loyalty = 60 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_NEUTRAL
+		trigger = {
+			has_estate = estate_ghulams
+			NOT = { estate_loyalty = { estate = estate_ghulams loyalty = 60 } }
+			estate_loyalty = { estate = estate_ghulams loyalty = 30 }
+		}
+	}
+	text = {
+		localisation_key = ESTATE_DISLOYAL
+		trigger = {
+			has_estate = estate_ghulams
+			NOT = { estate_loyalty = { estate = estate_ghulams loyalty = 30 } }
+		}
+	}
+}
+defined_text = {
 	name = GetGranadaOrAndalusia
 	random = no
 	text = {
@@ -5479,3 +5531,1592 @@ defined_text = {
 		}
 	}
 }
+
+defined_text = {
+    name = GetAvailableAppanageAnnexationScore
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = can_annex_appanages_points
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_AVAILABLE_ANNEXATIONS
+        trigger = {
+            check_variable = {
+                which = can_annex_appanages_points
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetSaleTitleCounter
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = sale_of_titles_counter
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_SOLD_TITLES
+        trigger = {
+            check_variable = {
+                which = sale_of_titles_counter
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetSummonDietCounter
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = summon_the_diet_counter
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_DIETS_CALLED
+        trigger = {
+            check_variable = {
+                which = summon_the_diet_counter
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetSeizeLandCounter
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = seize_land_counter
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_LAND_SEIZED
+        trigger = {
+            check_variable = {
+                which = seize_land_counter
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+	name = GetManufactoriesRuleBritannia
+	text = {
+		localisation_key = ONLY_MANUFACTORIES
+		trigger = {
+			has_dlc = "Rule Britannia"
+		}
+	}
+	text = {
+		localisation_key = MANUFACTORIES_AND_INDUSTRIALIZATION
+		trigger = {
+			NOT = {
+				has_dlc = "Rule Britannia"
+			}
+		}
+	}
+	text = {
+		localisation_key = MANUFACTORIES_AND_INDUSTRIALIZATION
+	}
+}
+
+defined_text = {
+    name = GetByzantineMonumentBuff
+	
+    text = {
+        localisation_key = BYZ_great_project_cost
+        trigger = {
+			has_dlc = "Leviathan"
+        }
+    }
+    text = {
+        localisation_key = BYZ_construction_cost
+        trigger = {
+			always = yes
+        }
+    }
+}
+
+defined_text = {
+	name = GetDynastyOrFallback
+	random = no
+	text = {
+		localisation_key = THIS_GET_DYNASTY_NAME
+		trigger = {
+			OR = {
+				government = monarchy
+				government = tribal
+			}
+			OR = {
+				has_regency = no
+				AND = {
+					has_heir = yes
+					has_regency = yes
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = NO_SPACE
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetTempElevationCostReduction
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			NOT = { has_country_flag = persian_influence_setup_flag }
+		}
+	}
+	text = {
+		localisation_key = persian_influence_current_reduction_bonus_tt
+		trigger = {
+			has_country_flag = persian_influence_setup_flag
+		}
+	}
+}
+
+defined_text = {
+	name = GetFabricateReligiousConflictCost
+	text = { 
+		localisation_key = 30_STRING
+		trigger = {
+			NOT = { full_idea_group = spy_ideas }
+			NOT = { has_country_flag = reduced_spread_faith_cb_spy_cost }
+		}
+	}
+	text = { 
+		localisation_key = 24_STRING
+		trigger = {
+			full_idea_group = spy_ideas
+			NOT = { has_country_flag = reduced_spread_faith_cb_spy_cost }
+		}
+	}
+	text = { 
+		localisation_key = 10_STRING
+		trigger = {
+			NOT = { full_idea_group = spy_ideas }
+			has_country_flag = reduced_spread_faith_cb_spy_cost
+		}
+	}
+	text = { 
+		localisation_key = 8_STRING
+		trigger = {
+			full_idea_group = spy_ideas
+			has_country_flag = reduced_spread_faith_cb_spy_cost
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentPersianInfluenceInteractionCounter
+	text = { 
+		localisation_key = ZERO
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = persian_influence_interaction_counter
+					value = 1
+				}
+			}
+		}
+	}
+	text = { 
+		localisation_key = persian_influence_interaction_counter_tt
+		trigger = {
+			check_variable = {
+				which = persian_influence_interaction_counter
+				value = 1
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentPersianInfluenceElevationCounter
+	text = { 
+		localisation_key = ZERO
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = persian_influence_elevation_counter
+					value = 1
+				}
+			}
+		}
+	}
+	text = { 
+		localisation_key = persian_influence_elevation_counter_tt
+		trigger = {
+			check_variable = {
+				which = persian_influence_elevation_counter
+				value = 1
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetTempleName
+	text = {
+		localisation_key = building_temple_christian
+		trigger = { religion_group = christian }
+	}
+	text = {
+		localisation_key = building_temple_muslim
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_temple_shinto
+		trigger = { religion = shinto }
+	}
+	text = {
+		localisation_key = building_temple_zoroastrian
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_temple_jewish
+		trigger = { religion = jewish }
+	}
+	text = {
+		localisation_key = building_temple
+	}
+}
+
+defined_text = {
+	name = GetCathedralName
+	text = {
+		localisation_key = building_cathedral_orthodox
+		trigger = { religion = orthodox }
+	}
+	text = {
+		localisation_key = building_cathedral_muslim
+		trigger = { religion_group = muslim }
+	}
+	text = {
+		localisation_key = building_cathedral_dharmic
+		trigger = { religion_group = dharmic }
+	}
+	text = {
+		localisation_key = building_cathedral_eastern
+		trigger = { religion_group = eastern }
+	}
+	text = {
+		localisation_key = building_cathedral_pagan
+		trigger = { religion_group = pagan }
+	}
+	text = {
+		localisation_key = building_cathedral_zoroastrian_group
+		trigger = { religion = zoroastrian }
+	}
+	text = {
+		localisation_key = building_cathedral_jewish_group
+		trigger = { religion_group = jewish_group }
+	}
+	text = {
+		localisation_key = building_cathedral
+	}
+}
+
+defined_text = {
+	name = GetWorkOfArtDescription
+	random = no
+	text = {
+		localisation_key = MAGNIFICENT_BUILDING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 4 }
+			has_country_modifier = promoting_architecture
+		}
+	}
+	text = {
+		localisation_key = MAGNIFICENT_CARPETS_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 4 }
+			has_country_modifier = promoting_textiles
+		}
+	}
+	text = {
+		localisation_key = MAGNIFICENT_PAINTING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 4 }
+			has_country_modifier = promoting_painting
+		}
+	}
+	text = {
+		localisation_key = SIGNIFICANT_BUILDING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 3 }
+			has_country_modifier = promoting_architecture
+		}
+	}
+	text = {
+		localisation_key = SIGNIFICANT_CARPETS_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 3 }
+			has_country_modifier = promoting_textiles
+		}
+	}
+	text = {
+		localisation_key = SIGNIFICANT_PAINTING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 3 }
+			has_country_modifier = promoting_painting
+		}
+	}
+	text = {
+		localisation_key = NOTEWORTHY_BUILDING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 2 }
+			has_country_modifier = promoting_architecture
+		}
+	}
+	text = {
+		localisation_key = NOTEWORTHY_CARPETS_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 2 }
+			has_country_modifier = promoting_textiles
+		}
+	}
+	text = {
+		localisation_key = NOTEWORTHY_PAINTING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 2 }
+			has_country_modifier = promoting_painting
+		}
+	}
+	text = {
+		localisation_key = GREAT_BUILDING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 1 }
+			has_country_modifier = promoting_architecture
+		}
+	}
+	text = {
+		localisation_key = GREAT_CARPETS_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 1 }
+			has_country_modifier = promoting_textiles
+		}
+	}
+	text = {
+		localisation_key = GREAT_PAINTING_STRING
+		trigger = {
+			check_variable = { which = art_quality value = 1 }
+			has_country_modifier = promoting_painting
+		}
+	}
+	text = {
+		localisation_key = PATHETIC_BUILDING_STRING
+		trigger = {
+			has_country_modifier = promoting_architecture
+		}
+	}
+	text = {
+		localisation_key = PATHETIC_CARPETS_STRING
+		trigger = {
+			has_country_modifier = promoting_textiles
+		}
+	}
+	text = {
+		localisation_key = PATHETIC_PAINTING_STRING
+		trigger = {
+			has_country_modifier = promoting_painting
+		}
+	}
+	text = {
+		localisation_key = FALLBACK_ART_STRING
+	}
+}
+
+defined_text = {
+	name = GetReligiousMainDeityName
+	text = {
+		localisation_key = THE_LORD_DEITY	#Note: He will be always referred as 'THE LORD'
+		trigger = {
+			religion_group = christian
+		}
+	}
+	text = {
+		localisation_key = ALLAH_DEITY
+		trigger = {
+			religion_group = muslim
+		}
+	}
+	text = {
+		localisation_key = MAHABRAHMA_DEITY	#Note: Buddhism does not belief in any creator deity
+		trigger = {
+			OR = {
+				religion = buddhism
+				religion = mahayana
+				religion = vajrayana
+			}
+		}
+	}
+	text = {
+		localisation_key = THE_HEAVEN_DEITY	#Note: Here is the say of 'THE HEAVEN'
+		trigger = {
+			religion = confucianism
+			OR = {
+				has_reform = celestial_empire
+				is_emperor_of_china = yes
+			}
+		}
+	}
+	text = {
+		localisation_key = AMATERASU_DEITY
+		trigger = {
+			religion = shinto
+		}
+	}
+	text = {
+		localisation_key = INTI_DEITY
+		trigger = {
+			religion = inti
+		}
+	}
+	text = {
+		localisation_key = OMETECUHTLI_DEITY	#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = OMECIHUATL_DEITY		#Randomly picked for Nahuatl
+		trigger = {
+			religion = nahuatl
+		}
+	}
+	text = {
+		localisation_key = HUNAB_KU_DEITY
+		trigger = {
+			religion = mesoamerican_religion
+		}
+	}
+	text = {
+		localisation_key = ODIN_DEITY
+		trigger = {
+			religion = norse_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = TENGRI_DEITY
+		trigger = {
+			religion = tengri_pagan_reformed
+		}
+	}
+	text = {
+		localisation_key = BRAHMAN_DEITY
+		trigger = {
+			religion = hinduism
+		}
+	}
+	text = {
+		localisation_key = KARTA_PURAKH_DEITY
+		trigger = {
+			religion = sikhism
+		}
+	}
+	text = {
+		localisation_key = GOD_DEITY	#Note: Technically speaking, God for the Jews has a lot of different names. However, using any of the Jewish names can be seen as disrespectful, so I opted with the most generally accepted term
+		trigger = {
+			religion_group = jewish_group
+		}
+	}
+	text = {
+		localisation_key = AHURA_MAZDA_DEITY
+		trigger = {
+			religion_group = zoroastrian_group
+		}
+	}
+	text = {
+		localisation_key = GREAT_SPIRIT_FALLBACK_DEITY
+		trigger = {
+			NOT = { religion_group = christian }
+			NOT = { religion_group = muslim }
+			NOT = { religion = buddhism }
+			NOT = { religion = mahayana }
+			NOT = { religion = vajrayana }
+			NOT = { religion = confucianism }
+			NOT = { religion = shinto }
+			NOT = { religion = inti }
+			NOT = { religion = nahuatl }
+			NOT = { religion = mesoamerican_religion }
+			NOT = { religion = norse_pagan_reformed }
+			NOT = { religion = tengri_pagan_reformed }
+			NOT = { religion = hinduism }
+			NOT = { religion = sikhism }
+			NOT = { religion_group = jewish_group }
+			NOT = { religion_group = zoroastrian_group }
+		}
+	}
+}
+
+defined_text = {
+	name = GetFreeAshaVahistCostTooltip
+	random = no
+	text = {
+		localisation_key = no_asha_vahishta_cost_diplo_action
+		trigger = {
+			has_government_mechanic = the_three_royal_fires_mechanic
+		}
+	}
+	text = {
+		localisation_key = string_empty
+		trigger = {
+			NOT = { has_government_mechanic = the_three_royal_fires_mechanic }
+		}
+	}
+}
+
+defined_text = {
+	name = GetPersianInfluenceOrAshaVahishta
+	text = {
+		localisation_key = persian_influence
+		trigger = {
+			has_government_mechanic = persian_influence_mechanic
+			NOT = { has_government_mechanic = the_three_royal_fires_mechanic }
+		}
+	}
+	text = {
+		localisation_key = asha_vahishta
+		trigger = {
+			NOT = { has_government_mechanic = persian_influence_mechanic }
+			has_government_mechanic = the_three_royal_fires_mechanic
+		}
+	}
+	text = {
+		localisation_key = persian_influence_and_asha_vahishta
+		trigger = {
+			has_government_mechanic = persian_influence_mechanic
+			has_government_mechanic = the_three_royal_fires_mechanic
+		}
+	}
+	text = {
+		localisation_key = string_empty
+		trigger = {
+			NOT = { has_government_mechanic = persian_influence_mechanic }
+			NOT = { has_government_mechanic = the_three_royal_fires_mechanic }
+		}
+	}
+}
+
+defined_text = {
+	name = GetRoyalFiresAbilityCounter
+	text = {
+		localisation_key = the_three_royal_fires_counter_tt
+		trigger = {
+			check_variable = {
+				which = the_three_royal_fires_counter
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = the_three_royal_fires_counter
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetZoroCoRCounter
+	text = {
+		localisation_key = zoroastrian_reform_center_counter_tt
+		trigger = {
+			1 = {
+				check_variable = {
+					which = zoroastrian_reform_center_counter
+					value = 1
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			1 = {
+				NOT = {
+					check_variable = {
+						which = zoroastrian_reform_center_counter
+						value = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetPronoiaInheritanceLaw
+	text = {
+		localisation_key = empty_text
+		trigger = {
+			has_country_flag = BYZ_hereditary_pronoiars
+		}
+	}
+	text = {
+		localisation_key = create_pronoia_non_inherently
+		trigger = {
+			NOT = { has_country_flag = BYZ_hereditary_pronoiars }
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentElevasionCost
+	random = no
+	text = {
+		localisation_key = 0_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 0 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 1 } }
+		}
+	}
+	text = {
+		localisation_key = 1_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 1 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 2 } }
+		}
+	}
+	text = {
+		localisation_key = 2_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 2 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 3 } }
+		}
+	}
+	text = {
+		localisation_key = 3_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 3 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 4 } }
+		}
+	}
+	text = {
+		localisation_key = 4_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 4 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 5 } }
+		}
+	}
+	text = {
+		localisation_key = 5_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 5 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 6 } }
+		}
+	}
+	text = {
+		localisation_key = 6_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 6 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 7 } }
+		}
+	}
+	text = {
+		localisation_key = 7_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 7 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 8 } }
+		}
+	}
+	text = {
+		localisation_key = 8_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 8 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 9 } }
+		}
+	}
+	text = {
+		localisation_key = 9_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 9 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 10 } }
+		}
+	}
+	text = {
+		localisation_key = 10_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 10 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 11 } }
+		}
+	}
+	text = {
+		localisation_key = 11_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 11 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 12 } }
+		}
+	}
+	text = {
+		localisation_key = 12_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 12 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 13 } }
+		}
+	}
+	text = {
+		localisation_key = 13_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 13 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 14 } }
+		}
+	}
+	text = {
+		localisation_key = 14_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 14 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 15 } }
+		}
+	}
+	text = {
+		localisation_key = 15_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 15 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 16 } }
+		}
+	}
+	text = {
+		localisation_key = 16_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 16 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 17 } }
+		}
+	}
+	text = {
+		localisation_key = 17_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 17 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 18 } }
+		}
+	}
+	text = {
+		localisation_key = 18_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 18 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 19 } }
+		}
+	}
+	text = {
+		localisation_key = 19_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 19 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 20 } }
+		}
+	}
+	text = {
+		localisation_key = 20_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 20 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 21 } }
+		}
+	}
+	text = {
+		localisation_key = 21_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 21 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 22 } }
+		}
+	}
+	text = {
+		localisation_key = 22_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 22 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 23 } }
+		}
+	}
+	text = {
+		localisation_key = 23_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 23 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 24 } }
+		}
+	}
+	text = {
+		localisation_key = 24_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 24 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 25 } }
+		}
+	}
+	text = {
+		localisation_key = 25_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 25 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 26 } }
+		}
+	}
+	text = {
+		localisation_key = 26_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 26 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 27 } }
+		}
+	}
+	text = {
+		localisation_key = 27_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 27 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 28 } }
+		}
+	}
+	text = {
+		localisation_key = 28_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 28 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 29 } }
+		}
+	}
+	text = {
+		localisation_key = 29_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 29 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 30 } }
+		}
+	}
+	text = {
+		localisation_key = 30_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 30 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 31 } }
+		}
+	}
+	text = {
+		localisation_key = 31_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 31 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 32 } }
+		}
+	}
+	text = {
+		localisation_key = 32_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 32 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 33 } }
+		}
+	}
+	text = {
+		localisation_key = 33_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 33 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 34 } }
+		}
+	}
+	text = {
+		localisation_key = 34_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 34 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 35 } }
+		}
+	}
+	text = {
+		localisation_key = 35_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 35 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 36 } }
+		}
+	}
+	text = {
+		localisation_key = 36_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 36 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 37 } }
+		}
+	}
+	text = {
+		localisation_key = 37_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 37 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 38 } }
+		}
+	}
+	text = {
+		localisation_key = 38_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 38 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 39 } }
+		}
+	}
+	text = {
+		localisation_key = 39_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 39 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 40 } }
+		}
+	}
+	text = {
+		localisation_key = 40_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 40 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 41 } }
+		}
+	}
+	text = {
+		localisation_key = 41_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 41 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 42 } }
+		}
+	}
+	text = {
+		localisation_key = 42_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 42 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 43 } }
+		}
+	}
+	text = {
+		localisation_key = 43_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 43 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 44 } }
+		}
+	}
+	text = {
+		localisation_key = 44_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 44 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 45 } }
+		}
+	}
+	text = {
+		localisation_key = 45_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 45 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 46 } }
+		}
+	}
+	text = {
+		localisation_key = 46_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 46 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 47 } }
+		}
+	}
+	text = {
+		localisation_key = 47_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 47 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 48 } }
+		}
+	}
+	text = {
+		localisation_key = 48_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 48 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 49 } }
+		}
+	}
+	text = {
+		localisation_key = 49_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 49 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 50 } }
+		}
+	}
+	text = {
+		localisation_key = 50_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 50 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 51 } }
+		}
+	}
+	text = {
+		localisation_key = 51_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 51 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 52 } }
+		}
+	}
+	text = {
+		localisation_key = 52_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 52 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 53 } }
+		}
+	}
+	text = {
+		localisation_key = 53_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 53 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 54 } }
+		}
+	}
+	text = {
+		localisation_key = 54_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 54 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 55 } }
+		}
+	}
+	text = {
+		localisation_key = 55_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 55 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 56 } }
+		}
+	}
+	text = {
+		localisation_key = 56_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 56 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 57 } }
+		}
+	}
+	text = {
+		localisation_key = 57_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 57 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 58 } }
+		}
+	}
+	text = {
+		localisation_key = 58_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 58 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 59 } }
+		}
+	}
+	text = {
+		localisation_key = 59_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 59 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 60 } }
+		}
+	}
+	text = {
+		localisation_key = 60_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 60 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 61 } }
+		}
+	}
+	text = {
+		localisation_key = 61_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 61 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 62 } }
+		}
+	}
+	text = {
+		localisation_key = 62_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 62 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 63 } }
+		}
+	}
+	text = {
+		localisation_key = 63_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 63 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 64 } }
+		}
+	}
+	text = {
+		localisation_key = 64_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 64 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 65 } }
+		}
+	}
+	text = {
+		localisation_key = 65_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 65 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 66 } }
+		}
+	}
+	text = {
+		localisation_key = 66_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 66 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 67 } }
+		}
+	}
+	text = {
+		localisation_key = 67_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 67 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 68 } }
+		}
+	}
+	text = {
+		localisation_key = 68_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 68 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 69 } }
+		}
+	}
+	text = {
+		localisation_key = 69_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 69 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 70 } }
+		}
+	}
+	text = {
+		localisation_key = 70_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 70 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 71 } }
+		}
+	}
+	text = {
+		localisation_key = 71_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 71 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 72 } }
+		}
+	}
+	text = {
+		localisation_key = 72_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 72 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 73 } }
+		}
+	}
+	text = {
+		localisation_key = 73_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 73 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 74 } }
+		}
+	}
+	text = {
+		localisation_key = 74_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 74 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 75 } }
+		}
+	}
+	text = {
+		localisation_key = 75_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 75 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 76 } }
+		}
+	}
+	text = {
+		localisation_key = 76_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 76 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 77 } }
+		}
+	}
+	text = {
+		localisation_key = 77_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 77 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 78 } }
+		}
+	}
+	text = {
+		localisation_key = 78_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 78 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 79 } }
+		}
+	}
+	text = {
+		localisation_key = 79_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 79 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 80 } }
+		}
+	}
+	text = {
+		localisation_key = 80_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 80 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 81 } }
+		}
+	}
+	text = {
+		localisation_key = 81_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 81 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 82 } }
+		}
+	}
+	text = {
+		localisation_key = 82_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 82 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 83 } }
+		}
+	}
+	text = {
+		localisation_key = 83_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 83 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 84 } }
+		}
+	}
+	text = {
+		localisation_key = 84_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 84 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 85 } }
+		}
+	}
+	text = {
+		localisation_key = 85_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 85 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 86 } }
+		}
+	}
+	text = {
+		localisation_key = 86_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 86 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 87 } }
+		}
+	}
+	text = {
+		localisation_key = 87_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 87 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 88 } }
+		}
+	}
+	text = {
+		localisation_key = 88_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 88 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 89 } }
+		}
+	}
+	text = {
+		localisation_key = 89_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 89 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 90 } }
+		}
+	}
+	text = {
+		localisation_key = 90_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 90 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 91 } }
+		}
+	}
+	text = {
+		localisation_key = 91_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 91 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 92 } }
+		}
+	}
+	text = {
+		localisation_key = 92_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 92 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 93 } }
+		}
+	}
+	text = {
+		localisation_key = 93_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 93 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 94 } }
+		}
+	}
+	text = {
+		localisation_key = 94_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 94 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 95 } }
+		}
+	}
+	text = {
+		localisation_key = 95_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 95 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 96 } }
+		}
+	}
+	text = {
+		localisation_key = 96_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 96 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 97 } }
+		}
+	}
+	text = {
+		localisation_key = 97_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 97 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 98 } }
+		}
+	}
+	text = {
+		localisation_key = 98_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 98 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 99 } }
+		}
+	}
+	text = {
+		localisation_key = 99_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 99 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 100 } }
+		}
+	}
+	text = {
+		localisation_key = 100_STRING
+		trigger = {
+			has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 100 }
+			NOT = { has_global_modifier_value = { which = influence_to_vassal_elevation_cost value = 101 } }
+		}
+	}
+}
+
+defined_text = {
+	name = GetCurrentSelectedMissionBranch
+	text = {
+		localisation_key = teu_prussian_path
+		trigger = { 
+			has_country_flag = teu_prussian_path
+			not = { has_country_flag = teu_conquest_hre_path }
+			not = { has_country_flag = teu_diplomacy_hre_path }
+			not = { has_country_flag = teu_kingdom_prussia_path }
+		}
+	}
+	text = {
+		localisation_key = teu_crusader_path
+		trigger = { has_country_flag = teu_crusader_path }
+	}
+	text = {
+		localisation_key = teu_conquest_hre_path
+		trigger = { has_country_flag = teu_conquest_hre_path }
+	}
+	text = {
+		localisation_key = teu_diplomacy_hre_path
+		trigger = { has_country_flag = teu_diplomacy_hre_path }
+	}
+	text = {
+		localisation_key = teu_kingdom_prussia_path
+		trigger = { has_country_flag = teu_kingdom_prussia_path }
+	}
+	text = {
+		localisation_key = liv_livonian_path
+		trigger = { has_country_flag = liv_livonian_path }
+	}
+	text = {
+		localisation_key = liv_crusader_path
+		trigger = { has_country_flag = liv_crusader_path }
+	}
+	text = {
+		localisation_key = BYZ_centralized
+		trigger = { has_country_flag = BYZ_centralized }
+	}
+	text = {
+		localisation_key = per_shia_missions
+		trigger = { has_country_flag = per_shia_missions }
+	}
+	text = {
+		localisation_key = BYZ_decentralized
+		trigger = { has_country_flag = BYZ_decentralized }
+	}
+	text = {
+		localisation_key = per_zoroastrian_missions
+		trigger = { has_country_flag = per_zoroastrian_missions }
+	}
+	text = {
+		localisation_key = per_sunni_missions
+		trigger = { has_country_flag = per_sunni_missions }
+	}
+	text = {
+		localisation_key = NO_MISSIONS_SELECTED
+	}
+}
+
+defined_text = {
+	name = GetProniaAdvancedTooltip
+	text = {
+		localisation_key = extra_text_hereditary_proniar
+		trigger = { not = { has_country_flag = BYZ_hereditary_pronoiars } }
+	}
+	text = {
+		localisation_key = extra_text_proniar
+		trigger = { has_country_flag = BYZ_hereditary_pronoiars }
+	}
+}
+
+defined_text = {
+	name = GetLoyaltyHitTooltip
+	text = {
+		localisation_key = empty_text
+		trigger = { not = { liberty_desire = 50 } }
+	}
+	text = {
+		localisation_key = loyalty_opinion_hit
+		trigger = { liberty_desire = 50 }
+	}
+}
+
+defined_text = {
+	name = GetTotalNonEstateDisastersCompleted
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			not = {
+				check_variable = {
+					which = total_disasters_completed_counter
+					value = 1
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = get_current_completed_non_estate_disaster_progress_tt
+		trigger = {
+			check_variable = {
+				which = total_disasters_completed_counter
+				value = 1
+			}
+		}
+	}
+}
+
+defined_text = {
+	name = GetQizilbashReference
+	text = {
+		localisation_key = estate_qizilbash
+		trigger = { not = { religion_group = zoroastrian_group } }
+	}
+	text = {
+		localisation_key = estate_aswaran
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+defined_text = {
+	name = GetQizilbashEstateDescription
+	text = {
+		localisation_key = estate_qizilbash_description
+		trigger = { not = { religion_group = zoroastrian_group } }
+	}
+	text = {
+		localisation_key = estate_aswaran_description
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+defined_text = {
+	name = GetTurkomanOrHorseman
+	text = {
+		localisation_key = turkoman
+		trigger = { not = { religion_group = zoroastrian_group } }
+	}
+	text = {
+		localisation_key = horsemen
+		trigger = { religion_group = zoroastrian_group }
+	}
+}
+
+# Mission Title Colorings
+defined_text = {
+	name = GetPreviewColorTEU
+	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = TEU } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU } } NOT = { has_preview_mission_flag = yes } } } }
+}
+defined_text = {
+	name = GetPreviewColorTEU_end
+	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = TEU } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU } } NOT = { has_preview_mission_flag = yes } } } }
+}
+
+defined_text = {
+	name = GetPreviewColorTEU_PRU
+	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = TEU_PRU } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU_PRU } } NOT = { has_preview_mission_flag = yes } } } }
+}
+defined_text = {
+	name = GetPreviewColorTEU_PRU_end
+	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = TEU_PRU } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU_PRU } } NOT = { has_preview_mission_flag = yes } } } }
+}
+
+defined_text = {
+	name = GetPreviewColorLIV
+	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = LIV } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = LIV } } NOT = { has_preview_mission_flag = yes } } } }
+}
+defined_text = {
+	name = GetPreviewColorLIV_end
+	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = LIV } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = LIV } } NOT = { has_preview_mission_flag = yes } } } }
+}
+
+defined_text = {
+	name = GetPreviewColorPER
+	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = PER } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = PER } } NOT = { has_preview_mission_flag = yes } } } }
+}
+defined_text = {
+	name = GetPreviewColorPER_end
+	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = PER } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = PER } } NOT = { has_preview_mission_flag = yes } } } }
+}
+
+defined_text = {
+	name = GetPreviewColorBYZ
+	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = BYZ } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = BYZ } } NOT = { has_preview_mission_flag = yes } } } }
+}
+defined_text = {
+	name = GetPreviewColorBYZ_end
+	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = BYZ } has_preview_mission_flag = yes } }
+	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = BYZ } } NOT = { has_preview_mission_flag = yes } } } }
+}
+
+# Dynamic Mission Descriptions
+defined_text = {
+	name = per_qizilbash_loyalty_desc
+	text = { localisation_key = per_qizilbash_loyalty_desc_qizilbash trigger = { not = { religion_group = zoroastrian_group } } }
+	text = { localisation_key = per_qizilbash_loyalty_desc_aswaran trigger = { religion_group = zoroastrian_group } }

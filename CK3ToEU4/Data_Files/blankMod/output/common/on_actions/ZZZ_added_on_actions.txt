@@ -1,12 +1,24 @@
 #Scripted effect for Extra Fetishist cult mechanics.
 
 on_battle_lost_country = {
-	on_battle_ended_effect = yes
 	##VANILLA
-	#battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
+	on_battle_ended_effect = yes
+	battle_cult_spreading_effect = yes #Scripted effect for fetishist cult mechanics.
 	random_events = {
 		90 = 0
 		10 = friendship_events.1 #Historical Friendship Broken
+	}
+	if = {
+		limit = { 
+			OR = {
+				is_or_was_tag = { tag = QAR }
+				is_or_was_tag = { tag = AKK }
+			}
+			FROM = {
+				tag = TUR
+			}
+		}
+		set_country_flag = turkoman_hasnt_lost_battle_to_ottomans
 	}
 	##MODDED
 	ZZZ_enhanced_converter_battle_cult_spreading_effect = yes
@@ -18,7 +30,6 @@ on_province_owner_change = {
 		japan.1			#Fall of the current Shogun
 		flavor_tur.207	#Victory over the Knights
 	}
-
 	on_province_owner_change_government_effect = yes
 
 	if = {
@@ -39,14 +50,14 @@ on_province_owner_change = {
 	}
 	on_province_owner_change_estate_privileges_effect = yes
 	imperial_modifiers_on_province_change_culture_or_change_owner_effect = yes
-
+	
 	if = {
 		limit = {
 			region = indo_china_region
 			has_building = farm_estate
 			trade_goods = grain
 			owner = {
-				has_mission = mnd_khm_irrigation
+				has_mission = mnd_khm_irrigation 
 				NOT = {
 					OR = {
 						has_estate = estate_vaisyas
@@ -74,6 +85,16 @@ on_province_owner_change = {
 			duration = -1
 		}
 	}
+	
+	if = {
+		limit = {
+			province_id = 379
+			owner = {
+				NOT = { religion = jewish }
+			}
+		}
+		remove_country_modifier = third_temple_country_modifier
+	}
 	if = {
 		limit = {
 			owner = {
@@ -88,16 +109,6 @@ on_province_owner_change = {
 			desc = son_fetishism_as_secondary_religion_province_desc
 		}
 	}
-
-	if = {
-		limit = {
-			province_id = 379
-			owner = {
-				NOT = { religion = jewish }
-			}
-		}
-		remove_country_modifier = third_temple_country_modifier
-	}
 	else_if = {
 		limit = {
 			OR = {
@@ -110,7 +121,38 @@ on_province_owner_change = {
 		}
 		remove_province_modifier = son_fetishism_as_secondary_religion_province
 	}
-
+	if = { 
+		limit = { 
+			owner = { NOT = { has_reform = jap_gokaido_reform } }
+		}
+		remove_province_modifier = jap_gokaido_modifier
+	}
+	if = {
+		limit = { 
+			owner = { 
+				has_government_attribute = more_15_manpower_in_heathen_provinces
+			}
+			NOT ={ religion_group = owner }
+			NOT = { has_province_modifier = ottoman_siyasah_tax_reform_manpower }
+		}
+		add_province_modifier = {
+			name = ottoman_siyasah_tax_reform_manpower
+			duration = -1
+		}
+	}
+	if = {
+		limit = { 
+			owner = { 
+				has_government_attribute = more_15_manpower_in_heathen_provinces
+			}
+			NOT ={ religion_group = owner }
+			NOT = { has_province_modifier = ottoman_siyasah_tax_reform_manpower }
+		}
+		add_province_modifier = {
+			name = ottoman_siyasah_tax_reform_manpower
+			duration = -1
+		}
+	}
 	##MODDED
 	if = {
 		limit = {
