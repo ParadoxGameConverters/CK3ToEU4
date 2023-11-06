@@ -1,10 +1,10 @@
 # Version info
 
-version = "0.13M"
-name = "Melian"
+version = "0.14N"
+name = "Nestorian"
 source = "CK3"
-minSource = "1.8"
+minSource = "1.10"
 maxSource = "1.10"
 target = "EU4"
-minTarget = "1.35"
-maxTarget = "1.35"
+minTarget = "1.36"
+maxTarget = "1.36"

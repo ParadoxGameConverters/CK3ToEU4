@@ -1185,7 +1185,7 @@ exploration_ideas = {
 		}
 		modifier = {
 			factor = 3
-			technology_group = polynesian
+			technology_group = polynesian_tech
 			num_of_ports = 3
 			has_institution = new_world_i
 		}
