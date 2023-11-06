@@ -33,6 +33,7 @@ norse_cultural_ideas = {
 	norse_vinlandsaga = {
 		colonists = 1
 		range = 0.33
+		effect = { remove_temporary_colonist = yes }
 	}
 	norse_settle_homeland = {
 		development_cost = -0.1
@@ -81,6 +82,7 @@ iberian_muslim_cultural_ideas = {
 	}
 	iberian_further_into_america = {
 		colonists = 1					#Iberian nation, duh!
+		effect = { remove_temporary_colonist = yes }
 	}
 	iberian_global_caliphate = {
 		land_forcelimit_modifier = 0.33
@@ -515,7 +517,10 @@ african_christian_ideas = {
 		land_attrition = -0.10
 	}
 
-	bonus = { colonists = 1 }					#Iberian influence
+	bonus = { 
+		colonists = 1 
+		effect = { remove_temporary_colonist = yes }
+	}					#Iberian influence
 
 	trigger = {	
 		religion_group = christian										#in case crusaders are successful

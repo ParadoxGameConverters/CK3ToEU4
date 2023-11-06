@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "CK3 to EU4"
-#define MyAppVersion "0.13 Melian"
+#define MyAppVersion "0.14 Nestorian"
 #define MyAppPublisher "Paradox Game Converters Group"
 #define MyAppURL "https://paradoxgameconverters.com/"
 #define MyAppExeName "ConverterFrontend.exe"

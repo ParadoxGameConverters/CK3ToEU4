@@ -760,7 +760,7 @@ country_event = {
 		ai_chance = { factor = 99 }											#Its exsclusive for them, so they really want it
 		trigger = {
 			has_dlc = "Domination"
-			tag = HRE
+			tag = HLR
 		}
 		add_government_reform = holy_imperial_monarchy_reform
 	}
@@ -913,7 +913,7 @@ country_event = {
 			tag = TUR
 			tag = RUM
 			tag = BYZ
-			tag = HRE
+			tag = HLR
 			tag = ROM
 		}
 		stability = 1

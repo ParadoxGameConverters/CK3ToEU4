@@ -24,6 +24,7 @@ order_of_saint_anthony_ideas = {
 	}
 	ZZZ_mission_to_the_unknown = {
 		colonists = 1
+		effect = { remove_temporary_colonist = yes }
 	}
 	ZZZ_capacity_for_more = {
 		land_forcelimit_modifier = 0.25

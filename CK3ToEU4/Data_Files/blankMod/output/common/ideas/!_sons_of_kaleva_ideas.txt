@@ -34,6 +34,7 @@ sons_of_kaleva_ideas = {
 	}
 	ZZZ_kalevan_expansion = {
 		colonists = 1
+		effect = { remove_temporary_colonist = yes }
 	}
 	ZZZ_take_down_the_walls = {
 		artillery_levels_available_vs_fort = 2
