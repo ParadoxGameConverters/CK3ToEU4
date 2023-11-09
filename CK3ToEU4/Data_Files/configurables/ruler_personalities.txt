@@ -4,7 +4,7 @@ righteous_personality = { honest = 3 humble = 2 just = 1 education_republican_kn
 tolerant_personality = { temperate = 3 trusting = 1 patient = 1 zealous = -99 }
 free_thinker_personality = { mystic_1 = 5 mystic_2 = 5 mystic_3 = 5 cynical = 3 intellect_good_3 = 3 intellect_good_1 = 2 shrewd = 2 }
 calm_personality = { pensive = 1 patient = 3 shy = 2 content = 1 impatient = -99 }
-zealot_personality = { theologian = 5 zealous = 3 holy_warrior = 3 humble = 2 faith_warrior = 1 cynical = -99 }
+zealot_personality = { theologian = 5 zealous = 3 holy_warrior = 3 humble = 2 extolled = 2 faith_warrior = 1 cynical = -99 }
 pious_personality = { theologian = 5 humble = 3 generous = 2 zealous = 1 cynical = -99 }
 lawgiver_personality = { diligent = 3 just = 1 }
 midas_touched_personality = { education_stewardship_4 = 5 education_stewardship_3 = 3 greedy = 2 }
@@ -30,7 +30,7 @@ inspiring_leader_personality = { hunter_1 = 5 hunter_2 = 5 hunter_3 = 5 strong =
 martial_educator_personality = { logistician = 3 education_martial_4 = 2 education_martial_3 = 2 patient = 2 stubborn = 1 }
 kind_hearted_personality = { bossy = 1 compassionate = 3 trusting = 2 generous = 1 sadistic = -99 }
 infertile_personality = { eunuch = 5 celibate = 5 inbred = 5 chaste = 3 }
-embezzler_personality = { greedy = 3 lazy = 2 callous = 1 generous = -99 }
+embezzler_personality = { decadent = 5 greedy = 3 lazy = 2 callous = 1 generous = -99 }
 sinner_personality = { possessed_genetic = 3 cynical = 2 cannibal = 3 gluttonous = 1 lustful = 1 }
 greedy_personality = { greedy = 3 gluttonous = 2 arbitrary = 1 generous = -99 }
 obsessive_perfectionist_personality = { conscientious = 1 charming = 1 callous = 3 arrogant = 2 stubborn = 1 }

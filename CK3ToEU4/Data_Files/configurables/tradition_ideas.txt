@@ -207,6 +207,15 @@ link = { ck3 = { tradition = tradition_ep2_avid_falconers } eu4 = { prestige = 0
 ### 1.10.0 - New Tradition
 link = { ck3 = { tradition = tradition_noble_adoption } eu4 = { heir_chance = 0.50 } }
 
+### 1.11.0 - New Tradition
+link = { ck3 = { tradition = tradition_fp3_frontier_warriors } eu4 = { loot_amount = 0.10 } }
+link = { ck3 = { tradition = tradition_fp3_irrigation_experts } eu4 = { development_cost = -0.1 } }
+link = { ck3 = { tradition = tradition_fp3_beacon_of_learning } eu4 = { technology_cost = -0.05 } }
+link = { ck3 = { tradition = tradition_fp3_enlightened_magnates } eu4 = { global_tax_modifier = 0.10 } }
+link = { ck3 = { tradition = tradition_fp3_jirga } eu4 = { spy_offence = 0.1 } }
+link = { ck3 = { tradition = tradition_fp3_pragmatic_creed } eu4 = { cavalry_cost = -0.1 } }
+link = { ck3 = { tradition = tradition_fp3_fierce_independence } eu4 = { hostile_attrition = 1 } }
+
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
 link = { ck3 = { tradition = tradition_forest_folk } rule = { heritage = heritage_east_slavic idea_name = fin_siberian_frontier } eu4 = { may_establish_frontier = yes auto_explore_adjacent_to_colony = yes } }

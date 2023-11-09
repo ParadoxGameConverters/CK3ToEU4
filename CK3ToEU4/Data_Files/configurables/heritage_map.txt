@@ -47,7 +47,7 @@ link = { eu4 = sudanese ck3 = heritage_east_african  }
 link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian ck3 = heritage_central_african ck3 = heritage_gur }
 link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 #link = { eu4 = kongo_group ck3 =  } Central African is the pass between west and east africa, not the Kongo
-#link = { eu4 = african ck3 =  }
+link = { eu4 = african ck3 = heritage_bantu }
 link = { eu4 = cushitic ck3 = heritage_somalian }
 
 # Mod: RICE

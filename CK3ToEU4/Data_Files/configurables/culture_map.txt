@@ -547,6 +547,7 @@ link = { eu4 = amhara ck3 = somali tech = east_african gfx = africangfx region =
 link = { eu4 = somali ck3 = somali ck3 = harla tech = east_african gfx = africangfx }
 link = { eu4 = daju ck3 = daju tech = east_african gfx = africangfx }
 link = { eu4 = oromo ck3 = oromo tech = east_african gfx = africangfx }
+link = { eu4 = bantu ck3 = east_bantu tech = east_african gfx = africangfx }
 
 # West African
 link = { eu4 = bambara ck3 = mande tech = sub_saharan gfx = africangfx region = massina_area region = jenne_area }
