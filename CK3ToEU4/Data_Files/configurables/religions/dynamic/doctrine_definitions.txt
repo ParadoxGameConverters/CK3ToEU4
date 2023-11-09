@@ -670,6 +670,24 @@ tenet_megaliths = {
 	}
 }
 
+tenet_fp3_fedayeen = {
+	country = {
+		spy_offence = 0.5
+	}
+	country_as_secondary = {
+		spy_offence = 0.3
+	}
+}
+
+tenet_communal_possessions = {
+	country = {
+		build_cost = -0.1
+	}
+	country_as_secondary = {
+		build_cost = -0.05
+	}
+}
+
 #Empty
 tenets = {
 
@@ -866,6 +884,16 @@ doctrine_pilgrimage_encouraged = {
 doctrine_pilgrimage_mandatory = {
 }
 doctrine_temple_authority = {
+	tolerance_own = 2
+}
+temple_authority_toric_doctrine = {
+	tolerance_own = 2
+}
+temple_authority_kohanim_doctrine = {
+	tolerance_own = 2
+}
+temple_authority_samaritan_torah_doctrine = {
+	tolerance_own = 2
 }
 ##Clerical Gender
 doctrine_clerical_gender_male_only = {
@@ -1181,5 +1209,26 @@ rice_zun_hephthalite_warriors  = {
 rice_zun_hephthalite_culture  = {
 	country = {
 		prestige = 0.25
+	}
+}
+######### 1.11
+doctrine_zoroastrian_branches = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+doctrine_major_branch_behdin  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+doctrine_heretic_branch_zandik  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+has_jizya_doctrine  = {
+	country = {
+		reinforce_speed = 0.3
 	}
 }
