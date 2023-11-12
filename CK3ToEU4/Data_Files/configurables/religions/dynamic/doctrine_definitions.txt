@@ -1211,6 +1211,11 @@ rice_zun_hephthalite_culture  = {
 		prestige = 0.25
 	}
 }
+special_doctrine_is_west_iranian_faith = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
 ######### 1.11
 doctrine_zoroastrian_branches = {
 	country = {
