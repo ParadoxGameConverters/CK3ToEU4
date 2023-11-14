@@ -504,6 +504,7 @@ age_of_reformation = {
 			allow = {
 				OR = {
 					tag = PER
+					tag = ERS
 					AND = {
 						government_rank = 3
 						culture_group = iranian
