@@ -141,6 +141,10 @@ link = { ck3 = c_oriel eu4 = TYR }
 link = { ck3 = d_ulster eu4 = ULS }
 link = { ck3 = c_ulster eu4 = ULS }
 link = { ck3 = k_wales eu4 = WLS }
+link = { ck3 = d_somerset eu4 = WSX }
+link = { ck3 = d_hereford eu4 = MRC }
+link = { ck3 = d_bedford eu4 = ESX }
+link = { ck3 = c_essex eu4 = ESX }
 
 # Eastern Europe
 
@@ -165,6 +169,7 @@ link = { ck3 = d_poloniae eu4 = POL }
 link = { ck3 = d_wielkopolska eu4 = POL }
 link = { ck3 = d_lesser_poland eu4 = KRA }
 link = { ck3 = d_prussia eu4 = PRU }
+link = { ck3 = d_pruthenians eu4 = PRT }
 link = { ck3 = d_prus eu4 = PRU }
 link = { ck3 = c_vidzeme eu4 = RIG }
 link = { ck3 = k_teutonic_order eu4 = TEU }
@@ -272,6 +277,7 @@ link = { ck3 = c_luneburg eu4 = LUN }
 link = { ck3 = c_magdeburg eu4 = MAG } # Magdeburg
 link = { ck3 = d_germania_superior eu4 = MAI }
 link = { ck3 = c_mainz eu4 = MAI }
+link = { ck3 = d_glomacze eu4 = MEI }
 link = { ck3 = d_meissen eu4 = MEI }
 link = { ck3 = c_meissen eu4 = MEI }
 link = { ck3 = c_dresden eu4 = MEI } #Maps to same province as c_meissen
@@ -456,7 +462,7 @@ link = { ck3 = c_yoshkar-ola eu4 = KAZ } #Maps to same province as c_kazan
 link = { ck3 = k_muscovy eu4 = MOS }
 link = { ck3 = c_moskva eu4 = MOS }
 link = { capitals = { 295 } eu4 = MOS }
-link = { capitals = { 309 } eu4 = YAR }
+link = { capitals = { 308 } eu4 = YAR }
 link = { ck3 = k_opolye eu4 = MOS }
 link = { ck3 = k_nogai eu4 = NOG }
 link = { ck3 = k_novgorod eu4 = NOV }
@@ -482,6 +488,9 @@ link = { ck3 = c_yaroslavl eu4 = YAR }
 link = { ck3 = k_pontic_steppe eu4 = ZAZ }
 link = { ck3 = d_yedisan eu4 = ZAZ }
 link = { ck3 = e_rurikid eu4 = UKR }
+link = { ck3 = d_meshcheras eu4 = MSH }
+link = { ck3 = d_ingers eu4 = IGR }
+link = { ck3 = c_vodi eu4 = IGR }
 
 # Arabia
 
@@ -597,6 +606,7 @@ link = { ck3 = c_tunis eu4 = TUN }
 
 link = { ck3 = d_bukhara eu4 = BUK }
 link = { ck3 = c_bukhara eu4 = BUK }
+link = { ck3 = d_khorezm eu4 = KHI }
 link = { ck3 = c_khiva eu4 = KHI }
 link = { ck3 = d_ferghana eu4 = KOK }
 link = { ck3 = c_fergana eu4 = KOK }
@@ -752,6 +762,7 @@ link = { ck3 = k_mongolia eu4 = KHA }
 link = { ck3 = e_mongol_empire eu4 = MGE }  
 link = { ck3 = k_hanthawaddy eu4 = PEG }
 link = { ck3 = d_ramannadesa eu4 = PEG }
+link = { ck3 = k_ramannadesa eu4 = PEG }
 link = { ck3 = c_pegu eu4 = PEG }
 link = { ck3 = c_toungoo eu4 = TAU }
 link = { ck3 = e_tibet eu4 = TIB }
