@@ -18,7 +18,7 @@ evenks = {
 }
 dravidian = {
 	brahui = {
-		primary = BRA
+		primary = BAL
 		male_names = {
 			Amarapuyankan Arulmolivarman Atitta Avraaham Cadayan Cankili Cataiyavarman Cayantavarman Celiyancentan Cevakattevan
 			Chaacko Chaandy Cimmavisnu Cuntara Eappen Eisow Irattapadikonda Iyob Kadarangkonda Karunandadakkan
@@ -36,7 +36,7 @@ dravidian = {
 }
 western_aryan = {
 	peristani = {
-		primary = NUR
+		primary = AFG
 		male_names = {
 			Aaditya Abhimanyu Abhinanda Aditya Amit Anandhavardana Ananta Anil Arun Avantivarman
 			Bansi Bharat Bhaskar Bhimagupta Birbal Braj Brij Chakravarman Chandrakanta
@@ -69,7 +69,7 @@ western_aryan = {
 		dynasty_names = { Karkota Utpala Lohara Maqpon Vuppadeva Dhar Gul Shaikh Kichlu Sopuri Mala Poot Mirakhur Kadlabaju Kokru Bangru Bakaya Khashu Kichlu Misri Lone Mattoo Mir Sapru Vani Kesarwani Talwani Puiwani Baandwani Baswani Tarangarwani Kakarwani Parwani }
 	}
 	burusho = {
-		primary = BUR
+		primary = KSH
 		male_names = {
 			Ayash Baaz Bayoo Bayu Bepat Beyenom Bilchon Bras Bula Chaghurum
 			Chindar Chumo Czolom Daltas Dan Dast Dohom Donesh Fooh Gachir

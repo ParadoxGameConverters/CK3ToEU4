@@ -14,16 +14,19 @@ link = { eu4 = west_slavic ck3 = heritage_west_slavic }
 link = { eu4 = carpathian ck3 = heritage_magyar ck3 = heritage_vlach ck3 = heritage_proto_carpathian }
 link = { eu4 = east_slavic ck3 = heritage_east_slavic }
 link = { eu4 = baltic ck3 = heritage_baltic ck3 = heritage_balto_finnic }
-link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_aramaic ck3 = heritage_egyptian ck3 = heritage_aramean ck3 = heritage_arberian ck3 = heritage_anatolian }
+link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_arberian ck3 = heritage_anatolian }
+link = { eu4 = chaldean ck3 = heritage_aramaic ck3 =  heritage_aramean ck3 = heritage_chaldean }
+link = { eu4 = old_mashriqi ck3 = heritage_egyptian }
 
 # no clear mapping as they shoved the cultures in byzantine 
 link = { eu4 = caucasian ck3 = heritage_caucasian ck3 = heritage_armenian }
 
 # this is levantine group, no actual turks.
-link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic ck3 = heritage_punic }
+link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic }
+link = { eu4 = punic_group ck3 = heritage_punic }
 
 link = { eu4 = maghrebi ck3 = heritage_berber ck3 = heritage_guanche }
-link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite ck3 = heritage_chaldean ck3 = heritage_peristani ck3 = heritage_sakan ck3 = heritage_sarmatian }
+link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite ck3 = heritage_peristani ck3 = heritage_sakan ck3 = heritage_sarmatian }
 link = { eu4 = altaic ck3 = heritage_mongolic }
 
 # this is dubious. they put turkish in with tartars all in turkic, eu4 has them in levantine.
