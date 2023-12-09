@@ -175,7 +175,7 @@ link = { eu4 = shamanism ck3 = malagasy_pagan }
 link = { eu4 = shamanism ck3 = welayta_pagan }
 link = { eu4 = shamanism ck3 = shona_pagan ck3 = nguni_pagan ck3 = sotho_pagan ck3 = tsonga_pagan }											   
 link = { eu4 = shamanism ck3 = odinala_pagan }
-link = { eu4 = harranism ck3 = harranian_pagan ck3 = shamsi_pagan }
+link = { eu4 = harranism ck3 = harranian_pagan }
 link = { eu4 = arab_pagan ck3 = nabataean_pagan }
 link = { eu4 = arab_pagan ck3 = aksumite_pagan }
 link = { eu4 = arab_pagan ck3 = south_arabian_pagan }
@@ -199,6 +199,7 @@ link = { eu4 = animism ck3 = bugaism }
 link = { eu4 = animism ck3 = abkaism }
 link = { eu4 = animism ck3 = moism }
 link = { eu4 = animism ck3 = muism }
+link = { eu4 = mardukism ck3 = shamsi_pagan }
 
 # Mod: The Fallen Eagle
 link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
