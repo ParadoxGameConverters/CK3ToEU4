@@ -2,11 +2,11 @@
 # Provided defaults are reasonable for a standard 250-year game. If shorter, you may want to increase the numbers ever so slightly,
 # or reduce them if you've been playing longer.
 
-dev_from_building = 0.15
+dev_from_building = 0.1
 dev_from_holding = 1
 dev_from_development = 0.15
-dev_treshold = 50.0
+dev_treshold = 70.0
 
 # formula is: (sum of all building upgrades) * dev_from_building + (sum of holdings) * dev_from_holding + max(0, (dev - dev_treshold)) * dev_from_development
 
-# If the world seems underdeveloped, try with dev_from_building = 0.3 or 0.35. dev_from_holding is usually fine as is, as well as dev from development.
+# If the world seems underdeveloped, try with dev_from_building = 0.2 or 0.3. dev_from_holding is usually fine as is, as well as dev from development.
