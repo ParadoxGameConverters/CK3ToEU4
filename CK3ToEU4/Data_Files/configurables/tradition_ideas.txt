@@ -215,6 +215,7 @@ link = { ck3 = { tradition = tradition_fp3_enlightened_magnates } eu4 = { global
 link = { ck3 = { tradition = tradition_fp3_jirga } eu4 = { spy_offence = 0.1 } }
 link = { ck3 = { tradition = tradition_fp3_pragmatic_creed } eu4 = { cavalry_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_fp3_fierce_independence } eu4 = { hostile_attrition = 1 } }
+link = { ck3 = { tradition = tradition_ghazi } eu4 = { discipline = 0.05 } }
 
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
