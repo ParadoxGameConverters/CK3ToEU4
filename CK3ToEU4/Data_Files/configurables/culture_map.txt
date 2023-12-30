@@ -377,7 +377,7 @@ link = { eu4 = bulgarian ck3 = bolghar tech = eastern gfx = easterngfx region = 
 link = { eu4 = turkmeni ck3 = anatolian_turkish tech = nomad_group gfx = muslimgfx region = central_asia_region }
 link = { eu4 = turkmeni ck3 = khanid ck3 = gokturkish tech = nomad_group gfx = muslimgfx }
 link = { eu4 = oghuz ck3 = turkish ck3 = utigur ck3 = kutrigur ck3 = barsil tech = nomad_group gfx = muslimgfx } #CK3 Turkish is Oghuz
-link = { eu4 = shirvani ck3 = shirvani tech = muslim gfx = muslimgfx }
+link = { eu4 = shirvani ck3 = shirvani ck3 = tat tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = azeri ck3 = adhari tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = turkish ck3 = anatolian_turkish tech = muslim gfx = muslimgfx region = caucasia_region region = persia_region }
 link = { eu4 = azerbaijani ck3 = persian tech = muslim gfx = muslimgfx region = caucasia_region region = azerbaijan_area }
@@ -514,7 +514,7 @@ link = { eu4 = szekely ck3 = szekely tech = eastern gfx = easterngfx }
 # Iranian
 
 link = { eu4 = mazandarani ck3 = persian tech = muslim gfx = muslimgfx region = tabarestan_area }
-link = { eu4 = mazandarani ck3 = daylamite ck3 = tabari ck3 = mazandarani ck3 = gilani tech = muslim gfx = muslimgfx }
+link = { eu4 = mazandarani ck3 = daylamite ck3 = tabari ck3 = mazandarani ck3 = gilani ck3 = taleshi tech = muslim gfx = muslimgfx }
 link = { eu4 = luri ck3 = luri tech = muslim gfx = muslimgfx }
 link = { eu4 = luri ck3 = persian tech = muslim gfx = muslimgfx region = luristan_area region = khuzestan_area }
 link = { eu4 = tajik ck3 = persian tech = muslim gfx = muslimgfx region = central_asia_region region = merv_area }
@@ -523,7 +523,7 @@ link = { eu4 = persian ck3 = persian ck3 = semnani ck3 = adhari ck3 = elamite ck
 link = { eu4 = parthian ck3 = parthian ck3 = indo_parthian tech = muslim gfx = muslimgfx }
 link = { eu4 = gorani ck3 = gorani tech = muslim gfx = muslimgfx }
 link = { eu4 = kurdish ck3 = kurdish ck3 = median ck3 = cyrtian tech = muslim gfx = muslimgfx }
-link = { eu4 = baluchi ck3 = baloch ck3 = brahui ck3 = kushanshas tech = muslim gfx = muslimgfx }
+link = { eu4 = baluchi ck3 = baloch ck3 = brahui ck3 = kushanshas ck3 = makrani ck3 = paradani tech = muslim gfx = muslimgfx }
 link = { eu4 = afghani ck3 = afghan ck3 = pamiri ck3 = pashtun tech = muslim gfx = muslimgfx }
 link = { eu4 = saka ck3 = saka tech = muslim gfx = muslimgfx }
 
@@ -845,7 +845,7 @@ link = { eu4 = nivkh ck3 = nivkh tech = eastern gfx = inuitgfx }
 link = { eu4 = yakut ck3 = yakut tech = eastern gfx = inuitgfx }
 link = { eu4 = yeniseian ck3 = yeniseian tech = eastern gfx = inuitgfx }
 link = { eu4 = yukaghir ck3 = yukaghir tech = eastern gfx = inuitgfx }
-link = { eu4 = brahui ck3 = brahui tech = indian gfx = indiangfx }
+link = { eu4 = brahui ck3 = brahui ck3 = makrani ck3 = paradani tech = indian gfx = indiangfx }
 link = { eu4 = peristani ck3 = nuristani ck3 = kalash tech = indian gfx = indiangfx }
 link = { eu4 = burusho ck3 = burusho tech = indian gfx = indiangfx }
 link = { eu4 = soqotri ck3 = south_arabian tech = muslim gfx = muslimgfx }
