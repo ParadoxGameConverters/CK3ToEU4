@@ -24,7 +24,6 @@ ColumnLimit: 160
 Cpp11BracedListStyle: true
 IndentCaseLabels: true
 IndentWidth: 3
-SortIncludes: false
 DerivePointerAlignment: false
 MaxEmptyLinesToKeep: 3
 PointerAlignment: Left

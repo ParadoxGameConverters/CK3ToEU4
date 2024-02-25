@@ -260,6 +260,25 @@ option = { #Historic (eurocentric) vs. Dynamic Insitutions/idea selection
 		}
 	}
 }
+option = { #Dynastic names
+	name = dynasticNames
+	displayName = DYNASTICNAMES
+	tooltip = DYNASTICNAMESTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = DYNASTICNAMES1
+			tooltip = DYNASTICNAMES1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = DYNASTICNAMES2
+			tooltip = DYNASTICNAMES2TIP
+			default = false
+		}
+	}
+}
 option = {
 	name = output_name
 	displayName = MODNAME
