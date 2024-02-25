@@ -76,6 +76,11 @@ class Configuration: commonItems::parser
 		HISTORIC = 1,
 		DYNAMIC = 2
 	};
+	enum class DYNASTICNAMES
+	{
+		ENABLED = 1,
+		DISABLED = 2
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -95,6 +100,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getMultiProvDevTransfer() const { return multiProvinceDevelopmentTransfer; }
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
+	[[nodiscard]] const auto& getDynasticNames() const { return dynasticNames; }
 
 	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
@@ -124,6 +130,7 @@ class Configuration: commonItems::parser
 	MULTIPROVDEVTRANSFER multiProvinceDevelopmentTransfer = MULTIPROVDEVTRANSFER::DEFAULT;
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
+	DYNASTICNAMES dynasticNames = DYNASTICNAMES::ENABLED;
 
 	std::optional<std::string> playerTitle;
 };

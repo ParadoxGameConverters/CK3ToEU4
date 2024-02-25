@@ -115,6 +115,11 @@ void Configuration::registerKeys()
 		multiProvinceDevelopmentTransfer = MULTIPROVDEVTRANSFER(std::stoi(multiprovdevtransferString.getString()));
 		Log(LogLevel::Info) << "Multiple Province Dev Transfer set to: " << multiprovdevtransferString.getString();
 	});
+	registerKeyword("dynasticNames", [this](std::istream& theStream) {
+		const commonItems::singleString dynasticNamesString(theStream);
+		dynasticNames = DYNASTICNAMES(std::stoi(dynasticNamesString.getString()));
+		Log(LogLevel::Info) << "Dynastic Names set to: " << dynasticNamesString.getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

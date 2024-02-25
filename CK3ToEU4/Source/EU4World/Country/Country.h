@@ -43,7 +43,8 @@ class Country
 		 const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 date theConversionDate,
-		 Configuration::STARTDATE startDateOption);
+		 Configuration::STARTDATE startDateOption,
+		 bool dynasticNames);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
 	void clearHistoryLessons() { details.historyLessons.clear(); }
 	void registerProvince(std::pair<int, std::shared_ptr<Province>> theProvince) { provinces.insert(std::move(theProvince)); }
@@ -110,7 +111,7 @@ class Country
 		 const mappers::CultureMapper& cultureMapper);
 	void populateCommons(const mappers::CultureMapper& cultureMapper, const mappers::LocalizationMapper& localizationMapper);
 	void populateMisc();
-	void populateLocs(const mappers::LocalizationMapper& localizationMapper);
+	void populateLocs(const mappers::LocalizationMapper& localizationMapper, bool dynasticNames);
 	void populateRulers(const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,

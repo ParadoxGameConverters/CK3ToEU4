@@ -52,7 +52,8 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 date theConversionDate,
-	 Configuration::STARTDATE startDateOption)
+	 Configuration::STARTDATE startDateOption,
+	 bool dynasticNames)
 {
 	tag = theTag;
 	if (startDateOption == Configuration::STARTDATE::CK)
@@ -72,7 +73,7 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	populateHistory(governmentsMapper, religionMapper, provinceMapper, cultureMapper);
 	populateCommons(cultureMapper, localizationMapper);
 	populateMisc();
-	populateLocs(localizationMapper);
+	populateLocs(localizationMapper, dynasticNames);
 	populateRulers(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
 }
 
@@ -339,7 +340,7 @@ void EU4::Country::populateMisc()
 		details.excommunicated = true;
 }
 
-void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationMapper)
+void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationMapper, bool dynasticNames)
 {
 	auto nameSet = false;
 
@@ -421,9 +422,10 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	std::set<std::string> hardcodedExclusions =
 		 {"k_rum", "k_israel", "e_india", "e_ilkhanate", "e_persia", "e_mali", "k_mali", "k_ghana", "k_songhay", "e_hre", "e_roman_empire", "e_byzantium"};
 
-	if (details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first && details.holder->getHouse().second &&
-		 details.holder->getHouse().second->getDynasty().second && details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
-		 title->second->getClay() && title->second->getClay()->canBeNamedAfterDynasty() &&
+	if (dynasticNames && details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
+		 details.holder->getHouse().second && details.holder->getHouse().second->getDynasty().second &&
+		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() && title->second->getClay() &&
+		 title->second->getClay()->canBeNamedAfterDynasty() &&
 		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
 	{
 		const auto& houseName = details.holder->getHouse().second->getName();
@@ -476,8 +478,8 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		adjSet = true;
 	}
 
-	// See if we use dynasty name.
-	if (!adjSet && details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
+	// Except if needed override for dynasties. See if we use dynasty name.
+	if (dynasticNames && details.government == "monarchy" && !hardcodedExclusions.count(title->first) && details.holder->getHouse().first &&
 		 details.holder->getHouse().second->getDynasty().second->isAppropriateRealmName() &&
 		 (title->second->getLevel() == CK3::LEVEL::KINGDOM || title->second->getLevel() == CK3::LEVEL::EMPIRE))
 	{
@@ -490,7 +492,10 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 			newblock.spanish = "de los " + nameLocalizationMatch->spanish;
 			newblock.french = "des " + nameLocalizationMatch->french;
 			newblock.german = nameLocalizationMatch->german + "-";
-			localizations.insert(std::pair(tag + "_ADJ", newblock));
+			if (localizations.contains(tag + "_ADJ"))
+				localizations.at(tag + "_ADJ") = newblock;
+			else
+				localizations.emplace(tag + "_ADJ", newblock);
 			adjSet = true;
 		}
 	}
