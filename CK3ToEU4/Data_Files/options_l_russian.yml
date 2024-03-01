@@ -5,6 +5,8 @@ l_russian:
  STARTDATE1TIP: "Начать на изначальной дате старта EU4."
  STARTDATE2: "Crusader Universalis (динамичное)"
  STARTDATE2TIP: "Начать с конечной даты сейва CK."
+ STARTDATE3: "Индивидуальные - start_date.txt"
+ STARTDATE3TIP: "Настраивается вручную."
  DEJURE: "Должны ли страны иметь вечные притязание на деюр?"
  DEJURETIP: "Некоторые, по типу Византии, могут их иметь."
  DEJURE1: "Ага, а что может пойти не так?"

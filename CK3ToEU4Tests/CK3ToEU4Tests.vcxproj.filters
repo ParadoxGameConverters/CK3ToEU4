@@ -130,6 +130,9 @@
     <Filter Include="EU4WorldTests\IdeaTests">
       <UniqueIdentifier>{9027090e-4c4c-4594-8a9d-415d5c51072f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MapperTests\StartDateMapperTests">
+      <UniqueIdentifier>{4d32651e-5b8e-46e4-a0b8-aa2a05c418e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp">
@@ -371,6 +374,9 @@
     </ClCompile>
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest_main.cc" />
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
+    <ClCompile Include="MapperTests\StartDateMapper\StartDateMapperTests.cpp">
+      <Filter>MapperTests\StartDateMapperTests</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="..\imageMagick\dll-windows-required\CORE_RL_bzlib_.dll">

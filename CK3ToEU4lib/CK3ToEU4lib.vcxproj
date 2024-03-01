@@ -104,6 +104,7 @@
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.cpp" />
+    <ClCompile Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\TraitScraper\TraitScraper.cpp" />
@@ -210,6 +211,7 @@
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapper.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\RulerPersonalitiesMapper\RulerPersonalitiesMapping.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\ShatterEmpiresMapper\ShatterEmpiresMapper.h" />
+    <ClInclude Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\TitleTagMapper\TitleTagMapper.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\TitleTagMapper\TitleTagMapping.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\TraitScraper\TraitScraper.h" />

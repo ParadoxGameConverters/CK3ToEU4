@@ -5,6 +5,8 @@ l_english:
  STARTDATE1TIP: "Start at vanilla EU4 start date."
  STARTDATE2: "Crusader Universalis (dynamic)"
  STARTDATE2TIP: "Start at CK savegame date."
+ STARTDATE3: "Customized - start_date.txt"
+ STARTDATE3TIP: "Manually configured."
  DEJURE: "Should countries get permaclaims on de jure land?"
  DEJURETIP: "Some, like BYZ, might get a lot of those."
  DEJURE1: "Yeah, what's the worst that could happen?"

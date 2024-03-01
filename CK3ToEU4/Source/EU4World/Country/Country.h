@@ -43,6 +43,7 @@ class Country
 		 const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 date theConversionDate,
+		 date startDate,
 		 Configuration::STARTDATE startDateOption,
 		 bool dynasticNames);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }

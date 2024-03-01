@@ -13,7 +13,8 @@ class Configuration: commonItems::parser
 	enum class STARTDATE
 	{
 		EU = 1,
-		CK = 2
+		CK = 2,
+		MANUAL = 3
 	};
 	enum class SPLITVASSALS
 	{
@@ -87,7 +88,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getCK3DocPath() const { return CK3DocPath; }
 	[[nodiscard]] const auto& getEU4Path() const { return EU4Path; }
 	[[nodiscard]] const auto& getOutputName() const { return outputName; }
-	[[nodiscard]] const auto& getStartDate() const { return startDate; }
+	[[nodiscard]] const auto& getStartDateOption() const { return startDate; }
 	[[nodiscard]] const auto& getHRE() const { return iAmHre; }
 	[[nodiscard]] const auto& getShatterEmpires() const { return shatterEmpires; }
 	[[nodiscard]] const auto& getShatterLevel() const { return shatterLevel; }

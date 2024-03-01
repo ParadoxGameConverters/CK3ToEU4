@@ -52,12 +52,15 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 date theConversionDate,
+	 date startDate,
 	 Configuration::STARTDATE startDateOption,
 	 bool dynasticNames)
 {
 	tag = theTag;
 	if (startDateOption == Configuration::STARTDATE::CK)
 		conversionDate = theConversionDate;
+	else if (startDateOption == Configuration::STARTDATE::MANUAL)
+		conversionDate = startDate;
 	else
 		conversionDate = date(1444, 11, 11);
 	title = theTitle;
@@ -1804,7 +1807,8 @@ date EU4::Country::normalizeDate(const date& incomingDate, Configuration::STARTD
 	if (startDateOption == Configuration::STARTDATE::CK)
 		return incomingDate;
 
-	// for 1444 bookmark we need to adjust dates. Instead of being anal about days and months, we'll just fix the year so ages match approximately.
+	// for 1444 or manual start date bookmark we need to adjust dates. Instead of being anal about days and months, we'll just fix the year so ages match
+	// approximately.
 	const auto incomingYear = incomingDate.getYear();
 	const auto yearDelta = 1444 - theConversionDate.getYear();
 

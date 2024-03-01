@@ -82,7 +82,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "55 %";
 
 	// Which happens now. Translating incoming titles into EU4 tags, with new tags being added to our countries.
-	importCK3Countries(sourceWorld, theConfiguration.getStartDate(), dynasticNames);
+	importCK3Countries(sourceWorld, theConfiguration.getStartDateOption(), startDateMapper.getStartDate(), dynasticNames);
 
 	Log(LogLevel::Progress) << "56 %";
 	// Now we can deal with provinces since we know to whom to assign them. We first import vanilla province data.
@@ -142,7 +142,11 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	if (sourceWorld.getHRETitle())
 	{
 		Log(LogLevel::Info) << "-> Marking HRE Title";
-		markHRETag(theConfiguration, *sourceWorld.getHRETitle(), sourceWorld.getConversionDate(), theConfiguration.getStartDate());
+		markHRETag(theConfiguration,
+			 *sourceWorld.getHRETitle(),
+			 sourceWorld.getConversionDate(),
+			 startDateMapper.getStartDate(),
+			 theConfiguration.getStartDateOption());
 	}
 	Log(LogLevel::Progress) << "66 %";
 
@@ -204,7 +208,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Info) << "---> The Dump <---";
 	modFile.outname = theConfiguration.getOutputName();
 	modFile.version = converterVersion.getMaxTarget();
-	output(converterVersion, theConfiguration, sourceWorld);
+	output(converterVersion, theConfiguration, sourceWorld, startDateMapper.getStartDate());
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
 }
 
@@ -379,7 +383,7 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 	}
 }
 
-void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption, const bool dynasticNames)
+void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption, date startDate, const bool dynasticNames)
 {
 	Log(LogLevel::Info) << "-> Importing CK3 Countries";
 	// countries holds all tags imported from EU4. We'll now overwrite some and
@@ -388,25 +392,25 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration
 	{
 		if (title.second->getLevel() != CK3::LEVEL::EMPIRE)
 			continue;
-		importCK3Country(title, sourceWorld, startDateOption, dynasticNames);
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::KINGDOM)
 			continue;
-		importCK3Country(title, sourceWorld, startDateOption, dynasticNames);
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::DUCHY)
 			continue;
-		importCK3Country(title, sourceWorld, startDateOption, dynasticNames);
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
 	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
 			continue;
-		importCK3Country(title, sourceWorld, startDateOption, dynasticNames);
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
 	}
 	Log(LogLevel::Info) << ">> " << countries.size() << " total countries recognized.";
 }
@@ -414,6 +418,7 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration
 void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
 	 const CK3::World& sourceWorld,
 	 Configuration::STARTDATE startDateOption,
+	 date startDate,
 	 bool dynasticNames)
 {
 	// Are we being fed crap?
@@ -472,6 +477,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 localizationMapper,
 			 rulerPersonalitiesMapper,
 			 sourceWorld.getConversionDate(),
+			 startDate,
 			 startDateOption,
 			 dynasticNames);
 		title.second->loadEU4Tag(std::pair(*tag, countryItr->second));
@@ -489,6 +495,7 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 			 localizationMapper,
 			 rulerPersonalitiesMapper,
 			 sourceWorld.getConversionDate(),
+			 startDate,
 			 startDateOption,
 			 dynasticNames);
 		newCountry->setGeneratedNation();
@@ -1217,6 +1224,7 @@ void EU4::World::resolvePersonalUnions()
 void EU4::World::markHRETag(const Configuration& theConfiguration,
 	 const std::pair<std::string, std::shared_ptr<CK3::Title>>& hreTitle,
 	 const date& conversionDate,
+	 date startDate,
 	 Configuration::STARTDATE startDateOption)
 {
 	if (theConfiguration.getHRE() == Configuration::I_AM_HRE::NONE)
@@ -1246,6 +1254,7 @@ void EU4::World::markHRETag(const Configuration& theConfiguration,
 			 localizationMapper,
 			 rulerPersonalitiesMapper,
 			 conversionDate,
+			 startDate,
 			 startDateOption,
 			 false);
 		countries.emplace(actualHRETag, newCountry);

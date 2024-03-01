@@ -18,6 +18,7 @@
 #include "../Mappers/ReligionGroupScraper/ReligionGroupScraper.h"
 #include "../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Mappers/RulerPersonalitiesMapper/RulerPersonalitiesMapper.h"
+#include "../Mappers/StartDateMapper/StartDateMapper.h"
 #include "../Mappers/TitleTagMapper/TitleTagMapper.h"
 #include "ConverterVersion.h"
 #include "Country/Country.h"
@@ -45,10 +46,11 @@ class World
 	void verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
 	void importVanillaCountries(const std::string& eu4Path, bool invasion);
 	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
-	void importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption, bool dynasticNames);
+	void importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption, date startDate, bool dynasticNames);
 	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
 		 const CK3::World& sourceWorld,
 		 Configuration::STARTDATE startDateOption,
+		 date startDate,
 		 bool dynasticNames);
 	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
 	void importCK3Provinces(const CK3::World& sourceWorld);
@@ -71,6 +73,7 @@ class World
 	void markHRETag(const Configuration& theConfiguration,
 		 const std::pair<std::string, std::shared_ptr<CK3::Title>>& hreTitle,
 		 const date& conversionDate,
+		 date startDate,
 		 Configuration::STARTDATE startDateOption);
 	void setElectors();
 	void setFreeCities();
@@ -85,7 +88,10 @@ class World
 	void religiousQuestion(bool doesIslamExist);
 
 	// output
-	void output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const;
+	void output(const commonItems::ConverterVersion& converterVersion,
+		 const Configuration& theConfiguration,
+		 const CK3::World& sourceWorld,
+		 date startDate) const;
 	void createModFile(const Configuration& theConfiguration) const;
 	void outputVersion(const commonItems::ConverterVersion& versionParser, const Configuration& theConfiguration) const;
 	void outputCommonCountriesFile(const Configuration& theConfiguration) const;
@@ -129,6 +135,7 @@ class World
 	mappers::AfricanPassesMapper africanPassesMapper;
 	mappers::CultureDefinitionsMapper cultureDefinitionsMapper;
 	mappers::DynamicIdeasMapper dynamicIdeasMapper;
+	mappers::StartDateMapper startDateMapper;
 
 	ModFile modFile;
 	Diplomacy diplomacy;

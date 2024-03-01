@@ -133,6 +133,9 @@
     <Filter Include="Mappers\CK3ReligionScraper">
       <UniqueIdentifier>{be032354-e8ff-4e18-a6f4-222fee0360fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\StartDateMapper">
+      <UniqueIdentifier>{87562219-fd4a-4f32-b6a7-4bec099e8d33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\World.cpp">
@@ -440,6 +443,9 @@
     </ClCompile>
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.cpp">
       <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.cpp">
+      <Filter>Mappers\StartDateMapper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -754,6 +760,9 @@
     </ClInclude>
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\CK3ReligionScraper\CK3ReligionScraping.h">
       <Filter>Mappers\CK3ReligionScraper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.h">
+      <Filter>Mappers\StartDateMapper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
