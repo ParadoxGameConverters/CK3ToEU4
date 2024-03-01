@@ -240,7 +240,7 @@ void EU4::World::outputReligions(const std::string& outputName,
 
 void EU4::World::outputBookmark(const Configuration& theConfiguration, date conversionDate) const
 {
-	if (theConfiguration.getStartDateOption() != Configuration::STARTDATE::CK)
+	if (theConfiguration.getStartDateOption() != Configuration::STARTDATE::EU)
 	{
 		// fix the dynamic bookmark in defines
 		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua"))
