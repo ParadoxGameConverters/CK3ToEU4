@@ -5,6 +5,8 @@ l_latin:
  STARTDATE1TIP: "Incipitur secundum vanillam EU4."
  STARTDATE2: "Per Cruciatorum Universalibus (dynamice)"
  STARTDATE2TIP: "Incipitur secundum ludum transcriptum."
+ STARTDATE3: "Nativus - start_date.txt"
+ STARTDATE3TIP: "Manually set.."
  DEJURE: "Dentur regnibus vindicationes in terris de jure?"
  DEJURETIP: "Aliquibus, sicut BYZ, darentur complures."
  DEJURE1: "Age, quod maxime mali esse potest?"

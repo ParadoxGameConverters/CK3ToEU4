@@ -14,11 +14,16 @@
 #include "../../Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
 namespace fs = std::filesystem;
 
-void EU4::World::output(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration, const CK3::World& sourceWorld) const
+void EU4::World::output(const commonItems::ConverterVersion& converterVersion,
+	 const Configuration& theConfiguration,
+	 const CK3::World& sourceWorld,
+	 date startDate) const
 {
 	const auto invasion = theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE;
 	const auto dynamicInstitutions = theConfiguration.getDynamicInstitutions() == Configuration::INSTITUTIONS::DYNAMIC;
-	const date conversionDate = sourceWorld.getConversionDate();
+	date conversionDate = sourceWorld.getConversionDate();
+	if (theConfiguration.getStartDateOption() == Configuration::STARTDATE::MANUAL)
+		conversionDate = startDate;
 	Log(LogLevel::Info) << "<- Creating Output Folder";
 
 	commonItems::TryCreateFolder("output");
@@ -235,7 +240,7 @@ void EU4::World::outputReligions(const std::string& outputName,
 
 void EU4::World::outputBookmark(const Configuration& theConfiguration, date conversionDate) const
 {
-	if (theConfiguration.getStartDate() == Configuration::STARTDATE::CK)
+	if (theConfiguration.getStartDateOption() != Configuration::STARTDATE::EU)
 	{
 		// fix the dynamic bookmark in defines
 		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua"))
@@ -537,7 +542,7 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const
 {
 	auto actualConversionDate = conversionDate;
-	if (theConfiguration.getStartDate() == Configuration::STARTDATE::EU)
+	if (theConfiguration.getStartDateOption() == Configuration::STARTDATE::EU)
 		actualConversionDate = date(1444, 11, 11);
 
 	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt");

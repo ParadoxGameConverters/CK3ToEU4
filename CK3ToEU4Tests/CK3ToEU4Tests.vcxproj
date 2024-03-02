@@ -137,6 +137,7 @@
     <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalitiesMappingTests.cpp" />
     <ClCompile Include="MapperTests\RulerPersonalityMapper\RulerPersonalityMapperTests.cpp" />
     <ClCompile Include="MapperTests\ShatterEmpiresMapper\ShatterEmpiresMapperTests.cpp" />
+    <ClCompile Include="MapperTests\StartDateMapper\StartDateMapperTests.cpp" />
     <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMapperTests.cpp" />
     <ClCompile Include="MapperTests\TitleTagMapper\TitleTagMappingTests.cpp" />
     <ClCompile Include="MapperTests\TraitScraper\TraitScraperTests.cpp" />

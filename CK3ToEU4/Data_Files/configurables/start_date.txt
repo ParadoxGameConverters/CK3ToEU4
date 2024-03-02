@@ -1,0 +1,8 @@
+# This file is used for MANUAL start date option - you have to enable it in converter options.
+# Hard limits are 500-1821. Don't set a date outside these.
+
+year = 1425
+month = 7
+day = 19
+
+# Please keep in mind EU4 doesn't know of leap years (February is always 28 days), and don't try to do 31st of April.

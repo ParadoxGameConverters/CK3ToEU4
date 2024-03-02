@@ -43,6 +43,7 @@ class Country
 		 const mappers::LocalizationMapper& localizationMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 date theConversionDate,
+		 date startDate,
 		 Configuration::STARTDATE startDateOption,
 		 bool dynasticNames);
 	void setSunsetCountry(bool isSunsetCountry) { details.isSunsetCountry = isSunsetCountry; }
@@ -117,27 +118,32 @@ class Country
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 Configuration::STARTDATE startDateOption,
-		 const date& theConversionDate);
+		 const date& theConversionDate,
+		 const date& startDate);
 	void convertHolder(const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 Configuration::STARTDATE startDateOption,
-		 const date& theConversionDate);
+		 const date& theConversionDate,
+		 const date& startDate);
 	void convertSpouse(const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 Configuration::STARTDATE startDateOption,
-		 const date& theConversionDate);
+		 const date& theConversionDate,
+		 const date& startDate);
 	void convertHeirs(const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 		 const mappers::LocalizationMapper& localizationMapper,
 		 Configuration::STARTDATE startDateOption,
-		 const date& theConversionDate);
+		 const date& theConversionDate,
+		 const date& startDate);
 
 	[[nodiscard]] date normalizeDate(const date& incomingDate,
 		 Configuration::STARTDATE startDateOption,
-		 const date& theConversionDate) const; // Uses bookmark date to shift dates if required.
+		 const date& theConversionDate,
+		 const date& startDate) const; // Uses bookmark date to shift dates if required.
 
 	std::string tag;
 	std::string commonCountryFile;

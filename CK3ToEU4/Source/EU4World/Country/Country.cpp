@@ -52,12 +52,15 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 date theConversionDate,
+	 date startDate,
 	 Configuration::STARTDATE startDateOption,
 	 bool dynasticNames)
 {
 	tag = theTag;
 	if (startDateOption == Configuration::STARTDATE::CK)
 		conversionDate = theConversionDate;
+	else if (startDateOption == Configuration::STARTDATE::MANUAL)
+		conversionDate = startDate;
 	else
 		conversionDate = date(1444, 11, 11);
 	title = theTitle;
@@ -74,7 +77,7 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 	populateCommons(cultureMapper, localizationMapper);
 	populateMisc();
 	populateLocs(localizationMapper, dynasticNames);
-	populateRulers(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+	populateRulers(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate, startDate);
 }
 
 void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governmentsMapper,
@@ -593,7 +596,8 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 Configuration::STARTDATE startDateOption,
-	 const date& theConversionDate)
+	 const date& theConversionDate,
+	 const date& startDate)
 {
 	// do we HAVE a ruler? Broken saves come to mind.
 	if (!details.holder || details.holder->isDead())
@@ -616,9 +620,9 @@ void EU4::Country::populateRulers(const mappers::ReligionMapper& religionMapper,
 	if (details.holder->getCharacterDomain()->getDomain()[0].second->getName() != title->first && details.government == "monarchy")
 		return;
 
-	convertHolder(rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
-	convertSpouse(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
-	convertHeirs(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate);
+	convertHolder(rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate, startDate);
+	convertSpouse(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate, startDate);
+	convertHeirs(religionMapper, cultureMapper, rulerPersonalitiesMapper, localizationMapper, startDateOption, theConversionDate, startDate);
 
 	// this transformation is always true, heir or not.
 	if (conversionDate.diffInYears(details.monarch.birthDate) < 16)
@@ -647,7 +651,8 @@ void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 Configuration::STARTDATE startDateOption,
-	 const date& theConversionDate)
+	 const date& theConversionDate,
+	 const date& startDate)
 {
 	if (!title->second->getHeirs().empty())
 	{
@@ -700,7 +705,7 @@ void EU4::Country::convertHeirs(const mappers::ReligionMapper& religionMapper,
 			details.heir.adm = std::min((heir.second->getSkills().stewardship + heir.second->getSkills().learning) / 2, 6);
 			details.heir.dip = std::min((heir.second->getSkills().diplomacy + heir.second->getSkills().intrigue) / 2, 6);
 			details.heir.mil = std::min((heir.second->getSkills().martial + heir.second->getSkills().learning) / 2, 6);
-			details.heir.birthDate = normalizeDate(heir.second->getBirthDate(), startDateOption, theConversionDate);
+			details.heir.birthDate = normalizeDate(heir.second->getBirthDate(), startDateOption, theConversionDate, startDate);
 			details.heir.female = heir.second->isFemale();
 			if (!heir.second->getFaith() || !heir.second->getFaith()->second)
 			{
@@ -752,7 +757,8 @@ void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
 	 const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 Configuration::STARTDATE startDateOption,
-	 const date& theConversionDate)
+	 const date& theConversionDate,
+	 const date& startDate)
 {
 	if (details.holder->getSpouse() && details.holder->getSpouse()->second && details.holder->getSpouse()->second->getHouse().second &&
 		 !details.holder->isDead()) // making sure she's alive.
@@ -785,7 +791,7 @@ void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
 		details.queen.adm = std::min((spouse->getSkills().stewardship + spouse->getSkills().learning) / 3, 6);
 		details.queen.dip = std::min((spouse->getSkills().diplomacy + spouse->getSkills().intrigue) / 3, 6);
 		details.queen.mil = std::min((spouse->getSkills().martial + spouse->getSkills().learning) / 3, 6);
-		details.queen.birthDate = normalizeDate(spouse->getBirthDate(), startDateOption, theConversionDate);
+		details.queen.birthDate = normalizeDate(spouse->getBirthDate(), startDateOption, theConversionDate, startDate);
 		details.queen.female = spouse->isFemale();
 		if (spouse->getFaith() && spouse->getFaith()->second)
 		{
@@ -832,7 +838,8 @@ void EU4::Country::convertSpouse(const mappers::ReligionMapper& religionMapper,
 void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerPersonalitiesMapper,
 	 const mappers::LocalizationMapper& localizationMapper,
 	 Configuration::STARTDATE startDateOption,
-	 const date& theConversionDate)
+	 const date& theConversionDate,
+	 const date& startDate)
 {
 	// Determine regnalness.
 	std::string actualName = details.holder->getName();
@@ -884,7 +891,7 @@ void EU4::Country::convertHolder(const mappers::RulerPersonalitiesMapper& rulerP
 	details.monarch.adm = std::min((details.holder->getSkills().stewardship + details.holder->getSkills().learning) / 3, 6);
 	details.monarch.dip = std::min((details.holder->getSkills().diplomacy + details.holder->getSkills().intrigue) / 3, 6);
 	details.monarch.mil = std::min((details.holder->getSkills().martial + details.holder->getSkills().learning) / 3, 6);
-	details.monarch.birthDate = normalizeDate(details.holder->getBirthDate(), startDateOption, theConversionDate);
+	details.monarch.birthDate = normalizeDate(details.holder->getBirthDate(), startDateOption, theConversionDate, startDate);
 	details.monarch.female = details.holder->isFemale();
 	// religion and culture were already determining our country's primary culture and religion. If we set there, we'll copy here.
 	if (!details.primaryCulture.empty())
@@ -1799,14 +1806,20 @@ void EU4::Country::correctRoyaltyToBuddhism()
 			adviser.religion = "buddhism";
 }
 
-date EU4::Country::normalizeDate(const date& incomingDate, Configuration::STARTDATE startDateOption, const date& theConversionDate) const
+date EU4::Country::normalizeDate(const date& incomingDate, Configuration::STARTDATE startDateOption, const date& theConversionDate, const date& startDate) const
 {
 	if (startDateOption == Configuration::STARTDATE::CK)
 		return incomingDate;
 
-	// for 1444 bookmark we need to adjust dates. Instead of being anal about days and months, we'll just fix the year so ages match approximately.
+	// for 1444 or manual start date bookmark we need to adjust dates. Instead of being anal about days and months, we'll just fix the year so ages match
+	// approximately.
 	const auto incomingYear = incomingDate.getYear();
-	const auto yearDelta = 1444 - theConversionDate.getYear();
+
+	int yearDelta;
+	if (startDateOption == Configuration::STARTDATE::EU)
+		yearDelta = 1444 - theConversionDate.getYear();
+	else
+		yearDelta = startDate.getYear() - theConversionDate.getYear();
 
 	return date(incomingYear + yearDelta, incomingDate.getMonth(), incomingDate.getDay());
 }

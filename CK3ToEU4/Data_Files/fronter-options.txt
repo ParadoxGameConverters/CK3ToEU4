@@ -15,6 +15,12 @@ option = {
 			tooltip = STARTDATE2TIP
 			default = false
 		}
+		radioOption = {
+			name = 3
+			displayName = STARTDATE3
+			tooltip = STARTDATE3TIP
+			default = false
+		}
 	}
 }
 
