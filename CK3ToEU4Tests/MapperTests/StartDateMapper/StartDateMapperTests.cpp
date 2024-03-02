@@ -29,7 +29,7 @@ TEST(Mappers_StartDateMapperTests, startDateCanBeSet)
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 19);
 }
 
-TEST(Mappers_StartDateMapperTests, invalidYearBailsToDefault)
+TEST(Mappers_StartDateMapperTests, invalidYearOverBailsToDefault)
 {
 	std::stringstream input;
 	input << "year = 1895\n";
@@ -44,7 +44,22 @@ TEST(Mappers_StartDateMapperTests, invalidYearBailsToDefault)
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
 }
 
-TEST(Mappers_StartDateMapperTests, invalidMonthBailsToDefault)
+TEST(Mappers_StartDateMapperTests, invalidYearUnderBailsToDefault)
+{
+	std::stringstream input;
+	input << "year = 375\n";
+	input << "month = 7\n";
+	input << "day = 19\n";
+
+	const mappers::StartDateMapper theMapper(input);
+
+	ASSERT_TRUE(theMapper.getStartDate().isSet());
+	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
+	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
+	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
+}
+
+TEST(Mappers_StartDateMapperTests, invalidMonthOverBailsToDefault)
 {
 	std::stringstream input;
 	input << "year = 1495\n";
@@ -59,7 +74,37 @@ TEST(Mappers_StartDateMapperTests, invalidMonthBailsToDefault)
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
 }
 
-TEST(Mappers_StartDateMapperTests, invalidDayBailsToDefault)
+TEST(Mappers_StartDateMapperTests, invalidMonthUnderBailsToDefault)
+{
+	std::stringstream input;
+	input << "year = 1495\n";
+	input << "month = 0\n";
+	input << "day = 19\n";
+
+	const mappers::StartDateMapper theMapper(input);
+
+	ASSERT_TRUE(theMapper.getStartDate().isSet());
+	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
+	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
+	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
+}
+
+TEST(Mappers_StartDateMapperTests, invalidDayOverBailsToDefault)
+{
+	std::stringstream input;
+	input << "year = 1495\n";
+	input << "month = 12\n";
+	input << "day = 32\n";
+
+	const mappers::StartDateMapper theMapper(input);
+
+	ASSERT_TRUE(theMapper.getStartDate().isSet());
+	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
+	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
+	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
+}
+
+TEST(Mappers_StartDateMapperTests, invalidDayUnderBailsToDefault)
 {
 	std::stringstream input;
 	input << "year = 1495\n";
