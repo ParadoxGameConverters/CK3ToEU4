@@ -1237,3 +1237,24 @@ has_jizya_doctrine  = {
 		reinforce_speed = 0.3
 	}
 }
+######### 1.12
+doctrine_funeral_stoic = {
+}
+doctrine_funeral_bewailment  = {
+}
+doctrine_funeral_cremation  = {
+}
+doctrine_funeral_sky_burial  = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		republican_tradition = 0.5
+	}
+	country_as_secondary = {
+		raze_power_gain = 0.15
+	}
+}
+doctrine_funeral_mummification  = {
+}
