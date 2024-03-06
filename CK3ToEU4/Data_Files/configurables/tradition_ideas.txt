@@ -216,6 +216,8 @@ link = { ck3 = { tradition = tradition_fp3_jirga } eu4 = { spy_offence = 0.1 } }
 link = { ck3 = { tradition = tradition_fp3_pragmatic_creed } eu4 = { cavalry_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_fp3_fierce_independence } eu4 = { hostile_attrition = 1 } }
 link = { ck3 = { tradition = tradition_ghazi } eu4 = { discipline = 0.05 } }
+### 1.12 - New Tradition
+link = { ck3 = { tradition = tradition_ce1_ritual_washing } eu4 = { prestige = 1 } }
 
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
@@ -350,5 +352,5 @@ link = { ck3 = { tradition = tradition_RICE_bantu_migrators } eu4 = { movement_s
 link = { ck3 = { tradition = tradition_RICE_cattle_kraals } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_RICE_forest_suppliers } eu4 = { global_tax_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_EEE_people_of_boika } eu4 = { build_time = -0.05 } }
-link = { ck3 = { tradition = tradition_RICE_wendish_confederations } eu4 = { prestige = 1 } }
+link = { ck3 = { tradition = tradition_RICE_wendish_confederations } eu4 = { prestige = 1 } 
 
