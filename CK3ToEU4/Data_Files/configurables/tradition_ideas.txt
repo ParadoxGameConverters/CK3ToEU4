@@ -352,5 +352,4 @@ link = { ck3 = { tradition = tradition_RICE_bantu_migrators } eu4 = { movement_s
 link = { ck3 = { tradition = tradition_RICE_cattle_kraals } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_RICE_forest_suppliers } eu4 = { global_tax_modifier = 0.1 } }
 link = { ck3 = { tradition = tradition_EEE_people_of_boika } eu4 = { build_time = -0.05 } }
-link = { ck3 = { tradition = tradition_RICE_wendish_confederations } eu4 = { prestige = 1 } 
-
+link = { ck3 = { tradition = tradition_RICE_wendish_confederations } eu4 = { prestige = 1 } }
