@@ -504,6 +504,7 @@ link = { ck3 = c_sirhan eu4 = ANZ } #Maps to same province as c_al_jawf
 link = { ck3 = e_arabia eu4 = ARB }
 link = { ck3 = k_arabia eu4 = ARB }
 link = { ck3 = d_arabia eu4 = ARB }
+link = { ck3 = k_kurdistan eu4 = ARD }
 link = { ck3 = d_kurdistan eu4 = ARD }
 link = { ck3 = c_dinawar eu4 = ARD } #Dinawar maps to province Ardalan
 link = { ck3 = c_irbil eu4 = BHT } #Arbil, capital of the Soran Emirate
@@ -535,6 +536,7 @@ link = { ck3 = d_oman eu4 = OMA }
 link = { ck3 = k_hail eu4 = SHM }
 link = { ck3 = d_shammar eu4 = SHM }
 link = { ck3 = c_julfar eu4 = SHR }
+link = { ck3 = k_shirvan eu4 = SRV }
 link = { ck3 = d_shirvan eu4 = SRV }
 link = { ck3 = c_shirvan eu4 = SRV }
 link = { ck3 = c_dhafra eu4 = YAS } #Traditional capital of the Bani Yas
@@ -542,6 +544,7 @@ link = { ck3 = k_yemen eu4 = YEM }
 
 # Asia Minor
 
+link = { ck3 = k_azerbaijan eu4 = ARL }
 link = { ck3 = d_azerbaijan eu4 = ARL }
 link = { ck3 = c_ardabil eu4 = ARL }
 link = { ck3 = e_avar_khaganate eu4 = AVR }
@@ -1268,7 +1271,7 @@ link = { ck3 = k_chrysanthemum_throne eu4 = JAP }
 
 #Historic Invasions
 
-link = { ck3 = e_fatimid eu4 = EGY }
+link = { ck3 = e_fatimid eu4 = AFR }
 link = { ck3 = e_ghaznavid eu4 = AFG }
 link = { ck3 = e_seljuk eu4 = PER }
 link = { ck3 = k_ziyarid eu4 = KRY }
@@ -1323,4 +1326,11 @@ link = { ck3 = k_bassenheim eu4 = TEU }
 link = { ck3 = k_balk eu4 = LIV }
 link = { ck3 = e_sangama eu4 = VIJ }
 link = { ck3 = e_borjigin eu4 = MGE }
+link = { ck3 = e_vlaanderen eu4 = LAE }
+link = { ck3 = k_eldiguzid eu4 = ARL }
+link = { ck3 = e_mamluk eu4 = MAM }
+link = { ck3 = e_qara_qoyunlu eu4 = QAR }
+link = { ck3 = k_qara_qoyunlu eu4 = QAR }
+link = { ck3 = e_aq_qoyunlu eu4 = AKK }
+link = { ck3 = k_aq_qoyunlu eu4 = AKK }
 
