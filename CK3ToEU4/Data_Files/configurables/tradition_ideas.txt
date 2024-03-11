@@ -362,4 +362,5 @@ link = { ck3 = { tradition = tradition_RICE_judicati_catholic } eu4 = { stabilit
 link = { ck3 = { tradition = tradition_RICE_judicati_orthodox } eu4 = { stability_cost_modifier = -0.1 yearly_patriarch_authority = 0.1 } }
 link = { ck3 = { tradition = tradition_RICE_judicati_north_african } eu4 = { stability_cost_modifier = -0.1 development_cost = -0.05 } }
 link = { ck3 = { tradition = tradition_RICE_judicati_none } eu4 = { stability_cost_modifier = -0.2 } }
-
+link = { ck3 = { tradition = tradition_tabari_isolation } eu4 = { stability_cost_modifier = -0.15 } }
+link = { ck3 = { tradition = tradition_norman_traditions } eu4 = { prestige = 0.5 } }
