@@ -71,3 +71,6 @@ link = { eu4 = tibetan_group ck3 = heritage_loloish }
 link = { eu4 = southeastasian_group ck3 = heritage_khmer }
 link = { eu4 = malay ck3 = heritage_sulawesi }
 link = { eu4 = thai_group ck3 = heritage_tai }
+
+# Mod: Fallen Eagle
+link = { eu4 = byzantine ck3 = heritage_hellenistic }
