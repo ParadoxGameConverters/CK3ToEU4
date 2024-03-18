@@ -884,10 +884,19 @@ link = { eu4 = gaulic ck3 = romano_gallic ck3 = gallo_romance tech = western gfx
 ## Fallen Eagle
 link = { eu4 = suebi ck3 = old_suebi tech = western gfx = westerngfx }
 link = { eu4 = gothic ck3 = herulian tech = western gfx = westerngfx }
+link = { eu4 = swabian ck3 = alamannic tech = western gfx = westerngfx }
 link = { eu4 = castillian ck3 = hispano_roman tech = western gfx = westerngfx }
 link = { eu4 = dalmatian ck3 = illyro_roman tech = western gfx = westerngfx }
 link = { eu4 = berber ck3 = maurian tech = muslim gfx = muslimgfx }
 link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = estonian ck3 = aestian tech = eastern gfx = inuitgfx }
+link = { eu4 = kishinyov ck3 = antean gfx = easterngfx }
 link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
+link = { eu4 = avar ck3 = hun ck3 = xionite tech = nomad_group gfx = asiangfx } # TODO: port hunnic from CK2ToEU4
+link = { eu4 = malayalam ck3 = malaiya tech = indian gfx = indiangfx }
+link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
+link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
+link = { eu4 = polish ck3 = vistulian ck3 = mazovian tech = western gfx = westerngfx }
+link = { eu4 = roman ck3 = thracio_roman tech = western gfx = westerngfx }
+link = { eu4 = bolghar ck3 = saragur tech = nomad_group gfx = muslimgfx }
