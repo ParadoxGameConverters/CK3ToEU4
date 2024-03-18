@@ -207,4 +207,14 @@ link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
 link = { eu4 = shiite ck3 = shia }
 link = { eu4 = ibadi ck3 = khawariji }
 link = { eu4 = buddhism ck3 = pudgalavada ck3 = dharmaguptaka ck3 = sarvastivada ck3 = vibhajjavada ck3 = mahasanghika }
-link = { eu4 = orthodox ck3 = nicene }
+link = { eu4 = orthodox ck3 = nicene ck3 = hesychasm }
+link = { eu4 = coptic ck3 = syriac }
+link = { eu4 = catholic ck3 = abelian } # https://en.wikipedia.org/wiki/Abelians
+link = { eu4 = catholic ck3 = arian ck3 = macedonianism ck3 = montanist } # TODO: add arianism from CK2ToEU4
+link = { eu4 = cathar ck3 = donatist } # Mapped to Cathar because that's what CK2ToEU4 did, but it would be better to have a separate Donatist religion.
+link = { eu4 = waldensian ck3 = pelagianism ck3 = marcionite } # Doing what CK2ToEU4 did.
+link = { eu4 = jewish ck3 = nazarene } # A sect of Jewish Christianity, should ideally be mapped to that if it existed in the converter.
+link = { eu4 = valentinianism ck3 = bardaisanism } # https://en.wikipedia.org/wiki/Bardaisan
+link = { eu4 = adamites ck3 = carpocratian } # https://en.wikipedia.org/wiki/Adamites:  "Some have thought them to have been an offshoot of the Carpocratians"
+link = { eu4 = catholic ck3 = collyridian } # Cursed mapping. MS Copilot: "Collyridianism was an early Christian movement in which adherents apparently worshipped the Virgin Mary, mother of Jesus, as a goddess. This particular veneration of Mary is not a mainstream belief in any of the listed denominations. However, if we must choose one, the Catholic Church might be the closest in terms of the high regard and special devotion given to Mary. But it's important to note that the Catholic Church does not worship Mary as a goddess, which is a significant difference from Collyridianism."
+link = { eu4 = cathar ck3 = encratite } # MS Copilot: "Encratitism was an early Christian movement that practiced asceticism, forbidding marriage and advocating for abstinence from meat. While none of the listed denominations fully align with these practices, the Cathar denomination might be the closest. The Cathars, also known as Albigensians, were a medieval Christian sect that practiced a form of asceticism and were known for their belief in the dualistic nature of good and evil. However, it's important to note that while there may be similarities, Encratitism and Catharism are distinct movements with different beliefs and practices."
