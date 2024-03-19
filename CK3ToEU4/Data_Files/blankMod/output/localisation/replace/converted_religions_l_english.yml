@@ -41,8 +41,10 @@
  samaritan_faith:3 "Samaritan"
  karaite_faith:3 "Karaite"
  jain:3 "Jain"
-
+ arianism: "Arian"
+ 
  #Descriptions
+ arianism_religion_desc:0 "Arianism is a nontrinitarian branch of Christianity that asserts that Jesus Christ is the Son of God, created by God the Father, distinct from the Father and therefore subordinate to the Father. Arian teachings were first attributed to Arius and declared heretical by the First Council of Nicaea in 325."
  pagan_religion_religion_desc:3 "Since the dawn of history, both Europe and the Middle East have been home to countless Pagan religions and cults unrelated to the Abrahamic faiths."
  bon_religion_desc:3 "Bön is the ancient indigenous pre-Buddhist religion of Tibet. It is shamanistic and animistic in nature with multiple deities. After the introduction of Buddhism to Tibet, Bön adopted many of its elements."
  west_african_pagan_religion_desc:3 "The West African religion includes many of the diverse pagan beliefs of the tribes of Sub-Saharan Africa. Ancestor worship, animism and totemistic shamanism dominate, but there also various pantheons of gods."
@@ -175,7 +177,10 @@
  mardukism: "Mardukism"
  mardukism_religion_desc: "The history of the Chaldean pantheon stretches back many thousands of years. Worshipping gods such as Anu, Enki and Nanna, the devotees of the Chaldean religion construct imposing temples in honor of their chosen God."
  ajivika: "Ajivika"
-# March 21 additions:
+ nuragic_pagan: "Nuragic"
+ nuragic_pagan_religion_desc:0 "Nuragic is a belief that stretches back to the Bronze Age of Corsica and Sardinia. Filled with cults of animals and wells, most central to Nuragic belief is the Henotheistic belief in a Father God known by many names, including Sardo, Sid Addir, and more."
+ 
+ #March 21 additions:
  # Religions
  germanic_pagan:0 "Fyrnsidu"
  anglo_pagan:0 "Osgeleafe"

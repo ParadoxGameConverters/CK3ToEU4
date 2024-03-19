@@ -460,4 +460,21 @@ pagan = {
 		
 		heretic = { DARKNESS SNAKE_CLAN }
 	}
+	nuragic_pagan = {
+		color = { 120 128 95 }
+		icon = 164
+		country = {
+			build_cost = -0.1
+			tolerance_heretic = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			build_cost = -0.1
+			tolerance_heretic = 1
+		}
+
+		heretic = { SNAKE_CLAN }
+	}
 }
