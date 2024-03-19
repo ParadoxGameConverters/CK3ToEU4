@@ -27,6 +27,43 @@ christian = {
 			will_of_the_martyrs
 		}
 	}
+	arianism = {
+		color = { 120 120 0 }
+		icon = 107
+		allowed_conversion = {
+			reformed
+			hussite
+			monophysite
+		}
+		country = {
+			global_tax_modifier = 0.1
+			stability_cost_modifier = -0.1
+		}
+		country_as_secondary = {
+			global_tax_modifier = 0.1
+			defensiveness = 0.1
+		}
+		on_convert = {
+			change_religion = reformed
+			add_prestige = -100
+			remove_country_modifier = counter_reformation
+			remove_country_modifier = the_statue_in_restraint_of_appeals
+			remove_country_modifier = revocation_of_restraint_of_appeals
+			remove_country_modifier = bavarian_jesuits
+			remove_country_modifier = the_societas_jesu
+			remove_country_modifier = the_declaration_of_indulgence
+			remove_country_modifier = de_heretico_comburendo
+			remove_country_modifier = the_conventicle_act
+		}
+
+		heretic = { BOGOMILIST WALDENSIAN HUSSITE LOLLARD SOCINIAN }
+
+		date = 325.1.1
+
+		fervor = yes
+
+		misguided_heretic = yes		# Other christians hate them less
+	}
 	messalian = {
 		color = { 0.6 0.1 0.4 } #153 25.5 102
 		icon = 33

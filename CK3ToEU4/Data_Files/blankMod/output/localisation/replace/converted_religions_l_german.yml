@@ -41,8 +41,9 @@
  samaritan_faith:3 "Samariter"
  karaite_faith:3 "Karaite"
  jain:3 "Jain"
+ arianism: "Arianismus"
 
-
+ arianism_religion_desc:0 "Der Arianismus ist ein nichttrinitarischer Zweig des Christentums, der behauptet, dass Jesus Christus der Sohn Gottes ist, der von Gott dem Vater geschaffen wurde, sich vom Vater unterscheidet und daher dem Vater untergeordnet ist. Die arianischen Lehren wurden erstmals Arius zugeschrieben und 325 vom Ersten Konzil von Nicäa für ketzerisch erklärt."
  mazdaki_religion_desc:3 "Mazdak war ein zoroastrischer Priester, der behauptete, ein Prophet von Ahura Mazda zu sein. Er versuchte, die Religion mit gnostischen Elementen zu reformieren und setzte sich für kommunale Besitztümer und Wohlfahrtsprogramme ein."
  manichean_religion_desc:3 "Der Manichäismus ist eine gnostische Religion, die Elemente des Christentums, des Zoroastrismus, des Buddhismus und des Gnostizismus vereint."
  baltic_pagan_reformed_religion_desc:3 "Der reformierte baltische Glaube hat ein Heiliges Buch mit einem Schöpfungsmythos, Kapitel über die Götter und ein Buch mit Prophezeiungen. Die Kirche hat auch eine standardisierte Liturgie und eine offizielle Kirchenhierarchie unter Leitung des Hohepriesters von Dievs."
@@ -172,7 +173,12 @@
  kemetism_religion_desc: "Die Geschichte der indigenen ägyptischen Religion reicht viele tausend Jahre zurück. Die Verehrung von Ra, Atum, Sekhmet und anderen, die sich als polytheistischer Glaube manifestiert, zeigt eine tiefe Ehrfurcht vor den grundlegenden Aspekten der natürlichen Welt."
  mardukism: "Mardukismus"
  mardukism_religion_desc: "Die Geschichte des chaldäischen Pantheons reicht viele tausend Jahre zurück. Die Anhänger der chaldäischen Religion verehren Götter wie Anu, Enki und Nanna und errichten imposante Tempel zu Ehren ihres auserwählten Gottes."
-# March 21 update
+ nuragic_pagan: "Nuragisch"
+ nuragic_pagan_religion_desc:0 "Nuragic ist ein Glaube, der bis in die Bronzezeit Korsikas und Sardiniens zurückreicht. Voller Tier- und Brunnenkulte ist der henotheistische Glaube an einen Vatergott, der unter vielen Namen bekannt ist, darunter Sardo, Sid, das Herzstück des nuraghischen Glaubens Addir und mehr. 
+ hurrian_pagan: "Hurrisch"
+ hurrian_pagan_religion_desc:0 "Die Hurriter verehrten eine große Anzahl von Göttern, die aus verschiedenen Kulturen des Nahen Ostens stammten. Die Hauptgötter im hurritischen Pantheon waren Teshub, der mächtige Wettergott, und seine Frau Hebat, die Muttergöttin. Eine besondere Klasse von Figuren, die von den Hurritern verehrt wurden, waren die sogenannten Sarrena, vergöttlichte Könige und Helden."
+ 
+ #March 21 update
  # Religions
  germanic_pagan:0 "Fyrnsidu"
  anglo_pagan:0 "Osgeleafe"
