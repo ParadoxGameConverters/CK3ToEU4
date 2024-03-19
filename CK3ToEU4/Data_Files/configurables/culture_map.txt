@@ -412,7 +412,7 @@ link = { eu4 = sogdian ck3 = sogdian tech = nomad_group gfx = asiangfx }
 link = { eu4 = tocharian ck3 = tocharian ck3 = khotanese ck3 = gushi tech = chinese gfx = asiangfx }
 link = { eu4 = manchu ck3 = jurchen tech = chinese gfx = asiangfx }
 
-link = { eu4 = avar ck3 = hunnic ck3 = xiongnu ck3 = hunno_bulgar ck3 = tiele ck3 = kurykan ck3 = hunas tech = nomad_group gfx = asiangfx } # To fix
+link = { eu4 = hunnic ck3 = hunnic ck3 = xiongnu ck3 = hunno_bulgar ck3 = tiele ck3 = kurykan ck3 = hunas tech = nomad_group gfx = asiangfx }
 
 # Arabic
 link = { eu4 = hejazi_culture ck3 = hejazi tech = muslim gfx = muslimgfx }
@@ -895,7 +895,7 @@ link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba i
 link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
 link = { eu4 = kishinyov ck3 = sclavenian ck3 = antean gfx = easterngfx }
 link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
-link = { eu4 = avar ck3 = hun ck3 = xionite ck3 = gurjara tech = nomad_group gfx = asiangfx } # TODO: port hunnic from CK2ToEU4
+link = { eu4 = hunnic ck3 = hun ck3 = xionite ck3 = gurjara tech = nomad_group gfx = asiangfx }
 link = { eu4 = malayalam ck3 = malaiya tech = indian gfx = indiangfx }
 link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
 link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
