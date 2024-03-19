@@ -41,9 +41,10 @@
  samaritan_faith:3 "Samaritain"
  karaite_faith:3 "Karaite"
  jain:3 "Jain"
+ arianism: "Arianisme"
 
-
-  mazdaki_religion_desc:3 "Mazdak était un prêtre zoroastrien qui prétendait être le prophète d'Ahurâ Mazda. Il tenta de réformer la religion en y introduisant des éléments gnostiques, et chercha à mettre en avant une possession communautaire des biens et des programmes de charité."
+ arianism_religion_desc:0 "L'arianisme est une branche du christianisme qui affirme que Jésus-Christ est le Fils de Dieu, créé par Dieu le Père, distinct du Père et donc subordonné au Père. Les enseignements ariens ont d'abord été attribués à Arius, puis ont été déclarés hérétiques par le premier Concile de Nicée en 325."
+ mazdaki_religion_desc:3 "Mazdak était un prêtre zoroastrien qui prétendait être le prophète d'Ahurâ Mazda. Il tenta de réformer la religion en y introduisant des éléments gnostiques, et chercha à mettre en avant une possession communautaire des biens et des programmes de charité."
  manichean_religion_desc:3 "Le manichéisme est une religion gnostique, incorporant des éléments propres au christianisme, au zoroastrianisme au bouddhisme et au gnosticisme."
  baltic_pagan_reformed_religion_desc:3 "La foi baltique réformée dispose d'un Livre Saint, comprenant les mythes de la Création, divers chapitres sur les dieux et un livre consacré aux prophéties. L'Église dispose d'une liturgie uniformisée et d'une hiérarchie bien établie, au sommet de laquelle se trouve le Grand Prêtre des dievs."
  finnish_pagan_reformed_religion_desc:3 "La foi suomenusko réformée dispose d'un Livre Saint, comprenant les mythes de la Création, divers chapitres sur les dieux et un livre consacré aux sorts et aux mystères. L'Église dispose aussi d'une liturgie uniformisée et une hiérarchie bien établie, au sommet de laquelle se trouve le grand prêtre d'Ukko."
@@ -173,7 +174,10 @@
  kemetism_religion_desc: "L'histoire de la religion égyptienne indigène remonte à plusieurs milliers d'années. Se manifestant comme une foi polythéiste, le culte de Ra, Atum, Sekhmet et d'autres, montre une profonde révérence pour les aspects fondamentaux du monde naturel."
  mardukism: "Mardoukisme"
  mardukism_religion_desc: "L'histoire du panthéon chaldéen remonte à plusieurs milliers d'années. Adorant des dieux comme Anu, Enki et Nanna, les fidèles de la religion chaldéenne construisent des temples imposants en l'honneur de leur Dieu choisi."
-# March 21 update
+ nuragic_pagan: "Nuragique"
+ nuragic_pagan_religion_desc:0 "Le nuragique est une croyance qui remonte à l'âge du bronze de la Corse et de la Sardaigne. Rempli de cultes d'animaux et de puits, le point central de la croyance nuragique est la croyance hénothéiste en un Dieu Père connu sous de nombreux noms, dont Sardo, Sid Addir, et plus encore."
+ 
+ #March 21 update
  # Religions
  germanic_pagan:0 "Fyrnsidu"
  anglo_pagan:0 "Osgeleafe"
