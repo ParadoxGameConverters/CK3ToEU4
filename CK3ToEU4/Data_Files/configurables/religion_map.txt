@@ -206,3 +206,38 @@ link = { eu4 = mardukism ck3 = shamsi_pagan }
 link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
 link = { eu4 = shiite ck3 = shia }
 link = { eu4 = ibadi ck3 = khawariji }
+link = { eu4 = buddhism ck3 = pudgalavada ck3 = dharmaguptaka ck3 = sarvastivada ck3 = vibhajjavada ck3 = mahasanghika }
+link = { eu4 = orthodox ck3 = nicene ck3 = hesychasm }
+link = { eu4 = coptic ck3 = syriac }
+link = { eu4 = catholic ck3 = abelian } # https://en.wikipedia.org/wiki/Abelians
+link = { eu4 = arianism ck3 = arianism ck3 = macedonianism ck3 = montanist }
+link = { eu4 = catholic ck3 = novatianism } # MS Copilot: "Novatianism was an early Christian sect that held a strict view refusing readmission to communion of lapsi, those baptized Christians who had denied their faith or performed the formalities of a ritual sacrifice to the pagan gods under the pressures of persecution. This strictness towards lapsi is not a mainstream belief in any of the listed denominations. However, if we must choose one, the Catholic Church might be the closest in terms of its historical context and its emphasis on the sacrament of penance for those who have lapsed. But it's important to note that the Catholic Church does not refuse readmission to lapsi, which is a significant difference from Novatianism."
+link = { eu4 = catholic ck3 = collyridian } # Cursed mapping. MS Copilot: "Collyridianism was an early Christian movement in which adherents apparently worshipped the Virgin Mary, mother of Jesus, as a goddess. This particular veneration of Mary is not a mainstream belief in any of the listed denominations. However, if we must choose one, the Catholic Church might be the closest in terms of the high regard and special devotion given to Mary. But it's important to note that the Catholic Church does not worship Mary as a goddess, which is a significant difference from Collyridianism."
+link = { eu4 = cathar ck3 = donatism ck3 = rogatism } # Mapped to Cathar because that's what CK2ToEU4 did, but it would be better to have a separate Donatist religion.
+link = { eu4 = cathar ck3 = encratite } # MS Copilot: "Encratitism was an early Christian movement that practiced asceticism, forbidding marriage and advocating for abstinence from meat. While none of the listed denominations fully align with these practices, the Cathar denomination might be the closest. The Cathars, also known as Albigensians, were a medieval Christian sect that practiced a form of asceticism and were known for their belief in the dualistic nature of good and evil. However, it's important to note that while there may be similarities, Encratitism and Catharism are distinct movements with different beliefs and practices."
+link = { eu4 = waldensian ck3 = pelagianism ck3 = marcionite } # Doing what CK2ToEU4 did.
+link = { eu4 = jewish ck3 = rahmanani }
+link = { eu4 = jewish ck3 = nazarene ck3 = ebionite ck3 = elkesaite } # Sects of Jewish Christianity, should ideally be mapped to that if it existed in the converter.
+link = { eu4 = jewish ck3 = hypsistarian_pagan } # MS Copilot: "The closest religion from the list to Hypsistarianism would be **Jewish**. Hypsistarianism was a monotheistic religion in the ancient world that recognized a supreme god, similar to the Jewish belief in Yahweh. It was influenced by Greek polytheism, Judaism, and possibly Zoroastrianism. However, please note that no religion on the list perfectly matches Hypsistarianism, and this is an approximation based on the available options."
+link = { eu4 = valentinianism ck3 = bardaisanism } # https://en.wikipedia.org/wiki/Bardaisan
+link = { eu4 = adamites ck3 = carpocratian } # https://en.wikipedia.org/wiki/Adamites:  "Some have thought them to have been an offshoot of the Carpocratians"
+link = { eu4 = protestant ck3 = jovinian } # MS Copilot: "Jovinianism was a 4th-century Christian movement that argued for the equality of marriage and celibacy, opposing the ascetic practices common in the Church at the time. While none of the listed denominations fully align with these views, the Protestant denomination might be the closest. Protestantism, with its emphasis on the priesthood of all believers and the importance of individual faith and practice, could be seen as more aligned with Jovinian's views compared to other denominations. However, it's important to note that while there may be similarities, Jovinianism and Protestantism are distinct movements with different beliefs and practices."
+link = { eu4 = pagan_religion ck3 = koyapunem }
+link = { eu4 = hinduism ck3 = yaksha_naga ck3 = narasimha ck3 = dravida_saiva ck3 = kaula_kapalika ck3 = pashupata ck3 = kalamukha}
+link = { eu4 = hinduism ck3 = dharni } # MS Copilot: "The closest religion from the list to "Dharni" would be "Hindu". Dharni is a term used in Hinduism and Buddhism, and it refers to the Earth or ground. It is often used in the context of Dharni Pada, which is a concept in Indian classical music."
+link = { eu4 = hinduism ck3 = gosain } # MS Copilot: "The closest religion from the list to “Gosain” would be “Hindu”. The term “Gosain” is used in Hinduism to refer to a religious mendicant or ascetic. It is often associated with the Vaishnavism tradition within Hinduism."
+link = { eu4 = druidism ck3 = druidism ck3 = pictish_druidism }
+link = { eu4 = briton_pagan ck3 = briton_pagan ck3 = britano_roman_pagan ck3 = celto_hellenic_syncretism }
+link = { eu4 = gaelic_pagan ck3 = irish_druidism }
+link = { eu4 = gallic_pagan ck3 = gaulish_pagan }
+link = { eu4 = mandeaism ck3 = quqite } # MS Copilot: "The closest religion from the list to Quqite would be Mandeaism. Mandaeism, like Quqite, is a form of Gnosticism. It incorporates elements of Christianity, Judaism, and pagan beliefs, similar to Quqite. Furthermore, Mandaeism also places a significant emphasis on astrology, comparable to the role of “Chaldean” astrology in Quqite. However, please note that no religion on the list perfectly matches Quqite, and this is an approximation based on the available options."
+link = { eu4 = mandeaism ck3 = basilidianism } # MS Copilot: "The closest religion from the list to Basilidianism would be **Gnosticism**. However, Gnosticism is not explicitly listed, so the next closest could be **Mandeaism**. Mandaeism, like Basilidianism, is a form of Gnosticism that incorporates elements of Christianity and other beliefs. Please note that no religion on the list perfectly matches Basilidianism, and this is an approximation based on the available options."
+link = { eu4 = magyar_pagan ck3 = bjarmian_pagan } # MS Copilot: "The closest religion from the list to Jómalinusko (Bjarmian pagans) would be **Uralic**. The Uralic paganism is a term used for a variety of related religious beliefs and practices of the Uralic peoples, including the Finns and the Sami. It is considered to be very close to the original Indo-European religion. Like the Bjarmian pagans, Uralic paganism is a polytheistic and animistic faith with a shamanistic features. However, please note that no religion on the list perfectly matches Jómalinusko, and this is an approximation based on the available options."
+link = { eu4 = norse_pagan ck3 = gothic_pagan ck3 = central_pagan }
+link = { eu4 = germanic_pagan ck3 = saxon_pagan }
+link = { eu4 = hellenic_pagan ck3 = roman_pagan ck3 = sol_invictus ck3 = palmyrene_pagan }
+link = { eu4 = animism ck3 = cheu_champa }
+link = { eu4 = kemetism ck3 = greco_egyptian_pagan ck3 = ammon_pagan ck3 = beja_pagan }
+link = { eu4 = nuragic_pagan ck3 = sardinian_pagan }
+link = { eu4 = hurrian_pagan ck3 = hurrian }
+link = { eu4 = zoroastrian ck3 = armaz ck3 = magousaian }

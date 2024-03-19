@@ -412,7 +412,7 @@ link = { eu4 = sogdian ck3 = sogdian tech = nomad_group gfx = asiangfx }
 link = { eu4 = tocharian ck3 = tocharian ck3 = khotanese ck3 = gushi tech = chinese gfx = asiangfx }
 link = { eu4 = manchu ck3 = jurchen tech = chinese gfx = asiangfx }
 
-link = { eu4 = avar ck3 = hunnic ck3 = xiongnu ck3 = hunno_bulgar ck3 = tiele ck3 = kurykan ck3 = hunas tech = nomad_group gfx = asiangfx } # To fix
+link = { eu4 = hunnic ck3 = hunnic ck3 = xiongnu ck3 = hunno_bulgar ck3 = tiele ck3 = kurykan ck3 = hunas tech = nomad_group gfx = asiangfx }
 
 # Arabic
 link = { eu4 = hejazi_culture ck3 = hejazi tech = muslim gfx = muslimgfx }
@@ -879,3 +879,34 @@ link = { eu4 = burgundian ck3 = romano_gallic ck3 = gallo_romance tech = western
 link = { eu4 = gascon ck3 = romano_gallic ck3 = gallo_romance tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country }
 link = { eu4 = wallonian ck3 = romano_gallic ck3 = gallo_romance tech = western gfx = westerngfx region = low_countries_region }
 link = { eu4 = gaulic ck3 = romano_gallic ck3 = gallo_romance tech = western gfx = westerngfx }
+
+
+## Fallen Eagle
+link = { eu4 = suebi ck3 = old_suebi tech = western gfx = westerngfx }
+link = { eu4 = gothic ck3 = herulian ck3 = scirian tech = western gfx = westerngfx }
+link = { eu4 = swabian ck3 = alamannic tech = western gfx = westerngfx }
+link = { eu4 = helvetian ck3 = helvetian tech = western gfx = westerngfx }
+link = { eu4 = dalmatian ck3 = illyro_roman tech = western gfx = westerngfx }
+link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja tech = muslim gfx = muslimgfx }
+link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
+link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
+link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
+link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
+link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."
+link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
+link = { eu4 = kishinyov ck3 = sclavenian ck3 = antean gfx = easterngfx }
+link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
+link = { eu4 = hunnic ck3 = hun ck3 = xionite ck3 = gurjara tech = nomad_group gfx = asiangfx }
+link = { eu4 = malayalam ck3 = malaiya tech = indian gfx = indiangfx }
+link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
+link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
+link = { eu4 = polish ck3 = vistulian ck3 = mazovian tech = western gfx = westerngfx }
+link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic tech = western gfx = westerngfx }
+link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman tech = western gfx = westerngfx }
+link = { eu4 = salinatorian ck3 = afro_roman tech = western gfx = easterngfx } # Because african_roman is mapped to salinatorian.
+link = { eu4 = aquitaine ck3 = aquitan tech = western gfx = westerngfx }
+link = { eu4 = bolghar ck3 = saragur ck3 = sabir tech = nomad_group gfx = muslimgfx }
+link = { eu4 = pecheneg ck3 = kangar tech = ottoman gfx = muslimgfx }
+link = { eu4 = oghuz ck3 = tujue tech = nomad_group gfx = muslimgfx }
+link = { eu4 = sarmatian ck3 = yazige tech = nomad_group gfx = muslimgfx }
+link = { eu4 = georgian ck3 = colchian tech = eastern gfx = easterngfx }

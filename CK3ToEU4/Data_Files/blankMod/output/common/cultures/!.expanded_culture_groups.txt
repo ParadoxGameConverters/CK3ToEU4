@@ -1260,6 +1260,12 @@ tartar = {
 			Manasseh Nisi Aaron Menahem Benjamin Joseph David Georgius Tzul Tzitzak
 		}
 	}
+	hunnic = {
+		male_names = {
+			Alp Balamber Uldin Charaton Attila Bleda Octar Ruga Rugila Ellak Ellac Dengizich Ernak Chelchel Aetla Ardaric Hunor Magor Mundo Edeko Hunoulph Odoacer Ediko Askoum
+			Kursich Basich
+		}
+	}
 }
 lost_cultures_group = {
 	atlantean = {
