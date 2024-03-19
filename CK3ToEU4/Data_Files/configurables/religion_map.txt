@@ -210,7 +210,7 @@ link = { eu4 = buddhism ck3 = pudgalavada ck3 = dharmaguptaka ck3 = sarvastivada
 link = { eu4 = orthodox ck3 = nicene ck3 = hesychasm }
 link = { eu4 = coptic ck3 = syriac }
 link = { eu4 = catholic ck3 = abelian } # https://en.wikipedia.org/wiki/Abelians
-link = { eu4 = catholic ck3 = arianism ck3 = macedonianism ck3 = montanist } # TODO: port arianism from CK2ToEU4
+link = { eu4 = arianism ck3 = arianism ck3 = macedonianism ck3 = montanist }
 link = { eu4 = catholic ck3 = novatianism } # MS Copilot: "Novatianism was an early Christian sect that held a strict view refusing readmission to communion of lapsi, those baptized Christians who had denied their faith or performed the formalities of a ritual sacrifice to the pagan gods under the pressures of persecution. This strictness towards lapsi is not a mainstream belief in any of the listed denominations. However, if we must choose one, the Catholic Church might be the closest in terms of its historical context and its emphasis on the sacrament of penance for those who have lapsed. But it's important to note that the Catholic Church does not refuse readmission to lapsi, which is a significant difference from Novatianism."
 link = { eu4 = catholic ck3 = collyridian } # Cursed mapping. MS Copilot: "Collyridianism was an early Christian movement in which adherents apparently worshipped the Virgin Mary, mother of Jesus, as a goddess. This particular veneration of Mary is not a mainstream belief in any of the listed denominations. However, if we must choose one, the Catholic Church might be the closest in terms of the high regard and special devotion given to Mary. But it's important to note that the Catholic Church does not worship Mary as a goddess, which is a significant difference from Collyridianism."
 link = { eu4 = cathar ck3 = donatism ck3 = rogatism } # Mapped to Cathar because that's what CK2ToEU4 did, but it would be better to have a separate Donatist religion.
@@ -238,8 +238,8 @@ link = { eu4 = germanic_pagan ck3 = saxon_pagan }
 link = { eu4 = hellenic_pagan ck3 = roman_pagan ck3 = sol_invictus ck3 = palmyrene_pagan }
 link = { eu4 = animism ck3 = cheu_champa }
 link = { eu4 = kemetism ck3 = greco_egyptian_pagan ck3 = ammon_pagan ck3 = beja_pagan }
-link = { eu4 = hellenic_pagan ck3 = sardinian_pagan } # TODO: port nuragic_pagan from CK2ToEU4
-link = { eu4 = hellenic_pagan ck3 = hurrian } # TODO: port hurrian_pagan from CK2ToEU4
+link = { eu4 = nuragic_pagan ck3 = sardinian_pagan }
+link = { eu4 = hurrian_pagan ck3 = hurrian }
 link = { eu4 = zoroastrian ck3 = armaz ck3 = magousaian }
 
 
