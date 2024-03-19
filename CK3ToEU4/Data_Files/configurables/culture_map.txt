@@ -892,6 +892,7 @@ link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
 link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
+link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."
 link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
 link = { eu4 = kishinyov ck3 = sclavenian ck3 = antean gfx = easterngfx }
 link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
