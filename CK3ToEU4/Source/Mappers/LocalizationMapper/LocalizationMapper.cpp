@@ -278,20 +278,31 @@ std::string mappers::cleanLocMarkups(const std::string& loc)
 		return loc;
 
 	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! witho no whitespace trailing it.
-   // We iterate over the entire string and just rip these out.
+	// We iterate over the entire string and just rip these out.
 
 	auto workingLoc = loc;
 	auto pos = workingLoc.find('#');
 
-   while (pos != std::string::npos)
+	while (pos != std::string::npos)
 	{
 		// find first #
 		const auto& head = getLeadStr(workingLoc, 1, "#");
 
-   	// find how long it is.
+		// find how long it is.
 		if (pos <= workingLoc.size() - 2 && workingLoc.at(pos + 1) == '!')
 		{
+			// Delete #!
 			workingLoc = head + workingLoc.substr(pos + 2, workingLoc.size());
+		}
+		else if (pos <= workingLoc.size() - 2 && workingLoc.at(pos + 1) == ' ')
+		{
+			// Delete freeform #
+			workingLoc = head + workingLoc.substr(pos + 1, workingLoc.size());
+		}
+		else if (pos == workingLoc.size() - 1)
+		{
+			// Delete # at endline
+			workingLoc = head;
 		}
 		else
 		{
