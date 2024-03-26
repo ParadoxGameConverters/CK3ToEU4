@@ -113,19 +113,19 @@ const std::string mappers::LocalizationMapper::selectLanguage(const std::string&
 void mappers::LocalizationMapper::assignSelectLanguage(const std::string& str, const std::string& language, LocBlock& block) const
 {
 	if (language == "english")
-		block.english = str;
+		block.english = commonItems::remQuotes(str);
 	else if (language == "french")
-		block.french = str;
+		block.french = commonItems::remQuotes(str);
 	else if (language == "spanish")
-		block.spanish = str;
+		block.spanish = commonItems::remQuotes(str);
 	else if (language == "german")
-		block.german = str;
+		block.german = commonItems::remQuotes(str);
 	else if (language == "korean")
-		block.korean = str;
+		block.korean = commonItems::remQuotes(str);
 	else if (language == "russian")
-		block.russian = str;
+		block.russian = commonItems::remQuotes(str);
 	else if (language == "simp_chinese")
-		block.simp_chinese = str;
+		block.simp_chinese = commonItems::remQuotes(str);
 	else
 		throw std::invalid_argument(language + " is not currently supported or has a typo.");
 	return;
@@ -274,11 +274,35 @@ std::string mappers::getTailStr(const std::string& str, const int occurrence, co
 }
 std::string mappers::cleanLocMarkups(const std::string& loc)
 {
-	if (loc.find("#") == std::string::npos)
+	if (loc.find('#') == std::string::npos)
 		return loc;
-	const auto& head = getLeadStr(loc, 1, "#");
-	const auto& mid = getLeadStr(getTailStr(loc, 1, "#"), 1, "#");
-	const auto& tail = getTailStr(loc, 2, "#");
 
-	return head + mid.substr(4) + tail;
+	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! witho no whitespace trailing it.
+   // We iterate over the entire string and just rip these out.
+
+	auto workingLoc = loc;
+	auto pos = workingLoc.find('#');
+
+   while (pos != std::string::npos)
+	{
+		// find first #
+		const auto& head = getLeadStr(workingLoc, 1, "#");
+
+   	// find how long it is.
+		if (pos <= workingLoc.size() - 2 && workingLoc.at(pos + 1) == '!')
+		{
+			workingLoc = head + workingLoc.substr(pos + 2, workingLoc.size());
+		}
+		else
+		{
+			// find the whitespace ending the mark.
+			auto endpos = workingLoc.find(' ', pos + 1);
+			if (endpos == std::string::npos)
+				return loc; // bail
+			workingLoc = head + workingLoc.substr(endpos + 1, workingLoc.size());
+		}
+		pos = workingLoc.find('#');
+	}
+
+	return workingLoc;
 }
