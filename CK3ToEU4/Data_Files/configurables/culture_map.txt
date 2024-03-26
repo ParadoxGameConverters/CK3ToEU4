@@ -886,6 +886,7 @@ link = { eu4 = suebi ck3 = old_suebi tech = western gfx = westerngfx }
 link = { eu4 = gothic ck3 = herulian ck3 = scirian tech = western gfx = westerngfx }
 link = { eu4 = swabian ck3 = alamannic tech = western gfx = westerngfx }
 link = { eu4 = helvetian ck3 = helvetian tech = western gfx = westerngfx }
+link = { eu4 = frankish ck3 = ripurian tech = western gfx = westerngfx }
 link = { eu4 = dalmatian ck3 = illyro_roman tech = western gfx = westerngfx }
 link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja tech = muslim gfx = muslimgfx }
 link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
@@ -902,6 +903,7 @@ link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
 link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
 link = { eu4 = polish ck3 = vistulian ck3 = mazovian tech = western gfx = westerngfx }
 link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic tech = western gfx = westerngfx }
+link = { eu4 = gaulic ck3 = gallo_roman tech = western gfx = westerngfx }
 link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman tech = western gfx = westerngfx }
 link = { eu4 = salinatorian ck3 = afro_roman tech = western gfx = easterngfx } # Because african_roman is mapped to salinatorian.
 link = { eu4 = aquitaine ck3 = aquitan tech = western gfx = westerngfx }
@@ -910,3 +912,5 @@ link = { eu4 = pecheneg ck3 = kangar tech = ottoman gfx = muslimgfx }
 link = { eu4 = oghuz ck3 = tujue tech = nomad_group gfx = muslimgfx }
 link = { eu4 = sarmatian ck3 = yazige tech = nomad_group gfx = muslimgfx }
 link = { eu4 = georgian ck3 = colchian tech = eastern gfx = easterngfx }
+# TODO: sitonian
+# TODO: gaul
