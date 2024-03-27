@@ -881,36 +881,60 @@ link = { eu4 = wallonian ck3 = romano_gallic ck3 = gallo_romance tech = western 
 link = { eu4 = gaulic ck3 = romano_gallic ck3 = gallo_romance tech = western gfx = westerngfx }
 
 ## Fallen Eagle
-link = { eu4 = suebi ck3 = old_suebi tech = western gfx = westerngfx }
-link = { eu4 = gothic ck3 = herulian ck3 = scirian tech = western gfx = westerngfx }
+link = { eu4 = suebi ck3 = old_suebi ck3 = marcomannic tech = western gfx = westerngfx } # According to Tacitus, Marcomanni were Suebi.
+link = { eu4 = gothic ck3 = herulian ck3 = scirian ck3 = gothonic ck3 = rugian tech = western gfx = westerngfx }
 link = { eu4 = swabian ck3 = alamannic tech = western gfx = westerngfx }
 link = { eu4 = helvetian ck3 = helvetian tech = western gfx = westerngfx }
-link = { eu4 = frankish ck3 = ripurian tech = western gfx = westerngfx }
+link = { eu4 = frankish ck3 = ripurian ck3 = salian tech = western gfx = westerngfx }
+link = { eu4 = frisian ck3 = frisa tech = western gfx = westerngfx }
+link = { eu4 = vandal ck3 = varinian tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Warini
 link = { eu4 = dalmatian ck3 = illyro_roman tech = western gfx = westerngfx }
-link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja tech = muslim gfx = muslimgfx }
-link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
+link = { eu4 = illyrian ck3 = illyrian tech = western gfx = easterngfx }
+link = { eu4 = aramaic ck3 = aramean tech = eastern gfx = muslimgfx }
+link = { eu4 = coptic ck3 = kemetic tech = eastern gfx = easterngfx }
+link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian tech = muslim gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
 link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
 link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."
+link = { eu4 = sidamo ck3 = aari tech = east_african gfx = africangfx } # Both Sidamo and Aari are Omotic. https://en.wikipedia.org/wiki/Aari_language
 link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
 link = { eu4 = finnish ck3 = sitonian tech = eastern gfx = westerngfx } # https://en.wikipedia.org/wiki/Kvenland
 link = { eu4 = kishinyov ck3 = sclavenian ck3 = antean gfx = easterngfx }
 link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
 link = { eu4 = hunnic ck3 = hun ck3 = xionite ck3 = gurjara tech = nomad_group gfx = asiangfx }
 link = { eu4 = malayalam ck3 = malaiya tech = indian gfx = indiangfx }
+link = { eu4 = hindustani ck3 = kaushali } # Both Kosala and Kannauji are Indo-Aryan and cover the Uttar Pradesh region.
+link = { eu4 = saurashtri ck3 = saurashtri tech = indian gfx = indiangfx }
+link = { eu4 = bengali ck3 = varendri tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Varendra
+link = { eu4 = panjabi ck3 = jat tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Jats
+link = { eu4 = panjabi ck3 = madraka tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Madra
+link = { eu4 = gujarati ck3 = abhira tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Abhira_people
+link = { eu4 = gondi ck3 = khond tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Khonds: "The Khonds speak Kui and Kuvi as their native languages. They are most closely related to the Gondi language. Both are Dravidian languages and are written with the Odia script."
+link = { eu4 = tibetan ck3 = kachari tech = chinese gfx = asiangfx } # Speakers of Tibeto–Burman. https://en.wikipedia.org/wiki/Bodo%E2%80%93Kachari_people
+link = { eu4 = burmese ck3 = zo tech = indian gfx = indiangfx }
 link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
 link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
 link = { eu4 = polish ck3 = vistulian ck3 = mazovian tech = western gfx = westerngfx }
+link = { eu4 = sorbian ck3 = wendish tech = western gfx = westerngfx }
+link = { eu4 = pruthenian ck3 = kolochin tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Kolochin_culture
+link = { eu4 = pruthenian ck3 = dnieper tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Dnieper_Balts
+link = { eu4 = lithuanian ck3 = east_galindian tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Galindians#Eastern_Galindians
 link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic tech = western gfx = westerngfx }
 link = { eu4 = gaulic ck3 = gallo_roman tech = western gfx = westerngfx }
-link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman tech = western gfx = westerngfx }
+link = { eu4 = britannian ck3 = britano_roman tech = western gfx = westerngfx }
+link = { eu4 = romanian ck3 = dacio_roman tech = eastern gfx = easterngfx }
+link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman ck3 = rhaetio_roman tech = western gfx = westerngfx }
 link = { eu4 = salinatorian ck3 = afro_roman tech = western gfx = easterngfx } # Because african_roman is mapped to salinatorian.
 link = { eu4 = gaulish ck3 = gaul tech = western gfx = westerngfx }
 link = { eu4 = aquitaine ck3 = aquitan tech = western gfx = westerngfx }
+link = { eu4 = celtiberian ck3 = castran tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Castro_culture
+link = { eu4 = cantabric ck3 = asturian tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Astures
 link = { eu4 = bolghar ck3 = saragur ck3 = sabir tech = nomad_group gfx = muslimgfx }
 link = { eu4 = pecheneg ck3 = kangar tech = ottoman gfx = muslimgfx }
 link = { eu4 = oghuz ck3 = tujue tech = nomad_group gfx = muslimgfx }
 link = { eu4 = sarmatian ck3 = yazige tech = nomad_group gfx = muslimgfx }
-link = { eu4 = georgian ck3 = colchian tech = eastern gfx = easterngfx }
+link = { eu4 = sarmatian ck3 = ciscaucasian tech = nomad_group gfx = muslimgfx }
+link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
+link = { eu4 = georgian ck3 = colchian ck3 = laz ck3 = kartvelian tech = eastern gfx = easterngfx }
 link = { eu4 = alexandrine ck3 = indo_greek tech = eastern gfx = easterngfx }
