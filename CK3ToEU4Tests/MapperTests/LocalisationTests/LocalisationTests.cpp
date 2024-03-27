@@ -111,3 +111,68 @@ TEST(Mappers_LocalisationTests, stringsCanBeSelectedFor)
 	EXPECT_EQ(mappers::getTailStr(d, 6), "a__la__gran__mancha__azul.");
 	EXPECT_EQ(mappers::getTailStr(d, 6, "__"), "mancha__azul.");
 }
+
+TEST(Mappers_LocalisationTests, trivialEmphasisCanBeRemoved)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " key: \"random #F Halale, or truth, of halale. and recognition.#!\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyBlock = locs.getLocBlockForKey("key");
+	locs.removeEmphasis(*copyBlock);
+	EXPECT_EQ("random Halale, or truth, of halale. and recognition.", copyBlock->english);
+}
+
+TEST(Mappers_LocalisationTests, multipleTrivialEmphasisCanBeRemoved)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " key: \"random #F Halale, or truth#!, of #EMPHASIS halale. and recognition.#!\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyBlock = locs.getLocBlockForKey("key");
+	locs.removeEmphasis(*copyBlock);
+	EXPECT_EQ("random Halale, or truth, of halale. and recognition.", copyBlock->english);
+}
+
+TEST(Mappers_LocalisationTests, nestedEmphasisCanBeRemoved)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " key: \"#RANDOMTESTMARK #TESTMARK Halale#!, or truth, of #TESTMARK2 halale#!. and recognition.#!\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyBlock = locs.getLocBlockForKey("key");
+	locs.removeEmphasis(*copyBlock);
+	EXPECT_EQ("Halale, or truth, of halale. and recognition.", copyBlock->english);
+}
+
+TEST(Mappers_LocalisationTests, complexEmphasisCanBeRemoved)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " key: \"#F #italic Halale#!, or truth, of #italic halale#!. and recognition.#!\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyBlock = locs.getLocBlockForKey("key");
+	locs.removeEmphasis(*copyBlock);
+	EXPECT_EQ("Halale, or truth, of halale. and recognition.", copyBlock->english);
+}
+
+TEST(Mappers_LocalisationTests, malformedEmphasisCanBeRemoved)
+{
+	mappers::LocalizationMapper locs;
+	std::stringstream input;
+	input << commonItems::utf8BOM << "l_english:\n";
+	input << " key: \"random Halale#!, or# truth, of # halale#!. and recognition.#\"\n";
+
+	locs.scrapeStream(input, "english");
+	auto copyBlock = locs.getLocBlockForKey("key");
+	locs.removeEmphasis(*copyBlock);
+	EXPECT_EQ("random Halale, or truth, of  halale. and recognition.", copyBlock->english);
+}
