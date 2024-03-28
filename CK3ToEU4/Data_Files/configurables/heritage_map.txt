@@ -8,7 +8,7 @@ link = { eu4 = gaelic ck3 = heritage_goidelic ck3 = heritage_celtic ck3 = herita
 link = { eu4 = latin ck3 = heritage_latin }
 link = { eu4 = iberian ck3 = heritage_iberian ck3 = heritage_vasconic ck3 = heritage_paleo_iberian }
 link = { eu4 = french ck3 = heritage_frankish ck3 = heritage_continental_celtic }
-link = { eu4 = finno_ugric ck3 = heritage_ugro_permian ck3 = heritage_volga_finnic ck3 = heritage_yugrian }
+link = { eu4 = finno_ugric ck3 = heritage_ugro_permian ck3 = heritage_volga_finnic ck3 = heritage_yugrian ck3 = heritage_yeniseian }
 link = { eu4 = south_slavic ck3 = heritage_south_slavic }
 link = { eu4 = west_slavic ck3 = heritage_west_slavic }
 link = { eu4 = carpathian ck3 = heritage_magyar ck3 = heritage_vlach ck3 = heritage_proto_carpathian ck3 = heritage_hunnic }
@@ -23,8 +23,8 @@ link = { eu4 = gothic_group ck3 = heritage_gothic }
 link = { eu4 = caucasian ck3 = heritage_caucasian ck3 = heritage_armenian }
 
 # this is levantine group, no actual turks.
-link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic }
-link = { eu4 = punic_group ck3 = heritage_punic }
+link = { eu4 = turko_semitic ck3 = heritage_arabic ck3 = heritage_south_arabian ck3 = heritage_levantine ck3 = heritage_coptic ck3 = heritage_semitic }
+link = { eu4 = punic_group ck3 = heritage_punic ck3 = heritage_daco_thracian }
 
 link = { eu4 = maghrebi ck3 = heritage_berber ck3 = heritage_guanche }
 link = { eu4 = iranian ck3 = heritage_iranian ck3 = heritage_tocharian ck3 = heritage_east_iranian ck3 = heritage_elamite ck3 = heritage_peristani ck3 = heritage_sakan ck3 = heritage_sarmatian }
@@ -52,7 +52,7 @@ link = { eu4 = sahelian ck3 = heritage_sahelian ck3 = heritage_senegambian ck3 =
 link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 #link = { eu4 = kongo_group ck3 =  } Central African is the pass between west and east africa, not the Kongo
 link = { eu4 = african ck3 = heritage_bantu }
-link = { eu4 = cushitic ck3 = heritage_somalian }
+link = { eu4 = cushitic ck3 = heritage_somalian ck3 = heritage_south_semitic }
 
 # Mod: RICE
 link = { eu4 = central_algonquian ck3 = heritage_algonquian }

@@ -301,7 +301,7 @@ link = { eu4 = seleucian ck3 = greek tech = eastern gfx = westerngfx region = ma
 link = { eu4 = seleucian ck3 = greek_persian tech = eastern gfx = muslimgfx }
 link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
-link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek tech = eastern gfx = easterngfx }
+link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek ck3 = trojan tech = eastern gfx = easterngfx }
 
 #Caucasian
 link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
@@ -472,7 +472,7 @@ link = { eu4 = kishinyov ck3 = tiverian tech = eastern gfx = easterngfx }
 
 # West Slavic
 
-link = { eu4 = old_pommeranian ck3 = pommeranian tech = western gfx = westerngfx }
+link = { eu4 = old_pommeranian ck3 = pommeranian ck3 = venedian tech = western gfx = westerngfx }
 link = { eu4 = old_pommeranian ck3 = urslavic ck3 = old_slavic tech = western gfx = westerngfx region = vorpommern_area }
 link = { eu4 = schlesian ck3 = silesian ck3 = opolan ck3 = golensizi tech = western gfx = westerngfx }
 link = { eu4 = schlesian ck3 = czech ck3 = polish ck3 = urslavic ck3 = old_slavic tech = western gfx = westerngfx region = silesia_area }
@@ -784,7 +784,7 @@ link = { eu4 = phoenician ck3 = phoenician ck3 = nabatean tech = eastern gfx = m
 
 ## Steppes
 link = { eu4 = scolotian ck3 = scythian tech = nomad_group gfx = muslimgfx region = baltic_region region = poland_region region = ruthenia_region region = crimea_region region = carpathia_region region = balkan_region }
-link = { eu4 = scythian ck3 = scythian ck3 = sakan ck3 = indo_scythian ck3 = bactrian ck3 = dahi_scythian ck3 = amardian tech = nomad_group gfx = muslimgfx }
+link = { eu4 = scythian ck3 = kangju ck3 = scythian ck3 = sakan ck3 = indo_scythian ck3 = bactrian ck3 = dahi_scythian ck3 = amardian tech = nomad_group gfx = muslimgfx }
 link = { eu4 = sarmatian ck3 = sarmatian ck3 = iazyges tech = nomad_group gfx = muslimgfx }
 
 ## Celtic
@@ -816,10 +816,10 @@ link = { eu4 = gaulish ck3 = gallic tech = western gfx = westerngfx } # Fallback
 link = { eu4 = gaulish ck3 = galatian ck3 = gaulish tech = eastern gfx = easterngfx } # To fix
 
 ### Celto-Pannonian
-link = { eu4 = noric ck3 = celtic_pannonian tech = eastern gfx = westerngfx region = tirol_area region = austria_proper_area region = inner_austria_area region = carinthia_area region = switzerland_area region = romandie_area }
+link = { eu4 = noric ck3 = celtic_pannonian ck3 = noric tech = eastern gfx = westerngfx region = tirol_area region = austria_proper_area region = inner_austria_area region = carinthia_area region = switzerland_area region = romandie_area }
 link = { eu4 = vindelician ck3 = celtic_pannonian tech = eastern gfx = westerngfx region = south_german_region }
 link = { eu4 = multavian ck3 = celtic_pannonian tech = eastern gfx = easterngfx region = north_german_region region = carpathia_region }
-link = { eu4 = scordiscian ck3 = celtic_pannonian tech = eastern gfx = easterngfx } # Fallback
+link = { eu4 = scordiscian ck3 = noric ck3 = celtic_pannonian tech = eastern gfx = easterngfx } # Fallback
 
 ## Italic
 link = { eu4 = nuragic ck3 = nuragic tech = western gfx = inuitgfx }
