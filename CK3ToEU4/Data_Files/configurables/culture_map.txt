@@ -888,11 +888,12 @@ link = { eu4 = helvetian ck3 = helvetian tech = western gfx = westerngfx }
 link = { eu4 = frankish ck3 = ripurian ck3 = salian tech = western gfx = westerngfx }
 link = { eu4 = frisian ck3 = frisa tech = western gfx = westerngfx }
 link = { eu4 = vandal ck3 = varinian tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Warini
+link = { eu4 = scordiscian ck3 = bastarnian tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/List_of_early_Germanic_peoples on Scordisci: "Related to the Bastarnae according to Titus Livy"
 link = { eu4 = dalmatian ck3 = illyro_roman tech = western gfx = westerngfx }
 link = { eu4 = illyrian ck3 = illyrian tech = western gfx = easterngfx }
 link = { eu4 = aramaic ck3 = aramean tech = eastern gfx = muslimgfx }
 link = { eu4 = coptic ck3 = kemetic tech = eastern gfx = easterngfx }
-link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian tech = muslim gfx = muslimgfx }
+link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian ck3 = tora tech = muslim gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
 link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
@@ -928,6 +929,7 @@ link = { eu4 = ptolemaic ck3 = aegyptian tech = eastern gfx = muslimgfx }
 link = { eu4 = serbian ck3 = beloserb tech = eastern gfx = easterngfx }
 link = { eu4 = polish ck3 = vistulian ck3 = mazovian tech = western gfx = westerngfx }
 link = { eu4 = sorbian ck3 = wendish tech = western gfx = westerngfx }
+link = { eu4 = russian_culture ck3 = slavic tech = eastern gfx = easterngfx }
 link = { eu4 = pruthenian ck3 = kolochin tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Kolochin_culture
 link = { eu4 = pruthenian ck3 = dnieper tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Dnieper_Balts
 link = { eu4 = lithuanian ck3 = east_galindian tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Galindians#Eastern_Galindians
@@ -944,11 +946,13 @@ link = { eu4 = cantabric ck3 = asturian tech = western gfx = westerngfx } # http
 link = { eu4 = bolghar ck3 = saragur ck3 = sabir tech = nomad_group gfx = muslimgfx }
 link = { eu4 = pecheneg ck3 = kangar tech = ottoman gfx = muslimgfx }
 link = { eu4 = oghuz ck3 = tujue tech = nomad_group gfx = muslimgfx }
-link = { eu4 = sarmatian ck3 = yazige tech = nomad_group gfx = muslimgfx }
+link = { eu4 = sarmatian ck3 = yazige ck3 = roxolan tech = nomad_group gfx = muslimgfx }
 link = { eu4 = sarmatian ck3 = ciscaucasian tech = nomad_group gfx = muslimgfx }
+link = { eu4 = sarmatian ck3 = thyssagataen tech = nomad_group gfx = muslimgfx } # https://en.wiktionary.org/wiki/Thyssagetae: "A tribe of Sarmatia"
 link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
 link = { eu4 = georgian ck3 = mingrelian ck3 = colchian ck3 = arran ck3 = laz ck3 = kartvelian ck3 = svan ck3 = abasgian ck3 = abkhazian tech = eastern gfx = easterngfx }
 link = { eu4 = caspian ck3 = caspian tech = eastern gfx = easterngfx }
 link = { eu4 = afghani ck3 = pactyan tech = muslim gfx = muslimgfx } # https://en.wikipedia.org/wiki/Pakhtas
-link = { eu4 = tocharian ck3 = ferghanan ck3 = wusun tech = chinese gfx = asiangfx } # mapped to tocharian due to heritage_tocharian
+link = { eu4 = tocharian ck3 = ferghanan ck3 = wusun ck3 = yuezhi ck3 = xiao_yuezhi tech = chinese gfx = asiangfx } # mapped to tocharian due to heritage_tocharian
+link = { eu4 = saka ck3 = shaka tech = muslim gfx = muslimgfx }
 link = { eu4 = alexandrine ck3 = indo_greek tech = eastern gfx = easterngfx }
