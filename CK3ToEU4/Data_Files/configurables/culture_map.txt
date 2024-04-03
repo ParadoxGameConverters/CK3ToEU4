@@ -910,7 +910,7 @@ link = { eu4 = saurashtri ck3 = saurashtri tech = indian gfx = indiangfx }
 link = { eu4 = malvi ck3 = avantika tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Avanti_(region): "According to the Vishnu Purana (II.3), the Bhagavata Purana (XII.I.36) and the Brahma Purana (XIX.17), the Avantis were associated with the Malava, the Saurashtras, the Abhiras/Yadavas, the Suras, the Karushas and the Arbudas and were described as dwelling along the Pariyatra (or Paripatra) mountains (a western branch of the Vindhyas)."
 link = { eu4 = bengali ck3 = varendri tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Varendra
 link = { eu4 = sindhi ck3 = med ck3 = parata tech = indian gfx = indiangfx } # Because they have sindhi as one of the parent cultures.
-link = { eu4 = panjabi ck3 = jat tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Jats
+link = { eu4 = panjabi ck3 = jat ck3 = kaikani tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Jats
 link = { eu4 = panjabi ck3 = yaudheya tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Yaudheya: "According to Swami Omanand, the Ahirs and Jats of Haryana and Western U.P., specially the residents of the Tajupur & Dayalpur villages of Gurgaon district and of the Tatarpur village of Meerut district, belong to the Dehiya, Dheyu or Dheya family which according to him is a corrupt from of the ancient word Yaudheya."
 link = { eu4 = panjabi ck3 = madraka tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Madra
 link = { eu4 = panjabi ck3 = arjunayana tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Arjunayanas
