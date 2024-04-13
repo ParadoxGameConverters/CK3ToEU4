@@ -202,7 +202,7 @@ link = { eu4 = sardinian ck3 = sardinian ck3 = arreyanu ck3 = corsican tech = we
 
 link = { eu4 = angevin ck3 = angevin tech = western gfx = westerngfx }
 link = { eu4 = aquitaine ck3 = aquitanian tech = western gfx = westerngfx }
-link = { eu4 = arpitan ck3 = arpitan ck3 = arpitan_ce tech = western gfx = westerngfx }
+link = { eu4 = arpitan ck3 = arpitan ck3 = arpitan_ce ck3 = arpetan tech = western gfx = westerngfx }
 link = { eu4 = auvergnat ck3 = auvergnat tech = western gfx = westerngfx }
 link = { eu4 = provancale ck3 = provancale ck3 = francoprovencal tech = western gfx = westerngfx }
 link = { eu4 = poitevin ck3 = poitevin tech = western gfx = westerngfx }
@@ -910,7 +910,7 @@ link = { eu4 = saurashtri ck3 = saurashtri tech = indian gfx = indiangfx }
 link = { eu4 = malvi ck3 = avantika tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Avanti_(region): "According to the Vishnu Purana (II.3), the Bhagavata Purana (XII.I.36) and the Brahma Purana (XIX.17), the Avantis were associated with the Malava, the Saurashtras, the Abhiras/Yadavas, the Suras, the Karushas and the Arbudas and were described as dwelling along the Pariyatra (or Paripatra) mountains (a western branch of the Vindhyas)."
 link = { eu4 = bengali ck3 = varendri tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Varendra
 link = { eu4 = sindhi ck3 = med ck3 = parata tech = indian gfx = indiangfx } # Because they have sindhi as one of the parent cultures.
-link = { eu4 = panjabi ck3 = jat ck3 = kaikani tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Jats
+link = { eu4 = brahui ck3 = jat ck3 = kaikani tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Jats
 link = { eu4 = panjabi ck3 = yaudheya tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Yaudheya: "According to Swami Omanand, the Ahirs and Jats of Haryana and Western U.P., specially the residents of the Tajupur & Dayalpur villages of Gurgaon district and of the Tatarpur village of Meerut district, belong to the Dehiya, Dheyu or Dheya family which according to him is a corrupt from of the ancient word Yaudheya."
 link = { eu4 = panjabi ck3 = madraka tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Madra
 link = { eu4 = panjabi ck3 = arjunayana tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Arjunayanas
@@ -950,7 +950,7 @@ link = { eu4 = sarmatian ck3 = yazige ck3 = roxolan tech = nomad_group gfx = mus
 link = { eu4 = sarmatian ck3 = ciscaucasian tech = nomad_group gfx = muslimgfx }
 link = { eu4 = sarmatian ck3 = thyssagataen tech = nomad_group gfx = muslimgfx } # https://en.wiktionary.org/wiki/Thyssagetae: "A tribe of Sarmatia"
 link = { eu4 = avar ck3 = rouran tech = nomad_group gfx = muslimgfx }
-link = { eu4 = georgian ck3 = mingrelian ck3 = colchian ck3 = arran ck3 = laz ck3 = kartvelian ck3 = svan ck3 = abasgian ck3 = abkhazian tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = mingrelian ck3 = colchian ck3 = arran ck3 = laz ck3 = kartvelian ck3 = svan ck3 = ce_svan ck3 = abasgian ck3 = abkhazian tech = eastern gfx = easterngfx }
 link = { eu4 = caspian ck3 = caspian tech = eastern gfx = easterngfx }
 link = { eu4 = afghani ck3 = pactyan tech = muslim gfx = muslimgfx } # https://en.wikipedia.org/wiki/Pakhtas
 link = { eu4 = tocharian ck3 = ferghanan ck3 = wusun ck3 = yuezhi ck3 = xiao_yuezhi tech = chinese gfx = asiangfx } # mapped to tocharian due to heritage_tocharian
