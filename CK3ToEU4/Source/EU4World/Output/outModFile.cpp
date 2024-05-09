@@ -6,7 +6,7 @@ std::ostream& EU4::operator<<(std::ostream& output, const ModFile& modFile)
 	output << "name = \"Converted - " << modFile.outname << "\"\n";
 	output << "path = \"mod/" << modFile.outname << "\"\n";
 	output << "normal_or_historical_nations = yes\n";
-	output << "supported_version = \"" << modFile.version.toWildCard() << "\"\n";
+	output << "supported_version = \"v" << modFile.version.toWildCard() << "\"\n";
 	output << "replace_path = \"history/countries/\"\n";
 	output << "replace_path = \"history/provinces/\"\n";
 	output << "replace_path = \"history/diplomacy/\"\n";
