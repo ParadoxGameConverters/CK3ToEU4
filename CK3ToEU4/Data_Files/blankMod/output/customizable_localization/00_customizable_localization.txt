@@ -44,6 +44,7 @@ defined_text = {
 defined_text = {
     name = GetOldEra
 
+###MODDED
 	text = {
 		localisation_key = string_human_era
 		trigger = {
@@ -60,6 +61,7 @@ defined_text = {
 			}
 		}
 	}
+#VANILLA
     text = {
         localisation_key = string_song_era
         trigger = {
@@ -187,6 +189,7 @@ defined_text = {
 			}
         }
 	}
+#MODDED
 	text = {
 		localisation_key = string_praefectus
 		trigger = {
@@ -196,6 +199,7 @@ defined_text = {
 			}
 		}
 	}
+#VANILLA
 	text = {
 		localisation_key = string_zupan
 		trigger = {
@@ -207,16 +211,7 @@ defined_text = {
 		trigger = {
 			OR = {
 				culture_group = british
-				culture_group = french
-				culture_group = germanic
-			}
-		}
-	}
-	text = {
-		localisation_key = string_bailif
-		trigger = {
-			OR = {
-				culture_group = british
+				culture = anglois
 				culture_group = french
 				culture_group = germanic
 			}
@@ -228,6 +223,7 @@ defined_text = {
 			culture_group = carpathian
 		}
 	}
+#MODDED
 	text = {
 		localisation_key = string_tanner
 		trigger = {
@@ -257,6 +253,7 @@ defined_text = {
 				culture_group = central_indic
 				culture_group = south_slavic
 				culture_group = british
+				culture = anglois
 				culture_group = french
 				culture_group = germanic
 				culture_group = roman_group
@@ -274,7 +271,7 @@ defined_text = {
         }
 	}
 }
-
+#VANILLA
 #A local power structure, such as a court or local parliament
 #Ex: "The [Court] refused our request to hand over the culprits"
 defined_text = {
@@ -537,11 +534,11 @@ defined_text = {
 }
 
 #Gets name of the religious scholars you currently have invited. Uses loc for schools.
-#Ex: The Maliki scholars we have invited are making themselves at home.
+#Ex: The Maliki scholars we have invited are making themselves at home. 
 defined_text = {
 	name = GetReligiousScholars
 	random = no
-
+	
 	text = {
 		localisation_key = ismaili_school
 		trigger = {
@@ -594,7 +591,7 @@ defined_text = {
 	name = GetFancyTradeGood #province scope
 	random = no
 
-
+	
 	#Gems
 	text = {
 		localisation_key = string_mother_of_pearl
@@ -681,7 +678,7 @@ defined_text = {
 			superregion = india_superregion
 		}
 	}
-
+	
 	#Gold
 	text = {
 		localisation_key = string_imperial_eggs
@@ -736,7 +733,7 @@ defined_text = {
 			NOT = { is_year = 1500 }
 		}
 	}
-
+	
 	#Cloth
 	text = {
 		localisation_key = string_fustians
@@ -769,7 +766,7 @@ defined_text = {
 			trade_goods = cloth
 		}
 	}
-
+	
 	#Silk
 	text = {
 		localisation_key = string_taffeta
@@ -778,7 +775,7 @@ defined_text = {
 			trade_goods = silk
 		}
 	}
-
+	
 	#Incense
 	text = {
 		localisation_key = string_frankincense
@@ -787,7 +784,7 @@ defined_text = {
 			trade_goods = incense
 		}
 	}
-
+	
 	#Spices
 	text = {
 		localisation_key = string_cardamom
@@ -852,9 +849,9 @@ defined_text = {
 			area = spice_islands_area
 		}
 	}
-
+	
 	#Fallbacks for Cloth, Silk, Spices, Tropical Wood, Cloth, Gems, Gold, Paper, Glass, Ivory, Chinaware and Incense
-
+	
 	text = {
 		localisation_key = string_perfume
 		trigger = {
@@ -891,9 +888,9 @@ defined_text = {
 			trade_goods = tropical_wood
 		}
 	}
-
+	
 	text = {
-		localisation_key = string_jewellery
+		localisation_key = string_jewellery 
 		trigger = { #province scope
 			OR = {
 				trade_goods = gems
@@ -930,7 +927,7 @@ defined_text = {
 	name = GetFancyTradeGood_LOW #province scope
 	random = no
 
-
+	
 	#Gems
 	text = {
 		localisation_key = string_l_mother_of_pearl
@@ -1017,7 +1014,7 @@ defined_text = {
 			superregion = india_superregion
 		}
 	}
-
+	
 	#Gold
 	text = {
 		localisation_key = string_l_imperial_eggs
@@ -1072,7 +1069,7 @@ defined_text = {
 			NOT = { is_year = 1500 }
 		}
 	}
-
+	
 	#Cloth
 	text = {
 		localisation_key = string_l_fustians
@@ -1105,7 +1102,7 @@ defined_text = {
 			trade_goods = cloth
 		}
 	}
-
+	
 	#Silk
 	text = {
 		localisation_key = string_l_taffeta
@@ -1114,7 +1111,7 @@ defined_text = {
 			trade_goods = silk
 		}
 	}
-
+	
 	#Incense
 	text = {
 		localisation_key = string_l_frankincense
@@ -1123,7 +1120,7 @@ defined_text = {
 			trade_goods = incense
 		}
 	}
-
+	
 	#Spices
 	text = {
 		localisation_key = string_l_cardamom
@@ -1188,9 +1185,9 @@ defined_text = {
 			area = spice_islands_area
 		}
 	}
-
+	
 	#Fallbacks for Cloth, Silk, Spices, Tropical Wood, Cloth, Gems, Gold, Paper, Glass, Ivory, Chinaware and Incense
-
+	
 	text = {
 		localisation_key = string_l_perfume
 		trigger = {
@@ -1227,9 +1224,9 @@ defined_text = {
 			trade_goods = tropical_wood
 		}
 	}
-
+	
 	text = {
-		localisation_key = string_l_jewellery
+		localisation_key = string_l_jewellery 
 		trigger = { #province scope
 			OR = {
 				trade_goods = gems
@@ -1377,9 +1374,9 @@ defined_text = {
 defined_text = {
     name = GetDefiniteArticleBeforePluralCountry
 	random = no
-
+	
 	text = {
-
+		
         localisation_key = string_definite_article_before_country
         trigger = {
 			tag_with_plural_name_trigger = yes
@@ -1398,7 +1395,7 @@ defined_text = {
 defined_text = {
     name = GetRulerOrRegency
 	random = no
-
+	
 	text = {
         localisation_key = string_ruler_name_really
         trigger = {
@@ -1418,7 +1415,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeTitle
 	random = no
-
+	
 	text = {
     localisation_key = flavor_eng.9880.t1
 		trigger = {
@@ -1464,7 +1461,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeLocation
 	random = no
-
+	
 	text = {
     localisation_key = flavor_eng.9880.loc0
 		trigger = {
@@ -1515,7 +1512,7 @@ defined_text = {
 defined_text = {
     name = OxOrBridgeSubject
 	random = no
-
+	
 	text = {
     localisation_key = flavor_eng.9880.sub1
 		trigger = {
@@ -1592,7 +1589,7 @@ defined_text = {
 defined_text = {
 	name = GetUsableName
 	random = no
-
+	
 	text = {
 		localisation_key = plural_country_name
 		trigger = {
@@ -1614,6 +1611,8 @@ defined_text = {
 			NOT = { has_country_flag = is_turkey_flag }
 			NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 			NOT = { has_country_flag = is_gurkani_flag }
+			NOT = { has_country_flag = is_revolutionary_iran_flag }
+			NOT = { has_country_flag = is_iran_flag }
 		}
 	}
 	text = {
@@ -1647,6 +1646,8 @@ defined_text = {
 				has_country_flag = is_turkey_flag
 				has_country_flag = is_revolutionary_gurkani_flag
 				has_country_flag = is_gurkani_flag
+				has_country_flag = is_revolutionary_iran_flag
+				has_country_flag = is_iran_flag
 			}
 		}
 	}
@@ -1656,7 +1657,7 @@ defined_text = {
 defined_text = {
 	name = GetUsableNameCap
 	random = no
-
+	
 	text = {
 		localisation_key = plural_country_name_CAP
 		trigger = {
@@ -1678,6 +1679,8 @@ defined_text = {
 			NOT = { has_country_flag = is_turkey_flag }
 			NOT = { has_country_flag = is_revolutionary_gurkani_flag }
 			NOT = { has_country_flag = is_gurkani_flag }
+			NOT = { has_country_flag = is_revolutionary_iran_flag }
+			NOT = { has_country_flag = is_iran_flag }
 		}
 	}
 	text = {
@@ -1711,6 +1714,8 @@ defined_text = {
 				has_country_flag = is_turkey_flag
 				has_country_flag = is_revolutionary_gurkani_flag
 				has_country_flag = is_gurkani_flag
+				has_country_flag = is_revolutionary_iran_flag
+				has_country_flag = is_iran_flag
 			}
 		}
 	}
@@ -2324,21 +2329,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorName
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorName.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorName.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorName.M
 		trigger = {
@@ -2351,21 +2356,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorTitle
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorTitle.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorTitle.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorTitle.M
 		trigger = {
@@ -2378,21 +2383,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorSheHeCap
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHeCap.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHeCap.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHeCap.M
 		trigger = {
@@ -2405,21 +2410,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorSheHe
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHe.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHe.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorSheHe.M
 		trigger = {
@@ -2432,21 +2437,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHisCap
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHisCap.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHisCap.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHisCap.M
 		trigger = {
@@ -2459,21 +2464,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHis
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHis.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHis.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHis.M
 		trigger = {
@@ -2486,21 +2491,21 @@ defined_text = {
 defined_text = {
 	name = GetEventAdvisorHerHim
 	random = no
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHim.A
 		trigger = {
 			has_country_flag = advisor_events_adm
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHim.D
 		trigger = {
 			has_country_flag = advisor_events_dip
 		}
 	}
-
+	
 	text = {
 		localisation_key = EventAdvisorHerHim.M
 		trigger = {
@@ -2516,14 +2521,14 @@ defined_text = {
 defined_text = {
 	name = GetNobilityOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_nobles_name
 		trigger = {
 			has_estate = estate_nobles
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_nobles
 		trigger = {
@@ -2535,14 +2540,14 @@ defined_text = {
 defined_text = {
 	name = GetBurghersOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_burghers_name
 		trigger = {
 			has_estate = estate_burghers
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_burghers
 		trigger = {
@@ -2554,14 +2559,14 @@ defined_text = {
 defined_text = {
 	name = GetChurchOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_church_name
 		trigger = {
 			has_estate = estate_church
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_church
 		trigger = {
@@ -2573,14 +2578,14 @@ defined_text = {
 defined_text = {
 	name = GetTribesOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_nomadic_tribes_name
 		trigger = {
 			has_estate = estate_nomadic_tribes
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_nomadic_tribes
 		trigger = {
@@ -2592,14 +2597,14 @@ defined_text = {
 defined_text = {
 	name = GetDhimmiOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_dhimmi_name
 		trigger = {
 			has_estate = estate_dhimmi
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_dhimmi
 		trigger = {
@@ -2611,14 +2616,14 @@ defined_text = {
 defined_text = {
 	name = GetCossacksOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_cossacks_name
 		trigger = {
 			has_estate = estate_cossacks
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_cossacks
 		trigger = {
@@ -2630,14 +2635,14 @@ defined_text = {
 defined_text = {
 	name = GetVaisyasOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_vaisyas_name
 		trigger = {
 			has_estate = estate_vaisyas
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_vaisyas
 		trigger = {
@@ -2649,14 +2654,14 @@ defined_text = {
 defined_text = {
 	name = GetBrahminsOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_brahmins_name
 		trigger = {
 			has_estate = estate_brahmins
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_brahmins
 		trigger = {
@@ -2668,14 +2673,14 @@ defined_text = {
 defined_text = {
 	name = GetJainsOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_jains_name
 		trigger = {
 			has_estate = estate_jains
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_jains
 		trigger = {
@@ -2687,14 +2692,14 @@ defined_text = {
 defined_text = {
 	name = GetRajputOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_rajput_name
 		trigger = {
 			has_estate = estate_rajput
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_rajput
 		trigger = {
@@ -2706,14 +2711,14 @@ defined_text = {
 defined_text = {
 	name = GetMarathaOrFallbackName
 	random = no
-
+	
 	text = {
 		localisation_key = country_estate_maratha_name
 		trigger = {
 			has_estate = estate_maratha
 		}
 	}
-
+	
 	text = {
 		localisation_key = estate_maratha
 		trigger = {
@@ -2723,9 +2728,85 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetJanissariesOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_janissaries_name
+		trigger = {
+			has_estate = estate_janissaries
+		}
+	}
+	
+	text = {
+		localisation_key = estate_janissaries
+		trigger = {
+			NOT = { has_estate = estate_janissaries }
+		}
+	}
+}
+
+defined_text = {
+	name = GetEunuchsOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_eunuchs_name
+		trigger = {
+			has_estate = estate_eunuchs
+		}
+	}
+	
+	text = {
+		localisation_key = estate_eunuchs
+		trigger = {
+			NOT = { has_estate = estate_eunuchs }
+		}
+	}
+}
+
+defined_text = {
+	name = GetQizilbashOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_qizilbash_name
+		trigger = {
+			has_estate = estate_qizilbash
+		}
+	}
+	
+	text = {
+		localisation_key = estate_qizilbash
+		trigger = {
+			NOT = { has_estate = estate_qizilbash }
+		}
+	}
+}
+
+defined_text = {
+	name = GetGhulamsOrFallbackName
+	random = no
+	
+	text = {
+		localisation_key = country_estate_ghulams_name
+		trigger = {
+			has_estate = estate_ghulams
+		}
+	}
+	
+	text = {
+		localisation_key = estate_ghulams
+		trigger = {
+			NOT = { has_estate = estate_ghulams }
+		}
+	}
+}
+
+defined_text = {
 	name = GetLegitimacyOrMeritocracy
 	random = no
-
+	
 	text = {
 		localisation_key = meritocracy
 		trigger = {
@@ -2745,7 +2826,7 @@ defined_text = {
 defined_text = {
 	name = GetExileAdvisorAAnTitle
 	random = no
-
+	
 	text = {
 		localisation_key = a_philosopher
 		trigger = {
@@ -3124,6 +3205,7 @@ defined_text = {
 			religion = zoroastrian
 		}
 	}
+#MODDED
 	# From CK3 - they're the default name anyway
 	text = {
 		localisation_key = adamite_rel
@@ -3386,6 +3468,7 @@ defined_text = {
 		trigger = { religion = jain }
 	}
 }
+#VANILLA
 
 #Prints the estate related to the event advisor via e.g. [This.GetBurghersName]
 defined_text = {
@@ -4043,6 +4126,32 @@ defined_text = {
 }
 
 defined_text = {
+    name = GetNumReligiousPropagations
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = propogation_counter
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_PROPOGATION_COUNTER
+        trigger = {
+            check_variable = {
+                which = propogation_counter
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
     name = GetNumOfJanissaryDecisions
 
     text = {
@@ -4114,6 +4223,188 @@ defined_text = {
         trigger = {
             check_variable = {
                 which = num_of_raided_coasts
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumDevelopedProvinces
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_times_developed
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_DEVELOPED_PROVINCES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_of_times_developed
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumAridDevelopedProvinces
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_times_developed_arid
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_ARID_DEVELOPMENT_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_of_times_developed_arid
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumWarsAgainstNonBelievers
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_wars_won_against_non_believers
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_WARS_WON_AGAINST_OTHER_RELIGIONS
+        trigger = {
+            check_variable = {
+                which = num_of_wars_won_against_non_believers
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumWarsAgainstHeretics
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_wars_won_against_heretics
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_WARS_WON_AGAINST_HERETICS
+        trigger = {
+            check_variable = {
+                which = num_of_wars_won_against_heretics
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumCultureConvertedProvinces
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_converted_culture
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_CULTURE_CONVERTED_PROVINCES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_converted_culture
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumCultureConvertedToOwnCultureProvinces
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_converted_to_own_culture
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_CULTURE_TO_OWN_CULTURE_CONVERTED_PROVINCES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_converted_to_own_culture
+                value = 1
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumForceCultureConvertedCountries
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_forced_culture_conversions
+                    value = 1
+                }
+            }
+        }
+    }
+
+    text = {
+        localisation_key = NUM_OF_FORCE_CULTURE_CONVERTED_COUNTRIES_COUNTER
+        trigger = {
+            check_variable = {
+                which = num_of_forced_culture_conversions
                 value = 1
             }
         }
@@ -5043,37 +5334,37 @@ defined_text = {
 	text = {
 		localisation_key = "5.0"
 		trigger = {
-			FROM = { tech_difference = 6 }
+			FROM = { tech_difference = 7 }
 		}
 	}
 	text = {
 		localisation_key = "4.5"
 		trigger = {
-			FROM = { tech_difference = 5 }
+			FROM = { tech_difference = 6 }
 		}
 	}
 	text = {
 		localisation_key = "4.0"
 		trigger = {
-			FROM = { tech_difference = 4 }
+			FROM = { tech_difference = 5 }
 		}
 	}
 	text = {
 		localisation_key = "3.5"
 		trigger = {
-			FROM = { tech_difference = 3 }
+			FROM = { tech_difference = 4 }
 		}
 	}
 	text = {
 		localisation_key = "3.0"
 		trigger = {
-			FROM = { tech_difference = 2 }
+			FROM = { tech_difference = 3 }
 		}
 	}
 	text = {
 		localisation_key = "2.5"
 		trigger = {
-			FROM = { tech_difference = 1 }
+			FROM = { tech_difference = 2 }
 		}
 	}
 	text = {
@@ -5085,37 +5376,37 @@ defined_text = {
 	text = {
 		localisation_key = "5.0"
 		trigger = {
-			ROOT = { tech_difference = 6 }
+			FROM = { PREV = { tech_difference = 7 } }
 		}
 	}
 	text = {
 		localisation_key = "4.5"
 		trigger = {
-			ROOT = { tech_difference = 5 }
+			FROM = { PREV = { tech_difference = 6 } }
 		}
 	}
 	text = {
 		localisation_key = "4.0"
 		trigger = {
-			ROOT = { tech_difference = 4 }
+			FROM = { PREV = { tech_difference = 5 } }
 		}
 	}
 	text = {
 		localisation_key = "3.5"
 		trigger = {
-			ROOT = { tech_difference = 3 }
+			FROM = { PREV = { tech_difference = 4 } }
 		}
 	}
 	text = {
 		localisation_key = "3.0"
 		trigger = {
-			ROOT = { tech_difference = 2 }
+			FROM = { PREV = { tech_difference = 3 } }
 		}
 	}
 	text = {
 		localisation_key = "2.5"
 		trigger = {
-			ROOT = { tech_difference = 1 }
+			FROM = { PREV = { tech_difference = 2 } }
 		}
 	}
 	text = {
@@ -6206,6 +6497,30 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetZoroastrianInvitationValue
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = zoroastrian_invitation_charges
+					value = 1
+				}
+			}
+		}
+	}
+	text = {
+		localisation_key = zoroastrian_invitation_charges_value
+		trigger = {
+			check_variable = {
+				which = zoroastrian_invitation_charges
+				value = 1
+			}
+		}
+	}
+}
+
+defined_text = {
 	name = GetCurrentElevasionCost
 	random = no
 	text = {
@@ -6918,66 +7233,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = GetCurrentSelectedMissionBranch
-	text = {
-		localisation_key = teu_prussian_path
-		trigger = { 
-			has_country_flag = teu_prussian_path
-			not = { has_country_flag = teu_conquest_hre_path }
-			not = { has_country_flag = teu_diplomacy_hre_path }
-			not = { has_country_flag = teu_kingdom_prussia_path }
-		}
-	}
-	text = {
-		localisation_key = teu_crusader_path
-		trigger = { has_country_flag = teu_crusader_path }
-	}
-	text = {
-		localisation_key = teu_conquest_hre_path
-		trigger = { has_country_flag = teu_conquest_hre_path }
-	}
-	text = {
-		localisation_key = teu_diplomacy_hre_path
-		trigger = { has_country_flag = teu_diplomacy_hre_path }
-	}
-	text = {
-		localisation_key = teu_kingdom_prussia_path
-		trigger = { has_country_flag = teu_kingdom_prussia_path }
-	}
-	text = {
-		localisation_key = liv_livonian_path
-		trigger = { has_country_flag = liv_livonian_path }
-	}
-	text = {
-		localisation_key = liv_crusader_path
-		trigger = { has_country_flag = liv_crusader_path }
-	}
-	text = {
-		localisation_key = BYZ_centralized
-		trigger = { has_country_flag = BYZ_centralized }
-	}
-	text = {
-		localisation_key = per_shia_missions
-		trigger = { has_country_flag = per_shia_missions }
-	}
-	text = {
-		localisation_key = BYZ_decentralized
-		trigger = { has_country_flag = BYZ_decentralized }
-	}
-	text = {
-		localisation_key = per_zoroastrian_missions
-		trigger = { has_country_flag = per_zoroastrian_missions }
-	}
-	text = {
-		localisation_key = per_sunni_missions
-		trigger = { has_country_flag = per_sunni_missions }
-	}
-	text = {
-		localisation_key = NO_MISSIONS_SELECTED
-	}
-}
-
-defined_text = {
 	name = GetProniaAdvancedTooltip
 	text = {
 		localisation_key = extra_text_hereditary_proniar
@@ -7059,64 +7314,765 @@ defined_text = {
 	}
 }
 
-# Mission Title Colorings
+#Aswaran Loc
 defined_text = {
-	name = GetPreviewColorTEU
-	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = TEU } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU } } NOT = { has_preview_mission_flag = yes } } } }
+	name = GetQizilbashSupremacyOverAristoPrivilegeName
+	text = {
+		localisation_key = estate_qizilbash_supremacy_over_the_aristocracy_qizilbash_name
+		trigger = { not = { religion_group = zoroastrian_group } }
+	}
+	text = {
+		localisation_key = estate_qizilbash_supremacy_over_the_aristocracy_aswaran_name
+		trigger = { religion_group = zoroastrian_group }
+	}
 }
 defined_text = {
-	name = GetPreviewColorTEU_end
-	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = TEU } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU } } NOT = { has_preview_mission_flag = yes } } } }
-}
-
-defined_text = {
-	name = GetPreviewColorTEU_PRU
-	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = TEU_PRU } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU_PRU } } NOT = { has_preview_mission_flag = yes } } } }
-}
-defined_text = {
-	name = GetPreviewColorTEU_PRU_end
-	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = TEU_PRU } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = TEU_PRU } } NOT = { has_preview_mission_flag = yes } } } }
-}
-
-defined_text = {
-	name = GetPreviewColorLIV
-	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = LIV } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = LIV } } NOT = { has_preview_mission_flag = yes } } } }
-}
-defined_text = {
-	name = GetPreviewColorLIV_end
-	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = LIV } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = LIV } } NOT = { has_preview_mission_flag = yes } } } }
+	name = GetQizilbashSupremacyOverAristoPrivilegeDesc
+	text = {
+		localisation_key = estate_qizilbash_supremacy_over_the_aristocracy_desc_qizilbash
+		trigger = { not = { religion_group = zoroastrian_group } }
+	}
+	text = {
+		localisation_key = estate_qizilbash_supremacy_over_the_aristocracy_desc_aswaran
+		trigger = { religion_group = zoroastrian_group }
+	}
 }
 
 defined_text = {
-	name = GetPreviewColorPER
-	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = PER } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = PER } } NOT = { has_preview_mission_flag = yes } } } }
+	name = GetTitleForSUN_sunrise
+	text = {
+		localisation_key = SUN_sunrise_title
+	}
 }
 defined_text = {
-	name = GetPreviewColorPER_end
-	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = PER } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = PER } } NOT = { has_preview_mission_flag = yes } } } }
+	name = GetDescForSUN_sunrise
+	text = {
+		localisation_key = SUN_sunrise_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_japan
+	text = {
+		localisation_key = SUN_japan_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_japan
+	text = {
+		localisation_key = SUN_japan_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_pacific
+	text = {
+		localisation_key = SUN_pacific_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_pacific
+	text = {
+		localisation_key = SUN_pacific_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_colonial_system
+	text = {
+		localisation_key = SUN_colonial_system_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_colonial_system
+	text = {
+		localisation_key = SUN_colonial_system_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_settling_europe
+	text = {
+		localisation_key = SUN_settling_europe_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_settling_europe
+	text = {
+		localisation_key = SUN_settling_europe_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_china
+	text = {
+		localisation_key = SUN_china_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_china
+	text = {
+		localisation_key = SUN_china_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_symposium
+	text = {
+		localisation_key = SUN_symposium_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_symposium
+	text = {
+		localisation_key = SUN_symposium_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_strangers
+	text = {
+		localisation_key = SUN_strangers_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_strangers
+	text = {
+		localisation_key = SUN_strangers_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_britain
+	text = {
+		localisation_key = SUN_britain_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_britain
+	text = {
+		localisation_key = SUN_britain_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_technology_adoption
+	text = {
+		localisation_key = SUN_technology_adoption_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_technology_adoption
+	text = {
+		localisation_key = SUN_technology_adoption_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_sunset_invasion
+	text = {
+		localisation_key = SUN_sunset_invasion_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_sunset_invasion
+	text = {
+		localisation_key = SUN_sunset_invasion_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_france
+	text = {
+		localisation_key = SUN_france_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_france
+	text = {
+		localisation_key = SUN_france_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_ships
+	text = {
+		localisation_key = SUN_ships_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_ships
+	text = {
+		localisation_key = SUN_ships_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_punish_colonialism
+	text = {
+		localisation_key = SUN_punish_colonialism_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_punish_colonialism
+	text = {
+		localisation_key = SUN_punish_colonialism_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_spain
+	text = {
+		localisation_key = SUN_spain_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_spain
+	text = {
+		localisation_key = SUN_spain_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_panama_canal
+	text = {
+		localisation_key = SUN_panama_canal_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_panama_canal
+	text = {
+		localisation_key = SUN_panama_canal_desc
+	}
+}
+defined_text = {
+	name = GetTitleForSUN_disease
+	text = {
+		localisation_key = SUN_disease_title
+	}
+}
+defined_text = {
+	name = GetDescForSUN_disease
+	text = {
+		localisation_key = SUN_disease_desc
+	}
 }
 
 defined_text = {
-	name = GetPreviewColorBYZ
-	text = { localisation_key = PREVIEW_COLOR trigger = { can_preview_mission_of_key = { key = BYZ } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = BYZ } } NOT = { has_preview_mission_flag = yes } } } }
-}
-defined_text = {
-	name = GetPreviewColorBYZ_end
-	text = { localisation_key = COLOR_END trigger = { can_preview_mission_of_key = { key = BYZ } has_preview_mission_flag = yes } }
-	text = { localisation_key = empty_text trigger = { OR = { NOT = { can_preview_mission_of_key = { key = BYZ } } NOT = { has_preview_mission_flag = yes } } } }
+	name = GetAmountofMummifiedRulers
+	text = {
+		localisation_key = "[Root.inca_amount_of_mummies.GetValue]"
+		trigger = {
+			check_variable = {
+				which = inca_amount_of_mummies
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			NOT = {
+				check_variable = {
+					which = inca_amount_of_mummies
+					value = 1
+				}
+			}
+		}
+	}
 }
 
-# Dynamic Mission Descriptions
+defined_text = {
+	name = GetAmountofMayanCasualties
+	text = {
+		localisation_key = "[Root.land_units_killed_since_last_reform.GetValue]"
+		trigger = {
+			check_variable = {
+				which = land_units_killed_since_last_reform
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetAmountofKills
+	text = {
+		localisation_key = "[Root.AZTDeathCounter.GetValue]"
+		trigger = {
+			check_variable = {
+				which = AZTDeathCounter
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetAmountofBattles
+	text = {
+		localisation_key = "[Root.num_of_battles_won_var.GetValue]"
+		trigger = {
+			check_variable = {
+				which = num_of_battles_won_var
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaVenusTitle
+	text = {
+		localisation_key = "MAY_venus_title"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaVenusDesc
+	text = {
+		localisation_key = "MAY_venus_desc"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaRealmSizeTitle
+	text = {
+		localisation_key = "MAY_realm_size_title"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaRealmSizeDesc
+	text = {
+		localisation_key = "MAY_realm_size_desc"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaPassReformTitle
+	text = {
+		localisation_key = "MAY_pass_reform_title"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetMayaPassReformDesc
+	text = {
+		localisation_key = "MAY_pass_reform_desc"
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetAztecPatronDeityName
+	text = {
+		localisation_key = azt_tezcatlipoca
+		trigger = {
+			has_country_flag = azt_tezcatlipoca_deity
+		}
+	}
+	text = {
+		localisation_key = azt_tlaloc
+		trigger = {
+			has_country_flag = azt_tlaloc_deity
+		}
+	}
+	text = {
+		localisation_key = azt_quetzacoatl
+		trigger = {
+			has_country_flag = azt_quetzacoatl_deity
+		}
+	}
+	text = {
+		localisation_key = azt_huitzilopochtli
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetPrivilegeForRecoveryModifiers
+	text = {
+		localisation_key = SUN_MoH_recovery_effects
+		trigger = {
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+	text = {
+		localisation_key = SUN_non_MoH_recovery_effects
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetBreakTheHabsburgsTitle
+	random = no
+	
+	text = {
+		localisation_key = GER_break_the_habsburgs_HAB_title
+		trigger = {
+			OR = {
+				was_tag = HAB
+				dynasty = "Habsburg"
+			}
+		}
+	}
+	text = {
+		localisation_key = GER_break_the_habsburgs_generic_title
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetBreakTheHabsburgsDesc
+	random = no
+	
+	text = {
+		localisation_key = GER_break_the_habsburgs_HAB_desc
+		trigger = {
+			OR = {
+				was_tag = HAB
+				dynasty = "von Habsburg"
+				tag = HLR
+			}
+		}
+	}
+	text = {
+		localisation_key = GER_break_the_habsburgs_generic_desc
+		trigger = {
+			always = yes
+		}
+	}
+}
+
 defined_text = {
 	name = per_qizilbash_loyalty_desc
 	text = { localisation_key = per_qizilbash_loyalty_desc_qizilbash trigger = { not = { religion_group = zoroastrian_group } } }
 	text = { localisation_key = per_qizilbash_loyalty_desc_aswaran trigger = { religion_group = zoroastrian_group } }
+}
+
+defined_text = {
+	name = GetVeniceUpgradeTooltip
+	text = {
+		localisation_key = ITA_venice_upgrade_dharma
+		trigger = {
+			has_dlc = "Dharma"
+		}
+	}
+	text = {
+		localisation_key = ITA_venice_upgrade_no_dharma
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetTIMAppeaseTheElitesModifier
+	text = {
+		localisation_key = TIM_cradle_of_civ_mod 
+		trigger = {
+			has_dlc = "Cradle of Civilization"
+		}
+	}
+	text = {
+		localisation_key = TIM_non_cradle_of_civ_mod 
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = GetTIMPatronageOfArtsUpgrade
+	text = {
+		localisation_key = TIM_prosperity 
+		trigger = {
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+	text = {
+		localisation_key = TIM_stab_cost 
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+	name = FourClassPrivilege
+	text = {
+		localisation_key = FourClassPrivilegeEoC
+		trigger = {
+			is_emperor_of_china = yes
+		}
+	}
+	text = {
+		localisation_key = FourClassPrivilegeNoEoC
+		trigger = {
+			is_emperor_of_china = no
+		}
+	}
+}
+
+defined_text = {
+	name = NumOfRulerBattlesWon
+	text = {
+		localisation_key = "[Root.num_of_battles_won_ruler.GetValue]"
+		trigger = {
+			check_variable = {
+				which = num_of_battles_won_ruler
+				value = 1
+			}
+		}
+	}
+	text = {
+		localisation_key = ZERO
+		trigger = {
+			always = yes
+		}
+	}
+}
+
+defined_text = {
+    name = GetNumFestivals
+	
+	text = {
+        localisation_key = "[Root.AztFestivalsHeldVar.GetValue]"
+        trigger = {
+            check_variable = {
+                which = AztFestivalsHeldVar
+                value = 1
+            }
+        }
+    }
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = AztFestivalsHeldVar
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+defined_text = {
+    name = GetNumWars
+	
+	text = {
+        localisation_key = "[Root.num_of_wars_won_var.GetValue]"
+        trigger = {
+            check_variable = {
+                which = num_of_wars_won_var
+                value = 1
+            }
+        }
+    }
+
+    text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = num_of_wars_won_var
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
+defined_text = {
+	name = GetNumAssimilatedCultureGroups
+	text = {
+        localisation_key = "[Root.cultures_assimilated.GetValue]"
+        trigger = {
+            check_variable = {
+                which = cultures_assimilated
+                value = 1
+            }
+        }
+	}
+	text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = cultures_assimilated
+                    value = 1
+                }
+            }
+        }
+	}
+}
+
+defined_text = {
+	name = GetBlackArmyBattleVictories
+	text = {
+        localisation_key = "[Root.black_army_glorious_victories.GetValue]"
+        trigger = {
+            check_variable = {
+                which = black_army_glorious_victories
+                value = 1
+            }
+        }
+	}
+	text = {
+        localisation_key = ZERO
+        trigger = {
+            NOT = {
+                check_variable = {
+                    which = black_army_glorious_victories
+                    value = 1
+                }
+            }
+        }
+	}
+}
+
+defined_text = {
+	name = HungarianRevolutionEnd
+	text = {
+		localisation_key = HungarianRevolutionCompromise
+		trigger = {
+			has_country_flag = hab_chose_compromise
+		}
+	}
+	text = {
+		localisation_key = HungarianRevolutionVictory
+		trigger = {
+			NOT = {
+				exists = HUN
+				has_country_flag = hab_chose_compromise
+			}
+		}
+	}
+	text = {
+		localisation_key = HungarianRevolutionDefeat
+		trigger = {
+			exists = HUN
+		}
+	}
+}
+
+defined_text = {
+	name = AustrianRevolutionEnd
+	text = {
+		localisation_key = AustrianRevolutionCompromise
+		trigger = {
+			has_country_flag = hun_chose_compromise
+		}
+	}
+	text = {
+		localisation_key = AustrianRevolutionVictory
+		trigger = {
+			NOT = {
+				exists = HAB
+				has_country_flag = hun_chose_compromise
+			}
+		}
+	}
+	text = {
+		localisation_key = AustrianRevolutionDefeat
+		trigger = {
+			exists = HAB
+		}
+	}
+}
+
+defined_text = {
+	name = GetMaxBloodBattles
+	text = {
+		localisation_key = GetMaxBloodBattles40
+		trigger = {
+			has_country_flag = azt_blood_cap_flag
+		}
+	}
+	text = {
+		localisation_key = GetMaxBloodBattles20
+		trigger = {
+			NOT = { has_country_flag = azt_blood_cap_flag }
+		}
+	}
+}
+
+defined_text = {
+	name = GetArabicTradeDescMOH
+	text = {
+		localisation_key = arabic_trade_influence_power_desc_MOH
+		trigger = {
+			has_dlc = "Mandate of Heaven"
+		}
+	}
+	text = {
+		localisation_key = empty_text
+		trigger = {
+			NOT = { has_dlc = "Mandate of Heaven" }
+		}
+	}
+}
+defined_text = {
+	name = GetArabicTradeDescWONDHA
+	text = {
+		localisation_key = arabic_trade_influence_power_desc_WON_DHA
+		trigger = {
+			OR = {
+				has_dlc = "Wealth of Nations"
+				has_dlc = "Dharma"
+			}
+		}
+	}
+	text = {
+		localisation_key = empty_text
+		trigger = {
+			NOT = { has_dlc = "Wealth of Nations" }
+			NOT = { has_dlc = "Dharma" }
+		}
+	}
+}
+
+defined_text = {
+    name = GetMacehualtinMissionName
+    text = {
+        localisation_key = AZTMacehualtinMissionName
+        trigger = {
+            tag = AZT
+        }
+    }
+    text = {
+        localisation_key = MacehualtinMissionName
+        trigger = {
+            NOT = { tag = AZT }
+        }
+    }
+} 
