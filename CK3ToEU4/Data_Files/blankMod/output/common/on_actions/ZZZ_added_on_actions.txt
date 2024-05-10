@@ -48,6 +48,36 @@ on_province_owner_change = {
 		}
 		remove_province_modifier = sufi_shrine
 	}
+	if = {
+		limit = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+			}
+			owner = {
+				has_church_aspect = jewish_abrahamic_aspect
+			}
+		}
+		add_province_modifier = {
+			name = judaism_abrahamic_roots
+			duration = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_province_modifier = judaism_abrahamic_roots
+			OR = {
+				AND = {
+					NOT = { religion_group = christian }
+					NOT = { religion_group = muslim }
+				}
+				owner = {
+					NOT = { has_church_aspect = jewish_abrahamic_aspect }
+				}
+			}
+		}
+		remove_province_modifier = judaism_abrahamic_roots
+	}
 	on_province_owner_change_estate_privileges_effect = yes
 	imperial_modifiers_on_province_change_culture_or_change_owner_effect = yes
 	
@@ -153,17 +183,256 @@ on_province_owner_change = {
 			duration = -1
 		}
 	}
-	##MODDED
+	if = {
+		limit = {
+			owner = { has_government_attribute = negate_unaccepted_levantine_culture }
+			culture_group = turko_semitic
+			has_owner_accepted_culture = no
+		}
+		add_province_modifier = {
+			name = hsn_ayyubid_tolerance
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = seven_provinces_organization
+			}
+		}
+		if = {
+			limit = {
+				region = low_countries_region
+				culture_group = ROOT
+			}
+			add_province_modifier = {
+				name = ned_seven_provinces_organization_positive_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { region = low_countries_region }
+				continent = europe
+			}
+			add_province_modifier = {
+				name = ned_seven_provinces_organization_negative_modifier
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = ned_buffed_forts_flag
+				NOT = {
+					full_idea_group = defensive_ideas
+				}
+			}
+			region = low_countries_region
+			has_fort_building_trigger = yes
+		}
+		add_province_modifier = {
+			name = ned_low_countries_fort_buff
+			duration = -1
+			hidden = yes
+		}
+	}
+	else_if = {
+		limit = {
+			owner = {
+				has_country_flag = ned_buffed_forts_flag
+				full_idea_group = defensive_ideas
+			}
+			region = low_countries_region
+			has_fort_building_trigger = yes
+		}
+		add_province_modifier = {
+			name = ned_low_countries_fort_buff_buffed
+			duration = -1
+			hidden = yes
+		}
+	}
+	
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = ned_unlock_dutch_urbanization_flag
+			}
+			region = low_countries_region
+			development = 25
+		}
+		add_province_modifier = {
+			name = ned_dutch_urbanization
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = ned_unlock_flemish_urbanization_flag
+			}
+			region = low_countries_region
+			development = 25
+		}
+		add_province_modifier = {
+			name = ned_flemish_urbanization
+			duration = -1
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				continent = south_america
+				continent = north_america
+				continent = new_world
+			}
+			colonial_territory_trigger_on_action = yes
+		}
+		set_province_flag = SUN_colonial_territory
+	}
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = INC_royal_roads_flag 
+			}
+			OR = {
+				has_terrain = mountain
+				has_terrain = highlands
+				has_terrain = hills
+			}
+			continent = south_america
+		}
+		add_province_modifier = {
+			name = INC_royal_roads
+			duration = -1
+		}
+	}
+	
+	if = {
+		limit = {
+			owner = {
+				has_estate_privilege = estate_church_INC_idol_making 
+			}
+			trade_goods = gold
+		}
+		add_province_modifier = {
+			name = INC_gold_debuff
+			duration = -1
+		}
+	}
+	
+	if = {
+		limit = {
+			owner = {
+				has_country_flag = azt_temples_buffs_flag
+			}
+			has_tax_building_trigger = yes
+		}
+		add_province_modifier = {
+			name = azt_religious_classes
+			duration = -1
+			hidden = yes
+		}
+	}
+	
+	if = {
+		limit = {
+			owner = {
+				has_government_attribute = chinampa_farms_mechanic
+			}
+			trade_goods = grain
+		}
+		add_province_modifier = {
+			name = chinampa_farms_modifier
+			duration = -1
+			hidden = yes
+		}
+	}
+
+	if = {
+        limit = {
+            owner = {
+                has_estate_privilege = estate_nobles_vegvar_system
+            }
+            has_fort_building_trigger = yes
+            any_neighbor_province = {
+                NOT = { owned_by = ROOT }
+            }
+        }
+        add_province_modifier = {
+            name = estate_nobles_vegvar_system_modifier
+            duration = -1
+        }
+    }
+	if = {
+        limit = {
+			has_province_modifier = estate_nobles_vegvar_system_modifier
+            NOT = {
+				any_neighbor_province = {
+                	NOT = { owned_by = ROOT }
+            	}
+			}
+        }
+        remove_province_modifier = estate_nobles_vegvar_system_modifier
+    }
+    if = {
+        limit = {
+            owner = {
+                has_estate_privilege = estate_nobles_vegvar_system
+            }
+        }
+        owner = {
+            every_owned_province = {
+                limit = {
+                    has_province_modifier = estate_nobles_vegvar_system_modifier
+                    has_fort_building_trigger = yes
+                    all_neighbor_province = {
+                        owned_by = ROOT
+                    }
+                }
+                remove_province_modifier = estate_nobles_vegvar_system_modifier
+            }
+        }
+    }
+	if = {
+        limit = {
+			has_province_modifier = estate_nobles_vegvar_system_modifier
+			NOT = {
+				owner = {
+					has_estate_privilege = estate_nobles_vegvar_system
+				}
+				has_fort_building_trigger = yes
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+        }
+		remove_province_modifier = estate_nobles_vegvar_system_modifier
+	}
+	if = {
+        limit = {
+			has_province_modifier = estate_nobles_vegvar_system_modifier
+			NOT = {
+				owner = {
+					has_estate_privilege = estate_nobles_vegvar_system
+				}
+				has_fort_building_trigger = yes
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				}
+			}
+        }
+		remove_province_modifier = estate_nobles_vegvar_system_modifier
+	}
 	if = {
 		limit = {
 			has_province_modifier = ZZZ_enhanced_mighty_temple_being_built
 		}
 		country_event = { id = ZZZ_enhanced_fetishist.83 }
 	}
-	if = { 
-		limit = { 
-			owner = { NOT = { has_reform = jap_gokaido_reform } }
-		}
-		remove_province_modifier = jap_gokaido_modifier
-	}
+
 }

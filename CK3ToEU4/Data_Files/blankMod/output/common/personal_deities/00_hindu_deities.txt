@@ -14,10 +14,10 @@ buddha = {
 		}
 	}
 	trigger = {}
-	effect = {}
-	removed_effect = {}
 	tolerance_heathen = 2
 	advisor_cost = -0.1
+	effect = {}
+	removed_effect = {}
 	ai_will_do = {
 		factor = 1
 		modifier = {
@@ -31,35 +31,32 @@ buddha = {
 
 #For custom CK3 Hindu religions
 
-shiva =
-{
+shiva = {
 	# (Diplomatic - War)
 	ae_impact = -0.05
 	core_creation = -0.10
-
+	
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 1
 	trigger = {}
+	sprite = 1
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 2
 			personality = ai_militarist
-		}
+		}	
 		modifier = {
 			factor = 0.5
 			personality = ai_diplomat
-		}
+		}		
 	}
 }
 
-ganesha =
-{
+ganesha = {
 	#(Diplomatic - Peace)
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.20
@@ -67,11 +64,11 @@ ganesha =
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 2
 	trigger = {}
+	sprite = 2
+	
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
@@ -81,12 +78,11 @@ ganesha =
 		modifier = {
 			factor = 0.5
 			personality = ai_militarist
-		}
-	}
+		}			
+	}	
 }
 
-surya =
-{
+surya = {
 	#(Economic - Income)
 	global_tax_modifier = 0.10
 	trade_efficiency = 0.10
@@ -94,101 +90,98 @@ surya =
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 3
 	trigger = {}
+	sprite = 3
+	
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 3
 			personality = ai_capitalist
-		}
+		}		
 		modifier = {
 			factor = 2
 			personality = ai_colonialist
-		}
-	}
+		}			
+	}	
 }
 
-ganga =
-{
+ganga = {
 	#(Economic - Savings)
 	interest = -0.25
 	build_cost = -0.10
-
+	
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 4
 	trigger = {}
+	sprite = 4
+	
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 3
 			personality = ai_capitalist
-		}
+		}	
 		modifier = {
 			factor = 2
 			personality = ai_colonialist
-		}
-	}
+		}		
+	}	
 }
 
-shakti =
-{
-	#(Military - Offensive)
+shakti = { 
+	#(Military - Offensive) 
 	siege_ability = 0.05
 	discipline = 0.05
-
+	
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 5
 	trigger = {}
+	sprite = 5
+	
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 2
 			personality = ai_militarist
-		}
+		}	
 		modifier = {
 			factor = 0.5
 			personality = ai_diplomat
-		}
-	}
+		}		
+	}	
 }
 
-vishnu =
-{
+vishnu = {
 	# (Military - Defensive)
 	defensiveness = 0.2
 	global_missionary_strength = 0.02
-
+	
 	potential = {
 		religion_group = dharmic
 	}
-	sprite = 6
 	trigger = {}
+	sprite = 6
+	
 	effect = {}
 	removed_effect = {}
-
 	ai_will_do = {
 		factor = 1
 		modifier = {
 			factor = 2
 			personality = ai_balanced
-		}
+		}	
 		modifier = {
 			factor = 0.5
 			personality = ai_capitalist
-		}
-	}
+		}		
+	}	
 }

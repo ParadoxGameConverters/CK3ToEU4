@@ -93,12 +93,12 @@ link = { ck3 = c_nyitra eu4 = SLO }
 link = { ck3 = c_bars eu4 = SLO } #Maps to same province as c_nyitra
 link = { ck3 = c_poszony eu4 = SLO } #Maps to same province as c_nyitra
 link = { ck3 = c_komarom eu4 = SLO } #Maps to same province as c_nyitra
-link = { ck3 = d_transylvania eu4 = TRA }
 link = { ck3 = d_transylvanian_alps eu4 = TRA }
+link = { ck3 = d_transylvania eu4 = TRA }
 link = { ck3 = k_ottoman eu4 = TUR }
-link = { ck3 = k_dacia eu4 = WAL }
 link = { ck3 = d_muntenia eu4 = WAL } # Oltenia => Wallachia
 link = { ck3 = d_oltenia eu4 = WAL } # Muntenia => Wallachia
+link = { ck3 = k_dacia eu4 = WAL }
 link = { ck3 = k_albania eu4 = ALB }
 link = { ck3 = e_latin_empire eu4 = LAE }
 
@@ -271,8 +271,8 @@ link = { ck3 = e_hre_roman eu4 = HLR }
 link = { ck3 = c_cleves eu4 = KLE }
 link = { ck3 = d_germania_inferior eu4 = KOL }
 link = { ck3 = c_cologne eu4 = KOL }
+link = { ck3 = d_lower_lorraine eu4 = KOL }
 link = { ck3 = d_upper_lorraine eu4 = LOR }
-link = { ck3 = d_lower_lorraine eu4 = LOR }
 link = { ck3 = c_luneburg eu4 = LUN }
 link = { ck3 = c_magdeburg eu4 = MAG } # Magdeburg
 link = { ck3 = d_germania_superior eu4 = MAI }
@@ -281,15 +281,17 @@ link = { ck3 = d_glomacze eu4 = MEI }
 link = { ck3 = d_meissen eu4 = MEI }
 link = { ck3 = c_meissen eu4 = MEI }
 link = { ck3 = c_dresden eu4 = MEI } #Maps to same province as c_meissen
+link = { ck3 = d_nordmark eu4 = MKL }
 link = { ck3 = c_mecklenburg eu4 = MKL }
 link = { ck3 = c_munster eu4 = MUN }
-link = { ck3 = k_moravia eu4 = MVA }
+link = { ck3 = k_moravia eu4 = GMA }
 link = { ck3 = d_moravia eu4 = MVA }
 link = { ck3 = c_nurnberg eu4 = NUM }
 link = { ck3 = c_nassau eu4 = NSA }
 link = { ck3 = c_sayn eu4 = NSA } #Maps to same province as c_nassau
 link = { ck3 = c_oldenburg eu4 = OLD }
 link = { ck3 = d_rhine eu4 = PAL }
+link = { ck3 = d_west_franconia eu4 = PAL }
 link = { ck3 = k_pomerania eu4 = POM }
 link = { ck3 = d_pommerania eu4 = POM }
 link = { ck3 = d_pomerelia eu4 = DNZ } #Polish Pommerania
@@ -1065,7 +1067,6 @@ link = { ck3 = k_sicily eu4 = TTS }
 link = { ck3 = k_franconia eu4 = FKN }
 link = { ck3 = d_franconia eu4 = FKN } #Franconia
 link = { ck3 = d_east_franconia eu4 = FKN } #Franconia
-link = { ck3 = d_west_franconia eu4 = FKN } #Franconia
 link = { ck3 = d_swabia eu4 = SWA }
 link = { ck3 = k_swabia eu4 = SWA }
 link = { ck3 = k_suebia eu4 = SWA }
@@ -1243,7 +1244,7 @@ link = { ck3 = k_jiok eu4 = SHU }
 link = { ck3 = k_chio eu4 = CHC }
 
 link = { ck3 = e_turkey eu4 = TUR }
-link = { ck3 = e_austria eu4 = HAB }
+link = { ck3 = e_austria eu4 = AUH }
 link = { ck3 = k_prussia eu4 = PRU }
 link = { ck3 = d_baden eu4 = BAD }
 link = { ck3 = d_berg eu4 = BRG }

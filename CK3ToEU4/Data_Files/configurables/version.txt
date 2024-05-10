@@ -1,10 +1,10 @@
 # Version info
 
-version = "0.14N"
-name = "Nestorian"
+version = "0.15O"
+name = "Orisa"
 source = "CK3"
-minSource = "1.10"
+minSource = "1.12"
 maxSource = "1.12"
 target = "EU4"
-minTarget = "1.36"
-maxTarget = "1.36"
+minTarget = "1.37"
+maxTarget = "1.37"

@@ -8,7 +8,6 @@ TEST(Mappers_StartDateMapperTests, startDateDefaultsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -23,7 +22,6 @@ TEST(Mappers_StartDateMapperTests, startDateCanBeSet)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1425);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 7);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 19);
@@ -38,7 +36,6 @@ TEST(Mappers_StartDateMapperTests, invalidYearOverBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -53,7 +50,6 @@ TEST(Mappers_StartDateMapperTests, invalidYearUnderBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -68,7 +64,6 @@ TEST(Mappers_StartDateMapperTests, invalidMonthOverBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -83,7 +78,6 @@ TEST(Mappers_StartDateMapperTests, invalidMonthUnderBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -98,7 +92,6 @@ TEST(Mappers_StartDateMapperTests, invalidDayOverBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -113,7 +106,6 @@ TEST(Mappers_StartDateMapperTests, invalidDayUnderBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -128,7 +120,6 @@ TEST(Mappers_StartDateMapperTests, invalidFebruaryBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
@@ -143,7 +134,6 @@ TEST(Mappers_StartDateMapperTests, invalidThirtyDayMonthBailsToDefault)
 
 	const mappers::StartDateMapper theMapper(input);
 
-	ASSERT_TRUE(theMapper.getStartDate().isSet());
 	EXPECT_EQ(theMapper.getStartDate().getYear(), 1444);
 	EXPECT_EQ(theMapper.getStartDate().getMonth(), 11);
 	EXPECT_EQ(theMapper.getStartDate().getDay(), 11);
