@@ -8076,3 +8076,19 @@ defined_text = {
         }
     }
 } 
+
+defined_text = {
+    name = GetUnifyMissionName
+    text = {
+        localisation_key = AZTNonTheocracyName
+        trigger = {
+            NOT = { government = theocracy }
+        }
+    }
+    text = {
+        localisation_key = AZTTheocracyName
+        trigger = {
+            government = theocracy
+        }
+    }
+} 
