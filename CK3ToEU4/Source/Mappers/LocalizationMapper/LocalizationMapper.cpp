@@ -229,7 +229,12 @@ std::optional<mappers::LocBlock> mappers::LocalizationMapper::getLocBlockForKey(
 			newBlock.simp_chinese = newBlock.english;
 		return newBlock;
 	}
-	// either all is well, or we're missing english. Can't do anything about the latter.
+
+	// either all is well, or we're missing english. Can't do anything about the latter. Since English is absolute base, we bail if it's missing.
+	// (Quite a few locs have only russian entries and no other languages.)
+	if (keyItr->second.english.empty())
+		return std::nullopt;
+
 	return keyItr->second;
 }
 

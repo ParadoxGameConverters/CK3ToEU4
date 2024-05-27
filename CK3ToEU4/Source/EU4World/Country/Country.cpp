@@ -466,7 +466,10 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 
 	// Pope is special, as always.
 	if (title->second->isThePope())
+	{
 		adjSet = true; // We'll use vanilla PAP locs.
+		return;
+	}
 
 	// For custom adjectives we use those directly.
 	if (!adjSet && !title->second->getAdjective().empty())
@@ -563,9 +566,13 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		adjSet = true;
 	}
 
-	// out of ideas.
+	// out of ideas. Ignore everything and use name if possible.
 	if (!adjSet)
-		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj?";
+	{
+		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj is missing. Using name substitute if possible.";
+		if (nameSet && localizations.contains(tag))
+			localizations.emplace(tag + "_ADJ", localizations.at(tag));
+	}
 
 	// Setting Up Idea Names
 	if (adjSet && localizations.count(tag + "_ADJ") && !localizations.find(tag + "_ADJ")->second.english.empty())
