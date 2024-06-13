@@ -6005,6 +6005,22 @@ defined_text = {
 }
 
 defined_text = {
+	name = GetTempElevationCostReductionCap
+	text = {
+		localisation_key = TWO_HUNDRED
+		trigger = {
+			NOT = { has_country_flag = improved_elevation_reduction }
+		}
+	}
+	text = {
+		localisation_key = FOUR_HUNDRED
+		trigger = {
+			has_country_flag = improved_elevation_reduction
+		}
+	}
+}
+
+defined_text = {
 	name = GetFabricateReligiousConflictCost
 	text = { 
 		localisation_key = 30_STRING
