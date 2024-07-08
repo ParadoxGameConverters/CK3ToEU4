@@ -1,9 +1,9 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
 
+#include "../../Configuration/Configuration.h"
 #include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "../../Mappers/RegionMapper/RegionMapper.h"
-#include "../../Configuration/Configuration.h"
 #include "ProvinceDetails.h"
 #include <memory>
 #include <string>
