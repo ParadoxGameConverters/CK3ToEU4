@@ -75,3 +75,15 @@ link = { eu4 = thai_group ck3 = heritage_tai }
 # Mod: Fallen Eagle
 link = { eu4 = byzantine ck3 = heritage_hellenistic }
 link = { eu4 = east_slavic ck3 = heritage_slavic } # could be improved by adding unified Slavic to EU4
+
+# Mod: More Bookmarks Plus
+link = { eu4 = southeastasian_group ck3 = heritage_katuic ck3 = heritage_mon ck3 = heritage_palaungic ck3 = heritage_aslianic } #Austroasiatic [Source: https://en.wikipedia.org/wiki/Austroasiatic_languages]
+link = { eu4 = pacific ck3 = heritage_oceanic ck3 = heritage_papuan ck3 = heritage_melanesian ck3 = heritage_micronesian ck3 = heritage_formosan }
+link = { eu4 = malay ck3 = heritage_moluccan ck3 = heritage_filipino }
+link = { eu4 = japanese_g ck3 = heritage_ryukyu }
+link = { eu4 = tartar ck3 = heritage_on_oq ck3 = heritage_toquz_oghuz }
+link = { eu4 = altaic ck3 = heritage_sayan_altaic }
+link = { eu4 = tibetan_group ck3 = heritage_mien ck3 = heritage_hmong } #Mien and Hmong are mapped here as Miao(Hmong) is also in EU4's Tibetan group
+link = { eu4 = thai_group ck3 = heritage_kam ck3 = heritage_hlai } #Includes the broader Kra-Dai family
+link = { eu4 = malay ck3 = heritage_dayak ck3 = heritage_kadazan } #Austronesian
+link = { eu4 = evenks ck3 = heritage_tungusic }

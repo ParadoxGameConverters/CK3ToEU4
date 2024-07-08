@@ -1,0 +1,21 @@
+muslim = {
+	barghawata = { 
+		color = { 25 100 63 } 
+		icon = 134
+		country = {
+			idea_cost = -0.1
+			land_morale = 0.1
+			religious_unity = 0.5
+		}
+		province = {
+			local_missionary_strength = -0.01
+		}
+		country_as_secondary = {
+			idea_cost = -0.1
+			land_morale = 0.1
+		}
+		heretic = { SUNNI SHIA IBADI }
+		
+		fervor = yes			# Uses fervor mechanics
+	}
+}

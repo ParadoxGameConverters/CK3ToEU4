@@ -358,11 +358,11 @@ link = { eu4 = lithuanian ck3 = lithuanian ck3 = sudovian tech = eastern gfx = e
 link = { eu4 = pruthenian ck3 = prussian ck3 = galindian ck3 = curonian ck3 = vistula_veneti ck3 = przeworsk ck3 = vidivarii ck3 = goliad tech = eastern gfx = easterngfx }
 
 # Tatar
-link = { eu4 = astrakhani ck3 = tatar ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = astrakhan_area region = lower_don_area region = lower_yik_area region = saratov_area }
-link = { eu4 = bashkir ck3 = tatar ck3 = bolghar ck3 = mongol tech = nomad_group gfx = muslimgfx region = bashkiria_area }
-link = { eu4 = bashkir ck3 = tatar ck3 = bashkir tech = nomad_group gfx = muslimgfx }
-link = { eu4 = crimean ck3 = tatar ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = ruthenia_region region = crimea_region }
-link = { eu4 = kazani ck3 = tatar ck3 = bolghar ck3 = mongol tech = nomad_group gfx = muslimgfx region = kazan_area region = volga_area region = kama_area }
+link = { eu4 = astrakhani ck3 = tatar ck3 = tatars ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = astrakhan_area region = lower_don_area region = lower_yik_area region = saratov_area }
+link = { eu4 = bashkir ck3 = tatar ck3 = tatars ck3 = bolghar ck3 = mongol tech = nomad_group gfx = muslimgfx region = bashkiria_area }
+link = { eu4 = bashkir ck3 = tatar ck3 = tatars ck3 = bashkir tech = nomad_group gfx = muslimgfx }
+link = { eu4 = crimean ck3 = tatar ck3 = tatars ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = ruthenia_region region = crimea_region }
+link = { eu4 = kazani ck3 = tatar ck3 = tatars ck3 = bolghar ck3 = mongol tech = nomad_group gfx = muslimgfx region = kazan_area region = volga_area region = kama_area }
 link = { eu4 = chuvash ck3 = chuvash tech = nomad_group gfx = muslimgfx }
 link = { eu4 = mishary ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = ural_region region = russia_region }
 link = { eu4 = nogaybak ck3 = kimek tech = nomad_group gfx = muslimgfx }
@@ -896,7 +896,7 @@ link = { eu4 = coptic ck3 = kemetic tech = eastern gfx = easterngfx }
 link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian ck3 = tora tech = muslim gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
-link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba peopleâ€™s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
+link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
 link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."
 link = { eu4 = sidamo ck3 = aari tech = east_african gfx = africangfx } # Both Sidamo and Aari are Omotic. https://en.wikipedia.org/wiki/Aari_language
 link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
@@ -921,7 +921,7 @@ link = { eu4 = gujarati ck3 = bhil tech = indian gfx = indiangfx } # https://en.
 link = { eu4 = pahari ck3 = pahari tech = indian gfx = indiangfx }
 link = { eu4 = gondi ck3 = khond tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Khonds: "The Khonds speak Kui and Kuvi as their native languages. They are most closely related to the Gondi language. Both are Dravidian languages and are written with the Odia script."
 link = { eu4 = jharkhandi ck3 = maler tech = indian gfx = indiangfx } # MS Copilot: "The Malto people, also known as Pahariya, are closest to the Jharkhandi culture. This is because the Malto people are a Dravidian tribal group from the Rajmahal Hills in the northeastern Chota Nagpur Plateau, which is in the Indian state of Jharkhand. They are listed as Scheduled Tribes in Jharkhand, Bihar, and West Bengal. Their native language, Malto, is related to the nearby Kurukh language, which is also spoken in Jharkhand. Therefore, their geographical location and linguistic similarities make them closest to the Jharkhandi culture."
-link = { eu4 = tibetan ck3 = kachari tech = chinese gfx = asiangfx } # Speakers of Tibetoâ€“Burman. https://en.wikipedia.org/wiki/Bodo%E2%80%93Kachari_people
+link = { eu4 = tibetan ck3 = kachari tech = chinese gfx = asiangfx } # Speakers of Tibeto–Burman. https://en.wikipedia.org/wiki/Bodo%E2%80%93Kachari_people
 link = { eu4 = nepali ck3 = newari tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Newar_people
 link = { eu4 = nepali ck3 = kashika ck3 = radhi tech = chinese gfx = asiangfx } # Because these cultures use language_magadhan and magadhi culture is mapped to nepali.
 link = { eu4 = burmese ck3 = zo tech = indian gfx = indiangfx }
@@ -956,3 +956,163 @@ link = { eu4 = afghani ck3 = pactyan tech = muslim gfx = muslimgfx } # https://e
 link = { eu4 = tocharian ck3 = ferghanan ck3 = wusun ck3 = yuezhi ck3 = xiao_yuezhi tech = chinese gfx = asiangfx } # mapped to tocharian due to heritage_tocharian
 link = { eu4 = saka ck3 = shaka tech = muslim gfx = muslimgfx }
 link = { eu4 = alexandrine ck3 = indo_greek tech = eastern gfx = easterngfx }
+
+## More Bookmarks Plus
+link = { eu4 = bjarmian ck3 = bjarmian tech = eastern gfx = inuitgfx }
+link = { eu4 = livonian ck3 = livonians tech = eastern gfx = inuitgfx }
+link = { eu4 = finnish ck3 = savonian tech = eastern gfx = westerngfx }
+link = { eu4 = griko ck3 = griko tech = eastern gfx = easterngfx }
+link = { eu4 = byelorussian ck3 = radimichi tech = eastern gfx = easterngfx } #Ancestors of the Belarusians
+link = { eu4 = volhynian ck3 = buzans ck3 = bolokhovens tech = eastern gfx = easterngfx } #Mapped due to name_list_volhynian and close proximity with them
+link = { eu4 = kishinyov ck3 = ulich tech = eastern gfx = easterngfx } #Mapped due to close proximity with Moldova & Tivertsis
+link = { eu4 = mazandarani ck3 = talysh tech = muslim gfx = muslimgfx }
+link = { eu4 = persian ck3 = aschomi tech = muslim gfx = muslimgfx }
+link = { eu4 = kishinyov ck3 = sclaveni tech = eastern gfx = easterngfx }
+link = { eu4 = serbian ck3 = sclaveni region = serbia_area tech = eastern gfx = easterngfx }
+link = { eu4 = croatian ck3 = sclaveni region = croatia_area tech = eastern gfx = easterngfx }
+link = { eu4 = anglosaxon ck3 = hwiccians ck3 = angles tech = western gfx = westerngfx }
+link = { eu4 = polish ck3 = polans tech = western gfx = westerngfx }
+link = { eu4 = sichuanese ck3 = sichuan tech = chinese gfx = asiangfx }
+link = { eu4 = chimin ck3 = min tech = chinese gfx = asiangfx }
+link = { eu4 = wu ck3 = wu tech = chinese gfx = asiangfx }
+link = { eu4 = gan ck3 = gan tech = chinese gfx = asiangfx }
+link = { eu4 = cantonese ck3 = yue tech = chinese gfx = asiangfx }
+link = { eu4 = xiang ck3 = xiang tech = chinese gfx = asiangfx }
+link = { eu4 = hakka ck3 = hakka tech = chinese gfx = asiangfx }
+link = { eu4 = old_egyptian ck3 = ancient_egyptian tech = east_african gfx = africangfx }
+link = { eu4 = malayalam ck3 = nasrani ck3 = knanaya tech = indian gfx = indiangfx }
+link = { eu4 = tibetan_new ck3 = tani tech = chinese gfx = asiangfx }
+link = { eu4 = chin ck3 = tripuri tech = chinese gfx = asiangfx } #Mapped as Tripura has Chin as primary culture
+link = { eu4 = kirgiz ck3 = yenisei_kirghiz tech = nomad_group gfx = asiangfx }
+link = { eu4 = khazar ck3 = kabars tech = muslim gfx = muslimgfx }
+link = { eu4 = tunjur ck3 = fur ck3 = maban tech = sub_saharan gfx = africangfx } #Mapped based on region (Sudan & Chad)
+link = { eu4 = nubian ck3 = kwama ck3 = berta tech = east_african gfx = africangfx } #Mapped due to Berta association with Funj, Kwama due to proximity
+link = { eu4 = harari ck3 = harar tech = east_african gfx = africangfx }
+link = { eu4 = gulf_arabic ck3 = bahraini tech = muslim gfx = muslimgfx }
+link = { eu4 = siculo_arabic ck3 = siqilli tech = muslim gfx = muslimgfx } #Sicilian arabs mainly arrive from Tunisia
+link = { eu4 = al_iraqiya_arabic ck3 = madan tech = muslim gfx = muslimgfx }
+link = { eu4 = al_misr_arabic ck3 = saidi tech = muslim gfx = muslimgfx }
+link = { eu4 = yemeni_culture ck3 = hadhrami tech = muslim gfx = muslimgfx }
+link = { eu4 = berber ck3 = masmuda ck3 = tagelmust tech = muslim gfx = muslimgfx } 
+#Tagelmust are the Sanhajas
+link = { eu4 = tuareg ck3 = tagelmust ck3 = andalusian tech = muslim gfx = muslimgfx region = sahel_region region = niger_region region = guinea_region }
+link = { eu4 = moroccan ck3 = tagelmust tech = muslim gfx = muslimgfx region = northern_morocco_area region = tafilalt_area region = sus_area region = marrekesh_area region = western_morocco_area region = southern_morocco_area }
+link = { eu4 = dagestani ck3 = caucasian_avar ck3 = lezgi tech = eastern gfx = easterngfx }
+link = { eu4 = circassian ck3 = abkhazians tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = abkhazians province = 422 province = 423 province = 2203 province = 2204 province = 4301 province = 462 province = 2196 province = 4303 tech = eastern gfx = easterngfx }
+link = { eu4 = hungarian ck3 = jasz tech = eastern gfx = easterngfx }
+link = { eu4 = flemish ck3 = low_frankish ck3 = brabantian tech = western gfx = westerngfx region = wallonia_area region = flanders_area }
+link = { eu4 = dutch ck3 = low_frankish ck3 = brabantian tech = western gfx = westerngfx }
+link = { eu4 = frankish ck3 = ripuarian tech = western gfx = westerngfx }
+link = { eu4 = pommeranian ck3 = german_pommeranian tech = western gfx = westerngfx }
+link = { eu4 = hannoverian ck3 = westphalian tech = western gfx = westerngfx }
+link = { eu4 = prussian ck3 = prussian_g tech = western gfx = westerngfx }
+link = { eu4 = swiss ck3 = high_alemannic tech = western gfx = westerngfx } 
+link = { eu4 = schlesian ck3 = german_silesian tech = western gfx = westerngfx }
+link = { eu4 = saxon ck3 = szasz ck3 = east_elbian tech = western gfx = westerngfx }
+link = { eu4 = prussian ck3 = east_elbian tech = western gfx = westerngfx owner = PRU }
+link = { eu4 = alsatian ck3 = alsatian tech = western gfx = westerngfx }
+link = { eu4 = kannada ck3 = tuluva tech = indian gfx = indiangfx }
+link = { eu4 = coptic ck3 = egyptian_coptic tech = eastern gfx = easterngfx }
+link = { eu4 = russian ck3 = great_russian tech = eastern gfx = easterngfx }
+link = { eu4 = gascon ck3 = gascon tech = western gfx = westerngfx }
+link = { eu4 = provancale ck3 = provencal tech = western gfx = westerngfx }
+link = { eu4 = burgundian ck3 = burgundian_oil ck3 = lorrainian tech = western gfx = westerngfx } #Lorraine has Burgundian culture in EU4, both are part of the langue d'oil family 
+link = { eu4 = cosmopolitan_french ck3 = gallo_f ck3 = picard tech = western gfx = westerngfx }
+link = { eu4 = irish ck3 = gall_goidel tech = western gfx = westerngfx }
+link = { eu4 = highland_scottish ck3 = gall_goidel tech = western gfx = westerngfx region = kingdom_of_the_isles_area region = highlands_area region = lowlands_area region = scottish_marches_area }
+link = { eu4 = marathi ck3 = konkani tech = indian gfx = indiangfx }
+link = { eu4 = oriya ck3 = sambalpuri tech = indian gfx = indiangfx }
+link = { eu4 = avadhi ck3 = awadhi tech = indian gfx = indiangfx }
+link = { eu4 = assamese ck3 = kamarupi tech = indian gfx = indiangfx }
+link = { eu4 = jharkhandi ck3 = nagpuri tech = indian gfx = indiangfx }
+link = { eu4 = marwari ck3 = marwari tech = indian gfx = indiangfx }
+link = { eu4 = rajput ck3 = harauti ck3 = ahirwati tech = indian gfx = indiangfx }
+link = { eu4 = pahari ck3 = kumaoni tech = indian gfx = indiangfx }
+link = { eu4 = afghani ck3 = hazara tech = muslim gfx = muslimgfx }
+link = { eu4 = baluchi ck3 = qufs tech = muslim gfx = muslimgfx }
+link = { eu4 = maltese ck3 = maltese tech = western gfx = westerngfx }
+link = { eu4 = piedmontese ck3 = piedmontese tech = western gfx = westerngfx }
+link = { eu4 = romagnan ck3 = emilian tech = western gfx = westerngfx } #Mapped due to Emilia-Romagna region
+link = { eu4 = neapolitan ck3 = neapolitan tech = western gfx = westerngfx }
+link = { eu4 = venetian ck3 = friulian tech = western gfx = westerngfx } #Mapped due to proximity
+link = { eu4 = catalan ck3 = balearian tech = western gfx = westerngfx }
+link = { eu4 = icelandic ck3 = greenlandic tech = western gfx = westerngfx }
+link = { eu4 = samoyed ck3 = nenets tech = eastern gfx = inuitgfx }
+link = { eu4 = tibetan ck3 = balti ck3 = ladakhi ck3 = khampa ck3 = amdo ck3 = baima ck3 = kinnauri tech = chinese gfx = asiangfx }
+link = { eu4 = oghuz ck3 = salar ck3 = khalaj tech = nomad_group gfx = muslimgfx }
+link = { eu4 = nogaybak ck3 = nogai tech = nomad_group gfx = muslimgfx }
+link = { eu4 = crimean ck3 = crimean tech = nomad_group gfx = muslimgfx }
+link = { eu4 = kazani ck3 = kazani tech = nomad_group gfx = muslimgfx }
+link = { eu4 = mishary ck3 = mishar tech = nomad_group gfx = muslimgfx }
+link = { eu4 = turkmeni ck3 = turkmeni tech = nomad_group gfx = muslimgfx }
+link = { eu4 = mongol ck3 = donghu tech = chinese gfx = asiangfx } #Mapped due to Mongolian heritage and language
+link = { eu4 = hunnic ck3 = jie tech = nomad_group gfx = asiangfx }
+link = { eu4 = turko_iranian ck3 = khalaj tech = nomad_group gfx = muslimgfx region = persia_region }
+link = { eu4 = english ck3 = anglo_norse tech = western gfx = westerngfx } #Preferably to create anglo_norse
+link = { eu4 = sorbian ck3 = lutici tech = western gfx = westerngfx } #Lutician mapped under Sorbian
+link = { eu4 = polish ck3 = kashubian tech = western gfx = westerngfx }
+link = { eu4 = parsim ck3 = parsim tech = muslim gfx = muslimgfx }
+link = { eu4 = yevanic ck3 = romaniote tech = eastern gfx = easterngfx }
+link = { eu4 = laaz ck3 = italkim tech = eastern gfx = easterngfx }
+link = { eu4 = ainu ck3 = emishi tech = chinese gfx = inuitgfx }
+link = { eu4 = aslian ck3 = aslian ck3 = semang ck3 = senoi ck3 = moklen tech = chinese gfx = asiangfx } #Mapped based on region, Indigenous people in Malaya
+link = { eu4 = karen ck3 = karen tech = chinese gfx = asiangfx }
+link = { eu4 = kachin ck3 = kachin ck3 = naga tech = chinese gfx = asiangfx }
+link = { eu4 = chin ck3 = manipur tech = chinese gfx = asiangfx }
+link = { eu4 = burmese ck3 = naga tech = indian gfx = indiangfx }
+link = { eu4 = dayak ck3 = kayan ck3 = punan ck3 = ot_danum ck3 = murut ck3 = iban ck3 = bidayuh ck3 = ngaju ck3 = kadazan tech = chinese gfx = asiangfx } 
+link = { eu4 = polynesian ck3 = atayal ck3 = bunun ck3 = paiwan ck3 = pepo ck3 = siraya ck3 = amis ck3 = kavalan tech = polynesian gfx = polynesiangfx } #Taiwan island in EU4 has Polynesian culture (Austronesian), could classify as Formosan/Taiwanese Aborigines 
+link = { eu4 = miao ck3 = hmong ck3 = yao ck3 = sheren tech = chinese gfx = asiangfx }
+link = { eu4 = kyushuan ck3 = ryukyu ck3 = kyushu ck3 = hayato tech = chinese gfx = asiangfx } #Ryukyu islands has Kyushuan in EU4
+link = { eu4 = japanese ck3 = oshu tech = chinese gfx = asiangfx }
+link = { eu4 = katuic ck3 = kuy ck3 = dega tech = chinese gfx = asiangfx }
+link = { eu4 = khmer ck3 = chong tech = chinese gfx = asiangfx }
+link = { eu4 = korean ck3 = goguryeo ck3 = jeju tech = chinese gfx = asiangfx }
+link = { eu4 = kam_sui ck3 = kam tech = chinese gfx = asiangfx }
+link = { eu4 = hlai ck3 = hlai tech = chinese gfx = asiangfx }
+link = { eu4 = yi ck3 = hani ck3 = lisu ck3 = tujia tech = chinese gfx = asiangfx } #Mapped due to name_list_yi, classified as Loloish
+link = { eu4 = sumatran ck3 = minangkabau ck3 = kerinci ck3 = rejang ck3 = nias ck3 = mentawai ck3 = lampung ck3 = komering ck3 = basemah tech = chinese gfx = asiangfx }
+link = { eu4 = malayan ck3 = minangkabau ck3 = kerinci tech = chinese gfx = asiangfx region = malaya_area region = johor_area region = north_malaya_area region = malacca_area }
+link = { eu4 = bornean ck3 = banjar tech = chinese gfx = asiangfx }
+link = { eu4 = nusa_tenggara ck3 = bali ck3 = samawa tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = sama tech = chinese gfx = asiangfx }
+link = { eu4 = javanese ck3 = madura tech = chinese gfx = asiangfx }
+link = { eu4 = acehnese ck3 = gayo tech = chinese gfx = asiangfx }
+link = { eu4 = sulawesi ck3 = tomini tech = chinese gfx = asiangfx } #Mapped based on region
+link = { eu4 = moluccan ck3 = nunusaku ck3 = halmahera ck3 = buli tech = chinese gfx = asiangfx } #Mapped based on region
+link = { eu4 = nusa_tenggara ck3 = timor ck3 = sumba tech = chinese gfx = asiangfx } #Mapped based on region
+link = { eu4 = melanesian ck3 = biak tech = polynesian gfx = polynesiangfx } #Mapped based on region
+link = { eu4 = khitan ck3 = shiwei tech = nomad_group gfx = asiangfx } #Shiwei are closely related to the Khitans: https://en.wikipedia.org/wiki/Shiwei_people
+link = { eu4 = mongol ck3 = khamag ck3 = tumed ck3 = tataric tech = chinese gfx = asiangfx }
+link = { eu4 = nivkh ck3 = gilyak tech = eastern gfx = inuitgfx }
+link = { eu4 = uzbehk ck3 = turgesh ck3 = ograk tech = nomad_group gfx = muslimgfx } #Mapped due to name_list_karluk and location, Karluk mapped to Uzbekh, Basmyl mapped to Uzbekh
+link = { eu4 = nogaybak ck3 = yemek tech = nomad_group gfx = muslimgfx } #Mapped due to name_list_kimek, Kimek mapped to Nogai
+link = { eu4 = oghuz ck3 = bayundur tech = nomad_group gfx = muslimgfx }
+link = { eu4 = hunnic ck3 = ueban ck3 = chigil tech = nomad_group gfx = asiangfx } #Uebans were the remnants of the Xiongnu after their disintegration, Chigils descended from the Uebans
+link = { eu4 = uyghur ck3 = kashgari tech = nomad_group gfx = asiangfx }
+link = { eu4 = palaungic ck3 = palaung ck3 = khmu ck3 = wa tech = chinese gfx = asiangfx }
+link = { eu4 = tangut ck3 = nakhi tech = chinese gfx = asiangfx } #Mapped due to Qiang heritage, both Di and Qiang are mapped to Tangut
+link = { eu4 = burmese ck3 = achang tech = indian gfx = indiangfx } #Mapped due to Burmese language
+link = { eu4 = yeniseian ck3 = kott tech = eastern gfx = inuitgfx }
+link = { eu4 = samoyed ck3 = solqumyt tech = eastern gfx = inuitgfx } #Mapped to Samoyeds due to Selkup language
+link = { eu4 = tuvan ck3 = dukha ck3 = todzh ck3 = az ck3 = cik tech = nomad_group gfx = inuitgfx } #Az & Cik mapped due to Tuvan language
+link = { eu4 = siberian ck3 = shor ck3 = telengit tech = nomad_group gfx = muslimgfx } #Telengit mapped due to sibir_tatar language
+link = { eu4 = yakut ck3 = sakha tech = eastern gfx = inuitgfx }
+link = { eu4 = central_thai ck3 = siamese tech = chinese gfx = asiangfx }
+link = { eu4 = northern_thai ck3 = lanna tech = chinese gfx = asiangfx }
+link = { eu4 = zhuang ck3 = nong tech = chinese gfx = asiangfx }
+link = { eu4 = shan ck3 = ahom tech = chinese gfx = asiangfx }
+link = { eu4 = buryat ck3 = barqut ck3 = ekhirit ck3 = tula tech = nomad_group gfx = inuitgfx } #No information on Tula, has Buryat language and name list
+link = { eu4 = mongol ck3 = onggirad ck3 = tajiuud  ck3 = merkit ck3 = qay tech = chinese gfx = asiangfx }
+link = { eu4 = khitan ck3 = qitai ck3 = daur tech = nomad_group gfx = asiangfx }
+link = { eu4 = tungus ck3 = sibe tech = chinese gfx = asiangfx }
+link = { eu4 = cuman ck3 = qun tech = nomad_group gfx = easterngfx } #Quns were suggested to be Cumans: https://en.wikipedia.org/wiki/Cumans
+link = { eu4 = oghuz ck3 = tongra ck3 = bayirku ck3 = siqar ck3 = yagma tech = nomad_group gfx = muslimgfx }
+link = { eu4 = uyghur ck3 = uigur tech = nomad_group gfx = muslimgfx }
+link = { eu4 = manchu ck3 = udege ck3 = nanai tech = chinese gfx = asiangfx }
+link = { eu4 = manchu_new ck3 = udege ck3 = nanai tech = chinese gfx = asiangfx owner = QNG owner = MCH }
+link = { eu4 = tungus ck3 = balhae tech = chinese gfx = asiangfx }
+link = { eu4 = korean ck3 = balhae tech = chinese gfx = asiangfx region = korea_region }
+link = { eu4 = vietnamese ck3 = muong tech = chinese gfx = asiangfx }
+#tatars added in the "Tatar" section

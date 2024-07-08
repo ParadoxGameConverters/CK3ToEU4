@@ -53,6 +53,7 @@ link = { utf8 = "ṣ" win1252 = "s" }
 link = { utf8 = "ẹ" win1252 = "e" }
 link = { utf8 = "ọ" win1252 = "o" }
 link = { utf8 = "ḥ" win1252 = "h" }
+link = { utf8 = "ĭ" win1252 = "i" }
 
 ## LATIN - UPPERCASE
 link = { utf8 = "Ā" win1252 = "Â" }

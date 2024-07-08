@@ -241,3 +241,90 @@ link = { eu4 = kemetism ck3 = greco_egyptian_pagan ck3 = ammon_pagan ck3 = beja_
 link = { eu4 = nuragic_pagan ck3 = sardinian_pagan }
 link = { eu4 = hurrian_pagan ck3 = hurrian }
 link = { eu4 = zoroastrian ck3 = armaz ck3 = magousaian }
+
+#Mod: More Bookmarks Plus
+# Bön
+link = { eu4 = bon ck3 = dongba }
+#Buddhism
+#Mahasanghika, Pudgalavada, Dharmaguptaka, Sarvastivada, Vibhajjavada defined in TFE as Theravada
+link = { eu4 = mahayana ck3 = phat_giao ck3 = zenzong ck3 = kegon ck3 = tiantai ck3 = jingtu ck3 = shin ck3 = indo_hellenism ck3 = vijna }
+link = { eu4 = vajrayana ck3 = azhaliism ck3 = kagyu ck3 = sakya ck3 = gelug }
+#Christianity
+link = { eu4 = catholic ck3 = african_church ck3 = ambrosian ck3 = aquileian_church ck3 = bohemian_catholic ck3 = maronite ck3 = cilician_uniate ck3 = uniate ck3 = melkite ck3 = alexandrian_melkite ck3 = irenopolis_melkite ck3 = jerusalem_melkite ck3 = romagyris_melkite ck3 = collyridianism }
+link = { eu4 = orthodox ck3 = baltic_orthodox ck3 = bulgarian_orthodox ck3 = circassian_christianity ck3 = cyprus_orthodox ck3 = finnish_orthodox ck3 = georgian_orthodox ck3 = ivirs ck3 = polish_orthodox ck3 = roman_orthodox ck3 = serbian_orthodox ck3 = slavic_orthodox ck3 = tsat ck3 = vlach_orthodox ck3 = albanian_apostolic ck3 = monothelitism ck3 = horoms } 
+link = { eu4 = coptic ck3 = ethiopian_orthodox ck3 = nubian_orthodox ck3 = jacobite ck3 = maphrianate ck3 = malankaran ck3 = gaianites }
+link = { eu4 = cathar ck3 = donatists ck3 = amalricians ck3 = free_spirit }
+link = { eu4 = waldensian ck3 = fraticelli }
+link = { eu4 = bogomilist ck3 = stephanites }
+link = { eu4 = messalian ck3 = tascodrugites }
+link = { eu4 = paulician ck3 = tondrakian }
+link = { eu4 = nestorian ck3 = chazinzarians }
+link = { eu4 = hussite ck3 = taborites ck3 = ultraquist }
+link = { eu4 = arianism ck3 = aerianism ck3 = montanism ck3 = julianists }
+link = { eu4 = adamites ck3 = valesians }
+#Dualism
+link = { eu4 = manichean ck3 = manichean_babylon ck3 = matari ck3 = dayhurianism ck3 = marcionism }
+link = { eu4 = mandeaism ck3 = elcesaites }
+# Finno-Ugric
+link = { eu4 = finnish_pagan ck3 = estonian_pagan ck3 = osilian_pagan ck3 = nenets_pagan ck3 = mordvin_pagan } 
+#Germanic
+link = { eu4 = germanic_pagan ck3 = central_pagan ck3 = gothic_pagan }
+#Hinduism
+link = { eu4 = hinduism ck3 = kambuja_devaraja ck3 = chamic_shaivism ck3 = trika_shaivism ck3 = ganaptism ck3 = shrautism ck3 = kaumaram }
+#Islam
+link = { eu4 = sunni ck3 = african_folk_islam school = maliki_school } #Most Sunni countries in African follow the Maliki school, hence the choice
+link = { eu4 = sunni ck3 = ghomara_pagan school = maliki_school }
+link = { eu4 = sunni ck3 = salihi school = shafii_school } 
+link = { eu4 = shiite ck3 = kutama_pagan school = ismaili_school }
+link = { eu4 = ibadi ck3 = nukkari ck3 = wahbiya ck3 = ishaqiya }
+link = { eu4 = quranist ck3 = nazzamism }
+link = { eu4 = barghawata ck3 = barghawata }
+link = { eu4 = sunni ck3 = ns_islam school = hanafi } #Linked the 'Ahl al-Bayt' to the predomnant Sunni branch, it is not a faith and cannot be converted to in-game
+link = { eu4 = shiite ck3 = ns_islam_shia school = jafari_school } #Linked "Shi'at 'Ali" to the predominant Shia school, it is not a faith and cannot be converted to in-game
+#Judaism
+link = { eu4 = jewish ck3 = himyarites }
+link = { eu4 = jewish ck3 = isawites ck3 = yudghanites ck3 = menahemists ck3 = teimanim } #Messianic Jews possibly
+link = { eu4 = samaritan_faith ck3 = dositheans ck3 = simonians }
+link = { eu4 = jewish ck3 = ebionites }
+#Sanamahism
+link = { eu4 = animism ck3 = sanamahi_pagan }
+# Siberian
+link = { eu4 = siberian_pagan ck3 = kuptyng }
+#Taoism
+link = { eu4 = confucianism ck3 = shendao ck3 = xinxue ck3 = jingshi ck3 = jingxue ck3 = rangyi }
+#Tenga
+link = { eu4 = animism ck3 = tenga_pagan ck3 = wennam_pagan }
+#Tengrism
+link = { eu4 = tengri_pagan ck3 = alan_pagan ck3 = eastern_tengri ck3 = ulganism }
+#Slavic
+link = { eu4 = slavic_pagan ck3 = slavic_east ck3 = slavic_south ck3 = slavic_west }
+# West African
+link = { eu4 = shamanism ck3 = songhai_pagan }
+# West African Orisha
+link = { eu4 = shamanism ck3 = oloku_pagan }
+# Zoroastrianism 
+link = { eu4 = zoroastrian ck3 = isfahani }
+#Caucasus
+link = { eu4 = caucasian_pagan ck3 = khabzism ck3 = nakh_pagan ck3 = apsuara }
+# Asian
+link = { eu4 = animism ck3 = mentawai_animism ck3 = nias_animism ck3 = batak_animism ck3 = umboh ck3 = malayic }
+link = { eu4 = animism ck3 = kadai }
+link = { eu4 = animism ck3 = alukta ck3 = malesung ck3 = halaika ck3 = makamba ck3 = marapu }
+link = { eu4 = shamanism ck3 = celebic }
+link = { eu4 = animism ck3 = kaharingan }
+link = { eu4 = shamanism ck3 = momolianism }
+link = { eu4 = animism ck3 = formosa_animism }
+link = { eu4 = shamanism ck3 = hmongism }
+link = { eu4 = animism ck3 = kapitayan }
+link = { eu4 = animism ck3 = khasi_animism }
+link = { eu4 = animism ck3 = kuy_animism }
+link = { eu4 = shinto ck3 = ryukyu_animism } #TO BE REVISED
+link = { eu4 = animism ck3 = wa_animism }
+link = { eu4 = shamanism ck3 = tungusic_shamanism }
+link = { eu4 = animism ck3 = sarnaism }
+link = { eu4 = animism ck3 = bathouism }
+#AFRICAN
+link = { eu4 = animism ck3 = basho_pagan }
+link = { eu4 = animism ck3 = ijaw_pagan }
+link = { eu4 = animism ck3 = idoism_pagan ck3 = munean_pagan }
+link = { eu4 = shamanism ck3 = vodun_pagan }

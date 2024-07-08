@@ -398,3 +398,7 @@ gaelic_pagan = {
 celtiberian_pagan = {
 	heretic = { ELUVEITIE ASTERIX }
 }
+
+barghawata = {
+	heretic = { SUNNI SHIA IBADI }
+}
