@@ -48,3 +48,8 @@ link = { ck3title = k_teutonic_order gov = theocracy reform = monastic_order_ref
 
 link = { ck3title = d_sunni gov = theocracy reform = leading_clergy_reform }
 link = { ck3title = d_shiite gov = theocracy reform = leading_clergy_reform }
+
+#More Bookmarks Plus
+link = { gov = theocracy ck3gov = holy_order_county_government }
+link = { gov = tribal ck3gov = ulus_government ck3gov = anarchist_government }
+link = { gov = monarchy ck3gov = mandala_government ck3gov = chinese_government }

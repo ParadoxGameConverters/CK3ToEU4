@@ -107,6 +107,9 @@
  quranist_religion_desc:0 "A literalist interpretation of Islam that emphasizes that the Quran as the only source of divine wisdom, and should be followed to the letter, ignoring hadith and fatwas."
  alawite:0 "Alawism"
  alawite_religion_desc:0 "Alawite religious teachings are secretive, and the Quran is only one of their sacred texts. In addition to the belief in the succession of Imams through Ali, Alawis also believe in reincarnation, and that all beings were stars cast out of heaven who must now re-earn their place by living successive good and faithful lives."
+ 
+
+
 
  #Yazidi
  yazidism: "Yazidism"
@@ -221,3 +224,7 @@
  
  # RICE
  harranism:0 "Harranism"
+ 
+ # More Bookmarks Plus
+ barghawata:0 "Barghawata"
+ barghawata_religion_desc:0 "A heavily altered and berberized form of the Islam mixed in with traditional Berber mythology founded by the self-proclaimed mahdi and prophet Ṣāliḥ ibn Tarīf."

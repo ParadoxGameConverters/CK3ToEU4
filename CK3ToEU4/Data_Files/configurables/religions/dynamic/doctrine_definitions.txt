@@ -1258,3 +1258,614 @@ doctrine_funeral_sky_burial  = {
 }
 doctrine_funeral_mummification  = {
 }
+
+##Mod: More Bookmarks Plus
+#DOCTRINES
+doctrine_right_to_rule_divine = {
+	country = {
+		legitimacy = 1
+	}
+}
+
+doctrine_right_to_rule_material = {
+	country = {
+		legitimacy = 0.5
+		stability_cost_modifier = -0.2
+	}
+}
+
+doctrine_right_to_rule_rajadharma = {
+	country = {
+		legitimacy = 1
+	}
+}
+
+doctrine_right_to_rule_mandate = {
+	country = {
+		imperial_mandate = 0.2
+	}
+}
+
+doctrine_mz_no_nudity  = {
+}
+
+doctrine_mz_full_nudity = {
+}
+
+doctrine_mz_monogamy = {
+}
+
+doctrine_me_intoxication_crime = {
+	country = {
+		production_efficiency = 0.05
+		global_unrest = -1
+	}
+}
+
+doctrine_me_intoxication_shunned = {
+}
+
+doctrine_me_intoxication_accepted = {
+}
+
+doctrine_me_intoxication_virtuous = {
+	country = {
+		production_efficiency = -0.05
+		global_unrest = 1
+	}
+}
+
+doctrine_me_ablution_none = {
+}
+
+doctrine_me_ablution_handwashing = {
+	country = {
+		monarch_lifespan = 0.1
+}
+
+doctrine_me_ablution_full = {
+	country = {
+		monarch_lifespan = 0.2
+}
+
+sampradaya_vaishnavism_doctrine = {
+}
+
+sampradaya_shaivism_doctrine = {
+}
+
+sampradaya_shaktism_doctrine = {
+}
+
+sampradaya_shaktism_doctrine = {
+}
+
+sampradaya_saurism_doctrine = {
+}
+
+sampradaya_ganapatism_doctrine = {
+}
+
+sampradaya_kaumaram_doctrine = {
+}
+
+sampradaya_shrautism_doctrine = {
+}
+
+cultural_religion = {
+	country = {
+		promote_culture_cost = 0.25
+		culture_conversion_cost = -0.25
+		tolerance_own = 2
+	}
+	province = {
+		local_culture_conversion_cost = 0.25
+	}
+}
+
+tribal_religion = {
+	country = {
+		promote_culture_cost = 0.25
+		culture_conversion_cost = -0.25
+		tolerance_own = 2
+	}
+	province = {
+		local_culture_conversion_cost = 0.25
+	}
+}
+
+special_faith_has_germanic_heritage = {
+}
+
+muhammad_succession_berberist_doctrine = {
+}
+
+muhammad_succession_zandaqa_real_doctrine = {
+}
+
+muhammad_succession_batriya_doctrine = {
+}
+
+temple_authority_rabbinic_doctrine = {
+	tolerance_own = 2
+}
+
+temple_authority_messiah_doctrine = {
+	country = {
+		infantry_power = 0.10
+		tolerance_own = 2
+	}
+}
+
+doctrine_christology_doctrine_arianism = {
+	unique_modifiers =  {
+		fervor = yes
+	}
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+
+doctrine_christology_adoptionism = {
+	unique_modifiers =  {
+		fervor = yes
+	}
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+
+doctrine_christology_docetism = {
+	not_unique_modifiers = {
+		misguided_heretic = yes	
+		allowed_conversion = {
+			bogomilist
+			mandeaism
+			manichean
+			valentinianism
+			sethianism
+			priscillianism
+			cainitism
+}
+
+doctrine_christology_diophysite = {
+}
+
+doctrine_christology_miaphysite = {
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+
+doctrine_christology_monophysite = {
+}
+
+doctrine_christology_monothelite = {
+}
+
+doctrine_christology_nestorian = {
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+
+doctrine_christology_psilanthropism = {
+}
+
+doctrine_circumincession_demiurge = {
+}
+
+doctrine_circumincession_dualism = {
+}
+
+doctrine_circumincession_modalism = {
+}
+
+doctrine_circumincession_trinitarian = {
+}
+
+doctrine_circumincession_tritheism = {
+}
+
+doctrine_circumincession_unitarianism = {
+}
+
+special_doctrine_council_capharthutha = {
+}
+
+gnostic_school_manichaeism = {
+}
+
+gnostic_school_marcionism = {
+}
+
+gnostic_school_ophitism = {
+}
+
+gnostic_school_valentinianism = {
+}
+
+special_doctrine_orthodox_communion = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+orthodox_autocephaly_autonomous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+orthodox_autocephaly_autocephalous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+orthodox_autocephaly_pentarch = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+oriental_autocephaly_autonomous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+oriental_autocephaly_autocephalous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+catholic_autocephaly_autonomous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+catholic_autocephaly_autocephalous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+nestorian_autocephaly_autonomous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+nestorian_autocephaly_autocephalous = {
+	country = {
+		tolerance_own = 1
+	}
+}
+
+special_doctrine_latin_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_byzantine_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_alexandrian_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_antioch_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_babylon_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_armenian_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+
+}
+
+special_doctrine_gallican_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_slavonic_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+special_doctrine_local_rite = {
+	country = {
+		tolerance_heretic = -1
+	}
+}
+
+
+
+#TENETS
+tenet_no_syncretism = {
+	country = {
+		tolerance_own = 2
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+}
+
+tenet_dhammavicaya = {
+	country = {
+		tolerance_own = 2
+		religious_unity = 0.25
+		institution_spread_from_true_faith = 0.1
+	}
+	unique_modifiers = {
+		uses_karma = yes
+	}
+}
+
+mz_tenet_valhalla_bound = {
+	country = {
+		land_morale = 0.1
+	}
+}
+
+mz_tenet_eternal_riders = {
+	country = {
+		cav_to_inf_ratio = 0.1
+		cavalry_power = 0.2
+	}
+	country_as_secondary = {
+		cav_to_inf_ratio = 0.1
+		cavalry_power = 0.2
+	}
+}
+
+mz_tenet_animism = {
+	country = {
+		global_unrest = -1
+	}
+}
+
+mz_tenet_totem_spirits = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+	}
+}
+
+mz_tenet_burial_rites = {
+	country = {
+		local_build_time = -0.25
+	}
+}
+
+mz_tenet_dawnbreakers = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+	}
+}
+
+mz_tenet_ekeraa = {
+	country = {
+		heir_chance = 0.2
+		monthly_heir_claim_increase_modifier = 0.2
+	}
+}
+
+tenet_puritanical_islam = {
+	country = {
+		tolerance_heretic = -2
+		warscore_cost_vs_other_religion = -0.25
+	}
+	unique_modifiers = {
+		uses_piety = yes
+	}
+}
+
+wap_tenet_grand_pilgrimages = {
+	country = {
+		legitimacy = 1
+		relation_with_same_religion = 15
+	}
+	unique_modifiers = {
+		uses_piety = yes
+	}
+}
+
+wap_tenet_sacred_deserts = {
+	country = {
+		hostile_attrition = 1
+	}
+	country_as_secondary = {
+		hostile_attrition = 1
+	}
+}
+
+
+wap_tenet_mune = {
+	country = {
+		stability_cost_modifier = -0.1
+		global_unrest = -1
+		all_estate_loyalty_equilibrium = 0.1
+	}
+}
+
+wap_tenet_water_spirits = {
+	country = {
+		movement_speed_in_fleet_modifier = 1
+		navy_tradition = 0.5
+	}
+
+	country_as_secondary = {
+		movement_speed_in_fleet_modifier = 1
+		navy_tradition = 0.5
+	}
+}
+
+wap_tenet_divination = {
+	country = {
+		tolerance_own = 2
+	}
+
+	country_as_secondary = {
+		tolerance_own = 2
+	}
+	province = {
+		local_missionary_strength = -0.02
+	}
+}
+
+tenet_fire_baptism = {
+	country = {
+		discipline = 0.05
+	}
+	country_as_secondary = {
+		discipline = 0.025
+	}
+}
+
+tenet_frequent_baptism = {
+	country = {
+		church_loyalty_modifier = 0.2
+	}
+	country_as_secondary = {
+		church_loyalty_modifier = 0.2
+	}
+}
+
+tenet_eunuch_priesthood = {
+	country = {
+		devotion = 1
+		global_missionary_strength = 0.02
+	}
+	country_as_secondary = {
+		devotion = 1
+		global_missionary_strength = 0.02
+	}
+}
+
+tenet_mary_worship = {
+	country = {
+		female_advisor_chance = 0.3
+		global_unrest = -2
+	}
+	country_as_secondary = {
+		female_advisor_chance = 0.3
+		global_unrest = -2
+	}
+}
+
+tenet_headhunting = {
+	country = {
+		war_exhaustion = -0.05
+		prestige_from_land = 0.1
+	}
+	country_as_secondary = {
+		war_exhaustion = -0.05
+		prestige_from_land = 0.1
+	}
+}
+
+tenet_spirit_guides = {
+	country = {
+		female_advisor_chance = 0.5
+		advisor_cost = -0.1
+	}
+	country_as_secondary = {
+		war_exhaustion = -0.05
+		advisor_cost = -0.1
+	}
+}
+
+#Is Religion
+special_doctrine_is_alb_faith = {
+	allowed_conversion = {
+		sunni
+		shiite
+		ibadi
+		mutazila
+		quranist
+		alawite
+		zikri
+		kharijite
+		druze
+		hurufi
+		qarmatian
+		barghawata
+	}
+	unique_modifiers = {
+		uses_piety = yes
+	}
+}
+
+special_doctrine_is_mutazila_faith = {
+	unique_modifiers = {
+		uses_piety = yes
+	}
+}
+
+special_doctrine_is_barghawata_faith = {
+	unique_modifiers =  {
+		fervor = yes
+	}
+}
+
+special_doctrine_is_coptic_faith = {
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+
+special_doctrine_is_hinduism_faith = {
+	unique_modifiers = {
+		personal_deity = yes
+	}
+}
+
+special_doctrine_is_jainism_faith = {
+	unique_modifiers = {
+		uses_karma = yes
+	}
+}
+
+special_doctrine_is_buddhist_faith = {
+	unique_modifiers = {
+		uses_karma = yes
+	}
+}
+
+special_doctrine_is_manichaean_faith = {
+	not_unique_modifiers = {
+		misguided_heretic = yes
+		can_have_secondary_religion = yes
+		allowed_conversion = {
+			bogomilist
+			mandeaism
+			manichean
+			valentinianism
+			sethianism
+			priscillianism
+			cainitism
+		}
+	}
+}
