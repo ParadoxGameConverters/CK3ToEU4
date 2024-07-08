@@ -120,6 +120,11 @@ void Configuration::registerKeys()
 		dynasticNames = DYNASTICNAMES(std::stoi(dynasticNamesString.getString()));
 		Log(LogLevel::Info) << "Dynastic Names set to: " << dynasticNamesString.getString();
 	});
+	registerKeyword("discoveredBy", [this](std::istream& theStream) {
+		const commonItems::singleString discoveredByString(theStream);
+		discoveredBy = DISCOVEREDBY(std::stoi(discoveredByString.getString()));
+		Log(LogLevel::Info) << "Discovered By set to: " << discoveredByString.getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

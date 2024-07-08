@@ -33,15 +33,20 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	 const mappers::CultureMapper& cultureMapper,
 	 const mappers::ReligionMapper& religionMapper,
 	 const mappers::LocDegraderMapper& locDegrader,
-	 const std::shared_ptr<mappers::RegionMapper>& regionMapper)
+	 const std::shared_ptr<mappers::RegionMapper>& regionMapper,
+	 Configuration::DISCOVEREDBY discoveredBy)
 {
 	srcProvince = origProvince;
 
-	details.discoveredBy = {"western", "eastern", "ottoman", "muslim", "indian", "east_african", "nomad_group", "sub_saharan"}; // hardcoding for now.
-	if (regionMapper->provinceIsInRegion(provID, "india_superregion") || regionMapper->provinceIsInRegion(provID, "east_indies_superregion") ||
-		 regionMapper->provinceIsInRegion(provID, "east_siberia_region") || regionMapper->provinceIsInRegion(provID, "mongolia_region") ||
-		 regionMapper->provinceIsInRegion(provID, "tibet_region"))
-		details.discoveredBy.insert("chinese");
+	// Vanilla setting doesn't touch visibility.
+	if (discoveredBy == Configuration::DISCOVEREDBY::DYNAMIC)
+	{
+		details.discoveredBy = {"western", "eastern", "ottoman", "muslim", "indian", "east_african", "nomad_group", "sub_saharan"}; // hardcoding for now.
+		if (regionMapper->provinceIsInRegion(provID, "india_superregion") || regionMapper->provinceIsInRegion(provID, "east_indies_superregion") ||
+			 regionMapper->provinceIsInRegion(provID, "east_siberia_region") || regionMapper->provinceIsInRegion(provID, "mongolia_region") ||
+			 regionMapper->provinceIsInRegion(provID, "tibet_region"))
+			details.discoveredBy.insert("chinese");
+	}
 
 	// If we're initializing this from CK3 full-fledged titles, and having a holder and development is a given.
 	// There are no uncolonized provinces in CK3.

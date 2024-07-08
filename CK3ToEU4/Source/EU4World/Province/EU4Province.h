@@ -3,6 +3,7 @@
 
 #include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "../../Mappers/RegionMapper/RegionMapper.h"
+#include "../../Configuration/Configuration.h"
 #include "ProvinceDetails.h"
 #include <memory>
 #include <string>
@@ -33,7 +34,8 @@ class Province
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::LocDegraderMapper& locDegrader,
-		 const std::shared_ptr<mappers::RegionMapper>& regionMapper);
+		 const std::shared_ptr<mappers::RegionMapper>& regionMapper,
+		 Configuration::DISCOVEREDBY discoveredBy);
 	void registerManualName(const mappers::LocDegraderMapper& locDegrader);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }

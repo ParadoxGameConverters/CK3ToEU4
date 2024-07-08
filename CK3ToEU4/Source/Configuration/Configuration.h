@@ -38,9 +38,8 @@ class Configuration: commonItems::parser
 	};
 	enum class SUNSET
 	{
-		DEFAULT = 1,
-		DISABLED = 2,
-		ACTIVE = 3
+		DISABLED = 1,
+		ACTIVE = 2
 	};
 	enum class I_AM_HRE
 	{
@@ -82,6 +81,11 @@ class Configuration: commonItems::parser
 		ENABLED = 1,
 		DISABLED = 2
 	};
+	enum class DISCOVEREDBY
+	{
+		VANILLA = 1,
+		DYNAMIC = 2
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -102,6 +106,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getSplitVassals() const { return splitVassals; }
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
 	[[nodiscard]] const auto& getDynasticNames() const { return dynasticNames; }
+	[[nodiscard]] const auto& getDiscoveredBy() const { return discoveredBy; }
 
 	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
@@ -125,13 +130,14 @@ class Configuration: commonItems::parser
 	SHATTER_HRE_LEVEL shatterHRELevel = SHATTER_HRE_LEVEL::DUTCHY;
 	SHATTER_LEVEL shatterLevel = SHATTER_LEVEL::DUTCHY;
 	SIBERIA siberia = SIBERIA::CLEAR_SIBERIA;
-	SUNSET sunset = SUNSET::DEFAULT;
+	SUNSET sunset = SUNSET::DISABLED;
 	INSTITUTIONS dynamicInstitutions = INSTITUTIONS::HISTORIC;
 	DEVELOPMENT development = DEVELOPMENT::IMPORT;
 	MULTIPROVDEVTRANSFER multiProvinceDevelopmentTransfer = MULTIPROVDEVTRANSFER::DEFAULT;
 	DEJURE dejure = DEJURE::ENABLED;
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
 	DYNASTICNAMES dynasticNames = DYNASTICNAMES::ENABLED;
+	DISCOVEREDBY discoveredBy = DISCOVEREDBY::VANILLA;
 
 	std::optional<std::string> playerTitle;
 };

@@ -96,7 +96,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	Log(LogLevel::Progress) << "58 %";
 
 	// Next we import ck provinces and translate them ontop a significant part of all imported provinces.
-	importCK3Provinces(sourceWorld);
+	importCK3Provinces(theConfiguration.getDiscoveredBy());
 	Log(LogLevel::Progress) << "59 %";
 
 	// With Ck provinces linked to those eu4 provinces they affect, we can adjust eu4 province dev values.
@@ -548,7 +548,7 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 	}
 }
 
-void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
+void EU4::World::importCK3Provinces(Configuration::DISCOVEREDBY discoveredBy)
 {
 	Log(LogLevel::Info) << "-> Importing CK3 Provinces";
 	auto counter = 0;
@@ -569,7 +569,7 @@ void EU4::World::importCK3Provinces(const CK3::World& sourceWorld)
 		else
 		{
 			// And finally, initialize it.
-			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader, regionMapper);
+			province.second->initializeFromCK3Title(sourceProvince->second, cultureMapper, religionMapper, locDegrader, regionMapper, discoveredBy);
 			counter++;
 		}
 	}
