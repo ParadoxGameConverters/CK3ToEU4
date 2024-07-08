@@ -1,6 +1,7 @@
 #ifndef EU4_PROVINCE_H
 #define EU4_PROVINCE_H
 
+#include "../../Configuration/Configuration.h"
 #include "../../Mappers/LocDegraderMapper/LocDegraderMapper.h"
 #include "../../Mappers/RegionMapper/RegionMapper.h"
 #include "ProvinceDetails.h"
@@ -33,7 +34,8 @@ class Province
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::LocDegraderMapper& locDegrader,
-		 const std::shared_ptr<mappers::RegionMapper>& regionMapper);
+		 const std::shared_ptr<mappers::RegionMapper>& regionMapper,
+		 Configuration::DISCOVEREDBY discoveredBy);
 	void registerManualName(const mappers::LocDegraderMapper& locDegrader);
 
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }

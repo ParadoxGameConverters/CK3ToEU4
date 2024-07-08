@@ -53,7 +53,7 @@ class World
 		 date startDate,
 		 bool dynasticNames);
 	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
-	void importCK3Provinces(const CK3::World& sourceWorld);
+	void importCK3Provinces(Configuration::DISCOVEREDBY discoveredBy);
 	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(
 		 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
 
