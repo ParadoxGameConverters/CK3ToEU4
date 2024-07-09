@@ -383,7 +383,7 @@ link = { eu4 = azerbaijani ck3 = turkish ck3 = anatolian_turkish tech = muslim g
 link = { eu4 = azerbaijani ck3 = persian tech = muslim gfx = muslimgfx region = caucasia_region region = azerbaijan_area }
 link = { eu4 = mervi ck3 = mervi tech = muslim gfx = muslimgfx }
 link = { eu4 = mervi ck3 = persian tech = muslim gfx = muslimgfx region = merv_area }
-link = { eu4 = khorasani ck3 = turkish ck3 = persian tech = muslim gfx = muslimgfx region = khorasan_region }
+link = { eu4 = khorasani ck3 = turkish ck3 = persian ck3 = tajik tech = muslim gfx = muslimgfx region = khorasan_region }
 link = { eu4 = gagauz ck3 = turkish tech = ottoman gfx = muslimgfx region = carpathia_region }
 link = { eu4 = turkish ck3 = turkish ck3 = ottoman_turkish ck3 = anatolian_turkish tech = ottoman gfx = muslimgfx }
 link = { eu4 = turko_afghan ck3 = turko_afghan tech = nomad_group gfx = muslimgfx }
