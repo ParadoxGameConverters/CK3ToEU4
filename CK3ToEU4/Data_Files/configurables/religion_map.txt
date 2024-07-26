@@ -139,7 +139,7 @@ link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = semiti
 link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old ck3 = assyrian_pagan }
 ## Perso-Caucasian
 link = { eu4 = mithraism ck3 = mithraic_mysteries }
-link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism }
+link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism ck3 = urartian_pagan }
 link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old ck3 = georgian_pagan }
 link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
 ## Egyptian
