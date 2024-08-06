@@ -100,8 +100,14 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 
 	metaParser.registerKeyword("mods", [this, theConfiguration](std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Detecting used mods.";
+		std::set<std::string> seenMods;
 		for (const auto& path: commonItems::getStrings(theStream))
+		{
+			if (seenMods.contains(path))
+				continue;
 			mods.emplace_back(Mod("", path));
+			seenMods.emplace(path);
+		}
 		Log(LogLevel::Info) << "<> Savegame claims " << mods.size() << " mods used.";
 		commonItems::ModLoader modLoader;
 		modLoader.loadMods(theConfiguration->getCK3DocPath(), mods);
