@@ -1116,3 +1116,6 @@ link = { eu4 = tungus ck3 = balhae tech = chinese gfx = asiangfx }
 link = { eu4 = korean ck3 = balhae tech = chinese gfx = asiangfx region = korea_region }
 link = { eu4 = vietnamese ck3 = muong tech = chinese gfx = asiangfx }
 #tatars added in the "Tatar" section
+
+## Rajas of Asia
+link = { eu4 = filipino ck3 = bisaya tech = chinese gfx = asiangfx }
