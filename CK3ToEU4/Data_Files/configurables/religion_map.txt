@@ -328,3 +328,9 @@ link = { eu4 = animism ck3 = basho_pagan }
 link = { eu4 = animism ck3 = ijaw_pagan }
 link = { eu4 = animism ck3 = idoism_pagan ck3 = munean_pagan }
 link = { eu4 = shamanism ck3 = vodun_pagan }
+
+# Mod: Rajas of Asia
+## Caucasus
+link = { eu4 = animism ck3 = dagestan_pagan ck3 = dagestan_pagan_old } # "The diverse peoples of Dagestan consider mountains, caves and other natural wonders to be inhabited by spirits and therefore holy."
+## Australia
+link = { eu4 = dreamtime ck3 = tagai ck3 = tagai_old }
