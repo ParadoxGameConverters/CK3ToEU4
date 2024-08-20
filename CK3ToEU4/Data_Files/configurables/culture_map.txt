@@ -1118,4 +1118,31 @@ link = { eu4 = vietnamese ck3 = muong tech = chinese gfx = asiangfx }
 #tatars added in the "Tatar" section
 
 ## Rajas of Asia
-link = { eu4 = filipino ck3 = bisaya tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = bisaya ck3 = buranun ck3 = pampangan ck3 = palawan ck3 = ati tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = aeta tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Aeta_people
+link = { eu4 = filipino ck3 = idaya ck3 = buranun ck3 = danao ck3 = sambal tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
+link = { eu4 = dagestani ck3 = kumyk tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Kumykss
+link = { eu4 = kanauji ck3 = brajji tech = indian gfx = indiangfx } # MS Copilot: "Braj culture is closely associated with the Braj Bhasha language, which is a dialect of Hindi. Hindavi, in historical contexts, often refers to the early forms of Hindi and its dialects, making it a fitting match."
+link = { eu4 = polynesian ck3 = palauan tech = polynesian gfx = polynesiangfx }
+link = { eu4 = vietnamese ck3 = mnong tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Mnong_people
+link = { eu4 = vietnamese ck3 = bahnar tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Bahnar_people
+link = { eu4 = nusa_tenggara ck3 = abui tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Abui_people
+link = { eu4 = papuan ck3 = mairasi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mairasi_people
+link = { eu4 = papuan ck3 = ndani tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Dani_people
+link = { eu4 = papuan ck3 = mek tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mek_people
+link = { eu4 = papuan ck3 = ok tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mountain_Ok_people
+link = { eu4 = papuan ck3 = kwerba tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Kwerba_language
+link = { eu4 = papuan ck3 = bauzi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Bauzi_people
+link = { eu4 = papuan ck3 = yapen tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/w/index.php?title=Yapen_languages_(Papuan)&redirect=no
+link = { eu4 = papuan ck3 = amung tech = polynesian gfx = polynesiangfx } # https://dbpedia.org/page/Amung_people
+link = { eu4 = papuan ck3 = pauwasi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Pauwasi_languages
+link = { # mapping based on CK3 heritage
+	eu4 = papuan
+	ck3 = mantion ck3 = binandere ck3 = morobe ck3 = madang ck3 = meneao ck3 = gogodala ck3 = chimbu ck3 = enga ck3 = yam ck3 = kayagar ck3 = anim ck3 = oriomo ck3 = awyu ck3 = kiwaian ck3 = bosavi ck3 = asmat ck3 = baining ck3 = nasioi ck3 = sepik
+	tech = polynesian
+	gfx = polynesiangfx
+}
+link = { eu4 = melanesian ck3 = motu tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Motu_people
+link = { eu4 = paman ck3 = kaurareg tech = polynesian gfx = polynesiangfx } # MS Copilot: "The Kaurareg people are part of the Torres Strait Islander group, which is culturally and linguistically distinct from mainland Aboriginal groups. In the context of mapping cultures from CK3 to EU4, the Paman culture would be the most appropriate match for the Kaurareg. The Paman languages are spoken by several groups in the Cape York Peninsula, which is geographically close to the Torres Strait Islands."
+link = { eu4 = sulawesi ck3 = salua ck3 = kaili ck3 = bungku tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
+link = { eu4 = zhuang ck3 = gelao tech = chinese gfx = asiangfx } # ChatGPT: "The Zhuang people are an ethnic minority in China, like the Gelao. Both belong to the broader family of Tai-Kadai (or Kra-Dai) languages, suggesting some degree of linguistic and cultural affinity."
