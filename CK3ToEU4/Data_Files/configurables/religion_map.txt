@@ -328,3 +328,15 @@ link = { eu4 = animism ck3 = basho_pagan }
 link = { eu4 = animism ck3 = ijaw_pagan }
 link = { eu4 = animism ck3 = idoism_pagan ck3 = munean_pagan }
 link = { eu4 = shamanism ck3 = vodun_pagan }
+
+# Mod: Rajas of Asia
+## Caucasus
+link = { eu4 = animism ck3 = dagestan_pagan ck3 = dagestan_pagan_old } # "The diverse peoples of Dagestan consider mountains, caves and other natural wonders to be inhabited by spirits and therefore holy."
+## Australia
+link = { eu4 = dreamtime ck3 = tagai ck3 = tagai_old }
+## SEA
+link = { eu4 = animism ck3 = nunusaku ck3 = nunusaku_old } # "Practitioners worship the spirits and ancestors, and they participate in elaborate rituals that govern everyday life."
+link = { eu4 = animism ck3 = penunggu ck3 = papuan_old } # "The Penunggu refers to the spirit that guards, supervises or protects a particular place, geographical region, nation, age group, country, culture or occupation."
+## Oceania
+link = { eu4 = animism ck3 = oceanic_animism ck3 = oceanic_animism_old }
+link = { eu4 = animism ck3 = palau_animism ck3 = palau_animism_old }
