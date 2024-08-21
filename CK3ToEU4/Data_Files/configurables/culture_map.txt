@@ -1123,7 +1123,7 @@ link = { eu4 = filipino ck3 = aeta tech = chinese gfx = asiangfx } # https://en.
 link = { eu4 = filipino ck3 = manobo tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Manobo_people
 link = { eu4 = filipino ck3 = subanen tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Subanon_people
 link = { eu4 = filipino ck3 = bilic tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/South_Mindanao_languages
-link = { eu4 = filipino ck3 = idaya ck3 = buranun ck3 = danao ck3 = sambal ck3 = ilokano ck3 = ifugao tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
+link = { eu4 = filipino ck3 = idaya ck3 = buranun ck3 = danao ck3 = sambal ck3 = ilokano ck3 = ifugao ck3 = ibanag tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
 link = { eu4 = dagestani ck3 = kumyk tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Kumyks
 link = { eu4 = dagestani ck3 = dargin tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Dargins
 link = { eu4 = dagestani ck3 = caucasian_avar ck3 = lezgic tech = eastern gfx = easterngfx }
