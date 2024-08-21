@@ -905,7 +905,7 @@ link = { eu4 = kishinyov ck3 = sclavenian ck3 = antean gfx = easterngfx }
 link = { eu4 = tangut ck3 = di tech = chinese gfx = asiangfx }
 link = { eu4 = hunnic ck3 = hun ck3 = xionite ck3 = gurjara tech = nomad_group gfx = asiangfx }
 link = { eu4 = malayalam ck3 = malaiya tech = indian gfx = indiangfx }
-link = { eu4 = hindustani ck3 = kaushali } # Both Kosala and Kannauji are Indo-Aryan and cover the Uttar Pradesh region.
+link = { eu4 = hindustani ck3 = kaushali tech = indian gfx = indiangfx } # Both Kosala and Kannauji are Indo-Aryan and cover the Uttar Pradesh region.
 link = { eu4 = saurashtri ck3 = saurashtri tech = indian gfx = indiangfx }
 link = { eu4 = malvi ck3 = avantika tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Avanti_(region): "According to the Vishnu Purana (II.3), the Bhagavata Purana (XII.I.36) and the Brahma Purana (XIX.17), the Avantis were associated with the Malava, the Saurashtras, the Abhiras/Yadavas, the Suras, the Karushas and the Arbudas and were described as dwelling along the Pariyatra (or Paripatra) mountains (a western branch of the Vindhyas)."
 link = { eu4 = bengali ck3 = varendri tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Varendra
