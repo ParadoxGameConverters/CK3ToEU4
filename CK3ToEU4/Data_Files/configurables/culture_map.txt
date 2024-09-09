@@ -837,7 +837,7 @@ link = { eu4 = albanian ck3 = albanian ck3 = arberian tech = eastern gfx = easte
 link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 
 ## Extra
-link = { eu4 = oldspain ck3 = iberian tech = western gfx = westerngfx }
+link = { eu4 = oldspain ck3 = non_indo_european_iberian tech = western gfx = westerngfx } # "iberian" overlaps with the post-roman culture of the same name from TFE, seems to be a deprecated culture from a previous version of the IR-CK3 converter?
 
 # Mod: RICE 
 link = { eu4 = evenk ck3 = evenk ck3 = tungusic tech = eastern gfx = inuitgfx }
@@ -896,7 +896,7 @@ link = { eu4 = coptic ck3 = kemetic tech = eastern gfx = easterngfx }
 link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian ck3 = tora tech = muslim gfx = muslimgfx }
 link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
-link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba people’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
+link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba peopleÂ’s location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
 link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."
 link = { eu4 = sidamo ck3 = aari tech = east_african gfx = africangfx } # Both Sidamo and Aari are Omotic. https://en.wikipedia.org/wiki/Aari_language
 link = { eu4 = estonian ck3 = aestian ck3 = chudic tech = eastern gfx = inuitgfx }
@@ -921,7 +921,7 @@ link = { eu4 = gujarati ck3 = bhil tech = indian gfx = indiangfx } # https://en.
 link = { eu4 = pahari ck3 = pahari tech = indian gfx = indiangfx }
 link = { eu4 = gondi ck3 = khond tech = indian gfx = indiangfx } # https://en.wikipedia.org/wiki/Khonds: "The Khonds speak Kui and Kuvi as their native languages. They are most closely related to the Gondi language. Both are Dravidian languages and are written with the Odia script."
 link = { eu4 = jharkhandi ck3 = maler tech = indian gfx = indiangfx } # MS Copilot: "The Malto people, also known as Pahariya, are closest to the Jharkhandi culture. This is because the Malto people are a Dravidian tribal group from the Rajmahal Hills in the northeastern Chota Nagpur Plateau, which is in the Indian state of Jharkhand. They are listed as Scheduled Tribes in Jharkhand, Bihar, and West Bengal. Their native language, Malto, is related to the nearby Kurukh language, which is also spoken in Jharkhand. Therefore, their geographical location and linguistic similarities make them closest to the Jharkhandi culture."
-link = { eu4 = tibetan ck3 = kachari tech = chinese gfx = asiangfx } # Speakers of Tibeto–Burman. https://en.wikipedia.org/wiki/Bodo%E2%80%93Kachari_people
+link = { eu4 = tibetan ck3 = kachari tech = chinese gfx = asiangfx } # Speakers of TibetoÂ–Burman. https://en.wikipedia.org/wiki/Bodo%E2%80%93Kachari_people
 link = { eu4 = nepali ck3 = newari tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Newar_people
 link = { eu4 = nepali ck3 = kashika ck3 = radhi tech = chinese gfx = asiangfx } # Because these cultures use language_magadhan and magadhi culture is mapped to nepali.
 link = { eu4 = burmese ck3 = zo tech = indian gfx = indiangfx }
@@ -933,14 +933,15 @@ link = { eu4 = russian_culture ck3 = slavic tech = eastern gfx = easterngfx }
 link = { eu4 = pruthenian ck3 = kolochin tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Kolochin_culture
 link = { eu4 = pruthenian ck3 = dnieper tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Dnieper_Balts
 link = { eu4 = lithuanian ck3 = east_galindian tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Galindians#Eastern_Galindians
-link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic tech = western gfx = westerngfx }
-link = { eu4 = gaulic ck3 = gallo_roman tech = western gfx = westerngfx }
-link = { eu4 = britannian ck3 = britano_roman tech = western gfx = westerngfx }
+link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic ck3 = galecian ck3 = lusitanian ck3 = baetican ck3 = iberian tech = western gfx = westerngfx } # The post-Roman cultures should maybe have their own EU4 cultures as seen for the Gaulic culture mappings but this placeholder works for now
+link = { eu4 = theodisc ck3 = germanian tech = western gfx = westerngfx } # Should maybe be mapped to Gaulic but this seems more appropriate for what Theodisc is supposed to represent
+link = { eu4 = gaulic ck3 = gallo_roman ck3 = armorican ck3 = helvetian ck3 = gallian ck3 = aquitan tech = western gfx = westerngfx } # More placeholders for cultures that should be mapped to unique cultures that represent something that's *less* Roman but still distinctly Latin-speaking, as Gaulic is just supposed to be a regional split of Roman in base CK3 to base EU4, but alas I am dumb and don't know how to make them yet. I did consider mapping gallian et al to French but that makes no sense in a world where the Franks never conquered and held onto Gaul
+link = { eu4 = britannian ck3 = britano_roman ck3 = britanian tech = western gfx = westerngfx } # Britanian is a post-Roman scripted divergent culture from TFE, like Breathanach etc, and those are mapped to convert into Britannian
 link = { eu4 = romanian ck3 = dacio_roman tech = eastern gfx = easterngfx }
 link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman ck3 = rhaetio_roman tech = western gfx = westerngfx }
 link = { eu4 = salinatorian ck3 = afro_roman tech = western gfx = easterngfx } # Because african_roman is mapped to salinatorian.
 link = { eu4 = gaulish ck3 = gaul tech = western gfx = westerngfx }
-link = { eu4 = aquitaine ck3 = aquitan tech = western gfx = westerngfx }
+# link = { eu4 = aquitaine ck3 = aquitan tech = western gfx = westerngfx } # Aquitan is an ahistorical post-Roman culture like Balearic and that's mapped to hispanic, so I don't see why it isn't mapped to Gaulic 
 link = { eu4 = celtiberian ck3 = castran tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Castro_culture
 link = { eu4 = cantabric ck3 = asturian tech = western gfx = westerngfx } # https://en.wikipedia.org/wiki/Astures
 link = { eu4 = bolghar ck3 = saragur ck3 = sabir tech = nomad_group gfx = muslimgfx }
@@ -1155,7 +1156,7 @@ link = { eu4 = melanesian ck3 = malaita ck3 = ngero ck3 = uneapa ck3 = manus ck3
 link = { eu4 = paman ck3 = kaurareg tech = polynesian gfx = polynesiangfx } # MS Copilot: "The Kaurareg people are part of the Torres Strait Islander group, which is culturally and linguistically distinct from mainland Aboriginal groups. In the context of mapping cultures from CK3 to EU4, the Paman culture would be the most appropriate match for the Kaurareg. The Paman languages are spoken by several groups in the Cape York Peninsula, which is geographically close to the Torres Strait Islands."
 link = { eu4 = sulawesi ck3 = salua ck3 = kaili ck3 = bungku ck3 = gorontalo ck3 = mandar ck3 = munan ck3 = minahasa tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
 link = { eu4 = zhuang ck3 = gelao tech = chinese gfx = asiangfx } # ChatGPT: "The Zhuang people are an ethnic minority in China, like the Gelao. Both belong to the broader family of Tai-Kadai (or Kra-Dai) languages, suggesting some degree of linguistic and cultural affinity."
-link = { eu4 = zhuang ck3 = be tech = chinese gfx = asiangfx } # ChatGPT: "[...] Ong Be, Bê, or Be-Tai, native to Hainan Island and belonging to the Be-Tai language family—most closely corresponds to the Zhuang culture in Europa Universalis IV. Explanation: The Be–Tai languages belong to the Kra-Dai language family, similar to the Zhuang, who are also part of this linguistic family. The Zhuang culture is primarily found in southern China in EU4, which is geographically close to Hainan and culturally related."
+link = { eu4 = zhuang ck3 = be tech = chinese gfx = asiangfx } # ChatGPT: "[...] Ong Be, BÃª, or Be-Tai, native to Hainan Island and belonging to the Be-Tai language familyÂ—most closely corresponds to the Zhuang culture in Europa Universalis IV. Explanation: The BeÂ–Tai languages belong to the Kra-Dai language family, similar to the Zhuang, who are also part of this linguistic family. The Zhuang culture is primarily found in southern China in EU4, which is geographically close to Hainan and culturally related."
 link = { eu4 = panjabi ck3 = multani tech = indian gfx = indiangfx } # https://qr.ae/p2vYRw
 link = { eu4 = hindustani_proper ck3 = madhyadeshi tech = indian gfx = indiangfx } # madhyadeshi is a parent culture of hindustani_proper in Rajas of Asia
 link = { eu4 = jharkhandi ck3 = kurukh tech = indian gfx = indiangfx } # MS Copilot: "The Kurukh culture in CK3 is associated with the Oraon people, who primarily reside in the Indian states of Jharkhand, Chhattisgarh, and Odisha. Given this, the most appropriate EU4 culture to map Kurukh to would likely be Jharkandi. This choice aligns with the geographical and cultural context of the Oraon people."
@@ -1164,7 +1165,7 @@ link = { eu4 = palaungic ck3 = bugan tech = chinese gfx = asiangfx } # mapping b
 link = { eu4 = palaungic ck3 = nicobar tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Nicobar_Islands#Population, mapping based on name_list_palaungic
 link = { eu4 = circassian ck3 = ubykh tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Ubykh_people
 link = { eu4 = nogaybak ck3 = tawlu tech = nomad_group gfx = asiangfx } # ChatGPT: "The Tawlu culture, with its Caucasian heritage and Kipchak language, would be best mapped to the Nogai culture in Europa Universalis IV (EU4). Explanation: Kipchak language: The Kipchak branch of the Turkic languages includes the languages spoken by various nomadic and semi-nomadic groups, such as the Nogai. Caucasian heritage: The Nogai historically inhabited areas near the Caucasus and were influenced by the region's cultures while maintaining their Turkic-Kipchak language and traditions."
-link = { eu4 = pecheneg ck3 = qangli tech = ottoman gfx = muslimgfx } # https://en.wikipedia.org/wiki/Kangly: "They may be related to the Kipchaks or Pechenegs, or they may have been a branch of the Kök Turks who were conquered by the Tang dynasty of China."
+link = { eu4 = pecheneg ck3 = qangli tech = ottoman gfx = muslimgfx } # https://en.wikipedia.org/wiki/Kangly: "They may be related to the Kipchaks or Pechenegs, or they may have been a branch of the KÃ¶k Turks who were conquered by the Tang dynasty of China."
 link = { eu4 = bai ck3 = caijia tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Caijia_language: "It has been described by different authors as a relative of Bai or an early split from Old Chinese."
 link = { eu4 = khmer ck3 = bnam tech = chinese gfx = asiangfx } # MS Copilot: "Given that the modded CK3 culture Bnam has Mon-Khmer heritage and Malay language, it would be best mapped to the Khmer culture in EU4. The Khmer culture is part of the Mon-Khmer group and aligns well with the heritage aspect."
 link = { eu4 = khmer ck3 = bruso ck3 = katang tech = chinese gfx = asiangfx } # The CK3 cultures have Katuic language and heritage. More info on Katuic: http://sealang.net/mk/katuic.htm
