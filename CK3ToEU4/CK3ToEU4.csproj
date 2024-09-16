@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifiers>win-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
+        <ApplicationIcon>thumbnail.ico</ApplicationIcon>
+        <LangVersion>12</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <OutputPath>..\Release\CK3ToEU4\</OutputPath>
+        <NoWarn>1701;1702;MA0001;MA0002;MA0004;MA0006;MA0009;MA0011;MA0074;MA0075;MA0076</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <OutputPath>..\Debug\CK3ToEU4\</OutputPath>
+        <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+        <NoWarn>1701;1702;MA0001;MA0002;MA0004;MA0006;MA0009;MA0011;MA0074;MA0075;MA0076</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AssemblyName>CK3ToEU4ConverterConverter</AssemblyName>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.0.0"/>
+        <PackageReference Include="Meziantou.Analyzer" Version="2.0.163">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="PGCG.commonItems" Version="12.5.4" />
+        <PackageReference Include="Roslynator.Analyzers" Version="4.12.5">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="Data_Files\converter_globals\after_converting.txt">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Update="Data_Files\converter_globals\FAQ.txt">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Update="Data_Files\converter_globals\license.txt">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+        <None Update="Data_Files\converter_globals\ReadMe.txt">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <FronterConfigurationFiles Include="Data_Files/fronter_configuration/**/*.*"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Configurables Include="Data_Files/configurables/**/*.*"/>
+    </ItemGroup>
+    <ItemGroup>
+        <RakalyWindowsBinaries Include="Resources/rakaly/*-pc-windows-msvc/*.*"/>
+        <RakalyLinuxBinaries Include="Resources/rakaly/*-unknown-linux-musl/*.*"/>
+        <RakalyMacBinaries Include="Resources/rakaly/*-apple-darwin/*.*"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ConverterGlobals Include="Data_Files/converter_globals/**/*.*"/>
+    </ItemGroup>
+    <ItemGroup>
+        <BlankMod Include="Data_Files/blankMod/**/*.*"/>
+    </ItemGroup>
+
+    <Target Name="CopyCustomContent" AfterTargets="Build">
+        <Copy SourceFiles="@(FronterConfigurationFiles)" DestinationFolder="$(OutDir)/../Configuration" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(Configurables)" DestinationFolder="$(OutDir)\configurables\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300"/>
+        <Copy SourceFiles="@(ConverterGlobals)" DestinationFolder="$(OutDir)/.." SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(BlankMod)" DestinationFolder="$(OutDir)\blankMod\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300"/>
+
+        <!-- Only copy Rakaly binaries appropriate for the platform we're building for. -->
+        <Copy SourceFiles="@(RakalyWindowsBinaries)" DestinationFolder="$(OutDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
+        <Copy SourceFiles="@(RakalyLinuxBinaries)" DestinationFolder="$(OutDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('Linux'))"/>
+        <Copy SourceFiles="@(RakalyMacBinaries)" DestinationFolder="$(OutDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('OSX'))"/>
+    </Target>
+
+    <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+        <Copy SourceFiles="@(FronterConfigurationFiles)" DestinationFolder="$(PublishDir)/../Configuration" SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(Configurables)" DestinationFolder="$(PublishDir)\configurables\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300"/>
+        <Copy SourceFiles="@(ConverterGlobals)" DestinationFolder="$(PublishDir)/.." SkipUnchangedFiles="true"/>
+        <Copy SourceFiles="@(BlankMod)" DestinationFolder="$(PublishDir)\blankMod\%(RecursiveDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="300"/>
+
+        <!-- Only copy Rakaly binaries appropriate for the platform we're building for. -->
+        <Copy SourceFiles="@(RakalyWindowsBinaries)" DestinationFolder="$(PublishDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('Windows'))"/>
+        <Copy SourceFiles="@(RakalyLinuxBinaries)" DestinationFolder="$(PublishDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('Linux'))"/>
+        <Copy SourceFiles="@(RakalyMacBinaries)" DestinationFolder="$(PublishDir)\Resources\rakaly\%(RecursiveDir)" SkipUnchangedFiles="true" Condition="$([MSBuild]::IsOSPlatform('OSX'))"/>
+    </Target>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="CK3ToEU4.UnitTests"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- root descriptors for trimming -->
+        <TrimmerRootAssembly Include="log4net"/>
+        <TrimmerRootAssembly Include="commonItems"/>
+    </ItemGroup>
+
+
+</Project>
