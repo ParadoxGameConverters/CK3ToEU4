@@ -381,3 +381,6 @@ tests.xml
 CK3ToEU4/build/
 lib/
 CK3ToEU4/log.txt
+
+# JetBrains files
+.idea/
