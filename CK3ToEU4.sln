@@ -32,6 +32,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CK3ToEU4lib", "CK3ToEU4lib\
 		{3B8EC8C8-4066-46F7-851D-EB762C39C140} = {3B8EC8C8-4066-46F7-851D-EB762C39C140}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CK3ToEU4.NET", "CK3ToEU4\CK3ToEU4.NET.csproj", "{45872FDA-E042-4D61-8CBE-1244A7E7E33B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -49,6 +51,8 @@ Global
 		{3B8EC8C8-4066-46F7-851D-EB762C39C140}.Release|x64.Build.0 = Release|x64
 		{5AF061A3-AA3A-4B03-B533-F7E26EC2987A}.Release|x64.ActiveCfg = Release|x64
 		{5AF061A3-AA3A-4B03-B533-F7E26EC2987A}.Release|x64.Build.0 = Release|x64
+		{45872FDA-E042-4D61-8CBE-1244A7E7E33B}.Release|x64.ActiveCfg = Release|Any CPU
+		{45872FDA-E042-4D61-8CBE-1244A7E7E33B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
