@@ -83,7 +83,7 @@ public enum DiscoveredBy
     Dynamic = 2
 }
 
-public class Configuration
+public class Config
 {
     public string SaveGamePath { get; private set; } = string.Empty;
     public string CK3Path { get; private set; } = string.Empty;
@@ -105,7 +105,7 @@ public class Configuration
     public DynasticNames DynasticNames { get; private set; } = DynasticNames.Enabled;
     public DiscoveredBy DiscoveredBy { get; private set; } = DiscoveredBy.Vanilla;
     
-    public Configuration(ConverterVersion converterVersion)
+    public Config(ConverterVersion converterVersion)
     {
         Logger.Info("Reading configuration file");
         var parser = new Parser();
@@ -120,7 +120,7 @@ public class Configuration
         Logger.Progress(3);
     }
 
-    public Configuration(BufferedReader reader)
+    public Config(BufferedReader reader)
     {
         var parser = new Parser();
         RegisterKeys(parser);
