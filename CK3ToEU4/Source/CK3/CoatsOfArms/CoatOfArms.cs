@@ -55,14 +55,14 @@ public class CoatOfArms
                 Color3 = new Color(0, 0, 0);
             }
         });
-        parser.RegisterKeyword("textured_emblem", reader => texturedEmblems.Add(new Emblem(reader)));
-        parser.RegisterKeyword("colored_emblem", reader => coloredEmblems.Add(new Emblem(reader)));
+        parser.RegisterKeyword("textured_emblem", reader => texturedEmblems.Add(new Emblem(reader, colorFactory)));
+        parser.RegisterKeyword("colored_emblem", reader => coloredEmblems.Add(new Emblem(reader, colorFactory)));
         parser.RegisterKeyword("sub", reader => { subs.Add(new CoatOfArms(reader, 0, colorFactory)); });
         parser.RegisterKeyword("instance", reader =>
         {
             var instance = new EmblemInstance(reader);
-            if (instance.getOffset().empty())
-                instance.defaultOffset();
+            if (instance.Offset.Count == 0)
+                instance.DefaultOffset();
             instances.Add(instance);
         });
         parser.RegisterKeyword("parent", reader => { Parent = new(reader.GetString(), null); });

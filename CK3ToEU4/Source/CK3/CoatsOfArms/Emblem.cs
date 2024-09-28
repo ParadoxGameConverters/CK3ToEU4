@@ -58,8 +58,8 @@ public class Emblem
         });
         parser.RegisterKeyword("instance", reader => {
             var instance = new EmblemInstance(reader);
-            if (instance.getPosition().empty())
-                instance.defaultPosition();
+            if (instance.Position.Count == 0)
+                instance.DefaultPosition();
             instances.Add(instance);
         });
        parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);

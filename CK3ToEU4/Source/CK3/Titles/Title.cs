@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using CK3ToEU4.CK3.CoatsOfArms;
 using CK3ToEU4.Configuration;
 using commonItems;
 using commonItems.Colors;
@@ -214,16 +216,17 @@ public class Title
 	parser.RegisterKeyword("history", reader => {
 		previousHolders = new Title(reader, 0).getPreviousHolders();
 	});
-	parser.RegisterRegex(CommonRegexes.Date, reader => {
-		const auto questionableItem = commonItems::stringOfItem(theStream).getString();
-		auto tempStream = std::stringstream(questionableItem);
-		if (questionableItem.find('{') == std::string::npos)
+	parser.RegisterRegex(CommonRegexes.Date, reader =>
+	{
+		var questionableItem = reader.GetStringOfItem().ToString();
+		var tempReader = new BufferedReader(questionableItem);
+		if (!questionableItem.Contains('{'))
 		{
 			try
 			{
-				previousHolders.emplace_back(std::pair(commonItems::singleLlong(tempStream).getLlong(), nullptr));
+				previousHolders.Add(new(tempReader.GetLong(), null));
 			}
-			catch (std::exception&)
+			catch (Exception e)
 			{
 				Logger.Warn($"Invalid previous holder ID: {questionableItem}");
 			}
@@ -270,7 +273,7 @@ public class Title
 	private KeyValuePair<string, EU4.Country>? tagCountry;
 	private bool landless = false;
 	private Color? color;
-	private List<KeyValuePair<long, Character>> previousHolders;
+	private List<KeyValuePair<long, Character?>> previousHolders;
 	private bool holderCapital = false;
 	private bool HRECapital = false;
 	private Level? dynamicLevel; // Maybe assigned through dynamic ranks, otherwise getLevel will try to guesstimate.
