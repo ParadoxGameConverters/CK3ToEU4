@@ -2,7 +2,7 @@
 using System.IO;
 using commonItems;
 
-namespace CK3ToEU4.NET.Source;
+namespace CK3ToEU4;
 
 public static class Program
 {

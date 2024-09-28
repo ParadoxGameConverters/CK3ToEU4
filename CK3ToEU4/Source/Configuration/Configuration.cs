@@ -3,7 +3,7 @@ using System.IO;
 using commonItems;
 using CommonFunctions = commonItems.CommonFunctions;
 
-namespace CK3ToEU4.NET.Source.Configuration;
+namespace CK3ToEU4.Configuration;
 
 public enum StartDate
 {

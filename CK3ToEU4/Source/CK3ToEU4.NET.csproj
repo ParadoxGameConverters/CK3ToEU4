@@ -7,6 +7,7 @@
         <RuntimeIdentifiers>win-x64;linux-x64;osx-arm64</RuntimeIdentifiers>
         <ApplicationIcon>thumbnail.ico</ApplicationIcon>
         <LangVersion>13</LangVersion>
+        <RootNamespace>CK3ToEU4</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
