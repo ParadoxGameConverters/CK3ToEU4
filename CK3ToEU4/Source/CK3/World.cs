@@ -276,7 +276,7 @@ public class World
 private void processSave(string saveGamePath)
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
-	std::stringstream inStream;
+	stringstream inStream;
 	inStream << saveFile.rdbuf();
 	saveGame.gamestate = inStream.str();
 
@@ -319,7 +319,7 @@ private void processSave(string saveGamePath)
 	saveDump.close();
 }
 
-private void verifySave(const std::string& saveGamePath) const
+private void verifySave(const string& saveGamePath)
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	if (!saveFile.is_open())
@@ -333,23 +333,23 @@ private void verifySave(const std::string& saveGamePath) const
 	saveFile.close();
 }
 
-private void primeLaFabricaDeColor(const Configuration& theConfiguration)
+private void primeLaFabricaDeColor(Config theConfiguration)
 {
 	Logger.Info("-> Loading colors.");
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
+	foreach (var file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (file.find(".txt") == string::npos)
 			continue;
 		namedColors.loadColors(theConfiguration.getCK3Path() + "common/named_colors/" + file);
 	}
-	for (const auto& mod: mods)
+	foreach (var mod: mods)
 	{
 		if (!commonItems::DoesFolderExist(mod.path + "common/named_colors"))
 			continue;
 		Logger.Info("<> Loading some colors from [" << mod.name << "]");
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/named_colors"))
+		foreach (var file: commonItems::GetAllFilesInFolder(mod.path + "common/named_colors"))
 		{
-			if (file.find(".txt") == std::string::npos)
+			if (file.find(".txt") == string::npos)
 				continue;
 			namedColors.loadColors(mod.path + "common/named_colors/" + file);
 		}
@@ -357,11 +357,11 @@ private void primeLaFabricaDeColor(const Configuration& theConfiguration)
 	Logger.Info("<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.");
 }
 
-private void loadLandedTitles(const Configuration& theConfiguration)
+private void loadLandedTitles(Config theConfiguration)
 {
 	Logger.Info("-> Loading Landed Titles.");
-	commonItems::ModFilesystem modFS(theConfiguration.getCK3Path(), mods);
-	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles/"))
+	ModFilesystem modFS = new(theConfiguration.CK3Path, mods);
+	foreach (var file: modFS.GetAllFilesInFolder("common/landed_titles/"))
 	{
 		if (getExtension(file) != "txt")
 			continue;
@@ -370,23 +370,23 @@ private void loadLandedTitles(const Configuration& theConfiguration)
 	Logger.Info("<> Loaded " << landedTitles.getFoundTitles().size() << " landed titles.");
 }
 
-private void loadCharacterTraits(const Configuration& theConfiguration)
+private void loadCharacterTraits(Config theConfiguration)
 {
 	Logger.Info("-> Examiming Personalities");
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
+	foreach (var file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (file.find(".txt") == string::npos)
 			continue;
 		traitScraper.loadTraits(theConfiguration.getCK3Path() + "common/traits/" + file);
 	}
-	for (const auto& mod: mods)
+	foreach (var mod: mods)
 	{
 		if (!commonItems::DoesFolderExist(mod.path + "common/traits"))
 			continue;
 		Logger.Info("<> Loading some character traits from [" << mod.name << "]");
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/traits"))
+		foreach (var file: commonItems::GetAllFilesInFolder(mod.path + "common/traits"))
 		{
-			if (file.find(".txt") == std::string::npos)
+			if (file.find(".txt") == string::npos)
 				continue;
 			traitScraper.loadTraits(mod.path + "common/traits/" + file);
 		}
@@ -476,9 +476,9 @@ private void crosslinkDatabases()
 	characters.linkTraits(traitScraper);
 }
 
-private void flagHREProvinces(const Configuration& theConfiguration)
+private void flagHREProvinces(Config theConfiguration)
 {
-	std::string hreTitleStr;
+	string hreTitleStr;
 	switch (theConfiguration.getHRE())
 	{
 		case Configuration::I_AM_HRE::HRE:
@@ -524,7 +524,7 @@ private void flagHREProvinces(const Configuration& theConfiguration)
 
 private void checkForIslam()
 {
-	for (const auto& county: countyDetails.getCountyDetails() | std::views::values)
+	foreach (var county: countyDetails.getCountyDetails() | std::views::values)
 	{
 		if (!county->getFaith().second)
 			continue;
@@ -538,20 +538,20 @@ private void checkForIslam()
 	}
 }
 
-private void shatterHRE(const Configuration& theConfiguration) const
+private void shatterHRE(Config theConfiguration) const
 {
 	if (!hreTitle)
 		return;
 	const auto& hreHolder = hreTitle->second->getHolder();
 	Logger.Info("HRE Holder: " << hreHolder->second->getName();
 	bool emperorSet = false; // "Emperor", in this context, is not a person but the resulting primary duchy/kingdom title of said person.
-	std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
+	Dictionary<long, Character?> brickedPeople; // these are people we need to fix.
 
 	// First we are composing a list of all HRE members. These are duchies,
 	// so we're also ripping them from under any potential kingdoms.
-	std::map<long long, std::shared_ptr<Title>> hreMembers;
-	std::map<long long, std::shared_ptr<Title>> brickList;
-	for (const auto& vassal: hreTitle->second->getDFVassals())
+	Dictionary<long, Title?> hreMembers;
+	Dictionary<long, Title?> brickList;
+	foreach (var vassal: hreTitle->second->getDFVassals())
 	{
 		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
 		{
@@ -566,7 +566,7 @@ private void shatterHRE(const Configuration& theConfiguration) const
 			}
 			else
 			{
-				for (const auto& vassalvassal: vassal.second->getDFVassals())
+				foreach (var vassalvassal: vassal.second->getDFVassals())
 				{
 					hreMembers.insert(vassalvassal);
 				}
@@ -581,14 +581,14 @@ private void shatterHRE(const Configuration& theConfiguration) const
 		}
 	}
 
-	for (const auto& brick: brickList)
+	foreach (var brick: brickList)
 		brick.second->brickTitle();
 
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
 	if (!hreHolder->second->getCharacterDomain())
 		throw std::runtime_error("HREmperor has no Character Domain!");
 
-	for (const auto& hreHolderTitle: hreHolder->second->getCharacterDomain()->getDomain())
+	foreach (var hreHolderTitle: hreHolder->second->getCharacterDomain()->getDomain())
 	{
 		if (hreHolderTitle.second->getName() == hreTitle->first) // this is what we're breaking, ignore it.
 			continue;
@@ -609,7 +609,7 @@ private void shatterHRE(const Configuration& theConfiguration) const
 		Log(LogLevel::Warning) << "Couldn't flag His HREship as emperor does not own any viable titles!");
 
 	// We're flagging hre members as such, as well as setting them free.
-	for (const auto& member: hreMembers)
+	foreach (var member: hreMembers)
 	{
 		member.second->setInHRE();
 		member.second->grantIndependence(); // This fill free emperor's holdings as well. We'll reintegrate them immediately after this.
@@ -623,12 +623,12 @@ private void shatterHRE(const Configuration& theConfiguration) const
 	// independent; If hreHolder has empire+duchy+county, county may not go free and needs to go back under the duchy. Now that we've cleaned up bricked title(s)
 	// from his domain, we can fix the loose ones.
 
-	for (const auto& afflictedPerson: brickedPeople)
+	foreach (var afflictedPerson: brickedPeople)
 	{
 		const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 		const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
-		for (const auto& holderTitle: holderDomain)
+		foreach (var holderTitle: holderDomain)
 		{
 			// does this title have a DJLiege that is was in his domain, and survived bricking, but does not have DFLiege since it was granted independence?
 			if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second->getHolder() &&
@@ -645,7 +645,7 @@ private void shatterHRE(const Configuration& theConfiguration) const
 	Logger.Info("<> " << hreMembers.size() << " HRE members released.");
 }
 
-private void shatterEmpires(const Configuration& theConfiguration) const
+private void shatterEmpires(Config theConfiguration) const
 {
 	if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::NONE)
 	{
@@ -665,7 +665,7 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 	}
 	const auto& allTitles = titles.getTitles();
 
-	for (const auto& empire: allTitles)
+	foreach (var empire: allTitles)
 	{
 		if (hreTitle && empire.first == hreTitle->first)
 			continue; // This is HRE, wrong function for that one.
@@ -678,11 +678,11 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 		if (!empire.second->getHolder())
 			continue; // No holder.
 
-		std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
+		Dictionary<long, Character?> brickedPeople; // these are people we need to fix.
 		// First we are composing a list of all members.
-		std::map<long long, std::shared_ptr<Title>> members;
-		std::map<long long, std::shared_ptr<Title>> brickList;
-		for (const auto& vassal: empire.second->getDFVassals())
+		Dictionary<long, Title?> members;
+		Dictionary<long, Title?> brickList;
+		foreach (var vassal: empire.second->getDFVassals())
 		{
 			if (!vassal.second)
 			{
@@ -698,7 +698,7 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 				if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
 				{ // hard override for special empire members
 
-					for (const auto& vassalVassal: vassal.second->getDFVassals())
+					foreach (var vassalVassal: vassal.second->getDFVassals())
 					{
 						if (!vassalVassal.second)
 							Log(LogLevel::Warning) << "VassalVassal " << vassalVassal.first << " has no link!");
@@ -728,11 +728,11 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 			}
 		}
 
-		for (const auto& brick: brickList)
+		foreach (var brick: brickList)
 			brick.second->brickTitle();
 
 		// grant independence to ex-vassals.
-		for (const auto& member: members)
+		foreach (var member: members)
 		{
 			member.second->grantIndependence();
 		}
@@ -742,7 +742,7 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 		empire.second->brickTitle();
 
 		// Same as with HREmperor, we need to roll back counties or duchies that got released from ex-emperor himself or kings.
-		for (const auto& afflictedPerson: brickedPeople)
+		foreach (var afflictedPerson: brickedPeople)
 		{
 			if (!afflictedPerson.second)
 			{
@@ -762,7 +762,7 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 			const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 			const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
-			for (const auto& holderTitle: holderDomain)
+			foreach (var holderTitle: holderDomain)
 			{
 				// does this title have a DJLiege that is was in his domain, and survived bricking, but does not have DFLiege since it was granted independence?
 				if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second->getHolder() &&
@@ -783,9 +783,9 @@ private void shatterEmpires(const Configuration& theConfiguration) const
 private void filterIndependentTitles()
 {
 	const auto& allTitles = titles.getTitles();
-	std::map<std::string, std::shared_ptr<Title>> potentialIndeps;
+	Dictionary<string, Title?> potentialIndeps;
 
-	for (const auto& title: allTitles)
+	foreach (var title: allTitles)
 	{
 		if (!title.second->getHolder())
 			continue; // don't bother with titles without holders.
@@ -809,9 +809,9 @@ private void filterIndependentTitles()
 	// (like Caliphate), it's not relevant at this stage as he's independent anyway.
 
 	// First, split off all county_title holders into a container.
-	std::set<long long> countyHolders;
-	std::map<long long, std::map<std::string, std::shared_ptr<Title>>> allTitleHolders;
-	for (const auto& title: allTitles)
+	HashSet<long> countyHolders;
+	Dictionary<long, Dictionary<string, Title?>> allTitleHolders;
+	foreach (var title: allTitles)
 	{
 		if (title.second->getHolder())
 		{
@@ -823,7 +823,7 @@ private void filterIndependentTitles()
 
 	// Then look at all potential indeps and see if their holders hold physical clay.
 	auto counter = 0;
-	for (const auto& indep: potentialIndeps)
+	foreach (var indep: potentialIndeps)
 	{
 		const auto& holderID = indep.second->getHolder()->first;
 		if (countyHolders.count(holderID))
@@ -850,7 +850,7 @@ private void filterIndependentTitles()
 	Logger.Info("<> " << counter << " independent titles recognized.");
 }
 
-private void splitVassals(const Configuration& theConfiguration)
+private void splitVassals(Config theConfiguration)
 {
 	if (theConfiguration.getSplitVassals() == Configuration::SPLITVASSALS::NO)
 	{
@@ -858,10 +858,10 @@ private void splitVassals(const Configuration& theConfiguration)
 		return;
 	}
 
-	std::map<std::string, std::shared_ptr<Title>> newIndeps;
+	Dictionary<string, Title?> newIndeps;
 
 	// We know who's independent. We can go through all indeps and see what should be an independent vassal.
-	for (const auto& title: independentTitles)
+	foreach (var title: independentTitles)
 	{
 		if (title.second->isThePope())
 			continue; // Not touching the pope.
@@ -876,7 +876,7 @@ private void splitVassals(const Configuration& theConfiguration)
 			relevantVassalLevel = LEVEL::DUCHY;
 		else
 			continue; // Not splitting off counties.
-		for (const auto& vassal: title.second->getDFVassals())
+		foreach (var vassal: title.second->getDFVassals())
 		{
 			if (vassal.second->getLevel() != relevantVassalLevel)
 				continue; // they are not relevant
@@ -887,7 +887,7 @@ private void splitVassals(const Configuration& theConfiguration)
 		if (!relevantVassals)
 			continue;																		// no need to split off anything.
 		const auto& countiesClaimed = title.second->coalesceDFCounties(); // this is our primary total.
-		for (const auto& vassal: title.second->getDFVassals())
+		foreach (var vassal: title.second->getDFVassals())
 		{
 			if (vassal.second->getLevel() != relevantVassalLevel)
 				continue; // they are not relevant
@@ -904,7 +904,7 @@ private void splitVassals(const Configuration& theConfiguration)
 	}
 
 	// Now let's free them.
-	for (const auto& newIndep: newIndeps)
+	foreach (var newIndep: newIndeps)
 	{
 		const auto& liege = newIndep.second->getDFLiege();
 		liege->second->addGeneratedVassal(newIndep);
@@ -923,10 +923,10 @@ private void gatherCourtierNames()
 
 	auto counter = 0;
 	auto counterAdvisors = 0;
-	std::map<long long, std::map<std::string, bool>> holderCourtiers;								// holder-name/male
-	std::map<long long, std::map<long long, std::shared_ptr<Character>>> holderCouncilors; // holder-councilors
+	Dictionary<long, Dictionary<string, bool>> holderCourtiers;								// holder-name/male
+	Dictionary<long, Dictionary<long, Character?>> holderCouncilors; // holder-councilors
 
-	for (const auto& character: characters.getCharacters())
+	foreach (var character: characters.getCharacters())
 	{
 		// Do you even exist?
 		if (!character.second)
@@ -972,7 +972,7 @@ private void gatherCourtierNames()
 	}
 
 	// We're only interested in those working for indeps.
-	for (const auto& title: independentTitles)
+	foreach (var title: independentTitles)
 	{
 		const auto containerItr = holderCourtiers.find(title.second->getHolder()->first);
 		if (containerItr != holderCourtiers.end())
@@ -995,10 +995,10 @@ private void congregateDFCounties()
 	auto counter = 0;
 	// We're linking all contained counties for a title's tree under that title.
 	// This will form actual EU4 tag and contained provinces.
-	for (const auto& title: independentTitles)
+	foreach (var title: independentTitles)
 	{
 		title.second->congregateDFCounties();
-		for (const auto& province: title.second->getOwnedDFCounties())
+		foreach (var province: title.second->getOwnedDFCounties())
 		{
 			province.second->loadHoldingTitle(std::pair(title.first, title.second));
 		}
@@ -1009,10 +1009,10 @@ private void congregateDFCounties()
 
 private void congregateDJCounties()
 {
-	auto counter = 0;
+	int counter = 0;
 	// We're linking all dejure provinces under the title as these will be the base
 	// for that title's permanent claims, unless already owned.
-	for (const auto& title: independentTitles)
+	foreach (var title: independentTitles)
 	{
 		title.second->congregateDJCounties();
 		counter += static_cast<int>(title.second->getOwnedDJCounties().size());
@@ -1022,21 +1022,21 @@ private void congregateDJCounties()
 
 private void filterLandlessTitles()
 {
-	auto counter = 0;
-	std::set<std::string> titlesForDisposal;
-	for (const auto& title: independentTitles)
+	int counter = 0;
+	HashSet<string> titlesForDisposal;
+	foreach (var title in IndependentTitles)
 	{
 		if (title.second->getOwnedDFCounties().empty())
 		{
 			titlesForDisposal.insert(title.first);
 		}
 	}
-	for (const auto& drop: titlesForDisposal)
+	foreach (var drop in titlesForDisposal)
 	{
-		independentTitles.erase(drop);
+		IndependentTitles.Remove(drop);
 		counter++;
 	}
-	Logger.Info("<> " << counter << " empty titles dropped, " << independentTitles.size() << " remain.");
+	Logger.Info($"<> {counter} empty titles dropped, {IndependentTitles.Count} remain.");
 }
 
 private void setElectors()
@@ -1048,26 +1048,26 @@ private void setElectors()
 	// Moreover, these electors may not even be indeps after HRE shattering as player may opt to keep kingdoms but electors were
 	// under these kings. We can't help that.
 
-	if (!hreTitle)
+	if (!HRETitle)
 	{
 		Logger.Info(">< HRE does not exist.");
 		return;
 	}
-	auto electors = hreTitle->second->getElectors();
+	var electors = HRETitle->getElectors();
 	if (electors.empty())
 	{
 		Logger.Info(">< HRE does not have electors.");
 		return;
 	}
 
-	auto counter = 0;
+	int counter = 0;
 
 	// Preambule done, we start here.
 	// Make a registry of indep titles and their holders.
-	std::map<long long, std::map<std::string, std::shared_ptr<Title>>> holderTitles; // holder/titles
-	std::pair<long long, std::shared_ptr<Character>> hreHolder;
+	Dictionary<long, Dictionary<string, Title?>> holderTitles; // holder/titles
+	std::pair<long, Character?> hreHolder;
 
-	for (const auto& title: independentTitles)
+	foreach (var title: independentTitles)
 	{
 		holderTitles[title.second->getHolder()->first].insert(title);
 		if (title.second->isHREEmperor())
@@ -1087,7 +1087,7 @@ private void setElectors()
 	// end up with multiple electorates, and that's possible only through EU4 gameplay and causes massive
 	// penalties to IA.
 
-	for (auto& elector: electors)
+	foreach (var elector in electors)
 	{
 		if (counter >= 7)
 			break; // We had enough.
@@ -1107,7 +1107,7 @@ private void setElectors()
 		// Which title is his primary? The first one in his domain (that survived the shattering)
 		if (elector.second->getCharacterDomain() && !elector.second->getCharacterDomain()->getDomain().empty())
 		{
-			for (const auto& electorTitle: elector.second->getCharacterDomain()->getDomain())
+			foreach (var electorTitle: elector.second->getCharacterDomain()->getDomain())
 			{
 				// mark this title as electorate if it's independent and has land.
 				if (regItr->second.count(electorTitle.second->getName()) && !electorTitle.second->getOwnedDFCounties().empty())
@@ -1123,7 +1123,7 @@ private void setElectors()
 		else
 		{
 			// This is a fellow without a domain? Mark some independent non-landless title as electorate.
-			for (const auto& title: regItr->second)
+			foreach (var title: regItr->second)
 			{
 				if (!title.second->getOwnedDFCounties().empty())
 				{

@@ -136,36 +136,36 @@ public class Title
 	private void RegisterKeys(Parser parser)
 	{
 			parser.RegisterKeyword("key", reader => {
-		name = commonItems::singleString(theStream).getString();
+		name = reader.GetString();
 	});
 	parser.RegisterKeyword("name", reader => {
-		displayName = commonItems::singleString(theStream).getString();
+		displayName = reader.GetString();
 		if (displayName.find("\x15") != std::string::npos)
 		{
 			cleanUpDisplayName();
 		}
 	});
 	parser.RegisterKeyword("adj", reader => {
-		adjective = commonItems::singleString(theStream).getString();
+		adjective = reader.GetString();
 	});
 	parser.RegisterKeyword("date", reader => {
-		creationDate = date(commonItems::singleString(theStream).getString());
+		creationDate = reader.GetString();
 	});
 	parser.RegisterKeyword("claim", reader => {
-		for (auto claimantID: commonItems::llongList(theStream).getLlongs())
-			claimants.insert(std::make_pair(claimantID, nullptr));
+		foreach (var claimantID in reader.GetLongs())
+			claimants.Add(claimantID, null);
 	});
 	parser.RegisterKeyword("history_government", reader => {
-		historyGovernment = commonItems::singleString(theStream).getString();
+		historyGovernment = reader.GetString();
 	});
 	parser.RegisterKeyword("theocratic_lease", reader => {
-		theocraticLease = commonItems::singleString(theStream).getString() == "yes";
+		theocraticLease = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("capital_barony", reader => {
-		cCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
+		cCapitalBarony = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("duchy_capital_barony", reader => {
-		dCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
+		dCapitalBarony = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("capital", reader => {
 		capital = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
@@ -195,7 +195,7 @@ public class Title
 		renamed = commonItems::getString(theStream) == "yes";
 	});
 	parser.RegisterKeyword("coat_of_arms_id", reader => {
-		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		coa = new KeyValuePair<long, CoatOfArms?>(reader.GetLong(), null);
 	});
 	parser.RegisterKeyword("succession_election", reader => {
 		const auto newTitle = Title(theStream, 0);
@@ -225,45 +225,14 @@ public class Title
 			}
 			catch (std::exception&)
 			{
-				Log(LogLevel::Warning) << "Invalid previous holder ID: " << questionableItem;
+				Logger.Warn($"Invalid previous holder ID: {questionableItem}");
 			}
 		}
 	});
 	parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-	#region savegame processing
 
-	void verifySave(string saveGamePath);
-	void processSave(string saveGamePath);
-
-	#endregion
-	
-	# region pre-parsing prep
-	void primeLaFabricaDeColor(Config theConfiguration);
-	void loadLandedTitles(Config theConfiguration);
-	void loadCharacterTraits(Config theConfiguration);
-	void loadHouseNames(Config theConfiguration);
-	# endregion
-	
-	# region postparsing weave
-	void crosslinkDatabases();
-	# endregion
-	
-	# region CK3World processing
-	void flagHREProvinces(Config theConfiguration);
-	void shatterHRE(Config theConfiguration);
-	void shatterEmpires(Config theConfiguration) ;
-	void filterIndependentTitles();
-	void splitVassals(Config theConfiguration);
-	void gatherCourtierNames();
-	void congregateDFCounties();
-	void congregateDJCounties();
-	void filterLandlessTitles();
-	void setElectors();
-	void checkForIslam();
-	void locatePlayerTitle(Config theConfiguration);
-	# endregion
     																			
     private KeyValuePair<long, Title> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
     private string name;																			// c_ashmaka
@@ -272,14 +241,14 @@ public class Title
     private string article;																		// "the ". Not always present.
     private string historyGovernment;														// Unclear why this is history. Maybe further governments override it.
     private Date creationDate;																		// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
-    private KeyValuePair<long, CoatOfArms>? coa;	// This is dejure flag but not defacto.
+    private KeyValuePair<long, CoatOfArms?>? coa;	// This is dejure flag but not defacto.
     private KeyValuePair<long, Title>? dfLiege;		// defacto liege title (d_kalyani)
     private KeyValuePair<long, Title>? djLiege;		// dejure liege title (d_rattapadi)
     private KeyValuePair<long, Character>? holder; // Holding character
     private Dictionary<long, Title> dfVassals;						// defacto vassals, not in save, manually linked post-loading
     private Dictionary<long, Title> djVassals;						// dejure vassals (for all except baronies and titulars)
     private List<KeyValuePair<long, Character>> heirs;		// Order of heirs is unclear so we're keeping them ordered and using first if able.
-    private Dictionary<long, Character> claimants;					// People holding a claim to this title. Incredibly useful.
+    private Dictionary<long, Character?> claimants;					// People holding a claim to this title. Incredibly useful.
     private Dictionary<long, Character> electors;					// People involved in elections regardless of election type law.
     private bool theocraticLease = false;															// Does this apply to non-baronies? Maybe? Who owns it then, dejure liege?
     private HashSet<string> laws;
