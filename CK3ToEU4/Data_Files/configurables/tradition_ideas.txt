@@ -218,6 +218,13 @@ link = { ck3 = { tradition = tradition_fp3_fierce_independence } eu4 = { hostile
 link = { ck3 = { tradition = tradition_ghazi } eu4 = { discipline = 0.05 } }
 ### 1.12 - New Tradition
 link = { ck3 = { tradition = tradition_ce1_ritual_washing } eu4 = { prestige = 1 } }
+### 1.13 - New Tradition
+link = { ck3 = { tradition = tradition_ep3_indomitable_azatani } eu4 = { cavalry_power = 0.1 } }
+link = { ck3 = { tradition = tradition_ep3_audacious_cadets } eu4 = { cavalry_power = 0.10 movement_speed = 0.05 } }
+link = { ck3 = { tradition = tradition_ep3_imperial_tagmata } eu4 = { land_forcelimit_modifier = 0.10 } }
+link = { ck3 = { tradition = tradition_ep3_roman_ceremonies } eu4 = { prestige = 1 } }
+link = { ck3 = { tradition = tradition_ep3_palace_politics } eu4 = { spy_offence = 0.2 global_spy_defence = 0.15 } }
+link = { ck3 = { tradition = tradition_ep3_cultivated_sophistication } eu4 = { diplomatic_reputation = 1 } }
 
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }

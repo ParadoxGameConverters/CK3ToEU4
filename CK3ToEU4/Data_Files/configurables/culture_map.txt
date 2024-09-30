@@ -376,7 +376,7 @@ link = { eu4 = bulgarian ck3 = bolghar tech = eastern gfx = easterngfx region = 
 
 link = { eu4 = turkmeni ck3 = anatolian_turkish tech = nomad_group gfx = muslimgfx region = central_asia_region }
 link = { eu4 = turkmeni ck3 = khanid ck3 = gokturkish tech = nomad_group gfx = muslimgfx }
-link = { eu4 = oghuz ck3 = turkish ck3 = utigur ck3 = kutrigur ck3 = barsil tech = nomad_group gfx = muslimgfx } #CK3 Turkish is Oghuz
+link = { eu4 = oghuz ck3 = turkish ck3 = utigur ck3 = kutrigur ck3 = barsil tech = nomad_group gfx = muslimgfx } #CK3 Oghuz is Turkmeni/Oghuz, Tukmen is Turkish
 link = { eu4 = shirvani ck3 = shirvani ck3 = tat tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = azeri ck3 = adhari tech = muslim gfx = muslimgfx }
 link = { eu4 = azerbaijani ck3 = turkish ck3 = anatolian_turkish tech = muslim gfx = muslimgfx region = caucasia_region region = persia_region }
@@ -385,7 +385,7 @@ link = { eu4 = mervi ck3 = mervi tech = muslim gfx = muslimgfx }
 link = { eu4 = mervi ck3 = persian tech = muslim gfx = muslimgfx region = merv_area }
 link = { eu4 = khorasani ck3 = turkish ck3 = persian ck3 = tajik tech = muslim gfx = muslimgfx region = khorasan_region }
 link = { eu4 = gagauz ck3 = turkish tech = ottoman gfx = muslimgfx region = carpathia_region }
-link = { eu4 = turkish ck3 = turkish ck3 = ottoman_turkish ck3 = anatolian_turkish tech = ottoman gfx = muslimgfx }
+link = { eu4 = turkish ck3 = turkish ck3 = ottoman_turkish ck3 = anatolian_turkish ck3 = turkmen tech = ottoman gfx = muslimgfx }
 link = { eu4 = turko_afghan ck3 = turko_afghan tech = nomad_group gfx = muslimgfx }
 link = { eu4 = turko_iranian ck3 = turko_iranian tech = nomad_group gfx = muslimgfx }
 link = { eu4 = khazak ck3 = naiman tech = nomad_group gfx = muslimgfx }

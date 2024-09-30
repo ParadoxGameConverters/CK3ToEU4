@@ -14,8 +14,9 @@ link = { eu4 = west_slavic ck3 = heritage_west_slavic }
 link = { eu4 = carpathian ck3 = heritage_magyar ck3 = heritage_vlach ck3 = heritage_proto_carpathian ck3 = heritage_hunnic }
 link = { eu4 = east_slavic ck3 = heritage_east_slavic }
 link = { eu4 = baltic ck3 = heritage_baltic ck3 = heritage_balto_finnic }
-link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_arberian ck3 = heritage_anatolian ck3 = heritage_ancient_greek }
-link = { eu4 = chaldean ck3 = heritage_aramaic ck3 =  heritage_aramean ck3 = heritage_chaldean }
+link = { eu4 = byzantine ck3 = heritage_byzantine ck3 = heritage_arberian ck3 = heritage_anatolian ck3 = heritage_ancient_greek ck3 = heritage_albanian }
+link = { eu4 = albanian_g ck3 = heritage_albanian }
+link = { eu4 = chaldean ck3 = heritage_aramaic ck3 =  heritage_aramean ck3 = heritage_chaldean ck3 = heritage_syriac }
 link = { eu4 = old_mashriqi ck3 = heritage_egyptian }
 link = { eu4 = gothic_group ck3 = heritage_gothic }
 
