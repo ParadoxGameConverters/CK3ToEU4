@@ -194,7 +194,7 @@ link = { eu4 = burgundian ck3 = burgundy ck3 = burgundian tech = western gfx = w
 link = { eu4 = gascon ck3 = french tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country }
 link = { eu4 = wallonian ck3 = french tech = western gfx = westerngfx region = low_countries_region }
 link = { eu4 = cosmopolitan_french ck3 = french ck3 = romano_frank tech = western gfx = westerngfx }
-link = { eu4 = normand ck3 = norman tech = western gfx = westerngfx }
+link = { eu4 = normand ck3 = norman ck3 = late_norman tech = western gfx = westerngfx }
 link = { eu4 = aquitaine ck3 = occitan tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country }
 link = { eu4 = occitain ck3 = occitan tech = western gfx = westerngfx }
 link = { eu4 = outremer ck3 = outremer tech = western gfx = westerngfx }
