@@ -1,5 +1,5 @@
 #include "Dynasties.h"
-#include "../CoatsOfArms/CoatsOfArms.h"
+#include "../CoatsOfArms/CoatsOfArms.cs"
 #include "CommonRegexes.h"
 #include "Dynasty.h"
 #include "Log.h"

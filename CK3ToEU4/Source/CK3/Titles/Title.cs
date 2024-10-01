@@ -113,13 +113,13 @@ public class Title
 	public void setThePope() { thePope = true; }
 	public void setCustomTitle() { customTitle = true; }
 	public void setManualNameClaim() { nameClaimed = true; }
-	public void pickDisplayName(const Dictionary<string, std::shared_ptr<Title>>& possibleTitles); // Grants one county's name to another during N:1/N:M mappings
+	public void pickDisplayName(const Dictionary<string, Title?>& possibleTitles); // Grants one county's name to another during N:1/N:M mappings
 	public Title findDuchyCapital();																 // Only for c_, for now
 	public void congregateDFCounties();
 	public void congregateDJCounties();
-	public void loadGeneratedLiege(const std::pair<string, std::shared_ptr<Title>>& liege) { generatedLiege = liege; }
-	public void addGeneratedVassal(const std::pair<string, std::shared_ptr<Title>>& theVassal) { generatedVassals.insert(theVassal); }
-	public void loadHoldingTitle(const std::pair<string, std::shared_ptr<Title>>& theTitle) { holdingTitle = theTitle; }
+	public void loadGeneratedLiege(const KeyValuePair<string, Title?>& liege) { generatedLiege = liege; }
+	public void addGeneratedVassal(const KeyValuePair<string, Title?>& theVassal) { generatedVassals.insert(theVassal); }
+	public void loadHoldingTitle(const KeyValuePair<string, Title?>& theTitle) { holdingTitle = theTitle; }
 	public void setElectorate() { electorate = true; }
 	public void relinkDeFactoVassals();
 	#endregion
@@ -135,14 +135,14 @@ public class Title
 	Dictionary<string, Title> coalesceDJCounties() const;
 	#endregion
 
-	private void RegisterKeys(Parser parser)
+	private void RegisterKeys(Parser parser, ColorFactory colorFactory)
 	{
 			parser.RegisterKeyword("key", reader => {
 		name = reader.GetString();
 	});
 	parser.RegisterKeyword("name", reader => {
 		displayName = reader.GetString();
-		if (displayName.find("\x15") != std::string::npos)
+		if (displayName.find("\x15") != string::npos)
 		{
 			cleanUpDisplayName();
 		}
@@ -170,13 +170,13 @@ public class Title
 		dCapitalBarony = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("capital", reader => {
-		capital = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		capital = new(reader.GetLong(), null);
 	});
 	parser.RegisterKeyword("de_facto_liege", reader => {
-		dfLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		dfLiege = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	parser.RegisterKeyword("de_jure_liege", reader => {
-		djLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		djLiege = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	parser.RegisterKeyword("de_jure_vassals", reader => {
 		for (auto vassalID: commonItems::llongList(theStream).getLlongs())
@@ -191,7 +191,7 @@ public class Title
 		laws = std::set(theLaws.begin(), theLaws.end());
 	});
 	parser.RegisterKeyword("holder", reader => {
-		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		holder = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	parser.RegisterKeyword("renamed", [this](std::istream& theStream) {
 		renamed = commonItems::getString(theStream) == "yes";
@@ -211,7 +211,7 @@ public class Title
 		landless = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("color", reader => {
-		color = laFabricaDeColor.getColor(theStream);
+		color = colorFactory.GetColor(reader);
 	});
 	parser.RegisterKeyword("history", reader => {
 		previousHolders = new Title(reader, 0).getPreviousHolders();
@@ -237,7 +237,7 @@ public class Title
 
 
     																			
-    private KeyValuePair<long, Title> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
+    private KeyValuePair<long, Title?> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
     private string name;																			// c_ashmaka
     private string displayName;																// Ashmaka
     private string adjective;																	// Ashmakan

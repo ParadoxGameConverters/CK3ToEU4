@@ -14,22 +14,22 @@ public class EmblemInstance
     
     private void RegisterKeys(Parser parser)
     {
-        registerKeyword("rotation", [this](const std::string& unused, std::istream& theStream) {
-            rotation = commonItems::singleDouble(theStream).getDouble();
+        parser.RegisterKeyword("rotation", reader => {
+            rotation = reader.GetDouble();
         });
-        registerKeyword("depth", [this](const std::string& unused, std::istream& theStream) {
-            depth = commonItems::singleDouble(theStream).getDouble();
+        parser.RegisterKeyword("depth", reader => {
+            depth = reader.GetDouble();
         });
-        registerKeyword("position", [this](const std::string& unused, std::istream& theStream) {
+        parser.RegisterKeyword("position", reader => {
             position = commonItems::doubleList(theStream).getDoubles();
         });
-        registerKeyword("scale", [this](const std::string& unused, std::istream& theStream) {
+        parser.RegisterKeyword("scale", reader => {
             scale = commonItems::doubleList(theStream).getDoubles();
         });
-        registerKeyword("offset", [this](const std::string& unused, std::istream& theStream) {
+        parser.RegisterKeyword("offset", reader => {
             offset = commonItems::doubleList(theStream).getDoubles();
         });
-        registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+        parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
     }
 
     public void DefaultPosition()

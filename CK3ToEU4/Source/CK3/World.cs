@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CK3ToEU4.CK3.Titles;
 using CK3ToEU4.Configuration;
 using commonItems;
 using commonItems.Mods;
@@ -257,9 +258,9 @@ public class World
     {
 	    foreach (var (titleId, title) in IndependentTitles)
 	    {
-		    if (title.getHolder() && title->getHolder()->first == playerId)
+		    if (title.getHolder() && title.getHolder().first == playerId)
 		    {
-			    Logger.Info("Player title: " << title->getName();
+			    Logger.Info("Player title: " << title.getName();
 			    PlayerTitleId = title.first;
 			    break;
 		    }
@@ -626,7 +627,7 @@ private void shatterHRE(Config theConfiguration) const
 	foreach (var afflictedPerson: brickedPeople)
 	{
 		const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
-		const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
+		const auto holderTitles = Dictionary(holderDomain.begin(), holderDomain.end());
 
 		foreach (var holderTitle: holderDomain)
 		{
@@ -636,7 +637,7 @@ private void shatterHRE(Config theConfiguration) const
 			{
 				// fix this title.
 				const auto& djLiege = holderTitle.second->getDJLiege();
-				djLiege->second->addDFVassals(std::map{holderTitle});
+				djLiege->second->addDFVassals(Dictionary{holderTitle});
 				holderTitle.second->loadDFLiege(*djLiege);
 			}
 		}
@@ -760,7 +761,7 @@ private void shatterEmpires(Config theConfiguration) const
 			}
 
 			const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
-			const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
+			const auto holderTitles = Dictionary(holderDomain.begin(), holderDomain.end());
 
 			foreach (var holderTitle: holderDomain)
 			{
@@ -770,7 +771,7 @@ private void shatterEmpires(Config theConfiguration) const
 				{
 					// fix this title.
 					const auto& djLiege = holderTitle.second->getDJLiege();
-					djLiege->second->addDFVassals(std::map{holderTitle});
+					djLiege->second->addDFVassals(Dictionary{holderTitle});
 					holderTitle.second->loadDFLiege(*djLiege);
 				}
 			}
@@ -899,7 +900,7 @@ private void splitVassals(Config theConfiguration)
 			double threshold = static_cast<double>(countiesClaimed.size()) / relevantVassals + 0.1 * static_cast<double>(countiesClaimed.size());
 			threshold *= vassalSplitoffMapper.getFactor();
 			if (static_cast<double>(vassalProvincesClaimed.size()) > threshold)
-				newIndeps.insert(std::pair(vassal.second->getName(), vassal.second));
+				newIndeps.insert(KeyValuePair(vassal.second->getName(), vassal.second));
 		}
 	}
 
@@ -908,7 +909,7 @@ private void splitVassals(Config theConfiguration)
 	{
 		const auto& liege = newIndep.second->getDFLiege();
 		liege->second->addGeneratedVassal(newIndep);
-		newIndep.second->loadGeneratedLiege(std::pair(liege->second->getName(), liege->second));
+		newIndep.second->loadGeneratedLiege(KeyValuePair(liege->second->getName(), liege->second));
 		newIndep.second->grantIndependence();
 		independentTitles.insert(newIndep);
 	}
@@ -940,7 +941,7 @@ private void gatherCourtierNames()
 			if (character.second->getEmployer() && character.second->getEmployer()->second)
 			{
 				// easiest case.
-				holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
+				holderCourtiers[character.second->getEmployer()->first].insert(KeyValuePair(character.second->getName(), !character.second->isFemale()));
 				holderCouncilors[character.second->getEmployer()->first].insert(character);
 			}
 			else if (character.second->getCharacterDomain() && !character.second->getCharacterDomain()->getDomain().empty())
@@ -955,7 +956,7 @@ private void gatherCourtierNames()
 				const auto& liege = liegeTitle->second->getHolder();
 				if (!liege || !liege->second)
 					continue; // Or maybe we should fire his liege.
-				holderCourtiers[liege->first].insert(std::pair(character.second->getName(), character.second->isFemale()));
+				holderCourtiers[liege->first].insert(KeyValuePair(character.second->getName(), character.second->isFemale()));
 				holderCouncilors[liege->first].insert(character);
 			}
 			else
@@ -967,7 +968,7 @@ private void gatherCourtierNames()
 		else if (character.second->getEmployer())
 		{
 			// Being employed but without a council task means a knight or physician or similar. Works for us.
-			holderCourtiers[character.second->getEmployer()->first].insert(std::pair(character.second->getName(), !character.second->isFemale()));
+			holderCourtiers[character.second->getEmployer()->first].insert(KeyValuePair(character.second->getName(), !character.second->isFemale()));
 		}
 	}
 
@@ -1000,7 +1001,7 @@ private void congregateDFCounties()
 		title.second->congregateDFCounties();
 		foreach (var province: title.second->getOwnedDFCounties())
 		{
-			province.second->loadHoldingTitle(std::pair(title.first, title.second));
+			province.second->loadHoldingTitle(KeyValuePair(title.first, title.second));
 		}
 		counter += static_cast<int>(title.second->getOwnedDFCounties().size());
 	}
@@ -1065,7 +1066,7 @@ private void setElectors()
 	// Preambule done, we start here.
 	// Make a registry of indep titles and their holders.
 	Dictionary<long, Dictionary<string, Title?>> holderTitles; // holder/titles
-	std::pair<long, Character?> hreHolder;
+	KeyValuePair<long, Character?> hreHolder;
 
 	foreach (var title: independentTitles)
 	{

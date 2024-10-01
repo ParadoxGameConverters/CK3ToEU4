@@ -1,132 +1,49 @@
-#include "Titles.h"
-#include "../Characters/Character.h"
-#include "../Characters/Characters.h"
-#include "../CoatsOfArms/CoatOfArms.h"
-#include "../CoatsOfArms/CoatsOfArms.h"
-#include "CommonRegexes.h"
-#include "DynamicTemplate.h"
-#include "LandedTitles.h"
-#include "Log.h"
-#include "ParserHelpers.h"
-#include "Title.h"
 
-CK3::Titles::Titles(std::istream& theStream)
+
+namespace CK3ToEU4.CK3.Titles;
+
+class Titles
 {
-	registerKeys();
-	parseStream(theStream);
-	clearRegisteredKeywords();
+	public Titles(std::istream& theStream)
+	{
+		registerKeys();
+		parseStream(theStream);
+		clearRegisteredKeywords();
 
-	// This bit assigns CK3::Level to dynamic titles that have a rank definition in the save. It should be all of them, but it's CK3, so who knows.
-	if (!dynamicTitleRanks.empty())
-		transcribeDynamicRanks();
-}
+		// This bit assigns CK3::Level to dynamic titles that have a rank definition in the save. It should be all of them, but it's CK3, so who knows.
+		if (!dynamicTitleRanks.empty())
+			transcribeDynamicRanks();
+	}
 
-void CK3::Titles::registerKeys()
-{
-	registerKeyword("dynamic_templates", [this](const std::string& unused, std::istream& theStream) {
-		const commonItems::blobList dynamicRanks(theStream);
-		for (const auto& dynamicTitle: dynamicRanks.getBlobs())
+	public const auto& getTitles() const { return titles; }
+	public const auto& getCounter() const { return titleCounter; }
+
+	public void linkCoats(const CoatsOfArms& coats)
+	{
+		auto counter = 0;
+		const auto& coatData = coats.getCoats();
+		for (const auto& title: titles)
 		{
-			std::stringstream blobStream(dynamicTitle);
-			const DynamicTemplate dynamicTitleTemplate(blobStream);
-			if (!dynamicTitleTemplate.getDynamicTitleKey().empty() && !dynamicTitleTemplate.getDynamicTitleRank().empty())
-				dynamicTitleRanks.insert(std::pair(dynamicTitleTemplate.getDynamicTitleKey(), dynamicTitleTemplate.getDynamicTitleRank()));
-		}
-	});
-	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
-		// A bit of recursion is good for the soul.
-		const auto& tempTitles = Titles(theStream);
-		titles = tempTitles.getTitles();
-		titleCounter = tempTitles.getCounter();
-	});
-	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
-		// Incoming titles may not be actual titles but half-deleted junk.
-		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
-		if (titleBlob.find('{') != std::string::npos)
-		{
-			std::stringstream tempStream(titleBlob);
-			try
+			if (!title.second->getCoA())
+				continue;
+			const auto& coatDataItr = coatData.find(title.second->getCoA()->first);
+			if (coatDataItr != coatData.end())
 			{
-				auto newTitle = std::make_shared<Title>(tempStream, std::stoll(ID));
-				if (!newTitle->getName().empty())
-					titles.insert(std::pair(newTitle->getName(), newTitle));
-				if (newTitle->getName().find("b_") == 0)
-					++titleCounter[0];
-				else if (newTitle->getName().find("c_") == 0)
-					++titleCounter[1];
-				else if (newTitle->getName().find("d_") == 0)
-					++titleCounter[2];
-				else if (newTitle->getName().find("k_") == 0)
-					++titleCounter[3];
-				else if (newTitle->getName().find("e_") == 0)
-					++titleCounter[4];
-				else
-					++titleCounter[5]; // x_x_, x_mc_ and the rest.
+				title.second->loadCoat(*coatDataItr);
+				++counter;
 			}
-			catch (std::exception& e)
+			else
 			{
-				throw std::runtime_error("Cannot import title ID: " + ID + " (" + e.what() + ")");
+				Log(LogLevel::Warning) << "Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) +
+					" which has no definition. Using Default.";
+				auto defaultCoat = std::make_pair(title.second->getCoA()->first, std::make_shared<CoatOfArms>());
+				title.second->loadCoat(defaultCoat);
 			}
 		}
-	});
-	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
-}
-
-void CK3::Titles::transcribeDynamicRanks()
-{
-	Log(LogLevel::Info) << "-> Transcribing dynamic ranks.";
-	auto counter = 0;
-	for (const auto& [key, rank]: dynamicTitleRanks)
-	{
-		if (!titles.contains(key))
-			continue; // Yay?
-		if (!titles.at(key))
-			continue; // Huh?
-
-		// There will not be a dynamic county or barony.
-		if (rank == "duchy")
-			titles.at(key)->setDynamicLevel(LEVEL::DUCHY);
-		else if (rank == "kingdom")
-		{
-			titles.at(key)->setDynamicLevel(LEVEL::KINGDOM);
-			titles.at(key)->setCustomTitle();
-		}
-		else if (rank == "empire")
-		{
-			titles.at(key)->setDynamicLevel(LEVEL::EMPIRE);
-			titles.at(key)->setCustomTitle();
-		}
-		counter++;
+		Log(LogLevel::Info) << "<> " << counter << " titles updated.";
 	}
-	Log(LogLevel::Info) << "<> Transcribed " << counter << " dynamics.";
-}
 
-void CK3::Titles::linkCoats(const CoatsOfArms& coats)
-{
-	auto counter = 0;
-	const auto& coatData = coats.getCoats();
-	for (const auto& title: titles)
-	{
-		if (!title.second->getCoA())
-			continue;
-		const auto& coatDataItr = coatData.find(title.second->getCoA()->first);
-		if (coatDataItr != coatData.end())
-		{
-			title.second->loadCoat(*coatDataItr);
-			++counter;
-		}
-		else
-		{
-			Log(LogLevel::Warning) << "Title " + title.first + " has CoA " + std::to_string(title.second->getCoA()->first) +
-													" which has no definition. Using Default.";
-			auto defaultCoat = std::make_pair(title.second->getCoA()->first, std::make_shared<CoatOfArms>());
-			title.second->loadCoat(defaultCoat);
-		}
-	}
-	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
-}
-
-void CK3::Titles::linkTitles()
+	public void linkTitles()
 {
 	auto DFLcounter = 0;
 	auto DJLcounter = 0;
@@ -275,14 +192,7 @@ void CK3::Titles::linkTitles()
 	Log(LogLevel::Info) << "<> " << DFLcounter << " defacto lieges, " << DJLcounter << " dejure lieges, " << DFVcounter << " defacto vassals, " << DJVcounter
 							  << " dejure vassals updated.";
 }
-
-void CK3::Titles::relinkDeFactoVassals()
-{
-	for (const auto& title: titles)
-		title.second->relinkDeFactoVassals();
-}
-
-void CK3::Titles::linkCharacters(const Characters& characters)
+	public void linkCharacters(Characters characters)
 {
 	auto holderCounter = 0;
 	auto claimantCounter = 0;
@@ -405,24 +315,112 @@ void CK3::Titles::linkCharacters(const Characters& characters)
 	Log(LogLevel::Info) << "<> " << holderCounter << " holders, " << claimantCounter << " claimants, " << heirCounter << " heirs, " << exCounter
 							  << " previous holders, " << electorCounter << " electors updated.";
 }
-
-void CK3::Titles::linkLandedTitles(const LandedTitles& landedTitles)
-{
-	// We're injecting clay towards titles instead the other way around.
-	auto counter = 0;
-	for (const auto& clay: landedTitles.getFoundTitles())
+	public void linkLandedTitles(LandedTitles landedTitles)
 	{
-		const auto& titleItr = titles.find(clay.first);
-		if (titleItr != titles.end())
+		// We're injecting clay towards titles instead the other way around.
+		auto counter = 0;
+		for (const auto& clay: landedTitles.getFoundTitles())
 		{
-			titleItr->second->loadClay(clay.second);
-			++counter;
+			const auto& titleItr = titles.find(clay.first);
+			if (titleItr != titles.end())
+			{
+				titleItr->second->loadClay(clay.second);
+				++counter;
+			}
+			else
+			{
+				Log(LogLevel::Error) << "Clay for " << clay.first
+					<< " has no title definition! THIS IS BAD! Are you converting an old save against a new CK3 version?";
+			}
 		}
-		else
-		{
-			Log(LogLevel::Error) << "Clay for " << clay.first
-										<< " has no title definition! THIS IS BAD! Are you converting an old save against a new CK3 version?";
-		}
+		Log(LogLevel::Info) << "<> " << counter << " titles updated.";
 	}
-	Log(LogLevel::Info) << "<> " << counter << " titles updated.";
+	public void relinkDeFactoVassals()
+	{
+		for (const auto& title: titles)
+		title.second->relinkDeFactoVassals();
+	}
+
+	private void registerKeys()
+{
+	registerKeyword("dynamic_templates", [this](const std::string& unused, std::istream& theStream) {
+		const commonItems::blobList dynamicRanks(theStream);
+		for (const auto& dynamicTitle: dynamicRanks.getBlobs())
+		{
+			std::stringstream blobStream(dynamicTitle);
+			const DynamicTemplate dynamicTitleTemplate(blobStream);
+			if (!dynamicTitleTemplate.getDynamicTitleKey().empty() && !dynamicTitleTemplate.getDynamicTitleRank().empty())
+				dynamicTitleRanks.insert(std::pair(dynamicTitleTemplate.getDynamicTitleKey(), dynamicTitleTemplate.getDynamicTitleRank()));
+		}
+	});
+	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
+		// A bit of recursion is good for the soul.
+		const auto& tempTitles = Titles(theStream);
+		titles = tempTitles.getTitles();
+		titleCounter = tempTitles.getCounter();
+	});
+	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
+		// Incoming titles may not be actual titles but half-deleted junk.
+		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
+		if (titleBlob.find('{') != std::string::npos)
+		{
+			std::stringstream tempStream(titleBlob);
+			try
+			{
+				auto newTitle = std::make_shared<Title>(tempStream, std::stoll(ID));
+				if (!newTitle->getName().empty())
+					titles.insert(std::pair(newTitle->getName(), newTitle));
+				if (newTitle->getName().find("b_") == 0)
+					++titleCounter[0];
+				else if (newTitle->getName().find("c_") == 0)
+					++titleCounter[1];
+				else if (newTitle->getName().find("d_") == 0)
+					++titleCounter[2];
+				else if (newTitle->getName().find("k_") == 0)
+					++titleCounter[3];
+				else if (newTitle->getName().find("e_") == 0)
+					++titleCounter[4];
+				else
+					++titleCounter[5]; // x_x_, x_mc_ and the rest.
+			}
+			catch (std::exception& e)
+			{
+				throw std::runtime_error("Cannot import title ID: " + ID + " (" + e.what() + ")");
+			}
+		}
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
+	private void transcribeDynamicRanks()
+	{
+		Log(LogLevel::Info) << "-> Transcribing dynamic ranks.";
+		auto counter = 0;
+		for (const auto& [key, rank]: dynamicTitleRanks)
+		{
+			if (!titles.contains(key))
+				continue; // Yay?
+			if (!titles.at(key))
+				continue; // Huh?
+
+			// There will not be a dynamic county or barony.
+			if (rank == "duchy")
+				titles.at(key)->setDynamicLevel(LEVEL::DUCHY);
+			else if (rank == "kingdom")
+			{
+				titles.at(key)->setDynamicLevel(LEVEL::KINGDOM);
+				titles.at(key)->setCustomTitle();
+			}
+			else if (rank == "empire")
+			{
+				titles.at(key)->setDynamicLevel(LEVEL::EMPIRE);
+				titles.at(key)->setCustomTitle();
+			}
+			counter++;
+		}
+		Log(LogLevel::Info) << "<> Transcribed " << counter << " dynamics.";
+	}
+
+	private std::vector<int> titleCounter = {0, 0, 0, 0, 0, 0};
+	private std::map<std::string, std::shared_ptr<Title>> titles; // We're using NAME, not ID for key value!
+	private std::map<std::string, std::string> dynamicTitleRanks;
+};

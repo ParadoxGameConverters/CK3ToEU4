@@ -1,8 +1,8 @@
 #include "CountyDetails.h"
-#include "../Cultures/Cultures.h"
-#include "../Religions/Faiths.h"
+#include "../Cultures/Cultures.cs"
+#include "../Religions/Faiths.cs"
 #include "CommonRegexes.h"
-#include "CountyDetail.h"
+#include "CountyDetail.cs"
 #include "Log.h"
 #include "ParserHelpers.h"
 
