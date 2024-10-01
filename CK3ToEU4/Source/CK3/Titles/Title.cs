@@ -109,7 +109,7 @@ public class Title
 	public void resetDJLiege() { djLiege.reset(); }
 	public void setHREEmperor() { HREEmperor = true; }
 	public void setInHRE() { inHRE = true; }
-	public void dropTitleFromDFVassals(long long titleID);
+	public void dropTitleFromDFVassals(long titleID);
 	public void setThePope() { thePope = true; }
 	public void setCustomTitle() { customTitle = true; }
 	public void setManualNameClaim() { nameClaimed = true; }
@@ -173,17 +173,17 @@ public class Title
 		capital = new(reader.GetLong(), null);
 	});
 	parser.RegisterKeyword("de_facto_liege", reader => {
-		dfLiege = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		dfLiege = KeyValuePair(reader.GetLong(), nullptr);
 	});
 	parser.RegisterKeyword("de_jure_liege", reader => {
-		djLiege = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		djLiege = KeyValuePair(reader.GetLong(), nullptr);
 	});
 	parser.RegisterKeyword("de_jure_vassals", reader => {
-		for (auto vassalID: commonItems::llongList(theStream).getLlongs())
+		for (auto vassalID: reader.GetLongs())
 			djVassals.insert(std::make_pair(vassalID, nullptr));
 	});
 	parser.RegisterKeyword("heir", reader => {
-		for (auto heirID: commonItems::llongList(theStream).getLlongs())
+		for (auto heirID: reader.GetLongs())
 			heirs.emplace_back(std::make_pair(heirID, nullptr));
 	});
 	parser.RegisterKeyword("laws", reader => {
@@ -191,10 +191,10 @@ public class Title
 		laws = std::set(theLaws.begin(), theLaws.end());
 	});
 	parser.RegisterKeyword("holder", reader => {
-		holder = KeyValuePair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		holder = KeyValuePair(reader.GetLong(), nullptr);
 	});
-	parser.RegisterKeyword("renamed", [this](std::istream& theStream) {
-		renamed = commonItems::getString(theStream) == "yes";
+	parser.RegisterKeyword("renamed", [this](BufferedReader reader) {
+		renamed = reader.GetString() == "yes";
 	});
 	parser.RegisterKeyword("coat_of_arms_id", reader => {
 		coa = new KeyValuePair<long, CoatOfArms?>(reader.GetLong(), null);

@@ -4,7 +4,7 @@ namespace CK3ToEU4.CK3.Titles;
 
 class Titles
 {
-	public Titles(std::istream& theStream)
+	public Titles(BufferedReader reader)
 	{
 		registerKeys();
 		parseStream(theStream);
@@ -50,16 +50,16 @@ class Titles
 	auto DFVcounter = 0;
 	auto DJVcounter = 0;
 	// We'll be needing a cache.
-	std::map<long long, std::shared_ptr<Title>> IDCache;
+	Dictionary<long, std::shared_ptr<Title>> IDCache;
 	for (const auto& title: titles)
 		IDCache.insert(std::pair(title.second->getID(), title.second));
 
 	// We'll also be needing a defacto vassal registry for later.
-	std::map<long long, std::map<long long, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
+	Dictionary<long, Dictionary<long, std::shared_ptr<Title>>> dfvRegistry; // map<liegeTitleID, map<vassalTitleID, vassalTitle>>
 
 	// But before we begin, we need to clear out the mess that is the save. Titles will have defacto liege set to titles that have no holder.
 	// To filter them, let's first run through all titles and make a cache of all without a holder.
-	std::set<long long> holderlessTitles;
+	HashSet<long> holderlessTitles;
 	for (const auto& title: titles)
 		if (!title.second->getHolder())
 			holderlessTitles.insert(title.second->getID());
@@ -73,7 +73,7 @@ class Titles
 		// Self-loading - this is used for coalescing and congregating counties later.
 		if (title.first.find("c_") == 0)
 		{
-			std::map<std::string, std::shared_ptr<Title>> self;
+			Dictionary<string, std::shared_ptr<Title>> self;
 			self.insert(title);
 			title.second->loadOwnedDFCounties(self); // every county defacto owns itself, by definition.
 			title.second->loadOwnedDJCounties(self); // dejure as well.
@@ -148,7 +148,7 @@ class Titles
 		// DJVassals
 		if (!title.second->getDJVassals().empty())
 		{
-			std::map<long long, std::shared_ptr<Title>> replacementMap;
+			Dictionary<long, std::shared_ptr<Title>> replacementMap;
 			for (const auto& dJVassal: title.second->getDJVassals())
 			{
 				const auto& cacheItr = IDCache.find(dJVassal.first);
@@ -169,7 +169,7 @@ class Titles
 	}
 
 	// Now with fully generated dfvCache we can load it into all lieges.
-	std::map<long long, std::map<long long, std::shared_ptr<Title>>> updateMap;
+	Dictionary<long, Dictionary<long, std::shared_ptr<Title>>> updateMap;
 	for (const auto& liege: dfvRegistry)
 	{
 		const auto& cacheItr = IDCache.find(liege.first);
@@ -180,7 +180,7 @@ class Titles
 		}
 		else
 		{
-			throw std::runtime_error("DJVCache corruption: " + std::to_string(liege.first) + " cannot be found!");
+			throw new Exception("DJVCache corruption: " + std::to_string(liege.first) + " cannot be found!");
 		}
 	}
 	// Finally update the dfvassal lists of all titles that gained new vassals.
@@ -219,7 +219,7 @@ class Titles
 				// Attempt recovery. Since titles are still unlinked we'll have to iterate to find DFliege's holder manually.
 				if (title.second->getDFLiege())
 				{
-					long long replacementHolder = 0;
+					long replacementHolder = 0;
 					for (const auto& [titleName, theTitle]: titles)
 						if (theTitle->getID() == title.second->getDFLiege()->first)
 						{
@@ -244,7 +244,7 @@ class Titles
 			}
 		}
 		// claimants
-		std::map<long long, std::shared_ptr<Character>> replacementMap;
+		Dictionary<long, std::shared_ptr<Character>> replacementMap;
 		for (const auto& claimant: title.second->getClaimants())
 		{
 			const auto& characterDataItr = characterData.find(claimant.first);
@@ -261,7 +261,7 @@ class Titles
 		title.second->loadClaimants(replacementMap);
 
 		// heirs
-		std::vector<std::pair<long long, std::shared_ptr<Character>>> replacementVector;
+		std::vector<KeyValuePair<long, std::shared_ptr<Character>>> replacementVector;
 		for (const auto& heir: title.second->getHeirs())
 		{
 			const auto& characterDataItr = characterData.find(heir.first);
@@ -343,28 +343,28 @@ class Titles
 
 	private void registerKeys()
 {
-	registerKeyword("dynamic_templates", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("dynamic_templates", reader => {
 		const commonItems::blobList dynamicRanks(theStream);
 		for (const auto& dynamicTitle: dynamicRanks.getBlobs())
 		{
-			std::stringstream blobStream(dynamicTitle);
+			stringstream blobStream(dynamicTitle);
 			const DynamicTemplate dynamicTitleTemplate(blobStream);
 			if (!dynamicTitleTemplate.getDynamicTitleKey().empty() && !dynamicTitleTemplate.getDynamicTitleRank().empty())
 				dynamicTitleRanks.insert(std::pair(dynamicTitleTemplate.getDynamicTitleKey(), dynamicTitleTemplate.getDynamicTitleRank()));
 		}
 	});
-	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
+	registerKeyword("landed_titles", reader => {
 		// A bit of recursion is good for the soul.
 		const auto& tempTitles = Titles(theStream);
 		titles = tempTitles.getTitles();
 		titleCounter = tempTitles.getCounter();
 	});
-	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
+	registerRegex(R"(\d+)", [this](const string& ID, std::istream& theStream) {
 		// Incoming titles may not be actual titles but half-deleted junk.
 		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
-		if (titleBlob.find('{') != std::string::npos)
+		if (titleBlob.find('{') != string::npos)
 		{
-			std::stringstream tempStream(titleBlob);
+			stringstream tempStream(titleBlob);
 			try
 			{
 				auto newTitle = std::make_shared<Title>(tempStream, std::stoll(ID));
@@ -385,11 +385,11 @@ class Titles
 			}
 			catch (std::exception& e)
 			{
-				throw std::runtime_error("Cannot import title ID: " + ID + " (" + e.what() + ")");
+				throw new Exception("Cannot import title ID: " + ID + " (" + e.what() + ")");
 			}
 		}
 	});
-	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+	registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 }
 	private void transcribeDynamicRanks()
 	{
@@ -421,6 +421,6 @@ class Titles
 	}
 
 	private std::vector<int> titleCounter = {0, 0, 0, 0, 0, 0};
-	private std::map<std::string, std::shared_ptr<Title>> titles; // We're using NAME, not ID for key value!
-	private std::map<std::string, std::string> dynamicTitleRanks;
+	private Dictionary<string, std::shared_ptr<Title>> titles; // We're using NAME, not ID for key value!
+	private Dictionary<string, string> dynamicTitleRanks;
 };

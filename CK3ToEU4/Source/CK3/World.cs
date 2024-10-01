@@ -324,12 +324,12 @@ private void verifySave(const string& saveGamePath)
 {
 	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
 	if (!saveFile.is_open())
-		throw std::runtime_error("Could not open save! Exiting!");
+		throw new Exception("Could not open save! Exiting!");
 
 	char buffer[10];
 	saveFile.get(buffer, 4);
 	if (buffer[0] != 'S' || buffer[1] != 'A' || buffer[2] != 'V')
-		throw std::runtime_error("Savefile of unknown type.");
+		throw new Exception("Savefile of unknown type.");
 
 	saveFile.close();
 }
@@ -587,7 +587,7 @@ private void shatterHRE(Config theConfiguration) const
 
 	// Locating HRE emperor. Unlike CK2, we'll using first non-hreTitle non-landless title from hreHolder's domain.
 	if (!hreHolder->second->getCharacterDomain())
-		throw std::runtime_error("HREmperor has no Character Domain!");
+		throw new Exception("HREmperor has no Character Domain!");
 
 	foreach (var hreHolderTitle: hreHolder->second->getCharacterDomain()->getDomain())
 	{

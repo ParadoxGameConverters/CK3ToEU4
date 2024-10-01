@@ -10,7 +10,7 @@ class Flags: commonItems::parser
 {
   public:
 	Flags() = default;
-	explicit Flags(std::istream& theStream)
+	explicit Flags(BufferedReader reader)
 	{
 		registerKeys();
 		parseStream(theStream);
@@ -25,33 +25,33 @@ class Flags: commonItems::parser
   private:
 	void registerKeys()
 	{
-		registerKeyword("list", [this](const std::string& unused, std::istream& theStream) {
+		registerKeyword("list", reader => {
 			for (const auto& blob: commonItems::blobList(theStream).getBlobs())
 			{
-				auto blobStream = std::stringstream(blob);
+				auto blobStream = stringstream(blob);
 				const auto scraper = Flags(blobStream);
 				const auto& foundFlags = scraper.getFlags();
 				flags.insert(foundFlags.begin(), foundFlags.end());
 			}
 		});
-		registerKeyword("item", [this](const std::string& unused, std::istream& theStream) {
+		registerKeyword("item", reader => {
 			const auto scraper = Flags(theStream);
 			const auto& foundFlags = scraper.getFlags();
 			flags.insert(foundFlags.begin(), foundFlags.end());
 		});
-		registerKeyword("flag", [this](const std::string& unused, std::istream& theStream) {
-			incomingFlag = commonItems::singleString(theStream).getString();
+		registerKeyword("flag", reader => {
+			incomingFlag = reader.GetString();
 		});
-		registerKeyword("type", [this](const std::string& unused, std::istream& theStream) {
-			itemType = commonItems::singleString(theStream).getString();
+		registerKeyword("type", reader => {
+			itemType = reader.GetString();
 		});
-		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
 
-	std::string itemType;
-	std::string incomingFlag;
-	std::set<std::string> flags;
+	string itemType;
+	string incomingFlag;
+	HashSet<string> flags;
 };
 } // namespace CK3
 

@@ -15,19 +15,19 @@ public class EmblemInstance
     private void RegisterKeys(Parser parser)
     {
         parser.RegisterKeyword("rotation", reader => {
-            rotation = reader.GetDouble();
+            Rotation = reader.GetDouble();
         });
         parser.RegisterKeyword("depth", reader => {
-            depth = reader.GetDouble();
+            Depth = reader.GetDouble();
         });
         parser.RegisterKeyword("position", reader => {
-            position = commonItems::doubleList(theStream).getDoubles();
+            position = reader.GetDoubles();
         });
         parser.RegisterKeyword("scale", reader => {
-            scale = commonItems::doubleList(theStream).getDoubles();
+            scale = reader.GetDoubles();
         });
         parser.RegisterKeyword("offset", reader => {
-            offset = commonItems::doubleList(theStream).getDoubles();
+            offset = reader.GetDoubles();
         });
         parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
     }

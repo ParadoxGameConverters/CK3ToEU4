@@ -13,7 +13,7 @@ class Faiths: commonItems::parser
 {
   public:
 	Faiths() = default;
-	public Faiths(std::istream& theStream)
+	public Faiths(BufferedReader reader)
 	{
 		registerKeys();
 		parseStream(theStream);
@@ -26,7 +26,7 @@ class Faiths: commonItems::parser
 	{
 		auto counter = 0;
 		const auto& religionData = religions.getReligions();
-		std::map<std::string, std::string> religiousHeadList; // ID, Title
+		Dictionary<string, string> religiousHeadList; // ID, Title
 		for (const auto& title: titles.getTitles())
 			if (title.second)
 				religiousHeadList.emplace(std::to_string(title.second->getID()), title.first);
@@ -42,7 +42,7 @@ class Faiths: commonItems::parser
 			}
 			else
 			{
-				throw std::runtime_error(
+				throw new Exception(
 					 "Faith " + faith.second->getName() + " has religion " + std::to_string(faith.second->getReligion().first) + " which has no definition!");
 			}
 		}
@@ -52,14 +52,14 @@ class Faiths: commonItems::parser
   private:
 	void registerKeys()
 	{
-		registerRegex(R"(\d+)", [this](const std::string& faithID, std::istream& theStream) {
+		registerRegex(R"(\d+)", [this](const string& faithID, std::istream& theStream) {
 			auto newFaith = std::make_shared<Faith>(theStream, std::stoll(faithID));
 			faiths.insert(std::pair(newFaith->getID(), newFaith));
 		});
-		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-	std::map<long long, std::shared_ptr<Faith>> faiths;
+	Dictionary<long, std::shared_ptr<Faith>> faiths;
 };
 } // namespace CK3
 

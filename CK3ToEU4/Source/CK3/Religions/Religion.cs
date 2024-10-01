@@ -1,50 +1,53 @@
-#ifndef CK3_RELIGION_H
-#define CK3_RELIGION_H
-#include "Parser.h"
 
-namespace CK3
+using System.Collections.Generic;
+using commonItems;
+
+namespace CK3ToEU4.CK3.Religions;
+
+class Religion
 {
-class Faith;
-class Religion: commonItems::parser
-{
-  public:
-	Religion() = default;
-	Religion(std::istream& theStream, long long theID): ID(theID)
+	public Religion()
 	{
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
 	}
 
-	[[nodiscard]] auto getID() const { return ID; }
-	[[nodiscard]] const auto& getName() const { return tag; }
-	[[nodiscard]] const auto& getFamily() const { return family; }
-	[[nodiscard]] const auto& getFaiths() const { return faiths; }
-
-	void loadFaiths(const std::map<long long, std::shared_ptr<Faith>>& theFaiths) { faiths = theFaiths; }
-
-  private:
-	void registerKeys()
+	public Religion(BufferedReader reader, long theID)
 	{
-		registerKeyword("tag", [this](const std::string& unused, std::istream& theStream) {
-			tag = commonItems::singleString(theStream).getString();
+		ID = theID;
+		
+		var parser = new Parser();
+		registerKeys(parser);
+		parser.ParseStream(reader);
+	}
+
+	public long ID { get; private set; } = 0;
+	public string getName() { return tag; }
+	public string getFamily() { return family; }
+	public IReadOnlyDictionary<long, Faith?> getFaiths() => faiths;
+
+	public void loadFaiths(Dictionary<long, Faith?> theFaiths) { faiths = theFaiths; }
+
+	
+	private void registerKeys(Parser parser)
+	{
+		parser.RegisterKeyword("tag", reader => {
+			tag = reader.GetString();
 		});
-		registerKeyword("family", [this](const std::string& unused, std::istream& theStream) {
-			family = commonItems::singleString(theStream).getString();
+		parser.RegisterKeyword("family", reader => {
+			family = reader.GetString();
 		});
-		registerKeyword("faiths", [this](const std::string& unused, std::istream& theStream) {
-			for (auto faith: commonItems::llongList(theStream).getLlongs())
-				faiths.insert(std::pair(faith, nullptr));
+		parser.RegisterKeyword("faiths", reader => {
+			foreach (var faithId in reader.GetLongs())
+			{
+				faiths.Add(faithId, null);
+			}
+				
 		});
-		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
 
-	long long ID = 0;
-	std::string tag;
-	std::string family;
-	std::map<long long, std::shared_ptr<Faith>> faiths;
+	
+	private string tag;
+	private string family;
+	private Dictionary<long, Faith?> faiths;
 };
-} // namespace CK3
-
-#endif // CK3_RELIGION_H

@@ -1,15 +1,12 @@
-#ifndef CK3_RELIGIONS_H
-#define CK3_RELIGIONS_H
-#include "Faiths.cs"
-#include "Parser.h"
 
-namespace CK3
+using CK3;
+
+namespace CK3ToEU4.CK3.Religions;
+
+class Religions
 {
-class Religion;
-class Religions: commonItems::parser
-{
-  public:
-	explicit Religions(std::istream& theStream)
+	public:
+	explicit Religions(BufferedReader reader)
 	{
 		registerKeys();
 		parseStream(theStream);
@@ -26,7 +23,7 @@ class Religions: commonItems::parser
 		for (const auto& religion: religions)
 		{
 			const auto& religionFaiths = religion.second->getFaiths();
-			std::map<long long, std::shared_ptr<Faith>> replacementMap;
+			Dictionary<long, std::shared_ptr<global::CK3.Faith>> replacementMap;
 
 			for (const auto& faith: religionFaiths)
 			{
@@ -37,7 +34,7 @@ class Religions: commonItems::parser
 				}
 				else
 				{
-					throw std::runtime_error("Religion " + religion.second->getName() + " has faith " + std::to_string(faith.first) + " which has no definition!");
+					throw new Exception("Religion " + religion.second->getName() + " has faith " + std::to_string(faith.first) + " which has no definition!");
 				}
 			}
 			religion.second->loadFaiths(replacementMap);
@@ -46,25 +43,22 @@ class Religions: commonItems::parser
 		Log(LogLevel::Info) << "<> " << counter << " religions updated.";
 	}
 
-  private:
+	private:
 	void registerKeys()
 	{
-		registerRegex(R"(\d+)", [this](const std::string& faithID, std::istream& theStream) {
+		registerRegex(R"(\d+)", [this](const string& faithID, std::istream& theStream) {
 			auto newReligion = std::make_shared<Religion>(theStream, std::stoll(faithID));
 			religions.insert(std::pair(newReligion->getID(), newReligion));
 		});
-		registerKeyword("religions", [this](const std::string& unused, std::istream& theStream) {
+		registerKeyword("religions", reader => {
 			religions = Religions(theStream).getReligions();
 		});
-		registerKeyword("faiths", [this](const std::string& unused, std::istream& theStream) {
+		registerKeyword("faiths", reader => {
 			faiths = Faiths(theStream);
 		});
-		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-	std::map<long long, std::shared_ptr<Religion>> religions;
+	Dictionary<long, std::shared_ptr<Religion>> religions;
 	Faiths faiths;
 };
-} // namespace CK3
-
-#endif // CK3_RELIGIONS_H

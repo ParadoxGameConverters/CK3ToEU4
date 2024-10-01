@@ -1,43 +1,41 @@
-using CK3;
+using System.Collections.Generic;
+using commonItems;
 
 namespace CK3ToEU4.CK3.Cultures;
 
-class Cultures: commonItems::parser
+class CultureCollection
 {
-	public Cultures() {}
-	public Cultures(std::istream& theStream)
+	public CultureCollection() {}
+	public CultureCollection(BufferedReader reader)
 	{
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
+		var parser = new Parser();
+		registerKeys(parser);
+		parser.ParseStream(reader);
 	}
 
-	public const auto& getCultures() const { return cultures; }
-	public void concoctCultures(const mappers::LocalizationMapper& localizationMapper, const mappers::CultureMapper& cultureMapper)
+	public IReadOnlyDictionary<long, Culture> Cultures => cultures;
+
+	public void concoctCultures(LocalizationMapper localizationMapper, CultureMapper cultureMapper)
 	{
-		for (const auto& culture: cultures | std::views::values)
+		foreach (var  culture in cultures.Values)
 		{
-			culture->concoctCultureName(localizationMapper, cultureMapper, cultureNamingCounter);
+			culture.concoctCultureName(localizationMapper, cultureMapper, cultureNamingCounter);
 		}
 	}
-
-
-  
-	private void registerKeys()
+	
+	private void registerKeys(Parser parser)
 	{
-		registerRegex(R"(\d+)", [this](const std::string& cultureID, std::istream& theStream) {
-			auto newCulture = std::make_shared<Culture>(theStream, std::stoll(cultureID));
-			cultures.insert(std::pair(newCulture->getID(), newCulture));
+		parser.RegisterRegex(CommonRegexes.Integer, (reader, cultureId) => {
+			var newCulture = new Culture(reader, long.Parse(cultureId));
+			cultures.Add(newCulture.getID(), newCulture);
 		});
-		registerKeyword("cultures", [this](std::istream& theStream) {
-			const auto scraper = Cultures(theStream);
-			cultures = scraper.getCultures();
+		parser.RegisterKeyword("cultures", reader => {
+			var scraper = new CultureCollection(reader);
+			cultures = new(scraper.cultures);
 		});
-		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-
-
-	private std::map<long long, std::shared_ptr<Culture>> cultures;
-	private std::map<std::string, int> cultureNamingCounter;
+	private Dictionary<long, Culture> cultures;
+	private readonly Dictionary<string, int> cultureNamingCounter = [];
 };

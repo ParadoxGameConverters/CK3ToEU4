@@ -59,7 +59,7 @@ class LandedTitles
 			if (landedTitle.first.find("b_") != 0)
 				continue;
 			if (!landedTitle.second->getProvince())
-				throw std::runtime_error("Landed title " + landedTitle.first + " has not province holding defined!");
+				throw new Exception("Landed title " + landedTitle.first + " has not province holding defined!");
 
 			const auto& provinceDataItr = provinceData.find(landedTitle.second->getProvince()->first);
 			if (provinceDataItr != provinceData.end())
