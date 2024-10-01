@@ -688,6 +688,16 @@ tenet_communal_possessions = {
 	}
 }
 
+tenet_household_gods = {
+	country = {
+		tolerance_heathen = 2
+		tolerance_heretic = 2
+	}
+	country_as_secondary = {
+		improve_relation_modifier = 0.1
+	}
+}
+
 #Empty
 tenets = {
 
