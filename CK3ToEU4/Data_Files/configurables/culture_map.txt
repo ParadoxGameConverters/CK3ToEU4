@@ -312,7 +312,7 @@ link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
 link = { eu4 = georgian ck3 = georgian ck3 = georgian1 ck3 = udi ck3 = caucasian_albanian ck3 = macronian ck3 = colchiscan ck3 = lazi tech = eastern gfx = easterngfx }
 
 #Chaldean
-link = { eu4 = assyrian ck3 = assyrian ck3 = syriac tech = eastern gfx = easterngfx }
+link = { eu4 = assyrian ck3 = assyrian ck3 = syriac ck3 = nabati tech = eastern gfx = easterngfx }
 link = { eu4 = babylonian ck3 = babylonian ck3 = akkadian ck3 = chaldean tech = eastern gfx = muslimgfx }
 
 # I:R Greek

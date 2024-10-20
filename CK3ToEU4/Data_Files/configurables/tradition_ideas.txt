@@ -371,6 +371,12 @@ link = { ck3 = { tradition = tradition_RICE_judicati_north_african } eu4 = { sta
 link = { ck3 = { tradition = tradition_RICE_judicati_none } eu4 = { stability_cost_modifier = -0.2 } }
 link = { ck3 = { tradition = tradition_tabari_isolation } eu4 = { stability_cost_modifier = -0.15 } }
 link = { ck3 = { tradition = tradition_norman_traditions } eu4 = { prestige = 0.5 } }
+link = { ck3 = { tradition = tradition_RICE_between_three_worlds } eu4 = { global_tax_modifier = 0.05 } }
+link = { ck3 = { tradition = tradition_RICE_longbeards } eu4 = { prestige = 0.5 legitimacy = 0.5 }  }
+link = { ck3 = { tradition = tradition_RICE_mediterranean_masserie } eu4 = { build_cost = -0.05 global_tax_modifier = 0.05 }  }
+link = { ck3 = { tradition = tradition_RICE_contentious_colonizers } eu4 = { development_cost = -0.05 }  }
+link = { ck3 = { tradition = tradition_RICE_berber_marignal_tribalism } eu4 = { movement_speed = 0.1 }  }
+link = { ck3 = { tradition = tradition_RICE_image_of_china } eu4 = { legitimacy = 1 }  }
 
 # Mod: More Bookmarks Plus
 link = { ck3 = { tradition = tradition_sardinian } eu4 = { navy_tradition = 0.5 } }
