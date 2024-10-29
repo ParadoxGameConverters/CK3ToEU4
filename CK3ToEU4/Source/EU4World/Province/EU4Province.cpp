@@ -5,7 +5,7 @@
 #include "../../CK3World/Religions/Faith.h"
 #include "../../CK3World/Titles/LandedTitles.h"
 #include "../../CK3World/Titles/Title.h"
-#include "../../Mappers/CultureMapper/CultureMapper.h"
+#include "../../Mappers/CultureMapper/CultureMapper.cs"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"
 #include "../Country/Country.h"
 #include "Log.h"

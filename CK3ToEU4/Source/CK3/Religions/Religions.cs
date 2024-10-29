@@ -1,31 +1,31 @@
-
-using CK3;
+using System;
+using System.Collections.Generic;
+using commonItems;
 
 namespace CK3ToEU4.CK3.Religions;
 
 class Religions
 {
-	public:
-	explicit Religions(BufferedReader reader)
+	public Religions(BufferedReader reader)
 	{
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
+		var parser = new Parser();
+		registerKeys(parser);
+		parser.ParseStream(reader);
 	}
 
-	[[nodiscard]] const auto& getReligions() const { return religions; }
-	[[nodiscard]] auto getFaiths() { return std::move(faiths); } // Use this only once in World.cpp
+	public IReadOnlyDictionary<long, Religion> getReligions() { return religions; }
+	public Faith getFaiths() { return faiths; } // Use this only once in World.cpp
 
-	void linkFaiths(const Faiths& theFaiths)
+	void linkFaiths(Faiths theFaiths)
 	{
-		auto counter = 0;
-		const auto& faithData = theFaiths.getFaiths();
-		for (const auto& religion: religions)
+		int counter = 0;
+		var faithData = theFaiths.getFaiths();
+		foreach (var religion in religions)
 		{
-			const auto& religionFaiths = religion.second->getFaiths();
-			Dictionary<long, std::shared_ptr<global::CK3.Faith>> replacementMap;
+			var religionFaiths = religion.Value.getFaiths();
+			Dictionary<long, Faith> replacementMap;
 
-			for (const auto& faith: religionFaiths)
+			foreach (var faith in religionFaiths)
 			{
 				const auto& faithDataItr = faithData.find(faith.first);
 				if (faithDataItr != faithData.end())
@@ -34,31 +34,30 @@ class Religions
 				}
 				else
 				{
-					throw new Exception("Religion " + religion.second->getName() + " has faith " + std::to_string(faith.first) + " which has no definition!");
+					throw new Exception($"Religion {religion.Value.getName()} has faith {faith.Key} which has no definition!");
 				}
 			}
-			religion.second->loadFaiths(replacementMap);
+			religion.Value.loadFaiths(replacementMap);
 			++counter;
 		}
-		Log(LogLevel::Info) << "<> " << counter << " religions updated.";
+		Logger.Info("<> " + counter + " religions updated.");
 	}
 
-	private:
-	void registerKeys()
+	private void registerKeys(Parser parser)
 	{
-		registerRegex(R"(\d+)", [this](const string& faithID, std::istream& theStream) {
-			auto newReligion = std::make_shared<Religion>(theStream, std::stoll(faithID));
-			religions.insert(std::pair(newReligion->getID(), newReligion));
+		parser.RegisterRegex(CommonRegexes.Integer, (reader, faithID) => {
+			var newReligion = new Religion(reader, long.Parse(faithID));
+			religions.Add(newReligion.ID, newReligion);
 		});
-		registerKeyword("religions", reader => {
-			religions = Religions(theStream).getReligions();
+		parser.RegisterKeyword("religions", reader => {
+			religions = new(new Religions(reader).getReligions());
 		});
-		registerKeyword("faiths", reader => {
-			faiths = Faiths(theStream);
+		parser.RegisterKeyword("faiths", reader => {
+			faiths = new Faiths(reader);
 		});
-		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-	Dictionary<long, std::shared_ptr<Religion>> religions;
+	Dictionary<long, Religion> religions;
 	Faiths faiths;
 };

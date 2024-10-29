@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using CK3;
+using CK3ToEU4.CK3.Dynasties;
+using CK3ToEU4.CK3.Geography;
+using CK3ToEU4.CK3.Religions;
 using CK3ToEU4.CK3.Titles;
 using CK3ToEU4.Configuration;
+using CK3ToEU4.Mappers.NamedColors;
+using CK3ToEU4.Mappers.TraitScraper;
 using commonItems;
 using commonItems.Mods;
 using SystemUtils = commonItems.SystemUtils;
@@ -1138,7 +1144,7 @@ private void setElectors()
 		}
 	}
 
-	Logger.Info("<> " << counter << " electorates linked.");
+	Logger.Info("<> " + counter + " electorates linked.");
 }
 
 

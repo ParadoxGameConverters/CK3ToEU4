@@ -1,58 +1,55 @@
-#ifndef CK3_FLAGS_H
-#define CK3_FLAGS_H
-#include <set>
+using System.Collections.Generic;
+using commonItems;
+using Open.Collections;
 
-#include "Parser.h"
+namespace CK3ToEU4.CK3.Flags;
 
-namespace CK3
+class Flags
 {
-class Flags: commonItems::parser
-{
-  public:
-	Flags() = default;
-	explicit Flags(BufferedReader reader)
+	public Flags()
 	{
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
-
-		if (itemType == "flag" && !incomingFlag.empty())
-			flags.insert(incomingFlag);
 	}
 
-	[[nodiscard]] const auto& getFlags() const { return flags; }
-
-  private:
-	void registerKeys()
+	public Flags(BufferedReader reader)
 	{
-		registerKeyword("list", reader => {
-			for (const auto& blob: commonItems::blobList(theStream).getBlobs())
+		var parser = new Parser();
+		RegisterKeys(parser);
+		parser.ParseStream(reader);
+
+		if (itemType == "flag" && incomingFlag.Length > 0)
+		{
+			flags.Add(incomingFlag);
+		}
+	}
+
+	public IReadOnlySet<string> getFlags() { return flags; }
+
+	private void RegisterKeys(Parser parser)
+	{
+		parser.RegisterKeyword("list", reader => {
+			foreach (var blob in new BlobList(reader).Blobs)
 			{
-				auto blobStream = stringstream(blob);
-				const auto scraper = Flags(blobStream);
-				const auto& foundFlags = scraper.getFlags();
-				flags.insert(foundFlags.begin(), foundFlags.end());
+				var blobReader = new BufferedReader(blob);
+				var scraper = new Flags(blobReader);
+				var foundFlags = scraper.getFlags();
+				flags.AddRange(foundFlags);
 			}
 		});
-		registerKeyword("item", reader => {
-			const auto scraper = Flags(theStream);
-			const auto& foundFlags = scraper.getFlags();
-			flags.insert(foundFlags.begin(), foundFlags.end());
+		parser.RegisterKeyword("item", reader => {
+			var scraper = new Flags(reader);
+			var foundFlags = scraper.getFlags();
+			flags.AddRange(foundFlags);
 		});
-		registerKeyword("flag", reader => {
+		parser.RegisterKeyword("flag", reader => {
 			incomingFlag = reader.GetString();
 		});
-		registerKeyword("type", reader => {
+		parser.RegisterKeyword("type", reader => {
 			itemType = reader.GetString();
 		});
-		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
-
-
-	string itemType;
-	string incomingFlag;
-	HashSet<string> flags;
-};
-} // namespace CK3
-
-#endif // CK3_FLAGS_H
+	
+	private string itemType = string.Empty;
+	private string incomingFlag = string.Empty;
+	private readonly HashSet<string> flags = [];
+}

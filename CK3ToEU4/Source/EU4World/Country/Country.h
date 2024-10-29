@@ -3,7 +3,7 @@
 
 #include "../../Configuration/Configuration.h"
 #include "../../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
-#include "../../Mappers/LocalizationMapper/LocalizationMapper.h"
+#include "../../Mappers/LocalizationMapper/LocalizationMapper.cs"
 #include "CountryDetails.h"
 #include <memory>
 #include <string>

@@ -10,7 +10,7 @@
 #include "../../CK3World/Titles/Title.h"
 #include "../../Mappers/CultureDefinitionsMapper/CultureDefinitionsMapper.h"
 #include "../../Mappers/CultureDefinitionsMapper/CultureGroupDefinition.h"
-#include "../../Mappers/CultureMapper/CultureMapper.h"
+#include "../../Mappers/CultureMapper/CultureMapper.cs"
 #include "../../Mappers/GovernmentsMapper/GovernmentsMapper.h"
 #include "../../Mappers/ProvinceMapper/ProvinceMapper.h"
 #include "../../Mappers/ReligionMapper/ReligionMapper.h"

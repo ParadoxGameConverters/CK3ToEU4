@@ -1,11 +1,11 @@
 #ifndef CK3_WORLD_H
 #define CK3_WORLD_H
-#include "../Mappers/CultureMapper/CultureMapper.h"
+#include "../Mappers/CultureMapper/CultureMapper.cs"
 #include "../Mappers/IAmHreMapper/IAmHreMapper.h"
-#include "../Mappers/LocalizationMapper/LocalizationMapper.h"
-#include "../Mappers/NamedColors/NamedColors.h"
+#include "../Mappers/LocalizationMapper/LocalizationMapper.cs"
+#include "../Mappers/NamedColors/NamedColors.cs"
 #include "../Mappers/ShatterEmpiresMapper/ShatterEmpiresMapper.h"
-#include "../Mappers/TraitScraper/TraitScraper.h"
+#include "../Mappers/TraitScraper/TraitScraper.cs"
 #include "../Mappers/VassalSplitoffMapper/VassalSplitoffMapper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"

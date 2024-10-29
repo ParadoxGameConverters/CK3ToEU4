@@ -1,4 +1,8 @@
 
+using System.Collections.Generic;
+using CK3;
+using commonItems;
+
 namespace CK3ToEU4.CK3.Dynasties;
 
 class House
@@ -8,58 +12,61 @@ class House
 	{
 	}
 
-	public House(std::istream& theStream, long housID)
+	public House(BufferedReader reader, long houseID)
 	{
-		houseID = housID;
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
+		ID = houseID;
+		
+		var parser = new Parser();
+		registerKeys(parser);
+		parser.ParseStream(reader);
 	}
-	public const auto& getKey() const { return key; }
-	public const auto& getName() const { return name; }
-	public const auto& getLocalizedName() const { return localizedName; }
-	public const auto& getPrefix() const { return prefix; }
-	public const auto& getDynasty() const { return dynasty; }
-	public const auto& getID() const { return houseID; }
-	public const auto& getHouseHead() const { return houseHead; }
+	public string getKey() { return key; }
+	public string getName() { return name; }
+	public string getLocalizedName() { return localizedName; }
+	public string getPrefix() { return prefix; }
+	public KeyValuePair<long, Dynasty?> getDynasty() { return dynasty; }
+	public long ID { get; private set; } = 0;
+	public KeyValuePair<long, Character?>? getHouseHead() { return houseHead; }
 
-	public void loadDynasty(const KeyValuePair<long, std::shared_ptr<Dynasty>>& theDynasty) { dynasty = theDynasty; }
-	public void loadHouseHead(const KeyValuePair<long, std::shared_ptr<Character>>& theHead) { houseHead = theHead; }
-	public void resetHouseHead() { houseHead.reset(); }
+	public void loadDynasty(KeyValuePair<long, Dynasty?> theDynasty) { dynasty = theDynasty; }
+	public void loadHouseHead(KeyValuePair<long, Character?> theHead) { houseHead = theHead; }
 
-	public void setName(const string& theName) { name = theName; }
-	public void setPrefix(const string& thePrefix) { prefix = thePrefix; }
+	public void resetHouseHead()
+	{
+		houseHead = null;
+	}
+
+	public void setName(string theName) { name = theName; }
+	public void setPrefix(string thePrefix) { prefix = thePrefix; }
 
   
-	private void registerKeys()
+	private void registerKeys(Parser parser)
 	{
-		registerKeyword("key", [this](BufferedReader reader) {
+		parser.RegisterKeyword("key", reader => {
 			key = reader.GetString();
 		});
-		registerKeyword("name", reader => {
+		parser.RegisterKeyword("name", reader => {
 			name = reader.GetString();
 		});
-		registerKeyword("localized_name", reader => {
+		parser.RegisterKeyword("localized_name", reader => {
 			localizedName = reader.GetString();
 		});
-		registerKeyword("prefix", reader => {
+		parser.RegisterKeyword("prefix", reader => {
 			prefix = reader.GetString();
 		});
-		registerKeyword("dynasty", reader => {
-			dynasty = std::make_pair(reader.GetLong(), nullptr);
+		parser.RegisterKeyword("dynasty", reader => {
+			dynasty = new(reader.GetLong(), null);
 		});
-		registerKeyword("head_of_house", reader => {
-			houseHead = std::make_pair(reader.GetLong(), nullptr);
+		parser.RegisterKeyword("head_of_house", reader => {
+			houseHead = new(reader.GetLong(), null);
 		});
-		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
-
-
-	private long houseID = 0;
+	
 	private string key;
 	private string name;
 	private string localizedName;
-	private KeyValuePair<long, std::shared_ptr<Dynasty>> dynasty;
+	private KeyValuePair<long, Dynasty?> dynasty;
 	private string prefix;
-	private std::optional<KeyValuePair<long, std::shared_ptr<Character>>> houseHead; // houses can have missing heads or dead people...
+	private KeyValuePair<long, Character?>? houseHead; // houses can have missing heads or dead people...
 };

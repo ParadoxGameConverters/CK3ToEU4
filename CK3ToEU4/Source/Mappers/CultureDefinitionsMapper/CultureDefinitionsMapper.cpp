@@ -2,7 +2,7 @@
 #include "../../CK3World/Cultures/Culture.h"
 #include "../../Configuration/Configuration.h"
 #include "../CultureDefinitionsMapper/CultureDefiniton.h"
-#include "../CultureMapper/CultureMapper.h"
+#include "../CultureMapper/CultureMapper.cs"
 #include "CommonRegexes.h"
 #include "CultureGroupDefinition.h"
 #include "Log.h"

@@ -1,5 +1,3 @@
-
-
 using System.Collections.Generic;
 using commonItems;
 using commonItems.Colors;
@@ -17,28 +15,28 @@ class Faith
 		ID = theID;
 		
 		var parser = new Parser();
-		registerKeys(parser, colorFactory);
+		RegisterKeys(parser, colorFactory);
 		parser.ParseStream(reader);
 	}
 
-	public const auto& getName() { return tag; }
-	public const auto& getColor() { return color; }
-	public const auto& getDoctrines() { return doctrines; }
-	public const auto& getReligion() { return religion; }
-	public const auto& getReligiousHead() { return religiousHead; }
-	public auto getID() { return ID; }
-	public const auto& getCustomName() { return customName; }
-	public const auto& getCustomAdj() { return customAdjective; }
-	public const auto& getDescription() { return description; }
-	public const auto& getTemplate() { return religionTemplate; }
-	public const auto& getIconPath() { return iconPath; }
-	public const auto& getReformedFlag() { return reformedFlag; }
+	public long ID { get; private set; } = 0;
+	public string getName() { return tag; }
+	public Color? Color { return color; }
+	public IReadOnlyList<string> getDoctrines() { return doctrines; }
+	public KeyValuePair<long, Religion?> getReligion() { return religion; }
+	public string getReligiousHead() { return religiousHead; }
+	public string getCustomName() { return customName; }
+	public string getCustomAdj() { return customAdjective; }
+	public string getDescription() { return description; }
+	public string getTemplate() { return religionTemplate; }
+	public string getIconPath() { return iconPath; }
+	public bool getReformedFlag() { return reformedFlag; }
 
-	public void setReligiousHead(const auto& newHead) { religiousHead = newHead; }
-	public void loadReligion(const KeyValuePair<long, std::shared_ptr<Religion>>& theReligion) { religion = theReligion; }
+	public void setReligiousHead(string newHead) { religiousHead = newHead; }
+	public void loadReligion(KeyValuePair<long, Religion?> theReligion) { religion = theReligion; }
 
 	
-	private void registerKeys(Parser parser, ColorFactory colorFactory)
+	private void RegisterKeys(Parser parser, ColorFactory colorFactory)
 	{
 		parser.RegisterKeyword("tag", reader => {
 			tag = reader.GetString();
@@ -71,15 +69,16 @@ class Faith
 			iconPath = reader.GetString();
 		});
 		parser.RegisterKeyword("variables", reader => {
-			if (commonItems::stringOfItem(theStream).getString().find("has_been_reformed") != string::npos)
+			if (reader.GetStringOfItem().ToString().Contains("has_been_reformed"))
+			{
 				reformedFlag = true;
+			}
 		});
 		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
 
 	private bool reformedFlag = false;
-	private long ID = 0;
 	private string tag;
 	private string religionTemplate;
 	private string iconPath;
@@ -88,6 +87,6 @@ class Faith
 	private string description;
 	private string religiousHead;
 	private Color? color;
-	private List<string> doctrines; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS
+	private readonly List<string> doctrines = []; // This is a vector in order to keep order consistent. We want the first things read (tenets) to be the first things output, ALWAYS
 	private KeyValuePair<long, Religion?> religion;
-};
+}

@@ -1,36 +1,36 @@
-#ifndef CK3_FAITHS_H
-#define CK3_FAITHS_H
-#include "../Titles/LandedTitles.cs"
-#include "../Titles/Title.h"
-#include "../Titles/Titles.cs"
-#include "Parser.h"
+using System;
+using System.Collections.Generic;
+using commonItems;
+using commonItems.Colors;
 
-namespace CK3
+namespace CK3ToEU4.CK3.Religions;
+
+class Faiths
 {
-class Faith;
-class Religions;
-class Faiths: commonItems::parser
-{
-  public:
-	Faiths() = default;
-	public Faiths(BufferedReader reader)
+	public Faiths() {}
+	public Faiths(BufferedReader reader, ColorFactory colorFactory)
 	{
-		registerKeys();
-		parseStream(theStream);
-		clearRegisteredKeywords();
+		var parser = new Parser();
+		registerKeys(parser, colorFactory);
+		parser.ParseStream(reader);
 	}
 
-	[[nodiscard]] const auto& getFaiths() const { return faiths; }
+	public IReadOnlyDictionary<long, Faith> getFaiths() { return faiths; }
 
-	void linkReligions(const Religions& religions, const Titles& titles)
+	public void linkReligions(Religions religions, Titles.Titles titles)
 	{
-		auto counter = 0;
-		const auto& religionData = religions.getReligions();
+		int counter = 0;
+		var religionData = religions.getReligions();
 		Dictionary<string, string> religiousHeadList; // ID, Title
-		for (const auto& title: titles.getTitles())
+		foreach (var title in titles.getTitles())
+		{
 			if (title.second)
+			{
 				religiousHeadList.emplace(std::to_string(title.second->getID()), title.first);
-		for (const auto& faith: faiths)
+			}
+		}
+		
+		foreach (var faith in faiths)
 		{
 			const auto& religionDataItr = religionData.find(faith.second->getReligion().first);
 			if (religionDataItr != religionData.end())
@@ -43,24 +43,20 @@ class Faiths: commonItems::parser
 			else
 			{
 				throw new Exception(
-					 "Faith " + faith.second->getName() + " has religion " + std::to_string(faith.second->getReligion().first) + " which has no definition!");
+					"Faith " + faith.Value.getName() + " has religion " + faith.Value.getReligion().Key + " which has no definition!");
 			}
 		}
-		Log(LogLevel::Info) << "<> " << counter << " faiths updated.";
+		Logger.Info("<> " + counter + " faiths updated.");
 	}
 
-  private:
-	void registerKeys()
+	private void registerKeys(Parser parser, ColorFactory colorFactory)
 	{
-		registerRegex(R"(\d+)", [this](const string& faithID, std::istream& theStream) {
-			auto newFaith = std::make_shared<Faith>(theStream, std::stoll(faithID));
-			faiths.insert(std::pair(newFaith->getID(), newFaith));
+		parser.RegisterRegex(CommonRegexes.Integer, (reader, faithId) => {
+			var newFaith = new Faith(reader, long.Parse(faithId), colorFactory);
+			faiths.Add(newFaith.ID, newFaith);
 		});
-		registerRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
+		parser.RegisterRegex(CommonRegexes.Catchall, ParserHelpers.IgnoreItem);
 	}
 
-	Dictionary<long, std::shared_ptr<Faith>> faiths;
-};
-} // namespace CK3
-
-#endif // CK3_FAITHS_H
+	private Dictionary<long, Faith> faiths;
+}

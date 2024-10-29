@@ -1,5 +1,6 @@
 
 using CK3;
+using CK3ToEU4.CK3.Religions;
 
 namespace CK3ToEU4.CK3.Geography;
 

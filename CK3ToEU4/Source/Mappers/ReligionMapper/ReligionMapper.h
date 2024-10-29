@@ -2,7 +2,7 @@
 #define RELIGION_MAPPER_H
 #include "../../EU4World/Religion/GeneratedReligion.h"
 #include "../CK3ReligionScraper/CK3ReligionScraper.h"
-#include "../LocalizationMapper/LocalizationMapper.h"
+#include "../LocalizationMapper/LocalizationMapper.cs"
 #include "Parser.h"
 #include <map>
 #include <optional>

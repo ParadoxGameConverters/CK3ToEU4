@@ -1,23 +1,34 @@
-#ifndef I_AM_HRE_MAPPER
-#define I_AM_HRE_MAPPER
-
-#include "Parser.h"
 
 namespace mappers
 {
 class IAmHreMapper: commonItems::parser
 {
   public:
-	IAmHreMapper();
-	explicit IAmHreMapper(std::istream& theStream);
+	IAmHreMapper()
+	{
+		registerKeys();
+		parseFile("configurables/i_am_hre.txt");
+		clearRegisteredKeywords();
+	}
+	explicit IAmHreMapper(std::istream& theStream)
+	{
+		registerKeys();
+		parseStream(theStream);
+		clearRegisteredKeywords();
+	}
 
 	[[nodiscard]] const auto& getHRE() const { return hre; }
 
   private:
-	void registerKeys();
+	void registerKeys()
+	{
+		registerKeyword("hre_mechanics", [this](const std::string& unused, std::istream& theStream) {
+			const commonItems::singleString hreStr(theStream);
+			hre = hreStr.getString();
+		});
+		registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+	}
 
 	std::string hre;
 };
-} // namespace mappers
-
-#endif // I_AM_HRE_MAPPER
+}
