@@ -225,6 +225,9 @@ link = { ck3 = { tradition = tradition_ep3_imperial_tagmata } eu4 = { land_force
 link = { ck3 = { tradition = tradition_ep3_roman_ceremonies } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_ep3_palace_politics } eu4 = { spy_offence = 0.2 global_spy_defence = 0.15 } }
 link = { ck3 = { tradition = tradition_ep3_cultivated_sophistication } eu4 = { diplomatic_reputation = 1 } }
+### 1.14 - New Tradition
+link = { ck3 = { tradition = tradition_brewery } eu4 = { tolerance_own = 2 } }
+
 
 ### Rule Overrides
 link = { ck3 = { tradition = tradition_seafaring } rule = { heritage = heritage_north_germanic } eu4 = { may_explore = yes } }
