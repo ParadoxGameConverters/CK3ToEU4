@@ -59,7 +59,7 @@ jobs:
   analyze:
     name: Analyze Foreign
     if: github.repository_owner != 'ParadoxGameConverters'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       fail-fast: false
