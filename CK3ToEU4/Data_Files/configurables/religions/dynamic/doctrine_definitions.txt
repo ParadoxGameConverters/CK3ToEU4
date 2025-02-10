@@ -1151,6 +1151,16 @@ special_doctrine_full_tolerance  = {
 	}
 }
 ##RICE
+rice_zun_hephthalite_warriors_doctrine  = {
+	country = {
+		land_morale = 0.1
+	}
+}
+rice_zun_hephthalite_culture_doctrine  = {
+	country = {
+		prestige = 0.25
+	}
+}
 special_doctrine_rice_doctrine_horse_sacrifice = {
 	country = {
 		tolerance_heretic = 1
@@ -1172,6 +1182,16 @@ rice_vajrayana_canon_doctrine  = {
 	}
 }
 rice_pudgalavada_canon_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_bon_deities_old_doctrine  = {
+	country = {
+		tolerance_heretic = 1
+	}
+}
+rice_bon_deities_new_doctrine  = {
 	country = {
 		tolerance_heretic = 1
 	}
@@ -1214,16 +1234,6 @@ rice_zoroastrian_eastern_doctrine  = {
 rice_zoroastrian_no_yazatas_doctrine  = {
 	country = {
 		tolerance_heretic = 1
-	}
-}
-rice_zun_hephthalite_warriors  = {
-	country = {
-		land_morale = 0.1
-	}
-}
-rice_zun_hephthalite_culture  = {
-	country = {
-		prestige = 0.25
 	}
 }
 special_doctrine_is_west_iranian_faith = {
@@ -1336,11 +1346,13 @@ doctrine_me_ablution_none = {
 doctrine_me_ablution_handwashing = {
 	country = {
 		monarch_lifespan = 0.1
+	}
 }
 
 doctrine_me_ablution_full = {
 	country = {
 		monarch_lifespan = 0.2
+	}
 }
 
 sampradaya_vaishnavism_doctrine = {
@@ -1441,6 +1453,8 @@ doctrine_christology_docetism = {
 			sethianism
 			priscillianism
 			cainitism
+		}
+	}
 }
 
 doctrine_christology_diophysite = {

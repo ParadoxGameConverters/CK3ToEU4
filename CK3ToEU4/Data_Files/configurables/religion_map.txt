@@ -88,7 +88,7 @@ link = { eu4 = kushitism_pagan ck3 = kushitism_pagan }
 # Magyar
 link = { eu4 = magyar_pagan ck3 = magyar_pagan }
 # Mundhum
-link = { eu4 = animism ck3 = kiratism ck3 = yumaism }
+link = { eu4 = animism ck3 = kiratism ck3 = yumaism ck3 = kinnaur_pagan }
 # Paganism
 link = { eu4 = pagan_religion ck3 = pagan }
 # Qiangic
@@ -180,7 +180,7 @@ link = { eu4 = arab_pagan ck3 = nabataean_pagan }
 link = { eu4 = mardukism ck3 = south_mesopotamian_pagan }
 link = { eu4 = arab_pagan ck3 = aksumite_pagan }
 link = { eu4 = arab_pagan ck3 = south_arabian_pagan }
-link = { eu4 = animism ck3 = nuristani_pagan }
+link = { eu4 = animism ck3 = nuristani_pagan ck3 = minaro_pagan }
 link = { eu4 = totemism ck3 = algonquian_pagan }
 link = { eu4 = totemism ck3 = inuit_pagan }
 link = { eu4 = totemism ck3 = iroquoian_pagan }
