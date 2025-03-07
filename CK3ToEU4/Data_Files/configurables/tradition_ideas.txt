@@ -412,3 +412,4 @@ link = { ck3 = { tradition = tradition_imperial_court } eu4 = { prestige = 1 } }
 link = { ck3 = { tradition = tradition_abstract_philosophy } eu4 = { yearly_innovativeness = 0.25 } }
 link = { ck3 = { tradition = tradition_historians } eu4 = { prestige = 1 advisor_cost = -0.1 } }
 link = { ck3 = { tradition = tradition_free_cities } eu4 = { development_cost = -0.1 local_build_time = -0.1 } }
+link = { ck3 = { tradition = tradition_brus_river_lifeblood } eu4 = { global_trade_power = 0.10 } }
