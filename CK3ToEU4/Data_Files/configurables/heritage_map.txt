@@ -55,6 +55,14 @@ link = { eu4 = west_african ck3 = heritage_akan ck3 = heritage_yoruba }
 link = { eu4 = african ck3 = heritage_bantu }
 link = { eu4 = cushitic ck3 = heritage_somalian ck3 = heritage_south_semitic }
 
+# IMP-CK3
+link = { eu4 = lost_cultures_group ck3 = heritage_nuragic }
+link = { eu4 = celtiberian_g ck3 = heritage_iberian_celtic }
+link = { eu4 = roman_group ck3 = heritage_venetic ck3 = heritage_italic ck3 = heritage_romano_british ck3 = heritage_romano_germanic }
+link = { eu4 = dacian_group ck3 = heritage_thracian }
+link = { eu4 = tyrrhenian ck3 = heritage_tyrrhenian }
+link = { eu4 = southeastasian_group ck3 = heritage_mon_khmer }
+
 # Mod: RICE
 link = { eu4 = central_algonquian ck3 = heritage_algonquian }
 link = { eu4 = iroquoian ck3 = heritage_iroquoian }
