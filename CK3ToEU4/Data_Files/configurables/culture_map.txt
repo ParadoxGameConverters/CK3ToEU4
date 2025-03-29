@@ -746,7 +746,7 @@ link = { eu4 = cherokee ck3 = cherokee tech = north_american gfx = northamericag
 
 # IMP:CK3
 ## Hellenic
-link = { eu4 = hellenistic ck3 = hellenistic }
+link = { eu4 = hellenistic ck3 = hellenistic ck3 = gelonian ck3 = neo_minoan ck3 = cretan ck3 = syro_hellenic ck3 = hellenic_greek tech = eastern gfx = easterngfx }
 ## Carthaginian
 link = { eu4 = carthaginian ck3 = carthaginian ck3 = punic tech = western gfx = muslimgfx }
 link = { eu4 = ynnocho ck3 = ynnocho tech = muslim gfx = muslimgfx }
@@ -837,6 +837,9 @@ link = { eu4 = getian ck3 = getian tech = nomad_group gfx = easterngfx }
 link = { eu4 = arbereshe ck3 = albanian ck3 = arberian ck3 = dalmatian tech = eastern gfx = easterngfx region = italy_region }
 link = { eu4 = albanian ck3 = albanian ck3 = arberian tech = eastern gfx = easterngfx }
 link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
+
+## East Asian
+link = { eu4 = xibei ck3 = qin tech = chinese gfx = asiangfx }
 
 ## Extra
 link = { eu4 = oldspain ck3 = non_indo_european_iberian tech = western gfx = westerngfx } # "iberian" overlaps with the post-roman culture of the same name from TFE, seems to be a deprecated culture from a previous version of the IR-CK3 converter?
