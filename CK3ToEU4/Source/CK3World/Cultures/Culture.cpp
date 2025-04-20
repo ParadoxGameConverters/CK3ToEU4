@@ -95,7 +95,7 @@ void CK3::Culture::concoctCultureName(const mappers::LocalizationMapper& localiz
 	name = "dynamic-";
 	for (const auto& entry: nameLists)
 	{
-		// Enery name component must be mapped to some base eu4 culture, so that eu4tovic2 can decompose it.
+		// Every name component must be mapped to some base eu4 culture, so that eu4tovic2 can decompose it.
 		const auto& cultureMatch = cultureMapper.cultureNonRegionalNonReligiousMatch(entry, "", 0, "");
 		if (cultureMatch)
 		{

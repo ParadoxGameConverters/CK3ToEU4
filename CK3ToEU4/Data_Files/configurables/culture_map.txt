@@ -826,7 +826,7 @@ link = { eu4 = scordiscian ck3 = noric ck3 = celtic_pannonian tech = eastern gfx
 ## Italic
 link = { eu4 = nuragic ck3 = nuragic tech = western gfx = inuitgfx }
 link = { eu4 = etrurian ck3 = etruscan tech = western gfx = westerngfx }
-link = { eu4 = rhaetian ck3 = rhaetian tech = western gfx = westerngfx }
+link = { eu4 = rhaetian ck3 = rhaetian ck3 = raetic tech = western gfx = westerngfx }
 link = { eu4 = lemnian ck3 = lemnian tech = western gfx = westerngfx }
 ## Balkans
 link = { eu4 = thracian ck3 = thracian tech = eastern gfx = easterngfx }

@@ -136,7 +136,7 @@ link = { eu4 = celtiberian_pagan ck3 = celtiberian_paganism }
 ## Semitic
 link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old ck3 = bosporan_faith ck3 = carthage_pagan }
 link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = semitic_pagan }
-link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old ck3 = assyrian_pagan }
+link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old ck3 = assyrian_pagan ck3 = elamite_faith }
 ## Perso-Caucasian
 link = { eu4 = mithraism ck3 = mithraic_mysteries }
 link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism ck3 = urartian_pagan }
@@ -156,6 +156,7 @@ link = {
 	eu4 = animism
 	ck3 = burmic # Natkokwe, animistic and polytheistic worship of nats and other spirits or ancestors
 	ck3 = dinka_pagan # "The Dinka are also animists." https://en.wikipedia.org/wiki/Dinka_religion
+	ck3 = hattian_faith
 }
 
 # Mod: Sunset Invasion
