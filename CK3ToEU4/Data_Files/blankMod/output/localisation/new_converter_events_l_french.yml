@@ -99,6 +99,22 @@
  ZZZ_enhanced_fetishist.11.t:3 "Les Olympiens"
  ZZZ_enhanced_fetishist.11.d:3 "Des chercheurs itinérants sont arrivés à la cour de [Root.Monarch.GetName]. Ils passent leurs journées à se disputer avec tout le monde et n'importe qui, menant souvent des discussions indirectes qui aboutissent à ce que le partenaire du chercheur se dispute contre ce qu'il avait défendu une heure auparavant. Ces savants prétendent être les descendants honoraires d'une longue tradition qui a commencé il y a des siècles dans un petit endroit appelé "Glees". Ils ont déjà un public dévoué qui a commencé à les copier dans le style et la robe, beaucoup allant même jusqu'à les rejoindre dans leurs pratiques religieuses, qui consistent à faire des sacrifices à un grand nombre de dieux qui vivent soi-disant sur une grande montagne loin appelé "Olympus"."
  ZZZ_enhanced_fetishist.11.a:3 "Une vie non examinée ne vaut pas la peine d'être vécue."
+ 
+ ZZZ_enhanced_fetishist.900.t:0 "Les marins"
+ ZZZ_enhanced_fetishist.900.d:0 "Des marins venus d'un pays lointain ont récemment débarqué sur nos côtes. Ils prétendent être des explorateurs de la grande ville de 'Kart'Hatadge' et rendent grâce à une déesse appelée Tanit, dont ils disent qu'ils bénissent. leur ont permis de survivre au périlleux voyage à travers les hautes et tumultueuses mers. Fascinés par les récits de ces marins exotiques, beaucoup de nos concitoyens ont commencé à construire des sanctuaires et des Tophets en l'honneur de Tanit et de son mari Ba'al ici à [Root.Capital .GetCapitalName], en espérant qu'ils seront protégés pendant leurs longs voyages. Malgré les rumeurs de sacrifices d'enfants, le culte de Tanit continue de se propager.
+ ZZZ_enhanced_fetishist.900.a:0 "Nous ne devons pas permettre la destruction de [Root.Capital.GetCapitalName]."
+
+ ZZZ_enhanced_fetishist.901.t:0 "Le pays des pharaons"
+ ZZZ_enhanced_fetishist.901.d:0 "Des marchands sont arrivés d'un pays appelé 'Kemet', qui nous parlent de tombes pyramidales massives, de rois divins, de dieux à tête d'animal et de richesses exorbitantes au-delà de nos rêves les plus fous. Notre pays a commencé à ériger des sanctuaires à Râ, Anubis, Sekhmet, Osiris et à beaucoup d'autres de ces dieux étrangers, dans l'espoir qu'ils seront bénis comme les habitants du Nil. Beaucoup d'autres ont commencé à planifier l'au-delà en épargnant pour leur mumification, et certains ont même suggéré que [Root.Monarch.GetName] soit proclamé Pharaon, représentant de Râ, pour s'assurer qu'ils seront divinement guidés.
+ ZZZ_enhanced_fetishist.901.a:0 "Que les dieux s'interposent entre nous et nous nuisent."
+
+ ZZZ_enhanced_fetishist.902.t:0 "Les Druides"
+ ZZZ_enhanced_fetishist.902.d:0 "Exilés de leur pays natal, de mystérieux chamanes se faisant appeler 'Druides' sont arrivés à [Root.Capital.GetCapitalName]. Leurs pratiques arcaniques entourées de secret, beaucoup de nos sujets sont devenus fascinés d'en apprendre davantage sur leurs Ceux qui les ont recherchés reviennent en parlant de dieux étranges et conseillent notre cour sur l'élaboration des lois. Certains de nos plus proches conseillers nous demandent maintenant d'officialiser cette institution, afin que nous puissions profiter pleinement de la sagesse qui nous est offerte.
+ ZZZ_enhanced_fetishist.902.a:0 "Nous devons tenir compte de leur sagesse."
+
+ ZZZ_enhanced_fetishist.903.t:0 "L'Ajivika"
+ ZZZ_enhanced_fetishist.903.d:0 "Un groupe de sages est arrivé de loin à l'est, apportant avec eux leurs croyances. Ils prétendent qu'il n'y a pas de libre arbitre et que tout était prédestiné lors de la création du monde : pas de dieux. que nous adorons nous protégera et aucune vertu morale ne nous sauvera de notre destin inévitable. Beaucoup de nos prêtres leur ont reproché de n'avoir aucune moralité, mais malgré les critiques de nos prêtres, beaucoup dans notre pays se sont réconfortés en sachant que leur sort est scellé. , libres des pressions du Karma et du Dharma, et se sont rassemblés pour suivre les Ajivika sur le chemin des Niyati.
+ ZZZ_enhanced_fetishist.903.a:0 "Comme prévu, nous devons considérer la sagesse de Niyati."
 
  ZZZ_enhanced_fetishist.12.t:3 "L'autre"
  ZZZ_enhanced_fetishist.12.d:3 "Au fur et à mesure que nous avons vu de plus en plus de monde, nous avons réalisé qu'il existe de nombreux peuples qui nous ressemblent, même s'ils ne sont pas de parfaits miroirs. Ils ont leurs propres rituels, dieux et croyances. Comme nous avons interagi avec ces personnes, il y a naturellement eu un échange de culture. Il n'est pas inhabituel de nos jours de trouver des familles locales faisant un sacrifice à un dieu connu principalement dans un pays qui mettrait des mois, voire des années à atteindre."
@@ -328,6 +344,11 @@
  ZZZ_enhanced_fetishist.106.d: 0 "Un grand groupe de Yézidis a demandé [Root.GetAuAlaDir] [Root.Owner.GetTitle] [Root.Owner.Ruler] de déménager [Root.GetAuAlaNP] [Root.GetName] où ils peuvent vivre en paix. Afin de faciliter ce déménagement , et afin de s'assurer que tout se passe bien, les Yézidis ont offert leurs services dans notre administration pendant un certain temps.Avec plusieurs de leurs membres ayant déjà travaillé comme administrateurs, il serait stupide de refuser cette opportunité sans d'abord considérer les avantages. "
  ZZZ_enhanced_fetishist.106.a: 0 "Très bien, laissez-les entrer."
  ZZZ_enhanced_fetishist.106.a: 0 "Nos propres administrateurs vont bien, merci."
+ 
+ #Illyric
+ ZZZ_enhanced_religion.19.t:0 "Le culte du cavalier thrace"
+ ZZZ_enhanced_religion.19.d:0 "Au fur et à mesure que nous interagissons davantage avec les Thraces, des idées et des croyances ont été échangées entre nous. Cependant, une croyance en particulier s'est imposée parmi tant d'autres dans [Root.GetName] : le cavalier thrace, un chasseur mythique dont l'habileté avec le cheval est légendaire. Beaucoup de nos guerriers se tournent désormais vers lui pour se protéger et notre cavalerie à cheval perfectionne ses compétences d'équitation en son honneur.
+ ZZZ_enhanced_religion.19.a:0 "Gloire au cavalier thrace!"
 
  #MISC
  ZZZ_enhanced_misc.4.t:3 "L'abolition de l'esclavage"

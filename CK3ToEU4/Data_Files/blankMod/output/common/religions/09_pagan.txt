@@ -479,7 +479,42 @@ pagan = {
 	}
 	hurrian_pagan = {
 		color = { 89 92 209 }
-		icon = 175
+		icon = 174
+		country = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 2
+			tolerance_heretic = 2
+		}
+
+		heretic = { SNAKE_CLAN }
+	}
+	illyric_pagan = {
+		color = { 13 92 128 }
+		icon = 176
+		country = {
+			tolerance_own = 1
+			tolerance_heretic = 1
+		}
+		province = {
+			local_missionary_strength = 0.02
+		}
+		country_as_secondary = {
+			tolerance_own = 1
+			manpower_recovery_speed = 0.15
+		}
+		personal_deity = yes
+
+		heretic = { SNAKE_CLAN }
+	}
+	hattian_pagan = {
+		color = { 199 199 199 }
+		icon = 177
 		country = {
 			tolerance_own = 2
 			tolerance_heretic = 2

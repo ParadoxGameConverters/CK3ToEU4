@@ -99,6 +99,22 @@
  ZZZ_enhanced_fetishist.11.t:3 "The Olympians"
  ZZZ_enhanced_fetishist.11.d:3 "Traveling scholars have arrived in the court of [Root.Monarch.GetName]. They spend their days arguing with everyone and anyone, oftentimes leading circling arguments that end up with the scholar's partner arguing against what he had stood for just an hour previously. These scholars claim to be the honorary descendants of a long tradition that began centuries ago in a small place called "Glees". They already have a devoted following who have begun to copy them in style and dress, with many even going so far as to join them in their religious practices, which concern making sacrifices to a large number of gods who supposedly live on a large mountain far away called "Olympus"."
  ZZZ_enhanced_fetishist.11.a:3 "An unexamined life is not worth living."
+ 
+ ZZZ_enhanced_fetishist.900.t:0 "The Seafarers"
+ ZZZ_enhanced_fetishist.900.d:0 "Seafarers from a far-away land have recently landed on our shores. They claim to be explorers from the great city of 'Kart'Hatadge,' and give thanks a goddess called Tanit, whose blessings they say have allowed them to survive the perilous journey across the high and stormy seas. Fascenated by the tales of these exotic seamen, many of our own people have begun to build shrines and Tophets to Tanit and her husband Ba'al here in [Root.Capital.GetCapitalName], hoping they will be protected during their own long journeys. Despite rumors of child sacrifice, the cult of Tanit continues to spread."
+ ZZZ_enhanced_fetishist.900.a:0 "We must not allow [Root.Capital.GetCapitalName] to be destroyed."
+
+ ZZZ_enhanced_fetishist.901.t:0 "The Land of the Pharaohs"
+ ZZZ_enhanced_fetishist.901.d:0 "Merchants have arrived from a land called 'Kemet,' who tell us of massive Pyramid-tombs, divine kings, animal-headed gods, and exorbitant riches beyond our wildest dreams. Hearing of this, many in our country have begun to erect shrines to Ra, Anubis, Sekhmet, Osiris, and many of other of these foreign gods, hoping they will be blessed like the people of the Nile. Many others have begun to plan for the afterlife by saving up for their mumification, and some have even suggested that [Root.Monarch.GetName] be proclaimed Pharaoh, representative of Ra, to ensure that they will be divinely guided."
+ ZZZ_enhanced_fetishist.901.a:0 "May the gods come between us and harm."
+
+ ZZZ_enhanced_fetishist.902.t:0 "The Druids"
+ ZZZ_enhanced_fetishist.902.d:0 "Exiled from their homeland, mysterious shamans calling themselves 'Druids' have arrived in [Root.Capital.GetCapitalName]. Their arcane practices shouded in secrecy, many of our subjects have become fascenated in learning more about their ways. Those who have sought them out return speaking of strange gods and advise our court on lawmaking. Some of our closest advisors now call on us to formalize this institution, so that we can fully take advantage of the wisdom offered to us."
+ ZZZ_enhanced_fetishist.902.a:0 "We must consider their wisdom."
+
+ ZZZ_enhanced_fetishist.903.t:0 "The Ajivika"
+ ZZZ_enhanced_fetishist.903.d:0 "A group of wise men have arrived from far to the east, bringing with them their beliefs. They claim that there is no free will and that everything was pre-destined when the world was created: no gods we worship will protect us and no moral virtues will save us from our inevitible fate. Many of our priests have critisized them for having no morality, but in spite of our priests' criticisms, many in our country have taken confort knowing their fate is sealed, free from the pressures of Karma and Dharma, and have flocked to follow the Ajivika in the way of the Niyati."
+ ZZZ_enhanced_fetishist.903.a:0 "As was destined, we must consider the wisdom in Niyati."
 
  ZZZ_enhanced_fetishist.12.t:3 "The Other"
  ZZZ_enhanced_fetishist.12.d:3 "As we have gradually seen more of the world, we have come to realize that there are many peoples who are similar to us, even if they are not perfect mirrors. They have their own rituals, gods and beliefs. As we have interacted with these people, there has naturally been an exchange of culture. It is not unusual nowadays to find local families making a sacrifice to a god known mainly in a land that would take months if not years to reach."
@@ -328,6 +344,11 @@
  ZZZ_enhanced_fetishist.106.d:3 "A large group of [yazidi_migrant_origin.Religion]s have petitioned [Root.Owner.GetTitle] [Root.Owner.Ruler] to move to [Root.GetName] where they can live in peace. In order to facilitate this move, and in order to ensure that everything goes smoothly, the Yazidis have offered their services in our administration for a time. With several of their members having previously worked as administrators, we would be foolish to turn down this opportunity without first considering the advantages."
  ZZZ_enhanced_fetishist.106.a:3 "Very well, let them in."
  ZZZ_enhanced_fetishist.106.a:3 "Our own administrators are fine, thank you."
+ 
+ #Illyric
+ ZZZ_enhanced_religion.19.t:0 "The Cult of the Thracian Horseman"
+ ZZZ_enhanced_religion.19.d:0 "As we have come to interact more with the Thracians, ideas and beliefs have been exhanged between us. However, one belief in particular has taken hold among many in [Root.GetName]: The Thracian Horseman, a mythical hunter whose skill with the horse is legendary. Many of our warriors now look to him for protection and our mounted cavalry hone their horse-riding skills in his honor."
+ ZZZ_enhanced_religion.19.a:0 "Glory to the Thracian Horseman!"
 
  #MISC
  ZZZ_enhanced_misc.4.t:3 "The Abolition of Slavery"

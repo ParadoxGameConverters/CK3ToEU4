@@ -48,4 +48,6 @@ An list of those who contributed effort to this mammoth undertaking
 * Silver Wizard 							- Coding support
 * Zemurin 									- The Weave
 
+Special thanks to the Bronze Age:Reborn mod for allowing the converter to use its namelists for Bronze Age cultures. It can be found on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2448788091
+
  - AND ALL THE OTHERS WHO GAVE THEIR INPUT ON THE FORUM AND DISCORD -

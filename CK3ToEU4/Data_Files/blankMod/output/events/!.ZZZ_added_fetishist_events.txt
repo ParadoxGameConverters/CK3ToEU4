@@ -21,6 +21,7 @@ country_event = {
 					}
 					AND = {
 						religion_group = dharmic
+						NOT = { religion = ajivika }
 						ROOT = { NOT = { has_unlocked_cult = dharmic_cult } }
 					}
 					AND = {
@@ -106,6 +107,36 @@ country_event = {
 						ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 					}
 					AND = {
+						OR = {
+							religion = canaanite
+							#religion = canaanite_pagan_reformed
+						}
+						ROOT = { NOT = { has_unlocked_cult = canaanite_cult } }
+					}
+					AND = {
+						OR = {
+							religion = kemetism
+						}
+						ROOT = { NOT = { has_unlocked_cult = kemetism_cult } }
+					}
+					AND = {
+						OR = {
+							religion = druidism
+							religion = briton_pagan
+							religion = gallic_pagan
+							religion = gaelic_pagan
+							religion = celtiberian_pagan
+							#religion = druidic_pagan_reformed
+						}
+						ROOT = { NOT = { has_unlocked_cult = druidic_cult } }
+					}
+					AND = {
+						OR = {
+							religion = ajivika
+						}
+						ROOT = { NOT = { has_unlocked_cult = ajivika_cult } }
+					}
+					AND = {
 						religion_group = pagan #Yes, it is possible to get two cults for the price of one
 						NOT = { uses_cults = yes }
 						ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
@@ -157,6 +188,7 @@ country_event = {
 			if = {
 				limit = {
 					religion_group = dharmic
+					NOT = { religion = ajivika }
 					ROOT = {  NOT = { has_unlocked_cult = dharmic_cult } }
 				}
 				ROOT = {
@@ -295,6 +327,56 @@ country_event = {
 			}
 			if = {
 				limit = {
+					OR = {
+						religion = canaanite
+						#religion = canaanite_pagan_reformed
+					}
+					ROOT = {  NOT = { has_unlocked_cult = canaanite_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.900 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = kemetism
+					}
+					ROOT = {  NOT = { has_unlocked_cult = kemetism_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.901 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = druidism
+						religion = briton_pagan
+						religion = gallic_pagan
+						religion = gaelic_pagan
+						religion = celtiberian_pagan
+						#religion = druidic_pagan_reformed
+					}
+					ROOT = {  NOT = { has_unlocked_cult = druidic_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.902 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = ajivika
+					}
+					ROOT = {  NOT = { has_unlocked_cult = ajivika_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.903 }
+				}
+			}
+			if = {
+				limit = {
 					religion_group = pagan #Yes, it is possible to get two cults for the price of one
 					NOT = { uses_cults = yes }
 					ROOT = {  NOT = { has_unlocked_cult = pagan_cult } }
@@ -320,6 +402,7 @@ country_event = {
 				}
 				AND = {
 					religion_group = dharmic
+					NOT = { religion = ajivika }
 					ROOT = { NOT = { has_unlocked_cult = dharmic_cult } }
 				}
 				AND = {
@@ -416,6 +499,36 @@ country_event = {
 					ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
 				}
 				AND = {
+					OR = {
+						religion = canaanite
+						#religion = canaanite_pagan_reformed
+					}
+					ROOT = { NOT = { has_unlocked_cult = canaanite_cult } }
+				}
+				AND = {
+					OR = {
+						religion = kemetism
+					}
+					ROOT = { NOT = { has_unlocked_cult = kemetism_cult } }
+				}
+				AND = {
+					OR = {
+						religion = druidism
+						religion = briton_pagan
+						religion = gallic_pagan
+						religion = gaelic_pagan
+						religion = celtiberian_pagan
+						#religion = druidic_pagan_reformed
+					}
+					ROOT = { NOT = { has_unlocked_cult = druidic_cult } }
+				}
+				AND = {
+					OR = {
+						religion = ajivika
+					}
+					ROOT = { NOT = { has_unlocked_cult = ajivika_cult } }
+				}
+				AND = {
 					religion_group = pagan #Yes, it is possible to get two cults for the price of one
 					NOT = { uses_cults = yes }
 					ROOT = { NOT = { has_unlocked_cult = pagan_cult } }
@@ -453,6 +566,7 @@ country_event = {
 					}
 					AND = {
 						religion_group = dharmic
+						NOT = { religion = ajivika }
 						ROOT = { NOT = { has_unlocked_cult = dharmic_cult } }
 					}
 					AND = {
@@ -536,6 +650,36 @@ country_event = {
 							religion = hellenic_pagan_reformed
 						}
 						ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
+					}
+					AND = {
+						OR = {
+							religion = canaanite
+							#religion = canaanite_pagan_reformed
+						}
+						ROOT = { NOT = { has_unlocked_cult = canaanite_cult } }
+					}
+					AND = {
+						OR = {
+							religion = kemetism
+						}
+						ROOT = { NOT = { has_unlocked_cult = kemetism_cult } }
+					}
+					AND = {
+						OR = {
+							religion = druidism
+							religion = briton_pagan
+							religion = gallic_pagan
+							religion = gaelic_pagan
+							religion = celtiberian_pagan
+							#religion = druidic_pagan_reformed
+						}
+						ROOT = { NOT = { has_unlocked_cult = druidic_cult } }
+					}
+					AND = {
+						OR = {
+							religion = ajivika
+						}
+						ROOT = { NOT = { has_unlocked_cult = ajivika_cult } }
 					}
 					AND = {
 						religion_group = pagan #Yes, it is possible to get two cults for the price of one
@@ -726,6 +870,56 @@ country_event = {
 			}
 			if = {
 				limit = {
+					OR = {
+						religion = canaanite
+						#religion = canaanite_pagan_reformed
+					}
+					ROOT = {  NOT = { has_unlocked_cult = canaanite_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.900 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = kemetism
+					}
+					ROOT = {  NOT = { has_unlocked_cult = kemetism_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.901 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = druidism
+						religion = briton_pagan
+						religion = gallic_pagan
+						religion = gaelic_pagan
+						religion = celtiberian_pagan
+						#religion = druidic_pagan_reformed
+					}
+					ROOT = {  NOT = { has_unlocked_cult = druidic_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.902 }
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						religion = ajivika
+					}
+					ROOT = {  NOT = { has_unlocked_cult = ajivika_cult } }
+				}
+				ROOT = {
+					country_event = { id = ZZZ_enhanced_fetishist.903 }
+				}
+			}
+			if = {
+				limit = {
 					religion_group = pagan #Yes, it is possible to get two cults for the price of one
 					NOT = { has_owner_religion = yes }
 					ROOT = {  NOT = { has_unlocked_cult = pagan_cult } }
@@ -749,6 +943,7 @@ country_event = {
 				}
 				AND = {
 					religion_group = dharmic
+					NOT = { religion = ajivika }
 					ROOT = { NOT = { has_unlocked_cult = dharmic_cult } }
 				}
 				AND = {
@@ -843,6 +1038,36 @@ country_event = {
 						religion = hellenic_pagan_reformed
 					}
 					ROOT = { NOT = { has_unlocked_cult = hellenic_cult } }
+				}
+				AND = {
+						OR = {
+							religion = canaanite
+							#religion = canaanite_pagan_reformed
+						}
+						ROOT = { NOT = { has_unlocked_cult = canaanite_cult } }
+					}
+				AND = {
+					OR = {
+						religion = kemetism
+					}
+					ROOT = { NOT = { has_unlocked_cult = kemetism_cult } }
+				}
+				AND = {
+					OR = {
+						religion = druidism
+						religion = briton_pagan
+						religion = gallic_pagan
+						religion = gaelic_pagan
+						religion = celtiberian_pagan
+						#religion = druidic_pagan_reformed
+					}
+					ROOT = { NOT = { has_unlocked_cult = druidic_cult } }
+				}
+				AND = {
+					OR = {
+						religion = ajivika
+					}
+					ROOT = { NOT = { has_unlocked_cult = ajivika_cult } }
 				}
 				AND = {
 					religion_group = pagan #Yes, it is possible to get two cults for the price of one
@@ -1093,6 +1318,98 @@ country_event = {
 	option = {
 		name = ZZZ_enhanced_fetishist.11.a
 		unlock_cult = hellenic_cult
+	}
+}
+
+#Discovering Canaanite cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.900
+	title = ZZZ_enhanced_fetishist.900.t
+	desc = ZZZ_enhanced_fetishist.900.d
+	picture = TRIBES_MEETING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.900.a
+		unlock_cult = canaanite_cult
+	}
+}
+
+#Discovering Kemetism cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.901
+	title = ZZZ_enhanced_fetishist.901.t
+	desc = ZZZ_enhanced_fetishist.901.d
+	picture = TRIBES_MEETING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.901.a
+		unlock_cult = kemetism_cult
+	}
+}
+
+#Discovering Druidic cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.902
+	title = ZZZ_enhanced_fetishist.902.t
+	desc = ZZZ_enhanced_fetishist.902.d
+	picture = TRIBES_MEETING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.902.a
+		unlock_cult = druidic_cult
+	}
+}
+
+#Discovering Ajivika cult
+country_event = {
+	id = ZZZ_enhanced_fetishist.903
+	title = ZZZ_enhanced_fetishist.903.t
+	desc = ZZZ_enhanced_fetishist.903.d
+	picture = TRIBES_MEETING_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_dlc = "Rights of Man"
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ZZZ_enhanced_fetishist.903.a
+		unlock_cult = ajivika_cult
 	}
 }
 
