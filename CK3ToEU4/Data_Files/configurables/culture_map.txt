@@ -301,15 +301,15 @@ link = { eu4 = seleucian ck3 = greek tech = eastern gfx = westerngfx region = ma
 link = { eu4 = seleucian ck3 = greek_persian tech = eastern gfx = muslimgfx }
 link = { eu4 = tylosi ck3 = greek tech = eastern gfx = westerngfx region = arabia_region }
 link = { eu4 = yavana ck3 = greek tech = eastern gfx = westerngfx region = india_superregion }
-link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek ck3 = trojan tech = eastern gfx = easterngfx }
+link = { eu4 = greek ck3 = greek ck3 = delmatic ck3 = macedonian ck3 = tsakonian ck3 = spartan ck3 = helleno_thracian ck3 = romano_thracian ck3 = ancient_greek tech = eastern gfx = easterngfx }
 
 #Caucasian
 link = { eu4 = circassian ck3 = circassian ck3 = alan ck3 = georgian ck3 = assyrian tech = eastern gfx = easterngfx region = circassia_area } #Circassian is needed for Mamluk Government type, so let's try to make it happen
 link = { eu4 = circassian ck3 = circassian ck3 = abaza ck3 = adyghes ck3 = abkhaz tech = eastern gfx = easterngfx } #It has to be this way or the Circassian outside of Circassia will disappear
 link = { eu4 = dagestani ck3 = georgian tech = eastern gfx = easterngfx region = dagestan_area }
-link = { eu4 = dagestani ck3 = dagestani ck3 = nakh ck3 = durdzuk tech = eastern gfx = easterngfx }
+link = { eu4 = dagestani ck3 = dagestani ck3 = nakh ck3 = durdzuk ck3 = udi ck3 = caucasian_albanian tech = eastern gfx = easterngfx }
 link = { eu4 = alan ck3 = alan tech = eastern gfx = easterngfx }
-link = { eu4 = georgian ck3 = georgian ck3 = georgian1 ck3 = udi ck3 = caucasian_albanian ck3 = macronian ck3 = colchiscan ck3 = lazi tech = eastern gfx = easterngfx }
+link = { eu4 = georgian ck3 = georgian ck3 = georgian1 ck3 = macronian ck3 = colchiscan ck3 = lazi tech = eastern gfx = easterngfx }
 
 #Chaldean
 link = { eu4 = assyrian ck3 = assyrian ck3 = syriac ck3 = nabati tech = eastern gfx = easterngfx }
@@ -771,6 +771,7 @@ link = { eu4 = hittite ck3 = hittite tech = eastern gfx = muslimgfx }
 link = { eu4 = phrygian ck3 = phrygian tech = eastern gfx = easterngfx }
 link = { eu4 = anatolian ck3 = ionic ck3 = cappadocian tech = eastern gfx = easterngfx }
 link = { eu4 = pontic_greek ck3 = pontic tech = eastern gfx = easterngfx }
+link = { eu4 = trojan ck3 = trojan tech = eastern gfx = muslimgfx }
 ## Germanic
 link = { eu4 = gothic ck3 = gothic ck3 = heruli ck3 = skirian ck3 = gepid ck3 = taifal ck3 = gothi tech = western gfx = westerngfx }
 link = { eu4 = ostrogothic ck3=thracian_gothic ck3 = ostrogothic tech = western gfx = westerngfx }
@@ -1175,3 +1176,29 @@ link = { eu4 = bai ck3 = caijia tech = chinese gfx = asiangfx } # https://en.wik
 link = { eu4 = khmer ck3 = bnam tech = chinese gfx = asiangfx } # MS Copilot: "Given that the modded CK3 culture Bnam has Mon-Khmer heritage and Malay language, it would be best mapped to the Khmer culture in EU4. The Khmer culture is part of the Mon-Khmer group and aligns well with the heritage aspect."
 link = { eu4 = khmer ck3 = bruso ck3 = katang tech = chinese gfx = asiangfx } # The CK3 cultures have Katuic language and heritage. More info on Katuic: http://sealang.net/mk/katuic.htm
 link = { eu4 = khmer ck3 = sambor tech = chinese gfx = asiangfx } # Mon-Khmer heritage, Khmer language
+
+#BA to I:R
+#Pre-Greek
+link = { eu4 = pelasgian ck3 = pelasgian tech = eastern gfx = easterngfx }
+link = { eu4 = minoan ck3 = minoan tech = eastern gfx = easterngfx }
+link = { eu4 = cycladic ck3 = cycladic tech = eastern gfx = easterngfx }
+
+#Ancient Semetic
+link = { eu4 = sumerian ck3 = sumerian tech = eastern gfx = easterngfx } #Not Semetic-speaking, but influenced and was influenced by Akkadian
+link = { eu4 = eblaite ck3 = eblaite tech = eastern gfx = easterngfx }
+link = { eu4 = alasiyan ck3 = alasiyan tech = muslim gfx = muslimgfx }
+link = { eu4 = ugaritic ck3 = ugaritic tech = muslim gfx = muslimgfx }
+
+#Old Anatolian
+link = { eu4 = kizzuwatnan ck3 = kizzuwatnan tech = eastern gfx = easterngfx }
+
+#Pre-Anatolian
+link = { eu4 = hatti ck3 = hatti tech = eastern gfx = easterngfx }
+
+#Hurrian
+link = { eu4 = hurrian_culture ck3 = hurrian_culture tech = muslim gfx = muslimgfx }
+link = { eu4 = gutian ck3 = gutian tech = muslim gfx = muslimgfx } #Unknown language, placed in the Hurrian group for convenience
+
+#Ancient Egyptian Divergences
+link = { eu4 = per_sheklesh ck3 = per_sheklesh tech = eastern gfx = easterngfx }
+link = { eu4 = niwt_ipt ck3 = niwt_ipt tech = eastern gfx = easterngfx }

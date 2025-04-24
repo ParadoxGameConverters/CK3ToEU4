@@ -99,6 +99,22 @@
  ZZZ_enhanced_fetishist.11.t:3 "Los Olímpicos"
  ZZZ_enhanced_fetishist.11.d:3 "Los eruditos viajeros han llegado a la corte de [Root.Monarch.GetName]. Pasan sus días discutiendo con todos y con cualquiera, a menudo liderando discusiones circulares que terminan con la pareja del erudito discutiendo en contra de lo que él había defendido solo una hora antes. Estos eruditos afirman ser descendientes honorarios de una larga tradición que comenzó hace siglos en un pequeño lugar llamado "Glees". Ya tienen seguidores devotos que han comenzado a copiarlos con estilo y vestimenta, y muchos incluso llegaron a unirse a ellos en sus prácticas religiosas, que consisten en hacer sacrificios a una gran cantidad de dioses que supuestamente viven en una gran montaña lejos de distancia llamado "Olimpo"."
  ZZZ_enhanced_fetishist.11.a:3 "Una vida no examinada no vale la pena vivirla."
+ 
+ ZZZ_enhanced_fetishist.900.t:0 "Los marinos"
+ ZZZ_enhanced_fetishist.900.d:0 "Marineros de una tierra lejana han desembarcado recientemente en nuestras costas. Dicen ser exploradores de la gran ciudad de 'Kart'Hatadge' y dan gracias a una diosa llamada Tanit, cuyas bendiciones dicen les han permitido sobrevivir al peligroso viaje a través de los altos y tormentosos mares. Fascenados por las historias de estos exóticos marineros, muchos de nuestro propio pueblo han comenzado a construir santuarios y tofetes para Tanit y su esposo Ba'al aquí en [Root.Capital .GetCapitalName], con la esperanza de que estén protegidos durante sus largos viajes. A pesar de los rumores sobre el sacrificio de niños, el culto a Tanit continúa extendiéndose."
+ ZZZ_enhanced_fetishist.900.a:0 "No debemos permitir que [Root.Capital.GetCapitalName] sea destruido."
+
+ ZZZ_enhanced_fetishist.901.t:0 "La tierra de los faraones"
+ ZZZ_enhanced_fetishist.901.d:0 "Han llegado mercaderes de una tierra llamada 'Kemet', que nos hablan de enormes tumbas piramidales, reyes divinos, dioses con cabeza de animales y riquezas exorbitantes más allá de nuestros sueños más locos. Al enterarse de esto, muchos en Nuestro país ha comenzado a erigir santuarios a Ra, Anubis, Sekhmet, Osiris y muchos otros de estos dioses extranjeros, con la esperanza de que sean bendecidos como la gente del Nilo. Muchos otros han comenzado a hacer planes para la otra vida ahorrando para su momificación, y algunos incluso han sugerido que [Root.Monarch.GetName] sea proclamado faraón, representante de Ra, para garantizar que serán guiados divinamente".
+ ZZZ_enhanced_fetishist.901.a:0 "Que los dioses se interpongan entre nosotros y nos hagan daño."
+
+ ZZZ_enhanced_fetishist.902.t:0 "Los druidas"
+ ZZZ_enhanced_fetishist.902.d:0 "Exiliados de su tierra natal, misteriosos chamanes que se hacen llamar 'Druidas' han llegado a [Root.Capital.GetCapitalName]. Sus prácticas arcanas deben mantenerse en secreto, muchos de nuestros súbditos han quedado fascinados por aprender más sobre sus maneras. Aquellos que los han buscado regresan hablando de dioses extraños y asesoran a nuestro tribunal sobre la elaboración de leyes. Algunos de nuestros asesores más cercanos ahora nos piden que formalicemos esta institución, para que podamos aprovechar plenamente la sabiduría que se nos ofrece ".
+ ZZZ_enhanced_fetishist.902.a:0 "Debemos considerar su sabiduría."
+
+ ZZZ_enhanced_fetishist.903.t:0 "La Ajivika"
+ ZZZ_enhanced_fetishist.903.d:0 "Un grupo de sabios ha llegado desde el lejano este, trayendo consigo sus creencias. Afirman que no existe el libre albedrío y que todo estaba predestinado cuando se creó el mundo: no había dioses que adoramos nos protegerá y ninguna virtud moral nos salvará de nuestro destino inevitable. Muchos de nuestros sacerdotes los han criticado por no tener moralidad, pero a pesar de las críticas de nuestros sacerdotes, muchos en nuestro país se han consolado sabiendo que su destino está sellado. , libres de las presiones del Karma y el Dharma, y han acudido en masa para seguir a los Ajivika en el camino de los Niyati".
+ ZZZ_enhanced_fetishist.903.a:0 "Como estaba destinado, debemos considerar la sabiduría en Niyati."
 
  ZZZ_enhanced_fetishist.12.t:3 "El Otro"
  ZZZ_enhanced_fetishist.12.d:3 "A medida que gradualmente hemos visto más del mundo, nos hemos dado cuenta de que hay muchas personas que son similares a nosotros, incluso si no son espejos perfectos. Tienen sus propios rituales, dioses y creencias. Al interactuar con estas personas, naturalmente ha habido un intercambio de cultura. No es inusual hoy en día encontrar familias locales que hacen un sacrificio a un dios conocido principalmente en una tierra que tomaría meses o incluso años en llegar."
@@ -328,6 +344,11 @@
  ZZZ_enhanced_fetishist.106.d: 0 "Un gran grupo de yazidis ha solicitado a [Root.Owner.GetTitle] [Root.Owner.Ruler] que se mude a [Root.GetName] donde pueden vivir en paz. , y para que todo salga bien, los Yazidis han ofrecido sus servicios en nuestra administración por un tiempo, ya que varios de sus miembros habían trabajado previamente como administradores, sería una tontería rechazar esta oportunidad sin antes considerar las ventajas. "
  ZZZ_enhanced_fetishist.106.a: 0 "Muy bien, déjalos entrar".
  ZZZ_enhanced_fetishist.106.a: 0 "Nuestros propios administradores están bien, gracias".
+ 
+ #Illyric
+ ZZZ_enhanced_religion.19.t:0 "El culto al jinete tracio"
+ ZZZ_enhanced_religion.19.d:0 "A medida que interactuamos más con los tracios, hemos intercambiado ideas y creencias entre nosotros. Sin embargo, una creencia en particular se ha arraigado entre muchas en [Root.GetName]: El jinete tracio, "Un cazador mítico cuya habilidad con el caballo es legendaria. Muchos de nuestros guerreros ahora acuden a él en busca de protección y nuestra caballería montada perfecciona sus habilidades para montar a caballo en su honor".
+ ZZZ_enhanced_religion.19.a:0 "¡Gloria al jinete tracio!"
 
  #MISC
  ZZZ_enhanced_misc.4.t:3 "La Abolición de la Esclavitud"

@@ -99,6 +99,22 @@
  ZZZ_enhanced_fetishist.11.t:3 "Die Olympier"
  ZZZ_enhanced_fetishist.11.d:3 "Reisende Gelehrte sind im Gericht von [Root.Monarch.GetName] angekommen. Sie verbringen ihre Tage damit, mit allen und jedem zu streiten, und führen häufig kreisende Auseinandersetzungen, bei denen der Partner des Gelehrten gegen das argumentiert, wofür er erst eine Stunde zuvor gestanden hatte. Diese Gelehrten behaupten, die ehrenamtlichen Nachkommen einer langen Tradition zu sein, die vor Jahrhunderten an einem kleinen Ort namens "Glees" begann. Sie haben bereits eine treue Anhängerschaft, die begonnen hat, sie in Stil und Kleidung zu kopieren, und viele gehen sogar so weit, sich ihren religiösen Praktiken anzuschließen, bei denen es darum geht, einer großen Anzahl von Göttern Opfer zu bringen, die angeblich auf einem großen Berg weit entfernt leben weg genannt "Olympus"."
  ZZZ_enhanced_fetishist.11.a:3 "Ein ungeprüftes Leben ist nicht lebenswert."
+ 
+ ZZZ_enhanced_fetishist.900.t:0 "Die Seefahrer"
+ ZZZ_enhanced_fetishist.900.d:0 "Seefahrer aus einem fernen Land sind kürzlich an unseren Küsten gelandet. Sie behaupten, Entdecker aus der großen Stadt 'Kart'Hatadge' zu sein, und danken einer Göttin namens Tanit, deren Segen sie sagen haben es ihnen ermöglicht, die gefährliche Reise über die hohe und stürmische See zu überleben. Fasziniert von den Geschichten dieser exotischen Seeleute haben viele unserer eigenen Leute begonnen, hier in [Root.Capital.GetCapitalName] Schreine und Tophets für Tanit und ihren Ehemann Ba'al zu errichten .GetCapitalName], in der Hoffnung, dass sie auf ihren eigenen langen Reisen beschützt werden. Trotz Gerüchten über Kinderopfer breitet sich der Tanit-Kult weiter aus."
+ ZZZ_enhanced_fetishist.900.a:0 "Wir dürfen nicht zulassen, dass [Root.Capital.GetCapitalName] zerstört wird."
+
+ ZZZ_enhanced_fetishist.901.t:0 "Das Land der Pharaonen"
+ ZZZ_enhanced_fetishist.901.d:0 "Händler sind aus einem Land namens 'Kemet' angekommen, die uns von gewaltigen Pyramidengräbern, göttlichen Königen, Göttern mit Tierköpfen und exorbitanten Reichtümern erzählen, die unsere kühnsten Träume übertreffen. Als wir davon hörten, waren viele in Unser Land hat damit begonnen, Schreine für Ra, Anubis, Sachmet, Osiris und viele andere dieser fremden Götter zu errichten, in der Hoffnung, dass sie wie die Menschen am Nil gesegnet werden. Viele andere haben begonnen, Pläne für das Leben nach dem Tod zu schmieden, indem sie dafür gespart haben ihre Mumifizierung, und einige haben sogar vorgeschlagen, [Root.Monarch.GetName] zum Pharao, Repräsentanten von Ra, auszurufen, um sicherzustellen, dass sie göttlich geführt werden."
+ ZZZ_enhanced_fetishist.901.a:0 "Mögen die Götter zwischen uns kommen und Schaden anrichten."
+
+ ZZZ_enhanced_fetishist.902.t:0 "Die Druiden"
+ ZZZ_enhanced_fetishist.902.d:0 "Aus ihrer Heimat verbannt, sind mysteriöse Schamanen, die sich 'Druiden' nennen, in [Root.Capital.GetCapitalName] angekommen. Ihre arkanen Praktiken waren geheim gehalten, und viele unserer Untertanen sind fasziniert davon, mehr über sie zu erfahren Diejenigen, die sie aufgesucht haben, kehren zurück und sprechen von seltsamen Göttern und beraten unser Gericht bei der Gesetzgebung. Einige unserer engsten Berater fordern uns jetzt auf, diese Institution zu formalisieren, damit wir die Weisheit, die uns geboten wird, voll ausnutzen können."
+ ZZZ_enhanced_fetishist.902.a:0 "Wir müssen ihre Weisheit berücksichtigen."
+
+ ZZZ_enhanced_fetishist.903.t:0 "Die Ajivika"
+ ZZZ_enhanced_fetishist.903.d:0 "Eine Gruppe weiser Männer ist aus dem fernen Osten angereist und hat ihren Glauben mitgebracht. Sie behaupten, dass es keinen freien Willen gibt und dass bei der Erschaffung der Welt alles vorherbestimmt war: keine Götter." die wir anbeten, wird uns beschützen und keine moralischen Tugenden werden uns vor unserem unvermeidlichen Schicksal retten. Viele unserer Priester haben sie dafür kritisiert, dass sie keine Moral haben, aber trotz der Kritik unserer Priester haben viele in unserem Land Trost gespürt, weil sie wussten, dass ihr Schicksal besiegelt ist , frei von den Zwängen von Karma und Dharma, und strömten herbei, um dem Ajivika auf dem Weg der Niyati zu folgen."
+ ZZZ_enhanced_fetishist.903.a:0 "Wie vorgesehen, müssen wir die Weisheit in Niyati berücksichtigen."
 
  ZZZ_enhanced_fetishist.12.t:3 "Das Andere"
  ZZZ_enhanced_fetishist.12.d:3 "Als wir allmählich mehr von der Welt gesehen haben, haben wir erkannt, dass es viele Völker gibt, die uns ähnlich sind, auch wenn sie keine perfekten Spiegel sind. Sie haben ihre eigenen Rituale, Götter und Überzeugungen. Während wir mit diesen Menschen interagiert haben, hat es natürlich einen Kulturaustausch gegeben. Es ist heutzutage nicht ungewöhnlich, dass einheimische Familien einem Gott Opfer bringen, der hauptsächlich in einem Land bekannt ist, dessen Erreichung Monate, wenn nicht Jahre dauern würde."
@@ -328,6 +344,11 @@
  ZZZ_enhanced_fetishist.106.d: 0 "Eine große Gruppe von Jesiden hat [Root.Owner.GetTitle] [Root.Owner.Ruler] gebeten, nach [Root.GetName] zu ziehen, wo sie in Frieden leben können. Um diesen Schritt zu erleichtern und um sicherzustellen, dass alles reibungslos verläuft, bieten die Jesiden ihre Dienste seit einiger Zeit in unserer Verwaltung an. Da einige ihrer Mitglieder zuvor als Administratoren gearbeitet haben, wäre es dumm, diese Gelegenheit abzulehnen, ohne zuerst die Vorteile in Betracht zu ziehen. ""
  ZZZ_enhanced_fetishist.106.a: 0 "Sehr gut, lass sie rein."
  ZZZ_enhanced_fetishist.106.a: 0 "Unseren eigenen Administratoren geht es gut, danke."
+ 
+ #Illyric
+ ZZZ_enhanced_religion.19.t:0 "Der Kult des Thrakischen Reiters"
+ ZZZ_enhanced_religion.19.d:0 "Da wir mehr mit den Thrakern interagieren, wurden Ideen und Glaubenssätze zwischen uns ausgetauscht. Ein Glaube hat sich jedoch unter vielen in [Root.GetName] besonders durchgesetzt: Der thrakische Reiter, ein mythischer Jäger, dessen Fähigkeiten im Umgang mit dem Pferd legendär sind. Viele unserer Krieger suchen jetzt Schutz bei ihm und unsere berittene Kavallerie verfeinert ihm zu Ehren ihre Reitkünste."
+ ZZZ_enhanced_religion.19.a:0 "Ehre sei dem thrakischen Reiter!"
 
  #MISC
  ZZZ_enhanced_misc.4.t:3 "Die Abschaffung der Sklaverei"

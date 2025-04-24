@@ -1,0 +1,56 @@
+illyric_snake_cult = { #Inspired by Imperator:Invictus
+	heir_chance = 0.5
+	manpower_recovery_speed = 0.10
+
+	potential = { religion = illyric_pagan }
+	sprite = 62
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_diplomat
+			factor = 2
+		}
+	}
+}
+
+illyric_sun_cult = { #Inspired by Imperator:Invictus
+	global_missionary_strength = 0.02
+	missionary_maintenance_cost = -0.10
+
+	potential = { religion = illyric_pagan }
+	sprite = 61
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+illyric_horseman_cult = { #Inspired by Imperator:Invictus
+	cavalry_power = 0.05
+	cav_to_inf_ratio = 0.10
+
+	potential = { religion = illyric_pagan }
+	sprite = 63
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}

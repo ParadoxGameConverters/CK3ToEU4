@@ -495,6 +495,34 @@ old_mashriqi = {
 			Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar
 		}
 	}
+	alasiyan = {
+ 		dynasty_names = {
+ 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
+ 			Milkiramid Philosirid
+ 		}
+ 		male_names = {
+ 			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes
+ 			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram
+ 			Paltibaal Philosir
+ 		}
+ 		female_names = {
+ 			Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar
+ 		}
+ 	}	
+ 	ugaritic = {
+ 		dynasty_names = {
+ 			Abbarid Adonibaalid Ahiromid Baalhannid Baalid Barcid Bostarid Chelbesid Eshbaalid Eugorid Hannid Hiramid Magoid Mattanid Metallid
+ 			Milkiramid Philosirid
+ 		}
+ 		male_names = {
+ 			Abbar Abdmelqart Adonibaal Agbal Ahirom Azimilik Baal Baalhanno Bodashtart Bodmelqart Bomilcar Bostar Boulomenus Carthalo Chelbes
+ 			Eshbaal Eugoras Germelqart Hamilcar Hannibal Hanno Hasdrubal Himilco Hiram Mago Maharbal Mattan Metallo Milkherem Milkiram
+ 			Paltibaal Philosir
+ 		}
+ 		female_names = {
+ 			Abdosir Arishat Astarte Batnoam Dido Shayna Sophonisba Tamar
+ 		}
+ 	}
 }
 chaldean = {
 	dynasty_names = {
@@ -528,6 +556,37 @@ chaldean = {
 			Ator Betheil Bredil Diklat "Il-Shvai" Imama Kasrin Nohara Nona Shamiram Tayara Yalda
 		}
 	}
+	sumerian = { #Names from I:R's Bronze Age: Reborn mod
+ 		dynasty_names = {
+ 			Nanniya-Meskilak Sabit-Nanshe Akurgal-Geshtinanna Lugula-Ningal Udul-Utu Shulgi-Ninhursag Kakug-Ninlil Nanni-Enlil Enmerkar-Ninazu Melem-Ishtaran Pirigme-Ishkur
+ 			Puzur-Nintinugga Lugula-Ereshkigal Zumudar-Nisaba Nanni-Dumuzid Ishu-Enki Gar-Nanna Ishu-Inanna
+ 		}
+ 		male_names = {
+ 			Alulim Alalngar En-men-lu-ana En-men-gal-ana Dumuzid En-sipad-zid-ana En-men-dur-ana Ubra-tutu Mesh-ki-ang-gasher Enmerkar Lugalbanda
+ 			Dumuzid Dumuzi Gilgamesh Ur-Nungal Udul-klama "La-ba Shum" En-un-tarah-ana Mesh-he Melem-ana Lugal-kitun Mesh-Ane-pada Mesh-ki-ang-Nuna
+ 			Elulu Balulu Hadanish En-shag-kush-ana Lugal-kinishe-dudu Lugal-ure Agrgandea Nanni Mesh-ki-ang-Nanna Lugal-Ane-mundu Unzi Undalulu Urur
+ 			Puzur-Nirah Ishu-Il Shu-suen Puzur-Suen Ur-Zababa Zumudar Usi-watar Eshtar-muti Ishme-Shamash Shu-ilishu Nanniya Lugal-zage-si Ur-ningin
+ 			Ur-gigir Kuda Puzur-ili Ur-Utu Lugal-melem En-hegal Lugal-sha-engur Ur-Nanshe Ur-nina Akurgal Eannatum Enannatum Entemena Enentarzi Lugalanda
+ 			Urukagina Lugal-ushumgal Puzer-Mama Ur-Utu Ur-Mama Lu-Baba Lugula Kaku Kakug Ur-Baba Gudea Ur-Ningirsu Pirigme Ugme Ur-gar Nam-mahani
+ 			Utu-hengal Ur-Namma Ur-Nammu Shulgi Amar-Suena Shu-Suen Ibbi-Suen
+ 		}
+ 		female_names = {
+ 			Ashusikildigir Enanatuma En-hedu-anna Ninbanda Puabi Shagshag Suhub-ad Shatu-Murrim Nin-Imma Amurritum Beletum Aea Gamelat En-Hedu-Anna
+ 			Shiptu Habannatum Nammu Nindukugga Mammetum Zimu Elutil Gemekala Urbau Lilith Ahunatum Yadidatum Ninbanda Anunit Gemeshega Sabit
+ 			Ashusikildigir Ahatiwaqrat Lahamu Ninsar Belessunu
+ 		}
+ 	}
+ 	eblaite = {
+ 		male_names = {
+ 			Naplanum Emisum Samium Zabaia Gungunum Abisare Sumuel "Nur-Adad" "Sin-Iddinam" "Sin-Eribam" "Sin-Iqisham" "Silli-Adad" "Warad-Sin" "Rim-Sin" Hammurabi "Samsu-iluna" "Su-abu" "Sumu-la-El" "Sabum" "Apil-Sin" "Sin-muballit" Abieshu "Ammi-ditana" "Samsu-Ditana" Ammisaduqa Gandas Agum Kastiliasu "Abi-Rattas" Hurbazum Ulamburiash Karaindash "Enlil-nadin-ahi" Gulkishar
+			Abu-Waqar Belteshazzar Duzi Ea Gaga Igigi Kurigalzu Lakhmu Merodach blaadan
+			Nebuchadnezzar Opis Shadrach Tayma Urhammu Zaidu
+ 		}
+ 		female_names = {
+ 			Nana Allatu Belit Zirrabanit Tiamat
+			Anatu Beltis Davcina Ishtar Kalumtum Lilith Mylitta Omarosa Sybella
+ 		}
+ 	}
 }
 hittite_group = {
 	male_names = {
@@ -613,6 +672,92 @@ hittite_group = {
 			Linos Hippodamia Astydameia Nicippe Lysidice Eurydice Axioche Danais Astyoche
 		}
 	}
+	trojan = {
+ 		male_names = {
+ 			Morzios Gaizatorix Pylaemenes Mithridates Datames Ariobarzanes Ariamnes Ariarathes Croesus Gyges Ardys Sadyattes Atys Adrastus Gordias Midas
+ 			Hecatomnus Hyssaldomus Mausolus Idrieus Pixodarus Lygdamis Kybernis Kuprilli
+ 			Arppakhu Arbinas Kheriga Kherei Abistamenes Syennesis Appuasu Oromedon
+ 			Zipoetes Bas Ziaelas Prusias Arcathias Xiphares Darius
+ 		}
+ 		female_names = {
+ 			Nysa Aryenis Ada Glaphyra Pythodorida Etazeta Drypetina Orsabaris Hypsicratea
+ 		}
+ 		dynasty_names = {
+  			Aramid Aramid Aramids Aramid
+  			Arid Arid Arids Arid
+  			Arkhid Arkhid Arkhids Arkhid
+  			Asinid Asinid Asinids Asinid
+  			Arsacid Arsacid Arsacids Arsacid
+  			Deiocid Deiocid Deiocids Deiocid
+  			Menid Menid Menids Menid
+  			Pacorid Pacorid Pacorids Pacorid
+  			Savacid Savacid Savacids Savacid
+  			Vardanid Vardanid Vardanids Vardanid
+  			Suren Suren Surenids Surenid
+  			Karin Karin Karinids Karinid
+  			Gaumatid Gaumatid Gaumatids Gaumatid
+  			Gobryasid Gobryasid Gobryasids Gobryasid
+  			Hydarnid Hydarnid Hydarnids Hydarnid
+  			Smerdid Smerdid Smerdids Smerdid
+  			Vivanid Vivanid Vivanids Vivanid
+  			Xerxid Xerxid Xerxids Xerxid
+  			Abadanid Abadanid Abadanids Abadanid
+  			Orontid Orontid Orontids Orontid
+  			Atropatid Atropatid Atropatids Atropatid
+  			Mithridatid Mithridatid Mithridatids Mithridatid
+  			Artiaxid Artiaxid Artiaxids Artiaxid
+  			Sassanid Sassanid Sassanids Sassanid
+  			Mihranid Mihranid Mihranids Mihranid
+  			Chosroid Chosroid Chosroids Chosroid
+  			Artashid Artashid Artashids Artashid
+  			Bagabignid Bagabignid Bagabignids Bagabignid
+  			Cambysid Cambysid Cambysids Cambysid
+  			Frataraka Frataraka Frataraka Frataraka
+ 		}
+ 	}
+ 	kizzuwatnan = {
+ 		male_names = {
+ 			Morzios Gaizatorix Pylaemenes Mithridates Datames Ariobarzanes Ariamnes Ariarathes Croesus Gyges Ardys Sadyattes Atys Adrastus Gordias Midas
+ 			Hecatomnus Hyssaldomus Mausolus Idrieus Pixodarus Lygdamis Kybernis Kuprilli
+ 			Arppakhu Arbinas Kheriga Kherei Abistamenes Syennesis Appuasu Oromedon
+ 			Zipoetes Bas Ziaelas Prusias Arcathias Xiphares Darius
+ 		}
+ 		female_names = {
+ 			Nysa Aryenis Ada Glaphyra Pythodorida Etazeta Drypetina Orsabaris Hypsicratea
+ 		}
+ 		dynasty_names = {
+  			Aramid Aramid Aramids Aramid
+  			Arid Arid Arids Arid
+  			Arkhid Arkhid Arkhids Arkhid
+  			Asinid Asinid Asinids Asinid
+  			Arsacid Arsacid Arsacids Arsacid
+  			Deiocid Deiocid Deiocids Deiocid
+  			Menid Menid Menids Menid
+  			Pacorid Pacorid Pacorids Pacorid
+  			Savacid Savacid Savacids Savacid
+  			Vardanid Vardanid Vardanids Vardanid
+  			Suren Suren Surenids Surenid
+  			Karin Karin Karinids Karinid
+  			Gaumatid Gaumatid Gaumatids Gaumatid
+  			Gobryasid Gobryasid Gobryasids Gobryasid
+  			Hydarnid Hydarnid Hydarnids Hydarnid
+  			Smerdid Smerdid Smerdids Smerdid
+  			Vivanid Vivanid Vivanids Vivanid
+  			Xerxid Xerxid Xerxids Xerxid
+  			Abadanid Abadanid Abadanids Abadanid
+  			Orontid Orontid Orontids Orontid
+  			Atropatid Atropatid Atropatids Atropatid
+  			Mithridatid Mithridatid Mithridatids Mithridatid
+  			Artiaxid Artiaxid Artiaxids Artiaxid
+  			Sassanid Sassanid Sassanids Sassanid
+  			Mihranid Mihranid Mihranids Mihranid
+  			Chosroid Chosroid Chosroids Chosroid
+  			Artashid Artashid Artashids Artashid
+  			Bagabignid Bagabignid Bagabignids Bagabignid
+  			Cambysid Cambysid Cambysids Cambysid
+  			Frataraka Frataraka Frataraka Frataraka
+ 		}
+ 	}
 }
 scythian_group = {
 	scythian = { primary = SCY }
@@ -802,4 +947,229 @@ frankish_g = {
 	austrasian = { primary = LOR }
 	agilolfingian = { primary = BAV }
 	frankish = { primary = FRA } # Fallback
+}
+
+hurrian_group = { #Names from I:R's Bronze Age: Reborn mod
+ 	hurrian_culture = {
+ 		male_names = {
+ 			Biridaswa Kikkula Kirta Mattiwaza Parattarna Parsatatar Sattawaza Saushtatar Shuttarna Tehiptilla Tushratta Abi-tisan
+ 			Adal-seni Aga-tisan Agap-eli Agap-tanu Aya-zi Aka-ya Aki-ya Aki-yan Aki-ra Aku-ya Alla-e Allae-kiyazi Allai-az Alli-turah Amma-ta-n Amman-kiyazi
+ 			Amman-tahi Ammen-ammume Ammen-ki Ammin-na Ana-ta-n Anis-hurpe Anis-kipa-l Anni-kabi Anni-sar Ara-zah Arda-kanda Arim-adal Arip-hurmis Arip-Negal
+ 			Arip-Tesub Ari-tupki Arip-turi Ari-ab Arip-an Arriyuk Aru-pa Aru-pal Arzi-hip Asar-musni Asa-kka Asma-ate Asmun-saki Asta-kuzi Astu Astua-unna
+ 			Asu-zi Atta-ha-n Atta-za Attu-Aya Attu-e Attu-ki Attu-zar Awi-yazi Awis-na Azi-za-n Azu-na-n Azzu Azzu-e Azzu-eli Azzu-ka Azzu-kki Azzu-nni Ehli
+ 			Ehlip-adal Ehlip-sarri Ela-ni Ela-pi Elan-kiyazi Elan-saki Elan-za Ela-patal Ela-paraluh Elen-za Elili-s Elili-sa Elum-sehir-e Enis-agum Eni-ya
+ 			Etem-meni Ete-ya Ewe Ewe-ni Ewenni-kki Hama-nna Hame-za Hapa-luk Hapi-ya Hapu-ri Hari-pan Hari-ya Hari-yazu Hazip-adal Hazip-aranzih Hazi-pa Hazi-pa-n
+ 			Hazip-Kakka Hazip-Kuzuli Hazip-Nawar Hazip-saki Hazip-saya Hazip-sarri Hazip-Tesub Hazip-ulme Hazu-ka-n Herzu-k Hui-zzi Hupa-zza Hupa-za-n Iku-za
+ 			Illu-te Ilu-Ila Ilu-Ili Ima-ku Inna-ha-n Ira-he Iwari Iza-mu Izi-za Iza-n Izza-ni Izzu-nni Kabi Kabi-ata Kabi-pursa Kabi-ta Kabi-ta-ya Kabi-ya
+ 			Kai-ta Kali-ya Kana-n Kani-pa-n Kanni Kannu-kka Kanzu Kari-ta-n Kari-ya Katir-he Katu-li Kilip-sarri Kili-ya Kilum-allai Kilum-ana Kimma Kinum-adal
+ 			Kinzi-ya Kipa-r Kipi-ri Kipu-seni Kiyazi Kizzi-ya Kupa-m Kupa-n Kuppi-ya Kuta-te Kutti Kuwari-ya Kuza-n Kuza-ri-na Kuza-zzi Kuzi Kuzuh-adal
+ 			Kuzu-zari Kuza-ri Memen-kanazi Memen-ki Memen-saki Mema-nna Menna Mulu-ka-n Muza-n-adal Muza-ni Muzu-m Muzum-eni Nana-kka Nana-ta-n Nani-ku
+ 			Nanip-naya Nanip-sawri Nani-ya Nawar-adal Nawar-kanazi Nawar-zi Nenis-naya Nergal-adal Nikir-sarri Nubar-ela Nubar-sarri Nubar-wari Nuki-za-n
+ 			Nupa-ta Nupa-tiya Nupu-ri Nupu-ta Nuza-pa Nuza-wari Nuzu-kka Paban-sarri Pahar-mi Pai-la Pai-pa Paip-sarri Paki-annae Paki-la Paku-zi Pala-Ila
+ 			Pala-mi Pala-n Pandi Pandi-ya Papu-zi Paru-ri Patala-n Patalla Pata-ni-te Pinzi-ya Pirhen-saki Pirhu-na Pir-kina Pir-kinnu Pir-paya Piru-ya-n
+ 			Pisr-uhli Pthu-na Piz-kina Puhe-n Puh-tani Purama-n Puram-zi Purra-n Puta-ma-n Puta-n Sadum-naya Sadun-sarri Sahis-menni Saki-ya-n Sama-his
+ 			Sama-hul Samba-ri Sanin-naya Sa-pi-lum-kiyazi Sas-karu Sat-pa Satta-kiyazi Sattu-ri Sazu-e Sazum-sarri Sahhi-ya Sehlip-sarri Sehlum-naya
+ 			Sehrum-nirzi Seh-saya Sena-m Sena-ya Senip-sarri Senis-wari Senu-urhi Serum-naya Ser-za-n Sewa-ni Sewum-sarri Sime-tagup Sim-kinna Sinim-sali
+ 			Sinis-tar-e Sinu-ka Sukrum-nawar Sukrum-Tesub Suk-siya Sur-e Sur-siya Susa-ki Taga-zi Tagi Tagis-nati-e Tagu-zza Tahi Tahi-ya Tahu-k Tahu-za-n
+ 			Tai-ra Tai-zi Taki-ki Taki-ya Taku-na Talmu-asihi Tamaku-meni TAmar-tahi Tamaru Tamar-zi Tami Tamma Tanu-ta Tapu-zi Tarma-ri-s Tasap-kildi
+ 			Tata-ra Tatta Tawe-nna Tidi-ka-n Tis-ulme Tisan-ki Tiswen-adal Tizi-ha-n Tizwi-na Tuli-s Tundi Tupki Turip-seni Turum-nadki Tuza-na Tuza-ya
+ 			Ullu-ki Ullum-tisni Ullu-ni Ullu-ri Ullu-waru Ulme Una-kka Unap-sarri Unap-se Unap-tagi Una-tis Una-ya Uni-na Un-takki Unus-kiyazi Ura-ki
+ 			Urra-n Usse Uski-za-n Ussu-ultu Usta-ni Ustan-sarri Ustap-adal Ustap-kiris Usta-ya Uti-na Uwe-hul-e Uza-na Uzi Uzzi-ya Uzzu Uzu-li Uzu-na-n
+ 			Wari-kipa Wari-muza Wari-taldu Zata-n Zaza-naya Zazi-ya Zigi Zigil-tanu-m Zika-n Zina-ki Zirbi-kuni Ziri-ta-n Zirri Zitu-ya Ziwe-ni Ziza-pa-n
+ 			Zuna-n Zunna Zunzu-m Zuwe-ne Zuza-n Zuzu Zip-musni
+ 		}
+ 		female_names = {
+ 			Gilukhepa Tadukhepa Ahahuia Ahassunu Ahat-abisha Ahat-kubi Ahatiia Akim-ninu Ala-Pusha Alitu Allai-talma Allai-tatta Allai-turahe Allai-wahri
+ 			Allaishe Allie-shar Allisha Anza-peki Arip-umella Elhip-ninu Elip-nuzu Epiritu Eres-kenni Erwin-nirshe Halb-abusa Halb-ahi Halu-teni Haluti
+ 			Tulpun-naja Nama-zzani
+ 		}
+ 		dynasty_names = {
+ 			Atal-sen-Teshub Biridaswa-Kumarbi Kikkula-Shaushka Kirta-Hebat Mattiwaza-Sharruma Parattarna-Shimegi Parsatatar-Kushuh Sattawaza-Hutena Saushtatar-Hutelluri
+ 			Shuttarna-Sumuqan Tehiptilla-Ashtabil Tushratta-Ningal Hui-zzi-Tashmisu Hupa-zza-Kubaba Elhip-ninu-Ashtabil Iku-za-Ebrimusha Nana-kka-Nabarbi Ilu-Ila-Pirinki
+ 			Tagis-nati-e-Hebat Tagu-zza-Sharruma Uzu-na-n-Nubadig Wari-kipa-Pirinki Zuzu-Tashmisu Tadukhepa-Allani Ahahuia-Ebrimusha Ahassunu-Nubadig
+ 		}
+ 	}
+ 	gutian = {
+ 		male_names = {
+ 			Inkishush Zarlagab Shulme Yarlagash Silulumesh Silulu Inimabakesh Igeshaush Yarlagab Ibate Yarla Kurum Apilkin La-erabum Irarum Ibranum Hablum
+ 			Puzur-Suen Yarlaganda Tirigan Duga Ilu-An Yarlangab Erridupizir Imta Nibia Sarlagab
+ 		}
+ 		female_names = {
+ 			Demeetheresu Nigsummulugal Deemethereesu Niiqarquusu Manishtusu Seluku Nur-Ayya Amata Belessunu Arahunaa Ahatsunu Ubalnu Gemeti Ettu Zakiti
+ 			Humusi Alittum Arwia Kullaa Mushezibti Nidintu Enheduana
+ 		}
+ 		dynasty_names = {
+ 			Agum-Duniash Arshanta-Gidar Gab-Indash Hurba-Bugash Gurzar-Duzagash Shipta-Alban Gandash-Mirizir Kunigi-Maruttash Badar-Akmul Dakash-Laguda Mushia-Kassu
+ 			Purna-Sah Ipashi-Sali Ashlulu-Kamulla Uzibi-Nanai Kadash-Miriash Hala-Shihu Ukin-Shipak Barhu-Shikme Ambaru-Shugurra Gabnila-Sah Kukla-Shimalia Apa-Zini
+ 			Huta-Tassi Manudi-Turgu Ulam-Kassu
+ 		}
+ 	}
+ 
+}
+ 
+hatti_group = { #Anatolian Names for now
+ 	hatti = {
+ 		male_names = {
+ 			Morzios Gaizatorix Pylaemenes Mithridates Datames Ariobarzanes Ariamnes Ariarathes Croesus Gyges Ardys Sadyattes Atys Adrastus Gordias Midas
+ 			Hecatomnus Hyssaldomus Mausolus Idrieus Pixodarus Lygdamis Kybernis Kuprilli
+ 			Arppakhu Arbinas Kheriga Kherei Abistamenes Syennesis Appuasu Oromedon
+ 			Zipoetes Bas Ziaelas Prusias Arcathias Xiphares Darius
+ 		}
+ 		female_names = {
+ 			Nysa Aryenis Ada Glaphyra Pythodorida Etazeta Drypetina Orsabaris Hypsicratea
+ 		}
+ 		dynasty_names = {
+  			Aramid Aramid Aramids Aramid
+  			Arid Arid Arids Arid
+  			Arkhid Arkhid Arkhids Arkhid
+  			Asinid Asinid Asinids Asinid
+  			Arsacid Arsacid Arsacids Arsacid
+  			Deiocid Deiocid Deiocids Deiocid
+  			Menid Menid Menids Menid
+  			Pacorid Pacorid Pacorids Pacorid
+  			Savacid Savacid Savacids Savacid
+  			Vardanid Vardanid Vardanids Vardanid
+  			Suren Suren Surenids Surenid
+  			Karin Karin Karinids Karinid
+  			Gaumatid Gaumatid Gaumatids Gaumatid
+  			Gobryasid Gobryasid Gobryasids Gobryasid
+  			Hydarnid Hydarnid Hydarnids Hydarnid
+  			Smerdid Smerdid Smerdids Smerdid
+  			Vivanid Vivanid Vivanids Vivanid
+  			Xerxid Xerxid Xerxids Xerxid
+  			Abadanid Abadanid Abadanids Abadanid
+  			Orontid Orontid Orontids Orontid
+  			Atropatid Atropatid Atropatids Atropatid
+  			Mithridatid Mithridatid Mithridatids Mithridatid
+  			Artiaxid Artiaxid Artiaxids Artiaxid
+  			Sassanid Sassanid Sassanids Sassanid
+  			Mihranid Mihranid Mihranids Mihranid
+  			Chosroid Chosroid Chosroids Chosroid
+  			Artashid Artashid Artashids Artashid
+  			Bagabignid Bagabignid Bagabignids Bagabignid
+  			Cambysid Cambysid Cambysids Cambysid
+  			Frataraka Frataraka Frataraka Frataraka
+ 		}
+ 	}
+ 
+}
+
+pre_greek_group = { #Greek names, as Linear A is undeciphered
+	male_names = {
+		Adrianos Akakios Alexandros Alexios Anastasios Anatolios 
+ 		Andreas Andronikos Anthemios Anthimos Antiokhos Antonios Apollonios 
+ 		Arsenios Artemios Athanasios Bardas
+ 		Bartholomaios Basileios Belisarios Boethios Bosporios 
+ 		Khristophoros Khrysanthos Khrysogonos Damianos Daniel David Demetrios 
+ 		Diogenes Dionysios Dorotheos Eirenaios Eudoxios Eustratios
+ 		Eugenios Euphemios Eusebios Eustathios Evangelos Gabriel Gennadios Georgios 
+ 		Gerasimos Germanos Gregoras Gregorios Hektorios Helias 
+ 		Herakleios Hierotheos Himerios
+ 		Konstantinos Pavlos Nikolaos Aineias Alexeios Ambrosios
+ 		Dionysos Elpidios Hektor 
+ 		Kastor Manouel Matthaios Nestor Nikomedes Orestes Palaimon Pelagios Petros Philemon Philippos 
+ 		Skantarios Stefanos Theodoros Thomas Prokopios Ioannes Iason
+	}
+	female_names = {
+		Alexandra Adriane Agathe Agne Agnes Aikaterine Alexeia Anastasia 
+ 		Anna Anthe Anthousa Antipatra Antonia Apollonia Athanasia Barbara Basillike
+ 		Chrysogone Damiane Demetra Dionysia Dorothea Aigidia Eirene Elaiodora Epiphania 
+ 		Eudokia Eudoxia Eugenia Eulalia Eunike Euphemia Euphrasia Euphrosyne
+ 		Eupraxia Eusebia Eustathia Evanthia Gabrielia Garyphallia Georgia Gregoria Helene 
+ 		Ioanna Ioulia Iouliana Ioustina Kale Konstantia 
+ 		Konstantine Kyra Kyriake Hypatia Zoe
+	}
+	dynasty_names = {
+		Kantakouzenos Doukas Komnenos Palaiologos Laskaris Angelos Phokas
+			"Kameniatis" "Chameas" "Demetrianos" "Laloudios" "Stamopatas" "Peloponnesites" "Klados" "Avastaktos" 
+			"Lardotyros" "Kyritzios" "Kolovos" "Podopagouros" "Touvakes" "Peteinakes" "Ooryphas" "Myxares" "Toxias" 
+			"Bardouchos" "Boilas" "Skepides" "Mamoulianos" "Katakylas" "Drakokephalos" "Rentakes" "Exarchos" "Skepastos" 
+			"Kyminas" "Krasas" "Konstantinakes" "Mouzelis" "Souanites" "Karteroukas" "Machairas" "Koutzodaktylos" 
+			"Kanakaris" "Vamvaloudes" "Leontares" "Klokas" "Axiotes" "Chrysouchos" "Pyrrogenes" "Kophinas" "Makroleon" 
+			"Kalopragmon" "Karphitzes" "Trichares" "Kokkalos" "Kritharatos" "Kretikos" "Tourkos" "Symvatikes" 
+			"Glykomachaires" "Chrysochoos" "Vonos" "Mystakon" "Pterotos" "Monotes" "Manginos" 
+			"Kalavros" "Sikelos" "Kilikos" "Macrodoukas" "Aineidas" 
+			"Pegonitissos" "Kastriotis" "Kamateros" "Skleros"
+			"Makrembolites" "Botaneiates" "Diogenes" "Stratiotikos" "Monomachos" "Kalaphates" 
+			"Paphlagon" "Argyros" "Kourkouas" "Lekapenos" "Karbonopsis" "Makedon" "Stryphnos" "Euforbenos" 
+			"Gabras" "Aaron" "Lampinos" "Tzimiskes" "Kurtikainos" "Murzuphlos" "Balatios" "Ouranos" "Amorios" "Armenios" 
+			"Rangabes" "Logothetes" "Isauros" "Polites" "Studites" "Skamandrenos" "Synkellos" "Kauleas" "Monocharzanios" 
+			"Kassymatas" "Nesteutes" "Scholastikos" "Chrisostomos" "Nazianzen" "Nikomedianos" "Protokletos" "Garidas" 
+			"Grammatikos" "Zeno" "Gavalas" "Axuchos" "Kamonas" "Asidenos" "Hephaistos" "Karatzas" 
+			"Amiroutzes" "Bessarion" "Callistus" "Chalkokondyles" "Gazis" "Kourtesios" "Kallistos" "Kladas" "de Patras" 
+			"Gemistus" "Allatios" "Chalcocondyles" "Korniaktos" "Damaskenos" "Eparchos" "Flanginis" "Fokás" "Heraclides" 
+			"Kallokratos" "Kottounios" "Leontaritis" "Loukanis" "Margunios" "Musurus" "Nafpliotis" "Hatzidákis" 
+			"Aprenos"  "Chortatzis" "Gabrielopoulos" "Gounaropoulos" "Belissariotis" "Konstantopoulos" "Kavallarios" 
+			"Maniakis" "Notaras" "Sgouromallis" "Epiphanis" "Logaras" "Eudaimon" "Sakellarios" "Maurozoumis" "Stylaios" 
+			"Maleinos" "Basilakios" "Mamonas" "Kekaumenos" "Metaxas" "Kanavos" "Koukouzelis" "Koresis" "Makrinos" 
+			"Lambardas" "Adrianos" "Agallon" "Akropolites" "Aoinos" "Apokaukos" "Aprenos" "Arbantenos" "Argyros" 
+			"Arianites" "Atrapes" "Balsamon" "Batatzes" "Botaneiates" "Boumbalis" "Bourtzes" "Branas" "Bryennios" 
+			"Chandrenos" "Choniates" "Choumnos" "Chrysaphes" "Chrysoloras" "Dalassenos" "Dermokaïtes" "Diasorenos" 
+			"Dokeianos" "Eirenikos" "Exazenos" "Gavras" "Glabas" "Iagaris" "Kabakes" "Kabasilas" "Kalamanos" "Kaloethes" 
+			"Kalothetos" "Kamateros" "Katrares" "Kaukadenos" "Kontostephanos" "Koresses" "Kourkouas" 
+			"Kourtikes" "Limpidares" "Machoneos" "Makrembolites" "Malakes" "Maliasenos" "Mamalis" 
+			"Mandromenos" "Manouelites" "Melachroinos" "Mourtzouphlos" "Mouzakios" "Mouzalon" "Neokaisareites" 
+			"Nestongos" "Pantechnes" "Paraspondylos" "Petraliphas" "Petzikopoulos" "Philanthropenos" "Pleustes" 
+			"Prasomales" "Prinkips" "Psellos" "Radenos" "Rossatas" "Sarantapechos" "Sebastopoulos" "Segouropoulos" 
+			"Sgouros" "Spartenos" "Sphrantzes" "Strabomytes" "Synadenos" "Syraneres" "Syropoulos" "Tagares" 
+			"Tarchaneiotes" "Tornikes" "Trichas" "Tsaphas" "Tzamplakon" "Tzykandeles" "Zaridas" "Akunin" "Abalantes" 
+			"Aboudimos" "Adralestos" "Agallianos" "Agrites" "Akapnes" "Alopos" "Alousianos" "Alyattes" "Amaseianos" 
+			"Amiropoulos" "Anatolikos" "Andreiomenos" "Androsalites" "Anemas" "Angoures" "Anthemiotes" "Antiochites" 
+			"Antiochos" "Antipapas" "Arbintenos" "Areobindenos" "Areobindos" "Argyropoulos" "Aristenos" "Artoukomites" 
+			"Arvantenos" "Attaleiates" "Aulenos" "Aulepates" "Axinites" "Axiomatikos" "Balantes" "Barbaros" "Bardales" 
+			"Barenos" "Barsakes" "Barys" "Belissariotes" "Bempetziotes" "Beriboes" "Beriotes" "Blachernites" "Blangas" 
+			"Boïlas" "Bouches" "Boutzares" "Bouzenos" "Brachamios" "Bringas" "Chaldos" "Chalkites" "Chalkoutzes" 
+			"Chamaretos" "Charsianites" "Chasanes" "Chazanes" "Choinides" "Choirosphaktes" "Chomatenos" "Chordolibas" 
+			"Choriates" "Chrouselios" "Chrousos" "Chrysanthos" "Chryselios" "Chrysobalantites" "Chrysoberges" "Chytes" 
+			"Daimones" "Dalessenos" "Dalassenos Doukas" "Dekanos" "Diabatenos" "Dikaios" "Diogenes" "Domestikopouolos" 
+			"Doxapatres" "Drakontopoulos" "Drosinos" "Drosos" "Droulenos" 
+			"Elegmites" "Enochos" "Epanokomites" "Ergodotes" "Erotikos" "Eugenianos" "Eugenios" "Eulogios" "Exotrochos" 
+			"Gabalas" "Galaton" "Gelotes" "Gidos" "Glykys" "Goudeles" "Gourzoubathenos" "Granatos" "Gribas" "Grispos" 
+			"Gymnos" "Hagiochrisophorites" "Hagioprokopites" "Hagiotheodorites" "Hagiozacharites" "Hamartolos" 
+			"Haplorabdes" "Haploucheir" "Hexakionites" "Hexaklinites" "Hexamilites" "Hierakes" "Hikanatos" "Iasites" 
+			"Iberopoulos" "Isakiotes" "Italikos" "Kaballarios" "Kabasilas" "Kaisar" "Kalameteros" "Kalamaras" 
+			"Kalampakes" "Kalognomos" "Kamytzes Komnenodoukas" "Kappadokes" "Kappadox Kalampakes" "Karabitenos" 
+			"Karabitziotes" "Karaïonatan" "Karamallos" "Karandenos" "Karantes" "Kardamopoulos" "Karenos" "Karianites" 
+			"Karkaronymos" "Karmalikes" "Karouzeiates" "Kaspax" "Kastamonites" "Katakalon" "Katakalos" "Kataphloros" 
+			"Katas" "Katharos" "Katotikos" "Katzamoundes" "Kegenes" "Kekaleimenos" "Keklymmenos" "Kemineianos" "Kenchres" 
+			"Kentenares" "Kephalas" "Keroularios" "Kibyrraiotes" "Kinnamos" "Kokkinos" "Komnenodoukas" "Konops" 
+			"Kopsenos" "Kostomyres" "Kotertzes" "Kouloukes" "Kouneres" "Krateros" "Krinites" 
+			"Kritharas" "Kritopolos" "Kyminianos" "Kynochorites" "Kyriotes" "Kyritzes" "Labouzenos" "Laktentitzes" 
+			"Lalakon" "Lampsiotes" "Lapardas" "Leichoudes" "Lependrenos" "Leukedonites" "Libadares" "Libadas" 
+			"Libellisios" "Limas" "Liparites" "Lithokastrites" "Logariastes" "Loules" "Louloukes" "Lykaon" "Machetarios" 
+			"Madrites" "Madytenos" "Makropoderes" "Maleïnos" "Maleses" "Mamalos" "Manganes" "Marachas" "Marapas" 
+			"Marchapsabos" "Marianites" "Marzapoulos" "Matzaris" "Matzas" "Matzoukes" "Maurex" "Maurokatakalos" "Mauros" 
+			"Maurozomes" "Mechos" "Megalommates" "Megenos" "Meginos" "Melias" "Melissenos" "Mermentoulos" "Mesarites" 
+			"Meschos" "Mesopotamites" "Metochites" "Metropoulos" "Mitylenaios" "Monachites" "Monokarites" "Monomachatos" 
+			"Moroiannes" "Mosaraph" "Moschos" "Mosele" "Moungos" "Mourmoures" "Moustakes" "Mozaes" "Myralides" 
+			"Myredeïtes" "Myrelaetes" "Myron" "Nabatenos" "Narbiotes" "Narsites" "Neophytos" "Neustongios" "Nikerites" 
+			"Nikoulitzes" "Noe" "Oinaiotes" "Olyntenos" "Opos" "Pagomenos" "Pakourianos" "Paktiares" 
+			"Doukas Mourtzouphlos" "Palaiotes" "Palatinos" "Pamphilos" "Panaretos" "Pankalos" 
+			"Panokomites" "Parsakoutenos" "Parthenios" "Paxenos" "Pediasimos" "Peganites" "Pegonites" "Pekoules" 
+			"Pelamedes" "Pentarkles" "Pepagomenos" "Pepanos" "Perenos" "Peribleptenos" "Phalkon" "Phialites" "Philaretos" 
+			"Philinos" "Philokales" "Phrangopolos" "Pistophilos" "Pleures" "Politopolos" "Pothos" "Probatas" 
+			"Promountenos" "Proteuon" "Ptochos" "Rentakenos" "Rizenos" "Rodios" "Rogerios" "Romaios" "Rousopoulos" 
+			"Sagopoulos" "Sarakenopoulos" "Saronites" "Sauloioannes" "Semnos" "Serblias" "Sikoundenos" "Sinopites" 
+			"Skandales" "Skanranos" "Skeblenos" "Skoutariotes" "Skribas" "Smyrnaios" "Solomon" "Sortes" 
+			"Soumenos" "Spanogregores" "Spanopoulos""Stachytzes" "Stemnitziotes"
+			"Strephnes" "Stypeiotes" "Styppes" "Synacheris" "Syros" "Taronites" "Tatikes" "Tetragonites" "Theodorokanos" 
+			"Theodosiopolites" "Thrakesios" "Thylakas" "Tilapos" "Timonites" "Tourmarchopoulos" "Traphines" "Trellos" 
+			"Triakontaphyllos" "Triblattites" "Trichinopodes" "Triphyllios" "Tzanzes" "Tzefres" "Tzetas" "Tzipoureles" 
+			"Tzirithon" "Tzoulas" "Tzoumenes" "Tzouroulles" "Tzympenos" "Vatatzes" "Xanthos" "Xenos" "Xeros" "Xiphias" 
+			"Xiphilinos" "Xylinites" "Zabareiotes" "Zagarommates" "Zerbos" "Zomes" "Zonaras" "Kalomalas" "Kaloudes" 
+			"Kampanarios" "Kamytzes" "Kallierges" "Loukites" "Kometopoulos" "Basiliakos" 
+			"Pateranos" "von Winterthur" "Paleologo" "Gregoras" "Sanudo" "Komytzes" "Lascaris" "Kyrdiniatis" "Agapetos" 
+			"Attikos" "Anastasiotis" "Evergetidiotis" "Chliarinos" "Chysovergis" "Eugeniotis" "Vorradiotis" "Mountanis" 
+			"Theotokitis" "Viticlenou" "Autoreianos" "Akoimitos" "Charitopoulos" "Panemorphiotis" "Hyakinthiotis" 
+			"Galesiotis" "Bekkos" "Kyprios" "Gonitis" "Pammakaristiotis" "Perivleptiotis" "Manganiotis" "Kalekas" 
+			"Herakleidon" "Xylaloes" "Syrikos" "Tatikios" "Aspietes" "Kastenianos" "Leovachos" "Maniatis" "Vaklikas" 
+			"Maurikios" "Skrinarios" "Mesanaktis" "Lachanodrakon" "Kalokyris" "Lykodontis" "Skyllaris" "Ampelas" 
+			"Gerontas" "Apokapis" "Pallikarios" "Orphanotrophos" "Chlorokokis" "Hexavoulis" "Martinakios" "Agelastos" 
+			"Kotzes" "Toxaras" "Aplakes" "Gomostos" "Koupharas" "Tyropoulis" "Kontomytes" "Chenopoulos" "Sellokalas" 
+			"Kentrokoukouros" "Antigonos" "Pastillas" "Katakalitzes" "Manikophagos" "Kolokynthis" "Rachites" "Bua Spatas" 
+			"Apsimaros" "Artemios"
+	}
+	minoan = {}
+	cycladic = {}
+	pelasgian = {}
 }

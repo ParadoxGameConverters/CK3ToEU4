@@ -59,6 +59,20 @@
  gnostic_cult_desc: 0 "Nous reconnaissons que le monde matériel est une création fausse et terrible dirigée par le démiurge. Nous attendons avec impatience notre salut du monde matériel."
  yazidi_cult: 0 "Yazidi"
  yazidi_cult_desc: 0 "Nous honorons Melek Taus, le premier des 7 anges, compagnon d'Adam, sauveur d'Abraham et souverain choisi de Dieu. Par lui, nous trouvons le salut auprès du Tout-Puissant."
+ illyric_snake_cult:0 "Serpent"
+ illyric_snake_cult_desc:0 "Traditionnellement adopté par les Illyriens du sud, en honorant le culte de la serpentine, notre pays bénéficierait sûrement d'une fertilité accrue."
+ illyric_sun_cult:0 "Soleil"
+ illyric_sun_cult_desc:0 "Traditionnellement adopté par les Illyriens du nord, le culte du soleil inspirera sûrement la dévotion, même parmi nos sujets les moins pieux."
+ illyric_horseman_cult:0 "Cavalier"
+ illyric_horseman_cult_desc:0 "Le contact avec les Thraces nous a apporté le culte du cavalier thrace, un grand chasseur dont les compétences à cheval sont légendaires. Embrasser son culte serait sûrement une bénédiction pour nos propres cavaliers."
+ canaanite_cult:0 "Tanit"
+ canaanite_cult_desc:0 "Nous suivons la déesse Tanit, dont les bénédictions feront pleuvoir nos récoltes, protégeront nos guerriers au combat et garantiront la fertilité de nos femmes."
+ kemetism_cult:0 "Râ"
+ kemetism_cult_desc:0 "Notre dirigeant est un représentant direct du dieu Râ. En suivant et en obéissant sans réserve à notre dirigeant, nous réaliserons la volonté divine de Râ, garantissant ainsi ses bénédictions sur notre peuple."
+ druidic_cult:0 "Druidique"
+ druidic_cult_desc:0 "Nous suivons les mystérieux enseignements des druides, dont les lois maintiennent l'ordre et gagnent la faveur de notre nation auprès des dieux."
+ ajivika_cult:0 "Ajivika"
+ ajivika_cult_desc:0 "Nous avons adopté le Niyati, la croyance selon laquelle la vie est prédéterminée et destinée. Aucun dieu que nous adorons, aucune action que nous entreprenons, qu'elle soit généreuse ou mauvaise, ne changera jamais l'avenir ou n'affectera notre destin final, car il n'y a pas de libre arbitre."
 
  ##Personal Deities
  #Khurmazta

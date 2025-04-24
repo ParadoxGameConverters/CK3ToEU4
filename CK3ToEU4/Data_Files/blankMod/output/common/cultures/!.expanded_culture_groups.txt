@@ -1287,4 +1287,100 @@ lost_cultures_group = {
 	old_egyptian = {
 		primary = KEM
 	}
+	per_sheklesh = { #Egyptian Italy
+ 		primary = KEM
+ 		male_names = {
+ 			Amyrteos Ankhmachis Anemhor Aratos Arganos Charias Djedhor Ezena Horemakhet Isocrates Khabbabash Leonippus Lydiadas Manetho Massiva
+  			Nakhthoreb Naravas Nefaarud Neferibre Nesisti Nicias Nicodemus Oezalces Oxyntas Pedubast Peneus Perdiccas Philocrates
+ 			Philotheos Polyperchon Psherenamun Psherenptah Psammuthes Ptolemy Theocritus Therapon Timoleon Xanthos Xenon Zeteres Zosimus Ahmes
+ 			Ahmose Alarus Amasus Ameny Bakenrenef Cleomenes Euclid Harsiotef Henut Ibi Khabash Lagus Nectanebo Kheperkare Neferkare Nehi Osorkon Pami
+ 			Petubastis Teos
+ 		}
+ 		female_names = {
+ 			Agape Agathoclea Amanishabheto Antigone Apame Apollonia Aristomache Artemisia Aspacia Athenais Berenice Charis Cleopatra Cynna
+ 			Demetria Elpis Eirene Eudocia Eunice Euphemia Eurydice Euthalia Hypatia Nysa Oenanthe Olympia Phila Phile Sostrate Stratonice Thais
+ 			Theophila Thetima Thessaloniki Thorakis Timo Arsinoe Lysandra Kiya Qelhata
+ 		}
+ 		dynasty_names = {
+ 			Ahmid Ahmid Ahmid Ahmid
+ 			Galestus Galestid Galestid Galestid
+ 			Kenamus Kenamid Kenamid Kenamid
+ 			Naravid Naravid Naravid Naravid
+ 			Penamus Penamid Penamid Penamid
+ 			Senuid Senuid Senuid Senuid
+ 			Setnid Setnid Setnid Setnid
+ 			Arganid Arganid Arganid Arganid
+ 			Psammid Psammid Psammid Psammid
+ 			Philothid Philothid Philothid Philothid
+ 			Timolid Timolid Timolid Timolid
+ 			Zosid Zosid Zosid Zosid
+ 			Phileid Phileid Phileid Phileid
+ 			Nicodemid Nicodemid Nicodemid Nicodemid
+ 			Nefarid Nefarid Nefarid Nefarid
+ 			Bastid Bastid Bastid Bastid
+ 			Xeneid Xeneid Xeneid Xeneid
+ 			Naravid Naravid Naravid Naravid
+ 			Ezanid Ezanid Ezanid Ezanid
+ 			Ahmid Ahmid Ahmid Ahmid
+ 			Alarus Alara Alarid Alarid
+ 			Harsiotes Harsiotes Harsiotid Harsiotid
+ 			Henus Hena Henid Henid
+ 			Ibus Iba Ibid Ibid
+ 			Khabbash Khabbash Khabbashid Khabbashid
+ 			Amasus Amasa Amasid Amasid
+ 			Nectanebo Nectanebo Nectanebid Nectanebid
+ 			Petubast Petubast Petubastes Petubastid
+ 			Djedhid Djedhid Djedhid Djedhid
+ 			Tachys Tachya Tachyes Tachyid
+ 			Mago Mago Mago Magid
+ 		}
+ 	}
+ 	niwt_ipt = { #Egyptian Carthage
+ 		primary = KEM
+ 		male_names = {
+ 			Amyrteos Ankhmachis Anemhor Aratos Arganos Charias Djedhor Ezena Horemakhet Isocrates Khabbabash Leonippus Lydiadas Manetho Massiva
+  			Nakhthoreb Naravas Nefaarud Neferibre Nesisti Nicias Nicodemus Oezalces Oxyntas Pedubast Peneus Perdiccas Philocrates
+ 			Philotheos Polyperchon Psherenamun Psherenptah Psammuthes Ptolemy Theocritus Therapon Timoleon Xanthos Xenon Zeteres Zosimus Ahmes
+ 			Ahmose Alarus Amasus Ameny Bakenrenef Cleomenes Euclid Harsiotef Henut Ibi Khabash Lagus Nectanebo Kheperkare Neferkare Nehi Osorkon Pami
+ 			Petubastis Teos
+ 		}
+ 		female_names = {
+ 			Agape Agathoclea Amanishabheto Antigone Apame Apollonia Aristomache Artemisia Aspacia Athenais Berenice Charis Cleopatra Cynna
+ 			Demetria Elpis Eirene Eudocia Eunice Euphemia Eurydice Euthalia Hypatia Nysa Oenanthe Olympia Phila Phile Sostrate Stratonice Thais
+ 			Theophila Thetima Thessaloniki Thorakis Timo Arsinoe Lysandra Kiya Qelhata
+ 		}
+ 		dynasty_names = {
+ 			Ahmid Ahmid Ahmid Ahmid
+ 			Galestus Galestid Galestid Galestid
+ 			Kenamus Kenamid Kenamid Kenamid
+ 			Naravid Naravid Naravid Naravid
+ 			Penamus Penamid Penamid Penamid
+ 			Senuid Senuid Senuid Senuid
+ 			Setnid Setnid Setnid Setnid
+ 			Arganid Arganid Arganid Arganid
+ 			Psammid Psammid Psammid Psammid
+ 			Philothid Philothid Philothid Philothid
+ 			Timolid Timolid Timolid Timolid
+ 			Zosid Zosid Zosid Zosid
+ 			Phileid Phileid Phileid Phileid
+ 			Nicodemid Nicodemid Nicodemid Nicodemid
+ 			Nefarid Nefarid Nefarid Nefarid
+ 			Bastid Bastid Bastid Bastid
+ 			Xeneid Xeneid Xeneid Xeneid
+ 			Naravid Naravid Naravid Naravid
+ 			Ezanid Ezanid Ezanid Ezanid
+ 			Ahmid Ahmid Ahmid Ahmid
+ 			Alarus Alara Alarid Alarid
+ 			Harsiotes Harsiotes Harsiotid Harsiotid
+ 			Henus Hena Henid Henid
+ 			Ibus Iba Ibid Ibid
+ 			Khabbash Khabbash Khabbashid Khabbashid
+ 			Amasus Amasa Amasid Amasid
+ 			Nectanebo Nectanebo Nectanebid Nectanebid
+ 			Petubast Petubast Petubastes Petubastid
+ 			Djedhid Djedhid Djedhid Djedhid
+ 			Tachys Tachya Tachyes Tachyid
+ 			Mago Mago Mago Magid
+ 		}
+ 	}
 }

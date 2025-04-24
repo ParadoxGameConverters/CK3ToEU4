@@ -171,3 +171,66 @@ yazidi_cult = {
 	}
 }
 
+###I:R
+
+canaanite_cult = {
+	sprite = 32
+	allow = {
+		has_unlocked_cult = canaanite_cult
+	}
+	ship_durability = 0.1
+	ai_will_do = {
+		factor = 11
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+kemetism_cult = {
+	sprite = 33
+	allow = {
+		has_unlocked_cult = kemetism_cult
+	}
+	stability_cost_modifier = -0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+druidic_cult = {
+	sprite = 34
+	allow = {
+		has_unlocked_cult = druidic_cult
+	}
+	land_maintenance_modifier = -0.15
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+ajivika_cult = {
+	sprite = 35
+	allow = {
+		has_unlocked_cult = ajivika_cult
+	}
+	tolerance_own = -1
+	ae_impact = -0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
