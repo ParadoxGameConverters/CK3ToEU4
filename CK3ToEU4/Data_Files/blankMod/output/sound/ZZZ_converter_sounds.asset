@@ -751,3 +751,38 @@
   name = start_convert_atenism
   file = "start_conversion_muslim_shiite.wav"
  }
+ 
+ sound = {
+  name = religion_hurrian_pagan
+  file = "tab_religion_pagan.wav"
+ }
+ sound = {
+  name = start_convert_hurrian_pagan
+  file = "start_conversion_pagan_shamanism.wav"
+ }
+ 
+ sound = {
+  name = religion_illyric_pagan
+  file = "tab_religion_pagan.wav"
+ }
+ sound = {
+  name = start_convert_illyric_pagan
+  file = "start_conversion_pagan_shamanism.wav"
+ }
+ 
+ sound = {
+  name = religion_hattian_pagan
+  file = "tab_religion_pagan.wav"
+ }
+ sound = {
+  name = start_convert_hattian_pagan
+  file = "start_conversion_pagan_shamanism.wav"
+ }
+ sound = {
+  name = religion_ajivika
+  file = "tab_religion_india.wav"
+ }
+ sound = {
+  name = start_convert_ajivika
+  file = "start_conversion_eastern_hinduism.wav"
+ }
