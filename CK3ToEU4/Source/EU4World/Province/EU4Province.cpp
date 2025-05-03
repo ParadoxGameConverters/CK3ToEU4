@@ -36,6 +36,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 	 const std::shared_ptr<mappers::RegionMapper>& regionMapper,
 	 Configuration::DISCOVEREDBY discoveredBy)
 {
+	Log(LogLevel::Debug) << "eu4 " << provID << " from " << origProvince->getHoldingTitle().second->getName();
 	srcProvince = origProvince;
 
 	// Vanilla setting doesn't touch visibility.
@@ -55,6 +56,7 @@ void EU4::Province::initializeFromCK3Title(const std::shared_ptr<CK3::Title>& or
 		throw std::runtime_error(
 			 "EU4 Province ID " + std::to_string(provID) + " has source holdingtitle " + srcProvince->getHoldingTitle().first + " which has no EU4 tag!");
 	tagCountry = *srcProvince->getHoldingTitle().second->getEU4Tag(); // linking to our holder
+	Log(LogLevel::Debug) << " --  owner " << tagCountry.first;
 	details.owner = tagCountry.first;
 	details.controller = tagCountry.first;
 

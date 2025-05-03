@@ -159,6 +159,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Ck3 does not support tributaries as such and we care not about alliances.
 	Log(LogLevel::Info) << "-> Importing Vassals";
 	diplomacy.importVassals(countries);
+	diplomacy.generateTributaries(countries);
 	Log(LogLevel::Progress) << "68 %";
 
 	// We're distributing permanent claims according to dejure distribution.
