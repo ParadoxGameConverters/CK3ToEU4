@@ -70,6 +70,8 @@
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\CoatsOfArmsTests.cpp" />
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemInstanceTests.cpp" />
     <ClCompile Include="CK3WorldTests\CoatOfArmsTests\EmblemTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ConfederationTests\ConfederationsTests.cpp" />
+    <ClCompile Include="CK3WorldTests\ConfederationTests\ConfederationTests.cpp" />
     <ClCompile Include="CK3WorldTests\CultureTests\CulturesTests.cpp" />
     <ClCompile Include="CK3WorldTests\CultureTests\CultureTests.cpp" />
     <ClCompile Include="CK3WorldTests\DynastyTests\DynastiesTests.cpp" />

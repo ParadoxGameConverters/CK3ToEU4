@@ -96,4 +96,9 @@ l_english:
  DISCOVEREDBYTIP1: "Import vanilla visibility."
  DISCOVEREDBY2: "Dynamic."
  DISCOVEREDBYTIP2: "Basically, everyone in scope."
-
+ TRIBALCONFEDERATIONS: "Do we merge tribal confederations?"
+ TRIBALCONFEDERATIONSTIP: "They merge into a single tag, akin to Golden Horde."
+ TRIBALCONFEDERATIONS1: "Yes, merge (default)."
+ TRIBALCONFEDERATIONSTIP1: "They become a single tag."
+ TRIBALCONFEDERATIONS2: "No, leave members independent."
+ TRIBALCONFEDERATIONSTIP2: "Confederations are dissolved."

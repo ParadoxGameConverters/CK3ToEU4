@@ -86,6 +86,11 @@ class Configuration: commonItems::parser
 		VANILLA = 1,
 		DYNAMIC = 2
 	};
+	enum class TRIBALCONFEDERATIONS
+	{
+		MERGE = 1,
+		LEAVE = 2
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -107,6 +112,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getPlayerTitle() const { return playerTitle; }
 	[[nodiscard]] const auto& getDynasticNames() const { return dynasticNames; }
 	[[nodiscard]] const auto& getDiscoveredBy() const { return discoveredBy; }
+	[[nodiscard]] const auto& getTribalConfederations() const { return tribalConfederations; }
 
 	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
@@ -138,6 +144,7 @@ class Configuration: commonItems::parser
 	SPLITVASSALS splitVassals = SPLITVASSALS::YES;
 	DYNASTICNAMES dynasticNames = DYNASTICNAMES::ENABLED;
 	DISCOVEREDBY discoveredBy = DISCOVEREDBY::VANILLA;
+	TRIBALCONFEDERATIONS tribalConfederations = TRIBALCONFEDERATIONS::MERGE;
 
 	std::optional<std::string> playerTitle;
 };

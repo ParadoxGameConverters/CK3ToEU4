@@ -136,6 +136,9 @@
     <Filter Include="Mappers\StartDateMapper">
       <UniqueIdentifier>{87562219-fd4a-4f32-b6a7-4bec099e8d33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CK3World\Confederations">
+      <UniqueIdentifier>{e3917fcf-1836-48f3-ab16-dc37d35d43f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\World.cpp">
@@ -446,6 +449,12 @@
     </ClCompile>
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.cpp">
       <Filter>Mappers\StartDateMapper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederation.cpp">
+      <Filter>CK3World\Confederations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.cpp">
+      <Filter>CK3World\Confederations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -763,6 +772,12 @@
     </ClInclude>
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\StartDateMapper\StartDateMapper.h">
       <Filter>Mappers\StartDateMapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederation.h">
+      <Filter>CK3World\Confederations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.h">
+      <Filter>CK3World\Confederations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -14,6 +14,8 @@
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\Emblem.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\EmblemInstance.cpp" />
+    <ClCompile Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederation.cpp" />
+    <ClCompile Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\Cultures\Culture.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\Cultures\Cultures.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\Dynasties\Dynasties.cpp" />
@@ -119,6 +121,8 @@
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\CoatsOfArms.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\Emblem.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\CoatsOfArms\EmblemInstance.h" />
+    <ClInclude Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederation.h" />
+    <ClInclude Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\Cultures\Culture.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\Cultures\Cultures.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\Dynasties\Dynasties.h" />

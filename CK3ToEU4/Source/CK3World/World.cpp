@@ -217,6 +217,11 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		cultures = Cultures(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << cultures.getCultures().size() << " cultures.";
 	});
+	registerKeyword("confederation_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading confederations.";
+		confederations = Confederations(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << confederations.getConfederations().size() << " confederations.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

@@ -133,6 +133,9 @@
     <Filter Include="MapperTests\StartDateMapperTests">
       <UniqueIdentifier>{4d32651e-5b8e-46e4-a0b8-aa2a05c418e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ck3WorldTests\ConfederationTests">
+      <UniqueIdentifier>{7969d19f-539d-4d85-90d7-dbb4de6c7aa5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConfigurationTests\ConfigurationTests.cpp">
@@ -376,6 +379,12 @@
     <ClCompile Include="..\commonItems\external\googletest\googletest\src\gtest-all.cc" />
     <ClCompile Include="MapperTests\StartDateMapper\StartDateMapperTests.cpp">
       <Filter>MapperTests\StartDateMapperTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ConfederationTests\ConfederationsTests.cpp">
+      <Filter>Ck3WorldTests\ConfederationTests</Filter>
+    </ClCompile>
+    <ClCompile Include="CK3WorldTests\ConfederationTests\ConfederationTests.cpp">
+      <Filter>Ck3WorldTests\ConfederationTests</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

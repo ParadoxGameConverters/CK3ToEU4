@@ -96,4 +96,9 @@ l_french:
  DISCOVEREDBYTIP1: "Importez la visibilité Vanilla."
  DISCOVEREDBY2: "Dynamique."
  DISCOVEREDBYTIP2: "En gros, tout le monde est concerné."
-
+ TRIBALCONFEDERATIONS: "Faut-il fusionner les confédérations tribales ?"
+ TRIBALCONFEDERATIONSTIP: "Ils fusionnent en une seule balise, semblable à Golden Horde."
+ TRIBALCONFEDERATIONS1: "Oui, fusionner (par défaut)."
+ TRIBALCONFEDERATIONSTIP1: "Ils deviennent une seule étiquette."
+ TRIBALCONFEDERATIONS2: "Non, laissez les membres indépendants."
+ TRIBALCONFEDERATIONSTIP2: "Les confédérations sont dissoutes."
