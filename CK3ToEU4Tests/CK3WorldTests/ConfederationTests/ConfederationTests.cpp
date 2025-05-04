@@ -1,6 +1,6 @@
 #include "../CK3ToEU4/Source/CK3World/Confederations/Confederation.h"
-#include "gtest/gtest.h"
 #include "gmock/gmock-matchers.h"
+#include "gtest/gtest.h"
 
 using testing::ElementsAre;
 TEST(CK3World_ConfederationTests, cultureIDLoads)
