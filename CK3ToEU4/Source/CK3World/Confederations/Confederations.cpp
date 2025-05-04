@@ -2,7 +2,6 @@
 #include "CommonRegexes.h"
 #include "Confederation.h"
 #include "ParserHelpers.h"
-#include <ranges>
 
 CK3::Confederations::Confederations(std::istream& theStream)
 {
