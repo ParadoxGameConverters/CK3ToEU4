@@ -4,12 +4,17 @@
 
 namespace CK3
 {
+class CoatsOfArms;
 class Confederation;
+class Characters;
 class Confederations: commonItems::parser
 {
   public:
 	Confederations() = default;
 	explicit Confederations(std::istream& theStream);
+
+	void linkCharacters(const Characters& characters);
+	void linkCoats(const CoatsOfArms& coats);
 
 	[[nodiscard]] const auto& getConfederations() const { return confederations; }
 

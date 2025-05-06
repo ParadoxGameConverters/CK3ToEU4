@@ -1,5 +1,6 @@
 #include "EU4World.h"
 #include "../CK3World/Characters/Character.h"
+#include "../CK3World/Confederations/Confederation.h"
 #include "../CK3World/Geography/CountyDetail.h"
 #include "../CK3World/Geography/ProvinceHolding.h"
 #include "../CK3World/Religions/Faith.h"
@@ -132,6 +133,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Rulers with multiple crowns either get PU agreements, or just annex the other crowns.
 	resolvePersonalUnions();
+
+	if (theConfiguration.getTribalConfederations() == Configuration::TRIBALCONFEDERATIONS::MERGE)
+		mergeConfederations(sourceWorld.getConfederations());
 	Log(LogLevel::Progress) << "65 %";
 
 	// We're onto the finesse part of conversion now. HRE was shattered in CK3 World and now we're assigning electorates, free
@@ -211,6 +215,62 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld, startDateMapper.getStartDate());
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
+}
+
+void EU4::World::mergeConfederations(const CK3::Confederations& confederations)
+{
+	// There is no real rhyme or reason about this. Confederations members in CK3 may or may not have survived the transition, and their individual stats are
+	// more or less meaningless in the grand scheme. We'll just pick the first one and merge other survivors into it, and then rename it.
+
+	Log(LogLevel::Info) << "-> Merging Confederations";
+
+	auto memberCounter = 0;
+	auto confederationCounter = 0;
+
+	for (const auto& confederation: confederations.getConfederations() | std::views::values)
+	{
+		std::shared_ptr<Country> confederationHolder = nullptr; // this will be the holder for the federation;
+
+		for (const auto& holder: confederation->getMembers() | std::views::values)
+		{
+			if (!holder)
+				continue; // could be deleted over the run.
+			// first do a buttload of checks to confirm member is sane.
+			const auto& charDomain = holder->getCharacterDomain();
+			if (!charDomain)
+				continue;
+			const auto& domain = charDomain->getDomain();
+			if (domain.empty())
+				continue;
+			const auto& primaryTitle = domain.begin()->second;
+			if (!primaryTitle)
+				continue;
+			const auto& eu4country = primaryTitle->getEU4Tag();
+			if (!eu4country || eu4country->first.empty() || !eu4country->second)
+				continue;
+			if (eu4country->second->getProvinces().empty())
+				continue;
+
+			if (!confederationHolder)
+			{
+				confederationHolder = eu4country->second;
+			}
+			else
+			{
+				confederationHolder->annexCountry(*eu4country);
+			}
+			memberCounter++;
+		}
+
+		// did we even do anything?
+		if (!confederationHolder)
+			continue;
+
+		confederationHolder->renameAndRemask(*confederation);
+		confederationCounter++;
+	}
+
+	Log(LogLevel::Info) << "<> Merged " << memberCounter << " confederation members into " << confederationCounter << " confederations.";
 }
 
 void EU4::World::religiousQuestion(bool doesIslamExist)

@@ -410,7 +410,7 @@ void CK3::World::crosslinkDatabases()
 	religions.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
 	faiths.linkReligions(religions, titles);
-	Log(LogLevel::Info) << "-> Loading Coats into Coats.";
+	Log(LogLevel::Info) << "-> Loading Titles into Coats.";
 	coats.linkParents(titles);
 	Log(LogLevel::Info) << "-> Loading Coats into Dynasties.";
 	dynasties.linkCoats(coats);
@@ -442,6 +442,10 @@ void CK3::World::crosslinkDatabases()
 	titles.linkLandedTitles(landedTitles);
 	Log(LogLevel::Info) << "-> Loading Traits into Characters.";
 	characters.linkTraits(traitScraper);
+	Log(LogLevel::Info) << "-> Loading Characters into Confederations.";
+	confederations.linkCharacters(characters);
+	Log(LogLevel::Info) << "-> Loading Coats into Confederations.";
+	confederations.linkCoats(coats);
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)

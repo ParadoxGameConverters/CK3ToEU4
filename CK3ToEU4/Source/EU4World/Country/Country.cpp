@@ -1,6 +1,7 @@
 #include "Country.h"
 #include "../../CK3World/Characters/Character.h"
 #include "../../CK3World/Characters/CharacterDomain.h"
+#include "../../CK3World/Confederations/Confederation.h"
 #include "../../CK3World/Cultures/Culture.h"
 #include "../../CK3World/Dynasties/Dynasty.h"
 #include "../../CK3World/Dynasties/House.h"
@@ -1829,4 +1830,49 @@ date EU4::Country::normalizeDate(const date& incomingDate, Configuration::STARTD
 		yearDelta = startDate.getYear() - theConversionDate.getYear();
 
 	return date(incomingYear + yearDelta, incomingDate.getMonth(), incomingDate.getDay());
+}
+
+void EU4::Country::renameAndRemask(const CK3::Confederation& confederation)
+{
+	// Incoming Confederation identity takes over country name, CoA and color. Rest remains as is.
+	// Since confederation name is in the save itself, single-language, we don't have an issue with splattering it all over the locs as-is.
+
+	if (!confederation.getName().empty())
+	{
+		if (localizations.contains(tag))
+		{
+			localizations.at(tag).initializeAll(confederation.getName());
+		}
+		else
+		{
+			mappers::LocBlock name;
+			name.initializeAll(confederation.getName());
+			localizations.emplace(tag, name);
+		}
+	}
+
+	// We can semi-create the adjective by stripping Confederation from name, but this works only for english.
+	const auto& pos = confederation.getName().find(" Confederation");
+	if (pos != std::string::npos && pos > 1)
+	{
+		const auto baseName = confederation.getName().substr(0, pos);
+		if (localizations.contains(tag + "_ADJ"))
+		{
+			localizations.at(tag + "_ADJ").english = baseName;
+		}
+		else
+		{
+			mappers::LocBlock adj;
+			adj.initializeAll(baseName);
+			localizations.emplace(tag + "_ADJ", adj);
+		}
+	}
+
+	// Copy over the color.
+	if (confederation.getColor())
+		details.color = confederation.getColor();
+
+	// And copy over CoA.
+	if (confederation.getCoat())
+		confederationCoA = confederation.getCoat();
 }

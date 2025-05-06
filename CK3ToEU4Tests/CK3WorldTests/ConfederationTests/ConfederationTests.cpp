@@ -19,8 +19,7 @@ TEST(CK3World_ConfederationTests, loadValuesDefaultToDefaults)
 	EXPECT_EQ(1, confederation.getID());
 	EXPECT_TRUE(confederation.getName().empty());
 	EXPECT_FALSE(confederation.getColor());
-	EXPECT_FALSE(confederation.getCoat().first);
-	EXPECT_FALSE(confederation.getCoat().second);
+	EXPECT_FALSE(confederation.getCoat());
 	EXPECT_TRUE(confederation.getMembers().empty());
 }
 
@@ -42,6 +41,6 @@ TEST(CK3World_ConfederationTests, confederationPrimitivesCanBeLoaded)
 			  std::pair<long long, std::shared_ptr<CK3::Character>>(16810363, nullptr)));
 	EXPECT_EQ("Polabian Confederation", confederation.getName());
 	EXPECT_EQ("= rgb { 80 110 80 }", confederation.getColor()->outputRgb());
-	EXPECT_EQ(20636, confederation.getCoat().first);
-	EXPECT_FALSE(confederation.getCoat().second);
+	EXPECT_EQ(20636, confederation.getCoat()->first);
+	EXPECT_FALSE(confederation.getCoat()->second);
 }

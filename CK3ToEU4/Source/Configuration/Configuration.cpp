@@ -125,6 +125,11 @@ void Configuration::registerKeys()
 		discoveredBy = DISCOVEREDBY(std::stoi(discoveredByString.getString()));
 		Log(LogLevel::Info) << "Discovered By set to: " << discoveredByString.getString();
 	});
+	registerKeyword("tribalConfederations", [this](std::istream& theStream) {
+		const commonItems::singleString tribalConfederationsString(theStream);
+		tribalConfederations = TRIBALCONFEDERATIONS(std::stoi(tribalConfederationsString.getString()));
+		Log(LogLevel::Info) << "Tribal Confederations set to: " << tribalConfederationsString.getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

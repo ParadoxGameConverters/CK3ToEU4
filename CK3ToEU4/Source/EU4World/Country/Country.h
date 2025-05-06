@@ -10,8 +10,10 @@
 
 namespace CK3
 {
+class CoatOfArms;
+class Confederation;
 class Title;
-}
+} // namespace CK3
 
 namespace mappers
 {
@@ -72,6 +74,7 @@ class Country
 	void setGovernment(const std::string& government) { details.government = government; }
 	void setLocalizations(const mappers::LocBlock& newBlock);
 	void correctRoyaltyToBuddhism();
+	void renameAndRemask(const CK3::Confederation& confederation);
 
 	[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyCountryFile; }
@@ -97,6 +100,7 @@ class Country
 	[[nodiscard]] auto getCapitalID() const { return details.capital; }
 	[[nodiscard]] auto getHouse() const { return details.house; }
 	[[nodiscard]] auto getHasDynastyName() const { return details.hasDynastyName; }
+	[[nodiscard]] auto getConfederationCoA() const { return confederationCoA; }
 
 	[[nodiscard]] int getDevelopment() const;
 
@@ -154,6 +158,7 @@ class Country
 	std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> title;
 	std::map<std::string, mappers::LocBlock> localizations; // Beware, these are UTF8 strings. If you are altering them be sure you know what you're doing.
 	std::map<int, std::shared_ptr<Province>> provinces;
+	std::optional<std::pair<long long, std::shared_ptr<CK3::CoatOfArms>>> confederationCoA;
 };
 } // namespace EU4
 

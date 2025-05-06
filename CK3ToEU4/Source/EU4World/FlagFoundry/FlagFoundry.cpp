@@ -110,7 +110,18 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 		return;
 	}
 
-	const auto& coa = country->getTitle()->second->getCoA()->second;
+	std::shared_ptr<CK3::CoatOfArms> coa;
+
+	// Before we proceed, do we have a custom CoA to use?
+	if (country->getConfederationCoA() && country->getConfederationCoA()->second)
+	{
+		coa = country->getConfederationCoA()->second;
+	}
+	else
+	{
+		coa = country->getTitle()->second->getCoA()->second;
+	}
+
 	auto generatedCoa = flagCrafter.craftFlagFromCoA(*coa);
 	try
 	{

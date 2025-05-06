@@ -86,6 +86,7 @@ class World
 	void africanQuestion();
 	void indianQuestion();
 	void religiousQuestion(bool doesIslamExist);
+	void mergeConfederations(const CK3::Confederations& confederations);
 
 	// output
 	void output(const commonItems::ConverterVersion& converterVersion,

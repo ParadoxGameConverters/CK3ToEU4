@@ -20,13 +20,16 @@ class Confederation: commonItems::parser
 	[[nodiscard]] const auto& getCoat() const { return coat; }
 	[[nodiscard]] const auto& getMembers() const { return members; }
 
+	void loadMembers(const std::map<long long, std::shared_ptr<Character>>& theMembers) { members = theMembers; }
+	void loadCoat(const std::pair<long long, std::shared_ptr<CoatOfArms>>& theCoat) { coat = theCoat; }
+
   private:
 	void registerKeys();
 
 	long long ID = 0;
 	std::string name;
 	std::optional<commonItems::Color> color;
-	std::pair<long long, std::shared_ptr<CoatOfArms>> coat;
+	std::optional<std::pair<long long, std::shared_ptr<CoatOfArms>>> coat;
 	std::map<long long, std::shared_ptr<Character>> members;
 };
 } // namespace CK3
