@@ -606,6 +606,12 @@ void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const st
 
 	for (const auto& agreement: agreements)
 	{
+		// Let's skip dead nations.
+		if (countries.at(agreement->getFirst())->getProvinces().empty())
+			continue;
+		if (countries.at(agreement->getSecond())->getProvinces().empty())
+			continue;
+
 		if (agreement->getType() == "guarantee")
 		{
 			guarantees << *agreement;

@@ -1294,6 +1294,9 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 					isReformed = true;
 					break;
 				}
+	  /*
+	   * This is now done through govmap.txt for these two.
+	   *
 		// Hordes (This is the worst way to do this, but so be it until we get a horde government type)
 		if (regionMapper->provinceIsInRegion(details.capital, "tambov_area") || regionMapper->provinceIsInRegion(details.capital, "ryazan_area") ||
 			 regionMapper->provinceIsInRegion(details.capital, "suzdal_area") || regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
@@ -1310,8 +1313,12 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 			details.reforms.clear();
 			details.reforms = {"siberian_tribe"};
 		}
+		*/
+		if (details.reforms.contains("steppe_horde") || details.reforms.contains("siberian_tribe"))
+			return;
+
 		// Tribal Federations
-		else if (muslimReligions.count(details.religion))
+		if (muslimReligions.count(details.religion))
 		{
 			details.reforms.clear();
 			details.reforms = {"tribal_federation"};

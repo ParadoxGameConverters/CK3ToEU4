@@ -34,6 +34,19 @@ void CK3::Title::registerKeys()
 			cleanUpDisplayName();
 		}
 	});
+	registerKeyword("specific_title_name", [this](const std::string& unused, std::istream& theStream) {
+		// This will override name set previously.
+		displayName = commonItems::singleString(theStream).getString();
+
+		// This is a check for ascii characters actually. We may have chinese here. However, in english they start with lowercase "the".
+		if (!displayName.empty() && std::islower(displayName[0]))
+			displayName[0] = std::toupper(displayName[0]);
+
+		if (displayName.find("\x15") != std::string::npos)
+		{
+			cleanUpDisplayName();
+		}
+	});
 	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
 		adjective = commonItems::singleString(theStream).getString();
 	});

@@ -366,7 +366,7 @@ link = { eu4 = kazani ck3 = tatar ck3 = tatars ck3 = bolghar ck3 = mongol tech =
 link = { eu4 = chuvash ck3 = chuvash tech = nomad_group gfx = muslimgfx }
 link = { eu4 = mishary ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = ural_region region = russia_region }
 link = { eu4 = nogaybak ck3 = kimek tech = nomad_group gfx = muslimgfx }
-link = { eu4 = siberian ck3 = mongol ck3 = bolghar tech = nomad_group gfx = muslimgfx region = west_siberia_region }
+link = { eu4 = siberian ck3 = bolghar tech = nomad_group gfx = muslimgfx region = east_siberia_region region = west_siberia_region }
 link = { eu4 = buryat ck3 = buryat tech = nomad_group gfx = inuitgfx }
 link = { eu4 = tuvan ck3 = uriankhai tech = nomad_group gfx = inuitgfx }
 link = { eu4 = ostyaki ck3 = ostyak ck3 = laktan tech = nomad_group gfx = inuitgfx }

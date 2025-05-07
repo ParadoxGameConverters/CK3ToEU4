@@ -163,7 +163,12 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Ck3 does not support tributaries as such and we care not about alliances.
 	Log(LogLevel::Info) << "-> Importing Vassals";
 	diplomacy.importVassals(countries);
+
+	Log(LogLevel::Info) << "-> Generating Tributaries";
 	diplomacy.generateTributaries(countries);
+
+	Log(LogLevel::Info) << "-> Coalescing Hordes";
+	coalesceHordes();
 	Log(LogLevel::Progress) << "68 %";
 
 	// We're distributing permanent claims according to dejure distribution.
@@ -215,6 +220,64 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld, startDateMapper.getStartDate());
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
+}
+
+void EU4::World::coalesceHordes()
+{
+	// We need to merge various horde subclans into a single horde entity. We don't care about vassalages or tributaries, and treat both
+	// as direct hierarchy when merging.
+
+	auto mergeCounter = 0;
+
+	// Let's filter out all agreements related to hordes so we can iterate faster. We're looking for 2 hordes either in tributary or vassal relations,
+	// Ie, mongols merge with mongols, oirats with oirats etc. Chains of 3+ are possible so we'll need to do this recursively.
+
+	std::map<std::string, std::vector<std::shared_ptr<Country>>> hordeDependencies; // overlord -> dependents
+
+	for (const auto& agreement: diplomacy.getAgreements())
+	{
+		const auto& eu4tag1 = agreement->getFirst();
+		const auto& eu4tag2 = agreement->getSecond();
+		const auto& country1 = countries.at(eu4tag1);
+		const auto& country2 = countries.at(eu4tag2);
+
+		if (!country1->getTitle() || country1->getGovernment() != "tribal" || !country1->getGovernmentReforms().contains("steppe_horde"))
+			continue;
+		if (!country2->getTitle() || country2->getGovernment() != "tribal" || !country2->getGovernmentReforms().contains("steppe_horde"))
+			continue;
+		if (!(agreement->getType() == "dependency" && agreement->getSubjectType() == "tributary_state") && agreement->getType() != "vassal")
+			continue;
+
+		if (hordeDependencies.contains(eu4tag1))
+		{
+			hordeDependencies.at(eu4tag1).emplace_back(country2);
+		}
+		else
+		{
+			hordeDependencies.emplace(eu4tag1, std::vector<std::shared_ptr<Country>>{country2});
+		}
+	}
+
+	// Now let's roll and recursively annex the bunch.
+
+	for (const auto& tag: hordeDependencies | std::views::keys)
+	{
+		annexHordes(tag, hordeDependencies);
+		mergeCounter++;
+	}
+
+	Log(LogLevel::Info) << "<> Coalesced " << mergeCounter << " hordes.";
+}
+
+void EU4::World::annexHordes(const std::string& tag, std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies)
+{
+	const auto& annexer = countries.at(tag);
+	for (const auto& annexee: hordeDependencies.at(tag))
+	{
+		if (hordeDependencies.contains(annexee->getTag()))
+			annexHordes(annexee->getTag(), hordeDependencies);
+		annexer->annexCountry(std::pair(annexee->getTag(), annexee));
+	}
 }
 
 void EU4::World::mergeConfederations(const CK3::Confederations& confederations)

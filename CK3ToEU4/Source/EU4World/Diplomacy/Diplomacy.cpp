@@ -45,6 +45,8 @@ void EU4::Diplomacy::importVassals(const std::map<std::string, std::shared_ptr<C
 
 void EU4::Diplomacy::generateTributaries(const std::map<std::string, std::shared_ptr<Country>>& countries)
 {
+	auto tributaryCounter = 0;
+
 	// Tributaries are our own creation so we're pinging our countries alone.
 	for (const auto& country: countries)
 	{
@@ -73,7 +75,10 @@ void EU4::Diplomacy::generateTributaries(const std::map<std::string, std::shared
 
 		auto newAgreement = std::make_shared<Agreement>(targetTag->first, country.first, "dependency", "tributary_state", country.second->getConversionDate());
 		agreements.push_back(newAgreement);
+		tributaryCounter++;
 	}
+
+	Log(LogLevel::Info) << "<> Generated " << tributaryCounter << " tributaries.";
 }
 
 void EU4::Diplomacy::updateTagsInAgreements(const std::string& oldTag, const std::string& newTag)
