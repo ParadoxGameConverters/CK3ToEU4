@@ -2089,6 +2089,13 @@ void EU4::World::mongolianQuestion()
 		return;
 	}
 
+	const auto& acutalMongol = localizationMapper.getLocBlockForKey("mongol_clothing_gfx"); // "Mongolian". Don't ask.
+	if (!acutalMongol)
+	{
+		Log(LogLevel::Error) << "Game locs don't have mongol_clothing_gfx. Ask your service provider for a fresh installation.";
+		return;
+	}
+
 	const auto& mongolNames = mongolLocBlock->getAllNames();
 
 	std::vector<std::shared_ptr<Country>> potentialCandidates;
@@ -2157,6 +2164,16 @@ void EU4::World::mongolianQuestion()
 
 	// Now the trivial task of reassigning the entire identity of the country to KHA. Easier for KHA to become mongols.
 	kha->subsumeCountry(shortestNameContestWinner);
+
+	// KHA_ADJ will now be buryatian or french or whatever nonsense. Need to fix it.
+
+	auto locs = kha->getLocalizations();
+
+	if (locs.contains("KHA_ADJ"))
+		locs.at("KHA_ADJ") = *acutalMongol;
+	else
+		locs.emplace("KHA_ADJ", *acutalMongol);
+	kha->setLocalizations(locs);
 
 	Log(LogLevel::Info) << "<> Mongolian Question resolved by Jurchen invasion of " << shortestNameContestWinner->getTag() << " - "
 							  << shortestNameContestWinner->getLocalizations().at(shortestNameContestWinner->getTag()).english << ".";

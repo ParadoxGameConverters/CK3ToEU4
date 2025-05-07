@@ -74,6 +74,7 @@ class Country
 	void setMercantilism(int mercantilism) { details.mercantilism = mercantilism; }
 	void setGovernment(const std::string& government) { details.government = government; }
 	void setLocalizations(const mappers::LocBlock& newBlock);
+	void setLocalizations(const std::map<std::string, mappers::LocBlock>& theLocalizations) { localizations = theLocalizations; }
 	void correctRoyaltyToBuddhism();
 	void renameAndRemask(const CK3::Confederation& confederation);
 
