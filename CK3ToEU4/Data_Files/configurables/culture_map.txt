@@ -401,8 +401,7 @@ link = { eu4 = oirats ck3 = oirat ck3 = yughur tech = chinese gfx = asiangfx }
 link = { eu4 = oirats ck3 = kerait tech = nomad_group gfx = muslimgfx region = crimea_region } # Keraites are ancestors to the Kalmyks
 link = { eu4 = khalkha ck3 = mongol tech = chinese gfx = asiangfx region = mongolia_region region = tibet_region region = north_china_region region = buryatia_area }
 link = { eu4 = khalkha ck3 = kerait ck3 = ongud tech = chinese gfx = asiangfx }
-link = { eu4 = mongol ck3 = mongol ck3 = xianbei ck3 = ninrun ck3 = tuoba tech = chinese gfx = asiangfx } #Fallback
-# EU4 Mongol is outside ck3
+link = { eu4 = mongol ck3 = mongol ck3 = xianbei ck3 = ninrun ck3 = tuoba tech = nomad_group gfx = asiangfx }
 link = { eu4 = kirgiz ck3 = kirghiz ck3 = kipchak ck3 = chagatai tech = nomad_group gfx = asiangfx }
 link = { eu4 = uyghur ck3 = karluk tech = nomad_group gfx = asiangfx region = mongolia_region region = north_china_region region = tibet_region }
 link = { eu4 = uzbehk ck3 = karluk ck3 = basmyl tech = nomad_group gfx = muslimgfx }

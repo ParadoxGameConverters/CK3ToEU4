@@ -198,9 +198,8 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	africanQuestion();
 	Log(LogLevel::Progress) << "74 %";
 
-	// Indian buddhisms
-	// Disabled for now as probably no longer necessary due to CK3's larger religious variance in later patches.
-	// indianQuestion();
+	// Mongolian Question
+	mongolianQuestion();
 
 	// No-Islam worlds
 	religiousQuestion(sourceWorld.doesIslamExist());
@@ -2063,45 +2062,102 @@ void EU4::World::africanQuestion()
 	}
 }
 
-void EU4::World::indianQuestion()
+void EU4::World::mongolianQuestion()
 {
-	// countries with capitals in india or persia superregions, need to have their provinces updated to buddhism (from vajrayana),
-	// as well as state religion if vajrayana.
-	Log(LogLevel::Info) << "-> Resolving the Indian Question";
-	auto countryCounter = 0;
-	auto provinceCounter = 0;
+	Log(LogLevel::Info) << "-> Resolving the Mongolian Question";
 
-	for (const auto& country: countries)
+	// Case 1. There was an e_mongolia or k_otuken that mapped to KHA. KHA now extends into CK3-scope.
+	// Solution: Nothing needs to be done.
+	const auto& kha = countries.at("KHA");
+
+	if (kha->getTitle())
 	{
-		if (!country.second->getTitle())
-			continue;
-		if (country.second->getProvinces().empty())
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by marriage.";
+		return;
+	}
+
+	// Case 2. There is noone that mapped to KHA. The Mongols exist, but they took over some other title and mapped to some other tag.
+	// Solution: Find them. Check if they own EU4 provinces that Mongolia borders on the other side. If yes, rename them to KHA.
+
+	// Step 1. "Find Them." Easy, they said. It should be TRIVIAL! Especially if they own k_england as primary title and the display name is in chinese.
+
+	const auto& mongolLocBlock =
+		 localizationMapper.getLocBlockForKey("mongol_collective_noun"); // this is "Mongols", not "The Mongols" we have as display name. Now we go hunting.
+	if (!mongolLocBlock)
+	{
+		Log(LogLevel::Error) << "Game locs don't have mongol_collective_noun. Ask your service provider for a fresh installation.";
+		return;
+	}
+
+	const auto& mongolNames = mongolLocBlock->getAllNames();
+
+	std::vector<std::shared_ptr<Country>> potentialCandidates;
+	std::string correctLanguage;
+
+	for (const auto& country: countries | std::views::values)
+	{
+		if (!country->getLocalizations().contains(country->getTag()))
 			continue;
 
-		const auto capitalID = country.second->getCapitalID();
-		if (!capitalID)
-			continue;
+		auto countryNames = country->getLocalizations().at(country->getTag()).getAllNames();
+		// does any ~~match~~  CONTAIN  any of the mongols locs? Jesus wept.
 
-		const auto& capitalSuperRegion = regionMapper->getParentSuperRegionName(capitalID);
-		if (!capitalSuperRegion)
-			continue;
-
-		if (*capitalSuperRegion == "india_superregion" || *capitalSuperRegion == "persia_superregion")
+		for (const auto& [monLanguage, mongolName]: mongolNames)
 		{
-			// Let's convert to buddhism.
-			if (country.second->getReligion() == "vajrayana")
+			for (const auto& countryName: countryNames | std::views::values)
 			{
-				country.second->setReligion("buddhism");
-				country.second->correctRoyaltyToBuddhism();
-				++countryCounter;
-			}
-			for (const auto& province: country.second->getProvinces())
-				if (province.second->getReligion() == "vajrayana")
+				if (countryName.find(mongolName) != std::string::npos)
 				{
-					province.second->setReligion("buddhism");
-					++provinceCounter;
+					// See? Potential! Because me may have just hit any of the indep mongol tribes, not the actual host.
+					potentialCandidates.emplace_back(country);
+					correctLanguage = monLanguage;
 				}
+			}
 		}
 	}
-	Log(LogLevel::Info) << "-> " << countryCounter << " countries and " << provinceCounter << " provinces resolved.";
+
+	if (potentialCandidates.empty())
+	{
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by attrition.";
+		return;
+	}
+
+	// Now see who has the shortest name. Not joking. Yes, I know.
+
+	std::shared_ptr<Country> shortestNameContestWinner;
+	size_t length = 9999;
+	for (const auto& candidate: potentialCandidates)
+	{
+		if (candidate->getLocalizations().at(candidate->getTag()).getAllNames().at(correctLanguage).size() < length)
+		{
+			shortestNameContestWinner = candidate;
+			length = candidate->getLocalizations().at(candidate->getTag()).getAllNames().at(correctLanguage).size();
+		}
+	}
+
+	// Are we even a valid target? Mongols in France are not KHA unless they border actual KHA.
+
+	std::set<int> relevantProvinces = {1056, 1057, 4220, 2116, 4221, 4677, 4676, 709}; // these are CK3-scope border provinces towards off-scope KHA.
+
+	bool borderCheck = false;
+	for (const auto& provinceID: shortestNameContestWinner->getProvinces() | std::views::keys)
+	{
+		if (relevantProvinces.contains(provinceID))
+		{
+			borderCheck = true;
+			break;
+		}
+	}
+
+	if (!borderCheck)
+	{
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by tribal migration.";
+		return;
+	}
+
+	// Now the trivial task of reassigning the entire identity of the country to KHA. Easier for KHA to become mongols.
+	kha->subsumeCountry(shortestNameContestWinner);
+
+	Log(LogLevel::Info) << "<> Mongolian Question resolved by Jurchen invasion of " << shortestNameContestWinner->getTag() << " - "
+							  << shortestNameContestWinner->getLocalizations().at(shortestNameContestWinner->getTag()).english << ".";
 }

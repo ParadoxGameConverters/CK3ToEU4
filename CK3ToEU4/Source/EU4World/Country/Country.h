@@ -67,6 +67,7 @@ class Country
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper);
 	void annexCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry);
+	void subsumeCountry(const std::shared_ptr<Country>& theCountry);
 	void clearProvinces() { provinces.clear(); }
 	void setElector() { details.elector = true; }
 	void overrideReforms(const std::string& reform) { details.reforms = {reform}; }
@@ -101,6 +102,7 @@ class Country
 	[[nodiscard]] auto getHouse() const { return details.house; }
 	[[nodiscard]] auto getHasDynastyName() const { return details.hasDynastyName; }
 	[[nodiscard]] auto getConfederationCoA() const { return confederationCoA; }
+	[[nodiscard]] auto getEntireDetails() const { return details; }
 
 	[[nodiscard]] int getDevelopment() const;
 

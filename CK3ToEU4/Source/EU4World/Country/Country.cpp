@@ -1802,6 +1802,44 @@ void EU4::Country::annexCountry(const std::pair<std::string, std::shared_ptr<Cou
 	// Bricking the title -> eu4tag is not necessary and not desirable. As soon as the country has 0 provinces, it's effectively dead.
 }
 
+void EU4::Country::subsumeCountry(const std::shared_ptr<Country>& theCountry)
+{
+	// Subsuming is the process of both annexing but also becoming the target country. We eat it but we install all of its details as ours.
+
+   auto savedTag = theCountry->getTag();
+	auto theDetails = theCountry->getEntireDetails();
+	auto theTitle = theCountry->getTitle();
+	auto locs = theCountry->getLocalizations();
+	auto theConfederationCoa = theCountry->getConfederationCoA();
+
+   annexCountry({savedTag, theCountry});
+
+   // Now become it.
+
+   details = theDetails;
+	title = theTitle;
+	localizations = locs;
+	confederationCoA = theConfederationCoa;
+
+   // Fix the locs.
+
+   if (locs.contains(savedTag))
+   {
+		if (localizations.contains(tag))
+			localizations.at(tag) = locs.at(savedTag);
+		else
+			localizations.emplace(tag, locs.at(savedTag));
+   }
+
+   if (locs.contains(savedTag + "_ADJ"))
+   {
+		if (localizations.contains(tag + "_ADJ"))
+			localizations.at(tag + "_ADJ") = locs.at(savedTag + "_ADJ");
+		else
+			localizations.emplace(tag + "_ADJ", locs.at(savedTag + "_ADJ"));
+   }
+}
+
 void EU4::Country::setLocalizations(const mappers::LocBlock& newBlock)
 {
 	// Setting the name

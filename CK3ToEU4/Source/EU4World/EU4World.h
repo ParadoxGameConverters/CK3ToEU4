@@ -84,7 +84,7 @@ class World
 	void fixDuplicateNames();
 	void siberianQuestion(const Configuration& theConfiguration);
 	void africanQuestion();
-	void indianQuestion();
+	void mongolianQuestion();
 	void religiousQuestion(bool doesIslamExist);
 	void mergeConfederations(const CK3::Confederations& confederations);
 	void coalesceHordes();

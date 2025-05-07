@@ -28,6 +28,18 @@ typedef struct LocBlock
 		simp_chinese = initText;
 		spanish = initText;
 	}
+
+	[[nodiscard]] std::map<std::string, std::string> getAllNames() const
+	{
+		return std::map<std::string, std::string>{std::pair{"english", english},
+			 std::pair{"french", french},
+			 std::pair{"german", german},
+			 std::pair{"korean", korean},
+			 std::pair{"russian", russian},
+			 std::pair{"simp_chinese", simp_chinese},
+			 std::pair{"spanish", spanish}};
+	}
+
 } LocBlock;
 
 // Returns substring of str before nth occurrence of match string.
