@@ -1294,26 +1294,26 @@ void EU4::Country::assignReforms(const std::shared_ptr<mappers::RegionMapper>& r
 					isReformed = true;
 					break;
 				}
-	  /*
-	   * This is now done through govmap.txt for these two.
-	   *
-		// Hordes (This is the worst way to do this, but so be it until we get a horde government type)
-		if (regionMapper->provinceIsInRegion(details.capital, "tambov_area") || regionMapper->provinceIsInRegion(details.capital, "ryazan_area") ||
-			 regionMapper->provinceIsInRegion(details.capital, "suzdal_area") || regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
-			 regionMapper->provinceIsInRegion(details.capital, "ural_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
-			 regionMapper->provinceIsInRegion(details.capital, "central_asia_region") || regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
-		{
-			details.reforms.clear();
-			details.reforms = {"steppe_horde"};
-		}
-		// Siberian Tribes
-		else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") ||
-					regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
-		{
-			details.reforms.clear();
-			details.reforms = {"siberian_tribe"};
-		}
-		*/
+		/*
+		 * This is now done through govmap.txt for these two.
+		 *
+		 // Hordes (This is the worst way to do this, but so be it until we get a horde government type)
+		 if (regionMapper->provinceIsInRegion(details.capital, "tambov_area") || regionMapper->provinceIsInRegion(details.capital, "ryazan_area") ||
+			  regionMapper->provinceIsInRegion(details.capital, "suzdal_area") || regionMapper->provinceIsInRegion(details.capital, "sloboda_ukraine_area") ||
+			  regionMapper->provinceIsInRegion(details.capital, "ural_region") || regionMapper->provinceIsInRegion(details.capital, "crimea_region") ||
+			  regionMapper->provinceIsInRegion(details.capital, "central_asia_region") || regionMapper->provinceIsInRegion(details.capital, "mongolia_region"))
+		 {
+			 details.reforms.clear();
+			 details.reforms = {"steppe_horde"};
+		 }
+		 // Siberian Tribes
+		 else if (regionMapper->provinceIsInRegion(details.capital, "west_siberia_region") ||
+					 regionMapper->provinceIsInRegion(details.capital, "east_siberia_region"))
+		 {
+			 details.reforms.clear();
+			 details.reforms = {"siberian_tribe"};
+		 }
+		 */
 		if (details.reforms.contains("steppe_horde") || details.reforms.contains("siberian_tribe"))
 			return;
 
