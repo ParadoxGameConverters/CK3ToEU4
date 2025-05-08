@@ -8,7 +8,7 @@
 class Configuration;
 namespace mappers
 {
-typedef struct
+typedef struct LocBlock
 {
 	std::string english;
 	std::string french;
@@ -17,6 +17,29 @@ typedef struct
 	std::string russian;
 	std::string simp_chinese;
 	std::string spanish;
+
+	void initializeAll(const std::string& initText)
+	{
+		english = initText;
+		french = initText;
+		german = initText;
+		korean = initText;
+		russian = initText;
+		simp_chinese = initText;
+		spanish = initText;
+	}
+
+	[[nodiscard]] std::map<std::string, std::string> getAllNames() const
+	{
+		return std::map<std::string, std::string>{std::pair{"english", english},
+			 std::pair{"french", french},
+			 std::pair{"german", german},
+			 std::pair{"korean", korean},
+			 std::pair{"russian", russian},
+			 std::pair{"simp_chinese", simp_chinese},
+			 std::pair{"spanish", spanish}};
+	}
+
 } LocBlock;
 
 // Returns substring of str before nth occurrence of match string.

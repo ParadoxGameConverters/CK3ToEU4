@@ -1,36 +1,203 @@
 1.6.0 = {
+	triangulation_pair = { srcX = 4953 srcY = 1760 dstX = 4024 dstY = 672 }
+	triangulation_pair = { srcX = 4848 srcY = 1796 dstX = 3997 dstY = 678 }
+	triangulation_pair = { srcX = 4945 srcY = 1520 dstX = 4040 dstY = 595 }
+	triangulation_pair = { srcX = 4731 srcY = 1661 dstX = 3963 dstY = 626 }
+	triangulation_pair = { srcX = 4007 srcY = 1828 dstX = 3728 dstY = 650 }
+	triangulation_pair = { srcX = 4078 srcY = 1623 dstX = 3770 dstY = 597 }
+	triangulation_pair = { srcX = 2129 srcY = 2782 dstX = 3117 dstY = 874 }
+	triangulation_pair = { srcX = 1001 srcY = 2160 dstX = 2818 dstY = 711 }
+	triangulation_pair = { srcX = 537 srcY = 2371 dstX = 2691 dstY = 774 }
+	triangulation_pair = { srcX = 455 srcY = 2041 dstX = 2668 dstY = 688 }
+	triangulation_pair = { srcX = 469 srcY = 2098 dstX = 2671 dstY = 700 }
+	triangulation_pair = { srcX = 947 srcY = 1470 dstX = 2807 dstY = 540 }
+	triangulation_pair = { srcX = 1276 srcY = 1224 dstX = 2891 dstY = 470 }
+	triangulation_pair = { srcX = 1231 srcY = 1214 dstX = 2881 dstY = 469 }
+	triangulation_pair = { srcX = 2228 srcY = 1892 dstX = 3160 dstY = 632 }
+	triangulation_pair = { srcX = 2009 srcY = 1650 dstX = 3105 dstY = 570 }
+	triangulation_pair = { srcX = 1744 srcY = 1265 dstX = 3035 dstY = 477 }
+	triangulation_pair = { srcX = 1732 srcY = 1160 dstX = 3027 dstY = 449 }
+	triangulation_pair = { srcX = 2164 srcY = 954 dstX = 3182 dstY = 380 }
+	triangulation_pair = { srcX = 2197 srcY = 1102 dstX = 3182 dstY = 426 }
+	triangulation_pair = { srcX = 2058 srcY = 1283 dstX = 3130 dstY = 484 }
+	triangulation_pair = { srcX = 2122 srcY = 1416 dstX = 3146 dstY = 515 }
+	triangulation_pair = { srcX = 2153 srcY = 1487 dstX = 3160 dstY = 532 }
+	triangulation_pair = { srcX = 2503 srcY = 1419 dstX = 3283 dstY = 516 }
+	triangulation_pair = { srcX = 2547 srcY = 411 dstX = 3440 dstY = 201 }
+	triangulation_pair = { srcX = 2950 srcY = 987 dstX = 3491 dstY = 396 }
+	triangulation_pair = { srcX = 3261 srcY = 1077 dstX = 3576 dstY = 421 }
+	triangulation_pair = { srcX = 3210 srcY = 1530 dstX = 3489 dstY = 544 }
+	triangulation_pair = { srcX = 3255 srcY = 1557 dstX = 3501 dstY = 553 }
+	triangulation_pair = { srcX = 3633 srcY = 1642 dstX = 3617 dstY = 590 }
+	triangulation_pair = { srcX = 3440 srcY = 1839 dstX = 3551 dstY = 650 }
+	triangulation_pair = { srcX = 3425 srcY = 1801 dstX = 3541 dstY = 635 }
+	triangulation_pair = { srcX = 6118 srcY = 811 dstX = 4506 dstY = 455 }
+	triangulation_pair = { srcX = 6087 srcY = 691 dstX = 4517 dstY = 411 }
+	triangulation_pair = { srcX = 6065 srcY = 881 dstX = 4476 dstY = 469 }
+	triangulation_pair = { srcX = 5980 srcY = 1012 dstX = 4420 dstY = 498 }
+	triangulation_pair = { srcX = 2292 srcY = 900 dstX = 3244 dstY = 360 }
+	triangulation_pair = { srcX = 2122 srcY = 815 dstX = 3171 dstY = 334 }
+	triangulation_pair = { srcX = 2100 srcY = 898 dstX = 3158 dstY = 364 }
+	triangulation_pair = { srcX = 1908 srcY = 946 dstX = 3089 dstY = 388 }
+	triangulation_pair = { srcX = 1950 srcY = 874 dstX = 3108 dstY = 355 }
+	triangulation_pair = { srcX = 2054 srcY = 1046 dstX = 3136 dstY = 414 }
+	triangulation_pair = { srcX = 1973 srcY = 1140 dstX = 3107 dstY = 439 }
+	triangulation_pair = { srcX = 1932 srcY = 1103 dstX = 3094 dstY = 430 }
+	triangulation_pair = { srcX = 1750 srcY = 1061 dstX = 3037 dstY = 419 }
+	triangulation_pair = { srcX = 1652 srcY = 1001 dstX = 3003 dstY = 401 }
+	triangulation_pair = { srcX = 1575 srcY = 1110 dstX = 2978 dstY = 440 }
+	triangulation_pair = { srcX = 1588 srcY = 906 dstX = 2980 dstY = 374 }
+	triangulation_pair = { srcX = 1570 srcY = 474 dstX = 2959 dstY = 227 }
+	triangulation_pair = { srcX = 1683 srcY = 209 dstX = 3006 dstY = 116 }
+	triangulation_pair = { srcX = 1783 srcY = 130 dstX = 3058 dstY = 76 }
+	triangulation_pair = { srcX = 1978 srcY = 56 dstX = 3151 dstY = 39 }
+	triangulation_pair = { srcX = 2106 srcY = 24 dstX = 3209 dstY = 25 }
+	triangulation_pair = { srcX = 2109 srcY = 39 dstX = 3210 dstY = 32 }
+	triangulation_pair = { srcX = 2118 srcY = 421 dstX = 3195 dstY = 189 }
+	triangulation_pair = { srcX = 1988 srcY = 738 dstX = 3128 dstY = 311 }
+	triangulation_pair = { srcX = 1994 srcY = 526 dstX = 3139 dstY = 234 }
+	triangulation_pair = { srcX = 2260 srcY = 774 dstX = 3245 dstY = 318 }
+	triangulation_pair = { srcX = 2304 srcY = 270 dstX = 3310 dstY = 135 }
+	triangulation_pair = { srcX = 2458 srcY = 384 dstX = 3383 dstY = 186 }
+	triangulation_pair = { srcX = 2578 srcY = 248 dstX = 3470 dstY = 145 }
+	triangulation_pair = { srcX = 2554 srcY = 122 dstX = 3483 dstY = 94 }
+	triangulation_pair = { srcX = 3583 srcY = 1806 dstX = 3596 dstY = 637 }
+	triangulation_pair = { srcX = 3727 srcY = 2023 dstX = 3630 dstY = 701 }
+	triangulation_pair = { srcX = 3578 srcY = 2177 dstX = 3572 dstY = 742 }
+	triangulation_pair = { srcX = 3620 srcY = 2087 dstX = 3591 dstY = 716 }
+	triangulation_pair = { srcX = 2958 srcY = 1700 dstX = 3397 dstY = 598 }
+	triangulation_pair = { srcX = 2903 srcY = 2042 dstX = 3354 dstY = 686 }
+	triangulation_pair = { srcX = 2782 srcY = 1862 dstX = 3328 dstY = 637 }
+	triangulation_pair = { srcX = 2941 srcY = 1800 dstX = 3382 dstY = 623 }
+	triangulation_pair = { srcX = 2660 srcY = 1724 dstX = 3300 dstY = 600 }
+	triangulation_pair = { srcX = 2549 srcY = 1847 dstX = 3258 dstY = 630 }
+	triangulation_pair = { srcX = 2500 srcY = 2040 dstX = 3234 dstY = 678 }
+	triangulation_pair = { srcX = 2308 srcY = 2291 dstX = 3169 dstY = 739 }
+	triangulation_pair = { srcX = 2370 srcY = 2166 dstX = 3191 dstY = 708 }
+	triangulation_pair = { srcX = 2530 srcY = 2167 dstX = 3237 dstY = 712 }
+	triangulation_pair = { srcX = 2480 srcY = 2553 dstX = 3216 dstY = 812 }
+	triangulation_pair = { srcX = 2336 srcY = 2544 dstX = 3174 dstY = 807 }
+	triangulation_pair = { srcX = 2294 srcY = 2495 dstX = 3164 dstY = 791 }
+	triangulation_pair = { srcX = 2144 srcY = 2340 dstX = 3128 dstY = 750 }
+	triangulation_pair = { srcX = 2152 srcY = 2392 dstX = 3129 dstY = 764 }
+	triangulation_pair = { srcX = 2115 srcY = 2283 dstX = 3121 dstY = 735 }
+	triangulation_pair = { srcX = 2104 srcY = 2259 dstX = 3117 dstY = 728 }
+	triangulation_pair = { srcX = 1878 srcY = 2106 dstX = 3057 dstY = 689 }
+	triangulation_pair = { srcX = 1738 srcY = 1885 dstX = 3023 dstY = 633 }
+	triangulation_pair = { srcX = 1234 srcY = 1972 dstX = 2885 dstY = 659 }
+	triangulation_pair = { srcX = 1130 srcY = 2052 dstX = 2857 dstY = 680 }
+	triangulation_pair = { srcX = 1044 srcY = 2307 dstX = 2828 dstY = 748 }
+	triangulation_pair = { srcX = 1156 srcY = 2244 dstX = 2859 dstY = 729 }
+	triangulation_pair = { srcX = 1451 srcY = 2323 dstX = 2937 dstY = 742 }
+	triangulation_pair = { srcX = 1432 srcY = 2165 dstX = 2935 dstY = 707 }
+	triangulation_pair = { srcX = 1484 srcY = 2024 dstX = 2953 dstY = 668 }
+	triangulation_pair = { srcX = 1548 srcY = 2032 dstX = 2970 dstY = 668 }
+	triangulation_pair = { srcX = 1864 srcY = 2376 dstX = 3048 dstY = 758 }
+	triangulation_pair = { srcX = 1797 srcY = 2539 dstX = 3027 dstY = 796 }
+	triangulation_pair = { srcX = 1618 srcY = 2476 dstX = 2979 dstY = 781 }
+	triangulation_pair = { srcX = 1630 srcY = 2680 dstX = 2980 dstY = 834 }
+	triangulation_pair = { srcX = 2814 srcY = 2766 dstX = 3317 dstY = 886 }
+	triangulation_pair = { srcX = 3062 srcY = 3201 dstX = 3388 dstY = 1057 }
+	triangulation_pair = { srcX = 2980 srcY = 3081 dstX = 3364 dstY = 1009 }
+	triangulation_pair = { srcX = 2914 srcY = 2899 dstX = 3345 dstY = 937 }
+	triangulation_pair = { srcX = 5288 srcY = 3294 dstX = 4070 dstY = 1145 }
+	triangulation_pair = { srcX = 5753 srcY = 2844 dstX = 4234 dstY = 1034 }
+	triangulation_pair = { srcX = 5882 srcY = 3264 dstX = 4258 dstY = 1181 }
+	triangulation_pair = { srcX = 5897 srcY = 3021 dstX = 4269 dstY = 1097 }
+	triangulation_pair = { srcX = 5934 srcY = 3144 dstX = 4278 dstY = 1141 }
+	triangulation_pair = { srcX = 6073 srcY = 3059 dstX = 4319 dstY = 1119 }
+	triangulation_pair = { srcX = 4907 srcY = 3707 dstX = 3939 dstY = 1287 }
+	triangulation_pair = { srcX = 5311 srcY = 3644 dstX = 4059 dstY = 1248 }
+	triangulation_pair = { srcX = 5250 srcY = 3664 dstX = 4043 dstY = 1252 }
+	triangulation_pair = { srcX = 4617 srcY = 3006 dstX = 3884 dstY = 1035 }
+	triangulation_pair = { srcX = 3576 srcY = 2731 dstX = 3559 dstY = 911 }
+	triangulation_pair = { srcX = 3671 srcY = 2909 dstX = 3589 dstY = 972 }
+	triangulation_pair = { srcX = 3725 srcY = 2900 dstX = 3607 dstY = 973 }
+	triangulation_pair = { srcX = 3854 srcY = 2989 dstX = 3646 dstY = 1004 }
+	triangulation_pair = { srcX = 3966 srcY = 2836 dstX = 3690 dstY = 959 }
+	triangulation_pair = { srcX = 3976 srcY = 2868 dstX = 3686 dstY = 970 }
+	triangulation_pair = { srcX = 4110 srcY = 3177 dstX = 3722 dstY = 1071 }
+	triangulation_pair = { srcX = 3354 srcY = 3638 dstX = 3468 dstY = 1213 }
+	triangulation_pair = { srcX = 3388 srcY = 3588 dstX = 3485 dstY = 1194 }
+	triangulation_pair = { srcX = 3928 srcY = 3583 dstX = 3655 dstY = 1197 }
+	triangulation_pair = { srcX = 3769 srcY = 3620 dstX = 3606 dstY = 1209 }
+	triangulation_pair = { srcX = 3779 srcY = 3685 dstX = 3608 dstY = 1231 }
+	triangulation_pair = { srcX = 1392 srcY = 3950 dstX = 2863 dstY = 1294 }
+	triangulation_pair = { srcX = 1588 srcY = 4066 dstX = 2920 dstY = 1328 }
+	triangulation_pair = { srcX = 1022 srcY = 4029 dstX = 2774 dstY = 1321 }
+	triangulation_pair = { srcX = 92 srcY = 3520 dstX = 2534 dstY = 1161 }
+	triangulation_pair = { srcX = 108 srcY = 2602 dstX = 2537 dstY = 854 }
+	triangulation_pair = { srcX = 65 srcY = 2892 dstX = 2524 dstY = 944 }
+	triangulation_pair = { srcX = 144 srcY = 2852 dstX = 2554 dstY = 930 }
+	triangulation_pair = { srcX = 265 srcY = 2827 dstX = 2596 dstY = 919 }
+	triangulation_pair = { srcX = 110 srcY = 3252 dstX = 2541 dstY = 1060 }
+	triangulation_pair = { srcX = 663 srcY = 2468 dstX = 2722 dstY = 800 }
+	triangulation_pair = { srcX = 923 srcY = 2372 dstX = 2793 dstY = 768 }
+	triangulation_pair = { srcX = 972 srcY = 2299 dstX = 2808 dstY = 747 }
+	triangulation_pair = { srcX = 803 srcY = 2510 dstX = 2760 dstY = 811 }
+	triangulation_pair = { srcX = 661 srcY = 2458 dstX = 2720 dstY = 797 }
+	triangulation_pair = { srcX = 457 srcY = 2383 dstX = 2666 dstY = 778 }
+	triangulation_pair = { srcX = 440 srcY = 2268 dstX = 2663 dstY = 748 }
+	triangulation_pair = { srcX = 504 srcY = 1917 dstX = 2684 dstY = 654 }
+	triangulation_pair = { srcX = 852 srcY = 1727 dstX = 2784 dstY = 606 }
+	triangulation_pair = { srcX = 756 srcY = 1634 dstX = 2757 dstY = 584 }
+	triangulation_pair = { srcX = 679 srcY = 1553 dstX = 2735 dstY = 565 }
+	triangulation_pair = { srcX = 834 srcY = 1447 dstX = 2778 dstY = 537 }
+	triangulation_pair = { srcX = 968 srcY = 1101 dstX = 2805 dstY = 444 }
+	triangulation_pair = { srcX = 1029 srcY = 1326 dstX = 2828 dstY = 503 }
+	triangulation_pair = { srcX = 863 srcY = 1371 dstX = 2783 dstY = 516 }
+	triangulation_pair = { srcX = 631 srcY = 1399 dstX = 2718 dstY = 527 }
+	triangulation_pair = { srcX = 461 srcY = 1090 dstX = 2657 dstY = 449 }
+	triangulation_pair = { srcX = 606 srcY = 992 dstX = 2696 dstY = 419 }
+	triangulation_pair = { srcX = 442 srcY = 1260 dstX = 2655 dstY = 498 }
+	triangulation_pair = { srcX = 408 srcY = 1214 dstX = 2644 dstY = 485 }
+	triangulation_pair = { srcX = 616 srcY = 1226 dstX = 2707 dstY = 484 }
+	triangulation_pair = { srcX = 701 srcY = 1186 dstX = 2733 dstY = 472 }
+	triangulation_pair = { srcX = 710 srcY = 1149 dstX = 2736 dstY = 461 }
+	triangulation_pair = { srcX = 713 srcY = 1088 dstX = 2732 dstY = 445 }
+	triangulation_pair = { srcX = 710 srcY = 1040 dstX = 2730 dstY = 433 }
+	triangulation_pair = { srcX = 673 srcY = 745 dstX = 2710 dstY = 347 }
+	triangulation_pair = { srcX = 850 srcY = 923 dstX = 2764 dstY = 398 }
+	triangulation_pair = { srcX = 846 srcY = 740 dstX = 2759 dstY = 343 }
+	triangulation_pair = { srcX = 992 srcY = 586 dstX = 2794 dstY = 293 }
+	triangulation_pair = { srcX = 673 srcY = 520 dstX = 2701 dstY = 276 }
+	triangulation_pair = { srcX = 451 srcY = 128 dstX = 2549 dstY = 109 }
+	triangulation_pair = { srcX = 330 srcY = 131 dstX = 2491 dstY = 119 }
+	triangulation_pair = { srcX = 208 srcY = 132 dstX = 2425 dstY = 135 }
+	triangulation_pair = { srcX = 200 srcY = 175 dstX = 2432 dstY = 150 }
+	triangulation_pair = { srcX = 205 srcY = 243 dstX = 2453 dstY = 172 }
 	link = { comment = "# # Asia" }
 	link = { comment = "# Steppes, Mongolia, Sibir" }
-	link = { ck3 = 7292 ck3 = 1434 ck3 = 7043 eu4 = 4686 } # Uliuty, Karkaraly, Imekia -> Ekibastuz
-	link = { ck3 = 1435 eu4 = 2354 } # Akmola -> Shegendyk
-	link = { ck3 = 7298 ck3 = 7042 eu4 = 476 } # Karabas, Teniz -> Kypshak
-	link = { ck3 = 7289 eu4 = 4685 } # Jasky Kart -> Karagandy
-	link = { ck3 = 7104 eu4 = 2358 } # Aral Karakum -> Altyn
-	link = { ck3 = 7262 ck3 = 7264 ck3 = 7269 eu4 = 2359 } # Jilali, Ulu Jitanjik, Ulytau -> Baganaly
+	link = { ck3 = 7292 ck3 = 1434 ck3 = 7296 ck3 = 7319 ck3 = 7334 eu4 = 4686 } # Uliuty, Karkaraly, Uch Katyn, Degelen, Ak-Taylak -> Ekibastuz
+	link = { ck3 = 1435 ck3 = 7040 eu4 = 2354 } # Akmola, Astrakhanka -> Shegendyk
+	link = { ck3 = 7042 ck3 = 7274 ck3 = 7277 eu4 = 476 } # Teniz, Kaska, Qyzylteniz -> Kypshak
+	link = { ck3 = 7289 ck3 = 7298 ck3 = 7291 eu4 = 4685 } # Jasky Kart, Karabas, Ku Jeku -> Karagandy
+	link = { ck3 = 7104 ck3 = 7105 ck3 = 7100 eu4 = 2358 } # Aral Karakum, Chalkar, Terekli -> Altyn
+	link = { ck3 = 7262 ck3 = 7264 ck3 = 7269 ck3 = 7267 eu4 = 2359 } # Jilali, Ulu Jitanjik, Jilanjik, Achu -> Baganaly
 	link = { ck3 = 7562 eu4 = 2117 } # Bombögör -> Zasagt
 	link = { ck3 = 1456 eu4 = 2193 eu4 = 2190 } # Ikh Bogd -> Govi, Bayankhongor
 	link = { ck3 = 7568 ck3 = 7567 eu4 = 4677 } # Ongi, Tövkhön -> Noyon
 	link = { ck3 = 1457 eu4 = 4678 eu4 = 4221 } # Karakorum -> Qaraqorum, Dundgovi
 	link = { ck3 = 7608 ck3 = 1450 eu4 = 718 } # Khar Us, Sharga -> Kobdo
 	link = { ck3 = 7596 ck3 = 7600 ck3 = 7597 ck3 = 7611 ck3 = 7514 ck3 = 7614 ck3 = 7605 eu4 = 4222 } # Uvs Nuur, Tesiin Gol, Ulaangom, Harhiraa, Tavan Bogd, Tsambagarau, Urgamal -> Ulaangom
-	link = { ck3 = 1451 ck3 = 7478 eu4 = 4681 } # Altay, Qinggil -> Olgii
+	link = { ck3 = 1451 ck3 = 7478 ck3 = 7481 eu4 = 4681 } # Altay, Qinggil, Tengerge -> Olgii
 	link = { ck3 = 1455 ck3 = 7583 ck3 = 7586 eu4 = 4679 } # Darkhad Valley, Tömörbulag, Ulantaiga -> Khovsgol
-	link = { ck3 = 1458 eu4 = 2189 } # Tarvagatai -> Tsetserleg
+	link = { ck3 = 1458 ck3 = 7575 eu4 = 2189 } # Tarvagatai, Telmen -> Tsetserleg
 	link = { ck3 = 7574 eu4 = 719 } # Oigon -> Uliastai
-	link = { ck3 = 7546 ck3 = 7543 ck3 = 1461 eu4 = 4668 } # Khökhöö, Baibalik, Karabalgasun -> Orkhon
+	link = { ck3 = 7546 ck3 = 7543 ck3 = 1461 ck3 = 7526 eu4 = 4668 } # Khökhöö, Baibalik, Karabalgasun, Khanjargalant -> Orkhon
 	link = { ck3 = 7532 ck3 = 7517 eu4 = 2116 } # Örgöö, Mumo -> Ih Huree
 	link = { ck3 = 7537 ck3 = 7536 ck3 = 7549 eu4 = 4220 } # Khentii, Naushki, Karatsagaan -> Khiagt
 	link = { ck3 = 7552 ck3 = 7690 ck3 = 7694 eu4 = 1057 } # Selenga, Uda, Chikoy -> Ude
 	link = { ck3 = 1460 ck3 = 7703 ck3 = 7697 ck3 = 7700 eu4 = 1056 } # Bargajan, Muya, Kotokel, Yera -> Barguzin
 	link = { ck3 = 7708 ck3 = 7712 eu4 = 1055 } # Kotera, Vitim -> Kirenga
-	link = { ck3 = 1459 ck3 = 7619 ck3 = 7623 ck3 = 7639 ck3 = 1452 eu4 = 716 } # Arzhan, Tapsa, Azas, Stoyanka, Eastern Tannu -> Tannu Uriankhai
+	link = { ck3 = 1459 ck3 = 7619 ck3 = 7623 ck3 = 7639 ck3 = 1452 ck3 = 7628 eu4 = 716 } # Arzhan, Tapsa, Azas, Stoyanka, Eastern Tannu, Central Tannu -> Tannu Uriankhai
 	link = { ck3 = 7761 eu4 = 1062 } # Okangara -> Angara
 	link = { ck3 = 7770 ck3 = 7730 ck3 = 7721 ck3 = 7718 ck3 = 7715 eu4 = 2442 } # Gatsuurgazar, Eülge, Uulynkhöl, Chuya, Karabaigal -> Ust-Kut
 	link = { ck3 = 7758 ck3 = 7682 eu4 = 1063 } # Kymyl'Tey, Shityy -> Sayan
 	link = { ck3 = 7777 ck3 = 7775 ck3 = 7556 ck3 = 7688 ck3 = 7685 ck3 = 7764 ck3 = 7767 ck3 = 7727 ck3 = 7720 ck3 = 7772 eu4 = 1060 } # Olkhon, Erhüü, Tunka, Mönkh Saridag, Kropot, Kada, Kitoï, Ryty, Baigaluuls, Ilga -> Irkutsk
 	link = { ck3 = 892 ck3 = 887 ck3 = 5865 ck3 = 5869 ck3 = 5897 ck3 = 890 eu4 = 1780 } # Tselym Dalyn, Kharam-Vosh, Sosva, Kartauzh, Koda, Kazym -> Komi
-	link = { ck3 = 7022 eu4 = 2369 } # Kush-Murun -> Upper Ishim
-	link = { ck3 = 895 ck3 = 5892 eu4 = 1076 } # Kurgan, Sabakyul -> Kurgan
+	link = { ck3 = 7022 ck3 = 7024 eu4 = 2369 } # Abugan, Kush-Murun -> Upper Ishim
+	link = { ck3 = 895 ck3 = 5892 ck3 = 5893 eu4 = 1076 } # Kurgan, Sabakyul, Kostanay -> Kurgan
 	link = { ck3 = 5523 ck3 = 5519 ck3 = 5524 eu4 = 2427 } # Chadrinsk, Yekaterinburg, Chelabinsk -> Ostyaki
 	link = { ck3 = 7018 eu4 = 1075 } # Vargashi -> Tyumen
 	link = { ck3 = 1223 ck3 = 7019 ck3 = 7014 eu4 = 4690 } # Ishim, Kyzylzhar, Dolgujar -> Ishim
@@ -38,23 +205,23 @@
 	link = { ck3 = 7006 eu4 = 1074 } # Sibir -> Sibir
 	link = { ck3 = 7000 ck3 = 898 eu4 = 1073 } # Belogorje, Tobol -> Berezov
 	link = { ck3 = 5884 ck3 = 5881 ck3 = 5879 ck3 = 5871 ck3 = 5874 ck3 = 891 eu4 = 1080 } # Laia, Tabary, Neramkary, Pelym, Koshuki, Tyumen -> Pelym
-	link = { ck3 = 5493 ck3 = 5490 ck3 = 5445 eu4 = 1078 } # Uraltau, Karabash, Kumych -> Tura
-	link = { ck3 = 7249 ck3 = 1430 eu4 = 2441 } # Jitikul, Atamansku -> Iglino
+	link = { ck3 = 5493 ck3 = 5490 ck3 = 5445 ck3 = 5495 eu4 = 1078 } # Duvan, Karabash, Kumych, Uraltau -> Tura
+	link = { ck3 = 7249 ck3 = 1430 ck3 = 7250 ck3 = 7246 eu4 = 2441 } # Jitikul, Kbumak, Kosh Kurbay, Atamansku -> Iglino
 	link = { ck3 = 7254 ck3 = 7242 eu4 = 1966 } # Tumar, Mugodzhar Hills -> Chelyaba
-	link = { ck3 = 7099 eu4 = 2353 } # Terekli -> Tortkara
-	link = { ck3 = 622 ck3 = 7094 eu4 = 2351 } # Ak-Dzulpas, Barsuki -> Shekty
+	link = { ck3 = 7099 eu4 = 2353 } # Airyuk -> Tortkara
+	link = { ck3 = 622 ck3 = 7094 ck3 = 7096 eu4 = 2351 } # Ak-Dzulpas, Jamantau, Barsuki -> Shekty
 	link = { ck3 = 7236 ck3 = 7233 ck3 = 7239 eu4 = 472 } # Baisary, Basagha, Kos Uba -> Zhetyru
 	link = { ck3 = 896 ck3 = 5482 eu4 = 2420 } # Aqtobe, Sakmara -> Agyidel
 	link = { ck3 = 897 eu4 = 1965 } # Or -> Buzuluk
-	link = { ck3 = 7221 eu4 = 2366 } # Manatau -> Utva
-	link = { ck3 = 7226 eu4 = 470 } # Sagiz -> Bayuly
-	link = { ck3 = 5418 ck3 = 5426 eu4 = 4265 } # Belebey, Bugurslan -> Ar-Chally
-	link = { ck3 = 5429 eu4 = 475 } # Salavat -> Bashkortostan
-	link = { ck3 = 615 ck3 = 5478 ck3 = 5486 eu4 = 2444 } # Bashkort, Yanokul, Uiska -> Bashgird
+	link = { ck3 = 7221 ck3 = 7218 eu4 = 2366 } # Manatau, Ilek -> Utva
+	link = { ck3 = 7226 ck3 = 7224 eu4 = 470 } # Sagiz, Jaksybai -> Bayuly
+	link = { ck3 = 5418 ck3 = 5426 ck3 = 5419 eu4 = 4265 } # Belebey, Bugurslan, Siun -> Ar-Chally
+	link = { ck3 = 5429 ck3 = 5432 eu4 = 475 } # Salavat, Kumertau -> Bashkortostan
+	link = { ck3 = 615 ck3 = 5478 ck3 = 5486 ck3 = 5479 ck3 = 5475 eu4 = 2444 } # Bashkort, Yanokul, Uiska, Prigoro Tabynsk, Birsk -> Bashgird
 	link = { ck3 = 5407 ck3 = 5422 eu4 = 2421 } # Yar Calli, Jalmat -> Juketau
-	link = { ck3 = 608 ck3 = 5504 eu4 = 2418 } # Uzen, Jambalar -> Ukek
+	link = { ck3 = 608 ck3 = 5504 ck3 = 617 eu4 = 2418 } # Ukek, Jambalar, Uzen -> Ukek
 	link = { ck3 = 619 eu4 = 2365 eu4 = 466 } # Itil -> Orda, Sarai
-	link = { ck3 = 602 eu4 = 474 eu4 = 2367 } # Yaitsk -> Yaik, Lower Yik
+	link = { ck3 = 602 ck3 = 5318 eu4 = 474 eu4 = 2367 } # MANY-TO-MANY: Yaitsk, Qyzylyaitsk -> Yaik, Lower Yik
 	link = { comment = "# Persia, Hordeland, Tibet" }
 	link = { ck3 = 9524 ck3 = 9527 ck3 = 9525 ck3 = 9415 ck3 = 9419 eu4 = 699 } # Yongdeng, Baiyin, Dajing, Shanzhou, Kuozhou -> Lanzhou
 	link = { ck3 = 9536 ck3 = 9534 eu4 = 698 } # Xingqing, Shunzhou -> Ningxia
@@ -65,21 +232,21 @@
 	link = { ck3 = 9473 ck3 = 9476 ck3 = 9478 ck3 = 9485 eu4 = 708 } # Yumenguan, Shazhou, Guazhou, Changma -> Zhangye
 	link = { ck3 = 7147 ck3 = 7149 eu4 = 2125 } # Balashagun, Cherik -> Kochkor
 	link = { ck3 = 1424 eu4 = 2126 } # Suyab -> Chuy
-	link = { ck3 = 1273 ck3 = 7257 ck3 = 7273 eu4 = 4692 } # Turgay, Murun Tomis, Kaska -> Turgay
-	link = { ck3 = 1433 eu4 = 2361 } # Eghiz Kara -> Dzhaman-Kuduk
-	link = { ck3 = 7313 ck3 = 7308 ck3 = 7300 ck3 = 7286 eu4 = 477 } # Targyl, Betpa, Tokumbay, Kulan Utmas -> Nadym
-	link = { ck3 = 7327 ck3 = 7320 ck3 = 7321 ck3 = 7305 eu4 = 2360 } # Kulan-Uynak, Jiran Suat, Koi-Bagar, Nurtay -> Tobykty
-	link = { ck3 = 7332 ck3 = 7337 ck3 = 7336 eu4 = 478 } # Jinghiz, Arkat, Kalbin -> Argyn
-	link = { ck3 = 7483 eu4 = 4684 } # Agairik -> Dzhemenika
+	link = { ck3 = 1273 ck3 = 7257 ck3 = 7273 ck3 = 7259 eu4 = 4692 } # Turgay, Murun Tomis, Togotai, Chumkar Kia -> Turgay
+	link = { ck3 = 1433 ck3 = 7271 eu4 = 2361 } # Eghiz Kara, Ulytau -> Dzhaman-Kuduk
+	link = { ck3 = 7313 ck3 = 7308 ck3 = 7300 ck3 = 7286 ck3 = 7315 ck3 = 7303 ck3 = 7311 eu4 = 477 } # Bulat, Betpa, Arkalyk, Kulan Utmas, Targyl, Tokumbay, Manaka -> Nadym
+	link = { ck3 = 7327 ck3 = 7320 ck3 = 7321 ck3 = 7305 ck3 = 7330 eu4 = 2360 } # Kulan-Uynak, Jiran Suat, Koi-Bagar, Nurtay, Aigun -> Tobykty
+	link = { ck3 = 7332 ck3 = 7337 ck3 = 7336 ck3 = 7339 ck3 = 7343 ck3 = 7341 eu4 = 478 } # Jinghiz, Arkat, Sasyk Kul, Tekar, Kandygatai, Kalbin -> Argyn
+	link = { ck3 = 7483 ck3 = 7475 eu4 = 4684 } # Agairik, Burqin -> Dzhemenika
 	link = { ck3 = 7059 eu4 = 479 } # Burabay -> Kerey
-	link = { ck3 = 7023 ck3 = 7036 eu4 = 2357 } # Karasu, Atbasar -> Aksary
+	link = { ck3 = 7023 ck3 = 7036 ck3 = 7357 ck3 = 7038 eu4 = 2357 } # Karasu, Kafa, Jangyztau, Atbasar -> Aksary
 	link = { ck3 = 7360 eu4 = 2428 } # Chich -> Yugan
 	link = { ck3 = 1306 eu4 = 1071 } # Tara -> Irtesh
 	link = { ck3 = 7030 ck3 = 7062 ck3 = 7013 ck3 = 7044 eu4 = 4689 } # Solenoye, Teke, Irtysh, Om -> Om
-	link = { ck3 = 7400 ck3 = 7319 ck3 = 7388 eu4 = 4687 } # Kachu, Degelen, Kuchuk -> Imakia
+	link = { ck3 = 7400 ck3 = 7388 ck3 = 7043 eu4 = 4687 } # Kachu, Kuchuk, Imekia -> Imakia
 	link = { ck3 = 7368 ck3 = 7375 ck3 = 7366 ck3 = 7363 ck3 = 1329 eu4 = 2429 } # Vasyugan, Igaran, Umiai, Tartas, Eushta -> Agan
 	link = { ck3 = 1454 ck3 = 7648 ck3 = 7651 ck3 = 7657 ck3 = 7676 ck3 = 7673 ck3 = 7670 ck3 = 7654 ck3 = 7643 eu4 = 1065 } # Abakan, Jerjul, Kizir, Kyzylkul, Songuu Aallar, Chagdy Aallar, Burugu Aallar, Anja, Julym -> Kuznetsk
-	link = { ck3 = 7631 ck3 = 7625 ck3 = 7666 ck3 = 7664 ck3 = 7635 eu4 = 1066 } # Katu-Yaryk, Western Tannu, Uul Chors, Shor, Kantegir -> Altai Uriankhai
+	link = { ck3 = 7631 ck3 = 7625 ck3 = 7666 ck3 = 7664 ck3 = 7635 ck3 = 7633 ck3 = 7636 eu4 = 1066 } # Katu-Yaryk, Western Tannu, Uul Chors, Shor, Kantegir, Kara Khol, Sayanchu -> Altai Uriankhai
 	link = { ck3 = 1205 eu4 = 1070 } # Narim -> Narim
 	link = { ck3 = 7439 ck3 = 1462 ck3 = 7738 ck3 = 7736 ck3 = 7441 ck3 = 7449 ck3 = 7447 eu4 = 1068 } # Chulym, Kyzyl Char, Shishina, Mana, Kojuk, Yenisei, Sochur -> Ket
 	link = { ck3 = 7679 eu4 = 2443 } # Karauda -> Kan
@@ -88,9 +255,9 @@
 	link = { ck3 = 7047 ck3 = 7427 ck3 = 7381 ck3 = 7385 eu4 = 4688 } # Kainsk, Ob, Kolyvan, Sartlan -> Baraba
 	link = { ck3 = 7424 ck3 = 7373 ck3 = 7378 ck3 = 7432 eu4 = 2433 } # Torema, Ubins, Konda, Kiia -> Vah
 	link = { ck3 = 7417 ck3 = 7420 ck3 = 7415 ck3 = 7435 ck3 = 7661 eu4 = 480 } # Kyin, Sorok, Kondoma, Taskyl, Kuzbas -> Pegaya Orda
-	link = { ck3 = 7410 ck3 = 7404 ck3 = 7403 ck3 = 1132 ck3 = 7346 ck3 = 7396 ck3 = 7392 eu4 = 2434 } # Terektai, Korgon, Aley, Biia, Semey, Barnaul, Kulunda -> Barnaul
-	link = { ck3 = 7492 eu4 = 714 } # Hoboksar -> Hoboksar
-	link = { ck3 = 7486 ck3 = 7489 ck3 = 7179 ck3 = 1427 eu4 = 2355 } # Narym, Torangy Kul, Chuguchak, Kokpekty -> Narym
+	link = { ck3 = 7410 ck3 = 7404 ck3 = 7403 ck3 = 1132 ck3 = 7396 ck3 = 7392 ck3 = 7346 ck3 = 7349 eu4 = 2434 } # Terektai, Korgon, Aley, Biia, Barnaul, Kulunda, Semey, Koksemey -> Barnaul
+	link = { ck3 = 7492 ck3 = 7494 eu4 = 714 } # Hoboksar, Kaerji -> Hoboksar
+	link = { ck3 = 7486 ck3 = 7489 ck3 = 7179 ck3 = 1427 ck3 = 7176 eu4 = 2355 } # Narym, Torangy Kul, Chuguchak, Kokpekty, Bazarka -> Narym
 	link = { ck3 = 7202 ck3 = 7203 eu4 = 715 } # Ghulja, Kash -> Urumqi
 	link = { ck3 = 1425 eu4 = 4208 eu4 = 2120 } # Iliq -> Qurqara-usu, Ili
 	link = { ck3 = 7164 eu4 = 461 } # Almaty -> Almaty
@@ -114,17 +281,18 @@
 	link = { ck3 = 4032 eu4 = 2214 } # Dihistan -> Golestan
 	link = { ck3 = 4038 ck3 = 4028 eu4 = 2236 } # Samalqan, Gurgan -> Bojnord
 	link = { ck3 = 627 eu4 = 2349 } # Garabogazkol -> Kizil-Su
-	link = { ck3 = 4248 ck3 = 4389 eu4 = 4344 } # Kishsh, Nakhshab -> Kish
-	link = { ck3 = 901 ck3 = 7118 eu4 = 456 } # Jend, Uzgend -> Turkestan
-	link = { ck3 = 900 ck3 = 7108 eu4 = 2352 } # Yangikent, Raimskoe -> Alty-Kuduk
-	link = { ck3 = 7119 eu4 = 1970 } # Sighnaq -> Syghnak
-	link = { ck3 = 4459 eu4 = 440 eu4 = 1973 } # Kurdar -> Qaraqalpak, Urgench
-	link = { ck3 = 1378 eu4 = 2362 eu4 = 2370 } # Gurganj -> Gurganj, Kungirot
-	link = { ck3 = 623 ck3 = 621 ck3 = 7070 eu4 = 471 } # Aralkizil, Akkityk, Kos-Buwak -> Alimuly
-	link = { ck3 = 625 eu4 = 443 } # Ustyurt -> Ustyurt
-	link = { ck3 = 618 ck3 = 7065 eu4 = 465 } # Atyrau, Qoshagyl -> Nogay
-	link = { ck3 = 624 eu4 = 439 } # Mangyshlak -> Mangyshlak
-	link = { ck3 = 4415 eu4 = 437 } # Uzboy -> Kopet Dag
+	link = { ck3 = 4248 ck3 = 4389 ck3 = 4385 eu4 = 4344 } # Kalif, Nakhshab, Kishsh -> Kish
+	link = { ck3 = 901 ck3 = 7118 ck3 = 7119 eu4 = 456 } # Jend, Uzgend, Sighnaq -> Turkestan
+	link = { ck3 = 7108 ck3 = 7109 eu4 = 2352 } # Kara-Mugai, Raimskoe -> Alty-Kuduk
+	link = { ck3 = 900 eu4 = 1970 } # Yangikent -> Syghnak
+	link = { ck3 = 4459 eu4 = 1973 } # Kurdar -> Urgench
+	link = { ck3 = 4453 eu4 = 2362 } # Zamakhshar -> Gurganj
+	link = { ck3 = 1378 eu4 = 2370 } # Gurganj -> Kungirot
+	link = { ck3 = 623 ck3 = 621 ck3 = 7070 ck3 = 7068 eu4 = 471 } # Aralkizil, Akkityk, Kos-Buwak, Namastau -> Alimuly
+	link = { ck3 = 625 ck3 = 7077 ck3 = 7075 ck3 = 7087 eu4 = 443 } # Qyzylustyurt, Qaraustyurt, Churuk, Oglamych -> Ustyurt
+	link = { ck3 = 618 ck3 = 7065 ck3 = 7073 ck3 = 7230 eu4 = 465 } # Atyrau, Qoshagyl, Tengiz, Kainar -> Nogay
+	link = { ck3 = 624 ck3 = 7078 ck3 = 7085 eu4 = 439 } # Mangyshlak, Buzachi, Bekdas -> Mangyshlak
+	link = { ck3 = 4415 ck3 = 4530 eu4 = 437 } # Nebit Dag, Uzboy -> Kopet Dag
 	link = { ck3 = 4036 ck3 = 4041 eu4 = 2350 } # Farava, Abivard -> Konjikala
 	link = { ck3 = 4010 eu4 = 2221 } # Tus -> Mashhad
 	link = { ck3 = 4122 eu4 = 2217 eu4 = 4342 } # Sardan -> Yasuj, Malamir
@@ -141,22 +309,22 @@
 	link = { ck3 = 4007 eu4 = 4325 } # Sarakhs -> Sarakhs
 	link = { ck3 = 4347 ck3 = 4339 eu4 = 2227 } # East-Tokharestan, West-Tokharestan -> Kunduz
 	link = { ck3 = 7559 ck3 = 7578 ck3 = 7593 ck3 = 1453 eu4 = 4680 } # Khasagt Khairkhan, Uliastai, Zarman, Tseel -> Zakhchin
-	link = { ck3 = 7506 ck3 = 7502 ck3 = 7509 eu4 = 4682 } # Kara Asirgan, Balgun, Boro Burgasu -> Monkhkhairkhan
-	link = { ck3 = 1449 ck3 = 7499 ck3 = 7496 eu4 = 4683 } # Yangjibaliq, Jie, Ulan Chuzir -> Altay
-	link = { ck3 = 9037 ck3 = 9030 ck3 = 9058 ck3 = 9041 eu4 = 4520 } # Rutog, Khurnak, Gê'gyai, Memar -> Rutog
-	link = { ck3 = 7458 ck3 = 1446 ck3 = 7469 eu4 = 4206 } # Chamil, Kara Khoja, Barkul -> Balikul
+	link = { ck3 = 7506 ck3 = 7502 ck3 = 7509 ck3 = 7503 ck3 = 7462 eu4 = 4682 } # Kara Asirgan, Balgun, Boro Burgasu, Kabtag, Jimsar -> Monkhkhairkhan
+	link = { ck3 = 1449 ck3 = 7499 ck3 = 7496 ck3 = 7465 eu4 = 4683 } # Bugur, Jie, Ulan Chuzir, Yangjibaliq -> Altay
+	link = { ck3 = 9037 ck3 = 9030 ck3 = 9058 ck3 = 9041 ck3 = 9033 ck3 = 9035 eu4 = 4520 } # Rutog, Khurnak, Gê'gyai, Memar, Thaldat, Sumdo -> Rutog
+	link = { ck3 = 7458 ck3 = 1446 ck3 = 7469 ck3 = 9619 eu4 = 4206 } # Chamil, Kara Khoja, Barkul, Burgasutai -> Balikul
 	link = { ck3 = 7459 eu4 = 713 } # Beshbalik -> Bechbaliq
 	link = { ck3 = 1443 ck3 = 7985 eu4 = 4207 } # Karashar, Toksun -> Turpan
 	link = { ck3 = 1447 eu4 = 2123 } # Loulan -> Qakilik
 	link = { ck3 = 7978 eu4 = 2192 } # Luntai -> Korla
 	link = { ck3 = 1445 eu4 = 712 } # Aksu -> Aksu
 	link = { ck3 = 1444 eu4 = 2121 } # Kucha -> Kuqa
-	link = { ck3 = 1439 eu4 = 4209 } # Kashgar -> Maralbexi
+	link = { ck3 = 7968 eu4 = 4209 } # Maralbeshi -> Maralbexi
 	link = { ck3 = 4374 ck3 = 4378 ck3 = 4368 eu4 = 1968 } # Wakhsh, Khuttal, Chaghaniyan -> Kulob
 	link = { ck3 = 4366 eu4 = 2127 } # Karran -> Yashilkul
 	link = { ck3 = 4363 ck3 = 4360 eu4 = 4210 } # Shughnan, Wakhan -> Yangi Hissar
-	link = { ck3 = 9613 ck3 = 1438 eu4 = 2124 } # Karghalik, Yarkand -> Yarkand
-	link = { ck3 = 1440 ck3 = 9033 ck3 = 9035 eu4 = 710 } # Khotan, Thaldat, Sumdo -> Hotan
+	link = { ck3 = 1438 ck3 = 9614 eu4 = 2124 } # Yarkand, Karghalik -> Yarkand
+	link = { ck3 = 1440 ck3 = 9608 eu4 = 710 } # Khotan, Dondan Oilik -> Hotan
 	link = { ck3 = 9604 eu4 = 4693 } # Keriya -> Keriya
 	link = { ck3 = 1442 ck3 = 1441 eu4 = 711 } # Charkliq, Cherchen -> Qarqan
 	link = { ck3 = 9412 ck3 = 9414 eu4 = 2184 } # Datong, Xining -> Xining
@@ -169,22 +337,22 @@
 	link = { ck3 = 9471 ck3 = 9479 eu4 = 706 } # Aksay, Subei -> Tsaidam
 	link = { ck3 = 9350 ck3 = 9348 eu4 = 2133 } # Ariksar, Lingtsang -> Dege
 	link = { ck3 = 9404 ck3 = 9402 ck3 = 9396 ck3 = 9427 ck3 = 9411 ck3 = 9429 ck3 = 9369 ck3 = 9394 ck3 = 9389 ck3 = 9392 ck3 = 9406 ck3 = 9399 ck3 = 9469 ck3 = 9386 ck3 = 9385 ck3 = 9383 eu4 = 2134 } # Ülam, Tu'ulain, Nagormo, Xigortang, Gêrqên, Madoi, Hohaséco, Lenghu, Kumkol, Mangnai, Fuqi, Dêrlênka, Haltang, Ngoring, Qumarlêb, Chindu -> Rebgong
-	link = { ck3 = 7990 eu4 = 2122 } # Kumtag -> Hami
-	link = { ck3 = 1448 eu4 = 707 } # Miran -> Yumen
-	link = { ck3 = 7190 ck3 = 7194 eu4 = 2119 } # Karamay, Jinsko -> Chuguchak
+	link = { ck3 = 7990 ck3 = 7995 eu4 = 2122 } # Kumtag, Dafang -> Hami
+	link = { ck3 = 1448 ck3 = 7998 eu4 = 707 } # Luobupo, Miran -> Yumen
+	link = { ck3 = 7190 ck3 = 7194 ck3 = 7195 eu4 = 2119 } # Karamay, Ebi-Nor, Jinsko -> Chuguchak
 	link = { ck3 = 1426 ck3 = 7175 ck3 = 7187 eu4 = 2118 } # Lepsink, Guzkol, Emil -> Urzhar
-	link = { ck3 = 7966 eu4 = 739 } # Terek Pass -> Kashgar
+	link = { ck3 = 7966 ck3 = 1439 eu4 = 739 } # Terek Pass, Kashgar -> Kashgar
 	link = { ck3 = 4381 eu4 = 1967 } # Rasht -> Khujand
-	link = { ck3 = 4427 ck3 = 4422 eu4 = 458 } # Nasaiya, Isfara -> Kokand
-	link = { ck3 = 4433 ck3 = 1423 eu4 = 460 } # Ferghana, Nasrabad -> Uzkend
+	link = { ck3 = 4422 ck3 = 4424 eu4 = 458 } # Isfara, Nasaiya -> Kokand
+	link = { ck3 = 1423 ck3 = 4430 eu4 = 460 } # Nasrabad, Uzgend -> Uzkend
 	link = { ck3 = 7141 eu4 = 459 } # Taraz -> Taraz
 	link = { ck3 = 1432 eu4 = 2364 } # Shelji -> Talas
 	link = { ck3 = 7155 ck3 = 7159 ck3 = 7171 ck3 = 7168 ck3 = 7158 eu4 = 2368 } # Aksuyek, Kopathal, Uchkul, Qayaliq, Kaskelen -> Karamegdan
-	link = { ck3 = 903 eu4 = 457 } # Khojand -> Tashkent
+	link = { ck3 = 903 ck3 = 4434 eu4 = 457 } # Khojand, Ferghana -> Tashkent
 	link = { ck3 = 1186 ck3 = 4411 eu4 = 2363 } # Chah, Oshrusana -> Atakent
 	link = { ck3 = 1181 eu4 = 455 } # Sütkend -> Kyzylkum
-	link = { ck3 = 7126 ck3 = 7121 eu4 = 1969 } # Shavgar, Quriltay -> Sozak
-	link = { ck3 = 1431 eu4 = 2356 } # Otrar -> Shymkent
+	link = { ck3 = 7121 ck3 = 7132 eu4 = 1969 } # Mushun, Quriltay -> Sozak
+	link = { ck3 = 1431 ck3 = 7126 eu4 = 2356 } # Otrar, Shavgar -> Shymkent
 	link = { ck3 = 4403 ck3 = 4408 ck3 = 4399 eu4 = 454 } # Samarkand, Zarafshan, Dabusiya -> Samarkand
 	link = { ck3 = 9199 ck3 = 9201 ck3 = 9207 ck3 = 9066 ck3 = 9081 eu4 = 4515 } # Kagar, Cazê, Tongmoin, Coqên, Kyakyaru -> Gyirong
 	link = { ck3 = 9166 ck3 = 9173 ck3 = 9176 ck3 = 9282 ck3 = 9164 eu4 = 2132 } # Tezu, Rima, Golag, Zogang, Roing -> Markam
@@ -210,8 +378,8 @@
 	link = { ck3 = 4334 eu4 = 450 } # Balkh -> Balkh
 	link = { ck3 = 4234 eu4 = 445 } # Merv -> Merv
 	link = { ck3 = 4215 ck3 = 4212 ck3 = 4223 eu4 = 446 } # Herat, Badghis, Rivsharan -> Herat
-	link = { ck3 = 4524 eu4 = 438 } # Sarykamysh -> Karakum
-	link = { ck3 = 4449 ck3 = 4440 ck3 = 4444 eu4 = 441 } # Khiva, Darghan, Kath -> Khiva
+	link = { ck3 = 4524 ck3 = 4527 eu4 = 438 } # Sarykamysh, Kurtysh -> Karakum
+	link = { ck3 = 4449 ck3 = 4440 ck3 = 4444 ck3 = 4446 eu4 = 441 } # Khiva, Darghan, Kath, Ghardaman -> Khiva
 	link = { ck3 = 4014 eu4 = 4326 } # Nishapur -> Nishapur
 	link = { ck3 = 4096 eu4 = 2234 } # Shahr-e-Babak -> Rafsanjan
 	link = { ck3 = 4171 eu4 = 4330 } # Darabjerd -> Darab
@@ -864,12 +1032,12 @@
 	link = { comment = "# Mother Russia" }
 	link = { ck3 = 616 eu4 = 473 } # Pecheneg -> Samara
 	link = { ck3 = 5383 ck3 = 5357 eu4 = 2423 } # Saran, Kozlov -> Alatyr
-	link = { ck3 = 5388 eu4 = 304 } # Durovka -> Penza
-	link = { ck3 = 5377 eu4 = 2415 } # Balachev -> Etkara
-	link = { ck3 = 5410 ck3 = 5390 ck3 = 592 eu4 = 303 } # Atkara, Medveditsa, Sar Atau -> Saratov
-	link = { ck3 = 566 eu4 = 2408 } # Oskol -> Yelets
+	link = { ck3 = 5388 ck3 = 5384 ck3 = 579 eu4 = 304 } # Durovka, Serdosk, Penza -> Penza
+	link = { ck3 = 5377 ck3 = 5410 eu4 = 2415 } # Balachev, Atkara -> Etkara
+	link = { ck3 = 5390 ck3 = 592 eu4 = 303 } # Medveditsa, Sar Atau -> Saratov
+	link = { ck3 = 566 ck3 = 5285 eu4 = 2408 } # Oskol, Khursa -> Yelets
 	link = { ck3 = 5350 ck3 = 5371 eu4 = 299 } # Voronezh, Karatayak -> Voronezh
-	link = { ck3 = 5353 eu4 = 302 } # Tambov -> Tambov
+	link = { ck3 = 5353 ck3 = 5355 eu4 = 302 } # Tambov, Matya -> Tambov
 	link = { ck3 = 573 eu4 = 1956 eu4 = 4253 eu4 = 4147 } # Suzdal -> Suzdal, Yuriev, Rostov
 	link = { ck3 = 582 eu4 = 307 } # Vladimir -> Vladimir
 	link = { ck3 = 586 ck3 = 5832 eu4 = 1957 } # Manturovo, Onsthia -> Galich
@@ -878,18 +1046,17 @@
 	link = { ck3 = 5247 eu4 = 4254 } # Plyos -> Starodub
 	link = { ck3 = 5466 eu4 = 1079 } # Kolyn -> Viatka
 	link = { ck3 = 886 ck3 = 5437 eu4 = 305 } # Perm, Sebur -> Perm
-	link = { ck3 = 579 eu4 = 1081 eu4 = 2419 } # Penza -> Simbirsk, Kanadey
+	link = { ck3 = 591 eu4 = 1081 eu4 = 2419 } # Ashli -> Simbirsk, Kanadey
 	link = { ck3 = 5441 eu4 = 1077 } # Lysva -> Solikamsk
 	link = { ck3 = 5455 ck3 = 889 ck3 = 5449 eu4 = 1963 } # Kerken, Ural, Votkinsk -> Cherdyn
 	link = { ck3 = 5401 eu4 = 1972 eu4 = 4266 eu4 = 1962 } # Elabuga -> Udmurtia, Izhkar, Kudymkar
 	link = { ck3 = 610 ck3 = 5412 ck3 = 609 eu4 = 4267 } # Bolghar, Karabolam, Samar -> Bolgar
-	link = { ck3 = 591 eu4 = 4264 } # Ashli -> Tetyushi
 	link = { ck3 = 5463 ck3 = 888 ck3 = 612 eu4 = 1964 } # Glaz, Kargadan, Palniki -> Ust-Sysolsk
-	link = { ck3 = 611 ck3 = 588 eu4 = 1082 } # Kazan, Charla -> Kazan
+	link = { ck3 = 611 ck3 = 5398 eu4 = 1082 } # Kazan, Mamadych -> Kazan
 	link = { ck3 = 581 eu4 = 1754 } # Murom -> Murom
-	link = { ck3 = 5359 ck3 = 590 eu4 = 2422 } # Lachyk-Uba, Cheboksary -> Veda-Suvar
-	link = { ck3 = 589 ck3 = 5470 eu4 = 1083 } # Martyuba, Cykma -> Vetluga
-	link = { ck3 = 584 eu4 = 306 } # Obran Osh -> Nizhny Novgorod
+	link = { ck3 = 590 ck3 = 5393 eu4 = 2422 } # Cheboksary, Mari-Turek -> Veda-Suvar
+	link = { ck3 = 589 ck3 = 5470 ck3 = 588 eu4 = 1083 } # Martyuba, Cykma, Charla -> Vetluga
+	link = { ck3 = 584 ck3 = 5359 ck3 = 5361 eu4 = 306 } # Obran Osh, Lachyk-Uba, Rakcha -> Nizhny Novgorod
 	link = { ck3 = 5143 eu4 = 311 } # Rusa -> Kholm
 	link = { ck3 = 5137 eu4 = 310 eu4 = 1961 } # Novgorod -> Novgorod, Ladoga
 	link = { ck3 = 5146 eu4 = 274 } # Pskov -> Pskov
@@ -971,9 +1138,9 @@
 	link = { ck3 = 5114 eu4 = 4545 } # Slutsk -> Sluck
 	link = { ck3 = 550 eu4 = 276 } # Minsk -> Minsk
 	link = { ck3 = 5073 eu4 = 4538 } # Cherven -> Chelm
-	link = { ck3 = 603 eu4 = 2197 eu4 = 2201 } # Cabardinia -> Kabardia, Alania
+	link = { ck3 = 603 ck3 = 5303 eu4 = 2197 eu4 = 2201 } # MANY-TO-MANY: Cabardinia, Besinda -> Kabardia, Alania
 	link = { ck3 = 604 eu4 = 464 } # Astrakhan -> Astrakhan
-	link = { ck3 = 5307 eu4 = 2208 } # Samiran -> Terek
+	link = { ck3 = 5307 ck3 = 5309 eu4 = 2208 } # Samiran, Anket -> Terek
 	link = { ck3 = 674 eu4 = 425 eu4 = 4306 } # Derbent -> Dagestan, Lakia
 	link = { ck3 = 600 eu4 = 1856 } # Abkhazia -> Abkhazia
 	link = { ck3 = 5313 eu4 = 469 } # Saqsin -> Ryn
@@ -988,9 +1155,9 @@
 	link = { ck3 = 597 eu4 = 286 eu4 = 2414 } # Azak -> Azov, Azaraba
 	link = { ck3 = 556 eu4 = 291 } # Samar -> Kharkov
 	link = { ck3 = 593 ck3 = 5374 eu4 = 467 } # Khopyor, Tuluchezeva -> Borisoglebsk
-	link = { ck3 = 5287 eu4 = 2409 } # Kazanskaya -> Bahmut
-	link = { ck3 = 563 eu4 = 2413 } # Tana -> Tyn
-	link = { ck3 = 564 eu4 = 2411 } # Bakhmut -> Mansur
+	link = { ck3 = 5287 ck3 = 5326 eu4 = 2409 } # Kazanskaya, South Kazanskaya -> Bahmut
+	link = { ck3 = 563 ck3 = 5328 eu4 = 2413 } # Tana, Kuzeyrtorg -> Tyn
+	link = { ck3 = 564 ck3 = 5320 eu4 = 2411 } # Bakhmut, Lozova -> Mansur
 	link = { ck3 = 535 eu4 = 279 } # Volodymyr -> Volhynia
 	link = { ck3 = 5051 eu4 = 2962 } # Peresopnytsia -> Rowne
 	link = { ck3 = 5070 eu4 = 4539 } # Zaslavl -> Kremenets
@@ -1005,10 +1172,10 @@
 	link = { ck3 = 5012 ck3 = 512 ck3 = 5015 eu4 = 1756 } # Chilia, Cetatea Alba, Tigheci -> Bessarabia
 	link = { ck3 = 542 eu4 = 282 } # Kara-Kerman -> Yedisan
 	link = { ck3 = 5269 eu4 = 2406 } # Ingul -> Ingil
-	link = { ck3 = 5272 eu4 = 283 } # Buri-chai -> Zaporozhia
+	link = { ck3 = 5272 ck3 = 5274 eu4 = 283 } # Lower Dniepr, Buri-chai -> Zaporozhia
 	link = { ck3 = 557 eu4 = 2412 } # Yilki Su -> Kyzyl-Yar
 	link = { ck3 = 558 eu4 = 1974 } # Kyzyl Jar -> Yedishkul
-	link = { ck3 = 559 ck3 = 5277 eu4 = 284 } # Kalos Limen, Or Qapi -> Crimea
+	link = { ck3 = 559 ck3 = 5277 eu4 = 284 } # Güzliev, Aqmescit -> Crimea
 	link = { ck3 = 560 eu4 = 2410 eu4 = 285 } # Kerch -> Theodoro, Caffa
 	link = { comment = "# Baltics" }
 	link = { ck3 = 103 ck3 = 102 eu4 = 4241 } # Kokenois, Talava -> Wenden
@@ -1365,7 +1532,7 @@
 	link = { comment = "# Scandinavia" }
 	link = { ck3 = 174 eu4 = 32 eu4 = 4124 } # Sortavala -> Kexholm, Karelia
 	link = { ck3 = 450 ck3 = 418 eu4 = 4152 } # Kainuu, Kitka -> Kainuu
-	link = { ck3 = 448 ck3 = 188 eu4 = 31 } # Pielinen, Olavinlinna -> Savolax
+	link = { ck3 = 448 ck3 = 188 eu4 = 31 } # Pielinen, Savo -> Savolax
 	link = { ck3 = 205 ck3 = 207 eu4 = 29 } # Tavasts, Sysmä -> Tavastland
 	link = { ck3 = 211 eu4 = 4123 } # Messukylä -> Pirkanmaa
 	link = { ck3 = 181 ck3 = 171 eu4 = 30 } # Viipuri, Kakisalmi -> Viborg

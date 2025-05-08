@@ -9,6 +9,7 @@
 #include "../Mappers/VassalSplitoffMapper/VassalSplitoffMapper.h"
 #include "Characters/Characters.h"
 #include "CoatsOfArms/CoatsOfArms.h"
+#include "Confederations/Confederations.h"
 #include "ConverterVersion.h"
 #include "Cultures/Cultures.h"
 #include "Dynasties/Dynasties.h"
@@ -47,6 +48,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getLocalizationMapper() const { return localizationMapper; }
 	[[nodiscard]] const auto& getCultureMapper() const { return cultureMapper; }
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
+	[[nodiscard]] const auto& getConfederations() const { return confederations; }
 
   private:
 	void registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);
@@ -101,6 +103,7 @@ class World: commonItems::parser
 	CountyDetails countyDetails;
 	Cultures cultures;
 	HouseNameScraper houseNameScraper;
+	Confederations confederations;
 	mappers::NamedColors namedColors;
 	mappers::IAmHreMapper iAmHreMapper;
 	mappers::ShatterEmpiresMapper shatterEmpiresMapper;

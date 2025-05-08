@@ -304,6 +304,25 @@ option = { #Provincial discovered_by
 		}
 	}
 }
+option = { #Tribal confederations
+	name = tribalConfederations
+	displayName = TRIBALCONFEDERATIONS
+	tooltip = TRIBALCONFEDERATIONSTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = TRIBALCONFEDERATIONS1
+			tooltip = TRIBALCONFEDERATIONS1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = TRIBALCONFEDERATIONS2
+			tooltip = TRIBALCONFEDERATIONS2TIP
+			default = false
+		}
+	}
+}
 option = {
 	name = output_name
 	displayName = MODNAME

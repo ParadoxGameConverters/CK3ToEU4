@@ -770,7 +770,7 @@ link = { ck3 = k_khotan eu4 = KAS }
 link = { ck3 = c_yarkand eu4 = KAS }
 link = { ck3 = c_karghalik eu4 = KAS } #Maps to same province as c_yarkand
 link = { ck3 = e_mongolia eu4 = KHA }
-link = { ck3 = k_mongolia eu4 = KHA }
+link = { ck3 = k_otuken eu4 = KHA }
 link = { ck3 = e_mongol_empire eu4 = MGE }  
 link = { ck3 = k_hanthawaddy eu4 = PEG }
 link = { ck3 = d_ramannadesa eu4 = PEG }

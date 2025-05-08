@@ -187,6 +187,7 @@ void CK3::Characters::linkCharacters()
 {
 	auto employerCounter = 0;
 	auto spouseCounter = 0;
+	auto suzerainCounter = 0;
 
 	for (const auto& character: characters)
 	{
@@ -218,8 +219,22 @@ void CK3::Characters::linkCharacters()
 				character.second->resetEmployer();
 			}
 		}
+		if (character.second->getSuzerain())
+		{
+			const auto& charItr = characters.find(character.second->getSuzerain()->first);
+			if (charItr != characters.end())
+			{
+				character.second->loadSuzerain(*charItr);
+				++suzerainCounter;
+			}
+			else
+			{
+				// sigh.
+				character.second->resetSuzerain();
+			}
+		}
 	}
-	Log(LogLevel::Info) << "<> " << spouseCounter << " spouses, " << employerCounter << " employers updated.";
+	Log(LogLevel::Info) << "<> " << spouseCounter << " spouses, " << employerCounter << " employers, " << suzerainCounter << " suzerains updated.";
 }
 
 void CK3::Characters::linkTraits(const mappers::TraitScraper& traitScraper)

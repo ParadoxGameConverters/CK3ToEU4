@@ -58,6 +58,7 @@ void CK3::Character::registerKeys()
 		prestige = tempBlock.getPrestige();
 		gold = tempBlock.getGold();
 		claims = tempBlock.getClaims();
+		suzerain = tempBlock.getSuzerain();
 	});
 	registerKeyword("piety", [this](const std::string& unused, std::istream& theStream) {
 		const auto tempBlock = Character(theStream, charID);
@@ -70,8 +71,11 @@ void CK3::Character::registerKeys()
 	registerKeyword("accumulated", [this](const std::string& unused, std::istream& theStream) {
 		accumulated = commonItems::singleDouble(theStream).getDouble();
 	});
+	registerKeyword("obedience_target", [this](const std::string& unused, std::istream& theStream) {
+		suzerain = std::make_pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+	});
 	registerKeyword("gold", [this](const std::string& unused, std::istream& theStream) {
-		gold = commonItems::singleDouble(theStream).getDouble();
+		goldParser.parseStream(theStream);
 	});
 	registerKeyword("court_data", [this](const std::string& unused, std::istream& theStream) {
 		const auto tempBlock = Character(theStream, charID);
@@ -116,6 +120,12 @@ void CK3::Character::registerKeys()
 		tempTitle = commonItems::singleLlong(theStream).getLlong();
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	goldParser.registerKeyword("value", [this](const std::string& unused, std::istream& theStream) {
+		gold = commonItems::singleDouble(theStream).getDouble();
+	});
+
+	goldParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 void CK3::Character::dropTitleFromDomain(long long titleID)

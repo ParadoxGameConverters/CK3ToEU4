@@ -10,8 +10,10 @@
 
 namespace CK3
 {
+class CoatOfArms;
+class Confederation;
 class Title;
-}
+} // namespace CK3
 
 namespace mappers
 {
@@ -65,13 +67,16 @@ class Country
 		 const mappers::ReligionMapper& religionMapper,
 		 const mappers::CultureMapper& cultureMapper);
 	void annexCountry(const std::pair<std::string, std::shared_ptr<Country>>& theCountry);
+	void subsumeCountry(const std::shared_ptr<Country>& theCountry);
 	void clearProvinces() { provinces.clear(); }
 	void setElector() { details.elector = true; }
 	void overrideReforms(const std::string& reform) { details.reforms = {reform}; }
 	void setMercantilism(int mercantilism) { details.mercantilism = mercantilism; }
 	void setGovernment(const std::string& government) { details.government = government; }
 	void setLocalizations(const mappers::LocBlock& newBlock);
+	void setLocalizations(const std::map<std::string, mappers::LocBlock>& theLocalizations) { localizations = theLocalizations; }
 	void correctRoyaltyToBuddhism();
+	void renameAndRemask(const CK3::Confederation& confederation);
 
 	[[nodiscard]] const auto& getCommonCountryFile() const { return commonCountryFile; }
 	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyCountryFile; }
@@ -97,6 +102,8 @@ class Country
 	[[nodiscard]] auto getCapitalID() const { return details.capital; }
 	[[nodiscard]] auto getHouse() const { return details.house; }
 	[[nodiscard]] auto getHasDynastyName() const { return details.hasDynastyName; }
+	[[nodiscard]] auto getConfederationCoA() const { return confederationCoA; }
+	[[nodiscard]] auto getEntireDetails() const { return details; }
 
 	[[nodiscard]] int getDevelopment() const;
 
@@ -154,6 +161,7 @@ class Country
 	std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> title;
 	std::map<std::string, mappers::LocBlock> localizations; // Beware, these are UTF8 strings. If you are altering them be sure you know what you're doing.
 	std::map<int, std::shared_ptr<Province>> provinces;
+	std::optional<std::pair<long long, std::shared_ptr<CK3::CoatOfArms>>> confederationCoA;
 };
 } // namespace EU4
 

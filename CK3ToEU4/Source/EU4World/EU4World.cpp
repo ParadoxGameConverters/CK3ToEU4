@@ -1,5 +1,6 @@
 #include "EU4World.h"
 #include "../CK3World/Characters/Character.h"
+#include "../CK3World/Confederations/Confederation.h"
 #include "../CK3World/Geography/CountyDetail.h"
 #include "../CK3World/Geography/ProvinceHolding.h"
 #include "../CK3World/Religions/Faith.h"
@@ -132,6 +133,9 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 
 	// Rulers with multiple crowns either get PU agreements, or just annex the other crowns.
 	resolvePersonalUnions();
+
+	if (theConfiguration.getTribalConfederations() == Configuration::TRIBALCONFEDERATIONS::MERGE)
+		mergeConfederations(sourceWorld.getConfederations());
 	Log(LogLevel::Progress) << "65 %";
 
 	// We're onto the finesse part of conversion now. HRE was shattered in CK3 World and now we're assigning electorates, free
@@ -159,6 +163,12 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	// Ck3 does not support tributaries as such and we care not about alliances.
 	Log(LogLevel::Info) << "-> Importing Vassals";
 	diplomacy.importVassals(countries);
+
+	Log(LogLevel::Info) << "-> Generating Tributaries";
+	diplomacy.generateTributaries(countries);
+
+	Log(LogLevel::Info) << "-> Coalescing Hordes";
+	coalesceHordes();
 	Log(LogLevel::Progress) << "68 %";
 
 	// We're distributing permanent claims according to dejure distribution.
@@ -188,9 +198,8 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	africanQuestion();
 	Log(LogLevel::Progress) << "74 %";
 
-	// Indian buddhisms
-	// Disabled for now as probably no longer necessary due to CK3's larger religious variance in later patches.
-	// indianQuestion();
+	// Mongolian Question
+	mongolianQuestion();
 
 	// No-Islam worlds
 	religiousQuestion(sourceWorld.doesIslamExist());
@@ -210,6 +219,120 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	modFile.version = converterVersion.getMaxTarget();
 	output(converterVersion, theConfiguration, sourceWorld, startDateMapper.getStartDate());
 	Log(LogLevel::Info) << "*** Farewell EU4, granting you independence. ***";
+}
+
+void EU4::World::coalesceHordes()
+{
+	// We need to merge various horde subclans into a single horde entity. We don't care about vassalages or tributaries, and treat both
+	// as direct hierarchy when merging.
+
+	auto mergeCounter = 0;
+
+	// Let's filter out all agreements related to hordes so we can iterate faster. We're looking for 2 hordes either in tributary or vassal relations,
+	// Ie, mongols merge with mongols, oirats with oirats etc. Chains of 3+ are possible so we'll need to do this recursively.
+
+	std::map<std::string, std::vector<std::shared_ptr<Country>>> hordeDependencies; // overlord -> dependents
+
+	for (const auto& agreement: diplomacy.getAgreements())
+	{
+		const auto& eu4tag1 = agreement->getFirst();
+		const auto& eu4tag2 = agreement->getSecond();
+		const auto& country1 = countries.at(eu4tag1);
+		const auto& country2 = countries.at(eu4tag2);
+
+		if (!country1->getTitle() || country1->getGovernment() != "tribal" || !country1->getGovernmentReforms().contains("steppe_horde"))
+			continue;
+		if (!country2->getTitle() || country2->getGovernment() != "tribal" || !country2->getGovernmentReforms().contains("steppe_horde"))
+			continue;
+		if (!(agreement->getType() == "dependency" && agreement->getSubjectType() == "tributary_state") && agreement->getType() != "vassal")
+			continue;
+
+		if (hordeDependencies.contains(eu4tag1))
+		{
+			hordeDependencies.at(eu4tag1).emplace_back(country2);
+		}
+		else
+		{
+			hordeDependencies.emplace(eu4tag1, std::vector<std::shared_ptr<Country>>{country2});
+		}
+	}
+
+	// Now let's roll and recursively annex the bunch.
+
+	for (const auto& tag: hordeDependencies | std::views::keys)
+	{
+		annexHordes(tag, hordeDependencies);
+		mergeCounter++;
+	}
+
+	Log(LogLevel::Info) << "<> Coalesced " << mergeCounter << " hordes.";
+}
+
+void EU4::World::annexHordes(const std::string& tag, std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies)
+{
+	const auto& annexer = countries.at(tag);
+	for (const auto& annexee: hordeDependencies.at(tag))
+	{
+		if (hordeDependencies.contains(annexee->getTag()))
+			annexHordes(annexee->getTag(), hordeDependencies);
+		annexer->annexCountry(std::pair(annexee->getTag(), annexee));
+	}
+}
+
+void EU4::World::mergeConfederations(const CK3::Confederations& confederations)
+{
+	// There is no real rhyme or reason about this. Confederations members in CK3 may or may not have survived the transition, and their individual stats are
+	// more or less meaningless in the grand scheme. We'll just pick the first one and merge other survivors into it, and then rename it.
+
+	Log(LogLevel::Info) << "-> Merging Confederations";
+
+	auto memberCounter = 0;
+	auto confederationCounter = 0;
+
+	for (const auto& confederation: confederations.getConfederations() | std::views::values)
+	{
+		std::shared_ptr<Country> confederationHolder = nullptr; // this will be the holder for the federation;
+
+		for (const auto& holder: confederation->getMembers() | std::views::values)
+		{
+			if (!holder)
+				continue; // could be deleted over the run.
+			// first do a buttload of checks to confirm member is sane.
+			const auto& charDomain = holder->getCharacterDomain();
+			if (!charDomain)
+				continue;
+			const auto& domain = charDomain->getDomain();
+			if (domain.empty())
+				continue;
+			const auto& primaryTitle = domain.begin()->second;
+			if (!primaryTitle)
+				continue;
+			const auto& eu4country = primaryTitle->getEU4Tag();
+			if (!eu4country || eu4country->first.empty() || !eu4country->second)
+				continue;
+			if (eu4country->second->getProvinces().empty())
+				continue;
+
+			if (!confederationHolder)
+			{
+				confederationHolder = eu4country->second;
+			}
+			else
+			{
+				confederationHolder->annexCountry(*eu4country);
+			}
+			memberCounter++;
+		}
+
+		// did we even do anything?
+		if (!confederationHolder)
+			continue;
+
+		confederationHolder->renameAndRemask(*confederation);
+		confederationCounter++;
+	}
+
+	Log(LogLevel::Info) << "<> Merged " << memberCounter << " confederation members into " << confederationCounter << " confederations.";
 }
 
 void EU4::World::religiousQuestion(bool doesIslamExist)
@@ -1939,45 +2062,119 @@ void EU4::World::africanQuestion()
 	}
 }
 
-void EU4::World::indianQuestion()
+void EU4::World::mongolianQuestion()
 {
-	// countries with capitals in india or persia superregions, need to have their provinces updated to buddhism (from vajrayana),
-	// as well as state religion if vajrayana.
-	Log(LogLevel::Info) << "-> Resolving the Indian Question";
-	auto countryCounter = 0;
-	auto provinceCounter = 0;
+	Log(LogLevel::Info) << "-> Resolving the Mongolian Question";
 
-	for (const auto& country: countries)
+	// Case 1. There was an e_mongolia or k_otuken that mapped to KHA. KHA now extends into CK3-scope.
+	// Solution: Nothing needs to be done.
+	const auto& kha = countries.at("KHA");
+
+	if (kha->getTitle())
 	{
-		if (!country.second->getTitle())
-			continue;
-		if (country.second->getProvinces().empty())
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by marriage.";
+		return;
+	}
+
+	// Case 2. There is noone that mapped to KHA. The Mongols exist, but they took over some other title and mapped to some other tag.
+	// Solution: Find them. Check if they own EU4 provinces that Mongolia borders on the other side. If yes, rename them to KHA.
+
+	// Step 1. "Find Them." Easy, they said. It should be TRIVIAL! Especially if they own k_england as primary title and the display name is in chinese.
+
+	const auto& mongolLocBlock =
+		 localizationMapper.getLocBlockForKey("mongol_collective_noun"); // this is "Mongols", not "The Mongols" we have as display name. Now we go hunting.
+	if (!mongolLocBlock)
+	{
+		Log(LogLevel::Error) << "Game locs don't have mongol_collective_noun. Ask your service provider for a fresh installation.";
+		return;
+	}
+
+	const auto& acutalMongol = localizationMapper.getLocBlockForKey("mongol_clothing_gfx"); // "Mongolian". Don't ask.
+	if (!acutalMongol)
+	{
+		Log(LogLevel::Error) << "Game locs don't have mongol_clothing_gfx. Ask your service provider for a fresh installation.";
+		return;
+	}
+
+	const auto& mongolNames = mongolLocBlock->getAllNames();
+
+	std::vector<std::shared_ptr<Country>> potentialCandidates;
+	std::string correctLanguage;
+
+	for (const auto& country: countries | std::views::values)
+	{
+		if (!country->getLocalizations().contains(country->getTag()))
 			continue;
 
-		const auto capitalID = country.second->getCapitalID();
-		if (!capitalID)
-			continue;
+		auto countryNames = country->getLocalizations().at(country->getTag()).getAllNames();
+		// does any ~~match~~  CONTAIN  any of the mongols locs? Jesus wept.
 
-		const auto& capitalSuperRegion = regionMapper->getParentSuperRegionName(capitalID);
-		if (!capitalSuperRegion)
-			continue;
-
-		if (*capitalSuperRegion == "india_superregion" || *capitalSuperRegion == "persia_superregion")
+		for (const auto& [monLanguage, mongolName]: mongolNames)
 		{
-			// Let's convert to buddhism.
-			if (country.second->getReligion() == "vajrayana")
+			for (const auto& countryName: countryNames | std::views::values)
 			{
-				country.second->setReligion("buddhism");
-				country.second->correctRoyaltyToBuddhism();
-				++countryCounter;
-			}
-			for (const auto& province: country.second->getProvinces())
-				if (province.second->getReligion() == "vajrayana")
+				if (countryName.find(mongolName) != std::string::npos)
 				{
-					province.second->setReligion("buddhism");
-					++provinceCounter;
+					// See? Potential! Because me may have just hit any of the indep mongol tribes, not the actual host.
+					potentialCandidates.emplace_back(country);
+					correctLanguage = monLanguage;
 				}
+			}
 		}
 	}
-	Log(LogLevel::Info) << "-> " << countryCounter << " countries and " << provinceCounter << " provinces resolved.";
+
+	if (potentialCandidates.empty())
+	{
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by attrition.";
+		return;
+	}
+
+	// Now see who has the shortest name. Not joking. Yes, I know.
+
+	std::shared_ptr<Country> shortestNameContestWinner;
+	size_t length = 9999;
+	for (const auto& candidate: potentialCandidates)
+	{
+		if (candidate->getLocalizations().at(candidate->getTag()).getAllNames().at(correctLanguage).size() < length)
+		{
+			shortestNameContestWinner = candidate;
+			length = candidate->getLocalizations().at(candidate->getTag()).getAllNames().at(correctLanguage).size();
+		}
+	}
+
+	// Are we even a valid target? Mongols in France are not KHA unless they border actual KHA.
+
+	std::set<int> relevantProvinces = {1056, 1057, 4220, 2116, 4221, 4677, 4676, 709}; // these are CK3-scope border provinces towards off-scope KHA.
+
+	bool borderCheck = false;
+	for (const auto& provinceID: shortestNameContestWinner->getProvinces() | std::views::keys)
+	{
+		if (relevantProvinces.contains(provinceID))
+		{
+			borderCheck = true;
+			break;
+		}
+	}
+
+	if (!borderCheck)
+	{
+		Log(LogLevel::Info) << "<> Mongolian Question resolved by tribal migration.";
+		return;
+	}
+
+	// Now the trivial task of reassigning the entire identity of the country to KHA. Easier for KHA to become mongols.
+	kha->subsumeCountry(shortestNameContestWinner);
+
+	// KHA_ADJ will now be buryatian or french or whatever nonsense. Need to fix it.
+
+	auto locs = kha->getLocalizations();
+
+	if (locs.contains("KHA_ADJ"))
+		locs.at("KHA_ADJ") = *acutalMongol;
+	else
+		locs.emplace("KHA_ADJ", *acutalMongol);
+	kha->setLocalizations(locs);
+
+	Log(LogLevel::Info) << "<> Mongolian Question resolved by Jurchen invasion of " << shortestNameContestWinner->getTag() << " - "
+							  << shortestNameContestWinner->getLocalizations().at(shortestNameContestWinner->getTag()).english << ".";
 }

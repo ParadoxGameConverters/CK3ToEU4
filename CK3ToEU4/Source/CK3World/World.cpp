@@ -217,6 +217,11 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		cultures = Cultures(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << cultures.getCultures().size() << " cultures.";
 	});
+	registerKeyword("confederation_manager", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Info) << "-> Loading confederations.";
+		confederations = Confederations(theStream);
+		Log(LogLevel::Info) << "<> Loaded " << confederations.getConfederations().size() << " confederations.";
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
@@ -405,7 +410,7 @@ void CK3::World::crosslinkDatabases()
 	religions.linkFaiths(faiths);
 	Log(LogLevel::Info) << "-> Loading Religions into Faiths.";
 	faiths.linkReligions(religions, titles);
-	Log(LogLevel::Info) << "-> Loading Coats into Coats.";
+	Log(LogLevel::Info) << "-> Loading Titles into Coats.";
 	coats.linkParents(titles);
 	Log(LogLevel::Info) << "-> Loading Coats into Dynasties.";
 	dynasties.linkCoats(coats);
@@ -437,6 +442,10 @@ void CK3::World::crosslinkDatabases()
 	titles.linkLandedTitles(landedTitles);
 	Log(LogLevel::Info) << "-> Loading Traits into Characters.";
 	characters.linkTraits(traitScraper);
+	Log(LogLevel::Info) << "-> Loading Characters into Confederations.";
+	confederations.linkCharacters(characters);
+	Log(LogLevel::Info) << "-> Loading Coats into Confederations.";
+	confederations.linkCoats(coats);
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)

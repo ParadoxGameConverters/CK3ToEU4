@@ -84,8 +84,10 @@ class World
 	void fixDuplicateNames();
 	void siberianQuestion(const Configuration& theConfiguration);
 	void africanQuestion();
-	void indianQuestion();
+	void mongolianQuestion();
 	void religiousQuestion(bool doesIslamExist);
+	void mergeConfederations(const CK3::Confederations& confederations);
+	void coalesceHordes();
 
 	// output
 	void output(const commonItems::ConverterVersion& converterVersion,
@@ -112,6 +114,7 @@ class World
 		 const std::vector<std::string>& reformedReligions) const;
 	void outputCultures(const std::string& outputName) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const;
+	void annexHordes(const std::string& tag, std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies);
 
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;

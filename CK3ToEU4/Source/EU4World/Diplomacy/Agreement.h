@@ -25,6 +25,7 @@ class Agreement: commonItems::parser
 	[[nodiscard]] const auto& getFirst() const { return first; }
 	[[nodiscard]] const auto& getSecond() const { return second; }
 	[[nodiscard]] const auto& getType() const { return type; }
+	[[nodiscard]] const auto& getSubjectType() const { return subjectType; }
 
 	friend std::ostream& operator<<(std::ostream& output, const Agreement& agreement);
 

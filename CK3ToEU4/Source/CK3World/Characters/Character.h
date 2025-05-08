@@ -40,6 +40,7 @@ class Character: commonItems::parser
 	[[nodiscard]] const auto& getFaith() const { return faith; }
 	[[nodiscard]] const auto& getEmployer() const { return employer; }
 	[[nodiscard]] const auto& getSpouse() const { return spouse; }
+	[[nodiscard]] const auto& getSuzerain() const { return suzerain; }
 	[[nodiscard]] const auto& getHouse() const { return house; }
 	[[nodiscard]] const auto& getTraits() const { return traits; }
 	[[nodiscard]] const auto& getClaims() const { return claims; }
@@ -60,8 +61,10 @@ class Character: commonItems::parser
 	void loadClaims(const std::map<long long, std::shared_ptr<Title>>& theClaims) { claims = theClaims; }
 	void loadEmployer(const std::pair<long long, std::shared_ptr<Character>>& theEmployer) { employer = theEmployer; }
 	void loadSpouse(const std::pair<long long, std::shared_ptr<Character>>& theSpouse) { spouse = theSpouse; }
+	void loadSuzerain(const std::pair<long long, std::shared_ptr<Character>>& theSuzerain) { suzerain = theSuzerain; }
 	void resetSpouse() { spouse.reset(); }
 	void resetEmployer() { employer.reset(); }
+	void resetSuzerain() { suzerain.reset(); }
 	void loadTraits(const std::map<int, std::string>& theTraits) { traits = theTraits; }
 
 	// processing
@@ -92,6 +95,7 @@ class Character: commonItems::parser
 	std::optional<std::pair<long long, std::shared_ptr<Faith>>> faith;
 	std::optional<std::pair<long long, std::shared_ptr<Character>>> employer;
 	std::optional<std::pair<long long, std::shared_ptr<Character>>> spouse;
+	std::optional<std::pair<long long, std::shared_ptr<Character>>> suzerain; // Tributary overlord
 	std::pair<long long, std::shared_ptr<House>> house;
 	std::map<int, std::string> traits;
 	std::map<long long, std::shared_ptr<Title>> claims;
@@ -103,6 +107,8 @@ class Character: commonItems::parser
 
 	long long tempTitle = 0; // temporary variable for recursive scrapes.
 	double accumulated = 0;	 // temporary variable for recursive scrapes.
+
+	parser goldParser;
 };
 } // namespace CK3
 

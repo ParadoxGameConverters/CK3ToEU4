@@ -16,6 +16,7 @@ class Diplomacy: commonItems::parser
 
 	void addAgreement(std::shared_ptr<Agreement> agreement) { agreements.push_back(std::move(agreement)); }
 	void importVassals(const std::map<std::string, std::shared_ptr<Country>>& countries);
+	void generateTributaries(const std::map<std::string, std::shared_ptr<Country>>& countries);
 	void updateTagsInAgreements(const std::string& oldTag, const std::string& newTag);
 	void deleteAgreementsWithTag(const std::string& deadTag);
 	void filterDeadRelationships(const std::map<std::string, std::shared_ptr<Country>>& countries);

@@ -1,6 +1,7 @@
 #include "Diplomacy.h"
 #include "../../CK3World/Titles/Title.h"
 #include "../Country/Country.h"
+#include "CK3ToEU4/Source/CK3World/Characters/Character.h"
 #include "CommonRegexes.h"
 #include "Log.h"
 #include "ParserHelpers.h"
@@ -25,7 +26,7 @@ void EU4::Diplomacy::registerKeys()
 
 void EU4::Diplomacy::importVassals(const std::map<std::string, std::shared_ptr<Country>>& countries)
 {
-	// Vassalages are our own creation os we're pinging our countries alone.
+	// Vassalages are our own creation so we're pinging our countries alone.
 	for (const auto& country: countries)
 	{
 		if (!country.second->getTitle())
@@ -40,6 +41,44 @@ void EU4::Diplomacy::importVassals(const std::map<std::string, std::shared_ptr<C
 			agreements.push_back(newAgreement);
 		}
 	}
+}
+
+void EU4::Diplomacy::generateTributaries(const std::map<std::string, std::shared_ptr<Country>>& countries)
+{
+	auto tributaryCounter = 0;
+
+	// Tributaries are our own creation so we're pinging our countries alone.
+	for (const auto& country: countries)
+	{
+		if (!country.second->getTitle())
+			continue;
+		const auto& holder = country.second->getTitle()->second->getHolder();
+		if (!holder)
+			continue; // No holder? Jeez.
+		const auto& suzerain = holder->second->getSuzerain();
+		if (!suzerain)
+			continue; // No tributary overlord. We're good, carry on.
+		const auto& suzCharDomain = suzerain->second->getCharacterDomain();
+		if (!suzCharDomain)
+			continue; // Suzerain without domain, how...(?!)
+		const auto& suzDomain = suzCharDomain->getDomain();
+		if (suzDomain.empty())
+			continue; // what.
+		const auto& suzPrimaryTitle = suzDomain.begin();
+		if (!suzPrimaryTitle->second)
+			continue;
+		const auto& targetTag = suzPrimaryTitle->second->getEU4Tag();
+		if (!targetTag)
+			continue;
+		if (targetTag->second->getProvinces().empty())
+			continue;
+
+		auto newAgreement = std::make_shared<Agreement>(targetTag->first, country.first, "dependency", "tributary_state", country.second->getConversionDate());
+		agreements.push_back(newAgreement);
+		tributaryCounter++;
+	}
+
+	Log(LogLevel::Info) << "<> Generated " << tributaryCounter << " tributaries.";
 }
 
 void EU4::Diplomacy::updateTagsInAgreements(const std::string& oldTag, const std::string& newTag)

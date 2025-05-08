@@ -81,7 +81,9 @@ TEST(CK3World_CharacterTests, characterAliveDataCanBeLoaded)
 	input << "\tprestige = {\n";
 	input << "\t\taccumulated = 101.02\n";
 	input << "\t}\n";
-	input << "\tgold = 103.02\n";
+	input << "\tgold = {\n";
+	input << "\t\tvalue = 103.02\n";
+	input << "\t}\n";
 	input << "\tclaim = { { title = 1 } { title = 3 } { title = 5 } }\n";
 	input << "}";
 
