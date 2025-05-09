@@ -114,7 +114,9 @@ class World
 		 const std::vector<std::string>& reformedReligions) const;
 	void outputCultures(const std::string& outputName) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const;
-	void annexHordes(const std::string& tag, std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies);
+	void annexHordes(const std::string& tag,
+		 std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies,
+		 std::set<std::string> seenCountries);
 
 	std::map<int, std::shared_ptr<Province>> provinces;
 	std::map<std::string, std::shared_ptr<Country>> countries;

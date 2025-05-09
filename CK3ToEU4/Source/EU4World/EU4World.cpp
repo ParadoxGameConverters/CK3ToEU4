@@ -247,6 +247,8 @@ void EU4::World::coalesceHordes()
 		if (!(agreement->getType() == "dependency" && agreement->getSubjectType() == "tributary_state") && agreement->getType() != "vassal")
 			continue;
 
+		// We'll brute force circulars. Don't waste time checking.
+
 		if (hordeDependencies.contains(eu4tag1))
 		{
 			hordeDependencies.at(eu4tag1).emplace_back(country2);
@@ -261,20 +263,32 @@ void EU4::World::coalesceHordes()
 
 	for (const auto& tag: hordeDependencies | std::views::keys)
 	{
-		annexHordes(tag, hordeDependencies);
+		annexHordes(tag, hordeDependencies, std::set{tag});
 		mergeCounter++;
 	}
 
 	Log(LogLevel::Info) << "<> Coalesced " << mergeCounter << " hordes.";
 }
 
-void EU4::World::annexHordes(const std::string& tag, std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies)
+void EU4::World::annexHordes(const std::string& tag,
+	 std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies,
+	 std::set<std::string> seenCountries)
 {
 	const auto& annexer = countries.at(tag);
 	for (const auto& annexee: hordeDependencies.at(tag))
 	{
+		if (annexee->getProvinces().empty())
+			continue; // Already sucked dry.
+		if (seenCountries.contains(annexee->getTag()))
+		{
+			// We've been here before. Yay for circulars. Bail asap.
+			continue;
+		}
 		if (hordeDependencies.contains(annexee->getTag()))
-			annexHordes(annexee->getTag(), hordeDependencies);
+		{
+			seenCountries.emplace(annexee->getTag());
+			annexHordes(annexee->getTag(), hordeDependencies, seenCountries);
+		}
 		annexer->annexCountry(std::pair(annexee->getTag(), annexee));
 	}
 }
