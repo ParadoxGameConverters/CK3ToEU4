@@ -281,11 +281,11 @@
 	link = { ck3 = 4032 eu4 = 2214 } # Dihistan -> Golestan
 	link = { ck3 = 4038 ck3 = 4028 eu4 = 2236 } # Samalqan, Gurgan -> Bojnord
 	link = { ck3 = 627 eu4 = 2349 } # Garabogazkol -> Kizil-Su
-	link = { ck3 = 4248 ck3 = 4389 ck3 = 4385 eu4 = 4344 } # Kalif, Nakhshab, Kishsh -> Kish
-	link = { ck3 = 901 ck3 = 7118 ck3 = 7119 eu4 = 456 } # Jend, Uzgend, Sighnaq -> Turkestan
+	link = { ck3 = 4385 eu4 = 4344 } # Kishsh -> Kish
+	link = { ck3 = 901 ck3 = 7119 eu4 = 456 } # Jend, Sighnaq -> Turkestan
 	link = { ck3 = 7108 ck3 = 7109 eu4 = 2352 } # Kara-Mugai, Raimskoe -> Alty-Kuduk
 	link = { ck3 = 900 eu4 = 1970 } # Yangikent -> Syghnak
-	link = { ck3 = 4459 eu4 = 1973 } # Kurdar -> Urgench
+	link = { ck3 = 4459 eu4 = 1973 eu4 = 440 } # Kurdar -> Urgench, Qaraqalpak
 	link = { ck3 = 4453 eu4 = 2362 } # Zamakhshar -> Gurganj
 	link = { ck3 = 1378 eu4 = 2370 } # Gurganj -> Kungirot
 	link = { ck3 = 623 ck3 = 621 ck3 = 7070 ck3 = 7068 eu4 = 471 } # Aralkizil, Akkityk, Kos-Buwak, Namastau -> Alimuly
@@ -349,10 +349,10 @@
 	link = { ck3 = 1432 eu4 = 2364 } # Shelji -> Talas
 	link = { ck3 = 7155 ck3 = 7159 ck3 = 7171 ck3 = 7168 ck3 = 7158 eu4 = 2368 } # Aksuyek, Kopathal, Uchkul, Qayaliq, Kaskelen -> Karamegdan
 	link = { ck3 = 903 ck3 = 4434 eu4 = 457 } # Khojand, Ferghana -> Tashkent
-	link = { ck3 = 1186 ck3 = 4411 eu4 = 2363 } # Chah, Oshrusana -> Atakent
-	link = { ck3 = 1181 eu4 = 455 } # Sütkend -> Kyzylkum
-	link = { ck3 = 7121 ck3 = 7132 eu4 = 1969 } # Mushun, Quriltay -> Sozak
-	link = { ck3 = 1431 ck3 = 7126 eu4 = 2356 } # Otrar, Shavgar -> Shymkent
+	link = { ck3 = 4411 ck3 = 1181 eu4 = 2363 } # Oshrusana, Sütkend -> Atakent
+	link = { ck3 = 7118 eu4 = 455 } # Uzgend -> Kyzylkum
+	link = { ck3 = 7121 ck3 = 7132 ck3 = 7126 eu4 = 1969 } # Mushun, Quriltay, Shavgar -> Sozak
+	link = { ck3 = 1431 ck3 = 1186 eu4 = 2356 } # Otrar, Chah -> Shymkent
 	link = { ck3 = 4403 ck3 = 4408 ck3 = 4399 eu4 = 454 } # Samarkand, Zarafshan, Dabusiya -> Samarkand
 	link = { ck3 = 9199 ck3 = 9201 ck3 = 9207 ck3 = 9066 ck3 = 9081 eu4 = 4515 } # Kagar, Cazê, Tongmoin, Coqên, Kyakyaru -> Gyirong
 	link = { ck3 = 9166 ck3 = 9173 ck3 = 9176 ck3 = 9282 ck3 = 9164 eu4 = 2132 } # Tezu, Rima, Golag, Zogang, Roing -> Markam
@@ -371,10 +371,10 @@
 	link = { ck3 = 9020 ck3 = 9028 ck3 = 9018 ck3 = 9009 eu4 = 4521 } # Skardu, Khaplu, Purig, Diskit -> Skardu
 	link = { ck3 = 7954 ck3 = 9026 ck3 = 1351 eu4 = 2073 } # Yasin, Shigar, Gilgit -> Gilgit
 	link = { ck3 = 4357 ck3 = 4353 eu4 = 452 } # Munjan, Badakhshan -> Badakhshan
-	link = { ck3 = 4240 eu4 = 444 } # Amol -> Charjuy
+	link = { ck3 = 4240 ck3 = 4242 eu4 = 444 } # Amol, Firabr -> Charjuy
 	link = { ck3 = 4394 eu4 = 442 } # Bukhara -> Bukhara
-	link = { ck3 = 4242 eu4 = 453 } # Firabr -> Qarshi
-	link = { ck3 = 4246 eu4 = 4343 } # Zamm -> Termez
+	link = { ck3 = 4389 eu4 = 453 } # Nakhshab -> Qarshi
+	link = { ck3 = 4248 ck3 = 4246 eu4 = 4343 } # Kalif, Zamm -> Termez
 	link = { ck3 = 4334 eu4 = 450 } # Balkh -> Balkh
 	link = { ck3 = 4234 eu4 = 445 } # Merv -> Merv
 	link = { ck3 = 4215 ck3 = 4212 ck3 = 4223 eu4 = 446 } # Herat, Badghis, Rivsharan -> Herat
@@ -1046,7 +1046,7 @@
 	link = { ck3 = 5247 eu4 = 4254 } # Plyos -> Starodub
 	link = { ck3 = 5466 eu4 = 1079 } # Kolyn -> Viatka
 	link = { ck3 = 886 ck3 = 5437 eu4 = 305 } # Perm, Sebur -> Perm
-	link = { ck3 = 591 eu4 = 1081 eu4 = 2419 } # Ashli -> Simbirsk, Kanadey
+	link = { ck3 = 591 eu4 = 1081 eu4 = 2419 eu4 = 4264 } # Ashli -> Simbirsk, Kanadey, Tetyushi
 	link = { ck3 = 5441 eu4 = 1077 } # Lysva -> Solikamsk
 	link = { ck3 = 5455 ck3 = 889 ck3 = 5449 eu4 = 1963 } # Kerken, Ural, Votkinsk -> Cherdyn
 	link = { ck3 = 5401 eu4 = 1972 eu4 = 4266 eu4 = 1962 } # Elabuga -> Udmurtia, Izhkar, Kudymkar
