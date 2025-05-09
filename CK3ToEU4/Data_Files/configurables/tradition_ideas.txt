@@ -229,7 +229,8 @@ link = { ck3 = { tradition = tradition_ep3_cultivated_sophistication } eu4 = { d
 link = { ck3 = { tradition = tradition_brewery } eu4 = { tolerance_own = 2 } }
 ### 1.16 - New Tradition
 link = { ck3 = { tradition = tradition_mpo_northern_tribes } eu4 = { land_attrition = -0.10 hostile_attrition = 1 } }
-
+link = { ck3 = { tradition = tradition_devoted_horsemanship } eu4 = { movement_speed = 0.10 } }
+link = { ck3 = { tradition = tradition_mpo_wolves_of_the_deep_steppe } eu4 = { cavalry_power = 0.10 } }
 
 
 ### Rule Overrides
