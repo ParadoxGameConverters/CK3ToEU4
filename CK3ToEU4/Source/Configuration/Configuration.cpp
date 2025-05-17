@@ -13,7 +13,7 @@ Configuration::Configuration(const commonItems::ConverterVersion& converterVersi
 {
 	Log(LogLevel::Info) << "Reading configuration file";
 	registerKeys();
-	parseFile("configuration.txt");
+	parseFile(std::filesystem::path("configuration.txt"));
 	clearRegisteredKeywords();
 	setOutputName();
 	verifyCK3Path();
@@ -136,13 +136,13 @@ void Configuration::registerKeys()
 void Configuration::verifyCK3Path()
 {
 	if (!commonItems::DoesFolderExist(CK3Path))
-		throw std::runtime_error(CK3Path + " does not exist!");
+		throw std::runtime_error(CK3Path.string() + " does not exist!");
 	// TODO: OSX and Linux paths are speculative
-	if (!commonItems::DoesFileExist(CK3Path + "/binaries/ck3.exe") && !commonItems::DoesFileExist(CK3Path + "/CK3game") &&
-		 !commonItems::DoesFileExist(CK3Path + "/binaries/ck3"))
-		throw std::runtime_error(CK3Path + " does not contain Crusader Kings 3!");
-	if (!commonItems::DoesFileExist(CK3Path + "/game/map_data/positions.txt"))
-		throw std::runtime_error(CK3Path + " does not appear to be a valid CK3 install!");
+	if (!commonItems::DoesFileExist(CK3Path / "binaries/ck3.exe") && !commonItems::DoesFileExist(CK3Path / "CK3game") &&
+		 !commonItems::DoesFileExist(CK3Path / "binaries/ck3"))
+		throw std::runtime_error(CK3Path.string() + " does not contain Crusader Kings 3!");
+	if (!commonItems::DoesFileExist(CK3Path / "game/map_data/positions.txt"))
+		throw std::runtime_error(CK3Path.string() + " does not appear to be a valid CK3 install!");
 	Log(LogLevel::Info) << "\tCK3 install path is " << CK3Path;
 	CK3Path += "/game/"; // We're adding "/game/" since all we ever need from now on is in that subdirectory.
 }
@@ -150,11 +150,11 @@ void Configuration::verifyCK3Path()
 void Configuration::verifyEU4Path() const
 {
 	if (!commonItems::DoesFolderExist(EU4Path))
-		throw std::runtime_error(EU4Path + " does not exist!");
-	if (!commonItems::DoesFileExist(EU4Path + "/eu4.exe") && !commonItems::DoesFileExist(EU4Path + "/eu4"))
-		throw std::runtime_error(EU4Path + " does not contain Europa Universalis 4!");
-	if (!commonItems::DoesFileExist(EU4Path + "/map/positions.txt"))
-		throw std::runtime_error(EU4Path + " does not appear to be a valid EU4 install!");
+		throw std::runtime_error(EU4Path.string() + " does not exist!");
+	if (!commonItems::DoesFileExist(EU4Path / "eu4.exe") && !commonItems::DoesFileExist(EU4Path / "eu4"))
+		throw std::runtime_error(EU4Path.string() + " does not contain Europa Universalis 4!");
+	if (!commonItems::DoesFileExist(EU4Path / "map/positions.txt"))
+		throw std::runtime_error(EU4Path.string() + " does not appear to be a valid EU4 install!");
 	Log(LogLevel::Info) << "\tEU4 install path is " << EU4Path;
 }
 
@@ -162,19 +162,19 @@ void Configuration::setOutputName()
 {
 	if (outputName.empty())
 	{
-		outputName = trimPath(SaveGamePath);
+		outputName = SaveGamePath.filename();
 	}
-	outputName = trimExtension(outputName);
-	outputName = replaceCharacter(outputName, '-');
-	outputName = replaceCharacter(outputName, ' ');
+	auto outputNameString = outputName.stem().string();
+	outputNameString = replaceCharacter(outputNameString, '-');
+	outputNameString = replaceCharacter(outputNameString, ' ');
 
-	outputName = commonItems::normalizeUTF8Path(outputName);
-	Log(LogLevel::Info) << "Using output name " << outputName;
+	outputName = commonItems::normalizeUTF8Path(outputNameString);
+	Log(LogLevel::Info) << "Using output name " << outputName.string();
 }
 
 void Configuration::verifyCK3Version(const commonItems::ConverterVersion& converterVersion) const
 {
-	const auto CK3Version = GameVersion::extractVersionFromLauncher(CK3Path + "../launcher/launcher-settings.json");
+	const auto CK3Version = GameVersion::extractVersionFromLauncher(CK3Path / "../launcher/launcher-settings.json");
 	if (!CK3Version)
 	{
 		Log(LogLevel::Error) << "CK3 version could not be determined, proceeding blind!";
@@ -199,7 +199,7 @@ void Configuration::verifyCK3Version(const commonItems::ConverterVersion& conver
 
 void Configuration::verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const
 {
-	const auto EU4Version = GameVersion::extractVersionFromLauncher(EU4Path + "/launcher-settings.json");
+	const auto EU4Version = GameVersion::extractVersionFromLauncher(EU4Path / "launcher-settings.json");
 	if (!EU4Version)
 	{
 		Log(LogLevel::Error) << "EU4 version could not be determined, proceeding blind!";
