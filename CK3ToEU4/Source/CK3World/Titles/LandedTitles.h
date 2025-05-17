@@ -16,7 +16,7 @@ class LandedTitles: commonItems::parser
 {
   public:
 	void loadTitles(std::istream& theStream);
-	void loadTitles(const std::string& fileName);
+	void loadTitles(const std::filesystem::path& fileName);
 
 	[[nodiscard]] auto isDefiniteForm() const { return definiteForm; }
 	[[nodiscard]] auto isLandless() const { return landless; }

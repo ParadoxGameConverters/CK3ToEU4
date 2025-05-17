@@ -241,9 +241,9 @@ void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConf
 	}
 }
 
-void CK3::World::processSave(const std::string& saveGamePath)
+void CK3::World::processSave(const std::filesystem::path& saveGamePath)
 {
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::ifstream saveFile(saveGamePath, std::ios::binary);
 	std::stringstream inStream;
 	inStream << saveFile.rdbuf();
 	saveGame.gamestate = inStream.str();
@@ -287,9 +287,9 @@ void CK3::World::processSave(const std::string& saveGamePath)
 	saveDump.close();
 }
 
-void CK3::World::verifySave(const std::string& saveGamePath) const
+void CK3::World::verifySave(const std::filesystem::path& saveGamePath) const
 {
-	std::ifstream saveFile(fs::u8path(saveGamePath), std::ios::binary);
+	std::ifstream saveFile(saveGamePath, std::ios::binary);
 	if (!saveFile.is_open())
 		throw std::runtime_error("Could not open save! Exiting!");
 
@@ -304,22 +304,22 @@ void CK3::World::verifySave(const std::string& saveGamePath) const
 void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading colors.";
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/named_colors"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() / "common/named_colors"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (file.extension() != ".txt")
 			continue;
-		namedColors.loadColors(theConfiguration.getCK3Path() + "common/named_colors/" + file);
+		namedColors.loadColors(theConfiguration.getCK3Path() / "common/named_colors" / file);
 	}
 	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.path + "common/named_colors"))
+		if (!commonItems::DoesFolderExist(mod.path / "common/named_colors"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some colors from [" << mod.name << "]";
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/named_colors"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path / "common/named_colors"))
 		{
-			if (file.find(".txt") == std::string::npos)
+			if (file.extension() != ".txt")
 				continue;
-			namedColors.loadColors(mod.path + "common/named_colors/" + file);
+			namedColors.loadColors(mod.path / "common/named_colors" / file);
 		}
 	}
 	Log(LogLevel::Info) << "<> Loaded " << laFabricaDeColor.getRegisteredColors().size() << " colors.";
@@ -331,7 +331,7 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 	commonItems::ModFilesystem modFS(theConfiguration.getCK3Path(), mods);
 	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles/"))
 	{
-		if (getExtension(file) != "txt")
+		if (file.extension() != ".txt")
 			continue;
 		landedTitles.loadTitles(file);
 	}
@@ -341,22 +341,22 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Examiming Personalities";
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/traits"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() / "common/traits"))
 	{
-		if (file.find(".txt") == std::string::npos)
+		if (file.extension() != ".txt")
 			continue;
-		traitScraper.loadTraits(theConfiguration.getCK3Path() + "common/traits/" + file);
+		traitScraper.loadTraits(theConfiguration.getCK3Path() / "common/traits" / file);
 	}
 	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.path + "common/traits"))
+		if (!commonItems::DoesFolderExist(mod.path / "common/traits"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some character traits from [" << mod.name << "]";
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/traits"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path / "common/traits"))
 		{
-			if (file.find(".txt") == std::string::npos)
+			if (file.extension() !=".txt")
 				continue;
-			traitScraper.loadTraits(mod.path + "common/traits/" + file);
+			traitScraper.loadTraits(mod.path / "common/traits" / file);
 		}
 	}
 	Log(LogLevel::Info) << ">> " << traitScraper.getTraits().size() << " personalities scrutinized.";
@@ -365,22 +365,22 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 void CK3::World::loadHouseNames(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading House Names";
-	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() + "common/dynasty_houses"))
+	for (const auto& file: commonItems::GetAllFilesInFolder(theConfiguration.getCK3Path() / "common/dynasty_houses"))
 	{
-		if (getExtension(file) != "txt")
+		if (file.extension() != ".txt")
 			continue;
-		houseNameScraper.loadHouseDetails(theConfiguration.getCK3Path() + "common/dynasty_houses/" + file);
+		houseNameScraper.loadHouseDetails(theConfiguration.getCK3Path() / "common/dynasty_houses" / file);
 	}
 	for (const auto& mod: mods)
 	{
-		if (!commonItems::DoesFolderExist(mod.path + "common/dynasty_houses"))
+		if (!commonItems::DoesFolderExist(mod.path / "common/dynasty_houses"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading house names from [" << mod.name << "]";
-		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path + "common/dynasty_houses"))
+		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path / "common/dynasty_houses"))
 		{
-			if (getExtension(file) != "txt")
+			if (file.extension() != ".txt")
 				continue;
-			houseNameScraper.loadHouseDetails(mod.path + "common/dynasty_houses/" + file);
+			houseNameScraper.loadHouseDetails(mod.path / "common/dynasty_houses" / file);
 		}
 	}
 	Log(LogLevel::Info) << ">> " << houseNameScraper.getHouseNames().size() << " house names read.";

@@ -10,7 +10,7 @@ class HouseNameScraper: commonItems::parser
   public:
 	HouseNameScraper() = default;
 	void loadHouseDetails(std::istream& theStream);
-	void loadHouseDetails(const std::string& filename);
+	void loadHouseDetails(const std::filesystem::path& filename);
 
 	[[nodiscard]] std::optional<std::string> getNameForKey(const std::string& houseKey) const;
 	[[nodiscard]] std::optional<std::string> getPrefixForKey(const std::string& houseKey) const;
