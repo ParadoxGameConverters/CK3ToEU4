@@ -21,26 +21,23 @@
 #include "Log.h"
 #include <cmath>
 
-EU4::Country::Country(std::string theTag, const std::string& filePath): tag(std::move(theTag))
+EU4::Country::Country(std::string theTag, const std::filesystem::path& filePath): tag(std::move(theTag))
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
-	const auto startPos = filePath.find("/countries");
+	const auto startPos = filePath.string().find("/countries");
 	if (startPos == std::string::npos)
-		throw std::runtime_error("Cannot create country from: " + filePath);
-	commonCountryFile = filePath.substr(startPos + 1, filePath.length() - startPos);
+		throw std::runtime_error("Cannot create country from: " + filePath.string());
+	commonCountryFile = filePath.string().substr(startPos + 1, filePath.string().length() - startPos);
 	details = CountryDetails(filePath);
 
 	// We also must set a dummy history filepath for those countries that don't actually have a history file.
-	const auto lastslash = filePath.find_last_of('/');
-	const auto rawname = filePath.substr(lastslash + 1, filePath.length());
-
-	historyCountryFile = "history/countries/" + tag + " - " + rawname;
+	historyCountryFile = "history/countries/" + tag + " - " + filePath.filename().string();
 }
 
-void EU4::Country::loadHistory(const std::string& filePath)
+void EU4::Country::loadHistory(const std::filesystem::path& filePath)
 {
-	const auto startPos = filePath.find("/history");
-	historyCountryFile = filePath.substr(startPos + 1, filePath.length() - startPos);
+	const auto startPos = filePath.string().find("/history");
+	historyCountryFile = filePath.string().substr(startPos + 1, filePath.string().length() - startPos);
 	details.parseHistory(filePath);
 }
 

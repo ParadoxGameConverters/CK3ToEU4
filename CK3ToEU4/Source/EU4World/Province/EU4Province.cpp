@@ -15,15 +15,15 @@ EU4::Province::Province(const std::shared_ptr<CK3::Title>& origProvince): srcPro
 {
 }
 
-EU4::Province::Province(int id, const std::string& filePath): provID(id)
+EU4::Province::Province(int id, const std::filesystem::path& filePath): provID(id)
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
-	const auto startPos = filePath.find("/history");
-	historyProvincesFile = filePath.substr(startPos + 1, filePath.length() - startPos);
+	const auto startPos = filePath.string().find("/history");
+	historyProvincesFile = filePath.string().substr(startPos + 1, filePath.string().length() - startPos);
 	details = ProvinceDetails(filePath);
 }
 
-void EU4::Province::updateWith(const std::string& filePath)
+void EU4::Province::updateWith(const std::filesystem::path& filePath)
 {
 	// We're doing this for special reason and from a specific source.
 	details.updateWith(filePath);

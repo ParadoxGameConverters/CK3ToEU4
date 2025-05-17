@@ -17,7 +17,7 @@ struct GeneratedReligion
 	std::string province;
 	std::string unique;
 	std::string nonUnique;
-	std::string iconPath;
+	std::filesystem::path iconPath;
 	std::string religionGroup;
 	std::string staticBlob;
 	std::string name;

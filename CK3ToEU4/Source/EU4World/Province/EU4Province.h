@@ -27,9 +27,9 @@ class Province
 	Province() = default;
 	Province(const std::shared_ptr<CK3::Title>& origProvince); // For tests
 
-	Province(int id, const std::string& filePath);
+	Province(int id, const std::filesystem::path& filePath);
 
-	void updateWith(const std::string& filePath);
+	void updateWith(const std::filesystem::path& filePath);
 	void initializeFromCK3Title(const std::shared_ptr<CK3::Title>& origProvince,
 		 const mappers::CultureMapper& cultureMapper,
 		 const mappers::ReligionMapper& religionMapper,

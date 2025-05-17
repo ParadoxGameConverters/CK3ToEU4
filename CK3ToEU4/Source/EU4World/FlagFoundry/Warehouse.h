@@ -27,7 +27,7 @@ struct coloredImage
 class Warehouse
 {
   public:
-	void loadImageFolders(const std::set<std::string>& sources) { imageFolders = sources; }
+	void loadImageFolders(const std::set< std::filesystem::path>& sources) { imageFolders = sources; }
 	void storeCoA(long long ID, Magick::Image image) { coaStorage.insert(std::pair(ID, image)); }
 	[[nodiscard]] std::pair<bool, Magick::Image> getCoA(long long ID);
 
@@ -38,7 +38,7 @@ class Warehouse
   private:
 	[[nodiscard]] std::vector<std::pair<CK3::Emblem, Magick::Image>> getTextures(const std::vector<CK3::Emblem>& emblems, const std::string& directoryName);
 
-	std::set<std::string> imageFolders;
+	std::set< std::filesystem::path> imageFolders;
 
 	std::map<std::string, Magick::Image> basePatterns; // these are raw background patterns and textured emblems
 	std::map<std::string, Magick::Image> baseTextures; // these are raw colored emblems
