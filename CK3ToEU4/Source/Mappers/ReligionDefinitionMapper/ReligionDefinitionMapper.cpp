@@ -7,11 +7,11 @@ mappers::ReligionDefinitionMapper::ReligionDefinitionMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing religion definitions.";
 	registerKeys();
-	parseFile("configurables/religions/dynamic/current_icons.txt");
-	parseFile("configurables/religions/dynamic/doctrine_definitions.txt");
+	parseFile(std::filesystem::path("configurables/religions/dynamic/current_icons.txt"));
+	parseFile(std::filesystem::path("configurables/religions/dynamic/doctrine_definitions.txt"));
 	clearRegisteredKeywords();
 	registerStaticKeys();
-	parseFile("configurables/religions/dynamic/religion_globals.txt");
+	parseFile(std::filesystem::path("configurables/religions/dynamic/religion_globals.txt"));
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << mappings.size() << " religious intricacies.";
 }

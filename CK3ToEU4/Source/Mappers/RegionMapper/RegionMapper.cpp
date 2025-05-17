@@ -9,11 +9,11 @@ namespace fs = std::filesystem;
 
 void mappers::RegionMapper::loadRegions(const Configuration& theConfiguration)
 {
-	auto areaFilename = theConfiguration.getEU4Path() + "/map/area.txt";
-	auto regionFilename = theConfiguration.getEU4Path() + "/map/region.txt";
-	auto superRegionFilename = theConfiguration.getEU4Path() + "/map/superregion.txt";
+	auto areaFilename = theConfiguration.getEU4Path() / "map/area.txt";
+	auto regionFilename = theConfiguration.getEU4Path() / "map/region.txt";
+	auto superRegionFilename = theConfiguration.getEU4Path() / "map/superregion.txt";
 
-	std::ifstream areaStream(fs::u8path(areaFilename));
+	std::ifstream areaStream(areaFilename);
 	if (!areaStream.is_open())
 		throw std::runtime_error("Could not open map/area.txt!");
 	registerAreaKeys();
@@ -21,7 +21,7 @@ void mappers::RegionMapper::loadRegions(const Configuration& theConfiguration)
 	clearRegisteredKeywords();
 	areaStream.close();
 
-	std::ifstream superRegionStream(fs::u8path(superRegionFilename));
+	std::ifstream superRegionStream(superRegionFilename);
 	if (!superRegionStream.is_open())
 		throw std::runtime_error("Could not open map/superregion.txt!");
 	registerSuperRegionKeys();
@@ -29,7 +29,7 @@ void mappers::RegionMapper::loadRegions(const Configuration& theConfiguration)
 	clearRegisteredKeywords();
 	superRegionStream.close();
 
-	std::ifstream regionStream(fs::u8path(regionFilename));
+	std::ifstream regionStream(regionFilename);
 	if (!regionStream.is_open())
 		throw std::runtime_error("Could not open map/region.txt!");
 	registerRegionKeys();

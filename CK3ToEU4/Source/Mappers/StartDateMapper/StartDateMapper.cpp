@@ -5,7 +5,7 @@
 mappers::StartDateMapper::StartDateMapper()
 {
 	registerKeys();
-	parseFile("configurables/start_date.txt");
+	parseFile(std::filesystem::path("configurables/start_date.txt"));
 	clearRegisteredKeywords();
 	validateDate();
 }

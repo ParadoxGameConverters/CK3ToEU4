@@ -7,7 +7,7 @@ mappers::AfricanPassesMapper::AfricanPassesMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing African Passes.";
 	registerKeys();
-	parseFile("configurables/african_passes.txt");
+	parseFile(std::filesystem::path("configurables/african_passes.txt"));
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << passes.size() << " passes.";
 }

@@ -15,11 +15,11 @@ void mappers::CultureDefinitionsMapper::loadDefinitionsFromEU4Installation(const
 	Log(LogLevel::Info) << "Parsing Cultures and Culture Groups";
 	registerKeys();
 
-	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() + "/common/cultures/"))
-		parseFile(theConfiguration.getEU4Path() + "/common/cultures/" + cultureFile);
+	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "common/cultures/"))
+		parseFile(theConfiguration.getEU4Path() / "common/cultures" / cultureFile);
 
-	for (const auto& cultureFile: commonItems::GetAllFilesInFolder("blankMod/output/common/cultures/"))
-		parseFile("blankMod/output/common/cultures/" + cultureFile);
+	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/common/cultures/")))
+		parseFile("blankMod/output/common/cultures" / cultureFile);
 
 	clearRegisteredKeywords();
 }
