@@ -24,20 +24,18 @@
 EU4::Country::Country(std::string theTag, const std::filesystem::path& filePath): tag(std::move(theTag))
 {
 	// Load from a country file, if one exists. Otherwise rely on defaults.
-	const auto startPos = filePath.string().find("/countries");
-	if (startPos == std::string::npos)
+	if (!commonItems::DoesFileExist(filePath))
 		throw std::runtime_error("Cannot create country from: " + filePath.string());
-	commonCountryFile = filePath.string().substr(startPos + 1, filePath.string().length() - startPos);
+	commonCountryFile = filePath.filename();
 	details = CountryDetails(filePath);
 
 	// We also must set a dummy history filepath for those countries that don't actually have a history file.
-	historyCountryFile = "history/countries/" + tag + " - " + filePath.filename().string();
+	historyCountryFile = tag + " - " + filePath.filename().string();
 }
 
 void EU4::Country::loadHistory(const std::filesystem::path& filePath)
 {
-	const auto startPos = filePath.string().find("/history");
-	historyCountryFile = filePath.string().substr(startPos + 1, filePath.string().length() - startPos);
+	historyCountryFile = filePath.filename();
 	details.parseHistory(filePath);
 }
 
@@ -63,9 +61,9 @@ void EU4::Country::initializeFromTitle(const std::string& theTag,
 		conversionDate = date(1444, 11, 11);
 	title = theTitle;
 	if (commonCountryFile.empty())
-		commonCountryFile = "countries/" + title->first + ".txt";
+		commonCountryFile = title->first + ".txt";
 	if (historyCountryFile.empty())
-		historyCountryFile = "history/countries/" + tag + " - " + title->first + ".txt";
+		historyCountryFile = tag + " - " + title->first + ".txt";
 
 	details.holder = title->second->getHolder()->second;
 	if (details.holder->getHouse().first)

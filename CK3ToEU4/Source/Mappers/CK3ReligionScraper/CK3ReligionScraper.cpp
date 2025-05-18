@@ -8,7 +8,7 @@ void mappers::CK3ReligionScraper::scrapeCK3Religions(const commonItems::ModFiles
 {
 	Log(LogLevel::Info) << "-> Scraping CK3 religion hierarchy.";
 	registerKeys();
-	ParseGameFolder("common/religion/religions", modFS, {"txt"}, false);
+	ParseGameFolder("common/religion/religions", modFS, {".txt"}, false);
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << religionFaiths.size() << " religions.";
 }

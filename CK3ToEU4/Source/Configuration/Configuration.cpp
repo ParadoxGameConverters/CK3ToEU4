@@ -36,7 +36,7 @@ void Configuration::registerKeys()
 	registerKeyword("SaveGame", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
 		SaveGamePath = path.getString();
-		Log(LogLevel::Info) << "Save Game set to: " << SaveGamePath;
+		Log(LogLevel::Info) << "Save Game set to: " << SaveGamePath.string();
 	});
 	registerKeyword("CK3directory", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString path(theStream);
@@ -53,7 +53,7 @@ void Configuration::registerKeys()
 	registerKeyword("output_name", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString nameStr(theStream);
 		outputName = nameStr.getString();
-		Log(LogLevel::Info) << "Output name set to: " << outputName;
+		Log(LogLevel::Info) << "Output name set to: " << outputName.string();
 	});
 	registerKeyword("start_date", [this](const std::string& unused, std::istream& theStream) {
 		const commonItems::singleString startDateString(theStream);
@@ -143,7 +143,7 @@ void Configuration::verifyCK3Path()
 		throw std::runtime_error(CK3Path.string() + " does not contain Crusader Kings 3!");
 	if (!commonItems::DoesFileExist(CK3Path / "game/map_data/positions.txt"))
 		throw std::runtime_error(CK3Path.string() + " does not appear to be a valid CK3 install!");
-	Log(LogLevel::Info) << "\tCK3 install path is " << CK3Path;
+	Log(LogLevel::Info) << "\tCK3 install path is " << CK3Path.string();
 	CK3Path += "/game/"; // We're adding "/game/" since all we ever need from now on is in that subdirectory.
 }
 
@@ -155,7 +155,7 @@ void Configuration::verifyEU4Path() const
 		throw std::runtime_error(EU4Path.string() + " does not contain Europa Universalis 4!");
 	if (!commonItems::DoesFileExist(EU4Path / "map/positions.txt"))
 		throw std::runtime_error(EU4Path.string() + " does not appear to be a valid EU4 install!");
-	Log(LogLevel::Info) << "\tEU4 install path is " << EU4Path;
+	Log(LogLevel::Info) << "\tEU4 install path is " << EU4Path.string();
 }
 
 void Configuration::setOutputName()

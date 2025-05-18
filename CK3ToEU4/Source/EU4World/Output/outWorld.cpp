@@ -380,7 +380,7 @@ void EU4::World::outputCommonCountriesFile(const Configuration& theConfiguration
 		if (specialCountryTags.count(country.first))
 			continue; // Not outputting specials.
 		if (country.first != "REB")
-			output << country.first << " = \"" << country.second->getCommonCountryFile() << "\"\n";
+			output << country.first << " = \"countries/" << country.second->getCommonCountryFile().string() << "\"\n";
 	}
 	output << "\n";
 	output.close();
@@ -390,10 +390,10 @@ void EU4::World::outputCommonCountries(const Configuration& theConfiguration) co
 {
 	for (const auto& country: countries)
 	{
-		std::ofstream output("output" / theConfiguration.getOutputName() / "common" / country.second->getCommonCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "common/countries" / country.second->getCommonCountryFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country common file: output/" + theConfiguration.getOutputName().string() + "/common/" + country.second->getCommonCountryFile());
+			throw std::runtime_error("Could not create country common file: output/" + theConfiguration.getOutputName().string() + "/common/countries/" +
+											 country.second->getCommonCountryFile().string());
 		country.second->outputCommons(output);
 		output.close();
 	}
@@ -403,10 +403,10 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 {
 	for (const auto& country: countries)
 	{
-		std::ofstream output("output" / theConfiguration.getOutputName() / country.second->getHistoryCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "history/countries" / country.second->getHistoryCountryFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/" + country.second->getHistoryCountryFile());
+			throw std::runtime_error("Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/history/countries/" +
+											 country.second->getHistoryCountryFile().string());
 		output << *country.second;
 		output.close();
 	}
@@ -443,10 +443,10 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 {
 	for (const auto& province: provinces | std::views::values)
 	{
-		std::ofstream output("output" / theConfiguration.getOutputName() / province->getHistoryCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "history/provinces" / province->getHistoryProvincesFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/" + province->getHistoryCountryFile());
+			throw std::runtime_error("Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/history/provinces/" +
+											 province->getHistoryProvincesFile().string());
 		output << *province;
 		output.close();
 	}

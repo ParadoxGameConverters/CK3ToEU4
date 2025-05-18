@@ -671,14 +671,14 @@ void EU4::World::importVanillaProvinces(const std::filesystem::path& eu4Path, bo
 	Log(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
 	if (invasion)
 	{
-		for (const auto& fileName: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/provinces/")))
+		for (const auto& fileName: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/provinces")))
 		{
 			if (fileName.extension() != ".txt")
 				continue;
 			auto id = std::stoi(fileName);
 			const auto& provinceItr = provinces.find(id);
 			if (provinceItr != provinces.end())
-				provinceItr->second->updateWith(std::filesystem::path("configurables/sunset/history/provinces") / fileName);
+				provinceItr->second->updateWith("configurables/sunset/history/provinces" / fileName);
 		}
 	}
 }

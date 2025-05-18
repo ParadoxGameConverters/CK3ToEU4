@@ -153,8 +153,8 @@ class Country
 		 const date& startDate) const; // Uses bookmark date to shift dates if required.
 
 	std::string tag;
-	std::string commonCountryFile;
-	std::string historyCountryFile;
+	std::filesystem::path commonCountryFile;
+	std::filesystem::path historyCountryFile;
 	date conversionDate; // for dating the monarchs in history file.
 	CountryDetails details;
 

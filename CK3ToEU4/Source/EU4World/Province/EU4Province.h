@@ -38,7 +38,7 @@ class Province
 		 Configuration::DISCOVEREDBY discoveredBy);
 	void registerManualName(const mappers::LocDegraderMapper& locDegrader);
 
-	[[nodiscard]] const auto& getHistoryCountryFile() const { return historyProvincesFile; }
+	[[nodiscard]] const auto& getHistoryProvincesFile() const { return historyProvincesFile; }
 	[[nodiscard]] const auto& getTagCountry() const { return tagCountry; }
 	[[nodiscard]] const auto& getOwner() const { return details.owner; }
 	[[nodiscard]] const auto& getReligion() const { return details.religion; }
@@ -72,7 +72,7 @@ class Province
 
   private:
 	int provID = 0;
-	std::string historyProvincesFile;
+	std::filesystem::path historyProvincesFile;
 	std::shared_ptr<CK3::Title> srcProvince;
 	ProvinceDetails details;
 	std::pair<std::string, std::shared_ptr<Country>> tagCountry;
