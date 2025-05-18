@@ -354,7 +354,7 @@ void CK3::World::loadCharacterTraits(const Configuration& theConfiguration)
 		Log(LogLevel::Info) << "<> Loading some character traits from [" << mod.name << "]";
 		for (const auto& file: commonItems::GetAllFilesInFolder(mod.path / "common/traits"))
 		{
-			if (file.extension() !=".txt")
+			if (file.extension() != ".txt")
 				continue;
 			traitScraper.loadTraits(mod.path / "common/traits" / file);
 		}
