@@ -184,7 +184,7 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 		}
 		if (!foundIcon)
 		{
-			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
+			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath.string() << ", skipping!";
 			targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 		}
 	}
@@ -222,7 +222,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 			iconPathDds += ".dds";
 			auto trimmedIconPath = religion.iconPath.filename().stem();
 			trimmedIconPath += ".dds";
-			auto overridePath = std::filesystem::path("configurables/gfx/custom_faith_icons") / trimmedIconPath; // one of these three should be it.
+			auto overridePath = "configurables/gfx/custom_faith_icons" / trimmedIconPath; // one of these three should be it.
 			auto path1 = theConfiguration.getCK3Path() / religion.iconPath;
 			auto path2 = theConfiguration.getCK3Path() / "gfx/interface/icons/faith" / iconPathDds;
 			if (commonItems::DoesFileExist(overridePath))
@@ -262,7 +262,7 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 			}
 			if (!foundIcon)
 			{
-				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
+				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath.string() << ", skipping!";
 				sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 			}
 		}

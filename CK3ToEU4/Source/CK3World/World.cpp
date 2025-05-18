@@ -329,7 +329,7 @@ void CK3::World::loadLandedTitles(const Configuration& theConfiguration)
 {
 	Log(LogLevel::Info) << "-> Loading Landed Titles.";
 	commonItems::ModFilesystem modFS(theConfiguration.getCK3Path(), mods);
-	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles/"))
+	for (const auto& file: modFS.GetAllFilesInFolder("common/landed_titles"))
 	{
 		if (file.extension() != ".txt")
 			continue;

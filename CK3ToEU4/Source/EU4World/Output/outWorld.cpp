@@ -45,7 +45,7 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion,
 	}
 	Log(LogLevel::Progress) << "81 %";
 
-	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName().string();
 	try
 	{
 		fs::rename("output/output", "output" / theConfiguration.getOutputName());
@@ -297,7 +297,7 @@ void EU4::World::outputBookmark(const Configuration& theConfiguration, date conv
 
 void EU4::World::createModFile(const Configuration& theConfiguration) const
 {
-	std::ofstream output("output" + theConfiguration.getOutputName().string() + ".mod");
+	std::ofstream output("output/" + theConfiguration.getOutputName().string() + ".mod");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + ".mod");
 	Log(LogLevel::Info) << "<< Writing to: "
@@ -309,7 +309,7 @@ void EU4::World::createModFile(const Configuration& theConfiguration) const
 	if (!output2.is_open())
 		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + "/descriptor.mod");
 	Log(LogLevel::Info) << "<< Writing to: "
-							  << "output" / theConfiguration.getOutputName() / "descriptor.mod";
+							  << "output/" + theConfiguration.getOutputName().string() + "descriptor.mod";
 	output2 << modFile;
 	output2.close();
 }

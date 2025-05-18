@@ -415,7 +415,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 			std::ifstream blankCountriesFile("blankMod/output/common/country_tags" / file);
 			if (!blankCountriesFile.is_open())
 				throw std::runtime_error("Could not open blankMod/output/common/country_tags/" + file.string() + "!");
-			loadCountriesFromSource(blankCountriesFile, "blankMod/output/", false);
+			loadCountriesFromSource(blankCountriesFile, "blankMod/output", false);
 			blankCountriesFile.close();
 		}
 	}
@@ -425,7 +425,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 		std::ifstream sunset("configurables/sunset/common/country_tags/zz_countries.txt");
 		if (!sunset.is_open())
 			throw std::runtime_error("Could not open configurables/sunset/common/country_tags/zz_countries.txt!");
-		loadCountriesFromSource(sunset, "configurables/sunset/", true);
+		loadCountriesFromSource(sunset, "configurables/sunset", true);
 		sunset.close();
 	}
 
@@ -453,7 +453,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 		auto tag = fileName.string().substr(0, 3);
 		if (countries.contains(tag))
 		{
-			countries[tag]->loadHistory(std::filesystem::path("blankMod/output/history/countries") / fileName);
+			countries[tag]->loadHistory("blankMod/output/history/countries" / fileName);
 		}
 		else
 		{
@@ -470,7 +470,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 			{
 				countries[tag]->setSunsetCountry(true);
 				countries[tag]->clearHistoryLessons();
-				countries[tag]->loadHistory(std::filesystem::path("configurables/sunset/history/countries") / fileName);
+				countries[tag]->loadHistory("configurables/sunset/history/countries" / fileName);
 			}
 			else
 			{

@@ -122,7 +122,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("Static Template, usually very short.", newReligion.staticBlob);
 	ASSERT_TRUE(newReligion.nonUnique.empty());
 	ASSERT_EQ(10, newReligion.icon);
-	ASSERT_EQ("someicon.dds", newReligion.iconPath);
+	ASSERT_EQ(std::filesystem::path("someicon.dds"), newReligion.iconPath);
 	ASSERT_EQ("religion_group1", newReligion.religionGroup);
 	ASSERT_EQ("converted_dyn_faith_345", newReligion.name);
 	ASSERT_EQ("religion2", newReligion.parent);
