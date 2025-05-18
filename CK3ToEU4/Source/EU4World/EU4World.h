@@ -108,11 +108,11 @@ class World
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
-	void outputDynamicIdeasFile(const std::string& outputName) const;
-	void outputReligions(const std::string& outputName,
+	void outputDynamicIdeasFile(const std::filesystem::path& outputName) const;
+	void outputReligions(const std::filesystem::path& outputName,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;
-	void outputCultures(const std::string& outputName) const;
+	void outputCultures(const std::filesystem::path& outputName) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const;
 	void annexHordes(const std::string& tag,
 		 std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies,
