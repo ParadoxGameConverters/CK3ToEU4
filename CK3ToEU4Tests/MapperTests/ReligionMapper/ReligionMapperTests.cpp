@@ -113,7 +113,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("converted_dyn_faith_345", *match); // it's a new mapping we created.
 
 	const auto& dynamics = theMapper.getGeneratedReligions();
-	const auto newReligion = dynamics[0]; // these will be its details.
+	const auto& newReligion = dynamics[0]; // these will be its details.
 
 	ASSERT_EQ("country=great\ncountry=poor\n", newReligion.country);
 	ASSERT_TRUE(newReligion.countrySecondary.empty());
