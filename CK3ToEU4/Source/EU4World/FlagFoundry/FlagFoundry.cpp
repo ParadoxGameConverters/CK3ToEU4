@@ -9,6 +9,7 @@
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
+#include <ranges>
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -21,15 +22,15 @@ EU4::FlagFoundry::FlagFoundry()
 
 void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, const Mods& mods) const
 {
-	std::set<std::filesystem::path> folders;
-	folders.insert(theConfiguration.getCK3Path() / "gfx/coat_of_arms");
-	for (const auto& mod: mods)
+	std::vector<std::filesystem::path> folders;
+	for (const auto& mod: mods | std::views::reverse)
 	{
 		if (!commonItems::DoesFolderExist(mod.path / "gfx/coat_of_arms"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some garments from [" << mod.name << "]";
-		folders.insert(mod.path / "gfx/coat_of_arms");
+		folders.push_back(mod.path / "gfx/coat_of_arms");
 	}
+	folders.push_back(theConfiguration.getCK3Path() / "gfx/coat_of_arms");
 	warehouse->loadImageFolders(folders);
 }
 
