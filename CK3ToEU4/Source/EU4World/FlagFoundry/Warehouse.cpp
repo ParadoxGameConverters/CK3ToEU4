@@ -171,7 +171,10 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		newImageBlock.imageData = recolorer.craftTextureImage(newImageBlock);
 
 		// Store for posterity.
-		texturedStorage.emplace_back(newImageBlock);
+		if (directoryName == "colored_emblems")
+			coloredStorage.emplace_back(newImageBlock);
+		else if (directoryName == "textured_emblems")
+			texturedStorage.emplace_back(newImageBlock);
 
 		// And fulfill order
 		toReturn.emplace_back(std::pair(emblem, newImageBlock.imageData));
