@@ -26,7 +26,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	bool initProvinceMapper = false;
 	for (const auto& mod: sourceWorld.getMods())
 	{
-		if (commonItems::DoesFileExist("configurables/" + mod.name + "_province_mappings.txt"))
+		if (commonItems::DoesFileExist(std::filesystem::path("configurables") / (mod.name + "_province_mappings.txt")))
 		{
 			Log(LogLevel::Info) << ">> Found matching province mappings for mod [" << mod.name << "], loading.";
 			provinceMapper = mappers::ProvinceMapper("configurables/" + mod.name + "_province_mappings.txt");
@@ -397,35 +397,35 @@ void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared
 }
 
 
-void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasion)
+void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bool invasion)
 {
 	Log(LogLevel::Info) << "-> Importing Vanilla Countries";
 	// ---- Loading common/countries/
-	std::ifstream eu4CountriesFile(fs::u8path(eu4Path + "/common/country_tags/00_countries.txt"));
+	std::ifstream eu4CountriesFile(eu4Path / "common/country_tags/00_countries.txt");
 	if (!eu4CountriesFile.is_open())
-		throw std::runtime_error("Could not open " + eu4Path + "/common/country_tags/00_countries.txt!");
+		throw std::runtime_error("Could not open " + eu4Path.string() + "common/country_tags/00_countries.txt!");
 	loadCountriesFromSource(eu4CountriesFile, eu4Path, true);
 	eu4CountriesFile.close();
 
-	if (commonItems::DoesFolderExist("blankMod/output/common/country_tags/"))
+	if (commonItems::DoesFolderExist(std::filesystem::path("blankMod/output/common/country_tags")))
 	{
-		auto fileNames = commonItems::GetAllFilesInFolder("blankMod/output/common/country_tags/");
+		auto fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/common/country_tags"));
 		for (const auto& file: fileNames)
 		{
-			std::ifstream blankCountriesFile(fs::u8path("blankMod/output/common/country_tags/" + file));
+			std::ifstream blankCountriesFile("blankMod/output/common/country_tags" / file);
 			if (!blankCountriesFile.is_open())
-				throw std::runtime_error("Could not open blankMod/output/common/country_tags/" + file + "!");
-			loadCountriesFromSource(blankCountriesFile, "blankMod/output/", false);
+				throw std::runtime_error("Could not open blankMod/output/common/country_tags/" + file.string() + "!");
+			loadCountriesFromSource(blankCountriesFile, "blankMod/output", false);
 			blankCountriesFile.close();
 		}
 	}
 
 	if (invasion)
 	{
-		std::ifstream sunset(fs::u8path("configurables/sunset/common/country_tags/zz_countries.txt"));
+		std::ifstream sunset("configurables/sunset/common/country_tags/zz_countries.txt");
 		if (!sunset.is_open())
 			throw std::runtime_error("Could not open configurables/sunset/common/country_tags/zz_countries.txt!");
-		loadCountriesFromSource(sunset, "configurables/sunset/", true);
+		loadCountriesFromSource(sunset, "configurables/sunset", true);
 		sunset.close();
 	}
 
@@ -433,13 +433,13 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 
 	Log(LogLevel::Info) << "-> Importing Vanilla Country History";
 	// ---- Loading history/countries/
-	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/countries/");
+	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path / "history/countries");
 	for (const auto& fileName: fileNames)
 	{
-		auto tag = fileName.substr(0, 3);
+		auto tag = fileName.string().substr(0, 3);
 		if (countries.contains(tag))
 		{
-			countries[tag]->loadHistory(eu4Path + "/history/countries/" + fileName);
+			countries[tag]->loadHistory(eu4Path / "history/countries" / fileName);
 		}
 		else
 		{
@@ -447,13 +447,13 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 		}
 	}
 	// Now our special tags.
-	fileNames = commonItems::GetAllFilesInFolder("blankMod/output/history/countries/");
+	fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/history/countries"));
 	for (const auto& fileName: fileNames)
 	{
-		auto tag = fileName.substr(0, 3);
+		auto tag = fileName.string().substr(0, 3);
 		if (countries.contains(tag))
 		{
-			countries[tag]->loadHistory("blankMod/output/history/countries/" + fileName);
+			countries[tag]->loadHistory("blankMod/output/history/countries" / fileName);
 		}
 		else
 		{
@@ -462,15 +462,15 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 	}
 	if (invasion)
 	{
-		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/countries/");
+		fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/countries"));
 		for (const auto& fileName: fileNames)
 		{
-			auto tag = fileName.substr(0, 3);
+			auto tag = fileName.string().substr(0, 3);
 			if (countries.contains(tag))
 			{
 				countries[tag]->setSunsetCountry(true);
 				countries[tag]->clearHistoryLessons();
-				countries[tag]->loadHistory("configurables/sunset/history/countries/" + fileName);
+				countries[tag]->loadHistory("configurables/sunset/history/countries" / fileName);
 			}
 			else
 			{
@@ -481,7 +481,7 @@ void EU4::World::importVanillaCountries(const std::string& eu4Path, bool invasio
 	Log(LogLevel::Info) << ">> Loaded " << fileNames.size() << " history files.";
 }
 
-void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource)
+void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::filesystem::path& sourcePath, bool isVanillaSource)
 {
 	while (!theStream.eof())
 	{
@@ -507,7 +507,7 @@ void EU4::World::loadCountriesFromSource(std::istream& theStream, const std::str
 			continue;
 		}
 		countryLine = countryLine.substr(0, quoteLoc);
-		const auto filePath = sourcePath + "/common/" + countryLine;
+		const auto filePath = sourcePath / "common" / countryLine;
 
 		// We're soaking up all vanilla countries with all current definitions.
 		const auto newCountry = std::make_shared<Country>(tag, filePath);
@@ -641,21 +641,20 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	}
 }
 
-void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasion)
+void EU4::World::importVanillaProvinces(const std::filesystem::path& eu4Path, bool invasion)
 {
 	Log(LogLevel::Info) << "-> Importing Vanilla Provinces";
 	// ---- Loading history/provinces
-	auto fileNames = commonItems::GetAllFilesInFolder(eu4Path + "/history/provinces/");
-	for (const auto& fileName: fileNames)
+	for (const auto& fileName: commonItems::GetAllFilesInFolder(eu4Path / "history/provinces"))
 	{
-		if (fileName.find(".txt") == std::string::npos)
+		if (fileName.extension() != ".txt")
 			continue;
-		if (fileName.starts_with("~"))
+		if (fileName.string().starts_with("~"))
 			continue;
 		try
 		{
 			const auto id = std::stoi(fileName);
-			auto newProvince = std::make_shared<Province>(id, eu4Path + "/history/provinces/" + fileName);
+			auto newProvince = std::make_shared<Province>(id, eu4Path / "history/provinces" / fileName);
 			if (provinces.count(id))
 			{
 				Log(LogLevel::Warning) << "Vanilla province duplication - " << id << " already loaded! Overwriting.";
@@ -672,15 +671,14 @@ void EU4::World::importVanillaProvinces(const std::string& eu4Path, bool invasio
 	Log(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
 	if (invasion)
 	{
-		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/provinces/");
-		for (const auto& fileName: fileNames)
+		for (const auto& fileName: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/provinces")))
 		{
-			if (fileName.find(".txt") == std::string::npos)
+			if (fileName.extension() != ".txt")
 				continue;
 			auto id = std::stoi(fileName);
 			const auto& provinceItr = provinces.find(id);
 			if (provinceItr != provinces.end())
-				provinceItr->second->updateWith("configurables/sunset/history/provinces/" + fileName);
+				provinceItr->second->updateWith("configurables/sunset/history/provinces" / fileName);
 		}
 	}
 }

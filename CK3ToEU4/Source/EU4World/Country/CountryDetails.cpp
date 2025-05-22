@@ -4,7 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-EU4::CountryDetails::CountryDetails(const std::string& filePath)
+EU4::CountryDetails::CountryDetails(const std::filesystem::path& filePath)
 {
 	registerKeys();
 	if (commonItems::DoesFileExist(filePath))
@@ -21,7 +21,7 @@ EU4::CountryDetails::CountryDetails(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void EU4::CountryDetails::parseHistory(const std::string& filePath)
+void EU4::CountryDetails::parseHistory(const std::filesystem::path& filePath)
 {
 	registerHistoryKeys();
 	parseFile(filePath);

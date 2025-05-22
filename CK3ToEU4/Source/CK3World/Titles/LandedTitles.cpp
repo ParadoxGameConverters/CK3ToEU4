@@ -22,7 +22,7 @@ void CK3::LandedTitles::loadTitles(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void CK3::LandedTitles::loadTitles(const std::string& fileName)
+void CK3::LandedTitles::loadTitles(const std::filesystem::path& fileName)
 {
 	registerKeys();
 	parseFile(fileName);

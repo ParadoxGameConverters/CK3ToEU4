@@ -9,6 +9,7 @@
 #include "Magick++.h"
 #include "OSCompatibilityLayer.h"
 #include "Warehouse.h"
+#include <ranges>
 
 // This is the only class that interacts with imageMagick, outside of EU4World, which depends on this one.
 
@@ -21,15 +22,15 @@ EU4::FlagFoundry::FlagFoundry()
 
 void EU4::FlagFoundry::loadImageFolders(const Configuration& theConfiguration, const Mods& mods) const
 {
-	std::set<std::string> folders;
-	folders.insert(theConfiguration.getCK3Path() + "gfx/coat_of_arms/");
-	for (const auto& mod: mods)
+	std::vector<std::filesystem::path> folders;
+	for (const auto& mod: mods | std::views::reverse)
 	{
-		if (!commonItems::DoesFolderExist(mod.path + "/gfx/coat_of_arms/"))
+		if (!commonItems::DoesFolderExist(mod.path / "gfx/coat_of_arms"))
 			continue;
 		Log(LogLevel::Info) << "<> Loading some garments from [" << mod.name << "]";
-		folders.insert(mod.path + "/gfx/coat_of_arms/");
+		folders.push_back(mod.path / "gfx/coat_of_arms");
 	}
+	folders.push_back(theConfiguration.getCK3Path() / "gfx/coat_of_arms");
 	warehouse->loadImageFolders(folders);
 }
 
@@ -39,9 +40,9 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 	 const Mods& mods) const
 {
 	// prep the battleground.
-	if (!commonItems::DeleteFolder("flags.tmp"))
+	if (std::filesystem::exists("flags.tmp") && std::filesystem::remove_all("flags.tmp") == static_cast<std::uintmax_t>(-1))
 		Log(LogLevel::Error) << "Could not delete flags.tmp folder!";
-	else if (!commonItems::TryCreateFolder("flags.tmp"))
+	else if (!std::filesystem::create_directory("flags.tmp"))
 		throw std::runtime_error("Could not create flags.tmp folder!");
 
 	// For every tag we must have a flag. This can be vanilla flag (in which case we do nothing), or
@@ -60,15 +61,17 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 		{
 			const auto dynastyID = country.second->getHouse()->getDynasty().first;
 			// Do we have an appropriate flag?
-			if (commonItems::DoesFileExist("configurables/dynastyflags/" + std::to_string(dynastyID) + ".tga"))
+			if (commonItems::DoesFileExist(std::filesystem::path("configurables/dynastyflags") / (std::to_string(dynastyID) + ".tga")))
 			{
-				commonItems::TryCopyFile("configurables/dynastyflags/" + std::to_string(dynastyID) + ".tga", "flags.tmp/" + country.first + ".tga");
+				std::filesystem::copy_file(std::filesystem::path("configurables/dynastyflags") / (std::to_string(dynastyID) + ".tga"),
+					 std::filesystem::path("flags.tmp") / (country.first + ".tga"),
+					 std::filesystem::copy_options::overwrite_existing);
 				continue; // and this country is done.
 			}
 		}
 
 		// Do we have an alternate flag source?
-		if (commonItems::DoesFileExist("blankMod/output/gfx/flags/" + country.first + ".tga"))
+		if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/gfx/flags") / (country.first + ".tga")))
 			continue; // This will be copied over by outWorld.
 
 		if (theConfiguration.getPlayerTitle() && country.second->getTitle() && country.second->getTitle()->first == *theConfiguration.getPlayerTitle())
@@ -79,7 +82,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 		}
 
 		// Otherwise, do we need a flag at all?
-		if (commonItems::DoesFileExist(theConfiguration.getEU4Path() + "/gfx/flags/" + country.first + ".tga"))
+		if (commonItems::DoesFileExist(theConfiguration.getEU4Path() / "gfx/flags" / (country.first + ".tga")))
 			continue; // We'll be using vanilla flag.
 
 		// We do.
@@ -88,7 +91,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 
 	// Do not forget about our SDM.
 	if (theConfiguration.getSunset() == Configuration::SUNSET::ACTIVE)
-		commonItems::TryCopyFile("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga");
+		std::filesystem::copy_file("configurables/sunset/gfx/flags/SDM.tga", "flags.tmp/SDM.tga", std::filesystem::copy_options::overwrite_existing);
 
 	// Time for Religious Rebels
 	for (const auto& religion: religions)
@@ -137,7 +140,7 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const Mods& mods) const
 {
 	// Import the generic Rebel Flag
-	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
+	if (!commonItems::DoesFileExist(std::filesystem::path("blankMod/output/gfx/flags/generic_rebels.tga")))
 		throw std::runtime_error("blankMod/output/gfx/flags/generic_rebels.tga! Where are the rebel scum!?");
 	Magick::Image baseFlag("blankMod/output/gfx/flags/generic_rebels.tga");
 
@@ -146,41 +149,43 @@ void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, con
 	if (!religion.iconPath.empty())
 	{
 		auto foundIcon = false;
-		auto path1 = theConfiguration.getCK3Path() + religion.iconPath; // one of these two should be it.
-		auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+		auto path1 = theConfiguration.getCK3Path() / religion.iconPath; // one of these two should be it.
+		auto iconPathDds = religion.iconPath;
+		iconPathDds += ".dds";
+		auto path2 = theConfiguration.getCK3Path() / "gfx/interface/icons/faith" / iconPathDds;
 		if (commonItems::DoesFileExist(path1))
 		{
 			foundIcon = true;
-			targetIcon.read(path1);
+			targetIcon.read(path1.string());
 		}
 		if (!foundIcon && commonItems::DoesFileExist(path2))
 		{
 			foundIcon = true;
-			targetIcon.read(path2);
+			targetIcon.read(path2.string());
 		}
 		if (!foundIcon)
 		{
 			for (const auto& mod: mods)
 			{
-				path1 = mod.path + "/" + religion.iconPath;
-				path2 = mod.path + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+				path1 = mod.path / religion.iconPath;
+				path2 = mod.path / "gfx/interface/icons/faith" / iconPathDds;
 				if (commonItems::DoesFileExist(path1))
 				{
 					foundIcon = true;
-					targetIcon.read(path1);
+					targetIcon.read(path1.string());
 					break;
 				}
 				if (commonItems::DoesFileExist(path2))
 				{
 					foundIcon = true;
-					targetIcon.read(path2);
+					targetIcon.read(path2.string());
 					break;
 				}
 			}
 		}
 		if (!foundIcon)
 		{
-			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
+			Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath.string() << ", skipping!";
 			targetIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 		}
 	}
@@ -214,48 +219,51 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		if (!religion.iconPath.empty())
 		{
 			auto foundIcon = false;
-			auto trimmedIconPath = trimPath(trimExtension(religion.iconPath));
-			auto overridePath = "configurables/gfx/custom_faith_icons/" + trimmedIconPath + ".dds"; // one of these three should be it.
-			auto path1 = theConfiguration.getCK3Path() + religion.iconPath;
-			auto path2 = theConfiguration.getCK3Path() + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+			auto iconPathDds = religion.iconPath;
+			iconPathDds += ".dds";
+			auto trimmedIconPath = religion.iconPath.filename().stem();
+			trimmedIconPath += ".dds";
+			auto overridePath = "configurables/gfx/custom_faith_icons" / trimmedIconPath; // one of these three should be it.
+			auto path1 = theConfiguration.getCK3Path() / religion.iconPath;
+			auto path2 = theConfiguration.getCK3Path() / "gfx/interface/icons/faith" / iconPathDds;
 			if (commonItems::DoesFileExist(overridePath))
 			{
 				foundIcon = true;
-				sourceIcon.read(overridePath);
+				sourceIcon.read(overridePath.string());
 			}
 			if (!foundIcon && commonItems::DoesFileExist(path1))
 			{
 				foundIcon = true;
-				sourceIcon.read(path1);
+				sourceIcon.read(path1.string());
 			}
 			if (!foundIcon && commonItems::DoesFileExist(path2))
 			{
 				foundIcon = true;
-				sourceIcon.read(path2);
+				sourceIcon.read(path2.string());
 			}
 			if (!foundIcon)
 			{
 				for (const auto& mod: mods)
 				{
-					path1 = mod.path + "/" + religion.iconPath;
-					path2 = mod.path + "/gfx/interface/icons/faith/" + religion.iconPath + ".dds";
+					path1 = mod.path / religion.iconPath;
+					path2 = mod.path / "gfx/interface/icons/faith" / iconPathDds;
 					if (commonItems::DoesFileExist(path1))
 					{
 						foundIcon = true;
-						sourceIcon.read(path1);
+						sourceIcon.read(path1.string());
 						break;
 					}
 					if (commonItems::DoesFileExist(path2))
 					{
 						foundIcon = true;
-						sourceIcon.read(path2);
+						sourceIcon.read(path2.string());
 						break;
 					}
 				}
 			}
 			if (!foundIcon)
 			{
-				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath << ", skipping!";
+				Log(LogLevel::Warning) << "Could not find religious icon: " << religion.iconPath.string() << ", skipping!";
 				sourceIcon = Magick::Image("100x100", Magick::Color("transparent")); // blank.
 			}
 		}
@@ -267,11 +275,11 @@ void EU4::FlagFoundry::extendReligionStrips(const Configuration& theConfiguratio
 		// Process target strips
 		for (const auto& target: targetStrips)
 		{
-			if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target))
-				throw std::runtime_error("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target + "! Where are our religion strips?");
-			Magick::Image targetStrip("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target);
+			if (!commonItems::DoesFileExist("output" / theConfiguration.getOutputName() / "gfx/interface" / target))
+				throw std::runtime_error("output/" + theConfiguration.getOutputName().string() + "/gfx/interface/" + target + "! Where are our religion strips?");
+			Magick::Image targetStrip("output" + theConfiguration.getOutputName().string() + "/gfx/interface/" + target);
 			targetStrip = extendReligionStrip(targetStrip, sourceIcon);
-			targetStrip.write("output/" + theConfiguration.getOutputName() + "/gfx/interface/" + target);
+			targetStrip.write("output/" + theConfiguration.getOutputName().string() + "/gfx/interface/" + target);
 		}
 	}
 }

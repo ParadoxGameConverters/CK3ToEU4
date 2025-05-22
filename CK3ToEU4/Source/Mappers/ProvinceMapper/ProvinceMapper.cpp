@@ -17,7 +17,7 @@ mappers::ProvinceMapper::ProvinceMapper(std::istream& theStream)
 	createMappings();
 }
 
-mappers::ProvinceMapper::ProvinceMapper(const std::string& fileName)
+mappers::ProvinceMapper::ProvinceMapper(const std::filesystem::path& fileName)
 {
 	Log(LogLevel::Info) << "-> Parsing province mappings";
 	registerKeys();

@@ -44,15 +44,15 @@ class World
   private:
 	// import
 	void verifyAllCountyMappings(const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
-	void importVanillaCountries(const std::string& eu4Path, bool invasion);
-	void loadCountriesFromSource(std::istream& theStream, const std::string& sourcePath, bool isVanillaSource);
+	void importVanillaCountries(const std::filesystem::path& eu4Path, bool invasion);
+	void loadCountriesFromSource(std::istream& theStream, const std::filesystem::path& sourcePath, bool isVanillaSource);
 	void importCK3Countries(const CK3::World& sourceWorld, Configuration::STARTDATE startDateOption, date startDate, bool dynasticNames);
 	void importCK3Country(const std::pair<std::string, std::shared_ptr<CK3::Title>>& title,
 		 const CK3::World& sourceWorld,
 		 Configuration::STARTDATE startDateOption,
 		 date startDate,
 		 bool dynasticNames);
-	void importVanillaProvinces(const std::string& eu4Path, bool invasion);
+	void importVanillaProvinces(const std::filesystem::path& eu4Path, bool invasion);
 	void importCK3Provinces(Configuration::DISCOVEREDBY discoveredBy);
 	[[nodiscard]] std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>> determineProvinceSource(
 		 const std::map<std::string, std::shared_ptr<CK3::Title>>& ck3Titles) const;
@@ -108,11 +108,11 @@ class World
 	void outputInvasionExtras(const Configuration& theConfiguration) const;
 	void outputDynamicInstitutions(const Configuration& theConfiguration) const;
 	void outputBookmark(const Configuration& theConfiguration, date conversionDate) const;
-	void outputDynamicIdeasFile(const std::string& outputName) const;
-	void outputReligions(const std::string& outputName,
+	void outputDynamicIdeasFile(const std::filesystem::path& outputName) const;
+	void outputReligions(const std::filesystem::path& outputName,
 		 const std::vector<GeneratedReligion>& generatedReligions,
 		 const std::vector<std::string>& reformedReligions) const;
-	void outputCultures(const std::string& outputName) const;
+	void outputCultures(const std::filesystem::path& outputName) const;
 	void outputReligionIcons(const Configuration& theConfiguration, const std::vector<GeneratedReligion>& generatedReligions, const Mods& mods) const;
 	void annexHordes(const std::string& tag,
 		 std::map<std::string, std::vector<std::shared_ptr<Country>>>& hordeDependencies,

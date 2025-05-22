@@ -8,7 +8,7 @@
 TEST(EU4World_FlagCrafterTests, emblemOverlayOnPattern)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -34,7 +34,7 @@ TEST(EU4World_FlagCrafterTests, emblemOverlayOnPattern)
 TEST(EU4World_FlagCrafterTests, multicolorEmblemsOverlayOnMulticolorPattern)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -67,7 +67,7 @@ TEST(EU4World_FlagCrafterTests, emblemInstanceStretchingAndPositioning)
 	laFabricaDeColor.addNamedColor("red", commonItems::Color(std::array<int, 3>{255, 0, 0}));
 
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -87,7 +87,7 @@ TEST(EU4World_FlagCrafterTests, emblemInstanceStretchingAndPositioning)
 TEST(EU4World_FlagCrafterTests, emblemInstancePositioningRotationAndScaling)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -142,7 +142,7 @@ TEST(EU4World_FlagCrafterTests, subcoatPositioningRotationAndScaling)
 	laFabricaDeColor.addNamedColor("yellow", commonItems::Color(std::array<int, 3>{255, 255, 0}));
 
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -162,7 +162,7 @@ TEST(EU4World_FlagCrafterTests, subcoatPositioningRotationAndScaling)
 TEST(EU4World_FlagCrafterTests, simpleMaskTest)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -190,7 +190,7 @@ TEST(EU4World_FlagCrafterTests, simpleMaskTest)
 TEST(EU4World_FlagCrafterTests, dodgeMaskTest)
 {
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 
@@ -233,7 +233,7 @@ TEST(EU4World_FlagCrafterTests, almeriaTheFinalTestFromHell)
 		 commonItems::Color(std::array<float, 3>{static_cast<float>(0.9), static_cast<float>(0.7), static_cast<float>(0.35)}));
 
 	const auto warehouse = std::make_shared<EU4::Warehouse>();
-	warehouse->loadImageFolders({"FlagFoundry/"});
+	warehouse->loadImageFolders({"FlagFoundry"});
 	EU4::FlagCrafter flagCrafter;
 	flagCrafter.loadWarehouse(warehouse);
 

@@ -113,7 +113,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("converted_dyn_faith_345", *match); // it's a new mapping we created.
 
 	const auto& dynamics = theMapper.getGeneratedReligions();
-	const auto newReligion = dynamics[0]; // these will be its details.
+	const auto& newReligion = dynamics[0]; // these will be its details.
 
 	ASSERT_EQ("country=great\ncountry=poor\n", newReligion.country);
 	ASSERT_TRUE(newReligion.countrySecondary.empty());
@@ -122,7 +122,7 @@ TEST(Mappers_ReligionMapperTests, faithCanBeImported)
 	ASSERT_EQ("Static Template, usually very short.", newReligion.staticBlob);
 	ASSERT_TRUE(newReligion.nonUnique.empty());
 	ASSERT_EQ(10, newReligion.icon);
-	ASSERT_EQ("someicon.dds", newReligion.iconPath);
+	ASSERT_EQ(std::filesystem::path("someicon.dds"), newReligion.iconPath);
 	ASSERT_EQ("religion_group1", newReligion.religionGroup);
 	ASSERT_EQ("converted_dyn_faith_345", newReligion.name);
 	ASSERT_EQ("religion2", newReligion.parent);

@@ -17,7 +17,7 @@ void mappers::CultureMapper::loadCulturesFromDisk()
 {
 	Log(LogLevel::Info) << "-> Parsing culture mappings.";
 	registerKeys();
-	parseFile("configurables/culture_map.txt");
+	parseFile(std::filesystem::path("configurables/culture_map.txt"));
 	clearRegisteredKeywords();
 	buildCultureCaches();
 	Log(LogLevel::Info) << "<> Loaded " << cultureMapRules.size() << " cultural links.";

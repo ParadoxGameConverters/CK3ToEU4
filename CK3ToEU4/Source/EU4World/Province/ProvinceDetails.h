@@ -11,9 +11,9 @@ class ProvinceDetails: commonItems::parser
 {
   public:
 	ProvinceDetails() = default;
-	explicit ProvinceDetails(const std::string& filePath);
+	explicit ProvinceDetails(const std::filesystem::path& filePath);
 	explicit ProvinceDetails(std::istream& theStream);
-	void updateWith(const std::string& filePath);
+	void updateWith(const std::filesystem::path& filePath);
 
 	// These values are open to ease management.
 	// This is a storage container for EU4::Province.
