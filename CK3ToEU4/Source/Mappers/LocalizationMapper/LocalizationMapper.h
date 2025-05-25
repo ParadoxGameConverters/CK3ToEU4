@@ -62,7 +62,7 @@ class LocalizationMapper
 	[[nodiscard]] std::optional<std::string> reverseLookupCultureName(const std::string& localization) const;
 
   private:
-	void scrapeLanguage(const std::string& language, const std::string& path);
+	void scrapeLanguage(const std::string& language, const std::filesystem::path& path);
 	const std::string selectLanguage(const std::string& language, const LocBlock& block) const;
 	void assignSelectLanguage(const std::string& str, const std::string& language, LocBlock& block) const;
 

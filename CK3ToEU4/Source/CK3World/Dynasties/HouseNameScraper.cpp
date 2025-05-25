@@ -10,7 +10,7 @@ void CK3::HouseNameScraper::loadHouseDetails(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void CK3::HouseNameScraper::loadHouseDetails(const std::string& filename)
+void CK3::HouseNameScraper::loadHouseDetails(const std::filesystem::path& filename)
 {
 	registerKeys();
 	parseFile(filename);

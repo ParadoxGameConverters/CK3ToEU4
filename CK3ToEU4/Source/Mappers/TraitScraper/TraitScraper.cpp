@@ -4,7 +4,7 @@
 #include "ParserHelpers.h"
 #include "TraitScraping.h"
 
-void mappers::TraitScraper::loadTraits(const std::string& fileName)
+void mappers::TraitScraper::loadTraits(const std::filesystem::path& fileName)
 {
 	registerKeys();
 	parseFile(fileName);

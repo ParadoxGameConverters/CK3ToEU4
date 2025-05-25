@@ -9,7 +9,7 @@ class TraitScraper: commonItems::parser
   public:
 	TraitScraper() = default;
 	void loadTraits(std::istream& theStream);
-	void loadTraits(const std::string& fileName);
+	void loadTraits(const std::filesystem::path& fileName);
 
 	[[nodiscard]] const auto& getTraits() const { return traits; }
 

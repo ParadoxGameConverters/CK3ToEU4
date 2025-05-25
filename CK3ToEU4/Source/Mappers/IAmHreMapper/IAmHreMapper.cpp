@@ -5,7 +5,7 @@
 mappers::IAmHreMapper::IAmHreMapper()
 {
 	registerKeys();
-	parseFile("configurables/i_am_hre.txt");
+	parseFile(std::filesystem::path("configurables/i_am_hre.txt"));
 	clearRegisteredKeywords();
 }
 

@@ -7,47 +7,47 @@
 
 void mappers::LocalizationMapper::scrapeLocalizations(const Configuration& theConfiguration, const Mods& mods)
 {
-	scrapeLanguage("english", theConfiguration.getCK3Path() + "localization");
-	scrapeLanguage("french", theConfiguration.getCK3Path() + "localization");
-	scrapeLanguage("german", theConfiguration.getCK3Path() + "localization");
-	scrapeLanguage("korean", theConfiguration.getCK3Path() + "/localization");
-	scrapeLanguage("russian", theConfiguration.getCK3Path() + "/localization");
-	scrapeLanguage("simp_chinese", theConfiguration.getCK3Path() + "/localization");
-	scrapeLanguage("spanish", theConfiguration.getCK3Path() + "localization");
+	scrapeLanguage("english", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("french", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("german", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("korean", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("russian", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("simp_chinese", theConfiguration.getCK3Path() / "localization");
+	scrapeLanguage("spanish", theConfiguration.getCK3Path() / "localization");
 
 	for (const auto& mod: mods)
 	{
-		if (commonItems::DoesFolderExist(mod.path + "localization"))
+		if (commonItems::DoesFolderExist(mod.path / "localization"))
 		{
 			Log(LogLevel::Info) << "\t>> Found some words in: [" << mod.name + "]";
-			scrapeLanguage("english", mod.path + "/localization");
-			scrapeLanguage("french", mod.path + "/localization");
-			scrapeLanguage("german", mod.path + "/localization");
-			scrapeLanguage("korean", mod.path + "/localization");
-			scrapeLanguage("russian", mod.path + "/localization");
-			scrapeLanguage("simp_chinese", mod.path + "/localization");
-			scrapeLanguage("spanish", mod.path + "/localization");
-			scrapeLanguage("english", mod.path + "/localization/replace");
-			scrapeLanguage("french", mod.path + "/localization/replace");
-			scrapeLanguage("german", mod.path + "/localization/replace");
-			scrapeLanguage("korean", mod.path + "/localization/replace");
-			scrapeLanguage("russian", mod.path + "/localization/replace");
-			scrapeLanguage("simp_chinese", mod.path + "/localization/replace");
-			scrapeLanguage("spanish", mod.path + "/localization/replace");
+			scrapeLanguage("english", mod.path / "localization");
+			scrapeLanguage("french", mod.path / "localization");
+			scrapeLanguage("german", mod.path / "localization");
+			scrapeLanguage("korean", mod.path / "localization");
+			scrapeLanguage("russian", mod.path / "localization");
+			scrapeLanguage("simp_chinese", mod.path / "localization");
+			scrapeLanguage("spanish", mod.path / "localization");
+			scrapeLanguage("english", mod.path / "localization/replace");
+			scrapeLanguage("french", mod.path / "localization/replace");
+			scrapeLanguage("german", mod.path / "localization/replace");
+			scrapeLanguage("korean", mod.path / "localization/replace");
+			scrapeLanguage("russian", mod.path / "localization/replace");
+			scrapeLanguage("simp_chinese", mod.path / "localization/replace");
+			scrapeLanguage("spanish", mod.path / "localization/replace");
 		}
 	}
 
 	Log(LogLevel::Info) << ">> " << localizations.size() << " words read.";
 }
 
-void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, const std::string& path)
+void mappers::LocalizationMapper::scrapeLanguage(const std::string& language, const std::filesystem::path& path)
 {
-	if (!commonItems::DoesFolderExist(path + "/" + language))
+	if (!commonItems::DoesFolderExist(path / language))
 		return;
-	const auto fileNames = commonItems::GetAllFilesInFolderRecursive(path + "/" + language);
+	const auto fileNames = commonItems::GetAllFilesInFolderRecursive(path / language);
 	for (const auto& file: fileNames)
 	{
-		std::ifstream fileStream(path + "/" + language + "/" + file);
+		std::ifstream fileStream(path / language / file);
 		if (fileStream.is_open())
 			scrapeStream(fileStream, language);
 		fileStream.close();

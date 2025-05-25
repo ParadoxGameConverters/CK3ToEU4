@@ -8,7 +8,7 @@ namespace EU4
 class ModFile
 {
   public:
-	std::string outname;
+	std::filesystem::path outname;
 	GameVersion version;
 
 	friend std::ostream& operator<<(std::ostream& output, const ModFile& modFile);

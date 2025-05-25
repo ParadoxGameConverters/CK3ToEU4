@@ -26,31 +26,45 @@ void EU4::World::output(const commonItems::ConverterVersion& converterVersion,
 		conversionDate = startDate;
 	Log(LogLevel::Info) << "<- Creating Output Folder";
 
-	commonItems::TryCreateFolder("output");
-	if (commonItems::DoesFolderExist("output/" + theConfiguration.getOutputName()))
+	fs::create_directory("output");
+	if (commonItems::DoesFolderExist("output" / theConfiguration.getOutputName()))
 	{
 		Log(LogLevel::Info) << "<< Deleting existing mod folder.";
-		commonItems::DeleteFolder("output/" + theConfiguration.getOutputName());
+		fs::remove_all("output" / theConfiguration.getOutputName());
 	}
 	Log(LogLevel::Progress) << "80 %";
 
 	Log(LogLevel::Info) << "<- Copying Mod Template";
-	commonItems::CopyFolder("blankMod/output", "output/output");
+	try
+	{
+		fs::copy("blankMod/output", "output/output", fs::copy_options::recursive);
+	}
+	catch (std::exception& e)
+	{
+		Log(LogLevel::Error) << "Could not copy folder: " << e.what() << " " << commonItems::GetLastErrorString();
+	}
 	Log(LogLevel::Progress) << "81 %";
 
-	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName();
-	commonItems::RenameFolder("output/output", "output/" + theConfiguration.getOutputName());
+	Log(LogLevel::Info) << "<- Moving Mod Template >> " << theConfiguration.getOutputName().string();
+	try
+	{
+		fs::rename("output/output", "output" / theConfiguration.getOutputName());
+	}
+	catch (std::exception& e)
+	{
+		Log(LogLevel::Error) << "Could not rename folder: " << e.what() << " " << commonItems::GetLastErrorString();
+	}
 	Log(LogLevel::Progress) << "82 %";
 
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/countries/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/advisors/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/provinces/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/history/diplomacy/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/countries/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/country_tags/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/localisation/");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "history");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "history/countries");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "history/advisors");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "history/provinces");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "history/diplomacy");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "common");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "common/countries");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "common/country_tags");
+	fs::create_directories("output" / theConfiguration.getOutputName() / "localisation");
 	Log(LogLevel::Progress) << "83 %";
 
 	Log(LogLevel::Info) << "<- Crafting .mod File";
@@ -137,10 +151,10 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 	// edit interface file, raw search/replace.
 	const auto originalIcons = religionDefinitionMapper.getOriginalIconCount();
 	auto currentIcons = originalIcons + religionMapper.getGeneratedReligions().size();
-	if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx"))
-		throw std::runtime_error("Cannot open output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	if (!commonItems::DoesFileExist("output" / theConfiguration.getOutputName() / "interface/z_converter.gfx"))
+		throw std::runtime_error("Cannot open output/" + theConfiguration.getOutputName().string() + "/interface/z_converter.gfx");
 
-	std::ifstream sourceInterfaces("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	std::ifstream sourceInterfaces("output" / theConfiguration.getOutputName() / "interface/z_converter.gfx");
 	std::stringstream interfaceStream;
 	interfaceStream << sourceInterfaces.rdbuf();
 	sourceInterfaces.close();
@@ -156,24 +170,24 @@ void EU4::World::outputReligionIcons(const Configuration& theConfiguration, cons
 		pos = interfaceData.find(swap, pos + with.size());
 	}
 
-	std::ofstream interFaceDump("output/" + theConfiguration.getOutputName() + "/interface/z_converter.gfx");
+	std::ofstream interFaceDump("output" / theConfiguration.getOutputName() / "interface/z_converter.gfx");
 	interFaceDump << interfaceData;
 	interFaceDump.close();
 }
 
-void EU4::World::outputCultures(const std::string& outputName) const
+void EU4::World::outputCultures(const std::filesystem::path& outputName) const
 {
-	std::ofstream cultureFile("output/" + outputName + "/common/cultures/!.ZZ-dynamic_cultures.txt");
+	std::ofstream cultureFile("output" / outputName / "common/cultures/!.ZZ-dynamic_cultures.txt");
 	cultureFile << cultureDefinitionsMapper;
 	cultureFile.close();
 }
 
-void EU4::World::outputReligions(const std::string& outputName,
+void EU4::World::outputReligions(const std::filesystem::path& outputName,
 	 const std::vector<GeneratedReligion>& generatedReligions,
 	 const std::vector<std::string>& reformedReligions) const
 {
 	// Reformed Religion global flag output
-	std::ofstream globalFlagFile("output/" + outputName + "/common/on_actions/ZZZ_replaced_on_startup.txt");
+	std::ofstream globalFlagFile("output" / outputName / "common/on_actions/ZZZ_replaced_on_startup.txt");
 	// Basegame stuff first
 	globalFlagFile << "on_startup = {\n\t"
 						<< "emperor = {\n\t\t"
@@ -212,26 +226,26 @@ void EU4::World::outputReligions(const std::string& outputName,
 	for (const auto& religion: generatedReligions)
 	{
 		// Main Religion File
-		std::ofstream religionFile("output/" + outputName + "/common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionFile("output" / outputName / ("common/religions/99_" + religion.name + "-from-" + religion.parent + ".txt"));
 		religionFile << religion;
 		religionFile.close();
 		// Religious Rebels
-		std::ofstream religionRebelFile("output/" + outputName + "/common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt");
+		std::ofstream religionRebelFile("output" / outputName / ("common/rebel_types/99_rebel_" + religion.name + "-from-" + religion.parent + ".txt"));
 		religion.outputRebels(religionRebelFile);
 		religionRebelFile.close();
 		// Religious Personal Deities
 		std::ofstream religionPersonalDeityFile(
-			 "output/" + outputName + "/common/personal_deities/" + religion.name + "-from-" + religion.parent + "_deities.txt");
+			 "output" / outputName / "common/personal_deities" / (religion.name + "-from-" + religion.parent + "_deities.txt"));
 		religion.outputPersonalDeities(religionPersonalDeityFile);
 		religionPersonalDeityFile.close();
 		// Religion Sounds
-		std::ofstream religionSoundFile("output/" + outputName + "/sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset");
+		std::ofstream religionSoundFile("output" / outputName / ("sound/ZZZ_converted_" + religion.name + "-from-" + religion.parent + "sounds.asset"));
 		religion.outputSounds(religionSoundFile);
 		religionSoundFile.close();
 		// Religion GUI (Only if necessary)
 		if (religion.unique.find("uses_judaism_power = yes") != std::string::npos)
 		{
-			std::ofstream religionGUIFile("output/" + outputName + "/interface/ZZZ_" + religion.name + "-from-" + religion.parent + ".gui");
+			std::ofstream religionGUIFile("output" / outputName / ("interface/ZZZ_" + religion.name + "-from-" + religion.parent + ".gui"));
 			religion.outputGUI(religionGUIFile);
 			religionGUIFile.close();
 		}
@@ -243,39 +257,39 @@ void EU4::World::outputBookmark(const Configuration& theConfiguration, date conv
 	if (theConfiguration.getStartDateOption() != Configuration::STARTDATE::EU)
 	{
 		// fix the dynamic bookmark in defines
-		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua"))
-			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua!");
-		std::ofstream defines("output/" + theConfiguration.getOutputName() + "/common/defines/00_converter_defines.lua");
+		if (!commonItems::DoesFileExist("output" / theConfiguration.getOutputName() / "common/defines/00_converter_defines.lua"))
+			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName().string() + "/common/defines/00_converter_defines.lua!");
+		std::ofstream defines("output" / theConfiguration.getOutputName() / "common/defines/00_converter_defines.lua");
 		defines << "-- Defines modified by the converter\n\n";
 		defines << "\nNDefines.NGame.START_DATE = \"" << conversionDate << "\"\n";
 		defines.close();
 
 		// fix the dynamic bookmark in bookmark file
-		if (!commonItems::DoesFileExist("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt"))
-			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt!");
+		if (!commonItems::DoesFileExist("output" / theConfiguration.getOutputName() / "common/bookmarks/converter_bookmark.txt"))
+			throw std::runtime_error("Can not find output/" + theConfiguration.getOutputName().string() + "/common/bookmarks/converter_bookmark.txt!");
 
 		std::string startDate = "<CONVERSIONDATE>";
 		std::ostringstream incomingBookmarks;
 
-		std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
+		std::ifstream bookmarks_txt("output" / theConfiguration.getOutputName() / "common/bookmarks/converter_bookmark.txt");
 		incomingBookmarks << bookmarks_txt.rdbuf();
 		bookmarks_txt.close();
 		auto strBookmarks = incomingBookmarks.str();
 		auto pos2 = strBookmarks.find(startDate);
 		strBookmarks.replace(pos2, startDate.length(), conversionDate.toString());
-		std::ofstream out_bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt");
+		std::ofstream out_bookmarks_txt("output" / theConfiguration.getOutputName() / "common/bookmarks/converter_bookmark.txt");
 		out_bookmarks_txt << strBookmarks;
 		out_bookmarks_txt.close();
 
 		// And wipe regular one
-		std::ifstream bookmarks1444_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark_1444.txt",
+		std::ifstream bookmarks1444_txt("output" / theConfiguration.getOutputName() / "common/bookmarks/converter_bookmark_1444.txt",
 			 std::ofstream::out | std::ofstream::trunc);
 		bookmarks1444_txt.close();
 	}
 	else
 	{
 		// Vanilla defines are fine, just wipe dynamic bookmark
-		std::ifstream bookmarks_txt("output/" + theConfiguration.getOutputName() + "/common/bookmarks/converter_bookmark.txt",
+		std::ifstream bookmarks_txt("output" / theConfiguration.getOutputName() / "common/bookmarks/converter_bookmark.txt",
 			 std::ofstream::out | std::ofstream::trunc);
 		bookmarks_txt.close();
 	}
@@ -283,26 +297,26 @@ void EU4::World::outputBookmark(const Configuration& theConfiguration, date conv
 
 void EU4::World::createModFile(const Configuration& theConfiguration) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + ".mod");
+	std::ofstream output("output/" + theConfiguration.getOutputName().string() + ".mod");
 	if (!output.is_open())
-		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + ".mod");
+		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + ".mod");
 	Log(LogLevel::Info) << "<< Writing to: "
-							  << "output/" + theConfiguration.getOutputName() + ".mod";
+							  << "output/" + theConfiguration.getOutputName().string() + ".mod";
 	output << modFile;
 	output.close();
 
-	std::ofstream output2("output/" + theConfiguration.getOutputName() + "/descriptor.mod");
+	std::ofstream output2("output" / theConfiguration.getOutputName() / "descriptor.mod");
 	if (!output2.is_open())
-		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + "/descriptor.mod");
+		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + "/descriptor.mod");
 	Log(LogLevel::Info) << "<< Writing to: "
-							  << "output/" + theConfiguration.getOutputName() + "/descriptor.mod";
+							  << "output/" + theConfiguration.getOutputName().string() + "descriptor.mod";
 	output2 << modFile;
 	output2.close();
 }
 
 void EU4::World::outputVersion(const commonItems::ConverterVersion& converterVersion, const Configuration& theConfiguration) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/ck3toeu4_version.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "ck3toeu4_version.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Error writing version file! Is the output folder writable?");
 	output << converterVersion;
@@ -312,40 +326,51 @@ void EU4::World::outputVersion(const commonItems::ConverterVersion& converterVer
 void EU4::World::outputInvasionExtras(const Configuration& theConfiguration) const
 {
 	// Sunset Religions
-	auto files = commonItems::GetAllFilesInFolder("configurables/sunset/common/religions/");
+	auto files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/religions"));
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/sunset/common/religions/" + file, "output/" + theConfiguration.getOutputName() + "/common/religions/" + file);
+		fs::copy_file("configurables/sunset/common/religions" / file,
+			 "output" / theConfiguration.getOutputName() / "common/religions" / file,
+			 fs::copy_options::overwrite_existing);
 	// Sunset Ideas
-	files = commonItems::GetAllFilesInFolder("configurables/sunset/common/ideas/");
+	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/ideas"));
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/sunset/common/ideas/" + file, "output/" + theConfiguration.getOutputName() + "/common/ideas/" + file);
+		fs::copy_file("configurables/sunset/common/ideas" / file,
+			 "output" / theConfiguration.getOutputName() / "common/ideas" / file,
+			 fs::copy_options::overwrite_existing);
 	// Sunset Cultures
-	files = commonItems::GetAllFilesInFolder("configurables/sunset/common/cultures/");
+	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/cultures"));
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/sunset/common/cultures/" + file, "output/" + theConfiguration.getOutputName() + "/common/cultures/" + file);
+		fs::copy_file("configurables/sunset/common/cultures" / file,
+			 "output" / theConfiguration.getOutputName() / "common/cultures" / file,
+			 fs::copy_options::overwrite_existing);
 	// Sunset Decisions
-	files = commonItems::GetAllFilesInFolder("configurables/sunset/decisions/");
+	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/decisions"));
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/sunset/decisions/" + file, "output/" + theConfiguration.getOutputName() + "/decisions/" + file);
+		fs::copy_file("configurables/sunset/decisions" / file,
+			 "output" / theConfiguration.getOutputName() / "decisions" / file,
+			 fs::copy_options::overwrite_existing);
 }
 
 void EU4::World::outputDynamicInstitutions(const Configuration& theConfiguration) const
 {
 	// Dynamic Institions
-	auto files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/institutions/");
-	commonItems::TryCreateFolder("output/" + theConfiguration.getOutputName() + "/common/institutions/");
+	auto files = commonItems::GetAllFilesInFolder(fs::path("configurables/dynamicInstitutions/institutions"));
+	fs::create_directories("output" / theConfiguration.getOutputName() / "common/institutions");
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/dynamicInstitutions/institutions/" + file,
-			 "output/" + theConfiguration.getOutputName() + "/common/institutions/" + file);
+		fs::copy_file("configurables/dynamicInstitutions/institutions" / file,
+			 "output" / theConfiguration.getOutputName() / "common/institutions" / file,
+			 fs::copy_options::overwrite_existing);
 	// Dynamic Ideas
-	files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/ideas/");
+	files = commonItems::GetAllFilesInFolder(fs::path("configurables/dynamicInstitutions/ideas"));
 	for (const auto& file: files)
-		commonItems::TryCopyFile("configurables/dynamicInstitutions/ideas/" + file, "output/" + theConfiguration.getOutputName() + "/common/ideas/" + file);
+		fs::copy_file("configurables/dynamicInstitutions/ideas" / file,
+			 "output" / theConfiguration.getOutputName() / "common/ideas" / file,
+			 fs::copy_options::overwrite_existing);
 }
 
 void EU4::World::outputCommonCountriesFile(const Configuration& theConfiguration) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/country_tags/00_countries.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "common/country_tags/00_countries.txt");
 	if (!output.is_open())
 		throw std::runtime_error("Could not create countries file!");
 	output << "REB = \"countries/Rebels.txt\"\n\n"; // opening with rebels manually.
@@ -355,7 +380,7 @@ void EU4::World::outputCommonCountriesFile(const Configuration& theConfiguration
 		if (specialCountryTags.count(country.first))
 			continue; // Not outputting specials.
 		if (country.first != "REB")
-			output << country.first << " = \"" << country.second->getCommonCountryFile() << "\"\n";
+			output << country.first << " = \"countries/" << country.second->getCommonCountryFile().string() << "\"\n";
 	}
 	output << "\n";
 	output.close();
@@ -365,10 +390,10 @@ void EU4::World::outputCommonCountries(const Configuration& theConfiguration) co
 {
 	for (const auto& country: countries)
 	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/common/" + country.second->getCommonCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "common/countries" / country.second->getCommonCountryFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country common file: output/" + theConfiguration.getOutputName() + "/common/" + country.second->getCommonCountryFile());
+			throw std::runtime_error("Could not create country common file: output/" + theConfiguration.getOutputName().string() + "/common/countries/" +
+											 country.second->getCommonCountryFile().string());
 		country.second->outputCommons(output);
 		output.close();
 	}
@@ -378,18 +403,18 @@ void EU4::World::outputHistoryCountries(const Configuration& theConfiguration) c
 {
 	for (const auto& country: countries)
 	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/" + country.second->getHistoryCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "history/countries" / country.second->getHistoryCountryFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country history file: output/" + theConfiguration.getOutputName() + "/" + country.second->getHistoryCountryFile());
+			throw std::runtime_error("Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/history/countries/" +
+											 country.second->getHistoryCountryFile().string());
 		output << *country.second;
 		output.close();
 	}
 }
 
-void EU4::World::outputDynamicIdeasFile(const std::string& outputName) const
+void EU4::World::outputDynamicIdeasFile(const std::filesystem::path& outputName) const
 {
-	std::ofstream output("output/" + outputName + "/common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
+	std::ofstream output("output" / outputName / "common/ideas/00_dynamic_ideas.txt"); // Not sure where to put this
 	if (!output.is_open())
 		throw std::runtime_error("Could not create dynamic ideas file!");
 	output << "### National idea groups generated via cultural traditions. \n\n";
@@ -404,9 +429,9 @@ void EU4::World::outputDynamicIdeasFile(const std::string& outputName) const
 
 void EU4::World::outputAdvisers(const Configuration& theConfiguration) const
 {
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/advisors/00_converter_advisors.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "history/advisors/00_converter_advisors.txt");
 	if (!output.is_open())
-		throw std::runtime_error("Could not create " + theConfiguration.getOutputName() + "/history/advisors/00_converter_advisors.txt");
+		throw std::runtime_error("Could not create " + theConfiguration.getOutputName().string() + "/history/advisors/00_converter_advisors.txt");
 	for (const auto& country: countries)
 	{
 		country.second->outputAdvisers(output);
@@ -418,10 +443,10 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 {
 	for (const auto& province: provinces | std::views::values)
 	{
-		std::ofstream output("output/" + theConfiguration.getOutputName() + "/" + province->getHistoryCountryFile());
+		std::ofstream output("output" / theConfiguration.getOutputName() / "history/provinces" / province->getHistoryProvincesFile());
 		if (!output.is_open())
-			throw std::runtime_error(
-				 "Could not create country history file: output/" + theConfiguration.getOutputName() + "/" + province->getHistoryCountryFile());
+			throw std::runtime_error("Could not create country history file: output/" + theConfiguration.getOutputName().string() + "/history/provinces/" +
+											 province->getHistoryProvincesFile().string());
 		output << *province;
 		output.close();
 	}
@@ -429,10 +454,10 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 
 void EU4::World::outputLocalization(const Configuration& theConfiguration, bool invasion) const
 {
-	std::ofstream english("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_english.yml");
-	std::ofstream french("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_french.yml");
-	std::ofstream spanish("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_spanish.yml");
-	std::ofstream german("output/" + theConfiguration.getOutputName() + "/localisation/replace/converter_l_german.yml");
+	std::ofstream english("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_english.yml");
+	std::ofstream french("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_french.yml");
+	std::ofstream spanish("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_spanish.yml");
+	std::ofstream german("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_german.yml");
 	if (!english.is_open())
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!french.is_open())
@@ -528,15 +553,18 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 
 	if (invasion)
 	{
-		auto fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/localisation/");
+		auto fileNames = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/localisation/"));
 		for (const auto& fileName: fileNames)
-			commonItems::TryCopyFile("configurables/sunset/localisation/" + fileName, "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
+			fs::copy_file("configurables/sunset/localisation" / fileName,
+				 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
+				 fs::copy_options::overwrite_existing);
 	}
 
-	auto fileNames = commonItems::GetAllFilesInFolder("configurables/religions/reformation/roman/");
+	auto fileNames = commonItems::GetAllFilesInFolder(fs::path("configurables/religions/reformation/roman/"));
 	for (const auto& fileName: fileNames)
-		commonItems::TryCopyFile("configurables/religions/reformation/roman/" + fileName,
-			 "output/" + theConfiguration.getOutputName() + "/localisation/" + fileName);
+		fs::copy_file("configurables/religions/reformation/roman" / fileName,
+			 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
+			 fs::copy_options::overwrite_existing);
 }
 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const
@@ -545,31 +573,31 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 	if (theConfiguration.getStartDateOption() == Configuration::STARTDATE::EU)
 		actualConversionDate = date(1444, 11, 11);
 
-	std::ofstream output("output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt");
+	std::ofstream output("output" / theConfiguration.getOutputName() / "history/diplomacy/hre.txt");
 	if (!output.is_open())
-		throw std::runtime_error("Could not create hre diplomacy file: output/" + theConfiguration.getOutputName() + "/history/diplomacy/hre.txt!");
+		throw std::runtime_error("Could not create hre diplomacy file: output/" + theConfiguration.getOutputName().string() + "/history/diplomacy/hre.txt!");
 	if (emperorTag.empty())
 		output << actualConversionDate << " = { emperor = --- }\n";
 	else
 		output << actualConversionDate << " = { emperor = " << emperorTag << " }\n";
 	output.close();
 
-	output.open("output/" + theConfiguration.getOutputName() + "/history/diplomacy/celestial_empire.txt");
+	output.open("output" / theConfiguration.getOutputName() / "history/diplomacy/celestial_empire.txt");
 	output << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
 	output.close();
 
 	if (!actualHRETag.empty())
 	{
-		output.open("output/" + theConfiguration.getOutputName() + "/i_am_hre.txt");
+		output.open("output" / theConfiguration.getOutputName() / "i_am_hre.txt");
 		output << actualHRETag;
 		output.close();
 
 		if (actualHRETag != "HRE")
 		{
-			std::ifstream input(theConfiguration.getEU4Path() + "/events/HolyRomanEmpire.txt");
+			std::ifstream input(theConfiguration.getEU4Path() / "events/HolyRomanEmpire.txt");
 			if (!input.is_open())
 			{
-				Log(LogLevel::Warning) << "Where is " << theConfiguration.getEU4Path() << "/events/HolyRomanEmpire.txt?!";
+				Log(LogLevel::Warning) << "Where is " << theConfiguration.getEU4Path().string() << "/events/HolyRomanEmpire.txt?!";
 			}
 			else
 			{
@@ -578,7 +606,7 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 				auto eventFileString = inStream.str();
 				input.close();
 				eventFileString = std::regex_replace(eventFileString, std::regex("HLR"), actualHRETag);
-				output.open("output/" + theConfiguration.getOutputName() + "/events/HolyRomanEmpire.txt");
+				output.open("output" / theConfiguration.getOutputName() / "events/HolyRomanEmpire.txt");
 				output << eventFileString;
 				output.close();
 			}
@@ -588,19 +616,19 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 
 void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const std::vector<std::shared_ptr<Agreement>>& agreements, bool invasion) const
 {
-	std::ofstream alliances("output/" + theConfiguration.getOutputName() + "/history/diplomacy/converter_alliances.txt");
+	std::ofstream alliances("output" / theConfiguration.getOutputName() / "history/diplomacy/converter_alliances.txt");
 	if (!alliances.is_open())
 		throw std::runtime_error("Could not create alliances history file!");
 
-	std::ofstream guarantees("output/" + theConfiguration.getOutputName() + "/history/diplomacy/converter_guarantees.txt");
+	std::ofstream guarantees("output" / theConfiguration.getOutputName() / "history/diplomacy/converter_guarantees.txt");
 	if (!guarantees.is_open())
 		throw std::runtime_error("Could not create guarantees history file!");
 
-	std::ofstream puppetStates("output/" + theConfiguration.getOutputName() + "/history/diplomacy/converter_puppetstates.txt");
+	std::ofstream puppetStates("output" / theConfiguration.getOutputName() / "history/diplomacy/converter_puppetstates.txt");
 	if (!puppetStates.is_open())
 		throw std::runtime_error("Could not create puppet states history file!");
 
-	std::ofstream unions("output/" + theConfiguration.getOutputName() + "/history/diplomacy/converter_unions.txt");
+	std::ofstream unions("output" / theConfiguration.getOutputName() / "history/diplomacy/converter_unions.txt");
 	if (!unions.is_open())
 		throw std::runtime_error("Could not create unions history file!");
 
@@ -642,26 +670,27 @@ void EU4::World::outputDiplomacy(const Configuration& theConfiguration, const st
 	if (invasion)
 	{
 		// Blank american diplomacy
-		std::ofstream diplo("output/" + theConfiguration.getOutputName() + "/history/diplomacy/American_alliances.txt");
+		std::ofstream diplo("output" / theConfiguration.getOutputName() / "history/diplomacy/American_alliances.txt");
 		diplo << "\n";
 		diplo.close();
 		// and move over our alliances.
-		commonItems::TryCopyFile("configurables/sunset/history/diplomacy/SunsetInvasion.txt",
-			 "output/" + theConfiguration.getOutputName() + "/history/diplomacy/SunsetInvasion.txt");
+		fs::copy_file("configurables/sunset/history/diplomacy/SunsetInvasion.txt",
+			 "output" / theConfiguration.getOutputName() / "history/diplomacy/SunsetInvasion.txt",
+			 fs::copy_options::overwrite_existing);
 	}
 }
 
 void EU4::World::outputFlags(const Configuration& theConfiguration) const
 {
 	auto counter = 0;
-	if (!commonItems::DoesFolderExist("flags.tmp"))
+	if (!fs::exists("flags.tmp") || !fs::is_directory("flags.tmp"))
 	{
 		Log(LogLevel::Warning) << "Flag folder flags.tmp not found!";
 		return;
 	}
-	for (const auto& filename: commonItems::GetAllFilesInFolder("flags.tmp"))
+	for (const auto& filename: commonItems::GetAllFilesInFolder(fs::path("flags.tmp")))
 	{
-		if (commonItems::TryCopyFile("flags.tmp/" + filename, "output/" + theConfiguration.getOutputName() + "/gfx/flags/" + filename))
+		if (fs::copy_file("flags.tmp" / filename, "output" / theConfiguration.getOutputName() / "gfx/flags" / filename, fs::copy_options::overwrite_existing))
 			++counter;
 	}
 	Log(LogLevel::Info) << "<< " << counter << " flags copied.";

@@ -48,10 +48,10 @@ class CountryDetails: commonItems::parser
 {
   public:
 	CountryDetails() = default;
-	explicit CountryDetails(const std::string& filePath);
+	explicit CountryDetails(const std::filesystem::path& filePath);
 	explicit CountryDetails(std::istream& theStream);
 
-	void parseHistory(const std::string& filePath);
+	void parseHistory(const std::filesystem::path& filePath);
 	void parseHistory(std::istream& theStream);
 
 	// These values are open to ease management.

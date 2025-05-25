@@ -17,7 +17,7 @@ class ProvinceMapper: commonItems::parser
 {
   public:
 	ProvinceMapper() = default;
-	explicit ProvinceMapper(const std::string& fileName);
+	explicit ProvinceMapper(const std::filesystem::path& fileName);
 	explicit ProvinceMapper(std::istream& theStream);
 
 	[[nodiscard]] std::map<std::string, std::shared_ptr<CK3::Title>> getCK3Titles(int eu4ProvinceNumber) const;

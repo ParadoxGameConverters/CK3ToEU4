@@ -4,7 +4,7 @@
 #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
-EU4::ProvinceDetails::ProvinceDetails(const std::string& filePath)
+EU4::ProvinceDetails::ProvinceDetails(const std::filesystem::path& filePath)
 {
 	registerKeys();
 
@@ -15,7 +15,7 @@ EU4::ProvinceDetails::ProvinceDetails(const std::string& filePath)
 	clearRegisteredKeywords();
 }
 
-void EU4::ProvinceDetails::updateWith(const std::string& filePath)
+void EU4::ProvinceDetails::updateWith(const std::filesystem::path& filePath)
 {
 	registerKeys();
 	if (commonItems::DoesFileExist(filePath))

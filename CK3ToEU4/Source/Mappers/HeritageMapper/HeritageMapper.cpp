@@ -8,7 +8,7 @@ void mappers::HeritageMapper::loadHeritagesFromDisk()
 {
 	Log(LogLevel::Info) << "-> Parsing Heritages";
 	registerKeys();
-	parseFile("configurables/heritage_map.txt");
+	parseFile(std::filesystem::path("configurables/heritage_map.txt"));
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << heritagesToCultures.size() << " relations.";
 }
