@@ -147,9 +147,7 @@ prussian_monarchy = {
 				}
 				NOT = { map_setup = map_setup_random }
 			}
-			has_unlocked_government_reform = {
-				government_reform = prussian_monarchy
-			}
+			has_unlocked_government_reform = { government_reform = prussian_monarchy }
 			has_reform = prussian_monarchy
 			have_had_reform = prussian_monarchy
 		}
@@ -158,9 +156,7 @@ prussian_monarchy = {
 		OR = {
 			uses_church_aspects = yes
 			uses_fervor = yes
-			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_monarchy
-			}
+			has_unlocked_government_reform = { government_reform = prussian_monarchy }
 		}
 	}
 	legacy_equivalent = prussian_monarchy_legacy
@@ -236,9 +232,7 @@ prussian_monarchy_base = {
 					have_had_reform = prussian_theocratic_reform
 				}
 			}
-			has_unlocked_government_reform = {
-				government_reform = prussian_monarchy_base
-			}
+			has_unlocked_government_reform = { government_reform = prussian_monarchy_base }
 		}
 	}
 	trigger = {
@@ -256,9 +250,7 @@ prussian_monarchy_base = {
 					have_had_reform = prussian_theocratic_reform
 				}
 			}
-			has_unlocked_government_reform_tooltip = {
-				government_reform = prussian_monarchy_base
-			}
+			has_unlocked_government_reform = { government_reform = prussian_monarchy_base }
 		}
 	}
 	valid_for_nation_designer = yes
