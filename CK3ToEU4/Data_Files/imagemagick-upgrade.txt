@@ -1,0 +1,17 @@
+HOW TO UPGRADE to a newer version on local runners
+
+cd /usr/local/lib/<old imagemagick>
+make uninstall
+cd ..
+
+
+- get the latest source
+wget https://imagemagick.org/archive/ImageMagick.tar.gz
+
+tar xvzf ImageMagick.tar.gz
+cd ImageMagick-7.1.1-47 (or whichever version is latest)
+
+
+./configure --with-quantum-depth=8 --enable-hdri=no --with-x=no --with-utilities=no LDFLAGS='-L/usr/local/lib -R/usr/local/lib'
+make
+make install
