@@ -124,11 +124,11 @@ class Configuration: commonItems::parser
 	void verifyCK3Version(const commonItems::ConverterVersion& converterVersion) const;
 	void verifyEU4Version(const commonItems::ConverterVersion& converterVersion) const;
 
-	std::string SaveGamePath;
-	std::string CK3Path;
-	std::string CK3DocPath;
-	std::string EU4Path;
-	std::string outputName;
+	std::filesystem::path SaveGamePath;
+	std::filesystem::path CK3Path;
+	std::filesystem::path CK3DocPath;
+	std::filesystem::path EU4Path;
+	std::filesystem::path outputName;
 
 	STARTDATE startDate = STARTDATE::EU;
 	I_AM_HRE iAmHre = I_AM_HRE::HRE;

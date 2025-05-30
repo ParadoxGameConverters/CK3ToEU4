@@ -5,7 +5,7 @@
 mappers::ShatterEmpiresMapper::ShatterEmpiresMapper()
 {
 	registerKeys();
-	parseFile("configurables/shatter_empires.txt");
+	parseFile(std::filesystem::path("configurables/shatter_empires.txt"));
 	clearRegisteredKeywords();
 }
 

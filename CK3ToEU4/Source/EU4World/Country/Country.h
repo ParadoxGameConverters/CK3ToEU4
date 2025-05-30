@@ -34,8 +34,8 @@ class Country
   public:
 	Country() = default;
 
-	Country(std::string theTag, const std::string& filePath);
-	void loadHistory(const std::string& filePath);
+	Country(std::string theTag, const std::filesystem::path& filePath);
+	void loadHistory(const std::filesystem::path& filePath);
 	void initializeFromTitle(const std::string& theTag,
 		 const std::pair<std::string, std::shared_ptr<CK3::Title>>& theTitle,
 		 const mappers::GovernmentsMapper& governmentsMapper,
@@ -153,8 +153,8 @@ class Country
 		 const date& startDate) const; // Uses bookmark date to shift dates if required.
 
 	std::string tag;
-	std::string commonCountryFile;
-	std::string historyCountryFile;
+	std::filesystem::path commonCountryFile;
+	std::filesystem::path historyCountryFile;
 	date conversionDate; // for dating the monarchs in history file.
 	CountryDetails details;
 

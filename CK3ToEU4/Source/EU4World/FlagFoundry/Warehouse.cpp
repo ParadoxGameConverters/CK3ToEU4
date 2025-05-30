@@ -43,10 +43,10 @@ std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::Co
 	if (!basePatterns.count(newImageBlock.patternName))
 	{
 		// Load the pattern from disk.
-		std::string actualFolder;
+		std::filesystem::path actualFolder;
 		for (const auto& folder: imageFolders)
 		{
-			if (commonItems::DoesFileExist(folder + "patterns/" + newImageBlock.patternName))
+			if (commonItems::DoesFileExist(folder / "patterns" / newImageBlock.patternName))
 			{
 				actualFolder = folder;
 				break;
@@ -59,7 +59,7 @@ std::pair<Magick::Image, Magick::Image> EU4::Warehouse::getPattern(const CK3::Co
 		}
 		try
 		{
-			basePatterns.insert(std::pair(newImageBlock.patternName, Magick::Image(actualFolder + "patterns/" + newImageBlock.patternName)));
+			basePatterns.insert(std::pair(newImageBlock.patternName, Magick::Image((actualFolder / "patterns" / newImageBlock.patternName).string())));
 		}
 		catch (std::exception& e)
 		{
@@ -138,10 +138,10 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		if (!baseTextures.count(newImageBlock.patternName))
 		{
 			// Load the texture from disk.
-			std::string actualFolder;
+			std::filesystem::path actualFolder;
 			for (const auto& folder: imageFolders)
 			{
-				if (commonItems::DoesFileExist(folder + directoryName + "/" + newImageBlock.patternName))
+				if (commonItems::DoesFileExist(folder / directoryName / newImageBlock.patternName))
 				{
 					actualFolder = folder;
 					break;
@@ -155,7 +155,7 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 			}
 			try
 			{
-				baseTextures.insert(std::pair(newImageBlock.patternName, Magick::Image(actualFolder + directoryName + "/" + newImageBlock.patternName)));
+				baseTextures.insert(std::pair(newImageBlock.patternName, Magick::Image((actualFolder / directoryName / newImageBlock.patternName).string())));
 			}
 			catch (std::exception& e)
 			{
@@ -171,7 +171,10 @@ std::vector<std::pair<CK3::Emblem, Magick::Image>> EU4::Warehouse::getTextures(c
 		newImageBlock.imageData = recolorer.craftTextureImage(newImageBlock);
 
 		// Store for posterity.
-		texturedStorage.emplace_back(newImageBlock);
+		if (directoryName == "colored_emblems")
+			coloredStorage.emplace_back(newImageBlock);
+		else if (directoryName == "textured_emblems")
+			texturedStorage.emplace_back(newImageBlock);
 
 		// And fulfill order
 		toReturn.emplace_back(std::pair(emblem, newImageBlock.imageData));

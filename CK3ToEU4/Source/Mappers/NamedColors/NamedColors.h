@@ -11,7 +11,7 @@ class NamedColors: commonItems::parser
   public:
 	NamedColors() = default;
 	void loadColors(std::istream& theStream);
-	void loadColors(const std::string& filepath);
+	void loadColors(const std::filesystem::path& filepath);
 
   private:
 	void registerKeys();

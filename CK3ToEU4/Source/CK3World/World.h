@@ -57,8 +57,8 @@ class World: commonItems::parser
 	parser metaPreParser;
 
 	// savegame processing
-	void verifySave(const std::string& saveGamePath) const;
-	void processSave(const std::string& saveGamePath);
+	void verifySave(const std::filesystem::path& saveGamePath) const;
+	void processSave(const std::filesystem::path& saveGamePath);
 
 	// pre-parsing prep
 	void primeLaFabricaDeColor(const Configuration& theConfiguration);

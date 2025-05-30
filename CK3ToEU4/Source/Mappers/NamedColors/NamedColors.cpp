@@ -9,7 +9,7 @@ void mappers::NamedColors::loadColors(std::istream& theStream)
 	clearRegisteredKeywords();
 }
 
-void mappers::NamedColors::loadColors(const std::string& filepath)
+void mappers::NamedColors::loadColors(const std::filesystem::path& filepath)
 {
 	registerKeys();
 	parseFile(filepath);
