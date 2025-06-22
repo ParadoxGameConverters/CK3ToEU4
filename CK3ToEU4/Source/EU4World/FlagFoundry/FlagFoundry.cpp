@@ -71,7 +71,7 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 		}
 
 		// Do we have an alternate flag source?
-		if (commonItems::DoesFileExist("blankMod/output/gfx/flags" + country.first + ".tga"))
+		if (commonItems::DoesFileExist("blankMod/output/gfx/flags/" + country.first + ".tga"))
 			continue; // This will be copied over by outWorld.
 
 		if (theConfiguration.getPlayerTitle() && country.second->getTitle() && country.second->getTitle()->first == *theConfiguration.getPlayerTitle())

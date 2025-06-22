@@ -26,7 +26,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	bool initProvinceMapper = false;
 	for (const auto& mod: sourceWorld.getMods())
 	{
-		if (commonItems::DoesFileExist("configurables" + mod.name + "_province_mappings.txt"))
+		if (commonItems::DoesFileExist("configurables/" + mod.name + "_province_mappings.txt"))
 		{
 			Log(LogLevel::Info) << ">> Found matching province mappings for mod [" << mod.name << "], loading.";
 			provinceMapper = mappers::ProvinceMapper("configurables/" + mod.name + "_province_mappings.txt");
