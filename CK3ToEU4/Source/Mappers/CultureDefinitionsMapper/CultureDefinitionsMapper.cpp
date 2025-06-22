@@ -18,7 +18,7 @@ void mappers::CultureDefinitionsMapper::loadDefinitionsFromEU4Installation(const
 	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "common/cultures/"))
 		parseFile(theConfiguration.getEU4Path() / "common/cultures" / cultureFile);
 
-	for (const auto& cultureFile: commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/common/cultures/")))
+	for (const auto& cultureFile: commonItems::GetAllFilesInFolder("blankMod/output/common/cultures/"))
 		parseFile("blankMod/output/common/cultures" / cultureFile);
 
 	clearRegisteredKeywords();

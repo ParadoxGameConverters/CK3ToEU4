@@ -5,7 +5,7 @@
 mappers::DevWeightsMapper::DevWeightsMapper()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/dev_weights.txt"));
+	parseFile("configurables/dev_weights.txt");
 	clearRegisteredKeywords();
 }
 

@@ -26,7 +26,7 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	bool initProvinceMapper = false;
 	for (const auto& mod: sourceWorld.getMods())
 	{
-		if (commonItems::DoesFileExist(std::filesystem::path("configurables") / (mod.name + "_province_mappings.txt")))
+		if (commonItems::DoesFileExist("configurables" + mod.name + "_province_mappings.txt"))
 		{
 			Log(LogLevel::Info) << ">> Found matching province mappings for mod [" << mod.name << "], loading.";
 			provinceMapper = mappers::ProvinceMapper("configurables/" + mod.name + "_province_mappings.txt");
@@ -407,9 +407,9 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 	loadCountriesFromSource(eu4CountriesFile, eu4Path, true);
 	eu4CountriesFile.close();
 
-	if (commonItems::DoesFolderExist(std::filesystem::path("blankMod/output/common/country_tags")))
+	if (commonItems::DoesFolderExist("blankMod/output/common/country_tags"))
 	{
-		auto fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/common/country_tags"));
+		auto fileNames = commonItems::GetAllFilesInFolder("blankMod/output/common/country_tags");
 		for (const auto& file: fileNames)
 		{
 			std::ifstream blankCountriesFile("blankMod/output/common/country_tags" / file);
@@ -447,7 +447,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 		}
 	}
 	// Now our special tags.
-	fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/history/countries"));
+	fileNames = commonItems::GetAllFilesInFolder("blankMod/output/history/countries");
 	for (const auto& fileName: fileNames)
 	{
 		auto tag = fileName.string().substr(0, 3);
@@ -462,7 +462,7 @@ void EU4::World::importVanillaCountries(const std::filesystem::path& eu4Path, bo
 	}
 	if (invasion)
 	{
-		fileNames = commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/countries"));
+		fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/history/countries");
 		for (const auto& fileName: fileNames)
 		{
 			auto tag = fileName.string().substr(0, 3);
@@ -671,7 +671,7 @@ void EU4::World::importVanillaProvinces(const std::filesystem::path& eu4Path, bo
 	Log(LogLevel::Info) << ">> Loaded " << provinces.size() << " province definitions.";
 	if (invasion)
 	{
-		for (const auto& fileName: commonItems::GetAllFilesInFolder(std::filesystem::path("configurables/sunset/history/provinces")))
+		for (const auto& fileName: commonItems::GetAllFilesInFolder("configurables/sunset/history/provinces"))
 		{
 			if (fileName.extension() != ".txt")
 				continue;

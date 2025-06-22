@@ -61,17 +61,17 @@ void EU4::FlagFoundry::generateFlags(const std::map<std::string, std::shared_ptr
 		{
 			const auto dynastyID = country.second->getHouse()->getDynasty().first;
 			// Do we have an appropriate flag?
-			if (commonItems::DoesFileExist(std::filesystem::path("configurables/dynastyflags") / (std::to_string(dynastyID) + ".tga")))
+			if (commonItems::DoesFileExist("configurables/dynastyflags/" + std::to_string(dynastyID) + ".tga"))
 			{
-				std::filesystem::copy_file(std::filesystem::path("configurables/dynastyflags") / (std::to_string(dynastyID) + ".tga"),
-					 std::filesystem::path("flags.tmp") / (country.first + ".tga"),
+				std::filesystem::copy_file("configurables/dynastyflags/" + std::to_string(dynastyID) + ".tga",
+					 "flags.tmp" + country.first + ".tga",
 					 std::filesystem::copy_options::overwrite_existing);
 				continue; // and this country is done.
 			}
 		}
 
 		// Do we have an alternate flag source?
-		if (commonItems::DoesFileExist(std::filesystem::path("blankMod/output/gfx/flags") / (country.first + ".tga")))
+		if (commonItems::DoesFileExist("blankMod/output/gfx/flags" + country.first + ".tga"))
 			continue; // This will be copied over by outWorld.
 
 		if (theConfiguration.getPlayerTitle() && country.second->getTitle() && country.second->getTitle()->first == *theConfiguration.getPlayerTitle())
@@ -140,7 +140,7 @@ void EU4::FlagFoundry::craftFlag(const std::shared_ptr<Country>& country) const
 void EU4::FlagFoundry::craftRebelFlag(const Configuration& theConfiguration, const GeneratedReligion& religion, const Mods& mods) const
 {
 	// Import the generic Rebel Flag
-	if (!commonItems::DoesFileExist(std::filesystem::path("blankMod/output/gfx/flags/generic_rebels.tga")))
+	if (!commonItems::DoesFileExist("blankMod/output/gfx/flags/generic_rebels.tga"))
 		throw std::runtime_error("blankMod/output/gfx/flags/generic_rebels.tga! Where are the rebel scum!?");
 	Magick::Image baseFlag("blankMod/output/gfx/flags/generic_rebels.tga");
 

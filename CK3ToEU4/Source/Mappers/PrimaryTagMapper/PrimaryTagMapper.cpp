@@ -9,7 +9,7 @@ void mappers::PrimaryTagMapper::loadPrimaryTags(const Configuration& theConfigur
 {
 	registerKeys();
 
-	for (const auto& filename: commonItems::GetAllFilesInFolder(std::filesystem::path("blankMod/output/common/cultures/")))
+	for (const auto& filename: commonItems::GetAllFilesInFolder("blankMod/output/common/cultures/"))
 		parseFile("blankMod/output/common/cultures" / filename);
 	for (const auto& filename: commonItems::GetAllFilesInFolder(theConfiguration.getEU4Path() / "common/cultures/"))
 		parseFile(theConfiguration.getEU4Path() / "common/cultures" / filename);

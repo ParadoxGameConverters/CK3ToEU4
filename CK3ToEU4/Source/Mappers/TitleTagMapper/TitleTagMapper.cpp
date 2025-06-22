@@ -8,7 +8,7 @@ mappers::TitleTagMapper::TitleTagMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing Tag mappings";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/tag_mappings.txt"));
+	parseFile("configurables/tag_mappings.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> " << theMappings.size() << " mappings loaded.";
 }

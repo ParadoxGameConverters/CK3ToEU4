@@ -326,25 +326,25 @@ void EU4::World::outputVersion(const commonItems::ConverterVersion& converterVer
 void EU4::World::outputInvasionExtras(const Configuration& theConfiguration) const
 {
 	// Sunset Religions
-	auto files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/religions"));
+	auto files = commonItems::GetAllFilesInFolder("configurables/sunset/common/religions");
 	for (const auto& file: files)
 		fs::copy_file("configurables/sunset/common/religions" / file,
 			 "output" / theConfiguration.getOutputName() / "common/religions" / file,
 			 fs::copy_options::overwrite_existing);
 	// Sunset Ideas
-	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/ideas"));
+	files = commonItems::GetAllFilesInFolder("configurables/sunset/common/ideas");
 	for (const auto& file: files)
 		fs::copy_file("configurables/sunset/common/ideas" / file,
 			 "output" / theConfiguration.getOutputName() / "common/ideas" / file,
 			 fs::copy_options::overwrite_existing);
 	// Sunset Cultures
-	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/common/cultures"));
+	files = commonItems::GetAllFilesInFolder("configurables/sunset/common/cultures");
 	for (const auto& file: files)
 		fs::copy_file("configurables/sunset/common/cultures" / file,
 			 "output" / theConfiguration.getOutputName() / "common/cultures" / file,
 			 fs::copy_options::overwrite_existing);
 	// Sunset Decisions
-	files = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/decisions"));
+	files = commonItems::GetAllFilesInFolder("configurables/sunset/decisions");
 	for (const auto& file: files)
 		fs::copy_file("configurables/sunset/decisions" / file,
 			 "output" / theConfiguration.getOutputName() / "decisions" / file,
@@ -354,14 +354,14 @@ void EU4::World::outputInvasionExtras(const Configuration& theConfiguration) con
 void EU4::World::outputDynamicInstitutions(const Configuration& theConfiguration) const
 {
 	// Dynamic Institions
-	auto files = commonItems::GetAllFilesInFolder(fs::path("configurables/dynamicInstitutions/institutions"));
+	auto files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/institutions");
 	fs::create_directories("output" / theConfiguration.getOutputName() / "common/institutions");
 	for (const auto& file: files)
 		fs::copy_file("configurables/dynamicInstitutions/institutions" / file,
 			 "output" / theConfiguration.getOutputName() / "common/institutions" / file,
 			 fs::copy_options::overwrite_existing);
 	// Dynamic Ideas
-	files = commonItems::GetAllFilesInFolder(fs::path("configurables/dynamicInstitutions/ideas"));
+	files = commonItems::GetAllFilesInFolder("configurables/dynamicInstitutions/ideas");
 	for (const auto& file: files)
 		fs::copy_file("configurables/dynamicInstitutions/ideas" / file,
 			 "output" / theConfiguration.getOutputName() / "common/ideas" / file,
@@ -553,14 +553,14 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 
 	if (invasion)
 	{
-		auto fileNames = commonItems::GetAllFilesInFolder(fs::path("configurables/sunset/localisation/"));
+		auto fileNames = commonItems::GetAllFilesInFolder("configurables/sunset/localisation/");
 		for (const auto& fileName: fileNames)
 			fs::copy_file("configurables/sunset/localisation" / fileName,
 				 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
 				 fs::copy_options::overwrite_existing);
 	}
 
-	auto fileNames = commonItems::GetAllFilesInFolder(fs::path("configurables/religions/reformation/roman/"));
+	auto fileNames = commonItems::GetAllFilesInFolder("configurables/religions/reformation/roman/");
 	for (const auto& fileName: fileNames)
 		fs::copy_file("configurables/religions/reformation/roman" / fileName,
 			 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
@@ -688,7 +688,7 @@ void EU4::World::outputFlags(const Configuration& theConfiguration) const
 		Log(LogLevel::Warning) << "Flag folder flags.tmp not found!";
 		return;
 	}
-	for (const auto& filename: commonItems::GetAllFilesInFolder(fs::path("flags.tmp")))
+	for (const auto& filename: commonItems::GetAllFilesInFolder("flags.tmp"))
 	{
 		if (fs::copy_file("flags.tmp" / filename, "output" / theConfiguration.getOutputName() / "gfx/flags" / filename, fs::copy_options::overwrite_existing))
 			++counter;

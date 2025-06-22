@@ -55,7 +55,7 @@ TEST(CK3World_FaithTests, faithPrimitivesCanBeLoaded)
 	ASSERT_EQ("Custom Name", faith.getCustomName());
 	ASSERT_EQ("Custom Adj", faith.getCustomAdj());
 	ASSERT_EQ("Custom Desc", faith.getDescription());
-	ASSERT_EQ(std::filesystem::path("gfx/icon.dds"), faith.getIconPath());
+	ASSERT_EQ("gfx/icon.dds", faith.getIconPath());
 	ASSERT_EQ("catholic", faith.getTemplate());
 	ASSERT_FALSE(faith.getReformedFlag());
 }
