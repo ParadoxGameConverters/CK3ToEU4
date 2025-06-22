@@ -8,7 +8,7 @@ mappers::IslamOverrideMapper::IslamOverrideMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing religious override mappings.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/islam_override.txt"));
+	parseFile("configurables/islam_override.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << replacements.size() << " replacement links.";
 }

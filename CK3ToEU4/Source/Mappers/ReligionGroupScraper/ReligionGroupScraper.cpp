@@ -9,7 +9,7 @@ mappers::ReligionGroupScraper::ReligionGroupScraper()
 {
 	Log(LogLevel::Info) << "-> Scraping religion hierarchy.";
 	registerKeys();
-	for (const auto& fileName: commonItems::GetAllFilesInFolder(std::filesystem::path("blankmod/output/common/religions/")))
+	for (const auto& fileName: commonItems::GetAllFilesInFolder("blankmod/output/common/religions/"))
 		parseFile("blankmod/output/common/religions" / fileName);
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << religionGroups.size() << " religion groups.";

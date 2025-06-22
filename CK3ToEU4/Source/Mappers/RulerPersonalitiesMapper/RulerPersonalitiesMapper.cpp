@@ -8,7 +8,7 @@ mappers::RulerPersonalitiesMapper::RulerPersonalitiesMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing Ruler Personalities";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/ruler_personalities.txt"));
+	parseFile("configurables/ruler_personalities.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> " << theMappings.size() << " personalities loaded.";
 }

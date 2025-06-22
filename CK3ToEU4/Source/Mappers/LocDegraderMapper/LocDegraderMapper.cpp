@@ -8,7 +8,7 @@ mappers::LocDegraderMapper::LocDegraderMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing character replacement guidelines.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/char_reduce.txt"));
+	parseFile("configurables/char_reduce.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << replacements.size() << " character alternatives.";
 }

@@ -5,7 +5,7 @@
 mappers::VassalSplitoffMapper::VassalSplitoffMapper()
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/vassal_splitoff.txt"));
+	parseFile("configurables/vassal_splitoff.txt");
 	clearRegisteredKeywords();
 }
 

@@ -8,7 +8,7 @@
 mappers::DynamicIdeasMapper::DynamicIdeasMapper(const LocalizationMapper& localizationMapper): locs(localizationMapper)
 {
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/tradition_ideas.txt"));
+	parseFile("configurables/tradition_ideas.txt");
 	clearRegisteredKeywords();
 	processRules();
 }

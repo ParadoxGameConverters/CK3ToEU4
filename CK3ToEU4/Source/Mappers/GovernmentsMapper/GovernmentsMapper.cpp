@@ -7,7 +7,7 @@ mappers::GovernmentsMapper::GovernmentsMapper()
 {
 	Log(LogLevel::Info) << "-> Parsing government mappings.";
 	registerKeys();
-	parseFile(std::filesystem::path("configurables/government_map.txt"));
+	parseFile("configurables/government_map.txt");
 	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> Loaded " << govMappings.size() << " governmental links.";
 }
