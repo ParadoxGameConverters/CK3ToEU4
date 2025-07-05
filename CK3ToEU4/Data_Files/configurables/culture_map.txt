@@ -1070,7 +1070,7 @@ link = { eu4 = kachin ck3 = kachin ck3 = naga tech = chinese gfx = asiangfx }
 link = { eu4 = chin ck3 = manipur tech = chinese gfx = asiangfx }
 link = { eu4 = burmese ck3 = naga tech = indian gfx = indiangfx }
 link = { eu4 = dayak ck3 = kayan ck3 = punan ck3 = ot_danum ck3 = murut ck3 = iban ck3 = bidayuh ck3 = ngaju ck3 = kadazan tech = chinese gfx = asiangfx } 
-link = { eu4 = polynesian ck3 = atayal ck3 = bunun ck3 = paiwan ck3 = pepo ck3 = siraya ck3 = amis ck3 = kavalan tech = polynesian gfx = polynesiangfx } #Taiwan island in EU4 has Polynesian culture (Austronesian), could classify as Formosan/Taiwanese Aborigines 
+link = { eu4 = polynesian ck3 = atayal ck3 = bunun ck3 = paiwan ck3 = pepo ck3 = siraya ck3 = amis ck3 = kavalan tech = polynesian_tech gfx = polynesiangfx } #Taiwan island in EU4 has Polynesian culture (Austronesian), could classify as Formosan/Taiwanese Aborigines 
 link = { eu4 = miao ck3 = hmong ck3 = yao ck3 = sheren tech = chinese gfx = asiangfx }
 link = { eu4 = kyushuan ck3 = ryukyu ck3 = kyushu ck3 = hayato tech = chinese gfx = asiangfx } #Ryukyu islands has Kyushuan in EU4
 link = { eu4 = japanese ck3 = oshu tech = chinese gfx = asiangfx }
@@ -1090,7 +1090,7 @@ link = { eu4 = acehnese ck3 = gayo tech = chinese gfx = asiangfx }
 link = { eu4 = sulawesi ck3 = tomini tech = chinese gfx = asiangfx } #Mapped based on region
 link = { eu4 = moluccan ck3 = nunusaku ck3 = halmahera ck3 = buli tech = chinese gfx = asiangfx } #Mapped based on region
 link = { eu4 = nusa_tenggara ck3 = timor ck3 = sumba tech = chinese gfx = asiangfx } #Mapped based on region
-link = { eu4 = melanesian ck3 = biak tech = polynesian gfx = polynesiangfx } #Mapped based on region
+link = { eu4 = melanesian ck3 = biak tech = polynesian_tech gfx = polynesiangfx } #Mapped based on region
 link = { eu4 = khitan ck3 = shiwei tech = nomad_group gfx = asiangfx } #Shiwei are closely related to the Khitans: https://en.wikipedia.org/wiki/Shiwei_people
 link = { eu4 = mongol ck3 = khamag ck3 = tumed ck3 = tataric tech = chinese gfx = asiangfx }
 link = { eu4 = nivkh ck3 = gilyak tech = eastern gfx = inuitgfx }
@@ -1137,30 +1137,30 @@ link = { eu4 = dagestani ck3 = dargin tech = eastern gfx = easterngfx } # https:
 link = { eu4 = dagestani ck3 = caucasian_avar ck3 = lezgic tech = eastern gfx = easterngfx }
 link = { eu4 = dagestani ck3 = lak tech = eastern gfx = easterngfx } # Wikipedia: "Laks historically live in the Lakskiy and Kulinskiy districts of Dagestan."
 link = { eu4 = kanauji ck3 = brajji tech = indian gfx = indiangfx } # MS Copilot: "Braj culture is closely associated with the Braj Bhasha language, which is a dialect of Hindi. Hindavi, in historical contexts, often refers to the early forms of Hindi and its dialects, making it a fitting match."
-link = { eu4 = polynesian ck3 = palauan tech = polynesian gfx = polynesiangfx }
-link = { eu4 = polynesian ck3 = chuuk tech = polynesian gfx = polynesiangfx } # MS Copilot: "The Chuukese people are part of the broader Micronesian cultural and linguistic group, which shares more similarities with Polynesian cultures in terms of maritime traditions, social structures, and historical interactions compared to [Maori, Melanesian, Papuan]. While not a perfect match, Polynesian culture in EU4 would best represent the seafaring and island-based lifestyle of the Chuukese people."
-link = { eu4 = polynesian ck3 = chamorro ck3 = kosrae ck3 = pohnpei ck3 = yap tech = polynesian gfx = polynesiangfx } # same reason as with chuuk (Micronesian is relatively close to Polynesian)
+link = { eu4 = polynesian ck3 = palauan tech = polynesian_tech gfx = polynesiangfx }
+link = { eu4 = polynesian ck3 = chuuk tech = polynesian_tech gfx = polynesiangfx } # MS Copilot: "The Chuukese people are part of the broader Micronesian cultural and linguistic group, which shares more similarities with Polynesian cultures in terms of maritime traditions, social structures, and historical interactions compared to [Maori, Melanesian, Papuan]. While not a perfect match, Polynesian culture in EU4 would best represent the seafaring and island-based lifestyle of the Chuukese people."
+link = { eu4 = polynesian ck3 = chamorro ck3 = kosrae ck3 = pohnpei ck3 = yap tech = polynesian_tech gfx = polynesiangfx } # same reason as with chuuk (Micronesian is relatively close to Polynesian)
 link = { eu4 = vietnamese ck3 = mnong tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Mnong_people
 link = { eu4 = vietnamese ck3 = bahnar tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Bahnar_people
 link = { eu4 = nusa_tenggara ck3 = abui tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Abui_people
-link = { eu4 = papuan ck3 = mairasi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mairasi_people
-link = { eu4 = papuan ck3 = ndani tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Dani_people
-link = { eu4 = papuan ck3 = mek tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mek_people
-link = { eu4 = papuan ck3 = ok tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mountain_Ok_people
-link = { eu4 = papuan ck3 = kwerba tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Kwerba_language
-link = { eu4 = papuan ck3 = bauzi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Bauzi_people
-link = { eu4 = papuan ck3 = yapen tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/w/index.php?title=Yapen_languages_(Papuan)&redirect=no
-link = { eu4 = papuan ck3 = amung tech = polynesian gfx = polynesiangfx } # https://dbpedia.org/page/Amung_people
-link = { eu4 = papuan ck3 = pauwasi tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Pauwasi_languages
+link = { eu4 = papuan ck3 = mairasi tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mairasi_people
+link = { eu4 = papuan ck3 = ndani tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Dani_people
+link = { eu4 = papuan ck3 = mek tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mek_people
+link = { eu4 = papuan ck3 = ok tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mountain_Ok_people
+link = { eu4 = papuan ck3 = kwerba tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Kwerba_language
+link = { eu4 = papuan ck3 = bauzi tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Bauzi_people
+link = { eu4 = papuan ck3 = yapen tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/w/index.php?title=Yapen_languages_(Papuan)&redirect=no
+link = { eu4 = papuan ck3 = amung tech = polynesian_tech gfx = polynesiangfx } # https://dbpedia.org/page/Amung_people
+link = { eu4 = papuan ck3 = pauwasi tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Pauwasi_languages
 link = { # mapping based on CK3 heritage
 	eu4 = papuan
 	ck3 = mantion ck3 = binandere ck3 = morobe ck3 = madang ck3 = meneao ck3 = gogodala ck3 = chimbu ck3 = enga ck3 = yam ck3 = kayagar ck3 = anim ck3 = oriomo ck3 = awyu ck3 = kiwaian ck3 = bosavi ck3 = asmat ck3 = baining ck3 = nasioi ck3 = sepik
-	tech = polynesian
+	tech = polynesian_tech
 	gfx = polynesiangfx
 }
-link = { eu4 = melanesian ck3 = motu tech = polynesian gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Motu_people
-link = { eu4 = melanesian ck3 = malaita ck3 = ngero ck3 = uneapa ck3 = manus ck3 = suau tech = polynesian gfx = polynesiangfx } # mapping based on CK3 heritage
-link = { eu4 = paman ck3 = kaurareg tech = polynesian gfx = polynesiangfx } # MS Copilot: "The Kaurareg people are part of the Torres Strait Islander group, which is culturally and linguistically distinct from mainland Aboriginal groups. In the context of mapping cultures from CK3 to EU4, the Paman culture would be the most appropriate match for the Kaurareg. The Paman languages are spoken by several groups in the Cape York Peninsula, which is geographically close to the Torres Strait Islands."
+link = { eu4 = melanesian ck3 = motu tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Motu_people
+link = { eu4 = melanesian ck3 = malaita ck3 = ngero ck3 = uneapa ck3 = manus ck3 = suau tech = polynesian_tech gfx = polynesiangfx } # mapping based on CK3 heritage
+link = { eu4 = paman ck3 = kaurareg tech = polynesian_tech gfx = polynesiangfx } # MS Copilot: "The Kaurareg people are part of the Torres Strait Islander group, which is culturally and linguistically distinct from mainland Aboriginal groups. In the context of mapping cultures from CK3 to EU4, the Paman culture would be the most appropriate match for the Kaurareg. The Paman languages are spoken by several groups in the Cape York Peninsula, which is geographically close to the Torres Strait Islands."
 link = { eu4 = sulawesi ck3 = salua ck3 = kaili ck3 = bungku ck3 = gorontalo ck3 = mandar ck3 = munan ck3 = minahasa tech = chinese gfx = asiangfx } # mapping based on CK3 heritage
 link = { eu4 = zhuang ck3 = gelao tech = chinese gfx = asiangfx } # ChatGPT: "The Zhuang people are an ethnic minority in China, like the Gelao. Both belong to the broader family of Tai-Kadai (or Kra-Dai) languages, suggesting some degree of linguistic and cultural affinity."
 link = { eu4 = zhuang ck3 = be tech = chinese gfx = asiangfx } # ChatGPT: "[...] Ong Be, Bê, or Be-Tai, native to Hainan Island and belonging to the Be-Tai language familymost closely corresponds to the Zhuang culture in Europa Universalis IV. Explanation: The BeTai languages belong to the Kra-Dai language family, similar to the Zhuang, who are also part of this linguistic family. The Zhuang culture is primarily found in southern China in EU4, which is geographically close to Hainan and culturally related."

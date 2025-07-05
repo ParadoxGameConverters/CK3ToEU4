@@ -931,8 +931,11 @@ void EU4::GeneratedReligion::outputRebels(std::ostream& output) const
 			 << "if = {";
 	output << "\n\t\t\t"
 			 << "limit = {";
-	output << "\n\t\t\t\t"
-			 << "religion_group = " << religionGroup;
+	if (!religionGroup.empty())
+	{
+		output << "\n\t\t\t\t"
+				 << "religion_group = " << religionGroup;
+	}
 	output << "\n\t\t\t\t"
 			 << "NOT = { religion = " << name << " }";
 	output << "\n\t\t\t"
