@@ -308,7 +308,7 @@ prussian_republic_reform = {
 					have_had_reform = prussian_theocratic_reform
 				}
 			}
-			has_unlocked_government_reform_tooltip = {
+			has_unlocked_government_reform = {
 				government_reform = prussian_republic_reform
 			}
 		}

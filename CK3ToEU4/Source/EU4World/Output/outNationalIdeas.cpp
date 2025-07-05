@@ -24,7 +24,16 @@ std::ostream& EU4::operator<<(std::ostream& output, const NationalIdeas& idea)
 		output << "\t" + traditionIdeas[i] + " = {";
 
 		for (auto& effect: traditionEffects[i])
-			output << "\n\t\t" + effect.modifier + " = " + effect.value;
+		{
+			if (!effect.modifier.empty() && !effect.value.empty())
+			{
+				output << "\n\t\t" + effect.modifier + " = " + effect.value;
+			}
+			else
+			{
+				output << "\n\t\tprestige = 1";
+			}
+		}
 
 		output << "\n\t}\n";
 	}
