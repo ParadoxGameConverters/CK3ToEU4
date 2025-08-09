@@ -458,7 +458,7 @@ link = { eu4 = ryazanian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = ea
 link = { eu4 = ruthenian ck3 = ruthenian ck3 = ukrainian ck3 = volyn_ ck3 = chernigovan tech = eastern gfx = easterngfx }
 link = { eu4 = ruthenian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = ruthenia_region region = crimea_region }
 link = { eu4 = russian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = great_russian tech = eastern gfx = easterngfx region = russia_region region = ural_region } #Muscovite
-link = { eu4 = kishinyov ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = carpathia_region }
+link = { eu4 = kishinyov ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = carpathia_region region = balkan_region }
 link = { eu4 = kishinyov ck3 = antae ck3 = sklav tech = eastern gfx = easterngfx }
 link = { eu4 = red_ruthenian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = poland_region }
 link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx }
