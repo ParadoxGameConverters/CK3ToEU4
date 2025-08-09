@@ -488,6 +488,8 @@ link = { eu4 = slovak ck3 = czech ck3 = urslavic ck3 = old_slavic tech = western
 link = { eu4 = czech ck3 = czech tech = western gfx = westerngfx }
 link = { eu4 = slovak ck3 = slovien ck3 = nitravan tech = western gfx = westerngfx }
 
+link = { eu4 = kishinyov ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = carpathia_region } #East Slavic, moved down to allow Slovak mappings to go through
+
 # South Slavic
 
 link = { eu4 = chrobatian ck3 = croatian tech = eastern gfx = easterngfx region = poland_region region = moldavia_area region = slovakia_area } # White Croatia
