@@ -461,7 +461,7 @@ link = { eu4 = russian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = great
 link = { eu4 = kishinyov ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = carpathia_region }
 link = { eu4 = kishinyov ck3 = russian ck3 = volyn_ tech = eastern gfx = easterngfx region = balkan_region }
 link = { eu4 = kishinyov ck3 = antae ck3 = sklav tech = eastern gfx = easterngfx }
-link = { eu4 = red_ruthenian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = poland_region }
+link = { eu4 = red_ruthenian ck3 = russian ck3 = volyn_ tech = eastern gfx = easterngfx region = poland_region }
 link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx }
 link = { eu4 = russian ck3 = vladimirian tech = eastern gfx = easterngfx }
 link = { eu4 = russian_culture ck3 = russian tech = eastern gfx = easterngfx } #Fallback
