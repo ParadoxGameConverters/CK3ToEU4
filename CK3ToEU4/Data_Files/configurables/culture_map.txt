@@ -450,20 +450,21 @@ link = { eu4 = yemeni_culture ck3 = yemeni ck3 = qahtanite ck3 = hadramaut ck3 =
 
 link = { eu4 = byelorussian ck3 = belarusian ck3 = byelorusian tech = eastern gfx = easterngfx }
 link = { eu4 = novgorodian ck3 = novgorodian tech = eastern gfx = easterngfx }
-link = { eu4 = byelorussian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = baltic_region region = minsk_area region = white_ruthenia_area }
+link = { eu4 = byelorussian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = baltic_region region = minsk_area region = white_ruthenia_area region = pripyat_area region = podlasie_area }
 link = { eu4 = ryazanian ck3 = ryazanian tech = eastern gfx = easterngfx }
 link = { eu4 = byelorussian ck3 = belarusian ck3 = byelorusian tech = eastern gfx = easterngfx }
-link = { eu4 = novgorodian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = novgorod_area region = pskov_area region = beloozero_area region = karelia_area }
+link = { eu4 = novgorodian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = scandinavia_region region = novgorod_area region = pskov_area region = beloozero_area region = karelia_area region = north_karelia region = pomor_area region = arkhangelsk_area }
 link = { eu4 = ryazanian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = smolensk_area region = ryazan_area region = oka_area }
 link = { eu4 = ruthenian ck3 = ruthenian ck3 = ukrainian ck3 = volyn_ ck3 = chernigovan tech = eastern gfx = easterngfx }
 link = { eu4 = ruthenian ck3 = russian ck3 = urslavic ck3 = old_slavic tech = eastern gfx = easterngfx region = ruthenia_region region = crimea_region }
 link = { eu4 = russian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = great_russian tech = eastern gfx = easterngfx region = russia_region region = ural_region } #Muscovite
-link = { eu4 = kishinyov ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = carpathia_region region = poland_region }
+link = { eu4 = kishinyov ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = carpathia_region }
 link = { eu4 = kishinyov ck3 = antae ck3 = sklav tech = eastern gfx = easterngfx }
+link = { eu4 = red_ruthenian ck3 = russian ck3 = urslavic ck3 = old_slavic ck3 = volyn_ tech = eastern gfx = easterngfx region = poland_region }
+link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx }
 link = { eu4 = russian ck3 = vladimirian tech = eastern gfx = easterngfx }
 link = { eu4 = russian_culture ck3 = russian tech = eastern gfx = easterngfx } #Fallback
 
-link = { eu4 = red_ruthenian ck3 = red_ruthenian tech = eastern gfx = easterngfx }
 # East Slavic
 
 link = { eu4 = ilmenian ck3 = ilmenian ck3 = krivich ck3 = vyatichi ck3 = poloch tech = eastern gfx = easterngfx }
