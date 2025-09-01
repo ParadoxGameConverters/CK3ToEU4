@@ -10,7 +10,7 @@ jobs:
           - 'CK3ToEU4/Source'
           - 'CK3ToEU4Tests'
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Run clang-format style check for C/C++ programs.
       uses: jidicula/clang-format-action@v4.15.0
       with:
