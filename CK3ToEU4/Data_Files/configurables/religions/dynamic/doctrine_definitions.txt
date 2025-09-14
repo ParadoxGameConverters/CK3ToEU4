@@ -1284,6 +1284,27 @@ doctrine_funeral_sky_burial  = {
 doctrine_funeral_mummification  = {
 }
 
+######### 1.17
+doctrine_no_anointment = {}
+doctrine_anointment_permitted = {
+	country = {
+		legitimacy = 0.5
+		horde_unity = 0.5
+		devotion = 0.5
+		meritocracy = 0.5
+		republican_tradition = 0.25
+	}
+}
+doctrine_imperial_anointment = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		republican_tradition = 0.5
+	}
+}
+
 ##Mod: More Bookmarks Plus
 #DOCTRINES
 doctrine_right_to_rule_divine = {
