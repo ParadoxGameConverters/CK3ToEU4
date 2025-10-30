@@ -60,8 +60,10 @@ void CK3::Titles::registerKeys()
 					++titleCounter[3];
 				else if (newTitle->getName().find("e_") == 0)
 					++titleCounter[4];
+				else if (newTitle->getName().find("h_") == 0)
+					++titleCounter[5];
 				else
-					++titleCounter[5]; // x_x_, x_mc_ and the rest.
+					++titleCounter[6]; // x_x_, x_mc_ and the rest.
 			}
 			catch (std::exception& e)
 			{
@@ -94,6 +96,11 @@ void CK3::Titles::transcribeDynamicRanks()
 		else if (rank == "empire")
 		{
 			titles.at(key)->setDynamicLevel(LEVEL::EMPIRE);
+			titles.at(key)->setCustomTitle();
+		}
+		else if (rank == "hegemony")
+		{
+			titles.at(key)->setDynamicLevel(LEVEL::HEGEMONY);
 			titles.at(key)->setCustomTitle();
 		}
 		counter++;

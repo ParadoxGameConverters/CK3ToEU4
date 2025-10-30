@@ -26,11 +26,22 @@ enum class LEVEL
 	COUNTY,
 	DUCHY,
 	KINGDOM,
-	EMPIRE
+	EMPIRE,
+	HEGEMONY
 };
 
-static std::map<int, LEVEL> IntToLevel{{0, LEVEL::BARONY}, {1, LEVEL::COUNTY}, {2, LEVEL::DUCHY}, {3, LEVEL::KINGDOM}, {4, LEVEL::EMPIRE}};
-static std::map<LEVEL, int> LevelToInt{{LEVEL::BARONY, 0}, {LEVEL::COUNTY, 1}, {LEVEL::DUCHY, 2}, {LEVEL::KINGDOM, 3}, {LEVEL::EMPIRE, 4}};
+static std::map<int, LEVEL> IntToLevel{{0, LEVEL::BARONY},
+	 {1, LEVEL::COUNTY},
+	 {2, LEVEL::DUCHY},
+	 {3, LEVEL::KINGDOM},
+	 {4, LEVEL::EMPIRE},
+	 {5, LEVEL::HEGEMONY}};
+static std::map<LEVEL, int> LevelToInt{{LEVEL::BARONY, 0},
+	 {LEVEL::COUNTY, 1},
+	 {LEVEL::DUCHY, 2},
+	 {LEVEL::KINGDOM, 3},
+	 {LEVEL::EMPIRE, 4},
+	 {LEVEL::HEGEMONY, 5}};
 
 class Title: commonItems::parser
 {

@@ -357,6 +357,8 @@ CK3::LEVEL CK3::Title::getLevel() const
 		return LEVEL::KINGDOM;
 	if (name.find("e_") == 0)
 		return LEVEL::EMPIRE;
+	if (name.find("h_") == 0)
+		return LEVEL::HEGEMONY;
 
 	// for dynamic tiles we may have a level set already.
 	if (dynamicLevel)
@@ -368,7 +370,7 @@ CK3::LEVEL CK3::Title::getLevel() const
 
 	// see if they hold any vassals and if so, assign a level one step higher.
 	auto level = -1;
-	const std::set<char> allowedPrefixes = {'b', 'c', 'd', 'k'};
+	const std::set<char> allowedPrefixes = {'b', 'c', 'd', 'k', 'e'};
 	for (const auto& vassal: djVassals) // run through all as they can vary in levels.
 	{
 		if (!allowedPrefixes.count(vassal.second->getName().at(0)))

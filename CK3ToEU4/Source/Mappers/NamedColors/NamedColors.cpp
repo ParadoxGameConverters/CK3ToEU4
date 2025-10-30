@@ -24,6 +24,13 @@ void mappers::NamedColors::registerKeys()
 		loadedColors.loadColors(theStream);
 	});
 	registerRegex(commonItems::catchallRegex, [](const std::string& colorName, std::istream& theStream) {
-		laFabricaDeColor.addNamedColor(colorName, theStream);
+		try
+		{
+			laFabricaDeColor.addNamedColor(colorName, theStream);
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Warning) << "Issue parsing named colors: " << colorName << " : " << e.what();
+		}
 	});
 }

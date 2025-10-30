@@ -31,7 +31,7 @@ void CK3::LandedTitles::loadTitles(const std::filesystem::path& fileName)
 
 void CK3::LandedTitles::registerKeys()
 {
-	registerRegex(R"((e|k|d|c|b)_[A-Za-z0-9_\-\']+)", [this](const std::string& titleName, std::istream& theStream) {
+	registerRegex(R"((h|e|k|d|c|b)_[A-Za-z0-9_\-\']+)", [this](const std::string& titleName, std::istream& theStream) {
 		// Pull the titles beneath this one and add them to the lot, overwriting existing ones.
 		auto newTitle = std::make_shared<LandedTitles>();
 		newTitle->loadTitles(theStream);
