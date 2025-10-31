@@ -104,7 +104,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 									  << ", defaulting to monarchy.";
 		details.government = "monarchy";
 	}
-	if (title->second->getLevel() == CK3::LEVEL::EMPIRE)
+	if (title->second->getLevel() == CK3::LEVEL::EMPIRE || title->second->getLevel() == CK3::LEVEL::HEGEMONY)
 		details.governmentRank = 3;
 	else if (title->second->getLevel() == CK3::LEVEL::KINGDOM)
 		details.governmentRank = 2;
@@ -565,7 +565,9 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	// out of ideas. Ignore everything and use name if possible.
 	if (!adjSet)
 	{
-		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj is missing. Using name substitute if possible.";
+		// Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj is missing. Using name substitute if
+		// possible.";
+		// Too spammy nowadays with billions of non-adj titles.
 		if (nameSet && localizations.contains(tag))
 			localizations.emplace(tag + "_ADJ", localizations.at(tag));
 	}

@@ -389,7 +389,7 @@ void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared
 		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
 			continue;
 		const auto& mappings = provinceMapper.getEU4ProvinceNumbers(title.first);
-		if (mappings.empty())
+		if (mappings.empty() && !title.first.contains("c_nf_")) // Ignore dynamic titles.
 		{
 			Log(LogLevel::Warning) << "Province mapping error: " << title.first << " has no EU4 provinces!";
 		}
@@ -525,6 +525,12 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration
 	Log(LogLevel::Info) << "-> Importing CK3 Countries";
 	// countries holds all tags imported from EU4. We'll now overwrite some and
 	// add new ones from ck3 titles.
+	for (const auto& title: sourceWorld.getIndeps())
+	{
+		if (title.second->getLevel() != CK3::LEVEL::HEGEMONY)
+			continue;
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
+	}
 	for (const auto& title: sourceWorld.getIndeps())
 	{
 		if (title.second->getLevel() != CK3::LEVEL::EMPIRE)

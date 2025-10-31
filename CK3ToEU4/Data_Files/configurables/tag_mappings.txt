@@ -1196,6 +1196,7 @@ link = { ck3 = k_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 link = { ck3 = e_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 
 # Mod: East Asia Reboot
+link = { ck3 = h_china eu4 = CHN }
 link = { ck3 = e_china eu4 = CHN }
 link = { ck3 = k_wei_western_regions eu4 = WEI }
 link = { ck3 = k_zin eu4 = QIN }

@@ -409,7 +409,7 @@ link = { eu4 = uyghur ck3 = uyghur tech = nomad_group gfx = muslimgfx }
 link = { eu4 = khitan ck3 = khitan tech = nomad_group gfx = asiangfx }
 link = { eu4 = sogdian ck3 = sogdian tech = nomad_group gfx = asiangfx }
 link = { eu4 = tocharian ck3 = tocharian ck3 = khotanese ck3 = gushi tech = chinese gfx = asiangfx }
-link = { eu4 = manchu ck3 = jurchen tech = chinese gfx = asiangfx }
+link = { eu4 = manchu ck3 = jurchen ck3 = mohe tech = chinese gfx = asiangfx }
 
 link = { eu4 = hunnic ck3 = hunnic ck3 = xiongnu ck3 = hunno_bulgar ck3 = tiele ck3 = kurykan ck3 = hunas tech = nomad_group gfx = asiangfx }
 
@@ -677,12 +677,12 @@ link = { eu4 = kachin ck3 = shan tech = chinese gfx = asiangfx province = 2395 p
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
-link = { eu4 = sulawesi ck3 = makassar ck3 = bugis tech = chinese gfx = asiangfx }
+link = { eu4 = sulawesi ck3 = makassar ck3 = bugis ck3 = toraja tech = chinese gfx = asiangfx }
 link = { eu4 = malayan ck3 = malay tech = chinese gfx = asiangfx }
 link = { eu4 = sumatran ck3 = batak tech = chinese gfx = asiangfx }
-link = { eu4 = javanese ck3 = java tech = chinese gfx = asiangfx }
+link = { eu4 = javanese ck3 = javanese ck3 = java tech = chinese gfx = asiangfx }
 link = { eu4 = sundanese ck3 = sunda tech = chinese gfx = asiangfx }
-link = { eu4 = acehnese ck3 = seletar ck3 = aceh tech = chinese gfx = asiangfx }
+link = { eu4 = acehnese ck3 = acehnese ck3 = seletar ck3 = aceh tech = chinese gfx = asiangfx }
 link = {  # ImperatorToCK3
 	eu4 = palaungic tech = chinese gfx = asiangfx
 	ck3 = palaungic # https://en.wikipedia.org/wiki/Palaung_people
@@ -690,7 +690,7 @@ link = {  # ImperatorToCK3
 }
 
 # Japanese
-link = { eu4 = korean ck3 = korean ck3 = samhan tech = chinese gfx = asiangfx }
+link = { eu4 = korean ck3 = korean ck3 = goryeo ck3 = silla ck3 = baekje ck3 = samhan tech = chinese gfx = asiangfx }
 link = { eu4 = togoku ck3 = japanese tech = chinese gfx = asiangfx region = eastern_chubu_area region = eastern_kanto_area province = 4193 province = 1024 province = 1837 region = thohoku_area province = 1030 province = 1835 region = kanto_area }
 link = { eu4 = kyushuan ck3 = japanese tech = chinese gfx = asiangfx region = northern_kyushu region = kyushu_area }
 link = { eu4 = kyushuan ck3 = ryukyuan tech = chinese gfx = asiangfx }
@@ -1072,7 +1072,7 @@ link = { eu4 = karen ck3 = karen tech = chinese gfx = asiangfx }
 link = { eu4 = kachin ck3 = kachin ck3 = naga tech = chinese gfx = asiangfx }
 link = { eu4 = chin ck3 = manipur tech = chinese gfx = asiangfx }
 link = { eu4 = burmese ck3 = naga tech = indian gfx = indiangfx }
-link = { eu4 = dayak ck3 = kayan ck3 = punan ck3 = ot_danum ck3 = murut ck3 = iban ck3 = bidayuh ck3 = ngaju ck3 = kadazan tech = chinese gfx = asiangfx } 
+link = { eu4 = dayak ck3 = dayak ck3 = kayan ck3 = punan ck3 = ot_danum ck3 = murut ck3 = iban ck3 = bidayuh ck3 = ngaju ck3 = kadazan tech = chinese gfx = asiangfx } 
 link = { eu4 = polynesian ck3 = atayal ck3 = bunun ck3 = paiwan ck3 = pepo ck3 = siraya ck3 = amis ck3 = kavalan tech = polynesian_tech gfx = polynesiangfx } #Taiwan island in EU4 has Polynesian culture (Austronesian), could classify as Formosan/Taiwanese Aborigines 
 link = { eu4 = miao ck3 = hmong ck3 = yao ck3 = sheren tech = chinese gfx = asiangfx }
 link = { eu4 = kyushuan ck3 = ryukyu ck3 = kyushu ck3 = hayato tech = chinese gfx = asiangfx } #Ryukyu islands has Kyushuan in EU4
@@ -1087,11 +1087,12 @@ link = { eu4 = sumatran ck3 = minangkabau ck3 = kerinci ck3 = rejang ck3 = nias 
 link = { eu4 = malayan ck3 = minangkabau ck3 = kerinci tech = chinese gfx = asiangfx region = malaya_area region = johor_area region = north_malaya_area region = malacca_area }
 link = { eu4 = bornean ck3 = banjar tech = chinese gfx = asiangfx }
 link = { eu4 = nusa_tenggara ck3 = bali ck3 = samawa tech = chinese gfx = asiangfx }
-link = { eu4 = filipino ck3 = sama tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = bisayan ck3 = iloko ck3 = sama tech = chinese gfx = asiangfx }
+link = { eu4 = filipino ck3 = nakkavaram tech = chinese gfx = asiangfx } #per eu4 dev comment in province culture "closest we can get without making a new culture"
 link = { eu4 = javanese ck3 = madura tech = chinese gfx = asiangfx }
 link = { eu4 = acehnese ck3 = gayo tech = chinese gfx = asiangfx }
 link = { eu4 = sulawesi ck3 = tomini tech = chinese gfx = asiangfx } #Mapped based on region
-link = { eu4 = moluccan ck3 = nunusaku ck3 = halmahera ck3 = buli tech = chinese gfx = asiangfx } #Mapped based on region
+link = { eu4 = moluccan ck3 = nunusaku ck3 = halmahera ck3 = buli ck3 = maluku tech = chinese gfx = asiangfx } #Mapped based on region
 link = { eu4 = nusa_tenggara ck3 = timor ck3 = sumba tech = chinese gfx = asiangfx } #Mapped based on region
 link = { eu4 = melanesian ck3 = biak tech = polynesian_tech gfx = polynesiangfx } #Mapped based on region
 link = { eu4 = khitan ck3 = shiwei tech = nomad_group gfx = asiangfx } #Shiwei are closely related to the Khitans: https://en.wikipedia.org/wiki/Shiwei_people
@@ -1112,7 +1113,7 @@ link = { eu4 = siberian ck3 = shor ck3 = telengit tech = nomad_group gfx = musli
 link = { eu4 = yakut ck3 = sakha tech = eastern gfx = inuitgfx }
 link = { eu4 = central_thai ck3 = siamese tech = chinese gfx = asiangfx }
 link = { eu4 = northern_thai ck3 = lanna tech = chinese gfx = asiangfx }
-link = { eu4 = zhuang ck3 = nong tech = chinese gfx = asiangfx }
+link = { eu4 = zhuang ck3 = nong ck3 = bouxcuengh tech = chinese gfx = asiangfx }
 link = { eu4 = shan ck3 = ahom tech = chinese gfx = asiangfx }
 link = { eu4 = buryat ck3 = barqut ck3 = ekhirit ck3 = tula tech = nomad_group gfx = inuitgfx } #No information on Tula, has Buryat language and name list
 link = { eu4 = mongol ck3 = onggirad ck3 = tajiuud  ck3 = merkit ck3 = qay tech = chinese gfx = asiangfx }
@@ -1146,6 +1147,7 @@ link = { eu4 = polynesian ck3 = chamorro ck3 = kosrae ck3 = pohnpei ck3 = yap te
 link = { eu4 = vietnamese ck3 = mnong tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Mnong_people
 link = { eu4 = vietnamese ck3 = bahnar tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Bahnar_people
 link = { eu4 = nusa_tenggara ck3 = abui tech = chinese gfx = asiangfx } # https://en.wikipedia.org/wiki/Abui_people
+link = { eu4 = papuan ck3 = papuan tech = polynesian_tech gfx = polynesiangfx }
 link = { eu4 = papuan ck3 = mairasi tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mairasi_people
 link = { eu4 = papuan ck3 = ndani tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Dani_people
 link = { eu4 = papuan ck3 = mek tech = polynesian_tech gfx = polynesiangfx } # https://en.wikipedia.org/wiki/Mek_people

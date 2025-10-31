@@ -104,6 +104,10 @@ void CK3::LandedTitles::linkCountyDetails(const CountyDetails& countyDetails)
 			landedTitle.second->loadCountyDetails(*countyDataItr);
 			++counter;
 		}
+		else if (landedTitle.first.find("c_nf_") == 0)
+		{
+			// This is a virtual county-level title for daimyos and whatnot. Ignore this issue.
+		}
 		else
 		{
 			// Nothing. People with missing titles from mods and whatnot can have holes on their map.

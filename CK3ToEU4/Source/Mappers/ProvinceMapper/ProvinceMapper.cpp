@@ -109,6 +109,10 @@ std::vector<int> mappers::ProvinceMapper::getEU4ProvinceNumbers(const std::strin
 			Log(LogLevel::Warning) << "Province Mapper mismatch - " << ck3CountyName << " with baronyID " << mapping->second << " has no mappings!";
 		}
 	}
+	else if (ck3CountyName.contains("c_nf_"))
+	{
+		// Nothing, false alarm, junk dynamic title.
+	}
 	else
 	{
 		Log(LogLevel::Warning) << "Province Mapper mismatch - " << ck3CountyName << " has no mappings!";
