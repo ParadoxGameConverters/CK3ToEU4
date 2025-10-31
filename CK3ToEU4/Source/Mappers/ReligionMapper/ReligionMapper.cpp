@@ -153,7 +153,7 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	rebelBlock.english = "$RELIGION$ Zealots";
 	rebelBlock.french = "Fanatiques $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Fanatiker";
-	rebelBlock.spanish = "Fan�ticos de $RELIGION$";
+	rebelBlock.spanish = "Fanaticos de $RELIGION$";
 	localizations.insert(std::pair(faithName + "_rebels_name", rebelBlock));
 	// Desc
 	rebelBlock.english =
@@ -170,9 +170,9 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	localizations.insert(std::pair(faithName + "_rebels_desc", rebelBlock));
 	// Army
 	rebelBlock.english = "$RELIGION$ Army";
-	rebelBlock.french = "Arm�e $RELIGION$";
+	rebelBlock.french = "Armee $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Armee";
-	rebelBlock.spanish = "Ej�rcito $RELIGION$";
+	rebelBlock.spanish = "Ejercito $RELIGION$";
 	localizations.insert(std::pair(faithName + "_rebels_army", rebelBlock));
 
 	// Grab the source definitions from the originating faith (unreformed one)
@@ -370,7 +370,7 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		descBlock.english = "Odin is the major god of the Norse pantheon, commonly associated with war, victory and death.";
 		descBlock.french = "Odin est le dieu principal du pantheon norrois, et est souvent associe a la guerre, la victoire et la mort.";
 		descBlock.german = "Odin ist der Hauptgott der nordischen Ruhmeshalle und wird allgemein mit Krieg, Sieg und Tod assoziiert.";
-		descBlock.spanish = "Od�n es el dios principal del Panteon nordico, generalmente asociado con la guerra, la victoria y la muerte.";
+		descBlock.spanish = "Odin es el dios principal del Panteon nordico, generalmente asociado con la guerra, la victoria y la muerte.";
 		localizations.insert(std::pair("odin_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("odin_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Freya";
