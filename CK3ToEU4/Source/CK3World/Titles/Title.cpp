@@ -347,17 +347,17 @@ void CK3::Title::congregateDJCounties()
 CK3::LEVEL CK3::Title::getLevel() const
 {
 	// It's easy, until it's not.
-	if (name.find("b_") == 0)
+	if (name.starts_with("b_"))
 		return LEVEL::BARONY;
-	if (name.find("c_") == 0)
+	if (name.starts_with("c_"))
 		return LEVEL::COUNTY;
-	if (name.find("d_") == 0)
+	if (name.starts_with("d_"))
 		return LEVEL::DUCHY;
-	if (name.find("k_") == 0)
+	if (name.starts_with("k_"))
 		return LEVEL::KINGDOM;
-	if (name.find("e_") == 0)
+	if (name.starts_with("e_"))
 		return LEVEL::EMPIRE;
-	if (name.find("h_") == 0)
+	if (name.starts_with("h_"))
 		return LEVEL::HEGEMONY;
 
 	// for dynamic tiles we may have a level set already.

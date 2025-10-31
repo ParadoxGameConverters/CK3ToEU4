@@ -389,7 +389,7 @@ void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared
 		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
 			continue;
 		const auto& mappings = provinceMapper.getEU4ProvinceNumbers(title.first);
-		if (mappings.empty() && !title.first.contains("c_nf_")) // Ignore dynamic titles.
+		if (mappings.empty() && !title.first.starts_with("c_nf_")) // Ignore dynamic titles.
 		{
 			Log(LogLevel::Warning) << "Province mapping error: " << title.first << " has no EU4 provinces!";
 		}
