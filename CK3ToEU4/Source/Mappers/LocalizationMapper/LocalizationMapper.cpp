@@ -62,8 +62,12 @@ void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 		const auto& loc = selectLanguage(lang, block);
 		if (loc.find('$') != std::string::npos) // TODO: handle escaped \$
 		{
-			const auto& keyStr = getLeadStr(loc, 2, "$");		 // Chop off tail after nested key
-			const auto& nestedKey = getTailStr(keyStr, 1, "$"); // Chop off head before nested key
+			const auto& keyStr = getLeadStr(loc, 2, "$"); // Chop off tail after nested key
+			auto nestedKey = getTailStr(keyStr, 1, "$");	 // Chop off head before nested key
+			if (nestedKey.find('|') != std::string::npos)
+			{
+				nestedKey = getLeadStr(nestedKey, 1, "|"); // chop off localization specifics within the nested key. We can't handle them anyway.
+			}
 			if (const auto& newblock = getLocBlockForKey(nestedKey); newblock)
 			{
 				const auto& fstr = getLeadStr(loc, 1, "$");
@@ -282,7 +286,7 @@ std::string mappers::cleanLocMarkups(const std::string& loc)
 	if (loc.find('#') == std::string::npos)
 		return loc;
 
-	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! witho no whitespace trailing it.
+	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! with no whitespace trailing it.
 	// We iterate over the entire string and just rip these out.
 
 	auto workingLoc = loc;

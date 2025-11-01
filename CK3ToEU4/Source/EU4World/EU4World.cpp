@@ -1246,7 +1246,8 @@ void EU4::World::resolvePersonalUnions()
 			if (!foundTag)
 			{
 				// ... mooooving on.
-				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+				// Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+				// Commented out warning due to c_nf_ title holders with junk in their domain.
 			}
 		}
 		else

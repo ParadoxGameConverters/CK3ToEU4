@@ -308,7 +308,6 @@ void CK3::World::primeLaFabricaDeColor(const Configuration& theConfiguration)
 	{
 		if (file.extension() != ".txt")
 			continue;
-		Log(LogLevel::Debug) << file;
 		namedColors.loadColors(theConfiguration.getCK3Path() / "common/named_colors" / file);
 	}
 	for (const auto& mod: mods)

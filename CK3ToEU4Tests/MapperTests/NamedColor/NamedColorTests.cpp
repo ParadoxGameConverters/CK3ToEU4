@@ -34,6 +34,31 @@ TEST(Mappers_NamedColorsTests, ColorsCanBeLoaded)
 	laFabricaDeColor.clear();
 }
 
+
+TEST(Mappers_NamedColorsTests, VerySpecificCK3JunkIsIgnored)
+{
+	std::stringstream input;
+	input << "red 		= hsv {		0.02 	0.8 	0.45 	}\n";
+	input << "blue 		= hsv {		0.58 	0.8 	0.4 	} \n";
+	input << "khitan { 0.00 0.00 0.00 }\n ";
+	input << "tungusic { 0.00 0.00 0.00 }\n";
+	input << "brown 		= hsv360 {	021 	074 	045		} \n";
+
+	mappers::NamedColors colors;
+	colors.loadColors(input);
+
+	const auto& red = laFabricaDeColor.getColor("red");
+	const auto& blue = laFabricaDeColor.getColor("blue");
+	const auto& brown = laFabricaDeColor.getColor("brown");
+
+	EXPECT_EQ(4, laFabricaDeColor.getRegisteredColors().size());
+	EXPECT_EQ("= hsv { 0.02 0.8 0.45 }", red.outputHsv());
+	EXPECT_EQ("= hsv { 0.58 0.8 0.4 }", blue.outputHsv());
+	EXPECT_EQ("= hsv360 { 21 74 45 }", brown.outputHsv360());
+
+	laFabricaDeColor.clear();
+}
+
 TEST(Mappers_NamedColorsTests, ColorsCanBeOverriddenByMods)
 {
 	laFabricaDeColor.clear();

@@ -136,9 +136,9 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		Log(LogLevel::Warning) << tag << " has no match for base faith: " << baseReligion;
 		details.religion.clear();
 	}
-	// Change capitals for anyone not aztec.
+	// Change capitals for anyone not aztec or using c_nf_ title.
 	auto capitalMatchFound = false;
-	if (tag != "AZT")
+	if (tag != "AZT" && !title->first.starts_with("c_nf_"))
 	{
 		if (details.holder->getCharacterDomain() && details.holder->getCharacterDomain()->getRealmCapital().second)
 		{
@@ -159,7 +159,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		}
 	}
 
-	if (!capitalMatchFound && tag != "AZT")
+	if (!capitalMatchFound && tag != "AZT" && !title->first.starts_with("c_nf_"))
 	{
 		Log(LogLevel::Warning) << "No match for capital or missing capital for: " << tag;
 		details.capital = 0;

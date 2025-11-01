@@ -697,6 +697,85 @@ tenet_household_gods = {
 		improve_relation_modifier = 0.1
 	}
 }
+tenet_takamin = {
+	country = {
+		land_attrition = -0.3
+	}
+	country_as_secondary = {
+		land_attrition = -0.3
+	}
+}
+tenet_preservation = {
+	country = {
+		build_cost = -0.25
+	}
+	country_as_secondary = {
+		build_cost = -0.15
+	}
+}
+tenet_sacred_destruction = {
+	country = {
+		land_morale = 0.15
+	}
+	country_as_secondary = {
+		land_morale = 0.05
+	}
+}
+tenet_harmonious_society = {
+	country = {
+		religious_unity = 0.15
+	}
+}
+tenet_filial_piety = {
+	country = {
+		relation_with_same_religion = 15
+	}
+}
+tenet_benevolent_governance = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		republican_tradition = 0.5
+	}
+}
+tenet_pursuit_of_knowledge = {
+	country = {
+		technology_cost = -0.1
+	}
+	country_as_secondary = {
+		technology_cost = -0.05
+	}
+}
+tenet_cranial_trophies = {
+	country = {
+		prestige_from_land = 0.15
+	}
+	country_as_secondary = {
+		prestige_from_land = 0.1
+	}
+}
+tenet_extinction_of_dharma = {
+	country = {
+		tolerance_heathen = -2
+		tolerance_heretic = -2
+	}
+}
+tenet_mountain_worship = {
+	country = {
+		development_cost = -0.05
+	}
+}
+tenet_no_mind = {
+	#Zen
+}
+tenet_pure_land = {
+	country = {
+		tolerance_heathen = -2
+		tolerance_heretic = 2
+	}
+}
 
 #Empty
 tenets = {
@@ -757,6 +836,9 @@ doctrine_deviancy_shunned = {
 }
 
 doctrine_deviancy_accepted = {
+}
+
+doctrine_deviancy_virtuous = {
 }
 ##Adultery
 doctrine_adultery_men_crime = {
@@ -865,6 +947,19 @@ doctrine_pluralism_pluralistic = {
 		local_missionary_strength = 0.01
 	}
 }
+##Theism
+doctrine_polytheist = {
+	country = {
+		tolerance_heathen = 1
+		tolerance_heretic = 1
+	}
+}
+doctrine_monotheist = {
+	country = {
+		tolerance_heathen = -1
+		tolerance_heretic = -1
+	}
+}
 ##Theocracy
 doctrine_theocracy_temporal = {
 }
@@ -892,6 +987,10 @@ doctrine_clerical_function_recruitment = {
 doctrine_pilgrimage_encouraged = {
 }
 doctrine_pilgrimage_mandatory = {
+}
+doctrine_pilgrimage_mandatory_hajj = {
+}
+doctrine_pilgrimage_local_rites = {
 }
 doctrine_temple_authority = {
 	tolerance_own = 2
@@ -960,6 +1059,12 @@ pagan_hostility_doctrine = {
 }
 
 eastern_hostility_doctrine = {
+	country = {
+		tolerance_heathen = -1
+	}
+}
+
+sinitic_hostility_doctrine = {
 	country = {
 		tolerance_heathen = -1
 	}
@@ -1067,6 +1172,9 @@ special_doctrine_is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just 
 	
 }
 
+special_doctrine_immaterial_harmony = {
+}
+
 special_doctrine_is_gnostic_faith = {
 	not_unique_modifiers = {
 		misguided_heretic = yes	
@@ -1148,6 +1256,11 @@ special_doctrine_full_tolerance  = {
 	country = {
 		tolerance_heathen = 6
 		tolerance_heretic = 5
+	}
+}
+immaterial_harmony  = {
+	unique_modifiers = {
+		uses_harmony = yes
 	}
 }
 ##RICE
@@ -1282,6 +1395,15 @@ doctrine_funeral_sky_burial  = {
 	}
 }
 doctrine_funeral_mummification  = {
+}
+doctrine_family_rites  = {
+	country = {
+		legitimacy = 1
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+		republican_tradition = 0.5
+	}
 }
 
 ######### 1.17

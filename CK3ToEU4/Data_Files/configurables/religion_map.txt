@@ -15,9 +15,9 @@ link = { eu4 = iberian_pagan ck3 = basque_pagan  } #Temp
 link = { eu4 = bon_reformed ck3 = bon  }
 link = { eu4 = bon ck3 = old_bon }
 # Buddhism
-link = { eu4 = buddhism ck3 = theravada ck3 = ari }
-link = { eu4 = mahayana ck3 = mahayana }
-link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
+link = { eu4 = buddhism ck3 = theravada ck3 = ari ck3 = pundarika ck3 = dhyana ck3 = maitreya ck3 = vinaya }
+link = { eu4 = mahayana ck3 = mahayana ck3 = sukhavati ck3 = avatamsaka ck3 = yogacara }
+link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism ck3 = mantrayana ck3 = acharya }
 # Christianity
 link = { eu4 = catholic religious_head = k_papal_state }
 link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
@@ -101,7 +101,7 @@ link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism
 link = { eu4 = tengri_pagan ck3 = tengri_pagan }
 # Waaqism
-link = { eu4 = shamanism ck3 = waaqism_pagan }
+link = { eu4 = shamanism ck3 = waaqism_pagan ck3 = ngaiism_pagan }
 # West African
 link = { eu4 = shamanism ck3 = west_african_pagan ck3 = west_african_bidu_pagan ck3 = makonde_pagan ck3 = makua_pagan ck3 = mijikenda_pagan }
 # West African Bori
@@ -125,6 +125,8 @@ link = { eu4 = mazdaki ck3 = mazdakism }
 link = { eu4 = khurramism ck3 = khurramism }
 # Zunism
 link = { eu4 = zun_pagan ck3 = zun_pagan }
+# Japanese
+link = { eu4 = animist ck3 = utaki }
 
 # IRToCK3 addition
 ## Celtic
@@ -202,7 +204,7 @@ link = { eu4 = animism ck3 = ban_phi }
 link = { eu4 = animism ck3 = yzng }
 link = { eu4 = animism ck3 = bugaism }
 link = { eu4 = animism ck3 = abkaism }
-link = { eu4 = animism ck3 = moism }
+link = { eu4 = animism ck3 = moism ck3 = satsana_phi }
 link = { eu4 = animism ck3 = muism ck3 = mu }
 link = { eu4 = mardukism ck3 = shamsi_pagan }
 
