@@ -35,7 +35,7 @@ jobs:
            submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
         
@@ -50,7 +50,7 @@ jobs:
        ./CK3ToEU4Tests
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
       
     - name: Cleanup
       uses: colpal/actions-clean@v1
@@ -79,7 +79,7 @@ jobs:
            submodule update --init --recursive Fronter
 
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@v4
       with:
         languages: ${{ matrix.language }}
        
@@ -104,4 +104,4 @@ jobs:
        ./CK3ToEU4Tests
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@v4
