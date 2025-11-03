@@ -669,7 +669,7 @@ link = { ck3 = d_khuzestan eu4 = YZD }
 
 link = { ck3 = k_adal eu4 = ADA }
 link = { ck3 = d_adal eu4 = ADA }
-link = { ck3 = e_ajuraan eu4 = AJU }
+link = { ck3 = e_azania eu4 = AJU }
 link = { ck3 = k_ajuraan eu4 = AJU }
 link = { ck3 = d_west_ajuraan eu4 = AJU }
 link = { ck3 = d_ashanti eu4 = ASH }
@@ -799,7 +799,7 @@ link = { ck3 = c_haruppeswara eu4 = ASS }
 link = { ck3 = k_makran eu4 = BAL } #Kingdom of the Baloch culture, iffy mapping
 link = { ck3 = c_vadodara eu4 = BDA } #New name of Badora
 link = { ck3 = c_mandapika eu4 = BGA }
-link = { ck3 = e_india eu4 = BHA }
+link = { ck3 = h_india eu4 = BHA }
 link = { ck3 = k_lhomon eu4 = BHU }
 link = { ck3 = d_paro eu4 = BHU }
 link = { ck3 = c_paro eu4 = BHU }
@@ -1108,7 +1108,7 @@ link = { ck3 = c_salamat eu4 = WAD } #
 link = { ck3 = c_dar_rashid eu4 = WAD } #
 link = { ck3 = d_aksum eu4 = AKS } # Aksum
 link = { ck3 = e_axum eu4 = AKS }
-link = { ck3 = k_outer_ajuraan eu4 = OGD } # Ogaaden
+link = { ck3 = k_bale eu4 = OGD } # Ogaaden
 link = { ck3 = d_shabelle eu4 = OGD } # Ogaaden
 link = { ck3 = c_gidaya eu4 = OGD } # Ogaaden
 link = { ck3 = c_ganale eu4 = OGD } # Ogaaden
@@ -1127,7 +1127,8 @@ link = { ck3 = d_vepsia eu4 = VPS }
 link = { ck3 = k_yugra eu4 = YUG }
 
 #???
-link = { ck3 = e_roman_empire eu4 = ROM }
+link = { ck3 = h_roman_empire eu4 = ROM }
+link = { ck3 = h_eastern_roman_empire eu4 = BYZ }
 link = { ck3 = e_wre eu4 = ROM }
 
 
@@ -1196,7 +1197,6 @@ link = { ck3 = k_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 link = { ck3 = e_IMPTOCK3_MSY eu4 = KBA } # Massylia => Kabylia
 
 # Mod: East Asia Reboot
-link = { ck3 = h_china eu4 = CHN }
 link = { ck3 = e_china eu4 = CHN }
 link = { ck3 = k_wei_western_regions eu4 = WEI }
 link = { ck3 = k_zin eu4 = QIN }
@@ -1341,4 +1341,100 @@ link = { ck3 = e_qara_qoyunlu eu4 = QAR }
 link = { ck3 = k_qara_qoyunlu eu4 = QAR }
 link = { ck3 = e_aq_qoyunlu eu4 = AKK }
 link = { ck3 = k_aq_qoyunlu eu4 = AKK }
+
+link = { ck3 = k_hujung_medini eu4 = MLC }
+link = { ck3 = k_malayadvipa eu4 = PLB }
+link = { ck3 = k_yavakadvipa eu4 = MTR }
+link = { ck3 = k_tanjungnagara eu4 = BEI }
+link = { ck3 = k_sulawesi eu4 = LUW }
+link = { ck3 = k_maluku eu4 = TER }
+link = { ck3 = k_dvaravati eu4 = AYU }
+link = { ck3 = k_funan eu4 = KHM }
+link = { ck3 = k_chenla eu4 = CHK }
+link = { ck3 = k_champa eu4 = CHA }
+link = { ck3 = k_ruucuu eu4 = RYU }
+link = { ck3 = k_lusung eu4 = TDO }
+link = { ck3 = k_kabisay-an eu4 = MAS }
+link = { ck3 = k_liuqiu eu4 = FRM }
+link = { ck3 = h_china eu4 = CHN }
+link = { ck3 = k_viet eu4 = ANN }
+link = { ck3 = e_goryeo eu4 = KOR }
+link = { ck3 = e_goryeo eu4 = KOR }
+link = { ck3 = d_eman_nivkhia eu4 = NVK }
+link = { ck3 = k_aynumosir eu4 = ANU }
+link = { ck3 = e_viet eu4 = DAI }
+link = { ck3 = d_mongnai eu4 = MNI }
+link = { ck3 = d_sukhothai eu4 = SUK }
+link = { ck3 = d_angkor eu4 = KHM }
+link = { ck3 = d_PHI_tondo eu4 = TDO }
+link = { ck3 = d_PHI_visayas eu4 = CEB }
+link = { ck3 = d_PHI_maguindanao eu4 = MGD }
+link = { ck3 = d_PHI_butuan eu4 = BTU }
+link = { ck3 = d_liuqiu eu4 = FRM }
+link = { ck3 = d_BOR_kutai eu4 = KUT }
+link = { ck3 = d_SuMa_luwu eu4 = LUW }
+link = { ck3 = d_ruucuu eu4 = RYU }
+link = { ck3 = e_kambuja eu4 = KHM }
+link = { ck3 = e_srivijaya eu4 = MSA }
+link = { ck3 = e_nusantara eu4 = MSA }
+link = { ck3 = d_pate eu4 = PTE }
+link = { ck3 = c_pate eu4 = PTE }
+link = { ck3 = c_malindi eu4 = MLI }
+link = { ck3 = d_mombasa eu4 = MBA }
+link = { ck3 = c_mombasa eu4 = MBA }
+link = { ck3 = k_zanj eu4 = ZAN }
+link = { ck3 = d_zanzibar eu4 = ZAN }
+link = { ck3 = c_zanzibar eu4 = ZAN }
+link = { ck3 = c_SUM_riak_nan_berbedur eu4 = IND }
+link = { ck3 = c_SUM_muara_takus eu4 = PGR }
+link = { ck3 = c_SUM_barus eu4 = BRS }
+link = { ck3 = d_SUM_aceh eu4 = ATJ }
+link = { ck3 = c_SUM_lambri eu4 = PSA }
+link = { ck3 = c_SUM_panai eu4 = DLI }
+link = { ck3 = c_SUM_kampar eu4 = SAK }
+link = { ck3 = d_SUM_jambi eu4 = JMB }
+link = { ck3 = c_SUM_jambi eu4 = JMB }
+link = { ck3 = d_SUM_palembang eu4 = PLB }
+link = { ck3 = c_SUM_palembang eu4 = PLB }
+link = { ck3 = c_JAV_sunda eu4 = SUN }
+link = { ck3 = c_JAV_galuh eu4 = SUN }
+link = { ck3 = d_JAV_taruma eu4 = BAN }
+link = { ck3 = c_JAV_kalingga eu4 = DMK }
+link = { ck3 = c_JAV_lumajang eu4 = BLM }
+link = { ck3 = c_MAL_johor eu4 = JOH }
+link = { ck3 = d_MAL_pahang eu4 = PAH }
+link = { ck3 = c_MAL_pahang eu4 = PAH }
+link = { ck3 = c_MAL_gelanggi eu4 = MLC }
+link = { ck3 = c_MAL_kelantan eu4 = KEL }
+link = { ck3 = c_MAL_patani eu4 = PAT }
+link = { ck3 = c_MAL_kedah eu4 = KED }
+link = { ck3 = c_THAI_tambralinga eu4 = LIG }
+link = { ck3 = c_ngoenyang eu4 = LNA }
+link = { ck3 = c_mae_hong_son eu4 = MPA }
+link = { ck3 = c_mongnai eu4 = MNI }
+link = { ck3 = c_madaya eu4 = HSI }
+link = { ck3 = c_hsenwi eu4 = HSE }
+link = { ck3 = d_tengchong eu4 = MYA }
+link = { ck3 = c_momauk eu4 = MYA }
+link = { ck3 = c_myitkyina eu4 = MKA }
+link = { ck3 = d_muang_sua eu4 = LXA }
+link = { ck3 = c_luang_prabang eu4 = LXA }
+link = { ck3 = c_vien_chan eu4 = VIE }
+link = { ck3 = c_nam_dinh eu4 = TOK }
+link = { ck3 = d_BOR_tanjungpura eu4 = SMB }
+link = { ck3 = c_BOR_sambas eu4 = SMB }
+link = { ck3 = d_BOR_barune eu4 = BEI }
+link = { ck3 = c_BOR_brunei eu4 = BEI }
+link = { ck3 = c_BOR_berau eu4 = BEU }
+link = { ck3 = d_BOR_nan_sarunai eu4 = BNJ }
+link = { ck3 = c_BOR_banjar eu4 = BNJ }
+link = { ck3 = c_PHI_sulu eu4 = SUL }
+link = { ck3 = c_PHI_pangasinan PGS = SUL }
+link = { ck3 = c_SuMa_ternate PGS = TER }
+link = { ck3 = c_SuMa_tidore PGS = TID }
+link = { ck3 = c_SuMa_luwu PGS = LUW }
+link = { ck3 = c_SuMa_siang PGS = MKS }
+link = { ck3 = c_SuMa_butun PGS = BTN }
+
+
 
