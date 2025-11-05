@@ -130,6 +130,11 @@ void Configuration::registerKeys()
 		tribalConfederations = TRIBALCONFEDERATIONS(std::stoi(tribalConfederationsString.getString()));
 		Log(LogLevel::Info) << "Tribal Confederations set to: " << tribalConfederationsString.getString();
 	});
+	registerKeyword("celestial", [this](std::istream& theStream) {
+		const commonItems::singleString celestialString(theStream);
+		celestial = CELESTIAL(std::stoi(celestialString.getString()));
+		Log(LogLevel::Info) << "Celestial set to: " << celestialString.getString();
+	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 

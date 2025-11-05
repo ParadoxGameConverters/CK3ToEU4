@@ -62,6 +62,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isManualNameClaimed() const { return nameClaimed; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
+	[[nodiscard]] const auto& getAlteredName() const { return alteredName; }
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
 	[[nodiscard]] const auto& getCreationDate() const { return creationDate; }
 	[[nodiscard]] const auto& getHistoryGovernment() const { return historyGovernment; }
@@ -147,15 +148,17 @@ class Title: commonItems::parser
 
   private:
 	void registerKeys();
+	parser nameParser;
 
-	long long ID = 0;																			// 11038
-	std::pair<long long, std::shared_ptr<Title>> capital;							// capital title is a COUNTY, even for county itself and baronies beneath it!
-	std::string name;																			// c_ashmaka
-	std::string displayName;																// Ashmaka
-	std::string adjective;																	// Ashmakan
-	std::string article;																		// "the ". Not always present.
-	std::string historyGovernment;														// Unclear why this is history. Maybe further governments override it.
-	date creationDate;																		// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
+	long long ID = 0;													// 11038
+	std::pair<long long, std::shared_ptr<Title>> capital; // capital title is a COUNTY, even for county itself and baronies beneath it!
+	std::string name;													// c_ashmaka - Immutable.
+	std::string alteredName;										// c_ashmaka but changed. china, dynamics etc. We're not altering original pair key though.
+	std::string displayName;										// Ashmaka
+	std::string adjective;											// Ashmakan
+	std::string article;												// "the ". Not always present.
+	std::string historyGovernment;								// Unclear why this is history. Maybe further governments override it.
+	date creationDate;												// Unclear. Ranges to 9999.1.1, probably is PDX alternative for "bool isCreated";
 	std::optional<std::pair<long long, std::shared_ptr<CoatOfArms>>> coa;	// This is dejure flag but not defacto.
 	std::optional<std::pair<long long, std::shared_ptr<Title>>> dfLiege;		// defacto liege title (d_kalyani)
 	std::optional<std::pair<long long, std::shared_ptr<Title>>> djLiege;		// dejure liege title (d_rattapadi)

@@ -62,6 +62,8 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	shatterHRE(*theConfiguration);
 	Log(LogLevel::Info) << "-- Shattering Empires";
 	shatterEmpires(*theConfiguration);
+	Log(LogLevel::Info) << "-- Kowtow to Celestial Empire";
+	flagCelestialEmpire();
 	Log(LogLevel::Info) << "-- Filtering Independent Titles";
 	filterIndependentTitles();
 	Log(LogLevel::Info) << "-- Splitting Off Vassals";
@@ -446,6 +448,23 @@ void CK3::World::crosslinkDatabases()
 	confederations.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Coats into Confederations.";
 	confederations.linkCoats(coats);
+}
+
+void CK3::World::flagCelestialEmpire()
+{
+	if (!titles.getTitles().contains("h_china"))
+	{
+		Log(LogLevel::Error) << "There is no china in china. This is inconceivable.";
+		return;
+	}
+	const auto& h_china = titles.getTitles().at("h_china");
+	if (!h_china->getHolder() || !h_china->getHolder()->second)
+	{
+		Log(LogLevel::Error) << ">< Hegemony of China title does not exist. It's warlord time.";
+		return;
+	}
+	celestialTitle = {"h_china", h_china};
+	Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << h_china->getAlteredName() << "). All is well in the Middle Kingdom.";
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
