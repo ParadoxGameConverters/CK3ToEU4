@@ -57,6 +57,7 @@ class Country
 	void setMajorityReligion(const std::string& religion);
 	void setAcceptedCultures();
 	void setGeneratedNation() { details.generatedNation = true; }
+	void setGovernmentRank(int theRank) { details.governmentRank = theRank; }
 	void setReligion(const std::string& religion);
 	void setTechGroup(const std::string& tech) { details.technologyGroup = tech; }
 	void setGFX(const std::string& gfx) { details.graphicalCulture = gfx; }

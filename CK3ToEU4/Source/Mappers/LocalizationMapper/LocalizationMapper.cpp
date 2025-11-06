@@ -256,6 +256,20 @@ std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName
 	return std::nullopt;
 }
 
+std::set<std::string> mappers::LocalizationMapper::reverseLookup(const std::string& localization) const
+{
+	// This is a general lookup for a loc key.
+	std::set<std::string> toReturn;
+
+	for (const auto& [locName, locBlock]: localizations)
+	{
+		if (locBlock.english == localization || locBlock.french == localization || locBlock.german == localization || locBlock.korean == localization ||
+			 locBlock.russian == localization || locBlock.simp_chinese == localization || locBlock.spanish == localization)
+			toReturn.emplace(locName);
+	}
+	return toReturn;
+}
+
 std::string mappers::getLeadStr(const std::string& str, const int occurrence, const std::string& match)
 {
 	if (const auto& i = str.find(match); i != std::string::npos)

@@ -93,7 +93,7 @@ class Configuration: commonItems::parser
 	};
 	enum class CELESTIAL
 	{
-		BEJING = 1,
+		BEIJING = 1,
 		NANJING = 2,
 		CANTON = 3,
 		DESTROY = 4
@@ -153,7 +153,7 @@ class Configuration: commonItems::parser
 	DYNASTICNAMES dynasticNames = DYNASTICNAMES::ENABLED;
 	DISCOVEREDBY discoveredBy = DISCOVEREDBY::VANILLA;
 	TRIBALCONFEDERATIONS tribalConfederations = TRIBALCONFEDERATIONS::MERGE;
-	CELESTIAL celestial = CELESTIAL::BEJING;
+	CELESTIAL celestial = CELESTIAL::BEIJING;
 
 	std::optional<std::string> playerTitle;
 };

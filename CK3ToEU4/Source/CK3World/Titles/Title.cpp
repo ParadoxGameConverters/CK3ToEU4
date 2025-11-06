@@ -565,3 +565,14 @@ std::set<std::string> CK3::Title::getTitleNamesFromHolderDomain() const
 
 	return toReturn;
 }
+
+std::optional<std::string> CK3::Title::getAlteredName() const
+{
+	if (alteredName.empty())
+		return std::nullopt;
+
+	if (alteredName == name)
+		return std::nullopt;
+
+	return alteredName;
+}

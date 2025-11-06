@@ -49,6 +49,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getCultureMapper() const { return cultureMapper; }
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
 	[[nodiscard]] const auto& getConfederations() const { return confederations; }
+	[[nodiscard]] const auto& getCelestialTitle() const { return celestialTitle; }
 
   private:
 	void registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);

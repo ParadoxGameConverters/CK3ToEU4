@@ -15,6 +15,7 @@ class TitleTagMapping: commonItems::parser
 	[[nodiscard]] std::optional<std::string> titleMatch(const std::string& ck3title) const;
 	[[nodiscard]] std::optional<std::string> capitalMatch(int eu4capital) const;
 	[[nodiscard]] bool fallbackMatch() const;
+	[[nodiscard]] const auto& getEU4Tag() const { return eu4Tag; }
 
   private:
 	void registerKeys();

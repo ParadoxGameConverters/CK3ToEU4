@@ -75,6 +75,7 @@ class World
 		 const date& conversionDate,
 		 date startDate,
 		 Configuration::STARTDATE startDateOption);
+	void markCelestialTitle(const Configuration& theConfiguration, const std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>>& celestialTitle);
 	void setElectors();
 	void setFreeCities();
 	void distributeClaims(const Configuration& theConfiguration);
@@ -148,6 +149,7 @@ class World
 
 	std::string emperorTag;
 	std::string actualHRETag;
+	std::string MoHTag;
 };
 } // namespace EU4
 

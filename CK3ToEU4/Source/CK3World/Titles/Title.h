@@ -62,7 +62,7 @@ class Title: commonItems::parser
 	[[nodiscard]] auto isManualNameClaimed() const { return nameClaimed; }
 	[[nodiscard]] const auto& getName() const { return name; }
 	[[nodiscard]] const auto& getDisplayName() const { return displayName; }
-	[[nodiscard]] const auto& getAlteredName() const { return alteredName; }
+	[[nodiscard]] std::optional<std::string> getAlteredName() const;
 	[[nodiscard]] const auto& getAdjective() const { return adjective; }
 	[[nodiscard]] const auto& getCreationDate() const { return creationDate; }
 	[[nodiscard]] const auto& getHistoryGovernment() const { return historyGovernment; }

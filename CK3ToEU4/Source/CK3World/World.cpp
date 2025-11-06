@@ -175,7 +175,7 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		titles = Titles(theStream);
 		const auto& counter = titles.getCounter();
 		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles: " << counter[0] << "b " << counter[1] << "c " << counter[2] << "d "
-								  << counter[3] << "k " << counter[4] << "e, " << counter[5] << "h," << counter[6] << "dynamics.";
+								  << counter[3] << "k " << counter[4] << "e " << counter[5] << "h" << counter[6] << " dynamics.";
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading provinces.";
@@ -460,11 +460,14 @@ void CK3::World::flagCelestialEmpire()
 	const auto& h_china = titles.getTitles().at("h_china");
 	if (!h_china->getHolder() || !h_china->getHolder()->second)
 	{
-		Log(LogLevel::Error) << ">< Hegemony of China title does not exist. It's warlord time.";
+		Log(LogLevel::Info) << ">< Hegemony of China title does not exist. It's warlord time.";
 		return;
 	}
 	celestialTitle = {"h_china", h_china};
-	Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << h_china->getAlteredName() << "). All is well in the Middle Kingdom.";
+	if (h_china->getAlteredName())
+		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << *h_china->getAlteredName() << "). All is well in the Middle Kingdom.";
+	else
+		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " as h_china.";
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)
