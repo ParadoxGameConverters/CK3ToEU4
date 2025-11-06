@@ -1401,8 +1401,8 @@ void EU4::World::markCelestialTitle(const Configuration& theConfiguration,
 		return;
 	}
 
-   if (celestialTitle.has_value())
-   {
+	if (celestialTitle.has_value())
+	{
 		Log(LogLevel::Debug) << "has value";
 		if (!celestialTitle->first.empty())
 		{
@@ -1414,7 +1414,7 @@ void EU4::World::markCelestialTitle(const Configuration& theConfiguration,
 					Log(LogLevel::Debug) << "eu4tag";
 			}
 		}
-   }
+	}
 
 	if (celestialTitle.has_value() && !celestialTitle->first.empty() && celestialTitle->second && celestialTitle->second->getEU4Tag())
 	{
@@ -1435,25 +1435,25 @@ void EU4::World::markCelestialTitle(const Configuration& theConfiguration,
 
 	// Who holds this?
 
-   if (!provinces.contains(targetProvince))
-   {
+	if (!provinces.contains(targetProvince))
+	{
 		Log(LogLevel::Error) << "There's no province " << targetProvince << " in China? What?";
 		return;
-   }
+	}
 	const auto& province = provinces.at(targetProvince);
 
-   if (province->getOwner().empty())
-   {
+	if (province->getOwner().empty())
+	{
 		Log(LogLevel::Error) << "China is uncolonized? What?";
 		return;
 	}
 	MoHTag = province->getOwner();
 
-   if (!countries.contains(MoHTag))
-   {
+	if (!countries.contains(MoHTag))
+	{
 		Log(LogLevel::Error) << "There's no " << MoHTag << " in countries? What? Why?";
 		return;
-   }
+	}
 
 	const auto& moh = countries.at(MoHTag);
 	moh->setGovernment("monarchy");

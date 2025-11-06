@@ -465,7 +465,8 @@ void CK3::World::flagCelestialEmpire()
 	}
 	celestialTitle = {"h_china", h_china};
 	if (h_china->getAlteredName())
-		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << *h_china->getAlteredName() << "). All is well in the Middle Kingdom.";
+		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << *h_china->getAlteredName()
+								  << "). All is well in the Middle Kingdom.";
 	else
 		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " as h_china.";
 }
