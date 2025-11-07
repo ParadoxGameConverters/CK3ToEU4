@@ -1429,12 +1429,12 @@ link = { ck3 = c_BOR_berau eu4 = BEU }
 link = { ck3 = d_BOR_nan_sarunai eu4 = BNJ }
 link = { ck3 = c_BOR_banjar eu4 = BNJ }
 link = { ck3 = c_PHI_sulu eu4 = SUL }
-link = { ck3 = c_PHI_pangasinan PGS = SUL }
-link = { ck3 = c_SuMa_ternate PGS = TER }
-link = { ck3 = c_SuMa_tidore PGS = TID }
-link = { ck3 = c_SuMa_luwu PGS = LUW }
-link = { ck3 = c_SuMa_siang PGS = MKS }
-link = { ck3 = c_SuMa_butun PGS = BTN }
+link = { ck3 = c_PHI_pangasinan eu4 = SUL }
+link = { ck3 = c_SuMa_ternate eu4 = TER }
+link = { ck3 = c_SuMa_tidore eu4 = TID }
+link = { ck3 = c_SuMa_luwu eu4 = LUW }
+link = { ck3 = c_SuMa_siang eu4 = MKS }
+link = { ck3 = c_SuMa_butun eu4 = BTN }
 
 
 

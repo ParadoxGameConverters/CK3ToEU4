@@ -583,7 +583,14 @@ void EU4::World::outputEmperor(const Configuration& theConfiguration, date conve
 	output.close();
 
 	output.open("output" / theConfiguration.getOutputName() / "history/diplomacy/celestial_empire.txt");
-	output << actualConversionDate << " = { celestial_emperor = MNG }\n"; // hardcoded until china dlc.
+	if (MoHTag.empty())
+	{
+		output << actualConversionDate << " = { celestial_emperor = --- }\n";
+	}
+	else
+	{
+		output << actualConversionDate << " = { celestial_emperor = " << MoHTag << " }\n";
+	}
 	output.close();
 
 	if (!actualHRETag.empty())

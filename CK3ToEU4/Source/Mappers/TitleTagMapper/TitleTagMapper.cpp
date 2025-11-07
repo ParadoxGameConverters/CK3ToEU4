@@ -26,7 +26,15 @@ mappers::TitleTagMapper::TitleTagMapper(std::istream& theStream)
 void mappers::TitleTagMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
-		theMappings.emplace_back(TitleTagMapping(theStream));
+		auto mapping = TitleTagMapping(theStream);
+		if (mapping.getEU4Tag().empty())
+		{
+			Log(LogLevel::Warning) << "Issue with Title-tag mapping " << mapping.getCK3Title() << " - no eu4 tag? Skipping.";
+		}
+		else
+		{
+			theMappings.emplace_back(mapping);
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -34,7 +42,15 @@ void mappers::TitleTagMapper::registerKeys()
 void mappers::TitleTagMapper::registerChineseKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
-		chineseMappings.emplace_back(TitleTagMapping(theStream));
+		auto mapping = TitleTagMapping(theStream);
+		if (mapping.getEU4Tag().empty())
+		{
+			Log(LogLevel::Warning) << "Issue with chinese Title-tag mapping " << mapping.getCK3Title() << " - no eu4 tag? Skipping.";
+		}
+		else
+		{
+			chineseMappings.emplace_back(mapping);
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }

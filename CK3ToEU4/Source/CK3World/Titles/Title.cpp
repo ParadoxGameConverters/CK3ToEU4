@@ -66,6 +66,9 @@ void CK3::Title::registerKeys()
 			cleanUpDisplayName();
 		}
 	});
+	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
+		adjective = commonItems::singleString(theStream).getString();
+	});
 	/*
 	 // We're commenting this out because they started shoving in full utf-8 mapnames which are incompatible with eu4 when non-ascii.
 	 // retaining code just in case if needed alter down the line.
