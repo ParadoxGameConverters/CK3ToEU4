@@ -217,7 +217,7 @@ void mappers::RegionMapper::linkProvinces(const std::map<int, std::shared_ptr<EU
 			}
 			else
 			{
-				throw std::runtime_error("Area's " + area.first + " area " + std::to_string(requiredProvince.first) + " does not exist!");
+				throw std::runtime_error("Area's " + area.first + " province " + std::to_string(requiredProvince.first) + " does not exist!");
 			}
 		}
 	}

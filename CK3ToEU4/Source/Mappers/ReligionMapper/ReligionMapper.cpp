@@ -145,34 +145,34 @@ void mappers::ReligionMapper::importCK3Faith(const CK3::Faith& faith,
 	LocBlock rebelBlock;
 	// Title
 	rebelBlock.english = "Religious";
-	rebelBlock.french = "Dévots";
-	rebelBlock.german = "Religiöse";
+	rebelBlock.french = "Devots";
+	rebelBlock.german = "Religiose";
 	rebelBlock.spanish = "Religioso";
 	localizations.insert(std::pair(faithName + "_rebels_title", rebelBlock));
 	// Name
 	rebelBlock.english = "$RELIGION$ Zealots";
 	rebelBlock.french = "Fanatiques $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Fanatiker";
-	rebelBlock.spanish = "Fanáticos de $RELIGION$";
+	rebelBlock.spanish = "Fanaticos de $RELIGION$";
 	localizations.insert(std::pair(faithName + "_rebels_name", rebelBlock));
 	// Desc
 	rebelBlock.english =
 		 "Religious fanatics tend to rise up in provinces controlled by nations of a different faith. They seek to spread their faith and smite all unbelievers.";
 	rebelBlock.french =
-		 "Ces fanatiques religieux ont tendance à se soulever dans les provinces contrôlées par des nations de confession différente. Ils cherchent à répandre "
-		 "leur foi et s\'en prennent à tous les infidèles.";
+		 "Ces fanatiques religieux ont tendance a se soulever dans les provinces controlees par des nations de confession differente. Ils cherchent a repandre "
+		 "leur foi et s\'en prennent a tous les infideles.";
 	rebelBlock.german =
-		 "Religiöse Fanatiker neigen dazu, sich in Provinzen zu erheben, die von Nationen eines anderen Glaubens kontrolliert werden. Sie versuchen, ihren "
-		 "Glauben zu verbreiten und alle Ungläubigen zu quälen.";
+		 "Religiose Fanatiker neigen dazu, sich in Provinzen zu erheben, die von Nationen eines anderen Glaubens kontrolliert werden. Sie versuchen, ihren "
+		 "Glauben zu verbreiten und alle Unglaubigen zu qualen.";
 	rebelBlock.spanish =
-		 "Los fanáticos religiosos suelen aparecer en provincias controladas por naciones que practican una creencia diferente. Buscan propagar su fe y sofocar "
+		 "Los fanoticos religiosos suelen aparecer en provincias controladas por naciones que practican una creencia diferente. Buscan propagar su fe y sofocar "
 		 "a todos los infieles.";
 	localizations.insert(std::pair(faithName + "_rebels_desc", rebelBlock));
 	// Army
 	rebelBlock.english = "$RELIGION$ Army";
-	rebelBlock.french = "Armée $RELIGION$";
+	rebelBlock.french = "Armee $RELIGION$";
 	rebelBlock.german = "$RELIGION$-Armee";
-	rebelBlock.spanish = "Ejército $RELIGION$";
+	rebelBlock.spanish = "Ejercito $RELIGION$";
 	localizations.insert(std::pair(faithName + "_rebels_army", rebelBlock));
 
 	// Grab the source definitions from the originating faith (unreformed one)
@@ -368,9 +368,9 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Odin";
 		deityBlock.spanish = "Odin";
 		descBlock.english = "Odin is the major god of the Norse pantheon, commonly associated with war, victory and death.";
-		descBlock.french = "Odin est le dieu principal du panthéon norrois, et est souvent associé à la guerre, la victoire et la mort.";
+		descBlock.french = "Odin est le dieu principal du pantheon norrois, et est souvent associe a la guerre, la victoire et la mort.";
 		descBlock.german = "Odin ist der Hauptgott der nordischen Ruhmeshalle und wird allgemein mit Krieg, Sieg und Tod assoziiert.";
-		descBlock.spanish = "Odín es el dios principal del Panteón nórdico, generalmente asociado con la guerra, la victoria y la muerte.";
+		descBlock.spanish = "Odin es el dios principal del Panteon nordico, generalmente asociado con la guerra, la victoria y la muerte.";
 		localizations.insert(std::pair("odin_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("odin_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Freya";
@@ -378,8 +378,8 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Freya";
 		deityBlock.spanish = "Freya";
 		descBlock.english = "Freyja is the goddess commonly worshipped for her love, beauty, fertility and her promises of wealth.";
-		descBlock.french = "Freya est une déesse souvent vénérée pour l'amour, la beauté, la fertilité et ses promesses de richesse.";
-		descBlock.german = "Freya ist die allgemein für ihre Liebe, Schönheit, Fruchtbarkeit und ihre Versprechen des Wohlstands verehrte Göttin.";
+		descBlock.french = "Freya est une deesse souvent veneree pour l'amour, la beaute, la fertilite et ses promesses de richesse.";
+		descBlock.german = "Freya ist die allgemein fur ihre Liebe, Schonheit, Fruchtbarkeit und ihre Versprechen des Wohlstands verehrte Gottin.";
 		descBlock.spanish = "Freya es la diosa a la que se suele adorar por su amor, belleza, fertilidad y sus promesas de la riqueza.";
 		localizations.insert(std::pair("freya_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("freya_" + std::to_string(deityCount) + "_desc", descBlock));
@@ -388,9 +388,9 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Tor";
 		deityBlock.spanish = "Tor";
 		descBlock.english = "Tor is the son of Odin and is the god protecting humankind against the terrors trying to enter Midgard.";
-		descBlock.french = "Thor est le fils d'Odin ; il protège l'humanité contre les démons tentant de pénétrer Midgard.";
-		descBlock.german = "Thor ist der Sohn von Odin und der Gott, der die Menschheit vor den Schrecken beschützt, die versuchen, in Midgard einzufallen.";
-		descBlock.spanish = "Thor es hijo de Odín y y es el dios que protege la especie humana contra los terrores que tratan de entrar en Midgard.";
+		descBlock.french = "Thor est le fils d'Odin; il protege l'humanite contre les demons tentant de penetrer Midgard.";
+		descBlock.german = "Thor ist der Sohn von Odin und der Gott, der die Menschheit vor den Schrecken beschutzt, die versuchen, in Midgard einzufallen.";
+		descBlock.spanish = "Thor es hijo de Odin y y es el dios que protege la especie humana contra los terrores que tratan de entrar en Midgard.";
 		localizations.insert(std::pair("tor_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("tor_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Tyr";
@@ -399,8 +399,8 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.spanish = "Tyr";
 		descBlock.english = "Tyr is the one-handed god of justice and one of the most courageous gods.";
 		descBlock.french = "Le manchot Tyr est le dieu de la justice, et l'un des dieux les plus courageux.";
-		descBlock.german = "Tyr ist der einhändige Gott der Gerechtigkeit und einer der mutigsten Götter.";
-		descBlock.spanish = "Tyr es el dios manco de la justicia, y uno de los dioses más valientes.";
+		descBlock.german = "Tyr ist der einhandige Gott der Gerechtigkeit und einer der mutigsten Gotter.";
+		descBlock.spanish = "Tyr es el dios manco de la justicia, y uno de los dioses mas valientes.";
 		localizations.insert(std::pair("tyr_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("tyr_" + std::to_string(deityCount) + "_desc", descBlock));
 		deityBlock.english = "Njord";
@@ -408,7 +408,7 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Njord";
 		deityBlock.spanish = "Njord";
 		descBlock.english = "The father of Freya, god of the sea and wealth will bring food to the table for his worshippers.";
-		descBlock.french = "Père de Freya, le dieu de la mer et des richesses amène de la nourriture à la table de ceux qui le vénèrent.";
+		descBlock.french = "Pere de Freya, le dieu de la mer et des richesses amene de la nourriture a la table de ceux qui le venerent.";
 		descBlock.german = "Der Vater von Freya, Gott des Meeres und des Wohlstands, deckt den Tisch seiner Verehrer mit Nahrung ein.";
 		descBlock.spanish = "Padre de Freya, dios del mar y de la riqueza, lleva comida a la mesa de sus fieles.";
 		localizations.insert(std::pair("njord_" + std::to_string(deityCount), deityBlock));
@@ -418,8 +418,8 @@ void mappers::ReligionMapper::createPersonalDeities(const std::string& parentRel
 		deityBlock.german = "Snotra";
 		deityBlock.spanish = "Snotra";
 		descBlock.english = "Snotra is the clever goddess. A wise man or woman can be called snotr in her honor.";
-		descBlock.french = "Snotra est une déesse avisée ; en son honneur, un homme ou une femme sage peut être qualifié de « snotr ».";
-		descBlock.german = "Snotra ist die Göttin der Klugheit. Ein weiser Mann oder eine weise Frau kann ihr zu Ehren als snotr bezeichnet werden.";
+		descBlock.french = "Snotra est une deesse avisee; en son honneur, un homme ou une femme sage peut etre qualifie de \'snotr\'.";
+		descBlock.german = "Snotra ist die Gottin der Klugheit. Ein weiser Mann oder eine weise Frau kann ihr zu Ehren als snotr bezeichnet werden.";
 		descBlock.spanish = "Snotra es la diosa de la inteligencia. Un hombre o una mujer sabia puede ser llamada snotr en su honor.";
 		localizations.insert(std::pair("snotra_" + std::to_string(deityCount), deityBlock));
 		localizations.insert(std::pair("snotra_" + std::to_string(deityCount) + "_desc", descBlock));

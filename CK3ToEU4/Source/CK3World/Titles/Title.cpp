@@ -24,6 +24,38 @@ CK3::Title::Title(std::istream& theStream, long long theID): ID(theID)
 
 void CK3::Title::registerKeys()
 {
+	nameParser.registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		displayName = commonItems::singleString(theStream).getString();
+		if (displayName.find("\x15") != std::string::npos)
+		{
+			cleanUpDisplayName();
+		}
+	});
+	nameParser.registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
+		adjective = commonItems::singleString(theStream).getString();
+	});
+	nameParser.registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
+		creationDate = date(commonItems::singleString(theStream).getString());
+	});
+	nameParser.registerKeyword("title_history_names", [this](const std::string& unused, std::istream& theStream) {
+		const auto nameList = commonItems::blobList(theStream).getBlobs();
+		auto latestDate = date();
+		for (const auto& theBlob: nameList)
+		{
+			auto tempStream = std::stringstream(theBlob);
+			auto nameBlob = Title(tempStream, 0);
+			if (!nameBlob.getDisplayName().empty() && nameBlob.getCreationDate() > latestDate)
+			{
+				latestDate = nameBlob.getCreationDate();
+				alteredName = nameBlob.getDisplayName();
+			}
+		}
+	});
+	nameParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+
+	registerKeyword("title_name_data", [this](const std::string& unused, std::istream& theStream) {
+		nameParser.parseStream(theStream);
+	});
 	registerKeyword("key", [this](const std::string& unused, std::istream& theStream) {
 		name = commonItems::singleString(theStream).getString();
 	});
@@ -34,6 +66,13 @@ void CK3::Title::registerKeys()
 			cleanUpDisplayName();
 		}
 	});
+	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
+		adjective = commonItems::singleString(theStream).getString();
+	});
+	/*
+	 // We're commenting this out because they started shoving in full utf-8 mapnames which are incompatible with eu4 when non-ascii.
+	 // retaining code just in case if needed alter down the line.
+
 	registerKeyword("specific_title_name", [this](const std::string& unused, std::istream& theStream) {
 		// This will override name set previously.
 		displayName = commonItems::singleString(theStream).getString();
@@ -47,9 +86,7 @@ void CK3::Title::registerKeys()
 			cleanUpDisplayName();
 		}
 	});
-	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
-		adjective = commonItems::singleString(theStream).getString();
-	});
+	*/
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		creationDate = date(commonItems::singleString(theStream).getString());
 	});
@@ -347,16 +384,18 @@ void CK3::Title::congregateDJCounties()
 CK3::LEVEL CK3::Title::getLevel() const
 {
 	// It's easy, until it's not.
-	if (name.find("b_") == 0)
+	if (name.starts_with("b_"))
 		return LEVEL::BARONY;
-	if (name.find("c_") == 0)
+	if (name.starts_with("c_"))
 		return LEVEL::COUNTY;
-	if (name.find("d_") == 0)
+	if (name.starts_with("d_"))
 		return LEVEL::DUCHY;
-	if (name.find("k_") == 0)
+	if (name.starts_with("k_"))
 		return LEVEL::KINGDOM;
-	if (name.find("e_") == 0)
+	if (name.starts_with("e_"))
 		return LEVEL::EMPIRE;
+	if (name.starts_with("h_"))
+		return LEVEL::HEGEMONY;
 
 	// for dynamic tiles we may have a level set already.
 	if (dynamicLevel)
@@ -368,7 +407,7 @@ CK3::LEVEL CK3::Title::getLevel() const
 
 	// see if they hold any vassals and if so, assign a level one step higher.
 	auto level = -1;
-	const std::set<char> allowedPrefixes = {'b', 'c', 'd', 'k'};
+	const std::set<char> allowedPrefixes = {'b', 'c', 'd', 'k', 'e'};
 	for (const auto& vassal: djVassals) // run through all as they can vary in levels.
 	{
 		if (!allowedPrefixes.count(vassal.second->getName().at(0)))
@@ -528,4 +567,15 @@ std::set<std::string> CK3::Title::getTitleNamesFromHolderDomain() const
 			toReturn.insert(domainTitle->getName());
 
 	return toReturn;
+}
+
+std::optional<std::string> CK3::Title::getAlteredName() const
+{
+	if (alteredName.empty())
+		return std::nullopt;
+
+	if (alteredName == name)
+		return std::nullopt;
+
+	return alteredName;
 }

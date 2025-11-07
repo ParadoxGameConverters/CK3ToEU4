@@ -15,12 +15,16 @@ class TitleTagMapper: commonItems::parser
 
 	std::optional<std::string> getTagForTitle(const std::string& ck3Title, int eu4Capital);
 	std::optional<std::string> getTagForTitle(const std::string& ck3Title);
+	std::optional<std::string> getChinaForTitle(const std::string& ck3Title) const;
+	std::set<std::string> getAllChinas() const;
 
   private:
 	void registerKeys();
+	void registerChineseKeys();
 	std::string generateNewTag();
 
 	std::vector<TitleTagMapping> theMappings;
+	std::vector<TitleTagMapping> chineseMappings;
 	std::map<std::string, std::string> registeredTitleTags; // We store already mapped countries here.
 	std::set<std::string> usedTags;
 

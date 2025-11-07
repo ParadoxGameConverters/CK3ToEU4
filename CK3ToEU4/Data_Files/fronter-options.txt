@@ -146,6 +146,38 @@ option = {
 }
 
 option = {
+	name = celestial_emperor
+	displayName = CELESTIAL
+	tooltip = CELESTIALTIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName = CELESTIAL1
+			tooltip = CELESTIAL1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName = CELESTIAL2
+			tooltip = CELESTIAL2TIP
+			default = false
+		}
+		radioOption = {
+			name = 3
+			displayName = CELESTIAL3
+			tooltip = CELESTIAL3TIP
+			default = false
+		}
+		radioOption = {
+			name = 4
+			displayName = CELESTIAL4
+			tooltip = CELESTIAL4TIP
+			default = false
+		}
+	}
+}
+
+option = {
 	name = split_vassals
 	displayName = SPLITVASSALS
 	tooltip = SPLITVASSALSTIP

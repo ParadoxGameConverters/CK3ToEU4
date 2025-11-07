@@ -1,0 +1,53 @@
+## This is a map that correctly maps the CK3 Chinas to the equivalent EU4 tags.
+# Note: We're missing some CK3 sources that map to existing EU4 tags and vice versa.
+
+# Commented out links don't have proper EU4 targets
+#link = { ck3 = dynn_title_ba }
+#link = { ck3 = dynn_title_cai }
+#link = { ck3 = dynn_title_cao }
+link = { ck3 = dynn_title_chen eu4 = CEG }
+link = { ck3 = dynn_title_chu eu4 = CHC }
+link = { ck3 = dynn_title_dai eu4 = DAX }
+#link = { ck3 = dynn_title_dian }
+#link = { ck3 = dynn_title_gan }
+#link = { ck3 = dynn_title_gui }
+link = { ck3 = dynn_title_han eu4 = HND }
+link = { ck3 = dynn_title_huai eu4 = HUA }
+link = { ck3 = dynn_title_jin eu4 = JIN }
+#link = { ck3 = dynn_title_jing }
+#link = { ck3 = dynn_title_lai }
+link = { ck3 = dynn_title_liang eu4 = LNG }
+#link = { ck3 = dynn_title_lu }
+link = { ck3 = dynn_title_min eu4 = MIN }
+link = { ck3 = dynn_title_qi eu4 = QIC }
+#link = { ck3 = dynn_title_qian }
+link = { ck3 = dynn_title_shu eu4 = SHU }
+link = { ck3 = dynn_title_song eu4 = SNG }
+#link = { ck3 = dynn_title_sui }
+link = { ck3 = dynn_title_tang eu4 = TNG }
+link = { ck3 = dynn_title_wei eu4 = WEI }
+link = { ck3 = dynn_title_wu eu4 = WUU }
+link = { ck3 = dynn_title_xia eu4 = XIA }
+link = { ck3 = dynn_title_xiang eu4 = CXI }
+#link = { ck3 = dynn_title_xing }
+#link = { ck3 = dynn_title_xu }
+link = { ck3 = dynn_title_yang eu4 = YAN } # likely wrong
+#link = { ck3 = dynn_title_yong }
+link = { ck3 = dynn_title_yue eu4 = YUE }
+link = { ck3 = dynn_title_zhao eu4 = ZAO }
+#link = { ck3 = dynn_title_zheng }
+link = { ck3 = dynn_title_zhou eu4 = CZH }
+link = { ck3 = dynn_title_yuan eu4 = YUA }
+link = { ck3 = h_china eu4 = CHN } # This is *not* a fallback. We may have many chinas and we can't assign CHN to simply one of them.
+
+# We don't have these CK3 sources:
+#link = { ck2 = qin_china eu4 = QIN  }
+#link = { ck2 = liao_china eu4 = LIO }
+#link = { ck2 = qing_china eu4 = QNG }
+#link = { ck2 = ming_china eu4 = MNG }
+#link = { ck2 = chu_china eu4 = CHC }
+#link = { ck2 = yin_china eu4 = YIN }
+#link = { ck2 = shun_china eu4 = CSH }
+
+
+

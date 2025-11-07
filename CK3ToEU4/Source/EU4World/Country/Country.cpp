@@ -104,7 +104,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 									  << ", defaulting to monarchy.";
 		details.government = "monarchy";
 	}
-	if (title->second->getLevel() == CK3::LEVEL::EMPIRE)
+	if (title->second->getLevel() == CK3::LEVEL::EMPIRE || title->second->getLevel() == CK3::LEVEL::HEGEMONY)
 		details.governmentRank = 3;
 	else if (title->second->getLevel() == CK3::LEVEL::KINGDOM)
 		details.governmentRank = 2;
@@ -136,9 +136,9 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		Log(LogLevel::Warning) << tag << " has no match for base faith: " << baseReligion;
 		details.religion.clear();
 	}
-	// Change capitals for anyone not aztec.
+	// Change capitals for anyone not aztec or using c_nf_ title.
 	auto capitalMatchFound = false;
-	if (tag != "AZT")
+	if (tag != "AZT" && !title->first.starts_with("c_nf_"))
 	{
 		if (details.holder->getCharacterDomain() && details.holder->getCharacterDomain()->getRealmCapital().second)
 		{
@@ -159,7 +159,7 @@ void EU4::Country::populateHistory(const mappers::GovernmentsMapper& governments
 		}
 	}
 
-	if (!capitalMatchFound && tag != "AZT")
+	if (!capitalMatchFound && tag != "AZT" && !title->first.starts_with("c_nf_"))
 	{
 		Log(LogLevel::Warning) << "No match for capital or missing capital for: " << tag;
 		details.capital = 0;
@@ -565,7 +565,9 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 	// out of ideas. Ignore everything and use name if possible.
 	if (!adjSet)
 	{
-		Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj is missing. Using name substitute if possible.";
+		// Log(LogLevel::Warning) << tag << " needs help with localization for adjective! " << title->first << "_adj is missing. Using name substitute if
+		// possible.";
+		// Too spammy nowadays with billions of non-adj titles.
 		if (nameSet && localizations.contains(tag))
 			localizations.emplace(tag + "_ADJ", localizations.at(tag));
 	}

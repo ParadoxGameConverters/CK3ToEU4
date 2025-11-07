@@ -5,9 +5,7 @@
 mappers::DynamicIdeasRule::DynamicIdeasRule(const std::vector<RulePair>& ruleInfo,
 	 const std::vector<EffectPair>& newEffect,
 	 const std::string& replacee,
-	 const std::optional<std::string> ideaName):
-	 ruleInfo(ruleInfo),
-	 replacee(replacee), newEffect(newEffect), replacementIdentifier(replacee)
+	 const std::optional<std::string> ideaName): ruleInfo(ruleInfo), replacee(replacee), newEffect(newEffect), replacementIdentifier(replacee)
 {
 	if (ideaName)
 		replacementIdentifier = ideaName.value();

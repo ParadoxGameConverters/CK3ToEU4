@@ -19,6 +19,7 @@ link = { eu4 = albanian_g ck3 = heritage_albanian }
 link = { eu4 = chaldean ck3 = heritage_aramaic ck3 =  heritage_aramean ck3 = heritage_chaldean ck3 = heritage_syriac }
 link = { eu4 = old_mashriqi ck3 = heritage_egyptian }
 link = { eu4 = gothic_group ck3 = heritage_gothic }
+link = { eu4 = malay ck3 = heritage_austronesian }
 
 # no clear mapping as they shoved the cultures in byzantine 
 link = { eu4 = caucasian ck3 = heritage_caucasian ck3 = heritage_armenian }
@@ -70,12 +71,12 @@ link = { eu4 = eskaleut ck3 = heritage_paleo_inuit }
 link = { eu4 = eskaleut ck3 = heritage_inuit }
 link = { eu4 = african ck3 = heritage_east_bantu }
 link = { eu4 = evenks ck3 = heritage_siberian }
-link = { eu4 = southeastasian_group ck3 = heritage_vietic }
-link = { eu4 = korean_g ck3 = heritage_korean }
+link = { eu4 = southeastasian_group ck3 = heritage_vietic ck3 = heritage_vietic }
+link = { eu4 = korean_g ck3 = heritage_korean ck3 = heritage_buyeo }
 link = { eu4 = malay ck3 = heritage_malayic }
 link = { eu4 = southern_african ck3 = heritage_south_bantu }
 link = { eu4 = malay ck3 = heritage_chamic }
-link = { eu4 = japanese_g ck3 = heritage_yamato }
+link = { eu4 = japanese_g ck3 = heritage_yamato ck3 = heritage_japonic }
 link = { eu4 = tibetan_group ck3 = heritage_loloish }
 link = { eu4 = southeastasian_group ck3 = heritage_khmer }
 link = { eu4 = malay ck3 = heritage_sulawesi }
@@ -92,7 +93,8 @@ link = { eu4 = malay ck3 = heritage_moluccan ck3 = heritage_filipino }
 link = { eu4 = japanese_g ck3 = heritage_ryukyu }
 link = { eu4 = tartar ck3 = heritage_on_oq ck3 = heritage_toquz_oghuz }
 link = { eu4 = altaic ck3 = heritage_sayan_altaic }
-link = { eu4 = tibetan_group ck3 = heritage_mien ck3 = heritage_hmong } #Mien and Hmong are mapped here as Miao(Hmong) is also in EU4's Tibetan group
+link = { eu4 = tibetan_group ck3 = heritage_mien ck3 = heritage_hmong ck3 = heritage_hmongic } #Mien and Hmong are mapped here as Miao(Hmong) is also in EU4's Tibetan group
 link = { eu4 = thai_group ck3 = heritage_kam ck3 = heritage_hlai } #Includes the broader Kra-Dai family
 link = { eu4 = malay ck3 = heritage_dayak ck3 = heritage_kadazan } #Austronesian
 link = { eu4 = evenks ck3 = heritage_tungusic }
+link = { eu4 = kamchatkan_g ck3 = heritage_nivkh ck3 = heritage_ainuic }

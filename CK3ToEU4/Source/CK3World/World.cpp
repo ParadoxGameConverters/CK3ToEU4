@@ -62,6 +62,8 @@ CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	shatterHRE(*theConfiguration);
 	Log(LogLevel::Info) << "-- Shattering Empires";
 	shatterEmpires(*theConfiguration);
+	Log(LogLevel::Info) << "-- Kowtow to Celestial Empire";
+	flagCelestialEmpire();
 	Log(LogLevel::Info) << "-- Filtering Independent Titles";
 	filterIndependentTitles();
 	Log(LogLevel::Info) << "-- Splitting Off Vassals";
@@ -173,7 +175,7 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		titles = Titles(theStream);
 		const auto& counter = titles.getCounter();
 		Log(LogLevel::Info) << "<> Loaded " << titles.getTitles().size() << " titles: " << counter[0] << "b " << counter[1] << "c " << counter[2] << "d "
-								  << counter[3] << "k " << counter[4] << "e, " << counter[5] << "dynamics.";
+								  << counter[3] << "k " << counter[4] << "e " << counter[5] << "h" << counter[6] << " dynamics.";
 	});
 	registerKeyword("provinces", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading provinces.";
@@ -446,6 +448,27 @@ void CK3::World::crosslinkDatabases()
 	confederations.linkCharacters(characters);
 	Log(LogLevel::Info) << "-> Loading Coats into Confederations.";
 	confederations.linkCoats(coats);
+}
+
+void CK3::World::flagCelestialEmpire()
+{
+	if (!titles.getTitles().contains("h_china"))
+	{
+		Log(LogLevel::Error) << "There is no china in china. This is inconceivable.";
+		return;
+	}
+	const auto& h_china = titles.getTitles().at("h_china");
+	if (!h_china->getHolder() || !h_china->getHolder()->second)
+	{
+		Log(LogLevel::Info) << ">< Hegemony of China title does not exist. It's warlord time.";
+		return;
+	}
+	celestialTitle = {"h_china", h_china};
+	if (h_china->getAlteredName())
+		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " (" << *h_china->getAlteredName()
+								  << "). All is well in the Middle Kingdom.";
+	else
+		Log(LogLevel::Info) << "<> Proper China exists: " << h_china->getDisplayName() << " as h_china.";
 }
 
 void CK3::World::flagHREProvinces(const Configuration& theConfiguration)

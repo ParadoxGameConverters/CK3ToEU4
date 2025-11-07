@@ -62,8 +62,12 @@ void mappers::LocalizationMapper::unravelNestedLocs(LocBlock& block) const
 		const auto& loc = selectLanguage(lang, block);
 		if (loc.find('$') != std::string::npos) // TODO: handle escaped \$
 		{
-			const auto& keyStr = getLeadStr(loc, 2, "$");		 // Chop off tail after nested key
-			const auto& nestedKey = getTailStr(keyStr, 1, "$"); // Chop off head before nested key
+			const auto& keyStr = getLeadStr(loc, 2, "$"); // Chop off tail after nested key
+			auto nestedKey = getTailStr(keyStr, 1, "$");	 // Chop off head before nested key
+			if (nestedKey.find('|') != std::string::npos)
+			{
+				nestedKey = getLeadStr(nestedKey, 1, "|"); // chop off localization specifics within the nested key. We can't handle them anyway.
+			}
 			if (const auto& newblock = getLocBlockForKey(nestedKey); newblock)
 			{
 				const auto& fstr = getLeadStr(loc, 1, "$");
@@ -252,6 +256,20 @@ std::optional<std::string> mappers::LocalizationMapper::reverseLookupCultureName
 	return std::nullopt;
 }
 
+std::set<std::string> mappers::LocalizationMapper::reverseLookup(const std::string& localization) const
+{
+	// This is a general lookup for a loc key.
+	std::set<std::string> toReturn;
+
+	for (const auto& [locName, locBlock]: localizations)
+	{
+		if (locBlock.english == localization || locBlock.french == localization || locBlock.german == localization || locBlock.korean == localization ||
+			 locBlock.russian == localization || locBlock.simp_chinese == localization || locBlock.spanish == localization)
+			toReturn.emplace(locName);
+	}
+	return toReturn;
+}
+
 std::string mappers::getLeadStr(const std::string& str, const int occurrence, const std::string& match)
 {
 	if (const auto& i = str.find(match); i != std::string::npos)
@@ -282,7 +300,7 @@ std::string mappers::cleanLocMarkups(const std::string& loc)
 	if (loc.find('#') == std::string::npos)
 		return loc;
 
-	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! witho no whitespace trailing it.
+	// Locmarks come in two styles: #SOMETHING with a whitespace behind it, and a #! with no whitespace trailing it.
 	// We iterate over the entire string and just rip these out.
 
 	auto workingLoc = loc;

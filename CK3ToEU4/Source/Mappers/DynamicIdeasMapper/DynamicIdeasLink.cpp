@@ -2,7 +2,7 @@
 #include "CommonRegexes.h"
 #include "DynamicIdeasRuleEnum.h"
 #include "Log.h"
-//#include "OSCompatibilityLayer.h"
+// #include "OSCompatibilityLayer.h"
 #include "ParserHelpers.h"
 
 mappers::DynamicIdeasLink::DynamicIdeasLink(std::istream& theStream)

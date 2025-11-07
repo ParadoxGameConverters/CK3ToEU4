@@ -154,6 +154,10 @@ EU4::World::World(const CK3::World& sourceWorld, const Configuration& theConfigu
 	}
 	Log(LogLevel::Progress) << "66 %";
 
+	// Mark the MoH.
+	Log(LogLevel::Info) << "-> Marking Mandate of Heaven Holder.";
+	markCelestialTitle(theConfiguration, sourceWorld.getCelestialTitle());
+
 	// With all religious/cultural matters taken care of, we can now set reforms
 	Log(LogLevel::Info) << "-> Assigning Country Reforms";
 	assignAllCountryReforms();
@@ -389,7 +393,7 @@ void EU4::World::verifyAllCountyMappings(const std::map<std::string, std::shared
 		if (title.second->getLevel() != CK3::LEVEL::COUNTY)
 			continue;
 		const auto& mappings = provinceMapper.getEU4ProvinceNumbers(title.first);
-		if (mappings.empty())
+		if (mappings.empty() && !title.first.starts_with("c_nf_")) // Ignore dynamic titles.
 		{
 			Log(LogLevel::Warning) << "Province mapping error: " << title.first << " has no EU4 provinces!";
 		}
@@ -527,6 +531,12 @@ void EU4::World::importCK3Countries(const CK3::World& sourceWorld, Configuration
 	// add new ones from ck3 titles.
 	for (const auto& title: sourceWorld.getIndeps())
 	{
+		if (title.second->getLevel() != CK3::LEVEL::HEGEMONY)
+			continue;
+		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
+	}
+	for (const auto& title: sourceWorld.getIndeps())
+	{
 		if (title.second->getLevel() != CK3::LEVEL::EMPIRE)
 			continue;
 		importCK3Country(title, sourceWorld, startDateOption, startDate, dynasticNames);
@@ -594,7 +604,32 @@ void EU4::World::importCK3Country(const std::pair<std::string, std::shared_ptr<C
 	{
 		tag = titleTagMapper.getTagForTitle("The Pope", eu4CapitalID);
 	}
-	else
+
+	// Next we ask if this is a "china"? Chinas look at special mappings.
+	const auto& alteredName = title.second->getAlteredName();
+	if (!tag && alteredName)
+	{
+		if (const auto& china = titleTagMapper.getChinaForTitle(*alteredName); china)
+		{
+			tag = *china;
+		}
+		else
+		{
+			// Yuan and similar, it's possible this is a localization string, "Yuan".
+			const auto& keys = localizationMapper.reverseLookup(*alteredName);
+			for (const auto& key: keys)
+			{
+				if (const auto& keyChina = titleTagMapper.getChinaForTitle(key); keyChina)
+				{
+					tag = *keyChina;
+					break;
+				}
+			}
+		}
+	}
+
+	// Otherwise proceed as normal.
+	if (!tag)
 	{
 		tag = titleTagMapper.getTagForTitle(title.first, eu4CapitalID);
 	}
@@ -1240,7 +1275,8 @@ void EU4::World::resolvePersonalUnions()
 			if (!foundTag)
 			{
 				// ... mooooving on.
-				Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+				// Log(LogLevel::Warning) << country.first << " holder " << holder.first << " has no EU4tags in domain? Odd?";
+				// Commented out warning due to c_nf_ title holders with junk in their domain.
 			}
 		}
 		else
@@ -1354,6 +1390,76 @@ void EU4::World::resolvePersonalUnions()
 		}
 	}
 	Log(LogLevel::Info) << "<> Annexed " << annexCounter << " and PUed " << puCounter << " countries.";
+}
+
+void EU4::World::markCelestialTitle(const Configuration& theConfiguration,
+	 const std::optional<std::pair<std::string, std::shared_ptr<CK3::Title>>>& celestialTitle)
+{
+	if (theConfiguration.getCelestial() == Configuration::CELESTIAL::DESTROY)
+	{
+		Log(LogLevel::Debug) << ">< No MoH Holder per configuration.";
+		return;
+	}
+
+	if (celestialTitle.has_value())
+	{
+		Log(LogLevel::Debug) << "has value";
+		if (!celestialTitle->first.empty())
+		{
+			Log(LogLevel::Debug) << "not empty";
+			if (celestialTitle->second)
+			{
+				Log(LogLevel::Debug) << "has seconf";
+				if (celestialTitle->second->getEU4Tag())
+					Log(LogLevel::Debug) << "eu4tag";
+			}
+		}
+	}
+
+	if (celestialTitle.has_value() && !celestialTitle->first.empty() && celestialTitle->second && celestialTitle->second->getEU4Tag())
+	{
+		MoHTag = celestialTitle->second->getEU4Tag()->first;
+		const auto& moh = countries.at(MoHTag);
+		moh->overrideReforms("celestial_empire");
+		Log(LogLevel::Info) << "<> Celestial Empire assigned to: " << MoHTag;
+		return;
+	}
+
+	int targetProvince = 0;
+	if (theConfiguration.getCelestial() == Configuration::CELESTIAL::BEIJING)
+		targetProvince = 1816;
+	else if (theConfiguration.getCelestial() == Configuration::CELESTIAL::NANJING)
+		targetProvince = 1821;
+	else if (theConfiguration.getCelestial() == Configuration::CELESTIAL::CANTON)
+		targetProvince = 667;
+
+	// Who holds this?
+
+	if (!provinces.contains(targetProvince))
+	{
+		Log(LogLevel::Error) << "There's no province " << targetProvince << " in China? What?";
+		return;
+	}
+	const auto& province = provinces.at(targetProvince);
+
+	if (province->getOwner().empty())
+	{
+		Log(LogLevel::Error) << "China is uncolonized? What?";
+		return;
+	}
+	MoHTag = province->getOwner();
+
+	if (!countries.contains(MoHTag))
+	{
+		Log(LogLevel::Error) << "There's no " << MoHTag << " in countries? What? Why?";
+		return;
+	}
+
+	const auto& moh = countries.at(MoHTag);
+	moh->setGovernment("monarchy");
+	moh->overrideReforms("celestial_empire");
+	moh->setGovernmentRank(3);
+	Log(LogLevel::Info) << "<> No default China, so Celestial Empire granted to: " << MoHTag;
 }
 
 void EU4::World::markHRETag(const Configuration& theConfiguration,

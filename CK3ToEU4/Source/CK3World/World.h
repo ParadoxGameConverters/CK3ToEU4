@@ -49,6 +49,7 @@ class World: commonItems::parser
 	[[nodiscard]] const auto& getCultureMapper() const { return cultureMapper; }
 	[[nodiscard]] const auto& getCultures() const { return cultures; }
 	[[nodiscard]] const auto& getConfederations() const { return confederations; }
+	[[nodiscard]] const auto& getCelestialTitle() const { return celestialTitle; }
 
   private:
 	void registerKeys(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion);
@@ -71,6 +72,7 @@ class World: commonItems::parser
 
 	// CK3World processing
 	void flagHREProvinces(const Configuration& theConfiguration);
+	void flagCelestialEmpire();
 	void shatterHRE(const Configuration& theConfiguration) const;
 	void shatterEmpires(const Configuration& theConfiguration) const;
 	void filterIndependentTitles();
@@ -113,6 +115,7 @@ class World: commonItems::parser
 	mappers::CultureMapper cultureMapper;
 
 	std::optional<std::pair<std::string, std::shared_ptr<Title>>> hreTitle; // loaded by configuration option.
+	std::optional<std::pair<std::string, std::shared_ptr<Title>>> celestialTitle;
 	std::map<std::string, std::shared_ptr<Title>> independentTitles;
 
 	bool islamExists = false;

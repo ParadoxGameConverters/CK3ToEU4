@@ -10,6 +10,9 @@ mappers::TitleTagMapper::TitleTagMapper()
 	registerKeys();
 	parseFile("configurables/tag_mappings.txt");
 	clearRegisteredKeywords();
+	registerChineseKeys();
+	parseFile("configurables/chinese_tag_mappings.txt");
+	clearRegisteredKeywords();
 	Log(LogLevel::Info) << "<> " << theMappings.size() << " mappings loaded.";
 }
 
@@ -23,7 +26,31 @@ mappers::TitleTagMapper::TitleTagMapper(std::istream& theStream)
 void mappers::TitleTagMapper::registerKeys()
 {
 	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
-		theMappings.emplace_back(TitleTagMapping(theStream));
+		auto mapping = TitleTagMapping(theStream);
+		if (mapping.getEU4Tag().empty())
+		{
+			Log(LogLevel::Warning) << "Issue with Title-tag mapping " << mapping.getCK3Title() << " - no eu4 tag? Skipping.";
+		}
+		else
+		{
+			theMappings.emplace_back(mapping);
+		}
+	});
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+}
+
+void mappers::TitleTagMapper::registerChineseKeys()
+{
+	registerKeyword("link", [this](const std::string& unused, std::istream& theStream) {
+		auto mapping = TitleTagMapping(theStream);
+		if (mapping.getEU4Tag().empty())
+		{
+			Log(LogLevel::Warning) << "Issue with chinese Title-tag mapping " << mapping.getCK3Title() << " - no eu4 tag? Skipping.";
+		}
+		else
+		{
+			chineseMappings.emplace_back(mapping);
+		}
 	});
 	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
@@ -134,4 +161,36 @@ std::string mappers::TitleTagMapper::generateNewTag()
 		}
 	}
 	return eu4Tag;
+}
+
+std::optional<std::string> mappers::TitleTagMapper::getChinaForTitle(const std::string& ck3Title) const
+{
+	// Try regular maps.
+	for (const auto& mapping: chineseMappings)
+	{
+		if (const auto& match = mapping.titleMatch(ck3Title); match)
+		{
+			return *match;
+		}
+	}
+
+	// Try for fallback
+	for (const auto& mapping: chineseMappings)
+	{
+		if (const auto& match = mapping.fallbackMatch(); match)
+		{
+			return mapping.getEU4Tag();
+		}
+	}
+
+	// No china?
+	return std::nullopt;
+}
+
+std::set<std::string> mappers::TitleTagMapper::getAllChinas() const
+{
+	std::set<std::string> toReturn;
+	for (const auto& mapping: chineseMappings)
+		toReturn.insert(mapping.getEU4Tag());
+	return toReturn;
 }

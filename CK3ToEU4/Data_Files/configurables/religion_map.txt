@@ -15,9 +15,9 @@ link = { eu4 = iberian_pagan ck3 = basque_pagan  } #Temp
 link = { eu4 = bon_reformed ck3 = bon  }
 link = { eu4 = bon ck3 = old_bon }
 # Buddhism
-link = { eu4 = buddhism ck3 = theravada ck3 = ari }
-link = { eu4 = mahayana ck3 = mahayana }
-link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism }
+link = { eu4 = buddhism ck3 = theravada ck3 = ari ck3 = pundarika ck3 = dhyana ck3 = maitreya ck3 = vinaya }
+link = { eu4 = mahayana ck3 = mahayana ck3 = sukhavati ck3 = avatamsaka ck3 = yogacara }
+link = { eu4 = vajrayana ck3 = vajrayana ck3 = lamaism ck3 = mantrayana ck3 = acharya }
 # Christianity
 link = { eu4 = catholic religious_head = k_papal_state }
 link = { eu4 = catholic ck3 = conversos ck3 = catholic ck3 = mozarabic_church } # Fallback for old saves (pre 1.6.1.2)
@@ -44,7 +44,7 @@ link = { eu4 = insular_celtic ck3 = insular_celtic } # Fallback, it is already d
 # Tani
 link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism
-link = { eu4 = manichean ck3 = manichean }
+link = { eu4 = manichean ck3 = manichean ck3 = mingism } #same religious head in ck3
 link = { eu4 = mandeaism ck3 = mandeaism ck3 = sabianism }
 link = { eu4 = valentinianism ck3 = valentinianism }
 link = { eu4 = sethianism ck3 = sethianism }
@@ -101,7 +101,7 @@ link = { eu4 = confucianism ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
 # Tengrism
 link = { eu4 = tengri_pagan ck3 = tengri_pagan }
 # Waaqism
-link = { eu4 = shamanism ck3 = waaqism_pagan }
+link = { eu4 = shamanism ck3 = waaqism_pagan ck3 = ngaiism_pagan }
 # West African
 link = { eu4 = shamanism ck3 = west_african_pagan ck3 = west_african_bidu_pagan ck3 = makonde_pagan ck3 = makua_pagan ck3 = mijikenda_pagan }
 # West African Bori
@@ -125,6 +125,8 @@ link = { eu4 = mazdaki ck3 = mazdakism }
 link = { eu4 = khurramism ck3 = khurramism }
 # Zunism
 link = { eu4 = zun_pagan ck3 = zun_pagan }
+# Japanese
+link = { eu4 = animist ck3 = utaki }
 
 # IRToCK3 addition
 ## Celtic
@@ -160,6 +162,8 @@ link = {
 	ck3 = dinka_pagan # "The Dinka are also animists." https://en.wikipedia.org/wiki/Dinka_religion
 }
 
+link = { eu4 = animism ck3 = dayawism ck3 = kamuyism_pagan ck3 = aluk ck3 = tolotang ck3 = hantuism ck3 = dab_qhuas ck3 = kaharingan ck3 = bimoism ck3 = bilikuism ck3 = pulugaism ck3 = shamanism } #unreformed AUH pagans
+
 # Mod: Sunset Invasion
 link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cult_of_quetzalcoatl }
 
@@ -167,7 +171,7 @@ link = { eu4 = nahuatl ck3 = cult_of_tlaloc ck3 = cult_of_tezcatlipoca ck3 = cul
 link = { eu4 = protestant ck3 = protestant }
 link = { eu4 = reformed ck3 = reformed }
 link = { eu4 = confucianism ck3 = tianrenganying ck3 = sanjiaoheliu ck3 = lixue ck3 = zhengyi ck3 = shangqing ck3 = quanzhen }
-link = { eu4 = shinto ck3 = shinto ck3 = ainuism ck3 = ainu_paganism }
+link = { eu4 = shinto ck3 = shinto ck3 = shugendo ck3 = ainuism ck3 = ainu_paganism }
 
 # Mod: RICE
 link = { eu4 = shamanism ck3 = guanche_pagan }
@@ -200,8 +204,8 @@ link = { eu4 = animism ck3 = ban_phi }
 link = { eu4 = animism ck3 = yzng }
 link = { eu4 = animism ck3 = bugaism }
 link = { eu4 = animism ck3 = abkaism }
-link = { eu4 = animism ck3 = moism }
-link = { eu4 = animism ck3 = muism }
+link = { eu4 = animism ck3 = moism ck3 = satsana_phi }
+link = { eu4 = animism ck3 = muism ck3 = mu }
 link = { eu4 = mardukism ck3 = shamsi_pagan }
 
 # Mod: The Fallen Eagle
@@ -293,7 +297,7 @@ link = { eu4 = animism ck3 = sanamahi_pagan }
 # Siberian
 link = { eu4 = siberian_pagan ck3 = kuptyng }
 #Taoism
-link = { eu4 = confucianism ck3 = shendao ck3 = xinxue ck3 = jingshi ck3 = jingxue ck3 = rangyi }
+link = { eu4 = confucianism ck3 = shendao ck3 = xinxue ck3 = jingshi ck3 = jingxue ck3 = rangyi ck3 = daoxue }
 #Tenga
 link = { eu4 = animism ck3 = tenga_pagan ck3 = wennam_pagan }
 #Tengrism

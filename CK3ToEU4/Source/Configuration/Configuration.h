@@ -91,6 +91,13 @@ class Configuration: commonItems::parser
 		MERGE = 1,
 		LEAVE = 2
 	};
+	enum class CELESTIAL
+	{
+		BEIJING = 1,
+		NANJING = 2,
+		CANTON = 3,
+		DESTROY = 4
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -113,6 +120,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getDynasticNames() const { return dynasticNames; }
 	[[nodiscard]] const auto& getDiscoveredBy() const { return discoveredBy; }
 	[[nodiscard]] const auto& getTribalConfederations() const { return tribalConfederations; }
+	[[nodiscard]] const auto& getCelestial() const { return celestial; }
 
 	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
@@ -145,6 +153,7 @@ class Configuration: commonItems::parser
 	DYNASTICNAMES dynasticNames = DYNASTICNAMES::ENABLED;
 	DISCOVEREDBY discoveredBy = DISCOVEREDBY::VANILLA;
 	TRIBALCONFEDERATIONS tribalConfederations = TRIBALCONFEDERATIONS::MERGE;
+	CELESTIAL celestial = CELESTIAL::BEIJING;
 
 	std::optional<std::string> playerTitle;
 };
