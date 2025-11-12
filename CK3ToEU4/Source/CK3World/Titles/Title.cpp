@@ -26,18 +26,24 @@ void CK3::Title::registerKeys()
 {
 	nameParser.registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
 		displayName = commonItems::singleString(theStream).getString();
+		Log(LogLevel::Debug) << "inc name: |" << displayName << "|";
 		if (displayName.find("\x15") != std::string::npos)
 		{
+			Log(LogLevel::Debug) << "Cleaning name";
 			cleanUpDisplayName();
 		}
+		Log(LogLevel::Debug) << "name: |" << displayName << "|";
 	});
 	nameParser.registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
 		adjective = commonItems::singleString(theStream).getString();
+		Log(LogLevel::Debug) << "adj " << adjective;
 	});
 	nameParser.registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		creationDate = date(commonItems::singleString(theStream).getString());
+		Log(LogLevel::Debug) << "credate";
 	});
 	nameParser.registerKeyword("title_history_names", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "thn";
 		const auto nameList = commonItems::blobList(theStream).getBlobs();
 		auto latestDate = date();
 		for (const auto& theBlob: nameList)
@@ -48,23 +54,29 @@ void CK3::Title::registerKeys()
 			{
 				latestDate = nameBlob.getCreationDate();
 				alteredName = nameBlob.getDisplayName();
+				Log(LogLevel::Debug) << "altname " << alteredName;
 			}
 		}
+		Log(LogLevel::Debug) << "thn out";
 	});
 	nameParser.registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 
 	registerKeyword("title_name_data", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) <<  "tnd 2";
 		nameParser.parseStream(theStream);
 	});
 	registerKeyword("key", [this](const std::string& unused, std::istream& theStream) {
 		name = commonItems::singleString(theStream).getString();
+		Log(LogLevel::Debug) << "key 2" << name;
 	});
 	registerKeyword("name", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "inc name 2: |" << displayName << "|";
 		displayName = commonItems::singleString(theStream).getString();
 		if (displayName.find("\x15") != std::string::npos)
 		{
 			cleanUpDisplayName();
 		}
+		Log(LogLevel::Debug) << "the name 2: |" << displayName << "|";
 	});
 	registerKeyword("adj", [this](const std::string& unused, std::istream& theStream) {
 		adjective = commonItems::singleString(theStream).getString();
@@ -89,71 +101,92 @@ void CK3::Title::registerKeys()
 	*/
 	registerKeyword("date", [this](const std::string& unused, std::istream& theStream) {
 		creationDate = date(commonItems::singleString(theStream).getString());
+		Log(LogLevel::Debug) << "credate 2";
 	});
 	registerKeyword("claim", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "claim 2";
 		for (auto claimantID: commonItems::llongList(theStream).getLlongs())
 			claimants.insert(std::make_pair(claimantID, nullptr));
 	});
 	registerKeyword("history_government", [this](const std::string& unused, std::istream& theStream) {
 		historyGovernment = commonItems::singleString(theStream).getString();
+		Log(LogLevel::Debug) << "hg 2 " << historyGovernment;
 	});
 	registerKeyword("theocratic_lease", [this](const std::string& unused, std::istream& theStream) {
 		theocraticLease = commonItems::singleString(theStream).getString() == "yes";
+		Log(LogLevel::Debug) << "theleae 2 ";
 	});
 	registerKeyword("capital_barony", [this](const std::string& unused, std::istream& theStream) {
 		cCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
+		Log(LogLevel::Debug) << "cap baron 2 ";
 	});
 	registerKeyword("duchy_capital_barony", [this](const std::string& unused, std::istream& theStream) {
 		dCapitalBarony = commonItems::singleString(theStream).getString() == "yes";
+		Log(LogLevel::Debug) << "duchy capita bar 2 ";
 	});
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
 		capital = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		Log(LogLevel::Debug) << "capit bar 2 ";
 	});
 	registerKeyword("de_facto_liege", [this](const std::string& unused, std::istream& theStream) {
 		dfLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		Log(LogLevel::Debug) << "defactoliege 2 ";
 	});
 	registerKeyword("de_jure_liege", [this](const std::string& unused, std::istream& theStream) {
 		djLiege = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
+		Log(LogLevel::Debug) << "dejureliege 2 ";
 	});
 	registerKeyword("de_jure_vassals", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "dejure vassals 2 ";
 		for (auto vassalID: commonItems::llongList(theStream).getLlongs())
 			djVassals.insert(std::make_pair(vassalID, nullptr));
 	});
 	registerKeyword("heir", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "heir 2 ";
 		for (auto heirID: commonItems::llongList(theStream).getLlongs())
 			heirs.emplace_back(std::make_pair(heirID, nullptr));
 	});
 	registerKeyword("laws", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "laws 2 ";
 		const auto& theLaws = commonItems::stringList(theStream).getStrings();
 		laws = std::set(theLaws.begin(), theLaws.end());
 	});
 	registerKeyword("holder", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "holder 2 ";
 		holder = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("renamed", [this](std::istream& theStream) {
+		Log(LogLevel::Debug) << "renamed 2 ";
 		renamed = commonItems::getString(theStream) == "yes";
 	});
 	registerKeyword("coat_of_arms_id", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "coaid 2 ";
 		coa = std::pair(commonItems::singleLlong(theStream).getLlong(), nullptr);
 	});
 	registerKeyword("succession_election", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "succession_election 2 ";
 		const auto newTitle = Title(theStream, 0);
 		electors = newTitle.getElectors();
 	});
 	registerKeyword("electors", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "electors 2 ";
 		for (auto electorID: commonItems::intList(theStream).getInts())
 			electors.insert(std::pair(electorID, nullptr));
 	});
 	registerKeyword("landless", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "landless 2 ";
 		landless = commonItems::singleString(theStream).getString() == "yes";
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "color 2 ";
 		color = laFabricaDeColor.getColor(theStream);
 	});
 	registerKeyword("history", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "history 2 ";
 		previousHolders = Title(theStream, 0).getPreviousHolders();
 	});
 	registerRegex(R"(\d+.\d+.\d+)", [this](const std::string& unused, std::istream& theStream) {
+		Log(LogLevel::Debug) << "dubious ";
 		const auto questionableItem = commonItems::stringOfItem(theStream).getString();
 		auto tempStream = std::stringstream(questionableItem);
 		if (questionableItem.find('{') == std::string::npos)
@@ -168,7 +201,7 @@ void CK3::Title::registerKeys()
 			}
 		}
 	});
-	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreAndLogItem);
 }
 
 void CK3::Title::cleanUpDisplayName()
