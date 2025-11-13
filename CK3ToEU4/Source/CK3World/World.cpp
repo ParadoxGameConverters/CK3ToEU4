@@ -224,7 +224,7 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		confederations = Confederations(theStream);
 		Log(LogLevel::Info) << "<> Loaded " << confederations.getConfederations().size() << " confederations.";
 	});
-	registerRegex(commonItems::catchallRegex, commonItems::ignoreAndLogItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 void CK3::World::locatePlayerTitle(const std::shared_ptr<Configuration>& theConfiguration)

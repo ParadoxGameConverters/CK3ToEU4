@@ -9,6 +9,8 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
+#include <filesystem>
+#include <fstream>
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -24,7 +26,6 @@ CK3::Titles::Titles(std::istream& theStream)
 void CK3::Titles::registerKeys()
 {
 	registerKeyword("dynamic_templates", [this](const std::string& unused, std::istream& theStream) {
-		Log(LogLevel::Debug) << "dynamic_templates temp in";
 		const commonItems::blobList dynamicRanks(theStream);
 		for (const auto& dynamicTitle: dynamicRanks.getBlobs())
 		{
@@ -33,23 +34,19 @@ void CK3::Titles::registerKeys()
 			if (!dynamicTitleTemplate.getDynamicTitleKey().empty() && !dynamicTitleTemplate.getDynamicTitleRank().empty())
 				dynamicTitleRanks.insert(std::pair(dynamicTitleTemplate.getDynamicTitleKey(), dynamicTitleTemplate.getDynamicTitleRank()));
 		}
-		Log(LogLevel::Debug) << "dynamic_templates temp out";
 	});
 	registerKeyword("landed_titles", [this](const std::string& unused, std::istream& theStream) {
-		Log(LogLevel::Debug) << "landed_titles temp in";
 		// A bit of recursion is good for the soul.
 		const auto& tempTitles = Titles(theStream);
 		titles = tempTitles.getTitles();
 		titleCounter = tempTitles.getCounter();
-		Log(LogLevel::Debug) << "landed_titles temp out";
 	});
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
 		// Incoming titles may not be actual titles but half-deleted junk.
-		Log(LogLevel::Debug) << "on ID: " << ID;
 		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
+
 		if (titleBlob.find('{') != std::string::npos)
 		{
-			Log(LogLevel::Debug) << "found {";
 			std::stringstream tempStream(titleBlob);
 			try
 			{
@@ -57,7 +54,6 @@ void CK3::Titles::registerKeys()
 				if (!newTitle->getName().empty())
 				{
 					titles.insert(std::pair(newTitle->getName(), newTitle));
-					Log(LogLevel::Debug) << "loading " << newTitle->getName();
 					if (newTitle->getName().find("b_") == 0)
 						++titleCounter[0];
 					else if (newTitle->getName().find("c_") == 0)
@@ -73,23 +69,14 @@ void CK3::Titles::registerKeys()
 					else
 						++titleCounter[6]; // x_x_, x_mc_ and the rest.
 				}
-				else
-				{
-					Log(LogLevel::Debug) << "newTitle->getName() empty?";
-				}
 			}
 			catch (std::exception& e)
 			{
 				throw std::runtime_error("Cannot import title ID: " + ID + " (" + e.what() + ")");
 			}
 		}
-		else
-		{
-			Log(LogLevel::Debug) << "Dry title?";
-		}
-		Log(LogLevel::Debug) << "exit id " << ID;
 	});
-	registerRegex(commonItems::catchallRegex, commonItems::ignoreAndLogItem);
+	registerRegex(commonItems::catchallRegex, commonItems::ignoreItem);
 }
 
 void CK3::Titles::transcribeDynamicRanks()
