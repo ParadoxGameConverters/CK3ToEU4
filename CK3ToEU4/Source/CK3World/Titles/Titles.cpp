@@ -9,6 +9,8 @@
 #include "Log.h"
 #include "ParserHelpers.h"
 #include "Title.h"
+#include <filesystem>
+#include <fstream>
 
 CK3::Titles::Titles(std::istream& theStream)
 {
@@ -42,6 +44,7 @@ void CK3::Titles::registerKeys()
 	registerRegex(R"(\d+)", [this](const std::string& ID, std::istream& theStream) {
 		// Incoming titles may not be actual titles but half-deleted junk.
 		const auto& titleBlob = commonItems::stringOfItem(theStream).getString();
+
 		if (titleBlob.find('{') != std::string::npos)
 		{
 			std::stringstream tempStream(titleBlob);
@@ -49,21 +52,23 @@ void CK3::Titles::registerKeys()
 			{
 				auto newTitle = std::make_shared<Title>(tempStream, std::stoll(ID));
 				if (!newTitle->getName().empty())
+				{
 					titles.insert(std::pair(newTitle->getName(), newTitle));
-				if (newTitle->getName().find("b_") == 0)
-					++titleCounter[0];
-				else if (newTitle->getName().find("c_") == 0)
-					++titleCounter[1];
-				else if (newTitle->getName().find("d_") == 0)
-					++titleCounter[2];
-				else if (newTitle->getName().find("k_") == 0)
-					++titleCounter[3];
-				else if (newTitle->getName().find("e_") == 0)
-					++titleCounter[4];
-				else if (newTitle->getName().find("h_") == 0)
-					++titleCounter[5];
-				else
-					++titleCounter[6]; // x_x_, x_mc_ and the rest.
+					if (newTitle->getName().find("b_") == 0)
+						++titleCounter[0];
+					else if (newTitle->getName().find("c_") == 0)
+						++titleCounter[1];
+					else if (newTitle->getName().find("d_") == 0)
+						++titleCounter[2];
+					else if (newTitle->getName().find("k_") == 0)
+						++titleCounter[3];
+					else if (newTitle->getName().find("e_") == 0)
+						++titleCounter[4];
+					else if (newTitle->getName().find("h_") == 0)
+						++titleCounter[5];
+					else
+						++titleCounter[6]; // x_x_, x_mc_ and the rest.
+				}
 			}
 			catch (std::exception& e)
 			{

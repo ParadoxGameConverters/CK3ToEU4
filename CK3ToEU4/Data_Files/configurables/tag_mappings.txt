@@ -125,6 +125,7 @@ link = { ck3 = c_isle_of_man eu4 = KOI }
 link = { ck3 = d_leinster eu4 = LEI }
 link = { ck3 = c_leinster eu4 = LEI }
 link = { ck3 = k_dal_riata eu4 = LOI }
+link = { ck3 = k_ellan_vanin eu4 = LOI }
 link = { ck3 = d_western_isles eu4 = LOI }
 link = { ck3 = d_munster eu4 = MCM } #Currently no county Munster
 link = { ck3 = c_thomond eu4 = MNS } #The EU4 file is still named Munster even if the country name itself has changed
@@ -1246,6 +1247,7 @@ link = { ck3 = c_vientiane eu4 = VIE }
 link = { ck3 = d_taiwan eu4 = FRM }
 
 link = { ck3 = e_dali eu4 = CDL }
+link = { ck3 = k_dali eu4 = CDL }
 
 link = { ck3 = k_jiok eu4 = SHU }
 link = { ck3 = k_chio eu4 = CHC }
@@ -1352,6 +1354,7 @@ link = { ck3 = k_dvaravati eu4 = AYU }
 link = { ck3 = k_funan eu4 = KHM }
 link = { ck3 = k_chenla eu4 = CHK }
 link = { ck3 = k_champa eu4 = CHA }
+link = { ck3 = e_ruucuu eu4 = RYU }
 link = { ck3 = k_ruucuu eu4 = RYU }
 link = { ck3 = k_lusung eu4 = TDO }
 link = { ck3 = k_kabisay-an eu4 = MAS }
@@ -1439,6 +1442,8 @@ link = { ck3 = d_IDO_bali eu4 = BLI }
 link = { ck3 = c_IDO_bali eu4 = BLI }
 link = { ck3 = d_JAV_mataram eu4 = MTR }
 link = { ck3 = c_JAV_mataram eu4 = MTR }
+link = { ck3 = k_siam eu4 = SIA }
 
 
 
+link = { ck3 = e_kara_khitai eu4 = KAS }
