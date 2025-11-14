@@ -1171,7 +1171,10 @@ special_doctrine_is_jewish_faith  = {
 special_doctrine_is_eastern_faith = { #Includes Indian/Mazdaki faiths, not just Taoist ones
 	
 }
-
+special_doctrine_maitreya_hostility = {
+}
+special_doctrine_is_maitreya = {
+}
 special_doctrine_immaterial_harmony = {
 }
 
