@@ -54,7 +54,7 @@ void CK3::LandedTitles::registerKeys()
 		}
 		catch (std::exception& e)
 		{
-			Log(LogLevel::Error) << "Color loading failure: " << e.what();
+			Log(LogLevel::Error) << "Color loading failure: " << e.what() << " ... Replacing with grey.";
 			color = commonItems::Color(std::array<int, 3>{100, 100, 100});
 		}
 	});
