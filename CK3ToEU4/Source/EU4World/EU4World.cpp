@@ -1401,21 +1401,6 @@ void EU4::World::markCelestialTitle(const Configuration& theConfiguration,
 		return;
 	}
 
-	if (celestialTitle.has_value())
-	{
-		Log(LogLevel::Debug) << "has value";
-		if (!celestialTitle->first.empty())
-		{
-			Log(LogLevel::Debug) << "not empty";
-			if (celestialTitle->second)
-			{
-				Log(LogLevel::Debug) << "has seconf";
-				if (celestialTitle->second->getEU4Tag())
-					Log(LogLevel::Debug) << "eu4tag";
-			}
-		}
-	}
-
 	if (celestialTitle.has_value() && !celestialTitle->first.empty() && celestialTitle->second && celestialTitle->second->getEU4Tag())
 	{
 		MoHTag = celestialTitle->second->getEU4Tag()->first;

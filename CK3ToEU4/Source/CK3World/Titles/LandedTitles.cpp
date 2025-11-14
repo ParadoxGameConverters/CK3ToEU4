@@ -48,7 +48,15 @@ void CK3::LandedTitles::registerKeys()
 		landless = commonItems::singleString(theStream).getString() == "yes";
 	});
 	registerKeyword("color", [this](const std::string& unused, std::istream& theStream) {
-		color = laFabricaDeColor.getColor(theStream);
+		try
+		{
+			color = laFabricaDeColor.getColor(theStream);
+		}
+		catch (std::exception& e)
+		{
+			Log(LogLevel::Error) << "Color loading failure: " << e.what() << " ... Replacing with grey.";
+			color = commonItems::Color(std::array<int, 3>{100, 100, 100});
+		}
 	});
 	registerKeyword("capital", [this](const std::string& unused, std::istream& theStream) {
 		capital = std::make_pair(commonItems::singleString(theStream).getString(), nullptr);
