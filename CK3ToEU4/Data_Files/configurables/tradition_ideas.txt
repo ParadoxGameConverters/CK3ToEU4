@@ -180,7 +180,7 @@ link = { ck3 = { tradition = tradition_swords_for_hire} eu4 = { possible_condott
 link = { ck3 = { tradition = tradition_talent_acquisition } eu4 = { free_leader_pool = 1 general_cost = -0.10 } }
 link = { ck3 = { tradition = tradition_the_witenagemot } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier = 0.05 } }
 link = { ck3 = { tradition = tradition_things } eu4 = { reform_progress_growth = 0.1 nobles_influence_modifier = 0.05 } } 
-link = { ck3 = { tradition = tradition_tribe_unity } eu4 = { governing_cost = 0.8 } } 
+link = { ck3 = { tradition = tradition_tribe_unity } eu4 = { governing_cost = -0.2 } } 
 link = { ck3 = { tradition = tradition_upland_skirmishing } eu4 = { special_unit_forcelimit = 0.05 fire_damage_received = -0.10 } } 
 link = { ck3 = { tradition = tradition_vegetarianism } eu4 = { monthly_karma = 0.1 } } 
 link = { ck3 = { tradition = tradition_visigothic_codes } eu4 = { female_advisor_chance = 0.5 } }
