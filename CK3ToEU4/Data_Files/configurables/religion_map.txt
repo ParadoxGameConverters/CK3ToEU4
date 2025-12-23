@@ -44,7 +44,7 @@ link = { eu4 = insular_celtic ck3 = insular_celtic } # Fallback, it is already d
 # Tani
 link = { eu4 = animism ck3 = donyipoloism ck3 = sedism }
 # Dualism
-link = { eu4 = manichean ck3 = manichean ck3 = mingism } #same religious head in ck3
+link = { eu4 = manichean ck3 = manichean ck3 = mingism ck3 = chinese_manichean } #same religious head in ck3
 link = { eu4 = mandeaism ck3 = mandeaism ck3 = sabianism }
 link = { eu4 = valentinianism ck3 = valentinianism }
 link = { eu4 = sethianism ck3 = sethianism }
@@ -118,7 +118,7 @@ link = { eu4 = meshefaresism ck3 = meshefaresism }
 link = { eu4 = kitebacilweism ck3 = kitebacilweism }
 # Zoroastrianism
 link = { eu4 = zoroastrian ck3 = mazdayasna ck3 = hepthalitism }
-link = { eu4 = zurvanism ck3 = zurvanism ck3 = afridunism ck3 = urartuism }
+link = { eu4 = zurvanism ck3 = zurvanism ck3 = afridunism ck3 = urartuism ck3 = behafaridism }
 link = { eu4 = gayomarthianism ck3 = gayomarthianism }
 link = { eu4 = khurmazta ck3 = khurmazta }
 link = { eu4 = mazdaki ck3 = mazdakism }
@@ -159,7 +159,7 @@ link = { eu4 = hattian_pagan ck3 = hattian_faith }
 link = {
 	eu4 = animism
 	ck3 = burmic # Natkokwe, animistic and polytheistic worship of nats and other spirits or ancestors
-	ck3 = dinka_pagan # "The Dinka are also animists." https://en.wikipedia.org/wiki/Dinka_religion
+	ck3 = khmu_pagan
 }
 
 link = { eu4 = animism ck3 = dayawism ck3 = kamuyism_pagan ck3 = aluk ck3 = tolotang ck3 = hantuism ck3 = dab_qhuas ck3 = kaharingan ck3 = bimoism ck3 = bilikuism ck3 = pulugaism ck3 = shamanism } #unreformed AUH pagans
@@ -178,8 +178,8 @@ link = { eu4 = shamanism ck3 = guanche_pagan }
 link = { eu4 = shamanism ck3 = tuareg_pagan }
 link = { eu4 = shamanism ck3 = amazigh_pagan }
 link = { eu4 = shamanism ck3 = malagasy_pagan }
-link = { eu4 = shamanism ck3 = welayta_pagan ck3 = south_omotic_pagan ck3 = sidama_pagan ck3 = damot_pagan ck3 = fandaanano }
-link = { eu4 = shamanism ck3 = shona_pagan ck3 = nguni_pagan ck3 = sotho_pagan ck3 = tsonga_pagan }											   
+link = { eu4 = shamanism ck3 = welayta_pagan ck3 = south_omotic_pagan ck3 = sidama_pagan ck3 = damot_pagan ck3 = fandaanano ck3 = dinka_pagan ck3 = nuba_pagan ck3 = turkana_pagan }
+link = { eu4 = shamanism ck3 = shona_pagan ck3 = nguni_pagan ck3 = sotho_pagan ck3 = tsonga_pagan ck3 = daju_pagan ck3 = fur_pagan }											   
 link = { eu4 = shamanism ck3 = odinala_pagan }
 link = { eu4 = harranism ck3 = harranian_pagan }
 link = { eu4 = arab_pagan ck3 = nabataean_pagan }
@@ -204,7 +204,7 @@ link = { eu4 = animism ck3 = ban_phi }
 link = { eu4 = animism ck3 = yzng }
 link = { eu4 = animism ck3 = bugaism }
 link = { eu4 = animism ck3 = abkaism }
-link = { eu4 = animism ck3 = moism ck3 = satsana_phi }
+link = { eu4 = animism ck3 = moism ck3 = satsana_phi ck3 = semang_pagan ck3 = senoi_pagan ck3 = bahnar_pagan ck3 = viet_pagan ck3 = samre_pagan }
 link = { eu4 = animism ck3 = muism ck3 = mu }
 link = { eu4 = mardukism ck3 = shamsi_pagan }
 
@@ -212,8 +212,8 @@ link = { eu4 = mardukism ck3 = shamsi_pagan }
 link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
 link = { eu4 = shiite ck3 = shia }
 link = { eu4 = ibadi ck3 = khawariji }
-link = { eu4 = buddhism ck3 = pudgalavada ck3 = dharmaguptaka ck3 = sarvastivada ck3 = vibhajjavada ck3 = mahasanghika }
-link = { eu4 = orthodox ck3 = nicene ck3 = hesychasm }
+link = { eu4 = buddhism ck3 = pudgalavada ck3 = dharmaguptaka ck3 = sarvastivada ck3 = vibhajjavada ck3 = mahasanghika ck3 = vibhajyavada}
+link = { eu4 = orthodox ck3 = nicene ck3 = hesychasm ck3 = chalcedonian }
 link = { eu4 = coptic ck3 = syriac }
 link = { eu4 = catholic ck3 = abelian } # https://en.wikipedia.org/wiki/Abelians
 link = { eu4 = arianism ck3 = arianism ck3 = macedonianism ck3 = montanist }
@@ -253,7 +253,7 @@ link = { eu4 = zoroastrian ck3 = armaz ck3 = magousaian }
 link = { eu4 = bon ck3 = dongba }
 #Buddhism
 #Mahasanghika, Pudgalavada, Dharmaguptaka, Sarvastivada, Vibhajjavada defined in TFE as Theravada
-link = { eu4 = mahayana ck3 = phat_giao ck3 = zenzong ck3 = kegon ck3 = tiantai ck3 = jingtu ck3 = shin ck3 = indo_hellenism ck3 = vijna }
+link = { eu4 = mahayana ck3 = phat_giao ck3 = zenzong ck3 = kegon ck3 = tiantai ck3 = jingtu ck3 = shin ck3 = indo_hellenism ck3 = vijna ck3 = chan }
 link = { eu4 = vajrayana ck3 = azhaliism ck3 = kagyu ck3 = sakya ck3 = gelug }
 #Christianity
 link = { eu4 = catholic ck3 = african_church ck3 = ambrosian ck3 = aquileian_church ck3 = bohemian_catholic ck3 = maronite ck3 = cilician_uniate ck3 = uniate ck3 = melkite ck3 = alexandrian_melkite ck3 = irenopolis_melkite ck3 = jerusalem_melkite ck3 = romagyris_melkite ck3 = collyridianism }
@@ -269,7 +269,7 @@ link = { eu4 = hussite ck3 = taborites ck3 = ultraquist }
 link = { eu4 = arianism ck3 = aerianism ck3 = montanism ck3 = julianists }
 link = { eu4 = adamites ck3 = valesians }
 #Dualism
-link = { eu4 = manichean ck3 = manichean_babylon ck3 = matari ck3 = dayhurianism ck3 = marcionism }
+link = { eu4 = manichean ck3 = manichean_babylon ck3 = matari ck3 = dayhurianism ck3 = marcionism ck3 = athinganoi }
 link = { eu4 = mandeaism ck3 = elcesaites }
 # Finno-Ugric
 link = { eu4 = finnish_pagan ck3 = estonian_pagan ck3 = osilian_pagan ck3 = nenets_pagan ck3 = mordvin_pagan } 
@@ -315,7 +315,7 @@ link = { eu4 = caucasian_pagan ck3 = khabzism ck3 = nakh_pagan ck3 = apsuara }
 # Asian
 link = { eu4 = animism ck3 = mentawai_animism ck3 = nias_animism ck3 = batak_animism ck3 = umboh ck3 = malayic }
 link = { eu4 = animism ck3 = kadai }
-link = { eu4 = animism ck3 = alukta ck3 = malesung ck3 = halaika ck3 = makamba ck3 = marapu }
+link = { eu4 = animism ck3 = alukta ck3 = malesung ck3 = halaika ck3 = makamba ck3 = marapu ck3 = timor_pagan}
 link = { eu4 = shamanism ck3 = celebic }
 link = { eu4 = animism ck3 = kaharingan }
 link = { eu4 = shamanism ck3 = momolianism }
@@ -342,7 +342,7 @@ link = { eu4 = animism ck3 = dagestan_pagan ck3 = dagestan_pagan_old } # "The di
 link = { eu4 = dreamtime ck3 = tagai ck3 = tagai_old }
 ## SEA
 link = { eu4 = animism ck3 = nunusaku ck3 = nunusaku_old } # "Practitioners worship the spirits and ancestors, and they participate in elaborate rituals that govern everyday life."
-link = { eu4 = animism ck3 = penunggu ck3 = papuan_old } # "The Penunggu refers to the spirit that guards, supervises or protects a particular place, geographical region, nation, age group, country, culture or occupation."
+link = { eu4 = animism ck3 = penunggu ck3 = papuan_old ck3 = yaambism ck3 = bis} # "The Penunggu refers to the spirit that guards, supervises or protects a particular place, geographical region, nation, age group, country, culture or occupation."
 ## Oceania
 link = { eu4 = animism ck3 = oceanic_animism ck3 = oceanic_animism_old }
 link = { eu4 = animism ck3 = palau_animism ck3 = palau_animism_old }
