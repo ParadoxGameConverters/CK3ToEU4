@@ -140,7 +140,7 @@ link = { eu4 = canaanite ck3 = canaanite_pagan ck3 = canaanite_pagan_old ck3 = b
 link = { eu4 = arab_pagan ck3 = arabic_pagan ck3 = arabic_pagan_old ck3 = semitic_pagan }
 link = { eu4 = mardukism ck3 = mesopotamian_pagan ck3 = mesopotamian_pagan_old ck3 = assyrian_pagan ck3 = elamite_faith }
 ## Perso-Caucasian
-link = { eu4 = mithraism ck3 = mithraic_mysteries }
+link = { eu4 = mithraism ck3 = mithraic_mysteries ck3 = mithra_religion }
 link = { eu4 = armenian_pagan ck3 = armenian_pagan ck3 = armenian_pagan_old ck3 = urartuism ck3 = urartian_pagan }
 link = { eu4 = caucasian_pagan ck3 = caucasian_pagan ck3 = caucasian_pagan_old ck3 = georgian_pagan }
 link = { eu4 = scythian_pagan ck3 = scythian_pagan ck3 = scythian_pagan_old }
@@ -160,7 +160,10 @@ link = {
 	eu4 = animism
 	ck3 = burmic # Natkokwe, animistic and polytheistic worship of nats and other spirits or ancestors
 	ck3 = khmu_pagan
+	ck3 = shenic
+	ck3 = baiyue_faith
 }
+link = { eu4 = confucianism ck3 = mohism }
 
 link = { eu4 = animism ck3 = dayawism ck3 = kamuyism_pagan ck3 = aluk ck3 = tolotang ck3 = hantuism ck3 = dab_qhuas ck3 = kaharingan ck3 = bimoism ck3 = bilikuism ck3 = pulugaism ck3 = shamanism } #unreformed AUH pagans
 

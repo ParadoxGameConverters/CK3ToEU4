@@ -913,6 +913,9 @@ doctrine_gender_female_dominated = {
 	}
 }
 ##Consanguinity
+doctrine_consanguinity_dynastic = {
+}
+
 doctrine_consanguinity_restricted = {
 }
 
