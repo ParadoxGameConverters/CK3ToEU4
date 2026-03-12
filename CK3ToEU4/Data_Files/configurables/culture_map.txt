@@ -332,7 +332,7 @@ link = { eu4 = highland_scottish ck3 = irish tech = western gfx = westerngfx reg
 link = { eu4 = irish ck3 = irish tech = western gfx = westerngfx }
 link = { eu4 = welsh ck3 = welsh ck3 = wylish ck3 = cumbrian ck3 = brythonic ck3 = old_brythonic ck3 = briton ck3 = dumnonian tech = western gfx = westerngfx }
 link = { eu4 = coigriche ck3 = coigriche tech = western gfx = westerngfx }
-link = { eu4 = breton ck3 = breton ck3 = armorican tech = western gfx = westerngfx }
+link = { eu4 = breton ck3 = breton tech = western gfx = westerngfx }
 
 # Finno-Ugric
 
@@ -808,15 +808,14 @@ link = { eu4 = celtiberian ck3 = celtiberian tech = western gfx = westerngfx } #
 link = { eu4 = tagonian ck3 = lusoiberian ck3 = lusitanian tech = western gfx = westerngfx } # Fallback
 
 ### Gaulish/Belgian
-link = { eu4 = auscian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = pyrenees_area region = guyenne_area region = basque_country region = catalonia_area }
-link = { eu4 = armorican ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = brittany_area }
-link = { eu4 = lugdunian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = bourgogne_area region = west_burgundy_area }
-link = { eu4 = lutetian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = lorraine_area region = picardy_area region = champagne_area region = ile_de_france_area region = loire_area region = poitou_area region = orleans_area }
-link = { eu4 = arelatian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = provence_area region = languedoc_area region = massif_central_area region = savoy_dauphine_area }
-link = { eu4 = scaldic ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = low_countries_region }
-link = { eu4 = helvetian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = romandie_area region = switzerland_area }
-link = { eu4 = treverian ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = north_german_region region = south_german_region }
-link = { eu4 = lepontic ck3 = gallic ck3 = belgae tech = western gfx = westerngfx region = italy_region }
+link = { eu4 = auscian ck3 = auscian tech = western gfx = westerngfx }
+link = { eu4 = armorican ck3 = armorican tech = western gfx = westerngfx }
+link = { eu4 = lugdunian ck3 = lugdunian tech = western gfx = westerngfx }
+link = { eu4 = lutetian ck3 = lutetian tech = western gfx = westerngfx }
+link = { eu4 = arelatian ck3 = arelatian tech = western gfx = westerngfx }
+link = { eu4 = scaldic ck3 = scaldic tech = western gfx = westerngfx }
+link = { eu4 = treverian ck3 = treverian tech = western gfx = westerngfx }
+link = { eu4 = lepontic ck3 = lepontic tech = western gfx = westerngfx }
 link = { eu4 = belgian ck3 = belgae tech = western gfx = westerngfx } # Fallback
 link = { eu4 = gaulish ck3 = gallic tech = western gfx = westerngfx } # Fallback
 
@@ -949,7 +948,7 @@ link = { eu4 = pruthenian ck3 = dnieper tech = eastern gfx = easterngfx } # http
 link = { eu4 = lithuanian ck3 = east_galindian tech = eastern gfx = easterngfx } # https://en.wikipedia.org/wiki/Galindians#Eastern_Galindians
 link = { eu4 = hispanic ck3 = hispano_roman ck3 = balearic ck3 = galecian ck3 = lusitanian ck3 = baetican ck3 = iberian tech = western gfx = westerngfx } # The post-Roman cultures should maybe have their own EU4 cultures as seen for the Gaulic culture mappings but this placeholder works for now
 link = { eu4 = theodisc ck3 = germanian tech = western gfx = westerngfx } # Should maybe be mapped to Gaulic but this seems more appropriate for what Theodisc is supposed to represent
-link = { eu4 = gaulic ck3 = gallo_roman ck3 = armorican ck3 = helvetian ck3 = gallian ck3 = aquitan tech = western gfx = westerngfx } # More placeholders for cultures that should be mapped to unique cultures that represent something that's *less* Roman but still distinctly Latin-speaking, as Gaulic is just supposed to be a regional split of Roman in base CK3 to base EU4, but alas I am dumb and don't know how to make them yet. I did consider mapping gallian et al to French but that makes no sense in a world where the Franks never conquered and held onto Gaul
+link = { eu4 = gaulic ck3 = gallo_roman ck3 = gallian ck3 = aquitan tech = western gfx = westerngfx } # More placeholders for cultures that should be mapped to unique cultures that represent something that's *less* Roman but still distinctly Latin-speaking, as Gaulic is just supposed to be a regional split of Roman in base CK3 to base EU4, but alas I am dumb and don't know how to make them yet. I did consider mapping gallian et al to French but that makes no sense in a world where the Franks never conquered and held onto Gaul
 link = { eu4 = britannian ck3 = britano_roman ck3 = britanian tech = western gfx = westerngfx } # Britanian is a post-Roman scripted divergent culture from TFE, like Breathanach etc, and those are mapped to convert into Britannian
 link = { eu4 = romanian ck3 = dacio_roman tech = eastern gfx = easterngfx }
 link = { eu4 = roman ck3 = thracio_roman ck3 = mauro_roman ck3 = rhaetio_roman tech = western gfx = westerngfx }
