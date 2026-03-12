@@ -845,6 +845,10 @@ link = { eu4 = illyrian ck3 = dalmatian tech = western gfx = easterngfx }
 
 ## East Asian
 link = { eu4 = xibei ck3 = qin tech = chinese gfx = asiangfx }
+link = { eu4 = dongyi ck3 = dongyi tech = chinese gfx = asiangfx }
+link = { eu4 = baiyue ck3 = baiyue tech = chinese gfx = asiangfx }
+link = { eu4 = old_bashu ck3 = old_bashu tech = chinese gfx = asiangfx }
+
 
 ## Extra
 link = { eu4 = oldspain ck3 = non_indo_european_iberian tech = western gfx = westerngfx } # "iberian" overlaps with the post-roman culture of the same name from TFE, seems to be a deprecated culture from a previous version of the IR-CK3 converter?
