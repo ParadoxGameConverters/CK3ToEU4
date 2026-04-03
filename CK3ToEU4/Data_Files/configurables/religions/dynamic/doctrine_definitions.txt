@@ -1663,6 +1663,12 @@ gnostic_school_ophitism = {
 gnostic_school_valentinianism = {
 }
 
+doctrine_missionary_encouraged = {
+	country = {
+		global_missionary_strength = 0.02
+	}
+}
+
 special_doctrine_orthodox_communion = {
 	country = {
 		tolerance_own = 1

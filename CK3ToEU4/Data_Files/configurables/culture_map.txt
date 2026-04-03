@@ -677,7 +677,7 @@ link = { eu4 = filipino ck3 = tawo ck3 = sinauna ck3 = tagalog tech = chinese gf
 link = { eu4 = shan ck3 = shan tech = chinese gfx = asiangfx }
 link = { eu4 = khmer ck3 = khmer tech = chinese gfx = asiangfx }
 link = { eu4 = cham ck3 = cham tech = chinese gfx = asiangfx }
-link = { eu4 = sulawesi ck3 = makassar ck3 = bugis ck3 = toraja tech = chinese gfx = asiangfx }
+link = { eu4 = sulawesi ck3 = makassar ck3 = bugis ck3 = toraja ck3 = tolaki tech = chinese gfx = asiangfx }
 link = { eu4 = malayan ck3 = malay tech = chinese gfx = asiangfx region = tenasserim_area region = malaya_area region = johor_area region = north_malaya_area region = malacca_area }
 link = { eu4 = sumatran ck3 = batak ck3 = malay tech = chinese gfx = asiangfx }
 link = { eu4 = javanese ck3 = javanese ck3 = java tech = chinese gfx = asiangfx }
@@ -907,7 +907,7 @@ link = { eu4 = illyrian ck3 = illyrian tech = western gfx = easterngfx }
 link = { eu4 = aramaic ck3 = aramean tech = eastern gfx = muslimgfx }
 link = { eu4 = coptic ck3 = kemetic tech = eastern gfx = easterngfx }
 link = { eu4 = berber ck3 = maurian ck3 = gaetulian ck3 = sanhaja ck3 = autoleles ck3 = pharusian tech = muslim gfx = muslimgfx }
-link = { eu4 = nubian ck3 = meroitic tech = east_african gfx = africangfx }
+link = { eu4 = nubian ck3 = meroitic ck3 = nubian_RICE tech = east_african gfx = africangfx }
 link = { eu4 = nubian ck3 = dinka ck3 = luo ck3 = ateker ck3 = maasai ck3 = bari ck3 = kalenjin tech = east_african gfx = africangfx } # MS Copilot: "The Dinka and the Nubians have had significant historical interactions, with the Dinka absorbing a sizable amount of Nubian vocabulary."
 link = { eu4 = nubian ck3 = nuba tech = east_african gfx = africangfx } # Nuba is not to be confused with Nubian. MS Copilot: "Given the Nuba peoples location in Sudan and their linguistic affiliations, they might have some cultural similarities with the Nubian people."
 link = { eu4 = zaghawa ck3 = toubou tech = sub_saharan gfx = africangfx } # MS Copilot: "the Toubou and Zaghawa people are related. They are both ethnic groups primarily residing in the regions of northern Chad, southern Libya, northeastern Niger, and western Sudan1. They share a common geographical region and cultural practices."

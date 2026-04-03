@@ -674,35 +674,34 @@ void CK3::World::shatterEmpires(const Configuration& theConfiguration) const
 			continue; // Not relevant.
 		if (!hegemony.second->getHolder())
 			continue; // No holder.
-		Log(LogLevel::Debug) << "shatter hege " << hegemony.first;
+
 		releasedCount = releasedCount + shatterEmpire(theConfiguration, hegemony, shatterKingdoms);
-		Log(LogLevel::Debug) << "shatter hege " << hegemony.first << " out";
 
 		Log(LogLevel::Info) << "<> " << hegemony.first << " shattered, " << releasedCount << " members released.";
 	}
+	releasedCount = 0;
 	for (const auto& empire: allTitles)
 	{
 		if (hreTitle && empire.first == hreTitle->first)
 			continue; // This is HRE, wrong function for that one.
 		if (theConfiguration.getShatterEmpires() == Configuration::SHATTER_EMPIRES::CUSTOM && !shatterEmpiresMapper.isEmpireShatterable(empire.first))
 			continue; // Only considering those listed.
-		if ((empire.second->getLevel() != LEVEL::EMPIRE || empire.second->getLevel() != LEVEL::HEGEMONY) &&
-			 theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
-			continue; // Otherwise only empires & hegemonies.
+		if (empire.second->getLevel() != LEVEL::EMPIRE && theConfiguration.getShatterEmpires() != Configuration::SHATTER_EMPIRES::CUSTOM)
+			continue; // Otherwise only empires.
 		if (empire.second->getDFVassals().empty())
 			continue; // Not relevant.
 		if (!empire.second->getHolder())
 			continue; // No holder.
 
-		Log(LogLevel::Debug) << "shatter emp " << empire.first;
 		releasedCount = releasedCount + shatterEmpire(theConfiguration, empire, shatterKingdoms);
-		Log(LogLevel::Debug) << "shatter emp " << empire.first << " out";
 
 		Log(LogLevel::Info) << "<> " << empire.first << " shattered, " << releasedCount << " members released.";
 	}
 }
 
-int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<std::string, std::shared_ptr<Title>> theEmpire, bool shatterKingdoms) const
+int CK3::World::shatterEmpire(const Configuration& theConfiguration,
+	 const std::pair<std::string, std::shared_ptr<Title>>& theEmpire,
+	 bool shatterKingdoms) const
 {
 	std::map<long long, std::shared_ptr<Character>> brickedPeople; // these are people we need to fix.
 	// First we are composing a list of all members.
@@ -710,36 +709,28 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 	std::map<long long, std::shared_ptr<Title>> brickList;
 	for (const auto& vassal: theEmpire.second->getDFVassals())
 	{
-		if (!vassal.second)
-			Log(LogLevel::Debug) << "no vassal second?";
 
-		Log(LogLevel::Debug) << "enter vassal " << vassal.second->getHoldingTitle().second->getName();
 		if (!vassal.second)
 		{
 			Log(LogLevel::Warning) << "Shattering vassal " << vassal.first << " that isn't linked! Skipping!";
 			continue;
 		}
-		Log(LogLevel::Debug) << 1;
 		if (vassal.second->getLevel() == LEVEL::DUCHY || vassal.second->getLevel() == LEVEL::COUNTY)
 		{
-			Log(LogLevel::Debug) << 2;
 			members.insert(vassal);
 		}
-	  else if (vassal.second->getLevel() == LEVEL::EMPIRE)
-	  {
-		  Log(LogLevel::Debug) << 3;
-		  // We're shattering a hegemony apparently.
-		  int releasedCount = shatterEmpire(theConfiguration, vassal.second->getHoldingTitle(), shatterKingdoms);
+		else if (vassal.second->getLevel() == LEVEL::EMPIRE)
+		{
+			// We're shattering a hegemony apparently.
+			int releasedCount = shatterEmpire(theConfiguration, std::pair(vassal.second->getName(), vassal.second), shatterKingdoms);
 
-		  Log(LogLevel::Info) << "<> " << theEmpire.first << " shattered, " << releasedCount << " members released.";
-	  }
+			Log(LogLevel::Info) << "<> " << theEmpire.first << " shattered, " << releasedCount << " members released.";
+		}
 		else if (vassal.second->getLevel() == LEVEL::KINGDOM)
 		{
-			Log(LogLevel::Debug) << 4;
 			if (shatterKingdoms && vassal.second->getName() != "k_papal_state" && vassal.second->getName() != "k_orthodox")
 			{ // hard override for special empire members
 
-			Log(LogLevel::Debug) << 5;
 				for (const auto& vassalVassal: vassal.second->getDFVassals())
 				{
 					if (!vassalVassal.second)
@@ -748,7 +739,6 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 						members.insert(vassalVassal);
 				}
 				// Bricking the kingdom
-				Log(LogLevel::Debug) << 6;
 				if (!vassal.second->getHolder()->second)
 				{
 					Log(LogLevel::Warning) << "Vassal " << vassal.second->getName() << " has no holder linked!";
@@ -761,19 +751,16 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 			}
 			else
 			{
-				Log(LogLevel::Debug) << 7;
 				// Not shattering kingdoms.
 				members.insert(vassal);
 			}
 		}
 		else if (vassal.second->getLevel() != LEVEL::BARONY)
 		{
-			Log(LogLevel::Debug) << 8;
 			Log(LogLevel::Warning) << "Unrecognized vassal level: " << vassal.first;
 		}
 	}
 
-		Log(LogLevel::Debug) << 9;
 	for (const auto& brick: brickList)
 		brick.second->brickTitle();
 
@@ -783,18 +770,13 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 		member.second->grantIndependence();
 	}
 
-		Log(LogLevel::Debug) << 10;
 	// Finally, dispose of the shell.
-		Log(LogLevel::Debug) << 11;
-		brickedPeople.insert(*theEmpire.second->getHolder());
-		Log(LogLevel::Debug) << 12;
-		theEmpire.second->brickTitle();
+	brickedPeople.insert(*theEmpire.second->getHolder());
+	theEmpire.second->brickTitle();
 
 	// Same as with HREmperor, we need to roll back counties or duchies that got released from ex-emperor himself or kings.
-		Log(LogLevel::Debug) << 13;
-		for (const auto& afflictedPerson: brickedPeople)
+	for (const auto& afflictedPerson: brickedPeople)
 	{
-			Log(LogLevel::Debug) << "person " << afflictedPerson.first;
 		if (!afflictedPerson.second)
 		{
 			Log(LogLevel::Warning) << "Character " << afflictedPerson.first << " has no link! Cannot fix them.";
@@ -813,12 +795,15 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 		const auto& holderDomain = afflictedPerson.second->getCharacterDomain()->getDomain();
 		const auto holderTitles = std::map(holderDomain.begin(), holderDomain.end());
 
-		Log(LogLevel::Debug) << "person holdin";
 		for (const auto& holderTitle: holderDomain)
 		{
+			if (!holderTitle.second)
+				continue; // No comment.
+
 			// does this title have a DJLiege that is was in his domain, and survived bricking, but does not have DFLiege since it was granted independence?
-			if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second->getHolder() &&
-				 holderTitle.second->getDJLiege()->second->getHolder()->first == afflictedPerson.first && holderTitles.count(holderTitle.first))
+			if (!holderTitle.second->getDFLiege() && holderTitle.second->getDJLiege() && holderTitle.second->getDJLiege()->second &&
+				 holderTitle.second->getDJLiege()->second->getHolder() && holderTitle.second->getDJLiege()->second->getHolder()->first == afflictedPerson.first &&
+				 holderTitles.count(holderTitle.first))
 			{
 				// fix this title.
 				const auto& djLiege = holderTitle.second->getDJLiege();
@@ -826,10 +811,8 @@ int CK3::World::shatterEmpire(const Configuration& theConfiguration, std::pair<s
 				holderTitle.second->loadDFLiege(*djLiege);
 			}
 		}
-		Log(LogLevel::Debug) << "person out";
 	}
 
-		Log(LogLevel::Debug) << "satter out";
 	return static_cast<int>(members.size());
 }
 
@@ -1166,7 +1149,7 @@ void CK3::World::setElectors()
 				if (regItr->second.count(electorTitle.second->getName()) && !electorTitle.second->getOwnedDFCounties().empty())
 				{
 					electorTitle.second->setElectorate();
-					Log(LogLevel::Debug) << "Setting electorate: " << electorTitle.second->getName();
+					Log(LogLevel::Info) << "Setting electorate: " << electorTitle.second->getName();
 					counter++;
 					break;
 				}
@@ -1181,7 +1164,7 @@ void CK3::World::setElectors()
 				if (!title.second->getOwnedDFCounties().empty())
 				{
 					title.second->setElectorate();
-					Log(LogLevel::Debug) << "Setting electorate: " << title.first;
+					Log(LogLevel::Info) << "Setting electorate: " << title.first;
 					counter++;
 					break;
 				}

@@ -417,6 +417,11 @@ link = { ck3 = { tradition = tradition_RICE_zhangzhung_stonework } eu4 = { build
 link = { ck3 = { tradition = tradition_RICE_changthang_nomads } eu4 = { cavalry_power = 0.1 }  }
 link = { ck3 = { tradition = tradition_RICE_gandharan_art } eu4 = { prestige = 0.5 legitimacy = 0.5 }  }
 link = { ck3 = { tradition = tradition_qiqaniyya } eu4 = { cavalry_power = 0.15 }  }
+link = { ck3 = { tradition = tradition_RICE_cattle_economy } eu4 = { global_tax_modifier = 0.05 }  }
+link = { ck3 = { tradition = tradition_RICE_royal_physicians } eu4 = { monarch_lifespan = 0.1 }  }
+link = { ck3 = { tradition = tradition_RICE_nilotic_migrators } eu4 = { movement_speed = 0.1 }  }
+link = { ck3 = { tradition = tradition_RICE_tropical_purveyors } eu4 = { movement_speed = 0.1 }  }
+link = { ck3 = { tradition = tradition_RICE_heirs_of_kush } eu4 = { legitimacy = 1 }  }
 
 # Mod: More Bookmarks Plus
 link = { ck3 = { tradition = tradition_sardinian } eu4 = { navy_tradition = 0.5 } }
