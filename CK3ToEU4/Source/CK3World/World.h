@@ -75,6 +75,7 @@ class World: commonItems::parser
 	void flagCelestialEmpire();
 	void shatterHRE(const Configuration& theConfiguration) const;
 	void shatterEmpires(const Configuration& theConfiguration) const;
+	[[nodiscard]] int shatterEmpire(const Configuration& theConfiguration, std::pair<std::string, std::shared_ptr<Title>> theEmpire, bool shatterKingdoms) const;
 	void filterIndependentTitles();
 	void splitVassals(const Configuration& theConfiguration);
 	void gatherCourtierNames();
