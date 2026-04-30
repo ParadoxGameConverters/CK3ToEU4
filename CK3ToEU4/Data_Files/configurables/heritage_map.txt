@@ -64,6 +64,7 @@ link = { eu4 = dacian_group ck3 = heritage_thracian }
 link = { eu4 = tyrrhenian ck3 = heritage_tyrrhenian }
 link = { eu4 = southeastasian_group ck3 = heritage_mon_khmer ck3 = heritage_baiyue }
 link = { eu4 = east_asian ck3 = heritage_dongyi }
+link = { eu4 = old_mashriqi ck3 = heritage_phoenician ck3 = heritage_alasiyan }
 
 # Mod: RICE
 link = { eu4 = central_algonquian ck3 = heritage_algonquian }
