@@ -3,7 +3,7 @@
 version = "0.17Q"
 name = "Quanzhen"
 source = "CK3"
-minSource = "1.19"
+minSource = "1.18"
 maxSource = "1.19"
 target = "EU4"
 minTarget = "1.37"
