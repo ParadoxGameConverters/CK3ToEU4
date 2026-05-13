@@ -392,7 +392,7 @@ link = { eu4 = khazak ck3 = naiman tech = nomad_group gfx = muslimgfx }
 
 link = { eu4 = pecheneg ck3 = pecheneg ck3 = torkil tech = ottoman gfx = muslimgfx }
 link = { eu4 = cuman ck3 = cuman tech = nomad_group gfx = easterngfx }
-link = { eu4 = khazak ck3 = kazakh tech = nomad_group gfx = muslimgfx }
+link = { eu4 = khazak ck3 = kazakh ck3 = kazak tech = nomad_group gfx = muslimgfx }
 link = { eu4 = khazar ck3 = khazar tech = muslim gfx = muslimgfx }
 link = { eu4 = bolghar ck3 = bolghar tech = nomad_group gfx = muslimgfx }
 link = { eu4 = hungarian ck3 = avar tech = eastern gfx = easterngfx region = carpathia_region } # Pannonian Avars
