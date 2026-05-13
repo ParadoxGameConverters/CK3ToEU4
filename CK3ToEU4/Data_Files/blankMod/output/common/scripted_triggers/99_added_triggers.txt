@@ -33,7 +33,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { was_tag = SYN }
 				NOT = { was_tag = ADU }
 				NOT = { was_tag = LOT }
-				NOT = { was_tag = FAP }
 				NOT = { was_tag = WEI }
 				NOT = { was_tag = HND }
 				NOT = { was_tag = ZAO }
@@ -85,7 +84,6 @@ was_never_end_game_tag_trigger = {	#Country Scope
 				NOT = { tag = SYN }
 				NOT = { tag = ADU }
 				NOT = { tag = LOT }
-				NOT = { tag = FAP }
 				NOT = { tag = WEI }
 				NOT = { tag = HND }
 				NOT = { tag = ZAO }
