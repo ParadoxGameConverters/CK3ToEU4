@@ -402,3 +402,7 @@ celtiberian_pagan = {
 barghawata = {
 	heretic = { SUNNI SHIA IBADI }
 }
+
+dreamtime = {
+	heretic = { WAGYLKOOP MOORAMOORA GINGARRURNDE }
+}
