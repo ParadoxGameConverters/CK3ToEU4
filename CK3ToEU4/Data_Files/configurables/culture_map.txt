@@ -1089,7 +1089,7 @@ link = { eu4 = hlai ck3 = hlai tech = chinese gfx = asiangfx }
 link = { eu4 = yi ck3 = hani ck3 = lisu ck3 = tujia tech = chinese gfx = asiangfx } #Mapped due to name_list_yi, classified as Loloish
 link = { eu4 = sumatran ck3 = minangkabau ck3 = kerinci ck3 = rejang ck3 = nias ck3 = mentawai ck3 = lampung ck3 = komering ck3 = basemah tech = chinese gfx = asiangfx }
 link = { eu4 = malayan ck3 = minangkabau ck3 = kerinci tech = chinese gfx = asiangfx region = malaya_area region = johor_area region = north_malaya_area region = malacca_area }
-link = { eu4 = bornean ck3 = banjar tech = chinese gfx = asiangfx }
+link = { eu4 = bornean ck3 = banjar ck3 = kutai tech = chinese gfx = asiangfx }
 link = { eu4 = bornean ck3 = malay tech = chinese gfx = asiangfx region = indonesia_region }
 link = { eu4 = nusa_tenggara ck3 = bali ck3 = samawa tech = chinese gfx = asiangfx }
 link = { eu4 = filipino ck3 = bisayan ck3 = iloko ck3 = sama tech = chinese gfx = asiangfx }

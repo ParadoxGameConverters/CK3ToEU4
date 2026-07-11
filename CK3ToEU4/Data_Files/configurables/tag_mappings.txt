@@ -654,6 +654,7 @@ link = { ck3 = k_saruhan eu4 = SRU }
 link = { ck3 = d_alger eu4 = ALG }
 link = { ck3 = c_algier eu4 = ALG }
 link = { ck3 = d_sitifensis eu4 = ALG }
+link = { ck3 = e_aegyptus eu4 = EGY }
 link = { ck3 = e_egypt eu4 = EGY }
 link = { ck3 = k_egypt eu4 = EGY }
 link = { ck3 = d_fes eu4 = FEZ }
@@ -1236,6 +1237,7 @@ link = { ck3 = k_yugra eu4 = YUG }
 link = { ck3 = h_roman_empire eu4 = ROM }
 link = { ck3 = h_eastern_roman_empire eu4 = BYZ }
 link = { ck3 = e_wre eu4 = ROM }
+link = { ck3 = e_illyria eu4 = ILR }
 
 
 #Vanilla Converter
@@ -1280,7 +1282,6 @@ link = { ck3 = d_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = c_pecheneg eu4 = PTZ } # Pecheneg
 link = { ck3 = k_cuman eu4 = CMN } # Cuman
 link = { ck3 = d_khazaria eu4 = KHZ } # Khazaria
-link = { ck3 = e_caspian-pontic_steppe eu4 = KHZ } # Khazaria		 
 link = { ck3 = k_khazaria eu4 = KHZ }
 link = { ck3 = d_thrace eu4 = THR } # Thrace
 link = { ck3 = k_thrace eu4 = THR }
@@ -1288,6 +1289,9 @@ link = { ck3 = d_thracia eu4 = THR }
 link = { ck3 = k_thracia eu4 = THR }
 link = { ck3 = c_phrygia eu4 = PHR } # Phrygia
 link = { ck3 = d_phrygia eu4 = PHR }
+link = { ck3 = e_carthage eu4 = AFR } # Africa
+link = { ck3 = k_carthage eu4 = AFR } # Africa
+link = { ck3 = e_africa eu4 = AFR } # Africa
 link = { ck3 = k_africa eu4 = AFR } # Africa
 link = { ck3 = e_north_sea eu4 = ENS } # Empire of the North Sea
 
