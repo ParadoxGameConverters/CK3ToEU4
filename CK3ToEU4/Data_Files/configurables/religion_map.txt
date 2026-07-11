@@ -207,9 +207,39 @@ link = { eu4 = animism ck3 = ban_phi }
 link = { eu4 = animism ck3 = yzng }
 link = { eu4 = animism ck3 = bugaism }
 link = { eu4 = animism ck3 = abkaism }
+link = { eu4 = animism ck3 = nguillatun }
 link = { eu4 = animism ck3 = moism ck3 = satsana_phi ck3 = semang_pagan ck3 = senoi_pagan ck3 = bahnar_pagan ck3 = viet_pagan ck3 = samre_pagan }
 link = { eu4 = animism ck3 = muism ck3 = mu }
 link = { eu4 = mardukism ck3 = shamsi_pagan }
+link = { eu4 = inti ck3 = chiminigagua }
+link = { eu4 = inti ck3 = inti_religion }
+link = { eu4 = inti ck3 = pachamama_religion }
+link = { eu4 = inti ck3 = manteno_religion }
+link = { eu4 = inti ck3 = embera_religion }
+link = { eu4 = dreamtime ck3 = yolngu_pagan }
+link = { eu4 = dreamtime ck3 = bininj_pagan }
+link = { eu4 = dreamtime ck3 = tiwi_pagan }
+link = { eu4 = animism ck3 = fiji_pagan }
+link = { eu4 = animism ck3 = kwaraae_pagan }
+link = { eu4 = animism ck3 = tolai_pagan }
+link = { eu4 = animism ck3 = vanuatu_pagan }
+link = { eu4 = animism ck3 = manus_pagan }
+link = { eu4 = animism ck3 = palau_pagan }
+link = { eu4 = animism ck3 = yap_pagan }
+link = { eu4 = animism ck3 = pohnpei_pagan }
+link = { eu4 = animism ck3 = chamorro_pagan }
+link = { eu4 = animism ck3 = polynesian_pagan }
+link = { eu4 = animism ck3 = biak_pagan }
+link = { eu4 = animism ck3 = tehit_pagan }
+link = { eu4 = animism ck3 = fakfak_pagan }
+link = { eu4 = animism ck3 = abui_pagan }
+link = { eu4 = animism ck3 = halmahera_pagan }
+# Mod: RICE placeholder
+link = { eu4 = animism ck3 = rice_faith_placeholder_1 }
+link = { eu4 = animism ck3 = rice_faith_placeholder_2 }
+link = { eu4 = animism ck3 = rice_faith_placeholder_3 }
+link = { eu4 = animism ck3 = rice_faith_placeholder_4 }
+link = { eu4 = animism ck3 = rice_faith_placeholder_5 }
 
 # Mod: The Fallen Eagle
 link = { eu4 = sunni ck3 = united_islam ck3 = sunni }
