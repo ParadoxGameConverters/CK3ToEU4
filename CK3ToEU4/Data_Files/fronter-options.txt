@@ -65,7 +65,7 @@ option = {
 			name = 3
 			displayName = WHOHRE3
 			tooltip = WHOHRE3TIP
-			default = false		
+			default = false
 		}
 		radioOption = {
 			name = 4
@@ -73,7 +73,7 @@ option = {
 			tooltip = WHOHRE4TIP
 			default = false
 		}
-		radioOption = {		
+		radioOption = {
 			name = 5
 			displayName = WHOHRE5
 			tooltip = WHOHRE5TIP
@@ -359,9 +359,31 @@ option = {
 	name = output_name
 	displayName = MODNAME
 	tooltip = MODNAMETIP
-	textSelector = {	
+	textSelector = {
 		value = ""
 		editable = true
 		tooltip = MODNAMETIP2
+	}
+}
+
+option = {
+	#the east Asian language needs English as a "hook".  this option would decide which language will take the place of English.
+
+	name = EnglishTakingPlace
+	displayName = ENGLISHTAKINGPLACE
+	tooltip = ENGLISHTAKINGPLACETIP
+	radioSelector = {
+		radioOption = {
+			name = 1
+			displayName =  ENGLISHTAKINGPLACE1
+			tooltip =  ENGLISHTAKINGPLACE1TIP
+			default = true
+		}
+		radioOption = {
+			name = 2
+			displayName =ENGLISHTAKINGPLACE2
+			tooltip = ENGLISHTAKINGPLACE2TIP
+			default = false
+		}
 	}
 }

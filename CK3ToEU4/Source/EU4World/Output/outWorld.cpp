@@ -454,11 +454,20 @@ void EU4::World::outputHistoryProvinces(const Configuration& theConfiguration) c
 
 void EU4::World::outputLocalization(const Configuration& theConfiguration, bool invasion) const
 {
-	std::ofstream english("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_english.yml");
+	std::ofstream english;
 	std::ofstream french("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_french.yml");
 	std::ofstream spanish("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_spanish.yml");
 	std::ofstream german("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_german.yml");
-	if (!english.is_open())
+	std::ofstream simp_chinese;
+
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+		english.open("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_english.yml");
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+		simp_chinese.open("output" / theConfiguration.getOutputName() / "localisation/replace/converter_l_english.yml");
+		//l_english is not an error
+
+
+	if (!english.is_open() && theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!french.is_open())
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
@@ -466,66 +475,96 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
 	if (!german.is_open())
 		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
-	english << commonItems::utf8BOM << "l_english:\n"; // write BOM
+	if (!simp_chinese.is_open() && theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+		throw std::runtime_error("Error writing localization file! Is the output folder writable?");
+
+
 	french << commonItems::utf8BOM << "l_french:\n";	// write BOM
 	spanish << commonItems::utf8BOM << "l_spanish:\n"; // write BOM
 	german << commonItems::utf8BOM << "l_german:\n";	// write BOM
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+		english << commonItems::utf8BOM << "l_english:\n"; // write BOM
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+		simp_chinese << commonItems::utf8BOM << "l_english:\n"; // not a bug, write BOM
+
 
 	for (const auto& country: countries)
 	{
 		for (const auto& locblock: country.second->getLocalizations())
 		{
-			english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
 			french << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.french) << "\"\n";
 			spanish << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.spanish) << "\"\n";
 			german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
+			if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+				english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
+			if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+				simp_chinese << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.simp_chinese) << "\"\n";
 		}
 	}
 
+
 	for (const auto& locblock: religionMapper.getLocalizations())
 	{
-		english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
 		french << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.french) << "\"\n";
 		spanish << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.spanish) << "\"\n";
 		german << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.german) << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+			english << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.english) << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+			simp_chinese << " " << locblock.first << ":3 \"" << locDegrader.degradeString(locblock.second.simp_chinese) << "\"\n";
 	}
 
-	// localizations for dynamic cultures - don't have locblocks.
 
+	// localizations for dynamic cultures - don't have locblocks.
 	for (const auto& cultureGroup: cultureDefinitionsMapper.getCultureGroupsMap() | std::views::values)
 		for (const auto& [cultureName, culture]: cultureGroup->getCultures())
 			if (culture->getSourceCulture() && culture->getSourceCulture()->isDynamic() && !culture->getSourceCulture()->isEU4Ready() &&
 				 culture->getSourceCulture()->getLocalizedName())
 			{
-				english << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
 				french << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
 				spanish << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
 				german << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+					english << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
+				if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+					simp_chinese << " " << cultureName << ":0 \"" << locDegrader.degradeString(*culture->getSourceCulture()->getLocalizedName()) << "\"\n";
 			}
+
 
 	// localizations for dynamic nation ideas
 	for (const auto& [idea, locBlock]: dynamicIdeasMapper.getTraditionLocs())
 	{
-		english << " " << idea << ":0 \"" << locBlock.english << "\"\n";
 		french << " " << idea << ":0 \"" << locBlock.french << "\"\n";
 		spanish << " " << idea << ":0 \"" << locBlock.spanish << "\"\n";
 		german << " " << idea << ":0 \"" << locBlock.german << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+			english << " " << idea << ":0 \"" << locBlock.english << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+			simp_chinese << " " << idea << ":0 \"" << locDegrader.degradeString(locBlock.simp_chinese) << "\"\n";
 	}
+
+
 	// more localizations for dynamic national ideas - don't have locblocks.
 	std::vector<std::string> suffix{"_ideas", "_ideas_start", "_ideas_bonus"};
 	std::vector<std::string> eng_ideaText{"Ideas", "Traditions", "Ambitions"};
 	std::vector<std::string> fra_ideaText{"Idées", "Traditions", "Ambitions"};
 	std::vector<std::string> spa_ideaText{"Ideas", "tradiciones", "Ambiciones"};
 	std::vector<std::string> ger_ideaText{"Ideen", "Traditionen", "Ambitionen"};
-
+	std::vector<std::string> chi_ideaText{"思潮", "传统", "决心"};
 	for (const auto& idea: dynamicNationalIdeas)
 	{
 		for (auto i = 0; i < suffix.size(); i++)
 		{
-			english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + eng_ideaText[i] << "\"\n";
+
 			french << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + fra_ideaText[i] << "\"\n";
 			spanish << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + spa_ideaText[i] << "\"\n";
 			german << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + ger_ideaText[i] << "\"\n";
+			if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+				english << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + eng_ideaText[i]
+						  << "\"\n";
+			if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+				simp_chinese << " " << idea.getDynamicName() + suffix[i] << ":0 \"" << locDegrader.degradeString(idea.getLocalizedName()) + " " + chi_ideaText[i]
+								 << "\"\n";
 		}
 	}
 
@@ -536,20 +575,35 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 
 	for (const auto& province: provinces | std::views::values | std::views::filter(userRenamedOnly))
 	{
-		english << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+
 		french << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
 		spanish << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
 		german << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+			english << " PROV" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+			simp_chinese << " PROV" << province->getProvinceID() << ":0 \"" << locDegrader.degradeString(province->getCustomName()) << "\"\n";
 
-		english << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+
+
 		french << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
 		spanish << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
 		german << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+			english << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << province->getCustomName() << "\"\n";
+		if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+			simp_chinese << " PROV_ADJ" << province->getProvinceID() << ":0 \"" << locDegrader.degradeString(province->getCustomName()) << "\"\n";
 	}
-	english.close();
+
+
 	french.close();
 	spanish.close();
 	german.close();
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::ENGLISH)
+		english.close();
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+		simp_chinese.close();
+
 
 	if (invasion)
 	{
@@ -565,6 +619,39 @@ void EU4::World::outputLocalization(const Configuration& theConfiguration, bool 
 		fs::copy_file("configurables/religions/reformation/roman" / fileName,
 			 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
 			 fs::copy_options::overwrite_existing);
+
+	if (theConfiguration.getEnglishTakingPlace() == Configuration::ENGLISHTAKINGPLACE::CHINESE)
+	{
+		auto fileNames = commonItems::GetAllFilesInFolder("configurables/englishtakingplace/chinese");
+		for (const auto& fileName: fileNames)
+			fs::copy_file("configurables/englishtakingplace/chinese" / fileName,
+				 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
+				 fs::copy_options::overwrite_existing);
+
+		fileNames = commonItems::GetAllFilesInFolder("configurables/englishtakingplace/chinese/replace");
+		for (const auto& fileName: fileNames)
+			fs::copy_file("configurables/englishtakingplace/chinese/replace" / fileName,
+				 "output" / theConfiguration.getOutputName() / "localisation/replace" / fileName,
+				 fs::copy_options::overwrite_existing);
+
+		if (invasion)
+		{
+			fileNames = commonItems::GetAllFilesInFolder("configurables/englishtakingplace/chinese/sunset");
+			for (const auto& fileName: fileNames)
+				fs::copy_file("configurables/englishtakingplace/chinese/sunset" / fileName,
+					 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
+					 fs::copy_options::overwrite_existing);
+		}
+
+		fileNames = commonItems::GetAllFilesInFolder("configurables/englishtakingplace/chinese/roman");
+		for (const auto& fileName: fileNames)
+			fs::copy_file("configurables/englishtakingplace/chinese/roman" / fileName,
+				 "output" / theConfiguration.getOutputName() / "localisation" / fileName,
+				 fs::copy_options::overwrite_existing);
+	}
+
+
+
 }
 
 void EU4::World::outputEmperor(const Configuration& theConfiguration, date conversionDate) const
