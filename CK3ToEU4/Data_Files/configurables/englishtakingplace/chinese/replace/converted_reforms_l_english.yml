@@ -1,0 +1,32 @@
+﻿l_english:
+ #These are here to replace Country Specific government names to make them more open
+ ottoman_government:3 "^ê™l?eSO"
+ ottoman_government_desc:3 "^ê™l?eSO(W¸‹Y¹eb—N‡v²R,g«ŽÆRNïSR0T«RnxÝO†N^ê™l¦NsSO‹sKNIN8lÜNO:SçubºN0"
+ english_monarchy:3 "yr¸‹TIN6R"
+ english_monarchy_desc:3 "yr¸‹TIN6R=fNÍyãN®‹6RTIN?eSOÿ1u(WMOTINšRgìSÆ–®‹O0vQúWNx=fTINNvQSãqQTŒrr„vªRàzNbÄ‰šR„vyrCg0"
+ mamluk_government:3 "RSKQ¯etYuQ?eSO"
+ mamluk_government_desc:3 "Ù*NýV¶Rþf«ˆRSKQ¯etYuQ:YÖSÿv^O`—cíu“eQRSKQ¯etYuQegôucê«Ž0"
+ indian_sultanate_reform:3 "¾idÏ‚9NýV"
+ indian_sultanate_reform_desc:3 "1uŽNßu»lw=fFz¯e—gSpe²SOÿÏ‚9NìNN—VNoÛv^ÓbUS.Oßu„vFz¯e—g‹sCgÂ‰õV0Ù›NýV¶R‹†ÍN^SO¯epQýV¶RÿFO.OßuNµmÖv¹r*YºNNúWcw’V„vês|«ŽýNÿòT«ˆibUSó¾idø‹YeáO’V0"
+ prussian_monarchy:3 "›Q?eTIN6R"
+ prussian_monarchy_desc:3 "NÍy1uTINßu»l„v?eSObVVÿNvQô‹=fN*Nåb	g›Q–„výV¶RÿN‚Yô‹=fN=eåb	gýV¶R„v›Q–0"
+ prussian_republic_reform:3 "›Q?eLˆ?eSO"
+ prussian_republic_reform_desc:3 "›Q?eqQŒTýVâeN1uP%„váR4Yßu»lÿmNN1ua'f'YO„va×VIN°Rÿw=f1uvQgwQMbr^0ENÏuwŒš„v›Q‹Nßu^»lt0ib.VNÝOkS†uLu=fýV¶R„v–™‰¹eˆ”0\n\ny(u	>N0"
+ prussian_republic:3 "›Q?eLˆ?eSO"
+ prussian_republic_desc:3 "›Q?eqQŒTýVâeN1uP%„váR4Yßu»lÿmNN1ua'f'YO„va×VIN°Rÿw=f1uvQgwQMbr^0ENÏuwŒš„v›Q‹Nßu^»lt0ib.VNÝOkS†uLu=fýV¶R„v–™‰¹eˆ”0\n\ny(u	>N0"
+ prussian_theocratic_reform_desc:0 "å‚áOðNàeÕl«ˆMckSÿƒRØ	gUO÷N<PÿN^wck„vÆNºNâe^SHywyÿmNT7håb±bb—e0bìN„v›Q?e?eœ^ck=fOdkŸSR¾‹¡‹ÿ›Q‹NN—RYe,g«ŽYŽNTIrÍ‘‰„v0WMO0"
+ mughal_government:3 "êN6R"
+ mughal_government_desc:3 "å‚ô‹bìN„v‹sgpeŒvt^egfR0R†NÀNHNÿ±1S=fÅV‰˜ýwY”^bìNNbib.V0W:S„vSV0WlO0©‹bìNnxÝOÎN«ˆVgw«ŽNfR`NÿåNO^ýVcíuîX'Y0"
+ federal_republic:3 "Tw¦qQŒTýV"
+ federal_republic_desc:3 "Tw¦qQŒTýV=f1uT¦Äub„vTwßvÿT¦ÝO	gê«Ž„vìrËzN?eœ^ÿv^¾‹	gNMOÏu	>NµNu0ûNgÛVt^„vI`ßu0"
+
+ austrian_archduchy_reform:3 "^ýV'YlQýV"
+ austrian_archduchy_reform_desc:3 "^ýV'YlQýV(WÄuÇuN‹†NSú^TINýVøv<OÿtSƒvQÖNlQýVØšúQNIr0íQP•gßu»lÖNºNàeº‹vQ:NUOºNv^:N,gg)RÊv‰R’c‹sg‹N¡R„vÏuŒšÿ'YlQìN—VåNÑSUSúQNWY	gHe„vSOû|ÿ(uåN»ltvQ†˜0Wv^ôuû|vQßuN0"
+ austrian_archduchy:3 "^ýV'YlQýV"
+ austrian_archduchy_desc:3 "^ýV'YlQýV(WÄuÇuN‹†NSú^TINýVøv<OÿtSƒvQÖNlQýVØšúQNIr0íQP•gßu»lÖNºNàeº‹vQ:NUOºNv^:N,gg)RÊv‰R’c‹sg‹N¡R„vÏuŒšÿ'YlQìN—VåNÑSUSúQNWY	gHe„vSOû|ÿ(uåN»ltvQ†˜0Wv^ôuû|vQßuN0"
+
+ shaka_regime:0 "›Q?eèK„"
+ shaka_regime_legacy:0 "›Q?eèK„"
+ shaka_regime_desc:0 "NÍyèK„TIN6Rÿô›RŽNåN›Q‹NKbµk=eM‘vQÖNèK„ÿv^OýV¶R›Q‹NS0"
+ shaka_regime_legacy_desc:0 "NÍyèK„TIN6Rÿô›RŽNåN›Q‹NKbµk=eM‘vQÖNèK„ÿv^OýV¶R›Q‹NS0"
+ 

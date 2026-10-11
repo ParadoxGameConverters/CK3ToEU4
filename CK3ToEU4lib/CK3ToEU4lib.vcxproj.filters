@@ -139,6 +139,9 @@
     <Filter Include="CK3World\Confederations">
       <UniqueIdentifier>{e3917fcf-1836-48f3-ab16-dc37d35d43f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Mappers\EastAsiaLanguageSupport">
+      <UniqueIdentifier>{3ec8114e-54ae-45c0-89c2-397c0e079fed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\World.cpp">
@@ -455,6 +458,9 @@
     </ClCompile>
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.cpp">
       <Filter>CK3World\Confederations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3ToEU4\Source\Mappers\EastAsiaLanguageSupport\EastAsiaLanguageSupport.cpp">
+      <Filter>Mappers\EastAsiaLanguageSupport</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -778,6 +784,9 @@
     </ClInclude>
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\Confederations\Confederations.h">
       <Filter>CK3World\Confederations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CK3ToEU4\Source\Mappers\EastAsiaLanguageSupport\EastAsiaLanguageSupport.h">
+      <Filter>Mappers\EastAsiaLanguageSupport</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

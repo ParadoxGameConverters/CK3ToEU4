@@ -356,6 +356,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = title->second->getDisplayName();
 		newblock.french = title->second->getDisplayName();
 		newblock.german = title->second->getDisplayName();
+		newblock.simp_chinese = title->second->getDisplayName();
 		localizations.insert(std::pair(tag, newblock));
 		nameSet = true;
 	}
@@ -439,6 +440,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 			newblock.spanish = nameLocalizationMatch->spanish;
 			newblock.french = nameLocalizationMatch->french;
 			newblock.german = nameLocalizationMatch->german;
+			newblock.simp_chinese = nameLocalizationMatch->simp_chinese;
 
 			// If we already set a canonical name, don't just overwrite, save it for future reference (Ottoman Crimea)
 			if (nameSet)
@@ -476,6 +478,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = title->second->getAdjective();
 		newblock.french = title->second->getAdjective();
 		newblock.german = title->second->getAdjective();
+		newblock.simp_chinese = title->second->getAdjective();
 		localizations.insert(std::pair(tag + "_ADJ", newblock));
 		adjSet = true;
 	}
@@ -494,6 +497,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 			newblock.spanish = "de los " + nameLocalizationMatch->spanish;
 			newblock.french = "des " + nameLocalizationMatch->french;
 			newblock.german = nameLocalizationMatch->german + "-";
+			newblock.simp_chinese = nameLocalizationMatch->simp_chinese;
 			if (localizations.contains(tag + "_ADJ"))
 				localizations.at(tag + "_ADJ") = newblock;
 			else
@@ -546,6 +550,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = title->second->getAdjective();
 		newblock.french = title->second->getAdjective();
 		newblock.german = title->second->getAdjective();
+		newblock.simp_chinese = title->second->getAdjective();
 		localizations.insert(std::pair(tag + "_ADJ", newblock));
 		adjSet = true;
 	}
@@ -558,6 +563,7 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = "de " + title->second->getDisplayName();
 		newblock.french = "de " + title->second->getDisplayName();
 		newblock.german = title->second->getDisplayName() + "s";
+		newblock.simp_chinese = title->second->getDisplayName();
 		localizations.insert(std::pair(tag + "_ADJ", newblock));
 		adjSet = true;
 	}
@@ -580,18 +586,21 @@ void EU4::Country::populateLocs(const mappers::LocalizationMapper& localizationM
 		newblock.spanish = "Ideas de " + localizations.find(tag + "_ADJ")->second.spanish;
 		newblock.french = "Doctrines " + localizations.find(tag + "_ADJ")->second.french;
 		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ideen";
+		newblock.simp_chinese = localizations.find(tag + "_ADJ")->second.simp_chinese + "思潮";
 		localizations.insert(std::pair(tag + "_ideas", newblock));
 
 		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Traditions"; // Roman Traditions
 		newblock.spanish = "Tradiciones de " + localizations.find(tag + "_ADJ")->second.spanish;
 		newblock.french = "traditions " + localizations.find(tag + "_ADJ")->second.french;
 		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Traditionen";
+		newblock.simp_chinese = localizations.find(tag + "_ADJ")->second.simp_chinese + "传统";
 		localizations.insert(std::pair(tag + "_ideas_start", newblock));
 
 		newblock.english = localizations.find(tag + "_ADJ")->second.english + " Ambition"; // Roman Ambition
 		newblock.spanish = "Ambici�n de " + localizations.find(tag + "_ADJ")->second.spanish;
 		newblock.french = "ambitions " + localizations.find(tag + "_ADJ")->second.french;
 		newblock.german = localizations.find(tag + "_ADJ")->second.german + " Ambitionen";
+		newblock.simp_chinese = localizations.find(tag + "_ADJ")->second.simp_chinese + "决心";
 		localizations.insert(std::pair(tag + "_ideas_bonus", newblock));
 	}
 }
