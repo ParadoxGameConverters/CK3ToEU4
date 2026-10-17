@@ -259,9 +259,10 @@ link = { ck3 = { tradition = tradition_sinophilic } eu4 = { diplomatic_reputatio
 link = { ck3 = { tradition = tradition_tgp_japanese_houses } eu4 = { heir_chance = 0.33 } }
 link = { ck3 = { tradition = tradition_cultivation } eu4 = { legitimacy = 1 devotion = 1 republican_tradition = 0.3 meritocracy = 1 horde_unity = 1 imperial_mandate = 0.05 } }
 link = { ck3 = { tradition = tradition_intensive_farming } eu4 = { land_maintenance_modifier = -0.1 } }
-link = { ck3 = { tradition = tradition_intensive_farming } eu4 = { land_maintenance_modifier = -0.1 } }
 ### 1.19 - New Tradition
 link = { ck3 = { tradition = tradition_fortress_mastery } eu4 = { defensiveness = 0.15 } }
+### 1.20 - New Tradition
+link = { ck3 = { tradition = tradition_nubian_warrior_kings } eu4 = { monarch_military_power = 1 } }
 
 
 ### Rule Overrides

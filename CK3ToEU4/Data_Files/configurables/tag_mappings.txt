@@ -1560,3 +1560,26 @@ link = { ck3 = c_JAV_mataram eu4 = MTR }
 link = { ck3 = k_siam eu4 = SIA }
 link = { ck3 = e_majapahit eu4 = MAJ }
 link = { ck3 = e_kara_khitai eu4 = KAS }
+
+#Ecclesiastical
+
+link = { ck3 = d_et_africa eu4 = AFR }
+link = { ck3 = d_et_seleucia_ctesiphon eu4 = IRQ }
+link = { ck3 = d_et_armenia eu4 = ARM }
+link = { ck3 = d_et_georgia eu4 = GEO }
+link = { ck3 = d_et_cyprus eu4 = CYP }
+link = { ck3 = d_et_jerusalem eu4 = KOJ }
+link = { ck3 = d_et_constantinople eu4 = BYZ }
+link = { ck3 = d_et_kyiv eu4 = KIE }
+link = { ck3 = d_et_hamburg eu4 = HAM }
+link = { ck3 = d_et_cologne eu4 = KOL }
+link = { ck3 = d_et_magdeburg eu4 = MAG }
+link = { ck3 = d_et_mainz eu4 = MAI }
+link = { ck3 = d_et_trier eu4 = TRI }
+link = { ck3 = d_et_salzburg eu4 = SLZ }
+link = { ck3 = d_et_ragusa eu4 = RAG }
+link = { ck3 = d_et_napoli eu4 = NAP }
+link = { ck3 = d_et_pisa eu4 = PIS }
+link = { ck3 = d_et_roma eu4 = PAP }
+link = { ck3 = d_et_genoa eu4 = GEN }
+link = { ck3 = d_et_milano eu4 = MLO }
