@@ -1,6 +1,7 @@
 #include "ReligionMapper.h"
 #include "../../CK3World/Religions/Faith.h"
 #include "../../CK3World/Religions/Faiths.h"
+#include "../../Diagnostics/Diagnostics.h"
 #include "../ReligionDefinitionMapper/ReligionDefinitionMapper.h"
 #include "../ReligionGroupScraper/ReligionGroupScraper.h"
 #include "CommonRegexes.h"
@@ -71,11 +72,13 @@ void mappers::ReligionMapper::importCK3Faiths(const CK3::Faiths& faiths,
 	 const LocalizationMapper& localizationMapper)
 {
 	bool hasReformedAfrica = false;
+	diagnostics::Report::instance().addCount("faiths to import into EU4", static_cast<long long>(faiths.getFaiths().size()));
 	for (const auto& faith: faiths.getFaiths())
 	{
 		if (!getEU4ReligionForCK3Religion(faith.second->getName(), faith.second->getReligiousHead()))
 		{
 			// This is a new faith.
+			diagnostics::Report::instance().addNote("faiths with no religion_map entry (exported as converted_*)", faith.second->getName());
 			importCK3Faith(*faith.second, religionDefinitionMapper, religionGroupScraper, localizationMapper);
 		}
 		else if (getEU4ReligionForCK3Religion(faith.second->getName(), faith.second->getReligiousHead()) == "west_african_pagan" &&

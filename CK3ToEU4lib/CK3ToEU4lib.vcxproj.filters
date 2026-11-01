@@ -31,6 +31,9 @@
     <Filter Include="Configuration">
       <UniqueIdentifier>{0657f1b9-f05b-4e23-bb39-984c24c08c27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Diagnostics">
+      <UniqueIdentifier>{7a3c5e21-9d4b-4f08-b6e2-2c1f8a9d0e53}</UniqueIdentifier>
+    </Filter>
     <Filter Include="EU4World">
       <UniqueIdentifier>{b46a3dba-34f9-4507-974d-eafc2ef0da82}</UniqueIdentifier>
     </Filter>
@@ -230,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="..\CK3ToEU4\Source\Configuration\Configuration.cpp">
       <Filter>Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CK3ToEU4\Source\Diagnostics\Diagnostics.cpp">
+      <Filter>Diagnostics</Filter>
     </ClCompile>
     <ClCompile Include="..\CK3ToEU4\Source\EU4World\EU4World.cpp">
       <Filter>EU4World</Filter>

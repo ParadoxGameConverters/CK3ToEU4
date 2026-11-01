@@ -39,6 +39,7 @@
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\Titles\Titles.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\CK3World\World.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Configuration\Configuration.cpp" />
+    <ClCompile Include="..\CK3ToEU4\Source\Diagnostics\Diagnostics.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\EU4World\Country\Country.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\EU4World\Country\CountryDetails.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\EU4World\Country\MonarchNames.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\Titles\Titles.h" />
     <ClInclude Include="..\CK3ToEU4\Source\CK3World\World.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Configuration\Configuration.h" />
+    <ClInclude Include="..\CK3ToEU4\Source\Diagnostics\Diagnostics.h" />
     <ClInclude Include="..\CK3ToEU4\Source\EU4World\Country\Country.h" />
     <ClInclude Include="..\CK3ToEU4\Source\EU4World\Country\CountryDetails.h" />
     <ClInclude Include="..\CK3ToEU4\Source\EU4World\Country\MonarchNames.h" />

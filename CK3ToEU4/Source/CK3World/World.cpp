@@ -1,5 +1,6 @@
 #include "World.h"
 #include "../Configuration/Configuration.h"
+#include "../Diagnostics/Diagnostics.h"
 #include "../Helpers/rakaly.h"
 #include "../commonItems/ParserHelpers.h"
 #include "Characters/Character.h"
@@ -20,6 +21,7 @@ namespace fs = std::filesystem;
 
 CK3::World::World(const std::shared_ptr<Configuration>& theConfiguration, const commonItems::ConverterVersion& converterVersion)
 {
+	diagnostics::ScopedTimer timer("CK3 world load");
 	registerKeys(theConfiguration, converterVersion);
 	Log(LogLevel::Progress) << "4 %";
 
@@ -203,6 +205,19 @@ void CK3::World::registerKeys(const std::shared_ptr<Configuration>& theConfigura
 		religions = Religions(theStream);
 		faiths = religions.getFaiths(); // Do not access faiths in religions after this - there are none and will crash.
 		Log(LogLevel::Info) << "<> Loaded " << religions.getReligions().size() << " religions and " << faiths.getFaiths().size() << " faiths.";
+		diagnostics::Report::instance().addCount("religions loaded", static_cast<long long>(religions.getReligions().size()));
+		diagnostics::Report::instance().addCount("faiths loaded", static_cast<long long>(faiths.getFaiths().size()));
+		if (faiths.getFaiths().empty())
+		{
+			const auto message = std::string("The religion block has no faith definitions. CK3 1.20+ saves keep faiths in a top-level 'faiths' block, which this converter does not read yet.");
+			diagnostics::Report::instance().recordIssue(diagnostics::Severity::Error, "religion", message);
+			throw std::runtime_error(message);
+		}
+	});
+	registerKeyword("faiths", [](const std::string& unused, std::istream& theStream) {
+		// Top-level faiths only exist in CK3 1.20+ saves. Recording the block lets the report show which layout the save used.
+		diagnostics::Report::instance().addCount("top-level faiths blocks", 1);
+		commonItems::ignoreItem(unused, theStream);
 	});
 	registerKeyword("coat_of_arms", [this](const std::string& unused, std::istream& theStream) {
 		Log(LogLevel::Info) << "-> Loading garments of limbs.";
@@ -268,6 +283,7 @@ void CK3::World::processSave(const std::filesystem::path& saveGamePath)
 		if (melt.has_unknown_tokens())
 		{
 			Log(LogLevel::Error) << "Rakaly reports errors while melting ironman save!";
+			diagnostics::Report::instance().recordIssue(diagnostics::Severity::Error, "save", "rakaly reports unknown binary tokens; the bundled rakaly may be older than the save.");
 		}
 
 		melt.writeData(saveGame.gamestate);
@@ -278,6 +294,8 @@ void CK3::World::processSave(const std::filesystem::path& saveGamePath)
 		const auto& melt = save.melt();
 		melt.writeData(saveGame.gamestate);
 	}
+
+	diagnostics::Report::instance().scanUnresolvedTokens(saveGame.gamestate);
 
 	// Always dump to disk for easier debug.
 	std::ofstream metaDump("metaDump.txt");
