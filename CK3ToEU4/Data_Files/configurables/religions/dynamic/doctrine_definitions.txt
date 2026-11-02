@@ -138,15 +138,6 @@ tenet_mendicant_preachers = {
 	}
 }
 
-tenet_monasticism = {
-	country = {
-		missionary_maintenance_cost = -0.4
-	}
-	country_as_secondary = {
-		missionary_maintenance_cost = -0.2
-	}
-}
-
 tenet_pacifism = {
 	country = {
 		stability_cost_to_declare_war = 1
@@ -354,11 +345,8 @@ tenet_adorcism = {
 }
 
 tenet_ancestor_worship = {
-	country = {
-		diplomatic_reputation = 1
-	}
-	country_as_secondary = {
-		diplomatic_reputation = 1
+	not_unique_modifiers = {
+		ancestors = yes
 	}
 }
 
@@ -377,7 +365,7 @@ tenet_hedonistic = {
 		prestige = 0.5
 	}
 	country_as_secondary = {
-		prestige 0.5
+		prestige = 0.5
 	}
 }
 
@@ -963,6 +951,50 @@ doctrine_monotheist = {
 		tolerance_heretic = -1
 	}
 }
+
+doctrine_scriptural = {
+}
+doctrine_mythic_literary = {
+}
+doctrine_oral_storytelling = {
+}
+doctrine_oral_storytelling = {
+}
+
+doctrine_monasticism_encouraged = {
+	country = {
+		missionary_maintenance_cost = -0.4
+	}
+	country_as_secondary = {
+		missionary_maintenance_cost = -0.2
+	}
+}
+
+doctrine_monasticism_accepted = {
+	country = {
+		missionary_maintenance_cost = -0.2
+	}
+	country_as_secondary = {
+		missionary_maintenance_cost = -0.1
+	}
+}
+
+doctrine_monasticism_absent = {
+}
+
+doctrine_monasticism_forbidden = {
+	country = {
+		missionary_maintenance_cost = 0.2
+	}
+	country_as_secondary = {
+		missionary_maintenance_cost = 0.1
+	}
+}
+
+doctrine_sacraments_central = {
+}
+doctrine_sacraments_absent = {
+}
 ##Theocracy
 doctrine_theocracy_temporal = {
 }
@@ -1033,6 +1065,12 @@ doctrine_clerical_succession_temporal_fixed_appointment = {
 }
 
 doctrine_clerical_succession_spiritual_fixed_appointment = {
+}
+
+doctrine_clerical_succession_conditional = {
+}
+##Pilgrimage
+doctrine_pilgrimage_forbidden = {
 }
 
 ###Special/Other
@@ -1204,6 +1242,13 @@ special_doctrine_ecumenical_christian  = {
 		misguided_heretic = yes
 	}
 }
+special_doctrine_ecumenical_miaphysite  = {
+	not_unique_modifiers = {
+		misguided_heretic = yes
+	}
+}
+special_doctrine_has_clerical_electors = {
+}
 ##Heresy Hostility
 heresy_hostility_doctrine = {
 }
@@ -1212,6 +1257,15 @@ special_doctrine_naked_priests = {
 }
 ## ?
 special_doctrine_not_allowed_to_hof = {
+}
+special_doctrine_prophecy_of_malachi = {
+}
+
+special_doctrine_is_western_christian_faith = {
+}
+special_doctrine_is_eastern_christian_faith = {
+}
+special_doctrine_pope_blessing = {
 }
 ##Unreformed
 unreformed_faith_doctrine = {
@@ -2053,5 +2107,153 @@ special_doctrine_is_manichaean_faith = {
 			priscillianism
 			cainitism
 		}
+	}
+}
+
+
+tenet_peace_of_god = {
+	country = {
+		diplomatic_reputation = 2
+	}
+}
+tenet_dulia = {
+	country = {
+		global_unrest = -2
+	}
+}
+tenet_transubstantiation = {
+	country = {
+		prestige_from_land = 0.1
+	}
+}
+tenet_ora_et_labora = {
+	country = {
+		development_cost = -0.05
+	}
+}
+tenet_hyperdulia = {
+	not_unique_modifiers = {
+		may_recruit_female_generals = yes
+	}
+}
+tenet_simony = {
+	country = {
+		global_tax_modifier = 0.15
+	}
+}
+tenet_monophysitism = {
+	country = {
+		prestige = 0.25
+		legitimacy = -0.15
+	}
+}
+tenet_miaphysitism = {
+	country = {
+		legitimacy = 0.25
+		prestige = -0.15
+	}
+}
+tenet_acts_of_apostles = {
+	country = {
+		legitimacy = 0.05
+		prestige = 0.05
+	}
+}
+tenet_purgatory = {
+	country = {
+		legitimacy = 0.1
+	}
+}
+tenet_purgatory = {
+	country = {
+		legitimacy = 0.1
+	}
+}
+tenet_be_fruitful_and_multiply = {
+	country = {
+		heir_chance = 0.25
+	}
+}
+tenet_apostolic_succession = {
+	country = {
+		legitimacy = 0.1
+	}
+}
+tenet_confession = {
+	country = {
+		core_creation = -0.1
+	}
+}
+tenet_original_sin = {
+	country = {
+		global_spy_defence = 0.1
+	}
+}
+tenet_celestial_hierarchy = {
+	country = {
+		stability_cost_modifier = -0.1
+	}
+}
+tenet_miles_christi = {
+	country = {
+		manpower_in_true_faith_provinces  = 0.1
+	}
+}
+tenet_philanthropia = {
+	country = {
+		tolerance_own = 2
+		global_tax_modifier = -0.05
+	}
+}
+tenet_scholasticism = {
+	country = {
+		technology_cost = -0.15
+	}
+}
+tenet_adoptionism = {
+	country = {
+		tolerance_heretic = 2
+	}
+}
+tenet_love_thy_neighbour = {
+	country = {
+		tolerance_heretic = 2
+		tolerance_heathen = 2
+	}
+}
+tenet_divine_liturgy = {
+	country = {
+		build_cost = -0.1
+	}
+}
+tenet_hesychasm = {
+	country = {
+		stability_cost_modifier = -0.05
+		tolerance_own = 1
+	}
+}
+tenet_anachoresis = {
+	country = {
+		movement_speed = 0.05
+	}
+}
+tenet_mortification_of_the_flesh = {
+	country = {
+		tolerance_heretic = 2
+	}
+}
+tenet_holy_myron = {
+	country = {
+		legitimacy = 0.15
+	}
+}
+tenet_khachkar = {
+	country = {
+		defensiveness = 0.15
+	}
+}
+tenet_khachkar = {
+	country = {
+		defensiveness = 0.15
 	}
 }
