@@ -3,6 +3,7 @@
 #include "LocDegraderMapping.h"
 #include "Log.h"
 #include "ParserHelpers.h"
+#include "../EastAsiaLanguageSupport/EastAsiaLanguageSupport.h"
 
 mappers::LocDegraderMapper::LocDegraderMapper()
 {
@@ -37,5 +38,11 @@ std::string mappers::LocDegraderMapper::degradeString(const std::string& inputSt
 	{
 		toReturn = std::regex_replace(toReturn, std::regex(utf8), win1252);
 	}
+
+	toReturn = EastAsiaLanguageSupport::utf8StringToSpecial(toReturn, true, true);
+	// I don't wanna to change the function. So I add it in there.
+	// It's clear that this change would cause bad porformance. Wish someone could change it better.
+
 	return toReturn;
 }
+

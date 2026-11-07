@@ -1,0 +1,203 @@
+﻿l_english:
+ TRL:3 "yrÉb^pQêšN"
+ TRL_ADJ:3 "yrÉb^pQêšN„v"
+ israelite:3 "åNr‚RºN"
+ TERAPANTHA:3 "Á”ÉbXoTX"
+ DARKNESS:3 "Ñž—f"
+
+ #Blessings
+ mazdaki_blessings:0 "êNV"
+ pick_mazdaki_blessing:0 "	ébêNV"
+ zurvanism_blessings:0 "êNV"
+ pick_zurvanism_blessing:0 "	ébêNV"
+ gayomarthianism_blessings:0 "êNV"
+ pick_gayomarthianism_blessing:0 "	ébêNV"
+ nestorian_blessings:0 "kyy"
+ pick_nestorian_blessing:0 "	ébkyy"
+
+
+ ##Fetishist Cults
+ west_african_pagan_reformed_cult:3 "•w6R"
+ west_african_pagan_reformed_cult_desc:3 "bìNuªVÏeºN„vSïÿÖNìNTbìNíc:y†N‡R™R-NôfR'Y„vwtÿbìNmNàVdkØS—Vôf:V0"
+ tengri_cult:3 "Œ<hÌ‘"
+ tengri_cult_desc:3 "bìNáOIYŒ<hÌ‘)YzzKNIN0ø‹^yKN–™0(WÖN„vcVNÿbìN¾|†N‘š=g0"
+ baltic_cult:3 "WFzæt"
+ baltic_cult_desc:3 "bìN=fiOS“^³u¯e„vˆR²bw0:N†Nêæt¯e0iOS“^³u¯eNbìNºNl„vcƒwÿbìNZWšRwN0™„vQ‡^QOÿbìN8lN²uë`ÿ8lN1Y%0"
+ finnish_cult:3 "Ï‚eYè•LN¯eÑy"
+ finnish_cult_desc:3 "bìNleIY,gaN„v¨Rirÿv^åNTœR„vêNVNxQ<yÖS¦`ƒRìN„vHQVyKNÍkÃWFzìN0"
+ slavic_cult:3 "W·Vú‹ôuÌ‘"
+ slavic_cult_desc:3 "bìNáOIY	NBSNLuKNh0bìNTêN¹eˆRgdkh„viO&O0¾åeZS<h0«ƒÑyÀNNÉb¾.sN›OÁT0bìNmN(Œ°‹NïSýVÆ‰ôuR¯eÖN=e‘dNwNLuKNh„vÓu„gÿv^wŒ˜¡Nw0"
+ zunist_cult:3 "Vyi`áOðN"
+ zunist_cult_desc:3 "bìNuªVËzÕlwVyi`„vYeò‹ÿÖNs^IrwlQck0W¡R2ROu0(WVyi`<w-Nÿ¡l	gÀNHNÔklQck0lQs^NÁNHaôfTØš0bìN„vºNlªR›RõLˆÙ›Ntó`ÿwSV†˜–ˆ*gýw¾0RVyi`„vggöeÿÖNìN‰˜bÅb1ûN0"
+ bon_cult:3 "ï‚Ye"
+ bon_cult_desc:3 "bìN.s«ŽŽNHywy0äRÉRNT†Ú‹ÿåNBllNv^b1SÏu0íuN'YKbpS0bìN„vESNbòT™„ø‹^y²bQOÿbìNmN(W¶R-N:NÖNìN¾‹Ëz^yµ^0"
+ hellenic_cult:3 "^J"
+ hellenic_cult_desc:3 "bìNleIYeY—g9S¯eø‹^yÿv^ô›RŽNb:NºN-NKNpg0"
+ pagan_cult:3 "^¯w"
+ pagan_cult_desc:3 "bìN¥c³u†N±›NáOðNNbìNNT„vºNÿÇ‘³uÖNìN„v`N×Oÿv^TÖNìN„v^y.smy0bìNàVdkêS=fØS—Vôf:V0"
+ gnostic_cult:3 "ú‹¯eÐcKQ"
+ gnostic_cult_desc:3 "bìN²‹Æ‹0Rir(NLu=f.irINNbßu»l„vZ†GPwïS`„v.ir0bìNgüvÎNir(NLu-N·ƒ—VQeN0"
+ yazidi_cult:3 "Å–yQê"
+ yazidi_cult_desc:3 "bìNleIYTRÀ–)YO¦žÒRKQ·v–¯eN)YOKN–™0šNSV„vT4O0šN=OÉbU„vïbQew0^yNb	šR„vßu»lw0PNwÖNÿbìNNhQýwwT—VQeN0"
+ illyric_snake_cult:0 "Ç†"
+ illyric_snake_cult_desc:0 "WSO)RÌ‘šNºN†SegáOIYÇ†TÜb0SIYdkTÜbÿbýVÅVS™„×SôfØš„v0Nv™KNP0"
+ illyric_sun_cult:0 "*Y3–"
+ illyric_sun_cult_desc:0 "SO)RÌ‘šNºN†SegáOIY*Y3–TÜb0¥c³u*Y3–TÜbÿÅVšRýwÀoÑSÞbìNgNT†Ú‹„vãlmNÃVuT†le0"
+ illyric_horseman_cult:0 "‘šKb"
+ illyric_horseman_cult_desc:0 "Nr‚÷–¯eºN„v¥cæ‰:NbìN&^eg†Nr‚÷–¯e‘šKbTÜbÖN=fNMOO'Y„vsKbÿvQ‘š=gKN¾|in*Xðy.OGY0SIYÖN„vTÜbÿÅVšRýwÀo±RbìNêñT„v‘šKb0"
+ canaanite_cult:0 "TX<Syr"
+ canaanite_cult_desc:0 "bìNáOIYTX<SyrsY^yÿyY„v‡^QOS:NbìN„vjOir&^egè–4lÿ(Wb—e-NÝO²bbìN„vbëXÿv^nxÝObìN„v‡YsYYPR0"
+ kemetism_cult:0 "Éb"
+ kemetism_cult_desc:0 "bìN„vßu»lw=f*Y3–^yÉb„vôv¥cãNhˆ0êS‰ëkàen‘u0Wý–v^gÎNbìN„vßu»lwÿbìN1S=f(WgbLˆÉb„v1WaÿnxÝOÖN„v‡^QOM–4NŽNbìN„vºNl0"
+ druidic_cult:0 "·VœO"
+ druidic_cult_desc:0 "bìNuªV·VœO„v^yØyYeò‹ÿÖNìN„v‹VÕlôuû|éy^ÿv^:NbìNýV¶Rb—Vø‹^y„v7wŒ˜0"
+ ajivika_cult:0 "?–	TôuaS"
+ ajivika_cult_desc:0 "bìNòT¥c³u0<S6w‚„0sSu‹TéeòTèlšR0‹T-NèlšR„váOõV0bìNNbTÜb„v^y0bìNNbLˆ„v„Uv`KN>NÿýàeÕl9eØS*gegÿmNàeÕlqVÍTbìNgÈu„v‹TÐÿàV:N9h,gNXR(Wê1ua×V0"
+
+ ##Personal Deities
+ #Khurmazta
+ ZZZ_enhanced_desi:3 "·V‰"
+ ZZZ_enhanced_desi_desc:3 "·V‰=f0Nv™sY^y0åNyY„v^yÏPjO:N<yÜbKNirASRnfMÿåNyYKNT.smy¦N6q0"
+ ZZZ_enhanced_parn:3 "^i`"
+ ZZZ_enhanced_parn_desc:3 "^i`=f‹YÐN‹s²RcƒwKN^y0"
+ ZZZ_enhanced_nanaiya:3 "ZZOZ"
+ ZZZ_enhanced_nanaiya_desc:3 "a˜RKNZZOZ=fÛVÂ„v1rN0k	asY^y0"
+ ZZZ_enhanced_weshparkar:3 "æ—ÀN^aSS"
+ ZZZ_enhanced_weshparkar_desc:3 "æ—ÀN^aSS=fÎ˜KN^y0"
+ ZZZ_enhanced_wishaghn:3 "ôu™li`"
+ ZZZ_enhanced_wishaghn_desc:3 "ôu™li`=fÜw)RKN^y0"
+ ZZZ_enhanced_zurvan:3 "VySN"
+ ZZZ_enhanced_zurvan_desc:3 "VySN=fåwÆ‹KN^yÿmN=fø‹^yKN‹s0"
+
+ #Triggered Mods
+ ZZZ_enhanced_unreformed_religion:3 "*g9ei—„vY^yYe"
+ desc_ZZZ_enhanced_unreformed_religion:3 "å‹ýVáOIY*g9ei—„vY^yYe0(WbŸR9ei—áOðNKNMRÿvQ.OYe¾–¦^ôfØš0"
+ fraticelli_rome:3 "`S†˜Wlš"
+ desc_fraticelli_rome:3 "åNSDQV>m«ŽýN`S†˜WlšÿêSOÀownfM„v2a`0"
+ fraticelli_subjugation:3 "VgYe—R"
+ desc_fraticelli_subjugation:3 "bìNòTVgYe—RýV„vW0W0Ùmc³R†NbìN(WvQÖNSDQV>máOO<w-N„vðXg0"
+
+
+ #Country Mods
+ west_african_pagan_reformed_migration_into_ZZZ:3 "9ei—KN>N"
+ desc_west_african_pagan_reformed_migration_into_ZZZ:3 ">yO-N„vÐg›N¿R›R^g(WbìN„v>yO-N¨cLˆØSi—ÿàeº‹—RYeNØ=fLˆ?eN0"
+ ZZZ_baltic_pagan_migration_into_africa:3 "WFzætûyl"
+ desc_ZZZ_baltic_pagan_migration_into_africa:3 "'YÏ‘WFzætáOOÁeQ,gw0:Nhˆa0ŒÿÖNìNNž›³R0W R:V†N [Root.GetName] „v2–¡R0"
+ ZZZ_enhanced_poachers:3 "1Yµc„v×vsw"
+ desc_ZZZ_enhanced_poachers:3 "[Root.GetName] ƒX…QÿêS:NÖSPNwsNg„v×vswNsKbsWs0ÙüRôÑž^ib.VÿlOmNàV?eœ^<ONNàeNbjO:Nw²Å`Ào2a0"
+ ZZZ_enhanced_animal_boom:3 "Î‘‹QpeÏ‘ÀožX"
+ desc_ZZZ_enhanced_animal_boom:3 "[Root.GetName] „vÎ‘‹QpeÏ‘%`gRžX•ÿÐc›O†NEQ³„vß˜irNjuµN0"
+ ZZZ_finnish_pagan_migration_into_africa:3 "Ï‚eYè•LN¯eÑyûyl"
+ desc_ZZZ_finnish_pagan_migration_into_africa:3 "'YÏ‘Ï‚eYè•LN¯eÑyáOOÁeQ,gw0ÖNìNbú‹:NbýV›äR³RjOÿåNhˆ0Œa0"
+ ZZZ_slavic_pagan_migration_into_africa:3 "¯eÉb+Yûyl"
+ desc_ZZZ_slavic_pagan_migration_into_africa:3 "'YÏ‘¯eÉb+YáOOÁeQ,gw0ÖNìNÄuú^†N0W¹eluQÿpeÏ‘Ê`ºN„vR—t^ ReQ†N›Q–ÿå‚.OŠïSáOÿØ	gSpesY'`mNSÕ‹eQOÿ"
+ ZZZ_tengri_pagan_migration_into_africa:3 "Œ<hÌ‘ûyl"
+ desc_ZZZ_tengri_pagan_migration_into_africa:3 "'YÏ‘Œ<hÌ‘áOOÁeQ,gw0ÖNìN„v‘šuQòTÁ‹f=fýV¶R„vÝusODµN0"
+ ZZZ_zunist_pagan_migration_into_africa:3 "Vyi`áO’Vûyl"
+ desc_ZZZ_zunist_pagan_migration_into_africa:3 "'YÏ‘Vyi`áOOÁeQ,gw0ÖNìNbú‹“Š‰kOS©RÝOkS [Root.GetName]0"
+ ZZZ_enhanced_mighty_temple_being_built:3 "RO^y™^tQú^-N"
+ desc_ZZZ_enhanced_mighty_temple_being_built:3 "Nµ^.sÙuø‹^y„vRO^y™^ck(W [Root.GetCapitalName] …QtQú^0"
+ ZZZ_hellenic_pagan_migration_into_africa:3 "^Jûyl"
+ desc_ZZZ_hellenic_pagan_migration_into_africa:3 "'YÏ‘^JáOOÁeQ,gw0ÖNìNbú‹OS©Rôf‹Y0W»lt [Root.GetName]0"
+ ZZZ_bon_pagan_migration_into_africa:3 "ï‚Yeûyl"
+ desc_ZZZ_bon_pagan_migration_into_africa:3 "'YÏ‘ï‚YeáOOÁeQ,gw0ÖNìNbú‹›äR³RjO0Nu‹Nïz0"
+ ZZZ_spreading_of_reformed_pagan_rituals:3 "$RELIGION$êNV"
+ desc_ZZZ_spreading_of_reformed_pagan_rituals_title:3 "å‹ýVòTVËY²‹wOS›R0W(WlO-N.O­d $RELIGION$ êNV0"
+
+
+ #Triggered Province Mods
+ ZZZ_enhanced_mighty_temple:3 "RO^y™^"
+ desc_ZZZ_enhanced_mighty_temple:3 "ÙÌ‘×wËzNwNµ^.sÙuø‹^y„vRO^y™^ÿïSNN^y¿kb^yrœQ^y™^øv²ZŽ0"
+ ZZZ_enhanced_zoro_mecca:3 "Vg¦ž R"
+ desc_ZZZ_enhanced_zoro_mecca:3 "bìNþf«ˆFz¯e—geQµOwúQEeW0bìN„väSw^y™^m0RµNnÿtWšN¯e·V„v8lR`KNkp«ˆQbmpÿFO‚YÊNbìNòTYÇN0O¯epQ1WÎW [Root.GetCapitalName] òT(WbìN„vŒcµcKNN0"
+ ZZZ_enhanced_hellenic_rome:3 "6eYWlš"
+ desc_ZZZ_enhanced_hellenic_rome:3 "ˆVENåNMRÿúWcwYeVYe’VàQNNSbìN<ómpÝu„v¹ÿFObìNZWc†NNegÿv^(Wø‹^y„v©R›RNÍ‘:YWlšÿ:N^ýV„v†‰¡N¥b†NÇN0"
+
+ #Province Mods
+ ZZZ_defend_the_motherland_baltic_cult:3 "MckS.Oßu"
+ desc_ZZZ_defend_the_motherland_baltic_cult:3 "jO:Nêæt¯eNiOS“^³u¯e„váO’VÿbìN	gIN¡RZWšR0WMckSbìN„vW0WNuIm¹eV0"
+ ZZZ_enhanced_pet_lion:3 " Rirîr"
+ desc_ZZZ_enhanced_pet_lion:3 "‹s²R‰QNwN4Y Rirîrÿ=f²NKbd—e6Rg„v0"
+ ZZZ_enhanced_good_horses:3 "o‚lš"
+ desc_ZZZ_enhanced_good_horses:3 "Ù*NýV¶R„vlš9SÁT(V8^Oo‚0«ƒ^—=f×S†N^yi` Rcÿ"
+ ZZZ_enhanced_poor_horses:3 "±Rlš"
+ desc_ZZZ_enhanced_poor_horses:3 "Ù*NýV¶R„vlš9SÁT(žR(W*YîTÿêSýw¨cKm=fÐgMO^yfùRå‹ýV	gNbNán0"
+ ZZZ_enhanced_white_stallion:3 "[ZZZ_enhanced_white_stallion_name]"
+ desc_ZZZ_enhanced_white_stallion:3 "[Root.GetName] „v‹s²Råb	gN9S^yš„v‹vlšÿT:N [ZZZ_enhanced_white_stallion_name]ÿ¾u‚YÎ˜ÿs‚Yîr0d–‹s²RbXTYÿÖNN¸‹ûNUOºN‘šXN0"
+ string_ZZZ_shadowfax:3 "qV¾u"
+ string_ZZZ_atrax:3 "?–yrÉbKQ¯e"
+ string_ZZZ_bree:3 "^Ì‘"
+ string_ZZZ_unnamed:3 "‹vlš"
+ ZZZ_tengri_pagan_migration_into_africa2:3 "Œ<hÌ‘ûyl‘šuQ"
+ desc_ZZZ_tengri_pagan_migration_into_africa2:3 "Œ<hÌ‘ûyl‘šuQòT•beQbìN„v¾žN0ÖNìN&^eg†NØš…„v‘š=gN°e„v›Q‹NŽb=g0"
+ ZZZ_bad_omens:3 "öQFQ"
+ desc_ZZZ_bad_omens:3 "sQŽNsSS0Reg„v²Qzÿå‹ýV—V0R†NNey„vVFQ0"
+ ZZZ_good_omens:3 "	TFQ"
+ desc_ZZZ_good_omens:3 "sQŽNsSS0Reg„v²Qzÿå‹ýV—V0R†N	Tey„vVFQ0"
+ ZZZ_great_omens:3 "'Y	TFQ"
+ desc_ZZZ_great_omens:3 "sQŽNsSS0Reg„v²Qzÿå‹ýV—V0R†Ng:N	Tey„vVFQ0"
+ ZZZ_incredible_omens:3 "NïS`®‹„vVFQ"
+ desc_ZZZ_increedible_omens:3 "å‹ýV—V0R„vVFQ-f:yÿNb	gsSS0Reg„v²QzýS·ƒÜw0"
+
+ # Deities
+ ukko:0 "LNb"
+ tapio:0 "TX®veY"
+ ahti:0 "?–k‚„"
+ mielikki:0 "s|6w)RúW"
+ akras:0 "ÃWKQÉbN"
+ tuoni:0 "þVeY<S"
+ perun:0 "iO&O"
+ jarilo:0 "Å–Ì‘m"
+ lada:0 "Éb¾"
+ veles:0 "ôuR¯e"
+ svarog:0 "¯eætW<h"
+ svetovid:0 "¯eæ—Xbôu·V"
+ perkunas:0 "iOS“^³u¯e"
+ ausrine:0 "eYÀNÌ‘…Q"
+ saule:0 "Íu±ƒ"
+ laima:0 "±ƒ›s"
+ gabija:0 " RÔkZ"
+ dievas:0 "êæt¯e"
+ tiwaz:0 "ÐcætyQ"
+ wodan:0 "ƒl9N"
+ dunar:0 "þV³uS"
+ frijjo:0 "VKN¦u"
+ austro:0 "eY¯eyrW"
+ fraujaz:0 "V³RšNyQ"
+ amun:0 "?–™„"
+ maat:0 "›s?–yr"
+ ra:0 "Éb"
+ seth:0 "iyr"
+ isis:0 "O‰¯e"
+ anubis:0 "?–ªRÔk¯e"
+ # Deities desc
+ ukko_desc:0 "LNb=f¬‚pQY^yYe-NgÍ‘‰„v^y0ÖN=f÷–^yÿmN=f)YLu„vßu»lw0"
+ tapio_desc:0 "TX®veY=férsKN^yÿmN=fîh—g„vßu»lw0"
+ ahti_desc:0 "?–k‚„=f4lßW„vßu»lwÿmN=fnsKN^y0"
+ mielikki_desc:0 "s|6w)RúW=fîh—gNérssY^y0"
+ akras_desc:0 "ÃWKQÉbN=fœQNN0Nv™KN^y0"
+ tuoni_desc:0 "þVeY<S=f‰k^yÿmN=f¥QLu„vßu»lw0"
+ perun_desc:0 "iO&O=f÷–^yÿmN=f¯eÉb+YN^y¿k-N„vóØš^y0"
+ jarilo_desc:0 "Å–Ì‘m=f%f)Y00Nv™NIƒ(gKN^y0"
+ lada_desc:0 "Éb¾=fŒTŒ01rNŽKNsY^y0"
+ veles_desc:0 "ôuR¯e=f'Y0W04lßWN¥QLuKN^y0"
+ svarog_desc:0 "¯eætW<h=fkpKN^yÿ	göemN«ˆÏcð:NI•.KN^y0"
+ svetovid_desc:0 "ÛV–™„v¯eæ—Xbôu·V=fb‰N00Nv™NÌR³KN^y0"
+ perkunas_desc:0 "iOS“^³u¯e=f÷–5uN)YzzKN^yÿmN=fêæt¯eKNPR0"
+ ausrine_desc:0 "eYÀNÌ‘…Q=fhffsY^y0yY8^NŽNR—%føvsQTw0"
+ saule_desc:0 "Íu±ƒ=f*Y3–sY^y0yY8^Nu‹T00Nv™NeP·^øvsQTw0"
+ laima_desc:0 "±ƒ›s=fÐlN‹TÐsY^y0yYNu²w0ZZûYŒT‰k¡NøvsQTw0"
+ gabija_desc:0 " RÔkZ=fkpKNsY^y0yYmN=f¶RíVN¶R­^„vˆR²bw0"
+ dievas_desc:0 "êæt¯e=fâlW„v^yÝ‹-N„vóØš^y0"
+ tiwaz_desc:0 "ÐcætyQ=fb‰NKN^yÿmN=féegåe3wüfN^y¿k„v–™^y0"
+ wodan_desc:0 "ƒl9Nÿbðyƒl¾³uyQ	ÿ=f×‹ºN0HQåwNT›ÕlKN^y0ÖNmNNérs0b‰NŒT&^egÜw)RøvsQTw0"
+ dunar_desc:0 "þV³uSÿbðyþV³uÉbyQ	ÿ=f÷–5uN)YzzKN^y0"
+ frijjo_desc:0 "VKN¦u=f1rKNsY^yÿmN=fƒl9N„v»YPR0"
+ austro_desc:0 "eY¯eyrW=fÎžfN%fåeKNsY^y0"
+ fraujaz_desc:0 "V³RšNyQ=f0Nv™NAucƒKN^y0"
+ amun_desc:0 "?–™„=fÃWÊSN^y¿kKN‹sÿmN=fÎ˜KN^y0"
+ maat_desc:0 "›s?–yr=fwt0s^aˆ0éy^NckINKNsY^y0›s?–yrnxÝOÃWÊS„v3zúV0"
+ ra_desc:0 "Éb=f*Y3–KN^yÿN¼–bpžøvsQTw0"
+ seth_desc:0 "iyr=f1Y^0´f›R0÷mŒlNÎ˜´fKN^y0"
+ isis_desc:0 "O‰¯e=ftó`„vÍk²NN»YPRÿâe=f¡Nw„vˆR²bwÿmN=f?QåzKNsY^y0"
+ anubis_desc:0 "?–ªRÔk¯e=fzŒ–™KN^yÿN(gCNO6RjOÊSegNøvsQTw0"

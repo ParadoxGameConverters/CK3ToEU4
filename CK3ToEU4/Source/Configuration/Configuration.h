@@ -98,6 +98,11 @@ class Configuration: commonItems::parser
 		CANTON = 3,
 		DESTROY = 4
 	};
+	enum class ENGLISHTAKINGPLACE
+	{
+		ENGLISH = 1,
+		CHINESE = 2
+	};
 
 	[[nodiscard]] const auto& getSaveGamePath() const { return SaveGamePath; }
 	[[nodiscard]] const auto& getCK3Path() const { return CK3Path; }
@@ -121,6 +126,7 @@ class Configuration: commonItems::parser
 	[[nodiscard]] const auto& getDiscoveredBy() const { return discoveredBy; }
 	[[nodiscard]] const auto& getTribalConfederations() const { return tribalConfederations; }
 	[[nodiscard]] const auto& getCelestial() const { return celestial; }
+	[[nodiscard]] const auto& getEnglishTakingPlace() const { return englishtakingplace; }
 
 	void setCraftFlagForPlayerTitle(const std::string& title) { playerTitle = title; }
 
@@ -154,6 +160,7 @@ class Configuration: commonItems::parser
 	DISCOVEREDBY discoveredBy = DISCOVEREDBY::VANILLA;
 	TRIBALCONFEDERATIONS tribalConfederations = TRIBALCONFEDERATIONS::MERGE;
 	CELESTIAL celestial = CELESTIAL::BEIJING;
+	ENGLISHTAKINGPLACE englishtakingplace = ENGLISHTAKINGPLACE::ENGLISH;
 
 	std::optional<std::string> playerTitle;
 };

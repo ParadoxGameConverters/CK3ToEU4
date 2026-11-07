@@ -14,7 +14,6 @@ class LocDegraderMapper: commonItems::parser
 
   private:
 	void registerKeys();
-
 	std::map<std::string, std::string> replacements;
 };
 } // namespace mappers

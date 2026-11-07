@@ -1,0 +1,234 @@
+﻿l_english:
+ cathar:3 "aSyrÌ‘>m"
+ fraticelli:3 "SDQV>m"
+ waldensian:3 "ætÒR¦^>m"
+ lollard:3 "WÉb·V>m"
+ monophysite:3 "úWcwN'`º‹"
+ bogomilist:3 "œ<hs|ÒR>m"
+ monothelite:3 "úWcwN×Vº‹"
+ iconoclast:3 "1WÏP4xOW>m"
+ paulician:3 "ÝOW>m"
+ nestorian:3 "Bw¯eXbÌ‘>m"
+ messalian:3 "¦ž(„)R‰R>m"
+ zikri:3 "PŸKQÌ‘>m"
+ yazidi:3 "šNyQê"
+ kharijite:3 "ÈTæt)R	T>m"
+ druze:3 "·VœyQ>m"
+ hurufi:3 "áwSòƒ>m"
+ qarmatian:3 "aSSlšyr>m"
+ pagan_religion:3 "VYe"
+ baltic_pagan:3 "WFzæt"
+ baltic_pagan_reformed:3 "9ei—WFzæt"
+ finnish_pagan:3 "Ï‚eYè•LN¯eÑy"
+ finnish_pagan_reformed:3 "9ei—Ï‚eYè•LN¯eÑy"
+ norse_pagan:3 "S'kVYe"
+ norse_pagan_reformed:3 "9ei—S'kVYe"
+ slavic_pagan:3 "¯eÉb+YVYe"
+ slavic_pagan_reformed:3 "9ei—¯eÉb+YVYe"
+ tengri_pagan:3 "Œ<hÌ‘"
+ tengri_pagan_reformed:3 "9ei—Œ<hÌ‘"
+ zun_pagan:3 "Vyi`áOðN"
+ zun_pagan_reformed:3 "Vyi`YeO"
+ hellenic_pagan:3 "^JY^yYe"
+ hellenic_pagan_reformed:3 "9ei—^JY^yYe"
+ west_african_pagan:3 "‰^—VYe"
+ west_african_pagan_reformed:3 "9ei—‰^—VYe"
+ bon:3 "p`ôuï‚Ye"
+ bon_reformed:3 "ENSï‚Ye"
+ mazdaki:3 "lšyQ¾KQ>m"
+ manichean:3 "üf<SGYYe"
+ khurmazta:3 "“^SÆYNbTX"
+ samaritan_faith:3 "’d›s)RšNáOðN"
+ karaite_faith:3 "aSÉb>m"
+ jain:3 "w±Ye"
+ arianism: "?–Ì‘LN¯e>m"
+ 
+ #Descriptions
+ arianism_religion_desc:0 "?–Ì‘LN¯e>m=fúWcwYe-N&TšR	NMONSO„vN=eÿIN.V6w1zúWcw=fN^KNPRÿ1u1W6rNb.ÿN1W6r	g+RÿàVwÎN^SŽN1W6r0?–Ì‘LN¯e„vYeüRgRRVŽN?–Ì‘LN¯eKNTÿv^(W325t^,rN!k<S‰šN'YlQO®‹N«ˆšR:NVïz0"
+ pagan_religion_religion_desc:3 "ê	g†SòSåNegÿ'k2mN-NN¿O=fàepeNšN=OÉbUø‹YeàesQ„vVYeáOðNNYe>m„vESNb0"
+ bon_religion_desc:3 "ï‚Ye=f‰Ï…äSw„v0iOYe.OeQKNMR„v,gW—RYe0ƒR(W,g(N=f(„ánYeNNir	gupº‹ÿáOIYYMO^yGy0iOYe.OeQ‰Ï…Tÿï‚Ye8T6e†N¸‹YiOYeCQ.t0"
+ west_african_pagan_religion_desc:3 "‰^——RYeµmÖv†N’dÈTÉbåNWS^—2mTèÏeOYNT„vVYeáOðN0VyHQTÜb0Nir	gupº‹NþVŒ(„ánYe`SINüRÿFOTöemN	gTÍyNT„v^yGySOû|0"
+ norse_pagan_religion_desc:3 "äSw„våe3wüfáOðNSOû|åb	gž^'Y„v^yGySOû|ÿ1uzfga„vb^yeYNÿbðyƒl9N	ÿßu†˜ÿÖNßu–NLuKNh2S<h·VÉb^S„vNRgr^0æSY2NMOIN^y=fùRºN‰|ËS„U„vXbSÿþV³uS	ÿN0Nv™KN^yV÷–0"
+ slavic_pagan_religion_desc:3 "¯eÉb+YVYeáOIYY^yÿIN^y:N÷–5uKN^yiO&O0vQÖNÍ‘‰„v^yGySìb¥QLuKN^yôuR¯eÿåNÊS¯eætW<h0Å–Ì‘mN¯eNyrôuyr0"
+ baltic_pagan_religion_desc:3 "âlW„vVYeáOIYY^yÿvQ^yû|1u)YzzKN^yê6wæt¯eßu†˜0vQÖNIN^ySìb÷–5uKN^yiOS“^³u¯e0*Y3–N0Nv™sY^yÍu±ƒÿåNÊSS RætN…h…Q¯e0"
+ finnish_pagan_religion_desc:3 "¬‚pQVYebVVY7hÿTèÏeNT0W:SKNô•îTVˆV'Y0ƒRTleOY^yGyÿSìbLNbÿiOSïQ±ƒ0“^LNÿåNÊSNè„vW0WsY^ylš¯eXbS-?–æt0"
+ tengri_pagan_religion_desc:3 "Œ<hÌ‘áOðN=f'kšNIƒŸSø‹lÏe„v—RYeÿ2SvQ=fz¥SN™„äS8ngrl0IN^y:NŒ<hÌ‘ßu–)Yzz„vRNKN^y0"
+ zun_pagan_religion_desc:3 "Vyi`ckIN„vPˆNw=fgR1u?–ÌRWlVyi`ÔkS‹sgNbTÜb„v*Y3–^y0Vyi`SO°szfga0›RÏ‘0kp0qåNÊSqšceÑžY„vIQf0"
+ pagan_religion_religion_desc:3 "ê	g†SòSåNegÿ'k2mN-NN¿O=fàepeNšN=OÉbUø‹YeàesQ„vVYeáOðNNYe>m„vESNb0"
+ aztec_pagan_religion_desc:3 "?–yQyrKQ—RYe„vRN^yÝ‹åN.smy:N8hÃVÞ^yfmNþf«ˆ.smyÿåNôuc*Y3–„vÐLˆ0ÙÍS.f(Wå‹—RYeOY„v‚‚†^NêNV-NÿvQ-NS+T'YÄ‰!j„vImºN.smy0IN‰^yGySìbÿb‰NNImºN.smyKN^yôuPŸmâlGYyr)R0÷–5uNè–KN^yyrÉbmKQ0kpKN^yîOyr“^yr)R0bìN„veR®vKNIN‰iO·XbyrKQÿåNÊSzfgaKN^yA›-gSÑyšNyrS0"
+ west_african_pagan_reformed_religion_desc:3 "9ei—‰^——RYe‡T†N¸‹Ylô•áOðNÿåb	gNèßuN„v1WfNÿvQ-NS+TRN^yÝ‹0sQŽN¾|up„vÇràz0þVŒ¨RirÓRŠåNÊSø‹^y0"
+ baltic_pagan_reformed_religion_desc:3 "9ei—âlW„váOðNåb	gNè1WfNÿ…Q+TRN^yÝ‹0sQŽNø‹^y„vÇràzåNÊSNè„˜ŠfN0å‹YeOØåb	ghÆQS„v<yêNÿåNÊS1uê6wæt¯egØšmyøS†˜üR„vckVYe6–SOû|0"
+ finnish_pagan_reformed_religion_desc:3 "9ei—¬‚pQáOðNåb	gNè1WfNÿ…Q+TRN^yÝ‹0sQŽNø‹^y„vÇràzåNÊSNè’TÕlNØyêNKNfN0å‹YeOØåb	ghÆQS„v<yêNÿåNÊS1uLNbgØšmyøS†˜üR„vckVYe6–SOû|0"
+ slavic_pagan_reformed_religion_desc:3 "9ei—¯eÉb+YáOðNåb	gNè1WfNÿ…Q+TRN^yÝ‹0sQŽNø‹^y„vÇràzåNÊSNè„˜ŠfN0å‹YeOØåb	ghÆQS„v<yêNÿåNÊS1uiO&OgØšmyøS†˜üR„vckVYe6–SOû|0"
+ zun_pagan_reformed_religion_desc:3 "Vyi`*Y3–^yNckIN„vPˆNwSO°szfga0›RÏ‘0kp0qåNÊSqšceÑžY„vIQf09ei—Vyi`áOðNåb	gNè1WfNÿæ‹ðRN^yÝ‹Ir…Q¹Rv^–fYeOYeINÿdkYØ	ghÆQS„v<yêNÿåNÊS1ugØšmyøS†˜üR„vckVYe6–SOû|0"
+ hellenic_pagan_religion_desc:3 "^JY^yYeáOIYY^yÿvQ^yû|S+TASŒNMOIN^yÿvQ-N	g1g‡^yr0›sS¯e0¨XN)R0ôu³u¯e0ÆR…mætNôu¯eTX0ƒRwnŽNäS^Jÿv^–NwšN†SqS'Y'Y^NWlš^ýV„vVgÿÛwb:N0W-NwmNLu„vINüR—RYeÿôvóúWcwYeNLutQw0"
+ hellenic_pagan_reformed_religion_desc:3 "^JY^yYeáOIYY^yÿvQ^yû|S+TASŒNMOIN^yÿvQ-N	g1g‡^yr0›sS¯e0¨XN)R0ôu³u¯e0ÆR…mætNôu¯eTX0ƒRwnŽNäS^Jÿv^–NwšN†SqS'Y'Y^NWlš^ýV„vVgÿÛwb:N0W-NwmNLu„vINüR—RYeÿôvóúWcwYeNLutQw0"
+ jain_religion_desc:3 "w±Ye=fg:NäSw„v—RYeÿnúQpS¦^æ‚Lˆ„v™lè•.OßuÿNmyøS6–BS„vFZWè•ÊSÍyÓY6R¦^øvùRËz0w±Ye„vcüRŸSR=fN³R^—´f›RvQà‹Ê‘ÔkûNUOvQÖN—RYeýôf:N‰V•^0"
+ cathar_religion_desc:3 "aSyrÌ‘>mÿÈSðy?–SÔk>m	ÿVïzÒbÝuJTã‰ÿmN&T²‹^yLwºNXTNYe—R„v^y1W'`0ÖNìNêS	gNy˜1W‹NpaÉ…<y(uåNd–jÿv^OáO’Vb:NaSyrÌ‘>m„vŒRºN0"
+ fraticelli_religion_desc:3 "SDQV>mÿa:NSDQVìN	ÿ=fnê¹eNmTOîOëX„v)YINYeVïz0ƒRô›RŽNˆR+Næ‚îO2SvQ‰Bl^yLwºNXT‚Ydk0SDQV>mVïzÀoÈpÍSùRYeO„v0ÌRNbYa—’c:W0"
+ waldensian_religion_desc:3 "ætÒR¦^>mgR=f)YINYeO…Qè„v9ei—Ð¨R0ætÒR¦^>mVïzÍSùRYeCgÿIN.VÞVRVˆR+“Š?a0ÖNìNÍSùR‰kRÿv^²‹:Ns^áO’VmNïSåNËeLˆ1W‹N0"
+ lollard_religion_desc:3 "WÉb·V>mVïzÍSùR)YINYeO-NÖNìNNbÁ‰„vP%0N¸‹Y)YINYeVïzN7hÿÖNìNŒSv`^yLwºNXT„v0ÌRN«pwÿIN.VÞVRVôfŸSËY„vúWcwYebVV0"
+ monophysite_religion_desc:3 "úWcwN'`º‹=féegúWcwYeVïzÿIN.VúWcwêS	gUSN„v^y'`0ÙNBw¯eXbÌ‘>m„vËz:WøvÍSTw²‹:NúWcwwQ	g2N*N|Vdk	g+R„v,g'`ÿN:N^y'`ÿN:NºN'`0"
+ bogomilist_religion_desc:3 "œ<hs|ÒR>mgR=f&^	gú‹¯eÿfCQ.t„vNckYeVïzÿƒR‰V•^&TšRYeOYe6–ÿIN.VÞVRVéegúWcwYe0œ<hs|ÒR>møváONLu=f1uªv`„v.irINT›<›NbR.„v0"
+ monothelite_religion_desc:3 "úWcwN×Vº‹=fNÍyúWcwº‹fRô‹ÿŽN681t^«ˆ±R^:NVïz0N×Vº‹wÕ‹þV(WúWcwUSN,g'`î•˜˜NÑSUSTN'`º‹NN'`º‹„vËz:WÿIN.VúWcw|QwQºN'`N^y'`ÿFOêS	gN*Na×V0N×Vº‹YeOTINN„v–™=f‰RagKQ„vN×Vº‹—RINYe0"
+ iconoclast_religion_desc:3 "1WÏP4xOWÐ¨RÙNVïzþfY!k²QûQÜb`S­^^ýV01WÏP4xOWw²‹:N—RYeþVÏP2SvQ=f1WÏPN1W’VIuÏP^SŽNvPÏPTÜbÿÝuNïS¹R¸‹0(WvQŸÛvöegÿ4xOWwÁk‰c†Nàepedk‰|Åˆp™N1WÏPÿ	göeuó=f(W1WÏP4xOW>m‡v^„v``N:NKN0"
+ paulician_religion_desc:3 "ÝOW>m=f×Süf<SGYYeqVÍT„vúWcwYeú‹¯eÿfVïzÿwnŽNšNŽ<SšN0"
+ nestorian_religion_desc:3 "Bw¯eXbÌ‘>m=féegúWcwYe„vN=eÿIN.VúWcwwQ	g2N*N|Vdk	g+R„v,g'`ÿN:N^y'`ÿN:NºN'`0ÙNN'`º‹„vËz:WøvÍSTw²‹:NúWcwêS	gUSN,g'`0Bw¯eXbÌ‘>mYeOTINN„v–™=fN¹e—RINYe0"
+ messalian_religion_desc:3 "¦ž(„)R‰R>mÿÈSðyHywyw	ÿ=fnêŽ0tN¾s|šN„vúWcwYeVïzYe>mÿ×StWšN¯e·VYeIrŒNCQº‹áOðNqVÍT0¦ž(„)R‰R>møváON^ïS«ˆ‰w«Ža˜RNbaåwÿNdkÍyaåw=f¾0RŒRánNbÅV—„v0Ïk*NºNueg…Q-N¿O	gN*Nv`T›ÿ=U	gípR„vHywyMbýwSvQqšd–0ÖNìNØøváOï‰Õl=fN^„v•PR0=fN¡wT„U„v›RÏ‘ÿv^²‹:NqN&O=f^y1W„vÿàV:NšNSVNYZ„vPRsYþf‚YdkLˆ0ÖNìN¡l	gckVêNVÿmN¡l	g%N<h„vYeOYe6–0"
+ zikri_religion_desc:3 "PŸKQÌ‘>m=fO›sîv?–kS·Nbüf·ÈTyQÉbyr·iIN·V·FzUØž·V·TNi`nfÌ‘ÿsSlškêO›sîv	ÿ„vý–w0"
+ yazidi_religion_desc:3 "šNyQêºNøváON^R.NLuTÔYûNNMO)YOŒc¡rÿvQ-N:N–™w=fTRÀ–)YO¦žÒRKQ·v–¯eÿbðy™lOfWúWcw’VNFz¯e—g8^SvQIrTŽN’dæe0"
+ kharijite_religion_desc:3 "ÈTæt)R	T>m=fO¯epQYe„vN=eÿ(W7NªuR¿Om0R¹SN‹S6R0ÖNìN²‹:NûNUON”`9e„vjºNý=faSòƒSÿTöemN&T²‹ÈTÌ‘ÑSàeï‹„vô‹Õl0"
+ druze_religion_desc:3 "·VœyQ>mnêÀNöS>mO¯epQYe„vO¯e›sêN>mÿFOd–šN=OÉbUø‹Ye„vyrVYÿØ&^	g¸‹Yú‹¯eÿfININN°eÏgÉbþVININ„vr‚iV0"
+ hurufi_religion_desc:3 "áwSòƒ>m=fO¯epQYe…QèN*N^yØyININ„v0&^	gŽUôTÉbr‚iV„vÏ‚òƒYe>m0"
+ qarmatian_religion_desc:3 "aSSlšyr>m=fÀNöS>mO¯epQYe-N„vVïzR=eÿ‡T†NtWšN¯e·VYe„vCQ.t0ÖNìN&T²‹ÀNöS>mßu»lw„vINAmçub1Œû|ÿmN&T²‹gÐ‰0"
+ samaritan_faith_religion_desc:3 "’d›s)RšNáOðN=fN¹r*YYesQû|ÆRR„všN=OÉbU—RYe0’d›s)RšNºNIN.VÿÖNìN„vTÜbMb=fôTÔk&OKNÚVKNMRäSãNåNr‚RºN„vwck—RYeÿ1uYu(WåNr‚R0W„vºNÝOXRNegÿw¹r*YYe(WÖNìNwegR=fNÍyøvsQFOòT«ˆ9e¨RNîO¢‹„v—RYe0"
+ karaite_faith_religion_desc:3 "aSÉb>m¹r*YYe=fN:W¹r*YÐ¨RÿvQyr¹p=f(W¹r*Y—RYe‹VÕlN^yfR-NêSb²‹0TX³uk0:NgØš‹VÕlCgZ0(WÙN¹pNÿƒR	g+RŽNINAm„vÉbÔk¹r*YYe0aSÉb>mZWc²‹:NÿN^.OÙuid‰„vNR^y1Wë‹‹Tý°‹‹ŽNb‡e0XbÉb0KN-Nÿv^àe˜Y„vãS.O‹VÕlbã‰Ê‘0"
+ khurmazta_religion_desc:3 "“^SÆYNbTXÿNbSæt³u	ÿ=fAmLˆŽNŸ|yrºN-N„v÷mT‹WtWšN¯e·VYe0ƒRStWšN¯e·VYeNpS¦^Ye0iOYeÊSTÍyVYe÷mT(WNw0d–“^SÆYNbTXKNYÿÖNìNØTÜbÎ˜^yæ—ÀN^aSSIr!kµu^yGyv^.sN›OÁTÿ8^åNSÕ–ÏP„vbVV0"
+ mazdaki_religion_desc:3 "lšyQ¾KQ=fNMOtWšN¯e·VYemyøSÿêðy=f?–áwÉb·lšyQ¾„vHQåw0ÖNÕ‹þVåNú‹¯eÿfCQ.t9ei—å‹Yeÿv^IN.V0µNqQ	gNy)RªcËe0"
+ manichean_religion_desc:3 "üf<SGYYe=fNÍyú‹¯eÿf—RYeÿ‡T†NúWcwYe0tWšN¯e·VYe0iOYeNú‹¯eÿfININ„vCQ.t0"
+
+## From CK3
+ #Christian
+ adamites:0 "šNSV>m"
+ adamites_religion_desc:0 "šNSV>mgR=fWlšZfgS^—„vN*NéegúWcwYeYe>mÿåNÕ‹þVÇd«ŽøˆSO0N:N„Uv`1egÍ‘°sºNô•)YXwðXTürÉ…0"
+ adoptianist:0 "ãUPRº‹>m" #Spelled with 'a' to distinguish from another group known as adoptionist
+ adoptianist_religion_desc:0 "OÔk)RšN„vãUPRº‹N=eÿvQ9hnïSý¯nóXb±ƒY'YINYe:SÊSvQhT¹Ye:S-N„vìrËz`w0peNªuMRS^—„vnYeININÿåNÊS9NªuRpeMOgwQE››R„vVïz–™†˜0KS¡rvQbVVY7hÿÎNg:N–ff0RgvQôv‹v|Q	gÿFOqQT„vYeIN‰¹p=fùR1WPR8lR`^y'`c(‘u`¦^0"
+ insular_celtic:0 "wm›S"
+ insular_celtic_religion_desc:0 "wm›SïQSyrúWcwYeN)YINYeeu	gîTVÿFOîTVKNSÿd–tSN*N‹Y,T„vT÷SKNYÿv^N³åN(u8nb:g6Reghˆ°s0"
+ bosnian_church:0 "KQS¯eÐcšN<S"
+ bosnian_church_religion_desc:0 "•ENåNeg«ˆ)YINYeNNckYe2N¹eNbWØVÿâl¯e<SšNØš0W„vKQS¯eÐcšN<SÔkÖNìNôf:NåwT„vTáOðNwôf:NËR¹RÿtS:ONckV„vÄuÇuÓu„g0ÖNìNÝOYu†N¸‹YäSw„vúWcwYeCQ.tÿàVw8^«ˆTáOðNw‰…øv…VPå‚ÖNìNØ«ˆºN°‹—V„vÝ‹0"
+
+ #Islamic
+ masmudi:0 "lš¯eFzê"
+ masmudi_religion_desc:0 "jO:NnêS^—ÏgÏgSèÏe„vO¯epQYe9ei—>mR=eÿFzæt^·VÐ¨RêÆ‰:NN^yº‹wÿ±RlbNÍy¯uS„vN^yYeYeIN0"
+ mutazila:0 "aS¾Ì‘6w"
+ mutazila_religion_desc:0 "N*Nt'`ININ„v^yfRfR>mÿIN.V0äSpQÏu0v^^—NwIN8lR`qQXRÿàV:NwINÅV6qHQŽNvQŠí‹wXR(W0"
+ quranist:0 "=UÏu>m"
+ quranist_religion_desc:0 "ùRO¯epQYe„vNÍyWRb—ININà‹Ê‘ÿ:VŒ0äSpQÏu0=f^y1Wzfga„v=UNegnÿ”^WRuLˆÿwàeÆ‰1W­‹NYeäN0"
+ alawite:0 "?–Ébôu>m"
+ alawite_religion_desc:0 "?–Ébôu>m„v—RYeYeüRØywN±Rÿ0äSpQÏu0êS=fvQ1WxQKNN0d–øváOO›sîvÏu1u?–Ì‘.ObKNYÿ?–Ébôu>mØøváOlNÿv^øváONROu,g=fÎN)YLu«ˆúQ„vf°ÿ‚YÊNÅV‰˜ÇNNÈSNNo‚„UwT†Ú‹„vuImegÍ‘°ebÞVêñT„vMOn0"
+ 
+
+
+
+ #Yazidi
+ yazidism: "šNyQêYe"
+ harmonized_yazidism:0 "NšNyQêø‹áOðNŒŒT"
+ desc_harmonized_yazidism:0 "bìNòTSNRšNyQêáOðN³ueQbýVNlÏe¾|^yKN-N0"
+ meshefaresism:0 "¦ž0ŒÕl÷–¯e>m"
+ meshefaresism_religion_desc:0 "¦ž0ŒÕl÷–¯e>m=f0ÑžfN0„vý–wÿå‹fNÏcð†NIN‚YUOÎNÑžqSM–4Nv^R.NLu0"
+ kitebacilweism:0 "úWyrôTGYSæ—>m"
+ kitebacilweism_religion_desc:0 "úWyrôTGYSæ—>m=f0=T:yKNfN0„vý–wÿå‹fN²‹ðáw¾„vO'Y0"
+ HOLY_SITE_411_DESC:0 "idÏ‚SƒX…Q	gÉb)RÀNMOŽN<S<S®V„vNYqS7ŒN^y™^0ƒR=fšNyQêºNg^y1W„v^y™^ÿmN=fšNyQêáOðN„v8hÃVºNir0Œk?–ê·O,g·Fz(„òƒSu–“X„vNb(W0W0"
+ HOLY_SITE_385_DESC:0 "¦ž RåNO¯epQYe1W0Wwû•T0å‚šNyQêáOOýwµc6R¦ž Rÿ±SÁ‹fbìN”^SVgTÉb)RÀNHywyÿw^—gT¦ž R0"
+ HOLY_SITE_379_DESC:0 "jO:NšN=OÉbUø‹YeKNNÿšNyQêºNÆ‰6wï’d·Q:N1WÎWÿ‰˜åNgØš„vleaN(ŒNaùR…V0"
+ HOLY_SITE_4326_DESC:0 "jO:NNLuNgäSw0gÛvT„vÎW^KNNÿ…Q™l^SþfNbkN!kb:NO'Y^ýV„výÎWÿêvQ8hÃVceÑSúQZgN›RÏ‘0"
+ HOLY_SITE_430_DESC:0 "ncðy^ÀNS=f	NMOZSëX„v‰Rl„KN0WÿàVwNÅN(WbeuNÍ‘‰ÿ(W^yfRN¦N6q0"
+
+ #Mazdan
+ zurvanism:0 "VySNININ"
+ zurvanism_religion_desc:0 "VySNININwøváOÿ?–áwÉb·lšyQ¾N‰R<hÉb·üfËu=fs^IrwùRËz„vÌSuPRÿ†v1uNir„vR.wVySNNbu0VySNININg›R:VŒÇ9hd–ªv`NZ†„YegOS©R?–áwÉb·lšyQ¾0"
+ gayomarthianism:0 "KO¦ulšSyr>m"
+ gayomarthianism_religion_desc:0 "úWŽN?–áwÉb·lšyQ¾àVvQ`êuwaY.úQv`upÙNÂ‰õVÿKO¦ulšSyr>m&T²‹zfgaKNIN„vàeï‹'`ÿlw:VŒåNêNVžRõ(WN?–áwÉb·lšyQ¾„vøv-N†˜Ÿ`wt0"
+ khurramism:0 "áwÉbs|6w>m"
+ khurramism_religion_desc:0 "(WIQfNÑž—fv^XR„vNLuÌ‘ÿ:N=eco‚„UÿÅV‰˜¨cûNIN„vßu»lw0ÇlšyQ¾KQ0FzUØž·VN?–^·Fz¯e—gIrHQåwÿáwÉbs|6w>møváO^y'`OM–uŽNºNô•ÿv^Èu	gNåeRVegÿåN%VišNKNÿYV†˜ÖNìN0"
+
+ #Gnostic
+ gnostic: "ú‹¯eÿfININ"
+ gnostic_religion_desc: "ú‹¯eÿfININ=fTÍyNT—RYetº‹„vÆ–Tÿ'YYåNŒNCQº‹:N8hÃVÿ²‹:Nir(NLu=fªv`„vµNir0"
+ harmonized_gnostic:0 "Nú‹¯eÿfø‹áOðNŒŒT"
+ desc_harmonized_gnostic:0 "bìNòTSNRú‹¯eÿfáOðN³ueQbýVNlÏe¾|^yKN-N0"
+ mandeaism:0 "üf¾Ye"
+ mandeaism_religion_desc:0 "üf¾YeSvQ.Obý¯nóšNSVÿv^åNËem¦uð:NvQgO'Y„vHQåw0NLu1uIQfNÑž—f„gbÿÈu	gNöeÿNRáQºN„vupB›ýS×S¡R2RÿåNšRvQ=f&TM‘—VÞVRV8lR`KNIQ0"
+ valentinianism:0 "æt&O÷^>m"
+ valentinianism_religion_desc:0 "1W6rgR„vR.w=fNRåwÆ‹„vñmnÿmN=fŽVwck†˜Ÿ`sSú‹¯e„vSï0·ƒ—VåwÆ‹ýw9e„UNLuÿNæeNLuÆ–SOFd1vQir(N„v™„'fÿNLu¿OSÞVRVvQ^Sup„v0,g6q„v¶r`0"
+ sethianism:0 "^Xyr>m"
+ sethianism_religion_desc:0 "*gåwKN^ySNRXR(WAm¢nwúQÿGleQŒRŽ„vnf=tå‚»žÿvQ-NEQÈvNwi`xQ„vø‹ûyŒmÿES–™w:NÍk-6r­‚Ôkm0\nN!k%OWüRô†NÅ–¾ôTeYyr„vúQ°sÿÖNƒzÖS†NNN^y'`v^R.†Nir(NLu06qwÿSVÖNR.ºN‰|öeÿtSàeaô•SêñTƒz—V„v^y'`kp±‚KˆN†NºN‰|0Å–¾ôTeYyrSwzKS8lR`Õ‹þV:YÞVvQ›RÏ‘ÿwºN‰|RÅV‰˜ªR›ROê«ŽÞVRV­‚ÔkmN*gåwKN^y0"
+ priscillianism:0 "nfÌ‘‰)R‰R>m"
+ priscillianism_religion_desc:0 "XR(WNw2N*NýV¦^ÿN:NIQfÿN:NÑž—f0ºN‰|upB›,g”^VgÑž—fKNýVÿtSXK„v^«ˆðVŽNir(†˜ßWKN-N0ºN‰|-N	gASŒNMOIQfÏe•ÿàV«ŽÃVRÂˆw*gýwÜwÇÑž—f0àVdkN^SQeINcóºNô•ÿv^PvQ‰k¡NQ¦^OºN‰|upB›—VåNã‰10"
+ cainitism:0 "å‹–>m"
+ cainitism_religion_desc:0 "å‹–=f.irINKNv`„v,rN*N×S³Rw.irIN=fNRir(KNir„vR.w0âe6qir(N‰wSO=fªv`„vÿ‰wSO1SÅV‰˜Çj‹R RåN·salNÁkmpÿ‚Ydk…Q-Nwck„vºN‰|upB›Mbýw·ƒ—Vã‰10"
+
+ #Pagan
+ kushitism_pagan:1 "“^ËeáOðN"
+ kushitism_pagan_religion_desc:0 "dk0WTIYäS^yKNÎ˜O6qSmšSÿùRuN‰kKNLuP–„vTle¦N6q0"
+ kushitism_pagan_reformed:0 "9ei—“^Ëe"
+ kushitism_pagan_reformed_religion_desc:0 "Í‘=c„v“^ËeáOðNSvQ†SòSý¯npeCSt^ÿôvóäSöe„vÃWÊS^ýV0"
+ magyar_pagan:2 "LNÉbS"
+ magyar_pagan_religion_desc:1 "(WdkáOðN-NÿÏkNMOTXSXbÀNÿsSmyøS	ÿý(WúQuKNMR¿OòT1uø‹^y	šR0LNÉbSºNøváOÙ›NTXSXbÀNwQ	g…ºN„v›RÏ‘0zfgaN^y›RÿàVwXbØNÖNìNÝO²bÏe²v^V†˜vQpTAucƒ0"
+ magyar_pagan_reformed:0 "9ei—LNÉbS"
+ magyar_pagan_reformed_religion_desc:0 "9ei—LNÉbSYeOàVqQTáOðNwâVÓuÿvQbXTøváOTXSXbÀNÿsSmyøS	ÿ(WúQuKNMR¿OòT1uø‹^y	šR0LNÉbSºNøváOÙ›NTXSXbÀNwQ	g…ºN„v›RÏ‘0zfgaN^y›RÿàVwXbØNÖNìNÝO²bÏe²v^V†˜vQpTAucƒ0"
+ siberian_pagan:0 "þVœÆYáOðN"
+ siberian_pagan_religion_desc:0 "þVœÆYáO’VøváON*N*jT„vNLuÿºNN‹Q†våNlÏe:NUSMOuImÿÇÓußvbYÇNøv’NTwÓu0érs=f:YÖSu‹TNKˆNu‹TKNô•s^aˆ„v8hÃV¯s‚‚ÿºN‰kTÿNRupB›z˜AmwNÿluŽNvQHQMRNb^S„vlÏeKN-N0"
+ siberian_pagan_reformed:0 "9ei—þVœÆYáOðN"
+ siberian_pagan_reformed_religion_desc:0 "þVœÆYYeO±RlbN*N*jT„vNLuÿºNN‹Q†våNlÏe:NUSMOuImÿÇÓußvbYÇNøv’NTwÓu0ùRþVœÆYáO’VwŠÿuN‰k„vs^aˆg:NÍ‘‰ÿjm9N!kérs«ˆÆ‰:N'Yj0ÖNìNøváOºN‰kTÿNRupB›z˜AmwNÿluŽNvQHQMRNb^S„vlÏeKN-N0"
+
+ #Eastern
+ harmonized_confucian:0 "NQ¶RfRô‹ŒŒT"
+ desc_harmonized_confucian:0 "bìNòTSNRQ¶Rtó`³ueQbýVNlÏe¾|^yKN-N0"
+ harmonized_other_eastern:0 "NN¹eø‹áOðNŒŒT"
+ desc_harmonized_other_eastern:0 "bìNòTSNRN¹eáOðN³ueQbýVNlÏe¾|^yKN-N0"
+
+ # From Imperator
+
+ canaanite: "æWS"
+ canaanite_religion_desc: "æWS—RYeåNY^yYe„v¹eVTleOY^yGyÊSvQS«Ž0ôT›R«ˆÆ‰:NN*N1u!kµu^yGy„gb„vYBg^yû|-N„vIN^yÿÙ›N^yGy8^(WqSNbNv˜„v^y›Ÿ-N×S0RTÜb0"
+ druidism: "·VœOYe"
+ druidism_religion_desc: "·VœO(WïQSyrºN-N=fN*Nìryr„v>yO6–BS0ÖNìN8^EQûNgbÕlwNËzÕlwÿTöemN=eM‘NwSV0W„v—RYe`N×ONáOðN0"
+ kemetism: "ïQ¦žyrYe"
+ kemetism_religion_desc: "ÃWÊS,gW—RYe„v†SòSïSý¯npeCSt^0ƒRhˆ°s:NNÍyY^yáOðNÿùRÉb0?–þVÆY0^XkŽyrIr^yGy„vTÜbÿUS°súQùRê6qLu9h,gBSb—„vñmRleOu0"
+ mardukism: "lšSjgKQYe"
+ mardukism_religion_desc: "æÒR•^^yû|„v†SòSïSý¯npeCSt^0æÒR•^—RYe„váO’VTÜb‰RªR0i`úWNWS³uIr^yGyÿv^:NÖNìNNbSIY„v^yú^.RO„v^y™^0"
+ ajivika: "?–	TôuaS"
+ nuragic_pagan: "ªRÉb	T"
+ nuragic_pagan_religion_desc:0 "ªRÉb	TáOðNïSý¯nóÑy‰	VN’dN<SšN„vR—Ü”öeãN0vQ-NEQánùR¨RirN•NÉl„vTÜbÿwªRÉb	TáOðNg8hÃV„vèRÿ=fùRNMO6r^y„vUSNIN^yVáOðNÿÙMO6r^y	gø‹YT÷SÿSìb(„SY0‰·V·?–êSIr0"
+ hurrian_pagan: "áwÌ‘yr"
+ hurrian_pagan_religion_desc:0 "áwÌ‘yrºNTÜbOYnêäSÑNNT‡eS„v^yGy0áwÌ‘yr^yû|-N„vIN^y=f:V'Y„v)YlKN^yyr‚^ÊSvQ»YPR0Ík^ykôTyr0áwÌ‘yrºNØTleN‰|yrŠk„vºNirÿsSNbŒ„v(„÷–³u«ˆ^yS„vT‹sNñ‚Ä–0"
+ illyric_pagan: "O)RÌ‘šN"
+ illyric_pagan_religion_desc:0 "O)RÌ‘šNø‹lÏeáOIYN*Nìryr„vO)RÌ‘šN^yû|ÿv^×Sa'Y)RN^J^yû|qVÍT0O)RÌ‘šN¡l	gUSN„v–™^yÿw=fTÜbOY0W¹e^yGy0ÖNìNØ	g2N*NÍ‘‰„vTÜbÿ>meY<SšNO)RÌ‘šNºN„v*Y3–TÜbNWSO)RÌ‘šNºN„vÇ†TÜb0"
+ hattian_pagan: "ÈT¯h"
+ hattian_pagan_religion_desc:0 "ÈT¯h—RYe=fNÍywckäSw„váOðNÿvQèRCQ.tïSý¯nópeCSt^MR„vówhVöeãN0ÈT¯háOONcR‚‚ÊS'Y0W,g«Ž„vê6qªV¯søvOSŒÿÖNìNYžR›OÁTN`YR‘.sÙuÍk^yÿåNO0u0WÝOc¥wƒlÿv^2–bk)YŒp>P†‰ÙGrW0W0"
+ 
+ #March 21 additionsÿ
+ # Religions
+ germanic_pagan:0 "äSñ‚	T)RáOðN"
+ anglo_pagan:0 "Îv<hœáOðN"
+ cybelene:0 "“^ÏgÒRTÜb"
+ zamolxism:0 "Nb«ƒSKQ‰¯eáOðN"
+ mithraism:0 "ÆRyrÉbYe"
+ arab_pagan:0 "ætTX<S6w"
+ armenian_pagan:0 "kTXú‹¯eYe"
+ caucasian_pagan:0 "ßRSlšXbôT"
+ iberian_pagan:0 "OÔk)RšN"
+ scythian_pagan:0 "¯eúWðl"
+ briton_pagan:0 "^ËzT"
+ gallic_pagan:0 "ØšbS"
+ gaelic_pagan:0 "ÖvS"
+ celtiberian_pagan:0 "ïQSyrOÔk)RšN"
+ atenism:0 "?–˜áOðN"
+ # Descs
+ germanic_pagan_religion_desc:0 "jO:NS'kN-N'kåe3wüfø‹lÏe„v,gW—RYeÿåe3wüfVYeµmÖvYÍyáOðNÿ|VdkXR(WÍ‘‰„v0WßWîTV0vQ8hÃVqQIN˜˜SìbêNV.smy0ác	gCg¿R„vsYmyøSÿåNÊS%N<h„vT‰ŠÆQR0"
+ anglo_pagan_religion_desc:0 "Îv<hœ-’dKQVYe=fNWYY^yáOðNSOû|ÿ8hÃV=fùRðy:NÃW^X„vø‹^y„váOðN0vQ-Ng>fk„vSV^Sƒl‰vÿvQÖNÍ‘‰„v^ySìbþVú‹SNÐcLN0dkYºNìNØøváO	gTÍy…ê6qXR(WhESŽN'Y0WKNô•ÿSìb¾|up0<SKQÿ4l–Y	ÿN™Ÿ0"
+ cybelene_religion_desc:0 "VÌ‘	TšN„v“^ÏgÒRTÜbNòSMR„vÍk^yTÜbøvsQTw0†SÏupeCSt^oØSÿ“^ÏgÒRTÜb8^±RðyN^yÝ‹ºNirÊSñ‚Ä–	gNbsQTwÿv^åNœÜb^yÏP„v¹eVegžRõvQ—RYe0"
+ zamolxism_religion_desc:0 "NbS«ƒKQ‰¯egRvzßz=fHQåwØ=f^yGyÿòTàeÎN—Våw06qw¾QYšNºNNÖvTXºNSNbS«ƒKQ‰¯eS:N^yfÿv^Šb¸‹YGYùRVKNŽNÖN0"
+ mithraism_religion_desc:0 "‹†6q×SOgºNùRtWšN¯e·VYe^yGyÆRyrÉb„vTÜbNb=TÑSÿFO^J„vÆRyrÉb¯etSNNWY-T°ewìryr„vþVÏPSOû|øvsQTwÿ(WWlš^ýV›Q–-N‡˜:NAmLˆ0vQáOOåb	g1uNµueQYeêNV„gb„vYBgSOû|ÿåNÊSqQT>NLˆ„v<yêNZw™0"
+ arab_pagan_religion_desc:0 "?–Éb=O„v—RYe=f^yGy0S«ŽN¾|up„vY^y÷mTSOÿ(WT0WåN0W¹e'`NZwES'`„vbVVõLˆ0(WÙNöegÿÐg›N0W¹eb¸‹þfSRN^y‰RÉbjO:N^yû|KN–™egTÜb0"
+ armenian_pagan_religion_desc:0 "ÈTSê^yû|NbãNhˆ„v—RYeÿ=f¸‹YNªuåNMRÎNLNÉbSþV‡eS-NÑSUSweg„v0ƒRIN‰=fNÍyY^yáOðNÿvQIN^yT:NÈTSêÿ«ˆjO:Nb^y RåNTÜb0"
+ caucasian_pagan_religion_desc:0 "Øš R0t-OÔk)RšN0W:S„v^yû|b¸‹N»Ñ„v‰R³uXb)RšNø‹—RYe	gNbsQTwÿvQ^yû|ßu–ŽN^yGy?–SlšyQKNN0"
+ iberian_pagan_religion_desc:0 "OÔk)RšN—RYežRõ,g(N=fNÍy÷mT‹WY^yYeÿS+TùR¨Rir¾|up„vTleåNÊSVyHQTÜb0OÔk)RšNºNTÜbTÍy^JNS<SúW^yGyÿmNTÜbTXb?–TXÃW‰ZIr0W¹e^yGy0"
+ scythian_pagan_religion_desc:0 "ÙNÛl^yáOðNnŽN¯eúWðlKN0WÿTÜbNMOIN^yÿ8^«ˆIrTŽN^J^yû|-N„vø‹^y0¯eúWðlºNôfée„vY^ylô•—RYeCQ.tO6qYuXRÿlšmyNfl„„v`N×O¦N6qNïQSyrºN„vZPÕløv<O0"
+ briton_pagan_religion_desc:0 "NR ˜„vïQSyrºNTÜbê6qNir0ÖNìNI`SON=f–ŒTw1r‹YŒTs^„vlÏeÿFONæe«ˆ<ÿb—e-N¿OïSöQsV8^ÿŽVŽVd–tS«ŽNAuY„v‡e«ŽKNYhQ«Ždøˆ0WjOb0"
+ gallic_pagan_religion_desc:0 "ØšbSºN=f‰'kN-N'kN*NêjŒw:V'Y„vlÏe0NNR ˜²›S„v»ºN‡˜:Nøv<OÿÖNìNÎNê6q-NûR—VRY—ÿv^TÜbê6qLu-N„vNir0"
+ gaelic_pagan_religion_desc:0 "ÖvSºNáOIYN»ºNïQSyrºNøv<O„v^yû|0ÖvSºNTÜbê6qLu-N„vNirÿ·VœONT8n×‹ºN(WÖvS‡eS-NY×SST0"
+ celtiberian_pagan_religion_desc:0 "OÔk)RšN„vïQSyrèÏe=fN*N^yØy„vºN²ÿvQ‹Nù'YYòTnn¡lŽN†SòS0ÎNÅN	g„vSÏ‘°‹‹egwÿÖNìN(W‡eSNNØšbSºNg:Nøv<Oÿv^áOIYøv<O„v^yû|0"
+ atenism_religion_desc:0 "NY^y„vïQ¦žyrYeNTÿ?–˜áOðN=fNÍyN^yYeÿêSTÜb*Y3–WØv?–˜0NïQ¦žyrYeNTÿ?–˜áO’V&T²‹vQÖN^yGy„vXR(Wÿv^SùRÖNìN„vTÜbôv¥cšR:NjLˆ0"
+ # Forgotten entries
+ aztec_pagan:0 "?–yQyrKQ"
+ pagan_religion_reformed:0 "°eVYe"
+ 
+ # RICE
+ harranism:0 "ÈTpQáOðN"
+ 
+ # More Bookmarks Plus
+ barghawata:0 "ôTS RætTX"
+ barghawata_religion_desc:0 "NÍyÏu'YE^9e¨Rv^ÏgÏgSS„vO¯epQYebVVÿ÷mT†N.OßuÏgÏgS^yÝ‹ÿ1uêðylškêNHQåw„v(„)Rk·O,g·TXÌ‘+YRËz0"

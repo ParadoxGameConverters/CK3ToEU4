@@ -76,6 +76,7 @@
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasLink.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.cpp" />
+    <ClCompile Include="..\CK3ToEU4\Source\Mappers\EastAsiaLanguageSupport\EastAsiaLanguageSupport.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.cpp" />
     <ClCompile Include="..\CK3ToEU4\Source\Mappers\HeritageMapper\HeritageMapper.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasMapper.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRule.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\DynamicIdeasMapper\DynamicIdeasRuleEnum.h" />
+    <ClInclude Include="..\CK3ToEU4\Source\Mappers\EastAsiaLanguageSupport\EastAsiaLanguageSupport.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapper.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\GovernmentsMapper\GovernmentsMapping.h" />
     <ClInclude Include="..\CK3ToEU4\Source\Mappers\HeritageMapper\HeritageMapper.h" />

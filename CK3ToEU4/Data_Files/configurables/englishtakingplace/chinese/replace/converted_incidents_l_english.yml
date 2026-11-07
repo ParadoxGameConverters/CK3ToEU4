@@ -1,0 +1,20 @@
+﻿l_english:
+ incident_fraticelli_pope:3 "Ye—RN‡v^"
+ incident_fraticelli_pope_member_alert:3 "–Nwa'Y)RQ¦^b:N^ýVCgZ„v!X’WÿWlšYe—RòT÷‹Blb:N^y1WWlš^ýV„v^ýVø‹¯O0Ye—Rå‚¥c×S‡v^„vCgZÿSùRSDQV>mNLuµNu%NÍ‘Tœg0^ýVƒX…Q„vSDQV>máOOb¸‹OàVYe—R«ŽýNNbKˆN„vckSV'`wáOõVôfZWÿFO^ýVKNY„váOOP``¾–åN¥c×SÙN³QšRÿuóïSýwlTVïz0"
+ incident_fraticelli_pope_emperor_alert:3 "–Nwa'Y)RQ¦^b:N^ýVCgZ„v!X’WÿWlšYe—RòT÷‹Blb:N^y1WWlš^ýV„v^ýVø‹¯O0Ye—Rå‚¥c×S‡v^„vCgZÿSùRSDQV>mNLuµNu%NÍ‘Tœg0^ýVƒX…Q„vSDQV>máOOb¸‹OàVYe—R«ŽýNNbKˆN„vckSV'`wáOõVôfZWÿFO^ýVKNY„váOOP``¾–åN¥c×SÙN³QšRÿuóïSýwlTVïz0"
+
+ #The following overwrites the original. It replaces direct references to True Christians so that it works for other popes
+ incident_pope.1.t:3 "^y1W^ýVÿ"
+ incident_pope.1.d:3 "a'Y)RòTNQ=fqVKNýVÿ(W‡v^„vNÈaªR›RNÍ‘RV^y1WWlš^ýV„v`±b0Ye—RýV‚YÊNÅV‰˜‰bébÿ=f¥c×S‡v^„v8—CgÿØ=f«ˆVnŽN^ýVè•ÛiKNNÿdøˆw1V0\n\n¥c×S‡v^„vCgZSùRúWcwYeNLuµNu%NÍ‘Tœg0^ýVƒX…Q„vwúWcw’Vb¸‹OàVYe—R«ŽýNNbKˆN„vckSV'`wáOõVôfZWÿFO^ýVKNY„váOOP``¾–åN¥c×SÙN³QšRÿuóïSýwlTVïz0"
+ incident_pope.1.a:3 "bìNS ReQ^ýV0"
+ incident_pope.1.b:3 "1Wµ^ÅV‰˜ÝOcìrËz0"
+ pope_incident_tt:3 "‡v^S³QšR=f&T¥c³uYe—RýV ReQ^y1WWlš^ýV0\n§YÙSùRte*NúWcwYeNLuµNuqVÍT0§!"
+ pope_incident_tt2:3 "§YÙSùRte*NúWcwYeNLuµNuqVÍT0§!\n§Y^ýVKNY„vwúWcw’VS×S0RZgé`Z0§!"
+ incident_pope.2.t:3 "^y1W^ýVÿ"
+ incident_pope.2.d:3 "a'Y)RòTNQ=fqVKNýVÿ(W‡v^„vNÈaªR›RNÍ‘RV^y1WWlš^ýV„v`±b0WlšYe—RòT	éb¥c×S^ýV„v8—Cgÿw^—«ˆVnŽN^ýVè•ÛiKNNÿdøˆw1V0\n\nAQ¸‹Ye—Rb:N^ýVø‹¯OSùRúWcwYeNLuµNu%NÍ‘Tœg0^ýVƒX…Q„vwúWcw’Vb¸‹OàVYe—R«ŽýNNbKˆN„vckSV'`wáOõVôfZWÿFO^ýVKNY„váOOP``¾–åN¥c×SÙN³QšRÿuóïSýwlTVïz0"
+ incident_pope.2.a:3 "Ye—RS ReQ^ýV"
+ incident_pope.2.b:3 "1Wµ^”^SVÝOcìrËz0"
+ incident_pope.3.t:3 "µNn„v^ýV"
+ incident_pope.3.d:3 "^ýV®‹OòTÇNSïS`wNïS¹RÍV„vUeäNÿ^ýVSNQáOIYwúWcwYe0bìN:Nb`Y1WÍkYeOS%NNbZP„vNRªR›RýòTØNø‹NAmÿàVdkbìNÅV‰˜²‹wwQ†VÝuÙNòT«ˆ·sal„vSO6R0"
+ incident_pope.3.a:3 "©‹bìN»yVÙjv`KNŸz0"
+ incident_pope.3.b:3 ":N†NúWcwYeNLu„v)RÊvÿbìNÅV‰˜YuN0"
